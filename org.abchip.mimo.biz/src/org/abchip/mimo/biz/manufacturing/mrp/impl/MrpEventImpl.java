@@ -13,10 +13,14 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpEvent;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpEventType;
 import org.abchip.mimo.biz.manufacturing.mrp.MrpPackage;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,13 +32,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getMrpId <em>Mrp Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getEventDate <em>Event Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getMrpEventTypeId <em>Mrp Event Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getEventName <em>Event Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#isIsLate <em>Is Late</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getMrpEventTypeId <em>Mrp Event Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.impl.MrpEventImpl#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,26 +70,6 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	protected String mrpId = MRP_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getEventDate() <em>Event Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,26 +90,6 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	protected Date eventDate = EVENT_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMrpEventTypeId() <em>Mrp Event Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMrpEventTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MRP_EVENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMrpEventTypeId() <em>Mrp Event Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMrpEventTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String mrpEventTypeId = MRP_EVENT_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getEventName() <em>Event Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,26 +108,6 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 * @ordered
 	 */
 	protected String eventName = EVENT_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isIsLate() <em>Is Late</em>}' attribute.
@@ -204,6 +148,36 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 * @ordered
 	 */
 	protected double quantity = QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getMrpEventTypeId() <em>Mrp Event Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMrpEventTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected MrpEventType mrpEventTypeId;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,7 +227,24 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MrpPackage.MRP_EVENT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -263,8 +254,8 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__PRODUCT_ID, oldProductId, productId));
@@ -299,7 +290,24 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 * @generated
 	 */
 	@Override
-	public String getMrpEventTypeId() {
+	public MrpEventType getMrpEventTypeId() {
+		if (mrpEventTypeId != null && ((EObject)mrpEventTypeId).eIsProxy()) {
+			InternalEObject oldMrpEventTypeId = (InternalEObject)mrpEventTypeId;
+			mrpEventTypeId = (MrpEventType)eResolveProxy(oldMrpEventTypeId);
+			if (mrpEventTypeId != oldMrpEventTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID, oldMrpEventTypeId, mrpEventTypeId));
+			}
+		}
+		return mrpEventTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MrpEventType basicGetMrpEventTypeId() {
 		return mrpEventTypeId;
 	}
 
@@ -309,8 +317,8 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 * @generated
 	 */
 	@Override
-	public void setMrpEventTypeId(String newMrpEventTypeId) {
-		String oldMrpEventTypeId = mrpEventTypeId;
+	public void setMrpEventTypeId(MrpEventType newMrpEventTypeId) {
+		MrpEventType oldMrpEventTypeId = mrpEventTypeId;
 		mrpEventTypeId = newMrpEventTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID, oldMrpEventTypeId, mrpEventTypeId));
@@ -345,7 +353,24 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MrpPackage.MRP_EVENT__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -355,8 +380,8 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MrpPackage.MRP_EVENT__FACILITY_ID, oldFacilityId, facilityId));
@@ -418,20 +443,23 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 		switch (featureID) {
 			case MrpPackage.MRP_EVENT__MRP_ID:
 				return getMrpId();
-			case MrpPackage.MRP_EVENT__PRODUCT_ID:
-				return getProductId();
 			case MrpPackage.MRP_EVENT__EVENT_DATE:
 				return getEventDate();
-			case MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID:
-				return getMrpEventTypeId();
 			case MrpPackage.MRP_EVENT__EVENT_NAME:
 				return getEventName();
-			case MrpPackage.MRP_EVENT__FACILITY_ID:
-				return getFacilityId();
 			case MrpPackage.MRP_EVENT__IS_LATE:
 				return isIsLate();
 			case MrpPackage.MRP_EVENT__QUANTITY:
 				return getQuantity();
+			case MrpPackage.MRP_EVENT__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID:
+				if (resolve) return getMrpEventTypeId();
+				return basicGetMrpEventTypeId();
+			case MrpPackage.MRP_EVENT__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -447,26 +475,26 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 			case MrpPackage.MRP_EVENT__MRP_ID:
 				setMrpId((String)newValue);
 				return;
-			case MrpPackage.MRP_EVENT__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case MrpPackage.MRP_EVENT__EVENT_DATE:
 				setEventDate((Date)newValue);
 				return;
-			case MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID:
-				setMrpEventTypeId((String)newValue);
-				return;
 			case MrpPackage.MRP_EVENT__EVENT_NAME:
 				setEventName((String)newValue);
-				return;
-			case MrpPackage.MRP_EVENT__FACILITY_ID:
-				setFacilityId((String)newValue);
 				return;
 			case MrpPackage.MRP_EVENT__IS_LATE:
 				setIsLate((Boolean)newValue);
 				return;
 			case MrpPackage.MRP_EVENT__QUANTITY:
 				setQuantity((Double)newValue);
+				return;
+			case MrpPackage.MRP_EVENT__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID:
+				setMrpEventTypeId((MrpEventType)newValue);
+				return;
+			case MrpPackage.MRP_EVENT__FACILITY_ID:
+				setFacilityId((Facility)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -483,26 +511,26 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 			case MrpPackage.MRP_EVENT__MRP_ID:
 				setMrpId(MRP_ID_EDEFAULT);
 				return;
-			case MrpPackage.MRP_EVENT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case MrpPackage.MRP_EVENT__EVENT_DATE:
 				setEventDate(EVENT_DATE_EDEFAULT);
 				return;
-			case MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID:
-				setMrpEventTypeId(MRP_EVENT_TYPE_ID_EDEFAULT);
-				return;
 			case MrpPackage.MRP_EVENT__EVENT_NAME:
 				setEventName(EVENT_NAME_EDEFAULT);
-				return;
-			case MrpPackage.MRP_EVENT__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
 				return;
 			case MrpPackage.MRP_EVENT__IS_LATE:
 				setIsLate(IS_LATE_EDEFAULT);
 				return;
 			case MrpPackage.MRP_EVENT__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
+				return;
+			case MrpPackage.MRP_EVENT__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID:
+				setMrpEventTypeId((MrpEventType)null);
+				return;
+			case MrpPackage.MRP_EVENT__FACILITY_ID:
+				setFacilityId((Facility)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -518,20 +546,20 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 		switch (featureID) {
 			case MrpPackage.MRP_EVENT__MRP_ID:
 				return MRP_ID_EDEFAULT == null ? mrpId != null : !MRP_ID_EDEFAULT.equals(mrpId);
-			case MrpPackage.MRP_EVENT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case MrpPackage.MRP_EVENT__EVENT_DATE:
 				return EVENT_DATE_EDEFAULT == null ? eventDate != null : !EVENT_DATE_EDEFAULT.equals(eventDate);
-			case MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID:
-				return MRP_EVENT_TYPE_ID_EDEFAULT == null ? mrpEventTypeId != null : !MRP_EVENT_TYPE_ID_EDEFAULT.equals(mrpEventTypeId);
 			case MrpPackage.MRP_EVENT__EVENT_NAME:
 				return EVENT_NAME_EDEFAULT == null ? eventName != null : !EVENT_NAME_EDEFAULT.equals(eventName);
-			case MrpPackage.MRP_EVENT__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case MrpPackage.MRP_EVENT__IS_LATE:
 				return isLate != IS_LATE_EDEFAULT;
 			case MrpPackage.MRP_EVENT__QUANTITY:
 				return quantity != QUANTITY_EDEFAULT;
+			case MrpPackage.MRP_EVENT__PRODUCT_ID:
+				return productId != null;
+			case MrpPackage.MRP_EVENT__MRP_EVENT_TYPE_ID:
+				return mrpEventTypeId != null;
+			case MrpPackage.MRP_EVENT__FACILITY_ID:
+				return facilityId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -548,16 +576,10 @@ public class MrpEventImpl extends BizEntityTypedImpl<MrpEventType> implements Mr
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (mrpId: ");
 		result.append(mrpId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", eventDate: ");
 		result.append(eventDate);
-		result.append(", mrpEventTypeId: ");
-		result.append(mrpEventTypeId);
 		result.append(", eventName: ");
 		result.append(eventName);
-		result.append(", facilityId: ");
-		result.append(facilityId);
 		result.append(", isLate: ");
 		result.append(isLate);
 		result.append(", quantity: ");

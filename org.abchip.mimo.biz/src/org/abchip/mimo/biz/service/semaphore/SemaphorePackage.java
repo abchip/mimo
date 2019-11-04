@@ -50,7 +50,7 @@ public interface SemaphorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-service-semaphore";
+	String eNS_PREFIX = "biz-semaphore";
 
 	/**
 	 * The singleton instance of the package.

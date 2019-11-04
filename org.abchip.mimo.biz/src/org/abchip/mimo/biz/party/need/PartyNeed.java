@@ -10,6 +10,12 @@ package org.abchip.mimo.biz.party.need;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyType;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,16 +27,16 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyNeedId <em>Party Need Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getDatetimeRecorded <em>Datetime Recorded</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getNeedTypeId <em>Need Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyTypeId <em>Party Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getNeedTypeId <em>Need Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyTypeId <em>Party Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductCategoryId <em>Product Category Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed()
@@ -91,32 +97,30 @@ public interface PartyNeed extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_PartyId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Need Id</b></em>' attribute.
@@ -146,110 +150,108 @@ public interface PartyNeed extends BizEntity {
 	void setPartyNeedId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Type Id</em>' attribute.
-	 * @see #setPartyTypeId(String)
+	 * @return the value of the '<em>Party Type Id</em>' reference.
+	 * @see #setPartyTypeId(PartyType)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_PartyTypeId()
-	 * @model annotation="mimo-ent-domain frame='PartyType'"
+	 * @model keys="partyTypeId"
 	 * @generated
 	 */
-	String getPartyTypeId();
+	PartyType getPartyTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyTypeId <em>Party Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getPartyTypeId <em>Party Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Type Id</em>' reference.
 	 * @see #getPartyTypeId()
 	 * @generated
 	 */
-	void setPartyTypeId(String value);
+	void setPartyTypeId(PartyType value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Id</em>' attribute.
-	 * @see #setProductCategoryId(String)
+	 * @return the value of the '<em>Product Category Id</em>' reference.
+	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_ProductCategoryId()
-	 * @model annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model keys="productCategoryId"
 	 * @generated
 	 */
-	String getProductCategoryId();
+	ProductCategory getProductCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductCategoryId <em>Product Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductCategoryId <em>Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Category Id</em>' reference.
 	 * @see #getProductCategoryId()
 	 * @generated
 	 */
-	void setProductCategoryId(String value);
+	void setProductCategoryId(ProductCategory value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id</em>' attribute.
-	 * @see #setRoleTypeId(String)
+	 * @return the value of the '<em>Role Type Id</em>' reference.
+	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_RoleTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeId();
+	RoleType getRoleTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getRoleTypeId <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
 	 */
-	void setRoleTypeId(String value);
+	void setRoleTypeId(RoleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Visit Id</b></em>' attribute.
@@ -278,55 +280,55 @@ public interface PartyNeed extends BizEntity {
 	void setVisitId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Need Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Need Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Need Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Need Type Id</em>' attribute.
-	 * @see #setNeedTypeId(String)
+	 * @return the value of the '<em>Need Type Id</em>' reference.
+	 * @see #setNeedTypeId(NeedType)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_NeedTypeId()
-	 * @model annotation="mimo-ent-domain frame='NeedType'"
+	 * @model keys="needTypeId"
 	 * @generated
 	 */
-	String getNeedTypeId();
+	NeedType getNeedTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getNeedTypeId <em>Need Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getNeedTypeId <em>Need Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Need Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Need Type Id</em>' reference.
 	 * @see #getNeedTypeId()
 	 * @generated
 	 */
-	void setNeedTypeId(String value);
+	void setNeedTypeId(NeedType value);
 
 	/**
-	 * Returns the value of the '<em><b>Communication Event Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Communication Event Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Communication Event Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Id</em>' attribute.
-	 * @see #setCommunicationEventId(String)
+	 * @return the value of the '<em>Communication Event Id</em>' reference.
+	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.party.need.NeedPackage#getPartyNeed_CommunicationEventId()
-	 * @model annotation="mimo-ent-domain frame='CommunicationEvent'"
+	 * @model keys="communicationEventId"
 	 * @generated
 	 */
-	String getCommunicationEventId();
+	CommunicationEvent getCommunicationEventId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getCommunicationEventId <em>Communication Event Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.need.PartyNeed#getCommunicationEventId <em>Communication Event Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Communication Event Id</em>' attribute.
+	 * @param value the new value of the '<em>Communication Event Id</em>' reference.
 	 * @see #getCommunicationEventId()
 	 * @generated
 	 */
-	void setCommunicationEventId(String value);
+	void setCommunicationEventId(CommunicationEvent value);
 
 } // PartyNeed

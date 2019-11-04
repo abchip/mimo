@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.order.shoppinglist.impl;
 
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey;
 import org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -78,24 +81,14 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	protected String shoppingListItemSeqId = SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' attribute.
+	 * The cached value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSurveyResponseId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SURVEY_RESPONSE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyResponseId = SURVEY_RESPONSE_ID_EDEFAULT;
+	protected SurveyResponse surveyResponseId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +161,24 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	 * @generated
 	 */
 	@Override
-	public String getSurveyResponseId() {
+	public SurveyResponse getSurveyResponseId() {
+		if (surveyResponseId != null && ((EObject)surveyResponseId).eIsProxy()) {
+			InternalEObject oldSurveyResponseId = (InternalEObject)surveyResponseId;
+			surveyResponseId = (SurveyResponse)eResolveProxy(oldSurveyResponseId);
+			if (surveyResponseId != oldSurveyResponseId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
+			}
+		}
+		return surveyResponseId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurveyResponse basicGetSurveyResponseId() {
 		return surveyResponseId;
 	}
 
@@ -178,8 +188,8 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 	 * @generated
 	 */
 	@Override
-	public void setSurveyResponseId(String newSurveyResponseId) {
-		String oldSurveyResponseId = surveyResponseId;
+	public void setSurveyResponseId(SurveyResponse newSurveyResponseId) {
+		SurveyResponse oldSurveyResponseId = surveyResponseId;
 		surveyResponseId = newSurveyResponseId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
@@ -198,7 +208,8 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ITEM_SEQ_ID:
 				return getShoppingListItemSeqId();
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID:
-				return getSurveyResponseId();
+				if (resolve) return getSurveyResponseId();
+				return basicGetSurveyResponseId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,7 +229,7 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 				setShoppingListItemSeqId((String)newValue);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID:
-				setSurveyResponseId((String)newValue);
+				setSurveyResponseId((SurveyResponse)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,7 +250,7 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 				setShoppingListItemSeqId(SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID:
-				setSurveyResponseId(SURVEY_RESPONSE_ID_EDEFAULT);
+				setSurveyResponseId((SurveyResponse)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -258,7 +269,7 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SHOPPING_LIST_ITEM_SEQ_ID:
 				return SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT == null ? shoppingListItemSeqId != null : !SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT.equals(shoppingListItemSeqId);
 			case ShoppinglistPackage.SHOPPING_LIST_ITEM_SURVEY__SURVEY_RESPONSE_ID:
-				return SURVEY_RESPONSE_ID_EDEFAULT == null ? surveyResponseId != null : !SURVEY_RESPONSE_ID_EDEFAULT.equals(surveyResponseId);
+				return surveyResponseId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -277,8 +288,6 @@ public class ShoppingListItemSurveyImpl extends BizEntityImpl implements Shoppin
 		result.append(shoppingListId);
 		result.append(", shoppingListItemSeqId: ");
 		result.append(shoppingListItemSeqId);
-		result.append(", surveyResponseId: ");
-		result.append(surveyResponseId);
 		result.append(')');
 		return result.toString();
 	}

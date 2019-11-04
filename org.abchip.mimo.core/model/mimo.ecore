@@ -1066,6 +1066,18 @@
           </eGenericType>
         </eParameters>
       </eOperations>
+      <eOperations name="createProxy" lowerBound="1">
+        <eGenericType eTypeParameter="#//entity/FrameManager/createProxy/E"/>
+        <eTypeParameters name="E">
+          <eBounds eClassifier="#//entity/Entity"/>
+        </eTypeParameters>
+        <eParameters name="klass" lowerBound="1">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//entity/FrameManager/createProxy/E"/>
+          </eGenericType>
+        </eParameters>
+        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eOperations name="getFrameReader">
         <eGenericType eClassifier="#//entity/EntityReader">
           <eTypeArguments eClassifier="#//entity/Frame">

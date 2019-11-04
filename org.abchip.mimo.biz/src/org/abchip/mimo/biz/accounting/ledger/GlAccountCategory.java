@@ -55,30 +55,30 @@ public interface GlAccountCategory extends BizEntityTyped<GlAccountCategoryType>
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Category Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Category Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Category Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Category Type Id</em>' attribute.
-	 * @see #setGlAccountCategoryTypeId(String)
+	 * @return the value of the '<em>Gl Account Category Type Id</em>' reference.
+	 * @see #setGlAccountCategoryTypeId(GlAccountCategoryType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategory_GlAccountCategoryTypeId()
-	 * @model annotation="mimo-ent-domain frame='GlAccountCategoryType'"
+	 * @model keys="glAccountCategoryTypeId"
 	 * @generated
 	 */
-	String getGlAccountCategoryTypeId();
+	GlAccountCategoryType getGlAccountCategoryTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategory#getGlAccountCategoryTypeId <em>Gl Account Category Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategory#getGlAccountCategoryTypeId <em>Gl Account Category Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Category Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Category Type Id</em>' reference.
 	 * @see #getGlAccountCategoryTypeId()
 	 * @generated
 	 */
-	void setGlAccountCategoryTypeId(String value);
+	void setGlAccountCategoryTypeId(GlAccountCategoryType value);
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Category Id</b></em>' attribute.
@@ -91,7 +91,7 @@ public interface GlAccountCategory extends BizEntityTyped<GlAccountCategoryType>
 	 * @return the value of the '<em>Gl Account Category Id</em>' attribute.
 	 * @see #setGlAccountCategoryId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategory_GlAccountCategoryId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

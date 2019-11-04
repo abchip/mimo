@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.order.order.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderItemGroupOrder;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.product.product.ProductGroupOrder;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -78,24 +81,14 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getGroupOrderId() <em>Group Order Id</em>}' attribute.
+	 * The cached value of the '{@link #getGroupOrderId() <em>Group Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGroupOrderId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GROUP_ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGroupOrderId() <em>Group Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroupOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String groupOrderId = GROUP_ORDER_ID_EDEFAULT;
+	protected ProductGroupOrder groupOrderId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,7 +115,24 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 	 * @generated
 	 */
 	@Override
-	public String getGroupOrderId() {
+	public ProductGroupOrder getGroupOrderId() {
+		if (groupOrderId != null && ((EObject)groupOrderId).eIsProxy()) {
+			InternalEObject oldGroupOrderId = (InternalEObject)groupOrderId;
+			groupOrderId = (ProductGroupOrder)eResolveProxy(oldGroupOrderId);
+			if (groupOrderId != oldGroupOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_GROUP_ORDER__GROUP_ORDER_ID, oldGroupOrderId, groupOrderId));
+			}
+		}
+		return groupOrderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductGroupOrder basicGetGroupOrderId() {
 		return groupOrderId;
 	}
 
@@ -132,8 +142,8 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 	 * @generated
 	 */
 	@Override
-	public void setGroupOrderId(String newGroupOrderId) {
-		String oldGroupOrderId = groupOrderId;
+	public void setGroupOrderId(ProductGroupOrder newGroupOrderId) {
+		ProductGroupOrder oldGroupOrderId = groupOrderId;
 		groupOrderId = newGroupOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_GROUP_ORDER__GROUP_ORDER_ID, oldGroupOrderId, groupOrderId));
@@ -198,7 +208,8 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 			case OrderPackage.ORDER_ITEM_GROUP_ORDER__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.ORDER_ITEM_GROUP_ORDER__GROUP_ORDER_ID:
-				return getGroupOrderId();
+				if (resolve) return getGroupOrderId();
+				return basicGetGroupOrderId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,7 +229,7 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 				setOrderItemSeqId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM_GROUP_ORDER__GROUP_ORDER_ID:
-				setGroupOrderId((String)newValue);
+				setGroupOrderId((ProductGroupOrder)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,7 +250,7 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM_GROUP_ORDER__GROUP_ORDER_ID:
-				setGroupOrderId(GROUP_ORDER_ID_EDEFAULT);
+				setGroupOrderId((ProductGroupOrder)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -258,7 +269,7 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 			case OrderPackage.ORDER_ITEM_GROUP_ORDER__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.ORDER_ITEM_GROUP_ORDER__GROUP_ORDER_ID:
-				return GROUP_ORDER_ID_EDEFAULT == null ? groupOrderId != null : !GROUP_ORDER_ID_EDEFAULT.equals(groupOrderId);
+				return groupOrderId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -277,8 +288,6 @@ public class OrderItemGroupOrderImpl extends BizEntityImpl implements OrderItemG
 		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", groupOrderId: ");
-		result.append(groupOrderId);
 		result.append(')');
 		return result.toString();
 	}

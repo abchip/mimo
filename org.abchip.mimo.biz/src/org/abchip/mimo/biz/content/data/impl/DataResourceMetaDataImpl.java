@@ -7,13 +7,17 @@
  */
 package org.abchip.mimo.biz.content.data.impl;
 
+import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResourceMetaData;
+import org.abchip.mimo.biz.content.data.MetaDataPredicate;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getMetaDataValue <em>Meta Data Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getMetaDataPredicateId <em>Meta Data Predicate Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceMetaDataImpl#getMetaDataValue <em>Meta Data Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,46 +63,6 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMetaDataPredicateId() <em>Meta Data Predicate Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetaDataPredicateId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String META_DATA_PREDICATE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMetaDataPredicateId() <em>Meta Data Predicate Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMetaDataPredicateId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String metaDataPredicateId = META_DATA_PREDICATE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getMetaDataValue() <em>Meta Data Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,6 +81,26 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 * @ordered
 	 */
 	protected String metaDataValue = META_DATA_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMetaDataPredicateId() <em>Meta Data Predicate Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMetaDataPredicateId()
+	 * @generated
+	 * @ordered
+	 */
+	protected MetaDataPredicate metaDataPredicateId;
+
+	/**
+	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataSource dataSourceId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,7 +150,24 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 * @generated
 	 */
 	@Override
-	public String getDataSourceId() {
+	public DataSource getDataSourceId() {
+		if (dataSourceId != null && ((EObject)dataSourceId).eIsProxy()) {
+			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
+			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
+			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+			}
+		}
+		return dataSourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSource basicGetDataSourceId() {
 		return dataSourceId;
 	}
 
@@ -176,8 +177,8 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 * @generated
 	 */
 	@Override
-	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
+	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
@@ -189,7 +190,24 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 * @generated
 	 */
 	@Override
-	public String getMetaDataPredicateId() {
+	public MetaDataPredicate getMetaDataPredicateId() {
+		if (metaDataPredicateId != null && ((EObject)metaDataPredicateId).eIsProxy()) {
+			InternalEObject oldMetaDataPredicateId = (InternalEObject)metaDataPredicateId;
+			metaDataPredicateId = (MetaDataPredicate)eResolveProxy(oldMetaDataPredicateId);
+			if (metaDataPredicateId != oldMetaDataPredicateId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID, oldMetaDataPredicateId, metaDataPredicateId));
+			}
+		}
+		return metaDataPredicateId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MetaDataPredicate basicGetMetaDataPredicateId() {
 		return metaDataPredicateId;
 	}
 
@@ -199,8 +217,8 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 	 * @generated
 	 */
 	@Override
-	public void setMetaDataPredicateId(String newMetaDataPredicateId) {
-		String oldMetaDataPredicateId = metaDataPredicateId;
+	public void setMetaDataPredicateId(MetaDataPredicate newMetaDataPredicateId) {
+		MetaDataPredicate oldMetaDataPredicateId = metaDataPredicateId;
 		metaDataPredicateId = newMetaDataPredicateId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID, oldMetaDataPredicateId, metaDataPredicateId));
@@ -239,12 +257,14 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 		switch (featureID) {
 			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
 				return getDataResourceId();
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
-				return getMetaDataPredicateId();
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
-				return getDataSourceId();
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
 				return getMetaDataValue();
+			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
+				if (resolve) return getMetaDataPredicateId();
+				return basicGetMetaDataPredicateId();
+			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
+				if (resolve) return getDataSourceId();
+				return basicGetDataSourceId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,14 +280,14 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
 				setDataResourceId((String)newValue);
 				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
-				setMetaDataPredicateId((String)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
-				setDataSourceId((String)newValue);
-				return;
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
 				setMetaDataValue((String)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
+				setMetaDataPredicateId((MetaDataPredicate)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,14 +304,14 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
 				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
 				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
-				setMetaDataPredicateId(META_DATA_PREDICATE_ID_EDEFAULT);
-				return;
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
-				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
-				return;
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
 				setMetaDataValue(META_DATA_VALUE_EDEFAULT);
+				return;
+			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
+				setMetaDataPredicateId((MetaDataPredicate)null);
+				return;
+			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,12 +327,12 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 		switch (featureID) {
 			case DataPackage.DATA_RESOURCE_META_DATA__DATA_RESOURCE_ID:
 				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
-			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
-				return META_DATA_PREDICATE_ID_EDEFAULT == null ? metaDataPredicateId != null : !META_DATA_PREDICATE_ID_EDEFAULT.equals(metaDataPredicateId);
-			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
-				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
 			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_VALUE:
 				return META_DATA_VALUE_EDEFAULT == null ? metaDataValue != null : !META_DATA_VALUE_EDEFAULT.equals(metaDataValue);
+			case DataPackage.DATA_RESOURCE_META_DATA__META_DATA_PREDICATE_ID:
+				return metaDataPredicateId != null;
+			case DataPackage.DATA_RESOURCE_META_DATA__DATA_SOURCE_ID:
+				return dataSourceId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -329,10 +349,6 @@ public class DataResourceMetaDataImpl extends BizEntityImpl implements DataResou
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (dataResourceId: ");
 		result.append(dataResourceId);
-		result.append(", metaDataPredicateId: ");
-		result.append(metaDataPredicateId);
-		result.append(", dataSourceId: ");
-		result.append(dataSourceId);
 		result.append(", metaDataValue: ");
 		result.append(metaDataValue);
 		result.append(')');

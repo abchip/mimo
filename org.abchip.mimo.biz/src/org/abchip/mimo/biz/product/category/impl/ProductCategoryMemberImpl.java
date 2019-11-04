@@ -14,9 +14,12 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategoryMember;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,12 +31,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryMemberImpl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryMemberImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryMemberImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryMemberImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryMemberImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryMemberImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryMemberImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryMemberImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,26 +66,6 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 * @ordered
 	 */
 	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -185,6 +168,16 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -255,7 +248,24 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -265,8 +275,8 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID, oldProductId, productId));
@@ -374,8 +384,6 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID:
 				return getProductCategoryId();
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
-				return getProductId();
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE:
 				return getFromDate();
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__COMMENTS:
@@ -386,6 +394,9 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 				return getSequenceNum();
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE:
 				return getThruDate();
+			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -400,9 +411,6 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID:
 				setProductCategoryId((String)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
-				setProductId((String)newValue);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE:
 				setFromDate((Date)newValue);
@@ -419,6 +427,9 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -433,9 +444,6 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID:
 				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
@@ -452,6 +460,9 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -466,8 +477,6 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_CATEGORY_ID:
 				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
-			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__COMMENTS:
@@ -478,6 +487,8 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CategoryPackage.PRODUCT_CATEGORY_MEMBER__PRODUCT_ID:
+				return productId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -494,8 +505,6 @@ public class ProductCategoryMemberImpl extends BizEntityImpl implements ProductC
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productCategoryId: ");
 		result.append(productCategoryId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");

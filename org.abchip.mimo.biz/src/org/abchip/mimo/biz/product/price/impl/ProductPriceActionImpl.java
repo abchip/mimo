@@ -16,6 +16,8 @@ import org.abchip.mimo.biz.product.price.ProductPriceActionType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,8 +31,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceActionImpl#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceActionImpl#getProductPriceActionSeqId <em>Product Price Action Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceActionImpl#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceActionImpl#getProductPriceActionTypeId <em>Product Price Action Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceActionImpl#getRateCode <em>Rate Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceActionImpl#getProductPriceActionTypeId <em>Product Price Action Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,26 +104,6 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductPriceActionTypeId() <em>Product Price Action Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceActionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PRICE_ACTION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPriceActionTypeId() <em>Product Price Action Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceActionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPriceActionTypeId = PRODUCT_PRICE_ACTION_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getRateCode() <em>Rate Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,6 +122,16 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 	 * @ordered
 	 */
 	protected String rateCode = RATE_CODE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductPriceActionTypeId() <em>Product Price Action Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPriceActionTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPriceActionType productPriceActionTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,7 +227,24 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 	 * @generated
 	 */
 	@Override
-	public String getProductPriceActionTypeId() {
+	public ProductPriceActionType getProductPriceActionTypeId() {
+		if (productPriceActionTypeId != null && ((EObject)productPriceActionTypeId).eIsProxy()) {
+			InternalEObject oldProductPriceActionTypeId = (InternalEObject)productPriceActionTypeId;
+			productPriceActionTypeId = (ProductPriceActionType)eResolveProxy(oldProductPriceActionTypeId);
+			if (productPriceActionTypeId != oldProductPriceActionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID, oldProductPriceActionTypeId, productPriceActionTypeId));
+			}
+		}
+		return productPriceActionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPriceActionType basicGetProductPriceActionTypeId() {
 		return productPriceActionTypeId;
 	}
 
@@ -245,8 +254,8 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 	 * @generated
 	 */
 	@Override
-	public void setProductPriceActionTypeId(String newProductPriceActionTypeId) {
-		String oldProductPriceActionTypeId = productPriceActionTypeId;
+	public void setProductPriceActionTypeId(ProductPriceActionType newProductPriceActionTypeId) {
+		ProductPriceActionType oldProductPriceActionTypeId = productPriceActionTypeId;
 		productPriceActionTypeId = newProductPriceActionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID, oldProductPriceActionTypeId, productPriceActionTypeId));
@@ -289,10 +298,11 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 				return getProductPriceActionSeqId();
 			case PricePackage.PRODUCT_PRICE_ACTION__AMOUNT:
 				return getAmount();
-			case PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID:
-				return getProductPriceActionTypeId();
 			case PricePackage.PRODUCT_PRICE_ACTION__RATE_CODE:
 				return getRateCode();
+			case PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID:
+				if (resolve) return getProductPriceActionTypeId();
+				return basicGetProductPriceActionTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -314,11 +324,11 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 			case PricePackage.PRODUCT_PRICE_ACTION__AMOUNT:
 				setAmount((BigDecimal)newValue);
 				return;
-			case PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID:
-				setProductPriceActionTypeId((String)newValue);
-				return;
 			case PricePackage.PRODUCT_PRICE_ACTION__RATE_CODE:
 				setRateCode((String)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID:
+				setProductPriceActionTypeId((ProductPriceActionType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -341,11 +351,11 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 			case PricePackage.PRODUCT_PRICE_ACTION__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
 				return;
-			case PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID:
-				setProductPriceActionTypeId(PRODUCT_PRICE_ACTION_TYPE_ID_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_PRICE_ACTION__RATE_CODE:
 				setRateCode(RATE_CODE_EDEFAULT);
+				return;
+			case PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID:
+				setProductPriceActionTypeId((ProductPriceActionType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -365,10 +375,10 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 				return PRODUCT_PRICE_ACTION_SEQ_ID_EDEFAULT == null ? productPriceActionSeqId != null : !PRODUCT_PRICE_ACTION_SEQ_ID_EDEFAULT.equals(productPriceActionSeqId);
 			case PricePackage.PRODUCT_PRICE_ACTION__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID:
-				return PRODUCT_PRICE_ACTION_TYPE_ID_EDEFAULT == null ? productPriceActionTypeId != null : !PRODUCT_PRICE_ACTION_TYPE_ID_EDEFAULT.equals(productPriceActionTypeId);
 			case PricePackage.PRODUCT_PRICE_ACTION__RATE_CODE:
 				return RATE_CODE_EDEFAULT == null ? rateCode != null : !RATE_CODE_EDEFAULT.equals(rateCode);
+			case PricePackage.PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID:
+				return productPriceActionTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -389,8 +399,6 @@ public class ProductPriceActionImpl extends BizEntityTypedImpl<ProductPriceActio
 		result.append(productPriceActionSeqId);
 		result.append(", amount: ");
 		result.append(amount);
-		result.append(", productPriceActionTypeId: ");
-		result.append(productPriceActionTypeId);
 		result.append(", rateCode: ");
 		result.append(rateCode);
 		result.append(')');

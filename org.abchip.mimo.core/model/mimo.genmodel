@@ -662,6 +662,11 @@
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createEntity.1/klass"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/createEntity.1/E"/>
         </genOperations>
+        <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/createProxy">
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createProxy/klass"/>
+          <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/createProxy/name"/>
+          <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/createProxy/E"/>
+        </genOperations>
         <genOperations ecoreOperation="mimo.ecore#//entity/FrameManager/getFrameReader">
           <genParameters ecoreParameter="mimo.ecore#//entity/FrameManager/getFrameReader/contextProvider"/>
           <genTypeParameters ecoreTypeParameter="mimo.ecore#//entity/FrameManager/getFrameReader/E"/>

@@ -57,30 +57,30 @@ public interface GlAccountGroup extends BizEntityTyped<GlAccountGroupType> {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Group Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Group Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Group Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Group Type Id</em>' attribute.
-	 * @see #setGlAccountGroupTypeId(String)
+	 * @return the value of the '<em>Gl Account Group Type Id</em>' reference.
+	 * @see #setGlAccountGroupTypeId(GlAccountGroupType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroup_GlAccountGroupTypeId()
-	 * @model annotation="mimo-ent-domain frame='GlAccountGroupType'"
+	 * @model keys="glAccountGroupTypeId"
 	 * @generated
 	 */
-	String getGlAccountGroupTypeId();
+	GlAccountGroupType getGlAccountGroupTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroup#getGlAccountGroupTypeId <em>Gl Account Group Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountGroup#getGlAccountGroupTypeId <em>Gl Account Group Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Group Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Group Type Id</em>' reference.
 	 * @see #getGlAccountGroupTypeId()
 	 * @generated
 	 */
-	void setGlAccountGroupTypeId(String value);
+	void setGlAccountGroupTypeId(GlAccountGroupType value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,7 +102,7 @@ public interface GlAccountGroup extends BizEntityTyped<GlAccountGroupType> {
 	 * @return the value of the '<em>Gl Account Group Id</em>' attribute.
 	 * @see #setGlAccountGroupId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroup_GlAccountGroupId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

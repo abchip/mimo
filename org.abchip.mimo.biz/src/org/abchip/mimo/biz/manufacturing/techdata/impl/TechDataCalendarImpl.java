@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
+import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendarWeek;
 import org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -19,6 +20,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -32,8 +35,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarImpl#getCalendarId <em>Calendar Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarImpl#getCalendarWeekId <em>Calendar Week Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarImpl#getCalendarWeekId <em>Calendar Week Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarImpl#getTechDataCalendarExcDaies <em>Tech Data Calendar Exc Daies</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.impl.TechDataCalendarImpl#getTechDataCalendarExcWeeks <em>Tech Data Calendar Exc Weeks</em>}</li>
  * </ul>
@@ -67,26 +70,6 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	protected String calendarId = CALENDAR_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCalendarWeekId() <em>Calendar Week Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarWeekId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CALENDAR_WEEK_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCalendarWeekId() <em>Calendar Week Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarWeekId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String calendarWeekId = CALENDAR_WEEK_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,6 +88,16 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCalendarWeekId() <em>Calendar Week Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCalendarWeekId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TechDataCalendarWeek calendarWeekId;
 
 	/**
 	 * The cached value of the '{@link #getTechDataCalendarExcDaies() <em>Tech Data Calendar Exc Daies</em>}' attribute list.
@@ -174,7 +167,24 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	 * @generated
 	 */
 	@Override
-	public String getCalendarWeekId() {
+	public TechDataCalendarWeek getCalendarWeekId() {
+		if (calendarWeekId != null && ((EObject)calendarWeekId).eIsProxy()) {
+			InternalEObject oldCalendarWeekId = (InternalEObject)calendarWeekId;
+			calendarWeekId = (TechDataCalendarWeek)eResolveProxy(oldCalendarWeekId);
+			if (calendarWeekId != oldCalendarWeekId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
+			}
+		}
+		return calendarWeekId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TechDataCalendarWeek basicGetCalendarWeekId() {
 		return calendarWeekId;
 	}
 
@@ -184,8 +194,8 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 	 * @generated
 	 */
 	@Override
-	public void setCalendarWeekId(String newCalendarWeekId) {
-		String oldCalendarWeekId = calendarWeekId;
+	public void setCalendarWeekId(TechDataCalendarWeek newCalendarWeekId) {
+		TechDataCalendarWeek oldCalendarWeekId = calendarWeekId;
 		calendarWeekId = newCalendarWeekId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID, oldCalendarWeekId, calendarWeekId));
@@ -262,10 +272,11 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 		switch (featureID) {
 			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_ID:
 				return getCalendarId();
-			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID:
-				return getCalendarWeekId();
 			case TechdataPackage.TECH_DATA_CALENDAR__DESCRIPTION:
 				return getDescription();
+			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID:
+				if (resolve) return getCalendarWeekId();
+				return basicGetCalendarWeekId();
 			case TechdataPackage.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES:
 				return getTechDataCalendarExcDaies();
 			case TechdataPackage.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS:
@@ -286,11 +297,11 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_ID:
 				setCalendarId((String)newValue);
 				return;
-			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID:
-				setCalendarWeekId((String)newValue);
-				return;
 			case TechdataPackage.TECH_DATA_CALENDAR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID:
+				setCalendarWeekId((TechDataCalendarWeek)newValue);
 				return;
 			case TechdataPackage.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES:
 				getTechDataCalendarExcDaies().clear();
@@ -315,11 +326,11 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_ID:
 				setCalendarId(CALENDAR_ID_EDEFAULT);
 				return;
-			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID:
-				setCalendarWeekId(CALENDAR_WEEK_ID_EDEFAULT);
-				return;
 			case TechdataPackage.TECH_DATA_CALENDAR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID:
+				setCalendarWeekId((TechDataCalendarWeek)null);
 				return;
 			case TechdataPackage.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES:
 				getTechDataCalendarExcDaies().clear();
@@ -341,10 +352,10 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 		switch (featureID) {
 			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_ID:
 				return CALENDAR_ID_EDEFAULT == null ? calendarId != null : !CALENDAR_ID_EDEFAULT.equals(calendarId);
-			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID:
-				return CALENDAR_WEEK_ID_EDEFAULT == null ? calendarWeekId != null : !CALENDAR_WEEK_ID_EDEFAULT.equals(calendarWeekId);
 			case TechdataPackage.TECH_DATA_CALENDAR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case TechdataPackage.TECH_DATA_CALENDAR__CALENDAR_WEEK_ID:
+				return calendarWeekId != null;
 			case TechdataPackage.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES:
 				return techDataCalendarExcDaies != null && !techDataCalendarExcDaies.isEmpty();
 			case TechdataPackage.TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS:
@@ -365,8 +376,6 @@ public class TechDataCalendarImpl extends BizEntityImpl implements TechDataCalen
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (calendarId: ");
 		result.append(calendarId);
-		result.append(", calendarWeekId: ");
-		result.append(calendarWeekId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", techDataCalendarExcDaies: ");

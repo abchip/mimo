@@ -68,9 +68,8 @@ public interface ProductCalculatedInfo extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductCalculatedInfo_ProductId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
 	 * @generated
 	 */
 	String getProductId();

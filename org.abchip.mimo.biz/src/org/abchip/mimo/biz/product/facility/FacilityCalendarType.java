@@ -91,7 +91,7 @@ public interface FacilityCalendarType extends BizEntityType<FacilityCalendar> {
 	 * @return the value of the '<em>Facility Calendar Type Id</em>' attribute.
 	 * @see #setFacilityCalendarTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendarType_FacilityCalendarTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

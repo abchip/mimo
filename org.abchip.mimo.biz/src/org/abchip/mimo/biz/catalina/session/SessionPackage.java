@@ -50,7 +50,7 @@ public interface SessionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-catalina-session";
+	String eNS_PREFIX = "biz-session";
 
 	/**
 	 * The singleton instance of the package.

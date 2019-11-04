@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.service.schedule;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,8 +28,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getReasonEnumId <em>Reason Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getReasonEnumId <em>Reason Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock()
@@ -221,30 +222,30 @@ public interface JobManagerLock extends BizEntity {
 	void setLastModifiedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Reason Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Reason Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Reason Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reason Enum Id</em>' attribute.
-	 * @see #setReasonEnumId(String)
+	 * @return the value of the '<em>Reason Enum Id</em>' reference.
+	 * @see #setReasonEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getJobManagerLock_ReasonEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getReasonEnumId();
+	Enumeration getReasonEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getReasonEnumId <em>Reason Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getReasonEnumId <em>Reason Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reason Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Reason Enum Id</em>' reference.
 	 * @see #getReasonEnumId()
 	 * @generated
 	 */
-	void setReasonEnumId(String value);
+	void setReasonEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

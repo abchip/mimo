@@ -10,12 +10,16 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentStatus;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentStatusImpl#getStatusDate <em>Status Date</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,46 +65,6 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	protected String statusId = STATUS_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHANGE_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String changeByUserLoginId = CHANGE_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,6 +83,26 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	 * @ordered
 	 */
 	protected Date statusDate = STATUS_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shipment shipmentId;
+
+	/**
+	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChangeByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin changeByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,7 +129,24 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	 * @generated
 	 */
 	@Override
-	public String getChangeByUserLoginId() {
+	public UserLogin getChangeByUserLoginId() {
+		if (changeByUserLoginId != null && ((EObject)changeByUserLoginId).eIsProxy()) {
+			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
+			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
+			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
+			}
+		}
+		return changeByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangeByUserLoginId() {
 		return changeByUserLoginId;
 	}
 
@@ -155,8 +156,8 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	 * @generated
 	 */
 	@Override
-	public void setChangeByUserLoginId(String newChangeByUserLoginId) {
-		String oldChangeByUserLoginId = changeByUserLoginId;
+	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
@@ -168,7 +169,24 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -178,8 +196,8 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -241,12 +259,14 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 		switch (featureID) {
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
 				return getStatusId();
-			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
-				return getShipmentId();
-			case Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return getChangeByUserLoginId();
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_DATE:
 				return getStatusDate();
+			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
+			case Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				if (resolve) return getChangeByUserLoginId();
+				return basicGetChangeByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -262,14 +282,14 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
 				setStatusId((String)newValue);
 				return;
-			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
-				setShipmentId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_DATE:
 				setStatusDate((Date)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
+				setShipmentId((Shipment)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,14 +306,14 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
 				setStatusId(STATUS_ID_EDEFAULT);
 				return;
-			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId(CHANGE_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_DATE:
 				setStatusDate(STATUS_DATE_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
+				setShipmentId((Shipment)null);
+				return;
+			case Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,12 +329,12 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 		switch (featureID) {
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_ID:
 				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
-			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
-			case Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return CHANGE_BY_USER_LOGIN_ID_EDEFAULT == null ? changeByUserLoginId != null : !CHANGE_BY_USER_LOGIN_ID_EDEFAULT.equals(changeByUserLoginId);
 			case Shipment_Package.SHIPMENT_STATUS__STATUS_DATE:
 				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
+			case Shipment_Package.SHIPMENT_STATUS__SHIPMENT_ID:
+				return shipmentId != null;
+			case Shipment_Package.SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				return changeByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -331,10 +351,6 @@ public class ShipmentStatusImpl extends BizEntityImpl implements ShipmentStatus 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (statusId: ");
 		result.append(statusId);
-		result.append(", shipmentId: ");
-		result.append(shipmentId);
-		result.append(", changeByUserLoginId: ");
-		result.append(changeByUserLoginId);
 		result.append(", statusDate: ");
 		result.append(statusDate);
 		result.append(')');

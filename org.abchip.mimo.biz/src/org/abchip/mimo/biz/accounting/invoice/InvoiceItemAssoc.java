@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,13 +27,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getInvoiceItemSeqIdFrom <em>Invoice Item Seq Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getInvoiceIdTo <em>Invoice Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getInvoiceItemSeqIdTo <em>Invoice Item Seq Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getInvoiceItemAssocTypeId <em>Invoice Item Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getInvoiceItemAssocTypeId <em>Invoice Item Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getPartyIdTo <em>Party Id To</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc()
@@ -77,7 +78,8 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -103,7 +105,8 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @return the value of the '<em>Invoice Id From</em>' attribute.
 	 * @see #setInvoiceIdFrom(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceIdFrom()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceIdFrom();
@@ -129,7 +132,8 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @return the value of the '<em>Invoice Id To</em>' attribute.
 	 * @see #setInvoiceIdTo(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceIdTo();
@@ -155,7 +159,8 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @return the value of the '<em>Invoice Item Seq Id From</em>' attribute.
 	 * @see #setInvoiceItemSeqIdFrom(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceItemSeqIdFrom()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqIdFrom();
@@ -181,7 +186,8 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	 * @return the value of the '<em>Invoice Item Seq Id To</em>' attribute.
 	 * @see #setInvoiceItemSeqIdTo(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceItemSeqIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqIdTo();
@@ -197,56 +203,56 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	void setInvoiceItemSeqIdTo(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id From</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id From</em>' attribute.
-	 * @see #setPartyIdFrom(String)
+	 * @return the value of the '<em>Party Id From</em>' reference.
+	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_PartyIdFrom()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdFrom();
+	Party getPartyIdFrom();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getPartyIdFrom <em>Party Id From</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getPartyIdFrom <em>Party Id From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id From</em>' attribute.
+	 * @param value the new value of the '<em>Party Id From</em>' reference.
 	 * @see #getPartyIdFrom()
 	 * @generated
 	 */
-	void setPartyIdFrom(String value);
+	void setPartyIdFrom(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id To</em>' attribute.
-	 * @see #setPartyIdTo(String)
+	 * @return the value of the '<em>Party Id To</em>' reference.
+	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_PartyIdTo()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdTo();
+	Party getPartyIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getPartyIdTo <em>Party Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getPartyIdTo <em>Party Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id To</em>' attribute.
+	 * @param value the new value of the '<em>Party Id To</em>' reference.
 	 * @see #getPartyIdTo()
 	 * @generated
 	 */
-	void setPartyIdTo(String value);
+	void setPartyIdTo(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.
@@ -301,30 +307,29 @@ public interface InvoiceItemAssoc extends BizEntityTyped<InvoiceItemAssocType> {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Item Assoc Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Item Assoc Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Item Assoc Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Item Assoc Type Id</em>' attribute.
-	 * @see #setInvoiceItemAssocTypeId(String)
+	 * @return the value of the '<em>Invoice Item Assoc Type Id</em>' reference.
+	 * @see #setInvoiceItemAssocTypeId(InvoiceItemAssocType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAssoc_InvoiceItemAssocTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceItemAssocType'"
+	 * @model keys="invoiceItemAssocTypeId"
 	 * @generated
 	 */
-	String getInvoiceItemAssocTypeId();
+	InvoiceItemAssocType getInvoiceItemAssocTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getInvoiceItemAssocTypeId <em>Invoice Item Assoc Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc#getInvoiceItemAssocTypeId <em>Invoice Item Assoc Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Item Assoc Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Item Assoc Type Id</em>' reference.
 	 * @see #getInvoiceItemAssocTypeId()
 	 * @generated
 	 */
-	void setInvoiceItemAssocTypeId(String value);
+	void setInvoiceItemAssocTypeId(InvoiceItemAssocType value);
 
 } // InvoiceItemAssoc

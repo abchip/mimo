@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getInventoryItemId <em>Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getPhysicalInventoryId <em>Physical Inventory Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getAvailableToPromiseVar <em>Available To Promise Var</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getQuantityOnHandVar <em>Quantity On Hand Var</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getPhysicalInventoryId <em>Physical Inventory Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getVarianceReasonId <em>Variance Reason Id</em>}</li>
  * </ul>
  *
@@ -112,57 +112,56 @@ public interface InventoryItemVariance extends BizEntity {
 	void setQuantityOnHandVar(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Physical Inventory Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Physical Inventory Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Physical Inventory Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Physical Inventory Id</em>' attribute.
-	 * @see #setPhysicalInventoryId(String)
+	 * @return the value of the '<em>Physical Inventory Id</em>' reference.
+	 * @see #setPhysicalInventoryId(PhysicalInventory)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_PhysicalInventoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PhysicalInventory'"
+	 * @model keys="physicalInventoryId"
 	 * @generated
 	 */
-	String getPhysicalInventoryId();
+	PhysicalInventory getPhysicalInventoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getPhysicalInventoryId <em>Physical Inventory Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getPhysicalInventoryId <em>Physical Inventory Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Physical Inventory Id</em>' attribute.
+	 * @param value the new value of the '<em>Physical Inventory Id</em>' reference.
 	 * @see #getPhysicalInventoryId()
 	 * @generated
 	 */
-	void setPhysicalInventoryId(String value);
+	void setPhysicalInventoryId(PhysicalInventory value);
 
 	/**
-	 * Returns the value of the '<em><b>Variance Reason Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Variance Reason Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Variance Reason Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variance Reason Id</em>' attribute.
-	 * @see #setVarianceReasonId(String)
+	 * @return the value of the '<em>Variance Reason Id</em>' reference.
+	 * @see #setVarianceReasonId(VarianceReason)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_VarianceReasonId()
-	 * @model annotation="mimo-ent-domain frame='VarianceReason'"
+	 * @model keys="varianceReasonId"
 	 * @generated
 	 */
-	String getVarianceReasonId();
+	VarianceReason getVarianceReasonId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getVarianceReasonId <em>Variance Reason Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemVariance#getVarianceReasonId <em>Variance Reason Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Variance Reason Id</em>' attribute.
+	 * @param value the new value of the '<em>Variance Reason Id</em>' reference.
 	 * @see #getVarianceReasonId()
 	 * @generated
 	 */
-	void setVarianceReasonId(String value);
+	void setVarianceReasonId(VarianceReason value);
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' attribute.
@@ -175,8 +174,8 @@ public interface InventoryItemVariance extends BizEntity {
 	 * @return the value of the '<em>Inventory Item Id</em>' attribute.
 	 * @see #setInventoryItemId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemVariance_InventoryItemId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItem'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInventoryItemId();

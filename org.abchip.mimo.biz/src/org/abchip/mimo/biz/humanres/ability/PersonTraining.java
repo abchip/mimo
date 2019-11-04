@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.humanres.ability;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.humanres.trainings.TrainingRequest;
+import org.abchip.mimo.biz.party.party.Person;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,14 +24,14 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingClassTypeId <em>Training Class Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApprovalStatus <em>Approval Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApproverId <em>Approver Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingRequestId <em>Training Request Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApproverId <em>Approver Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingClassTypeId <em>Training Class Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingRequestId <em>Training Request Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining()
@@ -63,30 +66,30 @@ public interface PersonTraining extends BizEntity {
 	void setApprovalStatus(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Approver Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Approver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Approver Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Approver Id</em>' attribute.
-	 * @see #setApproverId(String)
+	 * @return the value of the '<em>Approver Id</em>' reference.
+	 * @see #setApproverId(Person)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_ApproverId()
-	 * @model annotation="mimo-ent-domain frame='Person'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getApproverId();
+	Person getApproverId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApproverId <em>Approver Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApproverId <em>Approver Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Approver Id</em>' attribute.
+	 * @param value the new value of the '<em>Approver Id</em>' reference.
 	 * @see #getApproverId()
 	 * @generated
 	 */
-	void setApproverId(String value);
+	void setApproverId(Person value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -99,7 +102,8 @@ public interface PersonTraining extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -125,8 +129,8 @@ public interface PersonTraining extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -194,82 +198,81 @@ public interface PersonTraining extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Training Class Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Training Class Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Training Class Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Training Class Type Id</em>' attribute.
-	 * @see #setTrainingClassTypeId(String)
+	 * @return the value of the '<em>Training Class Type Id</em>' reference.
+	 * @see #setTrainingClassTypeId(TrainingClassType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_TrainingClassTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='TrainingClassType'"
+	 * @model keys="trainingClassTypeId"
 	 * @generated
 	 */
-	String getTrainingClassTypeId();
+	TrainingClassType getTrainingClassTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingClassTypeId <em>Training Class Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingClassTypeId <em>Training Class Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Training Class Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Training Class Type Id</em>' reference.
 	 * @see #getTrainingClassTypeId()
 	 * @generated
 	 */
-	void setTrainingClassTypeId(String value);
+	void setTrainingClassTypeId(TrainingClassType value);
 
 	/**
-	 * Returns the value of the '<em><b>Training Request Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Training Request Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Training Request Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Training Request Id</em>' attribute.
-	 * @see #setTrainingRequestId(String)
+	 * @return the value of the '<em>Training Request Id</em>' reference.
+	 * @see #setTrainingRequestId(TrainingRequest)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_TrainingRequestId()
-	 * @model annotation="mimo-ent-domain frame='TrainingRequest'"
+	 * @model keys="trainingRequestId"
 	 * @generated
 	 */
-	String getTrainingRequestId();
+	TrainingRequest getTrainingRequestId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingRequestId <em>Training Request Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingRequestId <em>Training Request Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Training Request Id</em>' attribute.
+	 * @param value the new value of the '<em>Training Request Id</em>' reference.
 	 * @see #getTrainingRequestId()
 	 * @generated
 	 */
-	void setTrainingRequestId(String value);
+	void setTrainingRequestId(TrainingRequest value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Id</em>' attribute.
-	 * @see #setWorkEffortId(String)
+	 * @return the value of the '<em>Work Effort Id</em>' reference.
+	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPersonTraining_WorkEffortId()
-	 * @model annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @model keys="workEffortId"
 	 * @generated
 	 */
-	String getWorkEffortId();
+	WorkEffort getWorkEffortId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getWorkEffortId <em>Work Effort Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getWorkEffortId <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Id</em>' reference.
 	 * @see #getWorkEffortId()
 	 * @generated
 	 */
-	void setWorkEffortId(String value);
+	void setWorkEffortId(WorkEffort value);
 
 } // PersonTraining

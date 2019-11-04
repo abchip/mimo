@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.humanres.ability;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.humanres.position.EmplPosition;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,12 +27,12 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getEmployeeRoleTypeId <em>Employee Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getPerfReviewId <em>Perf Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getEmplPositionId <em>Empl Position Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getManagerPartyId <em>Manager Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getManagerRoleTypeId <em>Manager Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getPaymentId <em>Payment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getManagerPartyId <em>Manager Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getPaymentId <em>Payment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getEmplPositionId <em>Empl Position Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview()
@@ -64,30 +67,30 @@ public interface PerfReview extends BizEntity {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Empl Position Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Empl Position Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Empl Position Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Empl Position Id</em>' attribute.
-	 * @see #setEmplPositionId(String)
+	 * @return the value of the '<em>Empl Position Id</em>' reference.
+	 * @see #setEmplPositionId(EmplPosition)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_EmplPositionId()
-	 * @model annotation="mimo-ent-domain frame='EmplPosition'"
+	 * @model keys="emplPositionId"
 	 * @generated
 	 */
-	String getEmplPositionId();
+	EmplPosition getEmplPositionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getEmplPositionId <em>Empl Position Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getEmplPositionId <em>Empl Position Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Empl Position Id</em>' attribute.
+	 * @param value the new value of the '<em>Empl Position Id</em>' reference.
 	 * @see #getEmplPositionId()
 	 * @generated
 	 */
-	void setEmplPositionId(String value);
+	void setEmplPositionId(EmplPosition value);
 
 	/**
 	 * Returns the value of the '<em><b>Employee Party Id</b></em>' attribute.
@@ -100,8 +103,8 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>Employee Party Id</em>' attribute.
 	 * @see #setEmployeePartyId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_EmployeePartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmployeePartyId();
@@ -127,7 +130,8 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>Employee Role Type Id</em>' attribute.
 	 * @see #setEmployeeRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_EmployeeRoleTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmployeeRoleTypeId();
@@ -169,30 +173,30 @@ public interface PerfReview extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Manager Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Manager Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Manager Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Manager Party Id</em>' attribute.
-	 * @see #setManagerPartyId(String)
+	 * @return the value of the '<em>Manager Party Id</em>' reference.
+	 * @see #setManagerPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_ManagerPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getManagerPartyId();
+	Party getManagerPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getManagerPartyId <em>Manager Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getManagerPartyId <em>Manager Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Manager Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Manager Party Id</em>' reference.
 	 * @see #getManagerPartyId()
 	 * @generated
 	 */
-	void setManagerPartyId(String value);
+	void setManagerPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Manager Role Type Id</b></em>' attribute.
@@ -221,30 +225,30 @@ public interface PerfReview extends BizEntity {
 	void setManagerRoleTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Id</em>' attribute.
-	 * @see #setPaymentId(String)
+	 * @return the value of the '<em>Payment Id</em>' reference.
+	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_PaymentId()
-	 * @model annotation="mimo-ent-domain frame='Payment'"
+	 * @model keys="paymentId"
 	 * @generated
 	 */
-	String getPaymentId();
+	Payment getPaymentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getPaymentId <em>Payment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getPaymentId <em>Payment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Id</em>' reference.
 	 * @see #getPaymentId()
 	 * @generated
 	 */
-	void setPaymentId(String value);
+	void setPaymentId(Payment value);
 
 	/**
 	 * Returns the value of the '<em><b>Perf Review Id</b></em>' attribute.
@@ -257,7 +261,8 @@ public interface PerfReview extends BizEntity {
 	 * @return the value of the '<em>Perf Review Id</em>' attribute.
 	 * @see #setPerfReviewId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerfReview_PerfReviewId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPerfReviewId();

@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.product.facility.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.ContainerGeoPoint;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerGeoPointImpl#getContainerId <em>Container Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerGeoPointImpl#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerGeoPointImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerGeoPointImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerGeoPointImpl#getGeoPointId <em>Geo Point Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,26 +61,6 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 	 * @ordered
 	 */
 	protected String containerId = CONTAINER_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_POINT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoPointId = GEO_POINT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -118,6 +101,16 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoPointId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeoPoint geoPointId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,7 +160,24 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 	 * @generated
 	 */
 	@Override
-	public String getGeoPointId() {
+	public GeoPoint getGeoPointId() {
+		if (geoPointId != null && ((EObject)geoPointId).eIsProxy()) {
+			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
+			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
+			if (geoPointId != oldGeoPointId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID, oldGeoPointId, geoPointId));
+			}
+		}
+		return geoPointId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeoPoint basicGetGeoPointId() {
 		return geoPointId;
 	}
 
@@ -177,8 +187,8 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 	 * @generated
 	 */
 	@Override
-	public void setGeoPointId(String newGeoPointId) {
-		String oldGeoPointId = geoPointId;
+	public void setGeoPointId(GeoPoint newGeoPointId) {
+		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID, oldGeoPointId, geoPointId));
@@ -240,12 +250,13 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 		switch (featureID) {
 			case FacilityPackage.CONTAINER_GEO_POINT__CONTAINER_ID:
 				return getContainerId();
-			case FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID:
-				return getGeoPointId();
 			case FacilityPackage.CONTAINER_GEO_POINT__FROM_DATE:
 				return getFromDate();
 			case FacilityPackage.CONTAINER_GEO_POINT__THRU_DATE:
 				return getThruDate();
+			case FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID:
+				if (resolve) return getGeoPointId();
+				return basicGetGeoPointId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,14 +272,14 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 			case FacilityPackage.CONTAINER_GEO_POINT__CONTAINER_ID:
 				setContainerId((String)newValue);
 				return;
-			case FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID:
-				setGeoPointId((String)newValue);
-				return;
 			case FacilityPackage.CONTAINER_GEO_POINT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FacilityPackage.CONTAINER_GEO_POINT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID:
+				setGeoPointId((GeoPoint)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -285,14 +296,14 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 			case FacilityPackage.CONTAINER_GEO_POINT__CONTAINER_ID:
 				setContainerId(CONTAINER_ID_EDEFAULT);
 				return;
-			case FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID:
-				setGeoPointId(GEO_POINT_ID_EDEFAULT);
-				return;
 			case FacilityPackage.CONTAINER_GEO_POINT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FacilityPackage.CONTAINER_GEO_POINT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID:
+				setGeoPointId((GeoPoint)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -308,12 +319,12 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 		switch (featureID) {
 			case FacilityPackage.CONTAINER_GEO_POINT__CONTAINER_ID:
 				return CONTAINER_ID_EDEFAULT == null ? containerId != null : !CONTAINER_ID_EDEFAULT.equals(containerId);
-			case FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID:
-				return GEO_POINT_ID_EDEFAULT == null ? geoPointId != null : !GEO_POINT_ID_EDEFAULT.equals(geoPointId);
 			case FacilityPackage.CONTAINER_GEO_POINT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FacilityPackage.CONTAINER_GEO_POINT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FacilityPackage.CONTAINER_GEO_POINT__GEO_POINT_ID:
+				return geoPointId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -330,8 +341,6 @@ public class ContainerGeoPointImpl extends BizEntityImpl implements ContainerGeo
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (containerId: ");
 		result.append(containerId);
-		result.append(", geoPointId: ");
-		result.append(geoPointId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

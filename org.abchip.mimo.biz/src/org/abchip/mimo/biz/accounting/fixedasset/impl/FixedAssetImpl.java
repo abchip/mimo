@@ -17,11 +17,21 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,30 +44,30 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getAcquireOrderId <em>Acquire Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getAcquireOrderItemSeqId <em>Acquire Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getActualEndOfLife <em>Actual End Of Life</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getCalendarId <em>Calendar Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getClassEnumId <em>Class Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getDateAcquired <em>Date Acquired</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getDateLastServiced <em>Date Last Serviced</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getDateNextService <em>Date Next Service</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getDepreciation <em>Depreciation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getExpectedEndOfLife <em>Expected End Of Life</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetName <em>Fixed Asset Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getInstanceOfProductId <em>Instance Of Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getLocatedAtFacilityId <em>Located At Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getLocatedAtLocationSeqId <em>Located At Location Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getParentFixedAssetId <em>Parent Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getProductionCapacity <em>Production Capacity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getPurchaseCost <em>Purchase Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getPurchaseCostUomId <em>Purchase Cost Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getSalvageValue <em>Salvage Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getSerialNumber <em>Serial Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getParentFixedAssetId <em>Parent Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getInstanceOfProductId <em>Instance Of Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getClassEnumId <em>Class Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getAcquireOrderId <em>Acquire Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getCalendarId <em>Calendar Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getLocatedAtFacilityId <em>Located At Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetAttributes <em>Fixed Asset Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetIdents <em>Fixed Asset Idents</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetImpl#getFixedAssetMaints <em>Fixed Asset Maints</em>}</li>
@@ -89,24 +99,6 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @ordered
 	 */
 	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAcquireOrderId() <em>Acquire Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAcquireOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACQUIRE_ORDER_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAcquireOrderId() <em>Acquire Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAcquireOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String acquireOrderId = ACQUIRE_ORDER_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAcquireOrderItemSeqId() <em>Acquire Order Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -143,42 +135,6 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @ordered
 	 */
 	protected Date actualEndOfLife = ACTUAL_END_OF_LIFE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCalendarId() <em>Calendar Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CALENDAR_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCalendarId() <em>Calendar Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCalendarId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String calendarId = CALENDAR_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getClassEnumId() <em>Class Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClassEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CLASS_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getClassEnumId() <em>Class Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClassEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String classEnumId = CLASS_ENUM_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDateAcquired() <em>Date Acquired</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -288,60 +244,6 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	protected String fixedAssetName = FIXED_ASSET_NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetTypeId = FIXED_ASSET_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getInstanceOfProductId() <em>Instance Of Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstanceOfProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INSTANCE_OF_PRODUCT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInstanceOfProductId() <em>Instance Of Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstanceOfProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String instanceOfProductId = INSTANCE_OF_PRODUCT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getLocatedAtFacilityId() <em>Located At Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocatedAtFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LOCATED_AT_FACILITY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getLocatedAtFacilityId() <em>Located At Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocatedAtFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String locatedAtFacilityId = LOCATED_AT_FACILITY_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getLocatedAtLocationSeqId() <em>Located At Location Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,42 +261,6 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @ordered
 	 */
 	protected String locatedAtLocationSeqId = LOCATED_AT_LOCATION_SEQ_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getParentFixedAssetId() <em>Parent Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARENT_FIXED_ASSET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentFixedAssetId() <em>Parent Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentFixedAssetId = PARENT_FIXED_ASSET_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getProductionCapacity() <em>Production Capacity</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -450,24 +316,6 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	protected String purchaseCostUomId = PURCHASE_COST_UOM_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getSalvageValue() <em>Salvage Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -504,23 +352,95 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 */
 	protected String serialNumber = SERIAL_NUMBER_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getFixedAssetTypeId() <em>Fixed Asset Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUomId()
+	 * @see #getFixedAssetTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_ID_EDEFAULT = null;
+	protected FixedAssetType fixedAssetTypeId;
 	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentFixedAssetId() <em>Parent Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset parentFixedAssetId;
+	/**
+	 * The cached value of the '{@link #getInstanceOfProductId() <em>Instance Of Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInstanceOfProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product instanceOfProductId;
+	/**
+	 * The cached value of the '{@link #getClassEnumId() <em>Class Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration classEnumId;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+	/**
+	 * The cached value of the '{@link #getAcquireOrderId() <em>Acquire Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAcquireOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader acquireOrderId;
+	/**
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String uomId = UOM_ID_EDEFAULT;
+	protected Uom uomId;
+	/**
+	 * The cached value of the '{@link #getCalendarId() <em>Calendar Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCalendarId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TechDataCalendar calendarId;
+	/**
+	 * The cached value of the '{@link #getLocatedAtFacilityId() <em>Located At Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocatedAtFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility locatedAtFacilityId;
 
 	/**
 	 * The cached value of the '{@link #getFixedAssetAttributes() <em>Fixed Asset Attributes</em>}' attribute list.
@@ -584,7 +504,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getAcquireOrderId() {
+	public OrderHeader getAcquireOrderId() {
+		if (acquireOrderId != null && ((EObject)acquireOrderId).eIsProxy()) {
+			InternalEObject oldAcquireOrderId = (InternalEObject)acquireOrderId;
+			acquireOrderId = (OrderHeader)eResolveProxy(oldAcquireOrderId);
+			if (acquireOrderId != oldAcquireOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID, oldAcquireOrderId, acquireOrderId));
+			}
+		}
+		return acquireOrderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetAcquireOrderId() {
 		return acquireOrderId;
 	}
 
@@ -594,8 +531,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setAcquireOrderId(String newAcquireOrderId) {
-		String oldAcquireOrderId = acquireOrderId;
+	public void setAcquireOrderId(OrderHeader newAcquireOrderId) {
+		OrderHeader oldAcquireOrderId = acquireOrderId;
 		acquireOrderId = newAcquireOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID, oldAcquireOrderId, acquireOrderId));
@@ -653,7 +590,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getCalendarId() {
+	public TechDataCalendar getCalendarId() {
+		if (calendarId != null && ((EObject)calendarId).eIsProxy()) {
+			InternalEObject oldCalendarId = (InternalEObject)calendarId;
+			calendarId = (TechDataCalendar)eResolveProxy(oldCalendarId);
+			if (calendarId != oldCalendarId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__CALENDAR_ID, oldCalendarId, calendarId));
+			}
+		}
+		return calendarId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TechDataCalendar basicGetCalendarId() {
 		return calendarId;
 	}
 
@@ -663,8 +617,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setCalendarId(String newCalendarId) {
-		String oldCalendarId = calendarId;
+	public void setCalendarId(TechDataCalendar newCalendarId) {
+		TechDataCalendar oldCalendarId = calendarId;
 		calendarId = newCalendarId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__CALENDAR_ID, oldCalendarId, calendarId));
@@ -676,7 +630,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getClassEnumId() {
+	public Enumeration getClassEnumId() {
+		if (classEnumId != null && ((EObject)classEnumId).eIsProxy()) {
+			InternalEObject oldClassEnumId = (InternalEObject)classEnumId;
+			classEnumId = (Enumeration)eResolveProxy(oldClassEnumId);
+			if (classEnumId != oldClassEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID, oldClassEnumId, classEnumId));
+			}
+		}
+		return classEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetClassEnumId() {
 		return classEnumId;
 	}
 
@@ -686,8 +657,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setClassEnumId(String newClassEnumId) {
-		String oldClassEnumId = classEnumId;
+	public void setClassEnumId(Enumeration newClassEnumId) {
+		Enumeration oldClassEnumId = classEnumId;
 		classEnumId = newClassEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID, oldClassEnumId, classEnumId));
@@ -837,7 +808,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getInstanceOfProductId() {
+	public Product getInstanceOfProductId() {
+		if (instanceOfProductId != null && ((EObject)instanceOfProductId).eIsProxy()) {
+			InternalEObject oldInstanceOfProductId = (InternalEObject)instanceOfProductId;
+			instanceOfProductId = (Product)eResolveProxy(oldInstanceOfProductId);
+			if (instanceOfProductId != oldInstanceOfProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID, oldInstanceOfProductId, instanceOfProductId));
+			}
+		}
+		return instanceOfProductId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetInstanceOfProductId() {
 		return instanceOfProductId;
 	}
 
@@ -847,8 +835,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setInstanceOfProductId(String newInstanceOfProductId) {
-		String oldInstanceOfProductId = instanceOfProductId;
+	public void setInstanceOfProductId(Product newInstanceOfProductId) {
+		Product oldInstanceOfProductId = instanceOfProductId;
 		instanceOfProductId = newInstanceOfProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID, oldInstanceOfProductId, instanceOfProductId));
@@ -860,7 +848,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getLocatedAtFacilityId() {
+	public Facility getLocatedAtFacilityId() {
+		if (locatedAtFacilityId != null && ((EObject)locatedAtFacilityId).eIsProxy()) {
+			InternalEObject oldLocatedAtFacilityId = (InternalEObject)locatedAtFacilityId;
+			locatedAtFacilityId = (Facility)eResolveProxy(oldLocatedAtFacilityId);
+			if (locatedAtFacilityId != oldLocatedAtFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID, oldLocatedAtFacilityId, locatedAtFacilityId));
+			}
+		}
+		return locatedAtFacilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetLocatedAtFacilityId() {
 		return locatedAtFacilityId;
 	}
 
@@ -870,8 +875,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setLocatedAtFacilityId(String newLocatedAtFacilityId) {
-		String oldLocatedAtFacilityId = locatedAtFacilityId;
+	public void setLocatedAtFacilityId(Facility newLocatedAtFacilityId) {
+		Facility oldLocatedAtFacilityId = locatedAtFacilityId;
 		locatedAtFacilityId = newLocatedAtFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID, oldLocatedAtFacilityId, locatedAtFacilityId));
@@ -906,7 +911,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -916,8 +938,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__PARTY_ID, oldPartyId, partyId));
@@ -998,7 +1020,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -1008,8 +1047,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -1067,7 +1106,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -1077,8 +1133,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__UOM_ID, oldUomId, uomId));
@@ -1262,7 +1318,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetTypeId() {
+	public FixedAssetType getFixedAssetTypeId() {
+		if (fixedAssetTypeId != null && ((EObject)fixedAssetTypeId).eIsProxy()) {
+			InternalEObject oldFixedAssetTypeId = (InternalEObject)fixedAssetTypeId;
+			fixedAssetTypeId = (FixedAssetType)eResolveProxy(oldFixedAssetTypeId);
+			if (fixedAssetTypeId != oldFixedAssetTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
+			}
+		}
+		return fixedAssetTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAssetType basicGetFixedAssetTypeId() {
 		return fixedAssetTypeId;
 	}
 
@@ -1272,8 +1345,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetTypeId(String newFixedAssetTypeId) {
-		String oldFixedAssetTypeId = fixedAssetTypeId;
+	public void setFixedAssetTypeId(FixedAssetType newFixedAssetTypeId) {
+		FixedAssetType oldFixedAssetTypeId = fixedAssetTypeId;
 		fixedAssetTypeId = newFixedAssetTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID, oldFixedAssetTypeId, fixedAssetTypeId));
@@ -1285,7 +1358,24 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public String getParentFixedAssetId() {
+	public FixedAsset getParentFixedAssetId() {
+		if (parentFixedAssetId != null && ((EObject)parentFixedAssetId).eIsProxy()) {
+			InternalEObject oldParentFixedAssetId = (InternalEObject)parentFixedAssetId;
+			parentFixedAssetId = (FixedAsset)eResolveProxy(oldParentFixedAssetId);
+			if (parentFixedAssetId != oldParentFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID, oldParentFixedAssetId, parentFixedAssetId));
+			}
+		}
+		return parentFixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetParentFixedAssetId() {
 		return parentFixedAssetId;
 	}
 
@@ -1295,8 +1385,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 	 * @generated
 	 */
 	@Override
-	public void setParentFixedAssetId(String newParentFixedAssetId) {
-		String oldParentFixedAssetId = parentFixedAssetId;
+	public void setParentFixedAssetId(FixedAsset newParentFixedAssetId) {
+		FixedAsset oldParentFixedAssetId = parentFixedAssetId;
 		parentFixedAssetId = newParentFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID, oldParentFixedAssetId, parentFixedAssetId));
@@ -1335,16 +1425,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ID:
 				return getFixedAssetId();
-			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID:
-				return getAcquireOrderId();
 			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ITEM_SEQ_ID:
 				return getAcquireOrderItemSeqId();
 			case FixedassetPackage.FIXED_ASSET__ACTUAL_END_OF_LIFE:
 				return getActualEndOfLife();
-			case FixedassetPackage.FIXED_ASSET__CALENDAR_ID:
-				return getCalendarId();
-			case FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID:
-				return getClassEnumId();
 			case FixedassetPackage.FIXED_ASSET__DATE_ACQUIRED:
 				return getDateAcquired();
 			case FixedassetPackage.FIXED_ASSET__DATE_LAST_SERVICED:
@@ -1357,32 +1441,48 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 				return getExpectedEndOfLife();
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_NAME:
 				return getFixedAssetName();
-			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID:
-				return getFixedAssetTypeId();
-			case FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID:
-				return getInstanceOfProductId();
-			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID:
-				return getLocatedAtFacilityId();
 			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_LOCATION_SEQ_ID:
 				return getLocatedAtLocationSeqId();
-			case FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID:
-				return getParentFixedAssetId();
-			case FixedassetPackage.FIXED_ASSET__PARTY_ID:
-				return getPartyId();
 			case FixedassetPackage.FIXED_ASSET__PRODUCTION_CAPACITY:
 				return getProductionCapacity();
 			case FixedassetPackage.FIXED_ASSET__PURCHASE_COST:
 				return getPurchaseCost();
 			case FixedassetPackage.FIXED_ASSET__PURCHASE_COST_UOM_ID:
 				return getPurchaseCostUomId();
-			case FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID:
-				return getRoleTypeId();
 			case FixedassetPackage.FIXED_ASSET__SALVAGE_VALUE:
 				return getSalvageValue();
 			case FixedassetPackage.FIXED_ASSET__SERIAL_NUMBER:
 				return getSerialNumber();
+			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID:
+				if (resolve) return getFixedAssetTypeId();
+				return basicGetFixedAssetTypeId();
+			case FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID:
+				if (resolve) return getParentFixedAssetId();
+				return basicGetParentFixedAssetId();
+			case FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID:
+				if (resolve) return getInstanceOfProductId();
+				return basicGetInstanceOfProductId();
+			case FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID:
+				if (resolve) return getClassEnumId();
+				return basicGetClassEnumId();
+			case FixedassetPackage.FIXED_ASSET__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID:
+				if (resolve) return getAcquireOrderId();
+				return basicGetAcquireOrderId();
 			case FixedassetPackage.FIXED_ASSET__UOM_ID:
-				return getUomId();
+				if (resolve) return getUomId();
+				return basicGetUomId();
+			case FixedassetPackage.FIXED_ASSET__CALENDAR_ID:
+				if (resolve) return getCalendarId();
+				return basicGetCalendarId();
+			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID:
+				if (resolve) return getLocatedAtFacilityId();
+				return basicGetLocatedAtFacilityId();
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ATTRIBUTES:
 				return getFixedAssetAttributes();
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_IDENTS:
@@ -1407,20 +1507,11 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ID:
 				setFixedAssetId((String)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID:
-				setAcquireOrderId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ITEM_SEQ_ID:
 				setAcquireOrderItemSeqId((String)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET__ACTUAL_END_OF_LIFE:
 				setActualEndOfLife((Date)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET__CALENDAR_ID:
-				setCalendarId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID:
-				setClassEnumId((String)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET__DATE_ACQUIRED:
 				setDateAcquired((Date)newValue);
@@ -1440,23 +1531,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_NAME:
 				setFixedAssetName((String)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID:
-				setInstanceOfProductId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID:
-				setLocatedAtFacilityId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_LOCATION_SEQ_ID:
 				setLocatedAtLocationSeqId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID:
-				setParentFixedAssetId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET__PARTY_ID:
-				setPartyId((String)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET__PRODUCTION_CAPACITY:
 				setProductionCapacity((BigDecimal)newValue);
@@ -1467,17 +1543,41 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			case FixedassetPackage.FIXED_ASSET__PURCHASE_COST_UOM_ID:
 				setPurchaseCostUomId((String)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET__SALVAGE_VALUE:
 				setSalvageValue((BigDecimal)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET__SERIAL_NUMBER:
 				setSerialNumber((String)newValue);
 				return;
+			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID:
+				setFixedAssetTypeId((FixedAssetType)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID:
+				setParentFixedAssetId((FixedAsset)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID:
+				setInstanceOfProductId((Product)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID:
+				setClassEnumId((Enumeration)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID:
+				setAcquireOrderId((OrderHeader)newValue);
+				return;
 			case FixedassetPackage.FIXED_ASSET__UOM_ID:
-				setUomId((String)newValue);
+				setUomId((Uom)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET__CALENDAR_ID:
+				setCalendarId((TechDataCalendar)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID:
+				setLocatedAtFacilityId((Facility)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ATTRIBUTES:
 				getFixedAssetAttributes().clear();
@@ -1510,20 +1610,11 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ID:
 				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID:
-				setAcquireOrderId(ACQUIRE_ORDER_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ITEM_SEQ_ID:
 				setAcquireOrderItemSeqId(ACQUIRE_ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET__ACTUAL_END_OF_LIFE:
 				setActualEndOfLife(ACTUAL_END_OF_LIFE_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET__CALENDAR_ID:
-				setCalendarId(CALENDAR_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID:
-				setClassEnumId(CLASS_ENUM_ID_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET__DATE_ACQUIRED:
 				setDateAcquired(DATE_ACQUIRED_EDEFAULT);
@@ -1543,23 +1634,8 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_NAME:
 				setFixedAssetName(FIXED_ASSET_NAME_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID:
-				setFixedAssetTypeId(FIXED_ASSET_TYPE_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID:
-				setInstanceOfProductId(INSTANCE_OF_PRODUCT_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID:
-				setLocatedAtFacilityId(LOCATED_AT_FACILITY_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_LOCATION_SEQ_ID:
 				setLocatedAtLocationSeqId(LOCATED_AT_LOCATION_SEQ_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID:
-				setParentFixedAssetId(PARENT_FIXED_ASSET_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET__PRODUCTION_CAPACITY:
 				setProductionCapacity(PRODUCTION_CAPACITY_EDEFAULT);
@@ -1570,17 +1646,41 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 			case FixedassetPackage.FIXED_ASSET__PURCHASE_COST_UOM_ID:
 				setPurchaseCostUomId(PURCHASE_COST_UOM_ID_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET__SALVAGE_VALUE:
 				setSalvageValue(SALVAGE_VALUE_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET__SERIAL_NUMBER:
 				setSerialNumber(SERIAL_NUMBER_EDEFAULT);
 				return;
+			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID:
+				setFixedAssetTypeId((FixedAssetType)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID:
+				setParentFixedAssetId((FixedAsset)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID:
+				setInstanceOfProductId((Product)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID:
+				setClassEnumId((Enumeration)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID:
+				setAcquireOrderId((OrderHeader)null);
+				return;
 			case FixedassetPackage.FIXED_ASSET__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
+				setUomId((Uom)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET__CALENDAR_ID:
+				setCalendarId((TechDataCalendar)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID:
+				setLocatedAtFacilityId((Facility)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ATTRIBUTES:
 				getFixedAssetAttributes().clear();
@@ -1608,16 +1708,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ID:
 				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
-			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID:
-				return ACQUIRE_ORDER_ID_EDEFAULT == null ? acquireOrderId != null : !ACQUIRE_ORDER_ID_EDEFAULT.equals(acquireOrderId);
 			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ITEM_SEQ_ID:
 				return ACQUIRE_ORDER_ITEM_SEQ_ID_EDEFAULT == null ? acquireOrderItemSeqId != null : !ACQUIRE_ORDER_ITEM_SEQ_ID_EDEFAULT.equals(acquireOrderItemSeqId);
 			case FixedassetPackage.FIXED_ASSET__ACTUAL_END_OF_LIFE:
 				return ACTUAL_END_OF_LIFE_EDEFAULT == null ? actualEndOfLife != null : !ACTUAL_END_OF_LIFE_EDEFAULT.equals(actualEndOfLife);
-			case FixedassetPackage.FIXED_ASSET__CALENDAR_ID:
-				return CALENDAR_ID_EDEFAULT == null ? calendarId != null : !CALENDAR_ID_EDEFAULT.equals(calendarId);
-			case FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID:
-				return CLASS_ENUM_ID_EDEFAULT == null ? classEnumId != null : !CLASS_ENUM_ID_EDEFAULT.equals(classEnumId);
 			case FixedassetPackage.FIXED_ASSET__DATE_ACQUIRED:
 				return DATE_ACQUIRED_EDEFAULT == null ? dateAcquired != null : !DATE_ACQUIRED_EDEFAULT.equals(dateAcquired);
 			case FixedassetPackage.FIXED_ASSET__DATE_LAST_SERVICED:
@@ -1630,32 +1724,38 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 				return EXPECTED_END_OF_LIFE_EDEFAULT == null ? expectedEndOfLife != null : !EXPECTED_END_OF_LIFE_EDEFAULT.equals(expectedEndOfLife);
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_NAME:
 				return FIXED_ASSET_NAME_EDEFAULT == null ? fixedAssetName != null : !FIXED_ASSET_NAME_EDEFAULT.equals(fixedAssetName);
-			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID:
-				return FIXED_ASSET_TYPE_ID_EDEFAULT == null ? fixedAssetTypeId != null : !FIXED_ASSET_TYPE_ID_EDEFAULT.equals(fixedAssetTypeId);
-			case FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID:
-				return INSTANCE_OF_PRODUCT_ID_EDEFAULT == null ? instanceOfProductId != null : !INSTANCE_OF_PRODUCT_ID_EDEFAULT.equals(instanceOfProductId);
-			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID:
-				return LOCATED_AT_FACILITY_ID_EDEFAULT == null ? locatedAtFacilityId != null : !LOCATED_AT_FACILITY_ID_EDEFAULT.equals(locatedAtFacilityId);
 			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_LOCATION_SEQ_ID:
 				return LOCATED_AT_LOCATION_SEQ_ID_EDEFAULT == null ? locatedAtLocationSeqId != null : !LOCATED_AT_LOCATION_SEQ_ID_EDEFAULT.equals(locatedAtLocationSeqId);
-			case FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID:
-				return PARENT_FIXED_ASSET_ID_EDEFAULT == null ? parentFixedAssetId != null : !PARENT_FIXED_ASSET_ID_EDEFAULT.equals(parentFixedAssetId);
-			case FixedassetPackage.FIXED_ASSET__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case FixedassetPackage.FIXED_ASSET__PRODUCTION_CAPACITY:
 				return PRODUCTION_CAPACITY_EDEFAULT == null ? productionCapacity != null : !PRODUCTION_CAPACITY_EDEFAULT.equals(productionCapacity);
 			case FixedassetPackage.FIXED_ASSET__PURCHASE_COST:
 				return PURCHASE_COST_EDEFAULT == null ? purchaseCost != null : !PURCHASE_COST_EDEFAULT.equals(purchaseCost);
 			case FixedassetPackage.FIXED_ASSET__PURCHASE_COST_UOM_ID:
 				return PURCHASE_COST_UOM_ID_EDEFAULT == null ? purchaseCostUomId != null : !PURCHASE_COST_UOM_ID_EDEFAULT.equals(purchaseCostUomId);
-			case FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case FixedassetPackage.FIXED_ASSET__SALVAGE_VALUE:
 				return SALVAGE_VALUE_EDEFAULT == null ? salvageValue != null : !SALVAGE_VALUE_EDEFAULT.equals(salvageValue);
 			case FixedassetPackage.FIXED_ASSET__SERIAL_NUMBER:
 				return SERIAL_NUMBER_EDEFAULT == null ? serialNumber != null : !SERIAL_NUMBER_EDEFAULT.equals(serialNumber);
+			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_TYPE_ID:
+				return fixedAssetTypeId != null;
+			case FixedassetPackage.FIXED_ASSET__PARENT_FIXED_ASSET_ID:
+				return parentFixedAssetId != null;
+			case FixedassetPackage.FIXED_ASSET__INSTANCE_OF_PRODUCT_ID:
+				return instanceOfProductId != null;
+			case FixedassetPackage.FIXED_ASSET__CLASS_ENUM_ID:
+				return classEnumId != null;
+			case FixedassetPackage.FIXED_ASSET__PARTY_ID:
+				return partyId != null;
+			case FixedassetPackage.FIXED_ASSET__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case FixedassetPackage.FIXED_ASSET__ACQUIRE_ORDER_ID:
+				return acquireOrderId != null;
 			case FixedassetPackage.FIXED_ASSET__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+				return uomId != null;
+			case FixedassetPackage.FIXED_ASSET__CALENDAR_ID:
+				return calendarId != null;
+			case FixedassetPackage.FIXED_ASSET__LOCATED_AT_FACILITY_ID:
+				return locatedAtFacilityId != null;
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_ATTRIBUTES:
 				return fixedAssetAttributes != null && !fixedAssetAttributes.isEmpty();
 			case FixedassetPackage.FIXED_ASSET__FIXED_ASSET_IDENTS:
@@ -1680,16 +1780,10 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (fixedAssetId: ");
 		result.append(fixedAssetId);
-		result.append(", acquireOrderId: ");
-		result.append(acquireOrderId);
 		result.append(", acquireOrderItemSeqId: ");
 		result.append(acquireOrderItemSeqId);
 		result.append(", actualEndOfLife: ");
 		result.append(actualEndOfLife);
-		result.append(", calendarId: ");
-		result.append(calendarId);
-		result.append(", classEnumId: ");
-		result.append(classEnumId);
 		result.append(", dateAcquired: ");
 		result.append(dateAcquired);
 		result.append(", dateLastServiced: ");
@@ -1702,32 +1796,18 @@ public class FixedAssetImpl extends BizEntityTypedImpl<FixedAssetType> implement
 		result.append(expectedEndOfLife);
 		result.append(", fixedAssetName: ");
 		result.append(fixedAssetName);
-		result.append(", fixedAssetTypeId: ");
-		result.append(fixedAssetTypeId);
-		result.append(", instanceOfProductId: ");
-		result.append(instanceOfProductId);
-		result.append(", locatedAtFacilityId: ");
-		result.append(locatedAtFacilityId);
 		result.append(", locatedAtLocationSeqId: ");
 		result.append(locatedAtLocationSeqId);
-		result.append(", parentFixedAssetId: ");
-		result.append(parentFixedAssetId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", productionCapacity: ");
 		result.append(productionCapacity);
 		result.append(", purchaseCost: ");
 		result.append(purchaseCost);
 		result.append(", purchaseCostUomId: ");
 		result.append(purchaseCostUomId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
 		result.append(", salvageValue: ");
 		result.append(salvageValue);
 		result.append(", serialNumber: ");
 		result.append(serialNumber);
-		result.append(", uomId: ");
-		result.append(uomId);
 		result.append(", fixedAssetAttributes: ");
 		result.append(fixedAssetAttributes);
 		result.append(", fixedAssetIdents: ");

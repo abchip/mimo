@@ -55,31 +55,29 @@ public interface UomGroup extends BizEntity {
 	void setUomGroupId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uom Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uom Id</em>' attribute.
-	 * @see #setUomId(String)
+	 * @return the value of the '<em>Uom Id</em>' reference.
+	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomGroup_UomId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getUomId();
+	Uom getUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.UomGroup#getUomId <em>Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.UomGroup#getUomId <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Uom Id</em>' reference.
 	 * @see #getUomId()
 	 * @generated
 	 */
-	void setUomId(String value);
+	void setUomId(Uom value);
 
 } // UomGroup

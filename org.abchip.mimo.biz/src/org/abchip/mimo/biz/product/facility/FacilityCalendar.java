@@ -22,9 +22,9 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getCalendarId <em>Calendar Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFacilityCalendarTypeId <em>Facility Calendar Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFacilityCalendarTypeId <em>Facility Calendar Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar()
@@ -43,7 +43,8 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	 * @return the value of the '<em>Calendar Id</em>' attribute.
 	 * @see #setCalendarId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_CalendarId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCalendarId();
@@ -69,7 +70,8 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -121,8 +123,8 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	 * @return the value of the '<em>Facility Id</em>' attribute.
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_FacilityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Facility'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFacilityId();
@@ -138,30 +140,29 @@ public interface FacilityCalendar extends BizEntityTyped<FacilityCalendarType> {
 	void setFacilityId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Calendar Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Calendar Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Calendar Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Calendar Type Id</em>' attribute.
-	 * @see #setFacilityCalendarTypeId(String)
+	 * @return the value of the '<em>Facility Calendar Type Id</em>' reference.
+	 * @see #setFacilityCalendarTypeId(FacilityCalendarType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCalendar_FacilityCalendarTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FacilityCalendarType'"
+	 * @model keys="facilityCalendarTypeId"
 	 * @generated
 	 */
-	String getFacilityCalendarTypeId();
+	FacilityCalendarType getFacilityCalendarTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFacilityCalendarTypeId <em>Facility Calendar Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityCalendar#getFacilityCalendarTypeId <em>Facility Calendar Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Calendar Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Calendar Type Id</em>' reference.
 	 * @see #getFacilityCalendarTypeId()
 	 * @generated
 	 */
-	void setFacilityCalendarTypeId(String value);
+	void setFacilityCalendarTypeId(FacilityCalendarType value);
 
 } // FacilityCalendar

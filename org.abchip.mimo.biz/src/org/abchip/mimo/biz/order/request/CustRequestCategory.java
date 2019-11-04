@@ -21,8 +21,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getCustRequestCategoryId <em>Cust Request Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCategory()
@@ -41,7 +41,7 @@ public interface CustRequestCategory extends BizEntity {
 	 * @return the value of the '<em>Cust Request Category Id</em>' attribute.
 	 * @see #setCustRequestCategoryId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCategory_CustRequestCategoryId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -58,30 +58,30 @@ public interface CustRequestCategory extends BizEntity {
 	void setCustRequestCategoryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Cust Request Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cust Request Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cust Request Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cust Request Type Id</em>' attribute.
-	 * @see #setCustRequestTypeId(String)
+	 * @return the value of the '<em>Cust Request Type Id</em>' reference.
+	 * @see #setCustRequestTypeId(CustRequestType)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCategory_CustRequestTypeId()
-	 * @model annotation="mimo-ent-domain frame='CustRequestType'"
+	 * @model keys="custRequestTypeId"
 	 * @generated
 	 */
-	String getCustRequestTypeId();
+	CustRequestType getCustRequestTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getCustRequestTypeId <em>Cust Request Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestCategory#getCustRequestTypeId <em>Cust Request Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cust Request Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Cust Request Type Id</em>' reference.
 	 * @see #getCustRequestTypeId()
 	 * @generated
 	 */
-	void setCustRequestTypeId(String value);
+	void setCustRequestTypeId(CustRequestType value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

@@ -95,7 +95,7 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	 * @return the value of the '<em>Order Adjustment Type Id</em>' attribute.
 	 * @see #setOrderAdjustmentTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_OrderAdjustmentTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -112,30 +112,30 @@ public interface OrderAdjustmentType extends BizEntityType<OrderAdjustment> {
 	void setOrderAdjustmentTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='OrderAdjustmentType'"
+	 * @model keys="orderAdjustmentTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	OrderAdjustmentType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(OrderAdjustmentType value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Adjustment Type Attrs</b></em>' attribute list.

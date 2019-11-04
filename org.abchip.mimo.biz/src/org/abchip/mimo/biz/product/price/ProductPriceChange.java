@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +24,6 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getProductPriceChangeId <em>Product Price Change Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedByUserLogin <em>Changed By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedDate <em>Changed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getFromDate <em>From Date</em>}</li>
@@ -34,6 +34,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedByUserLogin <em>Changed By User Login</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange()
@@ -42,30 +43,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ProductPriceChange extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Changed By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Changed By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Changed By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Changed By User Login</em>' attribute.
-	 * @see #setChangedByUserLogin(String)
+	 * @return the value of the '<em>Changed By User Login</em>' reference.
+	 * @see #setChangedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ChangedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getChangedByUserLogin();
+	UserLogin getChangedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedByUserLogin <em>Changed By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedByUserLogin <em>Changed By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Changed By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Changed By User Login</em>' reference.
 	 * @see #getChangedByUserLogin()
 	 * @generated
 	 */
-	void setChangedByUserLogin(String value);
+	void setChangedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Changed Date</b></em>' attribute.
@@ -234,7 +235,7 @@ public interface ProductPriceChange extends BizEntity {
 	 * @return the value of the '<em>Product Price Change Id</em>' attribute.
 	 * @see #setProductPriceChangeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceChange_ProductPriceChangeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

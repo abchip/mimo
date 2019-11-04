@@ -16,6 +16,8 @@ import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getCalendarId <em>Calendar Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getFacilityCalendarTypeId <em>Facility Calendar Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCalendarImpl#getFacilityCalendarTypeId <em>Facility Calendar Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,26 +84,6 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	protected String calendarId = CALENDAR_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFacilityCalendarTypeId() <em>Facility Calendar Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityCalendarTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_CALENDAR_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityCalendarTypeId() <em>Facility Calendar Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityCalendarTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityCalendarTypeId = FACILITY_CALENDAR_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,6 +122,16 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFacilityCalendarTypeId() <em>Facility Calendar Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityCalendarTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FacilityCalendarType facilityCalendarTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,7 +250,24 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 * @generated
 	 */
 	@Override
-	public String getFacilityCalendarTypeId() {
+	public FacilityCalendarType getFacilityCalendarTypeId() {
+		if (facilityCalendarTypeId != null && ((EObject)facilityCalendarTypeId).eIsProxy()) {
+			InternalEObject oldFacilityCalendarTypeId = (InternalEObject)facilityCalendarTypeId;
+			facilityCalendarTypeId = (FacilityCalendarType)eResolveProxy(oldFacilityCalendarTypeId);
+			if (facilityCalendarTypeId != oldFacilityCalendarTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID, oldFacilityCalendarTypeId, facilityCalendarTypeId));
+			}
+		}
+		return facilityCalendarTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacilityCalendarType basicGetFacilityCalendarTypeId() {
 		return facilityCalendarTypeId;
 	}
 
@@ -268,8 +277,8 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 	 * @generated
 	 */
 	@Override
-	public void setFacilityCalendarTypeId(String newFacilityCalendarTypeId) {
-		String oldFacilityCalendarTypeId = facilityCalendarTypeId;
+	public void setFacilityCalendarTypeId(FacilityCalendarType newFacilityCalendarTypeId) {
+		FacilityCalendarType oldFacilityCalendarTypeId = facilityCalendarTypeId;
 		facilityCalendarTypeId = newFacilityCalendarTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID, oldFacilityCalendarTypeId, facilityCalendarTypeId));
@@ -287,12 +296,13 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 				return getFacilityId();
 			case FacilityPackage.FACILITY_CALENDAR__CALENDAR_ID:
 				return getCalendarId();
-			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
-				return getFacilityCalendarTypeId();
 			case FacilityPackage.FACILITY_CALENDAR__FROM_DATE:
 				return getFromDate();
 			case FacilityPackage.FACILITY_CALENDAR__THRU_DATE:
 				return getThruDate();
+			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
+				if (resolve) return getFacilityCalendarTypeId();
+				return basicGetFacilityCalendarTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -311,14 +321,14 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 			case FacilityPackage.FACILITY_CALENDAR__CALENDAR_ID:
 				setCalendarId((String)newValue);
 				return;
-			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
-				setFacilityCalendarTypeId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_CALENDAR__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FacilityPackage.FACILITY_CALENDAR__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
+				setFacilityCalendarTypeId((FacilityCalendarType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -338,14 +348,14 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 			case FacilityPackage.FACILITY_CALENDAR__CALENDAR_ID:
 				setCalendarId(CALENDAR_ID_EDEFAULT);
 				return;
-			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
-				setFacilityCalendarTypeId(FACILITY_CALENDAR_TYPE_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_CALENDAR__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FacilityPackage.FACILITY_CALENDAR__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
+				setFacilityCalendarTypeId((FacilityCalendarType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -363,12 +373,12 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case FacilityPackage.FACILITY_CALENDAR__CALENDAR_ID:
 				return CALENDAR_ID_EDEFAULT == null ? calendarId != null : !CALENDAR_ID_EDEFAULT.equals(calendarId);
-			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
-				return FACILITY_CALENDAR_TYPE_ID_EDEFAULT == null ? facilityCalendarTypeId != null : !FACILITY_CALENDAR_TYPE_ID_EDEFAULT.equals(facilityCalendarTypeId);
 			case FacilityPackage.FACILITY_CALENDAR__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FacilityPackage.FACILITY_CALENDAR__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FacilityPackage.FACILITY_CALENDAR__FACILITY_CALENDAR_TYPE_ID:
+				return facilityCalendarTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -387,8 +397,6 @@ public class FacilityCalendarImpl extends BizEntityTypedImpl<FacilityCalendarTyp
 		result.append(facilityId);
 		result.append(", calendarId: ");
 		result.append(calendarId);
-		result.append(", facilityCalendarTypeId: ");
-		result.append(facilityCalendarTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

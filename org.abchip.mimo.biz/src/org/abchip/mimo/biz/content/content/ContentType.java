@@ -112,30 +112,30 @@ public interface ContentType extends BizEntityType<Content> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(ContentType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='ContentType'"
+	 * @model keys="contentTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	ContentType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(ContentType value);
 
 	/**
 	 * Returns the value of the '<em><b>Content Type Attrs</b></em>' attribute list.

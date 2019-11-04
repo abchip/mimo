@@ -84,30 +84,30 @@ public interface DeductionType extends BizEntityType<Deduction> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(DeductionType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeductionType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='DeductionType'"
+	 * @model keys="deductionTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	DeductionType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.DeductionType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.DeductionType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(DeductionType value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +138,7 @@ public interface DeductionType extends BizEntityType<Deduction> {
 	 * @return the value of the '<em>Deduction Type Id</em>' attribute.
 	 * @see #setDeductionTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeductionType_DeductionTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -19,6 +19,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -106,24 +108,14 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected DocumentType parentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getDocumentTypeAttrs() <em>Document Type Attrs</em>}' attribute list.
@@ -229,7 +221,24 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public DocumentType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (DocumentType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DocumentType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -239,8 +248,8 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(DocumentType newParentTypeId) {
+		DocumentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -298,7 +307,8 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 			case DocumentPackage.DOCUMENT_TYPE__HAS_TABLE:
 				return isHasTable();
 			case DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS:
 				return getDocumentTypeAttrs();
 		}
@@ -324,7 +334,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 				setHasTable((Boolean)newValue);
 				return;
 			case DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((DocumentType)newValue);
 				return;
 			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS:
 				getDocumentTypeAttrs().clear();
@@ -352,7 +362,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((DocumentType)null);
 				return;
 			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS:
 				getDocumentTypeAttrs().clear();
@@ -376,7 +386,7 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 			case DocumentPackage.DOCUMENT_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case DocumentPackage.DOCUMENT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case DocumentPackage.DOCUMENT_TYPE__DOCUMENT_TYPE_ATTRS:
 				return documentTypeAttrs != null && !documentTypeAttrs.isEmpty();
 		}
@@ -399,8 +409,6 @@ public class DocumentTypeImpl extends BizEntityTypeImpl<Document> implements Doc
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", documentTypeAttrs: ");
 		result.append(documentTypeAttrs);
 		result.append(')');

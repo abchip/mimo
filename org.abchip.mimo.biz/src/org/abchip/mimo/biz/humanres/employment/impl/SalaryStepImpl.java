@@ -12,12 +12,15 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
+import org.abchip.mimo.biz.humanres.employment.PayGrade;
 import org.abchip.mimo.biz.humanres.employment.SalaryStep;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,13 +32,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getPayGradeId <em>Pay Grade Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getDateModified <em>Date Modified</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.SalaryStepImpl#getPayGradeId <em>Pay Grade Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,26 +68,6 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 * @ordered
 	 */
 	protected String salaryStepSeqId = SALARY_STEP_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPayGradeId() <em>Pay Grade Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPayGradeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAY_GRADE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPayGradeId() <em>Pay Grade Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPayGradeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String payGradeId = PAY_GRADE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -205,6 +188,16 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPayGradeId() <em>Pay Grade Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPayGradeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PayGrade payGradeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -346,7 +339,24 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 * @generated
 	 */
 	@Override
-	public String getPayGradeId() {
+	public PayGrade getPayGradeId() {
+		if (payGradeId != null && ((EObject)payGradeId).eIsProxy()) {
+			InternalEObject oldPayGradeId = (InternalEObject)payGradeId;
+			payGradeId = (PayGrade)eResolveProxy(oldPayGradeId);
+			if (payGradeId != oldPayGradeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.SALARY_STEP__PAY_GRADE_ID, oldPayGradeId, payGradeId));
+			}
+		}
+		return payGradeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PayGrade basicGetPayGradeId() {
 		return payGradeId;
 	}
 
@@ -356,8 +366,8 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 	 * @generated
 	 */
 	@Override
-	public void setPayGradeId(String newPayGradeId) {
-		String oldPayGradeId = payGradeId;
+	public void setPayGradeId(PayGrade newPayGradeId) {
+		PayGrade oldPayGradeId = payGradeId;
 		payGradeId = newPayGradeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.SALARY_STEP__PAY_GRADE_ID, oldPayGradeId, payGradeId));
@@ -419,8 +429,6 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 		switch (featureID) {
 			case EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID:
 				return getSalaryStepSeqId();
-			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
-				return getPayGradeId();
 			case EmploymentPackage.SALARY_STEP__FROM_DATE:
 				return getFromDate();
 			case EmploymentPackage.SALARY_STEP__AMOUNT:
@@ -433,6 +441,9 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 				return getLastModifiedByUserLogin();
 			case EmploymentPackage.SALARY_STEP__THRU_DATE:
 				return getThruDate();
+			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
+				if (resolve) return getPayGradeId();
+				return basicGetPayGradeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -447,9 +458,6 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 		switch (featureID) {
 			case EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID:
 				setSalaryStepSeqId((String)newValue);
-				return;
-			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
-				setPayGradeId((String)newValue);
 				return;
 			case EmploymentPackage.SALARY_STEP__FROM_DATE:
 				setFromDate((Date)newValue);
@@ -469,6 +477,9 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 			case EmploymentPackage.SALARY_STEP__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
+				setPayGradeId((PayGrade)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -483,9 +494,6 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 		switch (featureID) {
 			case EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID:
 				setSalaryStepSeqId(SALARY_STEP_SEQ_ID_EDEFAULT);
-				return;
-			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
-				setPayGradeId(PAY_GRADE_ID_EDEFAULT);
 				return;
 			case EmploymentPackage.SALARY_STEP__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
@@ -505,6 +513,9 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 			case EmploymentPackage.SALARY_STEP__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
+				setPayGradeId((PayGrade)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -519,8 +530,6 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 		switch (featureID) {
 			case EmploymentPackage.SALARY_STEP__SALARY_STEP_SEQ_ID:
 				return SALARY_STEP_SEQ_ID_EDEFAULT == null ? salaryStepSeqId != null : !SALARY_STEP_SEQ_ID_EDEFAULT.equals(salaryStepSeqId);
-			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
-				return PAY_GRADE_ID_EDEFAULT == null ? payGradeId != null : !PAY_GRADE_ID_EDEFAULT.equals(payGradeId);
 			case EmploymentPackage.SALARY_STEP__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case EmploymentPackage.SALARY_STEP__AMOUNT:
@@ -533,6 +542,8 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case EmploymentPackage.SALARY_STEP__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case EmploymentPackage.SALARY_STEP__PAY_GRADE_ID:
+				return payGradeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -549,8 +560,6 @@ public class SalaryStepImpl extends BizEntityImpl implements SalaryStep {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (salaryStepSeqId: ");
 		result.append(salaryStepSeqId);
-		result.append(", payGradeId: ");
-		result.append(payGradeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", amount: ");

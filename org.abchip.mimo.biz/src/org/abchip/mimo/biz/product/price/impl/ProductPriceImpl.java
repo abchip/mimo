@@ -11,13 +11,22 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPrice;
+import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.abchip.mimo.biz.product.price.ProductPriceType;
+import org.abchip.mimo.biz.product.store.ProductStoreGroup;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,26 +38,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getCustomPriceCalcService <em>Custom Price Calc Service</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getPrice <em>Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getPriceWithTax <em>Price With Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getPriceWithoutTax <em>Price Without Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getTaxAmount <em>Tax Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#isTaxInPrice <em>Tax In Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getTaxPercentage <em>Tax Percentage</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getTermUomId <em>Term Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getTermUomId <em>Term Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getCustomPriceCalcService <em>Custom Price Calc Service</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,86 +89,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductPriceTypeId() <em>Product Price Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PRICE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPriceTypeId() <em>Product Price Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPriceTypeId = PRODUCT_PRICE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductPricePurposeId() <em>Product Price Purpose Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPricePurposeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PRICE_PURPOSE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPricePurposeId() <em>Product Price Purpose Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPricePurposeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPricePurposeId = PRODUCT_PRICE_PURPOSE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreGroupId = PRODUCT_STORE_GROUP_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,26 +109,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,46 +127,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @ordered
 	 */
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCustomPriceCalcService() <em>Custom Price Calc Service</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomPriceCalcService()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUSTOM_PRICE_CALC_SERVICE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustomPriceCalcService() <em>Custom Price Calc Service</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomPriceCalcService()
-	 * @generated
-	 * @ordered
-	 */
-	protected String customPriceCalcService = CUSTOM_PRICE_CALC_SERVICE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
@@ -360,46 +229,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	protected BigDecimal taxAmount = TAX_AMOUNT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTaxAuthGeoId() <em>Tax Auth Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TAX_AUTH_GEO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTaxAuthGeoId() <em>Tax Auth Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String taxAuthGeoId = TAX_AUTH_GEO_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTaxAuthPartyId() <em>Tax Auth Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TAX_AUTH_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTaxAuthPartyId() <em>Tax Auth Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String taxAuthPartyId = TAX_AUTH_PARTY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isTaxInPrice() <em>Tax In Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -440,26 +269,6 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	protected BigDecimal taxPercentage = TAX_PERCENTAGE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTermUomId() <em>Term Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTermUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TERM_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTermUomId() <em>Term Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTermUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String termUomId = TERM_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -478,6 +287,106 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductPriceTypeId() <em>Product Price Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPriceTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPriceType productPriceTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductPricePurposeId() <em>Product Price Purpose Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPricePurposeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPricePurpose productPricePurposeId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getTermUomId() <em>Term Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTermUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom termUomId;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStoreGroup productStoreGroupId;
+
+	/**
+	 * The cached value of the '{@link #getCustomPriceCalcService() <em>Custom Price Calc Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomPriceCalcService()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod customPriceCalcService;
+
+	/**
+	 * The cached value of the '{@link #getTaxAuthPartyId() <em>Tax Auth Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaxAuthPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party taxAuthPartyId;
+
+	/**
+	 * The cached value of the '{@link #getTaxAuthGeoId() <em>Tax Auth Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaxAuthGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo taxAuthGeoId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -504,7 +413,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -514,8 +440,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -550,7 +476,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -560,8 +503,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -573,7 +516,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCustomPriceCalcService() {
+	public CustomMethod getCustomPriceCalcService() {
+		if (customPriceCalcService != null && ((EObject)customPriceCalcService).eIsProxy()) {
+			InternalEObject oldCustomPriceCalcService = (InternalEObject)customPriceCalcService;
+			customPriceCalcService = (CustomMethod)eResolveProxy(oldCustomPriceCalcService);
+			if (customPriceCalcService != oldCustomPriceCalcService) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE, oldCustomPriceCalcService, customPriceCalcService));
+			}
+		}
+		return customPriceCalcService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetCustomPriceCalcService() {
 		return customPriceCalcService;
 	}
 
@@ -583,8 +543,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCustomPriceCalcService(String newCustomPriceCalcService) {
-		String oldCustomPriceCalcService = customPriceCalcService;
+	public void setCustomPriceCalcService(CustomMethod newCustomPriceCalcService) {
+		CustomMethod oldCustomPriceCalcService = customPriceCalcService;
 		customPriceCalcService = newCustomPriceCalcService;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE, oldCustomPriceCalcService, customPriceCalcService));
@@ -619,7 +579,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -629,8 +606,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -757,7 +734,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreGroupId() {
+	public ProductStoreGroup getProductStoreGroupId() {
+		if (productStoreGroupId != null && ((EObject)productStoreGroupId).eIsProxy()) {
+			InternalEObject oldProductStoreGroupId = (InternalEObject)productStoreGroupId;
+			productStoreGroupId = (ProductStoreGroup)eResolveProxy(oldProductStoreGroupId);
+			if (productStoreGroupId != oldProductStoreGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
+			}
+		}
+		return productStoreGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStoreGroup basicGetProductStoreGroupId() {
 		return productStoreGroupId;
 	}
 
@@ -767,8 +761,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreGroupId(String newProductStoreGroupId) {
-		String oldProductStoreGroupId = productStoreGroupId;
+	public void setProductStoreGroupId(ProductStoreGroup newProductStoreGroupId) {
+		ProductStoreGroup oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
@@ -803,7 +797,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getTaxAuthGeoId() {
+	public Geo getTaxAuthGeoId() {
+		if (taxAuthGeoId != null && ((EObject)taxAuthGeoId).eIsProxy()) {
+			InternalEObject oldTaxAuthGeoId = (InternalEObject)taxAuthGeoId;
+			taxAuthGeoId = (Geo)eResolveProxy(oldTaxAuthGeoId);
+			if (taxAuthGeoId != oldTaxAuthGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
+			}
+		}
+		return taxAuthGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetTaxAuthGeoId() {
 		return taxAuthGeoId;
 	}
 
@@ -813,8 +824,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setTaxAuthGeoId(String newTaxAuthGeoId) {
-		String oldTaxAuthGeoId = taxAuthGeoId;
+	public void setTaxAuthGeoId(Geo newTaxAuthGeoId) {
+		Geo oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
@@ -826,7 +837,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getTaxAuthPartyId() {
+	public Party getTaxAuthPartyId() {
+		if (taxAuthPartyId != null && ((EObject)taxAuthPartyId).eIsProxy()) {
+			InternalEObject oldTaxAuthPartyId = (InternalEObject)taxAuthPartyId;
+			taxAuthPartyId = (Party)eResolveProxy(oldTaxAuthPartyId);
+			if (taxAuthPartyId != oldTaxAuthPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
+			}
+		}
+		return taxAuthPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetTaxAuthPartyId() {
 		return taxAuthPartyId;
 	}
 
@@ -836,8 +864,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
-		String oldTaxAuthPartyId = taxAuthPartyId;
+	public void setTaxAuthPartyId(Party newTaxAuthPartyId) {
+		Party oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
@@ -895,7 +923,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getTermUomId() {
+	public Uom getTermUomId() {
+		if (termUomId != null && ((EObject)termUomId).eIsProxy()) {
+			InternalEObject oldTermUomId = (InternalEObject)termUomId;
+			termUomId = (Uom)eResolveProxy(oldTermUomId);
+			if (termUomId != oldTermUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__TERM_UOM_ID, oldTermUomId, termUomId));
+			}
+		}
+		return termUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetTermUomId() {
 		return termUomId;
 	}
 
@@ -905,8 +950,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setTermUomId(String newTermUomId) {
-		String oldTermUomId = termUomId;
+	public void setTermUomId(Uom newTermUomId) {
+		Uom oldTermUomId = termUomId;
 		termUomId = newTermUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__TERM_UOM_ID, oldTermUomId, termUomId));
@@ -941,7 +986,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductPriceTypeId() {
+	public ProductPriceType getProductPriceTypeId() {
+		if (productPriceTypeId != null && ((EObject)productPriceTypeId).eIsProxy()) {
+			InternalEObject oldProductPriceTypeId = (InternalEObject)productPriceTypeId;
+			productPriceTypeId = (ProductPriceType)eResolveProxy(oldProductPriceTypeId);
+			if (productPriceTypeId != oldProductPriceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
+			}
+		}
+		return productPriceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPriceType basicGetProductPriceTypeId() {
 		return productPriceTypeId;
 	}
 
@@ -951,8 +1013,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductPriceTypeId(String newProductPriceTypeId) {
-		String oldProductPriceTypeId = productPriceTypeId;
+	public void setProductPriceTypeId(ProductPriceType newProductPriceTypeId) {
+		ProductPriceType oldProductPriceTypeId = productPriceTypeId;
 		productPriceTypeId = newProductPriceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
@@ -964,7 +1026,24 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductPricePurposeId() {
+	public ProductPricePurpose getProductPricePurposeId() {
+		if (productPricePurposeId != null && ((EObject)productPricePurposeId).eIsProxy()) {
+			InternalEObject oldProductPricePurposeId = (InternalEObject)productPricePurposeId;
+			productPricePurposeId = (ProductPricePurpose)eResolveProxy(oldProductPricePurposeId);
+			if (productPricePurposeId != oldProductPricePurposeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
+			}
+		}
+		return productPricePurposeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPricePurpose basicGetProductPricePurposeId() {
 		return productPricePurposeId;
 	}
 
@@ -974,8 +1053,8 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductPricePurposeId(String newProductPricePurposeId) {
-		String oldProductPricePurposeId = productPricePurposeId;
+	public void setProductPricePurposeId(ProductPricePurpose newProductPricePurposeId) {
+		ProductPricePurpose oldProductPricePurposeId = productPricePurposeId;
 		productPricePurposeId = newProductPricePurposeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
@@ -991,24 +1070,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 		switch (featureID) {
 			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
 				return getProductId();
-			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
-				return getProductPriceTypeId();
-			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID:
-				return getProductPricePurposeId();
-			case PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
-			case PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID:
-				return getProductStoreGroupId();
 			case PricePackage.PRODUCT_PRICE__FROM_DATE:
 				return getFromDate();
-			case PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case PricePackage.PRODUCT_PRICE__CREATED_DATE:
 				return getCreatedDate();
-			case PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE:
-				return getCustomPriceCalcService();
-			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
 			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
 			case PricePackage.PRODUCT_PRICE__PRICE:
@@ -1019,18 +1084,42 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 				return getPriceWithoutTax();
 			case PricePackage.PRODUCT_PRICE__TAX_AMOUNT:
 				return getTaxAmount();
-			case PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID:
-				return getTaxAuthGeoId();
-			case PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID:
-				return getTaxAuthPartyId();
 			case PricePackage.PRODUCT_PRICE__TAX_IN_PRICE:
 				return isTaxInPrice();
 			case PricePackage.PRODUCT_PRICE__TAX_PERCENTAGE:
 				return getTaxPercentage();
-			case PricePackage.PRODUCT_PRICE__TERM_UOM_ID:
-				return getTermUomId();
 			case PricePackage.PRODUCT_PRICE__THRU_DATE:
 				return getThruDate();
+			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
+				if (resolve) return getProductPriceTypeId();
+				return basicGetProductPriceTypeId();
+			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID:
+				if (resolve) return getProductPricePurposeId();
+				return basicGetProductPricePurposeId();
+			case PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case PricePackage.PRODUCT_PRICE__TERM_UOM_ID:
+				if (resolve) return getTermUomId();
+				return basicGetTermUomId();
+			case PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID:
+				if (resolve) return getProductStoreGroupId();
+				return basicGetProductStoreGroupId();
+			case PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE:
+				if (resolve) return getCustomPriceCalcService();
+				return basicGetCustomPriceCalcService();
+			case PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID:
+				if (resolve) return getTaxAuthPartyId();
+				return basicGetTaxAuthPartyId();
+			case PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID:
+				if (resolve) return getTaxAuthGeoId();
+				return basicGetTaxAuthGeoId();
+			case PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1046,32 +1135,11 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
 				setProductId((String)newValue);
 				return;
-			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
-				setProductPriceTypeId((String)newValue);
-				return;
-			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID:
-				setProductPricePurposeId((String)newValue);
-				return;
-			case PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
-			case PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID:
-				setProductStoreGroupId((String)newValue);
-				return;
 			case PricePackage.PRODUCT_PRICE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
 			case PricePackage.PRODUCT_PRICE__CREATED_DATE:
 				setCreatedDate((Date)newValue);
-				return;
-			case PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE:
-				setCustomPriceCalcService((String)newValue);
-				return;
-			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
 				return;
 			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
@@ -1088,23 +1156,44 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			case PricePackage.PRODUCT_PRICE__TAX_AMOUNT:
 				setTaxAmount((BigDecimal)newValue);
 				return;
-			case PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID:
-				setTaxAuthGeoId((String)newValue);
-				return;
-			case PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID:
-				setTaxAuthPartyId((String)newValue);
-				return;
 			case PricePackage.PRODUCT_PRICE__TAX_IN_PRICE:
 				setTaxInPrice((Boolean)newValue);
 				return;
 			case PricePackage.PRODUCT_PRICE__TAX_PERCENTAGE:
 				setTaxPercentage((BigDecimal)newValue);
 				return;
-			case PricePackage.PRODUCT_PRICE__TERM_UOM_ID:
-				setTermUomId((String)newValue);
-				return;
 			case PricePackage.PRODUCT_PRICE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
+				setProductPriceTypeId((ProductPriceType)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID:
+				setProductPricePurposeId((ProductPricePurpose)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__TERM_UOM_ID:
+				setTermUomId((Uom)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID:
+				setProductStoreGroupId((ProductStoreGroup)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE:
+				setCustomPriceCalcService((CustomMethod)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID:
+				setTaxAuthPartyId((Party)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID:
+				setTaxAuthGeoId((Geo)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1121,32 +1210,11 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
-			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
-				setProductPriceTypeId(PRODUCT_PRICE_TYPE_ID_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID:
-				setProductPricePurposeId(PRODUCT_PRICE_PURPOSE_ID_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID:
-				setProductStoreGroupId(PRODUCT_STORE_GROUP_ID_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_PRICE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_PRICE__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE:
-				setCustomPriceCalcService(CUSTOM_PRICE_CALC_SERVICE_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
 				return;
 			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
@@ -1163,23 +1231,44 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 			case PricePackage.PRODUCT_PRICE__TAX_AMOUNT:
 				setTaxAmount(TAX_AMOUNT_EDEFAULT);
 				return;
-			case PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID:
-				setTaxAuthGeoId(TAX_AUTH_GEO_ID_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID:
-				setTaxAuthPartyId(TAX_AUTH_PARTY_ID_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_PRICE__TAX_IN_PRICE:
 				setTaxInPrice(TAX_IN_PRICE_EDEFAULT);
 				return;
 			case PricePackage.PRODUCT_PRICE__TAX_PERCENTAGE:
 				setTaxPercentage(TAX_PERCENTAGE_EDEFAULT);
 				return;
-			case PricePackage.PRODUCT_PRICE__TERM_UOM_ID:
-				setTermUomId(TERM_UOM_ID_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_PRICE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
+				setProductPriceTypeId((ProductPriceType)null);
+				return;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID:
+				setProductPricePurposeId((ProductPricePurpose)null);
+				return;
+			case PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case PricePackage.PRODUCT_PRICE__TERM_UOM_ID:
+				setTermUomId((Uom)null);
+				return;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID:
+				setProductStoreGroupId((ProductStoreGroup)null);
+				return;
+			case PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE:
+				setCustomPriceCalcService((CustomMethod)null);
+				return;
+			case PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID:
+				setTaxAuthPartyId((Party)null);
+				return;
+			case PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID:
+				setTaxAuthGeoId((Geo)null);
+				return;
+			case PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1195,24 +1284,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 		switch (featureID) {
 			case PricePackage.PRODUCT_PRICE__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
-				return PRODUCT_PRICE_TYPE_ID_EDEFAULT == null ? productPriceTypeId != null : !PRODUCT_PRICE_TYPE_ID_EDEFAULT.equals(productPriceTypeId);
-			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID:
-				return PRODUCT_PRICE_PURPOSE_ID_EDEFAULT == null ? productPricePurposeId != null : !PRODUCT_PRICE_PURPOSE_ID_EDEFAULT.equals(productPricePurposeId);
-			case PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
-			case PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID:
-				return PRODUCT_STORE_GROUP_ID_EDEFAULT == null ? productStoreGroupId != null : !PRODUCT_STORE_GROUP_ID_EDEFAULT.equals(productStoreGroupId);
 			case PricePackage.PRODUCT_PRICE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case PricePackage.PRODUCT_PRICE__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE:
-				return CUSTOM_PRICE_CALC_SERVICE_EDEFAULT == null ? customPriceCalcService != null : !CUSTOM_PRICE_CALC_SERVICE_EDEFAULT.equals(customPriceCalcService);
-			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
 			case PricePackage.PRODUCT_PRICE__PRICE:
@@ -1223,18 +1298,32 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 				return PRICE_WITHOUT_TAX_EDEFAULT == null ? priceWithoutTax != null : !PRICE_WITHOUT_TAX_EDEFAULT.equals(priceWithoutTax);
 			case PricePackage.PRODUCT_PRICE__TAX_AMOUNT:
 				return TAX_AMOUNT_EDEFAULT == null ? taxAmount != null : !TAX_AMOUNT_EDEFAULT.equals(taxAmount);
-			case PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID:
-				return TAX_AUTH_GEO_ID_EDEFAULT == null ? taxAuthGeoId != null : !TAX_AUTH_GEO_ID_EDEFAULT.equals(taxAuthGeoId);
-			case PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID:
-				return TAX_AUTH_PARTY_ID_EDEFAULT == null ? taxAuthPartyId != null : !TAX_AUTH_PARTY_ID_EDEFAULT.equals(taxAuthPartyId);
 			case PricePackage.PRODUCT_PRICE__TAX_IN_PRICE:
 				return taxInPrice != TAX_IN_PRICE_EDEFAULT;
 			case PricePackage.PRODUCT_PRICE__TAX_PERCENTAGE:
 				return TAX_PERCENTAGE_EDEFAULT == null ? taxPercentage != null : !TAX_PERCENTAGE_EDEFAULT.equals(taxPercentage);
-			case PricePackage.PRODUCT_PRICE__TERM_UOM_ID:
-				return TERM_UOM_ID_EDEFAULT == null ? termUomId != null : !TERM_UOM_ID_EDEFAULT.equals(termUomId);
 			case PricePackage.PRODUCT_PRICE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID:
+				return productPriceTypeId != null;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID:
+				return productPricePurposeId != null;
+			case PricePackage.PRODUCT_PRICE__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case PricePackage.PRODUCT_PRICE__TERM_UOM_ID:
+				return termUomId != null;
+			case PricePackage.PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID:
+				return productStoreGroupId != null;
+			case PricePackage.PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE:
+				return customPriceCalcService != null;
+			case PricePackage.PRODUCT_PRICE__TAX_AUTH_PARTY_ID:
+				return taxAuthPartyId != null;
+			case PricePackage.PRODUCT_PRICE__TAX_AUTH_GEO_ID:
+				return taxAuthGeoId != null;
+			case PricePackage.PRODUCT_PRICE__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case PricePackage.PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1251,24 +1340,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", productPriceTypeId: ");
-		result.append(productPriceTypeId);
-		result.append(", productPricePurposeId: ");
-		result.append(productPricePurposeId);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
-		result.append(", productStoreGroupId: ");
-		result.append(productStoreGroupId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
-		result.append(", customPriceCalcService: ");
-		result.append(customPriceCalcService);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
 		result.append(", price: ");
@@ -1279,16 +1354,10 @@ public class ProductPriceImpl extends BizEntityTypedImpl<ProductPriceType> imple
 		result.append(priceWithoutTax);
 		result.append(", taxAmount: ");
 		result.append(taxAmount);
-		result.append(", taxAuthGeoId: ");
-		result.append(taxAuthGeoId);
-		result.append(", taxAuthPartyId: ");
-		result.append(taxAuthPartyId);
 		result.append(", taxInPrice: ");
 		result.append(taxInPrice);
 		result.append(", taxPercentage: ");
 		result.append(taxPercentage);
-		result.append(", termUomId: ");
-		result.append(termUomId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

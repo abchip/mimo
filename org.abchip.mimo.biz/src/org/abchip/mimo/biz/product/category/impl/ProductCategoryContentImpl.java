@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategoryContent;
@@ -18,6 +19,8 @@ import org.abchip.mimo.biz.product.category.ProductCategoryContentType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,14 +32,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getProdCatContentTypeId <em>Prod Cat Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getUseDaysLimit <em>Use Days Limit</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryContentImpl#getProdCatContentTypeId <em>Prod Cat Content Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,46 +69,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 * @ordered
 	 */
 	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProdCatContentTypeId() <em>Prod Cat Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROD_CAT_CONTENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProdCatContentTypeId() <em>Prod Cat Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String prodCatContentTypeId = PROD_CAT_CONTENT_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -228,6 +191,26 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	protected BigDecimal useDaysLimit = USE_DAYS_LIMIT_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
+	 * The cached value of the '{@link #getProdCatContentTypeId() <em>Prod Cat Content Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProdCatContentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategoryContentType prodCatContentTypeId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -252,7 +235,24 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -262,8 +262,8 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -436,7 +436,24 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 * @generated
 	 */
 	@Override
-	public String getProdCatContentTypeId() {
+	public ProductCategoryContentType getProdCatContentTypeId() {
+		if (prodCatContentTypeId != null && ((EObject)prodCatContentTypeId).eIsProxy()) {
+			InternalEObject oldProdCatContentTypeId = (InternalEObject)prodCatContentTypeId;
+			prodCatContentTypeId = (ProductCategoryContentType)eResolveProxy(oldProdCatContentTypeId);
+			if (prodCatContentTypeId != oldProdCatContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID, oldProdCatContentTypeId, prodCatContentTypeId));
+			}
+		}
+		return prodCatContentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategoryContentType basicGetProdCatContentTypeId() {
 		return prodCatContentTypeId;
 	}
 
@@ -446,8 +463,8 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 	 * @generated
 	 */
 	@Override
-	public void setProdCatContentTypeId(String newProdCatContentTypeId) {
-		String oldProdCatContentTypeId = prodCatContentTypeId;
+	public void setProdCatContentTypeId(ProductCategoryContentType newProdCatContentTypeId) {
+		ProductCategoryContentType oldProdCatContentTypeId = prodCatContentTypeId;
 		prodCatContentTypeId = newProdCatContentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID, oldProdCatContentTypeId, prodCatContentTypeId));
@@ -463,10 +480,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
 				return getProductCategoryId();
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
-				return getContentId();
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID:
-				return getProdCatContentTypeId();
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__FROM_DATE:
 				return getFromDate();
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PURCHASE_FROM_DATE:
@@ -479,6 +492,12 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 				return getUseCountLimit();
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_DAYS_LIMIT:
 				return getUseDaysLimit();
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID:
+				if (resolve) return getProdCatContentTypeId();
+				return basicGetProdCatContentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -493,12 +512,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
 				setProductCategoryId((String)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID:
-				setProdCatContentTypeId((String)newValue);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
@@ -518,6 +531,12 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_DAYS_LIMIT:
 				setUseDaysLimit((BigDecimal)newValue);
 				return;
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID:
+				setProdCatContentTypeId((ProductCategoryContentType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -532,12 +551,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
 				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID:
-				setProdCatContentTypeId(PROD_CAT_CONTENT_TYPE_ID_EDEFAULT);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
@@ -557,6 +570,12 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_DAYS_LIMIT:
 				setUseDaysLimit(USE_DAYS_LIMIT_EDEFAULT);
 				return;
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID:
+				setProdCatContentTypeId((ProductCategoryContentType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -571,10 +590,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PRODUCT_CATEGORY_ID:
 				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID:
-				return PROD_CAT_CONTENT_TYPE_ID_EDEFAULT == null ? prodCatContentTypeId != null : !PROD_CAT_CONTENT_TYPE_ID_EDEFAULT.equals(prodCatContentTypeId);
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PURCHASE_FROM_DATE:
@@ -587,6 +602,10 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 				return useCountLimit != USE_COUNT_LIMIT_EDEFAULT;
 			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__USE_DAYS_LIMIT:
 				return USE_DAYS_LIMIT_EDEFAULT == null ? useDaysLimit != null : !USE_DAYS_LIMIT_EDEFAULT.equals(useDaysLimit);
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__CONTENT_ID:
+				return contentId != null;
+			case CategoryPackage.PRODUCT_CATEGORY_CONTENT__PROD_CAT_CONTENT_TYPE_ID:
+				return prodCatContentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -603,10 +622,6 @@ public class ProductCategoryContentImpl extends BizEntityTypedImpl<ProductCatego
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productCategoryId: ");
 		result.append(productCategoryId);
-		result.append(", contentId: ");
-		result.append(contentId);
-		result.append(", prodCatContentTypeId: ");
-		result.append(prodCatContentTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", purchaseFromDate: ");

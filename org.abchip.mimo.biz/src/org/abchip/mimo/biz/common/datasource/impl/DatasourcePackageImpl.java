@@ -199,6 +199,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -361,6 +362,22 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -377,22 +394,6 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -504,6 +505,14 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -512,14 +521,6 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -599,6 +600,14 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -607,14 +616,6 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -682,8 +683,8 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataSource_DataSourceTypeId() {
-		return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(1);
+	public EReference getDataSource_DataSourceTypeId() {
+		return (EReference)dataSourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -693,7 +694,7 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 	 */
 	@Override
 	public EAttribute getDataSource_Description() {
-		return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -757,8 +758,8 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		// Create classes and their features
 		dataSourceEClass = createEClass(DATA_SOURCE);
 		createEAttribute(dataSourceEClass, DATA_SOURCE__DATA_SOURCE_ID);
-		createEAttribute(dataSourceEClass, DATA_SOURCE__DATA_SOURCE_TYPE_ID);
 		createEAttribute(dataSourceEClass, DATA_SOURCE__DESCRIPTION);
+		createEReference(dataSourceEClass, DATA_SOURCE__DATA_SOURCE_TYPE_ID);
 
 		dataSourceTypeEClass = createEClass(DATA_SOURCE_TYPE);
 		createEAttribute(dataSourceTypeEClass, DATA_SOURCE_TYPE__DATA_SOURCE_TYPE_ID);
@@ -808,8 +809,9 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		// Initialize classes and features; add operations and parameters
 		initEClass(dataSourceEClass, DataSource.class, "DataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataSource_DataSourceId(), ecorePackage.getEString(), "dataSourceId", null, 1, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataSource_DataSourceTypeId(), ecorePackage.getEString(), "dataSourceTypeId", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSource_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataSource_DataSourceTypeId(), this.getDataSourceType(), null, "dataSourceTypeId", null, 0, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDataSource_DataSourceTypeId().getEKeys().add(this.getDataSourceType_DataSourceTypeId());
 
 		addEOperation(dataSourceEClass, ecorePackage.getEString(), "contentMetaDatas", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -988,15 +990,6 @@ public class DatasourcePackageImpl extends EPackageImpl implements DatasourcePac
 		   new String[] {
 			   "frame", "Party",
 			   "route", "dataSourceId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getDataSource_DataSourceTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "DataSourceType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

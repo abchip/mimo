@@ -10,11 +10,14 @@ package org.abchip.mimo.biz.product.supplier.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.abchip.mimo.biz.product.supplier.MarketInterest;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.MarketInterestImpl#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,26 +61,6 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 * @ordered
 	 */
 	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyClassificationGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyClassificationGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyClassificationGroupId = PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -118,6 +101,16 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyClassificationGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PartyClassificationGroup partyClassificationGroupId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,7 +160,24 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 * @generated
 	 */
 	@Override
-	public String getPartyClassificationGroupId() {
+	public PartyClassificationGroup getPartyClassificationGroupId() {
+		if (partyClassificationGroupId != null && ((EObject)partyClassificationGroupId).eIsProxy()) {
+			InternalEObject oldPartyClassificationGroupId = (InternalEObject)partyClassificationGroupId;
+			partyClassificationGroupId = (PartyClassificationGroup)eResolveProxy(oldPartyClassificationGroupId);
+			if (partyClassificationGroupId != oldPartyClassificationGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
+			}
+		}
+		return partyClassificationGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyClassificationGroup basicGetPartyClassificationGroupId() {
 		return partyClassificationGroupId;
 	}
 
@@ -177,8 +187,8 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 	 * @generated
 	 */
 	@Override
-	public void setPartyClassificationGroupId(String newPartyClassificationGroupId) {
-		String oldPartyClassificationGroupId = partyClassificationGroupId;
+	public void setPartyClassificationGroupId(PartyClassificationGroup newPartyClassificationGroupId) {
+		PartyClassificationGroup oldPartyClassificationGroupId = partyClassificationGroupId;
 		partyClassificationGroupId = newPartyClassificationGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
@@ -240,12 +250,13 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 		switch (featureID) {
 			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
 				return getProductCategoryId();
-			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
-				return getPartyClassificationGroupId();
 			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
 				return getFromDate();
 			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
 				return getThruDate();
+			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
+				if (resolve) return getPartyClassificationGroupId();
+				return basicGetPartyClassificationGroupId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,14 +272,14 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
 				setProductCategoryId((String)newValue);
 				return;
-			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
-				setPartyClassificationGroupId((String)newValue);
-				return;
 			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
+				setPartyClassificationGroupId((PartyClassificationGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -285,14 +296,14 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
 				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
 				return;
-			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
-				setPartyClassificationGroupId(PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT);
-				return;
 			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
+				setPartyClassificationGroupId((PartyClassificationGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -308,12 +319,12 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 		switch (featureID) {
 			case SupplierPackage.MARKET_INTEREST__PRODUCT_CATEGORY_ID:
 				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
-			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
-				return PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT == null ? partyClassificationGroupId != null : !PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT.equals(partyClassificationGroupId);
 			case SupplierPackage.MARKET_INTEREST__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SupplierPackage.MARKET_INTEREST__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case SupplierPackage.MARKET_INTEREST__PARTY_CLASSIFICATION_GROUP_ID:
+				return partyClassificationGroupId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -330,8 +341,6 @@ public class MarketInterestImpl extends BizEntityImpl implements MarketInterest 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productCategoryId: ");
 		result.append(productCategoryId);
-		result.append(", partyClassificationGroupId: ");
-		result.append(partyClassificationGroupId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

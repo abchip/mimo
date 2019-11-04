@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.workeffort.workeffort;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,15 +24,15 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getSequenceId <em>Sequence Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getCurrentCount <em>Current Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getLocaleId <em>Locale Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getReminderDateTime <em>Reminder Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getReminderOffset <em>Reminder Offset</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getRepeatCount <em>Repeat Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getRepeatInterval <em>Repeat Interval</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getTimeZoneId <em>Time Zone Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder()
@@ -39,30 +41,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface WorkEffortEventReminder extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_ContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(ContactMech value);
 
 	/**
 	 * Returns the value of the '<em><b>Current Count</b></em>' attribute.
@@ -117,30 +119,30 @@ public interface WorkEffortEventReminder extends BizEntity {
 	void setLocaleId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Reminder Date Time</b></em>' attribute.
@@ -312,7 +314,6 @@ public interface WorkEffortEventReminder extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortEventReminder_WorkEffortId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
 	 * @generated
 	 */
 	String getWorkEffortId();

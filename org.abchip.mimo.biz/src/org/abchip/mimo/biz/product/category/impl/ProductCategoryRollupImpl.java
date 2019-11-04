@@ -11,10 +11,13 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.abchip.mimo.biz.product.category.ProductCategoryRollup;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getParentProductCategoryId <em>Parent Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryRollupImpl#getParentProductCategoryId <em>Parent Product Category Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +62,6 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 * @ordered
 	 */
 	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getParentProductCategoryId() <em>Parent Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARENT_PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentProductCategoryId() <em>Parent Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentProductCategoryId = PARENT_PRODUCT_CATEGORY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -139,6 +122,16 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getParentProductCategoryId() <em>Parent Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory parentProductCategoryId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +250,24 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public String getParentProductCategoryId() {
+	public ProductCategory getParentProductCategoryId() {
+		if (parentProductCategoryId != null && ((EObject)parentProductCategoryId).eIsProxy()) {
+			InternalEObject oldParentProductCategoryId = (InternalEObject)parentProductCategoryId;
+			parentProductCategoryId = (ProductCategory)eResolveProxy(oldParentProductCategoryId);
+			if (parentProductCategoryId != oldParentProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID, oldParentProductCategoryId, parentProductCategoryId));
+			}
+		}
+		return parentProductCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetParentProductCategoryId() {
 		return parentProductCategoryId;
 	}
 
@@ -267,8 +277,8 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 	 * @generated
 	 */
 	@Override
-	public void setParentProductCategoryId(String newParentProductCategoryId) {
-		String oldParentProductCategoryId = parentProductCategoryId;
+	public void setParentProductCategoryId(ProductCategory newParentProductCategoryId) {
+		ProductCategory oldParentProductCategoryId = parentProductCategoryId;
 		parentProductCategoryId = newParentProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID, oldParentProductCategoryId, parentProductCategoryId));
@@ -284,14 +294,15 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
 				return getProductCategoryId();
-			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
-				return getParentProductCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__FROM_DATE:
 				return getFromDate();
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__SEQUENCE_NUM:
 				return getSequenceNum();
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__THRU_DATE:
 				return getThruDate();
+			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
+				if (resolve) return getParentProductCategoryId();
+				return basicGetParentProductCategoryId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,9 +318,6 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
 				setProductCategoryId((String)newValue);
 				return;
-			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
-				setParentProductCategoryId((String)newValue);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -318,6 +326,9 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
+				setParentProductCategoryId((ProductCategory)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,9 +345,6 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
 				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
 				return;
-			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
-				setParentProductCategoryId(PARENT_PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -345,6 +353,9 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
+				setParentProductCategoryId((ProductCategory)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -360,14 +371,14 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 		switch (featureID) {
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PRODUCT_CATEGORY_ID:
 				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
-			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
-				return PARENT_PRODUCT_CATEGORY_ID_EDEFAULT == null ? parentProductCategoryId != null : !PARENT_PRODUCT_CATEGORY_ID_EDEFAULT.equals(parentProductCategoryId);
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CategoryPackage.PRODUCT_CATEGORY_ROLLUP__PARENT_PRODUCT_CATEGORY_ID:
+				return parentProductCategoryId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -384,8 +395,6 @@ public class ProductCategoryRollupImpl extends BizEntityImpl implements ProductC
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productCategoryId: ");
 		result.append(productCategoryId);
-		result.append(", parentProductCategoryId: ");
-		result.append(parentProductCategoryId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

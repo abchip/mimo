@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,17 +24,17 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#isRequireEmailOrParty <em>Require Email Or Party</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getUseLimitPerCode <em>Use Limit Per Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getUseLimitPerCustomer <em>Use Limit Per Customer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#isUserEntered <em>User Entered</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoId <em>Product Promo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeEmails <em>Product Promo Code Emails</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoCodeParties <em>Product Promo Code Parties</em>}</li>
  * </ul>
@@ -44,30 +45,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ProductPromoCode extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Created By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Created By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Created By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Created By User Login</em>' attribute.
-	 * @see #setCreatedByUserLogin(String)
+	 * @return the value of the '<em>Created By User Login</em>' reference.
+	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getCreatedByUserLogin();
+	UserLogin getCreatedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getCreatedByUserLogin <em>Created By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getCreatedByUserLogin <em>Created By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Created By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Created By User Login</em>' reference.
 	 * @see #getCreatedByUserLogin()
 	 * @generated
 	 */
-	void setCreatedByUserLogin(String value);
+	void setCreatedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Created Date</b></em>' attribute.
@@ -122,30 +123,30 @@ public interface ProductPromoCode extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Last Modified By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
-	 * @see #setLastModifiedByUserLogin(String)
+	 * @return the value of the '<em>Last Modified By User Login</em>' reference.
+	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getLastModifiedByUserLogin();
+	UserLogin getLastModifiedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Last Modified By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Last Modified By User Login</em>' reference.
 	 * @see #getLastModifiedByUserLogin()
 	 * @generated
 	 */
-	void setLastModifiedByUserLogin(String value);
+	void setLastModifiedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Last Modified Date</b></em>' attribute.
@@ -339,30 +340,30 @@ public interface ProductPromoCode extends BizEntity {
 	List<String> shoppingLists();
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Id</em>' attribute.
-	 * @see #setProductPromoId(String)
+	 * @return the value of the '<em>Product Promo Id</em>' reference.
+	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ProductPromoId()
-	 * @model annotation="mimo-ent-domain frame='ProductPromo'"
+	 * @model keys="productPromoId"
 	 * @generated
 	 */
-	String getProductPromoId();
+	ProductPromo getProductPromoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoId <em>Product Promo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoId <em>Product Promo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Id</em>' reference.
 	 * @see #getProductPromoId()
 	 * @generated
 	 */
-	void setProductPromoId(String value);
+	void setProductPromoId(ProductPromo value);
 
 	/**
 	 * Returns the value of the '<em><b>Require Email Or Party</b></em>' attribute.
@@ -401,7 +402,7 @@ public interface ProductPromoCode extends BizEntity {
 	 * @return the value of the '<em>Product Promo Code Id</em>' attribute.
 	 * @see #setProductPromoCodeId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCode_ProductPromoCodeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

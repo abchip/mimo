@@ -11,9 +11,12 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.accounting.payment.CreditCard;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,7 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getCompanyNameOnCard <em>Company Name On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getConsecutiveFailedAuths <em>Consecutive Failed Auths</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getConsecutiveFailedNsf <em>Consecutive Failed Nsf</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getExpireDate <em>Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getFirstNameOnCard <em>First Name On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getIssueNumber <em>Issue Number</em>}</li>
@@ -40,6 +42,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getSuffixOnCard <em>Suffix On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getTitleOnCard <em>Title On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getValidFromDate <em>Valid From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.CreditCardImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -148,26 +151,6 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 * @ordered
 	 */
 	protected long consecutiveFailedNsf = CONSECUTIVE_FAILED_NSF_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getExpireDate() <em>Expire Date</em>}' attribute.
@@ -363,6 +346,15 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 * @ordered
 	 */
 	protected String validFromDate = VALID_FROM_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PostalAddress contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -504,7 +496,24 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public PostalAddress getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostalAddress basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -514,8 +523,8 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(PostalAddress newContactMechId) {
+		PostalAddress oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -769,8 +778,6 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 				return getConsecutiveFailedAuths();
 			case PaymentPackage.CREDIT_CARD__CONSECUTIVE_FAILED_NSF:
 				return getConsecutiveFailedNsf();
-			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
-				return getContactMechId();
 			case PaymentPackage.CREDIT_CARD__EXPIRE_DATE:
 				return getExpireDate();
 			case PaymentPackage.CREDIT_CARD__FIRST_NAME_ON_CARD:
@@ -791,6 +798,9 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 				return getTitleOnCard();
 			case PaymentPackage.CREDIT_CARD__VALID_FROM_DATE:
 				return getValidFromDate();
+			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -817,9 +827,6 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 				return;
 			case PaymentPackage.CREDIT_CARD__CONSECUTIVE_FAILED_NSF:
 				setConsecutiveFailedNsf((Long)newValue);
-				return;
-			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
 				return;
 			case PaymentPackage.CREDIT_CARD__EXPIRE_DATE:
 				setExpireDate((String)newValue);
@@ -851,6 +858,9 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 			case PaymentPackage.CREDIT_CARD__VALID_FROM_DATE:
 				setValidFromDate((String)newValue);
 				return;
+			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -877,9 +887,6 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 				return;
 			case PaymentPackage.CREDIT_CARD__CONSECUTIVE_FAILED_NSF:
 				setConsecutiveFailedNsf(CONSECUTIVE_FAILED_NSF_EDEFAULT);
-				return;
-			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
 				return;
 			case PaymentPackage.CREDIT_CARD__EXPIRE_DATE:
 				setExpireDate(EXPIRE_DATE_EDEFAULT);
@@ -911,6 +918,9 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 			case PaymentPackage.CREDIT_CARD__VALID_FROM_DATE:
 				setValidFromDate(VALID_FROM_DATE_EDEFAULT);
 				return;
+			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -933,8 +943,6 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 				return consecutiveFailedAuths != CONSECUTIVE_FAILED_AUTHS_EDEFAULT;
 			case PaymentPackage.CREDIT_CARD__CONSECUTIVE_FAILED_NSF:
 				return consecutiveFailedNsf != CONSECUTIVE_FAILED_NSF_EDEFAULT;
-			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
 			case PaymentPackage.CREDIT_CARD__EXPIRE_DATE:
 				return EXPIRE_DATE_EDEFAULT == null ? expireDate != null : !EXPIRE_DATE_EDEFAULT.equals(expireDate);
 			case PaymentPackage.CREDIT_CARD__FIRST_NAME_ON_CARD:
@@ -955,6 +963,8 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 				return TITLE_ON_CARD_EDEFAULT == null ? titleOnCard != null : !TITLE_ON_CARD_EDEFAULT.equals(titleOnCard);
 			case PaymentPackage.CREDIT_CARD__VALID_FROM_DATE:
 				return VALID_FROM_DATE_EDEFAULT == null ? validFromDate != null : !VALID_FROM_DATE_EDEFAULT.equals(validFromDate);
+			case PaymentPackage.CREDIT_CARD__CONTACT_MECH_ID:
+				return contactMechId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -979,8 +989,6 @@ public class CreditCardImpl extends PaymentMethodImpl implements CreditCard {
 		result.append(consecutiveFailedAuths);
 		result.append(", consecutiveFailedNsf: ");
 		result.append(consecutiveFailedNsf);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
 		result.append(", expireDate: ");
 		result.append(expireDate);
 		result.append(", firstNameOnCard: ");

@@ -84,30 +84,30 @@ public interface ProductFeatureType extends BizEntityType<ProductFeature> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(ProductFeatureType)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductFeatureType'"
+	 * @model keys="productFeatureTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	ProductFeatureType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(ProductFeatureType value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +138,7 @@ public interface ProductFeatureType extends BizEntityType<ProductFeature> {
 	 * @return the value of the '<em>Product Feature Type Id</em>' attribute.
 	 * @see #setProductFeatureTypeId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureType_ProductFeatureTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

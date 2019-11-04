@@ -91,7 +91,7 @@ public interface BudgetReviewResultType extends BizEntity {
 	 * @return the value of the '<em>Budget Review Result Type Id</em>' attribute.
 	 * @see #setBudgetReviewResultTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetReviewResultType_BudgetReviewResultTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.product.product;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,13 +24,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductMaintSeqId <em>Product Maint Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalMeterTypeId <em>Interval Meter Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalQuantity <em>Interval Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalUomId <em>Interval Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getMaintName <em>Maint Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getMaintTemplateWorkEffortId <em>Maint Template Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductMaintTypeId <em>Product Maint Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getRepeatCount <em>Repeat Count</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductMaintTypeId <em>Product Maint Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getMaintTemplateWorkEffortId <em>Maint Template Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalUomId <em>Interval Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalMeterTypeId <em>Interval Meter Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint()
@@ -63,30 +65,30 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	void setIntervalQuantity(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Interval Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Interval Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Interval Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interval Uom Id</em>' attribute.
-	 * @see #setIntervalUomId(String)
+	 * @return the value of the '<em>Interval Uom Id</em>' reference.
+	 * @see #setIntervalUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_IntervalUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getIntervalUomId();
+	Uom getIntervalUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalUomId <em>Interval Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalUomId <em>Interval Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Interval Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Interval Uom Id</em>' reference.
 	 * @see #getIntervalUomId()
 	 * @generated
 	 */
-	void setIntervalUomId(String value);
+	void setIntervalUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Maint Name</b></em>' attribute.
@@ -115,30 +117,30 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	void setMaintName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Maint Template Work Effort Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Maint Template Work Effort Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Maint Template Work Effort Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Maint Template Work Effort Id</em>' attribute.
-	 * @see #setMaintTemplateWorkEffortId(String)
+	 * @return the value of the '<em>Maint Template Work Effort Id</em>' reference.
+	 * @see #setMaintTemplateWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_MaintTemplateWorkEffortId()
-	 * @model annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @model keys="workEffortId"
 	 * @generated
 	 */
-	String getMaintTemplateWorkEffortId();
+	WorkEffort getMaintTemplateWorkEffortId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMaint#getMaintTemplateWorkEffortId <em>Maint Template Work Effort Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMaint#getMaintTemplateWorkEffortId <em>Maint Template Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Maint Template Work Effort Id</em>' attribute.
+	 * @param value the new value of the '<em>Maint Template Work Effort Id</em>' reference.
 	 * @see #getMaintTemplateWorkEffortId()
 	 * @generated
 	 */
-	void setMaintTemplateWorkEffortId(String value);
+	void setMaintTemplateWorkEffortId(WorkEffort value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Maint Seq Id</b></em>' attribute.
@@ -151,7 +153,8 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @return the value of the '<em>Product Maint Seq Id</em>' attribute.
 	 * @see #setProductMaintSeqId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductMaintSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductMaintSeqId();
@@ -203,8 +206,8 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();
@@ -220,55 +223,55 @@ public interface ProductMaint extends BizEntityTyped<ProductMaintType> {
 	void setProductId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Maint Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Maint Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Maint Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Maint Type Id</em>' attribute.
-	 * @see #setProductMaintTypeId(String)
+	 * @return the value of the '<em>Product Maint Type Id</em>' reference.
+	 * @see #setProductMaintTypeId(ProductMaintType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_ProductMaintTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductMaintType'"
+	 * @model keys="productMaintTypeId"
 	 * @generated
 	 */
-	String getProductMaintTypeId();
+	ProductMaintType getProductMaintTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductMaintTypeId <em>Product Maint Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMaint#getProductMaintTypeId <em>Product Maint Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Maint Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Maint Type Id</em>' reference.
 	 * @see #getProductMaintTypeId()
 	 * @generated
 	 */
-	void setProductMaintTypeId(String value);
+	void setProductMaintTypeId(ProductMaintType value);
 
 	/**
-	 * Returns the value of the '<em><b>Interval Meter Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Interval Meter Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Interval Meter Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interval Meter Type Id</em>' attribute.
-	 * @see #setIntervalMeterTypeId(String)
+	 * @return the value of the '<em>Interval Meter Type Id</em>' reference.
+	 * @see #setIntervalMeterTypeId(ProductMeterType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMaint_IntervalMeterTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductMeterType'"
+	 * @model keys="productMeterTypeId"
 	 * @generated
 	 */
-	String getIntervalMeterTypeId();
+	ProductMeterType getIntervalMeterTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalMeterTypeId <em>Interval Meter Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMaint#getIntervalMeterTypeId <em>Interval Meter Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Interval Meter Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Interval Meter Type Id</em>' reference.
 	 * @see #getIntervalMeterTypeId()
 	 * @generated
 	 */
-	void setIntervalMeterTypeId(String value);
+	void setIntervalMeterTypeId(ProductMeterType value);
 
 } // ProductMaint

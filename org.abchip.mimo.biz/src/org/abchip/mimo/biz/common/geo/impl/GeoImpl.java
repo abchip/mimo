@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,8 +36,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getGeoCode <em>Geo Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getGeoName <em>Geo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getGeoSecCode <em>Geo Sec Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getGeoTypeId <em>Geo Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getWellKnownText <em>Well Known Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getGeoTypeId <em>Geo Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getMainGeoAssocs <em>Main Geo Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoImpl#getTaxAuthTaxAuthorities <em>Tax Auth Tax Authorities</em>}</li>
  * </ul>
@@ -138,24 +140,6 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 */
 	protected String geoSecCode = GEO_SEC_CODE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getGeoTypeId() <em>Geo Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoTypeId() <em>Geo Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoTypeId = GEO_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getWellKnownText() <em>Well Known Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +157,15 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @ordered
 	 */
 	protected String wellKnownText = WELL_KNOWN_TEXT_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getGeoTypeId() <em>Geo Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeoType geoTypeId;
 
 	/**
 	 * The cached value of the '{@link #getMainGeoAssocs() <em>Main Geo Assocs</em>}' attribute list.
@@ -671,7 +664,24 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public String getGeoTypeId() {
+	public GeoType getGeoTypeId() {
+		if (geoTypeId != null && ((EObject)geoTypeId).eIsProxy()) {
+			InternalEObject oldGeoTypeId = (InternalEObject)geoTypeId;
+			geoTypeId = (GeoType)eResolveProxy(oldGeoTypeId);
+			if (geoTypeId != oldGeoTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO__GEO_TYPE_ID, oldGeoTypeId, geoTypeId));
+			}
+		}
+		return geoTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeoType basicGetGeoTypeId() {
 		return geoTypeId;
 	}
 
@@ -681,8 +691,8 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 	 * @generated
 	 */
 	@Override
-	public void setGeoTypeId(String newGeoTypeId) {
-		String oldGeoTypeId = geoTypeId;
+	public void setGeoTypeId(GeoType newGeoTypeId) {
+		GeoType oldGeoTypeId = geoTypeId;
 		geoTypeId = newGeoTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO__GEO_TYPE_ID, oldGeoTypeId, geoTypeId));
@@ -729,10 +739,11 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 				return getGeoName();
 			case GeoPackage.GEO__GEO_SEC_CODE:
 				return getGeoSecCode();
-			case GeoPackage.GEO__GEO_TYPE_ID:
-				return getGeoTypeId();
 			case GeoPackage.GEO__WELL_KNOWN_TEXT:
 				return getWellKnownText();
+			case GeoPackage.GEO__GEO_TYPE_ID:
+				if (resolve) return getGeoTypeId();
+				return basicGetGeoTypeId();
 			case GeoPackage.GEO__MAIN_GEO_ASSOCS:
 				return getMainGeoAssocs();
 			case GeoPackage.GEO__TAX_AUTH_TAX_AUTHORITIES:
@@ -765,11 +776,11 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 			case GeoPackage.GEO__GEO_SEC_CODE:
 				setGeoSecCode((String)newValue);
 				return;
-			case GeoPackage.GEO__GEO_TYPE_ID:
-				setGeoTypeId((String)newValue);
-				return;
 			case GeoPackage.GEO__WELL_KNOWN_TEXT:
 				setWellKnownText((String)newValue);
+				return;
+			case GeoPackage.GEO__GEO_TYPE_ID:
+				setGeoTypeId((GeoType)newValue);
 				return;
 			case GeoPackage.GEO__MAIN_GEO_ASSOCS:
 				getMainGeoAssocs().clear();
@@ -806,11 +817,11 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 			case GeoPackage.GEO__GEO_SEC_CODE:
 				setGeoSecCode(GEO_SEC_CODE_EDEFAULT);
 				return;
-			case GeoPackage.GEO__GEO_TYPE_ID:
-				setGeoTypeId(GEO_TYPE_ID_EDEFAULT);
-				return;
 			case GeoPackage.GEO__WELL_KNOWN_TEXT:
 				setWellKnownText(WELL_KNOWN_TEXT_EDEFAULT);
+				return;
+			case GeoPackage.GEO__GEO_TYPE_ID:
+				setGeoTypeId((GeoType)null);
 				return;
 			case GeoPackage.GEO__MAIN_GEO_ASSOCS:
 				getMainGeoAssocs().clear();
@@ -840,10 +851,10 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 				return GEO_NAME_EDEFAULT == null ? geoName != null : !GEO_NAME_EDEFAULT.equals(geoName);
 			case GeoPackage.GEO__GEO_SEC_CODE:
 				return GEO_SEC_CODE_EDEFAULT == null ? geoSecCode != null : !GEO_SEC_CODE_EDEFAULT.equals(geoSecCode);
-			case GeoPackage.GEO__GEO_TYPE_ID:
-				return GEO_TYPE_ID_EDEFAULT == null ? geoTypeId != null : !GEO_TYPE_ID_EDEFAULT.equals(geoTypeId);
 			case GeoPackage.GEO__WELL_KNOWN_TEXT:
 				return WELL_KNOWN_TEXT_EDEFAULT == null ? wellKnownText != null : !WELL_KNOWN_TEXT_EDEFAULT.equals(wellKnownText);
+			case GeoPackage.GEO__GEO_TYPE_ID:
+				return geoTypeId != null;
 			case GeoPackage.GEO__MAIN_GEO_ASSOCS:
 				return mainGeoAssocs != null && !mainGeoAssocs.isEmpty();
 			case GeoPackage.GEO__TAX_AUTH_TAX_AUTHORITIES:
@@ -872,8 +883,6 @@ public class GeoImpl extends BizEntityTypedImpl<GeoType> implements Geo {
 		result.append(geoName);
 		result.append(", geoSecCode: ");
 		result.append(geoSecCode);
-		result.append(", geoTypeId: ");
-		result.append(geoTypeId);
 		result.append(", wellKnownText: ");
 		result.append(wellKnownText);
 		result.append(", mainGeoAssocs: ");

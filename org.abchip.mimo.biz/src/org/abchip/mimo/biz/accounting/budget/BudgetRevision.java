@@ -67,7 +67,8 @@ public interface BudgetRevision extends BizEntity {
 	 * @return the value of the '<em>Revision Seq Id</em>' attribute.
 	 * @see #setRevisionSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevision_RevisionSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRevisionSeqId();
@@ -93,8 +94,8 @@ public interface BudgetRevision extends BizEntity {
 	 * @return the value of the '<em>Budget Id</em>' attribute.
 	 * @see #setBudgetId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetRevision_BudgetId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Budget'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBudgetId();

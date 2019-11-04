@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.content.survey.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.survey.SurveyApplType;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyTrigger;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyTriggerImpl#getSurveyId <em>Survey Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyTriggerImpl#getSurveyApplTypeId <em>Survey Appl Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyTriggerImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyTriggerImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyTriggerImpl#getSurveyApplTypeId <em>Survey Appl Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +62,6 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 	 * @ordered
 	 */
 	protected String surveyId = SURVEY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSurveyApplTypeId() <em>Survey Appl Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyApplTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_APPL_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyApplTypeId() <em>Survey Appl Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyApplTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyApplTypeId = SURVEY_APPL_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -119,6 +102,16 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSurveyApplTypeId() <em>Survey Appl Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSurveyApplTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SurveyApplType surveyApplTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +161,24 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 	 * @generated
 	 */
 	@Override
-	public String getSurveyApplTypeId() {
+	public SurveyApplType getSurveyApplTypeId() {
+		if (surveyApplTypeId != null && ((EObject)surveyApplTypeId).eIsProxy()) {
+			InternalEObject oldSurveyApplTypeId = (InternalEObject)surveyApplTypeId;
+			surveyApplTypeId = (SurveyApplType)eResolveProxy(oldSurveyApplTypeId);
+			if (surveyApplTypeId != oldSurveyApplTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID, oldSurveyApplTypeId, surveyApplTypeId));
+			}
+		}
+		return surveyApplTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurveyApplType basicGetSurveyApplTypeId() {
 		return surveyApplTypeId;
 	}
 
@@ -178,8 +188,8 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 	 * @generated
 	 */
 	@Override
-	public void setSurveyApplTypeId(String newSurveyApplTypeId) {
-		String oldSurveyApplTypeId = surveyApplTypeId;
+	public void setSurveyApplTypeId(SurveyApplType newSurveyApplTypeId) {
+		SurveyApplType oldSurveyApplTypeId = surveyApplTypeId;
 		surveyApplTypeId = newSurveyApplTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID, oldSurveyApplTypeId, surveyApplTypeId));
@@ -241,12 +251,13 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 		switch (featureID) {
 			case SurveyPackage.SURVEY_TRIGGER__SURVEY_ID:
 				return getSurveyId();
-			case SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID:
-				return getSurveyApplTypeId();
 			case SurveyPackage.SURVEY_TRIGGER__FROM_DATE:
 				return getFromDate();
 			case SurveyPackage.SURVEY_TRIGGER__THRU_DATE:
 				return getThruDate();
+			case SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID:
+				if (resolve) return getSurveyApplTypeId();
+				return basicGetSurveyApplTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -262,14 +273,14 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 			case SurveyPackage.SURVEY_TRIGGER__SURVEY_ID:
 				setSurveyId((String)newValue);
 				return;
-			case SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID:
-				setSurveyApplTypeId((String)newValue);
-				return;
 			case SurveyPackage.SURVEY_TRIGGER__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case SurveyPackage.SURVEY_TRIGGER__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID:
+				setSurveyApplTypeId((SurveyApplType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,14 +297,14 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 			case SurveyPackage.SURVEY_TRIGGER__SURVEY_ID:
 				setSurveyId(SURVEY_ID_EDEFAULT);
 				return;
-			case SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID:
-				setSurveyApplTypeId(SURVEY_APPL_TYPE_ID_EDEFAULT);
-				return;
 			case SurveyPackage.SURVEY_TRIGGER__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case SurveyPackage.SURVEY_TRIGGER__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID:
+				setSurveyApplTypeId((SurveyApplType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,12 +320,12 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 		switch (featureID) {
 			case SurveyPackage.SURVEY_TRIGGER__SURVEY_ID:
 				return SURVEY_ID_EDEFAULT == null ? surveyId != null : !SURVEY_ID_EDEFAULT.equals(surveyId);
-			case SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID:
-				return SURVEY_APPL_TYPE_ID_EDEFAULT == null ? surveyApplTypeId != null : !SURVEY_APPL_TYPE_ID_EDEFAULT.equals(surveyApplTypeId);
 			case SurveyPackage.SURVEY_TRIGGER__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SurveyPackage.SURVEY_TRIGGER__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case SurveyPackage.SURVEY_TRIGGER__SURVEY_APPL_TYPE_ID:
+				return surveyApplTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -331,8 +342,6 @@ public class SurveyTriggerImpl extends BizEntityImpl implements SurveyTrigger {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (surveyId: ");
 		result.append(surveyId);
-		result.append(", surveyApplTypeId: ");
-		result.append(surveyApplTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

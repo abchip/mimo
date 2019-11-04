@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.agreement;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.geo.Geo;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,32 +57,30 @@ public interface AgreementGeographicalApplic extends BizEntity {
 	void setAgreementItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Id</em>' attribute.
-	 * @see #setGeoId(String)
+	 * @return the value of the '<em>Geo Id</em>' reference.
+	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementGeographicalApplic_GeoId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getGeoId();
+	Geo getGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementGeographicalApplic#getGeoId <em>Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementGeographicalApplic#getGeoId <em>Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Geo Id</em>' reference.
 	 * @see #getGeoId()
 	 * @generated
 	 */
-	void setGeoId(String value);
+	void setGeoId(Geo value);
 
 	/**
 	 * Returns the value of the '<em><b>Agreement Id</b></em>' attribute.
@@ -96,7 +95,6 @@ public interface AgreementGeographicalApplic extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementGeographicalApplic_AgreementId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Agreement'"
 	 * @generated
 	 */
 	String getAgreementId();

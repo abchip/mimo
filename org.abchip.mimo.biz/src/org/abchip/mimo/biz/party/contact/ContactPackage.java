@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface ContactPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-party-contact";
+	String eNS_PREFIX = "biz-contact";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,22 +117,22 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_MECH__CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Info String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTACT_MECH__INFO_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int CONTACT_MECH__INFO_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTACT_MECH__CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' attribute list.
@@ -307,7 +308,7 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id To</b></em>' attribute.
+	 * The feature id for the '<em><b>Contact Mech Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -480,7 +481,7 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -653,7 +654,7 @@ public interface ContactPackage extends EPackage {
 	int CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Contact Mech Purpose Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -808,15 +809,6 @@ public interface ContactPackage extends EPackage {
 	int FTP_ADDRESS__CONTACT_MECH_ID = CONTACT_MECH__CONTACT_MECH_ID;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FTP_ADDRESS__CONTACT_MECH_TYPE_ID = CONTACT_MECH__CONTACT_MECH_TYPE_ID;
-
-	/**
 	 * The feature id for the '<em><b>Info String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -824,6 +816,15 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int FTP_ADDRESS__INFO_STRING = CONTACT_MECH__INFO_STRING;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FTP_ADDRESS__CONTACT_MECH_TYPE_ID = CONTACT_MECH__CONTACT_MECH_TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' attribute list.
@@ -989,22 +990,13 @@ public interface ContactPackage extends EPackage {
 	int PARTY_CONTACT_MECH__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_CONTACT_MECH__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_CONTACT_MECH__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Allow Solicitation</b></em>' attribute.
@@ -1013,7 +1005,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH__ALLOW_SOLICITATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_CONTACT_MECH__ALLOW_SOLICITATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1022,7 +1014,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PARTY_CONTACT_MECH__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' attribute.
@@ -1031,7 +1023,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH__EXTENSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PARTY_CONTACT_MECH__EXTENSION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Months With Contact Mech</b></em>' attribute.
@@ -1040,16 +1032,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH__MONTHS_WITH_CONTACT_MECH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_CONTACT_MECH__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PARTY_CONTACT_MECH__MONTHS_WITH_CONTACT_MECH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1058,7 +1041,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PARTY_CONTACT_MECH__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Verified</b></em>' attribute.
@@ -1067,7 +1050,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH__VERIFIED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PARTY_CONTACT_MECH__VERIFIED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Years With Contact Mech</b></em>' attribute.
@@ -1076,7 +1059,25 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH__YEARS_WITH_CONTACT_MECH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PARTY_CONTACT_MECH__YEARS_WITH_CONTACT_MECH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Party Contact Mech</em>' class.
@@ -1143,31 +1144,13 @@ public interface ContactPackage extends EPackage {
 	int PARTY_CONTACT_MECH_PURPOSE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH_PURPOSE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_CONTACT_MECH_PURPOSE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1176,7 +1159,25 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_CONTACT_MECH_PURPOSE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PARTY_CONTACT_MECH_PURPOSE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Purpose Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Party Contact Mech Purpose</em>' class.
@@ -1243,15 +1244,6 @@ public interface ContactPackage extends EPackage {
 	int POSTAL_ADDRESS__CONTACT_MECH_ID = CONTACT_MECH__CONTACT_MECH_ID;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSTAL_ADDRESS__CONTACT_MECH_TYPE_ID = CONTACT_MECH__CONTACT_MECH_TYPE_ID;
-
-	/**
 	 * The feature id for the '<em><b>Info String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1259,6 +1251,15 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int POSTAL_ADDRESS__INFO_STRING = CONTACT_MECH__INFO_STRING;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS__CONTACT_MECH_TYPE_ID = CONTACT_MECH__CONTACT_MECH_TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' attribute list.
@@ -1315,49 +1316,13 @@ public interface ContactPackage extends EPackage {
 	int POSTAL_ADDRESS__CITY = CONTACT_MECH_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>City Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSTAL_ADDRESS__CITY_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Country Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSTAL_ADDRESS__COUNTRY_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>County Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSTAL_ADDRESS__COUNTY_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Directions</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POSTAL_ADDRESS__DIRECTIONS = CONTACT_MECH_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Geo Point Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSTAL_ADDRESS__GEO_POINT_ID = CONTACT_MECH_FEATURE_COUNT + 8;
+	int POSTAL_ADDRESS__DIRECTIONS = CONTACT_MECH_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>House Number</b></em>' attribute.
@@ -1366,7 +1331,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSTAL_ADDRESS__HOUSE_NUMBER = CONTACT_MECH_FEATURE_COUNT + 9;
+	int POSTAL_ADDRESS__HOUSE_NUMBER = CONTACT_MECH_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>House Number Ext</b></em>' attribute.
@@ -1375,16 +1340,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSTAL_ADDRESS__HOUSE_NUMBER_EXT = CONTACT_MECH_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Municipality Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSTAL_ADDRESS__MUNICIPALITY_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 11;
+	int POSTAL_ADDRESS__HOUSE_NUMBER_EXT = CONTACT_MECH_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Postal Code</b></em>' attribute.
@@ -1393,7 +1349,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSTAL_ADDRESS__POSTAL_CODE = CONTACT_MECH_FEATURE_COUNT + 12;
+	int POSTAL_ADDRESS__POSTAL_CODE = CONTACT_MECH_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Postal Code Ext</b></em>' attribute.
@@ -1402,25 +1358,7 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSTAL_ADDRESS__POSTAL_CODE_EXT = CONTACT_MECH_FEATURE_COUNT + 13;
-
-	/**
-	 * The feature id for the '<em><b>Postal Code Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSTAL_ADDRESS__POSTAL_CODE_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>State Province Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 15;
+	int POSTAL_ADDRESS__POSTAL_CODE_EXT = CONTACT_MECH_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>To Name</b></em>' attribute.
@@ -1429,7 +1367,70 @@ public interface ContactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSTAL_ADDRESS__TO_NAME = CONTACT_MECH_FEATURE_COUNT + 16;
+	int POSTAL_ADDRESS__TO_NAME = CONTACT_MECH_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Country Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS__COUNTRY_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>State Province Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>County Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS__COUNTY_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Municipality Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS__MUNICIPALITY_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>City Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS__CITY_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Postal Code Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS__POSTAL_CODE_GEO_ID = CONTACT_MECH_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Geo Point Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSTAL_ADDRESS__GEO_POINT_ID = CONTACT_MECH_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Postal Address Boundaries</b></em>' attribute list.
@@ -1505,7 +1506,7 @@ public interface ContactPackage extends EPackage {
 	int POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Geo Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1578,15 +1579,6 @@ public interface ContactPackage extends EPackage {
 	int TELECOM_NUMBER__CONTACT_MECH_ID = CONTACT_MECH__CONTACT_MECH_ID;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TELECOM_NUMBER__CONTACT_MECH_TYPE_ID = CONTACT_MECH__CONTACT_MECH_TYPE_ID;
-
-	/**
 	 * The feature id for the '<em><b>Info String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1594,6 +1586,15 @@ public interface ContactPackage extends EPackage {
 	 * @ordered
 	 */
 	int TELECOM_NUMBER__INFO_STRING = CONTACT_MECH__INFO_STRING;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELECOM_NUMBER__CONTACT_MECH_TYPE_ID = CONTACT_MECH__CONTACT_MECH_TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Contact Mech Attributes</b></em>' attribute list.
@@ -1714,7 +1715,7 @@ public interface ContactPackage extends EPackage {
 	int VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1754,15 +1755,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getContactMech_ContactMechId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.ContactMech#getContactMechTypeId <em>Contact Mech Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.ContactMech#getContactMechTypeId <em>Contact Mech Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Type Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.ContactMech#getContactMechTypeId()
 	 * @see #getContactMech()
 	 * @generated
 	 */
-	EAttribute getContactMech_ContactMechTypeId();
+	EReference getContactMech_ContactMechTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.ContactMech#getInfoString <em>Info String</em>}'.
@@ -1873,15 +1874,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getContactMechLink_ContactMechIdFrom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.ContactMechLink#getContactMechIdTo <em>Contact Mech Id To</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.ContactMechLink#getContactMechIdTo <em>Contact Mech Id To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id To</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id To</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.ContactMechLink#getContactMechIdTo()
 	 * @see #getContactMechLink()
 	 * @generated
 	 */
-	EAttribute getContactMechLink_ContactMechIdTo();
+	EReference getContactMechLink_ContactMechIdTo();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.ContactMechPurposeType <em>Mech Purpose Type</em>}'.
@@ -1959,15 +1960,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getContactMechType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.ContactMechType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.ContactMechType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.ContactMechType#getParentTypeId()
 	 * @see #getContactMechType()
 	 * @generated
 	 */
-	EAttribute getContactMechType_ParentTypeId();
+	EReference getContactMechType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.contact.ContactMechType#getContactMechTypeAttrs <em>Contact Mech Type Attrs</em>}'.
@@ -2056,15 +2057,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getContactMechTypePurpose_ContactMechTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.ContactMechTypePurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.ContactMechTypePurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Purpose Type Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Purpose Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.ContactMechTypePurpose#getContactMechPurposeTypeId()
 	 * @see #getContactMechTypePurpose()
 	 * @generated
 	 */
-	EAttribute getContactMechTypePurpose_ContactMechPurposeTypeId();
+	EReference getContactMechTypePurpose_ContactMechPurposeTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.EmailAddressVerification <em>Email Address Verification</em>}'.
@@ -2240,15 +2241,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPartyContactMech_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PartyContactMech#getContactMechId()
 	 * @see #getPartyContactMech()
 	 * @generated
 	 */
-	EAttribute getPartyContactMech_ContactMechId();
+	EReference getPartyContactMech_ContactMechId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getFromDate <em>From Date</em>}'.
@@ -2306,15 +2307,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPartyContactMech_MonthsWithContactMech();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getRoleTypeId <em>Role Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getRoleTypeId <em>Role Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PartyContactMech#getRoleTypeId()
 	 * @see #getPartyContactMech()
 	 * @generated
 	 */
-	EAttribute getPartyContactMech_RoleTypeId();
+	EReference getPartyContactMech_RoleTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getThruDate <em>Thru Date</em>}'.
@@ -2371,26 +2372,26 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPartyContactMechPurpose_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechId()
 	 * @see #getPartyContactMechPurpose()
 	 * @generated
 	 */
-	EAttribute getPartyContactMechPurpose_ContactMechId();
+	EReference getPartyContactMechPurpose_ContactMechId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Purpose Type Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Purpose Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechPurposeTypeId()
 	 * @see #getPartyContactMechPurpose()
 	 * @generated
 	 */
-	EAttribute getPartyContactMechPurpose_ContactMechPurposeTypeId();
+	EReference getPartyContactMechPurpose_ContactMechPurposeTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getFromDate <em>From Date</em>}'.
@@ -2469,37 +2470,37 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPostalAddress_City();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCityGeoId <em>City Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCityGeoId <em>City Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City Geo Id</em>'.
+	 * @return the meta object for the reference '<em>City Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PostalAddress#getCityGeoId()
 	 * @see #getPostalAddress()
 	 * @generated
 	 */
-	EAttribute getPostalAddress_CityGeoId();
+	EReference getPostalAddress_CityGeoId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountryGeoId <em>Country Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountryGeoId <em>Country Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Country Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PostalAddress#getCountryGeoId()
 	 * @see #getPostalAddress()
 	 * @generated
 	 */
-	EAttribute getPostalAddress_CountryGeoId();
+	EReference getPostalAddress_CountryGeoId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountyGeoId <em>County Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getCountyGeoId <em>County Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>County Geo Id</em>'.
+	 * @return the meta object for the reference '<em>County Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PostalAddress#getCountyGeoId()
 	 * @see #getPostalAddress()
 	 * @generated
 	 */
-	EAttribute getPostalAddress_CountyGeoId();
+	EReference getPostalAddress_CountyGeoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getDirections <em>Directions</em>}'.
@@ -2513,15 +2514,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPostalAddress_Directions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getGeoPointId <em>Geo Point Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getGeoPointId <em>Geo Point Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Geo Point Id</em>'.
+	 * @return the meta object for the reference '<em>Geo Point Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PostalAddress#getGeoPointId()
 	 * @see #getPostalAddress()
 	 * @generated
 	 */
-	EAttribute getPostalAddress_GeoPointId();
+	EReference getPostalAddress_GeoPointId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getHouseNumber <em>House Number</em>}'.
@@ -2546,15 +2547,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPostalAddress_HouseNumberExt();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getMunicipalityGeoId <em>Municipality Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getMunicipalityGeoId <em>Municipality Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Municipality Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Municipality Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PostalAddress#getMunicipalityGeoId()
 	 * @see #getPostalAddress()
 	 * @generated
 	 */
-	EAttribute getPostalAddress_MunicipalityGeoId();
+	EReference getPostalAddress_MunicipalityGeoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCode <em>Postal Code</em>}'.
@@ -2579,26 +2580,26 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPostalAddress_PostalCodeExt();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeGeoId <em>Postal Code Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeGeoId <em>Postal Code Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Postal Code Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Postal Code Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PostalAddress#getPostalCodeGeoId()
 	 * @see #getPostalAddress()
 	 * @generated
 	 */
-	EAttribute getPostalAddress_PostalCodeGeoId();
+	EReference getPostalAddress_PostalCodeGeoId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getStateProvinceGeoId <em>State Province Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getStateProvinceGeoId <em>State Province Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>State Province Geo Id</em>'.
+	 * @return the meta object for the reference '<em>State Province Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PostalAddress#getStateProvinceGeoId()
 	 * @see #getPostalAddress()
 	 * @generated
 	 */
-	EAttribute getPostalAddress_StateProvinceGeoId();
+	EReference getPostalAddress_StateProvinceGeoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddress#getToName <em>To Name</em>}'.
@@ -2644,15 +2645,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getPostalAddressBoundary_ContactMechId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.PostalAddressBoundary#getGeoId <em>Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.PostalAddressBoundary#getGeoId <em>Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.PostalAddressBoundary#getGeoId()
 	 * @see #getPostalAddressBoundary()
 	 * @generated
 	 */
-	EAttribute getPostalAddressBoundary_GeoId();
+	EReference getPostalAddressBoundary_GeoId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.contact.TelecomNumber <em>Telecom Number</em>}'.
@@ -2730,15 +2731,15 @@ public interface ContactPackage extends EPackage {
 	EAttribute getValidContactMechRole_RoleTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.contact.ValidContactMechRole#getContactMechTypeId <em>Contact Mech Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.contact.ValidContactMechRole#getContactMechTypeId <em>Contact Mech Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Type Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.contact.ValidContactMechRole#getContactMechTypeId()
 	 * @see #getValidContactMechRole()
 	 * @generated
 	 */
-	EAttribute getValidContactMechRole_ContactMechTypeId();
+	EReference getValidContactMechRole_ContactMechTypeId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2781,12 +2782,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute CONTACT_MECH__CONTACT_MECH_ID = eINSTANCE.getContactMech_ContactMechId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_MECH__CONTACT_MECH_TYPE_ID = eINSTANCE.getContactMech_ContactMechTypeId();
+		EReference CONTACT_MECH__CONTACT_MECH_TYPE_ID = eINSTANCE.getContactMech_ContactMechTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Info String</b></em>' attribute feature.
@@ -2873,12 +2874,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM = eINSTANCE.getContactMechLink_ContactMechIdFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id To</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_MECH_LINK__CONTACT_MECH_ID_TO = eINSTANCE.getContactMechLink_ContactMechIdTo();
+		EReference CONTACT_MECH_LINK__CONTACT_MECH_ID_TO = eINSTANCE.getContactMechLink_ContactMechIdTo();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.ContactMechPurposeTypeImpl <em>Mech Purpose Type</em>}' class.
@@ -2941,12 +2942,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute CONTACT_MECH_TYPE__HAS_TABLE = eINSTANCE.getContactMechType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_MECH_TYPE__PARENT_TYPE_ID = eINSTANCE.getContactMechType_ParentTypeId();
+		EReference CONTACT_MECH_TYPE__PARENT_TYPE_ID = eINSTANCE.getContactMechType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Contact Mech Type Attrs</b></em>' attribute list feature.
@@ -3017,12 +3018,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_TYPE_ID = eINSTANCE.getContactMechTypePurpose_ContactMechTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Purpose Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID = eINSTANCE.getContactMechTypePurpose_ContactMechPurposeTypeId();
+		EReference CONTACT_MECH_TYPE_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID = eINSTANCE.getContactMechTypePurpose_ContactMechPurposeTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.EmailAddressVerificationImpl <em>Email Address Verification</em>}' class.
@@ -3159,12 +3160,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute PARTY_CONTACT_MECH__PARTY_ID = eINSTANCE.getPartyContactMech_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_CONTACT_MECH__CONTACT_MECH_ID = eINSTANCE.getPartyContactMech_ContactMechId();
+		EReference PARTY_CONTACT_MECH__CONTACT_MECH_ID = eINSTANCE.getPartyContactMech_ContactMechId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -3207,12 +3208,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute PARTY_CONTACT_MECH__MONTHS_WITH_CONTACT_MECH = eINSTANCE.getPartyContactMech_MonthsWithContactMech();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_CONTACT_MECH__ROLE_TYPE_ID = eINSTANCE.getPartyContactMech_RoleTypeId();
+		EReference PARTY_CONTACT_MECH__ROLE_TYPE_ID = eINSTANCE.getPartyContactMech_RoleTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -3257,20 +3258,20 @@ public interface ContactPackage extends EPackage {
 		EAttribute PARTY_CONTACT_MECH_PURPOSE__PARTY_ID = eINSTANCE.getPartyContactMechPurpose_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID = eINSTANCE.getPartyContactMechPurpose_ContactMechId();
+		EReference PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID = eINSTANCE.getPartyContactMechPurpose_ContactMechId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Purpose Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID = eINSTANCE.getPartyContactMechPurpose_ContactMechPurposeTypeId();
+		EReference PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID = eINSTANCE.getPartyContactMechPurpose_ContactMechPurposeTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -3331,28 +3332,28 @@ public interface ContactPackage extends EPackage {
 		EAttribute POSTAL_ADDRESS__CITY = eINSTANCE.getPostalAddress_City();
 
 		/**
-		 * The meta object literal for the '<em><b>City Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>City Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POSTAL_ADDRESS__CITY_GEO_ID = eINSTANCE.getPostalAddress_CityGeoId();
+		EReference POSTAL_ADDRESS__CITY_GEO_ID = eINSTANCE.getPostalAddress_CityGeoId();
 
 		/**
-		 * The meta object literal for the '<em><b>Country Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Country Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POSTAL_ADDRESS__COUNTRY_GEO_ID = eINSTANCE.getPostalAddress_CountryGeoId();
+		EReference POSTAL_ADDRESS__COUNTRY_GEO_ID = eINSTANCE.getPostalAddress_CountryGeoId();
 
 		/**
-		 * The meta object literal for the '<em><b>County Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>County Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POSTAL_ADDRESS__COUNTY_GEO_ID = eINSTANCE.getPostalAddress_CountyGeoId();
+		EReference POSTAL_ADDRESS__COUNTY_GEO_ID = eINSTANCE.getPostalAddress_CountyGeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Directions</b></em>' attribute feature.
@@ -3363,12 +3364,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute POSTAL_ADDRESS__DIRECTIONS = eINSTANCE.getPostalAddress_Directions();
 
 		/**
-		 * The meta object literal for the '<em><b>Geo Point Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Geo Point Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POSTAL_ADDRESS__GEO_POINT_ID = eINSTANCE.getPostalAddress_GeoPointId();
+		EReference POSTAL_ADDRESS__GEO_POINT_ID = eINSTANCE.getPostalAddress_GeoPointId();
 
 		/**
 		 * The meta object literal for the '<em><b>House Number</b></em>' attribute feature.
@@ -3387,12 +3388,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute POSTAL_ADDRESS__HOUSE_NUMBER_EXT = eINSTANCE.getPostalAddress_HouseNumberExt();
 
 		/**
-		 * The meta object literal for the '<em><b>Municipality Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Municipality Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POSTAL_ADDRESS__MUNICIPALITY_GEO_ID = eINSTANCE.getPostalAddress_MunicipalityGeoId();
+		EReference POSTAL_ADDRESS__MUNICIPALITY_GEO_ID = eINSTANCE.getPostalAddress_MunicipalityGeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Postal Code</b></em>' attribute feature.
@@ -3411,20 +3412,20 @@ public interface ContactPackage extends EPackage {
 		EAttribute POSTAL_ADDRESS__POSTAL_CODE_EXT = eINSTANCE.getPostalAddress_PostalCodeExt();
 
 		/**
-		 * The meta object literal for the '<em><b>Postal Code Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Postal Code Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POSTAL_ADDRESS__POSTAL_CODE_GEO_ID = eINSTANCE.getPostalAddress_PostalCodeGeoId();
+		EReference POSTAL_ADDRESS__POSTAL_CODE_GEO_ID = eINSTANCE.getPostalAddress_PostalCodeGeoId();
 
 		/**
-		 * The meta object literal for the '<em><b>State Province Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>State Province Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID = eINSTANCE.getPostalAddress_StateProvinceGeoId();
+		EReference POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID = eINSTANCE.getPostalAddress_StateProvinceGeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>To Name</b></em>' attribute feature.
@@ -3461,12 +3462,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID = eINSTANCE.getPostalAddressBoundary_ContactMechId();
 
 		/**
-		 * The meta object literal for the '<em><b>Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POSTAL_ADDRESS_BOUNDARY__GEO_ID = eINSTANCE.getPostalAddressBoundary_GeoId();
+		EReference POSTAL_ADDRESS_BOUNDARY__GEO_ID = eINSTANCE.getPostalAddressBoundary_GeoId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.contact.impl.TelecomNumberImpl <em>Telecom Number</em>}' class.
@@ -3529,12 +3530,12 @@ public interface ContactPackage extends EPackage {
 		EAttribute VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID = eINSTANCE.getValidContactMechRole_RoleTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID = eINSTANCE.getValidContactMechRole_ContactMechTypeId();
+		EReference VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID = eINSTANCE.getValidContactMechRole_ContactMechTypeId();
 
 	}
 

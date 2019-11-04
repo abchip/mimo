@@ -11,13 +11,18 @@ import java.util.Collection;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountClass;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
+import org.abchip.mimo.biz.accounting.ledger.GlResourceType;
+import org.abchip.mimo.biz.accounting.ledger.GlXbrlClass;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,12 +39,12 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getAccountName <em>Account Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getExternalId <em>External Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlResourceTypeId <em>Gl Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlXbrlClassId <em>Gl Xbrl Class Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getParentGlAccountId <em>Parent Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlAccountGroupMembers <em>Gl Account Group Members</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountImpl#getGlAccountOrganizations <em>Gl Account Organizations</em>}</li>
  * </ul>
@@ -142,97 +147,6 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 */
 	protected String externalId = EXTERNAL_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getGlAccountClassId() <em>Gl Account Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_ACCOUNT_CLASS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountClassId() <em>Gl Account Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountClassId = GL_ACCOUNT_CLASS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_ACCOUNT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountTypeId = GL_ACCOUNT_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGlResourceTypeId() <em>Gl Resource Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlResourceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_RESOURCE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlResourceTypeId() <em>Gl Resource Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlResourceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glResourceTypeId = GL_RESOURCE_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGlXbrlClassId() <em>Gl Xbrl Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlXbrlClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_XBRL_CLASS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlXbrlClassId() <em>Gl Xbrl Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlXbrlClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glXbrlClassId = GL_XBRL_CLASS_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getParentGlAccountId() <em>Parent Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARENT_GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentGlAccountId() <em>Parent Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentGlAccountId = PARENT_GL_ACCOUNT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -250,6 +164,51 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @ordered
 	 */
 	protected String productId = PRODUCT_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlAccountTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccountType glAccountTypeId;
+	/**
+	 * The cached value of the '{@link #getGlAccountClassId() <em>Gl Account Class Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlAccountClassId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccountClass glAccountClassId;
+	/**
+	 * The cached value of the '{@link #getGlResourceTypeId() <em>Gl Resource Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlResourceTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlResourceType glResourceTypeId;
+	/**
+	 * The cached value of the '{@link #getGlXbrlClassId() <em>Gl Xbrl Class Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlXbrlClassId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlXbrlClass glXbrlClassId;
+	/**
+	 * The cached value of the '{@link #getParentGlAccountId() <em>Parent Gl Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentGlAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccount parentGlAccountId;
 
 	/**
 	 * The cached value of the '{@link #getGlAccountGroupMembers() <em>Gl Account Group Members</em>}' attribute list.
@@ -664,7 +623,24 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountTypeId() {
+	public GlAccountType getGlAccountTypeId() {
+		if (glAccountTypeId != null && ((EObject)glAccountTypeId).eIsProxy()) {
+			InternalEObject oldGlAccountTypeId = (InternalEObject)glAccountTypeId;
+			glAccountTypeId = (GlAccountType)eResolveProxy(oldGlAccountTypeId);
+			if (glAccountTypeId != oldGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
+			}
+		}
+		return glAccountTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountType basicGetGlAccountTypeId() {
 		return glAccountTypeId;
 	}
 
@@ -674,8 +650,8 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountTypeId(String newGlAccountTypeId) {
-		String oldGlAccountTypeId = glAccountTypeId;
+	public void setGlAccountTypeId(GlAccountType newGlAccountTypeId) {
+		GlAccountType oldGlAccountTypeId = glAccountTypeId;
 		glAccountTypeId = newGlAccountTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
@@ -687,7 +663,24 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountClassId() {
+	public GlAccountClass getGlAccountClassId() {
+		if (glAccountClassId != null && ((EObject)glAccountClassId).eIsProxy()) {
+			InternalEObject oldGlAccountClassId = (InternalEObject)glAccountClassId;
+			glAccountClassId = (GlAccountClass)eResolveProxy(oldGlAccountClassId);
+			if (glAccountClassId != oldGlAccountClassId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID, oldGlAccountClassId, glAccountClassId));
+			}
+		}
+		return glAccountClassId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountClass basicGetGlAccountClassId() {
 		return glAccountClassId;
 	}
 
@@ -697,8 +690,8 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountClassId(String newGlAccountClassId) {
-		String oldGlAccountClassId = glAccountClassId;
+	public void setGlAccountClassId(GlAccountClass newGlAccountClassId) {
+		GlAccountClass oldGlAccountClassId = glAccountClassId;
 		glAccountClassId = newGlAccountClassId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID, oldGlAccountClassId, glAccountClassId));
@@ -710,7 +703,24 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getGlResourceTypeId() {
+	public GlResourceType getGlResourceTypeId() {
+		if (glResourceTypeId != null && ((EObject)glResourceTypeId).eIsProxy()) {
+			InternalEObject oldGlResourceTypeId = (InternalEObject)glResourceTypeId;
+			glResourceTypeId = (GlResourceType)eResolveProxy(oldGlResourceTypeId);
+			if (glResourceTypeId != oldGlResourceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID, oldGlResourceTypeId, glResourceTypeId));
+			}
+		}
+		return glResourceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlResourceType basicGetGlResourceTypeId() {
 		return glResourceTypeId;
 	}
 
@@ -720,8 +730,8 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setGlResourceTypeId(String newGlResourceTypeId) {
-		String oldGlResourceTypeId = glResourceTypeId;
+	public void setGlResourceTypeId(GlResourceType newGlResourceTypeId) {
+		GlResourceType oldGlResourceTypeId = glResourceTypeId;
 		glResourceTypeId = newGlResourceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID, oldGlResourceTypeId, glResourceTypeId));
@@ -733,7 +743,24 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getGlXbrlClassId() {
+	public GlXbrlClass getGlXbrlClassId() {
+		if (glXbrlClassId != null && ((EObject)glXbrlClassId).eIsProxy()) {
+			InternalEObject oldGlXbrlClassId = (InternalEObject)glXbrlClassId;
+			glXbrlClassId = (GlXbrlClass)eResolveProxy(oldGlXbrlClassId);
+			if (glXbrlClassId != oldGlXbrlClassId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID, oldGlXbrlClassId, glXbrlClassId));
+			}
+		}
+		return glXbrlClassId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlXbrlClass basicGetGlXbrlClassId() {
 		return glXbrlClassId;
 	}
 
@@ -743,8 +770,8 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setGlXbrlClassId(String newGlXbrlClassId) {
-		String oldGlXbrlClassId = glXbrlClassId;
+	public void setGlXbrlClassId(GlXbrlClass newGlXbrlClassId) {
+		GlXbrlClass oldGlXbrlClassId = glXbrlClassId;
 		glXbrlClassId = newGlXbrlClassId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID, oldGlXbrlClassId, glXbrlClassId));
@@ -756,7 +783,24 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getParentGlAccountId() {
+	public GlAccount getParentGlAccountId() {
+		if (parentGlAccountId != null && ((EObject)parentGlAccountId).eIsProxy()) {
+			InternalEObject oldParentGlAccountId = (InternalEObject)parentGlAccountId;
+			parentGlAccountId = (GlAccount)eResolveProxy(oldParentGlAccountId);
+			if (parentGlAccountId != oldParentGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID, oldParentGlAccountId, parentGlAccountId));
+			}
+		}
+		return parentGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetParentGlAccountId() {
 		return parentGlAccountId;
 	}
 
@@ -766,8 +810,8 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setParentGlAccountId(String newParentGlAccountId) {
-		String oldParentGlAccountId = parentGlAccountId;
+	public void setParentGlAccountId(GlAccount newParentGlAccountId) {
+		GlAccount oldParentGlAccountId = parentGlAccountId;
 		parentGlAccountId = newParentGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID, oldParentGlAccountId, parentGlAccountId));
@@ -814,18 +858,23 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 				return getDescription();
 			case LedgerPackage.GL_ACCOUNT__EXTERNAL_ID:
 				return getExternalId();
-			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID:
-				return getGlAccountClassId();
-			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
-				return getGlAccountTypeId();
-			case LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID:
-				return getGlResourceTypeId();
-			case LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID:
-				return getGlXbrlClassId();
-			case LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID:
-				return getParentGlAccountId();
 			case LedgerPackage.GL_ACCOUNT__PRODUCT_ID:
 				return getProductId();
+			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
+				if (resolve) return getGlAccountTypeId();
+				return basicGetGlAccountTypeId();
+			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID:
+				if (resolve) return getGlAccountClassId();
+				return basicGetGlAccountClassId();
+			case LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID:
+				if (resolve) return getGlResourceTypeId();
+				return basicGetGlResourceTypeId();
+			case LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID:
+				if (resolve) return getGlXbrlClassId();
+				return basicGetGlXbrlClassId();
+			case LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID:
+				if (resolve) return getParentGlAccountId();
+				return basicGetParentGlAccountId();
 			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS:
 				return getGlAccountGroupMembers();
 			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_ORGANIZATIONS:
@@ -858,23 +907,23 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 			case LedgerPackage.GL_ACCOUNT__EXTERNAL_ID:
 				setExternalId((String)newValue);
 				return;
-			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID:
-				setGlAccountClassId((String)newValue);
-				return;
-			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
-				setGlAccountTypeId((String)newValue);
-				return;
-			case LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID:
-				setGlResourceTypeId((String)newValue);
-				return;
-			case LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID:
-				setGlXbrlClassId((String)newValue);
-				return;
-			case LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID:
-				setParentGlAccountId((String)newValue);
-				return;
 			case LedgerPackage.GL_ACCOUNT__PRODUCT_ID:
 				setProductId((String)newValue);
+				return;
+			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
+				setGlAccountTypeId((GlAccountType)newValue);
+				return;
+			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID:
+				setGlAccountClassId((GlAccountClass)newValue);
+				return;
+			case LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID:
+				setGlResourceTypeId((GlResourceType)newValue);
+				return;
+			case LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID:
+				setGlXbrlClassId((GlXbrlClass)newValue);
+				return;
+			case LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID:
+				setParentGlAccountId((GlAccount)newValue);
 				return;
 			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS:
 				getGlAccountGroupMembers().clear();
@@ -911,23 +960,23 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 			case LedgerPackage.GL_ACCOUNT__EXTERNAL_ID:
 				setExternalId(EXTERNAL_ID_EDEFAULT);
 				return;
-			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID:
-				setGlAccountClassId(GL_ACCOUNT_CLASS_ID_EDEFAULT);
-				return;
-			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
-				setGlAccountTypeId(GL_ACCOUNT_TYPE_ID_EDEFAULT);
-				return;
-			case LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID:
-				setGlResourceTypeId(GL_RESOURCE_TYPE_ID_EDEFAULT);
-				return;
-			case LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID:
-				setGlXbrlClassId(GL_XBRL_CLASS_ID_EDEFAULT);
-				return;
-			case LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID:
-				setParentGlAccountId(PARENT_GL_ACCOUNT_ID_EDEFAULT);
-				return;
 			case LedgerPackage.GL_ACCOUNT__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
+				return;
+			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
+				setGlAccountTypeId((GlAccountType)null);
+				return;
+			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID:
+				setGlAccountClassId((GlAccountClass)null);
+				return;
+			case LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID:
+				setGlResourceTypeId((GlResourceType)null);
+				return;
+			case LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID:
+				setGlXbrlClassId((GlXbrlClass)null);
+				return;
+			case LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID:
+				setParentGlAccountId((GlAccount)null);
 				return;
 			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS:
 				getGlAccountGroupMembers().clear();
@@ -957,18 +1006,18 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case LedgerPackage.GL_ACCOUNT__EXTERNAL_ID:
 				return EXTERNAL_ID_EDEFAULT == null ? externalId != null : !EXTERNAL_ID_EDEFAULT.equals(externalId);
-			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID:
-				return GL_ACCOUNT_CLASS_ID_EDEFAULT == null ? glAccountClassId != null : !GL_ACCOUNT_CLASS_ID_EDEFAULT.equals(glAccountClassId);
-			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
-				return GL_ACCOUNT_TYPE_ID_EDEFAULT == null ? glAccountTypeId != null : !GL_ACCOUNT_TYPE_ID_EDEFAULT.equals(glAccountTypeId);
-			case LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID:
-				return GL_RESOURCE_TYPE_ID_EDEFAULT == null ? glResourceTypeId != null : !GL_RESOURCE_TYPE_ID_EDEFAULT.equals(glResourceTypeId);
-			case LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID:
-				return GL_XBRL_CLASS_ID_EDEFAULT == null ? glXbrlClassId != null : !GL_XBRL_CLASS_ID_EDEFAULT.equals(glXbrlClassId);
-			case LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID:
-				return PARENT_GL_ACCOUNT_ID_EDEFAULT == null ? parentGlAccountId != null : !PARENT_GL_ACCOUNT_ID_EDEFAULT.equals(parentGlAccountId);
 			case LedgerPackage.GL_ACCOUNT__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
+				return glAccountTypeId != null;
+			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_CLASS_ID:
+				return glAccountClassId != null;
+			case LedgerPackage.GL_ACCOUNT__GL_RESOURCE_TYPE_ID:
+				return glResourceTypeId != null;
+			case LedgerPackage.GL_ACCOUNT__GL_XBRL_CLASS_ID:
+				return glXbrlClassId != null;
+			case LedgerPackage.GL_ACCOUNT__PARENT_GL_ACCOUNT_ID:
+				return parentGlAccountId != null;
 			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_GROUP_MEMBERS:
 				return glAccountGroupMembers != null && !glAccountGroupMembers.isEmpty();
 			case LedgerPackage.GL_ACCOUNT__GL_ACCOUNT_ORGANIZATIONS:
@@ -997,16 +1046,6 @@ public class GlAccountImpl extends BizEntityTypedImpl<GlAccountType> implements 
 		result.append(description);
 		result.append(", externalId: ");
 		result.append(externalId);
-		result.append(", glAccountClassId: ");
-		result.append(glAccountClassId);
-		result.append(", glAccountTypeId: ");
-		result.append(glAccountTypeId);
-		result.append(", glResourceTypeId: ");
-		result.append(glResourceTypeId);
-		result.append(", glXbrlClassId: ");
-		result.append(glXbrlClassId);
-		result.append(", parentGlAccountId: ");
-		result.append(parentGlAccountId);
 		result.append(", productId: ");
 		result.append(productId);
 		result.append(", glAccountGroupMembers: ");

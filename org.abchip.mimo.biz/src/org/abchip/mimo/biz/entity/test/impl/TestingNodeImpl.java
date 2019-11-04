@@ -16,6 +16,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -76,23 +78,14 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPrimaryParentNodeId() <em>Primary Parent Node Id</em>}' attribute.
+	 * The cached value of the '{@link #getPrimaryParentNodeId() <em>Primary Parent Node Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPrimaryParentNodeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRIMARY_PARENT_NODE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPrimaryParentNodeId() <em>Primary Parent Node Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryParentNodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String primaryParentNodeId = PRIMARY_PARENT_NODE_ID_EDEFAULT;
+	protected TestingNode primaryParentNodeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,7 +135,24 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 	 * @generated
 	 */
 	@Override
-	public String getPrimaryParentNodeId() {
+	public TestingNode getPrimaryParentNodeId() {
+		if (primaryParentNodeId != null && ((EObject)primaryParentNodeId).eIsProxy()) {
+			InternalEObject oldPrimaryParentNodeId = (InternalEObject)primaryParentNodeId;
+			primaryParentNodeId = (TestingNode)eResolveProxy(oldPrimaryParentNodeId);
+			if (primaryParentNodeId != oldPrimaryParentNodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_NODE__PRIMARY_PARENT_NODE_ID, oldPrimaryParentNodeId, primaryParentNodeId));
+			}
+		}
+		return primaryParentNodeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TestingNode basicGetPrimaryParentNodeId() {
 		return primaryParentNodeId;
 	}
 
@@ -152,8 +162,8 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 	 * @generated
 	 */
 	@Override
-	public void setPrimaryParentNodeId(String newPrimaryParentNodeId) {
-		String oldPrimaryParentNodeId = primaryParentNodeId;
+	public void setPrimaryParentNodeId(TestingNode newPrimaryParentNodeId) {
+		TestingNode oldPrimaryParentNodeId = primaryParentNodeId;
 		primaryParentNodeId = newPrimaryParentNodeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_NODE__PRIMARY_PARENT_NODE_ID, oldPrimaryParentNodeId, primaryParentNodeId));
@@ -207,7 +217,8 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 			case TestPackage.TESTING_NODE__DESCRIPTION:
 				return getDescription();
 			case TestPackage.TESTING_NODE__PRIMARY_PARENT_NODE_ID:
-				return getPrimaryParentNodeId();
+				if (resolve) return getPrimaryParentNodeId();
+				return basicGetPrimaryParentNodeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -227,7 +238,7 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 				setDescription((String)newValue);
 				return;
 			case TestPackage.TESTING_NODE__PRIMARY_PARENT_NODE_ID:
-				setPrimaryParentNodeId((String)newValue);
+				setPrimaryParentNodeId((TestingNode)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,7 +259,7 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case TestPackage.TESTING_NODE__PRIMARY_PARENT_NODE_ID:
-				setPrimaryParentNodeId(PRIMARY_PARENT_NODE_ID_EDEFAULT);
+				setPrimaryParentNodeId((TestingNode)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -267,7 +278,7 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 			case TestPackage.TESTING_NODE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case TestPackage.TESTING_NODE__PRIMARY_PARENT_NODE_ID:
-				return PRIMARY_PARENT_NODE_ID_EDEFAULT == null ? primaryParentNodeId != null : !PRIMARY_PARENT_NODE_ID_EDEFAULT.equals(primaryParentNodeId);
+				return primaryParentNodeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -286,8 +297,6 @@ public class TestingNodeImpl extends BizEntityImpl implements TestingNode {
 		result.append(testingNodeId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", primaryParentNodeId: ");
-		result.append(primaryParentNodeId);
 		result.append(')');
 		return result.toString();
 	}

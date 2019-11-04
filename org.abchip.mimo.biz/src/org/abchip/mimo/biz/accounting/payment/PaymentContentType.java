@@ -84,30 +84,30 @@ public interface PaymentContentType extends BizEntityType<PaymentContent> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(PaymentContentType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContentType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='PaymentContentType'"
+	 * @model keys="paymentContentTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	PaymentContentType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentContentType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentContentType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(PaymentContentType value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface PaymentContentType extends BizEntityType<PaymentContent> {
 	 * @return the value of the '<em>Payment Content Type Id</em>' attribute.
 	 * @see #setPaymentContentTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContentType_PaymentContentTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

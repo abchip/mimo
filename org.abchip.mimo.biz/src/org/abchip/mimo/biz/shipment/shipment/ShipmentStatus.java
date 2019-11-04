@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.shipment;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +22,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getStatusDate <em>Status Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentStatus()
@@ -32,57 +33,56 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ShipmentStatus extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Change By User Login Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Change By User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Change By User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Change By User Login Id</em>' attribute.
-	 * @see #setChangeByUserLoginId(String)
+	 * @return the value of the '<em>Change By User Login Id</em>' reference.
+	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentStatus_ChangeByUserLoginId()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getChangeByUserLoginId();
+	UserLogin getChangeByUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Change By User Login Id</em>' attribute.
+	 * @param value the new value of the '<em>Change By User Login Id</em>' reference.
 	 * @see #getChangeByUserLoginId()
 	 * @generated
 	 */
-	void setChangeByUserLoginId(String value);
+	void setChangeByUserLoginId(UserLogin value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Id</em>' attribute.
-	 * @see #setShipmentId(String)
+	 * @return the value of the '<em>Shipment Id</em>' reference.
+	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentStatus_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model keys="shipmentId"
 	 * @generated
 	 */
-	String getShipmentId();
+	Shipment getShipmentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getShipmentId <em>Shipment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentStatus#getShipmentId <em>Shipment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Id</em>' reference.
 	 * @see #getShipmentId()
 	 * @generated
 	 */
-	void setShipmentId(String value);
+	void setShipmentId(Shipment value);
 
 	/**
 	 * Returns the value of the '<em><b>Status Date</b></em>' attribute.
@@ -121,8 +121,8 @@ public interface ShipmentStatus extends BizEntity {
 	 * @return the value of the '<em>Status Id</em>' attribute.
 	 * @see #setStatusId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentStatus_StatusId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getStatusId();

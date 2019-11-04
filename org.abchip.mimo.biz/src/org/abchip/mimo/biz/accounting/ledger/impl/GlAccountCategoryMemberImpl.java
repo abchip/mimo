@@ -11,12 +11,15 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccountCategory;
 import org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,10 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getGlAccountId <em>Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getGlAccountCategoryId <em>Gl Account Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getAmountPercentage <em>Amount Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlAccountCategoryMemberImpl#getGlAccountCategoryId <em>Gl Account Category Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,24 +62,6 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 * @ordered
 	 */
 	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGlAccountCategoryId() <em>Gl Account Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_ACCOUNT_CATEGORY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountCategoryId() <em>Gl Account Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountCategoryId = GL_ACCOUNT_CATEGORY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -131,6 +116,15 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getGlAccountCategoryId() <em>Gl Account Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlAccountCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccountCategory glAccountCategoryId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,7 +243,24 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountCategoryId() {
+	public GlAccountCategory getGlAccountCategoryId() {
+		if (glAccountCategoryId != null && ((EObject)glAccountCategoryId).eIsProxy()) {
+			InternalEObject oldGlAccountCategoryId = (InternalEObject)glAccountCategoryId;
+			glAccountCategoryId = (GlAccountCategory)eResolveProxy(oldGlAccountCategoryId);
+			if (glAccountCategoryId != oldGlAccountCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID, oldGlAccountCategoryId, glAccountCategoryId));
+			}
+		}
+		return glAccountCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountCategory basicGetGlAccountCategoryId() {
 		return glAccountCategoryId;
 	}
 
@@ -259,8 +270,8 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountCategoryId(String newGlAccountCategoryId) {
-		String oldGlAccountCategoryId = glAccountCategoryId;
+	public void setGlAccountCategoryId(GlAccountCategory newGlAccountCategoryId) {
+		GlAccountCategory oldGlAccountCategoryId = glAccountCategoryId;
 		glAccountCategoryId = newGlAccountCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID, oldGlAccountCategoryId, glAccountCategoryId));
@@ -276,14 +287,15 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
 				return getGlAccountId();
-			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
-				return getGlAccountCategoryId();
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__FROM_DATE:
 				return getFromDate();
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__AMOUNT_PERCENTAGE:
 				return getAmountPercentage();
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__THRU_DATE:
 				return getThruDate();
+			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
+				if (resolve) return getGlAccountCategoryId();
+				return basicGetGlAccountCategoryId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -299,9 +311,6 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
 				setGlAccountId((String)newValue);
 				return;
-			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
-				setGlAccountCategoryId((String)newValue);
-				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -310,6 +319,9 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
+				setGlAccountCategoryId((GlAccountCategory)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -326,9 +338,6 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
 				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
 				return;
-			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
-				setGlAccountCategoryId(GL_ACCOUNT_CATEGORY_ID_EDEFAULT);
-				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -337,6 +346,9 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
+				setGlAccountCategoryId((GlAccountCategory)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -352,14 +364,14 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 		switch (featureID) {
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_ID:
 				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
-			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
-				return GL_ACCOUNT_CATEGORY_ID_EDEFAULT == null ? glAccountCategoryId != null : !GL_ACCOUNT_CATEGORY_ID_EDEFAULT.equals(glAccountCategoryId);
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__AMOUNT_PERCENTAGE:
 				return AMOUNT_PERCENTAGE_EDEFAULT == null ? amountPercentage != null : !AMOUNT_PERCENTAGE_EDEFAULT.equals(amountPercentage);
 			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case LedgerPackage.GL_ACCOUNT_CATEGORY_MEMBER__GL_ACCOUNT_CATEGORY_ID:
+				return glAccountCategoryId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -376,8 +388,6 @@ public class GlAccountCategoryMemberImpl extends BizEntityImpl implements GlAcco
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (glAccountId: ");
 		result.append(glAccountId);
-		result.append(", glAccountCategoryId: ");
-		result.append(glAccountCategoryId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", amountPercentage: ");

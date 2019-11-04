@@ -9,13 +9,17 @@ package org.abchip.mimo.biz.entity.test.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.entity.test.TestPackage;
 import org.abchip.mimo.biz.entity.test.TestingStatus;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,10 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getTestingStatusId <em>Testing Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getStatusDate <em>Status Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getTestingId <em>Testing Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.impl.TestingStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,24 +64,6 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 */
 	protected String testingStatusId = TESTING_STATUS_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHANGE_BY_USER_LOGIN_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String changeByUserLoginId = CHANGE_BY_USER_LOGIN_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96,24 +82,6 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 */
 	protected Date statusDate = STATUS_DATE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getTestingId() <em>Testing Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,6 +99,24 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 * @ordered
 	 */
 	protected String testingId = TESTING_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+	/**
+	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChangeByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin changeByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,7 +143,24 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 * @generated
 	 */
 	@Override
-	public String getChangeByUserLoginId() {
+	public UserLogin getChangeByUserLoginId() {
+		if (changeByUserLoginId != null && ((EObject)changeByUserLoginId).eIsProxy()) {
+			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
+			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
+			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
+			}
+		}
+		return changeByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangeByUserLoginId() {
 		return changeByUserLoginId;
 	}
 
@@ -167,8 +170,8 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 * @generated
 	 */
 	@Override
-	public void setChangeByUserLoginId(String newChangeByUserLoginId) {
-		String oldChangeByUserLoginId = changeByUserLoginId;
+	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
@@ -203,7 +206,24 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING_STATUS__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -213,8 +233,8 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING_STATUS__STATUS_ID, oldStatusId, statusId));
@@ -276,14 +296,16 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 		switch (featureID) {
 			case TestPackage.TESTING_STATUS__TESTING_STATUS_ID:
 				return getTestingStatusId();
-			case TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return getChangeByUserLoginId();
 			case TestPackage.TESTING_STATUS__STATUS_DATE:
 				return getStatusDate();
-			case TestPackage.TESTING_STATUS__STATUS_ID:
-				return getStatusId();
 			case TestPackage.TESTING_STATUS__TESTING_ID:
 				return getTestingId();
+			case TestPackage.TESTING_STATUS__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				if (resolve) return getChangeByUserLoginId();
+				return basicGetChangeByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -299,17 +321,17 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 			case TestPackage.TESTING_STATUS__TESTING_STATUS_ID:
 				setTestingStatusId((String)newValue);
 				return;
-			case TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((String)newValue);
-				return;
 			case TestPackage.TESTING_STATUS__STATUS_DATE:
 				setStatusDate((Date)newValue);
 				return;
-			case TestPackage.TESTING_STATUS__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case TestPackage.TESTING_STATUS__TESTING_ID:
 				setTestingId((String)newValue);
+				return;
+			case TestPackage.TESTING_STATUS__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -326,17 +348,17 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 			case TestPackage.TESTING_STATUS__TESTING_STATUS_ID:
 				setTestingStatusId(TESTING_STATUS_ID_EDEFAULT);
 				return;
-			case TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId(CHANGE_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
 			case TestPackage.TESTING_STATUS__STATUS_DATE:
 				setStatusDate(STATUS_DATE_EDEFAULT);
 				return;
-			case TestPackage.TESTING_STATUS__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case TestPackage.TESTING_STATUS__TESTING_ID:
 				setTestingId(TESTING_ID_EDEFAULT);
+				return;
+			case TestPackage.TESTING_STATUS__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -352,14 +374,14 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 		switch (featureID) {
 			case TestPackage.TESTING_STATUS__TESTING_STATUS_ID:
 				return TESTING_STATUS_ID_EDEFAULT == null ? testingStatusId != null : !TESTING_STATUS_ID_EDEFAULT.equals(testingStatusId);
-			case TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return CHANGE_BY_USER_LOGIN_ID_EDEFAULT == null ? changeByUserLoginId != null : !CHANGE_BY_USER_LOGIN_ID_EDEFAULT.equals(changeByUserLoginId);
 			case TestPackage.TESTING_STATUS__STATUS_DATE:
 				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
-			case TestPackage.TESTING_STATUS__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case TestPackage.TESTING_STATUS__TESTING_ID:
 				return TESTING_ID_EDEFAULT == null ? testingId != null : !TESTING_ID_EDEFAULT.equals(testingId);
+			case TestPackage.TESTING_STATUS__STATUS_ID:
+				return statusId != null;
+			case TestPackage.TESTING_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				return changeByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -376,12 +398,8 @@ public class TestingStatusImpl extends BizEntityImpl implements TestingStatus {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (testingStatusId: ");
 		result.append(testingStatusId);
-		result.append(", changeByUserLoginId: ");
-		result.append(changeByUserLoginId);
 		result.append(", statusDate: ");
 		result.append(statusDate);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", testingId: ");
 		result.append(testingId);
 		result.append(')');

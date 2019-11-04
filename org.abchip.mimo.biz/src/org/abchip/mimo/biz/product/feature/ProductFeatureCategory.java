@@ -57,30 +57,30 @@ public interface ProductFeatureCategory extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Category Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Category Id</em>' attribute.
-	 * @see #setParentCategoryId(String)
+	 * @return the value of the '<em>Parent Category Id</em>' reference.
+	 * @see #setParentCategoryId(ProductFeatureCategory)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategory_ParentCategoryId()
-	 * @model annotation="mimo-ent-domain frame='ProductFeatureCategory'"
+	 * @model keys="productFeatureCategoryId"
 	 * @generated
 	 */
-	String getParentCategoryId();
+	ProductFeatureCategory getParentCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategory#getParentCategoryId <em>Parent Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategory#getParentCategoryId <em>Parent Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Category Id</em>' reference.
 	 * @see #getParentCategoryId()
 	 * @generated
 	 */
-	void setParentCategoryId(String value);
+	void setParentCategoryId(ProductFeatureCategory value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,7 +111,7 @@ public interface ProductFeatureCategory extends BizEntity {
 	 * @return the value of the '<em>Product Feature Category Id</em>' attribute.
 	 * @see #setProductFeatureCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategory_ProductFeatureCategoryId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

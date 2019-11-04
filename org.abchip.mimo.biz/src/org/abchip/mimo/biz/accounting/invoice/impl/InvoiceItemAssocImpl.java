@@ -15,9 +15,12 @@ import org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssoc;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemAssocType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -32,13 +35,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getInvoiceItemSeqIdFrom <em>Invoice Item Seq Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getInvoiceIdTo <em>Invoice Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getInvoiceItemSeqIdTo <em>Invoice Item Seq Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getInvoiceItemAssocTypeId <em>Invoice Item Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getInvoiceItemAssocTypeId <em>Invoice Item Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemAssocImpl#getPartyIdTo <em>Party Id To</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,24 +126,6 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	protected String invoiceItemSeqIdTo = INVOICE_ITEM_SEQ_ID_TO_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getInvoiceItemAssocTypeId() <em>Invoice Item Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ITEM_ASSOC_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceItemAssocTypeId() <em>Invoice Item Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceItemAssocTypeId = INVOICE_ITEM_ASSOC_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -177,42 +162,6 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 */
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_FROM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdFrom = PARTY_ID_FROM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_TO_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdTo = PARTY_ID_TO_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -248,6 +197,33 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getInvoiceItemAssocTypeId() <em>Invoice Item Assoc Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoiceItemAssocTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InvoiceItemAssocType invoiceItemAssocTypeId;
+	/**
+	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyIdFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyIdFrom;
+	/**
+	 * The cached value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyIdTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -412,7 +388,24 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 * @generated
 	 */
 	@Override
-	public String getPartyIdFrom() {
+	public Party getPartyIdFrom() {
+		if (partyIdFrom != null && ((EObject)partyIdFrom).eIsProxy()) {
+			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
+			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
+			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
+			}
+		}
+		return partyIdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyIdFrom() {
 		return partyIdFrom;
 	}
 
@@ -422,8 +415,8 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 * @generated
 	 */
 	@Override
-	public void setPartyIdFrom(String newPartyIdFrom) {
-		String oldPartyIdFrom = partyIdFrom;
+	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
@@ -435,7 +428,24 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 * @generated
 	 */
 	@Override
-	public String getPartyIdTo() {
+	public Party getPartyIdTo() {
+		if (partyIdTo != null && ((EObject)partyIdTo).eIsProxy()) {
+			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
+			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
+			if (partyIdTo != oldPartyIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
+			}
+		}
+		return partyIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyIdTo() {
 		return partyIdTo;
 	}
 
@@ -445,8 +455,8 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 * @generated
 	 */
 	@Override
-	public void setPartyIdTo(String newPartyIdTo) {
-		String oldPartyIdTo = partyIdTo;
+	public void setPartyIdTo(Party newPartyIdTo) {
+		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
@@ -504,7 +514,24 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceItemAssocTypeId() {
+	public InvoiceItemAssocType getInvoiceItemAssocTypeId() {
+		if (invoiceItemAssocTypeId != null && ((EObject)invoiceItemAssocTypeId).eIsProxy()) {
+			InternalEObject oldInvoiceItemAssocTypeId = (InternalEObject)invoiceItemAssocTypeId;
+			invoiceItemAssocTypeId = (InvoiceItemAssocType)eResolveProxy(oldInvoiceItemAssocTypeId);
+			if (invoiceItemAssocTypeId != oldInvoiceItemAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID, oldInvoiceItemAssocTypeId, invoiceItemAssocTypeId));
+			}
+		}
+		return invoiceItemAssocTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvoiceItemAssocType basicGetInvoiceItemAssocTypeId() {
 		return invoiceItemAssocTypeId;
 	}
 
@@ -514,8 +541,8 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceItemAssocTypeId(String newInvoiceItemAssocTypeId) {
-		String oldInvoiceItemAssocTypeId = invoiceItemAssocTypeId;
+	public void setInvoiceItemAssocTypeId(InvoiceItemAssocType newInvoiceItemAssocTypeId) {
+		InvoiceItemAssocType oldInvoiceItemAssocTypeId = invoiceItemAssocTypeId;
 		invoiceItemAssocTypeId = newInvoiceItemAssocTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID, oldInvoiceItemAssocTypeId, invoiceItemAssocTypeId));
@@ -537,20 +564,23 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 				return getInvoiceIdTo();
 			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_SEQ_ID_TO:
 				return getInvoiceItemSeqIdTo();
-			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID:
-				return getInvoiceItemAssocTypeId();
 			case InvoicePackage.INVOICE_ITEM_ASSOC__FROM_DATE:
 				return getFromDate();
 			case InvoicePackage.INVOICE_ITEM_ASSOC__AMOUNT:
 				return getAmount();
-			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM:
-				return getPartyIdFrom();
-			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO:
-				return getPartyIdTo();
 			case InvoicePackage.INVOICE_ITEM_ASSOC__QUANTITY:
 				return getQuantity();
 			case InvoicePackage.INVOICE_ITEM_ASSOC__THRU_DATE:
 				return getThruDate();
+			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID:
+				if (resolve) return getInvoiceItemAssocTypeId();
+				return basicGetInvoiceItemAssocTypeId();
+			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM:
+				if (resolve) return getPartyIdFrom();
+				return basicGetPartyIdFrom();
+			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO:
+				if (resolve) return getPartyIdTo();
+				return basicGetPartyIdTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -575,26 +605,26 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_SEQ_ID_TO:
 				setInvoiceItemSeqIdTo((String)newValue);
 				return;
-			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID:
-				setInvoiceItemAssocTypeId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_ITEM_ASSOC__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case InvoicePackage.INVOICE_ITEM_ASSOC__AMOUNT:
 				setAmount((BigDecimal)newValue);
 				return;
-			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM:
-				setPartyIdFrom((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO:
-				setPartyIdTo((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_ITEM_ASSOC__QUANTITY:
 				setQuantity((BigDecimal)newValue);
 				return;
 			case InvoicePackage.INVOICE_ITEM_ASSOC__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID:
+				setInvoiceItemAssocTypeId((InvoiceItemAssocType)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM:
+				setPartyIdFrom((Party)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO:
+				setPartyIdTo((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -620,26 +650,26 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_SEQ_ID_TO:
 				setInvoiceItemSeqIdTo(INVOICE_ITEM_SEQ_ID_TO_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID:
-				setInvoiceItemAssocTypeId(INVOICE_ITEM_ASSOC_TYPE_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_ITEM_ASSOC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_ITEM_ASSOC__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM:
-				setPartyIdFrom(PARTY_ID_FROM_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO:
-				setPartyIdTo(PARTY_ID_TO_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_ITEM_ASSOC__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_ITEM_ASSOC__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID:
+				setInvoiceItemAssocTypeId((InvoiceItemAssocType)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM:
+				setPartyIdFrom((Party)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO:
+				setPartyIdTo((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -661,20 +691,20 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 				return INVOICE_ID_TO_EDEFAULT == null ? invoiceIdTo != null : !INVOICE_ID_TO_EDEFAULT.equals(invoiceIdTo);
 			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_SEQ_ID_TO:
 				return INVOICE_ITEM_SEQ_ID_TO_EDEFAULT == null ? invoiceItemSeqIdTo != null : !INVOICE_ITEM_SEQ_ID_TO_EDEFAULT.equals(invoiceItemSeqIdTo);
-			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID:
-				return INVOICE_ITEM_ASSOC_TYPE_ID_EDEFAULT == null ? invoiceItemAssocTypeId != null : !INVOICE_ITEM_ASSOC_TYPE_ID_EDEFAULT.equals(invoiceItemAssocTypeId);
 			case InvoicePackage.INVOICE_ITEM_ASSOC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case InvoicePackage.INVOICE_ITEM_ASSOC__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM:
-				return PARTY_ID_FROM_EDEFAULT == null ? partyIdFrom != null : !PARTY_ID_FROM_EDEFAULT.equals(partyIdFrom);
-			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO:
-				return PARTY_ID_TO_EDEFAULT == null ? partyIdTo != null : !PARTY_ID_TO_EDEFAULT.equals(partyIdTo);
 			case InvoicePackage.INVOICE_ITEM_ASSOC__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case InvoicePackage.INVOICE_ITEM_ASSOC__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case InvoicePackage.INVOICE_ITEM_ASSOC__INVOICE_ITEM_ASSOC_TYPE_ID:
+				return invoiceItemAssocTypeId != null;
+			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_FROM:
+				return partyIdFrom != null;
+			case InvoicePackage.INVOICE_ITEM_ASSOC__PARTY_ID_TO:
+				return partyIdTo != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -697,16 +727,10 @@ public class InvoiceItemAssocImpl extends BizEntityTypedImpl<InvoiceItemAssocTyp
 		result.append(invoiceIdTo);
 		result.append(", invoiceItemSeqIdTo: ");
 		result.append(invoiceItemSeqIdTo);
-		result.append(", invoiceItemAssocTypeId: ");
-		result.append(invoiceItemAssocTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", amount: ");
 		result.append(amount);
-		result.append(", partyIdFrom: ");
-		result.append(partyIdFrom);
-		result.append(", partyIdTo: ");
-		result.append(partyIdTo);
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", thruDate: ");

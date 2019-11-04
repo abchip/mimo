@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.manufacturing.mrp;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,13 +23,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getMrpId <em>Mrp Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getEventDate <em>Event Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getMrpEventTypeId <em>Mrp Event Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getEventName <em>Event Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#isIsLate <em>Is Late</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getMrpEventTypeId <em>Mrp Event Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent()
@@ -63,32 +65,30 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	void setMrpId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_ProductId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Event Date</b></em>' attribute.
@@ -118,32 +118,30 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	void setEventDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Mrp Event Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Mrp Event Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mrp Event Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mrp Event Type Id</em>' attribute.
-	 * @see #setMrpEventTypeId(String)
+	 * @return the value of the '<em>Mrp Event Type Id</em>' reference.
+	 * @see #setMrpEventTypeId(MrpEventType)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_MrpEventTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='MrpEventType'"
+	 * @model keys="mrpEventTypeId"
 	 * @generated
 	 */
-	String getMrpEventTypeId();
+	MrpEventType getMrpEventTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getMrpEventTypeId <em>Mrp Event Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getMrpEventTypeId <em>Mrp Event Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mrp Event Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Mrp Event Type Id</em>' reference.
 	 * @see #getMrpEventTypeId()
 	 * @generated
 	 */
-	void setMrpEventTypeId(String value);
+	void setMrpEventTypeId(MrpEventType value);
 
 	/**
 	 * Returns the value of the '<em><b>Event Name</b></em>' attribute.
@@ -172,30 +170,30 @@ public interface MrpEvent extends BizEntityTyped<MrpEventType> {
 	void setEventName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.manufacturing.mrp.MrpPackage#getMrpEvent_FacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.mrp.MrpEvent#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Late</b></em>' attribute.

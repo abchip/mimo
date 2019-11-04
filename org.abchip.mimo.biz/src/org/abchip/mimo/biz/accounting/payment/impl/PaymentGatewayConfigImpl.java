@@ -14,6 +14,8 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -74,23 +76,14 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPaymentGatewayConfigTypeId() <em>Payment Gateway Config Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPaymentGatewayConfigTypeId() <em>Payment Gateway Config Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPaymentGatewayConfigTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PAYMENT_GATEWAY_CONFIG_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigTypeId() <em>Payment Gateway Config Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayConfigTypeId = PAYMENT_GATEWAY_CONFIG_TYPE_ID_EDEFAULT;
+	protected PaymentGatewayConfigType paymentGatewayConfigTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,7 +133,24 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayConfigTypeId() {
+	public PaymentGatewayConfigType getPaymentGatewayConfigTypeId() {
+		if (paymentGatewayConfigTypeId != null && ((EObject)paymentGatewayConfigTypeId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayConfigTypeId = (InternalEObject)paymentGatewayConfigTypeId;
+			paymentGatewayConfigTypeId = (PaymentGatewayConfigType)eResolveProxy(oldPaymentGatewayConfigTypeId);
+			if (paymentGatewayConfigTypeId != oldPaymentGatewayConfigTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID, oldPaymentGatewayConfigTypeId, paymentGatewayConfigTypeId));
+			}
+		}
+		return paymentGatewayConfigTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayConfigType basicGetPaymentGatewayConfigTypeId() {
 		return paymentGatewayConfigTypeId;
 	}
 
@@ -150,8 +160,8 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigTypeId(String newPaymentGatewayConfigTypeId) {
-		String oldPaymentGatewayConfigTypeId = paymentGatewayConfigTypeId;
+	public void setPaymentGatewayConfigTypeId(PaymentGatewayConfigType newPaymentGatewayConfigTypeId) {
+		PaymentGatewayConfigType oldPaymentGatewayConfigTypeId = paymentGatewayConfigTypeId;
 		paymentGatewayConfigTypeId = newPaymentGatewayConfigTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID, oldPaymentGatewayConfigTypeId, paymentGatewayConfigTypeId));
@@ -193,7 +203,8 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 			case PaymentPackage.PAYMENT_GATEWAY_CONFIG__DESCRIPTION:
 				return getDescription();
 			case PaymentPackage.PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID:
-				return getPaymentGatewayConfigTypeId();
+				if (resolve) return getPaymentGatewayConfigTypeId();
+				return basicGetPaymentGatewayConfigTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,7 +224,7 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 				setDescription((String)newValue);
 				return;
 			case PaymentPackage.PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID:
-				setPaymentGatewayConfigTypeId((String)newValue);
+				setPaymentGatewayConfigTypeId((PaymentGatewayConfigType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -234,7 +245,7 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case PaymentPackage.PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID:
-				setPaymentGatewayConfigTypeId(PAYMENT_GATEWAY_CONFIG_TYPE_ID_EDEFAULT);
+				setPaymentGatewayConfigTypeId((PaymentGatewayConfigType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,7 +264,7 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 			case PaymentPackage.PAYMENT_GATEWAY_CONFIG__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PaymentPackage.PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID:
-				return PAYMENT_GATEWAY_CONFIG_TYPE_ID_EDEFAULT == null ? paymentGatewayConfigTypeId != null : !PAYMENT_GATEWAY_CONFIG_TYPE_ID_EDEFAULT.equals(paymentGatewayConfigTypeId);
+				return paymentGatewayConfigTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -272,8 +283,6 @@ public class PaymentGatewayConfigImpl extends BizEntityTypedImpl<PaymentGatewayC
 		result.append(paymentGatewayConfigId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", paymentGatewayConfigTypeId: ");
-		result.append(paymentGatewayConfigTypeId);
 		result.append(')');
 		return result.toString();
 	}

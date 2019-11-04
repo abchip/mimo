@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMechPurpose()
@@ -72,7 +72,6 @@ public interface PartyContactMechPurpose extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMechPurpose_PartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -114,59 +113,55 @@ public interface PartyContactMechPurpose extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Purpose Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Purpose Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' attribute.
-	 * @see #setContactMechPurposeTypeId(String)
+	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' reference.
+	 * @see #setContactMechPurposeTypeId(ContactMechPurposeType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMechPurpose_ContactMechPurposeTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMechPurposeType'"
+	 * @model keys="contactMechPurposeTypeId"
 	 * @generated
 	 */
-	String getContactMechPurposeTypeId();
+	ContactMechPurposeType getContactMechPurposeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Purpose Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Purpose Type Id</em>' reference.
 	 * @see #getContactMechPurposeTypeId()
 	 * @generated
 	 */
-	void setContactMechPurposeTypeId(String value);
+	void setContactMechPurposeTypeId(ContactMechPurposeType value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(TelecomNumber)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMechPurpose_ContactMechId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	TelecomNumber getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(TelecomNumber value);
 
 } // PartyContactMechPurpose

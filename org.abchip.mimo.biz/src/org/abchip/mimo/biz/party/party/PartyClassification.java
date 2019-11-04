@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification()
@@ -97,7 +97,6 @@ public interface PartyClassification extends BizEntityTyped<PartyClassificationT
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification_PartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -113,31 +112,29 @@ public interface PartyClassification extends BizEntityTyped<PartyClassificationT
 	void setPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Classification Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Classification Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Classification Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Classification Group Id</em>' attribute.
-	 * @see #setPartyClassificationGroupId(String)
+	 * @return the value of the '<em>Party Classification Group Id</em>' reference.
+	 * @see #setPartyClassificationGroupId(PartyClassificationGroup)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassification_PartyClassificationGroupId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PartyClassificationGroup'"
+	 * @model keys="partyClassificationGroupId"
 	 * @generated
 	 */
-	String getPartyClassificationGroupId();
+	PartyClassificationGroup getPartyClassificationGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyClassificationGroupId <em>Party Classification Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyClassification#getPartyClassificationGroupId <em>Party Classification Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Classification Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Classification Group Id</em>' reference.
 	 * @see #getPartyClassificationGroupId()
 	 * @generated
 	 */
-	void setPartyClassificationGroupId(String value);
+	void setPartyClassificationGroupId(PartyClassificationGroup value);
 
 } // PartyClassification

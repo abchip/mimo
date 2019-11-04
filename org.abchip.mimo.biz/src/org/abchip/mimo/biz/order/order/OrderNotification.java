@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.order;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,9 +23,9 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getOrderNotificationId <em>Order Notification Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getNotificationDate <em>Notification Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderNotification#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification()
@@ -59,30 +60,30 @@ public interface OrderNotification extends BizEntity {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Email Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Email Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Email Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Email Type</em>' attribute.
-	 * @see #setEmailType(String)
+	 * @return the value of the '<em>Email Type</em>' reference.
+	 * @see #setEmailType(Enumeration)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_EmailType()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getEmailType();
+	Enumeration getEmailType();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderNotification#getEmailType <em>Email Type</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderNotification#getEmailType <em>Email Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Email Type</em>' attribute.
+	 * @param value the new value of the '<em>Email Type</em>' reference.
 	 * @see #getEmailType()
 	 * @generated
 	 */
-	void setEmailType(String value);
+	void setEmailType(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Notification Date</b></em>' attribute.
@@ -111,30 +112,30 @@ public interface OrderNotification extends BizEntity {
 	void setNotificationDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Id</em>' attribute.
-	 * @see #setOrderId(String)
+	 * @return the value of the '<em>Order Id</em>' reference.
+	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_OrderId()
-	 * @model annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getOrderId();
+	OrderHeader getOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderNotification#getOrderId <em>Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderNotification#getOrderId <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Id</em>' reference.
 	 * @see #getOrderId()
 	 * @generated
 	 */
-	void setOrderId(String value);
+	void setOrderId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Notification Id</b></em>' attribute.
@@ -147,7 +148,7 @@ public interface OrderNotification extends BizEntity {
 	 * @return the value of the '<em>Order Notification Id</em>' attribute.
 	 * @see #setOrderNotificationId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderNotification_OrderNotificationId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

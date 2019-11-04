@@ -84,7 +84,7 @@ public interface GlAccountGroupType extends BizEntityType<GlAccountGroup> {
 	 * @return the value of the '<em>Gl Account Group Type Id</em>' attribute.
 	 * @see #setGlAccountGroupTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountGroupType_GlAccountGroupTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

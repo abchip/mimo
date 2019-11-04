@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.facility;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +22,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.ProductFacility#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.ProductFacility#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.ProductFacility#getDaysToShip <em>Days To Ship</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.ProductFacility#getLastInventoryCount <em>Last Inventory Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.ProductFacility#getMinimumStock <em>Minimum Stock</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.ProductFacility#getReorderQuantity <em>Reorder Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.ProductFacility#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.ProductFacility#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
  * </ul>
  *
@@ -123,8 +124,8 @@ public interface ProductFacility extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();
@@ -166,56 +167,55 @@ public interface ProductFacility extends BizEntity {
 	void setReorderQuantity(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Method Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Method Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Method Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Method Enum Id</em>' attribute.
-	 * @see #setRequirementMethodEnumId(String)
+	 * @return the value of the '<em>Requirement Method Enum Id</em>' reference.
+	 * @see #setRequirementMethodEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_RequirementMethodEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getRequirementMethodEnumId();
+	Enumeration getRequirementMethodEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.ProductFacility#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.ProductFacility#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Method Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Method Enum Id</em>' reference.
 	 * @see #getRequirementMethodEnumId()
 	 * @generated
 	 */
-	void setRequirementMethodEnumId(String value);
+	void setRequirementMethodEnumId(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getProductFacility_FacilityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.ProductFacility#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.ProductFacility#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 } // ProductFacility

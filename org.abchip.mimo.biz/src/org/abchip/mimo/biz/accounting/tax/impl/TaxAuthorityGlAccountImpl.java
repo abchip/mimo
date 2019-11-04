@@ -7,12 +7,16 @@
  */
 package org.abchip.mimo.biz.accounting.tax.impl;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityGlAccount;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -73,41 +77,23 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 	 */
 	protected String taxAuthPartyId = TAX_AUTH_PARTY_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
+	protected Party organizationPartyId;
 	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
+	protected GlAccount glAccountId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,7 +120,24 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -144,8 +147,8 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -203,7 +206,24 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountId() {
+	public GlAccount getGlAccountId() {
+		if (glAccountId != null && ((EObject)glAccountId).eIsProxy()) {
+			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
+			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
+			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
+			}
+		}
+		return glAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetGlAccountId() {
 		return glAccountId;
 	}
 
@@ -213,8 +233,8 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountId(String newGlAccountId) {
-		String oldGlAccountId = glAccountId;
+	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
@@ -233,9 +253,11 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__TAX_AUTH_PARTY_ID:
 				return getTaxAuthPartyId();
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__GL_ACCOUNT_ID:
-				return getGlAccountId();
+				if (resolve) return getGlAccountId();
+				return basicGetGlAccountId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -255,10 +277,10 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 				setTaxAuthPartyId((String)newValue);
 				return;
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
+				setOrganizationPartyId((Party)newValue);
 				return;
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__GL_ACCOUNT_ID:
-				setGlAccountId((String)newValue);
+				setGlAccountId((GlAccount)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -279,10 +301,10 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 				setTaxAuthPartyId(TAX_AUTH_PARTY_ID_EDEFAULT);
 				return;
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
+				setOrganizationPartyId((Party)null);
 				return;
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__GL_ACCOUNT_ID:
-				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
+				setGlAccountId((GlAccount)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -301,9 +323,9 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__TAX_AUTH_PARTY_ID:
 				return TAX_AUTH_PARTY_ID_EDEFAULT == null ? taxAuthPartyId != null : !TAX_AUTH_PARTY_ID_EDEFAULT.equals(taxAuthPartyId);
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
+				return organizationPartyId != null;
 			case TaxPackage.TAX_AUTHORITY_GL_ACCOUNT__GL_ACCOUNT_ID:
-				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
+				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -322,10 +344,6 @@ public class TaxAuthorityGlAccountImpl extends BizEntityImpl implements TaxAutho
 		result.append(taxAuthGeoId);
 		result.append(", taxAuthPartyId: ");
 		result.append(taxAuthPartyId);
-		result.append(", organizationPartyId: ");
-		result.append(organizationPartyId);
-		result.append(", glAccountId: ");
-		result.append(glAccountId);
 		result.append(')');
 		return result.toString();
 	}

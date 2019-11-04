@@ -13,11 +13,14 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -30,10 +33,10 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getInvoiceItemTypeAttrs <em>Invoice Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeImpl#getInvoiceItemTypeGlAccounts <em>Invoice Item Type Gl Accounts</em>}</li>
  * </ul>
@@ -63,24 +66,6 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * @ordered
 	 */
 	protected String invoiceItemTypeId = INVOICE_ITEM_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDefaultGlAccountId() <em>Default Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDefaultGlAccountId() <em>Default Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultGlAccountId = DEFAULT_GL_ACCOUNT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -119,23 +104,23 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
+	protected InvoiceItemType parentTypeId;
 	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getDefaultGlAccountId() <em>Default Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
+	 * @see #getDefaultGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected GlAccount defaultGlAccountId;
 
 	/**
 	 * The cached value of the '{@link #getInvoiceItemTypeAttrs() <em>Invoice Item Type Attrs</em>}' attribute list.
@@ -181,7 +166,24 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * @generated
 	 */
 	@Override
-	public String getDefaultGlAccountId() {
+	public GlAccount getDefaultGlAccountId() {
+		if (defaultGlAccountId != null && ((EObject)defaultGlAccountId).eIsProxy()) {
+			InternalEObject oldDefaultGlAccountId = (InternalEObject)defaultGlAccountId;
+			defaultGlAccountId = (GlAccount)eResolveProxy(oldDefaultGlAccountId);
+			if (defaultGlAccountId != oldDefaultGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
+			}
+		}
+		return defaultGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetDefaultGlAccountId() {
 		return defaultGlAccountId;
 	}
 
@@ -191,8 +193,8 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * @generated
 	 */
 	@Override
-	public void setDefaultGlAccountId(String newDefaultGlAccountId) {
-		String oldDefaultGlAccountId = defaultGlAccountId;
+	public void setDefaultGlAccountId(GlAccount newDefaultGlAccountId) {
+		GlAccount oldDefaultGlAccountId = defaultGlAccountId;
 		defaultGlAccountId = newDefaultGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
@@ -250,7 +252,24 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public InvoiceItemType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (InvoiceItemType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvoiceItemType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -260,8 +279,8 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(InvoiceItemType newParentTypeId) {
+		InvoiceItemType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -374,14 +393,16 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID:
 				return getInvoiceItemTypeId();
-			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				return getDefaultGlAccountId();
 			case InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION:
 				return getDescription();
 			case InvoicePackage.INVOICE_ITEM_TYPE__HAS_TABLE:
 				return isHasTable();
 			case InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
+			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
+				if (resolve) return getDefaultGlAccountId();
+				return basicGetDefaultGlAccountId();
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS:
 				return getInvoiceItemTypeAttrs();
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS:
@@ -402,9 +423,6 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID:
 				setInvoiceItemTypeId((String)newValue);
 				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				setDefaultGlAccountId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -412,7 +430,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 				setHasTable((Boolean)newValue);
 				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((InvoiceItemType)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
+				setDefaultGlAccountId((GlAccount)newValue);
 				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS:
 				getInvoiceItemTypeAttrs().clear();
@@ -437,9 +458,6 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID:
 				setInvoiceItemTypeId(INVOICE_ITEM_TYPE_ID_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				setDefaultGlAccountId(DEFAULT_GL_ACCOUNT_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -447,7 +465,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((InvoiceItemType)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
+				setDefaultGlAccountId((GlAccount)null);
 				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS:
 				getInvoiceItemTypeAttrs().clear();
@@ -469,14 +490,14 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ID:
 				return INVOICE_ITEM_TYPE_ID_EDEFAULT == null ? invoiceItemTypeId != null : !INVOICE_ITEM_TYPE_ID_EDEFAULT.equals(invoiceItemTypeId);
-			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				return DEFAULT_GL_ACCOUNT_ID_EDEFAULT == null ? defaultGlAccountId != null : !DEFAULT_GL_ACCOUNT_ID_EDEFAULT.equals(defaultGlAccountId);
 			case InvoicePackage.INVOICE_ITEM_TYPE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case InvoicePackage.INVOICE_ITEM_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case InvoicePackage.INVOICE_ITEM_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
+			case InvoicePackage.INVOICE_ITEM_TYPE__DEFAULT_GL_ACCOUNT_ID:
+				return defaultGlAccountId != null;
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_ATTRS:
 				return invoiceItemTypeAttrs != null && !invoiceItemTypeAttrs.isEmpty();
 			case InvoicePackage.INVOICE_ITEM_TYPE__INVOICE_ITEM_TYPE_GL_ACCOUNTS:
@@ -497,14 +518,10 @@ public class InvoiceItemTypeImpl extends BizEntityTypeImpl<InvoiceItem> implemen
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (invoiceItemTypeId: ");
 		result.append(invoiceItemTypeId);
-		result.append(", defaultGlAccountId: ");
-		result.append(defaultGlAccountId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", invoiceItemTypeAttrs: ");
 		result.append(invoiceItemTypeAttrs);
 		result.append(", invoiceItemTypeGlAccounts: ");

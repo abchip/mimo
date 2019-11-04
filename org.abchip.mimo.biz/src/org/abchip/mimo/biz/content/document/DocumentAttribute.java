@@ -121,7 +121,6 @@ public interface DocumentAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentAttribute_DocumentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Document'"
 	 * @generated
 	 */
 	String getDocumentId();

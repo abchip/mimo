@@ -65,7 +65,8 @@ public interface InvoiceTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface InvoiceTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Invoice Type Id</em>' attribute.
 	 * @see #setInvoiceTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTypeAttr_InvoiceTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceTypeId();

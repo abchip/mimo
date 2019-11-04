@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface QuotePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-order-quote";
+	String eNS_PREFIX = "biz-quote";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,22 +117,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE__QUOTE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Currency Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int QUOTE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Issue Date</b></em>' attribute.
@@ -140,25 +132,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE__ISSUE_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int QUOTE__ISSUE_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Quote Name</b></em>' attribute.
@@ -167,34 +141,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE__QUOTE_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Quote Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE__QUOTE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Sales Channel Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE__SALES_CHANNEL_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int QUOTE__QUOTE_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Valid From Date</b></em>' attribute.
@@ -203,7 +150,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE__VALID_FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int QUOTE__VALID_FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Valid Thru Date</b></em>' attribute.
@@ -212,7 +159,61 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE__VALID_THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int QUOTE__VALID_THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Quote Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE__QUOTE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Sales Channel Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE__SALES_CHANNEL_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Quote Attributes</b></em>' attribute list.
@@ -351,22 +352,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_ADJUSTMENT__CORRESPONDING_PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Created By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ADJUSTMENT__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Created Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__CREATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int QUOTE_ADJUSTMENT__CREATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Customer Reference Id</b></em>' attribute.
@@ -375,7 +367,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__CUSTOMER_REFERENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int QUOTE_ADJUSTMENT__CUSTOMER_REFERENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -384,7 +376,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int QUOTE_ADJUSTMENT__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Exempt Amount</b></em>' attribute.
@@ -393,7 +385,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__EXEMPT_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int QUOTE_ADJUSTMENT__EXEMPT_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Include In Shipping</b></em>' attribute.
@@ -402,7 +394,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__INCLUDE_IN_SHIPPING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int QUOTE_ADJUSTMENT__INCLUDE_IN_SHIPPING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Include In Tax</b></em>' attribute.
@@ -411,7 +403,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__INCLUDE_IN_TAX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int QUOTE_ADJUSTMENT__INCLUDE_IN_TAX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' attribute.
@@ -420,7 +412,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int QUOTE_ADJUSTMENT__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified Date</b></em>' attribute.
@@ -429,25 +421,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Override Gl Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
-
-	/**
-	 * The feature id for the '<em><b>Primary Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ADJUSTMENT__PRIMARY_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int QUOTE_ADJUSTMENT__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Product Feature Id</b></em>' attribute.
@@ -456,7 +430,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int QUOTE_ADJUSTMENT__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Product Promo Action Seq Id</b></em>' attribute.
@@ -465,16 +439,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
-
-	/**
-	 * The feature id for the '<em><b>Product Promo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ADJUSTMENT__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int QUOTE_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Product Promo Rule Id</b></em>' attribute.
@@ -483,25 +448,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__PRODUCT_PROMO_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
-
-	/**
-	 * The feature id for the '<em><b>Quote Adjustment Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ADJUSTMENT__QUOTE_ADJUSTMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
-
-	/**
-	 * The feature id for the '<em><b>Quote Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ADJUSTMENT__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int QUOTE_ADJUSTMENT__PRODUCT_PROMO_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Quote Item Seq Id</b></em>' attribute.
@@ -510,16 +457,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
-
-	/**
-	 * The feature id for the '<em><b>Secondary Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ADJUSTMENT__SECONDARY_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+	int QUOTE_ADJUSTMENT__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Source Percentage</b></em>' attribute.
@@ -528,7 +466,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__SOURCE_PERCENTAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
+	int QUOTE_ADJUSTMENT__SOURCE_PERCENTAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Source Reference Id</b></em>' attribute.
@@ -537,7 +475,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__SOURCE_REFERENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 24;
+	int QUOTE_ADJUSTMENT__SOURCE_REFERENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Tax Auth Geo Id</b></em>' attribute.
@@ -546,7 +484,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 25;
+	int QUOTE_ADJUSTMENT__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Tax Auth Party Id</b></em>' attribute.
@@ -555,7 +493,70 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ADJUSTMENT__TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 26;
+	int QUOTE_ADJUSTMENT__TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Quote Adjustment Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ADJUSTMENT__QUOTE_ADJUSTMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+
+	/**
+	 * The feature id for the '<em><b>Quote Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ADJUSTMENT__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>Created By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ADJUSTMENT__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+
+	/**
+	 * The feature id for the '<em><b>Product Promo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ADJUSTMENT__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
+
+	/**
+	 * The feature id for the '<em><b>Primary Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ADJUSTMENT__PRIMARY_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 24;
+
+	/**
+	 * The feature id for the '<em><b>Secondary Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ADJUSTMENT__SECONDARY_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 25;
+
+	/**
+	 * The feature id for the '<em><b>Override Gl Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 26;
 
 	/**
 	 * The number of structural features of the '<em>Adjustment</em>' class.
@@ -822,31 +823,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_ITEM__CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Cust Request Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ITEM__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Cust Request Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Deliverable Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ITEM__DELIVERABLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Delivery Date</b></em>' attribute.
@@ -855,7 +838,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__ESTIMATED_DELIVERY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int QUOTE_ITEM__ESTIMATED_DELIVERY_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Is Promo</b></em>' attribute.
@@ -864,7 +847,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__IS_PROMO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int QUOTE_ITEM__IS_PROMO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Lead Time Days</b></em>' attribute.
@@ -873,25 +856,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__LEAD_TIME_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Product Feature Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ITEM__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ITEM__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int QUOTE_ITEM__LEAD_TIME_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -900,7 +865,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int QUOTE_ITEM__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Quote Unit Price</b></em>' attribute.
@@ -909,7 +874,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__QUOTE_UNIT_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int QUOTE_ITEM__QUOTE_UNIT_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Length</b></em>' attribute.
@@ -918,7 +883,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__RESERV_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int QUOTE_ITEM__RESERV_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Persons</b></em>' attribute.
@@ -927,7 +892,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__RESERV_PERSONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int QUOTE_ITEM__RESERV_PERSONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Start</b></em>' attribute.
@@ -936,7 +901,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__RESERV_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int QUOTE_ITEM__RESERV_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Selected Amount</b></em>' attribute.
@@ -945,34 +910,70 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__SELECTED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int QUOTE_ITEM__SELECTED_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
-	 * The feature id for the '<em><b>Skill Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__SKILL_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int QUOTE_ITEM__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
-	 * The feature id for the '<em><b>Uom Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Product Feature Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+	int QUOTE_ITEM__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Deliverable Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ITEM__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int QUOTE_ITEM__DELIVERABLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Skill Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ITEM__SKILL_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ITEM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ITEM__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Cust Request Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ITEM__CUST_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of structural features of the '<em>Item</em>' class.
@@ -1121,31 +1122,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_ROLE__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int QUOTE_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1154,7 +1137,25 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int QUOTE_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -1221,22 +1222,13 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Quote Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUOTE_TERM__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Quote Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int QUOTE_TERM__QUOTE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1245,7 +1237,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int QUOTE_TERM__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Term Days</b></em>' attribute.
@@ -1254,7 +1246,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int QUOTE_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Term Value</b></em>' attribute.
@@ -1263,7 +1255,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int QUOTE_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Text Value</b></em>' attribute.
@@ -1272,7 +1264,7 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int QUOTE_TERM__TEXT_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Uom Id</b></em>' attribute.
@@ -1281,7 +1273,16 @@ public interface QuotePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUOTE_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int QUOTE_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Quote Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUOTE_TERM__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -1484,7 +1485,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1648,7 +1649,7 @@ public interface QuotePackage extends EPackage {
 	int QUOTE_WORK_EFFORT__QUOTE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1688,15 +1689,15 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuote_QuoteId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.Quote#getCurrencyUomId <em>Currency Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.Quote#getCurrencyUomId <em>Currency Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Currency Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Currency Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getCurrencyUomId()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_CurrencyUomId();
+	EReference getQuote_CurrencyUomId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.Quote#getDescription <em>Description</em>}'.
@@ -1721,26 +1722,26 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuote_IssueDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.Quote#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.Quote#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getPartyId()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_PartyId();
+	EReference getQuote_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.Quote#getProductStoreId <em>Product Store Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.Quote#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getProductStoreId()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_ProductStoreId();
+	EReference getQuote_ProductStoreId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteName <em>Quote Name</em>}'.
@@ -1754,37 +1755,37 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuote_QuoteName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId <em>Quote Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId <em>Quote Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Type Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_QuoteTypeId();
+	EReference getQuote_QuoteTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sales Channel Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Sales Channel Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_SalesChannelEnumId();
+	EReference getQuote_SalesChannelEnumId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.Quote#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.Quote#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.Quote#getStatusId()
 	 * @see #getQuote()
 	 * @generated
 	 */
-	EAttribute getQuote_StatusId();
+	EReference getQuote_StatusId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.Quote#getValidFromDate <em>Valid From Date</em>}'.
@@ -1918,15 +1919,15 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteAdjustment_CorrespondingProductId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Created By User Login</em>'.
+	 * @return the meta object for the reference '<em>Created By User Login</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedByUserLogin()
 	 * @see #getQuoteAdjustment()
 	 * @generated
 	 */
-	EAttribute getQuoteAdjustment_CreatedByUserLogin();
+	EReference getQuoteAdjustment_CreatedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedDate <em>Created Date</em>}'.
@@ -2017,26 +2018,26 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteAdjustment_LastModifiedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Override Gl Account Id</em>'.
+	 * @return the meta object for the reference '<em>Override Gl Account Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteAdjustment#getOverrideGlAccountId()
 	 * @see #getQuoteAdjustment()
 	 * @generated
 	 */
-	EAttribute getQuoteAdjustment_OverrideGlAccountId();
+	EReference getQuoteAdjustment_OverrideGlAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Primary Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Primary Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteAdjustment#getPrimaryGeoId()
 	 * @see #getQuoteAdjustment()
 	 * @generated
 	 */
-	EAttribute getQuoteAdjustment_PrimaryGeoId();
+	EReference getQuoteAdjustment_PrimaryGeoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductFeatureId <em>Product Feature Id</em>}'.
@@ -2061,15 +2062,15 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteAdjustment_ProductPromoActionSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoId <em>Product Promo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoId <em>Product Promo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoId()
 	 * @see #getQuoteAdjustment()
 	 * @generated
 	 */
-	EAttribute getQuoteAdjustment_ProductPromoId();
+	EReference getQuoteAdjustment_ProductPromoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoRuleId <em>Product Promo Rule Id</em>}'.
@@ -2083,26 +2084,26 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteAdjustment_ProductPromoRuleId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Adjustment Type Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Adjustment Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteAdjustmentTypeId()
 	 * @see #getQuoteAdjustment()
 	 * @generated
 	 */
-	EAttribute getQuoteAdjustment_QuoteAdjustmentTypeId();
+	EReference getQuoteAdjustment_QuoteAdjustmentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteId <em>Quote Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteId <em>Quote Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteId()
 	 * @see #getQuoteAdjustment()
 	 * @generated
 	 */
-	EAttribute getQuoteAdjustment_QuoteId();
+	EReference getQuoteAdjustment_QuoteId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteItemSeqId <em>Quote Item Seq Id</em>}'.
@@ -2116,15 +2117,15 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteAdjustment_QuoteItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Secondary Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Secondary Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSecondaryGeoId()
 	 * @see #getQuoteAdjustment()
 	 * @generated
 	 */
-	EAttribute getQuoteAdjustment_SecondaryGeoId();
+	EReference getQuoteAdjustment_SecondaryGeoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSourcePercentage <em>Source Percentage</em>}'.
@@ -2322,15 +2323,15 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteItem_ConfigId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getCustRequestId <em>Cust Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getCustRequestId <em>Cust Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cust Request Id</em>'.
+	 * @return the meta object for the reference '<em>Cust Request Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteItem#getCustRequestId()
 	 * @see #getQuoteItem()
 	 * @generated
 	 */
-	EAttribute getQuoteItem_CustRequestId();
+	EReference getQuoteItem_CustRequestId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}'.
@@ -2344,15 +2345,15 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteItem_CustRequestItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getDeliverableTypeId <em>Deliverable Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getDeliverableTypeId <em>Deliverable Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Deliverable Type Id</em>'.
+	 * @return the meta object for the reference '<em>Deliverable Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteItem#getDeliverableTypeId()
 	 * @see #getQuoteItem()
 	 * @generated
 	 */
-	EAttribute getQuoteItem_DeliverableTypeId();
+	EReference getQuoteItem_DeliverableTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getEstimatedDeliveryDate <em>Estimated Delivery Date</em>}'.
@@ -2388,26 +2389,26 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteItem_LeadTimeDays();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getProductFeatureId <em>Product Feature Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getProductFeatureId <em>Product Feature Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Feature Id</em>'.
+	 * @return the meta object for the reference '<em>Product Feature Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteItem#getProductFeatureId()
 	 * @see #getQuoteItem()
 	 * @generated
 	 */
-	EAttribute getQuoteItem_ProductFeatureId();
+	EReference getQuoteItem_ProductFeatureId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getProductId <em>Product Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getProductId <em>Product Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id</em>'.
+	 * @return the meta object for the reference '<em>Product Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteItem#getProductId()
 	 * @see #getQuoteItem()
 	 * @generated
 	 */
-	EAttribute getQuoteItem_ProductId();
+	EReference getQuoteItem_ProductId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getQuantity <em>Quantity</em>}'.
@@ -2476,37 +2477,37 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteItem_SelectedAmount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getSkillTypeId <em>Skill Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getSkillTypeId <em>Skill Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Skill Type Id</em>'.
+	 * @return the meta object for the reference '<em>Skill Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteItem#getSkillTypeId()
 	 * @see #getQuoteItem()
 	 * @generated
 	 */
-	EAttribute getQuoteItem_SkillTypeId();
+	EReference getQuoteItem_SkillTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getUomId <em>Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getUomId <em>Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteItem#getUomId()
 	 * @see #getQuoteItem()
 	 * @generated
 	 */
-	EAttribute getQuoteItem_UomId();
+	EReference getQuoteItem_UomId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getWorkEffortId <em>Work Effort Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteItem#getWorkEffortId <em>Work Effort Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Work Effort Id</em>'.
+	 * @return the meta object for the reference '<em>Work Effort Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteItem#getWorkEffortId()
 	 * @see #getQuoteItem()
 	 * @generated
 	 */
-	EAttribute getQuoteItem_WorkEffortId();
+	EReference getQuoteItem_WorkEffortId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.quote.QuoteNote <em>Note</em>}'.
@@ -2551,26 +2552,26 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteRole_QuoteId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteRole#getPartyId()
 	 * @see #getQuoteRole()
 	 * @generated
 	 */
-	EAttribute getQuoteRole_PartyId();
+	EReference getQuoteRole_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getRoleTypeId <em>Role Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getRoleTypeId <em>Role Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteRole#getRoleTypeId()
 	 * @see #getQuoteRole()
 	 * @generated
 	 */
-	EAttribute getQuoteRole_RoleTypeId();
+	EReference getQuoteRole_RoleTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteRole#getFromDate <em>From Date</em>}'.
@@ -2616,15 +2617,15 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteTerm_TermTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteId <em>Quote Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteId <em>Quote Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quote Id</em>'.
+	 * @return the meta object for the reference '<em>Quote Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteId()
 	 * @see #getQuoteTerm()
 	 * @generated
 	 */
-	EAttribute getQuoteTerm_QuoteId();
+	EReference getQuoteTerm_QuoteId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteItemSeqId <em>Quote Item Seq Id</em>}'.
@@ -2812,15 +2813,15 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteType#getParentTypeId()
 	 * @see #getQuoteType()
 	 * @generated
 	 */
-	EAttribute getQuoteType_ParentTypeId();
+	EReference getQuoteType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.quote.QuoteType#getQuoteTypeAttrs <em>Quote Type Attrs</em>}'.
@@ -2898,15 +2899,15 @@ public interface QuotePackage extends EPackage {
 	EAttribute getQuoteWorkEffort_QuoteId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.quote.QuoteWorkEffort#getWorkEffortId <em>Work Effort Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.quote.QuoteWorkEffort#getWorkEffortId <em>Work Effort Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Work Effort Id</em>'.
+	 * @return the meta object for the reference '<em>Work Effort Id</em>'.
 	 * @see org.abchip.mimo.biz.order.quote.QuoteWorkEffort#getWorkEffortId()
 	 * @see #getQuoteWorkEffort()
 	 * @generated
 	 */
-	EAttribute getQuoteWorkEffort_WorkEffortId();
+	EReference getQuoteWorkEffort_WorkEffortId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2949,12 +2950,12 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE__QUOTE_ID = eINSTANCE.getQuote_QuoteId();
 
 		/**
-		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__CURRENCY_UOM_ID = eINSTANCE.getQuote_CurrencyUomId();
+		EReference QUOTE__CURRENCY_UOM_ID = eINSTANCE.getQuote_CurrencyUomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -2973,20 +2974,20 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE__ISSUE_DATE = eINSTANCE.getQuote_IssueDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__PARTY_ID = eINSTANCE.getQuote_PartyId();
+		EReference QUOTE__PARTY_ID = eINSTANCE.getQuote_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__PRODUCT_STORE_ID = eINSTANCE.getQuote_ProductStoreId();
+		EReference QUOTE__PRODUCT_STORE_ID = eINSTANCE.getQuote_ProductStoreId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quote Name</b></em>' attribute feature.
@@ -2997,28 +2998,28 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE__QUOTE_NAME = eINSTANCE.getQuote_QuoteName();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__QUOTE_TYPE_ID = eINSTANCE.getQuote_QuoteTypeId();
+		EReference QUOTE__QUOTE_TYPE_ID = eINSTANCE.getQuote_QuoteTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Sales Channel Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Sales Channel Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__SALES_CHANNEL_ENUM_ID = eINSTANCE.getQuote_SalesChannelEnumId();
+		EReference QUOTE__SALES_CHANNEL_ENUM_ID = eINSTANCE.getQuote_SalesChannelEnumId();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE__STATUS_ID = eINSTANCE.getQuote_StatusId();
+		EReference QUOTE__STATUS_ID = eINSTANCE.getQuote_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Valid From Date</b></em>' attribute feature.
@@ -3119,12 +3120,12 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ADJUSTMENT__CORRESPONDING_PRODUCT_ID = eINSTANCE.getQuoteAdjustment_CorrespondingProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Created By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Created By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ADJUSTMENT__CREATED_BY_USER_LOGIN = eINSTANCE.getQuoteAdjustment_CreatedByUserLogin();
+		EReference QUOTE_ADJUSTMENT__CREATED_BY_USER_LOGIN = eINSTANCE.getQuoteAdjustment_CreatedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Created Date</b></em>' attribute feature.
@@ -3191,20 +3192,20 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ADJUSTMENT__LAST_MODIFIED_DATE = eINSTANCE.getQuoteAdjustment_LastModifiedDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Override Gl Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Override Gl Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID = eINSTANCE.getQuoteAdjustment_OverrideGlAccountId();
+		EReference QUOTE_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID = eINSTANCE.getQuoteAdjustment_OverrideGlAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Primary Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Primary Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ADJUSTMENT__PRIMARY_GEO_ID = eINSTANCE.getQuoteAdjustment_PrimaryGeoId();
+		EReference QUOTE_ADJUSTMENT__PRIMARY_GEO_ID = eINSTANCE.getQuoteAdjustment_PrimaryGeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Product Feature Id</b></em>' attribute feature.
@@ -3223,12 +3224,12 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID = eINSTANCE.getQuoteAdjustment_ProductPromoActionSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ADJUSTMENT__PRODUCT_PROMO_ID = eINSTANCE.getQuoteAdjustment_ProductPromoId();
+		EReference QUOTE_ADJUSTMENT__PRODUCT_PROMO_ID = eINSTANCE.getQuoteAdjustment_ProductPromoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Product Promo Rule Id</b></em>' attribute feature.
@@ -3239,20 +3240,20 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ADJUSTMENT__PRODUCT_PROMO_RULE_ID = eINSTANCE.getQuoteAdjustment_ProductPromoRuleId();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Adjustment Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Adjustment Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ADJUSTMENT__QUOTE_ADJUSTMENT_TYPE_ID = eINSTANCE.getQuoteAdjustment_QuoteAdjustmentTypeId();
+		EReference QUOTE_ADJUSTMENT__QUOTE_ADJUSTMENT_TYPE_ID = eINSTANCE.getQuoteAdjustment_QuoteAdjustmentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ADJUSTMENT__QUOTE_ID = eINSTANCE.getQuoteAdjustment_QuoteId();
+		EReference QUOTE_ADJUSTMENT__QUOTE_ID = eINSTANCE.getQuoteAdjustment_QuoteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quote Item Seq Id</b></em>' attribute feature.
@@ -3263,12 +3264,12 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ADJUSTMENT__QUOTE_ITEM_SEQ_ID = eINSTANCE.getQuoteAdjustment_QuoteItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Secondary Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Secondary Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ADJUSTMENT__SECONDARY_GEO_ID = eINSTANCE.getQuoteAdjustment_SecondaryGeoId();
+		EReference QUOTE_ADJUSTMENT__SECONDARY_GEO_ID = eINSTANCE.getQuoteAdjustment_SecondaryGeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Source Percentage</b></em>' attribute feature.
@@ -3421,12 +3422,12 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ITEM__CONFIG_ID = eINSTANCE.getQuoteItem_ConfigId();
 
 		/**
-		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cust Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ITEM__CUST_REQUEST_ID = eINSTANCE.getQuoteItem_CustRequestId();
+		EReference QUOTE_ITEM__CUST_REQUEST_ID = eINSTANCE.getQuoteItem_CustRequestId();
 
 		/**
 		 * The meta object literal for the '<em><b>Cust Request Item Seq Id</b></em>' attribute feature.
@@ -3437,12 +3438,12 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID = eINSTANCE.getQuoteItem_CustRequestItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Deliverable Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Deliverable Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ITEM__DELIVERABLE_TYPE_ID = eINSTANCE.getQuoteItem_DeliverableTypeId();
+		EReference QUOTE_ITEM__DELIVERABLE_TYPE_ID = eINSTANCE.getQuoteItem_DeliverableTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Estimated Delivery Date</b></em>' attribute feature.
@@ -3469,20 +3470,20 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ITEM__LEAD_TIME_DAYS = eINSTANCE.getQuoteItem_LeadTimeDays();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Feature Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Feature Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ITEM__PRODUCT_FEATURE_ID = eINSTANCE.getQuoteItem_ProductFeatureId();
+		EReference QUOTE_ITEM__PRODUCT_FEATURE_ID = eINSTANCE.getQuoteItem_ProductFeatureId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ITEM__PRODUCT_ID = eINSTANCE.getQuoteItem_ProductId();
+		EReference QUOTE_ITEM__PRODUCT_ID = eINSTANCE.getQuoteItem_ProductId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
@@ -3533,28 +3534,28 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ITEM__SELECTED_AMOUNT = eINSTANCE.getQuoteItem_SelectedAmount();
 
 		/**
-		 * The meta object literal for the '<em><b>Skill Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Skill Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ITEM__SKILL_TYPE_ID = eINSTANCE.getQuoteItem_SkillTypeId();
+		EReference QUOTE_ITEM__SKILL_TYPE_ID = eINSTANCE.getQuoteItem_SkillTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ITEM__UOM_ID = eINSTANCE.getQuoteItem_UomId();
+		EReference QUOTE_ITEM__UOM_ID = eINSTANCE.getQuoteItem_UomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ITEM__WORK_EFFORT_ID = eINSTANCE.getQuoteItem_WorkEffortId();
+		EReference QUOTE_ITEM__WORK_EFFORT_ID = eINSTANCE.getQuoteItem_WorkEffortId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.quote.impl.QuoteNoteImpl <em>Note</em>}' class.
@@ -3593,20 +3594,20 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_ROLE__QUOTE_ID = eINSTANCE.getQuoteRole_QuoteId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ROLE__PARTY_ID = eINSTANCE.getQuoteRole_PartyId();
+		EReference QUOTE_ROLE__PARTY_ID = eINSTANCE.getQuoteRole_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_ROLE__ROLE_TYPE_ID = eINSTANCE.getQuoteRole_RoleTypeId();
+		EReference QUOTE_ROLE__ROLE_TYPE_ID = eINSTANCE.getQuoteRole_RoleTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -3643,12 +3644,12 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_TERM__TERM_TYPE_ID = eINSTANCE.getQuoteTerm_TermTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Quote Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quote Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_TERM__QUOTE_ID = eINSTANCE.getQuoteTerm_QuoteId();
+		EReference QUOTE_TERM__QUOTE_ID = eINSTANCE.getQuoteTerm_QuoteId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quote Item Seq Id</b></em>' attribute feature.
@@ -3791,12 +3792,12 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_TYPE__HAS_TABLE = eINSTANCE.getQuoteType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_TYPE__PARENT_TYPE_ID = eINSTANCE.getQuoteType_ParentTypeId();
+		EReference QUOTE_TYPE__PARENT_TYPE_ID = eINSTANCE.getQuoteType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quote Type Attrs</b></em>' attribute list feature.
@@ -3859,12 +3860,12 @@ public interface QuotePackage extends EPackage {
 		EAttribute QUOTE_WORK_EFFORT__QUOTE_ID = eINSTANCE.getQuoteWorkEffort_QuoteId();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUOTE_WORK_EFFORT__WORK_EFFORT_ID = eINSTANCE.getQuoteWorkEffort_WorkEffortId();
+		EReference QUOTE_WORK_EFFORT__WORK_EFFORT_ID = eINSTANCE.getQuoteWorkEffort_WorkEffortId();
 
 	}
 

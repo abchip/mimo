@@ -14,6 +14,8 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentImpl#getFixedAssetIdentTypeId <em>Fixed Asset Ident Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentImpl#getIdValue <em>Id Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetIdentImpl#getFixedAssetIdentTypeId <em>Fixed Asset Ident Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,24 +58,6 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFixedAssetIdentTypeId() <em>Fixed Asset Ident Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetIdentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetIdentTypeId() <em>Fixed Asset Ident Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetIdentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetIdentTypeId = FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getIdValue() <em>Id Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,6 +75,15 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	 * @ordered
 	 */
 	protected String idValue = ID_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFixedAssetIdentTypeId() <em>Fixed Asset Ident Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetIdentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAssetIdentType fixedAssetIdentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,7 +156,24 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetIdentTypeId() {
+	public FixedAssetIdentType getFixedAssetIdentTypeId() {
+		if (fixedAssetIdentTypeId != null && ((EObject)fixedAssetIdentTypeId).eIsProxy()) {
+			InternalEObject oldFixedAssetIdentTypeId = (InternalEObject)fixedAssetIdentTypeId;
+			fixedAssetIdentTypeId = (FixedAssetIdentType)eResolveProxy(oldFixedAssetIdentTypeId);
+			if (fixedAssetIdentTypeId != oldFixedAssetIdentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID, oldFixedAssetIdentTypeId, fixedAssetIdentTypeId));
+			}
+		}
+		return fixedAssetIdentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAssetIdentType basicGetFixedAssetIdentTypeId() {
 		return fixedAssetIdentTypeId;
 	}
 
@@ -173,8 +183,8 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetIdentTypeId(String newFixedAssetIdentTypeId) {
-		String oldFixedAssetIdentTypeId = fixedAssetIdentTypeId;
+	public void setFixedAssetIdentTypeId(FixedAssetIdentType newFixedAssetIdentTypeId) {
+		FixedAssetIdentType oldFixedAssetIdentTypeId = fixedAssetIdentTypeId;
 		fixedAssetIdentTypeId = newFixedAssetIdentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID, oldFixedAssetIdentTypeId, fixedAssetIdentTypeId));
@@ -190,10 +200,11 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
 				return getFixedAssetId();
-			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
-				return getFixedAssetIdentTypeId();
 			case FixedassetPackage.FIXED_ASSET_IDENT__ID_VALUE:
 				return getIdValue();
+			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
+				if (resolve) return getFixedAssetIdentTypeId();
+				return basicGetFixedAssetIdentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,11 +220,11 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
 				setFixedAssetId((String)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
-				setFixedAssetIdentTypeId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_IDENT__ID_VALUE:
 				setIdValue((String)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
+				setFixedAssetIdentTypeId((FixedAssetIdentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,11 +241,11 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
 				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
-				setFixedAssetIdentTypeId(FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_IDENT__ID_VALUE:
 				setIdValue(ID_VALUE_EDEFAULT);
+				return;
+			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
+				setFixedAssetIdentTypeId((FixedAssetIdentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -250,10 +261,10 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_ID:
 				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
-			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
-				return FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT == null ? fixedAssetIdentTypeId != null : !FIXED_ASSET_IDENT_TYPE_ID_EDEFAULT.equals(fixedAssetIdentTypeId);
 			case FixedassetPackage.FIXED_ASSET_IDENT__ID_VALUE:
 				return ID_VALUE_EDEFAULT == null ? idValue != null : !ID_VALUE_EDEFAULT.equals(idValue);
+			case FixedassetPackage.FIXED_ASSET_IDENT__FIXED_ASSET_IDENT_TYPE_ID:
+				return fixedAssetIdentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,8 +281,6 @@ public class FixedAssetIdentImpl extends BizEntityTypedImpl<FixedAssetIdentType>
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (fixedAssetId: ");
 		result.append(fixedAssetId);
-		result.append(", fixedAssetIdentTypeId: ");
-		result.append(fixedAssetIdentTypeId);
 		result.append(", idValue: ");
 		result.append(idValue);
 		result.append(')');

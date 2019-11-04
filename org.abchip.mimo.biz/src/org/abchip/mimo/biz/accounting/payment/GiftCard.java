@@ -7,6 +7,8 @@
  */
 package org.abchip.mimo.biz.accounting.payment;
 
+import org.abchip.mimo.biz.party.contact.PostalAddress;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Gift Card</b></em>'.
@@ -17,9 +19,9 @@ package org.abchip.mimo.biz.accounting.payment;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getCardNumber <em>Card Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getExpireDate <em>Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getPinNumber <em>Pin Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCard()
@@ -54,30 +56,30 @@ public interface GiftCard extends PaymentMethod {
 	void setCardNumber(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(PostalAddress)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getGiftCard_ContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	PostalAddress getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(PostalAddress value);
 
 	/**
 	 * Returns the value of the '<em><b>Expire Date</b></em>' attribute.

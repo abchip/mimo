@@ -10,9 +10,12 @@ package org.abchip.mimo.biz.party.agreement.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementWorkEffortApplic;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -72,23 +75,14 @@ public class AgreementWorkEffortApplicImpl extends BizEntityImpl implements Agre
 	 */
 	protected String agreementItemSeqId = AGREEMENT_ITEM_SEQ_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWorkEffortId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
+	protected WorkEffort workEffortId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +132,24 @@ public class AgreementWorkEffortApplicImpl extends BizEntityImpl implements Agre
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_WORK_EFFORT_APPLIC__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -148,8 +159,8 @@ public class AgreementWorkEffortApplicImpl extends BizEntityImpl implements Agre
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_WORK_EFFORT_APPLIC__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -191,7 +202,8 @@ public class AgreementWorkEffortApplicImpl extends BizEntityImpl implements Agre
 			case AgreementPackage.AGREEMENT_WORK_EFFORT_APPLIC__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
 			case AgreementPackage.AGREEMENT_WORK_EFFORT_APPLIC__WORK_EFFORT_ID:
-				return getWorkEffortId();
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,7 +223,7 @@ public class AgreementWorkEffortApplicImpl extends BizEntityImpl implements Agre
 				setAgreementItemSeqId((String)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_WORK_EFFORT_APPLIC__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,7 +244,7 @@ public class AgreementWorkEffortApplicImpl extends BizEntityImpl implements Agre
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case AgreementPackage.AGREEMENT_WORK_EFFORT_APPLIC__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
+				setWorkEffortId((WorkEffort)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -251,7 +263,7 @@ public class AgreementWorkEffortApplicImpl extends BizEntityImpl implements Agre
 			case AgreementPackage.AGREEMENT_WORK_EFFORT_APPLIC__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
 			case AgreementPackage.AGREEMENT_WORK_EFFORT_APPLIC__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
+				return workEffortId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,8 +282,6 @@ public class AgreementWorkEffortApplicImpl extends BizEntityImpl implements Agre
 		result.append(agreementId);
 		result.append(", agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
-		result.append(", workEffortId: ");
-		result.append(workEffortId);
 		result.append(')');
 		return result.toString();
 	}

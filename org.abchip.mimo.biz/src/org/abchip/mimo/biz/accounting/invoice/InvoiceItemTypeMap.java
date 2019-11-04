@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap#getInvoiceItemMapKey <em>Invoice Item Map Key</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemTypeMap()
@@ -39,7 +39,8 @@ public interface InvoiceItemTypeMap extends BizEntity {
 	 * @return the value of the '<em>Invoice Item Map Key</em>' attribute.
 	 * @see #setInvoiceItemMapKey(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemTypeMap_InvoiceItemMapKey()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceItemMapKey();
@@ -55,56 +56,55 @@ public interface InvoiceItemTypeMap extends BizEntity {
 	void setInvoiceItemMapKey(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Type Id</em>' attribute.
-	 * @see #setInvoiceTypeId(String)
+	 * @return the value of the '<em>Invoice Type Id</em>' reference.
+	 * @see #setInvoiceTypeId(InvoiceType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemTypeMap_InvoiceTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceType'"
+	 * @model keys="invoiceTypeId"
 	 * @generated
 	 */
-	String getInvoiceTypeId();
+	InvoiceType getInvoiceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap#getInvoiceTypeId <em>Invoice Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap#getInvoiceTypeId <em>Invoice Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Type Id</em>' reference.
 	 * @see #getInvoiceTypeId()
 	 * @generated
 	 */
-	void setInvoiceTypeId(String value);
+	void setInvoiceTypeId(InvoiceType value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Item Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Item Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Item Type Id</em>' attribute.
-	 * @see #setInvoiceItemTypeId(String)
+	 * @return the value of the '<em>Invoice Item Type Id</em>' reference.
+	 * @see #setInvoiceItemTypeId(InvoiceItemType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemTypeMap_InvoiceItemTypeId()
-	 * @model annotation="mimo-ent-domain frame='InvoiceItemType'"
+	 * @model keys="invoiceItemTypeId"
 	 * @generated
 	 */
-	String getInvoiceItemTypeId();
+	InvoiceItemType getInvoiceItemTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Item Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Item Type Id</em>' reference.
 	 * @see #getInvoiceItemTypeId()
 	 * @generated
 	 */
-	void setInvoiceItemTypeId(String value);
+	void setInvoiceItemTypeId(InvoiceItemType value);
 
 } // InvoiceItemTypeMap

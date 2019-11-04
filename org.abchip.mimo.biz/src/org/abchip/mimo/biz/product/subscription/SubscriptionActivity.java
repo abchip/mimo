@@ -96,7 +96,7 @@ public interface SubscriptionActivity extends BizEntity {
 	 * @return the value of the '<em>Subscription Activity Id</em>' attribute.
 	 * @see #setSubscriptionActivityId(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionActivity_SubscriptionActivityId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

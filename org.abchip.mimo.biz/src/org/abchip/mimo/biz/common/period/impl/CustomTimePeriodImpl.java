@@ -13,10 +13,14 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.common.period.PeriodPackage;
+import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,12 +34,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#isIsClosed <em>Is Closed</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getParentPeriodId <em>Parent Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getPeriodName <em>Period Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getPeriodNum <em>Period Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getParentPeriodId <em>Parent Period Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.period.impl.CustomTimePeriodImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,42 +104,6 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	protected boolean isClosed = IS_CLOSED_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getParentPeriodId() <em>Parent Period Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentPeriodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARENT_PERIOD_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentPeriodId() <em>Parent Period Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentPeriodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentPeriodId = PARENT_PERIOD_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getPeriodName() <em>Period Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,24 +140,6 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 */
 	protected long periodNum = PERIOD_NUM_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PERIOD_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String periodTypeId = PERIOD_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -207,6 +157,33 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getParentPeriodId() <em>Parent Period Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentPeriodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomTimePeriod parentPeriodId;
+	/**
+	 * The cached value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPeriodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PeriodType periodTypeId;
+	/**
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrganizationPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party organizationPartyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,7 +256,24 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -289,8 +283,8 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -419,7 +413,24 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 * @generated
 	 */
 	@Override
-	public String getParentPeriodId() {
+	public CustomTimePeriod getParentPeriodId() {
+		if (parentPeriodId != null && ((EObject)parentPeriodId).eIsProxy()) {
+			InternalEObject oldParentPeriodId = (InternalEObject)parentPeriodId;
+			parentPeriodId = (CustomTimePeriod)eResolveProxy(oldParentPeriodId);
+			if (parentPeriodId != oldParentPeriodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID, oldParentPeriodId, parentPeriodId));
+			}
+		}
+		return parentPeriodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomTimePeriod basicGetParentPeriodId() {
 		return parentPeriodId;
 	}
 
@@ -429,8 +440,8 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 * @generated
 	 */
 	@Override
-	public void setParentPeriodId(String newParentPeriodId) {
-		String oldParentPeriodId = parentPeriodId;
+	public void setParentPeriodId(CustomTimePeriod newParentPeriodId) {
+		CustomTimePeriod oldParentPeriodId = parentPeriodId;
 		parentPeriodId = newParentPeriodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID, oldParentPeriodId, parentPeriodId));
@@ -442,7 +453,24 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 * @generated
 	 */
 	@Override
-	public String getPeriodTypeId() {
+	public PeriodType getPeriodTypeId() {
+		if (periodTypeId != null && ((EObject)periodTypeId).eIsProxy()) {
+			InternalEObject oldPeriodTypeId = (InternalEObject)periodTypeId;
+			periodTypeId = (PeriodType)eResolveProxy(oldPeriodTypeId);
+			if (periodTypeId != oldPeriodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
+			}
+		}
+		return periodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PeriodType basicGetPeriodTypeId() {
 		return periodTypeId;
 	}
 
@@ -452,8 +480,8 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 	 * @generated
 	 */
 	@Override
-	public void setPeriodTypeId(String newPeriodTypeId) {
-		String oldPeriodTypeId = periodTypeId;
+	public void setPeriodTypeId(PeriodType newPeriodTypeId) {
+		PeriodType oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
@@ -496,18 +524,21 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 				return getFromDate();
 			case PeriodPackage.CUSTOM_TIME_PERIOD__IS_CLOSED:
 				return isIsClosed();
-			case PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
-			case PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID:
-				return getParentPeriodId();
 			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NAME:
 				return getPeriodName();
 			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NUM:
 				return getPeriodNum();
-			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID:
-				return getPeriodTypeId();
 			case PeriodPackage.CUSTOM_TIME_PERIOD__THRU_DATE:
 				return getThruDate();
+			case PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID:
+				if (resolve) return getParentPeriodId();
+				return basicGetParentPeriodId();
+			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID:
+				if (resolve) return getPeriodTypeId();
+				return basicGetPeriodTypeId();
+			case PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID:
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -529,23 +560,23 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 			case PeriodPackage.CUSTOM_TIME_PERIOD__IS_CLOSED:
 				setIsClosed((Boolean)newValue);
 				return;
-			case PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
-				return;
-			case PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID:
-				setParentPeriodId((String)newValue);
-				return;
 			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NAME:
 				setPeriodName((String)newValue);
 				return;
 			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NUM:
 				setPeriodNum((Long)newValue);
 				return;
-			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID:
-				setPeriodTypeId((String)newValue);
-				return;
 			case PeriodPackage.CUSTOM_TIME_PERIOD__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID:
+				setParentPeriodId((CustomTimePeriod)newValue);
+				return;
+			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID:
+				setPeriodTypeId((PeriodType)newValue);
+				return;
+			case PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -568,23 +599,23 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 			case PeriodPackage.CUSTOM_TIME_PERIOD__IS_CLOSED:
 				setIsClosed(IS_CLOSED_EDEFAULT);
 				return;
-			case PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
-				return;
-			case PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID:
-				setParentPeriodId(PARENT_PERIOD_ID_EDEFAULT);
-				return;
 			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NAME:
 				setPeriodName(PERIOD_NAME_EDEFAULT);
 				return;
 			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NUM:
 				setPeriodNum(PERIOD_NUM_EDEFAULT);
 				return;
-			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID:
-				setPeriodTypeId(PERIOD_TYPE_ID_EDEFAULT);
-				return;
 			case PeriodPackage.CUSTOM_TIME_PERIOD__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID:
+				setParentPeriodId((CustomTimePeriod)null);
+				return;
+			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID:
+				setPeriodTypeId((PeriodType)null);
+				return;
+			case PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -604,18 +635,18 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PeriodPackage.CUSTOM_TIME_PERIOD__IS_CLOSED:
 				return isClosed != IS_CLOSED_EDEFAULT;
-			case PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
-			case PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID:
-				return PARENT_PERIOD_ID_EDEFAULT == null ? parentPeriodId != null : !PARENT_PERIOD_ID_EDEFAULT.equals(parentPeriodId);
 			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NAME:
 				return PERIOD_NAME_EDEFAULT == null ? periodName != null : !PERIOD_NAME_EDEFAULT.equals(periodName);
 			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_NUM:
 				return periodNum != PERIOD_NUM_EDEFAULT;
-			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID:
-				return PERIOD_TYPE_ID_EDEFAULT == null ? periodTypeId != null : !PERIOD_TYPE_ID_EDEFAULT.equals(periodTypeId);
 			case PeriodPackage.CUSTOM_TIME_PERIOD__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PeriodPackage.CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID:
+				return parentPeriodId != null;
+			case PeriodPackage.CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID:
+				return periodTypeId != null;
+			case PeriodPackage.CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID:
+				return organizationPartyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -636,16 +667,10 @@ public class CustomTimePeriodImpl extends BizEntityImpl implements CustomTimePer
 		result.append(fromDate);
 		result.append(", isClosed: ");
 		result.append(isClosed);
-		result.append(", organizationPartyId: ");
-		result.append(organizationPartyId);
-		result.append(", parentPeriodId: ");
-		result.append(parentPeriodId);
 		result.append(", periodName: ");
 		result.append(periodName);
 		result.append(", periodNum: ");
 		result.append(periodNum);
-		result.append(", periodTypeId: ");
-		result.append(periodTypeId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

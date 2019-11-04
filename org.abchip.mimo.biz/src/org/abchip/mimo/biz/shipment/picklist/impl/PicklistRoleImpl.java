@@ -10,12 +10,16 @@ package org.abchip.mimo.biz.shipment.picklist.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
 import org.abchip.mimo.biz.shipment.picklist.PicklistRole;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,11 +32,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistRoleImpl#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,26 +88,6 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,46 +108,6 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,6 +126,36 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +182,24 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -218,8 +209,8 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -254,7 +245,24 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -264,8 +272,8 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -323,7 +331,24 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -333,8 +358,8 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -375,16 +400,19 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 				return getPicklistId();
 			case PicklistPackage.PICKLIST_ROLE__PARTY_ID:
 				return getPartyId();
-			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
-				return getRoleTypeId();
 			case PicklistPackage.PICKLIST_ROLE__FROM_DATE:
 				return getFromDate();
-			case PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
-			case PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
 			case PicklistPackage.PICKLIST_ROLE__THRU_DATE:
 				return getThruDate();
+			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -403,20 +431,20 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 			case PicklistPackage.PICKLIST_ROLE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
 			case PicklistPackage.PICKLIST_ROLE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
-			case PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
-				return;
 			case PicklistPackage.PICKLIST_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -436,20 +464,20 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 			case PicklistPackage.PICKLIST_ROLE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
 			case PicklistPackage.PICKLIST_ROLE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
-			case PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case PicklistPackage.PICKLIST_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -467,16 +495,16 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 				return PICKLIST_ID_EDEFAULT == null ? picklistId != null : !PICKLIST_ID_EDEFAULT.equals(picklistId);
 			case PicklistPackage.PICKLIST_ROLE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case PicklistPackage.PICKLIST_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
-			case PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case PicklistPackage.PICKLIST_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PicklistPackage.PICKLIST_ROLE__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case PicklistPackage.PICKLIST_ROLE__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case PicklistPackage.PICKLIST_ROLE__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -495,14 +523,8 @@ public class PicklistRoleImpl extends BizEntityImpl implements PicklistRole {
 		result.append(picklistId);
 		result.append(", partyId: ");
 		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

@@ -41,7 +41,6 @@ public interface ContentKeyword extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentKeyword_ContentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
 	 * @generated
 	 */
 	String getContentId();

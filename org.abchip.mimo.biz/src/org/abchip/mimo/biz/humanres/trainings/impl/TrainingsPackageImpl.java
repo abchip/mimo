@@ -350,6 +350,22 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 		PositionPackageImpl thePositionPackage = (PositionPackageImpl)(registeredPackage instanceof PositionPackageImpl ? registeredPackage : PositionPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RecruitmentPackage.eNS_URI);
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -366,22 +382,6 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -493,6 +493,14 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 		theEmploymentPackage.createPackageContents();
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -501,14 +509,6 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -588,6 +588,14 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 		theEmploymentPackage.initializePackageContents();
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -596,14 +604,6 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -733,7 +733,7 @@ public class TrainingsPackageImpl extends EPackageImpl implements TrainingsPacka
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(trainingRequestEClass, TrainingRequest.class, "TrainingRequest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrainingRequest_TrainingRequestId(), ecorePackage.getEString(), "trainingRequestId", null, 0, 1, TrainingRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrainingRequest_TrainingRequestId(), ecorePackage.getEString(), "trainingRequestId", null, 1, 1, TrainingRequest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// mimo-ent-slot

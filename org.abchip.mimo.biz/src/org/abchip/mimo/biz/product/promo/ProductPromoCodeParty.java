@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.promo;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,31 +29,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ProductPromoCodeParty extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeParty_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeParty#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeParty#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Promo Code Id</b></em>' attribute.
@@ -65,8 +65,8 @@ public interface ProductPromoCodeParty extends BizEntity {
 	 * @return the value of the '<em>Product Promo Code Id</em>' attribute.
 	 * @see #setProductPromoCodeId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeParty_ProductPromoCodeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPromoCode'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductPromoCodeId();

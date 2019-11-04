@@ -12,13 +12,17 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceTerm;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.agreement.TermType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -32,13 +36,13 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getInvoiceTermId <em>Invoice Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getTermDays <em>Term Days</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getTermValue <em>Term Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getTextValue <em>Text Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceTermImpl#getInvoiceTermAttributes <em>Invoice Term Attributes</em>}</li>
  * </ul>
  *
@@ -87,24 +91,6 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceId = INVOICE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getInvoiceItemSeqId() <em>Invoice Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,24 +126,6 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 * @ordered
 	 */
 	protected long termDays = TERM_DAYS_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getTermTypeId() <em>Term Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTermTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TERM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTermTypeId() <em>Term Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTermTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String termTypeId = TERM_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getTermValue() <em>Term Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -212,6 +180,24 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 * @ordered
 	 */
 	protected String uomId = UOM_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getTermTypeId() <em>Term Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTermTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TermType termTypeId;
+	/**
+	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoiceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Invoice invoiceId;
 
 	/**
 	 * The cached value of the '{@link #getInvoiceTermAttributes() <em>Invoice Term Attributes</em>}' attribute list.
@@ -317,7 +303,24 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 * @generated
 	 */
 	@Override
-	public String getTermTypeId() {
+	public TermType getTermTypeId() {
+		if (termTypeId != null && ((EObject)termTypeId).eIsProxy()) {
+			InternalEObject oldTermTypeId = (InternalEObject)termTypeId;
+			termTypeId = (TermType)eResolveProxy(oldTermTypeId);
+			if (termTypeId != oldTermTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
+			}
+		}
+		return termTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TermType basicGetTermTypeId() {
 		return termTypeId;
 	}
 
@@ -327,8 +330,8 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 * @generated
 	 */
 	@Override
-	public void setTermTypeId(String newTermTypeId) {
-		String oldTermTypeId = termTypeId;
+	public void setTermTypeId(TermType newTermTypeId) {
+		TermType oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
@@ -422,7 +425,24 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceId() {
+	public Invoice getInvoiceId() {
+		if (invoiceId != null && ((EObject)invoiceId).eIsProxy()) {
+			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
+			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
+			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_TERM__INVOICE_ID, oldInvoiceId, invoiceId));
+			}
+		}
+		return invoiceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Invoice basicGetInvoiceId() {
 		return invoiceId;
 	}
 
@@ -432,8 +452,8 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceId(String newInvoiceId) {
-		String oldInvoiceId = invoiceId;
+	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_TERM__INVOICE_ID, oldInvoiceId, invoiceId));
@@ -474,20 +494,22 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 				return getInvoiceTermId();
 			case InvoicePackage.INVOICE_TERM__DESCRIPTION:
 				return getDescription();
-			case InvoicePackage.INVOICE_TERM__INVOICE_ID:
-				return getInvoiceId();
 			case InvoicePackage.INVOICE_TERM__INVOICE_ITEM_SEQ_ID:
 				return getInvoiceItemSeqId();
 			case InvoicePackage.INVOICE_TERM__TERM_DAYS:
 				return getTermDays();
-			case InvoicePackage.INVOICE_TERM__TERM_TYPE_ID:
-				return getTermTypeId();
 			case InvoicePackage.INVOICE_TERM__TERM_VALUE:
 				return getTermValue();
 			case InvoicePackage.INVOICE_TERM__TEXT_VALUE:
 				return getTextValue();
 			case InvoicePackage.INVOICE_TERM__UOM_ID:
 				return getUomId();
+			case InvoicePackage.INVOICE_TERM__TERM_TYPE_ID:
+				if (resolve) return getTermTypeId();
+				return basicGetTermTypeId();
+			case InvoicePackage.INVOICE_TERM__INVOICE_ID:
+				if (resolve) return getInvoiceId();
+				return basicGetInvoiceId();
 			case InvoicePackage.INVOICE_TERM__INVOICE_TERM_ATTRIBUTES:
 				return getInvoiceTermAttributes();
 		}
@@ -509,17 +531,11 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 			case InvoicePackage.INVOICE_TERM__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case InvoicePackage.INVOICE_TERM__INVOICE_ID:
-				setInvoiceId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_TERM__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId((String)newValue);
 				return;
 			case InvoicePackage.INVOICE_TERM__TERM_DAYS:
 				setTermDays((Long)newValue);
-				return;
-			case InvoicePackage.INVOICE_TERM__TERM_TYPE_ID:
-				setTermTypeId((String)newValue);
 				return;
 			case InvoicePackage.INVOICE_TERM__TERM_VALUE:
 				setTermValue((BigDecimal)newValue);
@@ -529,6 +545,12 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 				return;
 			case InvoicePackage.INVOICE_TERM__UOM_ID:
 				setUomId((String)newValue);
+				return;
+			case InvoicePackage.INVOICE_TERM__TERM_TYPE_ID:
+				setTermTypeId((TermType)newValue);
+				return;
+			case InvoicePackage.INVOICE_TERM__INVOICE_ID:
+				setInvoiceId((Invoice)newValue);
 				return;
 			case InvoicePackage.INVOICE_TERM__INVOICE_TERM_ATTRIBUTES:
 				getInvoiceTermAttributes().clear();
@@ -552,17 +574,11 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 			case InvoicePackage.INVOICE_TERM__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE_TERM__INVOICE_ID:
-				setInvoiceId(INVOICE_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_TERM__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId(INVOICE_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_TERM__TERM_DAYS:
 				setTermDays(TERM_DAYS_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_TERM__TERM_TYPE_ID:
-				setTermTypeId(TERM_TYPE_ID_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_TERM__TERM_VALUE:
 				setTermValue(TERM_VALUE_EDEFAULT);
@@ -572,6 +588,12 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 				return;
 			case InvoicePackage.INVOICE_TERM__UOM_ID:
 				setUomId(UOM_ID_EDEFAULT);
+				return;
+			case InvoicePackage.INVOICE_TERM__TERM_TYPE_ID:
+				setTermTypeId((TermType)null);
+				return;
+			case InvoicePackage.INVOICE_TERM__INVOICE_ID:
+				setInvoiceId((Invoice)null);
 				return;
 			case InvoicePackage.INVOICE_TERM__INVOICE_TERM_ATTRIBUTES:
 				getInvoiceTermAttributes().clear();
@@ -592,20 +614,20 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 				return INVOICE_TERM_ID_EDEFAULT == null ? invoiceTermId != null : !INVOICE_TERM_ID_EDEFAULT.equals(invoiceTermId);
 			case InvoicePackage.INVOICE_TERM__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case InvoicePackage.INVOICE_TERM__INVOICE_ID:
-				return INVOICE_ID_EDEFAULT == null ? invoiceId != null : !INVOICE_ID_EDEFAULT.equals(invoiceId);
 			case InvoicePackage.INVOICE_TERM__INVOICE_ITEM_SEQ_ID:
 				return INVOICE_ITEM_SEQ_ID_EDEFAULT == null ? invoiceItemSeqId != null : !INVOICE_ITEM_SEQ_ID_EDEFAULT.equals(invoiceItemSeqId);
 			case InvoicePackage.INVOICE_TERM__TERM_DAYS:
 				return termDays != TERM_DAYS_EDEFAULT;
-			case InvoicePackage.INVOICE_TERM__TERM_TYPE_ID:
-				return TERM_TYPE_ID_EDEFAULT == null ? termTypeId != null : !TERM_TYPE_ID_EDEFAULT.equals(termTypeId);
 			case InvoicePackage.INVOICE_TERM__TERM_VALUE:
 				return TERM_VALUE_EDEFAULT == null ? termValue != null : !TERM_VALUE_EDEFAULT.equals(termValue);
 			case InvoicePackage.INVOICE_TERM__TEXT_VALUE:
 				return TEXT_VALUE_EDEFAULT == null ? textValue != null : !TEXT_VALUE_EDEFAULT.equals(textValue);
 			case InvoicePackage.INVOICE_TERM__UOM_ID:
 				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+			case InvoicePackage.INVOICE_TERM__TERM_TYPE_ID:
+				return termTypeId != null;
+			case InvoicePackage.INVOICE_TERM__INVOICE_ID:
+				return invoiceId != null;
 			case InvoicePackage.INVOICE_TERM__INVOICE_TERM_ATTRIBUTES:
 				return invoiceTermAttributes != null && !invoiceTermAttributes.isEmpty();
 		}
@@ -626,14 +648,10 @@ public class InvoiceTermImpl extends BizEntityImpl implements InvoiceTerm {
 		result.append(invoiceTermId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", invoiceId: ");
-		result.append(invoiceId);
 		result.append(", invoiceItemSeqId: ");
 		result.append(invoiceItemSeqId);
 		result.append(", termDays: ");
 		result.append(termDays);
-		result.append(", termTypeId: ");
-		result.append(termTypeId);
 		result.append(", termValue: ");
 		result.append(termValue);
 		result.append(", textValue: ");

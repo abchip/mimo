@@ -10,6 +10,10 @@ package org.abchip.mimo.biz.product.inventory;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.product.facility.Container;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,17 +26,17 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getInventoryTransferId <em>Inventory Transfer Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerId <em>Container Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerIdTo <em>Container Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityIdTo <em>Facility Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getInventoryItemId <em>Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getLocationSeqId <em>Location Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getLocationSeqIdTo <em>Location Seq Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getReceiveDate <em>Receive Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getSendDate <em>Send Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerId <em>Container Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityIdTo <em>Facility Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerIdTo <em>Container Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer()
@@ -77,7 +81,7 @@ public interface InventoryTransfer extends BizEntity {
 	 * @return the value of the '<em>Inventory Transfer Id</em>' attribute.
 	 * @see #setInventoryTransferId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_InventoryTransferId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -94,30 +98,30 @@ public interface InventoryTransfer extends BizEntity {
 	void setInventoryTransferId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Item Issuance Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Item Issuance Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Item Issuance Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Item Issuance Id</em>' attribute.
-	 * @see #setItemIssuanceId(String)
+	 * @return the value of the '<em>Item Issuance Id</em>' reference.
+	 * @see #setItemIssuanceId(ItemIssuance)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ItemIssuanceId()
-	 * @model annotation="mimo-ent-domain frame='ItemIssuance'"
+	 * @model keys="itemIssuanceId"
 	 * @generated
 	 */
-	String getItemIssuanceId();
+	ItemIssuance getItemIssuanceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getItemIssuanceId <em>Item Issuance Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getItemIssuanceId <em>Item Issuance Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Item Issuance Id</em>' attribute.
+	 * @param value the new value of the '<em>Item Issuance Id</em>' reference.
 	 * @see #getItemIssuanceId()
 	 * @generated
 	 */
-	void setItemIssuanceId(String value);
+	void setItemIssuanceId(ItemIssuance value);
 
 	/**
 	 * Returns the value of the '<em><b>Location Seq Id</b></em>' attribute.
@@ -224,159 +228,159 @@ public interface InventoryTransfer extends BizEntity {
 	void setSendDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Id</em>' attribute.
-	 * @see #setInventoryItemId(String)
+	 * @return the value of the '<em>Inventory Item Id</em>' reference.
+	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_InventoryItemId()
-	 * @model annotation="mimo-ent-domain frame='InventoryItem'"
+	 * @model keys="inventoryItemId"
 	 * @generated
 	 */
-	String getInventoryItemId();
+	InventoryItem getInventoryItemId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getInventoryItemId <em>Inventory Item Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getInventoryItemId <em>Inventory Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Inventory Item Id</em>' attribute.
+	 * @param value the new value of the '<em>Inventory Item Id</em>' reference.
 	 * @see #getInventoryItemId()
 	 * @generated
 	 */
-	void setInventoryItemId(String value);
+	void setInventoryItemId(InventoryItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_FacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 	/**
-	 * Returns the value of the '<em><b>Container Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Container Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Container Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Container Id</em>' attribute.
-	 * @see #setContainerId(String)
+	 * @return the value of the '<em>Container Id</em>' reference.
+	 * @see #setContainerId(Container)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ContainerId()
-	 * @model annotation="mimo-ent-domain frame='Container'"
+	 * @model keys="containerId"
 	 * @generated
 	 */
-	String getContainerId();
+	Container getContainerId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerId <em>Container Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerId <em>Container Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Container Id</em>' attribute.
+	 * @param value the new value of the '<em>Container Id</em>' reference.
 	 * @see #getContainerId()
 	 * @generated
 	 */
-	void setContainerId(String value);
+	void setContainerId(Container value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id To</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id To</em>' attribute.
-	 * @see #setFacilityIdTo(String)
+	 * @return the value of the '<em>Facility Id To</em>' reference.
+	 * @see #setFacilityIdTo(Facility)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_FacilityIdTo()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityIdTo();
+	Facility getFacilityIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityIdTo <em>Facility Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getFacilityIdTo <em>Facility Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id To</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id To</em>' reference.
 	 * @see #getFacilityIdTo()
 	 * @generated
 	 */
-	void setFacilityIdTo(String value);
+	void setFacilityIdTo(Facility value);
 
 	/**
-	 * Returns the value of the '<em><b>Container Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Container Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Container Id To</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Container Id To</em>' attribute.
-	 * @see #setContainerIdTo(String)
+	 * @return the value of the '<em>Container Id To</em>' reference.
+	 * @see #setContainerIdTo(Container)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryTransfer_ContainerIdTo()
-	 * @model annotation="mimo-ent-domain frame='Container'"
+	 * @model keys="containerId"
 	 * @generated
 	 */
-	String getContainerIdTo();
+	Container getContainerIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerIdTo <em>Container Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryTransfer#getContainerIdTo <em>Container Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Container Id To</em>' attribute.
+	 * @param value the new value of the '<em>Container Id To</em>' reference.
 	 * @see #getContainerIdTo()
 	 * @generated
 	 */
-	void setContainerIdTo(String value);
+	void setContainerIdTo(Container value);
 
 } // InventoryTransfer

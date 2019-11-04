@@ -14,10 +14,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceChange;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,7 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getProductPriceChangeId <em>Product Price Change Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getChangedByUserLogin <em>Changed By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getChangedDate <em>Changed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getFromDate <em>From Date</em>}</li>
@@ -40,6 +42,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPriceChangeImpl#getChangedByUserLogin <em>Changed By User Login</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,26 +72,6 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 * @ordered
 	 */
 	protected String productPriceChangeId = PRODUCT_PRICE_CHANGE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getChangedByUserLogin() <em>Changed By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHANGED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getChangedByUserLogin() <em>Changed By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String changedByUserLogin = CHANGED_BY_USER_LOGIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getChangedDate() <em>Changed Date</em>}' attribute.
@@ -291,6 +274,16 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getChangedByUserLogin() <em>Changed By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChangedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin changedByUserLogin;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -315,7 +308,24 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 * @generated
 	 */
 	@Override
-	public String getChangedByUserLogin() {
+	public UserLogin getChangedByUserLogin() {
+		if (changedByUserLogin != null && ((EObject)changedByUserLogin).eIsProxy()) {
+			InternalEObject oldChangedByUserLogin = (InternalEObject)changedByUserLogin;
+			changedByUserLogin = (UserLogin)eResolveProxy(oldChangedByUserLogin);
+			if (changedByUserLogin != oldChangedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN, oldChangedByUserLogin, changedByUserLogin));
+			}
+		}
+		return changedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangedByUserLogin() {
 		return changedByUserLogin;
 	}
 
@@ -325,8 +335,8 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 	 * @generated
 	 */
 	@Override
-	public void setChangedByUserLogin(String newChangedByUserLogin) {
-		String oldChangedByUserLogin = changedByUserLogin;
+	public void setChangedByUserLogin(UserLogin newChangedByUserLogin) {
+		UserLogin oldChangedByUserLogin = changedByUserLogin;
 		changedByUserLogin = newChangedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN, oldChangedByUserLogin, changedByUserLogin));
@@ -595,8 +605,6 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 		switch (featureID) {
 			case PricePackage.PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_CHANGE_ID:
 				return getProductPriceChangeId();
-			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN:
-				return getChangedByUserLogin();
 			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_DATE:
 				return getChangedDate();
 			case PricePackage.PRODUCT_PRICE_CHANGE__CURRENCY_UOM_ID:
@@ -617,6 +625,9 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 				return getProductStoreGroupId();
 			case PricePackage.PRODUCT_PRICE_CHANGE__THRU_DATE:
 				return getThruDate();
+			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN:
+				if (resolve) return getChangedByUserLogin();
+				return basicGetChangedByUserLogin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -631,9 +642,6 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 		switch (featureID) {
 			case PricePackage.PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_CHANGE_ID:
 				setProductPriceChangeId((String)newValue);
-				return;
-			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN:
-				setChangedByUserLogin((String)newValue);
 				return;
 			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_DATE:
 				setChangedDate((Date)newValue);
@@ -665,6 +673,9 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 			case PricePackage.PRODUCT_PRICE_CHANGE__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
+			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN:
+				setChangedByUserLogin((UserLogin)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -679,9 +690,6 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 		switch (featureID) {
 			case PricePackage.PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_CHANGE_ID:
 				setProductPriceChangeId(PRODUCT_PRICE_CHANGE_ID_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN:
-				setChangedByUserLogin(CHANGED_BY_USER_LOGIN_EDEFAULT);
 				return;
 			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_DATE:
 				setChangedDate(CHANGED_DATE_EDEFAULT);
@@ -713,6 +721,9 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 			case PricePackage.PRODUCT_PRICE_CHANGE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
+			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN:
+				setChangedByUserLogin((UserLogin)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -727,8 +738,6 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 		switch (featureID) {
 			case PricePackage.PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_CHANGE_ID:
 				return PRODUCT_PRICE_CHANGE_ID_EDEFAULT == null ? productPriceChangeId != null : !PRODUCT_PRICE_CHANGE_ID_EDEFAULT.equals(productPriceChangeId);
-			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN:
-				return CHANGED_BY_USER_LOGIN_EDEFAULT == null ? changedByUserLogin != null : !CHANGED_BY_USER_LOGIN_EDEFAULT.equals(changedByUserLogin);
 			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_DATE:
 				return CHANGED_DATE_EDEFAULT == null ? changedDate != null : !CHANGED_DATE_EDEFAULT.equals(changedDate);
 			case PricePackage.PRODUCT_PRICE_CHANGE__CURRENCY_UOM_ID:
@@ -749,6 +758,8 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 				return PRODUCT_STORE_GROUP_ID_EDEFAULT == null ? productStoreGroupId != null : !PRODUCT_STORE_GROUP_ID_EDEFAULT.equals(productStoreGroupId);
 			case PricePackage.PRODUCT_PRICE_CHANGE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PricePackage.PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN:
+				return changedByUserLogin != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -765,8 +776,6 @@ public class ProductPriceChangeImpl extends BizEntityImpl implements ProductPric
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productPriceChangeId: ");
 		result.append(productPriceChangeId);
-		result.append(", changedByUserLogin: ");
-		result.append(changedByUserLogin);
 		result.append(", changedDate: ");
 		result.append(changedDate);
 		result.append(", currencyUomId: ");

@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.order.requirement.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementCustRequest;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -78,24 +81,14 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	protected String custRequestItemSeqId = CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRequirementId() <em>Requirement Id</em>}' attribute.
+	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRequirementId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REQUIREMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRequirementId() <em>Requirement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequirementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String requirementId = REQUIREMENT_ID_EDEFAULT;
+	protected Requirement requirementId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +161,24 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	 * @generated
 	 */
 	@Override
-	public String getRequirementId() {
+	public Requirement getRequirementId() {
+		if (requirementId != null && ((EObject)requirementId).eIsProxy()) {
+			InternalEObject oldRequirementId = (InternalEObject)requirementId;
+			requirementId = (Requirement)eResolveProxy(oldRequirementId);
+			if (requirementId != oldRequirementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID, oldRequirementId, requirementId));
+			}
+		}
+		return requirementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Requirement basicGetRequirementId() {
 		return requirementId;
 	}
 
@@ -178,8 +188,8 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 	 * @generated
 	 */
 	@Override
-	public void setRequirementId(String newRequirementId) {
-		String oldRequirementId = requirementId;
+	public void setRequirementId(Requirement newRequirementId) {
+		Requirement oldRequirementId = requirementId;
 		requirementId = newRequirementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID, oldRequirementId, requirementId));
@@ -198,7 +208,8 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ITEM_SEQ_ID:
 				return getCustRequestItemSeqId();
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID:
-				return getRequirementId();
+				if (resolve) return getRequirementId();
+				return basicGetRequirementId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,7 +229,7 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 				setCustRequestItemSeqId((String)newValue);
 				return;
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID:
-				setRequirementId((String)newValue);
+				setRequirementId((Requirement)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,7 +250,7 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 				setCustRequestItemSeqId(CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID:
-				setRequirementId(REQUIREMENT_ID_EDEFAULT);
+				setRequirementId((Requirement)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -258,7 +269,7 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__CUST_REQUEST_ITEM_SEQ_ID:
 				return CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT == null ? custRequestItemSeqId != null : !CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT.equals(custRequestItemSeqId);
 			case RequirementPackage.REQUIREMENT_CUST_REQUEST__REQUIREMENT_ID:
-				return REQUIREMENT_ID_EDEFAULT == null ? requirementId != null : !REQUIREMENT_ID_EDEFAULT.equals(requirementId);
+				return requirementId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -277,8 +288,6 @@ public class RequirementCustRequestImpl extends BizEntityImpl implements Require
 		result.append(custRequestId);
 		result.append(", custRequestItemSeqId: ");
 		result.append(custRequestItemSeqId);
-		result.append(", requirementId: ");
-		result.append(requirementId);
 		result.append(')');
 		return result.toString();
 	}

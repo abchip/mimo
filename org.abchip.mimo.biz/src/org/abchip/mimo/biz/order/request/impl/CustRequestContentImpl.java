@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.order.request.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.request.CustRequestContent;
 import org.abchip.mimo.biz.order.request.RequestPackage;
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getCustRequestId <em>Cust Request Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestContentImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +62,6 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 * @ordered
 	 */
 	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -121,6 +104,16 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -145,7 +138,24 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -155,8 +165,8 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -241,12 +251,13 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
 				return getCustRequestId();
-			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
-				return getContentId();
 			case RequestPackage.CUST_REQUEST_CONTENT__FROM_DATE:
 				return getFromDate();
 			case RequestPackage.CUST_REQUEST_CONTENT__THRU_DATE:
 				return getThruDate();
+			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -262,14 +273,14 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
 				setCustRequestId((String)newValue);
 				return;
-			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,14 +297,14 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
 				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
 				return;
-			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case RequestPackage.CUST_REQUEST_CONTENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,12 +320,12 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_CONTENT__CUST_REQUEST_ID:
 				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
-			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case RequestPackage.CUST_REQUEST_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case RequestPackage.CUST_REQUEST_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case RequestPackage.CUST_REQUEST_CONTENT__CONTENT_ID:
+				return contentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -331,8 +342,6 @@ public class CustRequestContentImpl extends BizEntityImpl implements CustRequest
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (custRequestId: ");
 		result.append(custRequestId);
-		result.append(", contentId: ");
-		result.append(contentId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

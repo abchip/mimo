@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.entity.tenant.impl;
 
+import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantDomainName;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -56,24 +59,14 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 	protected String domainName = DOMAIN_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTenantId() <em>Tenant Id</em>}' attribute.
+	 * The cached value of the '{@link #getTenantId() <em>Tenant Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTenantId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TENANT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTenantId() <em>Tenant Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tenantId = TENANT_ID_EDEFAULT;
+	protected Tenant tenantId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,7 +116,24 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 	 * @generated
 	 */
 	@Override
-	public String getTenantId() {
+	public Tenant getTenantId() {
+		if (tenantId != null && ((EObject)tenantId).eIsProxy()) {
+			InternalEObject oldTenantId = (InternalEObject)tenantId;
+			tenantId = (Tenant)eResolveProxy(oldTenantId);
+			if (tenantId != oldTenantId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TenantPackage.TENANT_DOMAIN_NAME__TENANT_ID, oldTenantId, tenantId));
+			}
+		}
+		return tenantId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Tenant basicGetTenantId() {
 		return tenantId;
 	}
 
@@ -133,8 +143,8 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 	 * @generated
 	 */
 	@Override
-	public void setTenantId(String newTenantId) {
-		String oldTenantId = tenantId;
+	public void setTenantId(Tenant newTenantId) {
+		Tenant oldTenantId = tenantId;
 		tenantId = newTenantId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_DOMAIN_NAME__TENANT_ID, oldTenantId, tenantId));
@@ -151,7 +161,8 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 			case TenantPackage.TENANT_DOMAIN_NAME__DOMAIN_NAME:
 				return getDomainName();
 			case TenantPackage.TENANT_DOMAIN_NAME__TENANT_ID:
-				return getTenantId();
+				if (resolve) return getTenantId();
+				return basicGetTenantId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,7 +179,7 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 				setDomainName((String)newValue);
 				return;
 			case TenantPackage.TENANT_DOMAIN_NAME__TENANT_ID:
-				setTenantId((String)newValue);
+				setTenantId((Tenant)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,7 +197,7 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 				setDomainName(DOMAIN_NAME_EDEFAULT);
 				return;
 			case TenantPackage.TENANT_DOMAIN_NAME__TENANT_ID:
-				setTenantId(TENANT_ID_EDEFAULT);
+				setTenantId((Tenant)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -203,7 +214,7 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 			case TenantPackage.TENANT_DOMAIN_NAME__DOMAIN_NAME:
 				return DOMAIN_NAME_EDEFAULT == null ? domainName != null : !DOMAIN_NAME_EDEFAULT.equals(domainName);
 			case TenantPackage.TENANT_DOMAIN_NAME__TENANT_ID:
-				return TENANT_ID_EDEFAULT == null ? tenantId != null : !TENANT_ID_EDEFAULT.equals(tenantId);
+				return tenantId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,8 +231,6 @@ public class TenantDomainNameImpl extends BizEntityImpl implements TenantDomainN
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (domainName: ");
 		result.append(domainName);
-		result.append(", tenantId: ");
-		result.append(tenantId);
 		result.append(')');
 		return result.toString();
 	}

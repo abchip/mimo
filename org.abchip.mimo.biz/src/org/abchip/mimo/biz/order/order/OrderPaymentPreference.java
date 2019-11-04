@@ -14,6 +14,12 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.payment.GiftCard;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.product.price.ProductPricePurpose;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,28 +32,28 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getBillingPostalCode <em>Billing Postal Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getManualAuthCode <em>Manual Auth Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getManualRefNum <em>Manual Ref Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getMaxAmount <em>Max Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isNeedsNsfRetry <em>Needs Nsf Retry</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isOverflowFlag <em>Overflow Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodId <em>Payment Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isPresentFlag <em>Present Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getProcessAttempt <em>Process Attempt</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getSecurityCode <em>Security Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#isSwipedFlag <em>Swiped Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getTrack2 <em>Track2</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getFinAccountId <em>Fin Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodId <em>Payment Method Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference()
@@ -82,30 +88,30 @@ public interface OrderPaymentPreference extends BizEntity {
 	void setBillingPostalCode(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Created By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Created By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Created By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Created By User Login</em>' attribute.
-	 * @see #setCreatedByUserLogin(String)
+	 * @return the value of the '<em>Created By User Login</em>' reference.
+	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getCreatedByUserLogin();
+	UserLogin getCreatedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getCreatedByUserLogin <em>Created By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getCreatedByUserLogin <em>Created By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Created By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Created By User Login</em>' reference.
 	 * @see #getCreatedByUserLogin()
 	 * @generated
 	 */
-	void setCreatedByUserLogin(String value);
+	void setCreatedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Created Date</b></em>' attribute.
@@ -134,30 +140,30 @@ public interface OrderPaymentPreference extends BizEntity {
 	void setCreatedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fin Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Id</em>' attribute.
-	 * @see #setFinAccountId(String)
+	 * @return the value of the '<em>Fin Account Id</em>' reference.
+	 * @see #setFinAccountId(FinAccount)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_FinAccountId()
-	 * @model annotation="mimo-ent-domain frame='FinAccount'"
+	 * @model keys="finAccountId"
 	 * @generated
 	 */
-	String getFinAccountId();
+	FinAccount getFinAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getFinAccountId <em>Fin Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getFinAccountId <em>Fin Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fin Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Fin Account Id</em>' reference.
 	 * @see #getFinAccountId()
 	 * @generated
 	 */
-	void setFinAccountId(String value);
+	void setFinAccountId(FinAccount value);
 
 	/**
 	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' attribute.
@@ -316,30 +322,30 @@ public interface OrderPaymentPreference extends BizEntity {
 	void setNeedsNsfRetry(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Id</em>' attribute.
-	 * @see #setOrderId(String)
+	 * @return the value of the '<em>Order Id</em>' reference.
+	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_OrderId()
-	 * @model annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getOrderId();
+	OrderHeader getOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOrderId <em>Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getOrderId <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Id</em>' reference.
 	 * @see #getOrderId()
 	 * @generated
 	 */
-	void setOrderId(String value);
+	void setOrderId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Item Seq Id</b></em>' attribute.
@@ -404,7 +410,7 @@ public interface OrderPaymentPreference extends BizEntity {
 	 * @return the value of the '<em>Order Payment Preference Id</em>' attribute.
 	 * @see #setOrderPaymentPreferenceId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_OrderPaymentPreferenceId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -421,56 +427,56 @@ public interface OrderPaymentPreference extends BizEntity {
 	void setOrderPaymentPreferenceId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Method Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Method Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Method Id</em>' attribute.
-	 * @see #setPaymentMethodId(String)
+	 * @return the value of the '<em>Payment Method Id</em>' reference.
+	 * @see #setPaymentMethodId(GiftCard)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_PaymentMethodId()
-	 * @model annotation="mimo-ent-domain frame='PaymentMethod'"
+	 * @model keys="paymentMethodId"
 	 * @generated
 	 */
-	String getPaymentMethodId();
+	GiftCard getPaymentMethodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodId <em>Payment Method Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodId <em>Payment Method Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Method Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Method Id</em>' reference.
 	 * @see #getPaymentMethodId()
 	 * @generated
 	 */
-	void setPaymentMethodId(String value);
+	void setPaymentMethodId(GiftCard value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Method Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Method Type Id</em>' attribute.
-	 * @see #setPaymentMethodTypeId(String)
+	 * @return the value of the '<em>Payment Method Type Id</em>' reference.
+	 * @see #setPaymentMethodTypeId(PaymentMethodType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_PaymentMethodTypeId()
-	 * @model annotation="mimo-ent-domain frame='PaymentMethodType'"
+	 * @model keys="paymentMethodTypeId"
 	 * @generated
 	 */
-	String getPaymentMethodTypeId();
+	PaymentMethodType getPaymentMethodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Method Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Method Type Id</em>' reference.
 	 * @see #getPaymentMethodTypeId()
 	 * @generated
 	 */
-	void setPaymentMethodTypeId(String value);
+	void setPaymentMethodTypeId(PaymentMethodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Present Flag</b></em>' attribute.
@@ -525,30 +531,30 @@ public interface OrderPaymentPreference extends BizEntity {
 	void setProcessAttempt(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Price Purpose Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Price Purpose Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Price Purpose Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Price Purpose Id</em>' attribute.
-	 * @see #setProductPricePurposeId(String)
+	 * @return the value of the '<em>Product Price Purpose Id</em>' reference.
+	 * @see #setProductPricePurposeId(ProductPricePurpose)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_ProductPricePurposeId()
-	 * @model annotation="mimo-ent-domain frame='ProductPricePurpose'"
+	 * @model keys="productPricePurposeId"
 	 * @generated
 	 */
-	String getProductPricePurposeId();
+	ProductPricePurpose getProductPricePurposeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getProductPricePurposeId <em>Product Price Purpose Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getProductPricePurposeId <em>Product Price Purpose Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Price Purpose Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Price Purpose Id</em>' reference.
 	 * @see #getProductPricePurposeId()
 	 * @generated
 	 */
-	void setProductPricePurposeId(String value);
+	void setProductPricePurposeId(ProductPricePurpose value);
 
 	/**
 	 * Returns the value of the '<em><b>Security Code</b></em>' attribute.
@@ -603,30 +609,30 @@ public interface OrderPaymentPreference extends BizEntity {
 	void setShipGroupSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderPaymentPreference_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderPaymentPreference#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Swiped Flag</b></em>' attribute.

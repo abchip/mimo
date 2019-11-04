@@ -9,14 +9,20 @@ package org.abchip.mimo.biz.content.content.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.datasource.DataSource;
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentAssoc;
+import org.abchip.mimo.biz.content.content.ContentAssocPredicate;
 import org.abchip.mimo.biz.content.content.ContentAssocType;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,20 +34,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentIdTo <em>Content Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentAssocTypeId <em>Content Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentAssocPredicateId <em>Content Assoc Predicate Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getLeftCoordinate <em>Left Coordinate</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getMapKey <em>Map Key</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getUpperCoordinate <em>Upper Coordinate</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentIdTo <em>Content Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentAssocTypeId <em>Content Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getContentAssocPredicateId <em>Content Assoc Predicate Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentAssocImpl#getDataSourceId <em>Data Source Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,46 +79,6 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	protected String contentId = CONTENT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContentIdTo() <em>Content Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentIdTo() <em>Content Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentIdTo = CONTENT_ID_TO_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentAssocTypeId() <em>Content Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ASSOC_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentAssocTypeId() <em>Content Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentAssocTypeId = CONTENT_ASSOC_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,46 +99,6 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContentAssocPredicateId() <em>Content Assoc Predicate Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentAssocPredicateId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ASSOC_PREDICATE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentAssocPredicateId() <em>Content Assoc Predicate Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentAssocPredicateId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentAssocPredicateId = CONTENT_ASSOC_PREDICATE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,46 +117,6 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @ordered
 	 */
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
@@ -353,6 +239,66 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	protected long upperCoordinate = UPPER_COORDINATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentIdTo() <em>Content Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentIdTo;
+
+	/**
+	 * The cached value of the '{@link #getContentAssocTypeId() <em>Content Assoc Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentAssocTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContentAssocType contentAssocTypeId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getContentAssocPredicateId() <em>Content Assoc Predicate Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentAssocPredicateId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContentAssocPredicate contentAssocPredicateId;
+
+	/**
+	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataSource dataSourceId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -377,7 +323,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getContentAssocPredicateId() {
+	public ContentAssocPredicate getContentAssocPredicateId() {
+		if (contentAssocPredicateId != null && ((EObject)contentAssocPredicateId).eIsProxy()) {
+			InternalEObject oldContentAssocPredicateId = (InternalEObject)contentAssocPredicateId;
+			contentAssocPredicateId = (ContentAssocPredicate)eResolveProxy(oldContentAssocPredicateId);
+			if (contentAssocPredicateId != oldContentAssocPredicateId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID, oldContentAssocPredicateId, contentAssocPredicateId));
+			}
+		}
+		return contentAssocPredicateId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentAssocPredicate basicGetContentAssocPredicateId() {
 		return contentAssocPredicateId;
 	}
 
@@ -387,8 +350,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setContentAssocPredicateId(String newContentAssocPredicateId) {
-		String oldContentAssocPredicateId = contentAssocPredicateId;
+	public void setContentAssocPredicateId(ContentAssocPredicate newContentAssocPredicateId) {
+		ContentAssocPredicate oldContentAssocPredicateId = contentAssocPredicateId;
 		contentAssocPredicateId = newContentAssocPredicateId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID, oldContentAssocPredicateId, contentAssocPredicateId));
@@ -400,7 +363,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getContentAssocTypeId() {
+	public ContentAssocType getContentAssocTypeId() {
+		if (contentAssocTypeId != null && ((EObject)contentAssocTypeId).eIsProxy()) {
+			InternalEObject oldContentAssocTypeId = (InternalEObject)contentAssocTypeId;
+			contentAssocTypeId = (ContentAssocType)eResolveProxy(oldContentAssocTypeId);
+			if (contentAssocTypeId != oldContentAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID, oldContentAssocTypeId, contentAssocTypeId));
+			}
+		}
+		return contentAssocTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentAssocType basicGetContentAssocTypeId() {
 		return contentAssocTypeId;
 	}
 
@@ -410,8 +390,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setContentAssocTypeId(String newContentAssocTypeId) {
-		String oldContentAssocTypeId = contentAssocTypeId;
+	public void setContentAssocTypeId(ContentAssocType newContentAssocTypeId) {
+		ContentAssocType oldContentAssocTypeId = contentAssocTypeId;
 		contentAssocTypeId = newContentAssocTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID, oldContentAssocTypeId, contentAssocTypeId));
@@ -446,7 +426,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getContentIdTo() {
+	public Content getContentIdTo() {
+		if (contentIdTo != null && ((EObject)contentIdTo).eIsProxy()) {
+			InternalEObject oldContentIdTo = (InternalEObject)contentIdTo;
+			contentIdTo = (Content)eResolveProxy(oldContentIdTo);
+			if (contentIdTo != oldContentIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO, oldContentIdTo, contentIdTo));
+			}
+		}
+		return contentIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentIdTo() {
 		return contentIdTo;
 	}
 
@@ -456,8 +453,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setContentIdTo(String newContentIdTo) {
-		String oldContentIdTo = contentIdTo;
+	public void setContentIdTo(Content newContentIdTo) {
+		Content oldContentIdTo = contentIdTo;
 		contentIdTo = newContentIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO, oldContentIdTo, contentIdTo));
@@ -469,7 +466,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -479,8 +493,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -515,7 +529,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getDataSourceId() {
+	public DataSource getDataSourceId() {
+		if (dataSourceId != null && ((EObject)dataSourceId).eIsProxy()) {
+			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
+			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
+			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+			}
+		}
+		return dataSourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSource basicGetDataSourceId() {
 		return dataSourceId;
 	}
 
@@ -525,8 +556,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
+	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
@@ -561,7 +592,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -571,8 +619,8 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -726,22 +774,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 		switch (featureID) {
 			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
 				return getContentId();
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
-				return getContentIdTo();
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID:
-				return getContentAssocTypeId();
 			case ContentPackage.CONTENT_ASSOC__FROM_DATE:
 				return getFromDate();
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID:
-				return getContentAssocPredicateId();
-			case ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case ContentPackage.CONTENT_ASSOC__CREATED_DATE:
 				return getCreatedDate();
-			case ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID:
-				return getDataSourceId();
-			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
 			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
 			case ContentPackage.CONTENT_ASSOC__LEFT_COORDINATE:
@@ -754,6 +790,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 				return getThruDate();
 			case ContentPackage.CONTENT_ASSOC__UPPER_COORDINATE:
 				return getUpperCoordinate();
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
+				if (resolve) return getContentIdTo();
+				return basicGetContentIdTo();
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID:
+				if (resolve) return getContentAssocTypeId();
+				return basicGetContentAssocTypeId();
+			case ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID:
+				if (resolve) return getContentAssocPredicateId();
+				return basicGetContentAssocPredicateId();
+			case ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID:
+				if (resolve) return getDataSourceId();
+				return basicGetDataSourceId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -769,29 +823,11 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
 				setContentId((String)newValue);
 				return;
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
-				setContentIdTo((String)newValue);
-				return;
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID:
-				setContentAssocTypeId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_ASSOC__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID:
-				setContentAssocPredicateId((String)newValue);
-				return;
-			case ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
 			case ContentPackage.CONTENT_ASSOC__CREATED_DATE:
 				setCreatedDate((Date)newValue);
-				return;
-			case ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID:
-				setDataSourceId((String)newValue);
-				return;
-			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
 				return;
 			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
@@ -811,6 +847,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			case ContentPackage.CONTENT_ASSOC__UPPER_COORDINATE:
 				setUpperCoordinate((Long)newValue);
 				return;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
+				setContentIdTo((Content)newValue);
+				return;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID:
+				setContentAssocTypeId((ContentAssocType)newValue);
+				return;
+			case ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
+				return;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID:
+				setContentAssocPredicateId((ContentAssocPredicate)newValue);
+				return;
+			case ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -826,29 +880,11 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
 				setContentId(CONTENT_ID_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
-				setContentIdTo(CONTENT_ID_TO_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID:
-				setContentAssocTypeId(CONTENT_ASSOC_TYPE_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_ASSOC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID:
-				setContentAssocPredicateId(CONTENT_ASSOC_PREDICATE_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_ASSOC__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID:
-				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
 				return;
 			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
@@ -868,6 +904,24 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 			case ContentPackage.CONTENT_ASSOC__UPPER_COORDINATE:
 				setUpperCoordinate(UPPER_COORDINATE_EDEFAULT);
 				return;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
+				setContentIdTo((Content)null);
+				return;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID:
+				setContentAssocTypeId((ContentAssocType)null);
+				return;
+			case ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
+				return;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID:
+				setContentAssocPredicateId((ContentAssocPredicate)null);
+				return;
+			case ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -882,22 +936,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 		switch (featureID) {
 			case ContentPackage.CONTENT_ASSOC__CONTENT_ID:
 				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
-				return CONTENT_ID_TO_EDEFAULT == null ? contentIdTo != null : !CONTENT_ID_TO_EDEFAULT.equals(contentIdTo);
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID:
-				return CONTENT_ASSOC_TYPE_ID_EDEFAULT == null ? contentAssocTypeId != null : !CONTENT_ASSOC_TYPE_ID_EDEFAULT.equals(contentAssocTypeId);
 			case ContentPackage.CONTENT_ASSOC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID:
-				return CONTENT_ASSOC_PREDICATE_ID_EDEFAULT == null ? contentAssocPredicateId != null : !CONTENT_ASSOC_PREDICATE_ID_EDEFAULT.equals(contentAssocPredicateId);
-			case ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case ContentPackage.CONTENT_ASSOC__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID:
-				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
-			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
 			case ContentPackage.CONTENT_ASSOC__LEFT_COORDINATE:
@@ -910,6 +952,18 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case ContentPackage.CONTENT_ASSOC__UPPER_COORDINATE:
 				return upperCoordinate != UPPER_COORDINATE_EDEFAULT;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ID_TO:
+				return contentIdTo != null;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_TYPE_ID:
+				return contentAssocTypeId != null;
+			case ContentPackage.CONTENT_ASSOC__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case ContentPackage.CONTENT_ASSOC__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
+			case ContentPackage.CONTENT_ASSOC__CONTENT_ASSOC_PREDICATE_ID:
+				return contentAssocPredicateId != null;
+			case ContentPackage.CONTENT_ASSOC__DATA_SOURCE_ID:
+				return dataSourceId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -926,22 +980,10 @@ public class ContentAssocImpl extends BizEntityTypedImpl<ContentAssocType> imple
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contentId: ");
 		result.append(contentId);
-		result.append(", contentIdTo: ");
-		result.append(contentIdTo);
-		result.append(", contentAssocTypeId: ");
-		result.append(contentAssocTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", contentAssocPredicateId: ");
-		result.append(contentAssocPredicateId);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
-		result.append(", dataSourceId: ");
-		result.append(dataSourceId);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
 		result.append(", leftCoordinate: ");

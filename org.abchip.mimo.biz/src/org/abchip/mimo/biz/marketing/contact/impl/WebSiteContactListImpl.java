@@ -10,12 +10,15 @@ package org.abchip.mimo.biz.marketing.contact.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
 import org.abchip.mimo.biz.marketing.contact.WebSiteContactList;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.WebSiteContactListImpl#getWebSiteId <em>Web Site Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.WebSiteContactListImpl#getContactListId <em>Contact List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.WebSiteContactListImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.WebSiteContactListImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.WebSiteContactListImpl#getContactListId <em>Contact List Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,28 +63,6 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 	 * @ordered
 	 */
 	protected String webSiteId = WEB_SITE_ID_EDEFAULT;
-
-
-	/**
-	 * The default value of the '{@link #getContactListId() <em>Contact List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_LIST_ID_EDEFAULT = null;
-
-
-	/**
-	 * The cached value of the '{@link #getContactListId() <em>Contact List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactListId = CONTACT_LIST_ID_EDEFAULT;
 
 
 	/**
@@ -127,6 +108,17 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
+
+	/**
+	 * The cached value of the '{@link #getContactListId() <em>Contact List Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactListId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactList contactListId;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,7 +144,24 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 	 * @generated
 	 */
 	@Override
-	public String getContactListId() {
+	public ContactList getContactListId() {
+		if (contactListId != null && ((EObject)contactListId).eIsProxy()) {
+			InternalEObject oldContactListId = (InternalEObject)contactListId;
+			contactListId = (ContactList)eResolveProxy(oldContactListId);
+			if (contactListId != oldContactListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID, oldContactListId, contactListId));
+			}
+		}
+		return contactListId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactList basicGetContactListId() {
 		return contactListId;
 	}
 
@@ -162,8 +171,8 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 	 * @generated
 	 */
 	@Override
-	public void setContactListId(String newContactListId) {
-		String oldContactListId = contactListId;
+	public void setContactListId(ContactList newContactListId) {
+		ContactList oldContactListId = contactListId;
 		contactListId = newContactListId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID, oldContactListId, contactListId));
@@ -248,12 +257,13 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 		switch (featureID) {
 			case ContactPackage.WEB_SITE_CONTACT_LIST__WEB_SITE_ID:
 				return getWebSiteId();
-			case ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID:
-				return getContactListId();
 			case ContactPackage.WEB_SITE_CONTACT_LIST__FROM_DATE:
 				return getFromDate();
 			case ContactPackage.WEB_SITE_CONTACT_LIST__THRU_DATE:
 				return getThruDate();
+			case ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID:
+				if (resolve) return getContactListId();
+				return basicGetContactListId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,14 +279,14 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 			case ContactPackage.WEB_SITE_CONTACT_LIST__WEB_SITE_ID:
 				setWebSiteId((String)newValue);
 				return;
-			case ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID:
-				setContactListId((String)newValue);
-				return;
 			case ContactPackage.WEB_SITE_CONTACT_LIST__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case ContactPackage.WEB_SITE_CONTACT_LIST__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID:
+				setContactListId((ContactList)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -293,14 +303,14 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 			case ContactPackage.WEB_SITE_CONTACT_LIST__WEB_SITE_ID:
 				setWebSiteId(WEB_SITE_ID_EDEFAULT);
 				return;
-			case ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID:
-				setContactListId(CONTACT_LIST_ID_EDEFAULT);
-				return;
 			case ContactPackage.WEB_SITE_CONTACT_LIST__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case ContactPackage.WEB_SITE_CONTACT_LIST__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID:
+				setContactListId((ContactList)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -316,12 +326,12 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 		switch (featureID) {
 			case ContactPackage.WEB_SITE_CONTACT_LIST__WEB_SITE_ID:
 				return WEB_SITE_ID_EDEFAULT == null ? webSiteId != null : !WEB_SITE_ID_EDEFAULT.equals(webSiteId);
-			case ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID:
-				return CONTACT_LIST_ID_EDEFAULT == null ? contactListId != null : !CONTACT_LIST_ID_EDEFAULT.equals(contactListId);
 			case ContactPackage.WEB_SITE_CONTACT_LIST__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ContactPackage.WEB_SITE_CONTACT_LIST__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case ContactPackage.WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID:
+				return contactListId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -338,8 +348,6 @@ public class WebSiteContactListImpl extends BizEntityImpl implements WebSiteCont
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (webSiteId: ");
 		result.append(webSiteId);
-		result.append(", contactListId: ");
-		result.append(contactListId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

@@ -16,6 +16,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -143,24 +145,14 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected BenefitType parentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,7 +294,24 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public BenefitType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (BenefitType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.BENEFIT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BenefitType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -312,8 +321,8 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(BenefitType newParentTypeId) {
+		BenefitType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.BENEFIT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -350,7 +359,8 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 			case EmploymentPackage.BENEFIT_TYPE__HAS_TABLE:
 				return isHasTable();
 			case EmploymentPackage.BENEFIT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -379,7 +389,7 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 				setHasTable((Boolean)newValue);
 				return;
 			case EmploymentPackage.BENEFIT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((BenefitType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -409,7 +419,7 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case EmploymentPackage.BENEFIT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((BenefitType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -434,7 +444,7 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 			case EmploymentPackage.BENEFIT_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case EmploymentPackage.BENEFIT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -459,8 +469,6 @@ public class BenefitTypeImpl extends BizEntityImpl implements BenefitType {
 		result.append(employerPaidPercentage);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(')');
 		return result.toString();
 	}

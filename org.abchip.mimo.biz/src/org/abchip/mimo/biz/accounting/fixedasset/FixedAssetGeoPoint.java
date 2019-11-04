@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.fixedasset;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +22,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetGeoPoint#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetGeoPoint#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetGeoPoint#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetGeoPoint#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetGeoPoint#getGeoPointId <em>Geo Point Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetGeoPoint()
@@ -42,7 +43,8 @@ public interface FixedAssetGeoPoint extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetGeoPoint_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -58,31 +60,30 @@ public interface FixedAssetGeoPoint extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Point Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Point Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Point Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Point Id</em>' attribute.
-	 * @see #setGeoPointId(String)
+	 * @return the value of the '<em>Geo Point Id</em>' reference.
+	 * @see #setGeoPointId(GeoPoint)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetGeoPoint_GeoPointId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='GeoPoint'"
+	 * @model keys="geoPointId"
 	 * @generated
 	 */
-	String getGeoPointId();
+	GeoPoint getGeoPointId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetGeoPoint#getGeoPointId <em>Geo Point Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetGeoPoint#getGeoPointId <em>Geo Point Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Point Id</em>' attribute.
+	 * @param value the new value of the '<em>Geo Point Id</em>' reference.
 	 * @see #getGeoPointId()
 	 * @generated
 	 */
-	void setGeoPointId(String value);
+	void setGeoPointId(GeoPoint value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -121,8 +122,8 @@ public interface FixedAssetGeoPoint extends BizEntity {
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetGeoPoint_FixedAssetId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFixedAssetId();

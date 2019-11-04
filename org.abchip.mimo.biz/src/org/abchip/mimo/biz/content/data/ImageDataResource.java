@@ -40,7 +40,6 @@ public interface ImageDataResource extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getImageDataResource_DataResourceId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource'"
 	 * @generated
 	 */
 	String getDataResourceId();

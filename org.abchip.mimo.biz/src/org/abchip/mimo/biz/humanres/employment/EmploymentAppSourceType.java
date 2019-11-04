@@ -94,7 +94,7 @@ public interface EmploymentAppSourceType extends BizEntity {
 	 * @return the value of the '<em>Employment App Source Type Id</em>' attribute.
 	 * @see #setEmploymentAppSourceTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentAppSourceType_EmploymentAppSourceTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -111,30 +111,30 @@ public interface EmploymentAppSourceType extends BizEntity {
 	void setEmploymentAppSourceTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(EmploymentAppSourceType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentAppSourceType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='EmploymentAppSourceType'"
+	 * @model keys="employmentAppSourceTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	EmploymentAppSourceType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(EmploymentAppSourceType value);
 
 	/**
 	 * <!-- begin-user-doc -->

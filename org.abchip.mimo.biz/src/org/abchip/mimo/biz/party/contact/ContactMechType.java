@@ -86,30 +86,30 @@ public interface ContactMechType extends BizEntityType<ContactMech> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(ContactMechType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='ContactMechType'"
+	 * @model keys="contactMechTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	ContactMechType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(ContactMechType value);
 
 	/**
 	 * Returns the value of the '<em><b>Contact Mech Type Attrs</b></em>' attribute list.

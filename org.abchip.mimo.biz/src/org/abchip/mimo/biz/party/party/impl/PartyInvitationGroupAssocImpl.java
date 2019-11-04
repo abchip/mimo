@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.party.party.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -53,23 +56,14 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 	 */
 	protected String partyInvitationId = PARTY_INVITATION_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' attribute.
+	 * The cached value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyIdTo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARTY_ID_TO_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdTo = PARTY_ID_TO_EDEFAULT;
+	protected Party partyIdTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,7 +90,24 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public String getPartyIdTo() {
+	public Party getPartyIdTo() {
+		if (partyIdTo != null && ((EObject)partyIdTo).eIsProxy()) {
+			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
+			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
+			if (partyIdTo != oldPartyIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
+			}
+		}
+		return partyIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyIdTo() {
 		return partyIdTo;
 	}
 
@@ -106,8 +117,8 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public void setPartyIdTo(String newPartyIdTo) {
-		String oldPartyIdTo = partyIdTo;
+	public void setPartyIdTo(Party newPartyIdTo) {
+		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
@@ -147,7 +158,8 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 			case PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_INVITATION_ID:
 				return getPartyInvitationId();
 			case PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO:
-				return getPartyIdTo();
+				if (resolve) return getPartyIdTo();
+				return basicGetPartyIdTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,7 +176,7 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 				setPartyInvitationId((String)newValue);
 				return;
 			case PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO:
-				setPartyIdTo((String)newValue);
+				setPartyIdTo((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,7 +194,7 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 				setPartyInvitationId(PARTY_INVITATION_ID_EDEFAULT);
 				return;
 			case PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO:
-				setPartyIdTo(PARTY_ID_TO_EDEFAULT);
+				setPartyIdTo((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -199,7 +211,7 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 			case PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_INVITATION_ID:
 				return PARTY_INVITATION_ID_EDEFAULT == null ? partyInvitationId != null : !PARTY_INVITATION_ID_EDEFAULT.equals(partyInvitationId);
 			case PartyPackage.PARTY_INVITATION_GROUP_ASSOC__PARTY_ID_TO:
-				return PARTY_ID_TO_EDEFAULT == null ? partyIdTo != null : !PARTY_ID_TO_EDEFAULT.equals(partyIdTo);
+				return partyIdTo != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,8 +228,6 @@ public class PartyInvitationGroupAssocImpl extends BizEntityImpl implements Part
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyInvitationId: ");
 		result.append(partyInvitationId);
-		result.append(", partyIdTo: ");
-		result.append(partyIdTo);
 		result.append(')');
 		return result.toString();
 	}

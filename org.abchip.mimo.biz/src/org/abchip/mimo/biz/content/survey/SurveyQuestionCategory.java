@@ -57,30 +57,30 @@ public interface SurveyQuestionCategory extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Category Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Category Id</em>' attribute.
-	 * @see #setParentCategoryId(String)
+	 * @return the value of the '<em>Parent Category Id</em>' reference.
+	 * @see #setParentCategoryId(SurveyQuestionCategory)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionCategory_ParentCategoryId()
-	 * @model annotation="mimo-ent-domain frame='SurveyQuestionCategory'"
+	 * @model keys="surveyQuestionCategoryId"
 	 * @generated
 	 */
-	String getParentCategoryId();
+	SurveyQuestionCategory getParentCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionCategory#getParentCategoryId <em>Parent Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionCategory#getParentCategoryId <em>Parent Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Category Id</em>' reference.
 	 * @see #getParentCategoryId()
 	 * @generated
 	 */
-	void setParentCategoryId(String value);
+	void setParentCategoryId(SurveyQuestionCategory value);
 
 	/**
 	 * <!-- begin-user-doc -->

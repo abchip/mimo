@@ -10,6 +10,11 @@ package org.abchip.mimo.biz.product.store;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.facility.Facility;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,25 +47,15 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isCheckInventory <em>Check Inventory</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getCompanyName <em>Company Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDaysToCancelNonPay <em>Days To Cancel Non Pay</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultCurrencyUomId <em>Default Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultLocaleString <em>Default Locale String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultPassword <em>Default Password</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultSalesChannelEnumId <em>Default Sales Channel Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultTimeZoneString <em>Default Time Zone String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDigProdUploadCategoryId <em>Dig Prod Upload Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDigitalItemApprovedStatus <em>Digital Item Approved Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isEnableAutoSuggestionList <em>Enable Auto Suggestion List</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isEnableDigProdUpload <em>Enable Dig Prod Upload</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isExplodeOrderItems <em>Explode Order Items</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderApprovedStatus <em>Header Approved Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderCancelStatus <em>Header Cancel Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderDeclinedStatus <em>Header Declined Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getInventoryFacilityId <em>Inventory Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isIsDemoStore <em>Is Demo Store</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isIsImmediatelyFulfilled <em>Is Immediately Fulfilled</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getItemApprovedStatus <em>Item Approved Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getItemCancelStatus <em>Item Cancel Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getItemDeclinedStatus <em>Item Declined Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isManagedByLot <em>Managed By Lot</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isManualAuthIsCapture <em>Manual Auth Is Capture</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOldHeaderLogo <em>Old Header Logo</em>}</li>
@@ -70,8 +65,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isOneInventoryFacility <em>One Inventory Facility</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOrderNumberPrefix <em>Order Number Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPayToPartyId <em>Pay To Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProdSearchExcludeVariants <em>Prod Search Exclude Variants</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateShipping <em>Prorate Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isProrateTaxes <em>Prorate Taxes</em>}</li>
@@ -79,9 +72,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isReqShipAddrForDigItems <em>Req Ship Addr For Dig Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isRequireCustomerRole <em>Require Customer Role</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isRequireInventory <em>Require Inventory</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isReserveInventory <em>Reserve Inventory</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isRetryFailedAuths <em>Retry Failed Auths</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isSelectPaymentTypePerItem <em>Select Payment Type Per Item</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isSetOwnerUponIssuance <em>Set Owner Upon Issuance</em>}</li>
@@ -91,7 +82,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isShowPricesWithVatTax <em>Show Prices With Vat Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isShowTaxIsExempt <em>Show Tax Is Exempt</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isSplitPayPrefPerShpGrp <em>Split Pay Pref Per Shp Grp</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getStoreCreditAccountEnumId <em>Store Credit Account Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getStoreCreditValidDays <em>Store Credit Valid Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getStoreName <em>Store Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getSubtitle <em>Subtitle</em>}</li>
@@ -101,6 +91,21 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getVatTaxAuthPartyId <em>Vat Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#isViewCartOnAdd <em>View Cart On Add</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getVisualThemeId <em>Visual Theme Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getInventoryFacilityId <em>Inventory Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getPayToPartyId <em>Pay To Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultCurrencyUomId <em>Default Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultSalesChannelEnumId <em>Default Sales Channel Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderApprovedStatus <em>Header Approved Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getItemApprovedStatus <em>Item Approved Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getDigitalItemApprovedStatus <em>Digital Item Approved Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderDeclinedStatus <em>Header Declined Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getItemDeclinedStatus <em>Item Declined Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderCancelStatus <em>Header Cancel Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getItemCancelStatus <em>Item Cancel Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getStoreCreditAccountEnumId <em>Store Credit Account Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2GitHubs <em>OAuth2 Git Hubs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2Googles <em>OAuth2 Googles</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStore#getOAuth2LinkedIns <em>OAuth2 Linked Ins</em>}</li>
@@ -556,30 +561,30 @@ public interface ProductStore extends BizEntity {
 	void setDaysToCancelNonPay(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Default Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Default Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Default Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Currency Uom Id</em>' attribute.
-	 * @see #setDefaultCurrencyUomId(String)
+	 * @return the value of the '<em>Default Currency Uom Id</em>' reference.
+	 * @see #setDefaultCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DefaultCurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getDefaultCurrencyUomId();
+	Uom getDefaultCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultCurrencyUomId <em>Default Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultCurrencyUomId <em>Default Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Default Currency Uom Id</em>' reference.
 	 * @see #getDefaultCurrencyUomId()
 	 * @generated
 	 */
-	void setDefaultCurrencyUomId(String value);
+	void setDefaultCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Locale String</b></em>' attribute.
@@ -634,30 +639,30 @@ public interface ProductStore extends BizEntity {
 	void setDefaultPassword(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Default Sales Channel Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Default Sales Channel Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Default Sales Channel Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Sales Channel Enum Id</em>' attribute.
-	 * @see #setDefaultSalesChannelEnumId(String)
+	 * @return the value of the '<em>Default Sales Channel Enum Id</em>' reference.
+	 * @see #setDefaultSalesChannelEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DefaultSalesChannelEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getDefaultSalesChannelEnumId();
+	Enumeration getDefaultSalesChannelEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultSalesChannelEnumId <em>Default Sales Channel Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getDefaultSalesChannelEnumId <em>Default Sales Channel Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Sales Channel Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Default Sales Channel Enum Id</em>' reference.
 	 * @see #getDefaultSalesChannelEnumId()
 	 * @generated
 	 */
-	void setDefaultSalesChannelEnumId(String value);
+	void setDefaultSalesChannelEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Time Zone String</b></em>' attribute.
@@ -712,30 +717,30 @@ public interface ProductStore extends BizEntity {
 	void setDigProdUploadCategoryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Digital Item Approved Status</b></em>' attribute.
+	 * Returns the value of the '<em><b>Digital Item Approved Status</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Digital Item Approved Status</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Digital Item Approved Status</em>' attribute.
-	 * @see #setDigitalItemApprovedStatus(String)
+	 * @return the value of the '<em>Digital Item Approved Status</em>' reference.
+	 * @see #setDigitalItemApprovedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_DigitalItemApprovedStatus()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getDigitalItemApprovedStatus();
+	StatusItem getDigitalItemApprovedStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getDigitalItemApprovedStatus <em>Digital Item Approved Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getDigitalItemApprovedStatus <em>Digital Item Approved Status</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Digital Item Approved Status</em>' attribute.
+	 * @param value the new value of the '<em>Digital Item Approved Status</em>' reference.
 	 * @see #getDigitalItemApprovedStatus()
 	 * @generated
 	 */
-	void setDigitalItemApprovedStatus(String value);
+	void setDigitalItemApprovedStatus(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Enable Auto Suggestion List</b></em>' attribute.
@@ -816,160 +821,160 @@ public interface ProductStore extends BizEntity {
 	void setExplodeOrderItems(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Header Approved Status</b></em>' attribute.
+	 * Returns the value of the '<em><b>Header Approved Status</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Header Approved Status</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Header Approved Status</em>' attribute.
-	 * @see #setHeaderApprovedStatus(String)
+	 * @return the value of the '<em>Header Approved Status</em>' reference.
+	 * @see #setHeaderApprovedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_HeaderApprovedStatus()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getHeaderApprovedStatus();
+	StatusItem getHeaderApprovedStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderApprovedStatus <em>Header Approved Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderApprovedStatus <em>Header Approved Status</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Header Approved Status</em>' attribute.
+	 * @param value the new value of the '<em>Header Approved Status</em>' reference.
 	 * @see #getHeaderApprovedStatus()
 	 * @generated
 	 */
-	void setHeaderApprovedStatus(String value);
+	void setHeaderApprovedStatus(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Header Cancel Status</b></em>' attribute.
+	 * Returns the value of the '<em><b>Header Cancel Status</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Header Cancel Status</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Header Cancel Status</em>' attribute.
-	 * @see #setHeaderCancelStatus(String)
+	 * @return the value of the '<em>Header Cancel Status</em>' reference.
+	 * @see #setHeaderCancelStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_HeaderCancelStatus()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getHeaderCancelStatus();
+	StatusItem getHeaderCancelStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderCancelStatus <em>Header Cancel Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderCancelStatus <em>Header Cancel Status</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Header Cancel Status</em>' attribute.
+	 * @param value the new value of the '<em>Header Cancel Status</em>' reference.
 	 * @see #getHeaderCancelStatus()
 	 * @generated
 	 */
-	void setHeaderCancelStatus(String value);
+	void setHeaderCancelStatus(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Header Declined Status</b></em>' attribute.
+	 * Returns the value of the '<em><b>Header Declined Status</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Header Declined Status</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Header Declined Status</em>' attribute.
-	 * @see #setHeaderDeclinedStatus(String)
+	 * @return the value of the '<em>Header Declined Status</em>' reference.
+	 * @see #setHeaderDeclinedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_HeaderDeclinedStatus()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getHeaderDeclinedStatus();
+	StatusItem getHeaderDeclinedStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderDeclinedStatus <em>Header Declined Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getHeaderDeclinedStatus <em>Header Declined Status</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Header Declined Status</em>' attribute.
+	 * @param value the new value of the '<em>Header Declined Status</em>' reference.
 	 * @see #getHeaderDeclinedStatus()
 	 * @generated
 	 */
-	void setHeaderDeclinedStatus(String value);
+	void setHeaderDeclinedStatus(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Item Approved Status</b></em>' attribute.
+	 * Returns the value of the '<em><b>Item Approved Status</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Item Approved Status</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Item Approved Status</em>' attribute.
-	 * @see #setItemApprovedStatus(String)
+	 * @return the value of the '<em>Item Approved Status</em>' reference.
+	 * @see #setItemApprovedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ItemApprovedStatus()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getItemApprovedStatus();
+	StatusItem getItemApprovedStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getItemApprovedStatus <em>Item Approved Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getItemApprovedStatus <em>Item Approved Status</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Item Approved Status</em>' attribute.
+	 * @param value the new value of the '<em>Item Approved Status</em>' reference.
 	 * @see #getItemApprovedStatus()
 	 * @generated
 	 */
-	void setItemApprovedStatus(String value);
+	void setItemApprovedStatus(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Item Cancel Status</b></em>' attribute.
+	 * Returns the value of the '<em><b>Item Cancel Status</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Item Cancel Status</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Item Cancel Status</em>' attribute.
-	 * @see #setItemCancelStatus(String)
+	 * @return the value of the '<em>Item Cancel Status</em>' reference.
+	 * @see #setItemCancelStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ItemCancelStatus()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getItemCancelStatus();
+	StatusItem getItemCancelStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getItemCancelStatus <em>Item Cancel Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getItemCancelStatus <em>Item Cancel Status</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Item Cancel Status</em>' attribute.
+	 * @param value the new value of the '<em>Item Cancel Status</em>' reference.
 	 * @see #getItemCancelStatus()
 	 * @generated
 	 */
-	void setItemCancelStatus(String value);
+	void setItemCancelStatus(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Item Declined Status</b></em>' attribute.
+	 * Returns the value of the '<em><b>Item Declined Status</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Item Declined Status</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Item Declined Status</em>' attribute.
-	 * @see #setItemDeclinedStatus(String)
+	 * @return the value of the '<em>Item Declined Status</em>' reference.
+	 * @see #setItemDeclinedStatus(StatusItem)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ItemDeclinedStatus()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getItemDeclinedStatus();
+	StatusItem getItemDeclinedStatus();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getItemDeclinedStatus <em>Item Declined Status</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getItemDeclinedStatus <em>Item Declined Status</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Item Declined Status</em>' attribute.
+	 * @param value the new value of the '<em>Item Declined Status</em>' reference.
 	 * @see #getItemDeclinedStatus()
 	 * @generated
 	 */
-	void setItemDeclinedStatus(String value);
+	void setItemDeclinedStatus(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Managed By Lot</b></em>' attribute.
@@ -1206,56 +1211,56 @@ public interface ProductStore extends BizEntity {
 	void setOrderNumberPrefix(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Pay To Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Pay To Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pay To Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pay To Party Id</em>' attribute.
-	 * @see #setPayToPartyId(String)
+	 * @return the value of the '<em>Pay To Party Id</em>' reference.
+	 * @see #setPayToPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_PayToPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPayToPartyId();
+	Party getPayToPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getPayToPartyId <em>Pay To Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getPayToPartyId <em>Pay To Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pay To Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Pay To Party Id</em>' reference.
 	 * @see #getPayToPartyId()
 	 * @generated
 	 */
-	void setPayToPartyId(String value);
+	void setPayToPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Method Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Method Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Method Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Method Enum Id</em>' attribute.
-	 * @see #setRequirementMethodEnumId(String)
+	 * @return the value of the '<em>Requirement Method Enum Id</em>' reference.
+	 * @see #setRequirementMethodEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_RequirementMethodEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getRequirementMethodEnumId();
+	Enumeration getRequirementMethodEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Method Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Method Enum Id</em>' reference.
 	 * @see #getRequirementMethodEnumId()
 	 * @generated
 	 */
-	void setRequirementMethodEnumId(String value);
+	void setRequirementMethodEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Reserve Inventory</b></em>' attribute.
@@ -1284,30 +1289,30 @@ public interface ProductStore extends BizEntity {
 	void setReserveInventory(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Reserve Order Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Reserve Order Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Reserve Order Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reserve Order Enum Id</em>' attribute.
-	 * @see #setReserveOrderEnumId(String)
+	 * @return the value of the '<em>Reserve Order Enum Id</em>' reference.
+	 * @see #setReserveOrderEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ReserveOrderEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getReserveOrderEnumId();
+	Enumeration getReserveOrderEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reserve Order Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Reserve Order Enum Id</em>' reference.
 	 * @see #getReserveOrderEnumId()
 	 * @generated
 	 */
-	void setReserveOrderEnumId(String value);
+	void setReserveOrderEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Retry Failed Auths</b></em>' attribute.
@@ -1544,30 +1549,30 @@ public interface ProductStore extends BizEntity {
 	void setSplitPayPrefPerShpGrp(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Store Credit Account Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Store Credit Account Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Store Credit Account Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Store Credit Account Enum Id</em>' attribute.
-	 * @see #setStoreCreditAccountEnumId(String)
+	 * @return the value of the '<em>Store Credit Account Enum Id</em>' reference.
+	 * @see #setStoreCreditAccountEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_StoreCreditAccountEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getStoreCreditAccountEnumId();
+	Enumeration getStoreCreditAccountEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getStoreCreditAccountEnumId <em>Store Credit Account Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getStoreCreditAccountEnumId <em>Store Credit Account Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Store Credit Account Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Store Credit Account Enum Id</em>' reference.
 	 * @see #getStoreCreditAccountEnumId()
 	 * @generated
 	 */
-	void setStoreCreditAccountEnumId(String value);
+	void setStoreCreditAccountEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Store Credit Valid Days</b></em>' attribute.
@@ -2006,30 +2011,30 @@ public interface ProductStore extends BizEntity {
 	List<String> webSites();
 
 	/**
-	 * Returns the value of the '<em><b>Primary Store Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Primary Store Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Primary Store Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Primary Store Group Id</em>' attribute.
-	 * @see #setPrimaryStoreGroupId(String)
+	 * @return the value of the '<em>Primary Store Group Id</em>' reference.
+	 * @see #setPrimaryStoreGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_PrimaryStoreGroupId()
-	 * @model annotation="mimo-ent-domain frame='ProductStoreGroup'"
+	 * @model keys="productStoreGroupId"
 	 * @generated
 	 */
-	String getPrimaryStoreGroupId();
+	ProductStoreGroup getPrimaryStoreGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getPrimaryStoreGroupId <em>Primary Store Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Primary Store Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Primary Store Group Id</em>' reference.
 	 * @see #getPrimaryStoreGroupId()
 	 * @generated
 	 */
-	void setPrimaryStoreGroupId(String value);
+	void setPrimaryStoreGroupId(ProductStoreGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Prod Search Exclude Variants</b></em>' attribute.
@@ -2214,30 +2219,30 @@ public interface ProductStore extends BizEntity {
 	void setRequireInventory(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inventory Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Facility Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Facility Id</em>' attribute.
-	 * @see #setInventoryFacilityId(String)
+	 * @return the value of the '<em>Inventory Facility Id</em>' reference.
+	 * @see #setInventoryFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_InventoryFacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getInventoryFacilityId();
+	Facility getInventoryFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getInventoryFacilityId <em>Inventory Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStore#getInventoryFacilityId <em>Inventory Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Inventory Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Inventory Facility Id</em>' reference.
 	 * @see #getInventoryFacilityId()
 	 * @generated
 	 */
-	void setInventoryFacilityId(String value);
+	void setInventoryFacilityId(Facility value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Demo Store</b></em>' attribute.
@@ -2302,7 +2307,7 @@ public interface ProductStore extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStore_ProductStoreId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

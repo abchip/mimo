@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface ReservationsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-order-reservations";
+	String eNS_PREFIX = "biz-reservations";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,31 +117,13 @@ public interface ReservationsPackage extends EPackage {
 	int ACCOMMODATION_SPOT__ACCOMMODATION_SPOT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Accommodation Class Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_SPOT__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Fixed Asset Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOMMODATION_SPOT__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int ACCOMMODATION_SPOT__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Spaces</b></em>' attribute.
@@ -149,7 +132,25 @@ public interface ReservationsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOMMODATION_SPOT__NUMBER_OF_SPACES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int ACCOMMODATION_SPOT__NUMBER_OF_SPACES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Accommodation Class Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Fixed Asset Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOMMODATION_SPOT__FIXED_ASSET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Accommodation Spot</em>' class.
@@ -183,15 +184,15 @@ public interface ReservationsPackage extends EPackage {
 	EAttribute getAccommodationSpot_AccommodationSpotId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getAccommodationClassId <em>Accommodation Class Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getAccommodationClassId <em>Accommodation Class Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Accommodation Class Id</em>'.
+	 * @return the meta object for the reference '<em>Accommodation Class Id</em>'.
 	 * @see org.abchip.mimo.biz.order.reservations.AccommodationSpot#getAccommodationClassId()
 	 * @see #getAccommodationSpot()
 	 * @generated
 	 */
-	EAttribute getAccommodationSpot_AccommodationClassId();
+	EReference getAccommodationSpot_AccommodationClassId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getDescription <em>Description</em>}'.
@@ -205,15 +206,15 @@ public interface ReservationsPackage extends EPackage {
 	EAttribute getAccommodationSpot_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getFixedAssetId <em>Fixed Asset Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getFixedAssetId <em>Fixed Asset Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fixed Asset Id</em>'.
+	 * @return the meta object for the reference '<em>Fixed Asset Id</em>'.
 	 * @see org.abchip.mimo.biz.order.reservations.AccommodationSpot#getFixedAssetId()
 	 * @see #getAccommodationSpot()
 	 * @generated
 	 */
-	EAttribute getAccommodationSpot_FixedAssetId();
+	EReference getAccommodationSpot_FixedAssetId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.reservations.AccommodationSpot#getNumberOfSpaces <em>Number Of Spaces</em>}'.
@@ -267,12 +268,12 @@ public interface ReservationsPackage extends EPackage {
 		EAttribute ACCOMMODATION_SPOT__ACCOMMODATION_SPOT_ID = eINSTANCE.getAccommodationSpot_AccommodationSpotId();
 
 		/**
-		 * The meta object literal for the '<em><b>Accommodation Class Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Accommodation Class Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID = eINSTANCE.getAccommodationSpot_AccommodationClassId();
+		EReference ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID = eINSTANCE.getAccommodationSpot_AccommodationClassId();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -283,12 +284,12 @@ public interface ReservationsPackage extends EPackage {
 		EAttribute ACCOMMODATION_SPOT__DESCRIPTION = eINSTANCE.getAccommodationSpot_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Fixed Asset Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Fixed Asset Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACCOMMODATION_SPOT__FIXED_ASSET_ID = eINSTANCE.getAccommodationSpot_FixedAssetId();
+		EReference ACCOMMODATION_SPOT__FIXED_ASSET_ID = eINSTANCE.getAccommodationSpot_FixedAssetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Spaces</b></em>' attribute feature.

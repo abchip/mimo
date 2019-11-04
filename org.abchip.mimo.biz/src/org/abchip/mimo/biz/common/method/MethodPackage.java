@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface MethodPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-common-method";
+	String eNS_PREFIX = "biz-method";
 
 	/**
 	 * The singleton instance of the package.
@@ -125,22 +126,22 @@ public interface MethodPackage extends EPackage {
 	int CUSTOM_METHOD__CUSTOM_METHOD_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Custom Method Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_METHOD__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int CUSTOM_METHOD__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Custom Method Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Asset Dep Methods</b></em>' attribute list.
@@ -243,7 +244,7 @@ public interface MethodPackage extends EPackage {
 	int CUSTOM_METHOD_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -294,15 +295,15 @@ public interface MethodPackage extends EPackage {
 	EAttribute getCustomMethod_CustomMethodName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId <em>Custom Method Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId <em>Custom Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Custom Method Type Id</em>'.
+	 * @return the meta object for the reference '<em>Custom Method Type Id</em>'.
 	 * @see org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId()
 	 * @see #getCustomMethod()
 	 * @generated
 	 */
-	EAttribute getCustomMethod_CustomMethodTypeId();
+	EReference getCustomMethod_CustomMethodTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.method.CustomMethod#getDescription <em>Description</em>}'.
@@ -370,15 +371,15 @@ public interface MethodPackage extends EPackage {
 	EAttribute getCustomMethodType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.method.CustomMethodType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.method.CustomMethodType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.common.method.CustomMethodType#getParentTypeId()
 	 * @see #getCustomMethodType()
 	 * @generated
 	 */
-	EAttribute getCustomMethodType_ParentTypeId();
+	EReference getCustomMethodType_ParentTypeId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -429,12 +430,12 @@ public interface MethodPackage extends EPackage {
 		EAttribute CUSTOM_METHOD__CUSTOM_METHOD_NAME = eINSTANCE.getCustomMethod_CustomMethodName();
 
 		/**
-		 * The meta object literal for the '<em><b>Custom Method Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Custom Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID = eINSTANCE.getCustomMethod_CustomMethodTypeId();
+		EReference CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID = eINSTANCE.getCustomMethod_CustomMethodTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -487,12 +488,12 @@ public interface MethodPackage extends EPackage {
 		EAttribute CUSTOM_METHOD_TYPE__HAS_TABLE = eINSTANCE.getCustomMethodType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUSTOM_METHOD_TYPE__PARENT_TYPE_ID = eINSTANCE.getCustomMethodType_ParentTypeId();
+		EReference CUSTOM_METHOD_TYPE__PARENT_TYPE_ID = eINSTANCE.getCustomMethodType_ParentTypeId();
 
 	}
 

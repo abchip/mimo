@@ -10,12 +10,17 @@ package org.abchip.mimo.biz.product.cost.impl;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
+import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.cost.CostComponentCalc;
 import org.abchip.mimo.biz.product.cost.CostPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,14 +32,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getCostCustomMethodId <em>Cost Custom Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getCostGlAccountTypeId <em>Cost Gl Account Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getFixedCost <em>Fixed Cost</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getOffsettingGlAccountTypeId <em>Offsetting Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getPerMilliSecond <em>Per Milli Second</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getVariableCost <em>Variable Cost</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getCostGlAccountTypeId <em>Cost Gl Account Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getOffsettingGlAccountTypeId <em>Offsetting Gl Account Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.impl.CostComponentCalcImpl#getCostCustomMethodId <em>Cost Custom Method Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,66 +69,6 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @ordered
 	 */
 	protected String costComponentCalcId = COST_COMPONENT_CALC_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCostCustomMethodId() <em>Cost Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCostCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COST_CUSTOM_METHOD_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCostCustomMethodId() <em>Cost Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCostCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String costCustomMethodId = COST_CUSTOM_METHOD_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCostGlAccountTypeId() <em>Cost Gl Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCostGlAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COST_GL_ACCOUNT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCostGlAccountTypeId() <em>Cost Gl Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCostGlAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String costGlAccountTypeId = COST_GL_ACCOUNT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -166,26 +111,6 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	protected BigDecimal fixedCost = FIXED_COST_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOffsettingGlAccountTypeId() <em>Offsetting Gl Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOffsettingGlAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OFFSETTING_GL_ACCOUNT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOffsettingGlAccountTypeId() <em>Offsetting Gl Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOffsettingGlAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String offsettingGlAccountTypeId = OFFSETTING_GL_ACCOUNT_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPerMilliSecond() <em>Per Milli Second</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -226,6 +151,46 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	protected BigDecimal variableCost = VARIABLE_COST_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getCostGlAccountTypeId() <em>Cost Gl Account Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCostGlAccountTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccountType costGlAccountTypeId;
+
+	/**
+	 * The cached value of the '{@link #getOffsettingGlAccountTypeId() <em>Offsetting Gl Account Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOffsettingGlAccountTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccountType offsettingGlAccountTypeId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getCostCustomMethodId() <em>Cost Custom Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCostCustomMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod costCustomMethodId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -250,7 +215,24 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @generated
 	 */
 	@Override
-	public String getCostCustomMethodId() {
+	public CustomMethod getCostCustomMethodId() {
+		if (costCustomMethodId != null && ((EObject)costCustomMethodId).eIsProxy()) {
+			InternalEObject oldCostCustomMethodId = (InternalEObject)costCustomMethodId;
+			costCustomMethodId = (CustomMethod)eResolveProxy(oldCostCustomMethodId);
+			if (costCustomMethodId != oldCostCustomMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID, oldCostCustomMethodId, costCustomMethodId));
+			}
+		}
+		return costCustomMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetCostCustomMethodId() {
 		return costCustomMethodId;
 	}
 
@@ -260,8 +242,8 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @generated
 	 */
 	@Override
-	public void setCostCustomMethodId(String newCostCustomMethodId) {
-		String oldCostCustomMethodId = costCustomMethodId;
+	public void setCostCustomMethodId(CustomMethod newCostCustomMethodId) {
+		CustomMethod oldCostCustomMethodId = costCustomMethodId;
 		costCustomMethodId = newCostCustomMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID, oldCostCustomMethodId, costCustomMethodId));
@@ -273,7 +255,24 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @generated
 	 */
 	@Override
-	public String getCostGlAccountTypeId() {
+	public GlAccountType getCostGlAccountTypeId() {
+		if (costGlAccountTypeId != null && ((EObject)costGlAccountTypeId).eIsProxy()) {
+			InternalEObject oldCostGlAccountTypeId = (InternalEObject)costGlAccountTypeId;
+			costGlAccountTypeId = (GlAccountType)eResolveProxy(oldCostGlAccountTypeId);
+			if (costGlAccountTypeId != oldCostGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID, oldCostGlAccountTypeId, costGlAccountTypeId));
+			}
+		}
+		return costGlAccountTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountType basicGetCostGlAccountTypeId() {
 		return costGlAccountTypeId;
 	}
 
@@ -283,8 +282,8 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @generated
 	 */
 	@Override
-	public void setCostGlAccountTypeId(String newCostGlAccountTypeId) {
-		String oldCostGlAccountTypeId = costGlAccountTypeId;
+	public void setCostGlAccountTypeId(GlAccountType newCostGlAccountTypeId) {
+		GlAccountType oldCostGlAccountTypeId = costGlAccountTypeId;
 		costGlAccountTypeId = newCostGlAccountTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID, oldCostGlAccountTypeId, costGlAccountTypeId));
@@ -296,7 +295,24 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -306,8 +322,8 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -365,7 +381,24 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @generated
 	 */
 	@Override
-	public String getOffsettingGlAccountTypeId() {
+	public GlAccountType getOffsettingGlAccountTypeId() {
+		if (offsettingGlAccountTypeId != null && ((EObject)offsettingGlAccountTypeId).eIsProxy()) {
+			InternalEObject oldOffsettingGlAccountTypeId = (InternalEObject)offsettingGlAccountTypeId;
+			offsettingGlAccountTypeId = (GlAccountType)eResolveProxy(oldOffsettingGlAccountTypeId);
+			if (offsettingGlAccountTypeId != oldOffsettingGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID, oldOffsettingGlAccountTypeId, offsettingGlAccountTypeId));
+			}
+		}
+		return offsettingGlAccountTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountType basicGetOffsettingGlAccountTypeId() {
 		return offsettingGlAccountTypeId;
 	}
 
@@ -375,8 +408,8 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 	 * @generated
 	 */
 	@Override
-	public void setOffsettingGlAccountTypeId(String newOffsettingGlAccountTypeId) {
-		String oldOffsettingGlAccountTypeId = offsettingGlAccountTypeId;
+	public void setOffsettingGlAccountTypeId(GlAccountType newOffsettingGlAccountTypeId) {
+		GlAccountType oldOffsettingGlAccountTypeId = offsettingGlAccountTypeId;
 		offsettingGlAccountTypeId = newOffsettingGlAccountTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID, oldOffsettingGlAccountTypeId, offsettingGlAccountTypeId));
@@ -473,22 +506,26 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 		switch (featureID) {
 			case CostPackage.COST_COMPONENT_CALC__COST_COMPONENT_CALC_ID:
 				return getCostComponentCalcId();
-			case CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID:
-				return getCostCustomMethodId();
-			case CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID:
-				return getCostGlAccountTypeId();
-			case CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case CostPackage.COST_COMPONENT_CALC__DESCRIPTION:
 				return getDescription();
 			case CostPackage.COST_COMPONENT_CALC__FIXED_COST:
 				return getFixedCost();
-			case CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID:
-				return getOffsettingGlAccountTypeId();
 			case CostPackage.COST_COMPONENT_CALC__PER_MILLI_SECOND:
 				return getPerMilliSecond();
 			case CostPackage.COST_COMPONENT_CALC__VARIABLE_COST:
 				return getVariableCost();
+			case CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID:
+				if (resolve) return getCostGlAccountTypeId();
+				return basicGetCostGlAccountTypeId();
+			case CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID:
+				if (resolve) return getOffsettingGlAccountTypeId();
+				return basicGetOffsettingGlAccountTypeId();
+			case CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID:
+				if (resolve) return getCostCustomMethodId();
+				return basicGetCostCustomMethodId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -504,29 +541,29 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 			case CostPackage.COST_COMPONENT_CALC__COST_COMPONENT_CALC_ID:
 				setCostComponentCalcId((String)newValue);
 				return;
-			case CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID:
-				setCostCustomMethodId((String)newValue);
-				return;
-			case CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID:
-				setCostGlAccountTypeId((String)newValue);
-				return;
-			case CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case CostPackage.COST_COMPONENT_CALC__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case CostPackage.COST_COMPONENT_CALC__FIXED_COST:
 				setFixedCost((BigDecimal)newValue);
 				return;
-			case CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID:
-				setOffsettingGlAccountTypeId((String)newValue);
-				return;
 			case CostPackage.COST_COMPONENT_CALC__PER_MILLI_SECOND:
 				setPerMilliSecond((Long)newValue);
 				return;
 			case CostPackage.COST_COMPONENT_CALC__VARIABLE_COST:
 				setVariableCost((BigDecimal)newValue);
+				return;
+			case CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID:
+				setCostGlAccountTypeId((GlAccountType)newValue);
+				return;
+			case CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID:
+				setOffsettingGlAccountTypeId((GlAccountType)newValue);
+				return;
+			case CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID:
+				setCostCustomMethodId((CustomMethod)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -543,29 +580,29 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 			case CostPackage.COST_COMPONENT_CALC__COST_COMPONENT_CALC_ID:
 				setCostComponentCalcId(COST_COMPONENT_CALC_ID_EDEFAULT);
 				return;
-			case CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID:
-				setCostCustomMethodId(COST_CUSTOM_METHOD_ID_EDEFAULT);
-				return;
-			case CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID:
-				setCostGlAccountTypeId(COST_GL_ACCOUNT_TYPE_ID_EDEFAULT);
-				return;
-			case CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case CostPackage.COST_COMPONENT_CALC__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case CostPackage.COST_COMPONENT_CALC__FIXED_COST:
 				setFixedCost(FIXED_COST_EDEFAULT);
 				return;
-			case CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID:
-				setOffsettingGlAccountTypeId(OFFSETTING_GL_ACCOUNT_TYPE_ID_EDEFAULT);
-				return;
 			case CostPackage.COST_COMPONENT_CALC__PER_MILLI_SECOND:
 				setPerMilliSecond(PER_MILLI_SECOND_EDEFAULT);
 				return;
 			case CostPackage.COST_COMPONENT_CALC__VARIABLE_COST:
 				setVariableCost(VARIABLE_COST_EDEFAULT);
+				return;
+			case CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID:
+				setCostGlAccountTypeId((GlAccountType)null);
+				return;
+			case CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID:
+				setOffsettingGlAccountTypeId((GlAccountType)null);
+				return;
+			case CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID:
+				setCostCustomMethodId((CustomMethod)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -581,22 +618,22 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 		switch (featureID) {
 			case CostPackage.COST_COMPONENT_CALC__COST_COMPONENT_CALC_ID:
 				return COST_COMPONENT_CALC_ID_EDEFAULT == null ? costComponentCalcId != null : !COST_COMPONENT_CALC_ID_EDEFAULT.equals(costComponentCalcId);
-			case CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID:
-				return COST_CUSTOM_METHOD_ID_EDEFAULT == null ? costCustomMethodId != null : !COST_CUSTOM_METHOD_ID_EDEFAULT.equals(costCustomMethodId);
-			case CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID:
-				return COST_GL_ACCOUNT_TYPE_ID_EDEFAULT == null ? costGlAccountTypeId != null : !COST_GL_ACCOUNT_TYPE_ID_EDEFAULT.equals(costGlAccountTypeId);
-			case CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case CostPackage.COST_COMPONENT_CALC__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case CostPackage.COST_COMPONENT_CALC__FIXED_COST:
 				return FIXED_COST_EDEFAULT == null ? fixedCost != null : !FIXED_COST_EDEFAULT.equals(fixedCost);
-			case CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID:
-				return OFFSETTING_GL_ACCOUNT_TYPE_ID_EDEFAULT == null ? offsettingGlAccountTypeId != null : !OFFSETTING_GL_ACCOUNT_TYPE_ID_EDEFAULT.equals(offsettingGlAccountTypeId);
 			case CostPackage.COST_COMPONENT_CALC__PER_MILLI_SECOND:
 				return perMilliSecond != PER_MILLI_SECOND_EDEFAULT;
 			case CostPackage.COST_COMPONENT_CALC__VARIABLE_COST:
 				return VARIABLE_COST_EDEFAULT == null ? variableCost != null : !VARIABLE_COST_EDEFAULT.equals(variableCost);
+			case CostPackage.COST_COMPONENT_CALC__COST_GL_ACCOUNT_TYPE_ID:
+				return costGlAccountTypeId != null;
+			case CostPackage.COST_COMPONENT_CALC__OFFSETTING_GL_ACCOUNT_TYPE_ID:
+				return offsettingGlAccountTypeId != null;
+			case CostPackage.COST_COMPONENT_CALC__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case CostPackage.COST_COMPONENT_CALC__COST_CUSTOM_METHOD_ID:
+				return costCustomMethodId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -613,18 +650,10 @@ public class CostComponentCalcImpl extends BizEntityImpl implements CostComponen
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (costComponentCalcId: ");
 		result.append(costComponentCalcId);
-		result.append(", costCustomMethodId: ");
-		result.append(costCustomMethodId);
-		result.append(", costGlAccountTypeId: ");
-		result.append(costGlAccountTypeId);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", fixedCost: ");
 		result.append(fixedCost);
-		result.append(", offsettingGlAccountTypeId: ");
-		result.append(offsettingGlAccountTypeId);
 		result.append(", perMilliSecond: ");
 		result.append(perMilliSecond);
 		result.append(", variableCost: ");

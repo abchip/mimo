@@ -8,12 +8,16 @@
 package org.abchip.mimo.biz.content.preference.impl;
 
 import org.abchip.mimo.biz.content.preference.PreferencePackage;
+import org.abchip.mimo.biz.content.preference.WebPreferenceType;
 import org.abchip.mimo.biz.content.preference.WebUserPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getUserLoginId <em>User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getVisitId <em>Visit Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getWebPreferenceTypeId <em>Web Preference Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getWebPreferenceValue <em>Web Preference Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getWebPreferenceTypeId <em>Web Preference Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.preference.impl.WebUserPreferenceImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,26 +64,6 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,26 +84,6 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	protected String visitId = VISIT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getWebPreferenceTypeId() <em>Web Preference Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebPreferenceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WEB_PREFERENCE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWebPreferenceTypeId() <em>Web Preference Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebPreferenceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String webPreferenceTypeId = WEB_PREFERENCE_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getWebPreferenceValue() <em>Web Preference Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,6 +102,26 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 * @ordered
 	 */
 	protected String webPreferenceValue = WEB_PREFERENCE_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWebPreferenceTypeId() <em>Web Preference Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWebPreferenceTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WebPreferenceType webPreferenceTypeId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,7 +148,24 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -174,8 +175,8 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID, oldPartyId, partyId));
@@ -233,7 +234,24 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 * @generated
 	 */
 	@Override
-	public String getWebPreferenceTypeId() {
+	public WebPreferenceType getWebPreferenceTypeId() {
+		if (webPreferenceTypeId != null && ((EObject)webPreferenceTypeId).eIsProxy()) {
+			InternalEObject oldWebPreferenceTypeId = (InternalEObject)webPreferenceTypeId;
+			webPreferenceTypeId = (WebPreferenceType)eResolveProxy(oldWebPreferenceTypeId);
+			if (webPreferenceTypeId != oldWebPreferenceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID, oldWebPreferenceTypeId, webPreferenceTypeId));
+			}
+		}
+		return webPreferenceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebPreferenceType basicGetWebPreferenceTypeId() {
 		return webPreferenceTypeId;
 	}
 
@@ -243,8 +261,8 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 	 * @generated
 	 */
 	@Override
-	public void setWebPreferenceTypeId(String newWebPreferenceTypeId) {
-		String oldWebPreferenceTypeId = webPreferenceTypeId;
+	public void setWebPreferenceTypeId(WebPreferenceType newWebPreferenceTypeId) {
+		WebPreferenceType oldWebPreferenceTypeId = webPreferenceTypeId;
 		webPreferenceTypeId = newWebPreferenceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID, oldWebPreferenceTypeId, webPreferenceTypeId));
@@ -283,14 +301,16 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 		switch (featureID) {
 			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
 				return getUserLoginId();
-			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
-				return getPartyId();
 			case PreferencePackage.WEB_USER_PREFERENCE__VISIT_ID:
 				return getVisitId();
-			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
-				return getWebPreferenceTypeId();
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_VALUE:
 				return getWebPreferenceValue();
+			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
+				if (resolve) return getWebPreferenceTypeId();
+				return basicGetWebPreferenceTypeId();
+			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -306,17 +326,17 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
 				setUserLoginId((String)newValue);
 				return;
-			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__VISIT_ID:
 				setVisitId((String)newValue);
 				return;
-			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
-				setWebPreferenceTypeId((String)newValue);
-				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_VALUE:
 				setWebPreferenceValue((String)newValue);
+				return;
+			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
+				setWebPreferenceTypeId((WebPreferenceType)newValue);
+				return;
+			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -333,17 +353,17 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
 				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
 				return;
-			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__VISIT_ID:
 				setVisitId(VISIT_ID_EDEFAULT);
 				return;
-			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
-				setWebPreferenceTypeId(WEB_PREFERENCE_TYPE_ID_EDEFAULT);
-				return;
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_VALUE:
 				setWebPreferenceValue(WEB_PREFERENCE_VALUE_EDEFAULT);
+				return;
+			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
+				setWebPreferenceTypeId((WebPreferenceType)null);
+				return;
+			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -359,14 +379,14 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 		switch (featureID) {
 			case PreferencePackage.WEB_USER_PREFERENCE__USER_LOGIN_ID:
 				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
-			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case PreferencePackage.WEB_USER_PREFERENCE__VISIT_ID:
 				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
-			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
-				return WEB_PREFERENCE_TYPE_ID_EDEFAULT == null ? webPreferenceTypeId != null : !WEB_PREFERENCE_TYPE_ID_EDEFAULT.equals(webPreferenceTypeId);
 			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_VALUE:
 				return WEB_PREFERENCE_VALUE_EDEFAULT == null ? webPreferenceValue != null : !WEB_PREFERENCE_VALUE_EDEFAULT.equals(webPreferenceValue);
+			case PreferencePackage.WEB_USER_PREFERENCE__WEB_PREFERENCE_TYPE_ID:
+				return webPreferenceTypeId != null;
+			case PreferencePackage.WEB_USER_PREFERENCE__PARTY_ID:
+				return partyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -383,12 +403,8 @@ public class WebUserPreferenceImpl extends BizEntityImpl implements WebUserPrefe
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (userLoginId: ");
 		result.append(userLoginId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", visitId: ");
 		result.append(visitId);
-		result.append(", webPreferenceTypeId: ");
-		result.append(webPreferenceTypeId);
 		result.append(", webPreferenceValue: ");
 		result.append(webPreferenceValue);
 		result.append(')');

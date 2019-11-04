@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.humanres.ability.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PartyQual;
 import org.abchip.mimo.biz.humanres.ability.PartyQualType;
@@ -17,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,12 +31,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getPartyQualTypeId <em>Party Qual Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getQualificationDesc <em>Qualification Desc</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getPartyQualTypeId <em>Party Qual Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualImpl#getVerifStatusId <em>Verif Status Id</em>}</li>
  * </ul>
  *
@@ -64,26 +67,6 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyQualTypeId() <em>Party Qual Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyQualTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_QUAL_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyQualTypeId() <em>Party Qual Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyQualTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyQualTypeId = PARTY_QUAL_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -126,26 +109,6 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	protected String qualificationDesc = QUALIFICATION_DESC_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,24 +149,34 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	protected String title = TITLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getVerifStatusId() <em>Verif Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyQualTypeId() <em>Party Qual Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVerifStatusId()
+	 * @see #getPartyQualTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VERIF_STATUS_ID_EDEFAULT = null;
+	protected PartyQualType partyQualTypeId;
 
 	/**
-	 * The cached value of the '{@link #getVerifStatusId() <em>Verif Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getVerifStatusId() <em>Verif Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVerifStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String verifStatusId = VERIF_STATUS_ID_EDEFAULT;
+	protected StatusItem verifStatusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +249,24 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getPartyQualTypeId() {
+	public PartyQualType getPartyQualTypeId() {
+		if (partyQualTypeId != null && ((EObject)partyQualTypeId).eIsProxy()) {
+			InternalEObject oldPartyQualTypeId = (InternalEObject)partyQualTypeId;
+			partyQualTypeId = (PartyQualType)eResolveProxy(oldPartyQualTypeId);
+			if (partyQualTypeId != oldPartyQualTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID, oldPartyQualTypeId, partyQualTypeId));
+			}
+		}
+		return partyQualTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyQualType basicGetPartyQualTypeId() {
 		return partyQualTypeId;
 	}
 
@@ -286,8 +276,8 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setPartyQualTypeId(String newPartyQualTypeId) {
-		String oldPartyQualTypeId = partyQualTypeId;
+	public void setPartyQualTypeId(PartyQualType newPartyQualTypeId) {
+		PartyQualType oldPartyQualTypeId = partyQualTypeId;
 		partyQualTypeId = newPartyQualTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID, oldPartyQualTypeId, partyQualTypeId));
@@ -322,7 +312,24 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_QUAL__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -332,8 +339,8 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__STATUS_ID, oldStatusId, statusId));
@@ -391,7 +398,24 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getVerifStatusId() {
+	public StatusItem getVerifStatusId() {
+		if (verifStatusId != null && ((EObject)verifStatusId).eIsProxy()) {
+			InternalEObject oldVerifStatusId = (InternalEObject)verifStatusId;
+			verifStatusId = (StatusItem)eResolveProxy(oldVerifStatusId);
+			if (verifStatusId != oldVerifStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PARTY_QUAL__VERIF_STATUS_ID, oldVerifStatusId, verifStatusId));
+			}
+		}
+		return verifStatusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetVerifStatusId() {
 		return verifStatusId;
 	}
 
@@ -401,8 +425,8 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setVerifStatusId(String newVerifStatusId) {
-		String oldVerifStatusId = verifStatusId;
+	public void setVerifStatusId(StatusItem newVerifStatusId) {
+		StatusItem oldVerifStatusId = verifStatusId;
 		verifStatusId = newVerifStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PARTY_QUAL__VERIF_STATUS_ID, oldVerifStatusId, verifStatusId));
@@ -418,20 +442,23 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 		switch (featureID) {
 			case AbilityPackage.PARTY_QUAL__PARTY_ID:
 				return getPartyId();
-			case AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID:
-				return getPartyQualTypeId();
 			case AbilityPackage.PARTY_QUAL__FROM_DATE:
 				return getFromDate();
 			case AbilityPackage.PARTY_QUAL__QUALIFICATION_DESC:
 				return getQualificationDesc();
-			case AbilityPackage.PARTY_QUAL__STATUS_ID:
-				return getStatusId();
 			case AbilityPackage.PARTY_QUAL__THRU_DATE:
 				return getThruDate();
 			case AbilityPackage.PARTY_QUAL__TITLE:
 				return getTitle();
+			case AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID:
+				if (resolve) return getPartyQualTypeId();
+				return basicGetPartyQualTypeId();
+			case AbilityPackage.PARTY_QUAL__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 			case AbilityPackage.PARTY_QUAL__VERIF_STATUS_ID:
-				return getVerifStatusId();
+				if (resolve) return getVerifStatusId();
+				return basicGetVerifStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -447,17 +474,11 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 			case AbilityPackage.PARTY_QUAL__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID:
-				setPartyQualTypeId((String)newValue);
-				return;
 			case AbilityPackage.PARTY_QUAL__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case AbilityPackage.PARTY_QUAL__QUALIFICATION_DESC:
 				setQualificationDesc((String)newValue);
-				return;
-			case AbilityPackage.PARTY_QUAL__STATUS_ID:
-				setStatusId((String)newValue);
 				return;
 			case AbilityPackage.PARTY_QUAL__THRU_DATE:
 				setThruDate((Date)newValue);
@@ -465,8 +486,14 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 			case AbilityPackage.PARTY_QUAL__TITLE:
 				setTitle((String)newValue);
 				return;
+			case AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID:
+				setPartyQualTypeId((PartyQualType)newValue);
+				return;
+			case AbilityPackage.PARTY_QUAL__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
 			case AbilityPackage.PARTY_QUAL__VERIF_STATUS_ID:
-				setVerifStatusId((String)newValue);
+				setVerifStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -483,17 +510,11 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 			case AbilityPackage.PARTY_QUAL__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID:
-				setPartyQualTypeId(PARTY_QUAL_TYPE_ID_EDEFAULT);
-				return;
 			case AbilityPackage.PARTY_QUAL__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case AbilityPackage.PARTY_QUAL__QUALIFICATION_DESC:
 				setQualificationDesc(QUALIFICATION_DESC_EDEFAULT);
-				return;
-			case AbilityPackage.PARTY_QUAL__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
 				return;
 			case AbilityPackage.PARTY_QUAL__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
@@ -501,8 +522,14 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 			case AbilityPackage.PARTY_QUAL__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
+			case AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID:
+				setPartyQualTypeId((PartyQualType)null);
+				return;
+			case AbilityPackage.PARTY_QUAL__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
 			case AbilityPackage.PARTY_QUAL__VERIF_STATUS_ID:
-				setVerifStatusId(VERIF_STATUS_ID_EDEFAULT);
+				setVerifStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -518,20 +545,20 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 		switch (featureID) {
 			case AbilityPackage.PARTY_QUAL__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID:
-				return PARTY_QUAL_TYPE_ID_EDEFAULT == null ? partyQualTypeId != null : !PARTY_QUAL_TYPE_ID_EDEFAULT.equals(partyQualTypeId);
 			case AbilityPackage.PARTY_QUAL__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case AbilityPackage.PARTY_QUAL__QUALIFICATION_DESC:
 				return QUALIFICATION_DESC_EDEFAULT == null ? qualificationDesc != null : !QUALIFICATION_DESC_EDEFAULT.equals(qualificationDesc);
-			case AbilityPackage.PARTY_QUAL__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case AbilityPackage.PARTY_QUAL__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case AbilityPackage.PARTY_QUAL__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case AbilityPackage.PARTY_QUAL__PARTY_QUAL_TYPE_ID:
+				return partyQualTypeId != null;
+			case AbilityPackage.PARTY_QUAL__STATUS_ID:
+				return statusId != null;
 			case AbilityPackage.PARTY_QUAL__VERIF_STATUS_ID:
-				return VERIF_STATUS_ID_EDEFAULT == null ? verifStatusId != null : !VERIF_STATUS_ID_EDEFAULT.equals(verifStatusId);
+				return verifStatusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -548,20 +575,14 @@ public class PartyQualImpl extends BizEntityTypedImpl<PartyQualType> implements 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", partyQualTypeId: ");
-		result.append(partyQualTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", qualificationDesc: ");
 		result.append(qualificationDesc);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(", title: ");
 		result.append(title);
-		result.append(", verifStatusId: ");
-		result.append(verifStatusId);
 		result.append(')');
 		return result.toString();
 	}

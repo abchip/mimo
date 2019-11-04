@@ -39,7 +39,8 @@ public interface CreditCardTypeGlAccount extends BizEntity {
 	 * @return the value of the '<em>Card Type</em>' attribute.
 	 * @see #setCardType(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCardTypeGlAccount_CardType()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCardType();
@@ -91,7 +92,8 @@ public interface CreditCardTypeGlAccount extends BizEntity {
 	 * @return the value of the '<em>Organization Party Id</em>' attribute.
 	 * @see #setOrganizationPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCardTypeGlAccount_OrganizationPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrganizationPartyId();

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.contact;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.RoleType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,16 +22,16 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#isAllowSolicitation <em>Allow Solicitation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getExtension <em>Extension</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getMonthsWithContactMech <em>Months With Contact Mech</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#isVerified <em>Verified</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getYearsWithContactMech <em>Years With Contact Mech</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech()
@@ -182,7 +183,6 @@ public interface PartyContactMech extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_PartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -198,30 +198,30 @@ public interface PartyContactMech extends BizEntity {
 	void setPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id</em>' attribute.
-	 * @see #setRoleTypeId(String)
+	 * @return the value of the '<em>Role Type Id</em>' reference.
+	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_RoleTypeId()
-	 * @model annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeId();
+	RoleType getRoleTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getRoleTypeId <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
 	 */
-	void setRoleTypeId(String value);
+	void setRoleTypeId(RoleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -302,31 +302,29 @@ public interface PartyContactMech extends BizEntity {
 	void setYearsWithContactMech(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(PostalAddress)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getPartyContactMech_ContactMechId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	PostalAddress getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.PartyContactMech#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(PostalAddress value);
 
 } // PartyContactMech

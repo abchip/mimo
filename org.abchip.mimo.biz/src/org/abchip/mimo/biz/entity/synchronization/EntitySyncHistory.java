@@ -92,7 +92,6 @@ public interface EntitySyncHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage#getEntitySyncHistory_EntitySyncId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='EntitySync'"
 	 * @generated
 	 */
 	String getEntitySyncId();

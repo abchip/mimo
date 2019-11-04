@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.workeffort.workeffort;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.humanres.ability.SkillType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +22,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard#getSkillTypeId <em>Skill Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard#getEstimatedCost <em>Estimated Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard#getEstimatedDuration <em>Estimated Duration</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard#getEstimatedNumPeople <em>Estimated Num People</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard#getSkillTypeId <em>Skill Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSkillStandard()
@@ -111,32 +112,30 @@ public interface WorkEffortSkillStandard extends BizEntity {
 	void setEstimatedNumPeople(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Skill Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Skill Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Skill Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Skill Type Id</em>' attribute.
-	 * @see #setSkillTypeId(String)
+	 * @return the value of the '<em>Skill Type Id</em>' reference.
+	 * @see #setSkillTypeId(SkillType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSkillStandard_SkillTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SkillType'"
+	 * @model keys="skillTypeId"
 	 * @generated
 	 */
-	String getSkillTypeId();
+	SkillType getSkillTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard#getSkillTypeId <em>Skill Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard#getSkillTypeId <em>Skill Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Skill Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Skill Type Id</em>' reference.
 	 * @see #getSkillTypeId()
 	 * @generated
 	 */
-	void setSkillTypeId(String value);
+	void setSkillTypeId(SkillType value);
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
@@ -151,7 +150,6 @@ public interface WorkEffortSkillStandard extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortSkillStandard_WorkEffortId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
 	 * @generated
 	 */
 	String getWorkEffortId();

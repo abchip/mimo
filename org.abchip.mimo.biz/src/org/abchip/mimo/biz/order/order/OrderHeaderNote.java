@@ -38,8 +38,8 @@ public interface OrderHeaderNote extends BizEntityNote {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderHeaderNote_OrderId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderId();

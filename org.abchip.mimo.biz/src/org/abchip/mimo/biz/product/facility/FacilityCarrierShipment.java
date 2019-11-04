@@ -8,6 +8,8 @@
 package org.abchip.mimo.biz.product.facility;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,8 +21,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCarrierShipment#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCarrierShipment#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCarrierShipment#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCarrierShipment#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityCarrierShipment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  * </ul>
  *
@@ -30,31 +32,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface FacilityCarrierShipment extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCarrierShipment_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityCarrierShipment#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityCarrierShipment#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
@@ -67,7 +68,8 @@ public interface FacilityCarrierShipment extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCarrierShipment_RoleTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -83,31 +85,30 @@ public interface FacilityCarrierShipment extends BizEntity {
 	void setRoleTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Method Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Method Type Id</em>' attribute.
-	 * @see #setShipmentMethodTypeId(String)
+	 * @return the value of the '<em>Shipment Method Type Id</em>' reference.
+	 * @see #setShipmentMethodTypeId(ShipmentMethodType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCarrierShipment_ShipmentMethodTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentMethodType'"
+	 * @model keys="shipmentMethodTypeId"
 	 * @generated
 	 */
-	String getShipmentMethodTypeId();
+	ShipmentMethodType getShipmentMethodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityCarrierShipment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityCarrierShipment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Method Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Method Type Id</em>' reference.
 	 * @see #getShipmentMethodTypeId()
 	 * @generated
 	 */
-	void setShipmentMethodTypeId(String value);
+	void setShipmentMethodTypeId(ShipmentMethodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
@@ -120,8 +121,8 @@ public interface FacilityCarrierShipment extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' attribute.
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityCarrierShipment_FacilityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Facility'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFacilityId();

@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebSiteId <em>Web Site Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsTypeId <em>Web Analytics Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsCode <em>Web Analytics Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsTypeId <em>Web Analytics Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig()
@@ -55,32 +55,30 @@ public interface WebAnalyticsConfig extends BizEntity {
 	void setWebAnalyticsCode(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Web Analytics Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Web Analytics Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Web Analytics Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Web Analytics Type Id</em>' attribute.
-	 * @see #setWebAnalyticsTypeId(String)
+	 * @return the value of the '<em>Web Analytics Type Id</em>' reference.
+	 * @see #setWebAnalyticsTypeId(WebAnalyticsType)
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebAnalyticsTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WebAnalyticsType'"
+	 * @model keys="webAnalyticsTypeId"
 	 * @generated
 	 */
-	String getWebAnalyticsTypeId();
+	WebAnalyticsType getWebAnalyticsTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsTypeId <em>Web Analytics Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.website.WebAnalyticsConfig#getWebAnalyticsTypeId <em>Web Analytics Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Web Analytics Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Web Analytics Type Id</em>' reference.
 	 * @see #getWebAnalyticsTypeId()
 	 * @generated
 	 */
-	void setWebAnalyticsTypeId(String value);
+	void setWebAnalyticsTypeId(WebAnalyticsType value);
 
 	/**
 	 * Returns the value of the '<em><b>Web Site Id</b></em>' attribute.
@@ -95,7 +93,6 @@ public interface WebAnalyticsConfig extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebAnalyticsConfig_WebSiteId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WebSite'"
 	 * @generated
 	 */
 	String getWebSiteId();

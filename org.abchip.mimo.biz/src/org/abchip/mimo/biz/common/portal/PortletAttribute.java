@@ -19,12 +19,12 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortalPageId <em>Portal Page Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortalPortletId <em>Portal Portlet Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortletSeqId <em>Portlet Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getAttrType <em>Attr Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortalPortletId <em>Portal Portlet Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute()
@@ -192,31 +192,29 @@ public interface PortletAttribute extends BizEntity {
 	void setPortletSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Portal Portlet Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Portal Portlet Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Portal Portlet Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portal Portlet Id</em>' attribute.
-	 * @see #setPortalPortletId(String)
+	 * @return the value of the '<em>Portal Portlet Id</em>' reference.
+	 * @see #setPortalPortletId(PortalPortlet)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletAttribute_PortalPortletId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PortalPortlet'"
+	 * @model keys="portalPortletId"
 	 * @generated
 	 */
-	String getPortalPortletId();
+	PortalPortlet getPortalPortletId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortalPortletId <em>Portal Portlet Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortletAttribute#getPortalPortletId <em>Portal Portlet Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Portal Portlet Id</em>' attribute.
+	 * @param value the new value of the '<em>Portal Portlet Id</em>' reference.
 	 * @see #getPortalPortletId()
 	 * @generated
 	 */
-	void setPortalPortletId(String value);
+	void setPortalPortletId(PortalPortlet value);
 
 } // PortletAttribute

@@ -11,10 +11,13 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.facility.ContainerType;
+import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,8 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getContainerId <em>Container Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getContainerTypeId <em>Container Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getContainerTypeId <em>Container Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ContainerImpl#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
@@ -60,26 +63,6 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	protected String containerId = CONTAINER_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContainerTypeId() <em>Container Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainerTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTAINER_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContainerTypeId() <em>Container Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainerTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String containerTypeId = CONTAINER_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,24 +83,24 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
+	 * The cached value of the '{@link #getContainerTypeId() <em>Container Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
+	 * @see #getContainerTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
+	protected ContainerType containerTypeId;
 
 	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFacilityId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
+	protected Facility facilityId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,7 +150,24 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getContainerTypeId() {
+	public ContainerType getContainerTypeId() {
+		if (containerTypeId != null && ((EObject)containerTypeId).eIsProxy()) {
+			InternalEObject oldContainerTypeId = (InternalEObject)containerTypeId;
+			containerTypeId = (ContainerType)eResolveProxy(oldContainerTypeId);
+			if (containerTypeId != oldContainerTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.CONTAINER__CONTAINER_TYPE_ID, oldContainerTypeId, containerTypeId));
+			}
+		}
+		return containerTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContainerType basicGetContainerTypeId() {
 		return containerTypeId;
 	}
 
@@ -177,8 +177,8 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setContainerTypeId(String newContainerTypeId) {
-		String oldContainerTypeId = containerTypeId;
+	public void setContainerTypeId(ContainerType newContainerTypeId) {
+		ContainerType oldContainerTypeId = containerTypeId;
 		containerTypeId = newContainerTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER__CONTAINER_TYPE_ID, oldContainerTypeId, containerTypeId));
@@ -190,7 +190,24 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.CONTAINER__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -200,8 +217,8 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.CONTAINER__FACILITY_ID, oldFacilityId, facilityId));
@@ -276,12 +293,14 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 		switch (featureID) {
 			case FacilityPackage.CONTAINER__CONTAINER_ID:
 				return getContainerId();
-			case FacilityPackage.CONTAINER__CONTAINER_TYPE_ID:
-				return getContainerTypeId();
 			case FacilityPackage.CONTAINER__DESCRIPTION:
 				return getDescription();
+			case FacilityPackage.CONTAINER__CONTAINER_TYPE_ID:
+				if (resolve) return getContainerTypeId();
+				return basicGetContainerTypeId();
 			case FacilityPackage.CONTAINER__FACILITY_ID:
-				return getFacilityId();
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,14 +316,14 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 			case FacilityPackage.CONTAINER__CONTAINER_ID:
 				setContainerId((String)newValue);
 				return;
-			case FacilityPackage.CONTAINER__CONTAINER_TYPE_ID:
-				setContainerTypeId((String)newValue);
-				return;
 			case FacilityPackage.CONTAINER__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
+			case FacilityPackage.CONTAINER__CONTAINER_TYPE_ID:
+				setContainerTypeId((ContainerType)newValue);
+				return;
 			case FacilityPackage.CONTAINER__FACILITY_ID:
-				setFacilityId((String)newValue);
+				setFacilityId((Facility)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -321,14 +340,14 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 			case FacilityPackage.CONTAINER__CONTAINER_ID:
 				setContainerId(CONTAINER_ID_EDEFAULT);
 				return;
-			case FacilityPackage.CONTAINER__CONTAINER_TYPE_ID:
-				setContainerTypeId(CONTAINER_TYPE_ID_EDEFAULT);
-				return;
 			case FacilityPackage.CONTAINER__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case FacilityPackage.CONTAINER__CONTAINER_TYPE_ID:
+				setContainerTypeId((ContainerType)null);
+				return;
 			case FacilityPackage.CONTAINER__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
+				setFacilityId((Facility)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -344,12 +363,12 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 		switch (featureID) {
 			case FacilityPackage.CONTAINER__CONTAINER_ID:
 				return CONTAINER_ID_EDEFAULT == null ? containerId != null : !CONTAINER_ID_EDEFAULT.equals(containerId);
-			case FacilityPackage.CONTAINER__CONTAINER_TYPE_ID:
-				return CONTAINER_TYPE_ID_EDEFAULT == null ? containerTypeId != null : !CONTAINER_TYPE_ID_EDEFAULT.equals(containerTypeId);
 			case FacilityPackage.CONTAINER__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case FacilityPackage.CONTAINER__CONTAINER_TYPE_ID:
+				return containerTypeId != null;
 			case FacilityPackage.CONTAINER__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
+				return facilityId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -366,12 +385,8 @@ public class ContainerImpl extends BizEntityTypedImpl<ContainerType> implements 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (containerId: ");
 		result.append(containerId);
-		result.append(", containerTypeId: ");
-		result.append(containerTypeId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", facilityId: ");
-		result.append(facilityId);
 		result.append(')');
 		return result.toString();
 	}

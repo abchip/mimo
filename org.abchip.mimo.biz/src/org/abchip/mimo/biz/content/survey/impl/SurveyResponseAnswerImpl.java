@@ -11,13 +11,17 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
+import org.abchip.mimo.biz.content.survey.SurveyQuestion;
 import org.abchip.mimo.biz.content.survey.SurveyResponseAnswer;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,13 +33,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getSurveyResponseId <em>Survey Response Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getSurveyMultiRespColId <em>Survey Multi Resp Col Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getAmountBase <em>Amount Base</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getAmountBaseUomId <em>Amount Base Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getAnsweredDate <em>Answered Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#isBooleanResponse <em>Boolean Response</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getCurrencyResponse <em>Currency Response</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getDuration <em>Duration</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getDurationUomId <em>Duration Uom Id</em>}</li>
@@ -46,6 +48,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getSurveyOptionSeqId <em>Survey Option Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getTextResponse <em>Text Response</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getWeightFactor <em>Weight Factor</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getSurveyQuestionId <em>Survey Question Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseAnswerImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,26 +79,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 * @ordered
 	 */
 	protected String surveyResponseId = SURVEY_RESPONSE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSurveyQuestionId() <em>Survey Question Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_QUESTION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyQuestionId() <em>Survey Question Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyQuestionId = SURVEY_QUESTION_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSurveyMultiRespColId() <em>Survey Multi Resp Col Id</em>}' attribute.
@@ -195,26 +179,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 * @ordered
 	 */
 	protected boolean booleanResponse = BOOLEAN_RESPONSE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCurrencyResponse() <em>Currency Response</em>}' attribute.
@@ -417,6 +381,26 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	protected double weightFactor = WEIGHT_FACTOR_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getSurveyQuestionId() <em>Survey Question Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSurveyQuestionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SurveyQuestion surveyQuestionId;
+
+	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -533,7 +517,24 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -543,8 +544,8 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID, oldContentId, contentId));
@@ -763,7 +764,24 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 * @generated
 	 */
 	@Override
-	public String getSurveyQuestionId() {
+	public SurveyQuestion getSurveyQuestionId() {
+		if (surveyQuestionId != null && ((EObject)surveyQuestionId).eIsProxy()) {
+			InternalEObject oldSurveyQuestionId = (InternalEObject)surveyQuestionId;
+			surveyQuestionId = (SurveyQuestion)eResolveProxy(oldSurveyQuestionId);
+			if (surveyQuestionId != oldSurveyQuestionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
+			}
+		}
+		return surveyQuestionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurveyQuestion basicGetSurveyQuestionId() {
 		return surveyQuestionId;
 	}
 
@@ -773,8 +791,8 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 	 * @generated
 	 */
 	@Override
-	public void setSurveyQuestionId(String newSurveyQuestionId) {
-		String oldSurveyQuestionId = surveyQuestionId;
+	public void setSurveyQuestionId(SurveyQuestion newSurveyQuestionId) {
+		SurveyQuestion oldSurveyQuestionId = surveyQuestionId;
 		surveyQuestionId = newSurveyQuestionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID, oldSurveyQuestionId, surveyQuestionId));
@@ -859,8 +877,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 		switch (featureID) {
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID:
 				return getSurveyResponseId();
-			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID:
-				return getSurveyQuestionId();
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_COL_ID:
 				return getSurveyMultiRespColId();
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__AMOUNT_BASE:
@@ -871,8 +887,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 				return getAnsweredDate();
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__BOOLEAN_RESPONSE:
 				return isBooleanResponse();
-			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID:
-				return getContentId();
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CURRENCY_RESPONSE:
 				return getCurrencyResponse();
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__DURATION:
@@ -893,6 +907,12 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 				return getTextResponse();
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__WEIGHT_FACTOR:
 				return getWeightFactor();
+			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID:
+				if (resolve) return getSurveyQuestionId();
+				return basicGetSurveyQuestionId();
+			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -908,9 +928,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID:
 				setSurveyResponseId((String)newValue);
 				return;
-			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID:
-				setSurveyQuestionId((String)newValue);
-				return;
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_COL_ID:
 				setSurveyMultiRespColId((String)newValue);
 				return;
@@ -925,9 +942,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 				return;
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__BOOLEAN_RESPONSE:
 				setBooleanResponse((Boolean)newValue);
-				return;
-			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID:
-				setContentId((String)newValue);
 				return;
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CURRENCY_RESPONSE:
 				setCurrencyResponse((BigDecimal)newValue);
@@ -959,6 +973,12 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__WEIGHT_FACTOR:
 				setWeightFactor((Double)newValue);
 				return;
+			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID:
+				setSurveyQuestionId((SurveyQuestion)newValue);
+				return;
+			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID:
+				setContentId((Content)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -974,9 +994,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID:
 				setSurveyResponseId(SURVEY_RESPONSE_ID_EDEFAULT);
 				return;
-			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID:
-				setSurveyQuestionId(SURVEY_QUESTION_ID_EDEFAULT);
-				return;
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_COL_ID:
 				setSurveyMultiRespColId(SURVEY_MULTI_RESP_COL_ID_EDEFAULT);
 				return;
@@ -991,9 +1008,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 				return;
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__BOOLEAN_RESPONSE:
 				setBooleanResponse(BOOLEAN_RESPONSE_EDEFAULT);
-				return;
-			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
 				return;
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CURRENCY_RESPONSE:
 				setCurrencyResponse(CURRENCY_RESPONSE_EDEFAULT);
@@ -1025,6 +1039,12 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__WEIGHT_FACTOR:
 				setWeightFactor(WEIGHT_FACTOR_EDEFAULT);
 				return;
+			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID:
+				setSurveyQuestionId((SurveyQuestion)null);
+				return;
+			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID:
+				setContentId((Content)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1039,8 +1059,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 		switch (featureID) {
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_RESPONSE_ID:
 				return SURVEY_RESPONSE_ID_EDEFAULT == null ? surveyResponseId != null : !SURVEY_RESPONSE_ID_EDEFAULT.equals(surveyResponseId);
-			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID:
-				return SURVEY_QUESTION_ID_EDEFAULT == null ? surveyQuestionId != null : !SURVEY_QUESTION_ID_EDEFAULT.equals(surveyQuestionId);
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_MULTI_RESP_COL_ID:
 				return SURVEY_MULTI_RESP_COL_ID_EDEFAULT == null ? surveyMultiRespColId != null : !SURVEY_MULTI_RESP_COL_ID_EDEFAULT.equals(surveyMultiRespColId);
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__AMOUNT_BASE:
@@ -1051,8 +1069,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 				return ANSWERED_DATE_EDEFAULT == null ? answeredDate != null : !ANSWERED_DATE_EDEFAULT.equals(answeredDate);
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__BOOLEAN_RESPONSE:
 				return booleanResponse != BOOLEAN_RESPONSE_EDEFAULT;
-			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CURRENCY_RESPONSE:
 				return CURRENCY_RESPONSE_EDEFAULT == null ? currencyResponse != null : !CURRENCY_RESPONSE_EDEFAULT.equals(currencyResponse);
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__DURATION:
@@ -1073,6 +1089,10 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 				return TEXT_RESPONSE_EDEFAULT == null ? textResponse != null : !TEXT_RESPONSE_EDEFAULT.equals(textResponse);
 			case SurveyPackage.SURVEY_RESPONSE_ANSWER__WEIGHT_FACTOR:
 				return weightFactor != WEIGHT_FACTOR_EDEFAULT;
+			case SurveyPackage.SURVEY_RESPONSE_ANSWER__SURVEY_QUESTION_ID:
+				return surveyQuestionId != null;
+			case SurveyPackage.SURVEY_RESPONSE_ANSWER__CONTENT_ID:
+				return contentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1089,8 +1109,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (surveyResponseId: ");
 		result.append(surveyResponseId);
-		result.append(", surveyQuestionId: ");
-		result.append(surveyQuestionId);
 		result.append(", surveyMultiRespColId: ");
 		result.append(surveyMultiRespColId);
 		result.append(", amountBase: ");
@@ -1101,8 +1119,6 @@ public class SurveyResponseAnswerImpl extends BizEntityImpl implements SurveyRes
 		result.append(answeredDate);
 		result.append(", booleanResponse: ");
 		result.append(booleanResponse);
-		result.append(", contentId: ");
-		result.append(contentId);
 		result.append(", currencyResponse: ");
 		result.append(currencyResponse);
 		result.append(", duration: ");

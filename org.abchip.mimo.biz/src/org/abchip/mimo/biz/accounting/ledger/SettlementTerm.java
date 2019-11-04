@@ -129,7 +129,7 @@ public interface SettlementTerm extends BizEntity {
 	 * @return the value of the '<em>Settlement Term Id</em>' attribute.
 	 * @see #setSettlementTermId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getSettlementTerm_SettlementTermId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

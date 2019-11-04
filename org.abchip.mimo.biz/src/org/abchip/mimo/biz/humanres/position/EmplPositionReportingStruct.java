@@ -21,11 +21,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdReportingTo <em>Empl Position Id Reporting To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#isPrimaryFlag <em>Primary Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct()
@@ -86,31 +86,30 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	void setPrimaryFlag(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Empl Position Id Managed By</b></em>' attribute.
+	 * Returns the value of the '<em><b>Empl Position Id Managed By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Empl Position Id Managed By</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Empl Position Id Managed By</em>' attribute.
-	 * @see #setEmplPositionIdManagedBy(String)
+	 * @return the value of the '<em>Empl Position Id Managed By</em>' reference.
+	 * @see #setEmplPositionIdManagedBy(EmplPosition)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_EmplPositionIdManagedBy()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='EmplPosition'"
+	 * @model keys="emplPositionId"
 	 * @generated
 	 */
-	String getEmplPositionIdManagedBy();
+	EmplPosition getEmplPositionIdManagedBy();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Empl Position Id Managed By</em>' attribute.
+	 * @param value the new value of the '<em>Empl Position Id Managed By</em>' reference.
 	 * @see #getEmplPositionIdManagedBy()
 	 * @generated
 	 */
-	void setEmplPositionIdManagedBy(String value);
+	void setEmplPositionIdManagedBy(EmplPosition value);
 
 	/**
 	 * Returns the value of the '<em><b>Empl Position Id Reporting To</b></em>' attribute.
@@ -123,8 +122,8 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @return the value of the '<em>Empl Position Id Reporting To</em>' attribute.
 	 * @see #setEmplPositionIdReportingTo(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_EmplPositionIdReportingTo()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='EmplPosition'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmplPositionIdReportingTo();
@@ -150,7 +149,8 @@ public interface EmplPositionReportingStruct extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionReportingStruct_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();

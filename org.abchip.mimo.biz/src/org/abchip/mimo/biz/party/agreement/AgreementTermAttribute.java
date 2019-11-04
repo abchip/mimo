@@ -121,7 +121,6 @@ public interface AgreementTermAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementTermAttribute_AgreementTermId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='AgreementTerm'"
 	 * @generated
 	 */
 	String getAgreementTermId();

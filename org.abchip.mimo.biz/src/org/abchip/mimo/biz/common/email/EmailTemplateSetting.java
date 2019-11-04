@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.common.email;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,10 +25,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getCcAddress <em>Cc Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getContentType <em>Content Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getFromAddress <em>From Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getXslfoAttachScreenLocation <em>Xslfo Attach Screen Location</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting()
@@ -193,30 +194,30 @@ public interface EmailTemplateSetting extends BizEntity {
 	void setEmailTemplateSettingId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Email Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Email Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Email Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Email Type</em>' attribute.
-	 * @see #setEmailType(String)
+	 * @return the value of the '<em>Email Type</em>' reference.
+	 * @see #setEmailType(Enumeration)
 	 * @see org.abchip.mimo.biz.common.email.EmailPackage#getEmailTemplateSetting_EmailType()
-	 * @model
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getEmailType();
+	Enumeration getEmailType();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getEmailType <em>Email Type</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getEmailType <em>Email Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Email Type</em>' attribute.
+	 * @param value the new value of the '<em>Email Type</em>' reference.
 	 * @see #getEmailType()
 	 * @generated
 	 */
-	void setEmailType(String value);
+	void setEmailType(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>From Address</b></em>' attribute.

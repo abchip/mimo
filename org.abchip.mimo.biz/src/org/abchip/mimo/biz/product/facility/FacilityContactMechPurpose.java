@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.product.facility;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +23,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose()
@@ -33,58 +35,56 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface FacilityContactMechPurpose extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose_ContactMechId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(ContactMech value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Purpose Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Purpose Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' attribute.
-	 * @see #setContactMechPurposeTypeId(String)
+	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' reference.
+	 * @see #setContactMechPurposeTypeId(ContactMechPurposeType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose_ContactMechPurposeTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMechPurposeType'"
+	 * @model keys="contactMechPurposeTypeId"
 	 * @generated
 	 */
-	String getContactMechPurposeTypeId();
+	ContactMechPurposeType getContactMechPurposeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Purpose Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Purpose Type Id</em>' reference.
 	 * @see #getContactMechPurposeTypeId()
 	 * @generated
 	 */
-	void setContactMechPurposeTypeId(String value);
+	void setContactMechPurposeTypeId(ContactMechPurposeType value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -97,7 +97,8 @@ public interface FacilityContactMechPurpose extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -149,8 +150,8 @@ public interface FacilityContactMechPurpose extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' attribute.
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityContactMechPurpose_FacilityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Facility'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFacilityId();

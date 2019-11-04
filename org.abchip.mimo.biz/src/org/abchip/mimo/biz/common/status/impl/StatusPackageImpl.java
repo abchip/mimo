@@ -200,6 +200,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -369,6 +370,22 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -385,22 +402,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -512,6 +513,14 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -520,14 +529,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -607,6 +608,14 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -615,14 +624,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -720,8 +721,8 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStatusItem_StatusTypeId() {
-		return (EAttribute)statusItemEClass.getEStructuralFeatures().get(4);
+	public EReference getStatusItem_StatusTypeId() {
+		return (EReference)statusItemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -790,8 +791,8 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStatusType_ParentTypeId() {
-		return (EAttribute)statusTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getStatusType_ParentTypeId() {
+		return (EReference)statusTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -820,8 +821,8 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStatusValidChange_StatusIdTo() {
-		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(1);
+	public EReference getStatusValidChange_StatusIdTo() {
+		return (EReference)statusValidChangeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -831,7 +832,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 */
 	@Override
 	public EAttribute getStatusValidChange_ConditionExpression() {
-		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -841,7 +842,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 	 */
 	@Override
 	public EAttribute getStatusValidChange_TransitionName() {
-		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)statusValidChangeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -878,7 +879,7 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		createEAttribute(statusItemEClass, STATUS_ITEM__DESCRIPTION);
 		createEAttribute(statusItemEClass, STATUS_ITEM__SEQUENCE_ID);
 		createEAttribute(statusItemEClass, STATUS_ITEM__STATUS_CODE);
-		createEAttribute(statusItemEClass, STATUS_ITEM__STATUS_TYPE_ID);
+		createEReference(statusItemEClass, STATUS_ITEM__STATUS_TYPE_ID);
 		createEAttribute(statusItemEClass, STATUS_ITEM__SHIPMENT_STATUSS);
 		createEAttribute(statusItemEClass, STATUS_ITEM__MAIN_STATUS_VALID_CHANGES);
 
@@ -886,13 +887,13 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		createEAttribute(statusTypeEClass, STATUS_TYPE__STATUS_TYPE_ID);
 		createEAttribute(statusTypeEClass, STATUS_TYPE__DESCRIPTION);
 		createEAttribute(statusTypeEClass, STATUS_TYPE__HAS_TABLE);
-		createEAttribute(statusTypeEClass, STATUS_TYPE__PARENT_TYPE_ID);
+		createEReference(statusTypeEClass, STATUS_TYPE__PARENT_TYPE_ID);
 
 		statusValidChangeEClass = createEClass(STATUS_VALID_CHANGE);
 		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__STATUS_ID);
-		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__STATUS_ID_TO);
 		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__CONDITION_EXPRESSION);
 		createEAttribute(statusValidChangeEClass, STATUS_VALID_CHANGE__TRANSITION_NAME);
+		createEReference(statusValidChangeEClass, STATUS_VALID_CHANGE__STATUS_ID_TO);
 	}
 
 	/**
@@ -942,7 +943,8 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		initEAttribute(getStatusItem_Description(), ecorePackage.getEString(), "description", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_StatusCode(), ecorePackage.getEString(), "statusCode", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStatusItem_StatusTypeId(), ecorePackage.getEString(), "statusTypeId", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatusItem_StatusTypeId(), this.getStatusType(), null, "statusTypeId", null, 0, 1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getStatusItem_StatusTypeId().getEKeys().add(this.getStatusType_StatusTypeId());
 		initEAttribute(getStatusItem_ShipmentStatuss(), ecorePackage.getEString(), "shipmentStatuss", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusItem_MainStatusValidChanges(), ecorePackage.getEString(), "mainStatusValidChanges", null, 0, -1, StatusItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1066,7 +1068,8 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		initEAttribute(getStatusType_StatusTypeId(), ecorePackage.getEString(), "statusTypeId", null, 1, 1, StatusType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusType_Description(), ecorePackage.getEString(), "description", null, 0, 1, StatusType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, StatusType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStatusType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, StatusType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatusType_ParentTypeId(), this.getStatusType(), null, "parentTypeId", null, 0, 1, StatusType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getStatusType_ParentTypeId().getEKeys().add(this.getStatusType_StatusTypeId());
 
 		addEOperation(statusTypeEClass, ecorePackage.getEString(), "childStatusTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1074,9 +1077,10 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 
 		initEClass(statusValidChangeEClass, StatusValidChange.class, "StatusValidChange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatusValidChange_StatusId(), ecorePackage.getEString(), "statusId", null, 1, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStatusValidChange_StatusIdTo(), ecorePackage.getEString(), "statusIdTo", null, 1, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusValidChange_ConditionExpression(), ecorePackage.getEString(), "conditionExpression", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStatusValidChange_TransitionName(), ecorePackage.getEString(), "transitionName", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatusValidChange_StatusIdTo(), this.getStatusItem(), null, "statusIdTo", null, 0, 1, StatusValidChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getStatusValidChange_StatusIdTo().getEKeys().add(this.getStatusItem_StatusId());
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1503,12 +1507,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   });
 		addAnnotation
 		  (getStatusValidChange_StatusId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getStatusValidChange_StatusIdTo(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2104,15 +2102,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getStatusItem_StatusTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getStatusItem_ShipmentStatuss(),
 		   source,
 		   new String[] {
@@ -2146,33 +2135,6 @@ public class StatusPackageImpl extends EPackageImpl implements StatusPackage {
 		   new String[] {
 			   "frame", "StatusItem",
 			   "route", "statusTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getStatusType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getStatusValidChange_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getStatusValidChange_StatusIdTo(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

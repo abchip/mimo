@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface SecuritygroupPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-security-securitygroup";
+	String eNS_PREFIX = "biz-securitygroup";
 
 	/**
 	 * The singleton instance of the package.
@@ -307,22 +308,13 @@ public interface SecuritygroupPackage extends EPackage {
 	int SECURITY_GROUP_PERMISSION__GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Permission Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECURITY_GROUP_PERMISSION__PERMISSION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_GROUP_PERMISSION__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SECURITY_GROUP_PERMISSION__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -331,7 +323,16 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_GROUP_PERMISSION__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SECURITY_GROUP_PERMISSION__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Permission Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY_GROUP_PERMISSION__PERMISSION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Security Group Permission</em>' class.
@@ -553,22 +554,13 @@ public interface SecuritygroupPackage extends EPackage {
 	int USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Group Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_SECURITY_GROUP__GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_SECURITY_GROUP__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int USER_LOGIN_SECURITY_GROUP__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -577,7 +569,16 @@ public interface SecuritygroupPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_SECURITY_GROUP__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int USER_LOGIN_SECURITY_GROUP__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Group Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SECURITY_GROUP__GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>User Login Security Group</em>' class.
@@ -730,15 +731,15 @@ public interface SecuritygroupPackage extends EPackage {
 	EAttribute getSecurityGroupPermission_GroupId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId <em>Permission Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId <em>Permission Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Permission Id</em>'.
+	 * @return the meta object for the reference '<em>Permission Id</em>'.
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId()
 	 * @see #getSecurityGroupPermission()
 	 * @generated
 	 */
-	EAttribute getSecurityGroupPermission_PermissionId();
+	EReference getSecurityGroupPermission_PermissionId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getFromDate <em>From Date</em>}'.
@@ -859,15 +860,15 @@ public interface SecuritygroupPackage extends EPackage {
 	EAttribute getUserLoginSecurityGroup_UserLoginId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId <em>Group Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId <em>Group Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Group Id</em>'.
+	 * @return the meta object for the reference '<em>Group Id</em>'.
 	 * @see org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId()
 	 * @see #getUserLoginSecurityGroup()
 	 * @generated
 	 */
-	EAttribute getUserLoginSecurityGroup_GroupId();
+	EReference getUserLoginSecurityGroup_GroupId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getFromDate <em>From Date</em>}'.
@@ -1024,12 +1025,12 @@ public interface SecuritygroupPackage extends EPackage {
 		EAttribute SECURITY_GROUP_PERMISSION__GROUP_ID = eINSTANCE.getSecurityGroupPermission_GroupId();
 
 		/**
-		 * The meta object literal for the '<em><b>Permission Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Permission Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SECURITY_GROUP_PERMISSION__PERMISSION_ID = eINSTANCE.getSecurityGroupPermission_PermissionId();
+		EReference SECURITY_GROUP_PERMISSION__PERMISSION_ID = eINSTANCE.getSecurityGroupPermission_PermissionId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -1126,12 +1127,12 @@ public interface SecuritygroupPackage extends EPackage {
 		EAttribute USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID = eINSTANCE.getUserLoginSecurityGroup_UserLoginId();
 
 		/**
-		 * The meta object literal for the '<em><b>Group Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Group Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_LOGIN_SECURITY_GROUP__GROUP_ID = eINSTANCE.getUserLoginSecurityGroup_GroupId();
+		EReference USER_LOGIN_SECURITY_GROUP__GROUP_ID = eINSTANCE.getUserLoginSecurityGroup_GroupId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.

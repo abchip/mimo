@@ -13,6 +13,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,13 +26,13 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountLimit <em>Account Limit</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getExternalAccountId <em>External Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount()
@@ -39,30 +41,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface BillingAccount extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Account Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Account Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Account Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Account Currency Uom Id</em>' attribute.
-	 * @see #setAccountCurrencyUomId(String)
+	 * @return the value of the '<em>Account Currency Uom Id</em>' reference.
+	 * @see #setAccountCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_AccountCurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getAccountCurrencyUomId();
+	Uom getAccountCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Account Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Account Currency Uom Id</em>' reference.
 	 * @see #getAccountCurrencyUomId()
 	 * @generated
 	 */
-	void setAccountCurrencyUomId(String value);
+	void setAccountCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Account Limit</b></em>' attribute.
@@ -91,30 +93,30 @@ public interface BillingAccount extends BizEntity {
 	void setAccountLimit(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(PostalAddress)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_ContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	PostalAddress getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(PostalAddress value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -285,7 +287,7 @@ public interface BillingAccount extends BizEntity {
 	 * @return the value of the '<em>Billing Account Id</em>' attribute.
 	 * @see #setBillingAccountId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccount_BillingAccountId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

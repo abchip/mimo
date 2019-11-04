@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.config;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getConfigId <em>Config Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getConfigTypeId <em>Config Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getNumOfConfs <em>Num Of Confs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigStats()
@@ -40,7 +41,8 @@ public interface ProductConfigStats extends BizEntity {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigStats_ConfigId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -108,30 +110,29 @@ public interface ProductConfigStats extends BizEntity {
 	void setNumOfConfs(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigStats_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigStats#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 } // ProductConfigStats

@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface WebsitePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-webapp-website";
+	String eNS_PREFIX = "biz-website";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,31 +117,31 @@ public interface WebsitePackage extends EPackage {
 	int WEB_PAGE__WEB_PAGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Content Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_PAGE__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Page Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_PAGE__PAGE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int WEB_PAGE__PAGE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Web Site Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Web Site Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_PAGE__WEB_SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int WEB_PAGE__WEB_SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Content Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_PAGE__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Web Page</em>' class.
@@ -297,22 +298,13 @@ public interface WebsitePackage extends EPackage {
 	int WEB_SITE__IS_DEFAULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
-
-	/**
 	 * The feature id for the '<em><b>Secure Content Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE__SECURE_CONTENT_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int WEB_SITE__SECURE_CONTENT_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Site Name</b></em>' attribute.
@@ -321,7 +313,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE__SITE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int WEB_SITE__SITE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Standard Content Prefix</b></em>' attribute.
@@ -330,16 +322,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE__STANDARD_CONTENT_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>Visual Theme Set Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_SITE__VISUAL_THEME_SET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int WEB_SITE__STANDARD_CONTENT_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Webapp Path</b></em>' attribute.
@@ -348,7 +331,25 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_SITE__WEBAPP_PATH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int WEB_SITE__WEBAPP_PATH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Visual Theme Set Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE__VISUAL_THEME_SET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_SITE__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Web Analytics Configs</b></em>' attribute list.
@@ -391,15 +392,15 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebPage_WebPageId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.website.WebPage#getContentId <em>Content Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.website.WebPage#getContentId <em>Content Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content Id</em>'.
+	 * @return the meta object for the reference '<em>Content Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.website.WebPage#getContentId()
 	 * @see #getWebPage()
 	 * @generated
 	 */
-	EAttribute getWebPage_ContentId();
+	EReference getWebPage_ContentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.website.WebPage#getPageName <em>Page Name</em>}'.
@@ -413,15 +414,15 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebPage_PageName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.website.WebPage#getWebSiteId <em>Web Site Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.website.WebPage#getWebSiteId <em>Web Site Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Web Site Id</em>'.
+	 * @return the meta object for the reference '<em>Web Site Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.website.WebPage#getWebSiteId()
 	 * @see #getWebPage()
 	 * @generated
 	 */
-	EAttribute getWebPage_WebSiteId();
+	EReference getWebPage_WebSiteId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.webapp.website.WebSite <em>Web Site</em>}'.
@@ -555,15 +556,15 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebSite_IsDefault();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.website.WebSite#getProductStoreId <em>Product Store Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.website.WebSite#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.website.WebSite#getProductStoreId()
 	 * @see #getWebSite()
 	 * @generated
 	 */
-	EAttribute getWebSite_ProductStoreId();
+	EReference getWebSite_ProductStoreId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.website.WebSite#getSecureContentPrefix <em>Secure Content Prefix</em>}'.
@@ -599,15 +600,15 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebSite_StandardContentPrefix();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.website.WebSite#getVisualThemeSetId <em>Visual Theme Set Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.website.WebSite#getVisualThemeSetId <em>Visual Theme Set Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Visual Theme Set Id</em>'.
+	 * @return the meta object for the reference '<em>Visual Theme Set Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.website.WebSite#getVisualThemeSetId()
 	 * @see #getWebSite()
 	 * @generated
 	 */
-	EAttribute getWebSite_VisualThemeSetId();
+	EReference getWebSite_VisualThemeSetId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.website.WebSite#getWebappPath <em>Webapp Path</em>}'.
@@ -672,12 +673,12 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEB_PAGE__WEB_PAGE_ID = eINSTANCE.getWebPage_WebPageId();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_PAGE__CONTENT_ID = eINSTANCE.getWebPage_ContentId();
+		EReference WEB_PAGE__CONTENT_ID = eINSTANCE.getWebPage_ContentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Page Name</b></em>' attribute feature.
@@ -688,12 +689,12 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEB_PAGE__PAGE_NAME = eINSTANCE.getWebPage_PageName();
 
 		/**
-		 * The meta object literal for the '<em><b>Web Site Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Web Site Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_PAGE__WEB_SITE_ID = eINSTANCE.getWebPage_WebSiteId();
+		EReference WEB_PAGE__WEB_SITE_ID = eINSTANCE.getWebPage_WebSiteId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl <em>Web Site</em>}' class.
@@ -794,12 +795,12 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEB_SITE__IS_DEFAULT = eINSTANCE.getWebSite_IsDefault();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_SITE__PRODUCT_STORE_ID = eINSTANCE.getWebSite_ProductStoreId();
+		EReference WEB_SITE__PRODUCT_STORE_ID = eINSTANCE.getWebSite_ProductStoreId();
 
 		/**
 		 * The meta object literal for the '<em><b>Secure Content Prefix</b></em>' attribute feature.
@@ -826,12 +827,12 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEB_SITE__STANDARD_CONTENT_PREFIX = eINSTANCE.getWebSite_StandardContentPrefix();
 
 		/**
-		 * The meta object literal for the '<em><b>Visual Theme Set Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Visual Theme Set Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEB_SITE__VISUAL_THEME_SET_ID = eINSTANCE.getWebSite_VisualThemeSetId();
+		EReference WEB_SITE__VISUAL_THEME_SET_ID = eINSTANCE.getWebSite_VisualThemeSetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Webapp Path</b></em>' attribute feature.

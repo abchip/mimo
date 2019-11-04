@@ -14,6 +14,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.product.facility.Facility;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,14 +29,14 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getDeliveryId <em>Delivery Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getActualArrivalDate <em>Actual Arrival Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getActualStartDate <em>Actual Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getDestFacilityId <em>Dest Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getEndMileage <em>End Mileage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getEstimatedArrivalDate <em>Estimated Arrival Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getEstimatedStartDate <em>Estimated Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getFuelUsed <em>Fuel Used</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getOriginFacilityId <em>Origin Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getStartMileage <em>Start Mileage</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getOriginFacilityId <em>Origin Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getDestFacilityId <em>Dest Facility Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery()
@@ -105,7 +107,7 @@ public interface Delivery extends BizEntity {
 	 * @return the value of the '<em>Delivery Id</em>' attribute.
 	 * @see #setDeliveryId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_DeliveryId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -122,30 +124,30 @@ public interface Delivery extends BizEntity {
 	void setDeliveryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Dest Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Dest Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Dest Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dest Facility Id</em>' attribute.
-	 * @see #setDestFacilityId(String)
+	 * @return the value of the '<em>Dest Facility Id</em>' reference.
+	 * @see #setDestFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_DestFacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getDestFacilityId();
+	Facility getDestFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getDestFacilityId <em>Dest Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getDestFacilityId <em>Dest Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dest Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Dest Facility Id</em>' reference.
 	 * @see #getDestFacilityId()
 	 * @generated
 	 */
-	void setDestFacilityId(String value);
+	void setDestFacilityId(Facility value);
 
 	/**
 	 * Returns the value of the '<em><b>End Mileage</b></em>' attribute.
@@ -226,30 +228,30 @@ public interface Delivery extends BizEntity {
 	void setEstimatedStartDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
-	 * @see #setFixedAssetId(String)
+	 * @return the value of the '<em>Fixed Asset Id</em>' reference.
+	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_FixedAssetId()
-	 * @model annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model keys="fixedAssetId"
 	 * @generated
 	 */
-	String getFixedAssetId();
+	FixedAsset getFixedAssetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getFixedAssetId <em>Fixed Asset Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getFixedAssetId <em>Fixed Asset Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Id</em>' reference.
 	 * @see #getFixedAssetId()
 	 * @generated
 	 */
-	void setFixedAssetId(String value);
+	void setFixedAssetId(FixedAsset value);
 
 	/**
 	 * Returns the value of the '<em><b>Fuel Used</b></em>' attribute.
@@ -278,30 +280,30 @@ public interface Delivery extends BizEntity {
 	void setFuelUsed(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Origin Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Origin Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Origin Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Origin Facility Id</em>' attribute.
-	 * @see #setOriginFacilityId(String)
+	 * @return the value of the '<em>Origin Facility Id</em>' reference.
+	 * @see #setOriginFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getDelivery_OriginFacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getOriginFacilityId();
+	Facility getOriginFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getOriginFacilityId <em>Origin Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.Delivery#getOriginFacilityId <em>Origin Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Origin Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Origin Facility Id</em>' reference.
 	 * @see #getOriginFacilityId()
 	 * @generated
 	 */
-	void setOriginFacilityId(String value);
+	void setOriginFacilityId(Facility value);
 
 	/**
 	 * Returns the value of the '<em><b>Start Mileage</b></em>' attribute.

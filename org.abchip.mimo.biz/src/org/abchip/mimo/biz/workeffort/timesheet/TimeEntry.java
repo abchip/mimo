@@ -10,6 +10,10 @@ package org.abchip.mimo.biz.workeffort.timesheet;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.rate.RateType;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,13 +28,13 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getHours <em>Hours</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getRateTypeId <em>Rate Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getTimesheetId <em>Timesheet Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getTimesheetId <em>Timesheet Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceId <em>Invoice Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry()
@@ -117,30 +121,30 @@ public interface TimeEntry extends BizEntity {
 	void setHours(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Id</em>' attribute.
-	 * @see #setInvoiceId(String)
+	 * @return the value of the '<em>Invoice Id</em>' reference.
+	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_InvoiceId()
-	 * @model annotation="mimo-ent-domain frame='Invoice'"
+	 * @model keys="invoiceId"
 	 * @generated
 	 */
-	String getInvoiceId();
+	Invoice getInvoiceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceId <em>Invoice Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceId <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Id</em>' reference.
 	 * @see #getInvoiceId()
 	 * @generated
 	 */
-	void setInvoiceId(String value);
+	void setInvoiceId(Invoice value);
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Item Seq Id</b></em>' attribute.
@@ -169,56 +173,56 @@ public interface TimeEntry extends BizEntity {
 	void setInvoiceItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Rate Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Rate Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Rate Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rate Type Id</em>' attribute.
-	 * @see #setRateTypeId(String)
+	 * @return the value of the '<em>Rate Type Id</em>' reference.
+	 * @see #setRateTypeId(RateType)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_RateTypeId()
-	 * @model annotation="mimo-ent-domain frame='RateType'"
+	 * @model keys="rateTypeId"
 	 * @generated
 	 */
-	String getRateTypeId();
+	RateType getRateTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getRateTypeId <em>Rate Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getRateTypeId <em>Rate Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rate Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Rate Type Id</em>' reference.
 	 * @see #getRateTypeId()
 	 * @generated
 	 */
-	void setRateTypeId(String value);
+	void setRateTypeId(RateType value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -274,55 +278,55 @@ public interface TimeEntry extends BizEntity {
 	void setTimeEntryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Timesheet Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Timesheet Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Timesheet Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Timesheet Id</em>' attribute.
-	 * @see #setTimesheetId(String)
+	 * @return the value of the '<em>Timesheet Id</em>' reference.
+	 * @see #setTimesheetId(Timesheet)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_TimesheetId()
-	 * @model annotation="mimo-ent-domain frame='Timesheet'"
+	 * @model keys="timesheetId"
 	 * @generated
 	 */
-	String getTimesheetId();
+	Timesheet getTimesheetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getTimesheetId <em>Timesheet Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getTimesheetId <em>Timesheet Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Timesheet Id</em>' attribute.
+	 * @param value the new value of the '<em>Timesheet Id</em>' reference.
 	 * @see #getTimesheetId()
 	 * @generated
 	 */
-	void setTimesheetId(String value);
+	void setTimesheetId(Timesheet value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Id</em>' attribute.
-	 * @see #setWorkEffortId(String)
+	 * @return the value of the '<em>Work Effort Id</em>' reference.
+	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage#getTimeEntry_WorkEffortId()
-	 * @model annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @model keys="workEffortId"
 	 * @generated
 	 */
-	String getWorkEffortId();
+	WorkEffort getWorkEffortId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getWorkEffortId <em>Work Effort Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getWorkEffortId <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Id</em>' reference.
 	 * @see #getWorkEffortId()
 	 * @generated
 	 */
-	void setWorkEffortId(String value);
+	void setWorkEffortId(WorkEffort value);
 
 } // TimeEntry

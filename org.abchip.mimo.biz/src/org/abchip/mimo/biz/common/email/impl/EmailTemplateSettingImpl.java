@@ -9,11 +9,14 @@ package org.abchip.mimo.biz.common.email.impl;
 
 import org.abchip.mimo.biz.common.email.EmailPackage;
 import org.abchip.mimo.biz.common.email.EmailTemplateSetting;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,10 +33,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getCcAddress <em>Cc Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getFromAddress <em>From Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getXslfoAttachScreenLocation <em>Xslfo Attach Screen Location</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.email.impl.EmailTemplateSettingImpl#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -154,26 +157,6 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEmailType() <em>Email Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmailType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMAIL_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmailType() <em>Email Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmailType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emailType = EMAIL_TYPE_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromAddress() <em>From Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -232,6 +215,15 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 * @ordered
 	 */
 	protected String xslfoAttachScreenLocation = XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getEmailType() <em>Email Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmailType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration emailType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -396,7 +388,24 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 * @generated
 	 */
 	@Override
-	public String getEmailType() {
+	public Enumeration getEmailType() {
+		if (emailType != null && ((EObject)emailType).eIsProxy()) {
+			InternalEObject oldEmailType = (InternalEObject)emailType;
+			emailType = (Enumeration)eResolveProxy(oldEmailType);
+			if (emailType != oldEmailType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE, oldEmailType, emailType));
+			}
+		}
+		return emailType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetEmailType() {
 		return emailType;
 	}
 
@@ -406,8 +415,8 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 	 * @generated
 	 */
 	@Override
-	public void setEmailType(String newEmailType) {
-		String oldEmailType = emailType;
+	public void setEmailType(Enumeration newEmailType) {
+		Enumeration oldEmailType = emailType;
 		emailType = newEmailType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE, oldEmailType, emailType));
@@ -502,14 +511,15 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 				return getContentType();
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__DESCRIPTION:
 				return getDescription();
-			case EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE:
-				return getEmailType();
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__FROM_ADDRESS:
 				return getFromAddress();
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__SUBJECT:
 				return getSubject();
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
 				return getXslfoAttachScreenLocation();
+			case EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE:
+				if (resolve) return getEmailType();
+				return basicGetEmailType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -540,9 +550,6 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE:
-				setEmailType((String)newValue);
-				return;
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__FROM_ADDRESS:
 				setFromAddress((String)newValue);
 				return;
@@ -551,6 +558,9 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 				return;
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
 				setXslfoAttachScreenLocation((String)newValue);
+				return;
+			case EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE:
+				setEmailType((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -582,9 +592,6 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE:
-				setEmailType(EMAIL_TYPE_EDEFAULT);
-				return;
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__FROM_ADDRESS:
 				setFromAddress(FROM_ADDRESS_EDEFAULT);
 				return;
@@ -593,6 +600,9 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 				return;
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
 				setXslfoAttachScreenLocation(XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT);
+				return;
+			case EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE:
+				setEmailType((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -618,14 +628,14 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 				return CONTENT_TYPE_EDEFAULT == null ? contentType != null : !CONTENT_TYPE_EDEFAULT.equals(contentType);
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE:
-				return EMAIL_TYPE_EDEFAULT == null ? emailType != null : !EMAIL_TYPE_EDEFAULT.equals(emailType);
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__FROM_ADDRESS:
 				return FROM_ADDRESS_EDEFAULT == null ? fromAddress != null : !FROM_ADDRESS_EDEFAULT.equals(fromAddress);
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__SUBJECT:
 				return SUBJECT_EDEFAULT == null ? subject != null : !SUBJECT_EDEFAULT.equals(subject);
 			case EmailPackage.EMAIL_TEMPLATE_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
 				return XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT == null ? xslfoAttachScreenLocation != null : !XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT.equals(xslfoAttachScreenLocation);
+			case EmailPackage.EMAIL_TEMPLATE_SETTING__EMAIL_TYPE:
+				return emailType != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -652,8 +662,6 @@ public class EmailTemplateSettingImpl extends BizEntityImpl implements EmailTemp
 		result.append(contentType);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", emailType: ");
-		result.append(emailType);
 		result.append(", fromAddress: ");
 		result.append(fromAddress);
 		result.append(", subject: ");

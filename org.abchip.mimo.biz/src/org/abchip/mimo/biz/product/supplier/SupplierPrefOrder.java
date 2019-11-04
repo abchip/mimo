@@ -64,7 +64,7 @@ public interface SupplierPrefOrder extends BizEntity {
 	 * @return the value of the '<em>Supplier Pref Order Id</em>' attribute.
 	 * @see #setSupplierPrefOrderId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierPrefOrder_SupplierPrefOrderId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -50,7 +50,7 @@ public interface LanguagePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-common-language";
+	String eNS_PREFIX = "biz-language";
 
 	/**
 	 * The singleton instance of the package.

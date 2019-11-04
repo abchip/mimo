@@ -66,7 +66,6 @@ public interface TenantKeyEncryptingKey extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantKeyEncryptingKey_TenantId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Tenant'"
 	 * @generated
 	 */
 	String getTenantId();

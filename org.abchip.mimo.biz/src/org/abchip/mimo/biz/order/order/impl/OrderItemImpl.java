@@ -11,14 +11,23 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.order.order.OrderItem;
 import org.abchip.mimo.biz.order.order.OrderItemType;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -36,46 +45,46 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getCancelBackOrderDate <em>Cancel Back Order Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getCancelQuantity <em>Cancel Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getCorrespondingPoId <em>Corresponding Po Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getDeploymentId <em>Deployment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getDontCancelSetDate <em>Dont Cancel Set Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getDontCancelSetUserLogin <em>Dont Cancel Set User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getEstimatedDeliveryDate <em>Estimated Delivery Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getEstimatedShipDate <em>Estimated Ship Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getExternalId <em>External Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getFromInventoryItemId <em>From Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#isIsItemGroupPrimary <em>Is Item Group Primary</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#isIsModifiedPrice <em>Is Modified Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#isIsPromo <em>Is Promo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getItemDescription <em>Item Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderItemGroupSeqId <em>Order Item Group Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getRecurringFreqUomId <em>Recurring Freq Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getReserveAfterDate <em>Reserve After Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSelectedAmount <em>Selected Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getShipAfterDate <em>Ship After Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getShipBeforeDate <em>Ship Before Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSubscriptionId <em>Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSupplierProductId <em>Supplier Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSyncStatusId <em>Sync Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitAverageCost <em>Unit Average Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitListPrice <em>Unit List Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitPrice <em>Unit Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getUnitRecurringPrice <em>Unit Recurring Price</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOrderItemTypeId <em>Order Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getFromInventoryItemId <em>From Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getRecurringFreqUomId <em>Recurring Freq Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSyncStatusId <em>Sync Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getDontCancelSetUserLogin <em>Dont Cancel Set User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -227,26 +236,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	protected BigDecimal cancelQuantity = CANCEL_QUANTITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHANGE_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String changeByUserLoginId = CHANGE_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -327,26 +316,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	protected Date dontCancelSetDate = DONT_CANCEL_SET_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDontCancelSetUserLogin() <em>Dont Cancel Set User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDontCancelSetUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DONT_CANCEL_SET_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDontCancelSetUserLogin() <em>Dont Cancel Set User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDontCancelSetUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dontCancelSetUserLogin = DONT_CANCEL_SET_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getEstimatedDeliveryDate() <em>Estimated Delivery Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -405,26 +374,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @ordered
 	 */
 	protected String externalId = EXTERNAL_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFromInventoryItemId() <em>From Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FROM_INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromInventoryItemId() <em>From Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fromInventoryItemId = FROM_INVENTORY_ITEM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isIsItemGroupPrimary() <em>Is Item Group Primary</em>}' attribute.
@@ -527,46 +476,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	protected String orderItemGroupSeqId = ORDER_ITEM_GROUP_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOrderItemTypeId() <em>Order Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ITEM_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderItemTypeId() <em>Order Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderItemTypeId = ORDER_ITEM_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOverrideGlAccountId() <em>Override Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OVERRIDE_GL_ACCOUNT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOverrideGlAccountId() <em>Override Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String overrideGlAccountId = OVERRIDE_GL_ACCOUNT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -625,26 +534,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @ordered
 	 */
 	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
@@ -707,26 +596,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	protected String quoteItemSeqId = QUOTE_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRecurringFreqUomId() <em>Recurring Freq Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurringFreqUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RECURRING_FREQ_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRecurringFreqUomId() <em>Recurring Freq Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurringFreqUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String recurringFreqUomId = RECURRING_FREQ_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getReserveAfterDate() <em>Reserve After Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -745,26 +614,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @ordered
 	 */
 	protected Date reserveAfterDate = RESERVE_AFTER_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesOpportunityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SALES_OPPORTUNITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesOpportunityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String salesOpportunityId = SALES_OPPORTUNITY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSelectedAmount() <em>Selected Amount</em>}' attribute.
@@ -867,26 +716,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	protected String shoppingListItemSeqId = SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSubscriptionId() <em>Subscription Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -925,26 +754,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @ordered
 	 */
 	protected String supplierProductId = SUPPLIER_PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSyncStatusId() <em>Sync Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSyncStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SYNC_STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSyncStatusId() <em>Sync Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSyncStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String syncStatusId = SYNC_STATUS_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getUnitAverageCost() <em>Unit Average Cost</em>}' attribute.
@@ -1025,6 +834,106 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @ordered
 	 */
 	protected BigDecimal unitRecurringPrice = UNIT_RECURRING_PRICE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOrderItemTypeId() <em>Order Item Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderItemTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderItemType orderItemTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getFromInventoryItemId() <em>From Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem fromInventoryItemId;
+
+	/**
+	 * The cached value of the '{@link #getRecurringFreqUomId() <em>Recurring Freq Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecurringFreqUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom recurringFreqUomId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getSyncStatusId() <em>Sync Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSyncStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem syncStatusId;
+
+	/**
+	 * The cached value of the '{@link #getDontCancelSetUserLogin() <em>Dont Cancel Set User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDontCancelSetUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin dontCancelSetUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getOverrideGlAccountId() <em>Override Gl Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOverrideGlAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccount overrideGlAccountId;
+
+	/**
+	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesOpportunityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SalesOpportunity salesOpportunityId;
+
+	/**
+	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChangeByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin changeByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1166,7 +1075,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getChangeByUserLoginId() {
+	public UserLogin getChangeByUserLoginId() {
+		if (changeByUserLoginId != null && ((EObject)changeByUserLoginId).eIsProxy()) {
+			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
+			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
+			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
+			}
+		}
+		return changeByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangeByUserLoginId() {
 		return changeByUserLoginId;
 	}
 
@@ -1176,8 +1102,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setChangeByUserLoginId(String newChangeByUserLoginId) {
-		String oldChangeByUserLoginId = changeByUserLoginId;
+	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
@@ -1281,7 +1207,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getDontCancelSetUserLogin() {
+	public UserLogin getDontCancelSetUserLogin() {
+		if (dontCancelSetUserLogin != null && ((EObject)dontCancelSetUserLogin).eIsProxy()) {
+			InternalEObject oldDontCancelSetUserLogin = (InternalEObject)dontCancelSetUserLogin;
+			dontCancelSetUserLogin = (UserLogin)eResolveProxy(oldDontCancelSetUserLogin);
+			if (dontCancelSetUserLogin != oldDontCancelSetUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN, oldDontCancelSetUserLogin, dontCancelSetUserLogin));
+			}
+		}
+		return dontCancelSetUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetDontCancelSetUserLogin() {
 		return dontCancelSetUserLogin;
 	}
 
@@ -1291,8 +1234,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setDontCancelSetUserLogin(String newDontCancelSetUserLogin) {
-		String oldDontCancelSetUserLogin = dontCancelSetUserLogin;
+	public void setDontCancelSetUserLogin(UserLogin newDontCancelSetUserLogin) {
+		UserLogin oldDontCancelSetUserLogin = dontCancelSetUserLogin;
 		dontCancelSetUserLogin = newDontCancelSetUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN, oldDontCancelSetUserLogin, dontCancelSetUserLogin));
@@ -1373,7 +1316,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getFromInventoryItemId() {
+	public InventoryItem getFromInventoryItemId() {
+		if (fromInventoryItemId != null && ((EObject)fromInventoryItemId).eIsProxy()) {
+			InternalEObject oldFromInventoryItemId = (InternalEObject)fromInventoryItemId;
+			fromInventoryItemId = (InventoryItem)eResolveProxy(oldFromInventoryItemId);
+			if (fromInventoryItemId != oldFromInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID, oldFromInventoryItemId, fromInventoryItemId));
+			}
+		}
+		return fromInventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetFromInventoryItemId() {
 		return fromInventoryItemId;
 	}
 
@@ -1383,8 +1343,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setFromInventoryItemId(String newFromInventoryItemId) {
-		String oldFromInventoryItemId = fromInventoryItemId;
+	public void setFromInventoryItemId(InventoryItem newFromInventoryItemId) {
+		InventoryItem oldFromInventoryItemId = fromInventoryItemId;
 		fromInventoryItemId = newFromInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID, oldFromInventoryItemId, fromInventoryItemId));
@@ -1557,7 +1517,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getOrderItemTypeId() {
+	public OrderItemType getOrderItemTypeId() {
+		if (orderItemTypeId != null && ((EObject)orderItemTypeId).eIsProxy()) {
+			InternalEObject oldOrderItemTypeId = (InternalEObject)orderItemTypeId;
+			orderItemTypeId = (OrderItemType)eResolveProxy(oldOrderItemTypeId);
+			if (orderItemTypeId != oldOrderItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID, oldOrderItemTypeId, orderItemTypeId));
+			}
+		}
+		return orderItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderItemType basicGetOrderItemTypeId() {
 		return orderItemTypeId;
 	}
 
@@ -1567,8 +1544,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setOrderItemTypeId(String newOrderItemTypeId) {
-		String oldOrderItemTypeId = orderItemTypeId;
+	public void setOrderItemTypeId(OrderItemType newOrderItemTypeId) {
+		OrderItemType oldOrderItemTypeId = orderItemTypeId;
 		orderItemTypeId = newOrderItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID, oldOrderItemTypeId, orderItemTypeId));
@@ -1580,7 +1557,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getOverrideGlAccountId() {
+	public GlAccount getOverrideGlAccountId() {
+		if (overrideGlAccountId != null && ((EObject)overrideGlAccountId).eIsProxy()) {
+			InternalEObject oldOverrideGlAccountId = (InternalEObject)overrideGlAccountId;
+			overrideGlAccountId = (GlAccount)eResolveProxy(oldOverrideGlAccountId);
+			if (overrideGlAccountId != oldOverrideGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
+			}
+		}
+		return overrideGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetOverrideGlAccountId() {
 		return overrideGlAccountId;
 	}
 
@@ -1590,8 +1584,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setOverrideGlAccountId(String newOverrideGlAccountId) {
-		String oldOverrideGlAccountId = overrideGlAccountId;
+	public void setOverrideGlAccountId(GlAccount newOverrideGlAccountId) {
+		GlAccount oldOverrideGlAccountId = overrideGlAccountId;
 		overrideGlAccountId = newOverrideGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
@@ -1672,7 +1666,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -1682,8 +1693,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__PRODUCT_ID, oldProductId, productId));
@@ -1764,7 +1775,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getRecurringFreqUomId() {
+	public Uom getRecurringFreqUomId() {
+		if (recurringFreqUomId != null && ((EObject)recurringFreqUomId).eIsProxy()) {
+			InternalEObject oldRecurringFreqUomId = (InternalEObject)recurringFreqUomId;
+			recurringFreqUomId = (Uom)eResolveProxy(oldRecurringFreqUomId);
+			if (recurringFreqUomId != oldRecurringFreqUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID, oldRecurringFreqUomId, recurringFreqUomId));
+			}
+		}
+		return recurringFreqUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetRecurringFreqUomId() {
 		return recurringFreqUomId;
 	}
 
@@ -1774,8 +1802,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setRecurringFreqUomId(String newRecurringFreqUomId) {
-		String oldRecurringFreqUomId = recurringFreqUomId;
+	public void setRecurringFreqUomId(Uom newRecurringFreqUomId) {
+		Uom oldRecurringFreqUomId = recurringFreqUomId;
 		recurringFreqUomId = newRecurringFreqUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID, oldRecurringFreqUomId, recurringFreqUomId));
@@ -1810,7 +1838,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getSalesOpportunityId() {
+	public SalesOpportunity getSalesOpportunityId() {
+		if (salesOpportunityId != null && ((EObject)salesOpportunityId).eIsProxy()) {
+			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
+			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
+			if (salesOpportunityId != oldSalesOpportunityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
+			}
+		}
+		return salesOpportunityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SalesOpportunity basicGetSalesOpportunityId() {
 		return salesOpportunityId;
 	}
 
@@ -1820,8 +1865,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setSalesOpportunityId(String newSalesOpportunityId) {
-		String oldSalesOpportunityId = salesOpportunityId;
+	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
+		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
@@ -1948,7 +1993,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -1958,8 +2020,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__STATUS_ID, oldStatusId, statusId));
@@ -2017,7 +2079,24 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getSyncStatusId() {
+	public StatusItem getSyncStatusId() {
+		if (syncStatusId != null && ((EObject)syncStatusId).eIsProxy()) {
+			InternalEObject oldSyncStatusId = (InternalEObject)syncStatusId;
+			syncStatusId = (StatusItem)eResolveProxy(oldSyncStatusId);
+			if (syncStatusId != oldSyncStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM__SYNC_STATUS_ID, oldSyncStatusId, syncStatusId));
+			}
+		}
+		return syncStatusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetSyncStatusId() {
 		return syncStatusId;
 	}
 
@@ -2027,8 +2106,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setSyncStatusId(String newSyncStatusId) {
-		String oldSyncStatusId = syncStatusId;
+	public void setSyncStatusId(StatusItem newSyncStatusId) {
+		StatusItem oldSyncStatusId = syncStatusId;
 		syncStatusId = newSyncStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM__SYNC_STATUS_ID, oldSyncStatusId, syncStatusId));
@@ -2148,8 +2227,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return getCancelBackOrderDate();
 			case OrderPackage.ORDER_ITEM__CANCEL_QUANTITY:
 				return getCancelQuantity();
-			case OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID:
-				return getChangeByUserLoginId();
 			case OrderPackage.ORDER_ITEM__COMMENTS:
 				return getComments();
 			case OrderPackage.ORDER_ITEM__CORRESPONDING_PO_ID:
@@ -2158,16 +2235,12 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return getDeploymentId();
 			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_DATE:
 				return getDontCancelSetDate();
-			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN:
-				return getDontCancelSetUserLogin();
 			case OrderPackage.ORDER_ITEM__ESTIMATED_DELIVERY_DATE:
 				return getEstimatedDeliveryDate();
 			case OrderPackage.ORDER_ITEM__ESTIMATED_SHIP_DATE:
 				return getEstimatedShipDate();
 			case OrderPackage.ORDER_ITEM__EXTERNAL_ID:
 				return getExternalId();
-			case OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID:
-				return getFromInventoryItemId();
 			case OrderPackage.ORDER_ITEM__IS_ITEM_GROUP_PRIMARY:
 				return isIsItemGroupPrimary();
 			case OrderPackage.ORDER_ITEM__IS_MODIFIED_PRICE:
@@ -2178,30 +2251,20 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return getItemDescription();
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_GROUP_SEQ_ID:
 				return getOrderItemGroupSeqId();
-			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
-				return getOrderItemTypeId();
-			case OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID:
-				return getOverrideGlAccountId();
 			case OrderPackage.ORDER_ITEM__PROD_CATALOG_ID:
 				return getProdCatalogId();
 			case OrderPackage.ORDER_ITEM__PRODUCT_CATEGORY_ID:
 				return getProductCategoryId();
 			case OrderPackage.ORDER_ITEM__PRODUCT_FEATURE_ID:
 				return getProductFeatureId();
-			case OrderPackage.ORDER_ITEM__PRODUCT_ID:
-				return getProductId();
 			case OrderPackage.ORDER_ITEM__QUANTITY:
 				return getQuantity();
 			case OrderPackage.ORDER_ITEM__QUOTE_ID:
 				return getQuoteId();
 			case OrderPackage.ORDER_ITEM__QUOTE_ITEM_SEQ_ID:
 				return getQuoteItemSeqId();
-			case OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID:
-				return getRecurringFreqUomId();
 			case OrderPackage.ORDER_ITEM__RESERVE_AFTER_DATE:
 				return getReserveAfterDate();
-			case OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID:
-				return getSalesOpportunityId();
 			case OrderPackage.ORDER_ITEM__SELECTED_AMOUNT:
 				return getSelectedAmount();
 			case OrderPackage.ORDER_ITEM__SHIP_AFTER_DATE:
@@ -2212,14 +2275,10 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return getShoppingListId();
 			case OrderPackage.ORDER_ITEM__SHOPPING_LIST_ITEM_SEQ_ID:
 				return getShoppingListItemSeqId();
-			case OrderPackage.ORDER_ITEM__STATUS_ID:
-				return getStatusId();
 			case OrderPackage.ORDER_ITEM__SUBSCRIPTION_ID:
 				return getSubscriptionId();
 			case OrderPackage.ORDER_ITEM__SUPPLIER_PRODUCT_ID:
 				return getSupplierProductId();
-			case OrderPackage.ORDER_ITEM__SYNC_STATUS_ID:
-				return getSyncStatusId();
 			case OrderPackage.ORDER_ITEM__UNIT_AVERAGE_COST:
 				return getUnitAverageCost();
 			case OrderPackage.ORDER_ITEM__UNIT_LIST_PRICE:
@@ -2228,6 +2287,36 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return getUnitPrice();
 			case OrderPackage.ORDER_ITEM__UNIT_RECURRING_PRICE:
 				return getUnitRecurringPrice();
+			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
+				if (resolve) return getOrderItemTypeId();
+				return basicGetOrderItemTypeId();
+			case OrderPackage.ORDER_ITEM__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID:
+				if (resolve) return getFromInventoryItemId();
+				return basicGetFromInventoryItemId();
+			case OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID:
+				if (resolve) return getRecurringFreqUomId();
+				return basicGetRecurringFreqUomId();
+			case OrderPackage.ORDER_ITEM__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case OrderPackage.ORDER_ITEM__SYNC_STATUS_ID:
+				if (resolve) return getSyncStatusId();
+				return basicGetSyncStatusId();
+			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN:
+				if (resolve) return getDontCancelSetUserLogin();
+				return basicGetDontCancelSetUserLogin();
+			case OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID:
+				if (resolve) return getOverrideGlAccountId();
+				return basicGetOverrideGlAccountId();
+			case OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID:
+				if (resolve) return getSalesOpportunityId();
+				return basicGetSalesOpportunityId();
+			case OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID:
+				if (resolve) return getChangeByUserLoginId();
+				return basicGetChangeByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -2261,9 +2350,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__CANCEL_QUANTITY:
 				setCancelQuantity((BigDecimal)newValue);
 				return;
-			case OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM__COMMENTS:
 				setComments((String)newValue);
 				return;
@@ -2276,9 +2362,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_DATE:
 				setDontCancelSetDate((Date)newValue);
 				return;
-			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN:
-				setDontCancelSetUserLogin((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM__ESTIMATED_DELIVERY_DATE:
 				setEstimatedDeliveryDate((Date)newValue);
 				return;
@@ -2287,9 +2370,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return;
 			case OrderPackage.ORDER_ITEM__EXTERNAL_ID:
 				setExternalId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID:
-				setFromInventoryItemId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM__IS_ITEM_GROUP_PRIMARY:
 				setIsItemGroupPrimary((Boolean)newValue);
@@ -2306,12 +2386,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_GROUP_SEQ_ID:
 				setOrderItemGroupSeqId((String)newValue);
 				return;
-			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
-				setOrderItemTypeId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID:
-				setOverrideGlAccountId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM__PROD_CATALOG_ID:
 				setProdCatalogId((String)newValue);
 				return;
@@ -2320,9 +2394,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return;
 			case OrderPackage.ORDER_ITEM__PRODUCT_FEATURE_ID:
 				setProductFeatureId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM__PRODUCT_ID:
-				setProductId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM__QUANTITY:
 				setQuantity((BigDecimal)newValue);
@@ -2333,14 +2404,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__QUOTE_ITEM_SEQ_ID:
 				setQuoteItemSeqId((String)newValue);
 				return;
-			case OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID:
-				setRecurringFreqUomId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM__RESERVE_AFTER_DATE:
 				setReserveAfterDate((Date)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM__SELECTED_AMOUNT:
 				setSelectedAmount((BigDecimal)newValue);
@@ -2357,17 +2422,11 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__SHOPPING_LIST_ITEM_SEQ_ID:
 				setShoppingListItemSeqId((String)newValue);
 				return;
-			case OrderPackage.ORDER_ITEM__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM__SUBSCRIPTION_ID:
 				setSubscriptionId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM__SUPPLIER_PRODUCT_ID:
 				setSupplierProductId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM__SYNC_STATUS_ID:
-				setSyncStatusId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM__UNIT_AVERAGE_COST:
 				setUnitAverageCost((BigDecimal)newValue);
@@ -2380,6 +2439,36 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return;
 			case OrderPackage.ORDER_ITEM__UNIT_RECURRING_PRICE:
 				setUnitRecurringPrice((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
+				setOrderItemTypeId((OrderItemType)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID:
+				setFromInventoryItemId((InventoryItem)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID:
+				setRecurringFreqUomId((Uom)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__SYNC_STATUS_ID:
+				setSyncStatusId((StatusItem)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN:
+				setDontCancelSetUserLogin((UserLogin)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID:
+				setOverrideGlAccountId((GlAccount)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID:
+				setSalesOpportunityId((SalesOpportunity)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -2414,9 +2503,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__CANCEL_QUANTITY:
 				setCancelQuantity(CANCEL_QUANTITY_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId(CHANGE_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
@@ -2429,9 +2515,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_DATE:
 				setDontCancelSetDate(DONT_CANCEL_SET_DATE_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN:
-				setDontCancelSetUserLogin(DONT_CANCEL_SET_USER_LOGIN_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM__ESTIMATED_DELIVERY_DATE:
 				setEstimatedDeliveryDate(ESTIMATED_DELIVERY_DATE_EDEFAULT);
 				return;
@@ -2440,9 +2523,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return;
 			case OrderPackage.ORDER_ITEM__EXTERNAL_ID:
 				setExternalId(EXTERNAL_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID:
-				setFromInventoryItemId(FROM_INVENTORY_ITEM_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM__IS_ITEM_GROUP_PRIMARY:
 				setIsItemGroupPrimary(IS_ITEM_GROUP_PRIMARY_EDEFAULT);
@@ -2459,12 +2539,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_GROUP_SEQ_ID:
 				setOrderItemGroupSeqId(ORDER_ITEM_GROUP_SEQ_ID_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
-				setOrderItemTypeId(ORDER_ITEM_TYPE_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID:
-				setOverrideGlAccountId(OVERRIDE_GL_ACCOUNT_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM__PROD_CATALOG_ID:
 				setProdCatalogId(PROD_CATALOG_ID_EDEFAULT);
 				return;
@@ -2473,9 +2547,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return;
 			case OrderPackage.ORDER_ITEM__PRODUCT_FEATURE_ID:
 				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
@@ -2486,14 +2557,8 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__QUOTE_ITEM_SEQ_ID:
 				setQuoteItemSeqId(QUOTE_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID:
-				setRecurringFreqUomId(RECURRING_FREQ_UOM_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM__RESERVE_AFTER_DATE:
 				setReserveAfterDate(RESERVE_AFTER_DATE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId(SALES_OPPORTUNITY_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM__SELECTED_AMOUNT:
 				setSelectedAmount(SELECTED_AMOUNT_EDEFAULT);
@@ -2510,17 +2575,11 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 			case OrderPackage.ORDER_ITEM__SHOPPING_LIST_ITEM_SEQ_ID:
 				setShoppingListItemSeqId(SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ITEM__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM__SUBSCRIPTION_ID:
 				setSubscriptionId(SUBSCRIPTION_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM__SUPPLIER_PRODUCT_ID:
 				setSupplierProductId(SUPPLIER_PRODUCT_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM__SYNC_STATUS_ID:
-				setSyncStatusId(SYNC_STATUS_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM__UNIT_AVERAGE_COST:
 				setUnitAverageCost(UNIT_AVERAGE_COST_EDEFAULT);
@@ -2533,6 +2592,36 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return;
 			case OrderPackage.ORDER_ITEM__UNIT_RECURRING_PRICE:
 				setUnitRecurringPrice(UNIT_RECURRING_PRICE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
+				setOrderItemTypeId((OrderItemType)null);
+				return;
+			case OrderPackage.ORDER_ITEM__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID:
+				setFromInventoryItemId((InventoryItem)null);
+				return;
+			case OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID:
+				setRecurringFreqUomId((Uom)null);
+				return;
+			case OrderPackage.ORDER_ITEM__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case OrderPackage.ORDER_ITEM__SYNC_STATUS_ID:
+				setSyncStatusId((StatusItem)null);
+				return;
+			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN:
+				setDontCancelSetUserLogin((UserLogin)null);
+				return;
+			case OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID:
+				setOverrideGlAccountId((GlAccount)null);
+				return;
+			case OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID:
+				setSalesOpportunityId((SalesOpportunity)null);
+				return;
+			case OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -2560,8 +2649,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return CANCEL_BACK_ORDER_DATE_EDEFAULT == null ? cancelBackOrderDate != null : !CANCEL_BACK_ORDER_DATE_EDEFAULT.equals(cancelBackOrderDate);
 			case OrderPackage.ORDER_ITEM__CANCEL_QUANTITY:
 				return CANCEL_QUANTITY_EDEFAULT == null ? cancelQuantity != null : !CANCEL_QUANTITY_EDEFAULT.equals(cancelQuantity);
-			case OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID:
-				return CHANGE_BY_USER_LOGIN_ID_EDEFAULT == null ? changeByUserLoginId != null : !CHANGE_BY_USER_LOGIN_ID_EDEFAULT.equals(changeByUserLoginId);
 			case OrderPackage.ORDER_ITEM__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case OrderPackage.ORDER_ITEM__CORRESPONDING_PO_ID:
@@ -2570,16 +2657,12 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return DEPLOYMENT_ID_EDEFAULT == null ? deploymentId != null : !DEPLOYMENT_ID_EDEFAULT.equals(deploymentId);
 			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_DATE:
 				return DONT_CANCEL_SET_DATE_EDEFAULT == null ? dontCancelSetDate != null : !DONT_CANCEL_SET_DATE_EDEFAULT.equals(dontCancelSetDate);
-			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN:
-				return DONT_CANCEL_SET_USER_LOGIN_EDEFAULT == null ? dontCancelSetUserLogin != null : !DONT_CANCEL_SET_USER_LOGIN_EDEFAULT.equals(dontCancelSetUserLogin);
 			case OrderPackage.ORDER_ITEM__ESTIMATED_DELIVERY_DATE:
 				return ESTIMATED_DELIVERY_DATE_EDEFAULT == null ? estimatedDeliveryDate != null : !ESTIMATED_DELIVERY_DATE_EDEFAULT.equals(estimatedDeliveryDate);
 			case OrderPackage.ORDER_ITEM__ESTIMATED_SHIP_DATE:
 				return ESTIMATED_SHIP_DATE_EDEFAULT == null ? estimatedShipDate != null : !ESTIMATED_SHIP_DATE_EDEFAULT.equals(estimatedShipDate);
 			case OrderPackage.ORDER_ITEM__EXTERNAL_ID:
 				return EXTERNAL_ID_EDEFAULT == null ? externalId != null : !EXTERNAL_ID_EDEFAULT.equals(externalId);
-			case OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID:
-				return FROM_INVENTORY_ITEM_ID_EDEFAULT == null ? fromInventoryItemId != null : !FROM_INVENTORY_ITEM_ID_EDEFAULT.equals(fromInventoryItemId);
 			case OrderPackage.ORDER_ITEM__IS_ITEM_GROUP_PRIMARY:
 				return isItemGroupPrimary != IS_ITEM_GROUP_PRIMARY_EDEFAULT;
 			case OrderPackage.ORDER_ITEM__IS_MODIFIED_PRICE:
@@ -2590,30 +2673,20 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return ITEM_DESCRIPTION_EDEFAULT == null ? itemDescription != null : !ITEM_DESCRIPTION_EDEFAULT.equals(itemDescription);
 			case OrderPackage.ORDER_ITEM__ORDER_ITEM_GROUP_SEQ_ID:
 				return ORDER_ITEM_GROUP_SEQ_ID_EDEFAULT == null ? orderItemGroupSeqId != null : !ORDER_ITEM_GROUP_SEQ_ID_EDEFAULT.equals(orderItemGroupSeqId);
-			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
-				return ORDER_ITEM_TYPE_ID_EDEFAULT == null ? orderItemTypeId != null : !ORDER_ITEM_TYPE_ID_EDEFAULT.equals(orderItemTypeId);
-			case OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID:
-				return OVERRIDE_GL_ACCOUNT_ID_EDEFAULT == null ? overrideGlAccountId != null : !OVERRIDE_GL_ACCOUNT_ID_EDEFAULT.equals(overrideGlAccountId);
 			case OrderPackage.ORDER_ITEM__PROD_CATALOG_ID:
 				return PROD_CATALOG_ID_EDEFAULT == null ? prodCatalogId != null : !PROD_CATALOG_ID_EDEFAULT.equals(prodCatalogId);
 			case OrderPackage.ORDER_ITEM__PRODUCT_CATEGORY_ID:
 				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
 			case OrderPackage.ORDER_ITEM__PRODUCT_FEATURE_ID:
 				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
-			case OrderPackage.ORDER_ITEM__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case OrderPackage.ORDER_ITEM__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case OrderPackage.ORDER_ITEM__QUOTE_ID:
 				return QUOTE_ID_EDEFAULT == null ? quoteId != null : !QUOTE_ID_EDEFAULT.equals(quoteId);
 			case OrderPackage.ORDER_ITEM__QUOTE_ITEM_SEQ_ID:
 				return QUOTE_ITEM_SEQ_ID_EDEFAULT == null ? quoteItemSeqId != null : !QUOTE_ITEM_SEQ_ID_EDEFAULT.equals(quoteItemSeqId);
-			case OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID:
-				return RECURRING_FREQ_UOM_ID_EDEFAULT == null ? recurringFreqUomId != null : !RECURRING_FREQ_UOM_ID_EDEFAULT.equals(recurringFreqUomId);
 			case OrderPackage.ORDER_ITEM__RESERVE_AFTER_DATE:
 				return RESERVE_AFTER_DATE_EDEFAULT == null ? reserveAfterDate != null : !RESERVE_AFTER_DATE_EDEFAULT.equals(reserveAfterDate);
-			case OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID:
-				return SALES_OPPORTUNITY_ID_EDEFAULT == null ? salesOpportunityId != null : !SALES_OPPORTUNITY_ID_EDEFAULT.equals(salesOpportunityId);
 			case OrderPackage.ORDER_ITEM__SELECTED_AMOUNT:
 				return SELECTED_AMOUNT_EDEFAULT == null ? selectedAmount != null : !SELECTED_AMOUNT_EDEFAULT.equals(selectedAmount);
 			case OrderPackage.ORDER_ITEM__SHIP_AFTER_DATE:
@@ -2624,14 +2697,10 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return SHOPPING_LIST_ID_EDEFAULT == null ? shoppingListId != null : !SHOPPING_LIST_ID_EDEFAULT.equals(shoppingListId);
 			case OrderPackage.ORDER_ITEM__SHOPPING_LIST_ITEM_SEQ_ID:
 				return SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT == null ? shoppingListItemSeqId != null : !SHOPPING_LIST_ITEM_SEQ_ID_EDEFAULT.equals(shoppingListItemSeqId);
-			case OrderPackage.ORDER_ITEM__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case OrderPackage.ORDER_ITEM__SUBSCRIPTION_ID:
 				return SUBSCRIPTION_ID_EDEFAULT == null ? subscriptionId != null : !SUBSCRIPTION_ID_EDEFAULT.equals(subscriptionId);
 			case OrderPackage.ORDER_ITEM__SUPPLIER_PRODUCT_ID:
 				return SUPPLIER_PRODUCT_ID_EDEFAULT == null ? supplierProductId != null : !SUPPLIER_PRODUCT_ID_EDEFAULT.equals(supplierProductId);
-			case OrderPackage.ORDER_ITEM__SYNC_STATUS_ID:
-				return SYNC_STATUS_ID_EDEFAULT == null ? syncStatusId != null : !SYNC_STATUS_ID_EDEFAULT.equals(syncStatusId);
 			case OrderPackage.ORDER_ITEM__UNIT_AVERAGE_COST:
 				return UNIT_AVERAGE_COST_EDEFAULT == null ? unitAverageCost != null : !UNIT_AVERAGE_COST_EDEFAULT.equals(unitAverageCost);
 			case OrderPackage.ORDER_ITEM__UNIT_LIST_PRICE:
@@ -2640,6 +2709,26 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 				return UNIT_PRICE_EDEFAULT == null ? unitPrice != null : !UNIT_PRICE_EDEFAULT.equals(unitPrice);
 			case OrderPackage.ORDER_ITEM__UNIT_RECURRING_PRICE:
 				return UNIT_RECURRING_PRICE_EDEFAULT == null ? unitRecurringPrice != null : !UNIT_RECURRING_PRICE_EDEFAULT.equals(unitRecurringPrice);
+			case OrderPackage.ORDER_ITEM__ORDER_ITEM_TYPE_ID:
+				return orderItemTypeId != null;
+			case OrderPackage.ORDER_ITEM__PRODUCT_ID:
+				return productId != null;
+			case OrderPackage.ORDER_ITEM__FROM_INVENTORY_ITEM_ID:
+				return fromInventoryItemId != null;
+			case OrderPackage.ORDER_ITEM__RECURRING_FREQ_UOM_ID:
+				return recurringFreqUomId != null;
+			case OrderPackage.ORDER_ITEM__STATUS_ID:
+				return statusId != null;
+			case OrderPackage.ORDER_ITEM__SYNC_STATUS_ID:
+				return syncStatusId != null;
+			case OrderPackage.ORDER_ITEM__DONT_CANCEL_SET_USER_LOGIN:
+				return dontCancelSetUserLogin != null;
+			case OrderPackage.ORDER_ITEM__OVERRIDE_GL_ACCOUNT_ID:
+				return overrideGlAccountId != null;
+			case OrderPackage.ORDER_ITEM__SALES_OPPORTUNITY_ID:
+				return salesOpportunityId != null;
+			case OrderPackage.ORDER_ITEM__CHANGE_BY_USER_LOGIN_ID:
+				return changeByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -2668,8 +2757,6 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 		result.append(cancelBackOrderDate);
 		result.append(", cancelQuantity: ");
 		result.append(cancelQuantity);
-		result.append(", changeByUserLoginId: ");
-		result.append(changeByUserLoginId);
 		result.append(", comments: ");
 		result.append(comments);
 		result.append(", correspondingPoId: ");
@@ -2678,16 +2765,12 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 		result.append(deploymentId);
 		result.append(", dontCancelSetDate: ");
 		result.append(dontCancelSetDate);
-		result.append(", dontCancelSetUserLogin: ");
-		result.append(dontCancelSetUserLogin);
 		result.append(", estimatedDeliveryDate: ");
 		result.append(estimatedDeliveryDate);
 		result.append(", estimatedShipDate: ");
 		result.append(estimatedShipDate);
 		result.append(", externalId: ");
 		result.append(externalId);
-		result.append(", fromInventoryItemId: ");
-		result.append(fromInventoryItemId);
 		result.append(", isItemGroupPrimary: ");
 		result.append(isItemGroupPrimary);
 		result.append(", isModifiedPrice: ");
@@ -2698,30 +2781,20 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 		result.append(itemDescription);
 		result.append(", orderItemGroupSeqId: ");
 		result.append(orderItemGroupSeqId);
-		result.append(", orderItemTypeId: ");
-		result.append(orderItemTypeId);
-		result.append(", overrideGlAccountId: ");
-		result.append(overrideGlAccountId);
 		result.append(", prodCatalogId: ");
 		result.append(prodCatalogId);
 		result.append(", productCategoryId: ");
 		result.append(productCategoryId);
 		result.append(", productFeatureId: ");
 		result.append(productFeatureId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", quoteId: ");
 		result.append(quoteId);
 		result.append(", quoteItemSeqId: ");
 		result.append(quoteItemSeqId);
-		result.append(", recurringFreqUomId: ");
-		result.append(recurringFreqUomId);
 		result.append(", reserveAfterDate: ");
 		result.append(reserveAfterDate);
-		result.append(", salesOpportunityId: ");
-		result.append(salesOpportunityId);
 		result.append(", selectedAmount: ");
 		result.append(selectedAmount);
 		result.append(", shipAfterDate: ");
@@ -2732,14 +2805,10 @@ public class OrderItemImpl extends BizEntityTypedImpl<OrderItemType> implements 
 		result.append(shoppingListId);
 		result.append(", shoppingListItemSeqId: ");
 		result.append(shoppingListItemSeqId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", subscriptionId: ");
 		result.append(subscriptionId);
 		result.append(", supplierProductId: ");
 		result.append(supplierProductId);
-		result.append(", syncStatusId: ");
-		result.append(syncStatusId);
 		result.append(", unitAverageCost: ");
 		result.append(unitAverageCost);
 		result.append(", unitListPrice: ");

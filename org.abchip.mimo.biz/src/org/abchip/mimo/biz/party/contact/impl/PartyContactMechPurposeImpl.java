@@ -10,11 +10,15 @@ package org.abchip.mimo.biz.party.contact.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PartyContactMechPurpose;
+import org.abchip.mimo.biz.party.contact.TelecomNumber;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PartyContactMechPurposeImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,42 +61,6 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContactMechPurposeTypeId() <em>Contact Mech Purpose Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechPurposeTypeId() <em>Contact Mech Purpose Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechPurposeTypeId = CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -129,6 +97,24 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getContactMechPurposeTypeId() <em>Contact Mech Purpose Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechPurposeTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMechPurposeType contactMechPurposeTypeId;
+	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TelecomNumber contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,7 +210,24 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @generated
 	 */
 	@Override
-	public String getContactMechPurposeTypeId() {
+	public ContactMechPurposeType getContactMechPurposeTypeId() {
+		if (contactMechPurposeTypeId != null && ((EObject)contactMechPurposeTypeId).eIsProxy()) {
+			InternalEObject oldContactMechPurposeTypeId = (InternalEObject)contactMechPurposeTypeId;
+			contactMechPurposeTypeId = (ContactMechPurposeType)eResolveProxy(oldContactMechPurposeTypeId);
+			if (contactMechPurposeTypeId != oldContactMechPurposeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
+			}
+		}
+		return contactMechPurposeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMechPurposeType basicGetContactMechPurposeTypeId() {
 		return contactMechPurposeTypeId;
 	}
 
@@ -234,8 +237,8 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @generated
 	 */
 	@Override
-	public void setContactMechPurposeTypeId(String newContactMechPurposeTypeId) {
-		String oldContactMechPurposeTypeId = contactMechPurposeTypeId;
+	public void setContactMechPurposeTypeId(ContactMechPurposeType newContactMechPurposeTypeId) {
+		ContactMechPurposeType oldContactMechPurposeTypeId = contactMechPurposeTypeId;
 		contactMechPurposeTypeId = newContactMechPurposeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
@@ -247,7 +250,24 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public TelecomNumber getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (TelecomNumber)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TelecomNumber basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -257,8 +277,8 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(TelecomNumber newContactMechId) {
+		TelecomNumber oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -274,14 +294,16 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 		switch (featureID) {
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
 				return getPartyId();
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				return getContactMechId();
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
-				return getContactMechPurposeTypeId();
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				return getFromDate();
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__THRU_DATE:
 				return getThruDate();
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
+				if (resolve) return getContactMechPurposeTypeId();
+				return basicGetContactMechPurposeTypeId();
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,17 +319,17 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
-				return;
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
-				setContactMechPurposeTypeId((String)newValue);
-				return;
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
+				setContactMechPurposeTypeId((ContactMechPurposeType)newValue);
+				return;
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
+				setContactMechId((TelecomNumber)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -324,17 +346,17 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
-				return;
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
-				setContactMechPurposeTypeId(CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT);
-				return;
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
+				setContactMechPurposeTypeId((ContactMechPurposeType)null);
+				return;
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
+				setContactMechId((TelecomNumber)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -350,14 +372,14 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 		switch (featureID) {
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
-			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
-				return CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT == null ? contactMechPurposeTypeId != null : !CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT.equals(contactMechPurposeTypeId);
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
+				return contactMechPurposeTypeId != null;
+			case ContactPackage.PARTY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
+				return contactMechId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,10 +396,6 @@ public class PartyContactMechPurposeImpl extends BizEntityImpl implements PartyC
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
-		result.append(", contactMechPurposeTypeId: ");
-		result.append(contactMechPurposeTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

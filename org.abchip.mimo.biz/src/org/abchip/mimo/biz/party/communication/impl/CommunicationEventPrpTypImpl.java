@@ -17,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -97,23 +99,14 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	 */
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected CommunicationEventPrpTyp parentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getCommunicationEventPurposes() <em>Communication Event Purposes</em>}' attribute list.
@@ -196,7 +189,24 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public CommunicationEventPrpTyp getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (CommunicationEventPrpTyp)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEventPrpTyp basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -206,8 +216,8 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(CommunicationEventPrpTyp newParentTypeId) {
+		CommunicationEventPrpTyp oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -276,7 +286,8 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__HAS_TABLE:
 				return isHasTable();
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES:
 				return getCommunicationEventPurposes();
 		}
@@ -302,7 +313,7 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 				setHasTable((Boolean)newValue);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((CommunicationEventPrpTyp)newValue);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES:
 				getCommunicationEventPurposes().clear();
@@ -330,7 +341,7 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((CommunicationEventPrpTyp)null);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES:
 				getCommunicationEventPurposes().clear();
@@ -354,7 +365,7 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case CommunicationPackage.COMMUNICATION_EVENT_PRP_TYP__COMMUNICATION_EVENT_PURPOSES:
 				return communicationEventPurposes != null && !communicationEventPurposes.isEmpty();
 		}
@@ -377,8 +388,6 @@ public class CommunicationEventPrpTypImpl extends BizEntityImpl implements Commu
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", communicationEventPurposes: ");
 		result.append(communicationEventPurposes);
 		result.append(')');

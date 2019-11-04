@@ -37,8 +37,8 @@ public interface QuoteNote extends BizEntityNote {
 	 * @return the value of the '<em>Quote Id</em>' attribute.
 	 * @see #setQuoteId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteNote_QuoteId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Quote'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getQuoteId();

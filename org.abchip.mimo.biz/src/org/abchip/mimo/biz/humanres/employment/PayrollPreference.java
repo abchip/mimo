@@ -12,6 +12,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.payment.DeductionType;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.common.period.PeriodType;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,14 +30,14 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPayrollPreferenceSeqId <em>Payroll Preference Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getAccountNumber <em>Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getBankName <em>Bank Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getDeductionTypeId <em>Deduction Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getFlatAmount <em>Flat Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPercentage <em>Percentage</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPeriodTypeId <em>Period Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getRoutingNumber <em>Routing Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getDeductionTypeId <em>Deduction Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPeriodTypeId <em>Period Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference()
@@ -95,30 +98,30 @@ public interface PayrollPreference extends BizEntity {
 	void setBankName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Deduction Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Deduction Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Deduction Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deduction Type Id</em>' attribute.
-	 * @see #setDeductionTypeId(String)
+	 * @return the value of the '<em>Deduction Type Id</em>' reference.
+	 * @see #setDeductionTypeId(DeductionType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_DeductionTypeId()
-	 * @model annotation="mimo-ent-domain frame='DeductionType'"
+	 * @model keys="deductionTypeId"
 	 * @generated
 	 */
-	String getDeductionTypeId();
+	DeductionType getDeductionTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getDeductionTypeId <em>Deduction Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getDeductionTypeId <em>Deduction Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deduction Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Deduction Type Id</em>' reference.
 	 * @see #getDeductionTypeId()
 	 * @generated
 	 */
-	void setDeductionTypeId(String value);
+	void setDeductionTypeId(DeductionType value);
 
 	/**
 	 * Returns the value of the '<em><b>Flat Amount</b></em>' attribute.
@@ -183,8 +186,8 @@ public interface PayrollPreference extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -200,30 +203,30 @@ public interface PayrollPreference extends BizEntity {
 	void setPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Method Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Method Type Id</em>' attribute.
-	 * @see #setPaymentMethodTypeId(String)
+	 * @return the value of the '<em>Payment Method Type Id</em>' reference.
+	 * @see #setPaymentMethodTypeId(PaymentMethodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PaymentMethodTypeId()
-	 * @model annotation="mimo-ent-domain frame='PaymentMethodType'"
+	 * @model keys="paymentMethodTypeId"
 	 * @generated
 	 */
-	String getPaymentMethodTypeId();
+	PaymentMethodType getPaymentMethodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Method Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Method Type Id</em>' reference.
 	 * @see #getPaymentMethodTypeId()
 	 * @generated
 	 */
-	void setPaymentMethodTypeId(String value);
+	void setPaymentMethodTypeId(PaymentMethodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Payroll Preference Seq Id</b></em>' attribute.
@@ -236,7 +239,8 @@ public interface PayrollPreference extends BizEntity {
 	 * @return the value of the '<em>Payroll Preference Seq Id</em>' attribute.
 	 * @see #setPayrollPreferenceSeqId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PayrollPreferenceSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPayrollPreferenceSeqId();
@@ -278,30 +282,30 @@ public interface PayrollPreference extends BizEntity {
 	void setPercentage(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Period Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Period Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Period Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Period Type Id</em>' attribute.
-	 * @see #setPeriodTypeId(String)
+	 * @return the value of the '<em>Period Type Id</em>' reference.
+	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_PeriodTypeId()
-	 * @model annotation="mimo-ent-domain frame='PeriodType'"
+	 * @model keys="periodTypeId"
 	 * @generated
 	 */
-	String getPeriodTypeId();
+	PeriodType getPeriodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPeriodTypeId <em>Period Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPeriodTypeId <em>Period Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Period Type Id</em>' reference.
 	 * @see #getPeriodTypeId()
 	 * @generated
 	 */
-	void setPeriodTypeId(String value);
+	void setPeriodTypeId(PeriodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
@@ -314,7 +318,8 @@ public interface PayrollPreference extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayrollPreference_RoleTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeId();

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.entity.tenant.impl;
 
+import org.abchip.mimo.biz.entity.tenant.Tenant;
 import org.abchip.mimo.biz.entity.tenant.TenantComponent;
 import org.abchip.mimo.biz.entity.tenant.TenantPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl#getComponentName <em>Component Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.impl.TenantComponentImpl#getTenantId <em>Tenant Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,25 +60,6 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	protected String componentName = COMPONENT_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTenantId() <em>Tenant Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TENANT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTenantId() <em>Tenant Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTenantId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tenantId = TENANT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,6 +77,15 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 * @ordered
 	 */
 	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getTenantId() <em>Tenant Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTenantId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Tenant tenantId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,7 +158,24 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 * @generated
 	 */
 	@Override
-	public String getTenantId() {
+	public Tenant getTenantId() {
+		if (tenantId != null && ((EObject)tenantId).eIsProxy()) {
+			InternalEObject oldTenantId = (InternalEObject)tenantId;
+			tenantId = (Tenant)eResolveProxy(oldTenantId);
+			if (tenantId != oldTenantId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TenantPackage.TENANT_COMPONENT__TENANT_ID, oldTenantId, tenantId));
+			}
+		}
+		return tenantId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Tenant basicGetTenantId() {
 		return tenantId;
 	}
 
@@ -175,8 +185,8 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 	 * @generated
 	 */
 	@Override
-	public void setTenantId(String newTenantId) {
-		String oldTenantId = tenantId;
+	public void setTenantId(Tenant newTenantId) {
+		Tenant oldTenantId = tenantId;
 		tenantId = newTenantId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TenantPackage.TENANT_COMPONENT__TENANT_ID, oldTenantId, tenantId));
@@ -192,10 +202,11 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 		switch (featureID) {
 			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
 				return getComponentName();
-			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
-				return getTenantId();
 			case TenantPackage.TENANT_COMPONENT__SEQUENCE_NUM:
 				return getSequenceNum();
+			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
+				if (resolve) return getTenantId();
+				return basicGetTenantId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,11 +222,11 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
 				setComponentName((String)newValue);
 				return;
-			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
-				setTenantId((String)newValue);
-				return;
 			case TenantPackage.TENANT_COMPONENT__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
+				return;
+			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
+				setTenantId((Tenant)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,11 +243,11 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
 				setComponentName(COMPONENT_NAME_EDEFAULT);
 				return;
-			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
-				setTenantId(TENANT_ID_EDEFAULT);
-				return;
 			case TenantPackage.TENANT_COMPONENT__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
+				return;
+			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
+				setTenantId((Tenant)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -252,10 +263,10 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 		switch (featureID) {
 			case TenantPackage.TENANT_COMPONENT__COMPONENT_NAME:
 				return COMPONENT_NAME_EDEFAULT == null ? componentName != null : !COMPONENT_NAME_EDEFAULT.equals(componentName);
-			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
-				return TENANT_ID_EDEFAULT == null ? tenantId != null : !TENANT_ID_EDEFAULT.equals(tenantId);
 			case TenantPackage.TENANT_COMPONENT__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
+			case TenantPackage.TENANT_COMPONENT__TENANT_ID:
+				return tenantId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -272,8 +283,6 @@ public class TenantComponentImpl extends BizEntityImpl implements TenantComponen
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (componentName: ");
 		result.append(componentName);
-		result.append(", tenantId: ");
-		result.append(tenantId);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(')');

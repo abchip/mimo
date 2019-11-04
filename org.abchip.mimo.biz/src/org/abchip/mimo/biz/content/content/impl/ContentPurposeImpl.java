@@ -15,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentPurposeImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentPurposeImpl#getContentPurposeTypeId <em>Content Purpose Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentPurposeImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentPurposeImpl#getContentPurposeTypeId <em>Content Purpose Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +61,6 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	protected String contentId = CONTENT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContentPurposeTypeId() <em>Content Purpose Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_PURPOSE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentPurposeTypeId() <em>Content Purpose Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentPurposeTypeId = CONTENT_PURPOSE_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,6 +79,16 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 * @ordered
 	 */
 	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContentPurposeTypeId() <em>Content Purpose Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentPurposeTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContentPurposeType contentPurposeTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,7 +138,24 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 * @generated
 	 */
 	@Override
-	public String getContentPurposeTypeId() {
+	public ContentPurposeType getContentPurposeTypeId() {
+		if (contentPurposeTypeId != null && ((EObject)contentPurposeTypeId).eIsProxy()) {
+			InternalEObject oldContentPurposeTypeId = (InternalEObject)contentPurposeTypeId;
+			contentPurposeTypeId = (ContentPurposeType)eResolveProxy(oldContentPurposeTypeId);
+			if (contentPurposeTypeId != oldContentPurposeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
+			}
+		}
+		return contentPurposeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentPurposeType basicGetContentPurposeTypeId() {
 		return contentPurposeTypeId;
 	}
 
@@ -156,8 +165,8 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 	 * @generated
 	 */
 	@Override
-	public void setContentPurposeTypeId(String newContentPurposeTypeId) {
-		String oldContentPurposeTypeId = contentPurposeTypeId;
+	public void setContentPurposeTypeId(ContentPurposeType newContentPurposeTypeId) {
+		ContentPurposeType oldContentPurposeTypeId = contentPurposeTypeId;
 		contentPurposeTypeId = newContentPurposeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
@@ -196,10 +205,11 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 		switch (featureID) {
 			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
 				return getContentId();
-			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				return getContentPurposeTypeId();
 			case ContentPackage.CONTENT_PURPOSE__SEQUENCE_NUM:
 				return getSequenceNum();
+			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
+				if (resolve) return getContentPurposeTypeId();
+				return basicGetContentPurposeTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,11 +225,11 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
 				setContentId((String)newValue);
 				return;
-			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				setContentPurposeTypeId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_PURPOSE__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
+				return;
+			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
+				setContentPurposeTypeId((ContentPurposeType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -236,11 +246,11 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
 				setContentId(CONTENT_ID_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				setContentPurposeTypeId(CONTENT_PURPOSE_TYPE_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_PURPOSE__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
+				return;
+			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
+				setContentPurposeTypeId((ContentPurposeType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -256,10 +266,10 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 		switch (featureID) {
 			case ContentPackage.CONTENT_PURPOSE__CONTENT_ID:
 				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				return CONTENT_PURPOSE_TYPE_ID_EDEFAULT == null ? contentPurposeTypeId != null : !CONTENT_PURPOSE_TYPE_ID_EDEFAULT.equals(contentPurposeTypeId);
 			case ContentPackage.CONTENT_PURPOSE__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
+			case ContentPackage.CONTENT_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
+				return contentPurposeTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -276,8 +286,6 @@ public class ContentPurposeImpl extends BizEntityTypedImpl<ContentPurposeType> i
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contentId: ");
 		result.append(contentId);
-		result.append(", contentPurposeTypeId: ");
-		result.append(contentPurposeTypeId);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(')');

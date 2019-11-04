@@ -11,6 +11,10 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,28 +26,28 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getBaseCurrencyUomId <em>Base Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getCogsMethodId <em>Cogs Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#isEnableAccounting <em>Enable Accounting</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getErrorGlJournalId <em>Error Gl Journal Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getFiscalYearStartDay <em>Fiscal Year Start Day</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getFiscalYearStartMonth <em>Fiscal Year Start Month</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getInvoiceIdPrefix <em>Invoice Id Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getInvoiceSeqCustMethId <em>Invoice Seq Cust Meth Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getLastInvoiceNumber <em>Last Invoice Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getLastInvoiceRestartDate <em>Last Invoice Restart Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getLastOrderNumber <em>Last Order Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getLastQuoteNumber <em>Last Quote Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldInvoiceSequenceEnumId <em>Old Invoice Sequence Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldOrderSequenceEnumId <em>Old Order Sequence Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldQuoteSequenceEnumId <em>Old Quote Sequence Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOrderIdPrefix <em>Order Id Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOrderSeqCustMethId <em>Order Seq Cust Meth Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getQuoteIdPrefix <em>Quote Id Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getQuoteSeqCustMethId <em>Quote Seq Cust Meth Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getRefundPaymentMethodId <em>Refund Payment Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getTaxFormId <em>Tax Form Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#isUseInvoiceIdForReturns <em>Use Invoice Id For Returns</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getTaxFormId <em>Tax Form Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getCogsMethodId <em>Cogs Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getBaseCurrencyUomId <em>Base Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getInvoiceSeqCustMethId <em>Invoice Seq Cust Meth Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getQuoteSeqCustMethId <em>Quote Seq Cust Meth Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOrderSeqCustMethId <em>Order Seq Cust Meth Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getRefundPaymentMethodId <em>Refund Payment Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getErrorGlJournalId <em>Error Gl Journal Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldInvoiceSequenceEnumId <em>Old Invoice Sequence Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldQuoteSequenceEnumId <em>Old Quote Sequence Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldOrderSequenceEnumId <em>Old Order Sequence Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference()
@@ -52,56 +56,56 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PartyAcctgPreference extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Base Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Base Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Base Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Currency Uom Id</em>' attribute.
-	 * @see #setBaseCurrencyUomId(String)
+	 * @return the value of the '<em>Base Currency Uom Id</em>' reference.
+	 * @see #setBaseCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_BaseCurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getBaseCurrencyUomId();
+	Uom getBaseCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getBaseCurrencyUomId <em>Base Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getBaseCurrencyUomId <em>Base Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Base Currency Uom Id</em>' reference.
 	 * @see #getBaseCurrencyUomId()
 	 * @generated
 	 */
-	void setBaseCurrencyUomId(String value);
+	void setBaseCurrencyUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Cogs Method Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cogs Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cogs Method Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cogs Method Id</em>' attribute.
-	 * @see #setCogsMethodId(String)
+	 * @return the value of the '<em>Cogs Method Id</em>' reference.
+	 * @see #setCogsMethodId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_CogsMethodId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getCogsMethodId();
+	Enumeration getCogsMethodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getCogsMethodId <em>Cogs Method Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getCogsMethodId <em>Cogs Method Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cogs Method Id</em>' attribute.
+	 * @param value the new value of the '<em>Cogs Method Id</em>' reference.
 	 * @see #getCogsMethodId()
 	 * @generated
 	 */
-	void setCogsMethodId(String value);
+	void setCogsMethodId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Enable Accounting</b></em>' attribute.
@@ -208,30 +212,30 @@ public interface PartyAcctgPreference extends BizEntity {
 	void setInvoiceIdPrefix(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Seq Cust Meth Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Seq Cust Meth Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Seq Cust Meth Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Seq Cust Meth Id</em>' attribute.
-	 * @see #setInvoiceSeqCustMethId(String)
+	 * @return the value of the '<em>Invoice Seq Cust Meth Id</em>' reference.
+	 * @see #setInvoiceSeqCustMethId(CustomMethod)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_InvoiceSeqCustMethId()
-	 * @model annotation="mimo-ent-domain frame='CustomMethod'"
+	 * @model keys="customMethodId"
 	 * @generated
 	 */
-	String getInvoiceSeqCustMethId();
+	CustomMethod getInvoiceSeqCustMethId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getInvoiceSeqCustMethId <em>Invoice Seq Cust Meth Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getInvoiceSeqCustMethId <em>Invoice Seq Cust Meth Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Seq Cust Meth Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Seq Cust Meth Id</em>' reference.
 	 * @see #getInvoiceSeqCustMethId()
 	 * @generated
 	 */
-	void setInvoiceSeqCustMethId(String value);
+	void setInvoiceSeqCustMethId(CustomMethod value);
 
 	/**
 	 * Returns the value of the '<em><b>Last Invoice Number</b></em>' attribute.
@@ -338,82 +342,82 @@ public interface PartyAcctgPreference extends BizEntity {
 	void setLastQuoteNumber(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Old Invoice Sequence Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Old Invoice Sequence Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Old Invoice Sequence Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Old Invoice Sequence Enum Id</em>' attribute.
-	 * @see #setOldInvoiceSequenceEnumId(String)
+	 * @return the value of the '<em>Old Invoice Sequence Enum Id</em>' reference.
+	 * @see #setOldInvoiceSequenceEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_OldInvoiceSequenceEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getOldInvoiceSequenceEnumId();
+	Enumeration getOldInvoiceSequenceEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldInvoiceSequenceEnumId <em>Old Invoice Sequence Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldInvoiceSequenceEnumId <em>Old Invoice Sequence Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Old Invoice Sequence Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Old Invoice Sequence Enum Id</em>' reference.
 	 * @see #getOldInvoiceSequenceEnumId()
 	 * @generated
 	 */
-	void setOldInvoiceSequenceEnumId(String value);
+	void setOldInvoiceSequenceEnumId(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Old Order Sequence Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Old Order Sequence Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Old Order Sequence Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Old Order Sequence Enum Id</em>' attribute.
-	 * @see #setOldOrderSequenceEnumId(String)
+	 * @return the value of the '<em>Old Order Sequence Enum Id</em>' reference.
+	 * @see #setOldOrderSequenceEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_OldOrderSequenceEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getOldOrderSequenceEnumId();
+	Enumeration getOldOrderSequenceEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldOrderSequenceEnumId <em>Old Order Sequence Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldOrderSequenceEnumId <em>Old Order Sequence Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Old Order Sequence Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Old Order Sequence Enum Id</em>' reference.
 	 * @see #getOldOrderSequenceEnumId()
 	 * @generated
 	 */
-	void setOldOrderSequenceEnumId(String value);
+	void setOldOrderSequenceEnumId(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Old Quote Sequence Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Old Quote Sequence Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Old Quote Sequence Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Old Quote Sequence Enum Id</em>' attribute.
-	 * @see #setOldQuoteSequenceEnumId(String)
+	 * @return the value of the '<em>Old Quote Sequence Enum Id</em>' reference.
+	 * @see #setOldQuoteSequenceEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_OldQuoteSequenceEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getOldQuoteSequenceEnumId();
+	Enumeration getOldQuoteSequenceEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldQuoteSequenceEnumId <em>Old Quote Sequence Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOldQuoteSequenceEnumId <em>Old Quote Sequence Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Old Quote Sequence Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Old Quote Sequence Enum Id</em>' reference.
 	 * @see #getOldQuoteSequenceEnumId()
 	 * @generated
 	 */
-	void setOldQuoteSequenceEnumId(String value);
+	void setOldQuoteSequenceEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Id Prefix</b></em>' attribute.
@@ -442,30 +446,30 @@ public interface PartyAcctgPreference extends BizEntity {
 	void setOrderIdPrefix(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Seq Cust Meth Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Seq Cust Meth Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Seq Cust Meth Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Seq Cust Meth Id</em>' attribute.
-	 * @see #setOrderSeqCustMethId(String)
+	 * @return the value of the '<em>Order Seq Cust Meth Id</em>' reference.
+	 * @see #setOrderSeqCustMethId(CustomMethod)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_OrderSeqCustMethId()
-	 * @model annotation="mimo-ent-domain frame='CustomMethod'"
+	 * @model keys="customMethodId"
 	 * @generated
 	 */
-	String getOrderSeqCustMethId();
+	CustomMethod getOrderSeqCustMethId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOrderSeqCustMethId <em>Order Seq Cust Meth Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getOrderSeqCustMethId <em>Order Seq Cust Meth Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Seq Cust Meth Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Seq Cust Meth Id</em>' reference.
 	 * @see #getOrderSeqCustMethId()
 	 * @generated
 	 */
-	void setOrderSeqCustMethId(String value);
+	void setOrderSeqCustMethId(CustomMethod value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
@@ -478,9 +482,8 @@ public interface PartyAcctgPreference extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_PartyId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -522,82 +525,82 @@ public interface PartyAcctgPreference extends BizEntity {
 	void setQuoteIdPrefix(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Seq Cust Meth Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quote Seq Cust Meth Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Seq Cust Meth Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Seq Cust Meth Id</em>' attribute.
-	 * @see #setQuoteSeqCustMethId(String)
+	 * @return the value of the '<em>Quote Seq Cust Meth Id</em>' reference.
+	 * @see #setQuoteSeqCustMethId(CustomMethod)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_QuoteSeqCustMethId()
-	 * @model annotation="mimo-ent-domain frame='CustomMethod'"
+	 * @model keys="customMethodId"
 	 * @generated
 	 */
-	String getQuoteSeqCustMethId();
+	CustomMethod getQuoteSeqCustMethId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getQuoteSeqCustMethId <em>Quote Seq Cust Meth Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getQuoteSeqCustMethId <em>Quote Seq Cust Meth Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quote Seq Cust Meth Id</em>' attribute.
+	 * @param value the new value of the '<em>Quote Seq Cust Meth Id</em>' reference.
 	 * @see #getQuoteSeqCustMethId()
 	 * @generated
 	 */
-	void setQuoteSeqCustMethId(String value);
+	void setQuoteSeqCustMethId(CustomMethod value);
 
 	/**
-	 * Returns the value of the '<em><b>Refund Payment Method Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Refund Payment Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Refund Payment Method Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Refund Payment Method Id</em>' attribute.
-	 * @see #setRefundPaymentMethodId(String)
+	 * @return the value of the '<em>Refund Payment Method Id</em>' reference.
+	 * @see #setRefundPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_RefundPaymentMethodId()
-	 * @model annotation="mimo-ent-domain frame='PaymentMethod'"
+	 * @model keys="paymentMethodId"
 	 * @generated
 	 */
-	String getRefundPaymentMethodId();
+	PaymentMethod getRefundPaymentMethodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getRefundPaymentMethodId <em>Refund Payment Method Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getRefundPaymentMethodId <em>Refund Payment Method Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Refund Payment Method Id</em>' attribute.
+	 * @param value the new value of the '<em>Refund Payment Method Id</em>' reference.
 	 * @see #getRefundPaymentMethodId()
 	 * @generated
 	 */
-	void setRefundPaymentMethodId(String value);
+	void setRefundPaymentMethodId(PaymentMethod value);
 
 	/**
-	 * Returns the value of the '<em><b>Tax Form Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tax Form Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tax Form Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tax Form Id</em>' attribute.
-	 * @see #setTaxFormId(String)
+	 * @return the value of the '<em>Tax Form Id</em>' reference.
+	 * @see #setTaxFormId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_TaxFormId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getTaxFormId();
+	Enumeration getTaxFormId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getTaxFormId <em>Tax Form Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getTaxFormId <em>Tax Form Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tax Form Id</em>' attribute.
+	 * @param value the new value of the '<em>Tax Form Id</em>' reference.
 	 * @see #getTaxFormId()
 	 * @generated
 	 */
-	void setTaxFormId(String value);
+	void setTaxFormId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Use Invoice Id For Returns</b></em>' attribute.
@@ -635,29 +638,29 @@ public interface PartyAcctgPreference extends BizEntity {
 	List<String> partyPrefDocTypeTpls();
 
 	/**
-	 * Returns the value of the '<em><b>Error Gl Journal Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Error Gl Journal Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Error Gl Journal Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Error Gl Journal Id</em>' attribute.
-	 * @see #setErrorGlJournalId(String)
+	 * @return the value of the '<em>Error Gl Journal Id</em>' reference.
+	 * @see #setErrorGlJournalId(GlJournal)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getPartyAcctgPreference_ErrorGlJournalId()
-	 * @model annotation="mimo-ent-domain frame='GlJournal'"
+	 * @model keys="glJournalId"
 	 * @generated
 	 */
-	String getErrorGlJournalId();
+	GlJournal getErrorGlJournalId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getErrorGlJournalId <em>Error Gl Journal Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference#getErrorGlJournalId <em>Error Gl Journal Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Error Gl Journal Id</em>' attribute.
+	 * @param value the new value of the '<em>Error Gl Journal Id</em>' reference.
 	 * @see #getErrorGlJournalId()
 	 * @generated
 	 */
-	void setErrorGlJournalId(String value);
+	void setErrorGlJournalId(GlJournal value);
 
 } // PartyAcctgPreference

@@ -8,11 +8,15 @@
 package org.abchip.mimo.biz.product.facility.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.FacilityCarrierShipment;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCarrierShipmentImpl#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCarrierShipmentImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCarrierShipmentImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCarrierShipmentImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityCarrierShipmentImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  * </ul>
  *
@@ -58,26 +62,6 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	protected String facilityId = FACILITY_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,24 +82,24 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
+	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SHIPMENT_METHOD_TYPE_ID_EDEFAULT = null;
+	protected Party partyId;
 
 	/**
-	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getShipmentMethodTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String shipmentMethodTypeId = SHIPMENT_METHOD_TYPE_ID_EDEFAULT;
+	protected ShipmentMethodType shipmentMethodTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,7 +126,24 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -152,8 +153,8 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID, oldPartyId, partyId));
@@ -188,7 +189,24 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	 * @generated
 	 */
 	@Override
-	public String getShipmentMethodTypeId() {
+	public ShipmentMethodType getShipmentMethodTypeId() {
+		if (shipmentMethodTypeId != null && ((EObject)shipmentMethodTypeId).eIsProxy()) {
+			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
+			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
+			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CARRIER_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
+			}
+		}
+		return shipmentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShipmentMethodType basicGetShipmentMethodTypeId() {
 		return shipmentMethodTypeId;
 	}
 
@@ -198,8 +216,8 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 	 * @generated
 	 */
 	@Override
-	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
-		String oldShipmentMethodTypeId = shipmentMethodTypeId;
+	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CARRIER_SHIPMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
@@ -238,12 +256,14 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 		switch (featureID) {
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__FACILITY_ID:
 				return getFacilityId();
-			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID:
-				return getPartyId();
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__ROLE_TYPE_ID:
 				return getRoleTypeId();
+			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__SHIPMENT_METHOD_TYPE_ID:
-				return getShipmentMethodTypeId();
+				if (resolve) return getShipmentMethodTypeId();
+				return basicGetShipmentMethodTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,14 +279,14 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__FACILITY_ID:
 				setFacilityId((String)newValue);
 				return;
-			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
 				return;
+			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((String)newValue);
+				setShipmentMethodTypeId((ShipmentMethodType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -283,14 +303,14 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__FACILITY_ID:
 				setFacilityId(FACILITY_ID_EDEFAULT);
 				return;
-			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
+			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID:
+				setPartyId((Party)null);
+				return;
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId(SHIPMENT_METHOD_TYPE_ID_EDEFAULT);
+				setShipmentMethodTypeId((ShipmentMethodType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -306,12 +326,12 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 		switch (featureID) {
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__FACILITY_ID:
 				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
-			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__PARTY_ID:
+				return partyId != null;
 			case FacilityPackage.FACILITY_CARRIER_SHIPMENT__SHIPMENT_METHOD_TYPE_ID:
-				return SHIPMENT_METHOD_TYPE_ID_EDEFAULT == null ? shipmentMethodTypeId != null : !SHIPMENT_METHOD_TYPE_ID_EDEFAULT.equals(shipmentMethodTypeId);
+				return shipmentMethodTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -328,12 +348,8 @@ public class FacilityCarrierShipmentImpl extends BizEntityImpl implements Facili
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (facilityId: ");
 		result.append(facilityId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", roleTypeId: ");
 		result.append(roleTypeId);
-		result.append(", shipmentMethodTypeId: ");
-		result.append(shipmentMethodTypeId);
 		result.append(')');
 		return result.toString();
 	}

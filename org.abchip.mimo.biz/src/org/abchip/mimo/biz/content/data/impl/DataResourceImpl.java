@@ -12,15 +12,26 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.datasource.DataSource;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.content.data.CharacterSet;
+import org.abchip.mimo.biz.content.data.DataCategory;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.content.data.DataResourceType;
+import org.abchip.mimo.biz.content.data.DataTemplateType;
+import org.abchip.mimo.biz.content.data.MimeType;
+import org.abchip.mimo.biz.content.survey.Survey;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -33,22 +44,22 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceId <em>Data Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getCharacterSetId <em>Character Set Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataCategoryId <em>Data Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceName <em>Data Resource Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataTemplateTypeId <em>Data Template Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#isIsPublic <em>Is Public</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getLocaleString <em>Locale String</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getMimeTypeId <em>Mime Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getObjectInfo <em>Object Info</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getRelatedDetailId <em>Related Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataTemplateTypeId <em>Data Template Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataCategoryId <em>Data Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getMimeTypeId <em>Mime Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getCharacterSetId <em>Character Set Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getSurveyResponseId <em>Survey Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.impl.DataResourceImpl#getDataResourceAttributes <em>Data Resource Attributes</em>}</li>
@@ -86,46 +97,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCharacterSetId() <em>Character Set Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCharacterSetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHARACTER_SET_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCharacterSetId() <em>Character Set Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCharacterSetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String characterSetId = CHARACTER_SET_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,26 +115,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @ordered
 	 */
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDataCategoryId() <em>Data Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataCategoryId() <em>Data Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataCategoryId = DATA_CATEGORY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDataResourceName() <em>Data Resource Name</em>}' attribute.
@@ -186,66 +137,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected String dataResourceName = DATA_RESOURCE_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDataResourceTypeId() <em>Data Resource Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_RESOURCE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceTypeId() <em>Data Resource Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataResourceTypeId = DATA_RESOURCE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDataTemplateTypeId() <em>Data Template Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataTemplateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_TEMPLATE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataTemplateTypeId() <em>Data Template Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataTemplateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataTemplateTypeId = DATA_TEMPLATE_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -264,26 +155,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @ordered
 	 */
 	protected boolean isPublic = IS_PUBLIC_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
@@ -326,26 +197,6 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected String localeString = LOCALE_STRING_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMimeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MIME_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMimeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String mimeTypeId = MIME_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getObjectInfo() <em>Object Info</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -386,64 +237,114 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	protected String relatedDetailId = RELATED_DETAIL_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getDataResourceTypeId() <em>Data Resource Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getDataResourceTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected DataResourceType dataResourceTypeId;
 
 	/**
-	 * The default value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
+	 * The cached value of the '{@link #getDataTemplateTypeId() <em>Data Template Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataTemplateTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataTemplateType dataTemplateTypeId;
+
+	/**
+	 * The cached value of the '{@link #getDataCategoryId() <em>Data Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataCategory dataCategoryId;
+
+	/**
+	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataSource dataSourceId;
+
+	/**
+	 * The cached value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMimeTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected MimeType mimeTypeId;
+
+	/**
+	 * The cached value of the '{@link #getCharacterSetId() <em>Character Set Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCharacterSetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CharacterSet characterSetId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSurveyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SURVEY_ID_EDEFAULT = null;
+	protected Survey surveyId;
 
 	/**
-	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyId = SURVEY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' attribute.
+	 * The cached value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSurveyResponseId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SURVEY_RESPONSE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyResponseId = SURVEY_RESPONSE_ID_EDEFAULT;
+	protected SurveyResponse surveyResponseId;
 
 	/**
 	 * The cached value of the '{@link #getDataResourceAttributes() <em>Data Resource Attributes</em>}' attribute list.
@@ -510,7 +411,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCharacterSetId() {
+	public CharacterSet getCharacterSetId() {
+		if (characterSetId != null && ((EObject)characterSetId).eIsProxy()) {
+			InternalEObject oldCharacterSetId = (InternalEObject)characterSetId;
+			characterSetId = (CharacterSet)eResolveProxy(oldCharacterSetId);
+			if (characterSetId != oldCharacterSetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
+			}
+		}
+		return characterSetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CharacterSet basicGetCharacterSetId() {
 		return characterSetId;
 	}
 
@@ -520,8 +438,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCharacterSetId(String newCharacterSetId) {
-		String oldCharacterSetId = characterSetId;
+	public void setCharacterSetId(CharacterSet newCharacterSetId) {
+		CharacterSet oldCharacterSetId = characterSetId;
 		characterSetId = newCharacterSetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
@@ -533,7 +451,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -543,8 +478,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -579,7 +514,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getDataCategoryId() {
+	public DataCategory getDataCategoryId() {
+		if (dataCategoryId != null && ((EObject)dataCategoryId).eIsProxy()) {
+			InternalEObject oldDataCategoryId = (InternalEObject)dataCategoryId;
+			dataCategoryId = (DataCategory)eResolveProxy(oldDataCategoryId);
+			if (dataCategoryId != oldDataCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID, oldDataCategoryId, dataCategoryId));
+			}
+		}
+		return dataCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataCategory basicGetDataCategoryId() {
 		return dataCategoryId;
 	}
 
@@ -589,8 +541,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setDataCategoryId(String newDataCategoryId) {
-		String oldDataCategoryId = dataCategoryId;
+	public void setDataCategoryId(DataCategory newDataCategoryId) {
+		DataCategory oldDataCategoryId = dataCategoryId;
 		dataCategoryId = newDataCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID, oldDataCategoryId, dataCategoryId));
@@ -648,7 +600,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getDataResourceTypeId() {
+	public DataResourceType getDataResourceTypeId() {
+		if (dataResourceTypeId != null && ((EObject)dataResourceTypeId).eIsProxy()) {
+			InternalEObject oldDataResourceTypeId = (InternalEObject)dataResourceTypeId;
+			dataResourceTypeId = (DataResourceType)eResolveProxy(oldDataResourceTypeId);
+			if (dataResourceTypeId != oldDataResourceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID, oldDataResourceTypeId, dataResourceTypeId));
+			}
+		}
+		return dataResourceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResourceType basicGetDataResourceTypeId() {
 		return dataResourceTypeId;
 	}
 
@@ -658,8 +627,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceTypeId(String newDataResourceTypeId) {
-		String oldDataResourceTypeId = dataResourceTypeId;
+	public void setDataResourceTypeId(DataResourceType newDataResourceTypeId) {
+		DataResourceType oldDataResourceTypeId = dataResourceTypeId;
 		dataResourceTypeId = newDataResourceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID, oldDataResourceTypeId, dataResourceTypeId));
@@ -671,7 +640,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getDataSourceId() {
+	public DataSource getDataSourceId() {
+		if (dataSourceId != null && ((EObject)dataSourceId).eIsProxy()) {
+			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
+			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
+			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+			}
+		}
+		return dataSourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSource basicGetDataSourceId() {
 		return dataSourceId;
 	}
 
@@ -681,8 +667,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
+	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
@@ -694,7 +680,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getDataTemplateTypeId() {
+	public DataTemplateType getDataTemplateTypeId() {
+		if (dataTemplateTypeId != null && ((EObject)dataTemplateTypeId).eIsProxy()) {
+			InternalEObject oldDataTemplateTypeId = (InternalEObject)dataTemplateTypeId;
+			dataTemplateTypeId = (DataTemplateType)eResolveProxy(oldDataTemplateTypeId);
+			if (dataTemplateTypeId != oldDataTemplateTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID, oldDataTemplateTypeId, dataTemplateTypeId));
+			}
+		}
+		return dataTemplateTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataTemplateType basicGetDataTemplateTypeId() {
 		return dataTemplateTypeId;
 	}
 
@@ -704,8 +707,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setDataTemplateTypeId(String newDataTemplateTypeId) {
-		String oldDataTemplateTypeId = dataTemplateTypeId;
+	public void setDataTemplateTypeId(DataTemplateType newDataTemplateTypeId) {
+		DataTemplateType oldDataTemplateTypeId = dataTemplateTypeId;
 		dataTemplateTypeId = newDataTemplateTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID, oldDataTemplateTypeId, dataTemplateTypeId));
@@ -740,7 +743,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -750,8 +770,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -809,7 +829,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getMimeTypeId() {
+	public MimeType getMimeTypeId() {
+		if (mimeTypeId != null && ((EObject)mimeTypeId).eIsProxy()) {
+			InternalEObject oldMimeTypeId = (InternalEObject)mimeTypeId;
+			mimeTypeId = (MimeType)eResolveProxy(oldMimeTypeId);
+			if (mimeTypeId != oldMimeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
+			}
+		}
+		return mimeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MimeType basicGetMimeTypeId() {
 		return mimeTypeId;
 	}
 
@@ -819,8 +856,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setMimeTypeId(String newMimeTypeId) {
-		String oldMimeTypeId = mimeTypeId;
+	public void setMimeTypeId(MimeType newMimeTypeId) {
+		MimeType oldMimeTypeId = mimeTypeId;
 		mimeTypeId = newMimeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
@@ -878,7 +915,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -888,8 +942,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__STATUS_ID, oldStatusId, statusId));
@@ -901,7 +955,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getSurveyId() {
+	public Survey getSurveyId() {
+		if (surveyId != null && ((EObject)surveyId).eIsProxy()) {
+			InternalEObject oldSurveyId = (InternalEObject)surveyId;
+			surveyId = (Survey)eResolveProxy(oldSurveyId);
+			if (surveyId != oldSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__SURVEY_ID, oldSurveyId, surveyId));
+			}
+		}
+		return surveyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Survey basicGetSurveyId() {
 		return surveyId;
 	}
 
@@ -911,8 +982,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setSurveyId(String newSurveyId) {
-		String oldSurveyId = surveyId;
+	public void setSurveyId(Survey newSurveyId) {
+		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__SURVEY_ID, oldSurveyId, surveyId));
@@ -924,7 +995,24 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public String getSurveyResponseId() {
+	public SurveyResponse getSurveyResponseId() {
+		if (surveyResponseId != null && ((EObject)surveyResponseId).eIsProxy()) {
+			InternalEObject oldSurveyResponseId = (InternalEObject)surveyResponseId;
+			surveyResponseId = (SurveyResponse)eResolveProxy(oldSurveyResponseId);
+			if (surveyResponseId != oldSurveyResponseId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
+			}
+		}
+		return surveyResponseId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurveyResponse basicGetSurveyResponseId() {
 		return surveyResponseId;
 	}
 
@@ -934,8 +1022,8 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 	 * @generated
 	 */
 	@Override
-	public void setSurveyResponseId(String newSurveyResponseId) {
-		String oldSurveyResponseId = surveyResponseId;
+	public void setSurveyResponseId(SurveyResponse newSurveyResponseId) {
+		SurveyResponse oldSurveyResponseId = surveyResponseId;
 		surveyResponseId = newSurveyResponseId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
@@ -1027,42 +1115,53 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 		switch (featureID) {
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_ID:
 				return getDataResourceId();
-			case DataPackage.DATA_RESOURCE__CHARACTER_SET_ID:
-				return getCharacterSetId();
-			case DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case DataPackage.DATA_RESOURCE__CREATED_DATE:
 				return getCreatedDate();
-			case DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID:
-				return getDataCategoryId();
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_NAME:
 				return getDataResourceName();
-			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID:
-				return getDataResourceTypeId();
-			case DataPackage.DATA_RESOURCE__DATA_SOURCE_ID:
-				return getDataSourceId();
-			case DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID:
-				return getDataTemplateTypeId();
 			case DataPackage.DATA_RESOURCE__IS_PUBLIC:
 				return isIsPublic();
-			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
 			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
 			case DataPackage.DATA_RESOURCE__LOCALE_STRING:
 				return getLocaleString();
-			case DataPackage.DATA_RESOURCE__MIME_TYPE_ID:
-				return getMimeTypeId();
 			case DataPackage.DATA_RESOURCE__OBJECT_INFO:
 				return getObjectInfo();
 			case DataPackage.DATA_RESOURCE__RELATED_DETAIL_ID:
 				return getRelatedDetailId();
 			case DataPackage.DATA_RESOURCE__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID:
+				if (resolve) return getDataResourceTypeId();
+				return basicGetDataResourceTypeId();
+			case DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID:
+				if (resolve) return getDataTemplateTypeId();
+				return basicGetDataTemplateTypeId();
+			case DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID:
+				if (resolve) return getDataCategoryId();
+				return basicGetDataCategoryId();
+			case DataPackage.DATA_RESOURCE__DATA_SOURCE_ID:
+				if (resolve) return getDataSourceId();
+				return basicGetDataSourceId();
+			case DataPackage.DATA_RESOURCE__MIME_TYPE_ID:
+				if (resolve) return getMimeTypeId();
+				return basicGetMimeTypeId();
+			case DataPackage.DATA_RESOURCE__CHARACTER_SET_ID:
+				if (resolve) return getCharacterSetId();
+				return basicGetCharacterSetId();
+			case DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
 			case DataPackage.DATA_RESOURCE__SURVEY_ID:
-				return getSurveyId();
+				if (resolve) return getSurveyId();
+				return basicGetSurveyId();
 			case DataPackage.DATA_RESOURCE__SURVEY_RESPONSE_ID:
-				return getSurveyResponseId();
+				if (resolve) return getSurveyResponseId();
+				return basicGetSurveyResponseId();
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES:
 				return getDataResourceAttributes();
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_META_DATAS:
@@ -1087,44 +1186,20 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_ID:
 				setDataResourceId((String)newValue);
 				return;
-			case DataPackage.DATA_RESOURCE__CHARACTER_SET_ID:
-				setCharacterSetId((String)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
 			case DataPackage.DATA_RESOURCE__CREATED_DATE:
 				setCreatedDate((Date)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID:
-				setDataCategoryId((String)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_NAME:
 				setDataResourceName((String)newValue);
 				return;
-			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID:
-				setDataResourceTypeId((String)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE__DATA_SOURCE_ID:
-				setDataSourceId((String)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID:
-				setDataTemplateTypeId((String)newValue);
-				return;
 			case DataPackage.DATA_RESOURCE__IS_PUBLIC:
 				setIsPublic((Boolean)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE__LOCALE_STRING:
 				setLocaleString((String)newValue);
-				return;
-			case DataPackage.DATA_RESOURCE__MIME_TYPE_ID:
-				setMimeTypeId((String)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE__OBJECT_INFO:
 				setObjectInfo((String)newValue);
@@ -1133,13 +1208,37 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 				setRelatedDetailId((String)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID:
+				setDataResourceTypeId((DataResourceType)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID:
+				setDataTemplateTypeId((DataTemplateType)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID:
+				setDataCategoryId((DataCategory)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE__MIME_TYPE_ID:
+				setMimeTypeId((MimeType)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE__CHARACTER_SET_ID:
+				setCharacterSetId((CharacterSet)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE__SURVEY_ID:
-				setSurveyId((String)newValue);
+				setSurveyId((Survey)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE__SURVEY_RESPONSE_ID:
-				setSurveyResponseId((String)newValue);
+				setSurveyResponseId((SurveyResponse)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES:
 				getDataResourceAttributes().clear();
@@ -1172,44 +1271,20 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_ID:
 				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
 				return;
-			case DataPackage.DATA_RESOURCE__CHARACTER_SET_ID:
-				setCharacterSetId(CHARACTER_SET_ID_EDEFAULT);
-				return;
-			case DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case DataPackage.DATA_RESOURCE__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
-				return;
-			case DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID:
-				setDataCategoryId(DATA_CATEGORY_ID_EDEFAULT);
 				return;
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_NAME:
 				setDataResourceName(DATA_RESOURCE_NAME_EDEFAULT);
 				return;
-			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID:
-				setDataResourceTypeId(DATA_RESOURCE_TYPE_ID_EDEFAULT);
-				return;
-			case DataPackage.DATA_RESOURCE__DATA_SOURCE_ID:
-				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
-				return;
-			case DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID:
-				setDataTemplateTypeId(DATA_TEMPLATE_TYPE_ID_EDEFAULT);
-				return;
 			case DataPackage.DATA_RESOURCE__IS_PUBLIC:
 				setIsPublic(IS_PUBLIC_EDEFAULT);
-				return;
-			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
 				return;
 			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
 				return;
 			case DataPackage.DATA_RESOURCE__LOCALE_STRING:
 				setLocaleString(LOCALE_STRING_EDEFAULT);
-				return;
-			case DataPackage.DATA_RESOURCE__MIME_TYPE_ID:
-				setMimeTypeId(MIME_TYPE_ID_EDEFAULT);
 				return;
 			case DataPackage.DATA_RESOURCE__OBJECT_INFO:
 				setObjectInfo(OBJECT_INFO_EDEFAULT);
@@ -1218,13 +1293,37 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 				setRelatedDetailId(RELATED_DETAIL_ID_EDEFAULT);
 				return;
 			case DataPackage.DATA_RESOURCE__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
+				return;
+			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID:
+				setDataResourceTypeId((DataResourceType)null);
+				return;
+			case DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID:
+				setDataTemplateTypeId((DataTemplateType)null);
+				return;
+			case DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID:
+				setDataCategoryId((DataCategory)null);
+				return;
+			case DataPackage.DATA_RESOURCE__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)null);
+				return;
+			case DataPackage.DATA_RESOURCE__MIME_TYPE_ID:
+				setMimeTypeId((MimeType)null);
+				return;
+			case DataPackage.DATA_RESOURCE__CHARACTER_SET_ID:
+				setCharacterSetId((CharacterSet)null);
+				return;
+			case DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
 				return;
 			case DataPackage.DATA_RESOURCE__SURVEY_ID:
-				setSurveyId(SURVEY_ID_EDEFAULT);
+				setSurveyId((Survey)null);
 				return;
 			case DataPackage.DATA_RESOURCE__SURVEY_RESPONSE_ID:
-				setSurveyResponseId(SURVEY_RESPONSE_ID_EDEFAULT);
+				setSurveyResponseId((SurveyResponse)null);
 				return;
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES:
 				getDataResourceAttributes().clear();
@@ -1252,42 +1351,42 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 		switch (featureID) {
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_ID:
 				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
-			case DataPackage.DATA_RESOURCE__CHARACTER_SET_ID:
-				return CHARACTER_SET_ID_EDEFAULT == null ? characterSetId != null : !CHARACTER_SET_ID_EDEFAULT.equals(characterSetId);
-			case DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case DataPackage.DATA_RESOURCE__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID:
-				return DATA_CATEGORY_ID_EDEFAULT == null ? dataCategoryId != null : !DATA_CATEGORY_ID_EDEFAULT.equals(dataCategoryId);
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_NAME:
 				return DATA_RESOURCE_NAME_EDEFAULT == null ? dataResourceName != null : !DATA_RESOURCE_NAME_EDEFAULT.equals(dataResourceName);
-			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID:
-				return DATA_RESOURCE_TYPE_ID_EDEFAULT == null ? dataResourceTypeId != null : !DATA_RESOURCE_TYPE_ID_EDEFAULT.equals(dataResourceTypeId);
-			case DataPackage.DATA_RESOURCE__DATA_SOURCE_ID:
-				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
-			case DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID:
-				return DATA_TEMPLATE_TYPE_ID_EDEFAULT == null ? dataTemplateTypeId != null : !DATA_TEMPLATE_TYPE_ID_EDEFAULT.equals(dataTemplateTypeId);
 			case DataPackage.DATA_RESOURCE__IS_PUBLIC:
 				return isPublic != IS_PUBLIC_EDEFAULT;
-			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
 			case DataPackage.DATA_RESOURCE__LOCALE_STRING:
 				return LOCALE_STRING_EDEFAULT == null ? localeString != null : !LOCALE_STRING_EDEFAULT.equals(localeString);
-			case DataPackage.DATA_RESOURCE__MIME_TYPE_ID:
-				return MIME_TYPE_ID_EDEFAULT == null ? mimeTypeId != null : !MIME_TYPE_ID_EDEFAULT.equals(mimeTypeId);
 			case DataPackage.DATA_RESOURCE__OBJECT_INFO:
 				return OBJECT_INFO_EDEFAULT == null ? objectInfo != null : !OBJECT_INFO_EDEFAULT.equals(objectInfo);
 			case DataPackage.DATA_RESOURCE__RELATED_DETAIL_ID:
 				return RELATED_DETAIL_ID_EDEFAULT == null ? relatedDetailId != null : !RELATED_DETAIL_ID_EDEFAULT.equals(relatedDetailId);
 			case DataPackage.DATA_RESOURCE__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
+			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_TYPE_ID:
+				return dataResourceTypeId != null;
+			case DataPackage.DATA_RESOURCE__DATA_TEMPLATE_TYPE_ID:
+				return dataTemplateTypeId != null;
+			case DataPackage.DATA_RESOURCE__DATA_CATEGORY_ID:
+				return dataCategoryId != null;
+			case DataPackage.DATA_RESOURCE__DATA_SOURCE_ID:
+				return dataSourceId != null;
+			case DataPackage.DATA_RESOURCE__MIME_TYPE_ID:
+				return mimeTypeId != null;
+			case DataPackage.DATA_RESOURCE__CHARACTER_SET_ID:
+				return characterSetId != null;
+			case DataPackage.DATA_RESOURCE__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case DataPackage.DATA_RESOURCE__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
 			case DataPackage.DATA_RESOURCE__SURVEY_ID:
-				return SURVEY_ID_EDEFAULT == null ? surveyId != null : !SURVEY_ID_EDEFAULT.equals(surveyId);
+				return surveyId != null;
 			case DataPackage.DATA_RESOURCE__SURVEY_RESPONSE_ID:
-				return SURVEY_RESPONSE_ID_EDEFAULT == null ? surveyResponseId != null : !SURVEY_RESPONSE_ID_EDEFAULT.equals(surveyResponseId);
+				return surveyResponseId != null;
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_ATTRIBUTES:
 				return dataResourceAttributes != null && !dataResourceAttributes.isEmpty();
 			case DataPackage.DATA_RESOURCE__DATA_RESOURCE_META_DATAS:
@@ -1312,42 +1411,20 @@ public class DataResourceImpl extends BizEntityTypedImpl<DataResourceType> imple
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (dataResourceId: ");
 		result.append(dataResourceId);
-		result.append(", characterSetId: ");
-		result.append(characterSetId);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
-		result.append(", dataCategoryId: ");
-		result.append(dataCategoryId);
 		result.append(", dataResourceName: ");
 		result.append(dataResourceName);
-		result.append(", dataResourceTypeId: ");
-		result.append(dataResourceTypeId);
-		result.append(", dataSourceId: ");
-		result.append(dataSourceId);
-		result.append(", dataTemplateTypeId: ");
-		result.append(dataTemplateTypeId);
 		result.append(", isPublic: ");
 		result.append(isPublic);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
 		result.append(", localeString: ");
 		result.append(localeString);
-		result.append(", mimeTypeId: ");
-		result.append(mimeTypeId);
 		result.append(", objectInfo: ");
 		result.append(objectInfo);
 		result.append(", relatedDetailId: ");
 		result.append(relatedDetailId);
-		result.append(", statusId: ");
-		result.append(statusId);
-		result.append(", surveyId: ");
-		result.append(surveyId);
-		result.append(", surveyResponseId: ");
-		result.append(surveyResponseId);
 		result.append(", dataResourceAttributes: ");
 		result.append(dataResourceAttributes);
 		result.append(", dataResourceMetaDatas: ");

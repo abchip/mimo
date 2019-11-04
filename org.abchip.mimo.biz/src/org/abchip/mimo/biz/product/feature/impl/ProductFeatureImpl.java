@@ -11,14 +11,18 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
 import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
 import org.abchip.mimo.biz.product.feature.ProductFeatureType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -192,64 +196,34 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	protected BigDecimal numberSpecified = NUMBER_SPECIFIED_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductFeatureCategoryId() <em>Product Feature Category Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductFeatureCategoryId() <em>Product Feature Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductFeatureCategoryId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_FEATURE_CATEGORY_ID_EDEFAULT = null;
+	protected ProductFeatureCategory productFeatureCategoryId;
 
 	/**
-	 * The cached value of the '{@link #getProductFeatureCategoryId() <em>Product Feature Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureCategoryId = PRODUCT_FEATURE_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductFeatureTypeId() <em>Product Feature Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductFeatureTypeId() <em>Product Feature Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductFeatureTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_FEATURE_TYPE_ID_EDEFAULT = null;
+	protected ProductFeatureType productFeatureTypeId;
 
 	/**
-	 * The cached value of the '{@link #getProductFeatureTypeId() <em>Product Feature Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureTypeId = PRODUCT_FEATURE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uomId = UOM_ID_EDEFAULT;
+	protected Uom uomId;
 
 	/**
 	 * The cached value of the '{@link #getMainProductFeatureIactns() <em>Main Product Feature Iactns</em>}' attribute list.
@@ -424,7 +398,24 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -434,8 +425,8 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE__UOM_ID, oldUomId, uomId));
@@ -556,7 +547,24 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureCategoryId() {
+	public ProductFeatureCategory getProductFeatureCategoryId() {
+		if (productFeatureCategoryId != null && ((EObject)productFeatureCategoryId).eIsProxy()) {
+			InternalEObject oldProductFeatureCategoryId = (InternalEObject)productFeatureCategoryId;
+			productFeatureCategoryId = (ProductFeatureCategory)eResolveProxy(oldProductFeatureCategoryId);
+			if (productFeatureCategoryId != oldProductFeatureCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_CATEGORY_ID, oldProductFeatureCategoryId, productFeatureCategoryId));
+			}
+		}
+		return productFeatureCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeatureCategory basicGetProductFeatureCategoryId() {
 		return productFeatureCategoryId;
 	}
 
@@ -566,8 +574,8 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureCategoryId(String newProductFeatureCategoryId) {
-		String oldProductFeatureCategoryId = productFeatureCategoryId;
+	public void setProductFeatureCategoryId(ProductFeatureCategory newProductFeatureCategoryId) {
+		ProductFeatureCategory oldProductFeatureCategoryId = productFeatureCategoryId;
 		productFeatureCategoryId = newProductFeatureCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_CATEGORY_ID, oldProductFeatureCategoryId, productFeatureCategoryId));
@@ -579,7 +587,24 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureTypeId() {
+	public ProductFeatureType getProductFeatureTypeId() {
+		if (productFeatureTypeId != null && ((EObject)productFeatureTypeId).eIsProxy()) {
+			InternalEObject oldProductFeatureTypeId = (InternalEObject)productFeatureTypeId;
+			productFeatureTypeId = (ProductFeatureType)eResolveProxy(oldProductFeatureTypeId);
+			if (productFeatureTypeId != oldProductFeatureTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_TYPE_ID, oldProductFeatureTypeId, productFeatureTypeId));
+			}
+		}
+		return productFeatureTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeatureType basicGetProductFeatureTypeId() {
 		return productFeatureTypeId;
 	}
 
@@ -589,8 +614,8 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureTypeId(String newProductFeatureTypeId) {
-		String oldProductFeatureTypeId = productFeatureTypeId;
+	public void setProductFeatureTypeId(ProductFeatureType newProductFeatureTypeId) {
+		ProductFeatureType oldProductFeatureTypeId = productFeatureTypeId;
 		productFeatureTypeId = newProductFeatureTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_TYPE_ID, oldProductFeatureTypeId, productFeatureTypeId));
@@ -642,11 +667,14 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 			case FeaturePackage.PRODUCT_FEATURE__NUMBER_SPECIFIED:
 				return getNumberSpecified();
 			case FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_CATEGORY_ID:
-				return getProductFeatureCategoryId();
+				if (resolve) return getProductFeatureCategoryId();
+				return basicGetProductFeatureCategoryId();
 			case FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_TYPE_ID:
-				return getProductFeatureTypeId();
+				if (resolve) return getProductFeatureTypeId();
+				return basicGetProductFeatureTypeId();
 			case FeaturePackage.PRODUCT_FEATURE__UOM_ID:
-				return getUomId();
+				if (resolve) return getUomId();
+				return basicGetUomId();
 			case FeaturePackage.PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS:
 				return getMainProductFeatureIactns();
 		}
@@ -684,13 +712,13 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 				setNumberSpecified((BigDecimal)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_CATEGORY_ID:
-				setProductFeatureCategoryId((String)newValue);
+				setProductFeatureCategoryId((ProductFeatureCategory)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_TYPE_ID:
-				setProductFeatureTypeId((String)newValue);
+				setProductFeatureTypeId((ProductFeatureType)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE__UOM_ID:
-				setUomId((String)newValue);
+				setUomId((Uom)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS:
 				getMainProductFeatureIactns().clear();
@@ -730,13 +758,13 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 				setNumberSpecified(NUMBER_SPECIFIED_EDEFAULT);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_CATEGORY_ID:
-				setProductFeatureCategoryId(PRODUCT_FEATURE_CATEGORY_ID_EDEFAULT);
+				setProductFeatureCategoryId((ProductFeatureCategory)null);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_TYPE_ID:
-				setProductFeatureTypeId(PRODUCT_FEATURE_TYPE_ID_EDEFAULT);
+				setProductFeatureTypeId((ProductFeatureType)null);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
+				setUomId((Uom)null);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS:
 				getMainProductFeatureIactns().clear();
@@ -768,11 +796,11 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 			case FeaturePackage.PRODUCT_FEATURE__NUMBER_SPECIFIED:
 				return NUMBER_SPECIFIED_EDEFAULT == null ? numberSpecified != null : !NUMBER_SPECIFIED_EDEFAULT.equals(numberSpecified);
 			case FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_CATEGORY_ID:
-				return PRODUCT_FEATURE_CATEGORY_ID_EDEFAULT == null ? productFeatureCategoryId != null : !PRODUCT_FEATURE_CATEGORY_ID_EDEFAULT.equals(productFeatureCategoryId);
+				return productFeatureCategoryId != null;
 			case FeaturePackage.PRODUCT_FEATURE__PRODUCT_FEATURE_TYPE_ID:
-				return PRODUCT_FEATURE_TYPE_ID_EDEFAULT == null ? productFeatureTypeId != null : !PRODUCT_FEATURE_TYPE_ID_EDEFAULT.equals(productFeatureTypeId);
+				return productFeatureTypeId != null;
 			case FeaturePackage.PRODUCT_FEATURE__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+				return uomId != null;
 			case FeaturePackage.PRODUCT_FEATURE__MAIN_PRODUCT_FEATURE_IACTNS:
 				return mainProductFeatureIactns != null && !mainProductFeatureIactns.isEmpty();
 		}
@@ -803,12 +831,6 @@ public class ProductFeatureImpl extends BizEntityTypedImpl<ProductFeatureType> i
 		result.append(idCode);
 		result.append(", numberSpecified: ");
 		result.append(numberSpecified);
-		result.append(", productFeatureCategoryId: ");
-		result.append(productFeatureCategoryId);
-		result.append(", productFeatureTypeId: ");
-		result.append(productFeatureTypeId);
-		result.append(", uomId: ");
-		result.append(uomId);
 		result.append(", mainProductFeatureIactns: ");
 		result.append(mainProductFeatureIactns);
 		result.append(')');

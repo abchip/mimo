@@ -21,6 +21,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -37,8 +39,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDateCreated <em>Date Created</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentLocation <em>Document Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentText <em>Document Text</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentTypeId <em>Document Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getImageData <em>Image Data</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentTypeId <em>Document Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.document.impl.DocumentImpl#getDocumentAttributes <em>Document Attributes</em>}</li>
  * </ul>
  *
@@ -151,26 +153,6 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	protected String documentText = DOCUMENT_TEXT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDocumentTypeId() <em>Document Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocumentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DOCUMENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDocumentTypeId() <em>Document Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocumentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String documentTypeId = DOCUMENT_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getImageData() <em>Image Data</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,6 +171,16 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 * @ordered
 	 */
 	protected Object imageData = IMAGE_DATA_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDocumentTypeId() <em>Document Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DocumentType documentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getDocumentAttributes() <em>Document Attributes</em>}' attribute list.
@@ -340,7 +332,24 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 * @generated
 	 */
 	@Override
-	public String getDocumentTypeId() {
+	public DocumentType getDocumentTypeId() {
+		if (documentTypeId != null && ((EObject)documentTypeId).eIsProxy()) {
+			InternalEObject oldDocumentTypeId = (InternalEObject)documentTypeId;
+			documentTypeId = (DocumentType)eResolveProxy(oldDocumentTypeId);
+			if (documentTypeId != oldDocumentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID, oldDocumentTypeId, documentTypeId));
+			}
+		}
+		return documentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DocumentType basicGetDocumentTypeId() {
 		return documentTypeId;
 	}
 
@@ -350,8 +359,8 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 	 * @generated
 	 */
 	@Override
-	public void setDocumentTypeId(String newDocumentTypeId) {
-		String oldDocumentTypeId = documentTypeId;
+	public void setDocumentTypeId(DocumentType newDocumentTypeId) {
+		DocumentType oldDocumentTypeId = documentTypeId;
 		documentTypeId = newDocumentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID, oldDocumentTypeId, documentTypeId));
@@ -411,10 +420,11 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 				return getDocumentLocation();
 			case DocumentPackage.DOCUMENT__DOCUMENT_TEXT:
 				return getDocumentText();
-			case DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID:
-				return getDocumentTypeId();
 			case DocumentPackage.DOCUMENT__IMAGE_DATA:
 				return getImageData();
+			case DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID:
+				if (resolve) return getDocumentTypeId();
+				return basicGetDocumentTypeId();
 			case DocumentPackage.DOCUMENT__DOCUMENT_ATTRIBUTES:
 				return getDocumentAttributes();
 		}
@@ -445,11 +455,11 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 			case DocumentPackage.DOCUMENT__DOCUMENT_TEXT:
 				setDocumentText((String)newValue);
 				return;
-			case DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID:
-				setDocumentTypeId((String)newValue);
-				return;
 			case DocumentPackage.DOCUMENT__IMAGE_DATA:
 				setImageData(newValue);
+				return;
+			case DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID:
+				setDocumentTypeId((DocumentType)newValue);
 				return;
 			case DocumentPackage.DOCUMENT__DOCUMENT_ATTRIBUTES:
 				getDocumentAttributes().clear();
@@ -482,11 +492,11 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 			case DocumentPackage.DOCUMENT__DOCUMENT_TEXT:
 				setDocumentText(DOCUMENT_TEXT_EDEFAULT);
 				return;
-			case DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID:
-				setDocumentTypeId(DOCUMENT_TYPE_ID_EDEFAULT);
-				return;
 			case DocumentPackage.DOCUMENT__IMAGE_DATA:
 				setImageData(IMAGE_DATA_EDEFAULT);
+				return;
+			case DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID:
+				setDocumentTypeId((DocumentType)null);
 				return;
 			case DocumentPackage.DOCUMENT__DOCUMENT_ATTRIBUTES:
 				getDocumentAttributes().clear();
@@ -513,10 +523,10 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 				return DOCUMENT_LOCATION_EDEFAULT == null ? documentLocation != null : !DOCUMENT_LOCATION_EDEFAULT.equals(documentLocation);
 			case DocumentPackage.DOCUMENT__DOCUMENT_TEXT:
 				return DOCUMENT_TEXT_EDEFAULT == null ? documentText != null : !DOCUMENT_TEXT_EDEFAULT.equals(documentText);
-			case DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID:
-				return DOCUMENT_TYPE_ID_EDEFAULT == null ? documentTypeId != null : !DOCUMENT_TYPE_ID_EDEFAULT.equals(documentTypeId);
 			case DocumentPackage.DOCUMENT__IMAGE_DATA:
 				return IMAGE_DATA_EDEFAULT == null ? imageData != null : !IMAGE_DATA_EDEFAULT.equals(imageData);
+			case DocumentPackage.DOCUMENT__DOCUMENT_TYPE_ID:
+				return documentTypeId != null;
 			case DocumentPackage.DOCUMENT__DOCUMENT_ATTRIBUTES:
 				return documentAttributes != null && !documentAttributes.isEmpty();
 		}
@@ -543,8 +553,6 @@ public class DocumentImpl extends BizEntityTypedImpl<DocumentType> implements Do
 		result.append(documentLocation);
 		result.append(", documentText: ");
 		result.append(documentText);
-		result.append(", documentTypeId: ");
-		result.append(documentTypeId);
 		result.append(", imageData: ");
 		result.append(imageData);
 		result.append(", documentAttributes: ");

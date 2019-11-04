@@ -13,10 +13,17 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.accounting.rate.RateAmount;
 import org.abchip.mimo.biz.accounting.rate.RatePackage;
+import org.abchip.mimo.biz.common.period.PeriodType;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,14 +35,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getRateTypeId <em>Rate Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getRateCurrencyUomId <em>Rate Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getRateAmount <em>Rate Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getRateCurrencyUomId <em>Rate Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.RateAmountImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,96 +70,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @ordered
 	 */
 	protected String rateTypeId = RATE_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRateCurrencyUomId() <em>Rate Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RATE_CURRENCY_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRateCurrencyUomId() <em>Rate Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String rateCurrencyUomId = RATE_CURRENCY_UOM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PERIOD_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String periodTypeId = PERIOD_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPL_POSITION_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emplPositionTypeId = EMPL_POSITION_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -207,6 +124,51 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getRateCurrencyUomId() <em>Rate Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRateCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom rateCurrencyUomId;
+	/**
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortId;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+	/**
+	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmplPositionTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EmplPositionType emplPositionTypeId;
+	/**
+	 * The cached value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPeriodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PeriodType periodTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,7 +195,24 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public String getEmplPositionTypeId() {
+	public EmplPositionType getEmplPositionTypeId() {
+		if (emplPositionTypeId != null && ((EObject)emplPositionTypeId).eIsProxy()) {
+			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
+			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
+			if (emplPositionTypeId != oldEmplPositionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
+			}
+		}
+		return emplPositionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmplPositionType basicGetEmplPositionTypeId() {
 		return emplPositionTypeId;
 	}
 
@@ -243,8 +222,8 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public void setEmplPositionTypeId(String newEmplPositionTypeId) {
-		String oldEmplPositionTypeId = emplPositionTypeId;
+	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
+		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
@@ -279,7 +258,24 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -289,8 +285,8 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__PARTY_ID, oldPartyId, partyId));
@@ -302,7 +298,24 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public String getPeriodTypeId() {
+	public PeriodType getPeriodTypeId() {
+		if (periodTypeId != null && ((EObject)periodTypeId).eIsProxy()) {
+			InternalEObject oldPeriodTypeId = (InternalEObject)periodTypeId;
+			periodTypeId = (PeriodType)eResolveProxy(oldPeriodTypeId);
+			if (periodTypeId != oldPeriodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
+			}
+		}
+		return periodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PeriodType basicGetPeriodTypeId() {
 		return periodTypeId;
 	}
 
@@ -312,8 +325,8 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public void setPeriodTypeId(String newPeriodTypeId) {
-		String oldPeriodTypeId = periodTypeId;
+	public void setPeriodTypeId(PeriodType newPeriodTypeId) {
+		PeriodType oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
@@ -348,7 +361,24 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public String getRateCurrencyUomId() {
+	public Uom getRateCurrencyUomId() {
+		if (rateCurrencyUomId != null && ((EObject)rateCurrencyUomId).eIsProxy()) {
+			InternalEObject oldRateCurrencyUomId = (InternalEObject)rateCurrencyUomId;
+			rateCurrencyUomId = (Uom)eResolveProxy(oldRateCurrencyUomId);
+			if (rateCurrencyUomId != oldRateCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID, oldRateCurrencyUomId, rateCurrencyUomId));
+			}
+		}
+		return rateCurrencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetRateCurrencyUomId() {
 		return rateCurrencyUomId;
 	}
 
@@ -358,8 +388,8 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public void setRateCurrencyUomId(String newRateCurrencyUomId) {
-		String oldRateCurrencyUomId = rateCurrencyUomId;
+	public void setRateCurrencyUomId(Uom newRateCurrencyUomId) {
+		Uom oldRateCurrencyUomId = rateCurrencyUomId;
 		rateCurrencyUomId = newRateCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID, oldRateCurrencyUomId, rateCurrencyUomId));
@@ -394,7 +424,24 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.RATE_AMOUNT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -404,8 +451,8 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.RATE_AMOUNT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -444,22 +491,27 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 		switch (featureID) {
 			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
 				return getRateTypeId();
-			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
-				return getRateCurrencyUomId();
-			case RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID:
-				return getPeriodTypeId();
-			case RatePackage.RATE_AMOUNT__PARTY_ID:
-				return getPartyId();
-			case RatePackage.RATE_AMOUNT__WORK_EFFORT_ID:
-				return getWorkEffortId();
-			case RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID:
-				return getEmplPositionTypeId();
 			case RatePackage.RATE_AMOUNT__FROM_DATE:
 				return getFromDate();
 			case RatePackage.RATE_AMOUNT__RATE_AMOUNT:
 				return getRateAmount();
 			case RatePackage.RATE_AMOUNT__THRU_DATE:
 				return getThruDate();
+			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
+				if (resolve) return getRateCurrencyUomId();
+				return basicGetRateCurrencyUomId();
+			case RatePackage.RATE_AMOUNT__WORK_EFFORT_ID:
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
+			case RatePackage.RATE_AMOUNT__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID:
+				if (resolve) return getEmplPositionTypeId();
+				return basicGetEmplPositionTypeId();
+			case RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID:
+				if (resolve) return getPeriodTypeId();
+				return basicGetPeriodTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -475,21 +527,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
 				setRateTypeId((String)newValue);
 				return;
-			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
-				setRateCurrencyUomId((String)newValue);
-				return;
-			case RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID:
-				setPeriodTypeId((String)newValue);
-				return;
-			case RatePackage.RATE_AMOUNT__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case RatePackage.RATE_AMOUNT__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
-				return;
-			case RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId((String)newValue);
-				return;
 			case RatePackage.RATE_AMOUNT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -498,6 +535,21 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 				return;
 			case RatePackage.RATE_AMOUNT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
+				setRateCurrencyUomId((Uom)newValue);
+				return;
+			case RatePackage.RATE_AMOUNT__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)newValue);
+				return;
+			case RatePackage.RATE_AMOUNT__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)newValue);
+				return;
+			case RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID:
+				setPeriodTypeId((PeriodType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -514,21 +566,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
 				setRateTypeId(RATE_TYPE_ID_EDEFAULT);
 				return;
-			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
-				setRateCurrencyUomId(RATE_CURRENCY_UOM_ID_EDEFAULT);
-				return;
-			case RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID:
-				setPeriodTypeId(PERIOD_TYPE_ID_EDEFAULT);
-				return;
-			case RatePackage.RATE_AMOUNT__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case RatePackage.RATE_AMOUNT__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
-				return;
-			case RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId(EMPL_POSITION_TYPE_ID_EDEFAULT);
-				return;
 			case RatePackage.RATE_AMOUNT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -537,6 +574,21 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 				return;
 			case RatePackage.RATE_AMOUNT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
+				setRateCurrencyUomId((Uom)null);
+				return;
+			case RatePackage.RATE_AMOUNT__WORK_EFFORT_ID:
+				setWorkEffortId((WorkEffort)null);
+				return;
+			case RatePackage.RATE_AMOUNT__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)null);
+				return;
+			case RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID:
+				setPeriodTypeId((PeriodType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -552,22 +604,22 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 		switch (featureID) {
 			case RatePackage.RATE_AMOUNT__RATE_TYPE_ID:
 				return RATE_TYPE_ID_EDEFAULT == null ? rateTypeId != null : !RATE_TYPE_ID_EDEFAULT.equals(rateTypeId);
-			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
-				return RATE_CURRENCY_UOM_ID_EDEFAULT == null ? rateCurrencyUomId != null : !RATE_CURRENCY_UOM_ID_EDEFAULT.equals(rateCurrencyUomId);
-			case RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID:
-				return PERIOD_TYPE_ID_EDEFAULT == null ? periodTypeId != null : !PERIOD_TYPE_ID_EDEFAULT.equals(periodTypeId);
-			case RatePackage.RATE_AMOUNT__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case RatePackage.RATE_AMOUNT__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID:
-				return EMPL_POSITION_TYPE_ID_EDEFAULT == null ? emplPositionTypeId != null : !EMPL_POSITION_TYPE_ID_EDEFAULT.equals(emplPositionTypeId);
 			case RatePackage.RATE_AMOUNT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case RatePackage.RATE_AMOUNT__RATE_AMOUNT:
 				return RATE_AMOUNT_EDEFAULT == null ? rateAmount != null : !RATE_AMOUNT_EDEFAULT.equals(rateAmount);
 			case RatePackage.RATE_AMOUNT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case RatePackage.RATE_AMOUNT__RATE_CURRENCY_UOM_ID:
+				return rateCurrencyUomId != null;
+			case RatePackage.RATE_AMOUNT__WORK_EFFORT_ID:
+				return workEffortId != null;
+			case RatePackage.RATE_AMOUNT__PARTY_ID:
+				return partyId != null;
+			case RatePackage.RATE_AMOUNT__EMPL_POSITION_TYPE_ID:
+				return emplPositionTypeId != null;
+			case RatePackage.RATE_AMOUNT__PERIOD_TYPE_ID:
+				return periodTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -584,16 +636,6 @@ public class RateAmountImpl extends BizEntityImpl implements RateAmount {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (rateTypeId: ");
 		result.append(rateTypeId);
-		result.append(", rateCurrencyUomId: ");
-		result.append(rateCurrencyUomId);
-		result.append(", periodTypeId: ");
-		result.append(periodTypeId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", workEffortId: ");
-		result.append(workEffortId);
-		result.append(", emplPositionTypeId: ");
-		result.append(emplPositionTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", rateAmount: ");

@@ -200,6 +200,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -378,6 +379,20 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -394,20 +409,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -520,6 +521,13 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -528,13 +536,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -615,6 +616,13 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -623,13 +631,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -697,8 +698,8 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTechDataCalendar_CalendarWeekId() {
-		return (EAttribute)techDataCalendarEClass.getEStructuralFeatures().get(1);
+	public EReference getTechDataCalendar_CalendarWeekId() {
+		return (EReference)techDataCalendarEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -708,7 +709,7 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 	 */
 	@Override
 	public EAttribute getTechDataCalendar_Description() {
-		return (EAttribute)techDataCalendarEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)techDataCalendarEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -827,8 +828,8 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTechDataCalendarExcWeek_CalendarWeekId() {
-		return (EAttribute)techDataCalendarExcWeekEClass.getEStructuralFeatures().get(2);
+	public EReference getTechDataCalendarExcWeek_CalendarWeekId() {
+		return (EReference)techDataCalendarExcWeekEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -838,7 +839,7 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 	 */
 	@Override
 	public EAttribute getTechDataCalendarExcWeek_Description() {
-		return (EAttribute)techDataCalendarExcWeekEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)techDataCalendarExcWeekEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1042,8 +1043,8 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		// Create classes and their features
 		techDataCalendarEClass = createEClass(TECH_DATA_CALENDAR);
 		createEAttribute(techDataCalendarEClass, TECH_DATA_CALENDAR__CALENDAR_ID);
-		createEAttribute(techDataCalendarEClass, TECH_DATA_CALENDAR__CALENDAR_WEEK_ID);
 		createEAttribute(techDataCalendarEClass, TECH_DATA_CALENDAR__DESCRIPTION);
+		createEReference(techDataCalendarEClass, TECH_DATA_CALENDAR__CALENDAR_WEEK_ID);
 		createEAttribute(techDataCalendarEClass, TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_DAIES);
 		createEAttribute(techDataCalendarEClass, TECH_DATA_CALENDAR__TECH_DATA_CALENDAR_EXC_WEEKS);
 
@@ -1057,8 +1058,8 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		techDataCalendarExcWeekEClass = createEClass(TECH_DATA_CALENDAR_EXC_WEEK);
 		createEAttribute(techDataCalendarExcWeekEClass, TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_ID);
 		createEAttribute(techDataCalendarExcWeekEClass, TECH_DATA_CALENDAR_EXC_WEEK__EXCEPTION_DATE_START);
-		createEAttribute(techDataCalendarExcWeekEClass, TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID);
 		createEAttribute(techDataCalendarExcWeekEClass, TECH_DATA_CALENDAR_EXC_WEEK__DESCRIPTION);
+		createEReference(techDataCalendarExcWeekEClass, TECH_DATA_CALENDAR_EXC_WEEK__CALENDAR_WEEK_ID);
 
 		techDataCalendarWeekEClass = createEClass(TECH_DATA_CALENDAR_WEEK);
 		createEAttribute(techDataCalendarWeekEClass, TECH_DATA_CALENDAR_WEEK__CALENDAR_WEEK_ID);
@@ -1118,8 +1119,9 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		// Initialize classes and features; add operations and parameters
 		initEClass(techDataCalendarEClass, TechDataCalendar.class, "TechDataCalendar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTechDataCalendar_CalendarId(), ecorePackage.getEString(), "calendarId", null, 1, 1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTechDataCalendar_CalendarWeekId(), ecorePackage.getEString(), "calendarWeekId", null, 0, 1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTechDataCalendar_Description(), ecorePackage.getEString(), "description", null, 0, 1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTechDataCalendar_CalendarWeekId(), this.getTechDataCalendarWeek(), null, "calendarWeekId", null, 0, 1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTechDataCalendar_CalendarWeekId().getEKeys().add(this.getTechDataCalendarWeek_CalendarWeekId());
 		initEAttribute(getTechDataCalendar_TechDataCalendarExcDaies(), ecorePackage.getEString(), "techDataCalendarExcDaies", null, 0, -1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTechDataCalendar_TechDataCalendarExcWeeks(), ecorePackage.getEString(), "techDataCalendarExcWeeks", null, 0, -1, TechDataCalendar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1135,8 +1137,9 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		initEClass(techDataCalendarExcWeekEClass, TechDataCalendarExcWeek.class, "TechDataCalendarExcWeek", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTechDataCalendarExcWeek_CalendarId(), ecorePackage.getEString(), "calendarId", null, 1, 1, TechDataCalendarExcWeek.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTechDataCalendarExcWeek_ExceptionDateStart(), ecorePackage.getEDate(), "exceptionDateStart", null, 1, 1, TechDataCalendarExcWeek.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTechDataCalendarExcWeek_CalendarWeekId(), ecorePackage.getEString(), "calendarWeekId", null, 0, 1, TechDataCalendarExcWeek.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTechDataCalendarExcWeek_Description(), ecorePackage.getEString(), "description", null, 0, 1, TechDataCalendarExcWeek.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTechDataCalendarExcWeek_CalendarWeekId(), this.getTechDataCalendarWeek(), null, "calendarWeekId", null, 0, 1, TechDataCalendarExcWeek.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTechDataCalendarExcWeek_CalendarWeekId().getEKeys().add(this.getTechDataCalendarWeek_CalendarWeekId());
 
 		initEClass(techDataCalendarWeekEClass, TechDataCalendarWeek.class, "TechDataCalendarWeek", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTechDataCalendarWeek_CalendarWeekId(), ecorePackage.getEString(), "calendarWeekId", null, 1, 1, TechDataCalendarWeek.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1298,15 +1301,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getTechDataCalendar_CalendarWeekId(),
-		   source,
-		   new String[] {
-			   "frame", "TechDataCalendarWeek"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getTechDataCalendar_TechDataCalendarExcDaies(),
 		   source,
 		   new String[] {
@@ -1320,33 +1314,6 @@ public class TechdataPackageImpl extends EPackageImpl implements TechdataPackage
 		   source,
 		   new String[] {
 			   "frame", "TechDataCalendarExcWeek"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTechDataCalendarExcDay_CalendarId(),
-		   source,
-		   new String[] {
-			   "frame", "TechDataCalendar"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTechDataCalendarExcWeek_CalendarId(),
-		   source,
-		   new String[] {
-			   "frame", "TechDataCalendar"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTechDataCalendarExcWeek_CalendarWeekId(),
-		   source,
-		   new String[] {
-			   "frame", "TechDataCalendarWeek"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

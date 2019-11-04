@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.entity.synchronization.impl;
 
+import org.abchip.mimo.biz.entity.group.EntityGroup;
 import org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup;
 import org.abchip.mimo.biz.entity.synchronization.SynchronizationPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -55,23 +58,14 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 	 */
 	protected String entitySyncId = ENTITY_SYNC_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getEntityGroupId() <em>Entity Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getEntityGroupId() <em>Entity Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEntityGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ENTITY_GROUP_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getEntityGroupId() <em>Entity Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String entityGroupId = ENTITY_GROUP_ID_EDEFAULT;
+	protected EntityGroup entityGroupId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,7 +92,24 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 	 * @generated
 	 */
 	@Override
-	public String getEntityGroupId() {
+	public EntityGroup getEntityGroupId() {
+		if (entityGroupId != null && ((EObject)entityGroupId).eIsProxy()) {
+			InternalEObject oldEntityGroupId = (InternalEObject)entityGroupId;
+			entityGroupId = (EntityGroup)eResolveProxy(oldEntityGroupId);
+			if (entityGroupId != oldEntityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID, oldEntityGroupId, entityGroupId));
+			}
+		}
+		return entityGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityGroup basicGetEntityGroupId() {
 		return entityGroupId;
 	}
 
@@ -108,8 +119,8 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 	 * @generated
 	 */
 	@Override
-	public void setEntityGroupId(String newEntityGroupId) {
-		String oldEntityGroupId = entityGroupId;
+	public void setEntityGroupId(EntityGroup newEntityGroupId) {
+		EntityGroup oldEntityGroupId = entityGroupId;
 		entityGroupId = newEntityGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID, oldEntityGroupId, entityGroupId));
@@ -149,7 +160,8 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 			case SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID:
 				return getEntitySyncId();
 			case SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID:
-				return getEntityGroupId();
+				if (resolve) return getEntityGroupId();
+				return basicGetEntityGroupId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,7 +178,7 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 				setEntitySyncId((String)newValue);
 				return;
 			case SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID:
-				setEntityGroupId((String)newValue);
+				setEntityGroupId((EntityGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -184,7 +196,7 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 				setEntitySyncId(ENTITY_SYNC_ID_EDEFAULT);
 				return;
 			case SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID:
-				setEntityGroupId(ENTITY_GROUP_ID_EDEFAULT);
+				setEntityGroupId((EntityGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -201,7 +213,7 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 			case SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID:
 				return ENTITY_SYNC_ID_EDEFAULT == null ? entitySyncId != null : !ENTITY_SYNC_ID_EDEFAULT.equals(entitySyncId);
 			case SynchronizationPackage.ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID:
-				return ENTITY_GROUP_ID_EDEFAULT == null ? entityGroupId != null : !ENTITY_GROUP_ID_EDEFAULT.equals(entityGroupId);
+				return entityGroupId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,8 +230,6 @@ public class EntitySyncIncludeGroupImpl extends BizEntityImpl implements EntityS
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (entitySyncId: ");
 		result.append(entitySyncId);
-		result.append(", entityGroupId: ");
-		result.append(entityGroupId);
 		result.append(')');
 		return result.toString();
 	}

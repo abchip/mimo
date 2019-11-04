@@ -10,12 +10,16 @@ package org.abchip.mimo.biz.party.contact.impl;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PostalAddress;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -31,19 +35,19 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getAddress2 <em>Address2</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getAttnName <em>Attn Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCity <em>City</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCityGeoId <em>City Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCountryGeoId <em>Country Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCountyGeoId <em>County Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getDirections <em>Directions</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getHouseNumber <em>House Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getHouseNumberExt <em>House Number Ext</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCode <em>Postal Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCodeExt <em>Postal Code Ext</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCodeGeoId <em>Postal Code Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getStateProvinceGeoId <em>State Province Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getToName <em>To Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCountryGeoId <em>Country Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getStateProvinceGeoId <em>State Province Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCountyGeoId <em>County Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getMunicipalityGeoId <em>Municipality Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getCityGeoId <em>City Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalCodeGeoId <em>Postal Code Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.PostalAddressImpl#getPostalAddressBoundaries <em>Postal Address Boundaries</em>}</li>
  * </ul>
  *
@@ -135,62 +139,6 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	protected String city = CITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCityGeoId() <em>City Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCityGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CITY_GEO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCityGeoId() <em>City Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCityGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String cityGeoId = CITY_GEO_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCountryGeoId() <em>Country Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCountryGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COUNTRY_GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCountryGeoId() <em>Country Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCountryGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String countryGeoId = COUNTRY_GEO_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCountyGeoId() <em>County Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCountyGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COUNTY_GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCountyGeoId() <em>County Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCountyGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String countyGeoId = COUNTY_GEO_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getDirections() <em>Directions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,24 +156,6 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @ordered
 	 */
 	protected String directions = DIRECTIONS_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_POINT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoPointId = GEO_POINT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getHouseNumber() <em>House Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -263,24 +193,6 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	protected String houseNumberExt = HOUSE_NUMBER_EXT_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getMunicipalityGeoId() <em>Municipality Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMunicipalityGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MUNICIPALITY_GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getMunicipalityGeoId() <em>Municipality Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMunicipalityGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String municipalityGeoId = MUNICIPALITY_GEO_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getPostalCode() <em>Postal Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -317,42 +229,6 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 */
 	protected String postalCodeExt = POSTAL_CODE_EXT_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPostalCodeGeoId() <em>Postal Code Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostalCodeGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String POSTAL_CODE_GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPostalCodeGeoId() <em>Postal Code Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostalCodeGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String postalCodeGeoId = POSTAL_CODE_GEO_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getStateProvinceGeoId() <em>State Province Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStateProvinceGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATE_PROVINCE_GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStateProvinceGeoId() <em>State Province Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStateProvinceGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String stateProvinceGeoId = STATE_PROVINCE_GEO_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getToName() <em>To Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -370,6 +246,69 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @ordered
 	 */
 	protected String toName = TO_NAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getCountryGeoId() <em>Country Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCountryGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo countryGeoId;
+	/**
+	 * The cached value of the '{@link #getStateProvinceGeoId() <em>State Province Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStateProvinceGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo stateProvinceGeoId;
+	/**
+	 * The cached value of the '{@link #getCountyGeoId() <em>County Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCountyGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo countyGeoId;
+	/**
+	 * The cached value of the '{@link #getMunicipalityGeoId() <em>Municipality Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMunicipalityGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo municipalityGeoId;
+	/**
+	 * The cached value of the '{@link #getCityGeoId() <em>City Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCityGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo cityGeoId;
+	/**
+	 * The cached value of the '{@link #getPostalCodeGeoId() <em>Postal Code Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPostalCodeGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo postalCodeGeoId;
+	/**
+	 * The cached value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoPointId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeoPoint geoPointId;
 
 	/**
 	 * The cached value of the '{@link #getPostalAddressBoundaries() <em>Postal Address Boundaries</em>}' attribute list.
@@ -498,7 +437,24 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public String getCityGeoId() {
+	public Geo getCityGeoId() {
+		if (cityGeoId != null && ((EObject)cityGeoId).eIsProxy()) {
+			InternalEObject oldCityGeoId = (InternalEObject)cityGeoId;
+			cityGeoId = (Geo)eResolveProxy(oldCityGeoId);
+			if (cityGeoId != oldCityGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID, oldCityGeoId, cityGeoId));
+			}
+		}
+		return cityGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetCityGeoId() {
 		return cityGeoId;
 	}
 
@@ -508,8 +464,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public void setCityGeoId(String newCityGeoId) {
-		String oldCityGeoId = cityGeoId;
+	public void setCityGeoId(Geo newCityGeoId) {
+		Geo oldCityGeoId = cityGeoId;
 		cityGeoId = newCityGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID, oldCityGeoId, cityGeoId));
@@ -521,7 +477,24 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public String getCountryGeoId() {
+	public Geo getCountryGeoId() {
+		if (countryGeoId != null && ((EObject)countryGeoId).eIsProxy()) {
+			InternalEObject oldCountryGeoId = (InternalEObject)countryGeoId;
+			countryGeoId = (Geo)eResolveProxy(oldCountryGeoId);
+			if (countryGeoId != oldCountryGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID, oldCountryGeoId, countryGeoId));
+			}
+		}
+		return countryGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetCountryGeoId() {
 		return countryGeoId;
 	}
 
@@ -531,8 +504,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public void setCountryGeoId(String newCountryGeoId) {
-		String oldCountryGeoId = countryGeoId;
+	public void setCountryGeoId(Geo newCountryGeoId) {
+		Geo oldCountryGeoId = countryGeoId;
 		countryGeoId = newCountryGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID, oldCountryGeoId, countryGeoId));
@@ -544,7 +517,24 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public String getCountyGeoId() {
+	public Geo getCountyGeoId() {
+		if (countyGeoId != null && ((EObject)countyGeoId).eIsProxy()) {
+			InternalEObject oldCountyGeoId = (InternalEObject)countyGeoId;
+			countyGeoId = (Geo)eResolveProxy(oldCountyGeoId);
+			if (countyGeoId != oldCountyGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID, oldCountyGeoId, countyGeoId));
+			}
+		}
+		return countyGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetCountyGeoId() {
 		return countyGeoId;
 	}
 
@@ -554,8 +544,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public void setCountyGeoId(String newCountyGeoId) {
-		String oldCountyGeoId = countyGeoId;
+	public void setCountyGeoId(Geo newCountyGeoId) {
+		Geo oldCountyGeoId = countyGeoId;
 		countyGeoId = newCountyGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID, oldCountyGeoId, countyGeoId));
@@ -590,7 +580,24 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public String getGeoPointId() {
+	public GeoPoint getGeoPointId() {
+		if (geoPointId != null && ((EObject)geoPointId).eIsProxy()) {
+			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
+			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
+			if (geoPointId != oldGeoPointId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID, oldGeoPointId, geoPointId));
+			}
+		}
+		return geoPointId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeoPoint basicGetGeoPointId() {
 		return geoPointId;
 	}
 
@@ -600,8 +607,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public void setGeoPointId(String newGeoPointId) {
-		String oldGeoPointId = geoPointId;
+	public void setGeoPointId(GeoPoint newGeoPointId) {
+		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID, oldGeoPointId, geoPointId));
@@ -659,7 +666,24 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public String getMunicipalityGeoId() {
+	public Geo getMunicipalityGeoId() {
+		if (municipalityGeoId != null && ((EObject)municipalityGeoId).eIsProxy()) {
+			InternalEObject oldMunicipalityGeoId = (InternalEObject)municipalityGeoId;
+			municipalityGeoId = (Geo)eResolveProxy(oldMunicipalityGeoId);
+			if (municipalityGeoId != oldMunicipalityGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID, oldMunicipalityGeoId, municipalityGeoId));
+			}
+		}
+		return municipalityGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetMunicipalityGeoId() {
 		return municipalityGeoId;
 	}
 
@@ -669,8 +693,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public void setMunicipalityGeoId(String newMunicipalityGeoId) {
-		String oldMunicipalityGeoId = municipalityGeoId;
+	public void setMunicipalityGeoId(Geo newMunicipalityGeoId) {
+		Geo oldMunicipalityGeoId = municipalityGeoId;
 		municipalityGeoId = newMunicipalityGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID, oldMunicipalityGeoId, municipalityGeoId));
@@ -728,7 +752,24 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public String getPostalCodeGeoId() {
+	public Geo getPostalCodeGeoId() {
+		if (postalCodeGeoId != null && ((EObject)postalCodeGeoId).eIsProxy()) {
+			InternalEObject oldPostalCodeGeoId = (InternalEObject)postalCodeGeoId;
+			postalCodeGeoId = (Geo)eResolveProxy(oldPostalCodeGeoId);
+			if (postalCodeGeoId != oldPostalCodeGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID, oldPostalCodeGeoId, postalCodeGeoId));
+			}
+		}
+		return postalCodeGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetPostalCodeGeoId() {
 		return postalCodeGeoId;
 	}
 
@@ -738,8 +779,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public void setPostalCodeGeoId(String newPostalCodeGeoId) {
-		String oldPostalCodeGeoId = postalCodeGeoId;
+	public void setPostalCodeGeoId(Geo newPostalCodeGeoId) {
+		Geo oldPostalCodeGeoId = postalCodeGeoId;
 		postalCodeGeoId = newPostalCodeGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID, oldPostalCodeGeoId, postalCodeGeoId));
@@ -751,7 +792,24 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public String getStateProvinceGeoId() {
+	public Geo getStateProvinceGeoId() {
+		if (stateProvinceGeoId != null && ((EObject)stateProvinceGeoId).eIsProxy()) {
+			InternalEObject oldStateProvinceGeoId = (InternalEObject)stateProvinceGeoId;
+			stateProvinceGeoId = (Geo)eResolveProxy(oldStateProvinceGeoId);
+			if (stateProvinceGeoId != oldStateProvinceGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID, oldStateProvinceGeoId, stateProvinceGeoId));
+			}
+		}
+		return stateProvinceGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetStateProvinceGeoId() {
 		return stateProvinceGeoId;
 	}
 
@@ -761,8 +819,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 	 * @generated
 	 */
 	@Override
-	public void setStateProvinceGeoId(String newStateProvinceGeoId) {
-		String oldStateProvinceGeoId = stateProvinceGeoId;
+	public void setStateProvinceGeoId(Geo newStateProvinceGeoId) {
+		Geo oldStateProvinceGeoId = stateProvinceGeoId;
 		stateProvinceGeoId = newStateProvinceGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID, oldStateProvinceGeoId, stateProvinceGeoId));
@@ -832,32 +890,39 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 				return getAttnName();
 			case ContactPackage.POSTAL_ADDRESS__CITY:
 				return getCity();
-			case ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID:
-				return getCityGeoId();
-			case ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID:
-				return getCountryGeoId();
-			case ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID:
-				return getCountyGeoId();
 			case ContactPackage.POSTAL_ADDRESS__DIRECTIONS:
 				return getDirections();
-			case ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID:
-				return getGeoPointId();
 			case ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER:
 				return getHouseNumber();
 			case ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER_EXT:
 				return getHouseNumberExt();
-			case ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID:
-				return getMunicipalityGeoId();
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE:
 				return getPostalCode();
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_EXT:
 				return getPostalCodeExt();
-			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID:
-				return getPostalCodeGeoId();
-			case ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID:
-				return getStateProvinceGeoId();
 			case ContactPackage.POSTAL_ADDRESS__TO_NAME:
 				return getToName();
+			case ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID:
+				if (resolve) return getCountryGeoId();
+				return basicGetCountryGeoId();
+			case ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID:
+				if (resolve) return getStateProvinceGeoId();
+				return basicGetStateProvinceGeoId();
+			case ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID:
+				if (resolve) return getCountyGeoId();
+				return basicGetCountyGeoId();
+			case ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID:
+				if (resolve) return getMunicipalityGeoId();
+				return basicGetMunicipalityGeoId();
+			case ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID:
+				if (resolve) return getCityGeoId();
+				return basicGetCityGeoId();
+			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID:
+				if (resolve) return getPostalCodeGeoId();
+				return basicGetPostalCodeGeoId();
+			case ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID:
+				if (resolve) return getGeoPointId();
+				return basicGetGeoPointId();
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES:
 				return getPostalAddressBoundaries();
 		}
@@ -885,20 +950,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			case ContactPackage.POSTAL_ADDRESS__CITY:
 				setCity((String)newValue);
 				return;
-			case ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID:
-				setCityGeoId((String)newValue);
-				return;
-			case ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID:
-				setCountryGeoId((String)newValue);
-				return;
-			case ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID:
-				setCountyGeoId((String)newValue);
-				return;
 			case ContactPackage.POSTAL_ADDRESS__DIRECTIONS:
 				setDirections((String)newValue);
-				return;
-			case ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID:
-				setGeoPointId((String)newValue);
 				return;
 			case ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER:
 				setHouseNumber((Long)newValue);
@@ -906,23 +959,35 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			case ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER_EXT:
 				setHouseNumberExt((String)newValue);
 				return;
-			case ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID:
-				setMunicipalityGeoId((String)newValue);
-				return;
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE:
 				setPostalCode((String)newValue);
 				return;
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_EXT:
 				setPostalCodeExt((String)newValue);
 				return;
-			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID:
-				setPostalCodeGeoId((String)newValue);
-				return;
-			case ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID:
-				setStateProvinceGeoId((String)newValue);
-				return;
 			case ContactPackage.POSTAL_ADDRESS__TO_NAME:
 				setToName((String)newValue);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID:
+				setCountryGeoId((Geo)newValue);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID:
+				setStateProvinceGeoId((Geo)newValue);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID:
+				setCountyGeoId((Geo)newValue);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID:
+				setMunicipalityGeoId((Geo)newValue);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID:
+				setCityGeoId((Geo)newValue);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID:
+				setPostalCodeGeoId((Geo)newValue);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID:
+				setGeoPointId((GeoPoint)newValue);
 				return;
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES:
 				getPostalAddressBoundaries().clear();
@@ -952,20 +1017,8 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			case ContactPackage.POSTAL_ADDRESS__CITY:
 				setCity(CITY_EDEFAULT);
 				return;
-			case ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID:
-				setCityGeoId(CITY_GEO_ID_EDEFAULT);
-				return;
-			case ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID:
-				setCountryGeoId(COUNTRY_GEO_ID_EDEFAULT);
-				return;
-			case ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID:
-				setCountyGeoId(COUNTY_GEO_ID_EDEFAULT);
-				return;
 			case ContactPackage.POSTAL_ADDRESS__DIRECTIONS:
 				setDirections(DIRECTIONS_EDEFAULT);
-				return;
-			case ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID:
-				setGeoPointId(GEO_POINT_ID_EDEFAULT);
 				return;
 			case ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER:
 				setHouseNumber(HOUSE_NUMBER_EDEFAULT);
@@ -973,23 +1026,35 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 			case ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER_EXT:
 				setHouseNumberExt(HOUSE_NUMBER_EXT_EDEFAULT);
 				return;
-			case ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID:
-				setMunicipalityGeoId(MUNICIPALITY_GEO_ID_EDEFAULT);
-				return;
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE:
 				setPostalCode(POSTAL_CODE_EDEFAULT);
 				return;
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_EXT:
 				setPostalCodeExt(POSTAL_CODE_EXT_EDEFAULT);
 				return;
-			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID:
-				setPostalCodeGeoId(POSTAL_CODE_GEO_ID_EDEFAULT);
-				return;
-			case ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID:
-				setStateProvinceGeoId(STATE_PROVINCE_GEO_ID_EDEFAULT);
-				return;
 			case ContactPackage.POSTAL_ADDRESS__TO_NAME:
 				setToName(TO_NAME_EDEFAULT);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID:
+				setCountryGeoId((Geo)null);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID:
+				setStateProvinceGeoId((Geo)null);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID:
+				setCountyGeoId((Geo)null);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID:
+				setMunicipalityGeoId((Geo)null);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID:
+				setCityGeoId((Geo)null);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID:
+				setPostalCodeGeoId((Geo)null);
+				return;
+			case ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID:
+				setGeoPointId((GeoPoint)null);
 				return;
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES:
 				getPostalAddressBoundaries().clear();
@@ -1014,32 +1079,32 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 				return ATTN_NAME_EDEFAULT == null ? attnName != null : !ATTN_NAME_EDEFAULT.equals(attnName);
 			case ContactPackage.POSTAL_ADDRESS__CITY:
 				return CITY_EDEFAULT == null ? city != null : !CITY_EDEFAULT.equals(city);
-			case ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID:
-				return CITY_GEO_ID_EDEFAULT == null ? cityGeoId != null : !CITY_GEO_ID_EDEFAULT.equals(cityGeoId);
-			case ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID:
-				return COUNTRY_GEO_ID_EDEFAULT == null ? countryGeoId != null : !COUNTRY_GEO_ID_EDEFAULT.equals(countryGeoId);
-			case ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID:
-				return COUNTY_GEO_ID_EDEFAULT == null ? countyGeoId != null : !COUNTY_GEO_ID_EDEFAULT.equals(countyGeoId);
 			case ContactPackage.POSTAL_ADDRESS__DIRECTIONS:
 				return DIRECTIONS_EDEFAULT == null ? directions != null : !DIRECTIONS_EDEFAULT.equals(directions);
-			case ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID:
-				return GEO_POINT_ID_EDEFAULT == null ? geoPointId != null : !GEO_POINT_ID_EDEFAULT.equals(geoPointId);
 			case ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER:
 				return houseNumber != HOUSE_NUMBER_EDEFAULT;
 			case ContactPackage.POSTAL_ADDRESS__HOUSE_NUMBER_EXT:
 				return HOUSE_NUMBER_EXT_EDEFAULT == null ? houseNumberExt != null : !HOUSE_NUMBER_EXT_EDEFAULT.equals(houseNumberExt);
-			case ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID:
-				return MUNICIPALITY_GEO_ID_EDEFAULT == null ? municipalityGeoId != null : !MUNICIPALITY_GEO_ID_EDEFAULT.equals(municipalityGeoId);
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE:
 				return POSTAL_CODE_EDEFAULT == null ? postalCode != null : !POSTAL_CODE_EDEFAULT.equals(postalCode);
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_EXT:
 				return POSTAL_CODE_EXT_EDEFAULT == null ? postalCodeExt != null : !POSTAL_CODE_EXT_EDEFAULT.equals(postalCodeExt);
-			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID:
-				return POSTAL_CODE_GEO_ID_EDEFAULT == null ? postalCodeGeoId != null : !POSTAL_CODE_GEO_ID_EDEFAULT.equals(postalCodeGeoId);
-			case ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID:
-				return STATE_PROVINCE_GEO_ID_EDEFAULT == null ? stateProvinceGeoId != null : !STATE_PROVINCE_GEO_ID_EDEFAULT.equals(stateProvinceGeoId);
 			case ContactPackage.POSTAL_ADDRESS__TO_NAME:
 				return TO_NAME_EDEFAULT == null ? toName != null : !TO_NAME_EDEFAULT.equals(toName);
+			case ContactPackage.POSTAL_ADDRESS__COUNTRY_GEO_ID:
+				return countryGeoId != null;
+			case ContactPackage.POSTAL_ADDRESS__STATE_PROVINCE_GEO_ID:
+				return stateProvinceGeoId != null;
+			case ContactPackage.POSTAL_ADDRESS__COUNTY_GEO_ID:
+				return countyGeoId != null;
+			case ContactPackage.POSTAL_ADDRESS__MUNICIPALITY_GEO_ID:
+				return municipalityGeoId != null;
+			case ContactPackage.POSTAL_ADDRESS__CITY_GEO_ID:
+				return cityGeoId != null;
+			case ContactPackage.POSTAL_ADDRESS__POSTAL_CODE_GEO_ID:
+				return postalCodeGeoId != null;
+			case ContactPackage.POSTAL_ADDRESS__GEO_POINT_ID:
+				return geoPointId != null;
 			case ContactPackage.POSTAL_ADDRESS__POSTAL_ADDRESS_BOUNDARIES:
 				return postalAddressBoundaries != null && !postalAddressBoundaries.isEmpty();
 		}
@@ -1064,30 +1129,16 @@ public class PostalAddressImpl extends ContactMechImpl implements PostalAddress 
 		result.append(attnName);
 		result.append(", city: ");
 		result.append(city);
-		result.append(", cityGeoId: ");
-		result.append(cityGeoId);
-		result.append(", countryGeoId: ");
-		result.append(countryGeoId);
-		result.append(", countyGeoId: ");
-		result.append(countyGeoId);
 		result.append(", directions: ");
 		result.append(directions);
-		result.append(", geoPointId: ");
-		result.append(geoPointId);
 		result.append(", houseNumber: ");
 		result.append(houseNumber);
 		result.append(", houseNumberExt: ");
 		result.append(houseNumberExt);
-		result.append(", municipalityGeoId: ");
-		result.append(municipalityGeoId);
 		result.append(", postalCode: ");
 		result.append(postalCode);
 		result.append(", postalCodeExt: ");
 		result.append(postalCodeExt);
-		result.append(", postalCodeGeoId: ");
-		result.append(postalCodeGeoId);
-		result.append(", stateProvinceGeoId: ");
-		result.append(stateProvinceGeoId);
 		result.append(", toName: ");
 		result.append(toName);
 		result.append(", postalAddressBoundaries: ");

@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -119,23 +121,14 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	protected String statusCode = STATUS_CODE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusTypeId() <em>Status Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusTypeId() <em>Status Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusTypeId() <em>Status Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusTypeId = STATUS_TYPE_ID_EDEFAULT;
+	protected StatusType statusTypeId;
 
 	/**
 	 * The cached value of the '{@link #getShipmentStatuss() <em>Shipment Statuss</em>}' attribute list.
@@ -250,7 +243,24 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public String getStatusTypeId() {
+	public StatusType getStatusTypeId() {
+		if (statusTypeId != null && ((EObject)statusTypeId).eIsProxy()) {
+			InternalEObject oldStatusTypeId = (InternalEObject)statusTypeId;
+			statusTypeId = (StatusType)eResolveProxy(oldStatusTypeId);
+			if (statusTypeId != oldStatusTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatusPackage.STATUS_ITEM__STATUS_TYPE_ID, oldStatusTypeId, statusTypeId));
+			}
+		}
+		return statusTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusType basicGetStatusTypeId() {
 		return statusTypeId;
 	}
 
@@ -260,8 +270,8 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 	 * @generated
 	 */
 	@Override
-	public void setStatusTypeId(String newStatusTypeId) {
-		String oldStatusTypeId = statusTypeId;
+	public void setStatusTypeId(StatusType newStatusTypeId) {
+		StatusType oldStatusTypeId = statusTypeId;
 		statusTypeId = newStatusTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_ITEM__STATUS_TYPE_ID, oldStatusTypeId, statusTypeId));
@@ -1029,7 +1039,8 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 			case StatusPackage.STATUS_ITEM__STATUS_CODE:
 				return getStatusCode();
 			case StatusPackage.STATUS_ITEM__STATUS_TYPE_ID:
-				return getStatusTypeId();
+				if (resolve) return getStatusTypeId();
+				return basicGetStatusTypeId();
 			case StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS:
 				return getShipmentStatuss();
 			case StatusPackage.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES:
@@ -1060,7 +1071,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 				setStatusCode((String)newValue);
 				return;
 			case StatusPackage.STATUS_ITEM__STATUS_TYPE_ID:
-				setStatusTypeId((String)newValue);
+				setStatusTypeId((StatusType)newValue);
 				return;
 			case StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS:
 				getShipmentStatuss().clear();
@@ -1095,7 +1106,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 				setStatusCode(STATUS_CODE_EDEFAULT);
 				return;
 			case StatusPackage.STATUS_ITEM__STATUS_TYPE_ID:
-				setStatusTypeId(STATUS_TYPE_ID_EDEFAULT);
+				setStatusTypeId((StatusType)null);
 				return;
 			case StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS:
 				getShipmentStatuss().clear();
@@ -1124,7 +1135,7 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 			case StatusPackage.STATUS_ITEM__STATUS_CODE:
 				return STATUS_CODE_EDEFAULT == null ? statusCode != null : !STATUS_CODE_EDEFAULT.equals(statusCode);
 			case StatusPackage.STATUS_ITEM__STATUS_TYPE_ID:
-				return STATUS_TYPE_ID_EDEFAULT == null ? statusTypeId != null : !STATUS_TYPE_ID_EDEFAULT.equals(statusTypeId);
+				return statusTypeId != null;
 			case StatusPackage.STATUS_ITEM__SHIPMENT_STATUSS:
 				return shipmentStatuss != null && !shipmentStatuss.isEmpty();
 			case StatusPackage.STATUS_ITEM__MAIN_STATUS_VALID_CHANGES:
@@ -1151,8 +1162,6 @@ public class StatusItemImpl extends BizEntityTypedImpl<StatusType> implements St
 		result.append(sequenceId);
 		result.append(", statusCode: ");
 		result.append(statusCode);
-		result.append(", statusTypeId: ");
-		result.append(statusTypeId);
 		result.append(", shipmentStatuss: ");
 		result.append(shipmentStatuss);
 		result.append(", mainStatusValidChanges: ");

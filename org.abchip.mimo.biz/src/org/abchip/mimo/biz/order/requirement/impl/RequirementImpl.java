@@ -13,15 +13,22 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.requirement.Requirement;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.RequirementType;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -36,21 +43,21 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getDeliverableId <em>Deliverable Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getEstimatedBudget <em>Estimated Budget</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequiredByDate <em>Required By Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementStartDate <em>Requirement Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementTypeId <em>Requirement Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getUseCase <em>Use Case</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementTypeId <em>Requirement Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getDeliverableId <em>Deliverable Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementAttributes <em>Requirement Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getRequirementStatuss <em>Requirement Statuss</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementImpl#getWorkRequirementFulfillments <em>Work Requirement Fulfillments</em>}</li>
@@ -125,26 +132,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDeliverableId() <em>Deliverable Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DELIVERABLE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDeliverableId() <em>Deliverable Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deliverableId = DELIVERABLE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -185,46 +172,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	protected BigDecimal estimatedBudget = ESTIMATED_BUDGET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -263,26 +210,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @ordered
 	 */
 	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
@@ -365,46 +292,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	protected Date requirementStartDate = REQUIREMENT_START_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRequirementTypeId() <em>Requirement Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequirementTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REQUIREMENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRequirementTypeId() <em>Requirement Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequirementTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String requirementTypeId = REQUIREMENT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getUseCase() <em>Use Case</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -423,6 +310,66 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @ordered
 	 */
 	protected String useCase = USE_CASE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRequirementTypeId() <em>Requirement Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirementTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RequirementType requirementTypeId;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
+
+	/**
+	 * The cached value of the '{@link #getDeliverableId() <em>Deliverable Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeliverableId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Deliverable deliverableId;
+
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
 
 	/**
 	 * The cached value of the '{@link #getRequirementAttributes() <em>Requirement Attributes</em>}' attribute list.
@@ -525,7 +472,24 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getDeliverableId() {
+	public Deliverable getDeliverableId() {
+		if (deliverableId != null && ((EObject)deliverableId).eIsProxy()) {
+			InternalEObject oldDeliverableId = (InternalEObject)deliverableId;
+			deliverableId = (Deliverable)eResolveProxy(oldDeliverableId);
+			if (deliverableId != oldDeliverableId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__DELIVERABLE_ID, oldDeliverableId, deliverableId));
+			}
+		}
+		return deliverableId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Deliverable basicGetDeliverableId() {
 		return deliverableId;
 	}
 
@@ -535,8 +499,8 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setDeliverableId(String newDeliverableId) {
-		String oldDeliverableId = deliverableId;
+	public void setDeliverableId(Deliverable newDeliverableId) {
+		Deliverable oldDeliverableId = deliverableId;
 		deliverableId = newDeliverableId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__DELIVERABLE_ID, oldDeliverableId, deliverableId));
@@ -594,7 +558,24 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -604,8 +585,8 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__FACILITY_ID, oldFacilityId, facilityId));
@@ -617,7 +598,24 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -627,8 +625,8 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -686,7 +684,24 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -696,8 +711,8 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__PRODUCT_ID, oldProductId, productId));
@@ -824,7 +839,24 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getRequirementTypeId() {
+	public RequirementType getRequirementTypeId() {
+		if (requirementTypeId != null && ((EObject)requirementTypeId).eIsProxy()) {
+			InternalEObject oldRequirementTypeId = (InternalEObject)requirementTypeId;
+			requirementTypeId = (RequirementType)eResolveProxy(oldRequirementTypeId);
+			if (requirementTypeId != oldRequirementTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID, oldRequirementTypeId, requirementTypeId));
+			}
+		}
+		return requirementTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RequirementType basicGetRequirementTypeId() {
 		return requirementTypeId;
 	}
 
@@ -834,8 +866,8 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setRequirementTypeId(String newRequirementTypeId) {
-		String oldRequirementTypeId = requirementTypeId;
+	public void setRequirementTypeId(RequirementType newRequirementTypeId) {
+		RequirementType oldRequirementTypeId = requirementTypeId;
 		requirementTypeId = newRequirementTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID, oldRequirementTypeId, requirementTypeId));
@@ -847,7 +879,24 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -857,8 +906,8 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT__STATUS_ID, oldStatusId, statusId));
@@ -952,22 +1001,14 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 				return getCreatedByUserLogin();
 			case RequirementPackage.REQUIREMENT__CREATED_DATE:
 				return getCreatedDate();
-			case RequirementPackage.REQUIREMENT__DELIVERABLE_ID:
-				return getDeliverableId();
 			case RequirementPackage.REQUIREMENT__DESCRIPTION:
 				return getDescription();
 			case RequirementPackage.REQUIREMENT__ESTIMATED_BUDGET:
 				return getEstimatedBudget();
-			case RequirementPackage.REQUIREMENT__FACILITY_ID:
-				return getFacilityId();
-			case RequirementPackage.REQUIREMENT__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case RequirementPackage.REQUIREMENT__LAST_MODIFIED_BY_USER_LOGIN:
 				return getLastModifiedByUserLogin();
 			case RequirementPackage.REQUIREMENT__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
-			case RequirementPackage.REQUIREMENT__PRODUCT_ID:
-				return getProductId();
 			case RequirementPackage.REQUIREMENT__QUANTITY:
 				return getQuantity();
 			case RequirementPackage.REQUIREMENT__REASON:
@@ -976,12 +1017,26 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 				return getRequiredByDate();
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_START_DATE:
 				return getRequirementStartDate();
-			case RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID:
-				return getRequirementTypeId();
-			case RequirementPackage.REQUIREMENT__STATUS_ID:
-				return getStatusId();
 			case RequirementPackage.REQUIREMENT__USE_CASE:
 				return getUseCase();
+			case RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID:
+				if (resolve) return getRequirementTypeId();
+				return basicGetRequirementTypeId();
+			case RequirementPackage.REQUIREMENT__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
+			case RequirementPackage.REQUIREMENT__DELIVERABLE_ID:
+				if (resolve) return getDeliverableId();
+				return basicGetDeliverableId();
+			case RequirementPackage.REQUIREMENT__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
+			case RequirementPackage.REQUIREMENT__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case RequirementPackage.REQUIREMENT__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_ATTRIBUTES:
 				return getRequirementAttributes();
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_STATUSS:
@@ -1010,29 +1065,17 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			case RequirementPackage.REQUIREMENT__CREATED_DATE:
 				setCreatedDate((Date)newValue);
 				return;
-			case RequirementPackage.REQUIREMENT__DELIVERABLE_ID:
-				setDeliverableId((String)newValue);
-				return;
 			case RequirementPackage.REQUIREMENT__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case RequirementPackage.REQUIREMENT__ESTIMATED_BUDGET:
 				setEstimatedBudget((BigDecimal)newValue);
 				return;
-			case RequirementPackage.REQUIREMENT__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
-			case RequirementPackage.REQUIREMENT__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
 			case RequirementPackage.REQUIREMENT__LAST_MODIFIED_BY_USER_LOGIN:
 				setLastModifiedByUserLogin((String)newValue);
 				return;
 			case RequirementPackage.REQUIREMENT__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
-				return;
-			case RequirementPackage.REQUIREMENT__PRODUCT_ID:
-				setProductId((String)newValue);
 				return;
 			case RequirementPackage.REQUIREMENT__QUANTITY:
 				setQuantity((BigDecimal)newValue);
@@ -1046,14 +1089,26 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_START_DATE:
 				setRequirementStartDate((Date)newValue);
 				return;
-			case RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID:
-				setRequirementTypeId((String)newValue);
-				return;
-			case RequirementPackage.REQUIREMENT__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case RequirementPackage.REQUIREMENT__USE_CASE:
 				setUseCase((String)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID:
+				setRequirementTypeId((RequirementType)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT__FACILITY_ID:
+				setFacilityId((Facility)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT__DELIVERABLE_ID:
+				setDeliverableId((Deliverable)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_ATTRIBUTES:
 				getRequirementAttributes().clear();
@@ -1088,29 +1143,17 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			case RequirementPackage.REQUIREMENT__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
 				return;
-			case RequirementPackage.REQUIREMENT__DELIVERABLE_ID:
-				setDeliverableId(DELIVERABLE_ID_EDEFAULT);
-				return;
 			case RequirementPackage.REQUIREMENT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case RequirementPackage.REQUIREMENT__ESTIMATED_BUDGET:
 				setEstimatedBudget(ESTIMATED_BUDGET_EDEFAULT);
 				return;
-			case RequirementPackage.REQUIREMENT__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
-			case RequirementPackage.REQUIREMENT__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
 			case RequirementPackage.REQUIREMENT__LAST_MODIFIED_BY_USER_LOGIN:
 				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
 				return;
 			case RequirementPackage.REQUIREMENT__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
-				return;
-			case RequirementPackage.REQUIREMENT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case RequirementPackage.REQUIREMENT__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
@@ -1124,14 +1167,26 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_START_DATE:
 				setRequirementStartDate(REQUIREMENT_START_DATE_EDEFAULT);
 				return;
-			case RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID:
-				setRequirementTypeId(REQUIREMENT_TYPE_ID_EDEFAULT);
-				return;
-			case RequirementPackage.REQUIREMENT__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case RequirementPackage.REQUIREMENT__USE_CASE:
 				setUseCase(USE_CASE_EDEFAULT);
+				return;
+			case RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID:
+				setRequirementTypeId((RequirementType)null);
+				return;
+			case RequirementPackage.REQUIREMENT__FACILITY_ID:
+				setFacilityId((Facility)null);
+				return;
+			case RequirementPackage.REQUIREMENT__DELIVERABLE_ID:
+				setDeliverableId((Deliverable)null);
+				return;
+			case RequirementPackage.REQUIREMENT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
+				return;
+			case RequirementPackage.REQUIREMENT__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case RequirementPackage.REQUIREMENT__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_ATTRIBUTES:
 				getRequirementAttributes().clear();
@@ -1160,22 +1215,14 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case RequirementPackage.REQUIREMENT__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case RequirementPackage.REQUIREMENT__DELIVERABLE_ID:
-				return DELIVERABLE_ID_EDEFAULT == null ? deliverableId != null : !DELIVERABLE_ID_EDEFAULT.equals(deliverableId);
 			case RequirementPackage.REQUIREMENT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case RequirementPackage.REQUIREMENT__ESTIMATED_BUDGET:
 				return ESTIMATED_BUDGET_EDEFAULT == null ? estimatedBudget != null : !ESTIMATED_BUDGET_EDEFAULT.equals(estimatedBudget);
-			case RequirementPackage.REQUIREMENT__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
-			case RequirementPackage.REQUIREMENT__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case RequirementPackage.REQUIREMENT__LAST_MODIFIED_BY_USER_LOGIN:
 				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case RequirementPackage.REQUIREMENT__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
-			case RequirementPackage.REQUIREMENT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case RequirementPackage.REQUIREMENT__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case RequirementPackage.REQUIREMENT__REASON:
@@ -1184,12 +1231,20 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 				return REQUIRED_BY_DATE_EDEFAULT == null ? requiredByDate != null : !REQUIRED_BY_DATE_EDEFAULT.equals(requiredByDate);
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_START_DATE:
 				return REQUIREMENT_START_DATE_EDEFAULT == null ? requirementStartDate != null : !REQUIREMENT_START_DATE_EDEFAULT.equals(requirementStartDate);
-			case RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID:
-				return REQUIREMENT_TYPE_ID_EDEFAULT == null ? requirementTypeId != null : !REQUIREMENT_TYPE_ID_EDEFAULT.equals(requirementTypeId);
-			case RequirementPackage.REQUIREMENT__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case RequirementPackage.REQUIREMENT__USE_CASE:
 				return USE_CASE_EDEFAULT == null ? useCase != null : !USE_CASE_EDEFAULT.equals(useCase);
+			case RequirementPackage.REQUIREMENT__REQUIREMENT_TYPE_ID:
+				return requirementTypeId != null;
+			case RequirementPackage.REQUIREMENT__FACILITY_ID:
+				return facilityId != null;
+			case RequirementPackage.REQUIREMENT__DELIVERABLE_ID:
+				return deliverableId != null;
+			case RequirementPackage.REQUIREMENT__FIXED_ASSET_ID:
+				return fixedAssetId != null;
+			case RequirementPackage.REQUIREMENT__PRODUCT_ID:
+				return productId != null;
+			case RequirementPackage.REQUIREMENT__STATUS_ID:
+				return statusId != null;
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_ATTRIBUTES:
 				return requirementAttributes != null && !requirementAttributes.isEmpty();
 			case RequirementPackage.REQUIREMENT__REQUIREMENT_STATUSS:
@@ -1216,22 +1271,14 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
-		result.append(", deliverableId: ");
-		result.append(deliverableId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", estimatedBudget: ");
 		result.append(estimatedBudget);
-		result.append(", facilityId: ");
-		result.append(facilityId);
-		result.append(", fixedAssetId: ");
-		result.append(fixedAssetId);
 		result.append(", lastModifiedByUserLogin: ");
 		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", reason: ");
@@ -1240,10 +1287,6 @@ public class RequirementImpl extends BizEntityTypedImpl<RequirementType> impleme
 		result.append(requiredByDate);
 		result.append(", requirementStartDate: ");
 		result.append(requirementStartDate);
-		result.append(", requirementTypeId: ");
-		result.append(requirementTypeId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", useCase: ");
 		result.append(useCase);
 		result.append(", requirementAttributes: ");

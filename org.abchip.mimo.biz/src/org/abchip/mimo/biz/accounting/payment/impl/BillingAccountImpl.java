@@ -13,9 +13,13 @@ import java.util.List;
 
 import org.abchip.mimo.biz.accounting.payment.BillingAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,13 +31,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getAccountLimit <em>Account Limit</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getExternalAccountId <em>External Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.BillingAccountImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,24 +66,6 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 */
 	protected String billingAccountId = BILLING_ACCOUNT_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getAccountCurrencyUomId() <em>Account Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccountCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCOUNT_CURRENCY_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAccountCurrencyUomId() <em>Account Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccountCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accountCurrencyUomId = ACCOUNT_CURRENCY_UOM_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getAccountLimit() <em>Account Limit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,24 +83,6 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @ordered
 	 */
 	protected BigDecimal accountLimit = ACCOUNT_LIMIT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -187,6 +155,24 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAccountCurrencyUomId() <em>Account Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccountCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom accountCurrencyUomId;
+	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PostalAddress contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +199,24 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public String getAccountCurrencyUomId() {
+	public Uom getAccountCurrencyUomId() {
+		if (accountCurrencyUomId != null && ((EObject)accountCurrencyUomId).eIsProxy()) {
+			InternalEObject oldAccountCurrencyUomId = (InternalEObject)accountCurrencyUomId;
+			accountCurrencyUomId = (Uom)eResolveProxy(oldAccountCurrencyUomId);
+			if (accountCurrencyUomId != oldAccountCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID, oldAccountCurrencyUomId, accountCurrencyUomId));
+			}
+		}
+		return accountCurrencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetAccountCurrencyUomId() {
 		return accountCurrencyUomId;
 	}
 
@@ -223,8 +226,8 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public void setAccountCurrencyUomId(String newAccountCurrencyUomId) {
-		String oldAccountCurrencyUomId = accountCurrencyUomId;
+	public void setAccountCurrencyUomId(Uom newAccountCurrencyUomId) {
+		Uom oldAccountCurrencyUomId = accountCurrencyUomId;
 		accountCurrencyUomId = newAccountCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID, oldAccountCurrencyUomId, accountCurrencyUomId));
@@ -259,7 +262,24 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public PostalAddress getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostalAddress basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -269,8 +289,8 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(PostalAddress newContactMechId) {
+		PostalAddress oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -473,12 +493,8 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 		switch (featureID) {
 			case PaymentPackage.BILLING_ACCOUNT__BILLING_ACCOUNT_ID:
 				return getBillingAccountId();
-			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID:
-				return getAccountCurrencyUomId();
 			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_LIMIT:
 				return getAccountLimit();
-			case PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID:
-				return getContactMechId();
 			case PaymentPackage.BILLING_ACCOUNT__DESCRIPTION:
 				return getDescription();
 			case PaymentPackage.BILLING_ACCOUNT__EXTERNAL_ACCOUNT_ID:
@@ -487,6 +503,12 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 				return getFromDate();
 			case PaymentPackage.BILLING_ACCOUNT__THRU_DATE:
 				return getThruDate();
+			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID:
+				if (resolve) return getAccountCurrencyUomId();
+				return basicGetAccountCurrencyUomId();
+			case PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -502,14 +524,8 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 			case PaymentPackage.BILLING_ACCOUNT__BILLING_ACCOUNT_ID:
 				setBillingAccountId((String)newValue);
 				return;
-			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID:
-				setAccountCurrencyUomId((String)newValue);
-				return;
 			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_LIMIT:
 				setAccountLimit((BigDecimal)newValue);
-				return;
-			case PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
 				return;
 			case PaymentPackage.BILLING_ACCOUNT__DESCRIPTION:
 				setDescription((String)newValue);
@@ -522,6 +538,12 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 				return;
 			case PaymentPackage.BILLING_ACCOUNT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID:
+				setAccountCurrencyUomId((Uom)newValue);
+				return;
+			case PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -538,14 +560,8 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 			case PaymentPackage.BILLING_ACCOUNT__BILLING_ACCOUNT_ID:
 				setBillingAccountId(BILLING_ACCOUNT_ID_EDEFAULT);
 				return;
-			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID:
-				setAccountCurrencyUomId(ACCOUNT_CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_LIMIT:
 				setAccountLimit(ACCOUNT_LIMIT_EDEFAULT);
-				return;
-			case PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
 				return;
 			case PaymentPackage.BILLING_ACCOUNT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -558,6 +574,12 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 				return;
 			case PaymentPackage.BILLING_ACCOUNT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID:
+				setAccountCurrencyUomId((Uom)null);
+				return;
+			case PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -573,12 +595,8 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 		switch (featureID) {
 			case PaymentPackage.BILLING_ACCOUNT__BILLING_ACCOUNT_ID:
 				return BILLING_ACCOUNT_ID_EDEFAULT == null ? billingAccountId != null : !BILLING_ACCOUNT_ID_EDEFAULT.equals(billingAccountId);
-			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID:
-				return ACCOUNT_CURRENCY_UOM_ID_EDEFAULT == null ? accountCurrencyUomId != null : !ACCOUNT_CURRENCY_UOM_ID_EDEFAULT.equals(accountCurrencyUomId);
 			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_LIMIT:
 				return ACCOUNT_LIMIT_EDEFAULT == null ? accountLimit != null : !ACCOUNT_LIMIT_EDEFAULT.equals(accountLimit);
-			case PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
 			case PaymentPackage.BILLING_ACCOUNT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PaymentPackage.BILLING_ACCOUNT__EXTERNAL_ACCOUNT_ID:
@@ -587,6 +605,10 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PaymentPackage.BILLING_ACCOUNT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PaymentPackage.BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID:
+				return accountCurrencyUomId != null;
+			case PaymentPackage.BILLING_ACCOUNT__CONTACT_MECH_ID:
+				return contactMechId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -603,12 +625,8 @@ public class BillingAccountImpl extends BizEntityImpl implements BillingAccount 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (billingAccountId: ");
 		result.append(billingAccountId);
-		result.append(", accountCurrencyUomId: ");
-		result.append(accountCurrencyUomId);
 		result.append(", accountLimit: ");
 		result.append(accountLimit);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", externalAccountId: ");

@@ -16,6 +16,8 @@ import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupImpl#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupImpl#getPrimaryParentGroupId <em>Primary Parent Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupImpl#getProductStoreGroupName <em>Product Store Group Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupImpl#getProductStoreGroupTypeId <em>Product Store Group Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupImpl#getPrimaryParentGroupId <em>Primary Parent Group Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,26 +84,6 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPrimaryParentGroupId() <em>Primary Parent Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryParentGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRIMARY_PARENT_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPrimaryParentGroupId() <em>Primary Parent Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryParentGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String primaryParentGroupId = PRIMARY_PARENT_GROUP_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getProductStoreGroupName() <em>Product Store Group Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,24 +104,24 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	protected String productStoreGroupName = PRODUCT_STORE_GROUP_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductStoreGroupTypeId() <em>Product Store Group Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductStoreGroupTypeId() <em>Product Store Group Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductStoreGroupTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT = null;
+	protected ProductStoreGroupType productStoreGroupTypeId;
 
 	/**
-	 * The cached value of the '{@link #getProductStoreGroupTypeId() <em>Product Store Group Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPrimaryParentGroupId() <em>Primary Parent Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupTypeId()
+	 * @see #getPrimaryParentGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String productStoreGroupTypeId = PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT;
+	protected ProductStoreGroup primaryParentGroupId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +194,24 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreGroupTypeId() {
+	public ProductStoreGroupType getProductStoreGroupTypeId() {
+		if (productStoreGroupTypeId != null && ((EObject)productStoreGroupTypeId).eIsProxy()) {
+			InternalEObject oldProductStoreGroupTypeId = (InternalEObject)productStoreGroupTypeId;
+			productStoreGroupTypeId = (ProductStoreGroupType)eResolveProxy(oldProductStoreGroupTypeId);
+			if (productStoreGroupTypeId != oldProductStoreGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID, oldProductStoreGroupTypeId, productStoreGroupTypeId));
+			}
+		}
+		return productStoreGroupTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStoreGroupType basicGetProductStoreGroupTypeId() {
 		return productStoreGroupTypeId;
 	}
 
@@ -222,8 +221,8 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreGroupTypeId(String newProductStoreGroupTypeId) {
-		String oldProductStoreGroupTypeId = productStoreGroupTypeId;
+	public void setProductStoreGroupTypeId(ProductStoreGroupType newProductStoreGroupTypeId) {
+		ProductStoreGroupType oldProductStoreGroupTypeId = productStoreGroupTypeId;
 		productStoreGroupTypeId = newProductStoreGroupTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID, oldProductStoreGroupTypeId, productStoreGroupTypeId));
@@ -247,7 +246,24 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 * @generated
 	 */
 	@Override
-	public String getPrimaryParentGroupId() {
+	public ProductStoreGroup getPrimaryParentGroupId() {
+		if (primaryParentGroupId != null && ((EObject)primaryParentGroupId).eIsProxy()) {
+			InternalEObject oldPrimaryParentGroupId = (InternalEObject)primaryParentGroupId;
+			primaryParentGroupId = (ProductStoreGroup)eResolveProxy(oldPrimaryParentGroupId);
+			if (primaryParentGroupId != oldPrimaryParentGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID, oldPrimaryParentGroupId, primaryParentGroupId));
+			}
+		}
+		return primaryParentGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStoreGroup basicGetPrimaryParentGroupId() {
 		return primaryParentGroupId;
 	}
 
@@ -257,8 +273,8 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 	 * @generated
 	 */
 	@Override
-	public void setPrimaryParentGroupId(String newPrimaryParentGroupId) {
-		String oldPrimaryParentGroupId = primaryParentGroupId;
+	public void setPrimaryParentGroupId(ProductStoreGroup newPrimaryParentGroupId) {
+		ProductStoreGroup oldPrimaryParentGroupId = primaryParentGroupId;
 		primaryParentGroupId = newPrimaryParentGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID, oldPrimaryParentGroupId, primaryParentGroupId));
@@ -299,12 +315,14 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 				return getProductStoreGroupId();
 			case StorePackage.PRODUCT_STORE_GROUP__DESCRIPTION:
 				return getDescription();
-			case StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID:
-				return getPrimaryParentGroupId();
 			case StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_NAME:
 				return getProductStoreGroupName();
 			case StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID:
-				return getProductStoreGroupTypeId();
+				if (resolve) return getProductStoreGroupTypeId();
+				return basicGetProductStoreGroupTypeId();
+			case StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID:
+				if (resolve) return getPrimaryParentGroupId();
+				return basicGetPrimaryParentGroupId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -323,14 +341,14 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 			case StorePackage.PRODUCT_STORE_GROUP__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID:
-				setPrimaryParentGroupId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_NAME:
 				setProductStoreGroupName((String)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID:
-				setProductStoreGroupTypeId((String)newValue);
+				setProductStoreGroupTypeId((ProductStoreGroupType)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID:
+				setPrimaryParentGroupId((ProductStoreGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -350,14 +368,14 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 			case StorePackage.PRODUCT_STORE_GROUP__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID:
-				setPrimaryParentGroupId(PRIMARY_PARENT_GROUP_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_NAME:
 				setProductStoreGroupName(PRODUCT_STORE_GROUP_NAME_EDEFAULT);
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID:
-				setProductStoreGroupTypeId(PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT);
+				setProductStoreGroupTypeId((ProductStoreGroupType)null);
+				return;
+			case StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID:
+				setPrimaryParentGroupId((ProductStoreGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -375,12 +393,12 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 				return PRODUCT_STORE_GROUP_ID_EDEFAULT == null ? productStoreGroupId != null : !PRODUCT_STORE_GROUP_ID_EDEFAULT.equals(productStoreGroupId);
 			case StorePackage.PRODUCT_STORE_GROUP__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID:
-				return PRIMARY_PARENT_GROUP_ID_EDEFAULT == null ? primaryParentGroupId != null : !PRIMARY_PARENT_GROUP_ID_EDEFAULT.equals(primaryParentGroupId);
 			case StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_NAME:
 				return PRODUCT_STORE_GROUP_NAME_EDEFAULT == null ? productStoreGroupName != null : !PRODUCT_STORE_GROUP_NAME_EDEFAULT.equals(productStoreGroupName);
 			case StorePackage.PRODUCT_STORE_GROUP__PRODUCT_STORE_GROUP_TYPE_ID:
-				return PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT == null ? productStoreGroupTypeId != null : !PRODUCT_STORE_GROUP_TYPE_ID_EDEFAULT.equals(productStoreGroupTypeId);
+				return productStoreGroupTypeId != null;
+			case StorePackage.PRODUCT_STORE_GROUP__PRIMARY_PARENT_GROUP_ID:
+				return primaryParentGroupId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -399,12 +417,8 @@ public class ProductStoreGroupImpl extends BizEntityTypedImpl<ProductStoreGroupT
 		result.append(productStoreGroupId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", primaryParentGroupId: ");
-		result.append(primaryParentGroupId);
 		result.append(", productStoreGroupName: ");
 		result.append(productStoreGroupName);
-		result.append(", productStoreGroupTypeId: ");
-		result.append(productStoreGroupTypeId);
 		result.append(')');
 		return result.toString();
 	}

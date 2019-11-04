@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.category;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,10 +30,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getImageTwoUrl <em>Image Two Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getImageUrl <em>Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getLinkInfo <em>Link Info</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getLinkTypeEnumId <em>Link Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getTitleText <em>Title Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getLinkTypeEnumId <em>Link Type Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink()
@@ -129,7 +130,8 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -233,7 +235,8 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Link Seq Id</em>' attribute.
 	 * @see #setLinkSeqId(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_LinkSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getLinkSeqId();
@@ -249,30 +252,30 @@ public interface ProductCategoryLink extends BizEntity {
 	void setLinkSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Link Type Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Link Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Link Type Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Link Type Enum Id</em>' attribute.
-	 * @see #setLinkTypeEnumId(String)
+	 * @return the value of the '<em>Link Type Enum Id</em>' reference.
+	 * @see #setLinkTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_LinkTypeEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getLinkTypeEnumId();
+	Enumeration getLinkTypeEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getLinkTypeEnumId <em>Link Type Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryLink#getLinkTypeEnumId <em>Link Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Link Type Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Link Type Enum Id</em>' reference.
 	 * @see #getLinkTypeEnumId()
 	 * @generated
 	 */
-	void setLinkTypeEnumId(String value);
+	void setLinkTypeEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.
@@ -363,8 +366,8 @@ public interface ProductCategoryLink extends BizEntity {
 	 * @return the value of the '<em>Product Category Id</em>' attribute.
 	 * @see #setProductCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryLink_ProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductCategoryId();

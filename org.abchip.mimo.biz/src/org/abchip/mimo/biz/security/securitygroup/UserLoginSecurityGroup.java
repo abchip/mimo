@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getUserLoginId <em>User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId <em>Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup()
@@ -59,32 +59,30 @@ public interface UserLoginSecurityGroup extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Group Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Group Id</em>' attribute.
-	 * @see #setGroupId(String)
+	 * @return the value of the '<em>Group Id</em>' reference.
+	 * @see #setGroupId(SecurityGroup)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup_GroupId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SecurityGroup'"
+	 * @model keys="groupId"
 	 * @generated
 	 */
-	String getGroupId();
+	SecurityGroup getGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId <em>Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.securitygroup.UserLoginSecurityGroup#getGroupId <em>Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Group Id</em>' reference.
 	 * @see #getGroupId()
 	 * @generated
 	 */
-	void setGroupId(String value);
+	void setGroupId(SecurityGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -125,7 +123,6 @@ public interface UserLoginSecurityGroup extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getUserLoginSecurityGroup_UserLoginId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='UserLogin'"
 	 * @generated
 	 */
 	String getUserLoginId();

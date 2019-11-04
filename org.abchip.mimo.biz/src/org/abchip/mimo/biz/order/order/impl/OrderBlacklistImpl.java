@@ -15,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -58,24 +60,14 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 	protected String blacklistString = BLACKLIST_STRING_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOrderBlacklistTypeId() <em>Order Blacklist Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrderBlacklistTypeId() <em>Order Blacklist Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOrderBlacklistTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ORDER_BLACKLIST_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderBlacklistTypeId() <em>Order Blacklist Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderBlacklistTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderBlacklistTypeId = ORDER_BLACKLIST_TYPE_ID_EDEFAULT;
+	protected OrderBlacklistType orderBlacklistTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,7 +117,24 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 	 * @generated
 	 */
 	@Override
-	public String getOrderBlacklistTypeId() {
+	public OrderBlacklistType getOrderBlacklistTypeId() {
+		if (orderBlacklistTypeId != null && ((EObject)orderBlacklistTypeId).eIsProxy()) {
+			InternalEObject oldOrderBlacklistTypeId = (InternalEObject)orderBlacklistTypeId;
+			orderBlacklistTypeId = (OrderBlacklistType)eResolveProxy(oldOrderBlacklistTypeId);
+			if (orderBlacklistTypeId != oldOrderBlacklistTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID, oldOrderBlacklistTypeId, orderBlacklistTypeId));
+			}
+		}
+		return orderBlacklistTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderBlacklistType basicGetOrderBlacklistTypeId() {
 		return orderBlacklistTypeId;
 	}
 
@@ -135,8 +144,8 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 	 * @generated
 	 */
 	@Override
-	public void setOrderBlacklistTypeId(String newOrderBlacklistTypeId) {
-		String oldOrderBlacklistTypeId = orderBlacklistTypeId;
+	public void setOrderBlacklistTypeId(OrderBlacklistType newOrderBlacklistTypeId) {
+		OrderBlacklistType oldOrderBlacklistTypeId = orderBlacklistTypeId;
 		orderBlacklistTypeId = newOrderBlacklistTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID, oldOrderBlacklistTypeId, orderBlacklistTypeId));
@@ -153,7 +162,8 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 			case OrderPackage.ORDER_BLACKLIST__BLACKLIST_STRING:
 				return getBlacklistString();
 			case OrderPackage.ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID:
-				return getOrderBlacklistTypeId();
+				if (resolve) return getOrderBlacklistTypeId();
+				return basicGetOrderBlacklistTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,7 +180,7 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 				setBlacklistString((String)newValue);
 				return;
 			case OrderPackage.ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID:
-				setOrderBlacklistTypeId((String)newValue);
+				setOrderBlacklistTypeId((OrderBlacklistType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,7 +198,7 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 				setBlacklistString(BLACKLIST_STRING_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID:
-				setOrderBlacklistTypeId(ORDER_BLACKLIST_TYPE_ID_EDEFAULT);
+				setOrderBlacklistTypeId((OrderBlacklistType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,7 +215,7 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 			case OrderPackage.ORDER_BLACKLIST__BLACKLIST_STRING:
 				return BLACKLIST_STRING_EDEFAULT == null ? blacklistString != null : !BLACKLIST_STRING_EDEFAULT.equals(blacklistString);
 			case OrderPackage.ORDER_BLACKLIST__ORDER_BLACKLIST_TYPE_ID:
-				return ORDER_BLACKLIST_TYPE_ID_EDEFAULT == null ? orderBlacklistTypeId != null : !ORDER_BLACKLIST_TYPE_ID_EDEFAULT.equals(orderBlacklistTypeId);
+				return orderBlacklistTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -222,8 +232,6 @@ public class OrderBlacklistImpl extends BizEntityTypedImpl<OrderBlacklistType> i
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (blacklistString: ");
 		result.append(blacklistString);
-		result.append(", orderBlacklistTypeId: ");
-		result.append(orderBlacklistTypeId);
 		result.append(')');
 		return result.toString();
 	}

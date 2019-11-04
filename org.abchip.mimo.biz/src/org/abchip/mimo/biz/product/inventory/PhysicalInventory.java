@@ -148,7 +148,7 @@ public interface PhysicalInventory extends BizEntity {
 	 * @return the value of the '<em>Physical Inventory Id</em>' attribute.
 	 * @see #setPhysicalInventoryId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getPhysicalInventory_PhysicalInventoryId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

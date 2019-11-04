@@ -57,30 +57,30 @@ public interface ReturnItemType extends BizEntityType<ReturnItem> {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(ReturnItemType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='ReturnItemType'"
+	 * @model keys="returnItemTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	ReturnItemType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(ReturnItemType value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,7 +120,7 @@ public interface ReturnItemType extends BizEntityType<ReturnItem> {
 	 * @return the value of the '<em>Return Item Type Id</em>' attribute.
 	 * @see #setReturnItemTypeId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemType_ReturnItemTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

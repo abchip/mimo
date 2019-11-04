@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.accounting.payment.PaymentGroupMember;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupMemberImpl#getPaymentGroupId <em>Payment Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupMemberImpl#getPaymentId <em>Payment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupMemberImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupMemberImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupMemberImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupMemberImpl#getPaymentId <em>Payment Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,24 +61,6 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 */
 	protected String paymentGroupId = PAYMENT_GROUP_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getPaymentId() <em>Payment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentId = PAYMENT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -130,6 +115,15 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Payment paymentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,7 +242,24 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 * @generated
 	 */
 	@Override
-	public String getPaymentId() {
+	public Payment getPaymentId() {
+		if (paymentId != null && ((EObject)paymentId).eIsProxy()) {
+			InternalEObject oldPaymentId = (InternalEObject)paymentId;
+			paymentId = (Payment)eResolveProxy(oldPaymentId);
+			if (paymentId != oldPaymentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID, oldPaymentId, paymentId));
+			}
+		}
+		return paymentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Payment basicGetPaymentId() {
 		return paymentId;
 	}
 
@@ -258,8 +269,8 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 	 * @generated
 	 */
 	@Override
-	public void setPaymentId(String newPaymentId) {
-		String oldPaymentId = paymentId;
+	public void setPaymentId(Payment newPaymentId) {
+		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID, oldPaymentId, paymentId));
@@ -275,14 +286,15 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID:
 				return getPaymentGroupId();
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
-				return getPaymentId();
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE:
 				return getFromDate();
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM:
 				return getSequenceNum();
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE:
 				return getThruDate();
+			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
+				if (resolve) return getPaymentId();
+				return basicGetPaymentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,9 +310,6 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID:
 				setPaymentGroupId((String)newValue);
 				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
-				setPaymentId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -309,6 +318,9 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 				return;
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
+				setPaymentId((Payment)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,9 +337,6 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID:
 				setPaymentGroupId(PAYMENT_GROUP_ID_EDEFAULT);
 				return;
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
-				setPaymentId(PAYMENT_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -336,6 +345,9 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 				return;
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
+				setPaymentId((Payment)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -351,14 +363,14 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID:
 				return PAYMENT_GROUP_ID_EDEFAULT == null ? paymentGroupId != null : !PAYMENT_GROUP_ID_EDEFAULT.equals(paymentGroupId);
-			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
-				return PAYMENT_ID_EDEFAULT == null ? paymentId != null : !PAYMENT_ID_EDEFAULT.equals(paymentId);
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case PaymentPackage.PAYMENT_GROUP_MEMBER__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PaymentPackage.PAYMENT_GROUP_MEMBER__PAYMENT_ID:
+				return paymentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -375,8 +387,6 @@ public class PaymentGroupMemberImpl extends BizEntityImpl implements PaymentGrou
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (paymentGroupId: ");
 		result.append(paymentGroupId);
-		result.append(", paymentId: ");
-		result.append(paymentId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

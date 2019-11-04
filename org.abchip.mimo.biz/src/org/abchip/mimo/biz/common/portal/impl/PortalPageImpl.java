@@ -12,11 +12,15 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
 import org.abchip.mimo.biz.common.portal.PortalPage;
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -30,13 +34,13 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getHelpContentId <em>Help Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getOriginalPortalPageId <em>Original Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getOwnerUserLoginId <em>Owner User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getParentPortalPageId <em>Parent Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getPortalPageName <em>Portal Page Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getSecurityGroupId <em>Security Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getParentPortalPageId <em>Parent Portal Page Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getSecurityGroupId <em>Security Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getHelpContentId <em>Help Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortalPageImpl#getPortalPageColumns <em>Portal Page Columns</em>}</li>
  * </ul>
  *
@@ -84,24 +88,6 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getHelpContentId() <em>Help Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHelpContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HELP_CONTENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getHelpContentId() <em>Help Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHelpContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String helpContentId = HELP_CONTENT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getOriginalPortalPageId() <em>Original Portal Page Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,24 +124,6 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	protected String ownerUserLoginId = OWNER_USER_LOGIN_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentPortalPageId() <em>Parent Portal Page Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentPortalPageId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARENT_PORTAL_PAGE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentPortalPageId() <em>Parent Portal Page Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentPortalPageId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentPortalPageId = PARENT_PORTAL_PAGE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getPortalPageName() <em>Portal Page Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,24 +142,6 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 */
 	protected String portalPageName = PORTAL_PAGE_NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getSecurityGroupId() <em>Security Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecurityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SECURITY_GROUP_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getSecurityGroupId() <em>Security Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecurityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String securityGroupId = SECURITY_GROUP_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,6 +159,33 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 * @ordered
 	 */
 	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getParentPortalPageId() <em>Parent Portal Page Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentPortalPageId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PortalPage parentPortalPageId;
+	/**
+	 * The cached value of the '{@link #getSecurityGroupId() <em>Security Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecurityGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SecurityGroup securityGroupId;
+	/**
+	 * The cached value of the '{@link #getHelpContentId() <em>Help Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHelpContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content helpContentId;
 
 	/**
 	 * The cached value of the '{@link #getPortalPageColumns() <em>Portal Page Columns</em>}' attribute list.
@@ -268,7 +245,24 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 * @generated
 	 */
 	@Override
-	public String getHelpContentId() {
+	public Content getHelpContentId() {
+		if (helpContentId != null && ((EObject)helpContentId).eIsProxy()) {
+			InternalEObject oldHelpContentId = (InternalEObject)helpContentId;
+			helpContentId = (Content)eResolveProxy(oldHelpContentId);
+			if (helpContentId != oldHelpContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID, oldHelpContentId, helpContentId));
+			}
+		}
+		return helpContentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetHelpContentId() {
 		return helpContentId;
 	}
 
@@ -278,8 +272,8 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 * @generated
 	 */
 	@Override
-	public void setHelpContentId(String newHelpContentId) {
-		String oldHelpContentId = helpContentId;
+	public void setHelpContentId(Content newHelpContentId) {
+		Content oldHelpContentId = helpContentId;
 		helpContentId = newHelpContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID, oldHelpContentId, helpContentId));
@@ -360,7 +354,24 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 * @generated
 	 */
 	@Override
-	public String getSecurityGroupId() {
+	public SecurityGroup getSecurityGroupId() {
+		if (securityGroupId != null && ((EObject)securityGroupId).eIsProxy()) {
+			InternalEObject oldSecurityGroupId = (InternalEObject)securityGroupId;
+			securityGroupId = (SecurityGroup)eResolveProxy(oldSecurityGroupId);
+			if (securityGroupId != oldSecurityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID, oldSecurityGroupId, securityGroupId));
+			}
+		}
+		return securityGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SecurityGroup basicGetSecurityGroupId() {
 		return securityGroupId;
 	}
 
@@ -370,8 +381,8 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 * @generated
 	 */
 	@Override
-	public void setSecurityGroupId(String newSecurityGroupId) {
-		String oldSecurityGroupId = securityGroupId;
+	public void setSecurityGroupId(SecurityGroup newSecurityGroupId) {
+		SecurityGroup oldSecurityGroupId = securityGroupId;
 		securityGroupId = newSecurityGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID, oldSecurityGroupId, securityGroupId));
@@ -431,7 +442,24 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 * @generated
 	 */
 	@Override
-	public String getParentPortalPageId() {
+	public PortalPage getParentPortalPageId() {
+		if (parentPortalPageId != null && ((EObject)parentPortalPageId).eIsProxy()) {
+			InternalEObject oldParentPortalPageId = (InternalEObject)parentPortalPageId;
+			parentPortalPageId = (PortalPage)eResolveProxy(oldParentPortalPageId);
+			if (parentPortalPageId != oldParentPortalPageId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID, oldParentPortalPageId, parentPortalPageId));
+			}
+		}
+		return parentPortalPageId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortalPage basicGetParentPortalPageId() {
 		return parentPortalPageId;
 	}
 
@@ -441,8 +469,8 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 	 * @generated
 	 */
 	@Override
-	public void setParentPortalPageId(String newParentPortalPageId) {
-		String oldParentPortalPageId = parentPortalPageId;
+	public void setParentPortalPageId(PortalPage newParentPortalPageId) {
+		PortalPage oldParentPortalPageId = parentPortalPageId;
 		parentPortalPageId = newParentPortalPageId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID, oldParentPortalPageId, parentPortalPageId));
@@ -483,20 +511,23 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 				return getPortalPageId();
 			case PortalPackage.PORTAL_PAGE__DESCRIPTION:
 				return getDescription();
-			case PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID:
-				return getHelpContentId();
 			case PortalPackage.PORTAL_PAGE__ORIGINAL_PORTAL_PAGE_ID:
 				return getOriginalPortalPageId();
 			case PortalPackage.PORTAL_PAGE__OWNER_USER_LOGIN_ID:
 				return getOwnerUserLoginId();
-			case PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID:
-				return getParentPortalPageId();
 			case PortalPackage.PORTAL_PAGE__PORTAL_PAGE_NAME:
 				return getPortalPageName();
-			case PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID:
-				return getSecurityGroupId();
 			case PortalPackage.PORTAL_PAGE__SEQUENCE_NUM:
 				return getSequenceNum();
+			case PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID:
+				if (resolve) return getParentPortalPageId();
+				return basicGetParentPortalPageId();
+			case PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID:
+				if (resolve) return getSecurityGroupId();
+				return basicGetSecurityGroupId();
+			case PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID:
+				if (resolve) return getHelpContentId();
+				return basicGetHelpContentId();
 			case PortalPackage.PORTAL_PAGE__PORTAL_PAGE_COLUMNS:
 				return getPortalPageColumns();
 		}
@@ -518,26 +549,26 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 			case PortalPackage.PORTAL_PAGE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID:
-				setHelpContentId((String)newValue);
-				return;
 			case PortalPackage.PORTAL_PAGE__ORIGINAL_PORTAL_PAGE_ID:
 				setOriginalPortalPageId((String)newValue);
 				return;
 			case PortalPackage.PORTAL_PAGE__OWNER_USER_LOGIN_ID:
 				setOwnerUserLoginId((String)newValue);
 				return;
-			case PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID:
-				setParentPortalPageId((String)newValue);
-				return;
 			case PortalPackage.PORTAL_PAGE__PORTAL_PAGE_NAME:
 				setPortalPageName((String)newValue);
 				return;
-			case PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID:
-				setSecurityGroupId((String)newValue);
-				return;
 			case PortalPackage.PORTAL_PAGE__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
+				return;
+			case PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID:
+				setParentPortalPageId((PortalPage)newValue);
+				return;
+			case PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID:
+				setSecurityGroupId((SecurityGroup)newValue);
+				return;
+			case PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID:
+				setHelpContentId((Content)newValue);
 				return;
 			case PortalPackage.PORTAL_PAGE__PORTAL_PAGE_COLUMNS:
 				getPortalPageColumns().clear();
@@ -561,26 +592,26 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 			case PortalPackage.PORTAL_PAGE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID:
-				setHelpContentId(HELP_CONTENT_ID_EDEFAULT);
-				return;
 			case PortalPackage.PORTAL_PAGE__ORIGINAL_PORTAL_PAGE_ID:
 				setOriginalPortalPageId(ORIGINAL_PORTAL_PAGE_ID_EDEFAULT);
 				return;
 			case PortalPackage.PORTAL_PAGE__OWNER_USER_LOGIN_ID:
 				setOwnerUserLoginId(OWNER_USER_LOGIN_ID_EDEFAULT);
 				return;
-			case PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID:
-				setParentPortalPageId(PARENT_PORTAL_PAGE_ID_EDEFAULT);
-				return;
 			case PortalPackage.PORTAL_PAGE__PORTAL_PAGE_NAME:
 				setPortalPageName(PORTAL_PAGE_NAME_EDEFAULT);
 				return;
-			case PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID:
-				setSecurityGroupId(SECURITY_GROUP_ID_EDEFAULT);
-				return;
 			case PortalPackage.PORTAL_PAGE__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
+				return;
+			case PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID:
+				setParentPortalPageId((PortalPage)null);
+				return;
+			case PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID:
+				setSecurityGroupId((SecurityGroup)null);
+				return;
+			case PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID:
+				setHelpContentId((Content)null);
 				return;
 			case PortalPackage.PORTAL_PAGE__PORTAL_PAGE_COLUMNS:
 				getPortalPageColumns().clear();
@@ -601,20 +632,20 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 				return PORTAL_PAGE_ID_EDEFAULT == null ? portalPageId != null : !PORTAL_PAGE_ID_EDEFAULT.equals(portalPageId);
 			case PortalPackage.PORTAL_PAGE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID:
-				return HELP_CONTENT_ID_EDEFAULT == null ? helpContentId != null : !HELP_CONTENT_ID_EDEFAULT.equals(helpContentId);
 			case PortalPackage.PORTAL_PAGE__ORIGINAL_PORTAL_PAGE_ID:
 				return ORIGINAL_PORTAL_PAGE_ID_EDEFAULT == null ? originalPortalPageId != null : !ORIGINAL_PORTAL_PAGE_ID_EDEFAULT.equals(originalPortalPageId);
 			case PortalPackage.PORTAL_PAGE__OWNER_USER_LOGIN_ID:
 				return OWNER_USER_LOGIN_ID_EDEFAULT == null ? ownerUserLoginId != null : !OWNER_USER_LOGIN_ID_EDEFAULT.equals(ownerUserLoginId);
-			case PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID:
-				return PARENT_PORTAL_PAGE_ID_EDEFAULT == null ? parentPortalPageId != null : !PARENT_PORTAL_PAGE_ID_EDEFAULT.equals(parentPortalPageId);
 			case PortalPackage.PORTAL_PAGE__PORTAL_PAGE_NAME:
 				return PORTAL_PAGE_NAME_EDEFAULT == null ? portalPageName != null : !PORTAL_PAGE_NAME_EDEFAULT.equals(portalPageName);
-			case PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID:
-				return SECURITY_GROUP_ID_EDEFAULT == null ? securityGroupId != null : !SECURITY_GROUP_ID_EDEFAULT.equals(securityGroupId);
 			case PortalPackage.PORTAL_PAGE__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
+			case PortalPackage.PORTAL_PAGE__PARENT_PORTAL_PAGE_ID:
+				return parentPortalPageId != null;
+			case PortalPackage.PORTAL_PAGE__SECURITY_GROUP_ID:
+				return securityGroupId != null;
+			case PortalPackage.PORTAL_PAGE__HELP_CONTENT_ID:
+				return helpContentId != null;
 			case PortalPackage.PORTAL_PAGE__PORTAL_PAGE_COLUMNS:
 				return portalPageColumns != null && !portalPageColumns.isEmpty();
 		}
@@ -635,18 +666,12 @@ public class PortalPageImpl extends BizEntityImpl implements PortalPage {
 		result.append(portalPageId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", helpContentId: ");
-		result.append(helpContentId);
 		result.append(", originalPortalPageId: ");
 		result.append(originalPortalPageId);
 		result.append(", ownerUserLoginId: ");
 		result.append(ownerUserLoginId);
-		result.append(", parentPortalPageId: ");
-		result.append(parentPortalPageId);
 		result.append(", portalPageName: ");
 		result.append(portalPageName);
-		result.append(", securityGroupId: ");
-		result.append(securityGroupId);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(", portalPageColumns: ");

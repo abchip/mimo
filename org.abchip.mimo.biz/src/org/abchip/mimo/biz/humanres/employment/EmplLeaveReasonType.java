@@ -94,7 +94,7 @@ public interface EmplLeaveReasonType extends BizEntity {
 	 * @return the value of the '<em>Empl Leave Reason Type Id</em>' attribute.
 	 * @see #setEmplLeaveReasonTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeaveReasonType_EmplLeaveReasonTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -111,30 +111,30 @@ public interface EmplLeaveReasonType extends BizEntity {
 	void setEmplLeaveReasonTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(EmplLeaveReasonType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmplLeaveReasonType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='EmplLeaveReasonType'"
+	 * @model keys="emplLeaveReasonTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	EmplLeaveReasonType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmplLeaveReasonType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmplLeaveReasonType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(EmplLeaveReasonType value);
 
 	/**
 	 * <!-- begin-user-doc -->

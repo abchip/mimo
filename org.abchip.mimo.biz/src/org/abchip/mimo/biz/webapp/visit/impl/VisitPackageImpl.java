@@ -208,6 +208,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -435,6 +436,22 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -451,22 +468,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -577,6 +578,14 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -585,14 +594,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -672,6 +673,14 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -680,14 +689,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -884,8 +885,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServerHit_HitTypeId() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(3);
+	public EReference getServerHit_HitTypeId() {
+		return (EReference)serverHitEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -894,8 +895,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServerHit_IdByIpContactMechId() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(4);
+	public EReference getServerHit_IdByIpContactMechId() {
+		return (EReference)serverHitEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -904,8 +905,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServerHit_InternalContentId() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(5);
+	public EReference getServerHit_InternalContentId() {
+		return (EReference)serverHitEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -915,7 +916,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHit_NumOfBytes() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -924,8 +925,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServerHit_PartyId() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(7);
+	public EReference getServerHit_PartyId() {
+		return (EReference)serverHitEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -934,8 +935,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServerHit_RefByWebContactMechId() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(8);
+	public EReference getServerHit_RefByWebContactMechId() {
+		return (EReference)serverHitEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -945,7 +946,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHit_ReferrerUrl() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -955,7 +956,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHit_RequestUrl() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -965,7 +966,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHit_RunningTimeMillis() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -975,7 +976,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHit_ServerHostName() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -985,7 +986,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHit_ServerIpAddress() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -995,7 +996,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHit_StatusId() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1005,7 +1006,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHit_UserLoginId() {
-		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)serverHitEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1064,8 +1065,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServerHitBin_HitTypeId() {
-		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(4);
+	public EReference getServerHitBin_HitTypeId() {
+		return (EReference)serverHitBinEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1074,8 +1075,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getServerHitBin_InternalContentId() {
-		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(5);
+	public EReference getServerHitBin_InternalContentId() {
+		return (EReference)serverHitBinEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1085,7 +1086,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHitBin_MaxTimeMillis() {
-		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1095,7 +1096,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHitBin_MinTimeMillis() {
-		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1105,7 +1106,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHitBin_NumberHits() {
-		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1115,7 +1116,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHitBin_ServerHostName() {
-		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1125,7 +1126,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHitBin_ServerIpAddress() {
-		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1135,7 +1136,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getServerHitBin_TotalTimeMillis() {
-		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)serverHitBinEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1194,8 +1195,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserAgent_BrowserTypeId() {
-		return (EAttribute)userAgentEClass.getEStructuralFeatures().get(1);
+	public EReference getUserAgent_BrowserTypeId() {
+		return (EReference)userAgentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1204,8 +1205,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserAgent_PlatformTypeId() {
-		return (EAttribute)userAgentEClass.getEStructuralFeatures().get(2);
+	public EReference getUserAgent_PlatformTypeId() {
+		return (EReference)userAgentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1214,8 +1215,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserAgent_ProtocolTypeId() {
-		return (EAttribute)userAgentEClass.getEStructuralFeatures().get(3);
+	public EReference getUserAgent_ProtocolTypeId() {
+		return (EReference)userAgentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1224,8 +1225,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserAgent_UserAgentMethodTypeId() {
-		return (EAttribute)userAgentEClass.getEStructuralFeatures().get(4);
+	public EReference getUserAgent_UserAgentMethodTypeId() {
+		return (EReference)userAgentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1234,8 +1235,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserAgent_UserAgentTypeId() {
-		return (EAttribute)userAgentEClass.getEStructuralFeatures().get(5);
+	public EReference getUserAgent_UserAgentTypeId() {
+		return (EReference)userAgentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1524,8 +1525,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVisit_UserAgentId() {
-		return (EAttribute)visitEClass.getEStructuralFeatures().get(21);
+	public EReference getVisit_UserAgentId() {
+		return (EReference)visitEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -1535,7 +1536,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getVisit_UserCreated() {
-		return (EAttribute)visitEClass.getEStructuralFeatures().get(22);
+		return (EAttribute)visitEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -1545,7 +1546,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getVisit_UserLoginId() {
-		return (EAttribute)visitEClass.getEStructuralFeatures().get(23);
+		return (EAttribute)visitEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1554,8 +1555,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVisit_VisitorId() {
-		return (EAttribute)visitEClass.getEStructuralFeatures().get(24);
+	public EReference getVisit_VisitorId() {
+		return (EReference)visitEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -1565,7 +1566,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 */
 	@Override
 	public EAttribute getVisit_WebappName() {
-		return (EAttribute)visitEClass.getEStructuralFeatures().get(25);
+		return (EAttribute)visitEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -1604,8 +1605,8 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVisitor_UserLoginId() {
-		return (EAttribute)visitorEClass.getEStructuralFeatures().get(2);
+	public EReference getVisitor_UserLoginId() {
+		return (EReference)visitorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1655,12 +1656,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		createEAttribute(serverHitEClass, SERVER_HIT__VISIT_ID);
 		createEAttribute(serverHitEClass, SERVER_HIT__CONTENT_ID);
 		createEAttribute(serverHitEClass, SERVER_HIT__HIT_START_DATE_TIME);
-		createEAttribute(serverHitEClass, SERVER_HIT__HIT_TYPE_ID);
-		createEAttribute(serverHitEClass, SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID);
-		createEAttribute(serverHitEClass, SERVER_HIT__INTERNAL_CONTENT_ID);
 		createEAttribute(serverHitEClass, SERVER_HIT__NUM_OF_BYTES);
-		createEAttribute(serverHitEClass, SERVER_HIT__PARTY_ID);
-		createEAttribute(serverHitEClass, SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID);
 		createEAttribute(serverHitEClass, SERVER_HIT__REFERRER_URL);
 		createEAttribute(serverHitEClass, SERVER_HIT__REQUEST_URL);
 		createEAttribute(serverHitEClass, SERVER_HIT__RUNNING_TIME_MILLIS);
@@ -1668,20 +1664,25 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		createEAttribute(serverHitEClass, SERVER_HIT__SERVER_IP_ADDRESS);
 		createEAttribute(serverHitEClass, SERVER_HIT__STATUS_ID);
 		createEAttribute(serverHitEClass, SERVER_HIT__USER_LOGIN_ID);
+		createEReference(serverHitEClass, SERVER_HIT__HIT_TYPE_ID);
+		createEReference(serverHitEClass, SERVER_HIT__PARTY_ID);
+		createEReference(serverHitEClass, SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID);
+		createEReference(serverHitEClass, SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID);
+		createEReference(serverHitEClass, SERVER_HIT__INTERNAL_CONTENT_ID);
 
 		serverHitBinEClass = createEClass(SERVER_HIT_BIN);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__SERVER_HIT_BIN_ID);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__BIN_END_DATE_TIME);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__BIN_START_DATE_TIME);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__CONTENT_ID);
-		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__HIT_TYPE_ID);
-		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__INTERNAL_CONTENT_ID);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__MAX_TIME_MILLIS);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__MIN_TIME_MILLIS);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__NUMBER_HITS);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__SERVER_HOST_NAME);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__SERVER_IP_ADDRESS);
 		createEAttribute(serverHitBinEClass, SERVER_HIT_BIN__TOTAL_TIME_MILLIS);
+		createEReference(serverHitBinEClass, SERVER_HIT_BIN__HIT_TYPE_ID);
+		createEReference(serverHitBinEClass, SERVER_HIT_BIN__INTERNAL_CONTENT_ID);
 
 		serverHitTypeEClass = createEClass(SERVER_HIT_TYPE);
 		createEAttribute(serverHitTypeEClass, SERVER_HIT_TYPE__HIT_TYPE_ID);
@@ -1689,11 +1690,11 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 
 		userAgentEClass = createEClass(USER_AGENT);
 		createEAttribute(userAgentEClass, USER_AGENT__USER_AGENT_ID);
-		createEAttribute(userAgentEClass, USER_AGENT__BROWSER_TYPE_ID);
-		createEAttribute(userAgentEClass, USER_AGENT__PLATFORM_TYPE_ID);
-		createEAttribute(userAgentEClass, USER_AGENT__PROTOCOL_TYPE_ID);
-		createEAttribute(userAgentEClass, USER_AGENT__USER_AGENT_METHOD_TYPE_ID);
-		createEAttribute(userAgentEClass, USER_AGENT__USER_AGENT_TYPE_ID);
+		createEReference(userAgentEClass, USER_AGENT__BROWSER_TYPE_ID);
+		createEReference(userAgentEClass, USER_AGENT__PLATFORM_TYPE_ID);
+		createEReference(userAgentEClass, USER_AGENT__PROTOCOL_TYPE_ID);
+		createEReference(userAgentEClass, USER_AGENT__USER_AGENT_TYPE_ID);
+		createEReference(userAgentEClass, USER_AGENT__USER_AGENT_METHOD_TYPE_ID);
 
 		userAgentMethodTypeEClass = createEClass(USER_AGENT_METHOD_TYPE);
 		createEAttribute(userAgentMethodTypeEClass, USER_AGENT_METHOD_TYPE__USER_AGENT_METHOD_TYPE_ID);
@@ -1725,16 +1726,16 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		createEAttribute(visitEClass, VISIT__SERVER_IP_ADDRESS);
 		createEAttribute(visitEClass, VISIT__SESSION_ID);
 		createEAttribute(visitEClass, VISIT__THRU_DATE);
-		createEAttribute(visitEClass, VISIT__USER_AGENT_ID);
 		createEAttribute(visitEClass, VISIT__USER_CREATED);
 		createEAttribute(visitEClass, VISIT__USER_LOGIN_ID);
-		createEAttribute(visitEClass, VISIT__VISITOR_ID);
 		createEAttribute(visitEClass, VISIT__WEBAPP_NAME);
+		createEReference(visitEClass, VISIT__VISITOR_ID);
+		createEReference(visitEClass, VISIT__USER_AGENT_ID);
 
 		visitorEClass = createEClass(VISITOR);
 		createEAttribute(visitorEClass, VISITOR__VISITOR_ID);
 		createEAttribute(visitorEClass, VISITOR__PARTY_ID);
-		createEAttribute(visitorEClass, VISITOR__USER_LOGIN_ID);
+		createEReference(visitorEClass, VISITOR__USER_LOGIN_ID);
 	}
 
 	/**
@@ -1762,6 +1763,10 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		org.abchip.mimo.biz.party.contact.ContactPackage theContactPackage_1 = (org.abchip.mimo.biz.party.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.contact.ContactPackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1817,12 +1822,7 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEAttribute(getServerHit_VisitId(), ecorePackage.getEString(), "visitId", null, 1, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHit_ContentId(), ecorePackage.getEString(), "contentId", null, 1, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHit_HitStartDateTime(), ecorePackage.getEDate(), "hitStartDateTime", null, 1, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServerHit_HitTypeId(), ecorePackage.getEString(), "hitTypeId", null, 1, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServerHit_IdByIpContactMechId(), ecorePackage.getEString(), "idByIpContactMechId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServerHit_InternalContentId(), ecorePackage.getEString(), "internalContentId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHit_NumOfBytes(), ecorePackage.getELong(), "numOfBytes", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServerHit_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServerHit_RefByWebContactMechId(), ecorePackage.getEString(), "refByWebContactMechId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHit_ReferrerUrl(), ecorePackage.getEString(), "referrerUrl", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHit_RequestUrl(), ecorePackage.getEString(), "requestUrl", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHit_RunningTimeMillis(), ecorePackage.getELong(), "runningTimeMillis", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1830,20 +1830,32 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEAttribute(getServerHit_ServerIpAddress(), ecorePackage.getEString(), "serverIpAddress", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHit_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHit_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServerHit_HitTypeId(), this.getServerHitType(), null, "hitTypeId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getServerHit_HitTypeId().getEKeys().add(this.getServerHitType_HitTypeId());
+		initEReference(getServerHit_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getServerHit_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getServerHit_IdByIpContactMechId(), theContactPackage_1.getContactMech(), null, "idByIpContactMechId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getServerHit_IdByIpContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getServerHit_RefByWebContactMechId(), theContactPackage_1.getContactMech(), null, "refByWebContactMechId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getServerHit_RefByWebContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getServerHit_InternalContentId(), theContentPackage.getContent(), null, "internalContentId", null, 0, 1, ServerHit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getServerHit_InternalContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 
 		initEClass(serverHitBinEClass, ServerHitBin.class, "ServerHitBin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServerHitBin_ServerHitBinId(), ecorePackage.getEString(), "serverHitBinId", null, 1, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitBin_BinEndDateTime(), ecorePackage.getEDate(), "binEndDateTime", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitBin_BinStartDateTime(), ecorePackage.getEDate(), "binStartDateTime", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitBin_ContentId(), ecorePackage.getEString(), "contentId", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServerHitBin_HitTypeId(), ecorePackage.getEString(), "hitTypeId", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServerHitBin_InternalContentId(), ecorePackage.getEString(), "internalContentId", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitBin_MaxTimeMillis(), ecorePackage.getELong(), "maxTimeMillis", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitBin_MinTimeMillis(), ecorePackage.getELong(), "minTimeMillis", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitBin_NumberHits(), ecorePackage.getELong(), "numberHits", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitBin_ServerHostName(), ecorePackage.getEString(), "serverHostName", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitBin_ServerIpAddress(), ecorePackage.getEString(), "serverIpAddress", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerHitBin_TotalTimeMillis(), ecorePackage.getELong(), "totalTimeMillis", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServerHitBin_HitTypeId(), this.getServerHitType(), null, "hitTypeId", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getServerHitBin_HitTypeId().getEKeys().add(this.getServerHitType_HitTypeId());
+		initEReference(getServerHitBin_InternalContentId(), theContentPackage.getContent(), null, "internalContentId", null, 0, 1, ServerHitBin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getServerHitBin_InternalContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 
 		initEClass(serverHitTypeEClass, ServerHitType.class, "ServerHitType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServerHitType_HitTypeId(), ecorePackage.getEString(), "hitTypeId", null, 1, 1, ServerHitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1853,11 +1865,16 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 
 		initEClass(userAgentEClass, UserAgent.class, "UserAgent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserAgent_UserAgentId(), ecorePackage.getEString(), "userAgentId", null, 1, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserAgent_BrowserTypeId(), ecorePackage.getEString(), "browserTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserAgent_PlatformTypeId(), ecorePackage.getEString(), "platformTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserAgent_ProtocolTypeId(), ecorePackage.getEString(), "protocolTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserAgent_UserAgentMethodTypeId(), ecorePackage.getEString(), "userAgentMethodTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserAgent_UserAgentTypeId(), ecorePackage.getEString(), "userAgentTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserAgent_BrowserTypeId(), this.getBrowserType(), null, "browserTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserAgent_BrowserTypeId().getEKeys().add(this.getBrowserType_BrowserTypeId());
+		initEReference(getUserAgent_PlatformTypeId(), this.getPlatformType(), null, "platformTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserAgent_PlatformTypeId().getEKeys().add(this.getPlatformType_PlatformTypeId());
+		initEReference(getUserAgent_ProtocolTypeId(), this.getProtocolType(), null, "protocolTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserAgent_ProtocolTypeId().getEKeys().add(this.getProtocolType_ProtocolTypeId());
+		initEReference(getUserAgent_UserAgentTypeId(), this.getUserAgentType(), null, "userAgentTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserAgent_UserAgentTypeId().getEKeys().add(this.getUserAgentType_UserAgentTypeId());
+		initEReference(getUserAgent_UserAgentMethodTypeId(), this.getUserAgentMethodType(), null, "userAgentMethodTypeId", null, 0, 1, UserAgent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserAgent_UserAgentMethodTypeId().getEKeys().add(this.getUserAgentMethodType_UserAgentMethodTypeId());
 
 		addEOperation(userAgentEClass, ecorePackage.getEString(), "visits", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1895,16 +1912,19 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		initEAttribute(getVisit_ServerIpAddress(), ecorePackage.getEString(), "serverIpAddress", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisit_SessionId(), ecorePackage.getEString(), "sessionId", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisit_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisit_UserAgentId(), ecorePackage.getEString(), "userAgentId", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisit_UserCreated(), ecorePackage.getEBoolean(), "userCreated", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisit_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisit_VisitorId(), ecorePackage.getEString(), "visitorId", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisit_WebappName(), ecorePackage.getEString(), "webappName", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisit_VisitorId(), this.getVisitor(), null, "visitorId", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVisit_VisitorId().getEKeys().add(this.getVisitor_VisitorId());
+		initEReference(getVisit_UserAgentId(), this.getUserAgent(), null, "userAgentId", null, 0, 1, Visit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVisit_UserAgentId().getEKeys().add(this.getUserAgent_UserAgentId());
 
 		initEClass(visitorEClass, Visitor.class, "Visitor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisitor_VisitorId(), ecorePackage.getEString(), "visitorId", null, 1, 1, Visitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisitor_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, Visitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisitor_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 0, 1, Visitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisitor_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 0, 1, Visitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVisitor_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
 		addEOperation(visitorEClass, ecorePackage.getEString(), "visits", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1975,12 +1995,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		   });
 		addAnnotation
 		  (getServerHit_HitStartDateTime(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getServerHit_HitTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2098,78 +2112,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getServerHit_VisitId(),
-		   source,
-		   new String[] {
-			   "frame", "Visit"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getServerHit_HitTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ServerHitType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getServerHit_IdByIpContactMechId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMech"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getServerHit_InternalContentId(),
-		   source,
-		   new String[] {
-			   "frame", "Content"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getServerHit_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getServerHit_RefByWebContactMechId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMech"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getServerHitBin_HitTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ServerHitType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getServerHitBin_InternalContentId(),
-		   source,
-		   new String[] {
-			   "frame", "Content"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (serverHitTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -2185,51 +2127,6 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 		   new String[] {
 			   "frame", "Visit",
 			   "route", "userAgentId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getUserAgent_BrowserTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "BrowserType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getUserAgent_PlatformTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "PlatformType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getUserAgent_ProtocolTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProtocolType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getUserAgent_UserAgentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "UserAgentMethodType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getUserAgent_UserAgentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "UserAgentType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -2255,38 +2152,11 @@ public class VisitPackageImpl extends EPackageImpl implements VisitPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getVisit_UserAgentId(),
-		   source,
-		   new String[] {
-			   "frame", "UserAgent"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getVisit_VisitorId(),
-		   source,
-		   new String[] {
-			   "frame", "Visitor"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (visitorEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "Visit",
 			   "route", "visitorId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getVisitor_UserLoginId(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

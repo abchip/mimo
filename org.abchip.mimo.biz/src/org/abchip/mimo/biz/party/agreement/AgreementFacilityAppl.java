@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.agreement;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.facility.Facility;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,32 +57,30 @@ public interface AgreementFacilityAppl extends BizEntity {
 	void setAgreementItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementFacilityAppl_FacilityId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementFacilityAppl#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementFacilityAppl#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 	/**
 	 * Returns the value of the '<em><b>Agreement Id</b></em>' attribute.
@@ -96,7 +95,6 @@ public interface AgreementFacilityAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementFacilityAppl_AgreementId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Agreement'"
 	 * @generated
 	 */
 	String getAgreementId();

@@ -67,8 +67,8 @@ public interface SalesOpportunityTrckCode extends BizEntity {
 	 * @return the value of the '<em>Sales Opportunity Id</em>' attribute.
 	 * @see #setSalesOpportunityId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityTrckCode_SalesOpportunityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SalesOpportunity'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSalesOpportunityId();
@@ -94,7 +94,8 @@ public interface SalesOpportunityTrckCode extends BizEntity {
 	 * @return the value of the '<em>Tracking Code Id</em>' attribute.
 	 * @see #setTrackingCodeId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityTrckCode_TrackingCodeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTrackingCodeId();

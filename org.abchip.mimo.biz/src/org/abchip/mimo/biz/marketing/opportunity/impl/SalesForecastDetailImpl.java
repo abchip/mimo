@@ -9,13 +9,18 @@ package org.abchip.mimo.biz.marketing.opportunity.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail;
+import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,10 +34,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getSalesForecastId <em>Sales Forecast Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getSalesForecastDetailId <em>Sales Forecast Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getQuantityUomId <em>Quantity Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastDetailImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -104,46 +109,6 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,24 +129,34 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getQuantityUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String QUANTITY_UOM_ID_EDEFAULT = null;
+	protected Uom quantityUomId;
 
 	/**
-	 * The cached value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getQuantityUomId()
+	 * @see #getProductId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String quantityUomId = QUANTITY_UOM_ID_EDEFAULT;
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +206,24 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -241,8 +233,8 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -254,7 +246,24 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -264,8 +273,8 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID, oldProductId, productId));
@@ -300,7 +309,24 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 * @generated
 	 */
 	@Override
-	public String getQuantityUomId() {
+	public Uom getQuantityUomId() {
+		if (quantityUomId != null && ((EObject)quantityUomId).eIsProxy()) {
+			InternalEObject oldQuantityUomId = (InternalEObject)quantityUomId;
+			quantityUomId = (Uom)eResolveProxy(oldQuantityUomId);
+			if (quantityUomId != oldQuantityUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
+			}
+		}
+		return quantityUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetQuantityUomId() {
 		return quantityUomId;
 	}
 
@@ -310,8 +336,8 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 	 * @generated
 	 */
 	@Override
-	public void setQuantityUomId(String newQuantityUomId) {
-		String oldQuantityUomId = quantityUomId;
+	public void setQuantityUomId(Uom newQuantityUomId) {
+		Uom oldQuantityUomId = quantityUomId;
 		quantityUomId = newQuantityUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
@@ -377,14 +403,17 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 				return getSalesForecastDetailId();
 			case OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT:
 				return getAmount();
-			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
-			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
-				return getProductId();
 			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY:
 				return getQuantity();
 			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID:
-				return getQuantityUomId();
+				if (resolve) return getQuantityUomId();
+				return basicGetQuantityUomId();
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -406,17 +435,17 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 			case OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT:
 				setAmount((BigDecimal)newValue);
 				return;
-			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
-			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY:
 				setQuantity((BigDecimal)newValue);
 				return;
 			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID:
-				setQuantityUomId((String)newValue);
+				setQuantityUomId((Uom)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -439,17 +468,17 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 			case OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
 				return;
-			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
-			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
 				return;
 			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID:
-				setQuantityUomId(QUANTITY_UOM_ID_EDEFAULT);
+				setQuantityUomId((Uom)null);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -469,14 +498,14 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 				return SALES_FORECAST_DETAIL_ID_EDEFAULT == null ? salesForecastDetailId != null : !SALES_FORECAST_DETAIL_ID_EDEFAULT.equals(salesForecastDetailId);
 			case OpportunityPackage.SALES_FORECAST_DETAIL__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
-			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case OpportunityPackage.SALES_FORECAST_DETAIL__QUANTITY_UOM_ID:
-				return QUANTITY_UOM_ID_EDEFAULT == null ? quantityUomId != null : !QUANTITY_UOM_ID_EDEFAULT.equals(quantityUomId);
+				return quantityUomId != null;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_ID:
+				return productId != null;
+			case OpportunityPackage.SALES_FORECAST_DETAIL__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -497,14 +526,8 @@ public class SalesForecastDetailImpl extends BizEntityImpl implements SalesForec
 		result.append(salesForecastDetailId);
 		result.append(", amount: ");
 		result.append(amount);
-		result.append(", productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", quantity: ");
 		result.append(quantity);
-		result.append(", quantityUomId: ");
-		result.append(quantityUomId);
 		result.append(')');
 		return result.toString();
 	}

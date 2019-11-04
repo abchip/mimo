@@ -16,6 +16,8 @@ import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -102,44 +104,24 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	protected String facilityGroupName = FACILITY_GROUP_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFacilityGroupTypeId() <em>Facility Group Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getFacilityGroupTypeId() <em>Facility Group Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFacilityGroupTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FACILITY_GROUP_TYPE_ID_EDEFAULT = null;
+	protected FacilityGroupType facilityGroupTypeId;
 
 	/**
-	 * The cached value of the '{@link #getFacilityGroupTypeId() <em>Facility Group Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityGroupTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityGroupTypeId = FACILITY_GROUP_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPrimaryParentGroupId() <em>Primary Parent Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getPrimaryParentGroupId() <em>Primary Parent Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPrimaryParentGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRIMARY_PARENT_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPrimaryParentGroupId() <em>Primary Parent Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryParentGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String primaryParentGroupId = PRIMARY_PARENT_GROUP_ID_EDEFAULT;
+	protected FacilityGroup primaryParentGroupId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +194,24 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 * @generated
 	 */
 	@Override
-	public String getFacilityGroupTypeId() {
+	public FacilityGroupType getFacilityGroupTypeId() {
+		if (facilityGroupTypeId != null && ((EObject)facilityGroupTypeId).eIsProxy()) {
+			InternalEObject oldFacilityGroupTypeId = (InternalEObject)facilityGroupTypeId;
+			facilityGroupTypeId = (FacilityGroupType)eResolveProxy(oldFacilityGroupTypeId);
+			if (facilityGroupTypeId != oldFacilityGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_TYPE_ID, oldFacilityGroupTypeId, facilityGroupTypeId));
+			}
+		}
+		return facilityGroupTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacilityGroupType basicGetFacilityGroupTypeId() {
 		return facilityGroupTypeId;
 	}
 
@@ -222,8 +221,8 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 * @generated
 	 */
 	@Override
-	public void setFacilityGroupTypeId(String newFacilityGroupTypeId) {
-		String oldFacilityGroupTypeId = facilityGroupTypeId;
+	public void setFacilityGroupTypeId(FacilityGroupType newFacilityGroupTypeId) {
+		FacilityGroupType oldFacilityGroupTypeId = facilityGroupTypeId;
 		facilityGroupTypeId = newFacilityGroupTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_TYPE_ID, oldFacilityGroupTypeId, facilityGroupTypeId));
@@ -235,7 +234,24 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 * @generated
 	 */
 	@Override
-	public String getPrimaryParentGroupId() {
+	public FacilityGroup getPrimaryParentGroupId() {
+		if (primaryParentGroupId != null && ((EObject)primaryParentGroupId).eIsProxy()) {
+			InternalEObject oldPrimaryParentGroupId = (InternalEObject)primaryParentGroupId;
+			primaryParentGroupId = (FacilityGroup)eResolveProxy(oldPrimaryParentGroupId);
+			if (primaryParentGroupId != oldPrimaryParentGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID, oldPrimaryParentGroupId, primaryParentGroupId));
+			}
+		}
+		return primaryParentGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacilityGroup basicGetPrimaryParentGroupId() {
 		return primaryParentGroupId;
 	}
 
@@ -245,8 +261,8 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 	 * @generated
 	 */
 	@Override
-	public void setPrimaryParentGroupId(String newPrimaryParentGroupId) {
-		String oldPrimaryParentGroupId = primaryParentGroupId;
+	public void setPrimaryParentGroupId(FacilityGroup newPrimaryParentGroupId) {
+		FacilityGroup oldPrimaryParentGroupId = primaryParentGroupId;
 		primaryParentGroupId = newPrimaryParentGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID, oldPrimaryParentGroupId, primaryParentGroupId));
@@ -302,9 +318,11 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 			case FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_NAME:
 				return getFacilityGroupName();
 			case FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_TYPE_ID:
-				return getFacilityGroupTypeId();
+				if (resolve) return getFacilityGroupTypeId();
+				return basicGetFacilityGroupTypeId();
 			case FacilityPackage.FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID:
-				return getPrimaryParentGroupId();
+				if (resolve) return getPrimaryParentGroupId();
+				return basicGetPrimaryParentGroupId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -327,10 +345,10 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 				setFacilityGroupName((String)newValue);
 				return;
 			case FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_TYPE_ID:
-				setFacilityGroupTypeId((String)newValue);
+				setFacilityGroupTypeId((FacilityGroupType)newValue);
 				return;
 			case FacilityPackage.FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID:
-				setPrimaryParentGroupId((String)newValue);
+				setPrimaryParentGroupId((FacilityGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -354,10 +372,10 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 				setFacilityGroupName(FACILITY_GROUP_NAME_EDEFAULT);
 				return;
 			case FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_TYPE_ID:
-				setFacilityGroupTypeId(FACILITY_GROUP_TYPE_ID_EDEFAULT);
+				setFacilityGroupTypeId((FacilityGroupType)null);
 				return;
 			case FacilityPackage.FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID:
-				setPrimaryParentGroupId(PRIMARY_PARENT_GROUP_ID_EDEFAULT);
+				setPrimaryParentGroupId((FacilityGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -378,9 +396,9 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 			case FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_NAME:
 				return FACILITY_GROUP_NAME_EDEFAULT == null ? facilityGroupName != null : !FACILITY_GROUP_NAME_EDEFAULT.equals(facilityGroupName);
 			case FacilityPackage.FACILITY_GROUP__FACILITY_GROUP_TYPE_ID:
-				return FACILITY_GROUP_TYPE_ID_EDEFAULT == null ? facilityGroupTypeId != null : !FACILITY_GROUP_TYPE_ID_EDEFAULT.equals(facilityGroupTypeId);
+				return facilityGroupTypeId != null;
 			case FacilityPackage.FACILITY_GROUP__PRIMARY_PARENT_GROUP_ID:
-				return PRIMARY_PARENT_GROUP_ID_EDEFAULT == null ? primaryParentGroupId != null : !PRIMARY_PARENT_GROUP_ID_EDEFAULT.equals(primaryParentGroupId);
+				return primaryParentGroupId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -401,10 +419,6 @@ public class FacilityGroupImpl extends BizEntityTypedImpl<FacilityGroupType> imp
 		result.append(description);
 		result.append(", facilityGroupName: ");
 		result.append(facilityGroupName);
-		result.append(", facilityGroupTypeId: ");
-		result.append(facilityGroupTypeId);
-		result.append(", primaryParentGroupId: ");
-		result.append(primaryParentGroupId);
 		result.append(')');
 		return result.toString();
 	}

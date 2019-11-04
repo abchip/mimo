@@ -11,13 +11,19 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductAssoc;
 import org.abchip.mimo.biz.product.product.ProductAssocType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,18 +35,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getProductIdTo <em>Product Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getProductAssocTypeId <em>Product Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getEstimateCalcMethod <em>Estimate Calc Method</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getInstruction <em>Instruction</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getReason <em>Reason</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getRoutingWorkEffortId <em>Routing Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getScrapFactor <em>Scrap Factor</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getProductAssocTypeId <em>Product Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getProductIdTo <em>Product Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getRoutingWorkEffortId <em>Routing Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getEstimateCalcMethod <em>Estimate Calc Method</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductAssocImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,46 +78,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductIdTo() <em>Product Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductIdTo() <em>Product Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productIdTo = PRODUCT_ID_TO_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductAssocTypeId() <em>Product Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ASSOC_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductAssocTypeId() <em>Product Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productAssocTypeId = PRODUCT_ASSOC_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,26 +96,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @ordered
 	 */
 	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEstimateCalcMethod() <em>Estimate Calc Method</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimateCalcMethod()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ESTIMATE_CALC_METHOD_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEstimateCalcMethod() <em>Estimate Calc Method</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimateCalcMethod()
-	 * @generated
-	 * @ordered
-	 */
-	protected String estimateCalcMethod = ESTIMATE_CALC_METHOD_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInstruction() <em>Instruction</em>}' attribute.
@@ -212,46 +158,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	protected String reason = REASON_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceInfoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RECURRENCE_INFO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceInfoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String recurrenceInfoId = RECURRENCE_INFO_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoutingWorkEffortId() <em>Routing Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoutingWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROUTING_WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoutingWorkEffortId() <em>Routing Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoutingWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String routingWorkEffortId = ROUTING_WORK_EFFORT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getScrapFactor() <em>Scrap Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -312,6 +218,56 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductAssocTypeId() <em>Product Assoc Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductAssocTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductAssocType productAssocTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductIdTo() <em>Product Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productIdTo;
+
+	/**
+	 * The cached value of the '{@link #getRoutingWorkEffortId() <em>Routing Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutingWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort routingWorkEffortId;
+
+	/**
+	 * The cached value of the '{@link #getEstimateCalcMethod() <em>Estimate Calc Method</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEstimateCalcMethod()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod estimateCalcMethod;
+
+	/**
+	 * The cached value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecurrenceInfoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RecurrenceInfo recurrenceInfoId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -336,7 +292,24 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getEstimateCalcMethod() {
+	public CustomMethod getEstimateCalcMethod() {
+		if (estimateCalcMethod != null && ((EObject)estimateCalcMethod).eIsProxy()) {
+			InternalEObject oldEstimateCalcMethod = (InternalEObject)estimateCalcMethod;
+			estimateCalcMethod = (CustomMethod)eResolveProxy(oldEstimateCalcMethod);
+			if (estimateCalcMethod != oldEstimateCalcMethod) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD, oldEstimateCalcMethod, estimateCalcMethod));
+			}
+		}
+		return estimateCalcMethod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetEstimateCalcMethod() {
 		return estimateCalcMethod;
 	}
 
@@ -346,8 +319,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setEstimateCalcMethod(String newEstimateCalcMethod) {
-		String oldEstimateCalcMethod = estimateCalcMethod;
+	public void setEstimateCalcMethod(CustomMethod newEstimateCalcMethod) {
+		CustomMethod oldEstimateCalcMethod = estimateCalcMethod;
 		estimateCalcMethod = newEstimateCalcMethod;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD, oldEstimateCalcMethod, estimateCalcMethod));
@@ -451,7 +424,24 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getRecurrenceInfoId() {
+	public RecurrenceInfo getRecurrenceInfoId() {
+		if (recurrenceInfoId != null && ((EObject)recurrenceInfoId).eIsProxy()) {
+			InternalEObject oldRecurrenceInfoId = (InternalEObject)recurrenceInfoId;
+			recurrenceInfoId = (RecurrenceInfo)eResolveProxy(oldRecurrenceInfoId);
+			if (recurrenceInfoId != oldRecurrenceInfoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
+			}
+		}
+		return recurrenceInfoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RecurrenceInfo basicGetRecurrenceInfoId() {
 		return recurrenceInfoId;
 	}
 
@@ -461,8 +451,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setRecurrenceInfoId(String newRecurrenceInfoId) {
-		String oldRecurrenceInfoId = recurrenceInfoId;
+	public void setRecurrenceInfoId(RecurrenceInfo newRecurrenceInfoId) {
+		RecurrenceInfo oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
@@ -474,7 +464,24 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getRoutingWorkEffortId() {
+	public WorkEffort getRoutingWorkEffortId() {
+		if (routingWorkEffortId != null && ((EObject)routingWorkEffortId).eIsProxy()) {
+			InternalEObject oldRoutingWorkEffortId = (InternalEObject)routingWorkEffortId;
+			routingWorkEffortId = (WorkEffort)eResolveProxy(oldRoutingWorkEffortId);
+			if (routingWorkEffortId != oldRoutingWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID, oldRoutingWorkEffortId, routingWorkEffortId));
+			}
+		}
+		return routingWorkEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetRoutingWorkEffortId() {
 		return routingWorkEffortId;
 	}
 
@@ -484,8 +491,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setRoutingWorkEffortId(String newRoutingWorkEffortId) {
-		String oldRoutingWorkEffortId = routingWorkEffortId;
+	public void setRoutingWorkEffortId(WorkEffort newRoutingWorkEffortId) {
+		WorkEffort oldRoutingWorkEffortId = routingWorkEffortId;
 		routingWorkEffortId = newRoutingWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID, oldRoutingWorkEffortId, routingWorkEffortId));
@@ -566,7 +573,24 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductAssocTypeId() {
+	public ProductAssocType getProductAssocTypeId() {
+		if (productAssocTypeId != null && ((EObject)productAssocTypeId).eIsProxy()) {
+			InternalEObject oldProductAssocTypeId = (InternalEObject)productAssocTypeId;
+			productAssocTypeId = (ProductAssocType)eResolveProxy(oldProductAssocTypeId);
+			if (productAssocTypeId != oldProductAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID, oldProductAssocTypeId, productAssocTypeId));
+			}
+		}
+		return productAssocTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductAssocType basicGetProductAssocTypeId() {
 		return productAssocTypeId;
 	}
 
@@ -576,8 +600,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductAssocTypeId(String newProductAssocTypeId) {
-		String oldProductAssocTypeId = productAssocTypeId;
+	public void setProductAssocTypeId(ProductAssocType newProductAssocTypeId) {
+		ProductAssocType oldProductAssocTypeId = productAssocTypeId;
 		productAssocTypeId = newProductAssocTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID, oldProductAssocTypeId, productAssocTypeId));
@@ -612,7 +636,24 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductIdTo() {
+	public Product getProductIdTo() {
+		if (productIdTo != null && ((EObject)productIdTo).eIsProxy()) {
+			InternalEObject oldProductIdTo = (InternalEObject)productIdTo;
+			productIdTo = (Product)eResolveProxy(oldProductIdTo);
+			if (productIdTo != oldProductIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO, oldProductIdTo, productIdTo));
+			}
+		}
+		return productIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductIdTo() {
 		return productIdTo;
 	}
 
@@ -622,8 +663,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductIdTo(String newProductIdTo) {
-		String oldProductIdTo = productIdTo;
+	public void setProductIdTo(Product newProductIdTo) {
+		Product oldProductIdTo = productIdTo;
 		productIdTo = newProductIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO, oldProductIdTo, productIdTo));
@@ -639,30 +680,35 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 		switch (featureID) {
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
 				return getProductId();
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
-				return getProductIdTo();
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
-				return getProductAssocTypeId();
 			case ProductPackage.PRODUCT_ASSOC__FROM_DATE:
 				return getFromDate();
-			case ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD:
-				return getEstimateCalcMethod();
 			case ProductPackage.PRODUCT_ASSOC__INSTRUCTION:
 				return getInstruction();
 			case ProductPackage.PRODUCT_ASSOC__QUANTITY:
 				return getQuantity();
 			case ProductPackage.PRODUCT_ASSOC__REASON:
 				return getReason();
-			case ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID:
-				return getRecurrenceInfoId();
-			case ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID:
-				return getRoutingWorkEffortId();
 			case ProductPackage.PRODUCT_ASSOC__SCRAP_FACTOR:
 				return getScrapFactor();
 			case ProductPackage.PRODUCT_ASSOC__SEQUENCE_NUM:
 				return getSequenceNum();
 			case ProductPackage.PRODUCT_ASSOC__THRU_DATE:
 				return getThruDate();
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
+				if (resolve) return getProductAssocTypeId();
+				return basicGetProductAssocTypeId();
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
+				if (resolve) return getProductIdTo();
+				return basicGetProductIdTo();
+			case ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID:
+				if (resolve) return getRoutingWorkEffortId();
+				return basicGetRoutingWorkEffortId();
+			case ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD:
+				if (resolve) return getEstimateCalcMethod();
+				return basicGetEstimateCalcMethod();
+			case ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID:
+				if (resolve) return getRecurrenceInfoId();
+				return basicGetRecurrenceInfoId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -678,17 +724,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
 				setProductId((String)newValue);
 				return;
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
-				setProductIdTo((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
-				setProductAssocTypeId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_ASSOC__FROM_DATE:
 				setFromDate((Date)newValue);
-				return;
-			case ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD:
-				setEstimateCalcMethod((String)newValue);
 				return;
 			case ProductPackage.PRODUCT_ASSOC__INSTRUCTION:
 				setInstruction((String)newValue);
@@ -699,12 +736,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			case ProductPackage.PRODUCT_ASSOC__REASON:
 				setReason((String)newValue);
 				return;
-			case ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID:
-				setRecurrenceInfoId((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID:
-				setRoutingWorkEffortId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_ASSOC__SCRAP_FACTOR:
 				setScrapFactor((BigDecimal)newValue);
 				return;
@@ -713,6 +744,21 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 				return;
 			case ProductPackage.PRODUCT_ASSOC__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
+				setProductAssocTypeId((ProductAssocType)newValue);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
+				setProductIdTo((Product)newValue);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID:
+				setRoutingWorkEffortId((WorkEffort)newValue);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD:
+				setEstimateCalcMethod((CustomMethod)newValue);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID:
+				setRecurrenceInfoId((RecurrenceInfo)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -729,17 +775,8 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
-				setProductIdTo(PRODUCT_ID_TO_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
-				setProductAssocTypeId(PRODUCT_ASSOC_TYPE_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_ASSOC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD:
-				setEstimateCalcMethod(ESTIMATE_CALC_METHOD_EDEFAULT);
 				return;
 			case ProductPackage.PRODUCT_ASSOC__INSTRUCTION:
 				setInstruction(INSTRUCTION_EDEFAULT);
@@ -750,12 +787,6 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 			case ProductPackage.PRODUCT_ASSOC__REASON:
 				setReason(REASON_EDEFAULT);
 				return;
-			case ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID:
-				setRecurrenceInfoId(RECURRENCE_INFO_ID_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID:
-				setRoutingWorkEffortId(ROUTING_WORK_EFFORT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_ASSOC__SCRAP_FACTOR:
 				setScrapFactor(SCRAP_FACTOR_EDEFAULT);
 				return;
@@ -764,6 +795,21 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 				return;
 			case ProductPackage.PRODUCT_ASSOC__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
+				setProductAssocTypeId((ProductAssocType)null);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
+				setProductIdTo((Product)null);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID:
+				setRoutingWorkEffortId((WorkEffort)null);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD:
+				setEstimateCalcMethod((CustomMethod)null);
+				return;
+			case ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID:
+				setRecurrenceInfoId((RecurrenceInfo)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -779,30 +825,30 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 		switch (featureID) {
 			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
-				return PRODUCT_ID_TO_EDEFAULT == null ? productIdTo != null : !PRODUCT_ID_TO_EDEFAULT.equals(productIdTo);
-			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
-				return PRODUCT_ASSOC_TYPE_ID_EDEFAULT == null ? productAssocTypeId != null : !PRODUCT_ASSOC_TYPE_ID_EDEFAULT.equals(productAssocTypeId);
 			case ProductPackage.PRODUCT_ASSOC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD:
-				return ESTIMATE_CALC_METHOD_EDEFAULT == null ? estimateCalcMethod != null : !ESTIMATE_CALC_METHOD_EDEFAULT.equals(estimateCalcMethod);
 			case ProductPackage.PRODUCT_ASSOC__INSTRUCTION:
 				return INSTRUCTION_EDEFAULT == null ? instruction != null : !INSTRUCTION_EDEFAULT.equals(instruction);
 			case ProductPackage.PRODUCT_ASSOC__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case ProductPackage.PRODUCT_ASSOC__REASON:
 				return REASON_EDEFAULT == null ? reason != null : !REASON_EDEFAULT.equals(reason);
-			case ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID:
-				return RECURRENCE_INFO_ID_EDEFAULT == null ? recurrenceInfoId != null : !RECURRENCE_INFO_ID_EDEFAULT.equals(recurrenceInfoId);
-			case ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID:
-				return ROUTING_WORK_EFFORT_ID_EDEFAULT == null ? routingWorkEffortId != null : !ROUTING_WORK_EFFORT_ID_EDEFAULT.equals(routingWorkEffortId);
 			case ProductPackage.PRODUCT_ASSOC__SCRAP_FACTOR:
 				return SCRAP_FACTOR_EDEFAULT == null ? scrapFactor != null : !SCRAP_FACTOR_EDEFAULT.equals(scrapFactor);
 			case ProductPackage.PRODUCT_ASSOC__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case ProductPackage.PRODUCT_ASSOC__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID:
+				return productAssocTypeId != null;
+			case ProductPackage.PRODUCT_ASSOC__PRODUCT_ID_TO:
+				return productIdTo != null;
+			case ProductPackage.PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID:
+				return routingWorkEffortId != null;
+			case ProductPackage.PRODUCT_ASSOC__ESTIMATE_CALC_METHOD:
+				return estimateCalcMethod != null;
+			case ProductPackage.PRODUCT_ASSOC__RECURRENCE_INFO_ID:
+				return recurrenceInfoId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -819,24 +865,14 @@ public class ProductAssocImpl extends BizEntityTypedImpl<ProductAssocType> imple
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", productIdTo: ");
-		result.append(productIdTo);
-		result.append(", productAssocTypeId: ");
-		result.append(productAssocTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", estimateCalcMethod: ");
-		result.append(estimateCalcMethod);
 		result.append(", instruction: ");
 		result.append(instruction);
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", reason: ");
 		result.append(reason);
-		result.append(", recurrenceInfoId: ");
-		result.append(recurrenceInfoId);
-		result.append(", routingWorkEffortId: ");
-		result.append(routingWorkEffortId);
 		result.append(", scrapFactor: ");
 		result.append(scrapFactor);
 		result.append(", sequenceNum: ");

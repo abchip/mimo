@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -190,13 +191,11 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -328,8 +327,8 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -354,6 +353,20 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -370,20 +383,6 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -496,6 +495,13 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -504,13 +510,6 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -591,6 +590,13 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -599,13 +605,6 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -693,8 +692,8 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductManufacturingRule_ProductFeature() {
-		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(3);
+	public EReference getProductManufacturingRule_ProductFeature() {
+		return (EReference)productManufacturingRuleEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -703,8 +702,8 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductManufacturingRule_ProductId() {
-		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(4);
+	public EReference getProductManufacturingRule_ProductId() {
+		return (EReference)productManufacturingRuleEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -713,8 +712,8 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductManufacturingRule_ProductIdFor() {
-		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(5);
+	public EReference getProductManufacturingRule_ProductIdFor() {
+		return (EReference)productManufacturingRuleEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -723,8 +722,8 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductManufacturingRule_ProductIdIn() {
-		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(6);
+	public EReference getProductManufacturingRule_ProductIdIn() {
+		return (EReference)productManufacturingRuleEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -733,8 +732,8 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductManufacturingRule_ProductIdInSubst() {
-		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(7);
+	public EReference getProductManufacturingRule_ProductIdInSubst() {
+		return (EReference)productManufacturingRuleEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -744,7 +743,7 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 	 */
 	@Override
 	public EAttribute getProductManufacturingRule_Quantity() {
-		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -754,7 +753,7 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 	 */
 	@Override
 	public EAttribute getProductManufacturingRule_RuleOperator() {
-		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -764,7 +763,7 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 	 */
 	@Override
 	public EAttribute getProductManufacturingRule_RuleSeqId() {
-		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -774,7 +773,7 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 	 */
 	@Override
 	public EAttribute getProductManufacturingRule_ThruDate() {
-		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)productManufacturingRuleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -810,15 +809,15 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__RULE_ID);
 		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__DESCRIPTION);
 		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__FROM_DATE);
-		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE);
-		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_ID);
-		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR);
-		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN);
-		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST);
 		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__QUANTITY);
 		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__RULE_OPERATOR);
 		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__RULE_SEQ_ID);
 		createEAttribute(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__THRU_DATE);
+		createEReference(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_ID);
+		createEReference(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR);
+		createEReference(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN);
+		createEReference(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST);
+		createEReference(productManufacturingRuleEClass, PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE);
 	}
 
 	/**
@@ -846,6 +845,8 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
+		FeaturePackage theFeaturePackage = (FeaturePackage)EPackage.Registry.INSTANCE.getEPackage(FeaturePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -859,23 +860,26 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		initEAttribute(getProductManufacturingRule_RuleId(), ecorePackage.getEString(), "ruleId", null, 1, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductManufacturingRule_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductManufacturingRule_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductManufacturingRule_ProductFeature(), ecorePackage.getEString(), "productFeature", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductManufacturingRule_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductManufacturingRule_ProductIdFor(), ecorePackage.getEString(), "productIdFor", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductManufacturingRule_ProductIdIn(), ecorePackage.getEString(), "productIdIn", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductManufacturingRule_ProductIdInSubst(), ecorePackage.getEString(), "productIdInSubst", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductManufacturingRule_Quantity(), ecorePackage.getEDouble(), "quantity", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductManufacturingRule_RuleOperator(), ecorePackage.getEString(), "ruleOperator", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductManufacturingRule_RuleSeqId(), ecorePackage.getEString(), "ruleSeqId", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductManufacturingRule_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductManufacturingRule_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductManufacturingRule_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEReference(getProductManufacturingRule_ProductIdFor(), theProductPackage.getProduct(), null, "productIdFor", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductManufacturingRule_ProductIdFor().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEReference(getProductManufacturingRule_ProductIdIn(), theProductPackage.getProduct(), null, "productIdIn", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductManufacturingRule_ProductIdIn().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEReference(getProductManufacturingRule_ProductIdInSubst(), theProductPackage.getProduct(), null, "productIdInSubst", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductManufacturingRule_ProductIdInSubst().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEReference(getProductManufacturingRule_ProductFeature(), theFeaturePackage.getProductFeature(), null, "productFeature", null, 0, 1, ProductManufacturingRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductManufacturingRule_ProductFeature().getEKeys().add(theFeaturePackage.getProductFeature_ProductFeatureId());
 
 		// Create annotations
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -907,61 +911,6 @@ public class BomPackageImpl extends EPackageImpl implements BomPackage {
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (getProductManufacturingRule_ProductFeature(),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeature"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductManufacturingRule_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductManufacturingRule_ProductIdFor(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductManufacturingRule_ProductIdIn(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductManufacturingRule_ProductIdInSubst(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

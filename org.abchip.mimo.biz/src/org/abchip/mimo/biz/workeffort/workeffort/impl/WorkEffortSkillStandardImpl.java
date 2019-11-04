@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSkillStandard;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSkillStandardImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSkillStandardImpl#getSkillTypeId <em>Skill Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSkillStandardImpl#getEstimatedCost <em>Estimated Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSkillStandardImpl#getEstimatedDuration <em>Estimated Duration</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSkillStandardImpl#getEstimatedNumPeople <em>Estimated Num People</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSkillStandardImpl#getSkillTypeId <em>Skill Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,26 +63,6 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 	 * @ordered
 	 */
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSkillTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SKILL_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSkillTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String skillTypeId = SKILL_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEstimatedCost() <em>Estimated Cost</em>}' attribute.
@@ -140,6 +123,16 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 	 * @ordered
 	 */
 	protected double estimatedNumPeople = ESTIMATED_NUM_PEOPLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSkillTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SkillType skillTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,7 +228,24 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public String getSkillTypeId() {
+	public SkillType getSkillTypeId() {
+		if (skillTypeId != null && ((EObject)skillTypeId).eIsProxy()) {
+			InternalEObject oldSkillTypeId = (InternalEObject)skillTypeId;
+			skillTypeId = (SkillType)eResolveProxy(oldSkillTypeId);
+			if (skillTypeId != oldSkillTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
+			}
+		}
+		return skillTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SkillType basicGetSkillTypeId() {
 		return skillTypeId;
 	}
 
@@ -245,8 +255,8 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public void setSkillTypeId(String newSkillTypeId) {
-		String oldSkillTypeId = skillTypeId;
+	public void setSkillTypeId(SkillType newSkillTypeId) {
+		SkillType oldSkillTypeId = skillTypeId;
 		skillTypeId = newSkillTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
@@ -285,14 +295,15 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__WORK_EFFORT_ID:
 				return getWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID:
-				return getSkillTypeId();
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_COST:
 				return getEstimatedCost();
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_DURATION:
 				return getEstimatedDuration();
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_NUM_PEOPLE:
 				return getEstimatedNumPeople();
+			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID:
+				if (resolve) return getSkillTypeId();
+				return basicGetSkillTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,9 +319,6 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID:
-				setSkillTypeId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_COST:
 				setEstimatedCost((BigDecimal)newValue);
 				return;
@@ -319,6 +327,9 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 				return;
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_NUM_PEOPLE:
 				setEstimatedNumPeople((Double)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID:
+				setSkillTypeId((SkillType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,9 +346,6 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID:
-				setSkillTypeId(SKILL_TYPE_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_COST:
 				setEstimatedCost(ESTIMATED_COST_EDEFAULT);
 				return;
@@ -346,6 +354,9 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 				return;
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_NUM_PEOPLE:
 				setEstimatedNumPeople(ESTIMATED_NUM_PEOPLE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID:
+				setSkillTypeId((SkillType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,14 +372,14 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID:
-				return SKILL_TYPE_ID_EDEFAULT == null ? skillTypeId != null : !SKILL_TYPE_ID_EDEFAULT.equals(skillTypeId);
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_COST:
 				return ESTIMATED_COST_EDEFAULT == null ? estimatedCost != null : !ESTIMATED_COST_EDEFAULT.equals(estimatedCost);
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_DURATION:
 				return estimatedDuration != ESTIMATED_DURATION_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__ESTIMATED_NUM_PEOPLE:
 				return estimatedNumPeople != ESTIMATED_NUM_PEOPLE_EDEFAULT;
+			case WorkeffortPackage.WORK_EFFORT_SKILL_STANDARD__SKILL_TYPE_ID:
+				return skillTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,8 +396,6 @@ public class WorkEffortSkillStandardImpl extends BizEntityImpl implements WorkEf
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", skillTypeId: ");
-		result.append(skillTypeId);
 		result.append(", estimatedCost: ");
 		result.append(estimatedCost);
 		result.append(", estimatedDuration: ");

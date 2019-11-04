@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.return_;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,9 +23,9 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId <em>Shipment Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment()
@@ -69,8 +70,8 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' attribute.
 	 * @see #setReturnId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ReturnId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnId();
@@ -96,7 +97,8 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @return the value of the '<em>Return Item Seq Id</em>' attribute.
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ReturnItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -112,31 +114,30 @@ public interface ReturnItemShipment extends BizEntity {
 	void setReturnItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Id</em>' attribute.
-	 * @see #setShipmentId(String)
+	 * @return the value of the '<em>Shipment Id</em>' reference.
+	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model keys="shipmentId"
 	 * @generated
 	 */
-	String getShipmentId();
+	Shipment getShipmentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId <em>Shipment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId <em>Shipment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Id</em>' reference.
 	 * @see #getShipmentId()
 	 * @generated
 	 */
-	void setShipmentId(String value);
+	void setShipmentId(Shipment value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Item Seq Id</b></em>' attribute.
@@ -149,7 +150,8 @@ public interface ReturnItemShipment extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemShipment_ShipmentItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();

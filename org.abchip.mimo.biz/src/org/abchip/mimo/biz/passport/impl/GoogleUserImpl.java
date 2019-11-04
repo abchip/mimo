@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.passport.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.GoogleUser;
 import org.abchip.mimo.biz.passport.PassportPackage;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getGoogleUserId <em>Google User Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getAccessToken <em>Access Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getEnvPrefix <em>Env Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getTokenType <em>Token Type</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.passport.impl.GoogleUserImpl#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,26 +103,6 @@ public class GoogleUserImpl extends BizEntityImpl implements GoogleUser {
 	protected String envPrefix = ENV_PREFIX_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getTokenType() <em>Token Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,6 +121,16 @@ public class GoogleUserImpl extends BizEntityImpl implements GoogleUser {
 	 * @ordered
 	 */
 	protected String tokenType = TOKEN_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStore productStoreId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,7 +226,24 @@ public class GoogleUserImpl extends BizEntityImpl implements GoogleUser {
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -243,8 +253,8 @@ public class GoogleUserImpl extends BizEntityImpl implements GoogleUser {
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -287,10 +297,11 @@ public class GoogleUserImpl extends BizEntityImpl implements GoogleUser {
 				return getAccessToken();
 			case PassportPackage.GOOGLE_USER__ENV_PREFIX:
 				return getEnvPrefix();
-			case PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case PassportPackage.GOOGLE_USER__TOKEN_TYPE:
 				return getTokenType();
+			case PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -312,11 +323,11 @@ public class GoogleUserImpl extends BizEntityImpl implements GoogleUser {
 			case PassportPackage.GOOGLE_USER__ENV_PREFIX:
 				setEnvPrefix((String)newValue);
 				return;
-			case PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case PassportPackage.GOOGLE_USER__TOKEN_TYPE:
 				setTokenType((String)newValue);
+				return;
+			case PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -339,11 +350,11 @@ public class GoogleUserImpl extends BizEntityImpl implements GoogleUser {
 			case PassportPackage.GOOGLE_USER__ENV_PREFIX:
 				setEnvPrefix(ENV_PREFIX_EDEFAULT);
 				return;
-			case PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case PassportPackage.GOOGLE_USER__TOKEN_TYPE:
 				setTokenType(TOKEN_TYPE_EDEFAULT);
+				return;
+			case PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -363,10 +374,10 @@ public class GoogleUserImpl extends BizEntityImpl implements GoogleUser {
 				return ACCESS_TOKEN_EDEFAULT == null ? accessToken != null : !ACCESS_TOKEN_EDEFAULT.equals(accessToken);
 			case PassportPackage.GOOGLE_USER__ENV_PREFIX:
 				return ENV_PREFIX_EDEFAULT == null ? envPrefix != null : !ENV_PREFIX_EDEFAULT.equals(envPrefix);
-			case PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case PassportPackage.GOOGLE_USER__TOKEN_TYPE:
 				return TOKEN_TYPE_EDEFAULT == null ? tokenType != null : !TOKEN_TYPE_EDEFAULT.equals(tokenType);
+			case PassportPackage.GOOGLE_USER__PRODUCT_STORE_ID:
+				return productStoreId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -387,8 +398,6 @@ public class GoogleUserImpl extends BizEntityImpl implements GoogleUser {
 		result.append(accessToken);
 		result.append(", envPrefix: ");
 		result.append(envPrefix);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
 		result.append(", tokenType: ");
 		result.append(tokenType);
 		result.append(')');

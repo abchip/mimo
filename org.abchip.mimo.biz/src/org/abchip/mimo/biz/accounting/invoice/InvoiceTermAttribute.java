@@ -66,7 +66,8 @@ public interface InvoiceTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTermAttribute_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -118,8 +119,8 @@ public interface InvoiceTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Invoice Term Id</em>' attribute.
 	 * @see #setInvoiceTermId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTermAttribute_InvoiceTermId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceTerm'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceTermId();

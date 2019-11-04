@@ -11,15 +11,22 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.quote.Quote;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
 import org.abchip.mimo.biz.order.quote.QuoteType;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -32,17 +39,17 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteId <em>Quote Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getIssueDate <em>Issue Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteName <em>Quote Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteTypeId <em>Quote Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getValidFromDate <em>Valid From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getValidThruDate <em>Valid Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteTypeId <em>Quote Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteAttributes <em>Quote Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteCoefficients <em>Quote Coefficients</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteImpl#getQuoteItems <em>Quote Items</em>}</li>
@@ -77,26 +84,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @ordered
 	 */
 	protected String quoteId = QUOTE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -139,46 +126,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	protected Date issueDate = ISSUE_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getQuoteName() <em>Quote Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,66 +144,6 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @ordered
 	 */
 	protected String quoteName = QUOTE_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getQuoteTypeId() <em>Quote Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUOTE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuoteTypeId() <em>Quote Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quoteTypeId = QUOTE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSalesChannelEnumId() <em>Sales Channel Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesChannelEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SALES_CHANNEL_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSalesChannelEnumId() <em>Sales Channel Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesChannelEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String salesChannelEnumId = SALES_CHANNEL_ENUM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValidFromDate() <em>Valid From Date</em>}' attribute.
@@ -297,6 +184,66 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @ordered
 	 */
 	protected Date validThruDate = VALID_THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getQuoteTypeId() <em>Quote Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuoteTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected QuoteType quoteTypeId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStore productStoreId;
+
+	/**
+	 * The cached value of the '{@link #getSalesChannelEnumId() <em>Sales Channel Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesChannelEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration salesChannelEnumId;
 
 	/**
 	 * The cached value of the '{@link #getQuoteAttributes() <em>Quote Attributes</em>}' attribute list.
@@ -373,7 +320,24 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -383,8 +347,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -442,7 +406,24 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -452,8 +433,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__PARTY_ID, oldPartyId, partyId));
@@ -465,7 +446,24 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -475,8 +473,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -534,7 +532,24 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public String getQuoteTypeId() {
+	public QuoteType getQuoteTypeId() {
+		if (quoteTypeId != null && ((EObject)quoteTypeId).eIsProxy()) {
+			InternalEObject oldQuoteTypeId = (InternalEObject)quoteTypeId;
+			quoteTypeId = (QuoteType)eResolveProxy(oldQuoteTypeId);
+			if (quoteTypeId != oldQuoteTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
+			}
+		}
+		return quoteTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QuoteType basicGetQuoteTypeId() {
 		return quoteTypeId;
 	}
 
@@ -544,8 +559,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public void setQuoteTypeId(String newQuoteTypeId) {
-		String oldQuoteTypeId = quoteTypeId;
+	public void setQuoteTypeId(QuoteType newQuoteTypeId) {
+		QuoteType oldQuoteTypeId = quoteTypeId;
 		quoteTypeId = newQuoteTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__QUOTE_TYPE_ID, oldQuoteTypeId, quoteTypeId));
@@ -557,7 +572,24 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public String getSalesChannelEnumId() {
+	public Enumeration getSalesChannelEnumId() {
+		if (salesChannelEnumId != null && ((EObject)salesChannelEnumId).eIsProxy()) {
+			InternalEObject oldSalesChannelEnumId = (InternalEObject)salesChannelEnumId;
+			salesChannelEnumId = (Enumeration)eResolveProxy(oldSalesChannelEnumId);
+			if (salesChannelEnumId != oldSalesChannelEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
+			}
+		}
+		return salesChannelEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetSalesChannelEnumId() {
 		return salesChannelEnumId;
 	}
 
@@ -567,8 +599,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public void setSalesChannelEnumId(String newSalesChannelEnumId) {
-		String oldSalesChannelEnumId = salesChannelEnumId;
+	public void setSalesChannelEnumId(Enumeration newSalesChannelEnumId) {
+		Enumeration oldSalesChannelEnumId = salesChannelEnumId;
 		salesChannelEnumId = newSalesChannelEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
@@ -580,7 +612,24 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -590,8 +639,8 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE__STATUS_ID, oldStatusId, statusId));
@@ -742,28 +791,34 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 		switch (featureID) {
 			case QuotePackage.QUOTE__QUOTE_ID:
 				return getQuoteId();
-			case QuotePackage.QUOTE__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case QuotePackage.QUOTE__DESCRIPTION:
 				return getDescription();
 			case QuotePackage.QUOTE__ISSUE_DATE:
 				return getIssueDate();
-			case QuotePackage.QUOTE__PARTY_ID:
-				return getPartyId();
-			case QuotePackage.QUOTE__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case QuotePackage.QUOTE__QUOTE_NAME:
 				return getQuoteName();
-			case QuotePackage.QUOTE__QUOTE_TYPE_ID:
-				return getQuoteTypeId();
-			case QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID:
-				return getSalesChannelEnumId();
-			case QuotePackage.QUOTE__STATUS_ID:
-				return getStatusId();
 			case QuotePackage.QUOTE__VALID_FROM_DATE:
 				return getValidFromDate();
 			case QuotePackage.QUOTE__VALID_THRU_DATE:
 				return getValidThruDate();
+			case QuotePackage.QUOTE__QUOTE_TYPE_ID:
+				if (resolve) return getQuoteTypeId();
+				return basicGetQuoteTypeId();
+			case QuotePackage.QUOTE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case QuotePackage.QUOTE__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case QuotePackage.QUOTE__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case QuotePackage.QUOTE__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
+			case QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID:
+				if (resolve) return getSalesChannelEnumId();
+				return basicGetSalesChannelEnumId();
 			case QuotePackage.QUOTE__QUOTE_ATTRIBUTES:
 				return getQuoteAttributes();
 			case QuotePackage.QUOTE__QUOTE_COEFFICIENTS:
@@ -790,38 +845,38 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 			case QuotePackage.QUOTE__QUOTE_ID:
 				setQuoteId((String)newValue);
 				return;
-			case QuotePackage.QUOTE__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case QuotePackage.QUOTE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case QuotePackage.QUOTE__ISSUE_DATE:
 				setIssueDate((Date)newValue);
 				return;
-			case QuotePackage.QUOTE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case QuotePackage.QUOTE__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case QuotePackage.QUOTE__QUOTE_NAME:
 				setQuoteName((String)newValue);
-				return;
-			case QuotePackage.QUOTE__QUOTE_TYPE_ID:
-				setQuoteTypeId((String)newValue);
-				return;
-			case QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID:
-				setSalesChannelEnumId((String)newValue);
-				return;
-			case QuotePackage.QUOTE__STATUS_ID:
-				setStatusId((String)newValue);
 				return;
 			case QuotePackage.QUOTE__VALID_FROM_DATE:
 				setValidFromDate((Date)newValue);
 				return;
 			case QuotePackage.QUOTE__VALID_THRU_DATE:
 				setValidThruDate((Date)newValue);
+				return;
+			case QuotePackage.QUOTE__QUOTE_TYPE_ID:
+				setQuoteTypeId((QuoteType)newValue);
+				return;
+			case QuotePackage.QUOTE__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case QuotePackage.QUOTE__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case QuotePackage.QUOTE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case QuotePackage.QUOTE__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
+				return;
+			case QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID:
+				setSalesChannelEnumId((Enumeration)newValue);
 				return;
 			case QuotePackage.QUOTE__QUOTE_ATTRIBUTES:
 				getQuoteAttributes().clear();
@@ -858,38 +913,38 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 			case QuotePackage.QUOTE__QUOTE_ID:
 				setQuoteId(QUOTE_ID_EDEFAULT);
 				return;
-			case QuotePackage.QUOTE__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case QuotePackage.QUOTE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case QuotePackage.QUOTE__ISSUE_DATE:
 				setIssueDate(ISSUE_DATE_EDEFAULT);
 				return;
-			case QuotePackage.QUOTE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case QuotePackage.QUOTE__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case QuotePackage.QUOTE__QUOTE_NAME:
 				setQuoteName(QUOTE_NAME_EDEFAULT);
-				return;
-			case QuotePackage.QUOTE__QUOTE_TYPE_ID:
-				setQuoteTypeId(QUOTE_TYPE_ID_EDEFAULT);
-				return;
-			case QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID:
-				setSalesChannelEnumId(SALES_CHANNEL_ENUM_ID_EDEFAULT);
-				return;
-			case QuotePackage.QUOTE__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
 				return;
 			case QuotePackage.QUOTE__VALID_FROM_DATE:
 				setValidFromDate(VALID_FROM_DATE_EDEFAULT);
 				return;
 			case QuotePackage.QUOTE__VALID_THRU_DATE:
 				setValidThruDate(VALID_THRU_DATE_EDEFAULT);
+				return;
+			case QuotePackage.QUOTE__QUOTE_TYPE_ID:
+				setQuoteTypeId((QuoteType)null);
+				return;
+			case QuotePackage.QUOTE__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case QuotePackage.QUOTE__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case QuotePackage.QUOTE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case QuotePackage.QUOTE__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
+				return;
+			case QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID:
+				setSalesChannelEnumId((Enumeration)null);
 				return;
 			case QuotePackage.QUOTE__QUOTE_ATTRIBUTES:
 				getQuoteAttributes().clear();
@@ -920,28 +975,28 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 		switch (featureID) {
 			case QuotePackage.QUOTE__QUOTE_ID:
 				return QUOTE_ID_EDEFAULT == null ? quoteId != null : !QUOTE_ID_EDEFAULT.equals(quoteId);
-			case QuotePackage.QUOTE__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case QuotePackage.QUOTE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case QuotePackage.QUOTE__ISSUE_DATE:
 				return ISSUE_DATE_EDEFAULT == null ? issueDate != null : !ISSUE_DATE_EDEFAULT.equals(issueDate);
-			case QuotePackage.QUOTE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case QuotePackage.QUOTE__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case QuotePackage.QUOTE__QUOTE_NAME:
 				return QUOTE_NAME_EDEFAULT == null ? quoteName != null : !QUOTE_NAME_EDEFAULT.equals(quoteName);
-			case QuotePackage.QUOTE__QUOTE_TYPE_ID:
-				return QUOTE_TYPE_ID_EDEFAULT == null ? quoteTypeId != null : !QUOTE_TYPE_ID_EDEFAULT.equals(quoteTypeId);
-			case QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID:
-				return SALES_CHANNEL_ENUM_ID_EDEFAULT == null ? salesChannelEnumId != null : !SALES_CHANNEL_ENUM_ID_EDEFAULT.equals(salesChannelEnumId);
-			case QuotePackage.QUOTE__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case QuotePackage.QUOTE__VALID_FROM_DATE:
 				return VALID_FROM_DATE_EDEFAULT == null ? validFromDate != null : !VALID_FROM_DATE_EDEFAULT.equals(validFromDate);
 			case QuotePackage.QUOTE__VALID_THRU_DATE:
 				return VALID_THRU_DATE_EDEFAULT == null ? validThruDate != null : !VALID_THRU_DATE_EDEFAULT.equals(validThruDate);
+			case QuotePackage.QUOTE__QUOTE_TYPE_ID:
+				return quoteTypeId != null;
+			case QuotePackage.QUOTE__PARTY_ID:
+				return partyId != null;
+			case QuotePackage.QUOTE__STATUS_ID:
+				return statusId != null;
+			case QuotePackage.QUOTE__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case QuotePackage.QUOTE__PRODUCT_STORE_ID:
+				return productStoreId != null;
+			case QuotePackage.QUOTE__SALES_CHANNEL_ENUM_ID:
+				return salesChannelEnumId != null;
 			case QuotePackage.QUOTE__QUOTE_ATTRIBUTES:
 				return quoteAttributes != null && !quoteAttributes.isEmpty();
 			case QuotePackage.QUOTE__QUOTE_COEFFICIENTS:
@@ -968,24 +1023,12 @@ public class QuoteImpl extends BizEntityTypedImpl<QuoteType> implements Quote {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (quoteId: ");
 		result.append(quoteId);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", issueDate: ");
 		result.append(issueDate);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
 		result.append(", quoteName: ");
 		result.append(quoteName);
-		result.append(", quoteTypeId: ");
-		result.append(quoteTypeId);
-		result.append(", salesChannelEnumId: ");
-		result.append(salesChannelEnumId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", validFromDate: ");
 		result.append(validFromDate);
 		result.append(", validThruDate: ");

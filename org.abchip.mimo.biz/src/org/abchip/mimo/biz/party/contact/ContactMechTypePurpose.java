@@ -40,7 +40,6 @@ public interface ContactMechTypePurpose extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypePurpose_ContactMechTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMechType'"
 	 * @generated
 	 */
 	String getContactMechTypeId();
@@ -56,31 +55,29 @@ public interface ContactMechTypePurpose extends BizEntity {
 	void setContactMechTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Purpose Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Purpose Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' attribute.
-	 * @see #setContactMechPurposeTypeId(String)
+	 * @return the value of the '<em>Contact Mech Purpose Type Id</em>' reference.
+	 * @see #setContactMechPurposeTypeId(ContactMechPurposeType)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypePurpose_ContactMechPurposeTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMechPurposeType'"
+	 * @model keys="contactMechPurposeTypeId"
 	 * @generated
 	 */
-	String getContactMechPurposeTypeId();
+	ContactMechPurposeType getContactMechPurposeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechTypePurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechTypePurpose#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Purpose Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Purpose Type Id</em>' reference.
 	 * @see #getContactMechPurposeTypeId()
 	 * @generated
 	 */
-	void setContactMechPurposeTypeId(String value);
+	void setContactMechPurposeTypeId(ContactMechPurposeType value);
 
 } // ContactMechTypePurpose

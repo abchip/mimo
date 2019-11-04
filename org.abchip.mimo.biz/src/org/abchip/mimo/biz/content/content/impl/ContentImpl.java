@@ -12,15 +12,25 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.datasource.DataSource;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentType;
+import org.abchip.mimo.biz.content.data.CharacterSet;
+import org.abchip.mimo.biz.content.data.DataResource;
+import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -33,28 +43,28 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCharacterSetId <em>Character Set Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getChildBranchCount <em>Child Branch Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getChildLeafCount <em>Child Leaf Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentName <em>Content Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentTypeId <em>Content Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getDataResourceId <em>Data Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getDecoratorContentId <em>Decorator Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getInstanceOfContentId <em>Instance Of Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getLocaleString <em>Locale String</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getMimeTypeId <em>Mime Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getOwnerContentId <em>Owner Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getPrivilegeEnumId <em>Privilege Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getServiceName <em>Service Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentTypeId <em>Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getDataResourceId <em>Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getTemplateDataResourceId <em>Template Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getPrivilegeEnumId <em>Privilege Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getMimeTypeId <em>Mime Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCharacterSetId <em>Character Set Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getDecoratorContentId <em>Decorator Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getOwnerContentId <em>Owner Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getInstanceOfContentId <em>Instance Of Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentAttributes <em>Content Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentKeywords <em>Content Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentImpl#getContentMetaDatas <em>Content Meta Datas</em>}</li>
@@ -89,26 +99,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @ordered
 	 */
 	protected String contentId = CONTENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCharacterSetId() <em>Character Set Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCharacterSetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHARACTER_SET_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCharacterSetId() <em>Character Set Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCharacterSetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String characterSetId = CHARACTER_SET_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getChildBranchCount() <em>Child Branch Count</em>}' attribute.
@@ -171,46 +161,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	protected String contentName = CONTENT_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContentTypeId() <em>Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentTypeId() <em>Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentTypeId = CONTENT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,86 +181,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUSTOM_METHOD_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String customMethodId = CUSTOM_METHOD_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDecoratorContentId() <em>Decorator Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDecoratorContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DECORATOR_CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDecoratorContentId() <em>Decorator Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDecoratorContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String decoratorContentId = DECORATOR_CONTENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -329,46 +199,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInstanceOfContentId() <em>Instance Of Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstanceOfContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INSTANCE_OF_CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInstanceOfContentId() <em>Instance Of Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstanceOfContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String instanceOfContentId = INSTANCE_OF_CONTENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
@@ -411,66 +241,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	protected String localeString = LOCALE_STRING_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMimeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MIME_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMimeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String mimeTypeId = MIME_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOwnerContentId() <em>Owner Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnerContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OWNER_CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOwnerContentId() <em>Owner Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnerContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String ownerContentId = OWNER_CONTENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPrivilegeEnumId() <em>Privilege Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrivilegeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRIVILEGE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPrivilegeEnumId() <em>Privilege Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrivilegeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String privilegeEnumId = PRIVILEGE_ENUM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -491,44 +261,144 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	protected String serviceName = SERVICE_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getContentTypeId() <em>Content Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getContentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected ContentType contentTypeId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getDataResourceId() <em>Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getDataResourceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected DataResource dataResourceId;
 
 	/**
-	 * The default value of the '{@link #getTemplateDataResourceId() <em>Template Data Resource Id</em>}' attribute.
+	 * The cached value of the '{@link #getTemplateDataResourceId() <em>Template Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTemplateDataResourceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TEMPLATE_DATA_RESOURCE_ID_EDEFAULT = null;
+	protected DataResource templateDataResourceId;
 
 	/**
-	 * The cached value of the '{@link #getTemplateDataResourceId() <em>Template Data Resource Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateDataResourceId()
+	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String templateDataResourceId = TEMPLATE_DATA_RESOURCE_ID_EDEFAULT;
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getPrivilegeEnumId() <em>Privilege Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrivilegeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration privilegeEnumId;
+
+	/**
+	 * The cached value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod customMethodId;
+
+	/**
+	 * The cached value of the '{@link #getMimeTypeId() <em>Mime Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMimeTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected MimeType mimeTypeId;
+
+	/**
+	 * The cached value of the '{@link #getCharacterSetId() <em>Character Set Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCharacterSetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CharacterSet characterSetId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataSource dataSourceId;
+
+	/**
+	 * The cached value of the '{@link #getDecoratorContentId() <em>Decorator Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDecoratorContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content decoratorContentId;
+
+	/**
+	 * The cached value of the '{@link #getOwnerContentId() <em>Owner Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnerContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content ownerContentId;
+
+	/**
+	 * The cached value of the '{@link #getInstanceOfContentId() <em>Instance Of Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInstanceOfContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content instanceOfContentId;
 
 	/**
 	 * The cached value of the '{@link #getContentAttributes() <em>Content Attributes</em>}' attribute list.
@@ -605,7 +475,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getCharacterSetId() {
+	public CharacterSet getCharacterSetId() {
+		if (characterSetId != null && ((EObject)characterSetId).eIsProxy()) {
+			InternalEObject oldCharacterSetId = (InternalEObject)characterSetId;
+			characterSetId = (CharacterSet)eResolveProxy(oldCharacterSetId);
+			if (characterSetId != oldCharacterSetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
+			}
+		}
+		return characterSetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CharacterSet basicGetCharacterSetId() {
 		return characterSetId;
 	}
 
@@ -615,8 +502,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setCharacterSetId(String newCharacterSetId) {
-		String oldCharacterSetId = characterSetId;
+	public void setCharacterSetId(CharacterSet newCharacterSetId) {
+		CharacterSet oldCharacterSetId = characterSetId;
 		characterSetId = newCharacterSetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CHARACTER_SET_ID, oldCharacterSetId, characterSetId));
@@ -720,7 +607,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getContentTypeId() {
+	public ContentType getContentTypeId() {
+		if (contentTypeId != null && ((EObject)contentTypeId).eIsProxy()) {
+			InternalEObject oldContentTypeId = (InternalEObject)contentTypeId;
+			contentTypeId = (ContentType)eResolveProxy(oldContentTypeId);
+			if (contentTypeId != oldContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__CONTENT_TYPE_ID, oldContentTypeId, contentTypeId));
+			}
+		}
+		return contentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentType basicGetContentTypeId() {
 		return contentTypeId;
 	}
 
@@ -730,8 +634,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setContentTypeId(String newContentTypeId) {
-		String oldContentTypeId = contentTypeId;
+	public void setContentTypeId(ContentType newContentTypeId) {
+		ContentType oldContentTypeId = contentTypeId;
 		contentTypeId = newContentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CONTENT_TYPE_ID, oldContentTypeId, contentTypeId));
@@ -743,7 +647,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -753,8 +674,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -789,7 +710,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getCustomMethodId() {
+	public CustomMethod getCustomMethodId() {
+		if (customMethodId != null && ((EObject)customMethodId).eIsProxy()) {
+			InternalEObject oldCustomMethodId = (InternalEObject)customMethodId;
+			customMethodId = (CustomMethod)eResolveProxy(oldCustomMethodId);
+			if (customMethodId != oldCustomMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
+			}
+		}
+		return customMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetCustomMethodId() {
 		return customMethodId;
 	}
 
@@ -799,8 +737,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setCustomMethodId(String newCustomMethodId) {
-		String oldCustomMethodId = customMethodId;
+	public void setCustomMethodId(CustomMethod newCustomMethodId) {
+		CustomMethod oldCustomMethodId = customMethodId;
 		customMethodId = newCustomMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
@@ -812,7 +750,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getDataResourceId() {
+	public DataResource getDataResourceId() {
+		if (dataResourceId != null && ((EObject)dataResourceId).eIsProxy()) {
+			InternalEObject oldDataResourceId = (InternalEObject)dataResourceId;
+			dataResourceId = (DataResource)eResolveProxy(oldDataResourceId);
+			if (dataResourceId != oldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
+			}
+		}
+		return dataResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResource basicGetDataResourceId() {
 		return dataResourceId;
 	}
 
@@ -822,8 +777,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setDataResourceId(String newDataResourceId) {
-		String oldDataResourceId = dataResourceId;
+	public void setDataResourceId(DataResource newDataResourceId) {
+		DataResource oldDataResourceId = dataResourceId;
 		dataResourceId = newDataResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__DATA_RESOURCE_ID, oldDataResourceId, dataResourceId));
@@ -835,7 +790,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getDataSourceId() {
+	public DataSource getDataSourceId() {
+		if (dataSourceId != null && ((EObject)dataSourceId).eIsProxy()) {
+			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
+			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
+			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+			}
+		}
+		return dataSourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSource basicGetDataSourceId() {
 		return dataSourceId;
 	}
 
@@ -845,8 +817,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
+	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
@@ -858,7 +830,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getDecoratorContentId() {
+	public Content getDecoratorContentId() {
+		if (decoratorContentId != null && ((EObject)decoratorContentId).eIsProxy()) {
+			InternalEObject oldDecoratorContentId = (InternalEObject)decoratorContentId;
+			decoratorContentId = (Content)eResolveProxy(oldDecoratorContentId);
+			if (decoratorContentId != oldDecoratorContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__DECORATOR_CONTENT_ID, oldDecoratorContentId, decoratorContentId));
+			}
+		}
+		return decoratorContentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetDecoratorContentId() {
 		return decoratorContentId;
 	}
 
@@ -868,8 +857,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setDecoratorContentId(String newDecoratorContentId) {
-		String oldDecoratorContentId = decoratorContentId;
+	public void setDecoratorContentId(Content newDecoratorContentId) {
+		Content oldDecoratorContentId = decoratorContentId;
 		decoratorContentId = newDecoratorContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__DECORATOR_CONTENT_ID, oldDecoratorContentId, decoratorContentId));
@@ -904,7 +893,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getInstanceOfContentId() {
+	public Content getInstanceOfContentId() {
+		if (instanceOfContentId != null && ((EObject)instanceOfContentId).eIsProxy()) {
+			InternalEObject oldInstanceOfContentId = (InternalEObject)instanceOfContentId;
+			instanceOfContentId = (Content)eResolveProxy(oldInstanceOfContentId);
+			if (instanceOfContentId != oldInstanceOfContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID, oldInstanceOfContentId, instanceOfContentId));
+			}
+		}
+		return instanceOfContentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetInstanceOfContentId() {
 		return instanceOfContentId;
 	}
 
@@ -914,8 +920,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setInstanceOfContentId(String newInstanceOfContentId) {
-		String oldInstanceOfContentId = instanceOfContentId;
+	public void setInstanceOfContentId(Content newInstanceOfContentId) {
+		Content oldInstanceOfContentId = instanceOfContentId;
 		instanceOfContentId = newInstanceOfContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID, oldInstanceOfContentId, instanceOfContentId));
@@ -927,7 +933,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -937,8 +960,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -996,7 +1019,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getMimeTypeId() {
+	public MimeType getMimeTypeId() {
+		if (mimeTypeId != null && ((EObject)mimeTypeId).eIsProxy()) {
+			InternalEObject oldMimeTypeId = (InternalEObject)mimeTypeId;
+			mimeTypeId = (MimeType)eResolveProxy(oldMimeTypeId);
+			if (mimeTypeId != oldMimeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
+			}
+		}
+		return mimeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MimeType basicGetMimeTypeId() {
 		return mimeTypeId;
 	}
 
@@ -1006,8 +1046,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setMimeTypeId(String newMimeTypeId) {
-		String oldMimeTypeId = mimeTypeId;
+	public void setMimeTypeId(MimeType newMimeTypeId) {
+		MimeType oldMimeTypeId = mimeTypeId;
 		mimeTypeId = newMimeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__MIME_TYPE_ID, oldMimeTypeId, mimeTypeId));
@@ -1019,7 +1059,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getOwnerContentId() {
+	public Content getOwnerContentId() {
+		if (ownerContentId != null && ((EObject)ownerContentId).eIsProxy()) {
+			InternalEObject oldOwnerContentId = (InternalEObject)ownerContentId;
+			ownerContentId = (Content)eResolveProxy(oldOwnerContentId);
+			if (ownerContentId != oldOwnerContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__OWNER_CONTENT_ID, oldOwnerContentId, ownerContentId));
+			}
+		}
+		return ownerContentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetOwnerContentId() {
 		return ownerContentId;
 	}
 
@@ -1029,8 +1086,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setOwnerContentId(String newOwnerContentId) {
-		String oldOwnerContentId = ownerContentId;
+	public void setOwnerContentId(Content newOwnerContentId) {
+		Content oldOwnerContentId = ownerContentId;
 		ownerContentId = newOwnerContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__OWNER_CONTENT_ID, oldOwnerContentId, ownerContentId));
@@ -1042,7 +1099,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getPrivilegeEnumId() {
+	public Enumeration getPrivilegeEnumId() {
+		if (privilegeEnumId != null && ((EObject)privilegeEnumId).eIsProxy()) {
+			InternalEObject oldPrivilegeEnumId = (InternalEObject)privilegeEnumId;
+			privilegeEnumId = (Enumeration)eResolveProxy(oldPrivilegeEnumId);
+			if (privilegeEnumId != oldPrivilegeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__PRIVILEGE_ENUM_ID, oldPrivilegeEnumId, privilegeEnumId));
+			}
+		}
+		return privilegeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetPrivilegeEnumId() {
 		return privilegeEnumId;
 	}
 
@@ -1052,8 +1126,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setPrivilegeEnumId(String newPrivilegeEnumId) {
-		String oldPrivilegeEnumId = privilegeEnumId;
+	public void setPrivilegeEnumId(Enumeration newPrivilegeEnumId) {
+		Enumeration oldPrivilegeEnumId = privilegeEnumId;
 		privilegeEnumId = newPrivilegeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__PRIVILEGE_ENUM_ID, oldPrivilegeEnumId, privilegeEnumId));
@@ -1088,7 +1162,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -1098,8 +1189,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__STATUS_ID, oldStatusId, statusId));
@@ -1111,7 +1202,24 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public String getTemplateDataResourceId() {
+	public DataResource getTemplateDataResourceId() {
+		if (templateDataResourceId != null && ((EObject)templateDataResourceId).eIsProxy()) {
+			InternalEObject oldTemplateDataResourceId = (InternalEObject)templateDataResourceId;
+			templateDataResourceId = (DataResource)eResolveProxy(oldTemplateDataResourceId);
+			if (templateDataResourceId != oldTemplateDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT__TEMPLATE_DATA_RESOURCE_ID, oldTemplateDataResourceId, templateDataResourceId));
+			}
+		}
+		return templateDataResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResource basicGetTemplateDataResourceId() {
 		return templateDataResourceId;
 	}
 
@@ -1121,8 +1229,8 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 	 * @generated
 	 */
 	@Override
-	public void setTemplateDataResourceId(String newTemplateDataResourceId) {
-		String oldTemplateDataResourceId = templateDataResourceId;
+	public void setTemplateDataResourceId(DataResource newTemplateDataResourceId) {
+		DataResource oldTemplateDataResourceId = templateDataResourceId;
 		templateDataResourceId = newTemplateDataResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT__TEMPLATE_DATA_RESOURCE_ID, oldTemplateDataResourceId, templateDataResourceId));
@@ -1275,50 +1383,64 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 		switch (featureID) {
 			case ContentPackage.CONTENT__CONTENT_ID:
 				return getContentId();
-			case ContentPackage.CONTENT__CHARACTER_SET_ID:
-				return getCharacterSetId();
 			case ContentPackage.CONTENT__CHILD_BRANCH_COUNT:
 				return getChildBranchCount();
 			case ContentPackage.CONTENT__CHILD_LEAF_COUNT:
 				return getChildLeafCount();
 			case ContentPackage.CONTENT__CONTENT_NAME:
 				return getContentName();
-			case ContentPackage.CONTENT__CONTENT_TYPE_ID:
-				return getContentTypeId();
-			case ContentPackage.CONTENT__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case ContentPackage.CONTENT__CREATED_DATE:
 				return getCreatedDate();
-			case ContentPackage.CONTENT__CUSTOM_METHOD_ID:
-				return getCustomMethodId();
-			case ContentPackage.CONTENT__DATA_RESOURCE_ID:
-				return getDataResourceId();
-			case ContentPackage.CONTENT__DATA_SOURCE_ID:
-				return getDataSourceId();
-			case ContentPackage.CONTENT__DECORATOR_CONTENT_ID:
-				return getDecoratorContentId();
 			case ContentPackage.CONTENT__DESCRIPTION:
 				return getDescription();
-			case ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID:
-				return getInstanceOfContentId();
-			case ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
 			case ContentPackage.CONTENT__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
 			case ContentPackage.CONTENT__LOCALE_STRING:
 				return getLocaleString();
-			case ContentPackage.CONTENT__MIME_TYPE_ID:
-				return getMimeTypeId();
-			case ContentPackage.CONTENT__OWNER_CONTENT_ID:
-				return getOwnerContentId();
-			case ContentPackage.CONTENT__PRIVILEGE_ENUM_ID:
-				return getPrivilegeEnumId();
 			case ContentPackage.CONTENT__SERVICE_NAME:
 				return getServiceName();
-			case ContentPackage.CONTENT__STATUS_ID:
-				return getStatusId();
+			case ContentPackage.CONTENT__CONTENT_TYPE_ID:
+				if (resolve) return getContentTypeId();
+				return basicGetContentTypeId();
+			case ContentPackage.CONTENT__DATA_RESOURCE_ID:
+				if (resolve) return getDataResourceId();
+				return basicGetDataResourceId();
 			case ContentPackage.CONTENT__TEMPLATE_DATA_RESOURCE_ID:
-				return getTemplateDataResourceId();
+				if (resolve) return getTemplateDataResourceId();
+				return basicGetTemplateDataResourceId();
+			case ContentPackage.CONTENT__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case ContentPackage.CONTENT__PRIVILEGE_ENUM_ID:
+				if (resolve) return getPrivilegeEnumId();
+				return basicGetPrivilegeEnumId();
+			case ContentPackage.CONTENT__CUSTOM_METHOD_ID:
+				if (resolve) return getCustomMethodId();
+				return basicGetCustomMethodId();
+			case ContentPackage.CONTENT__MIME_TYPE_ID:
+				if (resolve) return getMimeTypeId();
+				return basicGetMimeTypeId();
+			case ContentPackage.CONTENT__CHARACTER_SET_ID:
+				if (resolve) return getCharacterSetId();
+				return basicGetCharacterSetId();
+			case ContentPackage.CONTENT__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
+			case ContentPackage.CONTENT__DATA_SOURCE_ID:
+				if (resolve) return getDataSourceId();
+				return basicGetDataSourceId();
+			case ContentPackage.CONTENT__DECORATOR_CONTENT_ID:
+				if (resolve) return getDecoratorContentId();
+				return basicGetDecoratorContentId();
+			case ContentPackage.CONTENT__OWNER_CONTENT_ID:
+				if (resolve) return getOwnerContentId();
+				return basicGetOwnerContentId();
+			case ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID:
+				if (resolve) return getInstanceOfContentId();
+				return basicGetInstanceOfContentId();
 			case ContentPackage.CONTENT__CONTENT_ATTRIBUTES:
 				return getContentAttributes();
 			case ContentPackage.CONTENT__CONTENT_KEYWORDS:
@@ -1345,9 +1467,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			case ContentPackage.CONTENT__CONTENT_ID:
 				setContentId((String)newValue);
 				return;
-			case ContentPackage.CONTENT__CHARACTER_SET_ID:
-				setCharacterSetId((String)newValue);
-				return;
 			case ContentPackage.CONTENT__CHILD_BRANCH_COUNT:
 				setChildBranchCount((Long)newValue);
 				return;
@@ -1357,35 +1476,11 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			case ContentPackage.CONTENT__CONTENT_NAME:
 				setContentName((String)newValue);
 				return;
-			case ContentPackage.CONTENT__CONTENT_TYPE_ID:
-				setContentTypeId((String)newValue);
-				return;
-			case ContentPackage.CONTENT__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
 			case ContentPackage.CONTENT__CREATED_DATE:
 				setCreatedDate((Date)newValue);
 				return;
-			case ContentPackage.CONTENT__CUSTOM_METHOD_ID:
-				setCustomMethodId((String)newValue);
-				return;
-			case ContentPackage.CONTENT__DATA_RESOURCE_ID:
-				setDataResourceId((String)newValue);
-				return;
-			case ContentPackage.CONTENT__DATA_SOURCE_ID:
-				setDataSourceId((String)newValue);
-				return;
-			case ContentPackage.CONTENT__DECORATOR_CONTENT_ID:
-				setDecoratorContentId((String)newValue);
-				return;
 			case ContentPackage.CONTENT__DESCRIPTION:
 				setDescription((String)newValue);
-				return;
-			case ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID:
-				setInstanceOfContentId((String)newValue);
-				return;
-			case ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
 				return;
 			case ContentPackage.CONTENT__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
@@ -1393,23 +1488,50 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			case ContentPackage.CONTENT__LOCALE_STRING:
 				setLocaleString((String)newValue);
 				return;
-			case ContentPackage.CONTENT__MIME_TYPE_ID:
-				setMimeTypeId((String)newValue);
-				return;
-			case ContentPackage.CONTENT__OWNER_CONTENT_ID:
-				setOwnerContentId((String)newValue);
-				return;
-			case ContentPackage.CONTENT__PRIVILEGE_ENUM_ID:
-				setPrivilegeEnumId((String)newValue);
-				return;
 			case ContentPackage.CONTENT__SERVICE_NAME:
 				setServiceName((String)newValue);
 				return;
-			case ContentPackage.CONTENT__STATUS_ID:
-				setStatusId((String)newValue);
+			case ContentPackage.CONTENT__CONTENT_TYPE_ID:
+				setContentTypeId((ContentType)newValue);
+				return;
+			case ContentPackage.CONTENT__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)newValue);
 				return;
 			case ContentPackage.CONTENT__TEMPLATE_DATA_RESOURCE_ID:
-				setTemplateDataResourceId((String)newValue);
+				setTemplateDataResourceId((DataResource)newValue);
+				return;
+			case ContentPackage.CONTENT__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case ContentPackage.CONTENT__PRIVILEGE_ENUM_ID:
+				setPrivilegeEnumId((Enumeration)newValue);
+				return;
+			case ContentPackage.CONTENT__CUSTOM_METHOD_ID:
+				setCustomMethodId((CustomMethod)newValue);
+				return;
+			case ContentPackage.CONTENT__MIME_TYPE_ID:
+				setMimeTypeId((MimeType)newValue);
+				return;
+			case ContentPackage.CONTENT__CHARACTER_SET_ID:
+				setCharacterSetId((CharacterSet)newValue);
+				return;
+			case ContentPackage.CONTENT__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
+				return;
+			case ContentPackage.CONTENT__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)newValue);
+				return;
+			case ContentPackage.CONTENT__DECORATOR_CONTENT_ID:
+				setDecoratorContentId((Content)newValue);
+				return;
+			case ContentPackage.CONTENT__OWNER_CONTENT_ID:
+				setOwnerContentId((Content)newValue);
+				return;
+			case ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID:
+				setInstanceOfContentId((Content)newValue);
 				return;
 			case ContentPackage.CONTENT__CONTENT_ATTRIBUTES:
 				getContentAttributes().clear();
@@ -1446,9 +1568,6 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			case ContentPackage.CONTENT__CONTENT_ID:
 				setContentId(CONTENT_ID_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT__CHARACTER_SET_ID:
-				setCharacterSetId(CHARACTER_SET_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT__CHILD_BRANCH_COUNT:
 				setChildBranchCount(CHILD_BRANCH_COUNT_EDEFAULT);
 				return;
@@ -1458,35 +1577,11 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			case ContentPackage.CONTENT__CONTENT_NAME:
 				setContentName(CONTENT_NAME_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT__CONTENT_TYPE_ID:
-				setContentTypeId(CONTENT_TYPE_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT__CUSTOM_METHOD_ID:
-				setCustomMethodId(CUSTOM_METHOD_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT__DATA_RESOURCE_ID:
-				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT__DATA_SOURCE_ID:
-				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT__DECORATOR_CONTENT_ID:
-				setDecoratorContentId(DECORATOR_CONTENT_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID:
-				setInstanceOfContentId(INSTANCE_OF_CONTENT_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
 				return;
 			case ContentPackage.CONTENT__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
@@ -1494,23 +1589,50 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 			case ContentPackage.CONTENT__LOCALE_STRING:
 				setLocaleString(LOCALE_STRING_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT__MIME_TYPE_ID:
-				setMimeTypeId(MIME_TYPE_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT__OWNER_CONTENT_ID:
-				setOwnerContentId(OWNER_CONTENT_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT__PRIVILEGE_ENUM_ID:
-				setPrivilegeEnumId(PRIVILEGE_ENUM_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT__SERVICE_NAME:
 				setServiceName(SERVICE_NAME_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+			case ContentPackage.CONTENT__CONTENT_TYPE_ID:
+				setContentTypeId((ContentType)null);
+				return;
+			case ContentPackage.CONTENT__DATA_RESOURCE_ID:
+				setDataResourceId((DataResource)null);
 				return;
 			case ContentPackage.CONTENT__TEMPLATE_DATA_RESOURCE_ID:
-				setTemplateDataResourceId(TEMPLATE_DATA_RESOURCE_ID_EDEFAULT);
+				setTemplateDataResourceId((DataResource)null);
+				return;
+			case ContentPackage.CONTENT__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case ContentPackage.CONTENT__PRIVILEGE_ENUM_ID:
+				setPrivilegeEnumId((Enumeration)null);
+				return;
+			case ContentPackage.CONTENT__CUSTOM_METHOD_ID:
+				setCustomMethodId((CustomMethod)null);
+				return;
+			case ContentPackage.CONTENT__MIME_TYPE_ID:
+				setMimeTypeId((MimeType)null);
+				return;
+			case ContentPackage.CONTENT__CHARACTER_SET_ID:
+				setCharacterSetId((CharacterSet)null);
+				return;
+			case ContentPackage.CONTENT__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
+				return;
+			case ContentPackage.CONTENT__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)null);
+				return;
+			case ContentPackage.CONTENT__DECORATOR_CONTENT_ID:
+				setDecoratorContentId((Content)null);
+				return;
+			case ContentPackage.CONTENT__OWNER_CONTENT_ID:
+				setOwnerContentId((Content)null);
+				return;
+			case ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID:
+				setInstanceOfContentId((Content)null);
 				return;
 			case ContentPackage.CONTENT__CONTENT_ATTRIBUTES:
 				getContentAttributes().clear();
@@ -1541,50 +1663,50 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 		switch (featureID) {
 			case ContentPackage.CONTENT__CONTENT_ID:
 				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case ContentPackage.CONTENT__CHARACTER_SET_ID:
-				return CHARACTER_SET_ID_EDEFAULT == null ? characterSetId != null : !CHARACTER_SET_ID_EDEFAULT.equals(characterSetId);
 			case ContentPackage.CONTENT__CHILD_BRANCH_COUNT:
 				return childBranchCount != CHILD_BRANCH_COUNT_EDEFAULT;
 			case ContentPackage.CONTENT__CHILD_LEAF_COUNT:
 				return childLeafCount != CHILD_LEAF_COUNT_EDEFAULT;
 			case ContentPackage.CONTENT__CONTENT_NAME:
 				return CONTENT_NAME_EDEFAULT == null ? contentName != null : !CONTENT_NAME_EDEFAULT.equals(contentName);
-			case ContentPackage.CONTENT__CONTENT_TYPE_ID:
-				return CONTENT_TYPE_ID_EDEFAULT == null ? contentTypeId != null : !CONTENT_TYPE_ID_EDEFAULT.equals(contentTypeId);
-			case ContentPackage.CONTENT__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case ContentPackage.CONTENT__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case ContentPackage.CONTENT__CUSTOM_METHOD_ID:
-				return CUSTOM_METHOD_ID_EDEFAULT == null ? customMethodId != null : !CUSTOM_METHOD_ID_EDEFAULT.equals(customMethodId);
-			case ContentPackage.CONTENT__DATA_RESOURCE_ID:
-				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
-			case ContentPackage.CONTENT__DATA_SOURCE_ID:
-				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
-			case ContentPackage.CONTENT__DECORATOR_CONTENT_ID:
-				return DECORATOR_CONTENT_ID_EDEFAULT == null ? decoratorContentId != null : !DECORATOR_CONTENT_ID_EDEFAULT.equals(decoratorContentId);
 			case ContentPackage.CONTENT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID:
-				return INSTANCE_OF_CONTENT_ID_EDEFAULT == null ? instanceOfContentId != null : !INSTANCE_OF_CONTENT_ID_EDEFAULT.equals(instanceOfContentId);
-			case ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case ContentPackage.CONTENT__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
 			case ContentPackage.CONTENT__LOCALE_STRING:
 				return LOCALE_STRING_EDEFAULT == null ? localeString != null : !LOCALE_STRING_EDEFAULT.equals(localeString);
-			case ContentPackage.CONTENT__MIME_TYPE_ID:
-				return MIME_TYPE_ID_EDEFAULT == null ? mimeTypeId != null : !MIME_TYPE_ID_EDEFAULT.equals(mimeTypeId);
-			case ContentPackage.CONTENT__OWNER_CONTENT_ID:
-				return OWNER_CONTENT_ID_EDEFAULT == null ? ownerContentId != null : !OWNER_CONTENT_ID_EDEFAULT.equals(ownerContentId);
-			case ContentPackage.CONTENT__PRIVILEGE_ENUM_ID:
-				return PRIVILEGE_ENUM_ID_EDEFAULT == null ? privilegeEnumId != null : !PRIVILEGE_ENUM_ID_EDEFAULT.equals(privilegeEnumId);
 			case ContentPackage.CONTENT__SERVICE_NAME:
 				return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
-			case ContentPackage.CONTENT__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+			case ContentPackage.CONTENT__CONTENT_TYPE_ID:
+				return contentTypeId != null;
+			case ContentPackage.CONTENT__DATA_RESOURCE_ID:
+				return dataResourceId != null;
 			case ContentPackage.CONTENT__TEMPLATE_DATA_RESOURCE_ID:
-				return TEMPLATE_DATA_RESOURCE_ID_EDEFAULT == null ? templateDataResourceId != null : !TEMPLATE_DATA_RESOURCE_ID_EDEFAULT.equals(templateDataResourceId);
+				return templateDataResourceId != null;
+			case ContentPackage.CONTENT__STATUS_ID:
+				return statusId != null;
+			case ContentPackage.CONTENT__PRIVILEGE_ENUM_ID:
+				return privilegeEnumId != null;
+			case ContentPackage.CONTENT__CUSTOM_METHOD_ID:
+				return customMethodId != null;
+			case ContentPackage.CONTENT__MIME_TYPE_ID:
+				return mimeTypeId != null;
+			case ContentPackage.CONTENT__CHARACTER_SET_ID:
+				return characterSetId != null;
+			case ContentPackage.CONTENT__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case ContentPackage.CONTENT__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
+			case ContentPackage.CONTENT__DATA_SOURCE_ID:
+				return dataSourceId != null;
+			case ContentPackage.CONTENT__DECORATOR_CONTENT_ID:
+				return decoratorContentId != null;
+			case ContentPackage.CONTENT__OWNER_CONTENT_ID:
+				return ownerContentId != null;
+			case ContentPackage.CONTENT__INSTANCE_OF_CONTENT_ID:
+				return instanceOfContentId != null;
 			case ContentPackage.CONTENT__CONTENT_ATTRIBUTES:
 				return contentAttributes != null && !contentAttributes.isEmpty();
 			case ContentPackage.CONTENT__CONTENT_KEYWORDS:
@@ -1611,50 +1733,22 @@ public class ContentImpl extends BizEntityTypedImpl<ContentType> implements Cont
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contentId: ");
 		result.append(contentId);
-		result.append(", characterSetId: ");
-		result.append(characterSetId);
 		result.append(", childBranchCount: ");
 		result.append(childBranchCount);
 		result.append(", childLeafCount: ");
 		result.append(childLeafCount);
 		result.append(", contentName: ");
 		result.append(contentName);
-		result.append(", contentTypeId: ");
-		result.append(contentTypeId);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
-		result.append(", customMethodId: ");
-		result.append(customMethodId);
-		result.append(", dataResourceId: ");
-		result.append(dataResourceId);
-		result.append(", dataSourceId: ");
-		result.append(dataSourceId);
-		result.append(", decoratorContentId: ");
-		result.append(decoratorContentId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", instanceOfContentId: ");
-		result.append(instanceOfContentId);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
 		result.append(", localeString: ");
 		result.append(localeString);
-		result.append(", mimeTypeId: ");
-		result.append(mimeTypeId);
-		result.append(", ownerContentId: ");
-		result.append(ownerContentId);
-		result.append(", privilegeEnumId: ");
-		result.append(privilegeEnumId);
 		result.append(", serviceName: ");
 		result.append(serviceName);
-		result.append(", statusId: ");
-		result.append(statusId);
-		result.append(", templateDataResourceId: ");
-		result.append(templateDataResourceId);
 		result.append(", contentAttributes: ");
 		result.append(contentAttributes);
 		result.append(", contentKeywords: ");

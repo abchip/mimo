@@ -64,7 +64,7 @@ public interface TerminationReason extends BizEntity {
 	 * @return the value of the '<em>Termination Reason Id</em>' attribute.
 	 * @see #setTerminationReasonId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getTerminationReason_TerminationReasonId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

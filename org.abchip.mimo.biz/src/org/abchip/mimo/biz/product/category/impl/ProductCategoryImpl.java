@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -37,9 +39,9 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getLinkOneImageUrl <em>Link One Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getLinkTwoImageUrl <em>Link Two Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getLongDescription <em>Long Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getPrimaryParentCategoryId <em>Primary Parent Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#isShowInSelect <em>Show In Select</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getPrimaryParentCategoryId <em>Primary Parent Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryImpl#getProductCategoryAttributes <em>Product Category Attributes</em>}</li>
  * </ul>
  *
@@ -212,46 +214,6 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	protected String longDescription = LONG_DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPrimaryParentCategoryId() <em>Primary Parent Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryParentCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRIMARY_PARENT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPrimaryParentCategoryId() <em>Primary Parent Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryParentCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String primaryParentCategoryId = PRIMARY_PARENT_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductCategoryTypeId() <em>Product Category Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryTypeId() <em>Product Category Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryTypeId = PRODUCT_CATEGORY_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isShowInSelect() <em>Show In Select</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -270,6 +232,26 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @ordered
 	 */
 	protected boolean showInSelect = SHOW_IN_SELECT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryTypeId() <em>Product Category Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategoryType productCategoryTypeId;
+
+	/**
+	 * The cached value of the '{@link #getPrimaryParentCategoryId() <em>Primary Parent Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrimaryParentCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory primaryParentCategoryId;
 
 	/**
 	 * The cached value of the '{@link #getProductCategoryAttributes() <em>Product Category Attributes</em>}' attribute list.
@@ -552,7 +534,24 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryTypeId() {
+	public ProductCategoryType getProductCategoryTypeId() {
+		if (productCategoryTypeId != null && ((EObject)productCategoryTypeId).eIsProxy()) {
+			InternalEObject oldProductCategoryTypeId = (InternalEObject)productCategoryTypeId;
+			productCategoryTypeId = (ProductCategoryType)eResolveProxy(oldProductCategoryTypeId);
+			if (productCategoryTypeId != oldProductCategoryTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
+			}
+		}
+		return productCategoryTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategoryType basicGetProductCategoryTypeId() {
 		return productCategoryTypeId;
 	}
 
@@ -562,8 +561,8 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryTypeId(String newProductCategoryTypeId) {
-		String oldProductCategoryTypeId = productCategoryTypeId;
+	public void setProductCategoryTypeId(ProductCategoryType newProductCategoryTypeId) {
+		ProductCategoryType oldProductCategoryTypeId = productCategoryTypeId;
 		productCategoryTypeId = newProductCategoryTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID, oldProductCategoryTypeId, productCategoryTypeId));
@@ -598,7 +597,24 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public String getPrimaryParentCategoryId() {
+	public ProductCategory getPrimaryParentCategoryId() {
+		if (primaryParentCategoryId != null && ((EObject)primaryParentCategoryId).eIsProxy()) {
+			InternalEObject oldPrimaryParentCategoryId = (InternalEObject)primaryParentCategoryId;
+			primaryParentCategoryId = (ProductCategory)eResolveProxy(oldPrimaryParentCategoryId);
+			if (primaryParentCategoryId != oldPrimaryParentCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID, oldPrimaryParentCategoryId, primaryParentCategoryId));
+			}
+		}
+		return primaryParentCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetPrimaryParentCategoryId() {
 		return primaryParentCategoryId;
 	}
 
@@ -608,8 +624,8 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 	 * @generated
 	 */
 	@Override
-	public void setPrimaryParentCategoryId(String newPrimaryParentCategoryId) {
-		String oldPrimaryParentCategoryId = primaryParentCategoryId;
+	public void setPrimaryParentCategoryId(ProductCategory newPrimaryParentCategoryId) {
+		ProductCategory oldPrimaryParentCategoryId = primaryParentCategoryId;
 		primaryParentCategoryId = newPrimaryParentCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID, oldPrimaryParentCategoryId, primaryParentCategoryId));
@@ -662,12 +678,14 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 				return getLinkTwoImageUrl();
 			case CategoryPackage.PRODUCT_CATEGORY__LONG_DESCRIPTION:
 				return getLongDescription();
-			case CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID:
-				return getPrimaryParentCategoryId();
-			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID:
-				return getProductCategoryTypeId();
 			case CategoryPackage.PRODUCT_CATEGORY__SHOW_IN_SELECT:
 				return isShowInSelect();
+			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID:
+				if (resolve) return getProductCategoryTypeId();
+				return basicGetProductCategoryTypeId();
+			case CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID:
+				if (resolve) return getPrimaryParentCategoryId();
+				return basicGetPrimaryParentCategoryId();
 			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES:
 				return getProductCategoryAttributes();
 		}
@@ -707,14 +725,14 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 			case CategoryPackage.PRODUCT_CATEGORY__LONG_DESCRIPTION:
 				setLongDescription((String)newValue);
 				return;
-			case CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID:
-				setPrimaryParentCategoryId((String)newValue);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID:
-				setProductCategoryTypeId((String)newValue);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY__SHOW_IN_SELECT:
 				setShowInSelect((Boolean)newValue);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID:
+				setProductCategoryTypeId((ProductCategoryType)newValue);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID:
+				setPrimaryParentCategoryId((ProductCategory)newValue);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES:
 				getProductCategoryAttributes().clear();
@@ -756,14 +774,14 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 			case CategoryPackage.PRODUCT_CATEGORY__LONG_DESCRIPTION:
 				setLongDescription(LONG_DESCRIPTION_EDEFAULT);
 				return;
-			case CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID:
-				setPrimaryParentCategoryId(PRIMARY_PARENT_CATEGORY_ID_EDEFAULT);
-				return;
-			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID:
-				setProductCategoryTypeId(PRODUCT_CATEGORY_TYPE_ID_EDEFAULT);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY__SHOW_IN_SELECT:
 				setShowInSelect(SHOW_IN_SELECT_EDEFAULT);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID:
+				setProductCategoryTypeId((ProductCategoryType)null);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID:
+				setPrimaryParentCategoryId((ProductCategory)null);
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES:
 				getProductCategoryAttributes().clear();
@@ -796,12 +814,12 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 				return LINK_TWO_IMAGE_URL_EDEFAULT == null ? linkTwoImageUrl != null : !LINK_TWO_IMAGE_URL_EDEFAULT.equals(linkTwoImageUrl);
 			case CategoryPackage.PRODUCT_CATEGORY__LONG_DESCRIPTION:
 				return LONG_DESCRIPTION_EDEFAULT == null ? longDescription != null : !LONG_DESCRIPTION_EDEFAULT.equals(longDescription);
-			case CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID:
-				return PRIMARY_PARENT_CATEGORY_ID_EDEFAULT == null ? primaryParentCategoryId != null : !PRIMARY_PARENT_CATEGORY_ID_EDEFAULT.equals(primaryParentCategoryId);
-			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID:
-				return PRODUCT_CATEGORY_TYPE_ID_EDEFAULT == null ? productCategoryTypeId != null : !PRODUCT_CATEGORY_TYPE_ID_EDEFAULT.equals(productCategoryTypeId);
 			case CategoryPackage.PRODUCT_CATEGORY__SHOW_IN_SELECT:
 				return showInSelect != SHOW_IN_SELECT_EDEFAULT;
+			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_TYPE_ID:
+				return productCategoryTypeId != null;
+			case CategoryPackage.PRODUCT_CATEGORY__PRIMARY_PARENT_CATEGORY_ID:
+				return primaryParentCategoryId != null;
 			case CategoryPackage.PRODUCT_CATEGORY__PRODUCT_CATEGORY_ATTRIBUTES:
 				return productCategoryAttributes != null && !productCategoryAttributes.isEmpty();
 		}
@@ -834,10 +852,6 @@ public class ProductCategoryImpl extends BizEntityTypedImpl<ProductCategoryType>
 		result.append(linkTwoImageUrl);
 		result.append(", longDescription: ");
 		result.append(longDescription);
-		result.append(", primaryParentCategoryId: ");
-		result.append(primaryParentCategoryId);
-		result.append(", productCategoryTypeId: ");
-		result.append(productCategoryTypeId);
 		result.append(", showInSelect: ");
 		result.append(showInSelect);
 		result.append(", productCategoryAttributes: ");

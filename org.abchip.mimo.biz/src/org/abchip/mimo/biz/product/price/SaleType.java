@@ -64,7 +64,7 @@ public interface SaleType extends BizEntity {
 	 * @return the value of the '<em>Sale Type Id</em>' attribute.
 	 * @see #setSaleTypeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getSaleType_SaleTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -41,11 +41,11 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getSessionId <em>Session Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserAgentId <em>User Agent Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#isUserCreated <em>User Created</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserLoginId <em>User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getVisitorId <em>Visitor Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getWebappName <em>Webapp Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getVisitorId <em>Visitor Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserAgentId <em>User Agent Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit()
@@ -601,30 +601,30 @@ public interface Visit extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>User Agent Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>User Agent Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Agent Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Agent Id</em>' attribute.
-	 * @see #setUserAgentId(String)
+	 * @return the value of the '<em>User Agent Id</em>' reference.
+	 * @see #setUserAgentId(UserAgent)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_UserAgentId()
-	 * @model annotation="mimo-ent-domain frame='UserAgent'"
+	 * @model keys="userAgentId"
 	 * @generated
 	 */
-	String getUserAgentId();
+	UserAgent getUserAgentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserAgentId <em>User Agent Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserAgentId <em>User Agent Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Agent Id</em>' attribute.
+	 * @param value the new value of the '<em>User Agent Id</em>' reference.
 	 * @see #getUserAgentId()
 	 * @generated
 	 */
-	void setUserAgentId(String value);
+	void setUserAgentId(UserAgent value);
 
 	/**
 	 * Returns the value of the '<em><b>User Created</b></em>' attribute.
@@ -679,30 +679,30 @@ public interface Visit extends BizEntity {
 	void setUserLoginId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Visitor Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Visitor Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Visitor Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Visitor Id</em>' attribute.
-	 * @see #setVisitorId(String)
+	 * @return the value of the '<em>Visitor Id</em>' reference.
+	 * @see #setVisitorId(Visitor)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getVisit_VisitorId()
-	 * @model annotation="mimo-ent-domain frame='Visitor'"
+	 * @model keys="visitorId"
 	 * @generated
 	 */
-	String getVisitorId();
+	Visitor getVisitorId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.Visit#getVisitorId <em>Visitor Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.Visit#getVisitorId <em>Visitor Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Visitor Id</em>' attribute.
+	 * @param value the new value of the '<em>Visitor Id</em>' reference.
 	 * @see #getVisitorId()
 	 * @generated
 	 */
-	void setVisitorId(String value);
+	void setVisitorId(Visitor value);
 
 	/**
 	 * Returns the value of the '<em><b>Webapp Name</b></em>' attribute.

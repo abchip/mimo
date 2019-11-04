@@ -75,7 +75,7 @@ public interface WorkReqFulfType extends BizEntityType<WorkRequirementFulfillmen
 	 * @return the value of the '<em>Work Req Fulf Type Id</em>' attribute.
 	 * @see #setWorkReqFulfTypeId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkReqFulfType_WorkReqFulfTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -11,10 +11,13 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.accounting.rate.PartyRate;
 import org.abchip.mimo.biz.accounting.rate.RatePackage;
+import org.abchip.mimo.biz.accounting.rate.RateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +29,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getRateTypeId <em>Rate Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#isDefaultRate <em>Default Rate</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getPercentageUsed <em>Percentage Used</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.rate.impl.PartyRateImpl#getRateTypeId <em>Rate Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,24 +63,6 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RATE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String rateTypeId = RATE_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -150,6 +135,15 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRateTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RateType rateTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -291,7 +285,24 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 * @generated
 	 */
 	@Override
-	public String getRateTypeId() {
+	public RateType getRateTypeId() {
+		if (rateTypeId != null && ((EObject)rateTypeId).eIsProxy()) {
+			InternalEObject oldRateTypeId = (InternalEObject)rateTypeId;
+			rateTypeId = (RateType)eResolveProxy(oldRateTypeId);
+			if (rateTypeId != oldRateTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RatePackage.PARTY_RATE__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
+			}
+		}
+		return rateTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RateType basicGetRateTypeId() {
 		return rateTypeId;
 	}
 
@@ -301,8 +312,8 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 	 * @generated
 	 */
 	@Override
-	public void setRateTypeId(String newRateTypeId) {
-		String oldRateTypeId = rateTypeId;
+	public void setRateTypeId(RateType newRateTypeId) {
+		RateType oldRateTypeId = rateTypeId;
 		rateTypeId = newRateTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RatePackage.PARTY_RATE__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
@@ -318,8 +329,6 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 		switch (featureID) {
 			case RatePackage.PARTY_RATE__PARTY_ID:
 				return getPartyId();
-			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
-				return getRateTypeId();
 			case RatePackage.PARTY_RATE__FROM_DATE:
 				return getFromDate();
 			case RatePackage.PARTY_RATE__DEFAULT_RATE:
@@ -328,6 +337,9 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 				return getPercentageUsed();
 			case RatePackage.PARTY_RATE__THRU_DATE:
 				return getThruDate();
+			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
+				if (resolve) return getRateTypeId();
+				return basicGetRateTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -343,9 +355,6 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 			case RatePackage.PARTY_RATE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
-				setRateTypeId((String)newValue);
-				return;
 			case RatePackage.PARTY_RATE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -357,6 +366,9 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 				return;
 			case RatePackage.PARTY_RATE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
+				setRateTypeId((RateType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -373,9 +385,6 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 			case RatePackage.PARTY_RATE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
-				setRateTypeId(RATE_TYPE_ID_EDEFAULT);
-				return;
 			case RatePackage.PARTY_RATE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -387,6 +396,9 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 				return;
 			case RatePackage.PARTY_RATE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
+				setRateTypeId((RateType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -402,8 +414,6 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 		switch (featureID) {
 			case RatePackage.PARTY_RATE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
-				return RATE_TYPE_ID_EDEFAULT == null ? rateTypeId != null : !RATE_TYPE_ID_EDEFAULT.equals(rateTypeId);
 			case RatePackage.PARTY_RATE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case RatePackage.PARTY_RATE__DEFAULT_RATE:
@@ -412,6 +422,8 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 				return percentageUsed != PERCENTAGE_USED_EDEFAULT;
 			case RatePackage.PARTY_RATE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case RatePackage.PARTY_RATE__RATE_TYPE_ID:
+				return rateTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -428,8 +440,6 @@ public class PartyRateImpl extends BizEntityImpl implements PartyRate {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", rateTypeId: ");
-		result.append(rateTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", defaultRate: ");

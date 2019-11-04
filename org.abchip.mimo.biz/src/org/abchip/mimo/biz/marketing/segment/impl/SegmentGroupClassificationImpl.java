@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.marketing.segment.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
+import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -57,24 +60,14 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 	protected String segmentGroupId = SEGMENT_GROUP_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyClassificationGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyClassificationGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyClassificationGroupId = PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT;
+	protected PartyClassificationGroup partyClassificationGroupId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +94,24 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 	 * @generated
 	 */
 	@Override
-	public String getPartyClassificationGroupId() {
+	public PartyClassificationGroup getPartyClassificationGroupId() {
+		if (partyClassificationGroupId != null && ((EObject)partyClassificationGroupId).eIsProxy()) {
+			InternalEObject oldPartyClassificationGroupId = (InternalEObject)partyClassificationGroupId;
+			partyClassificationGroupId = (PartyClassificationGroup)eResolveProxy(oldPartyClassificationGroupId);
+			if (partyClassificationGroupId != oldPartyClassificationGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
+			}
+		}
+		return partyClassificationGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyClassificationGroup basicGetPartyClassificationGroupId() {
 		return partyClassificationGroupId;
 	}
 
@@ -111,8 +121,8 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 	 * @generated
 	 */
 	@Override
-	public void setPartyClassificationGroupId(String newPartyClassificationGroupId) {
-		String oldPartyClassificationGroupId = partyClassificationGroupId;
+	public void setPartyClassificationGroupId(PartyClassificationGroup newPartyClassificationGroupId) {
+		PartyClassificationGroup oldPartyClassificationGroupId = partyClassificationGroupId;
 		partyClassificationGroupId = newPartyClassificationGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
@@ -152,7 +162,8 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 			case SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__SEGMENT_GROUP_ID:
 				return getSegmentGroupId();
 			case SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
-				return getPartyClassificationGroupId();
+				if (resolve) return getPartyClassificationGroupId();
+				return basicGetPartyClassificationGroupId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,7 +180,7 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 				setSegmentGroupId((String)newValue);
 				return;
 			case SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
-				setPartyClassificationGroupId((String)newValue);
+				setPartyClassificationGroupId((PartyClassificationGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +198,7 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 				setSegmentGroupId(SEGMENT_GROUP_ID_EDEFAULT);
 				return;
 			case SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
-				setPartyClassificationGroupId(PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT);
+				setPartyClassificationGroupId((PartyClassificationGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,7 +215,7 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 			case SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__SEGMENT_GROUP_ID:
 				return SEGMENT_GROUP_ID_EDEFAULT == null ? segmentGroupId != null : !SEGMENT_GROUP_ID_EDEFAULT.equals(segmentGroupId);
 			case SegmentPackage.SEGMENT_GROUP_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
-				return PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT == null ? partyClassificationGroupId != null : !PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT.equals(partyClassificationGroupId);
+				return partyClassificationGroupId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,8 +232,6 @@ public class SegmentGroupClassificationImpl extends BizEntityImpl implements Seg
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (segmentGroupId: ");
 		result.append(segmentGroupId);
-		result.append(", partyClassificationGroupId: ");
-		result.append(partyClassificationGroupId);
 		result.append(')');
 		return result.toString();
 	}

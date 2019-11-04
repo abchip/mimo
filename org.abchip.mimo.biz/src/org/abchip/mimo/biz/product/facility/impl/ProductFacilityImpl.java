@@ -9,12 +9,16 @@ package org.abchip.mimo.biz.product.facility.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.ProductFacility;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getDaysToShip <em>Days To Ship</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getLastInventoryCount <em>Last Inventory Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getMinimumStock <em>Minimum Stock</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getReorderQuantity <em>Reorder Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.ProductFacilityImpl#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
  * </ul>
  *
@@ -61,26 +65,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 * @ordered
 	 */
 	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDaysToShip() <em>Days To Ship</em>}' attribute.
@@ -163,24 +147,24 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	protected BigDecimal reorderQuantity = REORDER_QUANTITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRequirementMethodEnumId() <em>Requirement Method Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequirementMethodEnumId()
+	 * @see #getFacilityId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REQUIREMENT_METHOD_ENUM_ID_EDEFAULT = null;
+	protected Facility facilityId;
 
 	/**
-	 * The cached value of the '{@link #getRequirementMethodEnumId() <em>Requirement Method Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getRequirementMethodEnumId() <em>Requirement Method Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRequirementMethodEnumId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String requirementMethodEnumId = REQUIREMENT_METHOD_ENUM_ID_EDEFAULT;
+	protected Enumeration requirementMethodEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -322,7 +306,24 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 * @generated
 	 */
 	@Override
-	public String getRequirementMethodEnumId() {
+	public Enumeration getRequirementMethodEnumId() {
+		if (requirementMethodEnumId != null && ((EObject)requirementMethodEnumId).eIsProxy()) {
+			InternalEObject oldRequirementMethodEnumId = (InternalEObject)requirementMethodEnumId;
+			requirementMethodEnumId = (Enumeration)eResolveProxy(oldRequirementMethodEnumId);
+			if (requirementMethodEnumId != oldRequirementMethodEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID, oldRequirementMethodEnumId, requirementMethodEnumId));
+			}
+		}
+		return requirementMethodEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetRequirementMethodEnumId() {
 		return requirementMethodEnumId;
 	}
 
@@ -332,8 +333,8 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 * @generated
 	 */
 	@Override
-	public void setRequirementMethodEnumId(String newRequirementMethodEnumId) {
-		String oldRequirementMethodEnumId = requirementMethodEnumId;
+	public void setRequirementMethodEnumId(Enumeration newRequirementMethodEnumId) {
+		Enumeration oldRequirementMethodEnumId = requirementMethodEnumId;
 		requirementMethodEnumId = newRequirementMethodEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID, oldRequirementMethodEnumId, requirementMethodEnumId));
@@ -345,7 +346,24 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.PRODUCT_FACILITY__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -355,8 +373,8 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.PRODUCT_FACILITY__FACILITY_ID, oldFacilityId, facilityId));
@@ -372,8 +390,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 		switch (featureID) {
 			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
 				return getProductId();
-			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
-				return getFacilityId();
 			case FacilityPackage.PRODUCT_FACILITY__DAYS_TO_SHIP:
 				return getDaysToShip();
 			case FacilityPackage.PRODUCT_FACILITY__LAST_INVENTORY_COUNT:
@@ -382,8 +398,12 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 				return getMinimumStock();
 			case FacilityPackage.PRODUCT_FACILITY__REORDER_QUANTITY:
 				return getReorderQuantity();
+			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
 			case FacilityPackage.PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID:
-				return getRequirementMethodEnumId();
+				if (resolve) return getRequirementMethodEnumId();
+				return basicGetRequirementMethodEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -399,9 +419,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
 				setProductId((String)newValue);
 				return;
-			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
 			case FacilityPackage.PRODUCT_FACILITY__DAYS_TO_SHIP:
 				setDaysToShip((Long)newValue);
 				return;
@@ -414,8 +431,11 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 			case FacilityPackage.PRODUCT_FACILITY__REORDER_QUANTITY:
 				setReorderQuantity((BigDecimal)newValue);
 				return;
+			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
+				setFacilityId((Facility)newValue);
+				return;
 			case FacilityPackage.PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID:
-				setRequirementMethodEnumId((String)newValue);
+				setRequirementMethodEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -432,9 +452,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
-			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
 			case FacilityPackage.PRODUCT_FACILITY__DAYS_TO_SHIP:
 				setDaysToShip(DAYS_TO_SHIP_EDEFAULT);
 				return;
@@ -447,8 +464,11 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 			case FacilityPackage.PRODUCT_FACILITY__REORDER_QUANTITY:
 				setReorderQuantity(REORDER_QUANTITY_EDEFAULT);
 				return;
+			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
+				setFacilityId((Facility)null);
+				return;
 			case FacilityPackage.PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID:
-				setRequirementMethodEnumId(REQUIREMENT_METHOD_ENUM_ID_EDEFAULT);
+				setRequirementMethodEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -464,8 +484,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 		switch (featureID) {
 			case FacilityPackage.PRODUCT_FACILITY__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case FacilityPackage.PRODUCT_FACILITY__DAYS_TO_SHIP:
 				return daysToShip != DAYS_TO_SHIP_EDEFAULT;
 			case FacilityPackage.PRODUCT_FACILITY__LAST_INVENTORY_COUNT:
@@ -474,8 +492,10 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 				return MINIMUM_STOCK_EDEFAULT == null ? minimumStock != null : !MINIMUM_STOCK_EDEFAULT.equals(minimumStock);
 			case FacilityPackage.PRODUCT_FACILITY__REORDER_QUANTITY:
 				return REORDER_QUANTITY_EDEFAULT == null ? reorderQuantity != null : !REORDER_QUANTITY_EDEFAULT.equals(reorderQuantity);
+			case FacilityPackage.PRODUCT_FACILITY__FACILITY_ID:
+				return facilityId != null;
 			case FacilityPackage.PRODUCT_FACILITY__REQUIREMENT_METHOD_ENUM_ID:
-				return REQUIREMENT_METHOD_ENUM_ID_EDEFAULT == null ? requirementMethodEnumId != null : !REQUIREMENT_METHOD_ENUM_ID_EDEFAULT.equals(requirementMethodEnumId);
+				return requirementMethodEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -492,8 +512,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", facilityId: ");
-		result.append(facilityId);
 		result.append(", daysToShip: ");
 		result.append(daysToShip);
 		result.append(", lastInventoryCount: ");
@@ -502,8 +520,6 @@ public class ProductFacilityImpl extends BizEntityImpl implements ProductFacilit
 		result.append(minimumStock);
 		result.append(", reorderQuantity: ");
 		result.append(reorderQuantity);
-		result.append(", requirementMethodEnumId: ");
-		result.append(requirementMethodEnumId);
 		result.append(')');
 		return result.toString();
 	}

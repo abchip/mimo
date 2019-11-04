@@ -12,6 +12,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.order.order.OrderAdjustmentType;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +31,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCorrespondingProductId <em>Corresponding Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCustomerReferenceId <em>Customer Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getDescription <em>Description</em>}</li>
@@ -35,20 +39,21 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#isIncludeInTax <em>Include In Tax</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSourcePercentage <em>Source Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSourceReferenceId <em>Source Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteId <em>Quote Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment()
@@ -135,30 +140,30 @@ public interface QuoteAdjustment extends BizEntity {
 	void setCorrespondingProductId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Created By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Created By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Created By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Created By User Login</em>' attribute.
-	 * @see #setCreatedByUserLogin(String)
+	 * @return the value of the '<em>Created By User Login</em>' reference.
+	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getCreatedByUserLogin();
+	UserLogin getCreatedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Created By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Created By User Login</em>' reference.
 	 * @see #getCreatedByUserLogin()
 	 * @generated
 	 */
-	void setCreatedByUserLogin(String value);
+	void setCreatedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Created Date</b></em>' attribute.
@@ -369,56 +374,56 @@ public interface QuoteAdjustment extends BizEntity {
 	void setLastModifiedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Override Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Override Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Override Gl Account Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Override Gl Account Id</em>' attribute.
-	 * @see #setOverrideGlAccountId(String)
+	 * @return the value of the '<em>Override Gl Account Id</em>' reference.
+	 * @see #setOverrideGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_OverrideGlAccountId()
-	 * @model annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getOverrideGlAccountId();
+	GlAccount getOverrideGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Override Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Override Gl Account Id</em>' reference.
 	 * @see #getOverrideGlAccountId()
 	 * @generated
 	 */
-	void setOverrideGlAccountId(String value);
+	void setOverrideGlAccountId(GlAccount value);
 
 	/**
-	 * Returns the value of the '<em><b>Primary Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Primary Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Primary Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Primary Geo Id</em>' attribute.
-	 * @see #setPrimaryGeoId(String)
+	 * @return the value of the '<em>Primary Geo Id</em>' reference.
+	 * @see #setPrimaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_PrimaryGeoId()
-	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getPrimaryGeoId();
+	Geo getPrimaryGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Primary Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Primary Geo Id</em>' reference.
 	 * @see #getPrimaryGeoId()
 	 * @generated
 	 */
-	void setPrimaryGeoId(String value);
+	void setPrimaryGeoId(Geo value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Feature Id</b></em>' attribute.
@@ -473,30 +478,30 @@ public interface QuoteAdjustment extends BizEntity {
 	void setProductPromoActionSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Id</em>' attribute.
-	 * @see #setProductPromoId(String)
+	 * @return the value of the '<em>Product Promo Id</em>' reference.
+	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_ProductPromoId()
-	 * @model annotation="mimo-ent-domain frame='ProductPromo'"
+	 * @model keys="productPromoId"
 	 * @generated
 	 */
-	String getProductPromoId();
+	ProductPromo getProductPromoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoId <em>Product Promo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getProductPromoId <em>Product Promo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Id</em>' reference.
 	 * @see #getProductPromoId()
 	 * @generated
 	 */
-	void setProductPromoId(String value);
+	void setProductPromoId(ProductPromo value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Promo Rule Id</b></em>' attribute.
@@ -535,7 +540,7 @@ public interface QuoteAdjustment extends BizEntity {
 	 * @return the value of the '<em>Quote Adjustment Id</em>' attribute.
 	 * @see #setQuoteAdjustmentId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteAdjustmentId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -552,56 +557,56 @@ public interface QuoteAdjustment extends BizEntity {
 	void setQuoteAdjustmentId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Adjustment Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quote Adjustment Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Adjustment Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Adjustment Type Id</em>' attribute.
-	 * @see #setQuoteAdjustmentTypeId(String)
+	 * @return the value of the '<em>Quote Adjustment Type Id</em>' reference.
+	 * @see #setQuoteAdjustmentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteAdjustmentTypeId()
-	 * @model annotation="mimo-ent-domain frame='OrderAdjustmentType'"
+	 * @model keys="orderAdjustmentTypeId"
 	 * @generated
 	 */
-	String getQuoteAdjustmentTypeId();
+	OrderAdjustmentType getQuoteAdjustmentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteAdjustmentTypeId <em>Quote Adjustment Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quote Adjustment Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Quote Adjustment Type Id</em>' reference.
 	 * @see #getQuoteAdjustmentTypeId()
 	 * @generated
 	 */
-	void setQuoteAdjustmentTypeId(String value);
+	void setQuoteAdjustmentTypeId(OrderAdjustmentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quote Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Id</em>' attribute.
-	 * @see #setQuoteId(String)
+	 * @return the value of the '<em>Quote Id</em>' reference.
+	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_QuoteId()
-	 * @model annotation="mimo-ent-domain frame='Quote'"
+	 * @model keys="quoteId"
 	 * @generated
 	 */
-	String getQuoteId();
+	Quote getQuoteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteId <em>Quote Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getQuoteId <em>Quote Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quote Id</em>' attribute.
+	 * @param value the new value of the '<em>Quote Id</em>' reference.
 	 * @see #getQuoteId()
 	 * @generated
 	 */
-	void setQuoteId(String value);
+	void setQuoteId(Quote value);
 
 	/**
 	 * Returns the value of the '<em><b>Quote Item Seq Id</b></em>' attribute.
@@ -630,30 +635,30 @@ public interface QuoteAdjustment extends BizEntity {
 	void setQuoteItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Secondary Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Secondary Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Secondary Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Secondary Geo Id</em>' attribute.
-	 * @see #setSecondaryGeoId(String)
+	 * @return the value of the '<em>Secondary Geo Id</em>' reference.
+	 * @see #setSecondaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteAdjustment_SecondaryGeoId()
-	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getSecondaryGeoId();
+	Geo getSecondaryGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Secondary Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Secondary Geo Id</em>' reference.
 	 * @see #getSecondaryGeoId()
 	 * @generated
 	 */
-	void setSecondaryGeoId(String value);
+	void setSecondaryGeoId(Geo value);
 
 	/**
 	 * Returns the value of the '<em><b>Source Percentage</b></em>' attribute.

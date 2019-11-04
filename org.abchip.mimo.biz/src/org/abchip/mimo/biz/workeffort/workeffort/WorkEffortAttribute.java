@@ -121,7 +121,6 @@ public interface WorkEffortAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAttribute_WorkEffortId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
 	 * @generated
 	 */
 	String getWorkEffortId();

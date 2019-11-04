@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.shoppinglist;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,8 +40,8 @@ public interface ShoppingListItemSurvey extends BizEntity {
 	 * @return the value of the '<em>Shopping List Id</em>' attribute.
 	 * @see #setShoppingListId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey_ShoppingListId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ShoppingList'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShoppingListId();
@@ -66,7 +67,8 @@ public interface ShoppingListItemSurvey extends BizEntity {
 	 * @return the value of the '<em>Shopping List Item Seq Id</em>' attribute.
 	 * @see #setShoppingListItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey_ShoppingListItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShoppingListItemSeqId();
@@ -82,30 +84,29 @@ public interface ShoppingListItemSurvey extends BizEntity {
 	void setShoppingListItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Response Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Survey Response Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Response Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Response Id</em>' attribute.
-	 * @see #setSurveyResponseId(String)
+	 * @return the value of the '<em>Survey Response Id</em>' reference.
+	 * @see #setSurveyResponseId(SurveyResponse)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItemSurvey_SurveyResponseId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SurveyResponse'"
+	 * @model keys="surveyResponseId"
 	 * @generated
 	 */
-	String getSurveyResponseId();
+	SurveyResponse getSurveyResponseId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getSurveyResponseId <em>Survey Response Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItemSurvey#getSurveyResponseId <em>Survey Response Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Survey Response Id</em>' attribute.
+	 * @param value the new value of the '<em>Survey Response Id</em>' reference.
 	 * @see #getSurveyResponseId()
 	 * @generated
 	 */
-	void setSurveyResponseId(String value);
+	void setSurveyResponseId(SurveyResponse value);
 
 } // ShoppingListItemSurvey

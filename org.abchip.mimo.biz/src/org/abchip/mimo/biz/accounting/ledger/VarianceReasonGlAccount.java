@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.ledger;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,31 +30,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface VarianceReasonGlAccount extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Organization Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Organization Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Organization Party Id</em>' attribute.
-	 * @see #setOrganizationPartyId(String)
+	 * @return the value of the '<em>Organization Party Id</em>' reference.
+	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getVarianceReasonGlAccount_OrganizationPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getOrganizationPartyId();
+	Party getOrganizationPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Organization Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Organization Party Id</em>' reference.
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 */
-	void setOrganizationPartyId(String value);
+	void setOrganizationPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Variance Reason Id</b></em>' attribute.
@@ -66,8 +66,8 @@ public interface VarianceReasonGlAccount extends BizEntity {
 	 * @return the value of the '<em>Variance Reason Id</em>' attribute.
 	 * @see #setVarianceReasonId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getVarianceReasonGlAccount_VarianceReasonId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='VarianceReason'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getVarianceReasonId();
@@ -83,29 +83,29 @@ public interface VarianceReasonGlAccount extends BizEntity {
 	void setVarianceReasonId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Id</em>' attribute.
-	 * @see #setGlAccountId(String)
+	 * @return the value of the '<em>Gl Account Id</em>' reference.
+	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getVarianceReasonGlAccount_GlAccountId()
-	 * @model annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getGlAccountId();
+	GlAccount getGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount#getGlAccountId <em>Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount#getGlAccountId <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Id</em>' reference.
 	 * @see #getGlAccountId()
 	 * @generated
 	 */
-	void setGlAccountId(String value);
+	void setGlAccountId(GlAccount value);
 
 } // VarianceReasonGlAccount

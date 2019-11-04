@@ -9,13 +9,18 @@ package org.abchip.mimo.biz.product.product.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.product.ProductContent;
 import org.abchip.mimo.biz.product.product.ProductContentType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,16 +32,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getProductContentTypeId <em>Product Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getUseCountLimit <em>Use Count Limit</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getUseRoleTypeId <em>Use Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getUseTime <em>Use Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getProductContentTypeId <em>Product Content Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getUseRoleTypeId <em>Use Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductContentImpl#getUseTimeUomId <em>Use Time Uom Id</em>}</li>
  * </ul>
  *
@@ -67,46 +72,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @ordered
 	 */
 	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductContentTypeId() <em>Product Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CONTENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductContentTypeId() <em>Product Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productContentTypeId = PRODUCT_CONTENT_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -229,26 +194,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	protected long useCountLimit = USE_COUNT_LIMIT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUseRoleTypeId() <em>Use Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUseRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USE_ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUseRoleTypeId() <em>Use Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUseRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String useRoleTypeId = USE_ROLE_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getUseTime() <em>Use Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,24 +214,44 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	protected long useTime = USE_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUseTimeUomId() <em>Use Time Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUseTimeUomId()
+	 * @see #getContentId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USE_TIME_UOM_ID_EDEFAULT = null;
+	protected Content contentId;
 
 	/**
-	 * The cached value of the '{@link #getUseTimeUomId() <em>Use Time Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductContentTypeId() <em>Product Content Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductContentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductContentType productContentTypeId;
+
+	/**
+	 * The cached value of the '{@link #getUseRoleTypeId() <em>Use Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUseRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType useRoleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getUseTimeUomId() <em>Use Time Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUseTimeUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String useTimeUomId = USE_TIME_UOM_ID_EDEFAULT;
+	protected Uom useTimeUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -313,7 +278,24 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -323,8 +305,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -474,7 +456,24 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public String getUseRoleTypeId() {
+	public RoleType getUseRoleTypeId() {
+		if (useRoleTypeId != null && ((EObject)useRoleTypeId).eIsProxy()) {
+			InternalEObject oldUseRoleTypeId = (InternalEObject)useRoleTypeId;
+			useRoleTypeId = (RoleType)eResolveProxy(oldUseRoleTypeId);
+			if (useRoleTypeId != oldUseRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID, oldUseRoleTypeId, useRoleTypeId));
+			}
+		}
+		return useRoleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetUseRoleTypeId() {
 		return useRoleTypeId;
 	}
 
@@ -484,8 +483,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public void setUseRoleTypeId(String newUseRoleTypeId) {
-		String oldUseRoleTypeId = useRoleTypeId;
+	public void setUseRoleTypeId(RoleType newUseRoleTypeId) {
+		RoleType oldUseRoleTypeId = useRoleTypeId;
 		useRoleTypeId = newUseRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID, oldUseRoleTypeId, useRoleTypeId));
@@ -520,7 +519,24 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public String getUseTimeUomId() {
+	public Uom getUseTimeUomId() {
+		if (useTimeUomId != null && ((EObject)useTimeUomId).eIsProxy()) {
+			InternalEObject oldUseTimeUomId = (InternalEObject)useTimeUomId;
+			useTimeUomId = (Uom)eResolveProxy(oldUseTimeUomId);
+			if (useTimeUomId != oldUseTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
+			}
+		}
+		return useTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUseTimeUomId() {
 		return useTimeUomId;
 	}
 
@@ -530,8 +546,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public void setUseTimeUomId(String newUseTimeUomId) {
-		String oldUseTimeUomId = useTimeUomId;
+	public void setUseTimeUomId(Uom newUseTimeUomId) {
+		Uom oldUseTimeUomId = useTimeUomId;
 		useTimeUomId = newUseTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
@@ -566,7 +582,24 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public String getProductContentTypeId() {
+	public ProductContentType getProductContentTypeId() {
+		if (productContentTypeId != null && ((EObject)productContentTypeId).eIsProxy()) {
+			InternalEObject oldProductContentTypeId = (InternalEObject)productContentTypeId;
+			productContentTypeId = (ProductContentType)eResolveProxy(oldProductContentTypeId);
+			if (productContentTypeId != oldProductContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID, oldProductContentTypeId, productContentTypeId));
+			}
+		}
+		return productContentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductContentType basicGetProductContentTypeId() {
 		return productContentTypeId;
 	}
 
@@ -576,8 +609,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 	 * @generated
 	 */
 	@Override
-	public void setProductContentTypeId(String newProductContentTypeId) {
-		String oldProductContentTypeId = productContentTypeId;
+	public void setProductContentTypeId(ProductContentType newProductContentTypeId) {
+		ProductContentType oldProductContentTypeId = productContentTypeId;
 		productContentTypeId = newProductContentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID, oldProductContentTypeId, productContentTypeId));
@@ -593,10 +626,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 		switch (featureID) {
 			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
 				return getProductId();
-			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
-				return getContentId();
-			case ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID:
-				return getProductContentTypeId();
 			case ProductPackage.PRODUCT_CONTENT__FROM_DATE:
 				return getFromDate();
 			case ProductPackage.PRODUCT_CONTENT__PURCHASE_FROM_DATE:
@@ -609,12 +638,20 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 				return getThruDate();
 			case ProductPackage.PRODUCT_CONTENT__USE_COUNT_LIMIT:
 				return getUseCountLimit();
-			case ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID:
-				return getUseRoleTypeId();
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME:
 				return getUseTime();
+			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
+			case ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID:
+				if (resolve) return getProductContentTypeId();
+				return basicGetProductContentTypeId();
+			case ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID:
+				if (resolve) return getUseRoleTypeId();
+				return basicGetUseRoleTypeId();
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME_UOM_ID:
-				return getUseTimeUomId();
+				if (resolve) return getUseTimeUomId();
+				return basicGetUseTimeUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -629,12 +666,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 		switch (featureID) {
 			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
 				setProductId((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID:
-				setProductContentTypeId((String)newValue);
 				return;
 			case ProductPackage.PRODUCT_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
@@ -654,14 +685,20 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 			case ProductPackage.PRODUCT_CONTENT__USE_COUNT_LIMIT:
 				setUseCountLimit((Long)newValue);
 				return;
-			case ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID:
-				setUseRoleTypeId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME:
 				setUseTime((Long)newValue);
 				return;
+			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
+				return;
+			case ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID:
+				setProductContentTypeId((ProductContentType)newValue);
+				return;
+			case ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID:
+				setUseRoleTypeId((RoleType)newValue);
+				return;
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME_UOM_ID:
-				setUseTimeUomId((String)newValue);
+				setUseTimeUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -677,12 +714,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 		switch (featureID) {
 			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID:
-				setProductContentTypeId(PRODUCT_CONTENT_TYPE_ID_EDEFAULT);
 				return;
 			case ProductPackage.PRODUCT_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
@@ -702,14 +733,20 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 			case ProductPackage.PRODUCT_CONTENT__USE_COUNT_LIMIT:
 				setUseCountLimit(USE_COUNT_LIMIT_EDEFAULT);
 				return;
-			case ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID:
-				setUseRoleTypeId(USE_ROLE_TYPE_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME:
 				setUseTime(USE_TIME_EDEFAULT);
 				return;
+			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
+				return;
+			case ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID:
+				setProductContentTypeId((ProductContentType)null);
+				return;
+			case ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID:
+				setUseRoleTypeId((RoleType)null);
+				return;
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME_UOM_ID:
-				setUseTimeUomId(USE_TIME_UOM_ID_EDEFAULT);
+				setUseTimeUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -725,10 +762,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 		switch (featureID) {
 			case ProductPackage.PRODUCT_CONTENT__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID:
-				return PRODUCT_CONTENT_TYPE_ID_EDEFAULT == null ? productContentTypeId != null : !PRODUCT_CONTENT_TYPE_ID_EDEFAULT.equals(productContentTypeId);
 			case ProductPackage.PRODUCT_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case ProductPackage.PRODUCT_CONTENT__PURCHASE_FROM_DATE:
@@ -741,12 +774,16 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case ProductPackage.PRODUCT_CONTENT__USE_COUNT_LIMIT:
 				return useCountLimit != USE_COUNT_LIMIT_EDEFAULT;
-			case ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID:
-				return USE_ROLE_TYPE_ID_EDEFAULT == null ? useRoleTypeId != null : !USE_ROLE_TYPE_ID_EDEFAULT.equals(useRoleTypeId);
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME:
 				return useTime != USE_TIME_EDEFAULT;
+			case ProductPackage.PRODUCT_CONTENT__CONTENT_ID:
+				return contentId != null;
+			case ProductPackage.PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID:
+				return productContentTypeId != null;
+			case ProductPackage.PRODUCT_CONTENT__USE_ROLE_TYPE_ID:
+				return useRoleTypeId != null;
 			case ProductPackage.PRODUCT_CONTENT__USE_TIME_UOM_ID:
-				return USE_TIME_UOM_ID_EDEFAULT == null ? useTimeUomId != null : !USE_TIME_UOM_ID_EDEFAULT.equals(useTimeUomId);
+				return useTimeUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -763,10 +800,6 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", contentId: ");
-		result.append(contentId);
-		result.append(", productContentTypeId: ");
-		result.append(productContentTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", purchaseFromDate: ");
@@ -779,12 +812,8 @@ public class ProductContentImpl extends BizEntityTypedImpl<ProductContentType> i
 		result.append(thruDate);
 		result.append(", useCountLimit: ");
 		result.append(useCountLimit);
-		result.append(", useRoleTypeId: ");
-		result.append(useRoleTypeId);
 		result.append(", useTime: ");
 		result.append(useTime);
-		result.append(", useTimeUomId: ");
-		result.append(useTimeUomId);
 		result.append(')');
 		return result.toString();
 	}

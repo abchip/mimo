@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.order.order;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,11 +24,11 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderStatusId <em>Order Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getChangeReason <em>Change Reason</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusDatetime <em>Status Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusUserLogin <em>Status User Login</em>}</li>
  * </ul>
  *
@@ -62,30 +64,30 @@ public interface OrderStatus extends BizEntity {
 	void setChangeReason(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Id</em>' attribute.
-	 * @see #setOrderId(String)
+	 * @return the value of the '<em>Order Id</em>' reference.
+	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderId()
-	 * @model annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getOrderId();
+	OrderHeader getOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderId <em>Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderId <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Id</em>' reference.
 	 * @see #getOrderId()
 	 * @generated
 	 */
-	void setOrderId(String value);
+	void setOrderId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Item Seq Id</b></em>' attribute.
@@ -114,30 +116,30 @@ public interface OrderStatus extends BizEntity {
 	void setOrderItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Payment Preference Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Payment Preference Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Payment Preference Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Payment Preference Id</em>' attribute.
-	 * @see #setOrderPaymentPreferenceId(String)
+	 * @return the value of the '<em>Order Payment Preference Id</em>' reference.
+	 * @see #setOrderPaymentPreferenceId(OrderPaymentPreference)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderPaymentPreferenceId()
-	 * @model annotation="mimo-ent-domain frame='OrderPaymentPreference'"
+	 * @model keys="orderPaymentPreferenceId"
 	 * @generated
 	 */
-	String getOrderPaymentPreferenceId();
+	OrderPaymentPreference getOrderPaymentPreferenceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Payment Preference Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Payment Preference Id</em>' reference.
 	 * @see #getOrderPaymentPreferenceId()
 	 * @generated
 	 */
-	void setOrderPaymentPreferenceId(String value);
+	void setOrderPaymentPreferenceId(OrderPaymentPreference value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Status Id</b></em>' attribute.
@@ -150,7 +152,7 @@ public interface OrderStatus extends BizEntity {
 	 * @return the value of the '<em>Order Status Id</em>' attribute.
 	 * @see #setOrderStatusId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_OrderStatusId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -193,55 +195,55 @@ public interface OrderStatus extends BizEntity {
 	void setStatusDatetime(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Status User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status User Login</em>' attribute.
-	 * @see #setStatusUserLogin(String)
+	 * @return the value of the '<em>Status User Login</em>' reference.
+	 * @see #setStatusUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderStatus_StatusUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getStatusUserLogin();
+	UserLogin getStatusUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusUserLogin <em>Status User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderStatus#getStatusUserLogin <em>Status User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status User Login</em>' attribute.
+	 * @param value the new value of the '<em>Status User Login</em>' reference.
 	 * @see #getStatusUserLogin()
 	 * @generated
 	 */
-	void setStatusUserLogin(String value);
+	void setStatusUserLogin(UserLogin value);
 
 } // OrderStatus

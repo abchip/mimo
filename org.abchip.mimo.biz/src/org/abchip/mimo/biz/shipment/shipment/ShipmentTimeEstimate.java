@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,13 +27,13 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdTo <em>Geo Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdFrom <em>Geo Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getLeadTime <em>Lead Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getLeadTimeUomId <em>Lead Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getSequenceNumber <em>Sequence Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdTo <em>Geo Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdFrom <em>Geo Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getLeadTimeUomId <em>Lead Time Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate()
@@ -50,7 +52,8 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -66,58 +69,56 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Id From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Id From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Id From</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Id From</em>' attribute.
-	 * @see #setGeoIdFrom(String)
+	 * @return the value of the '<em>Geo Id From</em>' reference.
+	 * @see #setGeoIdFrom(Geo)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_GeoIdFrom()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getGeoIdFrom();
+	Geo getGeoIdFrom();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdFrom <em>Geo Id From</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdFrom <em>Geo Id From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Id From</em>' attribute.
+	 * @param value the new value of the '<em>Geo Id From</em>' reference.
 	 * @see #getGeoIdFrom()
 	 * @generated
 	 */
-	void setGeoIdFrom(String value);
+	void setGeoIdFrom(Geo value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Id To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Id To</em>' attribute.
-	 * @see #setGeoIdTo(String)
+	 * @return the value of the '<em>Geo Id To</em>' reference.
+	 * @see #setGeoIdTo(Geo)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_GeoIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getGeoIdTo();
+	Geo getGeoIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdTo <em>Geo Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getGeoIdTo <em>Geo Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Id To</em>' attribute.
+	 * @param value the new value of the '<em>Geo Id To</em>' reference.
 	 * @see #getGeoIdTo()
 	 * @generated
 	 */
-	void setGeoIdTo(String value);
+	void setGeoIdTo(Geo value);
 
 	/**
 	 * Returns the value of the '<em><b>Lead Time</b></em>' attribute.
@@ -146,30 +147,30 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	void setLeadTime(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Lead Time Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Lead Time Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Lead Time Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lead Time Uom Id</em>' attribute.
-	 * @see #setLeadTimeUomId(String)
+	 * @return the value of the '<em>Lead Time Uom Id</em>' reference.
+	 * @see #setLeadTimeUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_LeadTimeUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getLeadTimeUomId();
+	Uom getLeadTimeUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getLeadTimeUomId <em>Lead Time Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate#getLeadTimeUomId <em>Lead Time Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Lead Time Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Lead Time Uom Id</em>' reference.
 	 * @see #getLeadTimeUomId()
 	 * @generated
 	 */
-	void setLeadTimeUomId(String value);
+	void setLeadTimeUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
@@ -182,7 +183,8 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -208,7 +210,8 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_RoleTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeId();
@@ -260,7 +263,8 @@ public interface ShipmentTimeEstimate extends BizEntity {
 	 * @return the value of the '<em>Shipment Method Type Id</em>' attribute.
 	 * @see #setShipmentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentTimeEstimate_ShipmentMethodTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentMethodTypeId();

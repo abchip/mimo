@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.passport.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.passport.LinkedInUser;
 import org.abchip.mimo.biz.passport.PassportPackage;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -99,24 +102,14 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 	protected String envPrefix = ENV_PREFIX_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductStoreId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
+	protected ProductStore productStoreId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +205,24 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PassportPackage.LINKED_IN_USER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -222,8 +232,8 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PassportPackage.LINKED_IN_USER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -244,7 +254,8 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 			case PassportPackage.LINKED_IN_USER__ENV_PREFIX:
 				return getEnvPrefix();
 			case PassportPackage.LINKED_IN_USER__PRODUCT_STORE_ID:
-				return getProductStoreId();
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -267,7 +278,7 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 				setEnvPrefix((String)newValue);
 				return;
 			case PassportPackage.LINKED_IN_USER__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
+				setProductStoreId((ProductStore)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -291,7 +302,7 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 				setEnvPrefix(ENV_PREFIX_EDEFAULT);
 				return;
 			case PassportPackage.LINKED_IN_USER__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
+				setProductStoreId((ProductStore)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -312,7 +323,7 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 			case PassportPackage.LINKED_IN_USER__ENV_PREFIX:
 				return ENV_PREFIX_EDEFAULT == null ? envPrefix != null : !ENV_PREFIX_EDEFAULT.equals(envPrefix);
 			case PassportPackage.LINKED_IN_USER__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
+				return productStoreId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -333,8 +344,6 @@ public class LinkedInUserImpl extends BizEntityImpl implements LinkedInUser {
 		result.append(accessToken);
 		result.append(", envPrefix: ");
 		result.append(envPrefix);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
 		result.append(')');
 		return result.toString();
 	}

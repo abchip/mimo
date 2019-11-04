@@ -50,7 +50,7 @@ public interface GroupPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-entity-group";
+	String eNS_PREFIX = "biz-group";
 
 	/**
 	 * The singleton instance of the package.

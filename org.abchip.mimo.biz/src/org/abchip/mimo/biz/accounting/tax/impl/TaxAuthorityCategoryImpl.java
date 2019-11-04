@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.accounting.tax.impl;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthorityCategory;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -76,23 +79,14 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 	 */
 	protected String taxAuthPartyId = TAX_AUTH_PARTY_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductCategoryId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,7 +113,24 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -129,8 +140,8 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -195,7 +206,8 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 			case TaxPackage.TAX_AUTHORITY_CATEGORY__TAX_AUTH_PARTY_ID:
 				return getTaxAuthPartyId();
 			case TaxPackage.TAX_AUTHORITY_CATEGORY__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,7 +227,7 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 				setTaxAuthPartyId((String)newValue);
 				return;
 			case TaxPackage.TAX_AUTHORITY_CATEGORY__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
+				setProductCategoryId((ProductCategory)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -236,7 +248,7 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 				setTaxAuthPartyId(TAX_AUTH_PARTY_ID_EDEFAULT);
 				return;
 			case TaxPackage.TAX_AUTHORITY_CATEGORY__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
+				setProductCategoryId((ProductCategory)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -255,7 +267,7 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 			case TaxPackage.TAX_AUTHORITY_CATEGORY__TAX_AUTH_PARTY_ID:
 				return TAX_AUTH_PARTY_ID_EDEFAULT == null ? taxAuthPartyId != null : !TAX_AUTH_PARTY_ID_EDEFAULT.equals(taxAuthPartyId);
 			case TaxPackage.TAX_AUTHORITY_CATEGORY__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
+				return productCategoryId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -274,8 +286,6 @@ public class TaxAuthorityCategoryImpl extends BizEntityImpl implements TaxAuthor
 		result.append(taxAuthGeoId);
 		result.append(", taxAuthPartyId: ");
 		result.append(taxAuthPartyId);
-		result.append(", productCategoryId: ");
-		result.append(productCategoryId);
 		result.append(')');
 		return result.toString();
 	}

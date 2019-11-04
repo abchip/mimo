@@ -92,8 +92,8 @@ public interface CostComponentAttribute extends BizEntity {
 	 * @return the value of the '<em>Cost Component Id</em>' attribute.
 	 * @see #setCostComponentId(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute_CostComponentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CostComponent'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCostComponentId();
@@ -119,7 +119,8 @@ public interface CostComponentAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponentAttribute_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();

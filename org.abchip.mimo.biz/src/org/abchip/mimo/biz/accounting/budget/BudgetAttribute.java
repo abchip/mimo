@@ -92,8 +92,8 @@ public interface BudgetAttribute extends BizEntity {
 	 * @return the value of the '<em>Budget Id</em>' attribute.
 	 * @see #setBudgetId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetAttribute_BudgetId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Budget'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBudgetId();
@@ -119,7 +119,8 @@ public interface BudgetAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetAttribute_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();

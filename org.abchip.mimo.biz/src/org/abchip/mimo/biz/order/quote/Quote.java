@@ -11,6 +11,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.store.ProductStore;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,17 +27,17 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteId <em>Quote Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getIssueDate <em>Issue Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteName <em>Quote Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId <em>Quote Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getValidFromDate <em>Valid From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getValidThruDate <em>Valid Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId <em>Quote Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteAttributes <em>Quote Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteCoefficients <em>Quote Coefficients</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteItems <em>Quote Items</em>}</li>
@@ -46,30 +51,30 @@ import org.abchip.mimo.biz.BizEntityTyped;
  */
 public interface Quote extends BizEntityTyped<QuoteType> {
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_CurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -124,56 +129,56 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	void setIssueDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Store Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Id</em>' attribute.
-	 * @see #setProductStoreId(String)
+	 * @return the value of the '<em>Product Store Id</em>' reference.
+	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_ProductStoreId()
-	 * @model annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model keys="productStoreId"
 	 * @generated
 	 */
-	String getProductStoreId();
+	ProductStore getProductStoreId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getProductStoreId <em>Product Store Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getProductStoreId <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Store Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Store Id</em>' reference.
 	 * @see #getProductStoreId()
 	 * @generated
 	 */
-	void setProductStoreId(String value);
+	void setProductStoreId(ProductStore value);
 
 	/**
 	 * Returns the value of the '<em><b>Quote Id</b></em>' attribute.
@@ -186,7 +191,7 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	 * @return the value of the '<em>Quote Id</em>' attribute.
 	 * @see #setQuoteId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -229,82 +234,82 @@ public interface Quote extends BizEntityTyped<QuoteType> {
 	void setQuoteName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quote Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Type Id</em>' attribute.
-	 * @see #setQuoteTypeId(String)
+	 * @return the value of the '<em>Quote Type Id</em>' reference.
+	 * @see #setQuoteTypeId(QuoteType)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_QuoteTypeId()
-	 * @model annotation="mimo-ent-domain frame='QuoteType'"
+	 * @model keys="quoteTypeId"
 	 * @generated
 	 */
-	String getQuoteTypeId();
+	QuoteType getQuoteTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId <em>Quote Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getQuoteTypeId <em>Quote Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quote Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Quote Type Id</em>' reference.
 	 * @see #getQuoteTypeId()
 	 * @generated
 	 */
-	void setQuoteTypeId(String value);
+	void setQuoteTypeId(QuoteType value);
 
 	/**
-	 * Returns the value of the '<em><b>Sales Channel Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Sales Channel Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sales Channel Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sales Channel Enum Id</em>' attribute.
-	 * @see #setSalesChannelEnumId(String)
+	 * @return the value of the '<em>Sales Channel Enum Id</em>' reference.
+	 * @see #setSalesChannelEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_SalesChannelEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getSalesChannelEnumId();
+	Enumeration getSalesChannelEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sales Channel Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Sales Channel Enum Id</em>' reference.
 	 * @see #getSalesChannelEnumId()
 	 * @generated
 	 */
-	void setSalesChannelEnumId(String value);
+	void setSalesChannelEnumId(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuote_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.Quote#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Valid From Date</b></em>' attribute.

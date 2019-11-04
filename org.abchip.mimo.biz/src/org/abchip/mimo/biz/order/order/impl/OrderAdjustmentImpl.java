@@ -13,15 +13,23 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
+import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderAdjustment;
 import org.abchip.mimo.biz.order.order.OrderAdjustmentType;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -38,7 +46,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getAmountAlreadyIncluded <em>Amount Already Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getCorrespondingProductId <em>Corresponding Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getCustomerReferenceId <em>Customer Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getDescription <em>Description</em>}</li>
@@ -50,24 +57,25 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOldAmountPerQuantity <em>Old Amount Per Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOldPercentage <em>Old Percentage</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOriginalAdjustmentId <em>Original Adjustment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getRecurringAmount <em>Recurring Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getSourcePercentage <em>Source Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getSourceReferenceId <em>Source Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getProductPromoId <em>Product Promo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOriginalAdjustmentId <em>Original Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderAdjustmentImpl#getOrderAdjustmentAttributes <em>Order Adjustment Attributes</em>}</li>
  * </ul>
  *
@@ -178,26 +186,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @ordered
 	 */
 	protected String correspondingProductId = CORRESPONDING_PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
@@ -420,46 +408,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	protected double oldPercentage = OLD_PERCENTAGE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOrderAdjustmentTypeId() <em>Order Adjustment Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderAdjustmentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ADJUSTMENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderAdjustmentTypeId() <em>Order Adjustment Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderAdjustmentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderAdjustmentTypeId = ORDER_ADJUSTMENT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -478,66 +426,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @ordered
 	 */
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOriginalAdjustmentId() <em>Original Adjustment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalAdjustmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORIGINAL_ADJUSTMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOriginalAdjustmentId() <em>Original Adjustment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalAdjustmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String originalAdjustmentId = ORIGINAL_ADJUSTMENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOverrideGlAccountId() <em>Override Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OVERRIDE_GL_ACCOUNT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOverrideGlAccountId() <em>Override Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String overrideGlAccountId = OVERRIDE_GL_ACCOUNT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPrimaryGeoId() <em>Primary Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRIMARY_GEO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPrimaryGeoId() <em>Primary Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String primaryGeoId = PRIMARY_GEO_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
@@ -580,26 +468,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	protected String productPromoActionSeqId = PRODUCT_PROMO_ACTION_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoId = PRODUCT_PROMO_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getProductPromoRuleId() <em>Product Promo Rule Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -638,26 +506,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @ordered
 	 */
 	protected BigDecimal recurringAmount = RECURRING_AMOUNT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSecondaryGeoId() <em>Secondary Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecondaryGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SECONDARY_GEO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSecondaryGeoId() <em>Secondary Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecondaryGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String secondaryGeoId = SECONDARY_GEO_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShipGroupSeqId() <em>Ship Group Seq Id</em>}' attribute.
@@ -760,24 +608,94 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	protected String taxAuthPartyId = TAX_AUTH_PARTY_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTaxAuthorityRateSeqId() <em>Tax Authority Rate Seq Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrderAdjustmentTypeId() <em>Order Adjustment Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthorityRateSeqId()
+	 * @see #getOrderAdjustmentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT = null;
+	protected OrderAdjustmentType orderAdjustmentTypeId;
 
 	/**
-	 * The cached value of the '{@link #getTaxAuthorityRateSeqId() <em>Tax Authority Rate Seq Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromo productPromoId;
+
+	/**
+	 * The cached value of the '{@link #getPrimaryGeoId() <em>Primary Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrimaryGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo primaryGeoId;
+
+	/**
+	 * The cached value of the '{@link #getSecondaryGeoId() <em>Secondary Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecondaryGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo secondaryGeoId;
+
+	/**
+	 * The cached value of the '{@link #getOverrideGlAccountId() <em>Override Gl Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOverrideGlAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccount overrideGlAccountId;
+
+	/**
+	 * The cached value of the '{@link #getTaxAuthorityRateSeqId() <em>Tax Authority Rate Seq Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTaxAuthorityRateSeqId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String taxAuthorityRateSeqId = TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT;
+	protected TaxAuthorityRateProduct taxAuthorityRateSeqId;
+
+	/**
+	 * The cached value of the '{@link #getOriginalAdjustmentId() <em>Original Adjustment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginalAdjustmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderAdjustment originalAdjustmentId;
 
 	/**
 	 * The cached value of the '{@link #getOrderAdjustmentAttributes() <em>Order Adjustment Attributes</em>}' attribute list.
@@ -906,7 +824,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -916,8 +851,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -1205,7 +1140,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public String getOrderAdjustmentTypeId() {
+	public OrderAdjustmentType getOrderAdjustmentTypeId() {
+		if (orderAdjustmentTypeId != null && ((EObject)orderAdjustmentTypeId).eIsProxy()) {
+			InternalEObject oldOrderAdjustmentTypeId = (InternalEObject)orderAdjustmentTypeId;
+			orderAdjustmentTypeId = (OrderAdjustmentType)eResolveProxy(oldOrderAdjustmentTypeId);
+			if (orderAdjustmentTypeId != oldOrderAdjustmentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID, oldOrderAdjustmentTypeId, orderAdjustmentTypeId));
+			}
+		}
+		return orderAdjustmentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderAdjustmentType basicGetOrderAdjustmentTypeId() {
 		return orderAdjustmentTypeId;
 	}
 
@@ -1215,8 +1167,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public void setOrderAdjustmentTypeId(String newOrderAdjustmentTypeId) {
-		String oldOrderAdjustmentTypeId = orderAdjustmentTypeId;
+	public void setOrderAdjustmentTypeId(OrderAdjustmentType newOrderAdjustmentTypeId) {
+		OrderAdjustmentType oldOrderAdjustmentTypeId = orderAdjustmentTypeId;
 		orderAdjustmentTypeId = newOrderAdjustmentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID, oldOrderAdjustmentTypeId, orderAdjustmentTypeId));
@@ -1228,7 +1180,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -1238,8 +1207,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT__ORDER_ID, oldOrderId, orderId));
@@ -1274,7 +1243,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public String getOriginalAdjustmentId() {
+	public OrderAdjustment getOriginalAdjustmentId() {
+		if (originalAdjustmentId != null && ((EObject)originalAdjustmentId).eIsProxy()) {
+			InternalEObject oldOriginalAdjustmentId = (InternalEObject)originalAdjustmentId;
+			originalAdjustmentId = (OrderAdjustment)eResolveProxy(oldOriginalAdjustmentId);
+			if (originalAdjustmentId != oldOriginalAdjustmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID, oldOriginalAdjustmentId, originalAdjustmentId));
+			}
+		}
+		return originalAdjustmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderAdjustment basicGetOriginalAdjustmentId() {
 		return originalAdjustmentId;
 	}
 
@@ -1284,8 +1270,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public void setOriginalAdjustmentId(String newOriginalAdjustmentId) {
-		String oldOriginalAdjustmentId = originalAdjustmentId;
+	public void setOriginalAdjustmentId(OrderAdjustment newOriginalAdjustmentId) {
+		OrderAdjustment oldOriginalAdjustmentId = originalAdjustmentId;
 		originalAdjustmentId = newOriginalAdjustmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID, oldOriginalAdjustmentId, originalAdjustmentId));
@@ -1297,7 +1283,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public String getOverrideGlAccountId() {
+	public GlAccount getOverrideGlAccountId() {
+		if (overrideGlAccountId != null && ((EObject)overrideGlAccountId).eIsProxy()) {
+			InternalEObject oldOverrideGlAccountId = (InternalEObject)overrideGlAccountId;
+			overrideGlAccountId = (GlAccount)eResolveProxy(oldOverrideGlAccountId);
+			if (overrideGlAccountId != oldOverrideGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
+			}
+		}
+		return overrideGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetOverrideGlAccountId() {
 		return overrideGlAccountId;
 	}
 
@@ -1307,8 +1310,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public void setOverrideGlAccountId(String newOverrideGlAccountId) {
-		String oldOverrideGlAccountId = overrideGlAccountId;
+	public void setOverrideGlAccountId(GlAccount newOverrideGlAccountId) {
+		GlAccount oldOverrideGlAccountId = overrideGlAccountId;
 		overrideGlAccountId = newOverrideGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
@@ -1320,7 +1323,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public String getPrimaryGeoId() {
+	public Geo getPrimaryGeoId() {
+		if (primaryGeoId != null && ((EObject)primaryGeoId).eIsProxy()) {
+			InternalEObject oldPrimaryGeoId = (InternalEObject)primaryGeoId;
+			primaryGeoId = (Geo)eResolveProxy(oldPrimaryGeoId);
+			if (primaryGeoId != oldPrimaryGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID, oldPrimaryGeoId, primaryGeoId));
+			}
+		}
+		return primaryGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetPrimaryGeoId() {
 		return primaryGeoId;
 	}
 
@@ -1330,8 +1350,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public void setPrimaryGeoId(String newPrimaryGeoId) {
-		String oldPrimaryGeoId = primaryGeoId;
+	public void setPrimaryGeoId(Geo newPrimaryGeoId) {
+		Geo oldPrimaryGeoId = primaryGeoId;
 		primaryGeoId = newPrimaryGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID, oldPrimaryGeoId, primaryGeoId));
@@ -1389,7 +1409,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoId() {
+	public ProductPromo getProductPromoId() {
+		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
+			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
+			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
+			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
+			}
+		}
+		return productPromoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromo basicGetProductPromoId() {
 		return productPromoId;
 	}
 
@@ -1399,8 +1436,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoId(String newProductPromoId) {
-		String oldProductPromoId = productPromoId;
+	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
@@ -1458,7 +1495,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public String getSecondaryGeoId() {
+	public Geo getSecondaryGeoId() {
+		if (secondaryGeoId != null && ((EObject)secondaryGeoId).eIsProxy()) {
+			InternalEObject oldSecondaryGeoId = (InternalEObject)secondaryGeoId;
+			secondaryGeoId = (Geo)eResolveProxy(oldSecondaryGeoId);
+			if (secondaryGeoId != oldSecondaryGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID, oldSecondaryGeoId, secondaryGeoId));
+			}
+		}
+		return secondaryGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetSecondaryGeoId() {
 		return secondaryGeoId;
 	}
 
@@ -1468,8 +1522,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public void setSecondaryGeoId(String newSecondaryGeoId) {
-		String oldSecondaryGeoId = secondaryGeoId;
+	public void setSecondaryGeoId(Geo newSecondaryGeoId) {
+		Geo oldSecondaryGeoId = secondaryGeoId;
 		secondaryGeoId = newSecondaryGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID, oldSecondaryGeoId, secondaryGeoId));
@@ -1596,7 +1650,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public String getTaxAuthorityRateSeqId() {
+	public TaxAuthorityRateProduct getTaxAuthorityRateSeqId() {
+		if (taxAuthorityRateSeqId != null && ((EObject)taxAuthorityRateSeqId).eIsProxy()) {
+			InternalEObject oldTaxAuthorityRateSeqId = (InternalEObject)taxAuthorityRateSeqId;
+			taxAuthorityRateSeqId = (TaxAuthorityRateProduct)eResolveProxy(oldTaxAuthorityRateSeqId);
+			if (taxAuthorityRateSeqId != oldTaxAuthorityRateSeqId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID, oldTaxAuthorityRateSeqId, taxAuthorityRateSeqId));
+			}
+		}
+		return taxAuthorityRateSeqId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TaxAuthorityRateProduct basicGetTaxAuthorityRateSeqId() {
 		return taxAuthorityRateSeqId;
 	}
 
@@ -1606,8 +1677,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 	 * @generated
 	 */
 	@Override
-	public void setTaxAuthorityRateSeqId(String newTaxAuthorityRateSeqId) {
-		String oldTaxAuthorityRateSeqId = taxAuthorityRateSeqId;
+	public void setTaxAuthorityRateSeqId(TaxAuthorityRateProduct newTaxAuthorityRateSeqId) {
+		TaxAuthorityRateProduct oldTaxAuthorityRateSeqId = taxAuthorityRateSeqId;
 		taxAuthorityRateSeqId = newTaxAuthorityRateSeqId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID, oldTaxAuthorityRateSeqId, taxAuthorityRateSeqId));
@@ -1656,8 +1727,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 				return getComments();
 			case OrderPackage.ORDER_ADJUSTMENT__CORRESPONDING_PRODUCT_ID:
 				return getCorrespondingProductId();
-			case OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case OrderPackage.ORDER_ADJUSTMENT__CREATED_DATE:
 				return getCreatedDate();
 			case OrderPackage.ORDER_ADJUSTMENT__CUSTOMER_REFERENCE_ID:
@@ -1680,30 +1749,16 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 				return getOldAmountPerQuantity();
 			case OrderPackage.ORDER_ADJUSTMENT__OLD_PERCENTAGE:
 				return getOldPercentage();
-			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID:
-				return getOrderAdjustmentTypeId();
-			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID:
-				return getOriginalAdjustmentId();
-			case OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID:
-				return getOverrideGlAccountId();
-			case OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID:
-				return getPrimaryGeoId();
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_FEATURE_ID:
 				return getProductFeatureId();
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID:
 				return getProductPromoActionSeqId();
-			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID:
-				return getProductPromoId();
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_RULE_ID:
 				return getProductPromoRuleId();
 			case OrderPackage.ORDER_ADJUSTMENT__RECURRING_AMOUNT:
 				return getRecurringAmount();
-			case OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID:
-				return getSecondaryGeoId();
 			case OrderPackage.ORDER_ADJUSTMENT__SHIP_GROUP_SEQ_ID:
 				return getShipGroupSeqId();
 			case OrderPackage.ORDER_ADJUSTMENT__SOURCE_PERCENTAGE:
@@ -1714,8 +1769,33 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 				return getTaxAuthGeoId();
 			case OrderPackage.ORDER_ADJUSTMENT__TAX_AUTH_PARTY_ID:
 				return getTaxAuthPartyId();
+			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID:
+				if (resolve) return getOrderAdjustmentTypeId();
+				return basicGetOrderAdjustmentTypeId();
+			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
+			case OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID:
+				if (resolve) return getProductPromoId();
+				return basicGetProductPromoId();
+			case OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID:
+				if (resolve) return getPrimaryGeoId();
+				return basicGetPrimaryGeoId();
+			case OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID:
+				if (resolve) return getSecondaryGeoId();
+				return basicGetSecondaryGeoId();
+			case OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID:
+				if (resolve) return getOverrideGlAccountId();
+				return basicGetOverrideGlAccountId();
 			case OrderPackage.ORDER_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID:
-				return getTaxAuthorityRateSeqId();
+				if (resolve) return getTaxAuthorityRateSeqId();
+				return basicGetTaxAuthorityRateSeqId();
+			case OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID:
+				if (resolve) return getOriginalAdjustmentId();
+				return basicGetOriginalAdjustmentId();
 			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_ATTRIBUTES:
 				return getOrderAdjustmentAttributes();
 		}
@@ -1745,9 +1825,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__CORRESPONDING_PRODUCT_ID:
 				setCorrespondingProductId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__CREATED_DATE:
 				setCreatedDate((Date)newValue);
@@ -1782,23 +1859,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 			case OrderPackage.ORDER_ADJUSTMENT__OLD_PERCENTAGE:
 				setOldPercentage((Double)newValue);
 				return;
-			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID:
-				setOrderAdjustmentTypeId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID:
-				setOriginalAdjustmentId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID:
-				setOverrideGlAccountId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID:
-				setPrimaryGeoId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_FEATURE_ID:
 				setProductFeatureId((String)newValue);
@@ -1806,17 +1868,11 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID:
 				setProductPromoActionSeqId((String)newValue);
 				return;
-			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID:
-				setProductPromoId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_RULE_ID:
 				setProductPromoRuleId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__RECURRING_AMOUNT:
 				setRecurringAmount((BigDecimal)newValue);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID:
-				setSecondaryGeoId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__SHIP_GROUP_SEQ_ID:
 				setShipGroupSeqId((String)newValue);
@@ -1833,8 +1889,32 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 			case OrderPackage.ORDER_ADJUSTMENT__TAX_AUTH_PARTY_ID:
 				setTaxAuthPartyId((String)newValue);
 				return;
+			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID:
+				setOrderAdjustmentTypeId((OrderAdjustmentType)newValue);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)newValue);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID:
+				setPrimaryGeoId((Geo)newValue);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID:
+				setSecondaryGeoId((Geo)newValue);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID:
+				setOverrideGlAccountId((GlAccount)newValue);
+				return;
 			case OrderPackage.ORDER_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID:
-				setTaxAuthorityRateSeqId((String)newValue);
+				setTaxAuthorityRateSeqId((TaxAuthorityRateProduct)newValue);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID:
+				setOriginalAdjustmentId((OrderAdjustment)newValue);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_ATTRIBUTES:
 				getOrderAdjustmentAttributes().clear();
@@ -1866,9 +1946,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__CORRESPONDING_PRODUCT_ID:
 				setCorrespondingProductId(CORRESPONDING_PRODUCT_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
@@ -1903,23 +1980,8 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 			case OrderPackage.ORDER_ADJUSTMENT__OLD_PERCENTAGE:
 				setOldPercentage(OLD_PERCENTAGE_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID:
-				setOrderAdjustmentTypeId(ORDER_ADJUSTMENT_TYPE_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID:
-				setOriginalAdjustmentId(ORIGINAL_ADJUSTMENT_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID:
-				setOverrideGlAccountId(OVERRIDE_GL_ACCOUNT_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID:
-				setPrimaryGeoId(PRIMARY_GEO_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_FEATURE_ID:
 				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
@@ -1927,17 +1989,11 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID:
 				setProductPromoActionSeqId(PRODUCT_PROMO_ACTION_SEQ_ID_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID:
-				setProductPromoId(PRODUCT_PROMO_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_RULE_ID:
 				setProductPromoRuleId(PRODUCT_PROMO_RULE_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__RECURRING_AMOUNT:
 				setRecurringAmount(RECURRING_AMOUNT_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID:
-				setSecondaryGeoId(SECONDARY_GEO_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__SHIP_GROUP_SEQ_ID:
 				setShipGroupSeqId(SHIP_GROUP_SEQ_ID_EDEFAULT);
@@ -1954,8 +2010,32 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 			case OrderPackage.ORDER_ADJUSTMENT__TAX_AUTH_PARTY_ID:
 				setTaxAuthPartyId(TAX_AUTH_PARTY_ID_EDEFAULT);
 				return;
+			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID:
+				setOrderAdjustmentTypeId((OrderAdjustmentType)null);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)null);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID:
+				setPrimaryGeoId((Geo)null);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID:
+				setSecondaryGeoId((Geo)null);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID:
+				setOverrideGlAccountId((GlAccount)null);
+				return;
 			case OrderPackage.ORDER_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID:
-				setTaxAuthorityRateSeqId(TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT);
+				setTaxAuthorityRateSeqId((TaxAuthorityRateProduct)null);
+				return;
+			case OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID:
+				setOriginalAdjustmentId((OrderAdjustment)null);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_ATTRIBUTES:
 				getOrderAdjustmentAttributes().clear();
@@ -1982,8 +2062,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case OrderPackage.ORDER_ADJUSTMENT__CORRESPONDING_PRODUCT_ID:
 				return CORRESPONDING_PRODUCT_ID_EDEFAULT == null ? correspondingProductId != null : !CORRESPONDING_PRODUCT_ID_EDEFAULT.equals(correspondingProductId);
-			case OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case OrderPackage.ORDER_ADJUSTMENT__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
 			case OrderPackage.ORDER_ADJUSTMENT__CUSTOMER_REFERENCE_ID:
@@ -2006,30 +2084,16 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 				return OLD_AMOUNT_PER_QUANTITY_EDEFAULT == null ? oldAmountPerQuantity != null : !OLD_AMOUNT_PER_QUANTITY_EDEFAULT.equals(oldAmountPerQuantity);
 			case OrderPackage.ORDER_ADJUSTMENT__OLD_PERCENTAGE:
 				return oldPercentage != OLD_PERCENTAGE_EDEFAULT;
-			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID:
-				return ORDER_ADJUSTMENT_TYPE_ID_EDEFAULT == null ? orderAdjustmentTypeId != null : !ORDER_ADJUSTMENT_TYPE_ID_EDEFAULT.equals(orderAdjustmentTypeId);
-			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID:
-				return ORIGINAL_ADJUSTMENT_ID_EDEFAULT == null ? originalAdjustmentId != null : !ORIGINAL_ADJUSTMENT_ID_EDEFAULT.equals(originalAdjustmentId);
-			case OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID:
-				return OVERRIDE_GL_ACCOUNT_ID_EDEFAULT == null ? overrideGlAccountId != null : !OVERRIDE_GL_ACCOUNT_ID_EDEFAULT.equals(overrideGlAccountId);
-			case OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID:
-				return PRIMARY_GEO_ID_EDEFAULT == null ? primaryGeoId != null : !PRIMARY_GEO_ID_EDEFAULT.equals(primaryGeoId);
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_FEATURE_ID:
 				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID:
 				return PRODUCT_PROMO_ACTION_SEQ_ID_EDEFAULT == null ? productPromoActionSeqId != null : !PRODUCT_PROMO_ACTION_SEQ_ID_EDEFAULT.equals(productPromoActionSeqId);
-			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID:
-				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
 			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_RULE_ID:
 				return PRODUCT_PROMO_RULE_ID_EDEFAULT == null ? productPromoRuleId != null : !PRODUCT_PROMO_RULE_ID_EDEFAULT.equals(productPromoRuleId);
 			case OrderPackage.ORDER_ADJUSTMENT__RECURRING_AMOUNT:
 				return RECURRING_AMOUNT_EDEFAULT == null ? recurringAmount != null : !RECURRING_AMOUNT_EDEFAULT.equals(recurringAmount);
-			case OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID:
-				return SECONDARY_GEO_ID_EDEFAULT == null ? secondaryGeoId != null : !SECONDARY_GEO_ID_EDEFAULT.equals(secondaryGeoId);
 			case OrderPackage.ORDER_ADJUSTMENT__SHIP_GROUP_SEQ_ID:
 				return SHIP_GROUP_SEQ_ID_EDEFAULT == null ? shipGroupSeqId != null : !SHIP_GROUP_SEQ_ID_EDEFAULT.equals(shipGroupSeqId);
 			case OrderPackage.ORDER_ADJUSTMENT__SOURCE_PERCENTAGE:
@@ -2040,8 +2104,24 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 				return TAX_AUTH_GEO_ID_EDEFAULT == null ? taxAuthGeoId != null : !TAX_AUTH_GEO_ID_EDEFAULT.equals(taxAuthGeoId);
 			case OrderPackage.ORDER_ADJUSTMENT__TAX_AUTH_PARTY_ID:
 				return TAX_AUTH_PARTY_ID_EDEFAULT == null ? taxAuthPartyId != null : !TAX_AUTH_PARTY_ID_EDEFAULT.equals(taxAuthPartyId);
+			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_TYPE_ID:
+				return orderAdjustmentTypeId != null;
+			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ID:
+				return orderId != null;
+			case OrderPackage.ORDER_ADJUSTMENT__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case OrderPackage.ORDER_ADJUSTMENT__PRODUCT_PROMO_ID:
+				return productPromoId != null;
+			case OrderPackage.ORDER_ADJUSTMENT__PRIMARY_GEO_ID:
+				return primaryGeoId != null;
+			case OrderPackage.ORDER_ADJUSTMENT__SECONDARY_GEO_ID:
+				return secondaryGeoId != null;
+			case OrderPackage.ORDER_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID:
+				return overrideGlAccountId != null;
 			case OrderPackage.ORDER_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID:
-				return TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT == null ? taxAuthorityRateSeqId != null : !TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT.equals(taxAuthorityRateSeqId);
+				return taxAuthorityRateSeqId != null;
+			case OrderPackage.ORDER_ADJUSTMENT__ORIGINAL_ADJUSTMENT_ID:
+				return originalAdjustmentId != null;
 			case OrderPackage.ORDER_ADJUSTMENT__ORDER_ADJUSTMENT_ATTRIBUTES:
 				return orderAdjustmentAttributes != null && !orderAdjustmentAttributes.isEmpty();
 		}
@@ -2068,8 +2148,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 		result.append(comments);
 		result.append(", correspondingProductId: ");
 		result.append(correspondingProductId);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
 		result.append(", customerReferenceId: ");
@@ -2092,30 +2170,16 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 		result.append(oldAmountPerQuantity);
 		result.append(", oldPercentage: ");
 		result.append(oldPercentage);
-		result.append(", orderAdjustmentTypeId: ");
-		result.append(orderAdjustmentTypeId);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", originalAdjustmentId: ");
-		result.append(originalAdjustmentId);
-		result.append(", overrideGlAccountId: ");
-		result.append(overrideGlAccountId);
-		result.append(", primaryGeoId: ");
-		result.append(primaryGeoId);
 		result.append(", productFeatureId: ");
 		result.append(productFeatureId);
 		result.append(", productPromoActionSeqId: ");
 		result.append(productPromoActionSeqId);
-		result.append(", productPromoId: ");
-		result.append(productPromoId);
 		result.append(", productPromoRuleId: ");
 		result.append(productPromoRuleId);
 		result.append(", recurringAmount: ");
 		result.append(recurringAmount);
-		result.append(", secondaryGeoId: ");
-		result.append(secondaryGeoId);
 		result.append(", shipGroupSeqId: ");
 		result.append(shipGroupSeqId);
 		result.append(", sourcePercentage: ");
@@ -2126,8 +2190,6 @@ public class OrderAdjustmentImpl extends BizEntityTypedImpl<OrderAdjustmentType>
 		result.append(taxAuthGeoId);
 		result.append(", taxAuthPartyId: ");
 		result.append(taxAuthPartyId);
-		result.append(", taxAuthorityRateSeqId: ");
-		result.append(taxAuthorityRateSeqId);
 		result.append(", orderAdjustmentAttributes: ");
 		result.append(orderAdjustmentAttributes);
 		result.append(')');

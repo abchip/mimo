@@ -22,8 +22,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodId <em>Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodName <em>Custom Method Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId <em>Custom Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId <em>Custom Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.CustomMethod#getFixedAssetDepMethods <em>Fixed Asset Dep Methods</em>}</li>
  * </ul>
  *
@@ -201,29 +201,29 @@ public interface CustomMethod extends BizEntityTyped<CustomMethodType> {
 	List<String> workEfforts();
 
 	/**
-	 * Returns the value of the '<em><b>Custom Method Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Custom Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Custom Method Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Custom Method Type Id</em>' attribute.
-	 * @see #setCustomMethodTypeId(String)
+	 * @return the value of the '<em>Custom Method Type Id</em>' reference.
+	 * @see #setCustomMethodTypeId(CustomMethodType)
 	 * @see org.abchip.mimo.biz.common.method.MethodPackage#getCustomMethod_CustomMethodTypeId()
-	 * @model annotation="mimo-ent-domain frame='CustomMethodType'"
+	 * @model keys="customMethodTypeId"
 	 * @generated
 	 */
-	String getCustomMethodTypeId();
+	CustomMethodType getCustomMethodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId <em>Custom Method Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.method.CustomMethod#getCustomMethodTypeId <em>Custom Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Custom Method Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Custom Method Type Id</em>' reference.
 	 * @see #getCustomMethodTypeId()
 	 * @generated
 	 */
-	void setCustomMethodTypeId(String value);
+	void setCustomMethodTypeId(CustomMethodType value);
 
 } // CustomMethod

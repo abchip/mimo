@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.agreement;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,10 +23,10 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementPromoAppl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementPromoAppl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementPromoAppl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementPromoAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementPromoAppl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementPromoAppl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementPromoAppl#getProductPromoId <em>Product Promo Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementPromoAppl()
@@ -88,32 +89,30 @@ public interface AgreementPromoAppl extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Id</em>' attribute.
-	 * @see #setProductPromoId(String)
+	 * @return the value of the '<em>Product Promo Id</em>' reference.
+	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementPromoAppl_ProductPromoId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPromo'"
+	 * @model keys="productPromoId"
 	 * @generated
 	 */
-	String getProductPromoId();
+	ProductPromo getProductPromoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementPromoAppl#getProductPromoId <em>Product Promo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementPromoAppl#getProductPromoId <em>Product Promo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Id</em>' reference.
 	 * @see #getProductPromoId()
 	 * @generated
 	 */
-	void setProductPromoId(String value);
+	void setProductPromoId(ProductPromo value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.
@@ -180,7 +179,6 @@ public interface AgreementPromoAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementPromoAppl_AgreementId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Agreement'"
 	 * @generated
 	 */
 	String getAgreementId();

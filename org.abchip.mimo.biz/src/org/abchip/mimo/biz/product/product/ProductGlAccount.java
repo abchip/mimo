@@ -8,6 +8,9 @@
 package org.abchip.mimo.biz.product.product;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,84 +33,82 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ProductGlAccount extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Id</em>' attribute.
-	 * @see #setGlAccountId(String)
+	 * @return the value of the '<em>Gl Account Id</em>' reference.
+	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGlAccount_GlAccountId()
-	 * @model annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getGlAccountId();
+	GlAccount getGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGlAccount#getGlAccountId <em>Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGlAccount#getGlAccountId <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Id</em>' reference.
 	 * @see #getGlAccountId()
 	 * @generated
 	 */
-	void setGlAccountId(String value);
+	void setGlAccountId(GlAccount value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Type Id</em>' attribute.
-	 * @see #setGlAccountTypeId(String)
+	 * @return the value of the '<em>Gl Account Type Id</em>' reference.
+	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGlAccount_GlAccountTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountType'"
+	 * @model keys="glAccountTypeId"
 	 * @generated
 	 */
-	String getGlAccountTypeId();
+	GlAccountType getGlAccountTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Type Id</em>' reference.
 	 * @see #getGlAccountTypeId()
 	 * @generated
 	 */
-	void setGlAccountTypeId(String value);
+	void setGlAccountTypeId(GlAccountType value);
 
 	/**
-	 * Returns the value of the '<em><b>Organization Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Organization Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Organization Party Id</em>' attribute.
-	 * @see #setOrganizationPartyId(String)
+	 * @return the value of the '<em>Organization Party Id</em>' reference.
+	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGlAccount_OrganizationPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getOrganizationPartyId();
+	Party getOrganizationPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Organization Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Organization Party Id</em>' reference.
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 */
-	void setOrganizationPartyId(String value);
+	void setOrganizationPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
@@ -120,8 +121,8 @@ public interface ProductGlAccount extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGlAccount_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();

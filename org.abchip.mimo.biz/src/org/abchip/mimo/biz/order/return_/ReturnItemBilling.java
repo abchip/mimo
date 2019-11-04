@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.order.return_;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,10 +24,10 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getShipmentReceiptId <em>Shipment Receipt Id</em>}</li>
  * </ul>
  *
@@ -61,31 +63,30 @@ public interface ReturnItemBilling extends BizEntity {
 	void setAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Id</em>' attribute.
-	 * @see #setInvoiceId(String)
+	 * @return the value of the '<em>Invoice Id</em>' reference.
+	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_InvoiceId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Invoice'"
+	 * @model keys="invoiceId"
 	 * @generated
 	 */
-	String getInvoiceId();
+	Invoice getInvoiceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceId <em>Invoice Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceId <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Id</em>' reference.
 	 * @see #getInvoiceId()
 	 * @generated
 	 */
-	void setInvoiceId(String value);
+	void setInvoiceId(Invoice value);
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Item Seq Id</b></em>' attribute.
@@ -98,7 +99,8 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @return the value of the '<em>Invoice Item Seq Id</em>' attribute.
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_InvoiceItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -150,8 +152,8 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @return the value of the '<em>Return Id</em>' attribute.
 	 * @see #setReturnId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_ReturnId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnId();
@@ -177,7 +179,8 @@ public interface ReturnItemBilling extends BizEntity {
 	 * @return the value of the '<em>Return Item Seq Id</em>' attribute.
 	 * @see #setReturnItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_ReturnItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnItemSeqId();
@@ -193,29 +196,29 @@ public interface ReturnItemBilling extends BizEntity {
 	void setReturnItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Receipt Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Receipt Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Receipt Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Receipt Id</em>' attribute.
-	 * @see #setShipmentReceiptId(String)
+	 * @return the value of the '<em>Shipment Receipt Id</em>' reference.
+	 * @see #setShipmentReceiptId(ShipmentReceipt)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemBilling_ShipmentReceiptId()
-	 * @model annotation="mimo-ent-domain frame='ShipmentReceipt'"
+	 * @model keys="receiptId"
 	 * @generated
 	 */
-	String getShipmentReceiptId();
+	ShipmentReceipt getShipmentReceiptId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getShipmentReceiptId <em>Shipment Receipt Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getShipmentReceiptId <em>Shipment Receipt Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Receipt Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Receipt Id</em>' reference.
 	 * @see #getShipmentReceiptId()
 	 * @generated
 	 */
-	void setShipmentReceiptId(String value);
+	void setShipmentReceiptId(ShipmentReceipt value);
 
 } // ReturnItemBilling

@@ -9,14 +9,22 @@ package org.abchip.mimo.biz.order.return_.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.return_.ReturnItem;
+import org.abchip.mimo.biz.order.return_.ReturnItemResponse;
 import org.abchip.mimo.biz.order.return_.ReturnItemType;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
+import org.abchip.mimo.biz.order.return_.ReturnReason;
+import org.abchip.mimo.biz.order.return_.ReturnType;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,18 +38,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getExpectedItemStatus <em>Expected Item Status</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReceivedQuantity <em>Received Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnItemResponseId <em>Return Item Response Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnItemTypeId <em>Return Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnPrice <em>Return Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnQuantity <em>Return Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnReasonId <em>Return Reason Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnTypeId <em>Return Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnItemTypeId <em>Return Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getReturnItemResponseId <em>Return Item Response Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getExpectedItemStatus <em>Expected Item Status</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -113,46 +121,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getExpectedItemStatus() <em>Expected Item Status</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpectedItemStatus()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EXPECTED_ITEM_STATUS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExpectedItemStatus() <em>Expected Item Status</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpectedItemStatus()
-	 * @generated
-	 * @ordered
-	 */
-	protected String expectedItemStatus = EXPECTED_ITEM_STATUS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,26 +141,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getReceivedQuantity() <em>Received Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,46 +159,6 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @ordered
 	 */
 	protected BigDecimal receivedQuantity = RECEIVED_QUANTITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReturnItemResponseId() <em>Return Item Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnItemResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_ITEM_RESPONSE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnItemResponseId() <em>Return Item Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnItemResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnItemResponseId = RETURN_ITEM_RESPONSE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReturnItemTypeId() <em>Return Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_ITEM_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnItemTypeId() <em>Return Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnItemTypeId = RETURN_ITEM_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReturnPrice() <em>Return Price</em>}' attribute.
@@ -293,64 +201,84 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	protected BigDecimal returnQuantity = RETURN_QUANTITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getReturnReasonId() <em>Return Reason Id</em>}' attribute.
+	 * The cached value of the '{@link #getReturnReasonId() <em>Return Reason Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReturnReasonId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String RETURN_REASON_ID_EDEFAULT = null;
+	protected ReturnReason returnReasonId;
 
 	/**
-	 * The cached value of the '{@link #getReturnReasonId() <em>Return Reason Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnReasonId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnReasonId = RETURN_REASON_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReturnTypeId() <em>Return Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getReturnTypeId() <em>Return Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReturnTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String RETURN_TYPE_ID_EDEFAULT = null;
+	protected ReturnType returnTypeId;
 
 	/**
-	 * The cached value of the '{@link #getReturnTypeId() <em>Return Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getReturnItemTypeId() <em>Return Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReturnTypeId()
+	 * @see #getReturnItemTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String returnTypeId = RETURN_TYPE_ID_EDEFAULT;
+	protected ReturnItemType returnItemTypeId;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getReturnItemResponseId() <em>Return Item Response Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnItemResponseId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReturnItemResponse returnItemResponseId;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getExpectedItemStatus() <em>Expected Item Status</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getExpectedItemStatus()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected StatusItem expectedItemStatus;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -400,7 +328,24 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getExpectedItemStatus() {
+	public StatusItem getExpectedItemStatus() {
+		if (expectedItemStatus != null && ((EObject)expectedItemStatus).eIsProxy()) {
+			InternalEObject oldExpectedItemStatus = (InternalEObject)expectedItemStatus;
+			expectedItemStatus = (StatusItem)eResolveProxy(oldExpectedItemStatus);
+			if (expectedItemStatus != oldExpectedItemStatus) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS, oldExpectedItemStatus, expectedItemStatus));
+			}
+		}
+		return expectedItemStatus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetExpectedItemStatus() {
 		return expectedItemStatus;
 	}
 
@@ -410,8 +355,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setExpectedItemStatus(String newExpectedItemStatus) {
-		String oldExpectedItemStatus = expectedItemStatus;
+	public void setExpectedItemStatus(StatusItem newExpectedItemStatus) {
+		StatusItem oldExpectedItemStatus = expectedItemStatus;
 		expectedItemStatus = newExpectedItemStatus;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS, oldExpectedItemStatus, expectedItemStatus));
@@ -423,7 +368,24 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -433,8 +395,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__ORDER_ID, oldOrderId, orderId));
@@ -469,7 +431,24 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -479,8 +458,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__PRODUCT_ID, oldProductId, productId));
@@ -538,7 +517,24 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getReturnItemResponseId() {
+	public ReturnItemResponse getReturnItemResponseId() {
+		if (returnItemResponseId != null && ((EObject)returnItemResponseId).eIsProxy()) {
+			InternalEObject oldReturnItemResponseId = (InternalEObject)returnItemResponseId;
+			returnItemResponseId = (ReturnItemResponse)eResolveProxy(oldReturnItemResponseId);
+			if (returnItemResponseId != oldReturnItemResponseId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID, oldReturnItemResponseId, returnItemResponseId));
+			}
+		}
+		return returnItemResponseId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnItemResponse basicGetReturnItemResponseId() {
 		return returnItemResponseId;
 	}
 
@@ -548,8 +544,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setReturnItemResponseId(String newReturnItemResponseId) {
-		String oldReturnItemResponseId = returnItemResponseId;
+	public void setReturnItemResponseId(ReturnItemResponse newReturnItemResponseId) {
+		ReturnItemResponse oldReturnItemResponseId = returnItemResponseId;
 		returnItemResponseId = newReturnItemResponseId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID, oldReturnItemResponseId, returnItemResponseId));
@@ -584,7 +580,24 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getReturnItemTypeId() {
+	public ReturnItemType getReturnItemTypeId() {
+		if (returnItemTypeId != null && ((EObject)returnItemTypeId).eIsProxy()) {
+			InternalEObject oldReturnItemTypeId = (InternalEObject)returnItemTypeId;
+			returnItemTypeId = (ReturnItemType)eResolveProxy(oldReturnItemTypeId);
+			if (returnItemTypeId != oldReturnItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID, oldReturnItemTypeId, returnItemTypeId));
+			}
+		}
+		return returnItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnItemType basicGetReturnItemTypeId() {
 		return returnItemTypeId;
 	}
 
@@ -594,8 +607,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setReturnItemTypeId(String newReturnItemTypeId) {
-		String oldReturnItemTypeId = returnItemTypeId;
+	public void setReturnItemTypeId(ReturnItemType newReturnItemTypeId) {
+		ReturnItemType oldReturnItemTypeId = returnItemTypeId;
 		returnItemTypeId = newReturnItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID, oldReturnItemTypeId, returnItemTypeId));
@@ -653,7 +666,24 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getReturnReasonId() {
+	public ReturnReason getReturnReasonId() {
+		if (returnReasonId != null && ((EObject)returnReasonId).eIsProxy()) {
+			InternalEObject oldReturnReasonId = (InternalEObject)returnReasonId;
+			returnReasonId = (ReturnReason)eResolveProxy(oldReturnReasonId);
+			if (returnReasonId != oldReturnReasonId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_REASON_ID, oldReturnReasonId, returnReasonId));
+			}
+		}
+		return returnReasonId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnReason basicGetReturnReasonId() {
 		return returnReasonId;
 	}
 
@@ -663,8 +693,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setReturnReasonId(String newReturnReasonId) {
-		String oldReturnReasonId = returnReasonId;
+	public void setReturnReasonId(ReturnReason newReturnReasonId) {
+		ReturnReason oldReturnReasonId = returnReasonId;
 		returnReasonId = newReturnReasonId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_REASON_ID, oldReturnReasonId, returnReasonId));
@@ -676,7 +706,24 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getReturnTypeId() {
+	public ReturnType getReturnTypeId() {
+		if (returnTypeId != null && ((EObject)returnTypeId).eIsProxy()) {
+			InternalEObject oldReturnTypeId = (InternalEObject)returnTypeId;
+			returnTypeId = (ReturnType)eResolveProxy(oldReturnTypeId);
+			if (returnTypeId != oldReturnTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__RETURN_TYPE_ID, oldReturnTypeId, returnTypeId));
+			}
+		}
+		return returnTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnType basicGetReturnTypeId() {
 		return returnTypeId;
 	}
 
@@ -686,8 +733,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setReturnTypeId(String newReturnTypeId) {
-		String oldReturnTypeId = returnTypeId;
+	public void setReturnTypeId(ReturnType newReturnTypeId) {
+		ReturnType oldReturnTypeId = returnTypeId;
 		returnTypeId = newReturnTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__RETURN_TYPE_ID, oldReturnTypeId, returnTypeId));
@@ -699,7 +746,24 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -709,8 +773,8 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM__STATUS_ID, oldStatusId, statusId));
@@ -730,30 +794,38 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 				return getReturnItemSeqId();
 			case ReturnPackage.RETURN_ITEM__DESCRIPTION:
 				return getDescription();
-			case ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS:
-				return getExpectedItemStatus();
-			case ReturnPackage.RETURN_ITEM__ORDER_ID:
-				return getOrderId();
 			case ReturnPackage.RETURN_ITEM__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case ReturnPackage.RETURN_ITEM__PRODUCT_ID:
-				return getProductId();
 			case ReturnPackage.RETURN_ITEM__RECEIVED_QUANTITY:
 				return getReceivedQuantity();
-			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID:
-				return getReturnItemResponseId();
-			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID:
-				return getReturnItemTypeId();
 			case ReturnPackage.RETURN_ITEM__RETURN_PRICE:
 				return getReturnPrice();
 			case ReturnPackage.RETURN_ITEM__RETURN_QUANTITY:
 				return getReturnQuantity();
 			case ReturnPackage.RETURN_ITEM__RETURN_REASON_ID:
-				return getReturnReasonId();
+				if (resolve) return getReturnReasonId();
+				return basicGetReturnReasonId();
 			case ReturnPackage.RETURN_ITEM__RETURN_TYPE_ID:
-				return getReturnTypeId();
+				if (resolve) return getReturnTypeId();
+				return basicGetReturnTypeId();
+			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID:
+				if (resolve) return getReturnItemTypeId();
+				return basicGetReturnItemTypeId();
+			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID:
+				if (resolve) return getReturnItemResponseId();
+				return basicGetReturnItemResponseId();
+			case ReturnPackage.RETURN_ITEM__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case ReturnPackage.RETURN_ITEM__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS:
+				if (resolve) return getExpectedItemStatus();
+				return basicGetExpectedItemStatus();
+			case ReturnPackage.RETURN_ITEM__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -775,26 +847,11 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			case ReturnPackage.RETURN_ITEM__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS:
-				setExpectedItemStatus((String)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case ReturnPackage.RETURN_ITEM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
-			case ReturnPackage.RETURN_ITEM__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ReturnPackage.RETURN_ITEM__RECEIVED_QUANTITY:
 				setReceivedQuantity((BigDecimal)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID:
-				setReturnItemResponseId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID:
-				setReturnItemTypeId((String)newValue);
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_PRICE:
 				setReturnPrice((BigDecimal)newValue);
@@ -803,13 +860,28 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 				setReturnQuantity((BigDecimal)newValue);
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_REASON_ID:
-				setReturnReasonId((String)newValue);
+				setReturnReasonId((ReturnReason)newValue);
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_TYPE_ID:
-				setReturnTypeId((String)newValue);
+				setReturnTypeId((ReturnType)newValue);
+				return;
+			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID:
+				setReturnItemTypeId((ReturnItemType)newValue);
+				return;
+			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID:
+				setReturnItemResponseId((ReturnItemResponse)newValue);
+				return;
+			case ReturnPackage.RETURN_ITEM__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 			case ReturnPackage.RETURN_ITEM__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
+				return;
+			case ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS:
+				setExpectedItemStatus((StatusItem)newValue);
+				return;
+			case ReturnPackage.RETURN_ITEM__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -832,26 +904,11 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 			case ReturnPackage.RETURN_ITEM__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS:
-				setExpectedItemStatus(EXPECTED_ITEM_STATUS_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_ITEM__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case ReturnPackage.RETURN_ITEM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case ReturnPackage.RETURN_ITEM__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ReturnPackage.RETURN_ITEM__RECEIVED_QUANTITY:
 				setReceivedQuantity(RECEIVED_QUANTITY_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID:
-				setReturnItemResponseId(RETURN_ITEM_RESPONSE_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID:
-				setReturnItemTypeId(RETURN_ITEM_TYPE_ID_EDEFAULT);
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_PRICE:
 				setReturnPrice(RETURN_PRICE_EDEFAULT);
@@ -860,13 +917,28 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 				setReturnQuantity(RETURN_QUANTITY_EDEFAULT);
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_REASON_ID:
-				setReturnReasonId(RETURN_REASON_ID_EDEFAULT);
+				setReturnReasonId((ReturnReason)null);
 				return;
 			case ReturnPackage.RETURN_ITEM__RETURN_TYPE_ID:
-				setReturnTypeId(RETURN_TYPE_ID_EDEFAULT);
+				setReturnTypeId((ReturnType)null);
+				return;
+			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID:
+				setReturnItemTypeId((ReturnItemType)null);
+				return;
+			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID:
+				setReturnItemResponseId((ReturnItemResponse)null);
+				return;
+			case ReturnPackage.RETURN_ITEM__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 			case ReturnPackage.RETURN_ITEM__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
+				return;
+			case ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS:
+				setExpectedItemStatus((StatusItem)null);
+				return;
+			case ReturnPackage.RETURN_ITEM__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -886,30 +958,30 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 				return RETURN_ITEM_SEQ_ID_EDEFAULT == null ? returnItemSeqId != null : !RETURN_ITEM_SEQ_ID_EDEFAULT.equals(returnItemSeqId);
 			case ReturnPackage.RETURN_ITEM__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS:
-				return EXPECTED_ITEM_STATUS_EDEFAULT == null ? expectedItemStatus != null : !EXPECTED_ITEM_STATUS_EDEFAULT.equals(expectedItemStatus);
-			case ReturnPackage.RETURN_ITEM__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case ReturnPackage.RETURN_ITEM__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case ReturnPackage.RETURN_ITEM__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ReturnPackage.RETURN_ITEM__RECEIVED_QUANTITY:
 				return RECEIVED_QUANTITY_EDEFAULT == null ? receivedQuantity != null : !RECEIVED_QUANTITY_EDEFAULT.equals(receivedQuantity);
-			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID:
-				return RETURN_ITEM_RESPONSE_ID_EDEFAULT == null ? returnItemResponseId != null : !RETURN_ITEM_RESPONSE_ID_EDEFAULT.equals(returnItemResponseId);
-			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID:
-				return RETURN_ITEM_TYPE_ID_EDEFAULT == null ? returnItemTypeId != null : !RETURN_ITEM_TYPE_ID_EDEFAULT.equals(returnItemTypeId);
 			case ReturnPackage.RETURN_ITEM__RETURN_PRICE:
 				return RETURN_PRICE_EDEFAULT == null ? returnPrice != null : !RETURN_PRICE_EDEFAULT.equals(returnPrice);
 			case ReturnPackage.RETURN_ITEM__RETURN_QUANTITY:
 				return RETURN_QUANTITY_EDEFAULT == null ? returnQuantity != null : !RETURN_QUANTITY_EDEFAULT.equals(returnQuantity);
 			case ReturnPackage.RETURN_ITEM__RETURN_REASON_ID:
-				return RETURN_REASON_ID_EDEFAULT == null ? returnReasonId != null : !RETURN_REASON_ID_EDEFAULT.equals(returnReasonId);
+				return returnReasonId != null;
 			case ReturnPackage.RETURN_ITEM__RETURN_TYPE_ID:
-				return RETURN_TYPE_ID_EDEFAULT == null ? returnTypeId != null : !RETURN_TYPE_ID_EDEFAULT.equals(returnTypeId);
+				return returnTypeId != null;
+			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_TYPE_ID:
+				return returnItemTypeId != null;
+			case ReturnPackage.RETURN_ITEM__RETURN_ITEM_RESPONSE_ID:
+				return returnItemResponseId != null;
+			case ReturnPackage.RETURN_ITEM__ORDER_ID:
+				return orderId != null;
 			case ReturnPackage.RETURN_ITEM__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
+			case ReturnPackage.RETURN_ITEM__EXPECTED_ITEM_STATUS:
+				return expectedItemStatus != null;
+			case ReturnPackage.RETURN_ITEM__PRODUCT_ID:
+				return productId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -930,30 +1002,14 @@ public class ReturnItemImpl extends BizEntityTypedImpl<ReturnItemType> implement
 		result.append(returnItemSeqId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", expectedItemStatus: ");
-		result.append(expectedItemStatus);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", receivedQuantity: ");
 		result.append(receivedQuantity);
-		result.append(", returnItemResponseId: ");
-		result.append(returnItemResponseId);
-		result.append(", returnItemTypeId: ");
-		result.append(returnItemTypeId);
 		result.append(", returnPrice: ");
 		result.append(returnPrice);
 		result.append(", returnQuantity: ");
 		result.append(returnQuantity);
-		result.append(", returnReasonId: ");
-		result.append(returnReasonId);
-		result.append(", returnTypeId: ");
-		result.append(returnTypeId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(')');
 		return result.toString();
 	}

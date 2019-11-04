@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.product.store.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,8 +32,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getTargetTypeEnumId <em>Target Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreKeywordOvrdImpl#getTargetTypeEnumId <em>Target Type Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,26 +125,6 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	protected String target = TARGET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTargetTypeEnumId() <em>Target Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TARGET_TYPE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTargetTypeEnumId() <em>Target Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String targetTypeEnumId = TARGET_TYPE_ENUM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,6 +143,16 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTargetTypeEnumId() <em>Target Type Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetTypeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration targetTypeEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,7 +248,24 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public String getTargetTypeEnumId() {
+	public Enumeration getTargetTypeEnumId() {
+		if (targetTypeEnumId != null && ((EObject)targetTypeEnumId).eIsProxy()) {
+			InternalEObject oldTargetTypeEnumId = (InternalEObject)targetTypeEnumId;
+			targetTypeEnumId = (Enumeration)eResolveProxy(oldTargetTypeEnumId);
+			if (targetTypeEnumId != oldTargetTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID, oldTargetTypeEnumId, targetTypeEnumId));
+			}
+		}
+		return targetTypeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetTargetTypeEnumId() {
 		return targetTypeEnumId;
 	}
 
@@ -265,8 +275,8 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public void setTargetTypeEnumId(String newTargetTypeEnumId) {
-		String oldTargetTypeEnumId = targetTypeEnumId;
+	public void setTargetTypeEnumId(Enumeration newTargetTypeEnumId) {
+		Enumeration oldTargetTypeEnumId = targetTypeEnumId;
 		targetTypeEnumId = newTargetTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID, oldTargetTypeEnumId, targetTypeEnumId));
@@ -334,10 +344,11 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 				return getFromDate();
 			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET:
 				return getTarget();
-			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID:
-				return getTargetTypeEnumId();
 			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__THRU_DATE:
 				return getThruDate();
+			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID:
+				if (resolve) return getTargetTypeEnumId();
+				return basicGetTargetTypeEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -362,11 +373,11 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET:
 				setTarget((String)newValue);
 				return;
-			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID:
-				setTargetTypeEnumId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID:
+				setTargetTypeEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -392,11 +403,11 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET:
 				setTarget(TARGET_EDEFAULT);
 				return;
-			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID:
-				setTargetTypeEnumId(TARGET_TYPE_ENUM_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID:
+				setTargetTypeEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -418,10 +429,10 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET:
 				return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
-			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID:
-				return TARGET_TYPE_ENUM_ID_EDEFAULT == null ? targetTypeEnumId != null : !TARGET_TYPE_ENUM_ID_EDEFAULT.equals(targetTypeEnumId);
 			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case StorePackage.PRODUCT_STORE_KEYWORD_OVRD__TARGET_TYPE_ENUM_ID:
+				return targetTypeEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -444,8 +455,6 @@ public class ProductStoreKeywordOvrdImpl extends BizEntityImpl implements Produc
 		result.append(fromDate);
 		result.append(", target: ");
 		result.append(target);
-		result.append(", targetTypeEnumId: ");
-		result.append(targetTypeEnumId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

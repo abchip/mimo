@@ -75,7 +75,7 @@ public interface FacilityGroupType extends BizEntityType<FacilityGroup> {
 	 * @return the value of the '<em>Facility Group Type Id</em>' attribute.
 	 * @see #setFacilityGroupTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupType_FacilityGroupTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

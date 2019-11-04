@@ -13,6 +13,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,21 +31,21 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getDeliverableId <em>Deliverable Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getEstimatedBudget <em>Estimated Budget</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getReason <em>Reason</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequiredByDate <em>Required By Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementStartDate <em>Requirement Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementTypeId <em>Requirement Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getUseCase <em>Use Case</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementTypeId <em>Requirement Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getDeliverableId <em>Deliverable Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementAttributes <em>Requirement Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementStatuss <em>Requirement Statuss</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.Requirement#getWorkRequirementFulfillments <em>Work Requirement Fulfillments</em>}</li>
@@ -104,30 +109,30 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	void setCreatedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Deliverable Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Deliverable Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Deliverable Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deliverable Id</em>' attribute.
-	 * @see #setDeliverableId(String)
+	 * @return the value of the '<em>Deliverable Id</em>' reference.
+	 * @see #setDeliverableId(Deliverable)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_DeliverableId()
-	 * @model annotation="mimo-ent-domain frame='Deliverable'"
+	 * @model keys="deliverableId"
 	 * @generated
 	 */
-	String getDeliverableId();
+	Deliverable getDeliverableId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getDeliverableId <em>Deliverable Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getDeliverableId <em>Deliverable Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deliverable Id</em>' attribute.
+	 * @param value the new value of the '<em>Deliverable Id</em>' reference.
 	 * @see #getDeliverableId()
 	 * @generated
 	 */
-	void setDeliverableId(String value);
+	void setDeliverableId(Deliverable value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -182,56 +187,56 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	void setEstimatedBudget(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_FacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
-	 * @see #setFixedAssetId(String)
+	 * @return the value of the '<em>Fixed Asset Id</em>' reference.
+	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_FixedAssetId()
-	 * @model annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model keys="fixedAssetId"
 	 * @generated
 	 */
-	String getFixedAssetId();
+	FixedAsset getFixedAssetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getFixedAssetId <em>Fixed Asset Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getFixedAssetId <em>Fixed Asset Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Id</em>' reference.
 	 * @see #getFixedAssetId()
 	 * @generated
 	 */
-	void setFixedAssetId(String value);
+	void setFixedAssetId(FixedAsset value);
 
 	/**
 	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' attribute.
@@ -286,30 +291,30 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	void setLastModifiedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.
@@ -400,7 +405,7 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	 * @return the value of the '<em>Requirement Id</em>' attribute.
 	 * @see #setRequirementId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -443,56 +448,56 @@ public interface Requirement extends BizEntityTyped<RequirementType> {
 	void setRequirementStartDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Type Id</em>' attribute.
-	 * @see #setRequirementTypeId(String)
+	 * @return the value of the '<em>Requirement Type Id</em>' reference.
+	 * @see #setRequirementTypeId(RequirementType)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_RequirementTypeId()
-	 * @model annotation="mimo-ent-domain frame='RequirementType'"
+	 * @model keys="requirementTypeId"
 	 * @generated
 	 */
-	String getRequirementTypeId();
+	RequirementType getRequirementTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementTypeId <em>Requirement Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getRequirementTypeId <em>Requirement Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Type Id</em>' reference.
 	 * @see #getRequirementTypeId()
 	 * @generated
 	 */
-	void setRequirementTypeId(String value);
+	void setRequirementTypeId(RequirementType value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirement_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.Requirement#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Use Case</b></em>' attribute.

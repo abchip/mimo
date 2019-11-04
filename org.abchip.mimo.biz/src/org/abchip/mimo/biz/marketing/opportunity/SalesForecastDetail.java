@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.marketing.opportunity;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,10 +26,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getSalesForecastId <em>Sales Forecast Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getSalesForecastDetailId <em>Sales Forecast Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getQuantityUomId <em>Quantity Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductCategoryId <em>Product Category Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastDetail()
@@ -61,56 +64,56 @@ public interface SalesForecastDetail extends BizEntity {
 	void setAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Id</em>' attribute.
-	 * @see #setProductCategoryId(String)
+	 * @return the value of the '<em>Product Category Id</em>' reference.
+	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastDetail_ProductCategoryId()
-	 * @model annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model keys="productCategoryId"
 	 * @generated
 	 */
-	String getProductCategoryId();
+	ProductCategory getProductCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductCategoryId <em>Product Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductCategoryId <em>Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Category Id</em>' reference.
 	 * @see #getProductCategoryId()
 	 * @generated
 	 */
-	void setProductCategoryId(String value);
+	void setProductCategoryId(ProductCategory value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastDetail_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.
@@ -139,30 +142,30 @@ public interface SalesForecastDetail extends BizEntity {
 	void setQuantity(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Quantity Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quantity Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quantity Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quantity Uom Id</em>' attribute.
-	 * @see #setQuantityUomId(String)
+	 * @return the value of the '<em>Quantity Uom Id</em>' reference.
+	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastDetail_QuantityUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getQuantityUomId();
+	Uom getQuantityUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getQuantityUomId <em>Quantity Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecastDetail#getQuantityUomId <em>Quantity Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Quantity Uom Id</em>' reference.
 	 * @see #getQuantityUomId()
 	 * @generated
 	 */
-	void setQuantityUomId(String value);
+	void setQuantityUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Sales Forecast Detail Id</b></em>' attribute.
@@ -175,7 +178,8 @@ public interface SalesForecastDetail extends BizEntity {
 	 * @return the value of the '<em>Sales Forecast Detail Id</em>' attribute.
 	 * @see #setSalesForecastDetailId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastDetail_SalesForecastDetailId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSalesForecastDetailId();
@@ -201,8 +205,8 @@ public interface SalesForecastDetail extends BizEntity {
 	 * @return the value of the '<em>Sales Forecast Id</em>' attribute.
 	 * @see #setSalesForecastId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecastDetail_SalesForecastId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SalesForecast'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSalesForecastId();

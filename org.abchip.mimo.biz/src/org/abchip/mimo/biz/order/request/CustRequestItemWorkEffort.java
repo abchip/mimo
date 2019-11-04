@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.request;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,8 +40,8 @@ public interface CustRequestItemWorkEffort extends BizEntity {
 	 * @return the value of the '<em>Cust Request Id</em>' attribute.
 	 * @see #setCustRequestId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemWorkEffort_CustRequestId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequest'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestId();
@@ -66,7 +67,8 @@ public interface CustRequestItemWorkEffort extends BizEntity {
 	 * @return the value of the '<em>Cust Request Item Seq Id</em>' attribute.
 	 * @see #setCustRequestItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemWorkEffort_CustRequestItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestItemSeqId();
@@ -82,30 +84,29 @@ public interface CustRequestItemWorkEffort extends BizEntity {
 	void setCustRequestItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Id</em>' attribute.
-	 * @see #setWorkEffortId(String)
+	 * @return the value of the '<em>Work Effort Id</em>' reference.
+	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemWorkEffort_WorkEffortId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @model keys="workEffortId"
 	 * @generated
 	 */
-	String getWorkEffortId();
+	WorkEffort getWorkEffortId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestItemWorkEffort#getWorkEffortId <em>Work Effort Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestItemWorkEffort#getWorkEffortId <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Id</em>' reference.
 	 * @see #getWorkEffortId()
 	 * @generated
 	 */
-	void setWorkEffortId(String value);
+	void setWorkEffortId(WorkEffort value);
 
 } // CustRequestItemWorkEffort

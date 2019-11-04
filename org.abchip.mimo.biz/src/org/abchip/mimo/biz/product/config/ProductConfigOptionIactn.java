@@ -20,11 +20,11 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigOptionId <em>Config Option Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemIdTo <em>Config Item Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigOptionIdTo <em>Config Option Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigIactnTypeId <em>Config Iactn Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemIdTo <em>Config Item Id To</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn()
@@ -69,7 +69,8 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @return the value of the '<em>Config Option Id</em>' attribute.
 	 * @see #setConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigOptionId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigOptionId();
@@ -95,7 +96,8 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @return the value of the '<em>Config Option Id To</em>' attribute.
 	 * @see #setConfigOptionIdTo(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigOptionIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigOptionIdTo();
@@ -147,7 +149,8 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_SequenceNum()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -173,8 +176,8 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	 * @return the value of the '<em>Config Item Id</em>' attribute.
 	 * @see #setConfigItemId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigItemId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductConfigItem'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigItemId();
@@ -190,30 +193,29 @@ public interface ProductConfigOptionIactn extends BizEntity {
 	void setConfigItemId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Config Item Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Config Item Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Config Item Id To</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Config Item Id To</em>' attribute.
-	 * @see #setConfigItemIdTo(String)
+	 * @return the value of the '<em>Config Item Id To</em>' reference.
+	 * @see #setConfigItemIdTo(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOptionIactn_ConfigItemIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductConfigItem'"
+	 * @model keys="configItemId"
 	 * @generated
 	 */
-	String getConfigItemIdTo();
+	ProductConfigItem getConfigItemIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemIdTo <em>Config Item Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigOptionIactn#getConfigItemIdTo <em>Config Item Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Config Item Id To</em>' attribute.
+	 * @param value the new value of the '<em>Config Item Id To</em>' reference.
 	 * @see #getConfigItemIdTo()
 	 * @generated
 	 */
-	void setConfigItemIdTo(String value);
+	void setConfigItemIdTo(ProductConfigItem value);
 
 } // ProductConfigOptionIactn

@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.party.agreement.impl;
 
+import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementGeographicalApplic;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -72,23 +75,14 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 	 */
 	protected String agreementItemSeqId = AGREEMENT_ITEM_SEQ_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
+	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGeoId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoId = GEO_ID_EDEFAULT;
+	protected Geo geoId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +132,24 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 	 * @generated
 	 */
 	@Override
-	public String getGeoId() {
+	public Geo getGeoId() {
+		if (geoId != null && ((EObject)geoId).eIsProxy()) {
+			InternalEObject oldGeoId = (InternalEObject)geoId;
+			geoId = (Geo)eResolveProxy(oldGeoId);
+			if (geoId != oldGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID, oldGeoId, geoId));
+			}
+		}
+		return geoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetGeoId() {
 		return geoId;
 	}
 
@@ -148,8 +159,8 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 	 * @generated
 	 */
 	@Override
-	public void setGeoId(String newGeoId) {
-		String oldGeoId = geoId;
+	public void setGeoId(Geo newGeoId) {
+		Geo oldGeoId = geoId;
 		geoId = newGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID, oldGeoId, geoId));
@@ -191,7 +202,8 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 			case AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
 			case AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID:
-				return getGeoId();
+				if (resolve) return getGeoId();
+				return basicGetGeoId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,7 +223,7 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 				setAgreementItemSeqId((String)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID:
-				setGeoId((String)newValue);
+				setGeoId((Geo)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,7 +244,7 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID:
-				setGeoId(GEO_ID_EDEFAULT);
+				setGeoId((Geo)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -251,7 +263,7 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 			case AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
 			case AgreementPackage.AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID:
-				return GEO_ID_EDEFAULT == null ? geoId != null : !GEO_ID_EDEFAULT.equals(geoId);
+				return geoId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,8 +282,6 @@ public class AgreementGeographicalApplicImpl extends BizEntityImpl implements Ag
 		result.append(agreementId);
 		result.append(", agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
-		result.append(", geoId: ");
-		result.append(geoId);
 		result.append(')');
 		return result.toString();
 	}

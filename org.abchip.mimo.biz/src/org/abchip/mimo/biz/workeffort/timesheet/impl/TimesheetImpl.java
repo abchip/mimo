@@ -11,13 +11,18 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,13 +34,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getTimesheetId <em>Timesheet Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getApprovedByUserLoginId <em>Approved By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getClientPartyId <em>Client Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getClientPartyId <em>Client Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl#getApprovedByUserLoginId <em>Approved By User Login Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,46 +70,6 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @ordered
 	 */
 	protected String timesheetId = TIMESHEET_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getApprovedByUserLoginId() <em>Approved By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApprovedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String APPROVED_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getApprovedByUserLoginId() <em>Approved By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApprovedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String approvedByUserLoginId = APPROVED_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getClientPartyId() <em>Client Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClientPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CLIENT_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getClientPartyId() <em>Client Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClientPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String clientPartyId = CLIENT_PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
@@ -147,46 +112,6 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -205,6 +130,46 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getClientPartyId() <em>Client Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClientPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party clientPartyId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getApprovedByUserLoginId() <em>Approved By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApprovedByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin approvedByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +196,24 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @generated
 	 */
 	@Override
-	public String getApprovedByUserLoginId() {
+	public UserLogin getApprovedByUserLoginId() {
+		if (approvedByUserLoginId != null && ((EObject)approvedByUserLoginId).eIsProxy()) {
+			InternalEObject oldApprovedByUserLoginId = (InternalEObject)approvedByUserLoginId;
+			approvedByUserLoginId = (UserLogin)eResolveProxy(oldApprovedByUserLoginId);
+			if (approvedByUserLoginId != oldApprovedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID, oldApprovedByUserLoginId, approvedByUserLoginId));
+			}
+		}
+		return approvedByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetApprovedByUserLoginId() {
 		return approvedByUserLoginId;
 	}
 
@@ -241,8 +223,8 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @generated
 	 */
 	@Override
-	public void setApprovedByUserLoginId(String newApprovedByUserLoginId) {
-		String oldApprovedByUserLoginId = approvedByUserLoginId;
+	public void setApprovedByUserLoginId(UserLogin newApprovedByUserLoginId) {
+		UserLogin oldApprovedByUserLoginId = approvedByUserLoginId;
 		approvedByUserLoginId = newApprovedByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID, oldApprovedByUserLoginId, approvedByUserLoginId));
@@ -254,7 +236,24 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @generated
 	 */
 	@Override
-	public String getClientPartyId() {
+	public Party getClientPartyId() {
+		if (clientPartyId != null && ((EObject)clientPartyId).eIsProxy()) {
+			InternalEObject oldClientPartyId = (InternalEObject)clientPartyId;
+			clientPartyId = (Party)eResolveProxy(oldClientPartyId);
+			if (clientPartyId != oldClientPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID, oldClientPartyId, clientPartyId));
+			}
+		}
+		return clientPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetClientPartyId() {
 		return clientPartyId;
 	}
 
@@ -264,8 +263,8 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @generated
 	 */
 	@Override
-	public void setClientPartyId(String newClientPartyId) {
-		String oldClientPartyId = clientPartyId;
+	public void setClientPartyId(Party newClientPartyId) {
+		Party oldClientPartyId = clientPartyId;
 		clientPartyId = newClientPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID, oldClientPartyId, clientPartyId));
@@ -323,7 +322,24 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -333,8 +349,8 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__PARTY_ID, oldPartyId, partyId));
@@ -346,7 +362,24 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -356,8 +389,8 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET__STATUS_ID, oldStatusId, statusId));
@@ -431,20 +464,24 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 		switch (featureID) {
 			case TimesheetPackage.TIMESHEET__TIMESHEET_ID:
 				return getTimesheetId();
-			case TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID:
-				return getApprovedByUserLoginId();
-			case TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID:
-				return getClientPartyId();
 			case TimesheetPackage.TIMESHEET__COMMENTS:
 				return getComments();
 			case TimesheetPackage.TIMESHEET__FROM_DATE:
 				return getFromDate();
-			case TimesheetPackage.TIMESHEET__PARTY_ID:
-				return getPartyId();
-			case TimesheetPackage.TIMESHEET__STATUS_ID:
-				return getStatusId();
 			case TimesheetPackage.TIMESHEET__THRU_DATE:
 				return getThruDate();
+			case TimesheetPackage.TIMESHEET__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID:
+				if (resolve) return getClientPartyId();
+				return basicGetClientPartyId();
+			case TimesheetPackage.TIMESHEET__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID:
+				if (resolve) return getApprovedByUserLoginId();
+				return basicGetApprovedByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -460,26 +497,26 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 			case TimesheetPackage.TIMESHEET__TIMESHEET_ID:
 				setTimesheetId((String)newValue);
 				return;
-			case TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID:
-				setApprovedByUserLoginId((String)newValue);
-				return;
-			case TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID:
-				setClientPartyId((String)newValue);
-				return;
 			case TimesheetPackage.TIMESHEET__COMMENTS:
 				setComments((String)newValue);
 				return;
 			case TimesheetPackage.TIMESHEET__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case TimesheetPackage.TIMESHEET__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case TimesheetPackage.TIMESHEET__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case TimesheetPackage.TIMESHEET__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case TimesheetPackage.TIMESHEET__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID:
+				setClientPartyId((Party)newValue);
+				return;
+			case TimesheetPackage.TIMESHEET__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID:
+				setApprovedByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -496,26 +533,26 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 			case TimesheetPackage.TIMESHEET__TIMESHEET_ID:
 				setTimesheetId(TIMESHEET_ID_EDEFAULT);
 				return;
-			case TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID:
-				setApprovedByUserLoginId(APPROVED_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
-			case TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID:
-				setClientPartyId(CLIENT_PARTY_ID_EDEFAULT);
-				return;
 			case TimesheetPackage.TIMESHEET__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
 			case TimesheetPackage.TIMESHEET__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case TimesheetPackage.TIMESHEET__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case TimesheetPackage.TIMESHEET__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case TimesheetPackage.TIMESHEET__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case TimesheetPackage.TIMESHEET__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID:
+				setClientPartyId((Party)null);
+				return;
+			case TimesheetPackage.TIMESHEET__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID:
+				setApprovedByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -531,20 +568,20 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 		switch (featureID) {
 			case TimesheetPackage.TIMESHEET__TIMESHEET_ID:
 				return TIMESHEET_ID_EDEFAULT == null ? timesheetId != null : !TIMESHEET_ID_EDEFAULT.equals(timesheetId);
-			case TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID:
-				return APPROVED_BY_USER_LOGIN_ID_EDEFAULT == null ? approvedByUserLoginId != null : !APPROVED_BY_USER_LOGIN_ID_EDEFAULT.equals(approvedByUserLoginId);
-			case TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID:
-				return CLIENT_PARTY_ID_EDEFAULT == null ? clientPartyId != null : !CLIENT_PARTY_ID_EDEFAULT.equals(clientPartyId);
 			case TimesheetPackage.TIMESHEET__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case TimesheetPackage.TIMESHEET__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case TimesheetPackage.TIMESHEET__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case TimesheetPackage.TIMESHEET__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case TimesheetPackage.TIMESHEET__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case TimesheetPackage.TIMESHEET__PARTY_ID:
+				return partyId != null;
+			case TimesheetPackage.TIMESHEET__CLIENT_PARTY_ID:
+				return clientPartyId != null;
+			case TimesheetPackage.TIMESHEET__STATUS_ID:
+				return statusId != null;
+			case TimesheetPackage.TIMESHEET__APPROVED_BY_USER_LOGIN_ID:
+				return approvedByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -561,18 +598,10 @@ public class TimesheetImpl extends BizEntityImpl implements Timesheet {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (timesheetId: ");
 		result.append(timesheetId);
-		result.append(", approvedByUserLoginId: ");
-		result.append(approvedByUserLoginId);
-		result.append(", clientPartyId: ");
-		result.append(clientPartyId);
 		result.append(", comments: ");
 		result.append(comments);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

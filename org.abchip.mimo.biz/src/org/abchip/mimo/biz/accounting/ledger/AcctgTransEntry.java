@@ -12,6 +12,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,29 +29,29 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getAcctgTransEntrySeqId <em>Acctg Trans Entry Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getAcctgTransEntryTypeId <em>Acctg Trans Entry Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#isDebitCreditFlag <em>Debit Credit Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getDueDate <em>Due Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGlAccountId <em>Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGroupId <em>Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#isIsSummary <em>Is Summary</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getOrigAmount <em>Orig Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getOrigCurrencyUomId <em>Orig Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getReconcileStatusId <em>Reconcile Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getSettlementTermId <em>Settlement Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getTaxId <em>Tax Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getTheirPartyId <em>Their Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getTheirProductId <em>Their Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getVoucherRef <em>Voucher Ref</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getAcctgTransEntryTypeId <em>Acctg Trans Entry Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getOrigCurrencyUomId <em>Orig Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGlAccountId <em>Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getReconcileStatusId <em>Reconcile Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getSettlementTermId <em>Settlement Term Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry()
@@ -65,7 +70,8 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Acctg Trans Entry Seq Id</em>' attribute.
 	 * @see #setAcctgTransEntrySeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_AcctgTransEntrySeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAcctgTransEntrySeqId();
@@ -107,30 +113,30 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	void setAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_CurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Debit Credit Flag</b></em>' attribute.
@@ -237,30 +243,30 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	void setGroupId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Id</em>' attribute.
-	 * @see #setInventoryItemId(String)
+	 * @return the value of the '<em>Inventory Item Id</em>' reference.
+	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_InventoryItemId()
-	 * @model annotation="mimo-ent-domain frame='InventoryItem'"
+	 * @model keys="inventoryItemId"
 	 * @generated
 	 */
-	String getInventoryItemId();
+	InventoryItem getInventoryItemId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getInventoryItemId <em>Inventory Item Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getInventoryItemId <em>Inventory Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Inventory Item Id</em>' attribute.
+	 * @param value the new value of the '<em>Inventory Item Id</em>' reference.
 	 * @see #getInventoryItemId()
 	 * @generated
 	 */
-	void setInventoryItemId(String value);
+	void setInventoryItemId(InventoryItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Summary</b></em>' attribute.
@@ -341,56 +347,56 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	void setOrigAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Orig Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Orig Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Orig Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Orig Currency Uom Id</em>' attribute.
-	 * @see #setOrigCurrencyUomId(String)
+	 * @return the value of the '<em>Orig Currency Uom Id</em>' reference.
+	 * @see #setOrigCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_OrigCurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getOrigCurrencyUomId();
+	Uom getOrigCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getOrigCurrencyUomId <em>Orig Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getOrigCurrencyUomId <em>Orig Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Orig Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Orig Currency Uom Id</em>' reference.
 	 * @see #getOrigCurrencyUomId()
 	 * @generated
 	 */
-	void setOrigCurrencyUomId(String value);
+	void setOrigCurrencyUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
@@ -419,56 +425,56 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	void setProductId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Reconcile Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Reconcile Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Reconcile Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reconcile Status Id</em>' attribute.
-	 * @see #setReconcileStatusId(String)
+	 * @return the value of the '<em>Reconcile Status Id</em>' reference.
+	 * @see #setReconcileStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_ReconcileStatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getReconcileStatusId();
+	StatusItem getReconcileStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getReconcileStatusId <em>Reconcile Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getReconcileStatusId <em>Reconcile Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reconcile Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Reconcile Status Id</em>' reference.
 	 * @see #getReconcileStatusId()
 	 * @generated
 	 */
-	void setReconcileStatusId(String value);
+	void setReconcileStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id</em>' attribute.
-	 * @see #setRoleTypeId(String)
+	 * @return the value of the '<em>Role Type Id</em>' reference.
+	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_RoleTypeId()
-	 * @model annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeId();
+	RoleType getRoleTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getRoleTypeId <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
 	 */
-	void setRoleTypeId(String value);
+	void setRoleTypeId(RoleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Tax Id</b></em>' attribute.
@@ -575,30 +581,30 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	void setVoucherRef(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Acctg Trans Entry Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Acctg Trans Entry Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Acctg Trans Entry Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Acctg Trans Entry Type Id</em>' attribute.
-	 * @see #setAcctgTransEntryTypeId(String)
+	 * @return the value of the '<em>Acctg Trans Entry Type Id</em>' reference.
+	 * @see #setAcctgTransEntryTypeId(AcctgTransEntryType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_AcctgTransEntryTypeId()
-	 * @model annotation="mimo-ent-domain frame='AcctgTransEntryType'"
+	 * @model keys="acctgTransEntryTypeId"
 	 * @generated
 	 */
-	String getAcctgTransEntryTypeId();
+	AcctgTransEntryType getAcctgTransEntryTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getAcctgTransEntryTypeId <em>Acctg Trans Entry Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getAcctgTransEntryTypeId <em>Acctg Trans Entry Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Acctg Trans Entry Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Acctg Trans Entry Type Id</em>' reference.
 	 * @see #getAcctgTransEntryTypeId()
 	 * @generated
 	 */
-	void setAcctgTransEntryTypeId(String value);
+	void setAcctgTransEntryTypeId(AcctgTransEntryType value);
 
 	/**
 	 * Returns the value of the '<em><b>Acctg Trans Id</b></em>' attribute.
@@ -611,8 +617,8 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	 * @return the value of the '<em>Acctg Trans Id</em>' attribute.
 	 * @see #setAcctgTransId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_AcctgTransId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTrans'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAcctgTransId();
@@ -628,81 +634,81 @@ public interface AcctgTransEntry extends BizEntityTyped<AcctgTransEntryType> {
 	void setAcctgTransId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Type Id</em>' attribute.
-	 * @see #setGlAccountTypeId(String)
+	 * @return the value of the '<em>Gl Account Type Id</em>' reference.
+	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_GlAccountTypeId()
-	 * @model annotation="mimo-ent-domain frame='GlAccountType'"
+	 * @model keys="glAccountTypeId"
 	 * @generated
 	 */
-	String getGlAccountTypeId();
+	GlAccountType getGlAccountTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGlAccountTypeId <em>Gl Account Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGlAccountTypeId <em>Gl Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Type Id</em>' reference.
 	 * @see #getGlAccountTypeId()
 	 * @generated
 	 */
-	void setGlAccountTypeId(String value);
+	void setGlAccountTypeId(GlAccountType value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Id</em>' attribute.
-	 * @see #setGlAccountId(String)
+	 * @return the value of the '<em>Gl Account Id</em>' reference.
+	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_GlAccountId()
-	 * @model annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getGlAccountId();
+	GlAccount getGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGlAccountId <em>Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getGlAccountId <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Id</em>' reference.
 	 * @see #getGlAccountId()
 	 * @generated
 	 */
-	void setGlAccountId(String value);
+	void setGlAccountId(GlAccount value);
 
 	/**
-	 * Returns the value of the '<em><b>Settlement Term Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Settlement Term Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Settlement Term Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Settlement Term Id</em>' attribute.
-	 * @see #setSettlementTermId(String)
+	 * @return the value of the '<em>Settlement Term Id</em>' reference.
+	 * @see #setSettlementTermId(SettlementTerm)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransEntry_SettlementTermId()
-	 * @model annotation="mimo-ent-domain frame='SettlementTerm'"
+	 * @model keys="settlementTermId"
 	 * @generated
 	 */
-	String getSettlementTermId();
+	SettlementTerm getSettlementTermId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getSettlementTermId <em>Settlement Term Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.AcctgTransEntry#getSettlementTermId <em>Settlement Term Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Settlement Term Id</em>' attribute.
+	 * @param value the new value of the '<em>Settlement Term Id</em>' reference.
 	 * @see #getSettlementTermId()
 	 * @generated
 	 */
-	void setSettlementTermId(String value);
+	void setSettlementTermId(SettlementTerm value);
 
 } // AcctgTransEntry

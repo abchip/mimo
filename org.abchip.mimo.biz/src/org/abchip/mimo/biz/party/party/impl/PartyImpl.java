@@ -11,13 +11,19 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.datasource.DataSource;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyType;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -30,17 +36,17 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getExternalId <em>External Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#isIsUnread <em>Is Unread</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyTypeId <em>Party Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPreferredCurrencyUomId <em>Preferred Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyAttributes <em>Party Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyIdentifications <em>Party Identifications</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyImpl#getPartyNameHistories <em>Party Name Histories</em>}</li>
@@ -77,24 +83,6 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,24 +100,6 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @ordered
 	 */
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -185,24 +155,6 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 */
 	protected boolean isUnread = IS_UNREAD_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,59 +174,59 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARTY_TYPE_ID_EDEFAULT = null;
+	protected PartyType partyTypeId;
 	/**
-	 * The cached value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPartyTypeId()
+	 * @see #getCreatedByUserLogin()
 	 * @generated
 	 * @ordered
 	 */
-	protected String partyTypeId = PARTY_TYPE_ID_EDEFAULT;
+	protected UserLogin createdByUserLogin;
 	/**
-	 * The default value of the '{@link #getPreferredCurrencyUomId() <em>Preferred Currency Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
+	/**
+	 * The cached value of the '{@link #getPreferredCurrencyUomId() <em>Preferred Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPreferredCurrencyUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PREFERRED_CURRENCY_UOM_ID_EDEFAULT = null;
+	protected Uom preferredCurrencyUomId;
 	/**
-	 * The cached value of the '{@link #getPreferredCurrencyUomId() <em>Preferred Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPreferredCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String preferredCurrencyUomId = PREFERRED_CURRENCY_UOM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getDataSourceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected DataSource dataSourceId;
 	/**
 	 * The cached value of the '{@link #getPartyAttributes() <em>Party Attributes</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -372,7 +324,24 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -382,8 +351,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -418,7 +387,24 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public String getDataSourceId() {
+	public DataSource getDataSourceId() {
+		if (dataSourceId != null && ((EObject)dataSourceId).eIsProxy()) {
+			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
+			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
+			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+			}
+		}
+		return dataSourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSource basicGetDataSourceId() {
 		return dataSourceId;
 	}
 
@@ -428,8 +414,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
+	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
@@ -510,7 +496,24 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -520,8 +523,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -556,7 +559,24 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public String getPreferredCurrencyUomId() {
+	public Uom getPreferredCurrencyUomId() {
+		if (preferredCurrencyUomId != null && ((EObject)preferredCurrencyUomId).eIsProxy()) {
+			InternalEObject oldPreferredCurrencyUomId = (InternalEObject)preferredCurrencyUomId;
+			preferredCurrencyUomId = (Uom)eResolveProxy(oldPreferredCurrencyUomId);
+			if (preferredCurrencyUomId != oldPreferredCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID, oldPreferredCurrencyUomId, preferredCurrencyUomId));
+			}
+		}
+		return preferredCurrencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetPreferredCurrencyUomId() {
 		return preferredCurrencyUomId;
 	}
 
@@ -566,8 +586,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public void setPreferredCurrencyUomId(String newPreferredCurrencyUomId) {
-		String oldPreferredCurrencyUomId = preferredCurrencyUomId;
+	public void setPreferredCurrencyUomId(Uom newPreferredCurrencyUomId) {
+		Uom oldPreferredCurrencyUomId = preferredCurrencyUomId;
 		preferredCurrencyUomId = newPreferredCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID, oldPreferredCurrencyUomId, preferredCurrencyUomId));
@@ -579,7 +599,24 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -589,8 +626,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__STATUS_ID, oldStatusId, statusId));
@@ -1690,7 +1727,24 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public String getPartyTypeId() {
+	public PartyType getPartyTypeId() {
+		if (partyTypeId != null && ((EObject)partyTypeId).eIsProxy()) {
+			InternalEObject oldPartyTypeId = (InternalEObject)partyTypeId;
+			partyTypeId = (PartyType)eResolveProxy(oldPartyTypeId);
+			if (partyTypeId != oldPartyTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
+			}
+		}
+		return partyTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyType basicGetPartyTypeId() {
 		return partyTypeId;
 	}
 
@@ -1700,8 +1754,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 	 * @generated
 	 */
 	@Override
-	public void setPartyTypeId(String newPartyTypeId) {
-		String oldPartyTypeId = partyTypeId;
+	public void setPartyTypeId(PartyType newPartyTypeId) {
+		PartyType oldPartyTypeId = partyTypeId;
 		partyTypeId = newPartyTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
@@ -1740,28 +1794,34 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 		switch (featureID) {
 			case PartyPackage.PARTY__PARTY_ID:
 				return getPartyId();
-			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case PartyPackage.PARTY__CREATED_DATE:
 				return getCreatedDate();
-			case PartyPackage.PARTY__DATA_SOURCE_ID:
-				return getDataSourceId();
 			case PartyPackage.PARTY__DESCRIPTION:
 				return getDescription();
 			case PartyPackage.PARTY__EXTERNAL_ID:
 				return getExternalId();
 			case PartyPackage.PARTY__IS_UNREAD:
 				return isIsUnread();
-			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
 			case PartyPackage.PARTY__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
 			case PartyPackage.PARTY__PARTY_TYPE_ID:
-				return getPartyTypeId();
+				if (resolve) return getPartyTypeId();
+				return basicGetPartyTypeId();
+			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
 			case PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID:
-				return getPreferredCurrencyUomId();
+				if (resolve) return getPreferredCurrencyUomId();
+				return basicGetPreferredCurrencyUomId();
 			case PartyPackage.PARTY__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case PartyPackage.PARTY__DATA_SOURCE_ID:
+				if (resolve) return getDataSourceId();
+				return basicGetDataSourceId();
 			case PartyPackage.PARTY__PARTY_ATTRIBUTES:
 				return getPartyAttributes();
 			case PartyPackage.PARTY__PARTY_IDENTIFICATIONS:
@@ -1794,14 +1854,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			case PartyPackage.PARTY__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
 			case PartyPackage.PARTY__CREATED_DATE:
 				setCreatedDate((Date)newValue);
-				return;
-			case PartyPackage.PARTY__DATA_SOURCE_ID:
-				setDataSourceId((String)newValue);
 				return;
 			case PartyPackage.PARTY__DESCRIPTION:
 				setDescription((String)newValue);
@@ -1812,20 +1866,26 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			case PartyPackage.PARTY__IS_UNREAD:
 				setIsUnread((Boolean)newValue);
 				return;
-			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
-				return;
 			case PartyPackage.PARTY__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
 				return;
 			case PartyPackage.PARTY__PARTY_TYPE_ID:
-				setPartyTypeId((String)newValue);
+				setPartyTypeId((PartyType)newValue);
+				return;
+			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
 				return;
 			case PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID:
-				setPreferredCurrencyUomId((String)newValue);
+				setPreferredCurrencyUomId((Uom)newValue);
 				return;
 			case PartyPackage.PARTY__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
+				return;
+			case PartyPackage.PARTY__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)newValue);
 				return;
 			case PartyPackage.PARTY__PARTY_ATTRIBUTES:
 				getPartyAttributes().clear();
@@ -1874,14 +1934,8 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			case PartyPackage.PARTY__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case PartyPackage.PARTY__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
-				return;
-			case PartyPackage.PARTY__DATA_SOURCE_ID:
-				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
 				return;
 			case PartyPackage.PARTY__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -1892,20 +1946,26 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 			case PartyPackage.PARTY__IS_UNREAD:
 				setIsUnread(IS_UNREAD_EDEFAULT);
 				return;
-			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case PartyPackage.PARTY__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
 				return;
 			case PartyPackage.PARTY__PARTY_TYPE_ID:
-				setPartyTypeId(PARTY_TYPE_ID_EDEFAULT);
+				setPartyTypeId((PartyType)null);
+				return;
+			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
 				return;
 			case PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID:
-				setPreferredCurrencyUomId(PREFERRED_CURRENCY_UOM_ID_EDEFAULT);
+				setPreferredCurrencyUomId((Uom)null);
 				return;
 			case PartyPackage.PARTY__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
+				return;
+			case PartyPackage.PARTY__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)null);
 				return;
 			case PartyPackage.PARTY__PARTY_ATTRIBUTES:
 				getPartyAttributes().clear();
@@ -1945,28 +2005,28 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 		switch (featureID) {
 			case PartyPackage.PARTY__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case PartyPackage.PARTY__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case PartyPackage.PARTY__DATA_SOURCE_ID:
-				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
 			case PartyPackage.PARTY__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PartyPackage.PARTY__EXTERNAL_ID:
 				return EXTERNAL_ID_EDEFAULT == null ? externalId != null : !EXTERNAL_ID_EDEFAULT.equals(externalId);
 			case PartyPackage.PARTY__IS_UNREAD:
 				return isUnread != IS_UNREAD_EDEFAULT;
-			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case PartyPackage.PARTY__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
 			case PartyPackage.PARTY__PARTY_TYPE_ID:
-				return PARTY_TYPE_ID_EDEFAULT == null ? partyTypeId != null : !PARTY_TYPE_ID_EDEFAULT.equals(partyTypeId);
+				return partyTypeId != null;
+			case PartyPackage.PARTY__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case PartyPackage.PARTY__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
 			case PartyPackage.PARTY__PREFERRED_CURRENCY_UOM_ID:
-				return PREFERRED_CURRENCY_UOM_ID_EDEFAULT == null ? preferredCurrencyUomId != null : !PREFERRED_CURRENCY_UOM_ID_EDEFAULT.equals(preferredCurrencyUomId);
+				return preferredCurrencyUomId != null;
 			case PartyPackage.PARTY__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
+			case PartyPackage.PARTY__DATA_SOURCE_ID:
+				return dataSourceId != null;
 			case PartyPackage.PARTY__PARTY_ATTRIBUTES:
 				return partyAttributes != null && !partyAttributes.isEmpty();
 			case PartyPackage.PARTY__PARTY_IDENTIFICATIONS:
@@ -1999,28 +2059,16 @@ public class PartyImpl extends BizEntityTypedImpl<PartyType> implements Party {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
-		result.append(", dataSourceId: ");
-		result.append(dataSourceId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", externalId: ");
 		result.append(externalId);
 		result.append(", isUnread: ");
 		result.append(isUnread);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
-		result.append(", partyTypeId: ");
-		result.append(partyTypeId);
-		result.append(", preferredCurrencyUomId: ");
-		result.append(preferredCurrencyUomId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", partyAttributes: ");
 		result.append(partyAttributes);
 		result.append(", partyIdentifications: ");

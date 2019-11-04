@@ -11,13 +11,17 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
+import org.abchip.mimo.biz.humanres.employment.PayGrade;
 import org.abchip.mimo.biz.humanres.employment.PayHistory;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -35,10 +39,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayHistoryImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayHistoryImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayHistoryImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayHistoryImpl#getPayGradeId <em>Pay Grade Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayHistoryImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayHistoryImpl#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayHistoryImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayHistoryImpl#getPayGradeId <em>Pay Grade Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayHistoryImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -190,46 +194,6 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	protected String comments = COMMENTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPayGradeId() <em>Pay Grade Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPayGradeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAY_GRADE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPayGradeId() <em>Pay Grade Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPayGradeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String payGradeId = PAY_GRADE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PERIOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String periodTypeId = PERIOD_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSalaryStepSeqId() <em>Salary Step Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -268,6 +232,26 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPayGradeId() <em>Pay Grade Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPayGradeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PayGrade payGradeId;
+
+	/**
+	 * The cached value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPeriodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PeriodType periodTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -409,7 +393,24 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 * @generated
 	 */
 	@Override
-	public String getPayGradeId() {
+	public PayGrade getPayGradeId() {
+		if (payGradeId != null && ((EObject)payGradeId).eIsProxy()) {
+			InternalEObject oldPayGradeId = (InternalEObject)payGradeId;
+			payGradeId = (PayGrade)eResolveProxy(oldPayGradeId);
+			if (payGradeId != oldPayGradeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID, oldPayGradeId, payGradeId));
+			}
+		}
+		return payGradeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PayGrade basicGetPayGradeId() {
 		return payGradeId;
 	}
 
@@ -419,8 +420,8 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 * @generated
 	 */
 	@Override
-	public void setPayGradeId(String newPayGradeId) {
-		String oldPayGradeId = payGradeId;
+	public void setPayGradeId(PayGrade newPayGradeId) {
+		PayGrade oldPayGradeId = payGradeId;
 		payGradeId = newPayGradeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID, oldPayGradeId, payGradeId));
@@ -432,7 +433,24 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 * @generated
 	 */
 	@Override
-	public String getPeriodTypeId() {
+	public PeriodType getPeriodTypeId() {
+		if (periodTypeId != null && ((EObject)periodTypeId).eIsProxy()) {
+			InternalEObject oldPeriodTypeId = (InternalEObject)periodTypeId;
+			periodTypeId = (PeriodType)eResolveProxy(oldPeriodTypeId);
+			if (periodTypeId != oldPeriodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
+			}
+		}
+		return periodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PeriodType basicGetPeriodTypeId() {
 		return periodTypeId;
 	}
 
@@ -442,8 +460,8 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 	 * @generated
 	 */
 	@Override
-	public void setPeriodTypeId(String newPeriodTypeId) {
-		String oldPeriodTypeId = periodTypeId;
+	public void setPeriodTypeId(PeriodType newPeriodTypeId) {
+		PeriodType oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
@@ -563,14 +581,16 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 				return getAmount();
 			case EmploymentPackage.PAY_HISTORY__COMMENTS:
 				return getComments();
-			case EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID:
-				return getPayGradeId();
-			case EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID:
-				return getPeriodTypeId();
 			case EmploymentPackage.PAY_HISTORY__SALARY_STEP_SEQ_ID:
 				return getSalaryStepSeqId();
 			case EmploymentPackage.PAY_HISTORY__THRU_DATE:
 				return getThruDate();
+			case EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID:
+				if (resolve) return getPayGradeId();
+				return basicGetPayGradeId();
+			case EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID:
+				if (resolve) return getPeriodTypeId();
+				return basicGetPeriodTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -604,17 +624,17 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 			case EmploymentPackage.PAY_HISTORY__COMMENTS:
 				setComments((String)newValue);
 				return;
-			case EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID:
-				setPayGradeId((String)newValue);
-				return;
-			case EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID:
-				setPeriodTypeId((String)newValue);
-				return;
 			case EmploymentPackage.PAY_HISTORY__SALARY_STEP_SEQ_ID:
 				setSalaryStepSeqId((String)newValue);
 				return;
 			case EmploymentPackage.PAY_HISTORY__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID:
+				setPayGradeId((PayGrade)newValue);
+				return;
+			case EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID:
+				setPeriodTypeId((PeriodType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -649,17 +669,17 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 			case EmploymentPackage.PAY_HISTORY__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
-			case EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID:
-				setPayGradeId(PAY_GRADE_ID_EDEFAULT);
-				return;
-			case EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID:
-				setPeriodTypeId(PERIOD_TYPE_ID_EDEFAULT);
-				return;
 			case EmploymentPackage.PAY_HISTORY__SALARY_STEP_SEQ_ID:
 				setSalaryStepSeqId(SALARY_STEP_SEQ_ID_EDEFAULT);
 				return;
 			case EmploymentPackage.PAY_HISTORY__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID:
+				setPayGradeId((PayGrade)null);
+				return;
+			case EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID:
+				setPeriodTypeId((PeriodType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -687,14 +707,14 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
 			case EmploymentPackage.PAY_HISTORY__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID:
-				return PAY_GRADE_ID_EDEFAULT == null ? payGradeId != null : !PAY_GRADE_ID_EDEFAULT.equals(payGradeId);
-			case EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID:
-				return PERIOD_TYPE_ID_EDEFAULT == null ? periodTypeId != null : !PERIOD_TYPE_ID_EDEFAULT.equals(periodTypeId);
 			case EmploymentPackage.PAY_HISTORY__SALARY_STEP_SEQ_ID:
 				return SALARY_STEP_SEQ_ID_EDEFAULT == null ? salaryStepSeqId != null : !SALARY_STEP_SEQ_ID_EDEFAULT.equals(salaryStepSeqId);
 			case EmploymentPackage.PAY_HISTORY__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case EmploymentPackage.PAY_HISTORY__PAY_GRADE_ID:
+				return payGradeId != null;
+			case EmploymentPackage.PAY_HISTORY__PERIOD_TYPE_ID:
+				return periodTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -723,10 +743,6 @@ public class PayHistoryImpl extends BizEntityImpl implements PayHistory {
 		result.append(amount);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", payGradeId: ");
-		result.append(payGradeId);
-		result.append(", periodTypeId: ");
-		result.append(periodTypeId);
 		result.append(", salaryStepSeqId: ");
 		result.append(salaryStepSeqId);
 		result.append(", thruDate: ");

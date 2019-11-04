@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -118,23 +120,14 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	protected long numericCode = NUMERIC_CODE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUomTypeId() <em>Uom Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getUomTypeId() <em>Uom Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getUomTypeId() <em>Uom Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uomTypeId = UOM_TYPE_ID_EDEFAULT;
+	protected UomType uomTypeId;
 
 	/**
 	 * The cached value of the '{@link #getMainUomConversions() <em>Main Uom Conversions</em>}' attribute list.
@@ -240,7 +233,24 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public String getUomTypeId() {
+	public UomType getUomTypeId() {
+		if (uomTypeId != null && ((EObject)uomTypeId).eIsProxy()) {
+			InternalEObject oldUomTypeId = (InternalEObject)uomTypeId;
+			uomTypeId = (UomType)eResolveProxy(oldUomTypeId);
+			if (uomTypeId != oldUomTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM__UOM_TYPE_ID, oldUomTypeId, uomTypeId));
+			}
+		}
+		return uomTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UomType basicGetUomTypeId() {
 		return uomTypeId;
 	}
 
@@ -250,8 +260,8 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 	 * @generated
 	 */
 	@Override
-	public void setUomTypeId(String newUomTypeId) {
-		String oldUomTypeId = uomTypeId;
+	public void setUomTypeId(UomType newUomTypeId) {
+		UomType oldUomTypeId = uomTypeId;
 		uomTypeId = newUomTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM__UOM_TYPE_ID, oldUomTypeId, uomTypeId));
@@ -1126,7 +1136,8 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 			case UomPackage.UOM__NUMERIC_CODE:
 				return getNumericCode();
 			case UomPackage.UOM__UOM_TYPE_ID:
-				return getUomTypeId();
+				if (resolve) return getUomTypeId();
+				return basicGetUomTypeId();
 			case UomPackage.UOM__MAIN_UOM_CONVERSIONS:
 				return getMainUomConversions();
 		}
@@ -1155,7 +1166,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 				setNumericCode((Long)newValue);
 				return;
 			case UomPackage.UOM__UOM_TYPE_ID:
-				setUomTypeId((String)newValue);
+				setUomTypeId((UomType)newValue);
 				return;
 			case UomPackage.UOM__MAIN_UOM_CONVERSIONS:
 				getMainUomConversions().clear();
@@ -1186,7 +1197,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 				setNumericCode(NUMERIC_CODE_EDEFAULT);
 				return;
 			case UomPackage.UOM__UOM_TYPE_ID:
-				setUomTypeId(UOM_TYPE_ID_EDEFAULT);
+				setUomTypeId((UomType)null);
 				return;
 			case UomPackage.UOM__MAIN_UOM_CONVERSIONS:
 				getMainUomConversions().clear();
@@ -1212,7 +1223,7 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 			case UomPackage.UOM__NUMERIC_CODE:
 				return numericCode != NUMERIC_CODE_EDEFAULT;
 			case UomPackage.UOM__UOM_TYPE_ID:
-				return UOM_TYPE_ID_EDEFAULT == null ? uomTypeId != null : !UOM_TYPE_ID_EDEFAULT.equals(uomTypeId);
+				return uomTypeId != null;
 			case UomPackage.UOM__MAIN_UOM_CONVERSIONS:
 				return mainUomConversions != null && !mainUomConversions.isEmpty();
 		}
@@ -1237,8 +1248,6 @@ public class UomImpl extends BizEntityTypedImpl<UomType> implements Uom {
 		result.append(description);
 		result.append(", numericCode: ");
 		result.append(numericCode);
-		result.append(", uomTypeId: ");
-		result.append(uomTypeId);
 		result.append(", mainUomConversions: ");
 		result.append(mainUomConversions);
 		result.append(')');

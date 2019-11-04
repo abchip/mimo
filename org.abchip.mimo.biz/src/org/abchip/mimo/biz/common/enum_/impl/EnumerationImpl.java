@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -32,8 +34,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getEnumId <em>Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getEnumCode <em>Enum Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getEnumTypeId <em>Enum Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getEnumTypeId <em>Enum Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.impl.EnumerationImpl#getUserLoginSecurityQuestions <em>User Login Security Questions</em>}</li>
  * </ul>
  *
@@ -100,24 +102,6 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	protected String enumCode = ENUM_CODE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEnumTypeId() <em>Enum Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnumTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENUM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getEnumTypeId() <em>Enum Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnumTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String enumTypeId = ENUM_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getSequenceId() <em>Sequence Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,6 +119,15 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @ordered
 	 */
 	protected String sequenceId = SEQUENCE_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getEnumTypeId() <em>Enum Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnumTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EnumerationType enumTypeId;
 
 	/**
 	 * The cached value of the '{@link #getUserLoginSecurityQuestions() <em>User Login Security Questions</em>}' attribute list.
@@ -793,7 +786,24 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getEnumTypeId() {
+	public EnumerationType getEnumTypeId() {
+		if (enumTypeId != null && ((EObject)enumTypeId).eIsProxy()) {
+			InternalEObject oldEnumTypeId = (InternalEObject)enumTypeId;
+			enumTypeId = (EnumerationType)eResolveProxy(oldEnumTypeId);
+			if (enumTypeId != oldEnumTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnumPackage.ENUMERATION__ENUM_TYPE_ID, oldEnumTypeId, enumTypeId));
+			}
+		}
+		return enumTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnumerationType basicGetEnumTypeId() {
 		return enumTypeId;
 	}
 
@@ -803,8 +813,8 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setEnumTypeId(String newEnumTypeId) {
-		String oldEnumTypeId = enumTypeId;
+	public void setEnumTypeId(EnumerationType newEnumTypeId) {
+		EnumerationType oldEnumTypeId = enumTypeId;
 		enumTypeId = newEnumTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EnumPackage.ENUMERATION__ENUM_TYPE_ID, oldEnumTypeId, enumTypeId));
@@ -847,10 +857,11 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 				return getDescription();
 			case EnumPackage.ENUMERATION__ENUM_CODE:
 				return getEnumCode();
-			case EnumPackage.ENUMERATION__ENUM_TYPE_ID:
-				return getEnumTypeId();
 			case EnumPackage.ENUMERATION__SEQUENCE_ID:
 				return getSequenceId();
+			case EnumPackage.ENUMERATION__ENUM_TYPE_ID:
+				if (resolve) return getEnumTypeId();
+				return basicGetEnumTypeId();
 			case EnumPackage.ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS:
 				return getUserLoginSecurityQuestions();
 		}
@@ -875,11 +886,11 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 			case EnumPackage.ENUMERATION__ENUM_CODE:
 				setEnumCode((String)newValue);
 				return;
-			case EnumPackage.ENUMERATION__ENUM_TYPE_ID:
-				setEnumTypeId((String)newValue);
-				return;
 			case EnumPackage.ENUMERATION__SEQUENCE_ID:
 				setSequenceId((String)newValue);
+				return;
+			case EnumPackage.ENUMERATION__ENUM_TYPE_ID:
+				setEnumTypeId((EnumerationType)newValue);
 				return;
 			case EnumPackage.ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS:
 				getUserLoginSecurityQuestions().clear();
@@ -906,11 +917,11 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 			case EnumPackage.ENUMERATION__ENUM_CODE:
 				setEnumCode(ENUM_CODE_EDEFAULT);
 				return;
-			case EnumPackage.ENUMERATION__ENUM_TYPE_ID:
-				setEnumTypeId(ENUM_TYPE_ID_EDEFAULT);
-				return;
 			case EnumPackage.ENUMERATION__SEQUENCE_ID:
 				setSequenceId(SEQUENCE_ID_EDEFAULT);
+				return;
+			case EnumPackage.ENUMERATION__ENUM_TYPE_ID:
+				setEnumTypeId((EnumerationType)null);
 				return;
 			case EnumPackage.ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS:
 				getUserLoginSecurityQuestions().clear();
@@ -933,10 +944,10 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case EnumPackage.ENUMERATION__ENUM_CODE:
 				return ENUM_CODE_EDEFAULT == null ? enumCode != null : !ENUM_CODE_EDEFAULT.equals(enumCode);
-			case EnumPackage.ENUMERATION__ENUM_TYPE_ID:
-				return ENUM_TYPE_ID_EDEFAULT == null ? enumTypeId != null : !ENUM_TYPE_ID_EDEFAULT.equals(enumTypeId);
 			case EnumPackage.ENUMERATION__SEQUENCE_ID:
 				return SEQUENCE_ID_EDEFAULT == null ? sequenceId != null : !SEQUENCE_ID_EDEFAULT.equals(sequenceId);
+			case EnumPackage.ENUMERATION__ENUM_TYPE_ID:
+				return enumTypeId != null;
 			case EnumPackage.ENUMERATION__USER_LOGIN_SECURITY_QUESTIONS:
 				return userLoginSecurityQuestions != null && !userLoginSecurityQuestions.isEmpty();
 		}
@@ -959,8 +970,6 @@ public class EnumerationImpl extends BizEntityTypedImpl<EnumerationType> impleme
 		result.append(description);
 		result.append(", enumCode: ");
 		result.append(enumCode);
-		result.append(", enumTypeId: ");
-		result.append(enumTypeId);
 		result.append(", sequenceId: ");
 		result.append(sequenceId);
 		result.append(", userLoginSecurityQuestions: ");

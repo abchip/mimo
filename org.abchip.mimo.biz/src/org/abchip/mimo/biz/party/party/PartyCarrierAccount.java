@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getAccountNumber <em>Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyCarrierAccount()
@@ -124,7 +124,6 @@ public interface PartyCarrierAccount extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyCarrierAccount_PartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -140,31 +139,29 @@ public interface PartyCarrierAccount extends BizEntity {
 	void setPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Carrier Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Carrier Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Carrier Party Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Carrier Party Id</em>' attribute.
-	 * @see #setCarrierPartyId(String)
+	 * @return the value of the '<em>Carrier Party Id</em>' reference.
+	 * @see #setCarrierPartyId(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyCarrierAccount_CarrierPartyId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getCarrierPartyId();
+	Party getCarrierPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getCarrierPartyId <em>Carrier Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyCarrierAccount#getCarrierPartyId <em>Carrier Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Carrier Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Carrier Party Id</em>' reference.
 	 * @see #getCarrierPartyId()
 	 * @generated
 	 */
-	void setCarrierPartyId(String value);
+	void setCarrierPartyId(Party value);
 
 } // PartyCarrierAccount

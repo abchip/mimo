@@ -24,8 +24,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getBrowserTypeId <em>Browser Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getPlatformTypeId <em>Platform Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getProtocolTypeId <em>Protocol Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentMethodTypeId <em>User Agent Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentTypeId <em>User Agent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentMethodTypeId <em>User Agent Method Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent()
@@ -61,134 +61,134 @@ public interface UserAgent extends BizEntityTyped<UserAgentType> {
 	void setUserAgentId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Browser Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Browser Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Browser Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Browser Type Id</em>' attribute.
-	 * @see #setBrowserTypeId(String)
+	 * @return the value of the '<em>Browser Type Id</em>' reference.
+	 * @see #setBrowserTypeId(BrowserType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_BrowserTypeId()
-	 * @model annotation="mimo-ent-domain frame='BrowserType'"
+	 * @model keys="browserTypeId"
 	 * @generated
 	 */
-	String getBrowserTypeId();
+	BrowserType getBrowserTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getBrowserTypeId <em>Browser Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getBrowserTypeId <em>Browser Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Browser Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Browser Type Id</em>' reference.
 	 * @see #getBrowserTypeId()
 	 * @generated
 	 */
-	void setBrowserTypeId(String value);
+	void setBrowserTypeId(BrowserType value);
 
 	/**
-	 * Returns the value of the '<em><b>Platform Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Platform Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Platform Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Platform Type Id</em>' attribute.
-	 * @see #setPlatformTypeId(String)
+	 * @return the value of the '<em>Platform Type Id</em>' reference.
+	 * @see #setPlatformTypeId(PlatformType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_PlatformTypeId()
-	 * @model annotation="mimo-ent-domain frame='PlatformType'"
+	 * @model keys="platformTypeId"
 	 * @generated
 	 */
-	String getPlatformTypeId();
+	PlatformType getPlatformTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getPlatformTypeId <em>Platform Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getPlatformTypeId <em>Platform Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Platform Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Platform Type Id</em>' reference.
 	 * @see #getPlatformTypeId()
 	 * @generated
 	 */
-	void setPlatformTypeId(String value);
+	void setPlatformTypeId(PlatformType value);
 
 	/**
-	 * Returns the value of the '<em><b>Protocol Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Protocol Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Protocol Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Protocol Type Id</em>' attribute.
-	 * @see #setProtocolTypeId(String)
+	 * @return the value of the '<em>Protocol Type Id</em>' reference.
+	 * @see #setProtocolTypeId(ProtocolType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_ProtocolTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProtocolType'"
+	 * @model keys="protocolTypeId"
 	 * @generated
 	 */
-	String getProtocolTypeId();
+	ProtocolType getProtocolTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getProtocolTypeId <em>Protocol Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getProtocolTypeId <em>Protocol Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Protocol Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Protocol Type Id</em>' reference.
 	 * @see #getProtocolTypeId()
 	 * @generated
 	 */
-	void setProtocolTypeId(String value);
+	void setProtocolTypeId(ProtocolType value);
 
 	/**
-	 * Returns the value of the '<em><b>User Agent Method Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>User Agent Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Agent Method Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Agent Method Type Id</em>' attribute.
-	 * @see #setUserAgentMethodTypeId(String)
+	 * @return the value of the '<em>User Agent Method Type Id</em>' reference.
+	 * @see #setUserAgentMethodTypeId(UserAgentMethodType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_UserAgentMethodTypeId()
-	 * @model annotation="mimo-ent-domain frame='UserAgentMethodType'"
+	 * @model keys="userAgentMethodTypeId"
 	 * @generated
 	 */
-	String getUserAgentMethodTypeId();
+	UserAgentMethodType getUserAgentMethodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentMethodTypeId <em>User Agent Method Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentMethodTypeId <em>User Agent Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Agent Method Type Id</em>' attribute.
+	 * @param value the new value of the '<em>User Agent Method Type Id</em>' reference.
 	 * @see #getUserAgentMethodTypeId()
 	 * @generated
 	 */
-	void setUserAgentMethodTypeId(String value);
+	void setUserAgentMethodTypeId(UserAgentMethodType value);
 
 	/**
-	 * Returns the value of the '<em><b>User Agent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>User Agent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>User Agent Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Agent Type Id</em>' attribute.
-	 * @see #setUserAgentTypeId(String)
+	 * @return the value of the '<em>User Agent Type Id</em>' reference.
+	 * @see #setUserAgentTypeId(UserAgentType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getUserAgent_UserAgentTypeId()
-	 * @model annotation="mimo-ent-domain frame='UserAgentType'"
+	 * @model keys="userAgentTypeId"
 	 * @generated
 	 */
-	String getUserAgentTypeId();
+	UserAgentType getUserAgentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentTypeId <em>User Agent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentTypeId <em>User Agent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Agent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>User Agent Type Id</em>' reference.
 	 * @see #getUserAgentTypeId()
 	 * @generated
 	 */
-	void setUserAgentTypeId(String value);
+	void setUserAgentTypeId(UserAgentType value);
 
 	/**
 	 * <!-- begin-user-doc -->

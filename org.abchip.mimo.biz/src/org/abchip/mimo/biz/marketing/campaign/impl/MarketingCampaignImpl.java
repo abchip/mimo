@@ -14,6 +14,8 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
@@ -22,6 +24,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -40,7 +44,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getCampaignSummary <em>Campaign Summary</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getConvertedLeads <em>Converted Leads</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getEstimatedCost <em>Estimated Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getExpectedResponsePercent <em>Expected Response Percent</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getExpectedRevenue <em>Expected Revenue</em>}</li>
@@ -48,10 +51,11 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#isIsActive <em>Is Active</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getNumSent <em>Num Sent</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getParentCampaignId <em>Parent Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getStartDate <em>Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getParentCampaignId <em>Parent Campaign Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignImpl#getMarketingCampaignNotes <em>Marketing Campaign Notes</em>}</li>
  * </ul>
  *
@@ -218,28 +222,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 
 
 	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
-
-
-	/**
 	 * The default value of the '{@link #getEstimatedCost() <em>Estimated Cost</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -391,26 +373,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	protected long numSent = NUM_SENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentCampaignId() <em>Parent Campaign Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARENT_CAMPAIGN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentCampaignId() <em>Parent Campaign Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentCampaignId = PARENT_CAMPAIGN_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -431,26 +393,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	protected Date startDate = START_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -469,6 +411,39 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+
+	/**
+	 * The cached value of the '{@link #getParentCampaignId() <em>Parent Campaign Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentCampaignId()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarketingCampaign parentCampaignId;
+
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
 
 	/**
 	 * The cached value of the '{@link #getMarketingCampaignNotes() <em>Marketing Campaign Notes</em>}' attribute list.
@@ -643,7 +618,24 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -653,8 +645,8 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -850,7 +842,24 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public String getParentCampaignId() {
+	public MarketingCampaign getParentCampaignId() {
+		if (parentCampaignId != null && ((EObject)parentCampaignId).eIsProxy()) {
+			InternalEObject oldParentCampaignId = (InternalEObject)parentCampaignId;
+			parentCampaignId = (MarketingCampaign)eResolveProxy(oldParentCampaignId);
+			if (parentCampaignId != oldParentCampaignId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID, oldParentCampaignId, parentCampaignId));
+			}
+		}
+		return parentCampaignId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MarketingCampaign basicGetParentCampaignId() {
 		return parentCampaignId;
 	}
 
@@ -860,8 +869,8 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public void setParentCampaignId(String newParentCampaignId) {
-		String oldParentCampaignId = parentCampaignId;
+	public void setParentCampaignId(MarketingCampaign newParentCampaignId) {
+		MarketingCampaign oldParentCampaignId = parentCampaignId;
 		parentCampaignId = newParentCampaignId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID, oldParentCampaignId, parentCampaignId));
@@ -896,7 +905,24 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -906,8 +932,8 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID, oldStatusId, statusId));
@@ -1019,8 +1045,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 				return getConvertedLeads();
 			case CampaignPackage.MARKETING_CAMPAIGN__CREATED_BY_USER_LOGIN:
 				return getCreatedByUserLogin();
-			case CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case CampaignPackage.MARKETING_CAMPAIGN__ESTIMATED_COST:
 				return getEstimatedCost();
 			case CampaignPackage.MARKETING_CAMPAIGN__EXPECTED_RESPONSE_PERCENT:
@@ -1035,14 +1059,19 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 				return getLastModifiedByUserLogin();
 			case CampaignPackage.MARKETING_CAMPAIGN__NUM_SENT:
 				return getNumSent();
-			case CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID:
-				return getParentCampaignId();
 			case CampaignPackage.MARKETING_CAMPAIGN__START_DATE:
 				return getStartDate();
-			case CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID:
-				return getStatusId();
 			case CampaignPackage.MARKETING_CAMPAIGN__THRU_DATE:
 				return getThruDate();
+			case CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID:
+				if (resolve) return getParentCampaignId();
+				return basicGetParentCampaignId();
+			case CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
 			case CampaignPackage.MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES:
 				return getMarketingCampaignNotes();
 		}
@@ -1079,9 +1108,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 			case CampaignPackage.MARKETING_CAMPAIGN__CREATED_BY_USER_LOGIN:
 				setCreatedByUserLogin((String)newValue);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN__ESTIMATED_COST:
 				setEstimatedCost((BigDecimal)newValue);
 				return;
@@ -1103,17 +1129,20 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 			case CampaignPackage.MARKETING_CAMPAIGN__NUM_SENT:
 				setNumSent((Long)newValue);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID:
-				setParentCampaignId((String)newValue);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN__START_DATE:
 				setStartDate((Date)newValue);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID:
+				setParentCampaignId((MarketingCampaign)newValue);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
 				return;
 			case CampaignPackage.MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES:
 				getMarketingCampaignNotes().clear();
@@ -1152,9 +1181,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 			case CampaignPackage.MARKETING_CAMPAIGN__CREATED_BY_USER_LOGIN:
 				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN__ESTIMATED_COST:
 				setEstimatedCost(ESTIMATED_COST_EDEFAULT);
 				return;
@@ -1176,17 +1202,20 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 			case CampaignPackage.MARKETING_CAMPAIGN__NUM_SENT:
 				setNumSent(NUM_SENT_EDEFAULT);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID:
-				setParentCampaignId(PARENT_CAMPAIGN_ID_EDEFAULT);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN__START_DATE:
 				setStartDate(START_DATE_EDEFAULT);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID:
+				setParentCampaignId((MarketingCampaign)null);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
 				return;
 			case CampaignPackage.MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES:
 				getMarketingCampaignNotes().clear();
@@ -1217,8 +1246,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 				return CONVERTED_LEADS_EDEFAULT == null ? convertedLeads != null : !CONVERTED_LEADS_EDEFAULT.equals(convertedLeads);
 			case CampaignPackage.MARKETING_CAMPAIGN__CREATED_BY_USER_LOGIN:
 				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
-			case CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case CampaignPackage.MARKETING_CAMPAIGN__ESTIMATED_COST:
 				return ESTIMATED_COST_EDEFAULT == null ? estimatedCost != null : !ESTIMATED_COST_EDEFAULT.equals(estimatedCost);
 			case CampaignPackage.MARKETING_CAMPAIGN__EXPECTED_RESPONSE_PERCENT:
@@ -1233,14 +1260,16 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case CampaignPackage.MARKETING_CAMPAIGN__NUM_SENT:
 				return numSent != NUM_SENT_EDEFAULT;
-			case CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID:
-				return PARENT_CAMPAIGN_ID_EDEFAULT == null ? parentCampaignId != null : !PARENT_CAMPAIGN_ID_EDEFAULT.equals(parentCampaignId);
 			case CampaignPackage.MARKETING_CAMPAIGN__START_DATE:
 				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
-			case CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case CampaignPackage.MARKETING_CAMPAIGN__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CampaignPackage.MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID:
+				return parentCampaignId != null;
+			case CampaignPackage.MARKETING_CAMPAIGN__STATUS_ID:
+				return statusId != null;
+			case CampaignPackage.MARKETING_CAMPAIGN__CURRENCY_UOM_ID:
+				return currencyUomId != null;
 			case CampaignPackage.MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES:
 				return marketingCampaignNotes != null && !marketingCampaignNotes.isEmpty();
 		}
@@ -1271,8 +1300,6 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 		result.append(convertedLeads);
 		result.append(", createdByUserLogin: ");
 		result.append(createdByUserLogin);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", estimatedCost: ");
 		result.append(estimatedCost);
 		result.append(", expectedResponsePercent: ");
@@ -1287,12 +1314,8 @@ public class MarketingCampaignImpl extends BizEntityImpl implements MarketingCam
 		result.append(lastModifiedByUserLogin);
 		result.append(", numSent: ");
 		result.append(numSent);
-		result.append(", parentCampaignId: ");
-		result.append(parentCampaignId);
 		result.append(", startDate: ");
 		result.append(startDate);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(", marketingCampaignNotes: ");

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.supplier;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +22,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest()
@@ -42,7 +43,8 @@ public interface MarketInterest extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -58,31 +60,30 @@ public interface MarketInterest extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Classification Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Classification Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Classification Group Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Classification Group Id</em>' attribute.
-	 * @see #setPartyClassificationGroupId(String)
+	 * @return the value of the '<em>Party Classification Group Id</em>' reference.
+	 * @see #setPartyClassificationGroupId(PartyClassificationGroup)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest_PartyClassificationGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PartyClassificationGroup'"
+	 * @model keys="partyClassificationGroupId"
 	 * @generated
 	 */
-	String getPartyClassificationGroupId();
+	PartyClassificationGroup getPartyClassificationGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getPartyClassificationGroupId <em>Party Classification Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.MarketInterest#getPartyClassificationGroupId <em>Party Classification Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Classification Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Classification Group Id</em>' reference.
 	 * @see #getPartyClassificationGroupId()
 	 * @generated
 	 */
-	void setPartyClassificationGroupId(String value);
+	void setPartyClassificationGroupId(PartyClassificationGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -121,8 +122,8 @@ public interface MarketInterest extends BizEntity {
 	 * @return the value of the '<em>Product Category Id</em>' attribute.
 	 * @see #setProductCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getMarketInterest_ProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductCategoryId();

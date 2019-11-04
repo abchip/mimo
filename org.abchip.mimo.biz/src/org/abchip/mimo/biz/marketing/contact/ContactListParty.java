@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.marketing.contact;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +24,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getContactListId <em>Contact List Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getPreferredContactMechId <em>Preferred Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getPreferredContactMechId <em>Preferred Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty()
@@ -44,8 +47,8 @@ public interface ContactListParty extends BizEntity {
 	 * @return the value of the '<em>Contact List Id</em>' attribute.
 	 * @see #setContactListId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty_ContactListId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactList'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContactListId();
@@ -71,7 +74,8 @@ public interface ContactListParty extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -87,83 +91,82 @@ public interface ContactListParty extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Preferred Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Preferred Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Preferred Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Preferred Contact Mech Id</em>' attribute.
-	 * @see #setPreferredContactMechId(String)
+	 * @return the value of the '<em>Preferred Contact Mech Id</em>' reference.
+	 * @see #setPreferredContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty_PreferredContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getPreferredContactMechId();
+	ContactMech getPreferredContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getPreferredContactMechId <em>Preferred Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getPreferredContactMechId <em>Preferred Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Preferred Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Preferred Contact Mech Id</em>' reference.
 	 * @see #getPreferredContactMechId()
 	 * @generated
 	 */
-	void setPreferredContactMechId(String value);
+	void setPreferredContactMechId(ContactMech value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListParty_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.contact.ContactListParty#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

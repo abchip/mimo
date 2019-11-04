@@ -7,13 +7,19 @@
  */
 package org.abchip.mimo.biz.content.content.impl;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.content.content.ContentOperation;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentPurposeOperation;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -60,84 +66,44 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	protected String contentPurposeTypeId = CONTENT_PURPOSE_TYPE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContentOperationId() <em>Content Operation Id</em>}' attribute.
+	 * The cached value of the '{@link #getContentOperationId() <em>Content Operation Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContentOperationId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTENT_OPERATION_ID_EDEFAULT = null;
+	protected ContentOperation contentOperationId;
 
 	/**
-	 * The cached value of the '{@link #getContentOperationId() <em>Content Operation Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentOperationId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentOperationId = CONTENT_OPERATION_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoleTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
+	protected RoleType roleTypeId;
 
 	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPrivilegeEnumId() <em>Privilege Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getPrivilegeEnumId() <em>Privilege Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPrivilegeEnumId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRIVILEGE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPrivilegeEnumId() <em>Privilege Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrivilegeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String privilegeEnumId = PRIVILEGE_ENUM_ID_EDEFAULT;
+	protected Enumeration privilegeEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,7 +130,24 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public String getContentOperationId() {
+	public ContentOperation getContentOperationId() {
+		if (contentOperationId != null && ((EObject)contentOperationId).eIsProxy()) {
+			InternalEObject oldContentOperationId = (InternalEObject)contentOperationId;
+			contentOperationId = (ContentOperation)eResolveProxy(oldContentOperationId);
+			if (contentOperationId != oldContentOperationId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_OPERATION_ID, oldContentOperationId, contentOperationId));
+			}
+		}
+		return contentOperationId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentOperation basicGetContentOperationId() {
 		return contentOperationId;
 	}
 
@@ -174,8 +157,8 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public void setContentOperationId(String newContentOperationId) {
-		String oldContentOperationId = contentOperationId;
+	public void setContentOperationId(ContentOperation newContentOperationId) {
+		ContentOperation oldContentOperationId = contentOperationId;
 		contentOperationId = newContentOperationId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_OPERATION_ID, oldContentOperationId, contentOperationId));
@@ -210,7 +193,24 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public String getPrivilegeEnumId() {
+	public Enumeration getPrivilegeEnumId() {
+		if (privilegeEnumId != null && ((EObject)privilegeEnumId).eIsProxy()) {
+			InternalEObject oldPrivilegeEnumId = (InternalEObject)privilegeEnumId;
+			privilegeEnumId = (Enumeration)eResolveProxy(oldPrivilegeEnumId);
+			if (privilegeEnumId != oldPrivilegeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE_OPERATION__PRIVILEGE_ENUM_ID, oldPrivilegeEnumId, privilegeEnumId));
+			}
+		}
+		return privilegeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetPrivilegeEnumId() {
 		return privilegeEnumId;
 	}
 
@@ -220,8 +220,8 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public void setPrivilegeEnumId(String newPrivilegeEnumId) {
-		String oldPrivilegeEnumId = privilegeEnumId;
+	public void setPrivilegeEnumId(Enumeration newPrivilegeEnumId) {
+		Enumeration oldPrivilegeEnumId = privilegeEnumId;
 		privilegeEnumId = newPrivilegeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_OPERATION__PRIVILEGE_ENUM_ID, oldPrivilegeEnumId, privilegeEnumId));
@@ -233,7 +233,24 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE_OPERATION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -243,8 +260,8 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_OPERATION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -256,7 +273,24 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_PURPOSE_OPERATION__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -266,8 +300,8 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_PURPOSE_OPERATION__STATUS_ID, oldStatusId, statusId));
@@ -284,13 +318,17 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_PURPOSE_TYPE_ID:
 				return getContentPurposeTypeId();
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_OPERATION_ID:
-				return getContentOperationId();
+				if (resolve) return getContentOperationId();
+				return basicGetContentOperationId();
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__ROLE_TYPE_ID:
-				return getRoleTypeId();
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__PRIVILEGE_ENUM_ID:
-				return getPrivilegeEnumId();
+				if (resolve) return getPrivilegeEnumId();
+				return basicGetPrivilegeEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,16 +345,16 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 				setContentPurposeTypeId((String)newValue);
 				return;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_OPERATION_ID:
-				setContentOperationId((String)newValue);
+				setContentOperationId((ContentOperation)newValue);
 				return;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
+				setRoleTypeId((RoleType)newValue);
 				return;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
 				return;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__PRIVILEGE_ENUM_ID:
-				setPrivilegeEnumId((String)newValue);
+				setPrivilegeEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,16 +372,16 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 				setContentPurposeTypeId(CONTENT_PURPOSE_TYPE_ID_EDEFAULT);
 				return;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_OPERATION_ID:
-				setContentOperationId(CONTENT_OPERATION_ID_EDEFAULT);
+				setContentOperationId((ContentOperation)null);
 				return;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				setRoleTypeId((RoleType)null);
 				return;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
 				return;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__PRIVILEGE_ENUM_ID:
-				setPrivilegeEnumId(PRIVILEGE_ENUM_ID_EDEFAULT);
+				setPrivilegeEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -360,13 +398,13 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_PURPOSE_TYPE_ID:
 				return CONTENT_PURPOSE_TYPE_ID_EDEFAULT == null ? contentPurposeTypeId != null : !CONTENT_PURPOSE_TYPE_ID_EDEFAULT.equals(contentPurposeTypeId);
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__CONTENT_OPERATION_ID:
-				return CONTENT_OPERATION_ID_EDEFAULT == null ? contentOperationId != null : !CONTENT_OPERATION_ID_EDEFAULT.equals(contentOperationId);
+				return contentOperationId != null;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+				return roleTypeId != null;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
 			case ContentPackage.CONTENT_PURPOSE_OPERATION__PRIVILEGE_ENUM_ID:
-				return PRIVILEGE_ENUM_ID_EDEFAULT == null ? privilegeEnumId != null : !PRIVILEGE_ENUM_ID_EDEFAULT.equals(privilegeEnumId);
+				return privilegeEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -383,14 +421,6 @@ public class ContentPurposeOperationImpl extends BizEntityImpl implements Conten
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contentPurposeTypeId: ");
 		result.append(contentPurposeTypeId);
-		result.append(", contentOperationId: ");
-		result.append(contentOperationId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", statusId: ");
-		result.append(statusId);
-		result.append(", privilegeEnumId: ");
-		result.append(privilegeEnumId);
 		result.append(')');
 		return result.toString();
 	}

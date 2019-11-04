@@ -40,7 +40,6 @@ public interface ContactMechLink extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechLink_ContactMechIdFrom()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMech'"
 	 * @generated
 	 */
 	String getContactMechIdFrom();
@@ -56,31 +55,29 @@ public interface ContactMechLink extends BizEntity {
 	void setContactMechIdFrom(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id To</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id To</em>' attribute.
-	 * @see #setContactMechIdTo(String)
+	 * @return the value of the '<em>Contact Mech Id To</em>' reference.
+	 * @see #setContactMechIdTo(ContactMech)
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechLink_ContactMechIdTo()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechIdTo();
+	ContactMech getContactMechIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechLink#getContactMechIdTo <em>Contact Mech Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.contact.ContactMechLink#getContactMechIdTo <em>Contact Mech Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id To</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id To</em>' reference.
 	 * @see #getContactMechIdTo()
 	 * @generated
 	 */
-	void setContactMechIdTo(String value);
+	void setContactMechIdTo(ContactMech value);
 
 } // ContactMechLink

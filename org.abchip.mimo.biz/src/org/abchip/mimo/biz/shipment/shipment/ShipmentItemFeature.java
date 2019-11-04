@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.shipment.shipment;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,31 +30,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ShipmentItemFeature extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Product Feature Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Id</em>' attribute.
-	 * @see #setProductFeatureId(String)
+	 * @return the value of the '<em>Product Feature Id</em>' reference.
+	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemFeature_ProductFeatureId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeature'"
+	 * @model keys="productFeatureId"
 	 * @generated
 	 */
-	String getProductFeatureId();
+	ProductFeature getProductFeatureId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemFeature#getProductFeatureId <em>Product Feature Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemFeature#getProductFeatureId <em>Product Feature Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Id</em>' reference.
 	 * @see #getProductFeatureId()
 	 * @generated
 	 */
-	void setProductFeatureId(String value);
+	void setProductFeatureId(ProductFeature value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Id</b></em>' attribute.
@@ -66,8 +66,8 @@ public interface ShipmentItemFeature extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemFeature_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentId();
@@ -93,7 +93,8 @@ public interface ShipmentItemFeature extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemFeature_ShipmentItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();

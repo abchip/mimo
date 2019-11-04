@@ -21,8 +21,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getCalendarId <em>Calendar Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getCalendarWeekId <em>Calendar Week Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getCalendarWeekId <em>Calendar Week Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getTechDataCalendarExcDaies <em>Tech Data Calendar Exc Daies</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getTechDataCalendarExcWeeks <em>Tech Data Calendar Exc Weeks</em>}</li>
  * </ul>
@@ -60,30 +60,30 @@ public interface TechDataCalendar extends BizEntity {
 	void setCalendarId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Calendar Week Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Calendar Week Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Calendar Week Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Calendar Week Id</em>' attribute.
-	 * @see #setCalendarWeekId(String)
+	 * @return the value of the '<em>Calendar Week Id</em>' reference.
+	 * @see #setCalendarWeekId(TechDataCalendarWeek)
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendar_CalendarWeekId()
-	 * @model annotation="mimo-ent-domain frame='TechDataCalendarWeek'"
+	 * @model keys="calendarWeekId"
 	 * @generated
 	 */
-	String getCalendarWeekId();
+	TechDataCalendarWeek getCalendarWeekId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getCalendarWeekId <em>Calendar Week Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar#getCalendarWeekId <em>Calendar Week Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Calendar Week Id</em>' attribute.
+	 * @param value the new value of the '<em>Calendar Week Id</em>' reference.
 	 * @see #getCalendarWeekId()
 	 * @generated
 	 */
-	void setCalendarWeekId(String value);
+	void setCalendarWeekId(TechDataCalendarWeek value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

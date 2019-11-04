@@ -12,6 +12,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.abchip.mimo.biz.party.party.PartyGroup;
+import org.abchip.mimo.biz.product.facility.Facility;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,26 +37,14 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getActualStartDate <em>Actual Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getActualTransportCost <em>Actual Transport Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getBillingWeight <em>Billing Weight</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getBillingWeightUomId <em>Billing Weight Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierDeliveryZone <em>Carrier Delivery Zone</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierRestrictionCodes <em>Carrier Restriction Codes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierRestrictionDesc <em>Carrier Restriction Desc</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierServiceStatusId <em>Carrier Service Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDeliveryId <em>Delivery Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestContactMechId <em>Dest Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestFacilityId <em>Dest Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestTelecomNumberId <em>Dest Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getEstimatedArrivalDate <em>Estimated Arrival Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getEstimatedStartDate <em>Estimated Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getHomeDeliveryDate <em>Home Delivery Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getHomeDeliveryType <em>Home Delivery Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getLastUpdatedDate <em>Last Updated Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginFacilityId <em>Origin Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getThirdPartyAccountNumber <em>Third Party Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getThirdPartyCountryGeoCode <em>Third Party Country Geo Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getThirdPartyPostalCode <em>Third Party Postal Code</em>}</li>
@@ -58,6 +52,18 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getTrackingIdNumber <em>Tracking Id Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getUpdatedByUserLoginId <em>Updated By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getUpsHighValueReport <em>Ups High Value Report</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDeliveryId <em>Delivery Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierPartyId <em>Carrier Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginFacilityId <em>Origin Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestFacilityId <em>Dest Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestContactMechId <em>Dest Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestTelecomNumberId <em>Dest Telecom Number Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierServiceStatusId <em>Carrier Service Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getBillingWeightUomId <em>Billing Weight Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment()
@@ -248,30 +254,30 @@ public interface ShipmentRouteSegment extends BizEntity {
 	void setBillingWeight(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Billing Weight Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Billing Weight Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Billing Weight Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Billing Weight Uom Id</em>' attribute.
-	 * @see #setBillingWeightUomId(String)
+	 * @return the value of the '<em>Billing Weight Uom Id</em>' reference.
+	 * @see #setBillingWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_BillingWeightUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getBillingWeightUomId();
+	Uom getBillingWeightUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getBillingWeightUomId <em>Billing Weight Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getBillingWeightUomId <em>Billing Weight Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Billing Weight Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Billing Weight Uom Id</em>' reference.
 	 * @see #getBillingWeightUomId()
 	 * @generated
 	 */
-	void setBillingWeightUomId(String value);
+	void setBillingWeightUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Carrier Delivery Zone</b></em>' attribute.
@@ -300,30 +306,30 @@ public interface ShipmentRouteSegment extends BizEntity {
 	void setCarrierDeliveryZone(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Carrier Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Carrier Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Carrier Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Carrier Party Id</em>' attribute.
-	 * @see #setCarrierPartyId(String)
+	 * @return the value of the '<em>Carrier Party Id</em>' reference.
+	 * @see #setCarrierPartyId(PartyGroup)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_CarrierPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getCarrierPartyId();
+	PartyGroup getCarrierPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierPartyId <em>Carrier Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierPartyId <em>Carrier Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Carrier Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Carrier Party Id</em>' reference.
 	 * @see #getCarrierPartyId()
 	 * @generated
 	 */
-	void setCarrierPartyId(String value);
+	void setCarrierPartyId(PartyGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Carrier Restriction Codes</b></em>' attribute.
@@ -378,160 +384,160 @@ public interface ShipmentRouteSegment extends BizEntity {
 	void setCarrierRestrictionDesc(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Carrier Service Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Carrier Service Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Carrier Service Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Carrier Service Status Id</em>' attribute.
-	 * @see #setCarrierServiceStatusId(String)
+	 * @return the value of the '<em>Carrier Service Status Id</em>' reference.
+	 * @see #setCarrierServiceStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_CarrierServiceStatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getCarrierServiceStatusId();
+	StatusItem getCarrierServiceStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierServiceStatusId <em>Carrier Service Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCarrierServiceStatusId <em>Carrier Service Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Carrier Service Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Carrier Service Status Id</em>' reference.
 	 * @see #getCarrierServiceStatusId()
 	 * @generated
 	 */
-	void setCarrierServiceStatusId(String value);
+	void setCarrierServiceStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_CurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Delivery Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Delivery Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Delivery Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Delivery Id</em>' attribute.
-	 * @see #setDeliveryId(String)
+	 * @return the value of the '<em>Delivery Id</em>' reference.
+	 * @see #setDeliveryId(Delivery)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_DeliveryId()
-	 * @model annotation="mimo-ent-domain frame='Delivery'"
+	 * @model keys="deliveryId"
 	 * @generated
 	 */
-	String getDeliveryId();
+	Delivery getDeliveryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDeliveryId <em>Delivery Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDeliveryId <em>Delivery Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Delivery Id</em>' attribute.
+	 * @param value the new value of the '<em>Delivery Id</em>' reference.
 	 * @see #getDeliveryId()
 	 * @generated
 	 */
-	void setDeliveryId(String value);
+	void setDeliveryId(Delivery value);
 
 	/**
-	 * Returns the value of the '<em><b>Dest Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Dest Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Dest Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dest Contact Mech Id</em>' attribute.
-	 * @see #setDestContactMechId(String)
+	 * @return the value of the '<em>Dest Contact Mech Id</em>' reference.
+	 * @see #setDestContactMechId(PostalAddress)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_DestContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getDestContactMechId();
+	PostalAddress getDestContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestContactMechId <em>Dest Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestContactMechId <em>Dest Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dest Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Dest Contact Mech Id</em>' reference.
 	 * @see #getDestContactMechId()
 	 * @generated
 	 */
-	void setDestContactMechId(String value);
+	void setDestContactMechId(PostalAddress value);
 
 	/**
-	 * Returns the value of the '<em><b>Dest Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Dest Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Dest Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dest Facility Id</em>' attribute.
-	 * @see #setDestFacilityId(String)
+	 * @return the value of the '<em>Dest Facility Id</em>' reference.
+	 * @see #setDestFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_DestFacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getDestFacilityId();
+	Facility getDestFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestFacilityId <em>Dest Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestFacilityId <em>Dest Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dest Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Dest Facility Id</em>' reference.
 	 * @see #getDestFacilityId()
 	 * @generated
 	 */
-	void setDestFacilityId(String value);
+	void setDestFacilityId(Facility value);
 
 	/**
-	 * Returns the value of the '<em><b>Dest Telecom Number Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Dest Telecom Number Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Dest Telecom Number Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dest Telecom Number Id</em>' attribute.
-	 * @see #setDestTelecomNumberId(String)
+	 * @return the value of the '<em>Dest Telecom Number Id</em>' reference.
+	 * @see #setDestTelecomNumberId(TelecomNumber)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_DestTelecomNumberId()
-	 * @model annotation="mimo-ent-domain frame='TelecomNumber'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getDestTelecomNumberId();
+	TelecomNumber getDestTelecomNumberId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestTelecomNumberId <em>Dest Telecom Number Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getDestTelecomNumberId <em>Dest Telecom Number Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dest Telecom Number Id</em>' attribute.
+	 * @param value the new value of the '<em>Dest Telecom Number Id</em>' reference.
 	 * @see #getDestTelecomNumberId()
 	 * @generated
 	 */
-	void setDestTelecomNumberId(String value);
+	void setDestTelecomNumberId(TelecomNumber value);
 
 	/**
 	 * Returns the value of the '<em><b>Estimated Arrival Date</b></em>' attribute.
@@ -664,82 +670,82 @@ public interface ShipmentRouteSegment extends BizEntity {
 	void setLastUpdatedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Origin Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Origin Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Origin Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Origin Contact Mech Id</em>' attribute.
-	 * @see #setOriginContactMechId(String)
+	 * @return the value of the '<em>Origin Contact Mech Id</em>' reference.
+	 * @see #setOriginContactMechId(PostalAddress)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_OriginContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getOriginContactMechId();
+	PostalAddress getOriginContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginContactMechId <em>Origin Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginContactMechId <em>Origin Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Origin Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Origin Contact Mech Id</em>' reference.
 	 * @see #getOriginContactMechId()
 	 * @generated
 	 */
-	void setOriginContactMechId(String value);
+	void setOriginContactMechId(PostalAddress value);
 
 	/**
-	 * Returns the value of the '<em><b>Origin Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Origin Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Origin Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Origin Facility Id</em>' attribute.
-	 * @see #setOriginFacilityId(String)
+	 * @return the value of the '<em>Origin Facility Id</em>' reference.
+	 * @see #setOriginFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_OriginFacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getOriginFacilityId();
+	Facility getOriginFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginFacilityId <em>Origin Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginFacilityId <em>Origin Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Origin Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Origin Facility Id</em>' reference.
 	 * @see #getOriginFacilityId()
 	 * @generated
 	 */
-	void setOriginFacilityId(String value);
+	void setOriginFacilityId(Facility value);
 
 	/**
-	 * Returns the value of the '<em><b>Origin Telecom Number Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Origin Telecom Number Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Origin Telecom Number Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Origin Telecom Number Id</em>' attribute.
-	 * @see #setOriginTelecomNumberId(String)
+	 * @return the value of the '<em>Origin Telecom Number Id</em>' reference.
+	 * @see #setOriginTelecomNumberId(TelecomNumber)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_OriginTelecomNumberId()
-	 * @model annotation="mimo-ent-domain frame='TelecomNumber'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getOriginTelecomNumberId();
+	TelecomNumber getOriginTelecomNumberId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Origin Telecom Number Id</em>' attribute.
+	 * @param value the new value of the '<em>Origin Telecom Number Id</em>' reference.
 	 * @see #getOriginTelecomNumberId()
 	 * @generated
 	 */
-	void setOriginTelecomNumberId(String value);
+	void setOriginTelecomNumberId(TelecomNumber value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Id</b></em>' attribute.
@@ -752,8 +758,8 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentId();
@@ -769,30 +775,30 @@ public interface ShipmentRouteSegment extends BizEntity {
 	void setShipmentId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Method Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Method Type Id</em>' attribute.
-	 * @see #setShipmentMethodTypeId(String)
+	 * @return the value of the '<em>Shipment Method Type Id</em>' reference.
+	 * @see #setShipmentMethodTypeId(ShipmentMethodType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ShipmentMethodTypeId()
-	 * @model annotation="mimo-ent-domain frame='ShipmentMethodType'"
+	 * @model keys="shipmentMethodTypeId"
 	 * @generated
 	 */
-	String getShipmentMethodTypeId();
+	ShipmentMethodType getShipmentMethodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Method Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Method Type Id</em>' reference.
 	 * @see #getShipmentMethodTypeId()
 	 * @generated
 	 */
-	void setShipmentMethodTypeId(String value);
+	void setShipmentMethodTypeId(ShipmentMethodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Route Segment Id</b></em>' attribute.
@@ -805,7 +811,8 @@ public interface ShipmentRouteSegment extends BizEntity {
 	 * @return the value of the '<em>Shipment Route Segment Id</em>' attribute.
 	 * @see #setShipmentRouteSegmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentRouteSegment_ShipmentRouteSegmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentRouteSegmentId();

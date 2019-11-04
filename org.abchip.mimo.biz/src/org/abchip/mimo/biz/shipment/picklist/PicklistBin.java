@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.picklist;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,9 +23,9 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPicklistBinId <em>Picklist Bin Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getBinLocationNumber <em>Bin Location Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPrimaryShipGroupSeqId <em>Primary Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPrimaryOrderId <em>Primary Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPrimaryShipGroupSeqId <em>Primary Ship Group Seq Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin()
@@ -69,7 +70,7 @@ public interface PicklistBin extends BizEntity {
 	 * @return the value of the '<em>Picklist Bin Id</em>' attribute.
 	 * @see #setPicklistBinId(String)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PicklistBinId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -86,56 +87,56 @@ public interface PicklistBin extends BizEntity {
 	void setPicklistBinId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Picklist Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Picklist Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Picklist Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Picklist Id</em>' attribute.
-	 * @see #setPicklistId(String)
+	 * @return the value of the '<em>Picklist Id</em>' reference.
+	 * @see #setPicklistId(Picklist)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PicklistId()
-	 * @model annotation="mimo-ent-domain frame='Picklist'"
+	 * @model keys="picklistId"
 	 * @generated
 	 */
-	String getPicklistId();
+	Picklist getPicklistId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPicklistId <em>Picklist Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPicklistId <em>Picklist Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Picklist Id</em>' attribute.
+	 * @param value the new value of the '<em>Picklist Id</em>' reference.
 	 * @see #getPicklistId()
 	 * @generated
 	 */
-	void setPicklistId(String value);
+	void setPicklistId(Picklist value);
 
 	/**
-	 * Returns the value of the '<em><b>Primary Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Primary Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Primary Order Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Primary Order Id</em>' attribute.
-	 * @see #setPrimaryOrderId(String)
+	 * @return the value of the '<em>Primary Order Id</em>' reference.
+	 * @see #setPrimaryOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistBin_PrimaryOrderId()
-	 * @model annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getPrimaryOrderId();
+	OrderHeader getPrimaryOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPrimaryOrderId <em>Primary Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistBin#getPrimaryOrderId <em>Primary Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Primary Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Primary Order Id</em>' reference.
 	 * @see #getPrimaryOrderId()
 	 * @generated
 	 */
-	void setPrimaryOrderId(String value);
+	void setPrimaryOrderId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Primary Ship Group Seq Id</b></em>' attribute.

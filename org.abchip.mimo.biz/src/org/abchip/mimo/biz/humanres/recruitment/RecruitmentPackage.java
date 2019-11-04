@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-humanres-recruitment";
+	String eNS_PREFIX = "biz-recruitment";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,22 +117,13 @@ public interface RecruitmentPackage extends EPackage {
 	int JOB_INTERVIEW__JOB_INTERVIEW_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Grade Secured Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_INTERVIEW__GRADE_SECURED_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Job Interview Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_INTERVIEW_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int JOB_INTERVIEW__JOB_INTERVIEW_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Job Interview Result</b></em>' attribute.
@@ -140,43 +132,52 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_INTERVIEW_RESULT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int JOB_INTERVIEW__JOB_INTERVIEW_RESULT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Job Interview Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Job Interviewee Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Job Interviewee Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Job Interviewer Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Job Interviewer Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Job Interview Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Job Requisition Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Job Requisition Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_INTERVIEW__JOB_REQUISITION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int JOB_INTERVIEW__JOB_REQUISITION_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Grade Secured Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_INTERVIEW__GRADE_SECURED_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Job Interview</em>' class.
@@ -343,22 +344,13 @@ public interface RecruitmentPackage extends EPackage {
 	int JOB_REQUISITION__DURATION_MONTHS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Exam Type Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION__EXAM_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Experience Months</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__EXPERIENCE_MONTHS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int JOB_REQUISITION__EXPERIENCE_MONTHS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Experience Years</b></em>' attribute.
@@ -367,7 +359,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__EXPERIENCE_YEARS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int JOB_REQUISITION__EXPERIENCE_YEARS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Gender</b></em>' attribute.
@@ -376,7 +368,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__GENDER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int JOB_REQUISITION__GENDER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Job Location</b></em>' attribute.
@@ -385,16 +377,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__JOB_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Job Posting Type Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int JOB_REQUISITION__JOB_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Job Requisition Date</b></em>' attribute.
@@ -403,7 +386,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__JOB_REQUISITION_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int JOB_REQUISITION__JOB_REQUISITION_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>No Of Resources</b></em>' attribute.
@@ -412,7 +395,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__NO_OF_RESOURCES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int JOB_REQUISITION__NO_OF_RESOURCES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Qualification</b></em>' attribute.
@@ -421,7 +404,7 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__QUALIFICATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int JOB_REQUISITION__QUALIFICATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Required On Date</b></em>' attribute.
@@ -430,16 +413,34 @@ public interface RecruitmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__REQUIRED_ON_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int JOB_REQUISITION__REQUIRED_ON_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Skill Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Skill Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_REQUISITION__SKILL_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int JOB_REQUISITION__SKILL_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Exam Type Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_REQUISITION__EXAM_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Job Posting Type Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Job Requisition</em>' class.
@@ -473,15 +474,15 @@ public interface RecruitmentPackage extends EPackage {
 	EAttribute getJobInterview_JobInterviewId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getGradeSecuredEnumId <em>Grade Secured Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getGradeSecuredEnumId <em>Grade Secured Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Grade Secured Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Grade Secured Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.recruitment.JobInterview#getGradeSecuredEnumId()
 	 * @see #getJobInterview()
 	 * @generated
 	 */
-	EAttribute getJobInterview_GradeSecuredEnumId();
+	EReference getJobInterview_GradeSecuredEnumId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobInterviewDate <em>Job Interview Date</em>}'.
@@ -506,48 +507,48 @@ public interface RecruitmentPackage extends EPackage {
 	EAttribute getJobInterview_JobInterviewResult();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobInterviewTypeId <em>Job Interview Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobInterviewTypeId <em>Job Interview Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Job Interview Type Id</em>'.
+	 * @return the meta object for the reference '<em>Job Interview Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobInterviewTypeId()
 	 * @see #getJobInterview()
 	 * @generated
 	 */
-	EAttribute getJobInterview_JobInterviewTypeId();
+	EReference getJobInterview_JobInterviewTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobIntervieweePartyId <em>Job Interviewee Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobIntervieweePartyId <em>Job Interviewee Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Job Interviewee Party Id</em>'.
+	 * @return the meta object for the reference '<em>Job Interviewee Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobIntervieweePartyId()
 	 * @see #getJobInterview()
 	 * @generated
 	 */
-	EAttribute getJobInterview_JobIntervieweePartyId();
+	EReference getJobInterview_JobIntervieweePartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobInterviewerPartyId <em>Job Interviewer Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobInterviewerPartyId <em>Job Interviewer Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Job Interviewer Party Id</em>'.
+	 * @return the meta object for the reference '<em>Job Interviewer Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobInterviewerPartyId()
 	 * @see #getJobInterview()
 	 * @generated
 	 */
-	EAttribute getJobInterview_JobInterviewerPartyId();
+	EReference getJobInterview_JobInterviewerPartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobRequisitionId <em>Job Requisition Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobRequisitionId <em>Job Requisition Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Job Requisition Id</em>'.
+	 * @return the meta object for the reference '<em>Job Requisition Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.recruitment.JobInterview#getJobRequisitionId()
 	 * @see #getJobInterview()
 	 * @generated
 	 */
-	EAttribute getJobInterview_JobRequisitionId();
+	EReference getJobInterview_JobRequisitionId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.recruitment.JobInterviewType <em>Job Interview Type</em>}'.
@@ -625,15 +626,15 @@ public interface RecruitmentPackage extends EPackage {
 	EAttribute getJobRequisition_DurationMonths();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExamTypeEnumId <em>Exam Type Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExamTypeEnumId <em>Exam Type Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Exam Type Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Exam Type Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExamTypeEnumId()
 	 * @see #getJobRequisition()
 	 * @generated
 	 */
-	EAttribute getJobRequisition_ExamTypeEnumId();
+	EReference getJobRequisition_ExamTypeEnumId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExperienceMonths <em>Experience Months</em>}'.
@@ -680,15 +681,15 @@ public interface RecruitmentPackage extends EPackage {
 	EAttribute getJobRequisition_JobLocation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Job Posting Type Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Job Posting Type Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobPostingTypeEnumId()
 	 * @see #getJobRequisition()
 	 * @generated
 	 */
-	EAttribute getJobRequisition_JobPostingTypeEnumId();
+	EReference getJobRequisition_JobPostingTypeEnumId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobRequisitionDate <em>Job Requisition Date</em>}'.
@@ -735,15 +736,15 @@ public interface RecruitmentPackage extends EPackage {
 	EAttribute getJobRequisition_RequiredOnDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getSkillTypeId <em>Skill Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getSkillTypeId <em>Skill Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Skill Type Id</em>'.
+	 * @return the meta object for the reference '<em>Skill Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getSkillTypeId()
 	 * @see #getJobRequisition()
 	 * @generated
 	 */
-	EAttribute getJobRequisition_SkillTypeId();
+	EReference getJobRequisition_SkillTypeId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -786,12 +787,12 @@ public interface RecruitmentPackage extends EPackage {
 		EAttribute JOB_INTERVIEW__JOB_INTERVIEW_ID = eINSTANCE.getJobInterview_JobInterviewId();
 
 		/**
-		 * The meta object literal for the '<em><b>Grade Secured Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Grade Secured Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_INTERVIEW__GRADE_SECURED_ENUM_ID = eINSTANCE.getJobInterview_GradeSecuredEnumId();
+		EReference JOB_INTERVIEW__GRADE_SECURED_ENUM_ID = eINSTANCE.getJobInterview_GradeSecuredEnumId();
 
 		/**
 		 * The meta object literal for the '<em><b>Job Interview Date</b></em>' attribute feature.
@@ -810,36 +811,36 @@ public interface RecruitmentPackage extends EPackage {
 		EAttribute JOB_INTERVIEW__JOB_INTERVIEW_RESULT = eINSTANCE.getJobInterview_JobInterviewResult();
 
 		/**
-		 * The meta object literal for the '<em><b>Job Interview Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Job Interview Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID = eINSTANCE.getJobInterview_JobInterviewTypeId();
+		EReference JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID = eINSTANCE.getJobInterview_JobInterviewTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Job Interviewee Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Job Interviewee Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID = eINSTANCE.getJobInterview_JobIntervieweePartyId();
+		EReference JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID = eINSTANCE.getJobInterview_JobIntervieweePartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Job Interviewer Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Job Interviewer Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID = eINSTANCE.getJobInterview_JobInterviewerPartyId();
+		EReference JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID = eINSTANCE.getJobInterview_JobInterviewerPartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Job Requisition Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Job Requisition Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_INTERVIEW__JOB_REQUISITION_ID = eINSTANCE.getJobInterview_JobRequisitionId();
+		EReference JOB_INTERVIEW__JOB_REQUISITION_ID = eINSTANCE.getJobInterview_JobRequisitionId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewTypeImpl <em>Job Interview Type</em>}' class.
@@ -902,12 +903,12 @@ public interface RecruitmentPackage extends EPackage {
 		EAttribute JOB_REQUISITION__DURATION_MONTHS = eINSTANCE.getJobRequisition_DurationMonths();
 
 		/**
-		 * The meta object literal for the '<em><b>Exam Type Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Exam Type Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_REQUISITION__EXAM_TYPE_ENUM_ID = eINSTANCE.getJobRequisition_ExamTypeEnumId();
+		EReference JOB_REQUISITION__EXAM_TYPE_ENUM_ID = eINSTANCE.getJobRequisition_ExamTypeEnumId();
 
 		/**
 		 * The meta object literal for the '<em><b>Experience Months</b></em>' attribute feature.
@@ -942,12 +943,12 @@ public interface RecruitmentPackage extends EPackage {
 		EAttribute JOB_REQUISITION__JOB_LOCATION = eINSTANCE.getJobRequisition_JobLocation();
 
 		/**
-		 * The meta object literal for the '<em><b>Job Posting Type Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Job Posting Type Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID = eINSTANCE.getJobRequisition_JobPostingTypeEnumId();
+		EReference JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID = eINSTANCE.getJobRequisition_JobPostingTypeEnumId();
 
 		/**
 		 * The meta object literal for the '<em><b>Job Requisition Date</b></em>' attribute feature.
@@ -982,12 +983,12 @@ public interface RecruitmentPackage extends EPackage {
 		EAttribute JOB_REQUISITION__REQUIRED_ON_DATE = eINSTANCE.getJobRequisition_RequiredOnDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Skill Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Skill Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_REQUISITION__SKILL_TYPE_ID = eINSTANCE.getJobRequisition_SkillTypeId();
+		EReference JOB_REQUISITION__SKILL_TYPE_ID = eINSTANCE.getJobRequisition_SkillTypeId();
 
 	}
 

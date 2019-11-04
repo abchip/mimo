@@ -10,11 +10,15 @@ package org.abchip.mimo.biz.product.store.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.product.store.ProductStoreRole;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreRoleImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreRoleImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreRoleImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreRoleImpl#getProductStoreId <em>Product Store Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,46 +64,6 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -160,6 +124,26 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStore productStoreId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,7 +216,24 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -242,8 +243,8 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -301,7 +302,24 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -311,8 +329,8 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -328,16 +346,18 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_ROLE__PARTY_ID:
 				return getPartyId();
-			case StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID:
-				return getRoleTypeId();
-			case StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case StorePackage.PRODUCT_STORE_ROLE__FROM_DATE:
 				return getFromDate();
 			case StorePackage.PRODUCT_STORE_ROLE__SEQUENCE_NUM:
 				return getSequenceNum();
 			case StorePackage.PRODUCT_STORE_ROLE__THRU_DATE:
 				return getThruDate();
+			case StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -353,12 +373,6 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 			case StorePackage.PRODUCT_STORE_ROLE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_ROLE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -367,6 +381,12 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 				return;
 			case StorePackage.PRODUCT_STORE_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -383,12 +403,6 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 			case StorePackage.PRODUCT_STORE_ROLE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_ROLE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -397,6 +411,12 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 				return;
 			case StorePackage.PRODUCT_STORE_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -412,16 +432,16 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_ROLE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case StorePackage.PRODUCT_STORE_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case StorePackage.PRODUCT_STORE_ROLE__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case StorePackage.PRODUCT_STORE_ROLE__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case StorePackage.PRODUCT_STORE_ROLE__PRODUCT_STORE_ID:
+				return productStoreId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -438,10 +458,6 @@ public class ProductStoreRoleImpl extends BizEntityImpl implements ProductStoreR
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

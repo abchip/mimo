@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.agreement.TermType;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,13 +25,13 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceTermId <em>Invoice Term Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTermDays <em>Term Days</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTermValue <em>Term Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTextValue <em>Text Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTermTypeId <em>Term Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceTermAttributes <em>Invoice Term Attributes</em>}</li>
  * </ul>
  *
@@ -118,30 +119,30 @@ public interface InvoiceTerm extends BizEntity {
 	void setTermDays(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Term Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Term Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Term Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Term Type Id</em>' attribute.
-	 * @see #setTermTypeId(String)
+	 * @return the value of the '<em>Term Type Id</em>' reference.
+	 * @see #setTermTypeId(TermType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_TermTypeId()
-	 * @model annotation="mimo-ent-domain frame='TermType'"
+	 * @model keys="termTypeId"
 	 * @generated
 	 */
-	String getTermTypeId();
+	TermType getTermTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTermTypeId <em>Term Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getTermTypeId <em>Term Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Term Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Term Type Id</em>' reference.
 	 * @see #getTermTypeId()
 	 * @generated
 	 */
-	void setTermTypeId(String value);
+	void setTermTypeId(TermType value);
 
 	/**
 	 * Returns the value of the '<em><b>Term Value</b></em>' attribute.
@@ -239,30 +240,30 @@ public interface InvoiceTerm extends BizEntity {
 	List<String> getInvoiceTermAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Id</em>' attribute.
-	 * @see #setInvoiceId(String)
+	 * @return the value of the '<em>Invoice Id</em>' reference.
+	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_InvoiceId()
-	 * @model annotation="mimo-ent-domain frame='Invoice'"
+	 * @model keys="invoiceId"
 	 * @generated
 	 */
-	String getInvoiceId();
+	Invoice getInvoiceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceId <em>Invoice Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceTerm#getInvoiceId <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Id</em>' reference.
 	 * @see #getInvoiceId()
 	 * @generated
 	 */
-	void setInvoiceId(String value);
+	void setInvoiceId(Invoice value);
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Term Id</b></em>' attribute.
@@ -275,7 +276,7 @@ public interface InvoiceTerm extends BizEntity {
 	 * @return the value of the '<em>Invoice Term Id</em>' attribute.
 	 * @see #setInvoiceTermId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceTerm_InvoiceTermId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

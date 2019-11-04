@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.catalog;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.facility.Facility;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +22,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getProdCatalogId <em>Prod Catalog Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility()
@@ -33,31 +34,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ProdCatalogInvFacility extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility_FacilityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogInvFacility#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -70,7 +70,8 @@ public interface ProdCatalogInvFacility extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -148,8 +149,8 @@ public interface ProdCatalogInvFacility extends BizEntity {
 	 * @return the value of the '<em>Prod Catalog Id</em>' attribute.
 	 * @see #setProdCatalogId(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogInvFacility_ProdCatalogId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProdCatalog'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProdCatalogId();

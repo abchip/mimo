@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.store;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +22,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#isManualOnly <em>Manual Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getProductPromoId <em>Product Promo Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl()
@@ -44,7 +45,8 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -148,8 +150,8 @@ public interface ProductStorePromoAppl extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_ProductStoreId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreId();
@@ -165,30 +167,29 @@ public interface ProductStorePromoAppl extends BizEntity {
 	void setProductStoreId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Id</em>' attribute.
-	 * @see #setProductPromoId(String)
+	 * @return the value of the '<em>Product Promo Id</em>' reference.
+	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePromoAppl_ProductPromoId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPromo'"
+	 * @model keys="productPromoId"
 	 * @generated
 	 */
-	String getProductPromoId();
+	ProductPromo getProductPromoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getProductPromoId <em>Product Promo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePromoAppl#getProductPromoId <em>Product Promo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Id</em>' reference.
 	 * @see #getProductPromoId()
 	 * @generated
 	 */
-	void setProductPromoId(String value);
+	void setProductPromoId(ProductPromo value);
 
 } // ProductStorePromoAppl

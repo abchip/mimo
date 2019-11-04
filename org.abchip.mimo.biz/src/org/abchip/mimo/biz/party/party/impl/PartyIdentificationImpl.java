@@ -14,6 +14,8 @@ import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIdentificationImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIdentificationImpl#getPartyIdentificationTypeId <em>Party Identification Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIdentificationImpl#getIdValue <em>Id Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyIdentificationImpl#getPartyIdentificationTypeId <em>Party Identification Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,24 +58,6 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyIdentificationTypeId() <em>Party Identification Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdentificationTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdentificationTypeId() <em>Party Identification Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdentificationTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdentificationTypeId = PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getIdValue() <em>Id Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,6 +75,15 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 	 * @ordered
 	 */
 	protected String idValue = ID_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyIdentificationTypeId() <em>Party Identification Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyIdentificationTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PartyIdentificationType partyIdentificationTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,7 +133,24 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 	 * @generated
 	 */
 	@Override
-	public String getPartyIdentificationTypeId() {
+	public PartyIdentificationType getPartyIdentificationTypeId() {
+		if (partyIdentificationTypeId != null && ((EObject)partyIdentificationTypeId).eIsProxy()) {
+			InternalEObject oldPartyIdentificationTypeId = (InternalEObject)partyIdentificationTypeId;
+			partyIdentificationTypeId = (PartyIdentificationType)eResolveProxy(oldPartyIdentificationTypeId);
+			if (partyIdentificationTypeId != oldPartyIdentificationTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID, oldPartyIdentificationTypeId, partyIdentificationTypeId));
+			}
+		}
+		return partyIdentificationTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyIdentificationType basicGetPartyIdentificationTypeId() {
 		return partyIdentificationTypeId;
 	}
 
@@ -150,8 +160,8 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 	 * @generated
 	 */
 	@Override
-	public void setPartyIdentificationTypeId(String newPartyIdentificationTypeId) {
-		String oldPartyIdentificationTypeId = partyIdentificationTypeId;
+	public void setPartyIdentificationTypeId(PartyIdentificationType newPartyIdentificationTypeId) {
+		PartyIdentificationType oldPartyIdentificationTypeId = partyIdentificationTypeId;
 		partyIdentificationTypeId = newPartyIdentificationTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID, oldPartyIdentificationTypeId, partyIdentificationTypeId));
@@ -190,10 +200,11 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 		switch (featureID) {
 			case PartyPackage.PARTY_IDENTIFICATION__PARTY_ID:
 				return getPartyId();
-			case PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID:
-				return getPartyIdentificationTypeId();
 			case PartyPackage.PARTY_IDENTIFICATION__ID_VALUE:
 				return getIdValue();
+			case PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID:
+				if (resolve) return getPartyIdentificationTypeId();
+				return basicGetPartyIdentificationTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,11 +220,11 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 			case PartyPackage.PARTY_IDENTIFICATION__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID:
-				setPartyIdentificationTypeId((String)newValue);
-				return;
 			case PartyPackage.PARTY_IDENTIFICATION__ID_VALUE:
 				setIdValue((String)newValue);
+				return;
+			case PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID:
+				setPartyIdentificationTypeId((PartyIdentificationType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,11 +241,11 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 			case PartyPackage.PARTY_IDENTIFICATION__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID:
-				setPartyIdentificationTypeId(PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_IDENTIFICATION__ID_VALUE:
 				setIdValue(ID_VALUE_EDEFAULT);
+				return;
+			case PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID:
+				setPartyIdentificationTypeId((PartyIdentificationType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -250,10 +261,10 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 		switch (featureID) {
 			case PartyPackage.PARTY_IDENTIFICATION__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID:
-				return PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT == null ? partyIdentificationTypeId != null : !PARTY_IDENTIFICATION_TYPE_ID_EDEFAULT.equals(partyIdentificationTypeId);
 			case PartyPackage.PARTY_IDENTIFICATION__ID_VALUE:
 				return ID_VALUE_EDEFAULT == null ? idValue != null : !ID_VALUE_EDEFAULT.equals(idValue);
+			case PartyPackage.PARTY_IDENTIFICATION__PARTY_IDENTIFICATION_TYPE_ID:
+				return partyIdentificationTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,8 +281,6 @@ public class PartyIdentificationImpl extends BizEntityTypedImpl<PartyIdentificat
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", partyIdentificationTypeId: ");
-		result.append(partyIdentificationTypeId);
 		result.append(", idValue: ");
 		result.append(idValue);
 		result.append(')');

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.store;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.facility.Facility;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +22,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility()
@@ -43,7 +44,8 @@ public interface ProductStoreFacility extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -121,8 +123,8 @@ public interface ProductStoreFacility extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility_ProductStoreId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreId();
@@ -138,30 +140,29 @@ public interface ProductStoreFacility extends BizEntity {
 	void setProductStoreId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFacility_FacilityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFacility#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 } // ProductStoreFacility

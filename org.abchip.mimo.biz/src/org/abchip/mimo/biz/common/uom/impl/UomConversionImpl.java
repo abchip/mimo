@@ -7,12 +7,16 @@
  */
 package org.abchip.mimo.biz.common.uom.impl;
 
+import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomConversion;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,11 +28,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl#getUomId <em>Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl#getUomIdTo <em>Uom Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl#getConversionFactor <em>Conversion Factor</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl#getDecimalScale <em>Decimal Scale</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl#getRoundingMode <em>Rounding Mode</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl#getUomIdTo <em>Uom Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.impl.UomConversionImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,24 +61,6 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 */
 	protected String uomId = UOM_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getUomIdTo() <em>Uom Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String UOM_ID_TO_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getUomIdTo() <em>Uom Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uomIdTo = UOM_ID_TO_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getConversionFactor() <em>Conversion Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,24 +78,6 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 * @ordered
 	 */
 	protected double conversionFactor = CONVERSION_FACTOR_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUSTOM_METHOD_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String customMethodId = CUSTOM_METHOD_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDecimalScale() <em>Decimal Scale</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -146,6 +114,24 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 * @ordered
 	 */
 	protected String roundingMode = ROUNDING_MODE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getUomIdTo() <em>Uom Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUomIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom uomIdTo;
+	/**
+	 * The cached value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod customMethodId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,7 +250,24 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 * @generated
 	 */
 	@Override
-	public String getUomIdTo() {
+	public Uom getUomIdTo() {
+		if (uomIdTo != null && ((EObject)uomIdTo).eIsProxy()) {
+			InternalEObject oldUomIdTo = (InternalEObject)uomIdTo;
+			uomIdTo = (Uom)eResolveProxy(oldUomIdTo);
+			if (uomIdTo != oldUomIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION__UOM_ID_TO, oldUomIdTo, uomIdTo));
+			}
+		}
+		return uomIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomIdTo() {
 		return uomIdTo;
 	}
 
@@ -274,8 +277,8 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 * @generated
 	 */
 	@Override
-	public void setUomIdTo(String newUomIdTo) {
-		String oldUomIdTo = uomIdTo;
+	public void setUomIdTo(Uom newUomIdTo) {
+		Uom oldUomIdTo = uomIdTo;
 		uomIdTo = newUomIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION__UOM_ID_TO, oldUomIdTo, uomIdTo));
@@ -287,7 +290,24 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 * @generated
 	 */
 	@Override
-	public String getCustomMethodId() {
+	public CustomMethod getCustomMethodId() {
+		if (customMethodId != null && ((EObject)customMethodId).eIsProxy()) {
+			InternalEObject oldCustomMethodId = (InternalEObject)customMethodId;
+			customMethodId = (CustomMethod)eResolveProxy(oldCustomMethodId);
+			if (customMethodId != oldCustomMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
+			}
+		}
+		return customMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetCustomMethodId() {
 		return customMethodId;
 	}
 
@@ -297,8 +317,8 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 	 * @generated
 	 */
 	@Override
-	public void setCustomMethodId(String newCustomMethodId) {
-		String oldCustomMethodId = customMethodId;
+	public void setCustomMethodId(CustomMethod newCustomMethodId) {
+		CustomMethod oldCustomMethodId = customMethodId;
 		customMethodId = newCustomMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
@@ -314,16 +334,18 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 		switch (featureID) {
 			case UomPackage.UOM_CONVERSION__UOM_ID:
 				return getUomId();
-			case UomPackage.UOM_CONVERSION__UOM_ID_TO:
-				return getUomIdTo();
 			case UomPackage.UOM_CONVERSION__CONVERSION_FACTOR:
 				return getConversionFactor();
-			case UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID:
-				return getCustomMethodId();
 			case UomPackage.UOM_CONVERSION__DECIMAL_SCALE:
 				return getDecimalScale();
 			case UomPackage.UOM_CONVERSION__ROUNDING_MODE:
 				return getRoundingMode();
+			case UomPackage.UOM_CONVERSION__UOM_ID_TO:
+				if (resolve) return getUomIdTo();
+				return basicGetUomIdTo();
+			case UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID:
+				if (resolve) return getCustomMethodId();
+				return basicGetCustomMethodId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -339,20 +361,20 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 			case UomPackage.UOM_CONVERSION__UOM_ID:
 				setUomId((String)newValue);
 				return;
-			case UomPackage.UOM_CONVERSION__UOM_ID_TO:
-				setUomIdTo((String)newValue);
-				return;
 			case UomPackage.UOM_CONVERSION__CONVERSION_FACTOR:
 				setConversionFactor((Double)newValue);
-				return;
-			case UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID:
-				setCustomMethodId((String)newValue);
 				return;
 			case UomPackage.UOM_CONVERSION__DECIMAL_SCALE:
 				setDecimalScale((Long)newValue);
 				return;
 			case UomPackage.UOM_CONVERSION__ROUNDING_MODE:
 				setRoundingMode((String)newValue);
+				return;
+			case UomPackage.UOM_CONVERSION__UOM_ID_TO:
+				setUomIdTo((Uom)newValue);
+				return;
+			case UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID:
+				setCustomMethodId((CustomMethod)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -369,20 +391,20 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 			case UomPackage.UOM_CONVERSION__UOM_ID:
 				setUomId(UOM_ID_EDEFAULT);
 				return;
-			case UomPackage.UOM_CONVERSION__UOM_ID_TO:
-				setUomIdTo(UOM_ID_TO_EDEFAULT);
-				return;
 			case UomPackage.UOM_CONVERSION__CONVERSION_FACTOR:
 				setConversionFactor(CONVERSION_FACTOR_EDEFAULT);
-				return;
-			case UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID:
-				setCustomMethodId(CUSTOM_METHOD_ID_EDEFAULT);
 				return;
 			case UomPackage.UOM_CONVERSION__DECIMAL_SCALE:
 				setDecimalScale(DECIMAL_SCALE_EDEFAULT);
 				return;
 			case UomPackage.UOM_CONVERSION__ROUNDING_MODE:
 				setRoundingMode(ROUNDING_MODE_EDEFAULT);
+				return;
+			case UomPackage.UOM_CONVERSION__UOM_ID_TO:
+				setUomIdTo((Uom)null);
+				return;
+			case UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID:
+				setCustomMethodId((CustomMethod)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -398,16 +420,16 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 		switch (featureID) {
 			case UomPackage.UOM_CONVERSION__UOM_ID:
 				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
-			case UomPackage.UOM_CONVERSION__UOM_ID_TO:
-				return UOM_ID_TO_EDEFAULT == null ? uomIdTo != null : !UOM_ID_TO_EDEFAULT.equals(uomIdTo);
 			case UomPackage.UOM_CONVERSION__CONVERSION_FACTOR:
 				return conversionFactor != CONVERSION_FACTOR_EDEFAULT;
-			case UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID:
-				return CUSTOM_METHOD_ID_EDEFAULT == null ? customMethodId != null : !CUSTOM_METHOD_ID_EDEFAULT.equals(customMethodId);
 			case UomPackage.UOM_CONVERSION__DECIMAL_SCALE:
 				return decimalScale != DECIMAL_SCALE_EDEFAULT;
 			case UomPackage.UOM_CONVERSION__ROUNDING_MODE:
 				return ROUNDING_MODE_EDEFAULT == null ? roundingMode != null : !ROUNDING_MODE_EDEFAULT.equals(roundingMode);
+			case UomPackage.UOM_CONVERSION__UOM_ID_TO:
+				return uomIdTo != null;
+			case UomPackage.UOM_CONVERSION__CUSTOM_METHOD_ID:
+				return customMethodId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -424,12 +446,8 @@ public class UomConversionImpl extends BizEntityImpl implements UomConversion {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (uomId: ");
 		result.append(uomId);
-		result.append(", uomIdTo: ");
-		result.append(uomIdTo);
 		result.append(", conversionFactor: ");
 		result.append(conversionFactor);
-		result.append(", customMethodId: ");
-		result.append(customMethodId);
 		result.append(", decimalScale: ");
 		result.append(decimalScale);
 		result.append(", roundingMode: ");

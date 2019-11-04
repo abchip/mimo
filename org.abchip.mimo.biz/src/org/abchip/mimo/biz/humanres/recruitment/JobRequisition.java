@@ -12,6 +12,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.humanres.ability.SkillType;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,17 +27,17 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobRequisitionId <em>Job Requisition Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getAge <em>Age</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getDurationMonths <em>Duration Months</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExamTypeEnumId <em>Exam Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExperienceMonths <em>Experience Months</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExperienceYears <em>Experience Years</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#isGender <em>Gender</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobLocation <em>Job Location</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobRequisitionDate <em>Job Requisition Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getNoOfResources <em>No Of Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getQualification <em>Qualification</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getRequiredOnDate <em>Required On Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getSkillTypeId <em>Skill Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExamTypeEnumId <em>Exam Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition()
@@ -96,30 +98,30 @@ public interface JobRequisition extends BizEntity {
 	void setDurationMonths(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Exam Type Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Exam Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Exam Type Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exam Type Enum Id</em>' attribute.
-	 * @see #setExamTypeEnumId(String)
+	 * @return the value of the '<em>Exam Type Enum Id</em>' reference.
+	 * @see #setExamTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_ExamTypeEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getExamTypeEnumId();
+	Enumeration getExamTypeEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExamTypeEnumId <em>Exam Type Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getExamTypeEnumId <em>Exam Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Exam Type Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Exam Type Enum Id</em>' reference.
 	 * @see #getExamTypeEnumId()
 	 * @generated
 	 */
-	void setExamTypeEnumId(String value);
+	void setExamTypeEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Experience Months</b></em>' attribute.
@@ -226,30 +228,30 @@ public interface JobRequisition extends BizEntity {
 	void setJobLocation(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Job Posting Type Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Job Posting Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Job Posting Type Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Job Posting Type Enum Id</em>' attribute.
-	 * @see #setJobPostingTypeEnumId(String)
+	 * @return the value of the '<em>Job Posting Type Enum Id</em>' reference.
+	 * @see #setJobPostingTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_JobPostingTypeEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getJobPostingTypeEnumId();
+	Enumeration getJobPostingTypeEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Job Posting Type Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Job Posting Type Enum Id</em>' reference.
 	 * @see #getJobPostingTypeEnumId()
 	 * @generated
 	 */
-	void setJobPostingTypeEnumId(String value);
+	void setJobPostingTypeEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Job Requisition Date</b></em>' attribute.
@@ -288,7 +290,7 @@ public interface JobRequisition extends BizEntity {
 	 * @return the value of the '<em>Job Requisition Id</em>' attribute.
 	 * @see #setJobRequisitionId(String)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_JobRequisitionId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -383,30 +385,30 @@ public interface JobRequisition extends BizEntity {
 	void setRequiredOnDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Skill Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Skill Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Skill Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Skill Type Id</em>' attribute.
-	 * @see #setSkillTypeId(String)
+	 * @return the value of the '<em>Skill Type Id</em>' reference.
+	 * @see #setSkillTypeId(SkillType)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobRequisition_SkillTypeId()
-	 * @model annotation="mimo-ent-domain frame='SkillType'"
+	 * @model keys="skillTypeId"
 	 * @generated
 	 */
-	String getSkillTypeId();
+	SkillType getSkillTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getSkillTypeId <em>Skill Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.recruitment.JobRequisition#getSkillTypeId <em>Skill Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Skill Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Skill Type Id</em>' reference.
 	 * @see #getSkillTypeId()
 	 * @generated
 	 */
-	void setSkillTypeId(String value);
+	void setSkillTypeId(SkillType value);
 
 	/**
 	 * <!-- begin-user-doc -->

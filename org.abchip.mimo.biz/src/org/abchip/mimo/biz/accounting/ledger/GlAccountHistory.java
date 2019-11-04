@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.accounting.ledger;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.period.CustomTimePeriod;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,12 +23,12 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getGlAccountId <em>Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getOrganizationPartyId <em>Organization Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getEndingBalance <em>Ending Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getOpeningBalance <em>Opening Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getPostedCredits <em>Posted Credits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getPostedDebits <em>Posted Debits</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getOrganizationPartyId <em>Organization Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountHistory()
@@ -35,31 +37,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface GlAccountHistory extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Custom Time Period Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Custom Time Period Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Custom Time Period Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Custom Time Period Id</em>' attribute.
-	 * @see #setCustomTimePeriodId(String)
+	 * @return the value of the '<em>Custom Time Period Id</em>' reference.
+	 * @see #setCustomTimePeriodId(CustomTimePeriod)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountHistory_CustomTimePeriodId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CustomTimePeriod'"
+	 * @model keys="customTimePeriodId"
 	 * @generated
 	 */
-	String getCustomTimePeriodId();
+	CustomTimePeriod getCustomTimePeriodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getCustomTimePeriodId <em>Custom Time Period Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getCustomTimePeriodId <em>Custom Time Period Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Custom Time Period Id</em>' attribute.
+	 * @param value the new value of the '<em>Custom Time Period Id</em>' reference.
 	 * @see #getCustomTimePeriodId()
 	 * @generated
 	 */
-	void setCustomTimePeriodId(String value);
+	void setCustomTimePeriodId(CustomTimePeriod value);
 
 	/**
 	 * Returns the value of the '<em><b>Ending Balance</b></em>' attribute.
@@ -114,31 +115,30 @@ public interface GlAccountHistory extends BizEntity {
 	void setOpeningBalance(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Organization Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Organization Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Organization Party Id</em>' attribute.
-	 * @see #setOrganizationPartyId(String)
+	 * @return the value of the '<em>Organization Party Id</em>' reference.
+	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountHistory_OrganizationPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getOrganizationPartyId();
+	Party getOrganizationPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getOrganizationPartyId <em>Organization Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountHistory#getOrganizationPartyId <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Organization Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Organization Party Id</em>' reference.
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 */
-	void setOrganizationPartyId(String value);
+	void setOrganizationPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Posted Credits</b></em>' attribute.
@@ -203,8 +203,8 @@ public interface GlAccountHistory extends BizEntity {
 	 * @return the value of the '<em>Gl Account Id</em>' attribute.
 	 * @see #setGlAccountId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountHistory_GlAccountId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGlAccountId();

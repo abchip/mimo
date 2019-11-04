@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getStatusIdTo <em>Status Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getConditionExpression <em>Condition Expression</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getTransitionName <em>Transition Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.StatusValidChange#getStatusIdTo <em>Status Id To</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange()
@@ -94,7 +94,6 @@ public interface StatusValidChange extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange_StatusId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='StatusItem'"
 	 * @generated
 	 */
 	String getStatusId();
@@ -110,31 +109,29 @@ public interface StatusValidChange extends BizEntity {
 	void setStatusId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id To</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id To</em>' attribute.
-	 * @see #setStatusIdTo(String)
+	 * @return the value of the '<em>Status Id To</em>' reference.
+	 * @see #setStatusIdTo(StatusItem)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusValidChange_StatusIdTo()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusIdTo();
+	StatusItem getStatusIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.status.StatusValidChange#getStatusIdTo <em>Status Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.status.StatusValidChange#getStatusIdTo <em>Status Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id To</em>' attribute.
+	 * @param value the new value of the '<em>Status Id To</em>' reference.
 	 * @see #getStatusIdTo()
 	 * @generated
 	 */
-	void setStatusIdTo(String value);
+	void setStatusIdTo(StatusItem value);
 
 } // StatusValidChange

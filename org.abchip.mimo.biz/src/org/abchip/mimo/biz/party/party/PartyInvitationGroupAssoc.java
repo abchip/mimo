@@ -28,32 +28,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PartyInvitationGroupAssoc extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Party Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id To</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id To</em>' attribute.
-	 * @see #setPartyIdTo(String)
+	 * @return the value of the '<em>Party Id To</em>' reference.
+	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitationGroupAssoc_PartyIdTo()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PartyGroup'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdTo();
+	Party getPartyIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyIdTo <em>Party Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyInvitationGroupAssoc#getPartyIdTo <em>Party Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id To</em>' attribute.
+	 * @param value the new value of the '<em>Party Id To</em>' reference.
 	 * @see #getPartyIdTo()
 	 * @generated
 	 */
-	void setPartyIdTo(String value);
+	void setPartyIdTo(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Invitation Id</b></em>' attribute.
@@ -68,7 +66,6 @@ public interface PartyInvitationGroupAssoc extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitationGroupAssoc_PartyInvitationId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PartyInvitation'"
 	 * @generated
 	 */
 	String getPartyInvitationId();

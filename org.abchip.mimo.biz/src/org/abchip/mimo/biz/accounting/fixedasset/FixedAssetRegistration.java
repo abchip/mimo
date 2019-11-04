@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.fixedasset;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,11 +23,11 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getGovAgencyPartyId <em>Gov Agency Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getLicenseNumber <em>License Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getRegistrationDate <em>Registration Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getRegistrationNumber <em>Registration Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getGovAgencyPartyId <em>Gov Agency Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration()
@@ -45,7 +46,8 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -61,30 +63,30 @@ public interface FixedAssetRegistration extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Gov Agency Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gov Agency Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gov Agency Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gov Agency Party Id</em>' attribute.
-	 * @see #setGovAgencyPartyId(String)
+	 * @return the value of the '<em>Gov Agency Party Id</em>' reference.
+	 * @see #setGovAgencyPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_GovAgencyPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getGovAgencyPartyId();
+	Party getGovAgencyPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getGovAgencyPartyId <em>Gov Agency Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetRegistration#getGovAgencyPartyId <em>Gov Agency Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gov Agency Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Gov Agency Party Id</em>' reference.
 	 * @see #getGovAgencyPartyId()
 	 * @generated
 	 */
-	void setGovAgencyPartyId(String value);
+	void setGovAgencyPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>License Number</b></em>' attribute.
@@ -201,8 +203,8 @@ public interface FixedAssetRegistration extends BizEntity {
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetRegistration_FixedAssetId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFixedAssetId();

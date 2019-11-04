@@ -28,31 +28,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface SubscriptionFulfillmentPiece extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Subscription Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Subscription Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subscription Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subscription Id</em>' attribute.
-	 * @see #setSubscriptionId(String)
+	 * @return the value of the '<em>Subscription Id</em>' reference.
+	 * @see #setSubscriptionId(Subscription)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionFulfillmentPiece_SubscriptionId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Subscription'"
+	 * @model keys="subscriptionId"
 	 * @generated
 	 */
-	String getSubscriptionId();
+	Subscription getSubscriptionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionFulfillmentPiece#getSubscriptionId <em>Subscription Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionFulfillmentPiece#getSubscriptionId <em>Subscription Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Subscription Id</em>' attribute.
+	 * @param value the new value of the '<em>Subscription Id</em>' reference.
 	 * @see #getSubscriptionId()
 	 * @generated
 	 */
-	void setSubscriptionId(String value);
+	void setSubscriptionId(Subscription value);
 
 	/**
 	 * Returns the value of the '<em><b>Subscription Activity Id</b></em>' attribute.
@@ -65,8 +64,8 @@ public interface SubscriptionFulfillmentPiece extends BizEntity {
 	 * @return the value of the '<em>Subscription Activity Id</em>' attribute.
 	 * @see #setSubscriptionActivityId(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionFulfillmentPiece_SubscriptionActivityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SubscriptionActivity'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSubscriptionActivityId();

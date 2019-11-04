@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.shipment.picklist;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,11 +24,11 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole()
@@ -35,30 +37,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PicklistRole extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Created By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Created By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Created By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Created By User Login</em>' attribute.
-	 * @see #setCreatedByUserLogin(String)
+	 * @return the value of the '<em>Created By User Login</em>' reference.
+	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getCreatedByUserLogin();
+	UserLogin getCreatedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getCreatedByUserLogin <em>Created By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getCreatedByUserLogin <em>Created By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Created By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Created By User Login</em>' reference.
 	 * @see #getCreatedByUserLogin()
 	 * @generated
 	 */
-	void setCreatedByUserLogin(String value);
+	void setCreatedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -71,7 +73,8 @@ public interface PicklistRole extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -87,30 +90,30 @@ public interface PicklistRole extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Last Modified By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
-	 * @see #setLastModifiedByUserLogin(String)
+	 * @return the value of the '<em>Last Modified By User Login</em>' reference.
+	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getLastModifiedByUserLogin();
+	UserLogin getLastModifiedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Last Modified By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Last Modified By User Login</em>' reference.
 	 * @see #getLastModifiedByUserLogin()
 	 * @generated
 	 */
-	void setLastModifiedByUserLogin(String value);
+	void setLastModifiedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
@@ -123,7 +126,8 @@ public interface PicklistRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -149,8 +153,8 @@ public interface PicklistRole extends BizEntity {
 	 * @return the value of the '<em>Picklist Id</em>' attribute.
 	 * @see #setPicklistId(String)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_PicklistId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Picklist'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPicklistId();
@@ -166,31 +170,30 @@ public interface PicklistRole extends BizEntity {
 	void setPicklistId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id</em>' attribute.
-	 * @see #setRoleTypeId(String)
+	 * @return the value of the '<em>Role Type Id</em>' reference.
+	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.shipment.picklist.PicklistPackage#getPicklistRole_RoleTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeId();
+	RoleType getRoleTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.picklist.PicklistRole#getRoleTypeId <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
 	 */
-	void setRoleTypeId(String value);
+	void setRoleTypeId(RoleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContent;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortContentType;
@@ -17,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,10 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getWorkEffortContentTypeId <em>Work Effort Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortContentImpl#getWorkEffortContentTypeId <em>Work Effort Content Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,46 +64,6 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 * @ordered
 	 */
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortContentTypeId() <em>Work Effort Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_CONTENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortContentTypeId() <em>Work Effort Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortContentTypeId = WORK_EFFORT_CONTENT_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -143,6 +106,26 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortContentTypeId() <em>Work Effort Content Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortContentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffortContentType workEffortContentTypeId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -167,7 +150,24 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -177,8 +177,8 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -236,7 +236,24 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortContentTypeId() {
+	public WorkEffortContentType getWorkEffortContentTypeId() {
+		if (workEffortContentTypeId != null && ((EObject)workEffortContentTypeId).eIsProxy()) {
+			InternalEObject oldWorkEffortContentTypeId = (InternalEObject)workEffortContentTypeId;
+			workEffortContentTypeId = (WorkEffortContentType)eResolveProxy(oldWorkEffortContentTypeId);
+			if (workEffortContentTypeId != oldWorkEffortContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID, oldWorkEffortContentTypeId, workEffortContentTypeId));
+			}
+		}
+		return workEffortContentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffortContentType basicGetWorkEffortContentTypeId() {
 		return workEffortContentTypeId;
 	}
 
@@ -246,8 +263,8 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortContentTypeId(String newWorkEffortContentTypeId) {
-		String oldWorkEffortContentTypeId = workEffortContentTypeId;
+	public void setWorkEffortContentTypeId(WorkEffortContentType newWorkEffortContentTypeId) {
+		WorkEffortContentType oldWorkEffortContentTypeId = workEffortContentTypeId;
 		workEffortContentTypeId = newWorkEffortContentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID, oldWorkEffortContentTypeId, workEffortContentTypeId));
@@ -286,14 +303,16 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
 				return getWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
-				return getContentId();
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID:
-				return getWorkEffortContentTypeId();
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__FROM_DATE:
 				return getFromDate();
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID:
+				if (resolve) return getWorkEffortContentTypeId();
+				return basicGetWorkEffortContentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -309,17 +328,17 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID:
-				setWorkEffortContentTypeId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID:
+				setWorkEffortContentTypeId((WorkEffortContentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,17 +355,17 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID:
-				setWorkEffortContentTypeId(WORK_EFFORT_CONTENT_TYPE_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID:
+				setWorkEffortContentTypeId((WorkEffortContentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -362,14 +381,14 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID:
-				return WORK_EFFORT_CONTENT_TYPE_ID_EDEFAULT == null ? workEffortContentTypeId != null : !WORK_EFFORT_CONTENT_TYPE_ID_EDEFAULT.equals(workEffortContentTypeId);
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WorkeffortPackage.WORK_EFFORT_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__CONTENT_ID:
+				return contentId != null;
+			case WorkeffortPackage.WORK_EFFORT_CONTENT__WORK_EFFORT_CONTENT_TYPE_ID:
+				return workEffortContentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -386,10 +405,6 @@ public class WorkEffortContentImpl extends BizEntityTypedImpl<WorkEffortContentT
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", contentId: ");
-		result.append(contentId);
-		result.append(", workEffortContentTypeId: ");
-		result.append(workEffortContentTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

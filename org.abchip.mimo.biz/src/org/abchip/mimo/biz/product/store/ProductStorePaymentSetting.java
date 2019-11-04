@@ -8,6 +8,10 @@
 package org.abchip.mimo.biz.product.store;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.method.CustomMethod;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,13 +23,13 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#isApplyToAllProducts <em>Apply To All Products</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentCustomMethodId <em>Payment Custom Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentPropertiesPath <em>Payment Properties Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentService <em>Payment Service</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentCustomMethodId <em>Payment Custom Method Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting()
@@ -34,83 +38,82 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ProductStorePaymentSetting extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Payment Custom Method Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Custom Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Custom Method Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Custom Method Id</em>' attribute.
-	 * @see #setPaymentCustomMethodId(String)
+	 * @return the value of the '<em>Payment Custom Method Id</em>' reference.
+	 * @see #setPaymentCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_PaymentCustomMethodId()
-	 * @model annotation="mimo-ent-domain frame='CustomMethod'"
+	 * @model keys="customMethodId"
 	 * @generated
 	 */
-	String getPaymentCustomMethodId();
+	CustomMethod getPaymentCustomMethodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentCustomMethodId <em>Payment Custom Method Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentCustomMethodId <em>Payment Custom Method Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Custom Method Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Custom Method Id</em>' reference.
 	 * @see #getPaymentCustomMethodId()
 	 * @generated
 	 */
-	void setPaymentCustomMethodId(String value);
+	void setPaymentCustomMethodId(CustomMethod value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Gateway Config Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Gateway Config Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Gateway Config Id</em>' attribute.
-	 * @see #setPaymentGatewayConfigId(String)
+	 * @return the value of the '<em>Payment Gateway Config Id</em>' reference.
+	 * @see #setPaymentGatewayConfigId(PaymentGatewayConfig)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_PaymentGatewayConfigId()
-	 * @model annotation="mimo-ent-domain frame='PaymentGatewayConfig'"
+	 * @model keys="paymentGatewayConfigId"
 	 * @generated
 	 */
-	String getPaymentGatewayConfigId();
+	PaymentGatewayConfig getPaymentGatewayConfigId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Gateway Config Id</em>' reference.
 	 * @see #getPaymentGatewayConfigId()
 	 * @generated
 	 */
-	void setPaymentGatewayConfigId(String value);
+	void setPaymentGatewayConfigId(PaymentGatewayConfig value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Method Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Method Type Id</em>' attribute.
-	 * @see #setPaymentMethodTypeId(String)
+	 * @return the value of the '<em>Payment Method Type Id</em>' reference.
+	 * @see #setPaymentMethodTypeId(PaymentMethodType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_PaymentMethodTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentMethodType'"
+	 * @model keys="paymentMethodTypeId"
 	 * @generated
 	 */
-	String getPaymentMethodTypeId();
+	PaymentMethodType getPaymentMethodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentMethodTypeId <em>Payment Method Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentMethodTypeId <em>Payment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Method Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Method Type Id</em>' reference.
 	 * @see #getPaymentMethodTypeId()
 	 * @generated
 	 */
-	void setPaymentMethodTypeId(String value);
+	void setPaymentMethodTypeId(PaymentMethodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Payment Properties Path</b></em>' attribute.
@@ -165,31 +168,30 @@ public interface ProductStorePaymentSetting extends BizEntity {
 	void setPaymentService(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Service Type Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Service Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Service Type Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Service Type Enum Id</em>' attribute.
-	 * @see #setPaymentServiceTypeEnumId(String)
+	 * @return the value of the '<em>Payment Service Type Enum Id</em>' reference.
+	 * @see #setPaymentServiceTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_PaymentServiceTypeEnumId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getPaymentServiceTypeEnumId();
+	Enumeration getPaymentServiceTypeEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStorePaymentSetting#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Service Type Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Service Type Enum Id</em>' reference.
 	 * @see #getPaymentServiceTypeEnumId()
 	 * @generated
 	 */
-	void setPaymentServiceTypeEnumId(String value);
+	void setPaymentServiceTypeEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Apply To All Products</b></em>' attribute.
@@ -228,8 +230,8 @@ public interface ProductStorePaymentSetting extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStorePaymentSetting_ProductStoreId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreId();

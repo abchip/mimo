@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.content.content.Content;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,14 +24,14 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getProdCatContentTypeId <em>Prod Cat Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getUseDaysLimit <em>Use Days Limit</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getProdCatContentTypeId <em>Prod Cat Content Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent()
@@ -39,31 +40,30 @@ import org.abchip.mimo.biz.BizEntityTyped;
  */
 public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryContentType> {
 	/**
-	 * Returns the value of the '<em><b>Content Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Content Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Id</em>' attribute.
-	 * @see #setContentId(String)
+	 * @return the value of the '<em>Content Id</em>' reference.
+	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_ContentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
+	 * @model keys="contentId"
 	 * @generated
 	 */
-	String getContentId();
+	Content getContentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getContentId <em>Content Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getContentId <em>Content Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content Id</em>' attribute.
+	 * @param value the new value of the '<em>Content Id</em>' reference.
 	 * @see #getContentId()
 	 * @generated
 	 */
-	void setContentId(String value);
+	void setContentId(Content value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -76,7 +76,8 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -232,8 +233,8 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	 * @return the value of the '<em>Product Category Id</em>' attribute.
 	 * @see #setProductCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_ProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductCategoryId();
@@ -249,30 +250,29 @@ public interface ProductCategoryContent extends BizEntityTyped<ProductCategoryCo
 	void setProductCategoryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Prod Cat Content Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Prod Cat Content Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Prod Cat Content Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Prod Cat Content Type Id</em>' attribute.
-	 * @see #setProdCatContentTypeId(String)
+	 * @return the value of the '<em>Prod Cat Content Type Id</em>' reference.
+	 * @see #setProdCatContentTypeId(ProductCategoryContentType)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryContent_ProdCatContentTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategoryContentType'"
+	 * @model keys="prodCatContentTypeId"
 	 * @generated
 	 */
-	String getProdCatContentTypeId();
+	ProductCategoryContentType getProdCatContentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getProdCatContentTypeId <em>Prod Cat Content Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryContent#getProdCatContentTypeId <em>Prod Cat Content Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prod Cat Content Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Prod Cat Content Type Id</em>' reference.
 	 * @see #getProdCatContentTypeId()
 	 * @generated
 	 */
-	void setProdCatContentTypeId(String value);
+	void setProdCatContentTypeId(ProductCategoryContentType value);
 
 } // ProductCategoryContent

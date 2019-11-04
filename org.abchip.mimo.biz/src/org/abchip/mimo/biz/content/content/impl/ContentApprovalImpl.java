@@ -9,13 +9,19 @@ package org.abchip.mimo.biz.content.content.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.content.content.ContentApproval;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,13 +34,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getContentApprovalId <em>Content Approval Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getApprovalDate <em>Approval Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getApprovalStatusId <em>Approval Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentApprovalImpl#getApprovalStatusId <em>Approval Status Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,26 +92,6 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	protected Date approvalDate = APPROVAL_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getApprovalStatusId() <em>Approval Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApprovalStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String APPROVAL_STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getApprovalStatusId() <em>Approval Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApprovalStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String approvalStatusId = APPROVAL_STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,26 +110,6 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @ordered
 	 */
 	protected String comments = COMMENTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getContentRevisionSeqId() <em>Content Revision Seq Id</em>}' attribute.
@@ -166,46 +132,6 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	protected String contentRevisionSeqId = CONTENT_REVISION_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,6 +150,46 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @ordered
 	 */
 	protected long sequenceNum = SEQUENCE_NUM_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getApprovalStatusId() <em>Approval Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApprovalStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem approvalStatusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,7 +239,24 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @generated
 	 */
 	@Override
-	public String getApprovalStatusId() {
+	public StatusItem getApprovalStatusId() {
+		if (approvalStatusId != null && ((EObject)approvalStatusId).eIsProxy()) {
+			InternalEObject oldApprovalStatusId = (InternalEObject)approvalStatusId;
+			approvalStatusId = (StatusItem)eResolveProxy(oldApprovalStatusId);
+			if (approvalStatusId != oldApprovalStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID, oldApprovalStatusId, approvalStatusId));
+			}
+		}
+		return approvalStatusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetApprovalStatusId() {
 		return approvalStatusId;
 	}
 
@@ -283,8 +266,8 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @generated
 	 */
 	@Override
-	public void setApprovalStatusId(String newApprovalStatusId) {
-		String oldApprovalStatusId = approvalStatusId;
+	public void setApprovalStatusId(StatusItem newApprovalStatusId) {
+		StatusItem oldApprovalStatusId = approvalStatusId;
 		approvalStatusId = newApprovalStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID, oldApprovalStatusId, approvalStatusId));
@@ -342,7 +325,24 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_APPROVAL__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -352,8 +352,8 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__CONTENT_ID, oldContentId, contentId));
@@ -388,7 +388,24 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_APPROVAL__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -398,8 +415,8 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__PARTY_ID, oldPartyId, partyId));
@@ -411,7 +428,24 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -421,8 +455,8 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -463,20 +497,24 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 				return getContentApprovalId();
 			case ContentPackage.CONTENT_APPROVAL__APPROVAL_DATE:
 				return getApprovalDate();
-			case ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID:
-				return getApprovalStatusId();
 			case ContentPackage.CONTENT_APPROVAL__COMMENTS:
 				return getComments();
-			case ContentPackage.CONTENT_APPROVAL__CONTENT_ID:
-				return getContentId();
 			case ContentPackage.CONTENT_APPROVAL__CONTENT_REVISION_SEQ_ID:
 				return getContentRevisionSeqId();
-			case ContentPackage.CONTENT_APPROVAL__PARTY_ID:
-				return getPartyId();
-			case ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID:
-				return getRoleTypeId();
 			case ContentPackage.CONTENT_APPROVAL__SEQUENCE_NUM:
 				return getSequenceNum();
+			case ContentPackage.CONTENT_APPROVAL__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
+			case ContentPackage.CONTENT_APPROVAL__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID:
+				if (resolve) return getApprovalStatusId();
+				return basicGetApprovalStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -495,26 +533,26 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 			case ContentPackage.CONTENT_APPROVAL__APPROVAL_DATE:
 				setApprovalDate((Date)newValue);
 				return;
-			case ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID:
-				setApprovalStatusId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_APPROVAL__COMMENTS:
 				setComments((String)newValue);
-				return;
-			case ContentPackage.CONTENT_APPROVAL__CONTENT_ID:
-				setContentId((String)newValue);
 				return;
 			case ContentPackage.CONTENT_APPROVAL__CONTENT_REVISION_SEQ_ID:
 				setContentRevisionSeqId((String)newValue);
 				return;
-			case ContentPackage.CONTENT_APPROVAL__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_APPROVAL__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
+				return;
+			case ContentPackage.CONTENT_APPROVAL__CONTENT_ID:
+				setContentId((Content)newValue);
+				return;
+			case ContentPackage.CONTENT_APPROVAL__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID:
+				setApprovalStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -534,26 +572,26 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 			case ContentPackage.CONTENT_APPROVAL__APPROVAL_DATE:
 				setApprovalDate(APPROVAL_DATE_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID:
-				setApprovalStatusId(APPROVAL_STATUS_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_APPROVAL__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT_APPROVAL__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
 				return;
 			case ContentPackage.CONTENT_APPROVAL__CONTENT_REVISION_SEQ_ID:
 				setContentRevisionSeqId(CONTENT_REVISION_SEQ_ID_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT_APPROVAL__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_APPROVAL__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
+				return;
+			case ContentPackage.CONTENT_APPROVAL__CONTENT_ID:
+				setContentId((Content)null);
+				return;
+			case ContentPackage.CONTENT_APPROVAL__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID:
+				setApprovalStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -571,20 +609,20 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 				return CONTENT_APPROVAL_ID_EDEFAULT == null ? contentApprovalId != null : !CONTENT_APPROVAL_ID_EDEFAULT.equals(contentApprovalId);
 			case ContentPackage.CONTENT_APPROVAL__APPROVAL_DATE:
 				return APPROVAL_DATE_EDEFAULT == null ? approvalDate != null : !APPROVAL_DATE_EDEFAULT.equals(approvalDate);
-			case ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID:
-				return APPROVAL_STATUS_ID_EDEFAULT == null ? approvalStatusId != null : !APPROVAL_STATUS_ID_EDEFAULT.equals(approvalStatusId);
 			case ContentPackage.CONTENT_APPROVAL__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case ContentPackage.CONTENT_APPROVAL__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case ContentPackage.CONTENT_APPROVAL__CONTENT_REVISION_SEQ_ID:
 				return CONTENT_REVISION_SEQ_ID_EDEFAULT == null ? contentRevisionSeqId != null : !CONTENT_REVISION_SEQ_ID_EDEFAULT.equals(contentRevisionSeqId);
-			case ContentPackage.CONTENT_APPROVAL__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case ContentPackage.CONTENT_APPROVAL__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
+			case ContentPackage.CONTENT_APPROVAL__CONTENT_ID:
+				return contentId != null;
+			case ContentPackage.CONTENT_APPROVAL__PARTY_ID:
+				return partyId != null;
+			case ContentPackage.CONTENT_APPROVAL__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case ContentPackage.CONTENT_APPROVAL__APPROVAL_STATUS_ID:
+				return approvalStatusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -603,18 +641,10 @@ public class ContentApprovalImpl extends BizEntityImpl implements ContentApprova
 		result.append(contentApprovalId);
 		result.append(", approvalDate: ");
 		result.append(approvalDate);
-		result.append(", approvalStatusId: ");
-		result.append(approvalStatusId);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", contentId: ");
-		result.append(contentId);
 		result.append(", contentRevisionSeqId: ");
 		result.append(contentRevisionSeqId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(')');

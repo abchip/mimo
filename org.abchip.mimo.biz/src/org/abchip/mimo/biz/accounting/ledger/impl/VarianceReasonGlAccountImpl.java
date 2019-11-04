@@ -7,12 +7,16 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.accounting.ledger.VarianceReasonGlAccount;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -54,41 +58,23 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 */
 	protected String varianceReasonId = VARIANCE_REASON_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
+	protected Party organizationPartyId;
 	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
+	protected GlAccount glAccountId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +101,24 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -125,8 +128,8 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -161,7 +164,24 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountId() {
+	public GlAccount getGlAccountId() {
+		if (glAccountId != null && ((EObject)glAccountId).eIsProxy()) {
+			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
+			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
+			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
+			}
+		}
+		return glAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetGlAccountId() {
 		return glAccountId;
 	}
 
@@ -171,8 +191,8 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountId(String newGlAccountId) {
-		String oldGlAccountId = glAccountId;
+	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
@@ -189,9 +209,11 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID:
 				return getVarianceReasonId();
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID:
-				return getGlAccountId();
+				if (resolve) return getGlAccountId();
+				return basicGetGlAccountId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,10 +230,10 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 				setVarianceReasonId((String)newValue);
 				return;
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
+				setOrganizationPartyId((Party)newValue);
 				return;
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID:
-				setGlAccountId((String)newValue);
+				setGlAccountId((GlAccount)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,10 +251,10 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 				setVarianceReasonId(VARIANCE_REASON_ID_EDEFAULT);
 				return;
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
+				setOrganizationPartyId((Party)null);
 				return;
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID:
-				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
+				setGlAccountId((GlAccount)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -249,9 +271,9 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__VARIANCE_REASON_ID:
 				return VARIANCE_REASON_ID_EDEFAULT == null ? varianceReasonId != null : !VARIANCE_REASON_ID_EDEFAULT.equals(varianceReasonId);
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
+				return organizationPartyId != null;
 			case LedgerPackage.VARIANCE_REASON_GL_ACCOUNT__GL_ACCOUNT_ID:
-				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
+				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,10 +290,6 @@ public class VarianceReasonGlAccountImpl extends BizEntityImpl implements Varian
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (varianceReasonId: ");
 		result.append(varianceReasonId);
-		result.append(", organizationPartyId: ");
-		result.append(organizationPartyId);
-		result.append(", glAccountId: ");
-		result.append(glAccountId);
 		result.append(')');
 		return result.toString();
 	}

@@ -259,7 +259,7 @@ public interface ValueLinkKey extends BizEntity {
 	 * @return the value of the '<em>Merchant Id</em>' attribute.
 	 * @see #setMerchantId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getValueLinkKey_MerchantId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

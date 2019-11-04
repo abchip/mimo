@@ -94,7 +94,7 @@ public interface EmplPositionClassType extends BizEntity {
 	 * @return the value of the '<em>Empl Position Class Type Id</em>' attribute.
 	 * @see #setEmplPositionClassTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionClassType_EmplPositionClassTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -111,30 +111,30 @@ public interface EmplPositionClassType extends BizEntity {
 	void setEmplPositionClassTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(EmplPositionClassType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionClassType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='EmplPositionClassType'"
+	 * @model keys="emplPositionClassTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	EmplPositionClassType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionClassType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionClassType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(EmplPositionClassType value);
 
 	/**
 	 * <!-- begin-user-doc -->

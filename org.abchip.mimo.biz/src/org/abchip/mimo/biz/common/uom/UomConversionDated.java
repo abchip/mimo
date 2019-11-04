@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.common.uom;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.method.CustomMethod;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,14 +23,14 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomId <em>Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomIdTo <em>Uom Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getConversionFactor <em>Conversion Factor</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getCustomMethodId <em>Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getDecimalScale <em>Decimal Scale</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getPurposeEnumId <em>Purpose Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getRoundingMode <em>Rounding Mode</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomIdTo <em>Uom Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getCustomMethodId <em>Custom Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getPurposeEnumId <em>Purpose Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated()
@@ -180,7 +182,6 @@ public interface UomConversionDated extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_UomId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Uom'"
 	 * @generated
 	 */
 	String getUomId();
@@ -196,83 +197,81 @@ public interface UomConversionDated extends BizEntity {
 	void setUomId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Uom Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uom Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uom Id To</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uom Id To</em>' attribute.
-	 * @see #setUomIdTo(String)
+	 * @return the value of the '<em>Uom Id To</em>' reference.
+	 * @see #setUomIdTo(Uom)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_UomIdTo()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getUomIdTo();
+	Uom getUomIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomIdTo <em>Uom Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getUomIdTo <em>Uom Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uom Id To</em>' attribute.
+	 * @param value the new value of the '<em>Uom Id To</em>' reference.
 	 * @see #getUomIdTo()
 	 * @generated
 	 */
-	void setUomIdTo(String value);
+	void setUomIdTo(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Custom Method Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Custom Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Custom Method Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Custom Method Id</em>' attribute.
-	 * @see #setCustomMethodId(String)
+	 * @return the value of the '<em>Custom Method Id</em>' reference.
+	 * @see #setCustomMethodId(CustomMethod)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_CustomMethodId()
-	 * @model annotation="mimo-ent-domain frame='CustomMethod'"
+	 * @model keys="customMethodId"
 	 * @generated
 	 */
-	String getCustomMethodId();
+	CustomMethod getCustomMethodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getCustomMethodId <em>Custom Method Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getCustomMethodId <em>Custom Method Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Custom Method Id</em>' attribute.
+	 * @param value the new value of the '<em>Custom Method Id</em>' reference.
 	 * @see #getCustomMethodId()
 	 * @generated
 	 */
-	void setCustomMethodId(String value);
+	void setCustomMethodId(CustomMethod value);
 
 	/**
-	 * Returns the value of the '<em><b>Purpose Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Purpose Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Purpose Enum Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Purpose Enum Id</em>' attribute.
-	 * @see #setPurposeEnumId(String)
+	 * @return the value of the '<em>Purpose Enum Id</em>' reference.
+	 * @see #setPurposeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUomConversionDated_PurposeEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getPurposeEnumId();
+	Enumeration getPurposeEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getPurposeEnumId <em>Purpose Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.UomConversionDated#getPurposeEnumId <em>Purpose Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Purpose Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Purpose Enum Id</em>' reference.
 	 * @see #getPurposeEnumId()
 	 * @generated
 	 */
-	void setPurposeEnumId(String value);
+	void setPurposeEnumId(Enumeration value);
 
 } // UomConversionDated

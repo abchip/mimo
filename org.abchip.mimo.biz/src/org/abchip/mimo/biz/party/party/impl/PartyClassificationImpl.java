@@ -11,11 +11,14 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.PartyClassification;
+import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 import org.abchip.mimo.biz.party.party.PartyClassificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyClassificationImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyClassificationImpl#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyClassificationImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyClassificationImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyClassificationImpl#getPartyClassificationGroupId <em>Party Classification Group Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,24 +60,6 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyClassificationGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyClassificationGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyClassificationGroupId = PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -111,6 +96,15 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyClassificationGroupId() <em>Party Classification Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyClassificationGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PartyClassificationGroup partyClassificationGroupId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,7 +200,24 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 	 * @generated
 	 */
 	@Override
-	public String getPartyClassificationGroupId() {
+	public PartyClassificationGroup getPartyClassificationGroupId() {
+		if (partyClassificationGroupId != null && ((EObject)partyClassificationGroupId).eIsProxy()) {
+			InternalEObject oldPartyClassificationGroupId = (InternalEObject)partyClassificationGroupId;
+			partyClassificationGroupId = (PartyClassificationGroup)eResolveProxy(oldPartyClassificationGroupId);
+			if (partyClassificationGroupId != oldPartyClassificationGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
+			}
+		}
+		return partyClassificationGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyClassificationGroup basicGetPartyClassificationGroupId() {
 		return partyClassificationGroupId;
 	}
 
@@ -216,8 +227,8 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 	 * @generated
 	 */
 	@Override
-	public void setPartyClassificationGroupId(String newPartyClassificationGroupId) {
-		String oldPartyClassificationGroupId = partyClassificationGroupId;
+	public void setPartyClassificationGroupId(PartyClassificationGroup newPartyClassificationGroupId) {
+		PartyClassificationGroup oldPartyClassificationGroupId = partyClassificationGroupId;
 		partyClassificationGroupId = newPartyClassificationGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID, oldPartyClassificationGroupId, partyClassificationGroupId));
@@ -233,12 +244,13 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 		switch (featureID) {
 			case PartyPackage.PARTY_CLASSIFICATION__PARTY_ID:
 				return getPartyId();
-			case PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
-				return getPartyClassificationGroupId();
 			case PartyPackage.PARTY_CLASSIFICATION__FROM_DATE:
 				return getFromDate();
 			case PartyPackage.PARTY_CLASSIFICATION__THRU_DATE:
 				return getThruDate();
+			case PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
+				if (resolve) return getPartyClassificationGroupId();
+				return basicGetPartyClassificationGroupId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -254,14 +266,14 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 			case PartyPackage.PARTY_CLASSIFICATION__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
-				setPartyClassificationGroupId((String)newValue);
-				return;
 			case PartyPackage.PARTY_CLASSIFICATION__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case PartyPackage.PARTY_CLASSIFICATION__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
+				setPartyClassificationGroupId((PartyClassificationGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -278,14 +290,14 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 			case PartyPackage.PARTY_CLASSIFICATION__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
-				setPartyClassificationGroupId(PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_CLASSIFICATION__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case PartyPackage.PARTY_CLASSIFICATION__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
+				setPartyClassificationGroupId((PartyClassificationGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -301,12 +313,12 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 		switch (featureID) {
 			case PartyPackage.PARTY_CLASSIFICATION__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
-				return PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT == null ? partyClassificationGroupId != null : !PARTY_CLASSIFICATION_GROUP_ID_EDEFAULT.equals(partyClassificationGroupId);
 			case PartyPackage.PARTY_CLASSIFICATION__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PartyPackage.PARTY_CLASSIFICATION__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PartyPackage.PARTY_CLASSIFICATION__PARTY_CLASSIFICATION_GROUP_ID:
+				return partyClassificationGroupId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -323,8 +335,6 @@ public class PartyClassificationImpl extends BizEntityTypedImpl<PartyClassificat
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", partyClassificationGroupId: ");
-		result.append(partyClassificationGroupId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

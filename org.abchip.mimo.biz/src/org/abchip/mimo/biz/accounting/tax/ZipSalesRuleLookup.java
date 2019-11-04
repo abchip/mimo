@@ -45,7 +45,8 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @return the value of the '<em>City</em>' attribute.
 	 * @see #setCity(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_City()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCity();
@@ -71,7 +72,8 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @return the value of the '<em>County</em>' attribute.
 	 * @see #setCounty(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_County()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCounty();
@@ -97,7 +99,8 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -175,7 +178,8 @@ public interface ZipSalesRuleLookup extends BizEntity {
 	 * @return the value of the '<em>State Code</em>' attribute.
 	 * @see #setStateCode(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesRuleLookup_StateCode()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getStateCode();

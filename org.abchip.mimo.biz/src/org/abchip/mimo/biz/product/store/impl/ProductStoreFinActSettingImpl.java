@@ -9,12 +9,17 @@ package org.abchip.mimo.biz.product.store.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStoreFinActSetting;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,7 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getAccountCodeLength <em>Account Code Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getAccountValidDays <em>Account Valid Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#isAllowAuthToNegative <em>Allow Auth To Negative</em>}</li>
@@ -35,11 +39,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getPinCodeLength <em>Pin Code Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getPurchSurveyCopyMe <em>Purch Survey Copy Me</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getPurchSurveySendTo <em>Purch Survey Send To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getPurchaseSurveyId <em>Purchase Survey Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getReplenishThreshold <em>Replenish Threshold</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#isRequirePinCode <em>Require Pin Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#isValidateGCFinAcct <em>Validate GC Fin Acct</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getPurchaseSurveyId <em>Purchase Survey Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreFinActSettingImpl#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,26 +74,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @ordered
 	 */
 	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountTypeId = FIN_ACCOUNT_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAccountCodeLength() <em>Account Code Length</em>}' attribute.
@@ -251,46 +236,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	protected String purchSurveySendTo = PURCH_SURVEY_SEND_TO_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPurchaseSurveyId() <em>Purchase Survey Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPurchaseSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PURCHASE_SURVEY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPurchaseSurveyId() <em>Purchase Survey Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPurchaseSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String purchaseSurveyId = PURCHASE_SURVEY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReplenishMethodEnumId() <em>Replenish Method Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReplenishMethodEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REPLENISH_METHOD_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReplenishMethodEnumId() <em>Replenish Method Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReplenishMethodEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String replenishMethodEnumId = REPLENISH_METHOD_ENUM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getReplenishThreshold() <em>Replenish Threshold</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -349,6 +294,36 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @ordered
 	 */
 	protected boolean validateGCFinAcct = VALIDATE_GC_FIN_ACCT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinAccountTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FinAccountType finAccountTypeId;
+
+	/**
+	 * The cached value of the '{@link #getPurchaseSurveyId() <em>Purchase Survey Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPurchaseSurveyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Survey purchaseSurveyId;
+
+	/**
+	 * The cached value of the '{@link #getReplenishMethodEnumId() <em>Replenish Method Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReplenishMethodEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration replenishMethodEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -467,7 +442,24 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountTypeId() {
+	public FinAccountType getFinAccountTypeId() {
+		if (finAccountTypeId != null && ((EObject)finAccountTypeId).eIsProxy()) {
+			InternalEObject oldFinAccountTypeId = (InternalEObject)finAccountTypeId;
+			finAccountTypeId = (FinAccountType)eResolveProxy(oldFinAccountTypeId);
+			if (finAccountTypeId != oldFinAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
+			}
+		}
+		return finAccountTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccountType basicGetFinAccountTypeId() {
 		return finAccountTypeId;
 	}
 
@@ -477,8 +469,8 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountTypeId(String newFinAccountTypeId) {
-		String oldFinAccountTypeId = finAccountTypeId;
+	public void setFinAccountTypeId(FinAccountType newFinAccountTypeId) {
+		FinAccountType oldFinAccountTypeId = finAccountTypeId;
 		finAccountTypeId = newFinAccountTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
@@ -582,7 +574,24 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public String getPurchaseSurveyId() {
+	public Survey getPurchaseSurveyId() {
+		if (purchaseSurveyId != null && ((EObject)purchaseSurveyId).eIsProxy()) {
+			InternalEObject oldPurchaseSurveyId = (InternalEObject)purchaseSurveyId;
+			purchaseSurveyId = (Survey)eResolveProxy(oldPurchaseSurveyId);
+			if (purchaseSurveyId != oldPurchaseSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID, oldPurchaseSurveyId, purchaseSurveyId));
+			}
+		}
+		return purchaseSurveyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Survey basicGetPurchaseSurveyId() {
 		return purchaseSurveyId;
 	}
 
@@ -592,8 +601,8 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setPurchaseSurveyId(String newPurchaseSurveyId) {
-		String oldPurchaseSurveyId = purchaseSurveyId;
+	public void setPurchaseSurveyId(Survey newPurchaseSurveyId) {
+		Survey oldPurchaseSurveyId = purchaseSurveyId;
 		purchaseSurveyId = newPurchaseSurveyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID, oldPurchaseSurveyId, purchaseSurveyId));
@@ -605,7 +614,24 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public String getReplenishMethodEnumId() {
+	public Enumeration getReplenishMethodEnumId() {
+		if (replenishMethodEnumId != null && ((EObject)replenishMethodEnumId).eIsProxy()) {
+			InternalEObject oldReplenishMethodEnumId = (InternalEObject)replenishMethodEnumId;
+			replenishMethodEnumId = (Enumeration)eResolveProxy(oldReplenishMethodEnumId);
+			if (replenishMethodEnumId != oldReplenishMethodEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID, oldReplenishMethodEnumId, replenishMethodEnumId));
+			}
+		}
+		return replenishMethodEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetReplenishMethodEnumId() {
 		return replenishMethodEnumId;
 	}
 
@@ -615,8 +641,8 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setReplenishMethodEnumId(String newReplenishMethodEnumId) {
-		String oldReplenishMethodEnumId = replenishMethodEnumId;
+	public void setReplenishMethodEnumId(Enumeration newReplenishMethodEnumId) {
+		Enumeration oldReplenishMethodEnumId = replenishMethodEnumId;
 		replenishMethodEnumId = newReplenishMethodEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID, oldReplenishMethodEnumId, replenishMethodEnumId));
@@ -724,8 +750,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
 				return getProductStoreId();
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
-				return getFinAccountTypeId();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_CODE_LENGTH:
 				return getAccountCodeLength();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_VALID_DAYS:
@@ -742,16 +766,21 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 				return getPurchSurveyCopyMe();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCH_SURVEY_SEND_TO:
 				return getPurchSurveySendTo();
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID:
-				return getPurchaseSurveyId();
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID:
-				return getReplenishMethodEnumId();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_THRESHOLD:
 				return getReplenishThreshold();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REQUIRE_PIN_CODE:
 				return isRequirePinCode();
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__VALIDATE_GC_FIN_ACCT:
 				return isValidateGCFinAcct();
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
+				if (resolve) return getFinAccountTypeId();
+				return basicGetFinAccountTypeId();
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID:
+				if (resolve) return getPurchaseSurveyId();
+				return basicGetPurchaseSurveyId();
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID:
+				if (resolve) return getReplenishMethodEnumId();
+				return basicGetReplenishMethodEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -766,9 +795,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
 				setProductStoreId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
-				setFinAccountTypeId((String)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_CODE_LENGTH:
 				setAccountCodeLength((Long)newValue);
@@ -794,12 +820,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCH_SURVEY_SEND_TO:
 				setPurchSurveySendTo((String)newValue);
 				return;
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID:
-				setPurchaseSurveyId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID:
-				setReplenishMethodEnumId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_THRESHOLD:
 				setReplenishThreshold((BigDecimal)newValue);
 				return;
@@ -808,6 +828,15 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__VALIDATE_GC_FIN_ACCT:
 				setValidateGCFinAcct((Boolean)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
+				setFinAccountTypeId((FinAccountType)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID:
+				setPurchaseSurveyId((Survey)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID:
+				setReplenishMethodEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -823,9 +852,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
 				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
-				setFinAccountTypeId(FIN_ACCOUNT_TYPE_ID_EDEFAULT);
 				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_CODE_LENGTH:
 				setAccountCodeLength(ACCOUNT_CODE_LENGTH_EDEFAULT);
@@ -851,12 +877,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCH_SURVEY_SEND_TO:
 				setPurchSurveySendTo(PURCH_SURVEY_SEND_TO_EDEFAULT);
 				return;
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID:
-				setPurchaseSurveyId(PURCHASE_SURVEY_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID:
-				setReplenishMethodEnumId(REPLENISH_METHOD_ENUM_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_THRESHOLD:
 				setReplenishThreshold(REPLENISH_THRESHOLD_EDEFAULT);
 				return;
@@ -865,6 +885,15 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 				return;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__VALIDATE_GC_FIN_ACCT:
 				setValidateGCFinAcct(VALIDATE_GC_FIN_ACCT_EDEFAULT);
+				return;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
+				setFinAccountTypeId((FinAccountType)null);
+				return;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID:
+				setPurchaseSurveyId((Survey)null);
+				return;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID:
+				setReplenishMethodEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -880,8 +909,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PRODUCT_STORE_ID:
 				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
-				return FIN_ACCOUNT_TYPE_ID_EDEFAULT == null ? finAccountTypeId != null : !FIN_ACCOUNT_TYPE_ID_EDEFAULT.equals(finAccountTypeId);
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_CODE_LENGTH:
 				return accountCodeLength != ACCOUNT_CODE_LENGTH_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__ACCOUNT_VALID_DAYS:
@@ -898,16 +925,18 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 				return PURCH_SURVEY_COPY_ME_EDEFAULT == null ? purchSurveyCopyMe != null : !PURCH_SURVEY_COPY_ME_EDEFAULT.equals(purchSurveyCopyMe);
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCH_SURVEY_SEND_TO:
 				return PURCH_SURVEY_SEND_TO_EDEFAULT == null ? purchSurveySendTo != null : !PURCH_SURVEY_SEND_TO_EDEFAULT.equals(purchSurveySendTo);
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID:
-				return PURCHASE_SURVEY_ID_EDEFAULT == null ? purchaseSurveyId != null : !PURCHASE_SURVEY_ID_EDEFAULT.equals(purchaseSurveyId);
-			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID:
-				return REPLENISH_METHOD_ENUM_ID_EDEFAULT == null ? replenishMethodEnumId != null : !REPLENISH_METHOD_ENUM_ID_EDEFAULT.equals(replenishMethodEnumId);
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_THRESHOLD:
 				return REPLENISH_THRESHOLD_EDEFAULT == null ? replenishThreshold != null : !REPLENISH_THRESHOLD_EDEFAULT.equals(replenishThreshold);
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REQUIRE_PIN_CODE:
 				return requirePinCode != REQUIRE_PIN_CODE_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__VALIDATE_GC_FIN_ACCT:
 				return validateGCFinAcct != VALIDATE_GC_FIN_ACCT_EDEFAULT;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__FIN_ACCOUNT_TYPE_ID:
+				return finAccountTypeId != null;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__PURCHASE_SURVEY_ID:
+				return purchaseSurveyId != null;
+			case StorePackage.PRODUCT_STORE_FIN_ACT_SETTING__REPLENISH_METHOD_ENUM_ID:
+				return replenishMethodEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -924,8 +953,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productStoreId: ");
 		result.append(productStoreId);
-		result.append(", finAccountTypeId: ");
-		result.append(finAccountTypeId);
 		result.append(", accountCodeLength: ");
 		result.append(accountCodeLength);
 		result.append(", accountValidDays: ");
@@ -942,10 +969,6 @@ public class ProductStoreFinActSettingImpl extends BizEntityImpl implements Prod
 		result.append(purchSurveyCopyMe);
 		result.append(", purchSurveySendTo: ");
 		result.append(purchSurveySendTo);
-		result.append(", purchaseSurveyId: ");
-		result.append(purchaseSurveyId);
-		result.append(", replenishMethodEnumId: ");
-		result.append(replenishMethodEnumId);
 		result.append(", replenishThreshold: ");
 		result.append(replenishThreshold);
 		result.append(", requirePinCode: ");

@@ -28,32 +28,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PartyRole extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id</em>' attribute.
-	 * @see #setRoleTypeId(String)
+	 * @return the value of the '<em>Role Type Id</em>' reference.
+	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRole_RoleTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeId();
+	RoleType getRoleTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRole#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRole#getRoleTypeId <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
 	 */
-	void setRoleTypeId(String value);
+	void setRoleTypeId(RoleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
@@ -68,7 +66,6 @@ public interface PartyRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRole_PartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();

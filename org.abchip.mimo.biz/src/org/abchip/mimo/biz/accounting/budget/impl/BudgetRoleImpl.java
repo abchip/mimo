@@ -10,9 +10,12 @@ package org.abchip.mimo.biz.accounting.budget.impl;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetRole;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRoleImpl#getBudgetId <em>Budget Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRoleImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetRoleImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,24 +57,6 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 */
 	protected String budgetId = BUDGET_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,6 +74,15 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 * @ordered
 	 */
 	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +109,24 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ROLE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -125,8 +136,8 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ROLE__PARTY_ID, oldPartyId, partyId));
@@ -188,10 +199,11 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 		switch (featureID) {
 			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
 				return getBudgetId();
-			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
-				return getPartyId();
 			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
 				return getRoleTypeId();
+			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,11 +219,11 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
 				setBudgetId((String)newValue);
 				return;
-			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
+				return;
+			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,11 +240,11 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
 				setBudgetId(BUDGET_ID_EDEFAULT);
 				return;
-			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				return;
+			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -248,10 +260,10 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 		switch (featureID) {
 			case BudgetPackage.BUDGET_ROLE__BUDGET_ID:
 				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
-			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case BudgetPackage.BUDGET_ROLE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+			case BudgetPackage.BUDGET_ROLE__PARTY_ID:
+				return partyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,8 +280,6 @@ public class BudgetRoleImpl extends BizEntityImpl implements BudgetRole {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (budgetId: ");
 		result.append(budgetId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(')');

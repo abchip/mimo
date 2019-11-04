@@ -11,13 +11,23 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.abchip.mimo.biz.party.party.PartyGroup;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.shipment.shipment.Delivery;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentRouteSegment;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -37,26 +47,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getActualStartDate <em>Actual Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getActualTransportCost <em>Actual Transport Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getBillingWeight <em>Billing Weight</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getBillingWeightUomId <em>Billing Weight Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCarrierDeliveryZone <em>Carrier Delivery Zone</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCarrierRestrictionCodes <em>Carrier Restriction Codes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCarrierRestrictionDesc <em>Carrier Restriction Desc</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCarrierServiceStatusId <em>Carrier Service Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDeliveryId <em>Delivery Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDestContactMechId <em>Dest Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDestFacilityId <em>Dest Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDestTelecomNumberId <em>Dest Telecom Number Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getEstimatedArrivalDate <em>Estimated Arrival Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getEstimatedStartDate <em>Estimated Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getHomeDeliveryDate <em>Home Delivery Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getHomeDeliveryType <em>Home Delivery Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getLastUpdatedDate <em>Last Updated Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginFacilityId <em>Origin Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getThirdPartyAccountNumber <em>Third Party Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getThirdPartyCountryGeoCode <em>Third Party Country Geo Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getThirdPartyPostalCode <em>Third Party Postal Code</em>}</li>
@@ -64,6 +62,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getTrackingIdNumber <em>Tracking Id Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getUpdatedByUserLoginId <em>Updated By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getUpsHighValueReport <em>Ups High Value Report</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDeliveryId <em>Delivery Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCarrierPartyId <em>Carrier Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginFacilityId <em>Origin Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDestFacilityId <em>Dest Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getOriginTelecomNumberId <em>Origin Telecom Number Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDestContactMechId <em>Dest Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getDestTelecomNumberId <em>Dest Telecom Number Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCarrierServiceStatusId <em>Carrier Service Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentRouteSegmentImpl#getBillingWeightUomId <em>Billing Weight Uom Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -255,26 +265,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	protected BigDecimal billingWeight = BILLING_WEIGHT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getBillingWeightUomId() <em>Billing Weight Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingWeightUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BILLING_WEIGHT_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBillingWeightUomId() <em>Billing Weight Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingWeightUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String billingWeightUomId = BILLING_WEIGHT_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCarrierDeliveryZone() <em>Carrier Delivery Zone</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -293,26 +283,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @ordered
 	 */
 	protected String carrierDeliveryZone = CARRIER_DELIVERY_ZONE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CARRIER_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String carrierPartyId = CARRIER_PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCarrierRestrictionCodes() <em>Carrier Restriction Codes</em>}' attribute.
@@ -353,126 +323,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @ordered
 	 */
 	protected String carrierRestrictionDesc = CARRIER_RESTRICTION_DESC_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCarrierServiceStatusId() <em>Carrier Service Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierServiceStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CARRIER_SERVICE_STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCarrierServiceStatusId() <em>Carrier Service Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierServiceStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String carrierServiceStatusId = CARRIER_SERVICE_STATUS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDeliveryId() <em>Delivery Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliveryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DELIVERY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDeliveryId() <em>Delivery Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliveryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deliveryId = DELIVERY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDestContactMechId() <em>Dest Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEST_CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDestContactMechId() <em>Dest Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String destContactMechId = DEST_CONTACT_MECH_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDestFacilityId() <em>Dest Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEST_FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDestFacilityId() <em>Dest Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String destFacilityId = DEST_FACILITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDestTelecomNumberId() <em>Dest Telecom Number Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestTelecomNumberId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEST_TELECOM_NUMBER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDestTelecomNumberId() <em>Dest Telecom Number Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestTelecomNumberId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String destTelecomNumberId = DEST_TELECOM_NUMBER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEstimatedArrivalDate() <em>Estimated Arrival Date</em>}' attribute.
@@ -573,86 +423,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @ordered
 	 */
 	protected Date lastUpdatedDate = LAST_UPDATED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOriginContactMechId() <em>Origin Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORIGIN_CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOriginContactMechId() <em>Origin Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String originContactMechId = ORIGIN_CONTACT_MECH_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOriginFacilityId() <em>Origin Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORIGIN_FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOriginFacilityId() <em>Origin Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String originFacilityId = ORIGIN_FACILITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOriginTelecomNumberId() <em>Origin Telecom Number Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginTelecomNumberId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORIGIN_TELECOM_NUMBER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOriginTelecomNumberId() <em>Origin Telecom Number Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginTelecomNumberId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String originTelecomNumberId = ORIGIN_TELECOM_NUMBER_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_METHOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentMethodTypeId = SHIPMENT_METHOD_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getThirdPartyAccountNumber() <em>Third Party Account Number</em>}' attribute.
@@ -793,6 +563,126 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @ordered
 	 */
 	protected byte[] upsHighValueReport = UPS_HIGH_VALUE_REPORT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDeliveryId() <em>Delivery Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeliveryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Delivery deliveryId;
+
+	/**
+	 * The cached value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCarrierPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PartyGroup carrierPartyId;
+
+	/**
+	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ShipmentMethodType shipmentMethodTypeId;
+
+	/**
+	 * The cached value of the '{@link #getOriginFacilityId() <em>Origin Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility originFacilityId;
+
+	/**
+	 * The cached value of the '{@link #getDestFacilityId() <em>Dest Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDestFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility destFacilityId;
+
+	/**
+	 * The cached value of the '{@link #getOriginContactMechId() <em>Origin Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PostalAddress originContactMechId;
+
+	/**
+	 * The cached value of the '{@link #getOriginTelecomNumberId() <em>Origin Telecom Number Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginTelecomNumberId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TelecomNumber originTelecomNumberId;
+
+	/**
+	 * The cached value of the '{@link #getDestContactMechId() <em>Dest Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDestContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PostalAddress destContactMechId;
+
+	/**
+	 * The cached value of the '{@link #getDestTelecomNumberId() <em>Dest Telecom Number Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDestTelecomNumberId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TelecomNumber destTelecomNumberId;
+
+	/**
+	 * The cached value of the '{@link #getCarrierServiceStatusId() <em>Carrier Service Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCarrierServiceStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem carrierServiceStatusId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getBillingWeightUomId() <em>Billing Weight Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBillingWeightUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom billingWeightUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -980,7 +870,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getBillingWeightUomId() {
+	public Uom getBillingWeightUomId() {
+		if (billingWeightUomId != null && ((EObject)billingWeightUomId).eIsProxy()) {
+			InternalEObject oldBillingWeightUomId = (InternalEObject)billingWeightUomId;
+			billingWeightUomId = (Uom)eResolveProxy(oldBillingWeightUomId);
+			if (billingWeightUomId != oldBillingWeightUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID, oldBillingWeightUomId, billingWeightUomId));
+			}
+		}
+		return billingWeightUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetBillingWeightUomId() {
 		return billingWeightUomId;
 	}
 
@@ -990,8 +897,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setBillingWeightUomId(String newBillingWeightUomId) {
-		String oldBillingWeightUomId = billingWeightUomId;
+	public void setBillingWeightUomId(Uom newBillingWeightUomId) {
+		Uom oldBillingWeightUomId = billingWeightUomId;
 		billingWeightUomId = newBillingWeightUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID, oldBillingWeightUomId, billingWeightUomId));
@@ -1026,7 +933,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getCarrierPartyId() {
+	public PartyGroup getCarrierPartyId() {
+		if (carrierPartyId != null && ((EObject)carrierPartyId).eIsProxy()) {
+			InternalEObject oldCarrierPartyId = (InternalEObject)carrierPartyId;
+			carrierPartyId = (PartyGroup)eResolveProxy(oldCarrierPartyId);
+			if (carrierPartyId != oldCarrierPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
+			}
+		}
+		return carrierPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyGroup basicGetCarrierPartyId() {
 		return carrierPartyId;
 	}
 
@@ -1036,8 +960,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setCarrierPartyId(String newCarrierPartyId) {
-		String oldCarrierPartyId = carrierPartyId;
+	public void setCarrierPartyId(PartyGroup newCarrierPartyId) {
+		PartyGroup oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
@@ -1095,7 +1019,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getCarrierServiceStatusId() {
+	public StatusItem getCarrierServiceStatusId() {
+		if (carrierServiceStatusId != null && ((EObject)carrierServiceStatusId).eIsProxy()) {
+			InternalEObject oldCarrierServiceStatusId = (InternalEObject)carrierServiceStatusId;
+			carrierServiceStatusId = (StatusItem)eResolveProxy(oldCarrierServiceStatusId);
+			if (carrierServiceStatusId != oldCarrierServiceStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID, oldCarrierServiceStatusId, carrierServiceStatusId));
+			}
+		}
+		return carrierServiceStatusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetCarrierServiceStatusId() {
 		return carrierServiceStatusId;
 	}
 
@@ -1105,8 +1046,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setCarrierServiceStatusId(String newCarrierServiceStatusId) {
-		String oldCarrierServiceStatusId = carrierServiceStatusId;
+	public void setCarrierServiceStatusId(StatusItem newCarrierServiceStatusId) {
+		StatusItem oldCarrierServiceStatusId = carrierServiceStatusId;
 		carrierServiceStatusId = newCarrierServiceStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID, oldCarrierServiceStatusId, carrierServiceStatusId));
@@ -1118,7 +1059,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -1128,8 +1086,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -1141,7 +1099,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getDeliveryId() {
+	public Delivery getDeliveryId() {
+		if (deliveryId != null && ((EObject)deliveryId).eIsProxy()) {
+			InternalEObject oldDeliveryId = (InternalEObject)deliveryId;
+			deliveryId = (Delivery)eResolveProxy(oldDeliveryId);
+			if (deliveryId != oldDeliveryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID, oldDeliveryId, deliveryId));
+			}
+		}
+		return deliveryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Delivery basicGetDeliveryId() {
 		return deliveryId;
 	}
 
@@ -1151,8 +1126,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setDeliveryId(String newDeliveryId) {
-		String oldDeliveryId = deliveryId;
+	public void setDeliveryId(Delivery newDeliveryId) {
+		Delivery oldDeliveryId = deliveryId;
 		deliveryId = newDeliveryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID, oldDeliveryId, deliveryId));
@@ -1164,7 +1139,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getDestContactMechId() {
+	public PostalAddress getDestContactMechId() {
+		if (destContactMechId != null && ((EObject)destContactMechId).eIsProxy()) {
+			InternalEObject oldDestContactMechId = (InternalEObject)destContactMechId;
+			destContactMechId = (PostalAddress)eResolveProxy(oldDestContactMechId);
+			if (destContactMechId != oldDestContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID, oldDestContactMechId, destContactMechId));
+			}
+		}
+		return destContactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostalAddress basicGetDestContactMechId() {
 		return destContactMechId;
 	}
 
@@ -1174,8 +1166,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setDestContactMechId(String newDestContactMechId) {
-		String oldDestContactMechId = destContactMechId;
+	public void setDestContactMechId(PostalAddress newDestContactMechId) {
+		PostalAddress oldDestContactMechId = destContactMechId;
 		destContactMechId = newDestContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID, oldDestContactMechId, destContactMechId));
@@ -1187,7 +1179,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getDestFacilityId() {
+	public Facility getDestFacilityId() {
+		if (destFacilityId != null && ((EObject)destFacilityId).eIsProxy()) {
+			InternalEObject oldDestFacilityId = (InternalEObject)destFacilityId;
+			destFacilityId = (Facility)eResolveProxy(oldDestFacilityId);
+			if (destFacilityId != oldDestFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID, oldDestFacilityId, destFacilityId));
+			}
+		}
+		return destFacilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetDestFacilityId() {
 		return destFacilityId;
 	}
 
@@ -1197,8 +1206,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setDestFacilityId(String newDestFacilityId) {
-		String oldDestFacilityId = destFacilityId;
+	public void setDestFacilityId(Facility newDestFacilityId) {
+		Facility oldDestFacilityId = destFacilityId;
 		destFacilityId = newDestFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID, oldDestFacilityId, destFacilityId));
@@ -1210,7 +1219,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getDestTelecomNumberId() {
+	public TelecomNumber getDestTelecomNumberId() {
+		if (destTelecomNumberId != null && ((EObject)destTelecomNumberId).eIsProxy()) {
+			InternalEObject oldDestTelecomNumberId = (InternalEObject)destTelecomNumberId;
+			destTelecomNumberId = (TelecomNumber)eResolveProxy(oldDestTelecomNumberId);
+			if (destTelecomNumberId != oldDestTelecomNumberId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID, oldDestTelecomNumberId, destTelecomNumberId));
+			}
+		}
+		return destTelecomNumberId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TelecomNumber basicGetDestTelecomNumberId() {
 		return destTelecomNumberId;
 	}
 
@@ -1220,8 +1246,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setDestTelecomNumberId(String newDestTelecomNumberId) {
-		String oldDestTelecomNumberId = destTelecomNumberId;
+	public void setDestTelecomNumberId(TelecomNumber newDestTelecomNumberId) {
+		TelecomNumber oldDestTelecomNumberId = destTelecomNumberId;
 		destTelecomNumberId = newDestTelecomNumberId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID, oldDestTelecomNumberId, destTelecomNumberId));
@@ -1348,7 +1374,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getOriginContactMechId() {
+	public PostalAddress getOriginContactMechId() {
+		if (originContactMechId != null && ((EObject)originContactMechId).eIsProxy()) {
+			InternalEObject oldOriginContactMechId = (InternalEObject)originContactMechId;
+			originContactMechId = (PostalAddress)eResolveProxy(oldOriginContactMechId);
+			if (originContactMechId != oldOriginContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
+			}
+		}
+		return originContactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostalAddress basicGetOriginContactMechId() {
 		return originContactMechId;
 	}
 
@@ -1358,8 +1401,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setOriginContactMechId(String newOriginContactMechId) {
-		String oldOriginContactMechId = originContactMechId;
+	public void setOriginContactMechId(PostalAddress newOriginContactMechId) {
+		PostalAddress oldOriginContactMechId = originContactMechId;
 		originContactMechId = newOriginContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
@@ -1371,7 +1414,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getOriginFacilityId() {
+	public Facility getOriginFacilityId() {
+		if (originFacilityId != null && ((EObject)originFacilityId).eIsProxy()) {
+			InternalEObject oldOriginFacilityId = (InternalEObject)originFacilityId;
+			originFacilityId = (Facility)eResolveProxy(oldOriginFacilityId);
+			if (originFacilityId != oldOriginFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
+			}
+		}
+		return originFacilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetOriginFacilityId() {
 		return originFacilityId;
 	}
 
@@ -1381,8 +1441,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setOriginFacilityId(String newOriginFacilityId) {
-		String oldOriginFacilityId = originFacilityId;
+	public void setOriginFacilityId(Facility newOriginFacilityId) {
+		Facility oldOriginFacilityId = originFacilityId;
 		originFacilityId = newOriginFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
@@ -1394,7 +1454,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getOriginTelecomNumberId() {
+	public TelecomNumber getOriginTelecomNumberId() {
+		if (originTelecomNumberId != null && ((EObject)originTelecomNumberId).eIsProxy()) {
+			InternalEObject oldOriginTelecomNumberId = (InternalEObject)originTelecomNumberId;
+			originTelecomNumberId = (TelecomNumber)eResolveProxy(oldOriginTelecomNumberId);
+			if (originTelecomNumberId != oldOriginTelecomNumberId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID, oldOriginTelecomNumberId, originTelecomNumberId));
+			}
+		}
+		return originTelecomNumberId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TelecomNumber basicGetOriginTelecomNumberId() {
 		return originTelecomNumberId;
 	}
 
@@ -1404,8 +1481,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setOriginTelecomNumberId(String newOriginTelecomNumberId) {
-		String oldOriginTelecomNumberId = originTelecomNumberId;
+	public void setOriginTelecomNumberId(TelecomNumber newOriginTelecomNumberId) {
+		TelecomNumber oldOriginTelecomNumberId = originTelecomNumberId;
 		originTelecomNumberId = newOriginTelecomNumberId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID, oldOriginTelecomNumberId, originTelecomNumberId));
@@ -1440,7 +1517,24 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public String getShipmentMethodTypeId() {
+	public ShipmentMethodType getShipmentMethodTypeId() {
+		if (shipmentMethodTypeId != null && ((EObject)shipmentMethodTypeId).eIsProxy()) {
+			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
+			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
+			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
+			}
+		}
+		return shipmentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShipmentMethodType basicGetShipmentMethodTypeId() {
 		return shipmentMethodTypeId;
 	}
 
@@ -1450,8 +1544,8 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 	 * @generated
 	 */
 	@Override
-	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
-		String oldShipmentMethodTypeId = shipmentMethodTypeId;
+	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
@@ -1667,28 +1761,12 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return getActualTransportCost();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT:
 				return getBillingWeight();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID:
-				return getBillingWeightUomId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_DELIVERY_ZONE:
 				return getCarrierDeliveryZone();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
-				return getCarrierPartyId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_CODES:
 				return getCarrierRestrictionCodes();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_DESC:
 				return getCarrierRestrictionDesc();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID:
-				return getCarrierServiceStatusId();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
-				return getDeliveryId();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
-				return getDestContactMechId();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID:
-				return getDestFacilityId();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
-				return getDestTelecomNumberId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ESTIMATED_ARRIVAL_DATE:
 				return getEstimatedArrivalDate();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ESTIMATED_START_DATE:
@@ -1699,14 +1777,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return getHomeDeliveryType();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__LAST_UPDATED_DATE:
 				return getLastUpdatedDate();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
-				return getOriginContactMechId();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID:
-				return getOriginFacilityId();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
-				return getOriginTelecomNumberId();
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
-				return getShipmentMethodTypeId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_ACCOUNT_NUMBER:
 				return getThirdPartyAccountNumber();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_COUNTRY_GEO_CODE:
@@ -1721,6 +1791,42 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return getUpdatedByUserLoginId();
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT:
 				return getUpsHighValueReport();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
+				if (resolve) return getDeliveryId();
+				return basicGetDeliveryId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
+				if (resolve) return getCarrierPartyId();
+				return basicGetCarrierPartyId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
+				if (resolve) return getShipmentMethodTypeId();
+				return basicGetShipmentMethodTypeId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID:
+				if (resolve) return getOriginFacilityId();
+				return basicGetOriginFacilityId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID:
+				if (resolve) return getDestFacilityId();
+				return basicGetDestFacilityId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
+				if (resolve) return getOriginContactMechId();
+				return basicGetOriginContactMechId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
+				if (resolve) return getOriginTelecomNumberId();
+				return basicGetOriginTelecomNumberId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
+				if (resolve) return getDestContactMechId();
+				return basicGetDestContactMechId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
+				if (resolve) return getDestTelecomNumberId();
+				return basicGetDestTelecomNumberId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID:
+				if (resolve) return getCarrierServiceStatusId();
+				return basicGetCarrierServiceStatusId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID:
+				if (resolve) return getBillingWeightUomId();
+				return basicGetBillingWeightUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1760,38 +1866,14 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT:
 				setBillingWeight((BigDecimal)newValue);
 				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID:
-				setBillingWeightUomId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_DELIVERY_ZONE:
 				setCarrierDeliveryZone((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
-				setCarrierPartyId((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_CODES:
 				setCarrierRestrictionCodes((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_DESC:
 				setCarrierRestrictionDesc((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID:
-				setCarrierServiceStatusId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
-				setDeliveryId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
-				setDestContactMechId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID:
-				setDestFacilityId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
-				setDestTelecomNumberId((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ESTIMATED_ARRIVAL_DATE:
 				setEstimatedArrivalDate((Date)newValue);
@@ -1807,18 +1889,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__LAST_UPDATED_DATE:
 				setLastUpdatedDate((Date)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
-				setOriginContactMechId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID:
-				setOriginFacilityId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
-				setOriginTelecomNumberId((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_ACCOUNT_NUMBER:
 				setThirdPartyAccountNumber((String)newValue);
@@ -1840,6 +1910,42 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT:
 				setUpsHighValueReport((byte[])newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
+				setDeliveryId((Delivery)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
+				setCarrierPartyId((PartyGroup)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
+				setShipmentMethodTypeId((ShipmentMethodType)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID:
+				setOriginFacilityId((Facility)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID:
+				setDestFacilityId((Facility)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
+				setOriginContactMechId((PostalAddress)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
+				setOriginTelecomNumberId((TelecomNumber)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
+				setDestContactMechId((PostalAddress)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
+				setDestTelecomNumberId((TelecomNumber)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID:
+				setCarrierServiceStatusId((StatusItem)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID:
+				setBillingWeightUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1880,38 +1986,14 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT:
 				setBillingWeight(BILLING_WEIGHT_EDEFAULT);
 				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID:
-				setBillingWeightUomId(BILLING_WEIGHT_UOM_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_DELIVERY_ZONE:
 				setCarrierDeliveryZone(CARRIER_DELIVERY_ZONE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
-				setCarrierPartyId(CARRIER_PARTY_ID_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_CODES:
 				setCarrierRestrictionCodes(CARRIER_RESTRICTION_CODES_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_DESC:
 				setCarrierRestrictionDesc(CARRIER_RESTRICTION_DESC_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID:
-				setCarrierServiceStatusId(CARRIER_SERVICE_STATUS_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
-				setDeliveryId(DELIVERY_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
-				setDestContactMechId(DEST_CONTACT_MECH_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID:
-				setDestFacilityId(DEST_FACILITY_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
-				setDestTelecomNumberId(DEST_TELECOM_NUMBER_ID_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ESTIMATED_ARRIVAL_DATE:
 				setEstimatedArrivalDate(ESTIMATED_ARRIVAL_DATE_EDEFAULT);
@@ -1927,18 +2009,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__LAST_UPDATED_DATE:
 				setLastUpdatedDate(LAST_UPDATED_DATE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
-				setOriginContactMechId(ORIGIN_CONTACT_MECH_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID:
-				setOriginFacilityId(ORIGIN_FACILITY_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
-				setOriginTelecomNumberId(ORIGIN_TELECOM_NUMBER_ID_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId(SHIPMENT_METHOD_TYPE_ID_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_ACCOUNT_NUMBER:
 				setThirdPartyAccountNumber(THIRD_PARTY_ACCOUNT_NUMBER_EDEFAULT);
@@ -1960,6 +2030,42 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return;
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT:
 				setUpsHighValueReport(UPS_HIGH_VALUE_REPORT_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
+				setDeliveryId((Delivery)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
+				setCarrierPartyId((PartyGroup)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
+				setShipmentMethodTypeId((ShipmentMethodType)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID:
+				setOriginFacilityId((Facility)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID:
+				setDestFacilityId((Facility)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
+				setOriginContactMechId((PostalAddress)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
+				setOriginTelecomNumberId((TelecomNumber)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
+				setDestContactMechId((PostalAddress)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
+				setDestTelecomNumberId((TelecomNumber)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID:
+				setCarrierServiceStatusId((StatusItem)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID:
+				setBillingWeightUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1991,28 +2097,12 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return ACTUAL_TRANSPORT_COST_EDEFAULT == null ? actualTransportCost != null : !ACTUAL_TRANSPORT_COST_EDEFAULT.equals(actualTransportCost);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT:
 				return BILLING_WEIGHT_EDEFAULT == null ? billingWeight != null : !BILLING_WEIGHT_EDEFAULT.equals(billingWeight);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID:
-				return BILLING_WEIGHT_UOM_ID_EDEFAULT == null ? billingWeightUomId != null : !BILLING_WEIGHT_UOM_ID_EDEFAULT.equals(billingWeightUomId);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_DELIVERY_ZONE:
 				return CARRIER_DELIVERY_ZONE_EDEFAULT == null ? carrierDeliveryZone != null : !CARRIER_DELIVERY_ZONE_EDEFAULT.equals(carrierDeliveryZone);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
-				return CARRIER_PARTY_ID_EDEFAULT == null ? carrierPartyId != null : !CARRIER_PARTY_ID_EDEFAULT.equals(carrierPartyId);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_CODES:
 				return CARRIER_RESTRICTION_CODES_EDEFAULT == null ? carrierRestrictionCodes != null : !CARRIER_RESTRICTION_CODES_EDEFAULT.equals(carrierRestrictionCodes);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_DESC:
 				return CARRIER_RESTRICTION_DESC_EDEFAULT == null ? carrierRestrictionDesc != null : !CARRIER_RESTRICTION_DESC_EDEFAULT.equals(carrierRestrictionDesc);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID:
-				return CARRIER_SERVICE_STATUS_ID_EDEFAULT == null ? carrierServiceStatusId != null : !CARRIER_SERVICE_STATUS_ID_EDEFAULT.equals(carrierServiceStatusId);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
-				return DELIVERY_ID_EDEFAULT == null ? deliveryId != null : !DELIVERY_ID_EDEFAULT.equals(deliveryId);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
-				return DEST_CONTACT_MECH_ID_EDEFAULT == null ? destContactMechId != null : !DEST_CONTACT_MECH_ID_EDEFAULT.equals(destContactMechId);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID:
-				return DEST_FACILITY_ID_EDEFAULT == null ? destFacilityId != null : !DEST_FACILITY_ID_EDEFAULT.equals(destFacilityId);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
-				return DEST_TELECOM_NUMBER_ID_EDEFAULT == null ? destTelecomNumberId != null : !DEST_TELECOM_NUMBER_ID_EDEFAULT.equals(destTelecomNumberId);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ESTIMATED_ARRIVAL_DATE:
 				return ESTIMATED_ARRIVAL_DATE_EDEFAULT == null ? estimatedArrivalDate != null : !ESTIMATED_ARRIVAL_DATE_EDEFAULT.equals(estimatedArrivalDate);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ESTIMATED_START_DATE:
@@ -2023,14 +2113,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return HOME_DELIVERY_TYPE_EDEFAULT == null ? homeDeliveryType != null : !HOME_DELIVERY_TYPE_EDEFAULT.equals(homeDeliveryType);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__LAST_UPDATED_DATE:
 				return LAST_UPDATED_DATE_EDEFAULT == null ? lastUpdatedDate != null : !LAST_UPDATED_DATE_EDEFAULT.equals(lastUpdatedDate);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
-				return ORIGIN_CONTACT_MECH_ID_EDEFAULT == null ? originContactMechId != null : !ORIGIN_CONTACT_MECH_ID_EDEFAULT.equals(originContactMechId);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID:
-				return ORIGIN_FACILITY_ID_EDEFAULT == null ? originFacilityId != null : !ORIGIN_FACILITY_ID_EDEFAULT.equals(originFacilityId);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
-				return ORIGIN_TELECOM_NUMBER_ID_EDEFAULT == null ? originTelecomNumberId != null : !ORIGIN_TELECOM_NUMBER_ID_EDEFAULT.equals(originTelecomNumberId);
-			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
-				return SHIPMENT_METHOD_TYPE_ID_EDEFAULT == null ? shipmentMethodTypeId != null : !SHIPMENT_METHOD_TYPE_ID_EDEFAULT.equals(shipmentMethodTypeId);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_ACCOUNT_NUMBER:
 				return THIRD_PARTY_ACCOUNT_NUMBER_EDEFAULT == null ? thirdPartyAccountNumber != null : !THIRD_PARTY_ACCOUNT_NUMBER_EDEFAULT.equals(thirdPartyAccountNumber);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_COUNTRY_GEO_CODE:
@@ -2045,6 +2127,30 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 				return UPDATED_BY_USER_LOGIN_ID_EDEFAULT == null ? updatedByUserLoginId != null : !UPDATED_BY_USER_LOGIN_ID_EDEFAULT.equals(updatedByUserLoginId);
 			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT:
 				return UPS_HIGH_VALUE_REPORT_EDEFAULT == null ? upsHighValueReport != null : !UPS_HIGH_VALUE_REPORT_EDEFAULT.equals(upsHighValueReport);
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID:
+				return deliveryId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID:
+				return carrierPartyId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID:
+				return shipmentMethodTypeId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID:
+				return originFacilityId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID:
+				return destFacilityId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID:
+				return originContactMechId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID:
+				return originTelecomNumberId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID:
+				return destContactMechId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID:
+				return destTelecomNumberId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID:
+				return carrierServiceStatusId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case Shipment_Package.SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID:
+				return billingWeightUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -2077,28 +2183,12 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 		result.append(actualTransportCost);
 		result.append(", billingWeight: ");
 		result.append(billingWeight);
-		result.append(", billingWeightUomId: ");
-		result.append(billingWeightUomId);
 		result.append(", carrierDeliveryZone: ");
 		result.append(carrierDeliveryZone);
-		result.append(", carrierPartyId: ");
-		result.append(carrierPartyId);
 		result.append(", carrierRestrictionCodes: ");
 		result.append(carrierRestrictionCodes);
 		result.append(", carrierRestrictionDesc: ");
 		result.append(carrierRestrictionDesc);
-		result.append(", carrierServiceStatusId: ");
-		result.append(carrierServiceStatusId);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
-		result.append(", deliveryId: ");
-		result.append(deliveryId);
-		result.append(", destContactMechId: ");
-		result.append(destContactMechId);
-		result.append(", destFacilityId: ");
-		result.append(destFacilityId);
-		result.append(", destTelecomNumberId: ");
-		result.append(destTelecomNumberId);
 		result.append(", estimatedArrivalDate: ");
 		result.append(estimatedArrivalDate);
 		result.append(", estimatedStartDate: ");
@@ -2109,14 +2199,6 @@ public class ShipmentRouteSegmentImpl extends BizEntityImpl implements ShipmentR
 		result.append(homeDeliveryType);
 		result.append(", lastUpdatedDate: ");
 		result.append(lastUpdatedDate);
-		result.append(", originContactMechId: ");
-		result.append(originContactMechId);
-		result.append(", originFacilityId: ");
-		result.append(originFacilityId);
-		result.append(", originTelecomNumberId: ");
-		result.append(originTelecomNumberId);
-		result.append(", shipmentMethodTypeId: ");
-		result.append(shipmentMethodTypeId);
 		result.append(", thirdPartyAccountNumber: ");
 		result.append(thirdPartyAccountNumber);
 		result.append(", thirdPartyCountryGeoCode: ");

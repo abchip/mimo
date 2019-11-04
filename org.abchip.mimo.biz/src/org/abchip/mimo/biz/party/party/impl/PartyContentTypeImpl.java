@@ -15,6 +15,8 @@ import org.abchip.mimo.biz.party.party.PartyContentType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -74,23 +76,14 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected PartyContentType parentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,7 +133,24 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public PartyContentType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (PartyContentType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyContentType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -150,8 +160,8 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(PartyContentType newParentTypeId) {
+		PartyContentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -205,7 +215,8 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 			case PartyPackage.PARTY_CONTENT_TYPE__DESCRIPTION:
 				return getDescription();
 			case PartyPackage.PARTY_CONTENT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,7 +236,7 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 				setDescription((String)newValue);
 				return;
 			case PartyPackage.PARTY_CONTENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((PartyContentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -246,7 +257,7 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case PartyPackage.PARTY_CONTENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((PartyContentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -265,7 +276,7 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 			case PartyPackage.PARTY_CONTENT_TYPE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PartyPackage.PARTY_CONTENT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -284,8 +295,6 @@ public class PartyContentTypeImpl extends BizEntityTypeImpl<PartyContent> implem
 		result.append(partyContentTypeId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(')');
 		return result.toString();
 	}

@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.party.contact.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.ValidContactMechRole;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -53,23 +56,14 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 	 */
 	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContactMechTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTACT_MECH_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechTypeId = CONTACT_MECH_TYPE_ID_EDEFAULT;
+	protected ContactMechType contactMechTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,7 +113,24 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 	 * @generated
 	 */
 	@Override
-	public String getContactMechTypeId() {
+	public ContactMechType getContactMechTypeId() {
+		if (contactMechTypeId != null && ((EObject)contactMechTypeId).eIsProxy()) {
+			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
+			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
+			if (contactMechTypeId != oldContactMechTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
+			}
+		}
+		return contactMechTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMechType basicGetContactMechTypeId() {
 		return contactMechTypeId;
 	}
 
@@ -129,8 +140,8 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 	 * @generated
 	 */
 	@Override
-	public void setContactMechTypeId(String newContactMechTypeId) {
-		String oldContactMechTypeId = contactMechTypeId;
+	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
+		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
@@ -147,7 +158,8 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 			case ContactPackage.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID:
 				return getRoleTypeId();
 			case ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID:
-				return getContactMechTypeId();
+				if (resolve) return getContactMechTypeId();
+				return basicGetContactMechTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,7 +176,7 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 				setRoleTypeId((String)newValue);
 				return;
 			case ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId((String)newValue);
+				setContactMechTypeId((ContactMechType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,7 +194,7 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
 			case ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId(CONTACT_MECH_TYPE_ID_EDEFAULT);
+				setContactMechTypeId((ContactMechType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -199,7 +211,7 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 			case ContactPackage.VALID_CONTACT_MECH_ROLE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case ContactPackage.VALID_CONTACT_MECH_ROLE__CONTACT_MECH_TYPE_ID:
-				return CONTACT_MECH_TYPE_ID_EDEFAULT == null ? contactMechTypeId != null : !CONTACT_MECH_TYPE_ID_EDEFAULT.equals(contactMechTypeId);
+				return contactMechTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,8 +228,6 @@ public class ValidContactMechRoleImpl extends BizEntityImpl implements ValidCont
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (roleTypeId: ");
 		result.append(roleTypeId);
-		result.append(", contactMechTypeId: ");
-		result.append(contactMechTypeId);
 		result.append(')');
 		return result.toString();
 	}

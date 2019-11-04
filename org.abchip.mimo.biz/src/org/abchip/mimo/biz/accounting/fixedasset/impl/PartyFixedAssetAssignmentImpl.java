@@ -9,12 +9,17 @@ package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.accounting.fixedasset.PartyFixedAssetAssignment;
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,13 +31,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getAllocatedDate <em>Allocated Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.PartyFixedAssetAssignmentImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,42 +65,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -151,24 +120,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 */
 	protected String comments = COMMENTS_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,6 +137,33 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,7 +282,24 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -314,8 +309,8 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -327,7 +322,24 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -337,8 +349,8 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID, oldStatusId, statusId));
@@ -373,7 +385,24 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -383,8 +412,8 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -400,20 +429,23 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 		switch (featureID) {
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
 				return getPartyId();
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
-				return getRoleTypeId();
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FROM_DATE:
 				return getFromDate();
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ALLOCATED_DATE:
 				return getAllocatedDate();
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__COMMENTS:
 				return getComments();
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID:
-				return getStatusId();
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__THRU_DATE:
 				return getThruDate();
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -429,12 +461,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -444,11 +470,17 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__COMMENTS:
 				setComments((String)newValue);
 				return;
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
+				return;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -465,12 +497,6 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -480,11 +506,17 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
+				return;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -500,20 +532,20 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 		switch (featureID) {
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ALLOCATED_DATE:
 				return ALLOCATED_DATE_EDEFAULT == null ? allocatedDate != null : !ALLOCATED_DATE_EDEFAULT.equals(allocatedDate);
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__FIXED_ASSET_ID:
+				return fixedAssetId != null;
+			case FixedassetPackage.PARTY_FIXED_ASSET_ASSIGNMENT__STATUS_ID:
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -530,18 +562,12 @@ public class PartyFixedAssetAssignmentImpl extends BizEntityImpl implements Part
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", fixedAssetId: ");
-		result.append(fixedAssetId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", allocatedDate: ");
 		result.append(allocatedDate);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

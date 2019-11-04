@@ -64,7 +64,7 @@ public interface TaxAuthorityAssocType extends BizEntityType<TaxAuthorityAssoc> 
 	 * @return the value of the '<em>Tax Authority Assoc Type Id</em>' attribute.
 	 * @see #setTaxAuthorityAssocTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssocType_TaxAuthorityAssocTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

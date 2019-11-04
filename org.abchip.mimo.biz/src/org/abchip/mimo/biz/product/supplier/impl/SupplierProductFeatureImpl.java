@@ -7,12 +7,16 @@
  */
 package org.abchip.mimo.biz.product.supplier.impl;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.abchip.mimo.biz.product.supplier.SupplierProductFeature;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getIdCode <em>Id Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductFeatureImpl#getUomId <em>Uom Id</em>}</li>
  * </ul>
  *
@@ -57,26 +61,6 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -119,24 +103,24 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	protected String idCode = ID_CODE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUomId()
+	 * @see #getProductFeatureId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_ID_EDEFAULT = null;
+	protected ProductFeature productFeatureId;
 
 	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String uomId = UOM_ID_EDEFAULT;
+	protected Uom uomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,7 +216,24 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -242,8 +243,8 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__UOM_ID, oldUomId, uomId));
@@ -255,7 +256,24 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureId() {
+	public ProductFeature getProductFeatureId() {
+		if (productFeatureId != null && ((EObject)productFeatureId).eIsProxy()) {
+			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
+			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
+			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
+			}
+		}
+		return productFeatureId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature basicGetProductFeatureId() {
 		return productFeatureId;
 	}
 
@@ -265,8 +283,8 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
+	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
@@ -282,14 +300,16 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 		switch (featureID) {
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
 				return getPartyId();
-			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
-				return getProductFeatureId();
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__DESCRIPTION:
 				return getDescription();
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__ID_CODE:
 				return getIdCode();
+			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
+				if (resolve) return getProductFeatureId();
+				return basicGetProductFeatureId();
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__UOM_ID:
-				return getUomId();
+				if (resolve) return getUomId();
+				return basicGetUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -305,17 +325,17 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
-				setProductFeatureId((String)newValue);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__ID_CODE:
 				setIdCode((String)newValue);
 				return;
+			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)newValue);
+				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__UOM_ID:
-				setUomId((String)newValue);
+				setUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -332,17 +352,17 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
-				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__ID_CODE:
 				setIdCode(ID_CODE_EDEFAULT);
 				return;
+			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)null);
+				return;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
+				setUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -358,14 +378,14 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 		switch (featureID) {
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
-				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__ID_CODE:
 				return ID_CODE_EDEFAULT == null ? idCode != null : !ID_CODE_EDEFAULT.equals(idCode);
+			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__PRODUCT_FEATURE_ID:
+				return productFeatureId != null;
 			case SupplierPackage.SUPPLIER_PRODUCT_FEATURE__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+				return uomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -382,14 +402,10 @@ public class SupplierProductFeatureImpl extends BizEntityImpl implements Supplie
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", productFeatureId: ");
-		result.append(productFeatureId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", idCode: ");
 		result.append(idCode);
-		result.append(", uomId: ");
-		result.append(uomId);
 		result.append(')');
 		return result.toString();
 	}

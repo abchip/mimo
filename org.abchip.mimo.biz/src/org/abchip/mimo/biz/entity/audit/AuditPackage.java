@@ -50,7 +50,7 @@ public interface AuditPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-entity-audit";
+	String eNS_PREFIX = "biz-audit";
 
 	/**
 	 * The singleton instance of the package.

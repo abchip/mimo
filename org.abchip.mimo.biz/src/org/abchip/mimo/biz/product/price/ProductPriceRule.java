@@ -221,7 +221,7 @@ public interface ProductPriceRule extends BizEntity {
 	 * @return the value of the '<em>Product Price Rule Id</em>' attribute.
 	 * @see #setProductPriceRuleId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceRule_ProductPriceRuleId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

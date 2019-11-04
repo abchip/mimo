@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.party.party;
 
 import java.util.Date;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,6 @@ import java.util.Date;
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getCardId <em>Card Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getDeceasedDate <em>Deceased Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.Person#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#isExistingCustomer <em>Existing Customer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getFirstName <em>First Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getFirstNameLocal <em>First Name Local</em>}</li>
@@ -42,13 +42,14 @@ import java.util.Date;
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getPassportExpireDate <em>Passport Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getPassportNumber <em>Passport Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getPersonalTitle <em>Personal Title</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.Person#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getSalutation <em>Salutation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getSocialSecurityNumber <em>Social Security Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getSuffix <em>Suffix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getTotalYearsWorkExperience <em>Total Years Work Experience</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getWeight <em>Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.Person#getYearsWithEmployer <em>Years With Employer</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Person#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.Person#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson()
@@ -161,30 +162,30 @@ public interface Person extends Party {
 	void setDeceasedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Employment Status Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Employment Status Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Employment Status Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Employment Status Enum Id</em>' attribute.
-	 * @see #setEmploymentStatusEnumId(String)
+	 * @return the value of the '<em>Employment Status Enum Id</em>' reference.
+	 * @see #setEmploymentStatusEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_EmploymentStatusEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getEmploymentStatusEnumId();
+	Enumeration getEmploymentStatusEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Person#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Person#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Employment Status Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Employment Status Enum Id</em>' reference.
 	 * @see #getEmploymentStatusEnumId()
 	 * @generated
 	 */
-	void setEmploymentStatusEnumId(String value);
+	void setEmploymentStatusEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Existing Customer</b></em>' attribute.
@@ -681,30 +682,30 @@ public interface Person extends Party {
 	void setPersonalTitle(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Residence Status Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Residence Status Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Residence Status Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Residence Status Enum Id</em>' attribute.
-	 * @see #setResidenceStatusEnumId(String)
+	 * @return the value of the '<em>Residence Status Enum Id</em>' reference.
+	 * @see #setResidenceStatusEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPerson_ResidenceStatusEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getResidenceStatusEnumId();
+	Enumeration getResidenceStatusEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Person#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.Person#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Residence Status Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Residence Status Enum Id</em>' reference.
 	 * @see #getResidenceStatusEnumId()
 	 * @generated
 	 */
-	void setResidenceStatusEnumId(String value);
+	void setResidenceStatusEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Salutation</b></em>' attribute.

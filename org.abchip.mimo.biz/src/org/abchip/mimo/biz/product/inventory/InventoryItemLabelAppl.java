@@ -19,9 +19,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemLabelTypeId <em>Inventory Item Label Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemLabelId <em>Inventory Item Label Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getSequenceNum <em>Sequence Num</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl()
@@ -66,8 +66,8 @@ public interface InventoryItemLabelAppl extends BizEntity {
 	 * @return the value of the '<em>Inventory Item Id</em>' attribute.
 	 * @see #setInventoryItemId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl_InventoryItemId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItem'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInventoryItemId();
@@ -83,56 +83,55 @@ public interface InventoryItemLabelAppl extends BizEntity {
 	void setInventoryItemId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Label Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inventory Item Label Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Label Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Label Type Id</em>' attribute.
-	 * @see #setInventoryItemLabelTypeId(String)
+	 * @return the value of the '<em>Inventory Item Label Type Id</em>' reference.
+	 * @see #setInventoryItemLabelTypeId(InventoryItemLabelType)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl_InventoryItemLabelTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemLabelType'"
+	 * @model keys="inventoryItemLabelTypeId"
 	 * @generated
 	 */
-	String getInventoryItemLabelTypeId();
+	InventoryItemLabelType getInventoryItemLabelTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemLabelTypeId <em>Inventory Item Label Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemLabelTypeId <em>Inventory Item Label Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Inventory Item Label Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Inventory Item Label Type Id</em>' reference.
 	 * @see #getInventoryItemLabelTypeId()
 	 * @generated
 	 */
-	void setInventoryItemLabelTypeId(String value);
+	void setInventoryItemLabelTypeId(InventoryItemLabelType value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Label Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inventory Item Label Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Label Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Label Id</em>' attribute.
-	 * @see #setInventoryItemLabelId(String)
+	 * @return the value of the '<em>Inventory Item Label Id</em>' reference.
+	 * @see #setInventoryItemLabelId(InventoryItemLabel)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemLabelAppl_InventoryItemLabelId()
-	 * @model annotation="mimo-ent-domain frame='InventoryItemLabel'"
+	 * @model keys="inventoryItemLabelId"
 	 * @generated
 	 */
-	String getInventoryItemLabelId();
+	InventoryItemLabel getInventoryItemLabelId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemLabelId <em>Inventory Item Label Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItemLabelAppl#getInventoryItemLabelId <em>Inventory Item Label Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Inventory Item Label Id</em>' attribute.
+	 * @param value the new value of the '<em>Inventory Item Label Id</em>' reference.
 	 * @see #getInventoryItemLabelId()
 	 * @generated
 	 */
-	void setInventoryItemLabelId(String value);
+	void setInventoryItemLabelId(InventoryItemLabel value);
 
 } // InventoryItemLabelAppl

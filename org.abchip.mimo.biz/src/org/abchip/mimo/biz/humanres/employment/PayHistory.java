@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.period.PeriodType;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,10 +30,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPayGradeId <em>Pay Grade Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPeriodTypeId <em>Period Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPayGradeId <em>Pay Grade Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPeriodTypeId <em>Period Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory()
@@ -103,7 +104,8 @@ public interface PayHistory extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -129,7 +131,8 @@ public interface PayHistory extends BizEntity {
 	 * @return the value of the '<em>Party Id From</em>' attribute.
 	 * @see #setPartyIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_PartyIdFrom()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyIdFrom();
@@ -155,7 +158,8 @@ public interface PayHistory extends BizEntity {
 	 * @return the value of the '<em>Party Id To</em>' attribute.
 	 * @see #setPartyIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_PartyIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyIdTo();
@@ -171,56 +175,56 @@ public interface PayHistory extends BizEntity {
 	void setPartyIdTo(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Pay Grade Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Pay Grade Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pay Grade Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pay Grade Id</em>' attribute.
-	 * @see #setPayGradeId(String)
+	 * @return the value of the '<em>Pay Grade Id</em>' reference.
+	 * @see #setPayGradeId(PayGrade)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_PayGradeId()
-	 * @model annotation="mimo-ent-domain frame='PayGrade'"
+	 * @model keys="payGradeId"
 	 * @generated
 	 */
-	String getPayGradeId();
+	PayGrade getPayGradeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPayGradeId <em>Pay Grade Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPayGradeId <em>Pay Grade Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pay Grade Id</em>' attribute.
+	 * @param value the new value of the '<em>Pay Grade Id</em>' reference.
 	 * @see #getPayGradeId()
 	 * @generated
 	 */
-	void setPayGradeId(String value);
+	void setPayGradeId(PayGrade value);
 
 	/**
-	 * Returns the value of the '<em><b>Period Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Period Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Period Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Period Type Id</em>' attribute.
-	 * @see #setPeriodTypeId(String)
+	 * @return the value of the '<em>Period Type Id</em>' reference.
+	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_PeriodTypeId()
-	 * @model annotation="mimo-ent-domain frame='PeriodType'"
+	 * @model keys="periodTypeId"
 	 * @generated
 	 */
-	String getPeriodTypeId();
+	PeriodType getPeriodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPeriodTypeId <em>Period Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPeriodTypeId <em>Period Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Period Type Id</em>' reference.
 	 * @see #getPeriodTypeId()
 	 * @generated
 	 */
-	void setPeriodTypeId(String value);
+	void setPeriodTypeId(PeriodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id From</b></em>' attribute.
@@ -233,7 +237,8 @@ public interface PayHistory extends BizEntity {
 	 * @return the value of the '<em>Role Type Id From</em>' attribute.
 	 * @see #setRoleTypeIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_RoleTypeIdFrom()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeIdFrom();
@@ -259,7 +264,8 @@ public interface PayHistory extends BizEntity {
 	 * @return the value of the '<em>Role Type Id To</em>' attribute.
 	 * @see #setRoleTypeIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPayHistory_RoleTypeIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeIdTo();

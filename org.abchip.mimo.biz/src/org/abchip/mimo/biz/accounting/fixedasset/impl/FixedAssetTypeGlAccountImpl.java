@@ -7,12 +7,17 @@
  */
 package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetTypeGlAccount;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getAccDepGlAccountId <em>Acc Dep Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getAssetGlAccountId <em>Asset Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getAccDepGlAccountId <em>Acc Dep Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getDepGlAccountId <em>Dep Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getLossGlAccountId <em>Loss Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getProfitGlAccountId <em>Profit Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetTypeGlAccountImpl#getLossGlAccountId <em>Loss Gl Account Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,131 +64,68 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 */
 	protected String fixedAssetTypeId = FIXED_ASSET_TYPE_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFixedAssetId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
+	protected FixedAsset fixedAssetId;
 	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
+	protected Party organizationPartyId;
 	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAccDepGlAccountId() <em>Acc Dep Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccDepGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACC_DEP_GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAccDepGlAccountId() <em>Acc Dep Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccDepGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accDepGlAccountId = ACC_DEP_GL_ACCOUNT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAssetGlAccountId() <em>Asset Gl Account Id</em>}' attribute.
+	 * The cached value of the '{@link #getAssetGlAccountId() <em>Asset Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAssetGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ASSET_GL_ACCOUNT_ID_EDEFAULT = null;
+	protected GlAccount assetGlAccountId;
 	/**
-	 * The cached value of the '{@link #getAssetGlAccountId() <em>Asset Gl Account Id</em>}' attribute.
+	 * The cached value of the '{@link #getAccDepGlAccountId() <em>Acc Dep Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssetGlAccountId()
+	 * @see #getAccDepGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String assetGlAccountId = ASSET_GL_ACCOUNT_ID_EDEFAULT;
+	protected GlAccount accDepGlAccountId;
 	/**
-	 * The default value of the '{@link #getDepGlAccountId() <em>Dep Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDepGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEP_GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDepGlAccountId() <em>Dep Gl Account Id</em>}' attribute.
+	 * The cached value of the '{@link #getDepGlAccountId() <em>Dep Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDepGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String depGlAccountId = DEP_GL_ACCOUNT_ID_EDEFAULT;
+	protected GlAccount depGlAccountId;
 	/**
-	 * The default value of the '{@link #getLossGlAccountId() <em>Loss Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLossGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LOSS_GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getLossGlAccountId() <em>Loss Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLossGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lossGlAccountId = LOSS_GL_ACCOUNT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getProfitGlAccountId() <em>Profit Gl Account Id</em>}' attribute.
+	 * The cached value of the '{@link #getProfitGlAccountId() <em>Profit Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProfitGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROFIT_GL_ACCOUNT_ID_EDEFAULT = null;
+	protected GlAccount profitGlAccountId;
 	/**
-	 * The cached value of the '{@link #getProfitGlAccountId() <em>Profit Gl Account Id</em>}' attribute.
+	 * The cached value of the '{@link #getLossGlAccountId() <em>Loss Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProfitGlAccountId()
+	 * @see #getLossGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String profitGlAccountId = PROFIT_GL_ACCOUNT_ID_EDEFAULT;
+	protected GlAccount lossGlAccountId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +152,24 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public String getAccDepGlAccountId() {
+	public GlAccount getAccDepGlAccountId() {
+		if (accDepGlAccountId != null && ((EObject)accDepGlAccountId).eIsProxy()) {
+			InternalEObject oldAccDepGlAccountId = (InternalEObject)accDepGlAccountId;
+			accDepGlAccountId = (GlAccount)eResolveProxy(oldAccDepGlAccountId);
+			if (accDepGlAccountId != oldAccDepGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID, oldAccDepGlAccountId, accDepGlAccountId));
+			}
+		}
+		return accDepGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetAccDepGlAccountId() {
 		return accDepGlAccountId;
 	}
 
@@ -220,8 +179,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public void setAccDepGlAccountId(String newAccDepGlAccountId) {
-		String oldAccDepGlAccountId = accDepGlAccountId;
+	public void setAccDepGlAccountId(GlAccount newAccDepGlAccountId) {
+		GlAccount oldAccDepGlAccountId = accDepGlAccountId;
 		accDepGlAccountId = newAccDepGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID, oldAccDepGlAccountId, accDepGlAccountId));
@@ -233,7 +192,24 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public String getAssetGlAccountId() {
+	public GlAccount getAssetGlAccountId() {
+		if (assetGlAccountId != null && ((EObject)assetGlAccountId).eIsProxy()) {
+			InternalEObject oldAssetGlAccountId = (InternalEObject)assetGlAccountId;
+			assetGlAccountId = (GlAccount)eResolveProxy(oldAssetGlAccountId);
+			if (assetGlAccountId != oldAssetGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ASSET_GL_ACCOUNT_ID, oldAssetGlAccountId, assetGlAccountId));
+			}
+		}
+		return assetGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetAssetGlAccountId() {
 		return assetGlAccountId;
 	}
 
@@ -243,8 +219,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public void setAssetGlAccountId(String newAssetGlAccountId) {
-		String oldAssetGlAccountId = assetGlAccountId;
+	public void setAssetGlAccountId(GlAccount newAssetGlAccountId) {
+		GlAccount oldAssetGlAccountId = assetGlAccountId;
 		assetGlAccountId = newAssetGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ASSET_GL_ACCOUNT_ID, oldAssetGlAccountId, assetGlAccountId));
@@ -256,7 +232,24 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public String getDepGlAccountId() {
+	public GlAccount getDepGlAccountId() {
+		if (depGlAccountId != null && ((EObject)depGlAccountId).eIsProxy()) {
+			InternalEObject oldDepGlAccountId = (InternalEObject)depGlAccountId;
+			depGlAccountId = (GlAccount)eResolveProxy(oldDepGlAccountId);
+			if (depGlAccountId != oldDepGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__DEP_GL_ACCOUNT_ID, oldDepGlAccountId, depGlAccountId));
+			}
+		}
+		return depGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetDepGlAccountId() {
 		return depGlAccountId;
 	}
 
@@ -266,8 +259,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public void setDepGlAccountId(String newDepGlAccountId) {
-		String oldDepGlAccountId = depGlAccountId;
+	public void setDepGlAccountId(GlAccount newDepGlAccountId) {
+		GlAccount oldDepGlAccountId = depGlAccountId;
 		depGlAccountId = newDepGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__DEP_GL_ACCOUNT_ID, oldDepGlAccountId, depGlAccountId));
@@ -279,7 +272,24 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public String getLossGlAccountId() {
+	public GlAccount getLossGlAccountId() {
+		if (lossGlAccountId != null && ((EObject)lossGlAccountId).eIsProxy()) {
+			InternalEObject oldLossGlAccountId = (InternalEObject)lossGlAccountId;
+			lossGlAccountId = (GlAccount)eResolveProxy(oldLossGlAccountId);
+			if (lossGlAccountId != oldLossGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID, oldLossGlAccountId, lossGlAccountId));
+			}
+		}
+		return lossGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetLossGlAccountId() {
 		return lossGlAccountId;
 	}
 
@@ -289,8 +299,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public void setLossGlAccountId(String newLossGlAccountId) {
-		String oldLossGlAccountId = lossGlAccountId;
+	public void setLossGlAccountId(GlAccount newLossGlAccountId) {
+		GlAccount oldLossGlAccountId = lossGlAccountId;
 		lossGlAccountId = newLossGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID, oldLossGlAccountId, lossGlAccountId));
@@ -302,7 +312,24 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -312,8 +339,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -325,7 +352,24 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public String getProfitGlAccountId() {
+	public GlAccount getProfitGlAccountId() {
+		if (profitGlAccountId != null && ((EObject)profitGlAccountId).eIsProxy()) {
+			InternalEObject oldProfitGlAccountId = (InternalEObject)profitGlAccountId;
+			profitGlAccountId = (GlAccount)eResolveProxy(oldProfitGlAccountId);
+			if (profitGlAccountId != oldProfitGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__PROFIT_GL_ACCOUNT_ID, oldProfitGlAccountId, profitGlAccountId));
+			}
+		}
+		return profitGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetProfitGlAccountId() {
 		return profitGlAccountId;
 	}
 
@@ -335,8 +379,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public void setProfitGlAccountId(String newProfitGlAccountId) {
-		String oldProfitGlAccountId = profitGlAccountId;
+	public void setProfitGlAccountId(GlAccount newProfitGlAccountId) {
+		GlAccount oldProfitGlAccountId = profitGlAccountId;
 		profitGlAccountId = newProfitGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__PROFIT_GL_ACCOUNT_ID, oldProfitGlAccountId, profitGlAccountId));
@@ -371,7 +415,24 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -381,8 +442,8 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -399,19 +460,26 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID:
 				return getFixedAssetTypeId();
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID:
-				return getFixedAssetId();
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
-			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID:
-				return getAccDepGlAccountId();
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ASSET_GL_ACCOUNT_ID:
-				return getAssetGlAccountId();
+				if (resolve) return getAssetGlAccountId();
+				return basicGetAssetGlAccountId();
+			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID:
+				if (resolve) return getAccDepGlAccountId();
+				return basicGetAccDepGlAccountId();
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__DEP_GL_ACCOUNT_ID:
-				return getDepGlAccountId();
-			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID:
-				return getLossGlAccountId();
+				if (resolve) return getDepGlAccountId();
+				return basicGetDepGlAccountId();
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__PROFIT_GL_ACCOUNT_ID:
-				return getProfitGlAccountId();
+				if (resolve) return getProfitGlAccountId();
+				return basicGetProfitGlAccountId();
+			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID:
+				if (resolve) return getLossGlAccountId();
+				return basicGetLossGlAccountId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -428,25 +496,25 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 				setFixedAssetTypeId((String)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
+				setFixedAssetId((FixedAsset)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID:
-				setAccDepGlAccountId((String)newValue);
+				setOrganizationPartyId((Party)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ASSET_GL_ACCOUNT_ID:
-				setAssetGlAccountId((String)newValue);
+				setAssetGlAccountId((GlAccount)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID:
+				setAccDepGlAccountId((GlAccount)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__DEP_GL_ACCOUNT_ID:
-				setDepGlAccountId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID:
-				setLossGlAccountId((String)newValue);
+				setDepGlAccountId((GlAccount)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__PROFIT_GL_ACCOUNT_ID:
-				setProfitGlAccountId((String)newValue);
+				setProfitGlAccountId((GlAccount)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID:
+				setLossGlAccountId((GlAccount)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -464,25 +532,25 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 				setFixedAssetTypeId(FIXED_ASSET_TYPE_ID_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
+				setFixedAssetId((FixedAsset)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID:
-				setAccDepGlAccountId(ACC_DEP_GL_ACCOUNT_ID_EDEFAULT);
+				setOrganizationPartyId((Party)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ASSET_GL_ACCOUNT_ID:
-				setAssetGlAccountId(ASSET_GL_ACCOUNT_ID_EDEFAULT);
+				setAssetGlAccountId((GlAccount)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID:
+				setAccDepGlAccountId((GlAccount)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__DEP_GL_ACCOUNT_ID:
-				setDepGlAccountId(DEP_GL_ACCOUNT_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID:
-				setLossGlAccountId(LOSS_GL_ACCOUNT_ID_EDEFAULT);
+				setDepGlAccountId((GlAccount)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__PROFIT_GL_ACCOUNT_ID:
-				setProfitGlAccountId(PROFIT_GL_ACCOUNT_ID_EDEFAULT);
+				setProfitGlAccountId((GlAccount)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID:
+				setLossGlAccountId((GlAccount)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -499,19 +567,19 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_TYPE_ID:
 				return FIXED_ASSET_TYPE_ID_EDEFAULT == null ? fixedAssetTypeId != null : !FIXED_ASSET_TYPE_ID_EDEFAULT.equals(fixedAssetTypeId);
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
+				return fixedAssetId != null;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
-			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID:
-				return ACC_DEP_GL_ACCOUNT_ID_EDEFAULT == null ? accDepGlAccountId != null : !ACC_DEP_GL_ACCOUNT_ID_EDEFAULT.equals(accDepGlAccountId);
+				return organizationPartyId != null;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ASSET_GL_ACCOUNT_ID:
-				return ASSET_GL_ACCOUNT_ID_EDEFAULT == null ? assetGlAccountId != null : !ASSET_GL_ACCOUNT_ID_EDEFAULT.equals(assetGlAccountId);
+				return assetGlAccountId != null;
+			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__ACC_DEP_GL_ACCOUNT_ID:
+				return accDepGlAccountId != null;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__DEP_GL_ACCOUNT_ID:
-				return DEP_GL_ACCOUNT_ID_EDEFAULT == null ? depGlAccountId != null : !DEP_GL_ACCOUNT_ID_EDEFAULT.equals(depGlAccountId);
-			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID:
-				return LOSS_GL_ACCOUNT_ID_EDEFAULT == null ? lossGlAccountId != null : !LOSS_GL_ACCOUNT_ID_EDEFAULT.equals(lossGlAccountId);
+				return depGlAccountId != null;
 			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__PROFIT_GL_ACCOUNT_ID:
-				return PROFIT_GL_ACCOUNT_ID_EDEFAULT == null ? profitGlAccountId != null : !PROFIT_GL_ACCOUNT_ID_EDEFAULT.equals(profitGlAccountId);
+				return profitGlAccountId != null;
+			case FixedassetPackage.FIXED_ASSET_TYPE_GL_ACCOUNT__LOSS_GL_ACCOUNT_ID:
+				return lossGlAccountId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -528,20 +596,6 @@ public class FixedAssetTypeGlAccountImpl extends BizEntityImpl implements FixedA
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (fixedAssetTypeId: ");
 		result.append(fixedAssetTypeId);
-		result.append(", fixedAssetId: ");
-		result.append(fixedAssetId);
-		result.append(", organizationPartyId: ");
-		result.append(organizationPartyId);
-		result.append(", accDepGlAccountId: ");
-		result.append(accDepGlAccountId);
-		result.append(", assetGlAccountId: ");
-		result.append(assetGlAccountId);
-		result.append(", depGlAccountId: ");
-		result.append(depGlAccountId);
-		result.append(", lossGlAccountId: ");
-		result.append(lossGlAccountId);
-		result.append(", profitGlAccountId: ");
-		result.append(profitGlAccountId);
 		result.append(')');
 		return result.toString();
 	}

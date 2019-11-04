@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.humanres.employment.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.UnemploymentClaim;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -33,9 +36,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getUnemploymentClaimDate <em>Unemployment Claim Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -187,26 +190,6 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	protected String roleTypeIdTo = ROLE_TYPE_ID_TO_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +228,16 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 * @ordered
 	 */
 	protected Date unemploymentClaimDate = UNEMPLOYMENT_CLAIM_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -409,7 +402,24 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -419,8 +429,8 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID, oldStatusId, statusId));
@@ -517,12 +527,13 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 				return getRoleTypeIdFrom();
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_TO:
 				return getRoleTypeIdTo();
-			case EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID:
-				return getStatusId();
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__THRU_DATE:
 				return getThruDate();
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_DATE:
 				return getUnemploymentClaimDate();
+			case EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -556,14 +567,14 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_TO:
 				setRoleTypeIdTo((String)newValue);
 				return;
-			case EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_DATE:
 				setUnemploymentClaimDate((Date)newValue);
+				return;
+			case EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -598,14 +609,14 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_TO:
 				setRoleTypeIdTo(ROLE_TYPE_ID_TO_EDEFAULT);
 				return;
-			case EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_DATE:
 				setUnemploymentClaimDate(UNEMPLOYMENT_CLAIM_DATE_EDEFAULT);
+				return;
+			case EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -633,12 +644,12 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 				return ROLE_TYPE_ID_FROM_EDEFAULT == null ? roleTypeIdFrom != null : !ROLE_TYPE_ID_FROM_EDEFAULT.equals(roleTypeIdFrom);
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_TO:
 				return ROLE_TYPE_ID_TO_EDEFAULT == null ? roleTypeIdTo != null : !ROLE_TYPE_ID_TO_EDEFAULT.equals(roleTypeIdTo);
-			case EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case EmploymentPackage.UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_DATE:
 				return UNEMPLOYMENT_CLAIM_DATE_EDEFAULT == null ? unemploymentClaimDate != null : !UNEMPLOYMENT_CLAIM_DATE_EDEFAULT.equals(unemploymentClaimDate);
+			case EmploymentPackage.UNEMPLOYMENT_CLAIM__STATUS_ID:
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -667,8 +678,6 @@ public class UnemploymentClaimImpl extends BizEntityImpl implements Unemployment
 		result.append(roleTypeIdFrom);
 		result.append(", roleTypeIdTo: ");
 		result.append(roleTypeIdTo);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(", unemploymentClaimDate: ");

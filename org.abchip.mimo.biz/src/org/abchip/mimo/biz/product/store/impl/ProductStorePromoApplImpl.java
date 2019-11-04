@@ -10,11 +10,14 @@ package org.abchip.mimo.biz.product.store.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.store.ProductStorePromoAppl;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +29,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePromoApplImpl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePromoApplImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePromoApplImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePromoApplImpl#isManualOnly <em>Manual Only</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePromoApplImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePromoApplImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePromoApplImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,26 +63,6 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 * @ordered
 	 */
 	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoId = PRODUCT_PROMO_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -160,6 +143,16 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromo productPromoId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,7 +294,24 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoId() {
+	public ProductPromo getProductPromoId() {
+		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
+			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
+			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
+			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
+			}
+		}
+		return productPromoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromo basicGetProductPromoId() {
 		return productPromoId;
 	}
 
@@ -311,8 +321,8 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoId(String newProductPromoId) {
-		String oldProductPromoId = productPromoId;
+	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
@@ -328,8 +338,6 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID:
 				return getProductStoreId();
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
-				return getProductPromoId();
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE:
 				return getFromDate();
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY:
@@ -338,6 +346,9 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 				return getSequenceNum();
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE:
 				return getThruDate();
+			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
+				if (resolve) return getProductPromoId();
+				return basicGetProductPromoId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -353,9 +364,6 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID:
 				setProductStoreId((String)newValue);
 				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
-				setProductPromoId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -367,6 +375,9 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 				return;
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -383,9 +394,6 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID:
 				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
 				return;
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
-				setProductPromoId(PRODUCT_PROMO_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -397,6 +405,9 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 				return;
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -412,8 +423,6 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_STORE_ID:
 				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
-			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
-				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__MANUAL_ONLY:
@@ -422,6 +431,8 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_PROMO_APPL__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case StorePackage.PRODUCT_STORE_PROMO_APPL__PRODUCT_PROMO_ID:
+				return productPromoId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -438,8 +449,6 @@ public class ProductStorePromoApplImpl extends BizEntityImpl implements ProductS
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productStoreId: ");
 		result.append(productStoreId);
-		result.append(", productPromoId: ");
-		result.append(productPromoId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", manualOnly: ");

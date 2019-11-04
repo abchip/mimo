@@ -14,6 +14,8 @@ import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementImage <em>Agreement Image</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementText <em>Agreement Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementItemImpl#getAgreementItemTypeId <em>Agreement Item Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,25 +96,6 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 */
 	protected Object agreementImage = AGREEMENT_IMAGE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getAgreementItemTypeId() <em>Agreement Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ITEM_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAgreementItemTypeId() <em>Agreement Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementItemTypeId = AGREEMENT_ITEM_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getAgreementText() <em>Agreement Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,6 +131,15 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 * @ordered
 	 */
 	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAgreementItemTypeId() <em>Agreement Item Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementItemTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AgreementItemType agreementItemTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,7 +281,24 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getAgreementItemTypeId() {
+	public AgreementItemType getAgreementItemTypeId() {
+		if (agreementItemTypeId != null && ((EObject)agreementItemTypeId).eIsProxy()) {
+			InternalEObject oldAgreementItemTypeId = (InternalEObject)agreementItemTypeId;
+			agreementItemTypeId = (AgreementItemType)eResolveProxy(oldAgreementItemTypeId);
+			if (agreementItemTypeId != oldAgreementItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID, oldAgreementItemTypeId, agreementItemTypeId));
+			}
+		}
+		return agreementItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AgreementItemType basicGetAgreementItemTypeId() {
 		return agreementItemTypeId;
 	}
 
@@ -299,8 +308,8 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setAgreementItemTypeId(String newAgreementItemTypeId) {
-		String oldAgreementItemTypeId = agreementItemTypeId;
+	public void setAgreementItemTypeId(AgreementItemType newAgreementItemTypeId) {
+		AgreementItemType oldAgreementItemTypeId = agreementItemTypeId;
 		agreementItemTypeId = newAgreementItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID, oldAgreementItemTypeId, agreementItemTypeId));
@@ -320,12 +329,13 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 				return getAgreementItemSeqId();
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
 				return getAgreementImage();
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
-				return getAgreementItemTypeId();
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT:
 				return getAgreementText();
 			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
 				return getCurrencyUomId();
+			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
+				if (resolve) return getAgreementItemTypeId();
+				return basicGetAgreementItemTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -347,14 +357,14 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
 				setAgreementImage(newValue);
 				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
-				setAgreementItemTypeId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT:
 				setAgreementText((String)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
 				setCurrencyUomId((String)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
+				setAgreementItemTypeId((AgreementItemType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -377,14 +387,14 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
 				setAgreementImage(AGREEMENT_IMAGE_EDEFAULT);
 				return;
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
-				setAgreementItemTypeId(AGREEMENT_ITEM_TYPE_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT:
 				setAgreementText(AGREEMENT_TEXT_EDEFAULT);
 				return;
 			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
 				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
+				return;
+			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
+				setAgreementItemTypeId((AgreementItemType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -404,12 +414,12 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_IMAGE:
 				return AGREEMENT_IMAGE_EDEFAULT == null ? agreementImage != null : !AGREEMENT_IMAGE_EDEFAULT.equals(agreementImage);
-			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
-				return AGREEMENT_ITEM_TYPE_ID_EDEFAULT == null ? agreementItemTypeId != null : !AGREEMENT_ITEM_TYPE_ID_EDEFAULT.equals(agreementItemTypeId);
 			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_TEXT:
 				return AGREEMENT_TEXT_EDEFAULT == null ? agreementText != null : !AGREEMENT_TEXT_EDEFAULT.equals(agreementText);
 			case AgreementPackage.AGREEMENT_ITEM__CURRENCY_UOM_ID:
 				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
+			case AgreementPackage.AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID:
+				return agreementItemTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -430,8 +440,6 @@ public class AgreementItemImpl extends BizEntityTypedImpl<AgreementItemType> imp
 		result.append(agreementItemSeqId);
 		result.append(", agreementImage: ");
 		result.append(agreementImage);
-		result.append(", agreementItemTypeId: ");
-		result.append(agreementItemTypeId);
 		result.append(", agreementText: ");
 		result.append(agreementText);
 		result.append(", currencyUomId: ");

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.order;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,8 +39,8 @@ public interface OrderProductPromoCode extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderProductPromoCode_OrderId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -55,30 +56,29 @@ public interface OrderProductPromoCode extends BizEntity {
 	void setOrderId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Code Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Code Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Code Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Code Id</em>' attribute.
-	 * @see #setProductPromoCodeId(String)
+	 * @return the value of the '<em>Product Promo Code Id</em>' reference.
+	 * @see #setProductPromoCodeId(ProductPromoCode)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderProductPromoCode_ProductPromoCodeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPromoCode'"
+	 * @model keys="productPromoCodeId"
 	 * @generated
 	 */
-	String getProductPromoCodeId();
+	ProductPromoCode getProductPromoCodeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderProductPromoCode#getProductPromoCodeId <em>Product Promo Code Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderProductPromoCode#getProductPromoCodeId <em>Product Promo Code Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Code Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Code Id</em>' reference.
 	 * @see #getProductPromoCodeId()
 	 * @generated
 	 */
-	void setProductPromoCodeId(String value);
+	void setProductPromoCodeId(ProductPromoCode value);
 
 } // OrderProductPromoCode

@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.product.subscription.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionFulfillmentPiece;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -56,24 +59,14 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 	protected String subscriptionActivityId = SUBSCRIPTION_ACTIVITY_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSubscriptionId() <em>Subscription Id</em>}' attribute.
+	 * The cached value of the '{@link #getSubscriptionId() <em>Subscription Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSubscriptionId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SUBSCRIPTION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSubscriptionId() <em>Subscription Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subscriptionId = SUBSCRIPTION_ID_EDEFAULT;
+	protected Subscription subscriptionId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +93,24 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 	 * @generated
 	 */
 	@Override
-	public String getSubscriptionId() {
+	public Subscription getSubscriptionId() {
+		if (subscriptionId != null && ((EObject)subscriptionId).eIsProxy()) {
+			InternalEObject oldSubscriptionId = (InternalEObject)subscriptionId;
+			subscriptionId = (Subscription)eResolveProxy(oldSubscriptionId);
+			if (subscriptionId != oldSubscriptionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID, oldSubscriptionId, subscriptionId));
+			}
+		}
+		return subscriptionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Subscription basicGetSubscriptionId() {
 		return subscriptionId;
 	}
 
@@ -110,8 +120,8 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 	 * @generated
 	 */
 	@Override
-	public void setSubscriptionId(String newSubscriptionId) {
-		String oldSubscriptionId = subscriptionId;
+	public void setSubscriptionId(Subscription newSubscriptionId) {
+		Subscription oldSubscriptionId = subscriptionId;
 		subscriptionId = newSubscriptionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID, oldSubscriptionId, subscriptionId));
@@ -151,7 +161,8 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 			case SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ACTIVITY_ID:
 				return getSubscriptionActivityId();
 			case SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID:
-				return getSubscriptionId();
+				if (resolve) return getSubscriptionId();
+				return basicGetSubscriptionId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,7 +179,7 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 				setSubscriptionActivityId((String)newValue);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID:
-				setSubscriptionId((String)newValue);
+				setSubscriptionId((Subscription)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,7 +197,7 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 				setSubscriptionActivityId(SUBSCRIPTION_ACTIVITY_ID_EDEFAULT);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID:
-				setSubscriptionId(SUBSCRIPTION_ID_EDEFAULT);
+				setSubscriptionId((Subscription)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -203,7 +214,7 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 			case SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ACTIVITY_ID:
 				return SUBSCRIPTION_ACTIVITY_ID_EDEFAULT == null ? subscriptionActivityId != null : !SUBSCRIPTION_ACTIVITY_ID_EDEFAULT.equals(subscriptionActivityId);
 			case SubscriptionPackage.SUBSCRIPTION_FULFILLMENT_PIECE__SUBSCRIPTION_ID:
-				return SUBSCRIPTION_ID_EDEFAULT == null ? subscriptionId != null : !SUBSCRIPTION_ID_EDEFAULT.equals(subscriptionId);
+				return subscriptionId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,8 +231,6 @@ public class SubscriptionFulfillmentPieceImpl extends BizEntityImpl implements S
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (subscriptionActivityId: ");
 		result.append(subscriptionActivityId);
-		result.append(", subscriptionId: ");
-		result.append(subscriptionId);
 		result.append(')');
 		return result.toString();
 	}

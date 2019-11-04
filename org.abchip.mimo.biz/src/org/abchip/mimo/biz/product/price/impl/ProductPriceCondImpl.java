@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.product.price.impl;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPriceCond;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -99,44 +102,24 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	protected String condValue = COND_VALUE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getInputParamEnumId() <em>Input Param Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getInputParamEnumId() <em>Input Param Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInputParamEnumId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INPUT_PARAM_ENUM_ID_EDEFAULT = null;
+	protected Enumeration inputParamEnumId;
 
 	/**
-	 * The cached value of the '{@link #getInputParamEnumId() <em>Input Param Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputParamEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inputParamEnumId = INPUT_PARAM_ENUM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOperatorEnumId() <em>Operator Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getOperatorEnumId() <em>Operator Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOperatorEnumId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPERATOR_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOperatorEnumId() <em>Operator Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperatorEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String operatorEnumId = OPERATOR_ENUM_ID_EDEFAULT;
+	protected Enumeration operatorEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,7 +169,24 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 * @generated
 	 */
 	@Override
-	public String getInputParamEnumId() {
+	public Enumeration getInputParamEnumId() {
+		if (inputParamEnumId != null && ((EObject)inputParamEnumId).eIsProxy()) {
+			InternalEObject oldInputParamEnumId = (InternalEObject)inputParamEnumId;
+			inputParamEnumId = (Enumeration)eResolveProxy(oldInputParamEnumId);
+			if (inputParamEnumId != oldInputParamEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID, oldInputParamEnumId, inputParamEnumId));
+			}
+		}
+		return inputParamEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetInputParamEnumId() {
 		return inputParamEnumId;
 	}
 
@@ -196,8 +196,8 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 * @generated
 	 */
 	@Override
-	public void setInputParamEnumId(String newInputParamEnumId) {
-		String oldInputParamEnumId = inputParamEnumId;
+	public void setInputParamEnumId(Enumeration newInputParamEnumId) {
+		Enumeration oldInputParamEnumId = inputParamEnumId;
 		inputParamEnumId = newInputParamEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID, oldInputParamEnumId, inputParamEnumId));
@@ -209,7 +209,24 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 * @generated
 	 */
 	@Override
-	public String getOperatorEnumId() {
+	public Enumeration getOperatorEnumId() {
+		if (operatorEnumId != null && ((EObject)operatorEnumId).eIsProxy()) {
+			InternalEObject oldOperatorEnumId = (InternalEObject)operatorEnumId;
+			operatorEnumId = (Enumeration)eResolveProxy(oldOperatorEnumId);
+			if (operatorEnumId != oldOperatorEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PRICE_COND__OPERATOR_ENUM_ID, oldOperatorEnumId, operatorEnumId));
+			}
+		}
+		return operatorEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetOperatorEnumId() {
 		return operatorEnumId;
 	}
 
@@ -219,8 +236,8 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 	 * @generated
 	 */
 	@Override
-	public void setOperatorEnumId(String newOperatorEnumId) {
-		String oldOperatorEnumId = operatorEnumId;
+	public void setOperatorEnumId(Enumeration newOperatorEnumId) {
+		Enumeration oldOperatorEnumId = operatorEnumId;
 		operatorEnumId = newOperatorEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PRICE_COND__OPERATOR_ENUM_ID, oldOperatorEnumId, operatorEnumId));
@@ -287,9 +304,11 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 			case PricePackage.PRODUCT_PRICE_COND__COND_VALUE:
 				return getCondValue();
 			case PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID:
-				return getInputParamEnumId();
+				if (resolve) return getInputParamEnumId();
+				return basicGetInputParamEnumId();
 			case PricePackage.PRODUCT_PRICE_COND__OPERATOR_ENUM_ID:
-				return getOperatorEnumId();
+				if (resolve) return getOperatorEnumId();
+				return basicGetOperatorEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -312,10 +331,10 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 				setCondValue((String)newValue);
 				return;
 			case PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID:
-				setInputParamEnumId((String)newValue);
+				setInputParamEnumId((Enumeration)newValue);
 				return;
 			case PricePackage.PRODUCT_PRICE_COND__OPERATOR_ENUM_ID:
-				setOperatorEnumId((String)newValue);
+				setOperatorEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -339,10 +358,10 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 				setCondValue(COND_VALUE_EDEFAULT);
 				return;
 			case PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID:
-				setInputParamEnumId(INPUT_PARAM_ENUM_ID_EDEFAULT);
+				setInputParamEnumId((Enumeration)null);
 				return;
 			case PricePackage.PRODUCT_PRICE_COND__OPERATOR_ENUM_ID:
-				setOperatorEnumId(OPERATOR_ENUM_ID_EDEFAULT);
+				setOperatorEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -363,9 +382,9 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 			case PricePackage.PRODUCT_PRICE_COND__COND_VALUE:
 				return COND_VALUE_EDEFAULT == null ? condValue != null : !COND_VALUE_EDEFAULT.equals(condValue);
 			case PricePackage.PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID:
-				return INPUT_PARAM_ENUM_ID_EDEFAULT == null ? inputParamEnumId != null : !INPUT_PARAM_ENUM_ID_EDEFAULT.equals(inputParamEnumId);
+				return inputParamEnumId != null;
 			case PricePackage.PRODUCT_PRICE_COND__OPERATOR_ENUM_ID:
-				return OPERATOR_ENUM_ID_EDEFAULT == null ? operatorEnumId != null : !OPERATOR_ENUM_ID_EDEFAULT.equals(operatorEnumId);
+				return operatorEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -386,10 +405,6 @@ public class ProductPriceCondImpl extends BizEntityImpl implements ProductPriceC
 		result.append(productPriceCondSeqId);
 		result.append(", condValue: ");
 		result.append(condValue);
-		result.append(", inputParamEnumId: ");
-		result.append(inputParamEnumId);
-		result.append(", operatorEnumId: ");
-		result.append(operatorEnumId);
 		result.append(')');
 		return result.toString();
 	}

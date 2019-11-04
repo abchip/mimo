@@ -21,11 +21,11 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getWorkEffortIdFrom <em>Work Effort Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getWorkEffortIdTo <em>Work Effort Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getWorkEffortIdTo <em>Work Effort Id To</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssoc()
@@ -113,32 +113,30 @@ public interface WorkEffortAssoc extends BizEntityTyped<WorkEffortAssocType> {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Assoc Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Assoc Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Assoc Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Assoc Type Id</em>' attribute.
-	 * @see #setWorkEffortAssocTypeId(String)
+	 * @return the value of the '<em>Work Effort Assoc Type Id</em>' reference.
+	 * @see #setWorkEffortAssocTypeId(WorkEffortAssocType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssoc_WorkEffortAssocTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortAssocType'"
+	 * @model keys="workEffortAssocTypeId"
 	 * @generated
 	 */
-	String getWorkEffortAssocTypeId();
+	WorkEffortAssocType getWorkEffortAssocTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Assoc Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Assoc Type Id</em>' reference.
 	 * @see #getWorkEffortAssocTypeId()
 	 * @generated
 	 */
-	void setWorkEffortAssocTypeId(String value);
+	void setWorkEffortAssocTypeId(WorkEffortAssocType value);
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Id From</b></em>' attribute.
@@ -153,7 +151,6 @@ public interface WorkEffortAssoc extends BizEntityTyped<WorkEffortAssocType> {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssoc_WorkEffortIdFrom()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
 	 * @generated
 	 */
 	String getWorkEffortIdFrom();
@@ -169,31 +166,29 @@ public interface WorkEffortAssoc extends BizEntityTyped<WorkEffortAssocType> {
 	void setWorkEffortIdFrom(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Id To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Id To</em>' attribute.
-	 * @see #setWorkEffortIdTo(String)
+	 * @return the value of the '<em>Work Effort Id To</em>' reference.
+	 * @see #setWorkEffortIdTo(WorkEffort)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssoc_WorkEffortIdTo()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @model keys="workEffortId"
 	 * @generated
 	 */
-	String getWorkEffortIdTo();
+	WorkEffort getWorkEffortIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getWorkEffortIdTo <em>Work Effort Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc#getWorkEffortIdTo <em>Work Effort Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Id To</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Id To</em>' reference.
 	 * @see #getWorkEffortIdTo()
 	 * @generated
 	 */
-	void setWorkEffortIdTo(String value);
+	void setWorkEffortIdTo(WorkEffort value);
 
 } // WorkEffortAssoc

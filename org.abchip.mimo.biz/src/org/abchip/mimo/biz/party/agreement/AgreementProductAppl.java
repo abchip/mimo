@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.agreement;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,8 +23,8 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementProductAppl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementProductAppl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementProductAppl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementProductAppl#getPrice <em>Price</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementProductAppl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementProductAppl()
@@ -85,32 +86,30 @@ public interface AgreementProductAppl extends BizEntity {
 	void setPrice(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementProductAppl_ProductId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementProductAppl#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementProductAppl#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Agreement Id</b></em>' attribute.
@@ -125,7 +124,6 @@ public interface AgreementProductAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementProductAppl_AgreementId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Agreement'"
 	 * @generated
 	 */
 	String getAgreementId();

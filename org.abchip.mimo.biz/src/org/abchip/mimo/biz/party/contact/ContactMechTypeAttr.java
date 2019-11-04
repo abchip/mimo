@@ -94,7 +94,6 @@ public interface ContactMechTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.contact.ContactPackage#getContactMechTypeAttr_ContactMechTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContactMechType'"
 	 * @generated
 	 */
 	String getContactMechTypeId();

@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
  * <!-- begin-user-doc -->
@@ -196,30 +197,30 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	void setNumberSpecified(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uom Id</em>' attribute.
-	 * @see #setUomId(String)
+	 * @return the value of the '<em>Uom Id</em>' reference.
+	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_UomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getUomId();
+	Uom getUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getUomId <em>Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getUomId <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Uom Id</em>' reference.
 	 * @see #getUomId()
 	 * @generated
 	 */
-	void setUomId(String value);
+	void setUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Main Product Feature Iactns</b></em>' attribute list.
@@ -311,56 +312,56 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	List<String> supplierProductFeatures();
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Category Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Category Id</em>' attribute.
-	 * @see #setProductFeatureCategoryId(String)
+	 * @return the value of the '<em>Product Feature Category Id</em>' reference.
+	 * @see #setProductFeatureCategoryId(ProductFeatureCategory)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_ProductFeatureCategoryId()
-	 * @model annotation="mimo-ent-domain frame='ProductFeatureCategory'"
+	 * @model keys="productFeatureCategoryId"
 	 * @generated
 	 */
-	String getProductFeatureCategoryId();
+	ProductFeatureCategory getProductFeatureCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getProductFeatureCategoryId <em>Product Feature Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getProductFeatureCategoryId <em>Product Feature Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Category Id</em>' reference.
 	 * @see #getProductFeatureCategoryId()
 	 * @generated
 	 */
-	void setProductFeatureCategoryId(String value);
+	void setProductFeatureCategoryId(ProductFeatureCategory value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Type Id</em>' attribute.
-	 * @see #setProductFeatureTypeId(String)
+	 * @return the value of the '<em>Product Feature Type Id</em>' reference.
+	 * @see #setProductFeatureTypeId(ProductFeatureType)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_ProductFeatureTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductFeatureType'"
+	 * @model keys="productFeatureTypeId"
 	 * @generated
 	 */
-	String getProductFeatureTypeId();
+	ProductFeatureType getProductFeatureTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getProductFeatureTypeId <em>Product Feature Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeature#getProductFeatureTypeId <em>Product Feature Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Type Id</em>' reference.
 	 * @see #getProductFeatureTypeId()
 	 * @generated
 	 */
-	void setProductFeatureTypeId(String value);
+	void setProductFeatureTypeId(ProductFeatureType value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Feature Id</b></em>' attribute.
@@ -373,7 +374,7 @@ public interface ProductFeature extends BizEntityTyped<ProductFeatureType> {
 	 * @return the value of the '<em>Product Feature Id</em>' attribute.
 	 * @see #setProductFeatureId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeature_ProductFeatureId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

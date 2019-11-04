@@ -14,14 +14,21 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,19 +41,19 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getEstimatedAmount <em>Estimated Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getEstimatedCloseDate <em>Estimated Close Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getEstimatedProbability <em>Estimated Probability</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getNextStep <em>Next Step</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getNextStepDate <em>Next Step Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getOpportunityName <em>Opportunity Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getOpportunityStageId <em>Opportunity Stage Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getTypeEnumId <em>Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getSalesOpportunityCompetitors <em>Sales Opportunity Competitors</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getSalesOpportunityQuotes <em>Sales Opportunity Quotes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityImpl#getSalesOpportunityTrckCodes <em>Sales Opportunity Trck Codes</em>}</li>
@@ -80,46 +87,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @ordered
 	 */
 	protected String salesOpportunityId = SALES_OPPORTUNITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
@@ -222,26 +189,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	protected BigDecimal estimatedProbability = ESTIMATED_PROBABILITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMarketingCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MARKETING_CAMPAIGN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMarketingCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String marketingCampaignId = MARKETING_CAMPAIGN_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getNextStep() <em>Next Step</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -302,44 +249,54 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	protected String opportunityName = OPPORTUNITY_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOpportunityStageId() <em>Opportunity Stage Id</em>}' attribute.
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getOpportunityStageId() <em>Opportunity Stage Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOpportunityStageId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPPORTUNITY_STAGE_ID_EDEFAULT = null;
+	protected SalesOpportunityStage opportunityStageId;
 
 	/**
-	 * The cached value of the '{@link #getOpportunityStageId() <em>Opportunity Stage Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOpportunityStageId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String opportunityStageId = OPPORTUNITY_STAGE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTypeEnumId() <em>Type Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getTypeEnumId() <em>Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypeEnumId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TYPE_ENUM_ID_EDEFAULT = null;
+	protected Enumeration typeEnumId;
 
 	/**
-	 * The cached value of the '{@link #getTypeEnumId() <em>Type Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTypeEnumId()
+	 * @see #getMarketingCampaignId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String typeEnumId = TYPE_ENUM_ID_EDEFAULT;
+	protected MarketingCampaign marketingCampaignId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
 
 	/**
 	 * The cached value of the '{@link #getSalesOpportunityCompetitors() <em>Sales Opportunity Competitors</em>}' attribute list.
@@ -406,7 +363,24 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -416,8 +390,8 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -429,7 +403,24 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -439,8 +430,8 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -567,7 +558,24 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public String getMarketingCampaignId() {
+	public MarketingCampaign getMarketingCampaignId() {
+		if (marketingCampaignId != null && ((EObject)marketingCampaignId).eIsProxy()) {
+			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
+			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
+			if (marketingCampaignId != oldMarketingCampaignId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
+			}
+		}
+		return marketingCampaignId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MarketingCampaign basicGetMarketingCampaignId() {
 		return marketingCampaignId;
 	}
 
@@ -577,8 +585,8 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public void setMarketingCampaignId(String newMarketingCampaignId) {
-		String oldMarketingCampaignId = marketingCampaignId;
+	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
+		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
@@ -659,7 +667,24 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public String getOpportunityStageId() {
+	public SalesOpportunityStage getOpportunityStageId() {
+		if (opportunityStageId != null && ((EObject)opportunityStageId).eIsProxy()) {
+			InternalEObject oldOpportunityStageId = (InternalEObject)opportunityStageId;
+			opportunityStageId = (SalesOpportunityStage)eResolveProxy(oldOpportunityStageId);
+			if (opportunityStageId != oldOpportunityStageId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID, oldOpportunityStageId, opportunityStageId));
+			}
+		}
+		return opportunityStageId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SalesOpportunityStage basicGetOpportunityStageId() {
 		return opportunityStageId;
 	}
 
@@ -669,8 +694,8 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public void setOpportunityStageId(String newOpportunityStageId) {
-		String oldOpportunityStageId = opportunityStageId;
+	public void setOpportunityStageId(SalesOpportunityStage newOpportunityStageId) {
+		SalesOpportunityStage oldOpportunityStageId = opportunityStageId;
 		opportunityStageId = newOpportunityStageId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID, oldOpportunityStageId, opportunityStageId));
@@ -705,7 +730,24 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public String getTypeEnumId() {
+	public Enumeration getTypeEnumId() {
+		if (typeEnumId != null && ((EObject)typeEnumId).eIsProxy()) {
+			InternalEObject oldTypeEnumId = (InternalEObject)typeEnumId;
+			typeEnumId = (Enumeration)eResolveProxy(oldTypeEnumId);
+			if (typeEnumId != oldTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY__TYPE_ENUM_ID, oldTypeEnumId, typeEnumId));
+			}
+		}
+		return typeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetTypeEnumId() {
 		return typeEnumId;
 	}
 
@@ -715,8 +757,8 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 	 * @generated
 	 */
 	@Override
-	public void setTypeEnumId(String newTypeEnumId) {
-		String oldTypeEnumId = typeEnumId;
+	public void setTypeEnumId(Enumeration newTypeEnumId) {
+		Enumeration oldTypeEnumId = typeEnumId;
 		typeEnumId = newTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY__TYPE_ENUM_ID, oldTypeEnumId, typeEnumId));
@@ -820,10 +862,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 		switch (featureID) {
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_ID:
 				return getSalesOpportunityId();
-			case OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
-			case OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case OpportunityPackage.SALES_OPPORTUNITY__DATA_SOURCE_ID:
 				return getDataSourceId();
 			case OpportunityPackage.SALES_OPPORTUNITY__DESCRIPTION:
@@ -834,18 +872,27 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 				return getEstimatedCloseDate();
 			case OpportunityPackage.SALES_OPPORTUNITY__ESTIMATED_PROBABILITY:
 				return getEstimatedProbability();
-			case OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID:
-				return getMarketingCampaignId();
 			case OpportunityPackage.SALES_OPPORTUNITY__NEXT_STEP:
 				return getNextStep();
 			case OpportunityPackage.SALES_OPPORTUNITY__NEXT_STEP_DATE:
 				return getNextStepDate();
 			case OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_NAME:
 				return getOpportunityName();
+			case OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
 			case OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID:
-				return getOpportunityStageId();
+				if (resolve) return getOpportunityStageId();
+				return basicGetOpportunityStageId();
 			case OpportunityPackage.SALES_OPPORTUNITY__TYPE_ENUM_ID:
-				return getTypeEnumId();
+				if (resolve) return getTypeEnumId();
+				return basicGetTypeEnumId();
+			case OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID:
+				if (resolve) return getMarketingCampaignId();
+				return basicGetMarketingCampaignId();
+			case OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS:
 				return getSalesOpportunityCompetitors();
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_QUOTES:
@@ -870,12 +917,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_ID:
 				setSalesOpportunityId((String)newValue);
 				return;
-			case OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
-			case OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__DATA_SOURCE_ID:
 				setDataSourceId((String)newValue);
 				return;
@@ -891,9 +932,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			case OpportunityPackage.SALES_OPPORTUNITY__ESTIMATED_PROBABILITY:
 				setEstimatedProbability((BigDecimal)newValue);
 				return;
-			case OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId((String)newValue);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__NEXT_STEP:
 				setNextStep((String)newValue);
 				return;
@@ -903,11 +941,20 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			case OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_NAME:
 				setOpportunityName((String)newValue);
 				return;
+			case OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID:
-				setOpportunityStageId((String)newValue);
+				setOpportunityStageId((SalesOpportunityStage)newValue);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__TYPE_ENUM_ID:
-				setTypeEnumId((String)newValue);
+				setTypeEnumId((Enumeration)newValue);
+				return;
+			case OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID:
+				setMarketingCampaignId((MarketingCampaign)newValue);
+				return;
+			case OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS:
 				getSalesOpportunityCompetitors().clear();
@@ -940,12 +987,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_ID:
 				setSalesOpportunityId(SALES_OPPORTUNITY_ID_EDEFAULT);
 				return;
-			case OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
-			case OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__DATA_SOURCE_ID:
 				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
 				return;
@@ -961,9 +1002,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			case OpportunityPackage.SALES_OPPORTUNITY__ESTIMATED_PROBABILITY:
 				setEstimatedProbability(ESTIMATED_PROBABILITY_EDEFAULT);
 				return;
-			case OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId(MARKETING_CAMPAIGN_ID_EDEFAULT);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__NEXT_STEP:
 				setNextStep(NEXT_STEP_EDEFAULT);
 				return;
@@ -973,11 +1011,20 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 			case OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_NAME:
 				setOpportunityName(OPPORTUNITY_NAME_EDEFAULT);
 				return;
+			case OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID:
-				setOpportunityStageId(OPPORTUNITY_STAGE_ID_EDEFAULT);
+				setOpportunityStageId((SalesOpportunityStage)null);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__TYPE_ENUM_ID:
-				setTypeEnumId(TYPE_ENUM_ID_EDEFAULT);
+				setTypeEnumId((Enumeration)null);
+				return;
+			case OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID:
+				setMarketingCampaignId((MarketingCampaign)null);
+				return;
+			case OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS:
 				getSalesOpportunityCompetitors().clear();
@@ -1005,10 +1052,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 		switch (featureID) {
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_ID:
 				return SALES_OPPORTUNITY_ID_EDEFAULT == null ? salesOpportunityId != null : !SALES_OPPORTUNITY_ID_EDEFAULT.equals(salesOpportunityId);
-			case OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
-			case OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case OpportunityPackage.SALES_OPPORTUNITY__DATA_SOURCE_ID:
 				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
 			case OpportunityPackage.SALES_OPPORTUNITY__DESCRIPTION:
@@ -1019,18 +1062,22 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 				return ESTIMATED_CLOSE_DATE_EDEFAULT == null ? estimatedCloseDate != null : !ESTIMATED_CLOSE_DATE_EDEFAULT.equals(estimatedCloseDate);
 			case OpportunityPackage.SALES_OPPORTUNITY__ESTIMATED_PROBABILITY:
 				return ESTIMATED_PROBABILITY_EDEFAULT == null ? estimatedProbability != null : !ESTIMATED_PROBABILITY_EDEFAULT.equals(estimatedProbability);
-			case OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID:
-				return MARKETING_CAMPAIGN_ID_EDEFAULT == null ? marketingCampaignId != null : !MARKETING_CAMPAIGN_ID_EDEFAULT.equals(marketingCampaignId);
 			case OpportunityPackage.SALES_OPPORTUNITY__NEXT_STEP:
 				return NEXT_STEP_EDEFAULT == null ? nextStep != null : !NEXT_STEP_EDEFAULT.equals(nextStep);
 			case OpportunityPackage.SALES_OPPORTUNITY__NEXT_STEP_DATE:
 				return NEXT_STEP_DATE_EDEFAULT == null ? nextStepDate != null : !NEXT_STEP_DATE_EDEFAULT.equals(nextStepDate);
 			case OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_NAME:
 				return OPPORTUNITY_NAME_EDEFAULT == null ? opportunityName != null : !OPPORTUNITY_NAME_EDEFAULT.equals(opportunityName);
+			case OpportunityPackage.SALES_OPPORTUNITY__CURRENCY_UOM_ID:
+				return currencyUomId != null;
 			case OpportunityPackage.SALES_OPPORTUNITY__OPPORTUNITY_STAGE_ID:
-				return OPPORTUNITY_STAGE_ID_EDEFAULT == null ? opportunityStageId != null : !OPPORTUNITY_STAGE_ID_EDEFAULT.equals(opportunityStageId);
+				return opportunityStageId != null;
 			case OpportunityPackage.SALES_OPPORTUNITY__TYPE_ENUM_ID:
-				return TYPE_ENUM_ID_EDEFAULT == null ? typeEnumId != null : !TYPE_ENUM_ID_EDEFAULT.equals(typeEnumId);
+				return typeEnumId != null;
+			case OpportunityPackage.SALES_OPPORTUNITY__MARKETING_CAMPAIGN_ID:
+				return marketingCampaignId != null;
+			case OpportunityPackage.SALES_OPPORTUNITY__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_COMPETITORS:
 				return salesOpportunityCompetitors != null && !salesOpportunityCompetitors.isEmpty();
 			case OpportunityPackage.SALES_OPPORTUNITY__SALES_OPPORTUNITY_QUOTES:
@@ -1055,10 +1102,6 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (salesOpportunityId: ");
 		result.append(salesOpportunityId);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", dataSourceId: ");
 		result.append(dataSourceId);
 		result.append(", description: ");
@@ -1069,18 +1112,12 @@ public class SalesOpportunityImpl extends BizEntityImpl implements SalesOpportun
 		result.append(estimatedCloseDate);
 		result.append(", estimatedProbability: ");
 		result.append(estimatedProbability);
-		result.append(", marketingCampaignId: ");
-		result.append(marketingCampaignId);
 		result.append(", nextStep: ");
 		result.append(nextStep);
 		result.append(", nextStepDate: ");
 		result.append(nextStepDate);
 		result.append(", opportunityName: ");
 		result.append(opportunityName);
-		result.append(", opportunityStageId: ");
-		result.append(opportunityStageId);
-		result.append(", typeEnumId: ");
-		result.append(typeEnumId);
 		result.append(", salesOpportunityCompetitors: ");
 		result.append(salesOpportunityCompetitors);
 		result.append(", salesOpportunityQuotes: ");

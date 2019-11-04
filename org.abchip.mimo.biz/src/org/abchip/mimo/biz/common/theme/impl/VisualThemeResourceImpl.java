@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.common.theme.impl;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.theme.ThemePackage;
 import org.abchip.mimo.biz.common.theme.VisualThemeResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getVisualThemeId <em>Visual Theme Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getResourceTypeEnumId <em>Resource Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getSequenceId <em>Sequence Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getResourceValue <em>Resource Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.theme.impl.VisualThemeResourceImpl#getResourceTypeEnumId <em>Resource Type Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,24 +57,6 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 * @ordered
 	 */
 	protected String visualThemeId = VISUAL_THEME_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getResourceTypeEnumId() <em>Resource Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RESOURCE_TYPE_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getResourceTypeEnumId() <em>Resource Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String resourceTypeEnumId = RESOURCE_TYPE_ENUM_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getSequenceId() <em>Sequence Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -108,6 +93,15 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 * @ordered
 	 */
 	protected String resourceValue = RESOURCE_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getResourceTypeEnumId() <em>Resource Type Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResourceTypeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration resourceTypeEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,7 +197,24 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 * @generated
 	 */
 	@Override
-	public String getResourceTypeEnumId() {
+	public Enumeration getResourceTypeEnumId() {
+		if (resourceTypeEnumId != null && ((EObject)resourceTypeEnumId).eIsProxy()) {
+			InternalEObject oldResourceTypeEnumId = (InternalEObject)resourceTypeEnumId;
+			resourceTypeEnumId = (Enumeration)eResolveProxy(oldResourceTypeEnumId);
+			if (resourceTypeEnumId != oldResourceTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID, oldResourceTypeEnumId, resourceTypeEnumId));
+			}
+		}
+		return resourceTypeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetResourceTypeEnumId() {
 		return resourceTypeEnumId;
 	}
 
@@ -213,8 +224,8 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 	 * @generated
 	 */
 	@Override
-	public void setResourceTypeEnumId(String newResourceTypeEnumId) {
-		String oldResourceTypeEnumId = resourceTypeEnumId;
+	public void setResourceTypeEnumId(Enumeration newResourceTypeEnumId) {
+		Enumeration oldResourceTypeEnumId = resourceTypeEnumId;
 		resourceTypeEnumId = newResourceTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID, oldResourceTypeEnumId, resourceTypeEnumId));
@@ -230,12 +241,13 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 		switch (featureID) {
 			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
 				return getVisualThemeId();
-			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
-				return getResourceTypeEnumId();
 			case ThemePackage.VISUAL_THEME_RESOURCE__SEQUENCE_ID:
 				return getSequenceId();
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_VALUE:
 				return getResourceValue();
+			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
+				if (resolve) return getResourceTypeEnumId();
+				return basicGetResourceTypeEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -251,14 +263,14 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
 				setVisualThemeId((String)newValue);
 				return;
-			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
-				setResourceTypeEnumId((String)newValue);
-				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__SEQUENCE_ID:
 				setSequenceId((String)newValue);
 				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_VALUE:
 				setResourceValue((String)newValue);
+				return;
+			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
+				setResourceTypeEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -275,14 +287,14 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
 				setVisualThemeId(VISUAL_THEME_ID_EDEFAULT);
 				return;
-			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
-				setResourceTypeEnumId(RESOURCE_TYPE_ENUM_ID_EDEFAULT);
-				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__SEQUENCE_ID:
 				setSequenceId(SEQUENCE_ID_EDEFAULT);
 				return;
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_VALUE:
 				setResourceValue(RESOURCE_VALUE_EDEFAULT);
+				return;
+			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
+				setResourceTypeEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -298,12 +310,12 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 		switch (featureID) {
 			case ThemePackage.VISUAL_THEME_RESOURCE__VISUAL_THEME_ID:
 				return VISUAL_THEME_ID_EDEFAULT == null ? visualThemeId != null : !VISUAL_THEME_ID_EDEFAULT.equals(visualThemeId);
-			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
-				return RESOURCE_TYPE_ENUM_ID_EDEFAULT == null ? resourceTypeEnumId != null : !RESOURCE_TYPE_ENUM_ID_EDEFAULT.equals(resourceTypeEnumId);
 			case ThemePackage.VISUAL_THEME_RESOURCE__SEQUENCE_ID:
 				return SEQUENCE_ID_EDEFAULT == null ? sequenceId != null : !SEQUENCE_ID_EDEFAULT.equals(sequenceId);
 			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_VALUE:
 				return RESOURCE_VALUE_EDEFAULT == null ? resourceValue != null : !RESOURCE_VALUE_EDEFAULT.equals(resourceValue);
+			case ThemePackage.VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID:
+				return resourceTypeEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -320,8 +332,6 @@ public class VisualThemeResourceImpl extends BizEntityImpl implements VisualThem
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (visualThemeId: ");
 		result.append(visualThemeId);
-		result.append(", resourceTypeEnumId: ");
-		result.append(resourceTypeEnumId);
 		result.append(", sequenceId: ");
 		result.append(sequenceId);
 		result.append(", resourceValue: ");

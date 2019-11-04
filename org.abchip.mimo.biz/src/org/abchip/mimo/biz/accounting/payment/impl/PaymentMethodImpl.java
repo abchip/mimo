@@ -10,12 +10,17 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,12 +33,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getGlAccountId <em>Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getGlAccountId <em>Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,24 +86,6 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountId = FIN_ACCOUNT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,61 +104,6 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 */
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_METHOD_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodTypeId = PAYMENT_METHOD_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,6 +121,42 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethodType paymentMethodTypeId;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+	/**
+	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccount glAccountId;
+	/**
+	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FinAccount finAccountId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,7 +229,24 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -271,8 +256,8 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__PARTY_ID, oldPartyId, partyId));
@@ -391,7 +376,24 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodTypeId() {
+	public PaymentMethodType getPaymentMethodTypeId() {
+		if (paymentMethodTypeId != null && ((EObject)paymentMethodTypeId).eIsProxy()) {
+			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
+			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
+			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
+			}
+		}
+		return paymentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethodType basicGetPaymentMethodTypeId() {
 		return paymentMethodTypeId;
 	}
 
@@ -401,8 +403,8 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodTypeId(String newPaymentMethodTypeId) {
-		String oldPaymentMethodTypeId = paymentMethodTypeId;
+	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
@@ -414,7 +416,24 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountId() {
+	public GlAccount getGlAccountId() {
+		if (glAccountId != null && ((EObject)glAccountId).eIsProxy()) {
+			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
+			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
+			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
+			}
+		}
+		return glAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetGlAccountId() {
 		return glAccountId;
 	}
 
@@ -424,8 +443,8 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountId(String newGlAccountId) {
-		String oldGlAccountId = glAccountId;
+	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
@@ -437,7 +456,24 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountId() {
+	public FinAccount getFinAccountId() {
+		if (finAccountId != null && ((EObject)finAccountId).eIsProxy()) {
+			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
+			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
+			if (finAccountId != oldFinAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
+			}
+		}
+		return finAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccount basicGetFinAccountId() {
 		return finAccountId;
 	}
 
@@ -447,8 +483,8 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountId(String newFinAccountId) {
-		String oldFinAccountId = finAccountId;
+	public void setFinAccountId(FinAccount newFinAccountId) {
+		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
@@ -489,18 +525,22 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 				return getPaymentMethodId();
 			case PaymentPackage.PAYMENT_METHOD__DESCRIPTION:
 				return getDescription();
-			case PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID:
-				return getFinAccountId();
 			case PaymentPackage.PAYMENT_METHOD__FROM_DATE:
 				return getFromDate();
-			case PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID:
-				return getGlAccountId();
-			case PaymentPackage.PAYMENT_METHOD__PARTY_ID:
-				return getPartyId();
-			case PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID:
-				return getPaymentMethodTypeId();
 			case PaymentPackage.PAYMENT_METHOD__THRU_DATE:
 				return getThruDate();
+			case PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID:
+				if (resolve) return getPaymentMethodTypeId();
+				return basicGetPaymentMethodTypeId();
+			case PaymentPackage.PAYMENT_METHOD__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID:
+				if (resolve) return getGlAccountId();
+				return basicGetGlAccountId();
+			case PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID:
+				if (resolve) return getFinAccountId();
+				return basicGetFinAccountId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -519,23 +559,23 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 			case PaymentPackage.PAYMENT_METHOD__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID:
-				setFinAccountId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_METHOD__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID:
-				setGlAccountId((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_METHOD__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_METHOD__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)newValue);
+				return;
+			case PaymentPackage.PAYMENT_METHOD__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID:
+				setGlAccountId((GlAccount)newValue);
+				return;
+			case PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -555,23 +595,23 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 			case PaymentPackage.PAYMENT_METHOD__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID:
-				setFinAccountId(FIN_ACCOUNT_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_METHOD__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID:
-				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_METHOD__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId(PAYMENT_METHOD_TYPE_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_METHOD__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)null);
+				return;
+			case PaymentPackage.PAYMENT_METHOD__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID:
+				setGlAccountId((GlAccount)null);
+				return;
+			case PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -589,18 +629,18 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 				return PAYMENT_METHOD_ID_EDEFAULT == null ? paymentMethodId != null : !PAYMENT_METHOD_ID_EDEFAULT.equals(paymentMethodId);
 			case PaymentPackage.PAYMENT_METHOD__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID:
-				return FIN_ACCOUNT_ID_EDEFAULT == null ? finAccountId != null : !FIN_ACCOUNT_ID_EDEFAULT.equals(finAccountId);
 			case PaymentPackage.PAYMENT_METHOD__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID:
-				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
-			case PaymentPackage.PAYMENT_METHOD__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID:
-				return PAYMENT_METHOD_TYPE_ID_EDEFAULT == null ? paymentMethodTypeId != null : !PAYMENT_METHOD_TYPE_ID_EDEFAULT.equals(paymentMethodTypeId);
 			case PaymentPackage.PAYMENT_METHOD__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PaymentPackage.PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID:
+				return paymentMethodTypeId != null;
+			case PaymentPackage.PAYMENT_METHOD__PARTY_ID:
+				return partyId != null;
+			case PaymentPackage.PAYMENT_METHOD__GL_ACCOUNT_ID:
+				return glAccountId != null;
+			case PaymentPackage.PAYMENT_METHOD__FIN_ACCOUNT_ID:
+				return finAccountId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -619,16 +659,8 @@ public class PaymentMethodImpl extends BizEntityTypedImpl<PaymentMethodType> imp
 		result.append(paymentMethodId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", finAccountId: ");
-		result.append(finAccountId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", glAccountId: ");
-		result.append(glAccountId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", paymentMethodTypeId: ");
-		result.append(paymentMethodTypeId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

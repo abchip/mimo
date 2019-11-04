@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyId <em>Survey Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyApplTypeId <em>Survey Appl Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyApplTypeId <em>Survey Appl Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyTrigger()
@@ -59,32 +59,30 @@ public interface SurveyTrigger extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Appl Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Survey Appl Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Appl Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Appl Type Id</em>' attribute.
-	 * @see #setSurveyApplTypeId(String)
+	 * @return the value of the '<em>Survey Appl Type Id</em>' reference.
+	 * @see #setSurveyApplTypeId(SurveyApplType)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyTrigger_SurveyApplTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SurveyApplType'"
+	 * @model keys="surveyApplTypeId"
 	 * @generated
 	 */
-	String getSurveyApplTypeId();
+	SurveyApplType getSurveyApplTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyApplTypeId <em>Survey Appl Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyTrigger#getSurveyApplTypeId <em>Survey Appl Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Survey Appl Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Survey Appl Type Id</em>' reference.
 	 * @see #getSurveyApplTypeId()
 	 * @generated
 	 */
-	void setSurveyApplTypeId(String value);
+	void setSurveyApplTypeId(SurveyApplType value);
 
 	/**
 	 * Returns the value of the '<em><b>Survey Id</b></em>' attribute.
@@ -99,7 +97,6 @@ public interface SurveyTrigger extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyTrigger_SurveyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Survey'"
 	 * @generated
 	 */
 	String getSurveyId();

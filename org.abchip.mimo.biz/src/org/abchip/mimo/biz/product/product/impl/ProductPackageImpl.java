@@ -221,6 +221,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -539,6 +540,22 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -555,22 +572,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -681,6 +682,14 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -689,14 +698,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -776,6 +777,14 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -784,14 +793,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -858,8 +859,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGoodIdentification_ProductId() {
-		return (EAttribute)goodIdentificationEClass.getEStructuralFeatures().get(1);
+	public EReference getGoodIdentification_ProductId() {
+		return (EReference)goodIdentificationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -869,7 +870,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getGoodIdentification_IdValue() {
-		return (EAttribute)goodIdentificationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)goodIdentificationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -918,8 +919,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGoodIdentificationType_ParentTypeId() {
-		return (EAttribute)goodIdentificationTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getGoodIdentificationType_ParentTypeId() {
+		return (EReference)goodIdentificationTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -958,8 +959,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_AmountUomTypeId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(1);
+	public EReference getProduct_AmountUomTypeId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(56);
 	}
 
 	/**
@@ -969,7 +970,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_AutoCreateKeywords() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -979,7 +980,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_BillOfMaterialLevel() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -989,7 +990,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_BrandName() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -999,7 +1000,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ChargeShipping() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1009,7 +1010,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_Comments() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1019,7 +1020,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ConfigId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1028,8 +1029,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_CreatedByUserLogin() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(8);
+	public EReference getProduct_CreatedByUserLogin() {
+		return (EReference)productEClass.getEStructuralFeatures().get(66);
 	}
 
 	/**
@@ -1039,7 +1040,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_CreatedDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1048,8 +1049,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_DefaultShipmentBoxTypeId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(10);
+	public EReference getProduct_DefaultShipmentBoxTypeId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(68);
 	}
 
 	/**
@@ -1058,8 +1059,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_DepthUomId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(11);
+	public EReference getProduct_DepthUomId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(60);
 	}
 
 	/**
@@ -1069,7 +1070,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_Description() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1079,7 +1080,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_DetailImageUrl() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1089,7 +1090,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_DetailScreen() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1098,8 +1099,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_DiameterUomId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(15);
+	public EReference getProduct_DiameterUomId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(61);
 	}
 
 	/**
@@ -1108,8 +1109,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_FacilityId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(16);
+	public EReference getProduct_FacilityId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(54);
 	}
 
 	/**
@@ -1119,7 +1120,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_FixedAmount() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1128,8 +1129,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_HeightUomId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(18);
+	public EReference getProduct_HeightUomId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(58);
 	}
 
 	/**
@@ -1139,7 +1140,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_InShippingBox() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(19);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1149,7 +1150,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_IncludeInPromotions() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(20);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1159,7 +1160,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_InternalName() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(21);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1169,7 +1170,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_IntroductionDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(22);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1178,8 +1179,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_InventoryItemTypeId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(23);
+	public EReference getProduct_InventoryItemTypeId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(69);
 	}
 
 	/**
@@ -1189,7 +1190,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_InventoryMessage() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(24);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -1199,7 +1200,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_IsVariant() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(25);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -1209,7 +1210,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_IsVirtual() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(26);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1219,7 +1220,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_LargeImageUrl() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(27);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -1228,8 +1229,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_LastModifiedByUserLogin() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(28);
+	public EReference getProduct_LastModifiedByUserLogin() {
+		return (EReference)productEClass.getEStructuralFeatures().get(67);
 	}
 
 	/**
@@ -1239,7 +1240,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_LastModifiedDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(29);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -1249,7 +1250,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_LongDescription() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(30);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -1259,7 +1260,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_LotIdFilledIn() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(31);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1269,7 +1270,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_MediumImageUrl() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(32);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -1279,7 +1280,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_OrderDecimalQuantity() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(33);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -1288,8 +1289,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_OriginGeoId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(34);
+	public EReference getProduct_OriginGeoId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(65);
 	}
 
 	/**
@@ -1299,7 +1300,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_OriginalImageUrl() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(35);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -1309,7 +1310,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_PiecesIncluded() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(36);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(26);
 	}
 
 	/**
@@ -1319,7 +1320,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_PriceDetailText() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(37);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -1328,8 +1329,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_PrimaryProductCategoryId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(38);
+	public EReference getProduct_PrimaryProductCategoryId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(53);
 	}
 
 	/**
@@ -1339,7 +1340,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ProductDepth() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(39);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(28);
 	}
 
 	/**
@@ -1349,7 +1350,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ProductDiameter() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(40);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(29);
 	}
 
 	/**
@@ -1359,7 +1360,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ProductHeight() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(41);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(30);
 	}
 
 	/**
@@ -1369,7 +1370,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ProductName() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(42);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(31);
 	}
 
 	/**
@@ -1379,7 +1380,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ProductRating() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(43);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(32);
 	}
 
 	/**
@@ -1388,8 +1389,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_ProductTypeId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(44);
+	public EReference getProduct_ProductTypeId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(52);
 	}
 
 	/**
@@ -1399,7 +1400,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ProductWeight() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(45);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(33);
 	}
 
 	/**
@@ -1409,7 +1410,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ProductWidth() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(46);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(34);
 	}
 
 	/**
@@ -1419,7 +1420,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_QuantityIncluded() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(47);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(35);
 	}
 
 	/**
@@ -1428,8 +1429,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_QuantityUomId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(48);
+	public EReference getProduct_QuantityUomId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(55);
 	}
 
 	/**
@@ -1438,8 +1439,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_RatingTypeEnum() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(49);
+	public EReference getProduct_RatingTypeEnum() {
+		return (EReference)productEClass.getEStructuralFeatures().get(63);
 	}
 
 	/**
@@ -1449,7 +1450,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ReleaseDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(50);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(36);
 	}
 
 	/**
@@ -1459,7 +1460,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_RequireAmount() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(51);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(37);
 	}
 
 	/**
@@ -1469,7 +1470,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_RequireInventory() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(52);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(38);
 	}
 
 	/**
@@ -1478,8 +1479,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_RequirementMethodEnumId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(53);
+	public EReference getProduct_RequirementMethodEnumId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(64);
 	}
 
 	/**
@@ -1489,7 +1490,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_Reserv2ndPPPerc() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(54);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(39);
 	}
 
 	/**
@@ -1499,7 +1500,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ReservMaxPersons() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(55);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(40);
 	}
 
 	/**
@@ -1509,7 +1510,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ReservNthPPPerc() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(56);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(41);
 	}
 
 	/**
@@ -1519,7 +1520,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_Returnable() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(57);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(42);
 	}
 
 	/**
@@ -1529,7 +1530,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_SalesDiscWhenNotAvail() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(58);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(43);
 	}
 
 	/**
@@ -1539,7 +1540,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_SalesDiscontinuationDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(59);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(44);
 	}
 
 	/**
@@ -1549,7 +1550,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ShippingDepth() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(60);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(45);
 	}
 
 	/**
@@ -1559,7 +1560,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ShippingHeight() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(61);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(46);
 	}
 
 	/**
@@ -1569,7 +1570,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ShippingWeight() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(62);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(47);
 	}
 
 	/**
@@ -1579,7 +1580,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_ShippingWidth() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(63);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(48);
 	}
 
 	/**
@@ -1589,7 +1590,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_SmallImageUrl() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(64);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(49);
 	}
 
 	/**
@@ -1599,7 +1600,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_SupportDiscontinuationDate() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(65);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(50);
 	}
 
 	/**
@@ -1609,7 +1610,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProduct_Taxable() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(66);
+		return (EAttribute)productEClass.getEStructuralFeatures().get(51);
 	}
 
 	/**
@@ -1618,8 +1619,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_VirtualVariantMethodEnum() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(67);
+	public EReference getProduct_VirtualVariantMethodEnum() {
+		return (EReference)productEClass.getEStructuralFeatures().get(62);
 	}
 
 	/**
@@ -1628,8 +1629,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_WeightUomId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(68);
+	public EReference getProduct_WeightUomId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(57);
 	}
 
 	/**
@@ -1638,8 +1639,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_WidthUomId() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(69);
+	public EReference getProduct_WidthUomId() {
+		return (EReference)productEClass.getEStructuralFeatures().get(59);
 	}
 
 	/**
@@ -1728,8 +1729,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductAssoc_ProductIdTo() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(1);
+	public EReference getProductAssoc_ProductIdTo() {
+		return (EReference)productAssocEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1738,8 +1739,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductAssoc_ProductAssocTypeId() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(2);
+	public EReference getProductAssoc_ProductAssocTypeId() {
+		return (EReference)productAssocEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1749,7 +1750,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductAssoc_FromDate() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1758,8 +1759,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductAssoc_EstimateCalcMethod() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(4);
+	public EReference getProductAssoc_EstimateCalcMethod() {
+		return (EReference)productAssocEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1769,7 +1770,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductAssoc_Instruction() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1779,7 +1780,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductAssoc_Quantity() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1789,7 +1790,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductAssoc_Reason() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1798,8 +1799,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductAssoc_RecurrenceInfoId() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(8);
+	public EReference getProductAssoc_RecurrenceInfoId() {
+		return (EReference)productAssocEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1808,8 +1809,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductAssoc_RoutingWorkEffortId() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(9);
+	public EReference getProductAssoc_RoutingWorkEffortId() {
+		return (EReference)productAssocEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1819,7 +1820,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductAssoc_ScrapFactor() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1829,7 +1830,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductAssoc_SequenceNum() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1839,7 +1840,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductAssoc_ThruDate() {
-		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)productAssocEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1888,8 +1889,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductAssocType_ParentTypeId() {
-		return (EAttribute)productAssocTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getProductAssocType_ParentTypeId() {
+		return (EReference)productAssocTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2028,8 +2029,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductContent_ContentId() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(1);
+	public EReference getProductContent_ContentId() {
+		return (EReference)productContentEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2038,8 +2039,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductContent_ProductContentTypeId() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(2);
+	public EReference getProductContent_ProductContentTypeId() {
+		return (EReference)productContentEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2049,7 +2050,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductContent_FromDate() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)productContentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2059,7 +2060,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductContent_PurchaseFromDate() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)productContentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2069,7 +2070,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductContent_PurchaseThruDate() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)productContentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2079,7 +2080,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductContent_SequenceNum() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)productContentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2089,7 +2090,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductContent_ThruDate() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)productContentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2099,7 +2100,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductContent_UseCountLimit() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)productContentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2108,8 +2109,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductContent_UseRoleTypeId() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(9);
+	public EReference getProductContent_UseRoleTypeId() {
+		return (EReference)productContentEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -2119,7 +2120,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductContent_UseTime() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)productContentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2128,8 +2129,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductContent_UseTimeUomId() {
-		return (EAttribute)productContentEClass.getEStructuralFeatures().get(11);
+	public EReference getProductContent_UseTimeUomId() {
+		return (EReference)productContentEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -2178,8 +2179,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductContentType_ParentTypeId() {
-		return (EAttribute)productContentTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getProductContentType_ParentTypeId() {
+		return (EReference)productContentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2208,8 +2209,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductGeo_GeoId() {
-		return (EAttribute)productGeoEClass.getEStructuralFeatures().get(1);
+	public EReference getProductGeo_GeoId() {
+		return (EReference)productGeoEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2219,7 +2220,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductGeo_Description() {
-		return (EAttribute)productGeoEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)productGeoEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2228,8 +2229,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductGeo_ProductGeoEnumId() {
-		return (EAttribute)productGeoEClass.getEStructuralFeatures().get(3);
+	public EReference getProductGeo_ProductGeoEnumId() {
+		return (EReference)productGeoEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2258,8 +2259,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductGlAccount_OrganizationPartyId() {
-		return (EAttribute)productGlAccountEClass.getEStructuralFeatures().get(1);
+	public EReference getProductGlAccount_OrganizationPartyId() {
+		return (EReference)productGlAccountEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2268,8 +2269,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductGlAccount_GlAccountTypeId() {
-		return (EAttribute)productGlAccountEClass.getEStructuralFeatures().get(2);
+	public EReference getProductGlAccount_GlAccountTypeId() {
+		return (EReference)productGlAccountEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2278,8 +2279,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductGlAccount_GlAccountId() {
-		return (EAttribute)productGlAccountEClass.getEStructuralFeatures().get(3);
+	public EReference getProductGlAccount_GlAccountId() {
+		return (EReference)productGlAccountEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2318,8 +2319,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductGroupOrder_JobId() {
-		return (EAttribute)productGroupOrderEClass.getEStructuralFeatures().get(2);
+	public EReference getProductGroupOrder_JobId() {
+		return (EReference)productGroupOrderEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2328,8 +2329,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductGroupOrder_ProductId() {
-		return (EAttribute)productGroupOrderEClass.getEStructuralFeatures().get(3);
+	public EReference getProductGroupOrder_ProductId() {
+		return (EReference)productGroupOrderEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2339,7 +2340,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductGroupOrder_ReqOrderQty() {
-		return (EAttribute)productGroupOrderEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)productGroupOrderEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2349,7 +2350,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductGroupOrder_SoldOrderQty() {
-		return (EAttribute)productGroupOrderEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)productGroupOrderEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2358,8 +2359,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductGroupOrder_StatusId() {
-		return (EAttribute)productGroupOrderEClass.getEStructuralFeatures().get(6);
+	public EReference getProductGroupOrder_StatusId() {
+		return (EReference)productGroupOrderEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2369,7 +2370,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductGroupOrder_ThruDate() {
-		return (EAttribute)productGroupOrderEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)productGroupOrderEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2408,8 +2409,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductKeyword_KeywordTypeId() {
-		return (EAttribute)productKeywordEClass.getEStructuralFeatures().get(2);
+	public EReference getProductKeyword_KeywordTypeId() {
+		return (EReference)productKeywordEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2419,7 +2420,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductKeyword_RelevancyWeight() {
-		return (EAttribute)productKeywordEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)productKeywordEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2428,8 +2429,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductKeyword_StatusId() {
-		return (EAttribute)productKeywordEClass.getEStructuralFeatures().get(4);
+	public EReference getProductKeyword_StatusId() {
+		return (EReference)productKeywordEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2468,8 +2469,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductMaint_IntervalMeterTypeId() {
-		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(2);
+	public EReference getProductMaint_IntervalMeterTypeId() {
+		return (EReference)productMaintEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2479,7 +2480,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductMaint_IntervalQuantity() {
-		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2488,8 +2489,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductMaint_IntervalUomId() {
-		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(4);
+	public EReference getProductMaint_IntervalUomId() {
+		return (EReference)productMaintEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2499,7 +2500,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductMaint_MaintName() {
-		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2508,8 +2509,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductMaint_MaintTemplateWorkEffortId() {
-		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(6);
+	public EReference getProductMaint_MaintTemplateWorkEffortId() {
+		return (EReference)productMaintEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2518,8 +2519,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductMaint_ProductMaintTypeId() {
-		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(7);
+	public EReference getProductMaint_ProductMaintTypeId() {
+		return (EReference)productMaintEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2529,7 +2530,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductMaint_RepeatCount() {
-		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)productMaintEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2568,8 +2569,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductMaintType_ParentTypeId() {
-		return (EAttribute)productMaintTypeEClass.getEStructuralFeatures().get(2);
+	public EReference getProductMaintType_ParentTypeId() {
+		return (EReference)productMaintTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2598,8 +2599,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductMeter_ProductMeterTypeId() {
-		return (EAttribute)productMeterEClass.getEStructuralFeatures().get(1);
+	public EReference getProductMeter_ProductMeterTypeId() {
+		return (EReference)productMeterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2609,7 +2610,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductMeter_MeterName() {
-		return (EAttribute)productMeterEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)productMeterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2618,8 +2619,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductMeter_MeterUomId() {
-		return (EAttribute)productMeterEClass.getEStructuralFeatures().get(3);
+	public EReference getProductMeter_MeterUomId() {
+		return (EReference)productMeterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2648,8 +2649,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductMeterType_DefaultUomId() {
-		return (EAttribute)productMeterTypeEClass.getEStructuralFeatures().get(1);
+	public EReference getProductMeterType_DefaultUomId() {
+		return (EReference)productMeterTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2659,7 +2660,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductMeterType_Description() {
-		return (EAttribute)productMeterTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)productMeterTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2708,8 +2709,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductReview_ProductId() {
-		return (EAttribute)productReviewEClass.getEStructuralFeatures().get(3);
+	public EReference getProductReview_ProductId() {
+		return (EReference)productReviewEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2719,7 +2720,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductReview_ProductRating() {
-		return (EAttribute)productReviewEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)productReviewEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2729,7 +2730,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductReview_ProductReview() {
-		return (EAttribute)productReviewEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)productReviewEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2738,8 +2739,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductReview_ProductStoreId() {
-		return (EAttribute)productReviewEClass.getEStructuralFeatures().get(6);
+	public EReference getProductReview_ProductStoreId() {
+		return (EReference)productReviewEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2748,8 +2749,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductReview_StatusId() {
-		return (EAttribute)productReviewEClass.getEStructuralFeatures().get(7);
+	public EReference getProductReview_StatusId() {
+		return (EReference)productReviewEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2758,8 +2759,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductReview_UserLoginId() {
-		return (EAttribute)productReviewEClass.getEStructuralFeatures().get(8);
+	public EReference getProductReview_UserLoginId() {
+		return (EReference)productReviewEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2788,8 +2789,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductRole_PartyId() {
-		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(1);
+	public EReference getProductRole_PartyId() {
+		return (EReference)productRoleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2798,8 +2799,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductRole_RoleTypeId() {
-		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(2);
+	public EReference getProductRole_RoleTypeId() {
+		return (EReference)productRoleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2809,7 +2810,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductRole_FromDate() {
-		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2819,7 +2820,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductRole_Comments() {
-		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2829,7 +2830,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductRole_SequenceNum() {
-		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2839,7 +2840,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 */
 	@Override
 	public EAttribute getProductRole_ThruDate() {
-		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)productRoleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3118,8 +3119,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProductType_ParentTypeId() {
-		return (EAttribute)productTypeEClass.getEStructuralFeatures().get(5);
+	public EReference getProductType_ParentTypeId() {
+		return (EReference)productTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3198,8 +3199,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVendorProduct_VendorPartyId() {
-		return (EAttribute)vendorProductEClass.getEStructuralFeatures().get(1);
+	public EReference getVendorProduct_VendorPartyId() {
+		return (EReference)vendorProductEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3208,8 +3209,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVendorProduct_ProductStoreGroupId() {
-		return (EAttribute)vendorProductEClass.getEStructuralFeatures().get(2);
+	public EReference getVendorProduct_ProductStoreGroupId() {
+		return (EReference)vendorProductEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3243,71 +3244,56 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		// Create classes and their features
 		goodIdentificationEClass = createEClass(GOOD_IDENTIFICATION);
 		createEAttribute(goodIdentificationEClass, GOOD_IDENTIFICATION__GOOD_IDENTIFICATION_TYPE_ID);
-		createEAttribute(goodIdentificationEClass, GOOD_IDENTIFICATION__PRODUCT_ID);
 		createEAttribute(goodIdentificationEClass, GOOD_IDENTIFICATION__ID_VALUE);
+		createEReference(goodIdentificationEClass, GOOD_IDENTIFICATION__PRODUCT_ID);
 
 		goodIdentificationTypeEClass = createEClass(GOOD_IDENTIFICATION_TYPE);
 		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATION_TYPE_ID);
 		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__DESCRIPTION);
 		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__HAS_TABLE);
-		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__PARENT_TYPE_ID);
+		createEReference(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__PARENT_TYPE_ID);
 		createEAttribute(goodIdentificationTypeEClass, GOOD_IDENTIFICATION_TYPE__GOOD_IDENTIFICATIONS);
 
 		productEClass = createEClass(PRODUCT);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_ID);
-		createEAttribute(productEClass, PRODUCT__AMOUNT_UOM_TYPE_ID);
 		createEAttribute(productEClass, PRODUCT__AUTO_CREATE_KEYWORDS);
 		createEAttribute(productEClass, PRODUCT__BILL_OF_MATERIAL_LEVEL);
 		createEAttribute(productEClass, PRODUCT__BRAND_NAME);
 		createEAttribute(productEClass, PRODUCT__CHARGE_SHIPPING);
 		createEAttribute(productEClass, PRODUCT__COMMENTS);
 		createEAttribute(productEClass, PRODUCT__CONFIG_ID);
-		createEAttribute(productEClass, PRODUCT__CREATED_BY_USER_LOGIN);
 		createEAttribute(productEClass, PRODUCT__CREATED_DATE);
-		createEAttribute(productEClass, PRODUCT__DEFAULT_SHIPMENT_BOX_TYPE_ID);
-		createEAttribute(productEClass, PRODUCT__DEPTH_UOM_ID);
 		createEAttribute(productEClass, PRODUCT__DESCRIPTION);
 		createEAttribute(productEClass, PRODUCT__DETAIL_IMAGE_URL);
 		createEAttribute(productEClass, PRODUCT__DETAIL_SCREEN);
-		createEAttribute(productEClass, PRODUCT__DIAMETER_UOM_ID);
-		createEAttribute(productEClass, PRODUCT__FACILITY_ID);
 		createEAttribute(productEClass, PRODUCT__FIXED_AMOUNT);
-		createEAttribute(productEClass, PRODUCT__HEIGHT_UOM_ID);
 		createEAttribute(productEClass, PRODUCT__IN_SHIPPING_BOX);
 		createEAttribute(productEClass, PRODUCT__INCLUDE_IN_PROMOTIONS);
 		createEAttribute(productEClass, PRODUCT__INTERNAL_NAME);
 		createEAttribute(productEClass, PRODUCT__INTRODUCTION_DATE);
-		createEAttribute(productEClass, PRODUCT__INVENTORY_ITEM_TYPE_ID);
 		createEAttribute(productEClass, PRODUCT__INVENTORY_MESSAGE);
 		createEAttribute(productEClass, PRODUCT__IS_VARIANT);
 		createEAttribute(productEClass, PRODUCT__IS_VIRTUAL);
 		createEAttribute(productEClass, PRODUCT__LARGE_IMAGE_URL);
-		createEAttribute(productEClass, PRODUCT__LAST_MODIFIED_BY_USER_LOGIN);
 		createEAttribute(productEClass, PRODUCT__LAST_MODIFIED_DATE);
 		createEAttribute(productEClass, PRODUCT__LONG_DESCRIPTION);
 		createEAttribute(productEClass, PRODUCT__LOT_ID_FILLED_IN);
 		createEAttribute(productEClass, PRODUCT__MEDIUM_IMAGE_URL);
 		createEAttribute(productEClass, PRODUCT__ORDER_DECIMAL_QUANTITY);
-		createEAttribute(productEClass, PRODUCT__ORIGIN_GEO_ID);
 		createEAttribute(productEClass, PRODUCT__ORIGINAL_IMAGE_URL);
 		createEAttribute(productEClass, PRODUCT__PIECES_INCLUDED);
 		createEAttribute(productEClass, PRODUCT__PRICE_DETAIL_TEXT);
-		createEAttribute(productEClass, PRODUCT__PRIMARY_PRODUCT_CATEGORY_ID);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_DEPTH);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_DIAMETER);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_HEIGHT);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_NAME);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_RATING);
-		createEAttribute(productEClass, PRODUCT__PRODUCT_TYPE_ID);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_WEIGHT);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_WIDTH);
 		createEAttribute(productEClass, PRODUCT__QUANTITY_INCLUDED);
-		createEAttribute(productEClass, PRODUCT__QUANTITY_UOM_ID);
-		createEAttribute(productEClass, PRODUCT__RATING_TYPE_ENUM);
 		createEAttribute(productEClass, PRODUCT__RELEASE_DATE);
 		createEAttribute(productEClass, PRODUCT__REQUIRE_AMOUNT);
 		createEAttribute(productEClass, PRODUCT__REQUIRE_INVENTORY);
-		createEAttribute(productEClass, PRODUCT__REQUIREMENT_METHOD_ENUM_ID);
 		createEAttribute(productEClass, PRODUCT__RESERV2ND_PP_PERC);
 		createEAttribute(productEClass, PRODUCT__RESERV_MAX_PERSONS);
 		createEAttribute(productEClass, PRODUCT__RESERV_NTH_PP_PERC);
@@ -3321,9 +3307,24 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productEClass, PRODUCT__SMALL_IMAGE_URL);
 		createEAttribute(productEClass, PRODUCT__SUPPORT_DISCONTINUATION_DATE);
 		createEAttribute(productEClass, PRODUCT__TAXABLE);
-		createEAttribute(productEClass, PRODUCT__VIRTUAL_VARIANT_METHOD_ENUM);
-		createEAttribute(productEClass, PRODUCT__WEIGHT_UOM_ID);
-		createEAttribute(productEClass, PRODUCT__WIDTH_UOM_ID);
+		createEReference(productEClass, PRODUCT__PRODUCT_TYPE_ID);
+		createEReference(productEClass, PRODUCT__PRIMARY_PRODUCT_CATEGORY_ID);
+		createEReference(productEClass, PRODUCT__FACILITY_ID);
+		createEReference(productEClass, PRODUCT__QUANTITY_UOM_ID);
+		createEReference(productEClass, PRODUCT__AMOUNT_UOM_TYPE_ID);
+		createEReference(productEClass, PRODUCT__WEIGHT_UOM_ID);
+		createEReference(productEClass, PRODUCT__HEIGHT_UOM_ID);
+		createEReference(productEClass, PRODUCT__WIDTH_UOM_ID);
+		createEReference(productEClass, PRODUCT__DEPTH_UOM_ID);
+		createEReference(productEClass, PRODUCT__DIAMETER_UOM_ID);
+		createEReference(productEClass, PRODUCT__VIRTUAL_VARIANT_METHOD_ENUM);
+		createEReference(productEClass, PRODUCT__RATING_TYPE_ENUM);
+		createEReference(productEClass, PRODUCT__REQUIREMENT_METHOD_ENUM_ID);
+		createEReference(productEClass, PRODUCT__ORIGIN_GEO_ID);
+		createEReference(productEClass, PRODUCT__CREATED_BY_USER_LOGIN);
+		createEReference(productEClass, PRODUCT__LAST_MODIFIED_BY_USER_LOGIN);
+		createEReference(productEClass, PRODUCT__DEFAULT_SHIPMENT_BOX_TYPE_ID);
+		createEReference(productEClass, PRODUCT__INVENTORY_ITEM_TYPE_ID);
 		createEAttribute(productEClass, PRODUCT__COMMUNICATION_EVENT_PRODUCTS);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_ATTRIBUTES);
 		createEAttribute(productEClass, PRODUCT__PRODUCT_FACILITIES);
@@ -3333,24 +3334,24 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 
 		productAssocEClass = createEClass(PRODUCT_ASSOC);
 		createEAttribute(productAssocEClass, PRODUCT_ASSOC__PRODUCT_ID);
-		createEAttribute(productAssocEClass, PRODUCT_ASSOC__PRODUCT_ID_TO);
-		createEAttribute(productAssocEClass, PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID);
 		createEAttribute(productAssocEClass, PRODUCT_ASSOC__FROM_DATE);
-		createEAttribute(productAssocEClass, PRODUCT_ASSOC__ESTIMATE_CALC_METHOD);
 		createEAttribute(productAssocEClass, PRODUCT_ASSOC__INSTRUCTION);
 		createEAttribute(productAssocEClass, PRODUCT_ASSOC__QUANTITY);
 		createEAttribute(productAssocEClass, PRODUCT_ASSOC__REASON);
-		createEAttribute(productAssocEClass, PRODUCT_ASSOC__RECURRENCE_INFO_ID);
-		createEAttribute(productAssocEClass, PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID);
 		createEAttribute(productAssocEClass, PRODUCT_ASSOC__SCRAP_FACTOR);
 		createEAttribute(productAssocEClass, PRODUCT_ASSOC__SEQUENCE_NUM);
 		createEAttribute(productAssocEClass, PRODUCT_ASSOC__THRU_DATE);
+		createEReference(productAssocEClass, PRODUCT_ASSOC__PRODUCT_ASSOC_TYPE_ID);
+		createEReference(productAssocEClass, PRODUCT_ASSOC__PRODUCT_ID_TO);
+		createEReference(productAssocEClass, PRODUCT_ASSOC__ROUTING_WORK_EFFORT_ID);
+		createEReference(productAssocEClass, PRODUCT_ASSOC__ESTIMATE_CALC_METHOD);
+		createEReference(productAssocEClass, PRODUCT_ASSOC__RECURRENCE_INFO_ID);
 
 		productAssocTypeEClass = createEClass(PRODUCT_ASSOC_TYPE);
 		createEAttribute(productAssocTypeEClass, PRODUCT_ASSOC_TYPE__PRODUCT_ASSOC_TYPE_ID);
 		createEAttribute(productAssocTypeEClass, PRODUCT_ASSOC_TYPE__DESCRIPTION);
 		createEAttribute(productAssocTypeEClass, PRODUCT_ASSOC_TYPE__HAS_TABLE);
-		createEAttribute(productAssocTypeEClass, PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID);
+		createEReference(productAssocTypeEClass, PRODUCT_ASSOC_TYPE__PARENT_TYPE_ID);
 
 		productAttributeEClass = createEClass(PRODUCT_ATTRIBUTE);
 		createEAttribute(productAttributeEClass, PRODUCT_ATTRIBUTE__PRODUCT_ID);
@@ -3367,99 +3368,99 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 
 		productContentEClass = createEClass(PRODUCT_CONTENT);
 		createEAttribute(productContentEClass, PRODUCT_CONTENT__PRODUCT_ID);
-		createEAttribute(productContentEClass, PRODUCT_CONTENT__CONTENT_ID);
-		createEAttribute(productContentEClass, PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID);
 		createEAttribute(productContentEClass, PRODUCT_CONTENT__FROM_DATE);
 		createEAttribute(productContentEClass, PRODUCT_CONTENT__PURCHASE_FROM_DATE);
 		createEAttribute(productContentEClass, PRODUCT_CONTENT__PURCHASE_THRU_DATE);
 		createEAttribute(productContentEClass, PRODUCT_CONTENT__SEQUENCE_NUM);
 		createEAttribute(productContentEClass, PRODUCT_CONTENT__THRU_DATE);
 		createEAttribute(productContentEClass, PRODUCT_CONTENT__USE_COUNT_LIMIT);
-		createEAttribute(productContentEClass, PRODUCT_CONTENT__USE_ROLE_TYPE_ID);
 		createEAttribute(productContentEClass, PRODUCT_CONTENT__USE_TIME);
-		createEAttribute(productContentEClass, PRODUCT_CONTENT__USE_TIME_UOM_ID);
+		createEReference(productContentEClass, PRODUCT_CONTENT__CONTENT_ID);
+		createEReference(productContentEClass, PRODUCT_CONTENT__PRODUCT_CONTENT_TYPE_ID);
+		createEReference(productContentEClass, PRODUCT_CONTENT__USE_ROLE_TYPE_ID);
+		createEReference(productContentEClass, PRODUCT_CONTENT__USE_TIME_UOM_ID);
 
 		productContentTypeEClass = createEClass(PRODUCT_CONTENT_TYPE);
 		createEAttribute(productContentTypeEClass, PRODUCT_CONTENT_TYPE__PRODUCT_CONTENT_TYPE_ID);
 		createEAttribute(productContentTypeEClass, PRODUCT_CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(productContentTypeEClass, PRODUCT_CONTENT_TYPE__HAS_TABLE);
-		createEAttribute(productContentTypeEClass, PRODUCT_CONTENT_TYPE__PARENT_TYPE_ID);
+		createEReference(productContentTypeEClass, PRODUCT_CONTENT_TYPE__PARENT_TYPE_ID);
 
 		productGeoEClass = createEClass(PRODUCT_GEO);
 		createEAttribute(productGeoEClass, PRODUCT_GEO__PRODUCT_ID);
-		createEAttribute(productGeoEClass, PRODUCT_GEO__GEO_ID);
 		createEAttribute(productGeoEClass, PRODUCT_GEO__DESCRIPTION);
-		createEAttribute(productGeoEClass, PRODUCT_GEO__PRODUCT_GEO_ENUM_ID);
+		createEReference(productGeoEClass, PRODUCT_GEO__GEO_ID);
+		createEReference(productGeoEClass, PRODUCT_GEO__PRODUCT_GEO_ENUM_ID);
 
 		productGlAccountEClass = createEClass(PRODUCT_GL_ACCOUNT);
 		createEAttribute(productGlAccountEClass, PRODUCT_GL_ACCOUNT__PRODUCT_ID);
-		createEAttribute(productGlAccountEClass, PRODUCT_GL_ACCOUNT__ORGANIZATION_PARTY_ID);
-		createEAttribute(productGlAccountEClass, PRODUCT_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID);
-		createEAttribute(productGlAccountEClass, PRODUCT_GL_ACCOUNT__GL_ACCOUNT_ID);
+		createEReference(productGlAccountEClass, PRODUCT_GL_ACCOUNT__ORGANIZATION_PARTY_ID);
+		createEReference(productGlAccountEClass, PRODUCT_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID);
+		createEReference(productGlAccountEClass, PRODUCT_GL_ACCOUNT__GL_ACCOUNT_ID);
 
 		productGroupOrderEClass = createEClass(PRODUCT_GROUP_ORDER);
 		createEAttribute(productGroupOrderEClass, PRODUCT_GROUP_ORDER__GROUP_ORDER_ID);
 		createEAttribute(productGroupOrderEClass, PRODUCT_GROUP_ORDER__FROM_DATE);
-		createEAttribute(productGroupOrderEClass, PRODUCT_GROUP_ORDER__JOB_ID);
-		createEAttribute(productGroupOrderEClass, PRODUCT_GROUP_ORDER__PRODUCT_ID);
 		createEAttribute(productGroupOrderEClass, PRODUCT_GROUP_ORDER__REQ_ORDER_QTY);
 		createEAttribute(productGroupOrderEClass, PRODUCT_GROUP_ORDER__SOLD_ORDER_QTY);
-		createEAttribute(productGroupOrderEClass, PRODUCT_GROUP_ORDER__STATUS_ID);
 		createEAttribute(productGroupOrderEClass, PRODUCT_GROUP_ORDER__THRU_DATE);
+		createEReference(productGroupOrderEClass, PRODUCT_GROUP_ORDER__PRODUCT_ID);
+		createEReference(productGroupOrderEClass, PRODUCT_GROUP_ORDER__STATUS_ID);
+		createEReference(productGroupOrderEClass, PRODUCT_GROUP_ORDER__JOB_ID);
 
 		productKeywordEClass = createEClass(PRODUCT_KEYWORD);
 		createEAttribute(productKeywordEClass, PRODUCT_KEYWORD__PRODUCT_ID);
 		createEAttribute(productKeywordEClass, PRODUCT_KEYWORD__KEYWORD);
-		createEAttribute(productKeywordEClass, PRODUCT_KEYWORD__KEYWORD_TYPE_ID);
 		createEAttribute(productKeywordEClass, PRODUCT_KEYWORD__RELEVANCY_WEIGHT);
-		createEAttribute(productKeywordEClass, PRODUCT_KEYWORD__STATUS_ID);
+		createEReference(productKeywordEClass, PRODUCT_KEYWORD__KEYWORD_TYPE_ID);
+		createEReference(productKeywordEClass, PRODUCT_KEYWORD__STATUS_ID);
 
 		productMaintEClass = createEClass(PRODUCT_MAINT);
 		createEAttribute(productMaintEClass, PRODUCT_MAINT__PRODUCT_ID);
 		createEAttribute(productMaintEClass, PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID);
-		createEAttribute(productMaintEClass, PRODUCT_MAINT__INTERVAL_METER_TYPE_ID);
 		createEAttribute(productMaintEClass, PRODUCT_MAINT__INTERVAL_QUANTITY);
-		createEAttribute(productMaintEClass, PRODUCT_MAINT__INTERVAL_UOM_ID);
 		createEAttribute(productMaintEClass, PRODUCT_MAINT__MAINT_NAME);
-		createEAttribute(productMaintEClass, PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID);
-		createEAttribute(productMaintEClass, PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID);
 		createEAttribute(productMaintEClass, PRODUCT_MAINT__REPEAT_COUNT);
+		createEReference(productMaintEClass, PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID);
+		createEReference(productMaintEClass, PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID);
+		createEReference(productMaintEClass, PRODUCT_MAINT__INTERVAL_UOM_ID);
+		createEReference(productMaintEClass, PRODUCT_MAINT__INTERVAL_METER_TYPE_ID);
 
 		productMaintTypeEClass = createEClass(PRODUCT_MAINT_TYPE);
 		createEAttribute(productMaintTypeEClass, PRODUCT_MAINT_TYPE__PRODUCT_MAINT_TYPE_ID);
 		createEAttribute(productMaintTypeEClass, PRODUCT_MAINT_TYPE__DESCRIPTION);
-		createEAttribute(productMaintTypeEClass, PRODUCT_MAINT_TYPE__PARENT_TYPE_ID);
+		createEReference(productMaintTypeEClass, PRODUCT_MAINT_TYPE__PARENT_TYPE_ID);
 
 		productMeterEClass = createEClass(PRODUCT_METER);
 		createEAttribute(productMeterEClass, PRODUCT_METER__PRODUCT_ID);
-		createEAttribute(productMeterEClass, PRODUCT_METER__PRODUCT_METER_TYPE_ID);
 		createEAttribute(productMeterEClass, PRODUCT_METER__METER_NAME);
-		createEAttribute(productMeterEClass, PRODUCT_METER__METER_UOM_ID);
+		createEReference(productMeterEClass, PRODUCT_METER__PRODUCT_METER_TYPE_ID);
+		createEReference(productMeterEClass, PRODUCT_METER__METER_UOM_ID);
 
 		productMeterTypeEClass = createEClass(PRODUCT_METER_TYPE);
 		createEAttribute(productMeterTypeEClass, PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID);
-		createEAttribute(productMeterTypeEClass, PRODUCT_METER_TYPE__DEFAULT_UOM_ID);
 		createEAttribute(productMeterTypeEClass, PRODUCT_METER_TYPE__DESCRIPTION);
+		createEReference(productMeterTypeEClass, PRODUCT_METER_TYPE__DEFAULT_UOM_ID);
 
 		productReviewEClass = createEClass(PRODUCT_REVIEW);
 		createEAttribute(productReviewEClass, PRODUCT_REVIEW__PRODUCT_REVIEW_ID);
 		createEAttribute(productReviewEClass, PRODUCT_REVIEW__POSTED_ANONYMOUS);
 		createEAttribute(productReviewEClass, PRODUCT_REVIEW__POSTED_DATE_TIME);
-		createEAttribute(productReviewEClass, PRODUCT_REVIEW__PRODUCT_ID);
 		createEAttribute(productReviewEClass, PRODUCT_REVIEW__PRODUCT_RATING);
 		createEAttribute(productReviewEClass, PRODUCT_REVIEW__PRODUCT_REVIEW);
-		createEAttribute(productReviewEClass, PRODUCT_REVIEW__PRODUCT_STORE_ID);
-		createEAttribute(productReviewEClass, PRODUCT_REVIEW__STATUS_ID);
-		createEAttribute(productReviewEClass, PRODUCT_REVIEW__USER_LOGIN_ID);
+		createEReference(productReviewEClass, PRODUCT_REVIEW__PRODUCT_STORE_ID);
+		createEReference(productReviewEClass, PRODUCT_REVIEW__PRODUCT_ID);
+		createEReference(productReviewEClass, PRODUCT_REVIEW__USER_LOGIN_ID);
+		createEReference(productReviewEClass, PRODUCT_REVIEW__STATUS_ID);
 
 		productRoleEClass = createEClass(PRODUCT_ROLE);
 		createEAttribute(productRoleEClass, PRODUCT_ROLE__PRODUCT_ID);
-		createEAttribute(productRoleEClass, PRODUCT_ROLE__PARTY_ID);
-		createEAttribute(productRoleEClass, PRODUCT_ROLE__ROLE_TYPE_ID);
 		createEAttribute(productRoleEClass, PRODUCT_ROLE__FROM_DATE);
 		createEAttribute(productRoleEClass, PRODUCT_ROLE__COMMENTS);
 		createEAttribute(productRoleEClass, PRODUCT_ROLE__SEQUENCE_NUM);
 		createEAttribute(productRoleEClass, PRODUCT_ROLE__THRU_DATE);
+		createEReference(productRoleEClass, PRODUCT_ROLE__PARTY_ID);
+		createEReference(productRoleEClass, PRODUCT_ROLE__ROLE_TYPE_ID);
 
 		productSearchConstraintEClass = createEClass(PRODUCT_SEARCH_CONSTRAINT);
 		createEAttribute(productSearchConstraintEClass, PRODUCT_SEARCH_CONSTRAINT__PRODUCT_SEARCH_RESULT_ID);
@@ -3490,7 +3491,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		createEAttribute(productTypeEClass, PRODUCT_TYPE__HAS_TABLE);
 		createEAttribute(productTypeEClass, PRODUCT_TYPE__IS_DIGITAL);
 		createEAttribute(productTypeEClass, PRODUCT_TYPE__IS_PHYSICAL);
-		createEAttribute(productTypeEClass, PRODUCT_TYPE__PARENT_TYPE_ID);
+		createEReference(productTypeEClass, PRODUCT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(productTypeEClass, PRODUCT_TYPE__PRODUCT_TYPE_ATTRS);
 
 		productTypeAttrEClass = createEClass(PRODUCT_TYPE_ATTR);
@@ -3500,8 +3501,8 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 
 		vendorProductEClass = createEClass(VENDOR_PRODUCT);
 		createEAttribute(vendorProductEClass, VENDOR_PRODUCT__PRODUCT_ID);
-		createEAttribute(vendorProductEClass, VENDOR_PRODUCT__VENDOR_PARTY_ID);
-		createEAttribute(vendorProductEClass, VENDOR_PRODUCT__PRODUCT_STORE_GROUP_ID);
+		createEReference(vendorProductEClass, VENDOR_PRODUCT__VENDOR_PARTY_ID);
+		createEReference(vendorProductEClass, VENDOR_PRODUCT__PRODUCT_STORE_GROUP_ID);
 	}
 
 	/**
@@ -3529,6 +3530,22 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		CategoryPackage theCategoryPackage = (CategoryPackage)EPackage.Registry.INSTANCE.getEPackage(CategoryPackage.eNS_URI);
+		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
+		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
+		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
+		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
+		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
+		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
+		InventoryPackage theInventoryPackage = (InventoryPackage)EPackage.Registry.INSTANCE.getEPackage(InventoryPackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
+		MethodPackage theMethodPackage = (MethodPackage)EPackage.Registry.INSTANCE.getEPackage(MethodPackage.eNS_URI);
+		SchedulePackage theSchedulePackage = (SchedulePackage)EPackage.Registry.INSTANCE.getEPackage(SchedulePackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		LedgerPackage theLedgerPackage = (LedgerPackage)EPackage.Registry.INSTANCE.getEPackage(LedgerPackage.eNS_URI);
+		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
+		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -3598,74 +3615,61 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(goodIdentificationEClass, GoodIdentification.class, "GoodIdentification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGoodIdentification_GoodIdentificationTypeId(), ecorePackage.getEString(), "goodIdentificationTypeId", null, 0, 1, GoodIdentification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGoodIdentification_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, GoodIdentification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGoodIdentification_GoodIdentificationTypeId(), ecorePackage.getEString(), "goodIdentificationTypeId", null, 1, 1, GoodIdentification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoodIdentification_IdValue(), ecorePackage.getEString(), "idValue", null, 0, 1, GoodIdentification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoodIdentification_ProductId(), this.getProduct(), null, "productId", null, 0, 1, GoodIdentification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getGoodIdentification_ProductId().getEKeys().add(this.getProduct_ProductId());
 
 		initEClass(goodIdentificationTypeEClass, GoodIdentificationType.class, "GoodIdentificationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGoodIdentificationType_GoodIdentificationTypeId(), ecorePackage.getEString(), "goodIdentificationTypeId", null, 0, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGoodIdentificationType_GoodIdentificationTypeId(), ecorePackage.getEString(), "goodIdentificationTypeId", null, 1, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoodIdentificationType_Description(), ecorePackage.getEString(), "description", null, 0, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoodIdentificationType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGoodIdentificationType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoodIdentificationType_ParentTypeId(), this.getGoodIdentificationType(), null, "parentTypeId", null, 0, 1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getGoodIdentificationType_ParentTypeId().getEKeys().add(this.getGoodIdentificationType_GoodIdentificationTypeId());
 		initEAttribute(getGoodIdentificationType_GoodIdentifications(), ecorePackage.getEString(), "goodIdentifications", null, 0, -1, GoodIdentificationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(goodIdentificationTypeEClass, ecorePackage.getEString(), "childGoodIdentificationTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productEClass, Product.class, "Product", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProduct_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_AmountUomTypeId(), ecorePackage.getEString(), "amountUomTypeId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProduct_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_AutoCreateKeywords(), ecorePackage.getEBoolean(), "autoCreateKeywords", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_BillOfMaterialLevel(), ecorePackage.getELong(), "billOfMaterialLevel", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_BrandName(), ecorePackage.getEString(), "brandName", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ChargeShipping(), ecorePackage.getEBoolean(), "chargeShipping", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ConfigId(), ecorePackage.getEString(), "configId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_CreatedByUserLogin(), ecorePackage.getEString(), "createdByUserLogin", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_CreatedDate(), ecorePackage.getEDate(), "createdDate", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_DefaultShipmentBoxTypeId(), ecorePackage.getEString(), "defaultShipmentBoxTypeId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_DepthUomId(), ecorePackage.getEString(), "depthUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_Description(), ecorePackage.getEString(), "description", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_DetailImageUrl(), ecorePackage.getEString(), "detailImageUrl", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_DetailScreen(), ecorePackage.getEString(), "detailScreen", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_DiameterUomId(), ecorePackage.getEString(), "diameterUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_FacilityId(), ecorePackage.getEString(), "facilityId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_FixedAmount(), ecorePackage.getEBigDecimal(), "fixedAmount", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_HeightUomId(), ecorePackage.getEString(), "heightUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_InShippingBox(), ecorePackage.getEBoolean(), "inShippingBox", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_IncludeInPromotions(), ecorePackage.getEBoolean(), "includeInPromotions", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_InternalName(), ecorePackage.getEString(), "internalName", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_IntroductionDate(), ecorePackage.getEDate(), "introductionDate", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_InventoryItemTypeId(), ecorePackage.getEString(), "inventoryItemTypeId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_InventoryMessage(), ecorePackage.getEString(), "inventoryMessage", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_IsVariant(), ecorePackage.getEBoolean(), "isVariant", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_IsVirtual(), ecorePackage.getEBoolean(), "isVirtual", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_LargeImageUrl(), ecorePackage.getEString(), "largeImageUrl", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_LastModifiedByUserLogin(), ecorePackage.getEString(), "lastModifiedByUserLogin", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_LastModifiedDate(), ecorePackage.getEDate(), "lastModifiedDate", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_LongDescription(), ecorePackage.getEString(), "longDescription", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_LotIdFilledIn(), ecorePackage.getEString(), "lotIdFilledIn", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_MediumImageUrl(), ecorePackage.getEString(), "mediumImageUrl", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_OrderDecimalQuantity(), ecorePackage.getEBoolean(), "orderDecimalQuantity", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_OriginGeoId(), ecorePackage.getEString(), "originGeoId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_OriginalImageUrl(), ecorePackage.getEString(), "originalImageUrl", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_PiecesIncluded(), ecorePackage.getELong(), "piecesIncluded", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_PriceDetailText(), ecorePackage.getEString(), "priceDetailText", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_PrimaryProductCategoryId(), ecorePackage.getEString(), "primaryProductCategoryId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductDepth(), ecorePackage.getEBigDecimal(), "productDepth", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductDiameter(), ecorePackage.getEBigDecimal(), "productDiameter", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductHeight(), ecorePackage.getEBigDecimal(), "productHeight", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductName(), ecorePackage.getEString(), "productName", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductRating(), ecorePackage.getEBigDecimal(), "productRating", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_ProductTypeId(), ecorePackage.getEString(), "productTypeId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductWeight(), ecorePackage.getEBigDecimal(), "productWeight", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductWidth(), ecorePackage.getEBigDecimal(), "productWidth", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_QuantityIncluded(), ecorePackage.getEBigDecimal(), "quantityIncluded", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_QuantityUomId(), ecorePackage.getEString(), "quantityUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_RatingTypeEnum(), ecorePackage.getEString(), "ratingTypeEnum", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ReleaseDate(), ecorePackage.getEDate(), "releaseDate", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_RequireAmount(), ecorePackage.getEBoolean(), "requireAmount", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_RequireInventory(), ecorePackage.getEBoolean(), "requireInventory", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_RequirementMethodEnumId(), ecorePackage.getEString(), "requirementMethodEnumId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_Reserv2ndPPPerc(), ecorePackage.getEBigDecimal(), "reserv2ndPPPerc", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ReservMaxPersons(), ecorePackage.getEBigDecimal(), "reservMaxPersons", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ReservNthPPPerc(), ecorePackage.getEBigDecimal(), "reservNthPPPerc", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3679,9 +3683,42 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEAttribute(getProduct_SmallImageUrl(), ecorePackage.getEString(), "smallImageUrl", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_SupportDiscontinuationDate(), ecorePackage.getEDate(), "supportDiscontinuationDate", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_Taxable(), ecorePackage.getEBoolean(), "taxable", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_VirtualVariantMethodEnum(), ecorePackage.getEString(), "virtualVariantMethodEnum", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_WeightUomId(), ecorePackage.getEString(), "weightUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProduct_WidthUomId(), ecorePackage.getEString(), "widthUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProduct_ProductTypeId(), this.getProductType(), null, "productTypeId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_ProductTypeId().getEKeys().add(this.getProductType_ProductTypeId());
+		initEReference(getProduct_PrimaryProductCategoryId(), theCategoryPackage.getProductCategory(), null, "primaryProductCategoryId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_PrimaryProductCategoryId().getEKeys().add(theCategoryPackage.getProductCategory_ProductCategoryId());
+		initEReference(getProduct_FacilityId(), theFacilityPackage.getFacility(), null, "facilityId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_FacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
+		initEReference(getProduct_QuantityUomId(), theUomPackage.getUom(), null, "quantityUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_QuantityUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getProduct_AmountUomTypeId(), theUomPackage.getUomType(), null, "amountUomTypeId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_AmountUomTypeId().getEKeys().add(theUomPackage.getUomType_UomTypeId());
+		initEReference(getProduct_WeightUomId(), theUomPackage.getUom(), null, "weightUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_WeightUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getProduct_HeightUomId(), theUomPackage.getUom(), null, "heightUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_HeightUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getProduct_WidthUomId(), theUomPackage.getUom(), null, "widthUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_WidthUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getProduct_DepthUomId(), theUomPackage.getUom(), null, "depthUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_DepthUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getProduct_DiameterUomId(), theUomPackage.getUom(), null, "diameterUomId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_DiameterUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getProduct_VirtualVariantMethodEnum(), theEnumPackage.getEnumeration(), null, "virtualVariantMethodEnum", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_VirtualVariantMethodEnum().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
+		initEReference(getProduct_RatingTypeEnum(), theEnumPackage.getEnumeration(), null, "ratingTypeEnum", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_RatingTypeEnum().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
+		initEReference(getProduct_RequirementMethodEnumId(), theEnumPackage.getEnumeration(), null, "requirementMethodEnumId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_RequirementMethodEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
+		initEReference(getProduct_OriginGeoId(), theGeoPackage.getGeo(), null, "originGeoId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_OriginGeoId().getEKeys().add(theGeoPackage.getGeo_GeoId());
+		initEReference(getProduct_CreatedByUserLogin(), theLoginPackage.getUserLogin(), null, "createdByUserLogin", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_CreatedByUserLogin().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
+		initEReference(getProduct_LastModifiedByUserLogin(), theLoginPackage.getUserLogin(), null, "lastModifiedByUserLogin", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_LastModifiedByUserLogin().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
+		initEReference(getProduct_DefaultShipmentBoxTypeId(), theShipment_Package.getShipmentBoxType(), null, "defaultShipmentBoxTypeId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_DefaultShipmentBoxTypeId().getEKeys().add(theShipment_Package.getShipmentBoxType_ShipmentBoxTypeId());
+		initEReference(getProduct_InventoryItemTypeId(), theInventoryPackage.getInventoryItemType(), null, "inventoryItemTypeId", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProduct_InventoryItemTypeId().getEKeys().add(theInventoryPackage.getInventoryItemType_InventoryItemTypeId());
 		initEAttribute(getProduct_CommunicationEventProducts(), ecorePackage.getEString(), "communicationEventProducts", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductAttributes(), ecorePackage.getEString(), "productAttributes", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_ProductFacilities(), ecorePackage.getEString(), "productFacilities", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3742,107 +3779,133 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		addEOperation(productEClass, ecorePackage.getEString(), "subscriptions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productAssocEClass, ProductAssoc.class, "ProductAssoc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductAssoc_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductAssoc_ProductIdTo(), ecorePackage.getEString(), "productIdTo", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductAssoc_ProductAssocTypeId(), ecorePackage.getEString(), "productAssocTypeId", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductAssoc_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductAssoc_EstimateCalcMethod(), ecorePackage.getEString(), "estimateCalcMethod", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductAssoc_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductAssoc_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAssoc_Instruction(), ecorePackage.getEString(), "instruction", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAssoc_Quantity(), ecorePackage.getEBigDecimal(), "quantity", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAssoc_Reason(), ecorePackage.getEString(), "reason", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductAssoc_RecurrenceInfoId(), ecorePackage.getEString(), "recurrenceInfoId", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductAssoc_RoutingWorkEffortId(), ecorePackage.getEString(), "routingWorkEffortId", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAssoc_ScrapFactor(), ecorePackage.getEBigDecimal(), "scrapFactor", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAssoc_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAssoc_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductAssoc_ProductAssocTypeId(), this.getProductAssocType(), null, "productAssocTypeId", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductAssoc_ProductAssocTypeId().getEKeys().add(this.getProductAssocType_ProductAssocTypeId());
+		initEReference(getProductAssoc_ProductIdTo(), this.getProduct(), null, "productIdTo", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductAssoc_ProductIdTo().getEKeys().add(this.getProduct_ProductId());
+		initEReference(getProductAssoc_RoutingWorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "routingWorkEffortId", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductAssoc_RoutingWorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
+		initEReference(getProductAssoc_EstimateCalcMethod(), theMethodPackage.getCustomMethod(), null, "estimateCalcMethod", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductAssoc_EstimateCalcMethod().getEKeys().add(theMethodPackage.getCustomMethod_CustomMethodId());
+		initEReference(getProductAssoc_RecurrenceInfoId(), theSchedulePackage.getRecurrenceInfo(), null, "recurrenceInfoId", null, 0, 1, ProductAssoc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductAssoc_RecurrenceInfoId().getEKeys().add(theSchedulePackage.getRecurrenceInfo_RecurrenceInfoId());
 
 		initEClass(productAssocTypeEClass, ProductAssocType.class, "ProductAssocType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductAssocType_ProductAssocTypeId(), ecorePackage.getEString(), "productAssocTypeId", null, 0, 1, ProductAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductAssocType_ProductAssocTypeId(), ecorePackage.getEString(), "productAssocTypeId", null, 1, 1, ProductAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAssocType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAssocType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, ProductAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductAssocType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, ProductAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductAssocType_ParentTypeId(), this.getProductAssocType(), null, "parentTypeId", null, 0, 1, ProductAssocType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductAssocType_ParentTypeId().getEKeys().add(this.getProductAssocType_ProductAssocTypeId());
 
 		addEOperation(productAssocTypeEClass, ecorePackage.getEString(), "childProductAssocTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productAttributeEClass, ProductAttribute.class, "ProductAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductAttribute_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 0, 1, ProductAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductAttribute_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, ProductAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAttribute_AttrDescription(), ecorePackage.getEString(), "attrDescription", null, 0, 1, ProductAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAttribute_AttrType(), ecorePackage.getEString(), "attrType", null, 0, 1, ProductAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductAttribute_AttrValue(), ecorePackage.getEString(), "attrValue", null, 0, 1, ProductAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(productCalculatedInfoEClass, ProductCalculatedInfo.class, "ProductCalculatedInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductCalculatedInfo_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductCalculatedInfo_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductCalculatedInfo_AverageCustomerRating(), ecorePackage.getEBigDecimal(), "averageCustomerRating", null, 0, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductCalculatedInfo_TotalQuantityOrdered(), ecorePackage.getEBigDecimal(), "totalQuantityOrdered", null, 0, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductCalculatedInfo_TotalTimesViewed(), ecorePackage.getELong(), "totalTimesViewed", null, 0, 1, ProductCalculatedInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(productContentEClass, ProductContent.class, "ProductContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductContent_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductContent_ContentId(), ecorePackage.getEString(), "contentId", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductContent_ProductContentTypeId(), ecorePackage.getEString(), "productContentTypeId", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductContent_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductContent_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductContent_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductContent_PurchaseFromDate(), ecorePackage.getEDate(), "purchaseFromDate", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductContent_PurchaseThruDate(), ecorePackage.getEDate(), "purchaseThruDate", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductContent_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductContent_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductContent_UseCountLimit(), ecorePackage.getELong(), "useCountLimit", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductContent_UseRoleTypeId(), ecorePackage.getEString(), "useRoleTypeId", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductContent_UseTime(), ecorePackage.getELong(), "useTime", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductContent_UseTimeUomId(), ecorePackage.getEString(), "useTimeUomId", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductContent_ContentId(), theContentPackage.getContent(), null, "contentId", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductContent_ContentId().getEKeys().add(theContentPackage.getContent_ContentId());
+		initEReference(getProductContent_ProductContentTypeId(), this.getProductContentType(), null, "productContentTypeId", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductContent_ProductContentTypeId().getEKeys().add(this.getProductContentType_ProductContentTypeId());
+		initEReference(getProductContent_UseRoleTypeId(), thePartyPackage.getRoleType(), null, "useRoleTypeId", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductContent_UseRoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
+		initEReference(getProductContent_UseTimeUomId(), theUomPackage.getUom(), null, "useTimeUomId", null, 0, 1, ProductContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductContent_UseTimeUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
 		initEClass(productContentTypeEClass, ProductContentType.class, "ProductContentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductContentType_ProductContentTypeId(), ecorePackage.getEString(), "productContentTypeId", null, 0, 1, ProductContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductContentType_ProductContentTypeId(), ecorePackage.getEString(), "productContentTypeId", null, 1, 1, ProductContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductContentType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductContentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, ProductContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductContentType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, ProductContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductContentType_ParentTypeId(), this.getProductContentType(), null, "parentTypeId", null, 0, 1, ProductContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductContentType_ParentTypeId().getEKeys().add(this.getProductContentType_ProductContentTypeId());
 
 		addEOperation(productContentTypeEClass, ecorePackage.getEString(), "childProductContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productGeoEClass, ProductGeo.class, "ProductGeo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductGeo_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductGeo_GeoId(), ecorePackage.getEString(), "geoId", null, 0, 1, ProductGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductGeo_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductGeo_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductGeo_ProductGeoEnumId(), ecorePackage.getEString(), "productGeoEnumId", null, 0, 1, ProductGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductGeo_GeoId(), theGeoPackage.getGeo(), null, "geoId", null, 0, 1, ProductGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductGeo_GeoId().getEKeys().add(theGeoPackage.getGeo_GeoId());
+		initEReference(getProductGeo_ProductGeoEnumId(), theEnumPackage.getEnumeration(), null, "productGeoEnumId", null, 0, 1, ProductGeo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductGeo_ProductGeoEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		initEClass(productGlAccountEClass, ProductGlAccount.class, "ProductGlAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductGlAccount_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductGlAccount_OrganizationPartyId(), ecorePackage.getEString(), "organizationPartyId", null, 0, 1, ProductGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductGlAccount_GlAccountTypeId(), ecorePackage.getEString(), "glAccountTypeId", null, 0, 1, ProductGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductGlAccount_GlAccountId(), ecorePackage.getEString(), "glAccountId", null, 0, 1, ProductGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductGlAccount_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductGlAccount_OrganizationPartyId(), thePartyPackage.getParty(), null, "organizationPartyId", null, 0, 1, ProductGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductGlAccount_OrganizationPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getProductGlAccount_GlAccountTypeId(), theLedgerPackage.getGlAccountType(), null, "glAccountTypeId", null, 0, 1, ProductGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductGlAccount_GlAccountTypeId().getEKeys().add(theLedgerPackage.getGlAccountType_GlAccountTypeId());
+		initEReference(getProductGlAccount_GlAccountId(), theLedgerPackage.getGlAccount(), null, "glAccountId", null, 0, 1, ProductGlAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductGlAccount_GlAccountId().getEKeys().add(theLedgerPackage.getGlAccount_GlAccountId());
 
 		initEClass(productGroupOrderEClass, ProductGroupOrder.class, "ProductGroupOrder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductGroupOrder_GroupOrderId(), ecorePackage.getEString(), "groupOrderId", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductGroupOrder_GroupOrderId(), ecorePackage.getEString(), "groupOrderId", null, 1, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductGroupOrder_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductGroupOrder_JobId(), ecorePackage.getEString(), "jobId", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductGroupOrder_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductGroupOrder_ReqOrderQty(), ecorePackage.getEBigDecimal(), "reqOrderQty", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductGroupOrder_SoldOrderQty(), ecorePackage.getEBigDecimal(), "soldOrderQty", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductGroupOrder_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductGroupOrder_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductGroupOrder_ProductId(), this.getProduct(), null, "productId", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductGroupOrder_ProductId().getEKeys().add(this.getProduct_ProductId());
+		initEReference(getProductGroupOrder_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductGroupOrder_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEReference(getProductGroupOrder_JobId(), theSchedulePackage.getJobSandbox(), null, "jobId", null, 0, 1, ProductGroupOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductGroupOrder_JobId().getEKeys().add(theSchedulePackage.getJobSandbox_JobId());
 
 		initEClass(productKeywordEClass, ProductKeyword.class, "ProductKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductKeyword_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, ProductKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductKeyword_KeywordTypeId(), ecorePackage.getEString(), "keywordTypeId", null, 0, 1, ProductKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductKeyword_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 1, 1, ProductKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductKeyword_RelevancyWeight(), ecorePackage.getELong(), "relevancyWeight", null, 0, 1, ProductKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductKeyword_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, ProductKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductKeyword_KeywordTypeId(), theEnumPackage.getEnumeration(), null, "keywordTypeId", null, 0, 1, ProductKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductKeyword_KeywordTypeId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
+		initEReference(getProductKeyword_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, ProductKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductKeyword_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 
 		initEClass(productMaintEClass, ProductMaint.class, "ProductMaint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductMaint_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductMaint_ProductMaintSeqId(), ecorePackage.getEString(), "productMaintSeqId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductMaint_IntervalMeterTypeId(), ecorePackage.getEString(), "intervalMeterTypeId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductMaint_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductMaint_ProductMaintSeqId(), ecorePackage.getEString(), "productMaintSeqId", null, 1, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductMaint_IntervalQuantity(), ecorePackage.getEBigDecimal(), "intervalQuantity", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductMaint_IntervalUomId(), ecorePackage.getEString(), "intervalUomId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductMaint_MaintName(), ecorePackage.getEString(), "maintName", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductMaint_MaintTemplateWorkEffortId(), ecorePackage.getEString(), "maintTemplateWorkEffortId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductMaint_ProductMaintTypeId(), ecorePackage.getEString(), "productMaintTypeId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductMaint_RepeatCount(), ecorePackage.getELong(), "repeatCount", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductMaint_ProductMaintTypeId(), this.getProductMaintType(), null, "productMaintTypeId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductMaint_ProductMaintTypeId().getEKeys().add(this.getProductMaintType_ProductMaintTypeId());
+		initEReference(getProductMaint_MaintTemplateWorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "maintTemplateWorkEffortId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductMaint_MaintTemplateWorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
+		initEReference(getProductMaint_IntervalUomId(), theUomPackage.getUom(), null, "intervalUomId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductMaint_IntervalUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getProductMaint_IntervalMeterTypeId(), this.getProductMeterType(), null, "intervalMeterTypeId", null, 0, 1, ProductMaint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductMaint_IntervalMeterTypeId().getEKeys().add(this.getProductMeterType_ProductMeterTypeId());
 
 		initEClass(productMaintTypeEClass, ProductMaintType.class, "ProductMaintType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductMaintType_ProductMaintTypeId(), ecorePackage.getEString(), "productMaintTypeId", null, 0, 1, ProductMaintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductMaintType_ProductMaintTypeId(), ecorePackage.getEString(), "productMaintTypeId", null, 1, 1, ProductMaintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductMaintType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductMaintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductMaintType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, ProductMaintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductMaintType_ParentTypeId(), this.getProductMaintType(), null, "parentTypeId", null, 0, 1, ProductMaintType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductMaintType_ParentTypeId().getEKeys().add(this.getProductMaintType_ProductMaintTypeId());
 
 		addEOperation(productMaintTypeEClass, ecorePackage.getEString(), "childProductMaintTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -3851,15 +3914,18 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		addEOperation(productMaintTypeEClass, ecorePackage.getEString(), "productMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productMeterEClass, ProductMeter.class, "ProductMeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductMeter_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductMeter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductMeter_ProductMeterTypeId(), ecorePackage.getEString(), "productMeterTypeId", null, 0, 1, ProductMeter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductMeter_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductMeter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductMeter_MeterName(), ecorePackage.getEString(), "meterName", null, 0, 1, ProductMeter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductMeter_MeterUomId(), ecorePackage.getEString(), "meterUomId", null, 0, 1, ProductMeter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductMeter_ProductMeterTypeId(), this.getProductMeterType(), null, "productMeterTypeId", null, 0, 1, ProductMeter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductMeter_ProductMeterTypeId().getEKeys().add(this.getProductMeterType_ProductMeterTypeId());
+		initEReference(getProductMeter_MeterUomId(), theUomPackage.getUom(), null, "meterUomId", null, 0, 1, ProductMeter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductMeter_MeterUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
 		initEClass(productMeterTypeEClass, ProductMeterType.class, "ProductMeterType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductMeterType_ProductMeterTypeId(), ecorePackage.getEString(), "productMeterTypeId", null, 0, 1, ProductMeterType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductMeterType_DefaultUomId(), ecorePackage.getEString(), "defaultUomId", null, 0, 1, ProductMeterType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductMeterType_ProductMeterTypeId(), ecorePackage.getEString(), "productMeterTypeId", null, 1, 1, ProductMeterType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductMeterType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductMeterType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductMeterType_DefaultUomId(), theUomPackage.getUom(), null, "defaultUomId", null, 0, 1, ProductMeterType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductMeterType_DefaultUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
 		addEOperation(productMeterTypeEClass, ecorePackage.getEString(), "intervalFixedAssetMaints", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -3868,28 +3934,34 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		addEOperation(productMeterTypeEClass, ecorePackage.getEString(), "productMeters", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productReviewEClass, ProductReview.class, "ProductReview", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductReview_ProductReviewId(), ecorePackage.getEString(), "productReviewId", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductReview_ProductReviewId(), ecorePackage.getEString(), "productReviewId", null, 1, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductReview_PostedAnonymous(), ecorePackage.getEBoolean(), "postedAnonymous", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductReview_PostedDateTime(), ecorePackage.getEDate(), "postedDateTime", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductReview_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductReview_ProductRating(), ecorePackage.getEBigDecimal(), "productRating", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductReview_ProductReview(), ecorePackage.getEString(), "productReview", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductReview_ProductStoreId(), ecorePackage.getEString(), "productStoreId", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductReview_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductReview_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductReview_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductReview_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
+		initEReference(getProductReview_ProductId(), this.getProduct(), null, "productId", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductReview_ProductId().getEKeys().add(this.getProduct_ProductId());
+		initEReference(getProductReview_UserLoginId(), theLoginPackage.getUserLogin(), null, "userLoginId", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductReview_UserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
+		initEReference(getProductReview_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, ProductReview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductReview_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
 
 		initEClass(productRoleEClass, ProductRole.class, "ProductRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductRole_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductRole_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 0, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductRole_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductRole_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductRole_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductRole_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductRole_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductRole_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getProductRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, ProductRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
 
 		initEClass(productSearchConstraintEClass, ProductSearchConstraint.class, "ProductSearchConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductSearchConstraint_ProductSearchResultId(), ecorePackage.getEString(), "productSearchResultId", null, 0, 1, ProductSearchConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductSearchConstraint_ConstraintSeqId(), ecorePackage.getEString(), "constraintSeqId", null, 0, 1, ProductSearchConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductSearchConstraint_ProductSearchResultId(), ecorePackage.getEString(), "productSearchResultId", null, 1, 1, ProductSearchConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductSearchConstraint_ConstraintSeqId(), ecorePackage.getEString(), "constraintSeqId", null, 1, 1, ProductSearchConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchConstraint_AnyPrefix(), ecorePackage.getEBoolean(), "anyPrefix", null, 0, 1, ProductSearchConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchConstraint_AnySuffix(), ecorePackage.getEBoolean(), "anySuffix", null, 0, 1, ProductSearchConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchConstraint_ConstraintName(), ecorePackage.getEString(), "constraintName", null, 0, 1, ProductSearchConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3901,7 +3973,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEAttribute(getProductSearchConstraint_RemoveStems(), ecorePackage.getEBoolean(), "removeStems", null, 0, 1, ProductSearchConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(productSearchResultEClass, ProductSearchResult.class, "ProductSearchResult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductSearchResult_ProductSearchResultId(), ecorePackage.getEString(), "productSearchResultId", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductSearchResult_ProductSearchResultId(), ecorePackage.getEString(), "productSearchResultId", null, 1, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchResult_IsAscending(), ecorePackage.getEBoolean(), "isAscending", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchResult_NumResults(), ecorePackage.getELong(), "numResults", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductSearchResult_OrderByName(), ecorePackage.getEString(), "orderByName", null, 0, 1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3911,12 +3983,13 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		initEAttribute(getProductSearchResult_ProductSearchConstraints(), ecorePackage.getEString(), "productSearchConstraints", null, 0, -1, ProductSearchResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(productTypeEClass, ProductType.class, "ProductType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductType_ProductTypeId(), ecorePackage.getEString(), "productTypeId", null, 0, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductType_ProductTypeId(), ecorePackage.getEString(), "productTypeId", null, 1, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductType_IsDigital(), ecorePackage.getEBoolean(), "isDigital", null, 0, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductType_IsPhysical(), ecorePackage.getEBoolean(), "isPhysical", null, 0, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProductType_ParentTypeId(), this.getProductType(), null, "parentTypeId", null, 0, 1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getProductType_ParentTypeId().getEKeys().add(this.getProductType_ProductTypeId());
 		initEAttribute(getProductType_ProductTypeAttrs(), ecorePackage.getEString(), "productTypeAttrs", null, 0, -1, ProductType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(productTypeEClass, ecorePackage.getEString(), "childProductTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -3924,22 +3997,24 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		addEOperation(productTypeEClass, ecorePackage.getEString(), "products", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(productTypeAttrEClass, ProductTypeAttr.class, "ProductTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductTypeAttr_ProductTypeId(), ecorePackage.getEString(), "productTypeId", null, 0, 1, ProductTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProductTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 0, 1, ProductTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductTypeAttr_ProductTypeId(), ecorePackage.getEString(), "productTypeId", null, 1, 1, ProductTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProductTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, ProductTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductTypeAttr_Description(), ecorePackage.getEString(), "description", null, 0, 1, ProductTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vendorProductEClass, VendorProduct.class, "VendorProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVendorProduct_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, VendorProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVendorProduct_VendorPartyId(), ecorePackage.getEString(), "vendorPartyId", null, 0, 1, VendorProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVendorProduct_ProductStoreGroupId(), ecorePackage.getEString(), "productStoreGroupId", null, 0, 1, VendorProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVendorProduct_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, VendorProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVendorProduct_VendorPartyId(), thePartyPackage.getParty(), null, "vendorPartyId", null, 0, 1, VendorProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVendorProduct_VendorPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getVendorProduct_ProductStoreGroupId(), theStorePackage.getProductStoreGroup(), null, "productStoreGroupId", null, 0, 1, VendorProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVendorProduct_ProductStoreGroupId().getEKeys().add(theStorePackage.getProductStoreGroup_ProductStoreGroupId());
 
 		// Create annotations
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-domain
+		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -3952,12 +4027,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		String source = "mimo-ent-slot";
 		addAnnotation
 		  (getGoodIdentification_GoodIdentificationTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getGoodIdentification_ProductId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -4185,18 +4254,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getProductAssoc_ProductIdTo(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getProductAssoc_ProductAssocTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getProductAssoc_FromDate(),
 		   source,
 		   new String[] {
@@ -4239,18 +4296,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getProductContent_ContentId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getProductContent_ProductContentTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getProductContent_FromDate(),
 		   source,
 		   new String[] {
@@ -4275,25 +4320,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getProductGeo_GeoId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getProductGlAccount_ProductId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getProductGlAccount_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getProductGlAccount_GlAccountTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -4312,12 +4339,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   });
 		addAnnotation
 		  (getProductKeyword_Keyword(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getProductKeyword_KeywordTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -4365,12 +4386,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getProductMeter_ProductMeterTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (productMeterTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -4402,18 +4417,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   });
 		addAnnotation
 		  (getProductRole_ProductId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getProductRole_PartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getProductRole_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -4490,18 +4493,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   new String[] {
 			   "key", "true"
 		   });
-		addAnnotation
-		  (getVendorProduct_VendorPartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getVendorProduct_ProductStoreGroupId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
 	}
 
 	/**
@@ -4513,38 +4504,11 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getGoodIdentification_GoodIdentificationTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "GoodIdentificationType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getGoodIdentification_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (goodIdentificationTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "GoodIdentificationType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getGoodIdentificationType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "GoodIdentificationType"
 		   },
 		   new URI[] {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -4819,168 +4783,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProduct_AmountUomTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "UomType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_DefaultShipmentBoxTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentBoxType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_DepthUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_DiameterUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_FacilityId(),
-		   source,
-		   new String[] {
-			   "frame", "Facility"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_HeightUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_InventoryItemTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "InventoryItemType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_LastModifiedByUserLogin(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_OriginGeoId(),
-		   source,
-		   new String[] {
-			   "frame", "Geo"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_PrimaryProductCategoryId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductCategory"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_ProductTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_QuantityUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_RatingTypeEnum(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_RequirementMethodEnumId(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_VirtualVariantMethodEnum(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_WeightUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProduct_WidthUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getProduct_CommunicationEventProducts(),
 		   source,
 		   new String[] {
@@ -5035,60 +4837,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductAssoc_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductAssoc_ProductIdTo(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductAssoc_ProductAssocTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductAssocType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductAssoc_EstimateCalcMethod(),
-		   source,
-		   new String[] {
-			   "frame", "CustomMethod"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductAssoc_RecurrenceInfoId(),
-		   source,
-		   new String[] {
-			   "frame", "RecurrenceInfo"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductAssoc_RoutingWorkEffortId(),
-		   source,
-		   new String[] {
-			   "frame", "WorkEffort"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (productAssocTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -5099,254 +4847,11 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductAssocType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductAssocType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductAttribute_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductCalculatedInfo_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductContent_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductContent_ContentId(),
-		   source,
-		   new String[] {
-			   "frame", "Content"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductContent_ProductContentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductContentType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductContent_UseRoleTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "RoleType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductContent_UseTimeUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (productContentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ProductContentType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductContentType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGeo_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGeo_GeoId(),
-		   source,
-		   new String[] {
-			   "frame", "Geo"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGeo_ProductGeoEnumId(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGlAccount_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGlAccount_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGlAccount_GlAccountTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "GlAccountType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGlAccount_GlAccountId(),
-		   source,
-		   new String[] {
-			   "frame", "GlAccount"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGroupOrder_JobId(),
-		   source,
-		   new String[] {
-			   "frame", "JobSandbox"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGroupOrder_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductGroupOrder_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductKeyword_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductKeyword_KeywordTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductKeyword_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductMaint_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductMaint_IntervalMeterTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductMeterType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductMaint_IntervalUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductMaint_MaintTemplateWorkEffortId(),
-		   source,
-		   new String[] {
-			   "frame", "WorkEffort"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductMaint_ProductMaintTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductMaintType"
 		   },
 		   new URI[] {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -5382,42 +4887,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductMaintType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductMaintType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductMeter_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductMeter_ProductMeterTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductMeterType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductMeter_MeterUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (productMeterTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -5443,87 +4912,6 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 		   new String[] {
 			   "frame", "ProductMeter",
 			   "route", "productMeterTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductMeterType_DefaultUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductReview_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductReview_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductReview_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductReview_UserLoginId(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductRole_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductRole_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "RoleType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductSearchConstraint_ProductSearchResultId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductSearchResult"
 		   },
 		   new URI[] {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -5558,55 +4946,10 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getProductType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getProductType_ProductTypeAttrs(),
 		   source,
 		   new String[] {
 			   "frame", "ProductTypeAttr"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getProductTypeAttr_ProductTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductType"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getVendorProduct_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getVendorProduct_VendorPartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getVendorProduct_ProductStoreGroupId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreGroup"
 		   },
 		   new URI[] {
 			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")

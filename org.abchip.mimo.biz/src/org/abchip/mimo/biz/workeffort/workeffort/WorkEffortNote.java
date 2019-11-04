@@ -40,7 +40,6 @@ public interface WorkEffortNote extends BizEntityNote {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortNote_WorkEffortId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
 	 * @generated
 	 */
 	String getWorkEffortId();

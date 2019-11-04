@@ -57,30 +57,30 @@ public interface AccommodationClass extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Class Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Class Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Class Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Class Id</em>' attribute.
-	 * @see #setParentClassId(String)
+	 * @return the value of the '<em>Parent Class Id</em>' reference.
+	 * @see #setParentClassId(AccommodationClass)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationClass_ParentClassId()
-	 * @model annotation="mimo-ent-domain frame='AccommodationClass'"
+	 * @model keys="accommodationClassId"
 	 * @generated
 	 */
-	String getParentClassId();
+	AccommodationClass getParentClassId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass#getParentClassId <em>Parent Class Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass#getParentClassId <em>Parent Class Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Class Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Class Id</em>' reference.
 	 * @see #getParentClassId()
 	 * @generated
 	 */
-	void setParentClassId(String value);
+	void setParentClassId(AccommodationClass value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,7 +120,7 @@ public interface AccommodationClass extends BizEntity {
 	 * @return the value of the '<em>Accommodation Class Id</em>' attribute.
 	 * @see #setAccommodationClassId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationClass_AccommodationClassId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -50,7 +50,7 @@ public interface PropertyPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-common-property";
+	String eNS_PREFIX = "biz-property";
 
 	/**
 	 * The singleton instance of the package.

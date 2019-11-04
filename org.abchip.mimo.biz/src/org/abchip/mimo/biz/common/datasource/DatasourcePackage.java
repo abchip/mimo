@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface DatasourcePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-common-datasource";
+	String eNS_PREFIX = "biz-datasource";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,22 +117,22 @@ public interface DatasourcePackage extends EPackage {
 	int DATA_SOURCE__DATA_SOURCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Data Source Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE__DATA_SOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SOURCE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int DATA_SOURCE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Data Source Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SOURCE__DATA_SOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Data Source</em>' class.
@@ -247,15 +248,15 @@ public interface DatasourcePackage extends EPackage {
 	EAttribute getDataSource_DataSourceId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceTypeId <em>Data Source Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceTypeId <em>Data Source Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Data Source Type Id</em>'.
+	 * @return the meta object for the reference '<em>Data Source Type Id</em>'.
 	 * @see org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceTypeId()
 	 * @see #getDataSource()
 	 * @generated
 	 */
-	EAttribute getDataSource_DataSourceTypeId();
+	EReference getDataSource_DataSourceTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.datasource.DataSource#getDescription <em>Description</em>}'.
@@ -341,12 +342,12 @@ public interface DatasourcePackage extends EPackage {
 		EAttribute DATA_SOURCE__DATA_SOURCE_ID = eINSTANCE.getDataSource_DataSourceId();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Source Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Data Source Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_SOURCE__DATA_SOURCE_TYPE_ID = eINSTANCE.getDataSource_DataSourceTypeId();
+		EReference DATA_SOURCE__DATA_SOURCE_TYPE_ID = eINSTANCE.getDataSource_DataSourceTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

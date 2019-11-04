@@ -38,7 +38,8 @@ public interface ProductPromoCodeEmail extends BizEntity {
 	 * @return the value of the '<em>Email Address</em>' attribute.
 	 * @see #setEmailAddress(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeEmail_EmailAddress()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmailAddress();
@@ -64,8 +65,8 @@ public interface ProductPromoCodeEmail extends BizEntity {
 	 * @return the value of the '<em>Product Promo Code Id</em>' attribute.
 	 * @see #setProductPromoCodeId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCodeEmail_ProductPromoCodeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPromoCode'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductPromoCodeId();

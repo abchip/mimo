@@ -7,13 +7,17 @@
  */
 package org.abchip.mimo.biz.webapp.website.impl;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.website.WebPage;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.abchip.mimo.biz.webapp.website.WebsitePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getWebPageId <em>Web Page Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getPageName <em>Page Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getWebSiteId <em>Web Site Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebPageImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +63,6 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	protected String webPageId = WEB_PAGE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPageName() <em>Page Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,24 +83,24 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	protected String pageName = PAGE_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
+	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWebSiteId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WEB_SITE_ID_EDEFAULT = null;
+	protected WebSite webSiteId;
 
 	/**
-	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
+	 * @see #getContentId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String webSiteId = WEB_SITE_ID_EDEFAULT;
+	protected Content contentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,7 +150,24 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_PAGE__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -176,8 +177,8 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_PAGE__CONTENT_ID, oldContentId, contentId));
@@ -212,7 +213,24 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	 * @generated
 	 */
 	@Override
-	public String getWebSiteId() {
+	public WebSite getWebSiteId() {
+		if (webSiteId != null && ((EObject)webSiteId).eIsProxy()) {
+			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
+			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
+			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_PAGE__WEB_SITE_ID, oldWebSiteId, webSiteId));
+			}
+		}
+		return webSiteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebSite basicGetWebSiteId() {
 		return webSiteId;
 	}
 
@@ -222,8 +240,8 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 	 * @generated
 	 */
 	@Override
-	public void setWebSiteId(String newWebSiteId) {
-		String oldWebSiteId = webSiteId;
+	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_PAGE__WEB_SITE_ID, oldWebSiteId, webSiteId));
@@ -239,12 +257,14 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 		switch (featureID) {
 			case WebsitePackage.WEB_PAGE__WEB_PAGE_ID:
 				return getWebPageId();
-			case WebsitePackage.WEB_PAGE__CONTENT_ID:
-				return getContentId();
 			case WebsitePackage.WEB_PAGE__PAGE_NAME:
 				return getPageName();
 			case WebsitePackage.WEB_PAGE__WEB_SITE_ID:
-				return getWebSiteId();
+				if (resolve) return getWebSiteId();
+				return basicGetWebSiteId();
+			case WebsitePackage.WEB_PAGE__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,14 +280,14 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 			case WebsitePackage.WEB_PAGE__WEB_PAGE_ID:
 				setWebPageId((String)newValue);
 				return;
-			case WebsitePackage.WEB_PAGE__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case WebsitePackage.WEB_PAGE__PAGE_NAME:
 				setPageName((String)newValue);
 				return;
 			case WebsitePackage.WEB_PAGE__WEB_SITE_ID:
-				setWebSiteId((String)newValue);
+				setWebSiteId((WebSite)newValue);
+				return;
+			case WebsitePackage.WEB_PAGE__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,14 +304,14 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 			case WebsitePackage.WEB_PAGE__WEB_PAGE_ID:
 				setWebPageId(WEB_PAGE_ID_EDEFAULT);
 				return;
-			case WebsitePackage.WEB_PAGE__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case WebsitePackage.WEB_PAGE__PAGE_NAME:
 				setPageName(PAGE_NAME_EDEFAULT);
 				return;
 			case WebsitePackage.WEB_PAGE__WEB_SITE_ID:
-				setWebSiteId(WEB_SITE_ID_EDEFAULT);
+				setWebSiteId((WebSite)null);
+				return;
+			case WebsitePackage.WEB_PAGE__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,12 +327,12 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 		switch (featureID) {
 			case WebsitePackage.WEB_PAGE__WEB_PAGE_ID:
 				return WEB_PAGE_ID_EDEFAULT == null ? webPageId != null : !WEB_PAGE_ID_EDEFAULT.equals(webPageId);
-			case WebsitePackage.WEB_PAGE__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case WebsitePackage.WEB_PAGE__PAGE_NAME:
 				return PAGE_NAME_EDEFAULT == null ? pageName != null : !PAGE_NAME_EDEFAULT.equals(pageName);
 			case WebsitePackage.WEB_PAGE__WEB_SITE_ID:
-				return WEB_SITE_ID_EDEFAULT == null ? webSiteId != null : !WEB_SITE_ID_EDEFAULT.equals(webSiteId);
+				return webSiteId != null;
+			case WebsitePackage.WEB_PAGE__CONTENT_ID:
+				return contentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -329,12 +349,8 @@ public class WebPageImpl extends BizEntityImpl implements WebPage {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (webPageId: ");
 		result.append(webPageId);
-		result.append(", contentId: ");
-		result.append(contentId);
 		result.append(", pageName: ");
 		result.append(pageName);
-		result.append(", webSiteId: ");
-		result.append(webSiteId);
 		result.append(')');
 		return result.toString();
 	}

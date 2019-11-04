@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface KeywordPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-common-keyword";
+	String eNS_PREFIX = "biz-keyword";
 
 	/**
 	 * The singleton instance of the package.
@@ -125,7 +126,7 @@ public interface KeywordPackage extends EPackage {
 	int KEYWORD_THESAURUS__ALTERNATE_KEYWORD = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Relationship Enum Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Relationship Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -176,15 +177,15 @@ public interface KeywordPackage extends EPackage {
 	EAttribute getKeywordThesaurus_AlternateKeyword();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.keyword.KeywordThesaurus#getRelationshipEnumId <em>Relationship Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.keyword.KeywordThesaurus#getRelationshipEnumId <em>Relationship Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Relationship Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Relationship Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.common.keyword.KeywordThesaurus#getRelationshipEnumId()
 	 * @see #getKeywordThesaurus()
 	 * @generated
 	 */
-	EAttribute getKeywordThesaurus_RelationshipEnumId();
+	EReference getKeywordThesaurus_RelationshipEnumId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -235,12 +236,12 @@ public interface KeywordPackage extends EPackage {
 		EAttribute KEYWORD_THESAURUS__ALTERNATE_KEYWORD = eINSTANCE.getKeywordThesaurus_AlternateKeyword();
 
 		/**
-		 * The meta object literal for the '<em><b>Relationship Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Relationship Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID = eINSTANCE.getKeywordThesaurus_RelationshipEnumId();
+		EReference KEYWORD_THESAURUS__RELATIONSHIP_ENUM_ID = eINSTANCE.getKeywordThesaurus_RelationshipEnumId();
 
 	}
 

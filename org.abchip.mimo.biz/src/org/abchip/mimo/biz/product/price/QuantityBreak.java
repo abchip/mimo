@@ -23,8 +23,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakId <em>Quantity Break Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getFromQuantity <em>From Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakTypeId <em>Quantity Break Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getThruQuantity <em>Thru Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakTypeId <em>Quantity Break Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak()
@@ -69,7 +69,7 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	 * @return the value of the '<em>Quantity Break Id</em>' attribute.
 	 * @see #setQuantityBreakId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak_QuantityBreakId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -139,29 +139,29 @@ public interface QuantityBreak extends BizEntityTyped<QuantityBreakType> {
 	List<String> weightShipmentCostEstimates();
 
 	/**
-	 * Returns the value of the '<em><b>Quantity Break Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quantity Break Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quantity Break Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quantity Break Type Id</em>' attribute.
-	 * @see #setQuantityBreakTypeId(String)
+	 * @return the value of the '<em>Quantity Break Type Id</em>' reference.
+	 * @see #setQuantityBreakTypeId(QuantityBreakType)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreak_QuantityBreakTypeId()
-	 * @model annotation="mimo-ent-domain frame='QuantityBreakType'"
+	 * @model keys="quantityBreakTypeId"
 	 * @generated
 	 */
-	String getQuantityBreakTypeId();
+	QuantityBreakType getQuantityBreakTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakTypeId <em>Quantity Break Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakTypeId <em>Quantity Break Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity Break Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Quantity Break Type Id</em>' reference.
 	 * @see #getQuantityBreakTypeId()
 	 * @generated
 	 */
-	void setQuantityBreakTypeId(String value);
+	void setQuantityBreakTypeId(QuantityBreakType value);
 
 } // QuantityBreak

@@ -8,12 +8,16 @@
 package org.abchip.mimo.biz.workeffort.timesheet.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -58,44 +62,24 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 	protected String timesheetId = TIMESHEET_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
+	protected Party partyId;
 
 	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoleTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
+	protected RoleType roleTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,7 +106,24 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET_ROLE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -132,8 +133,8 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET_ROLE__PARTY_ID, oldPartyId, partyId));
@@ -145,7 +146,24 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIMESHEET_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -155,8 +173,8 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIMESHEET_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -196,9 +214,11 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 			case TimesheetPackage.TIMESHEET_ROLE__TIMESHEET_ID:
 				return getTimesheetId();
 			case TimesheetPackage.TIMESHEET_ROLE__PARTY_ID:
-				return getPartyId();
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case TimesheetPackage.TIMESHEET_ROLE__ROLE_TYPE_ID:
-				return getRoleTypeId();
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,10 +235,10 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 				setTimesheetId((String)newValue);
 				return;
 			case TimesheetPackage.TIMESHEET_ROLE__PARTY_ID:
-				setPartyId((String)newValue);
+				setPartyId((Party)newValue);
 				return;
 			case TimesheetPackage.TIMESHEET_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
+				setRoleTypeId((RoleType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -236,10 +256,10 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 				setTimesheetId(TIMESHEET_ID_EDEFAULT);
 				return;
 			case TimesheetPackage.TIMESHEET_ROLE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
+				setPartyId((Party)null);
 				return;
 			case TimesheetPackage.TIMESHEET_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				setRoleTypeId((RoleType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -256,9 +276,9 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 			case TimesheetPackage.TIMESHEET_ROLE__TIMESHEET_ID:
 				return TIMESHEET_ID_EDEFAULT == null ? timesheetId != null : !TIMESHEET_ID_EDEFAULT.equals(timesheetId);
 			case TimesheetPackage.TIMESHEET_ROLE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
+				return partyId != null;
 			case TimesheetPackage.TIMESHEET_ROLE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -275,10 +295,6 @@ public class TimesheetRoleImpl extends BizEntityImpl implements TimesheetRole {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (timesheetId: ");
 		result.append(timesheetId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
 		result.append(')');
 		return result.toString();
 	}

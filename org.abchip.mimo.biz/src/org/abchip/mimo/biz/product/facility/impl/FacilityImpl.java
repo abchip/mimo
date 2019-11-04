@@ -13,14 +13,22 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.geo.GeoPoint;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.facility.FacilityGroup;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.abchip.mimo.biz.product.facility.FacilityType;
+import org.abchip.mimo.biz.product.inventory.InventoryItemType;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -35,21 +43,21 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getClosedDate <em>Closed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getDefaultDaysToShip <em>Default Days To Ship</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getDefaultDimensionUomId <em>Default Dimension Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getDefaultInventoryItemTypeId <em>Default Inventory Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getDefaultWeightUomId <em>Default Weight Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getFacilityName <em>Facility Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getFacilitySize <em>Facility Size</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getFacilitySizeUomId <em>Facility Size Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getFacilityTypeId <em>Facility Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getOldSquareFootage <em>Old Square Footage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getOpenedDate <em>Opened Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getOwnerPartyId <em>Owner Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getFacilityTypeId <em>Facility Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getParentFacilityId <em>Parent Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getPrimaryFacilityGroupId <em>Primary Facility Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getOwnerPartyId <em>Owner Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getDefaultInventoryItemTypeId <em>Default Inventory Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getDefaultDimensionUomId <em>Default Dimension Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getDefaultWeightUomId <em>Default Weight Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getGeoPointId <em>Geo Point Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getFacilitySizeUomId <em>Facility Size Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getFacilityAttributes <em>Facility Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityImpl#getFacilityLocations <em>Facility Locations</em>}</li>
  * </ul>
@@ -123,66 +131,6 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	protected long defaultDaysToShip = DEFAULT_DAYS_TO_SHIP_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDefaultDimensionUomId() <em>Default Dimension Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultDimensionUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_DIMENSION_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDefaultDimensionUomId() <em>Default Dimension Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultDimensionUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultDimensionUomId = DEFAULT_DIMENSION_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDefaultInventoryItemTypeId() <em>Default Inventory Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultInventoryItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_INVENTORY_ITEM_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDefaultInventoryItemTypeId() <em>Default Inventory Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultInventoryItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultInventoryItemTypeId = DEFAULT_INVENTORY_ITEM_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDefaultWeightUomId() <em>Default Weight Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultWeightUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_WEIGHT_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDefaultWeightUomId() <em>Default Weight Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultWeightUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultWeightUomId = DEFAULT_WEIGHT_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -243,66 +191,6 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	protected BigDecimal facilitySize = FACILITY_SIZE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFacilitySizeUomId() <em>Facility Size Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilitySizeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_SIZE_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilitySizeUomId() <em>Facility Size Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilitySizeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilitySizeUomId = FACILITY_SIZE_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFacilityTypeId() <em>Facility Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityTypeId() <em>Facility Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityTypeId = FACILITY_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_POINT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoPointId = GEO_POINT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOldSquareFootage() <em>Old Square Footage</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -343,84 +231,104 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	protected Date openedDate = OPENED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getFacilityTypeId() <em>Facility Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnerPartyId()
+	 * @see #getFacilityTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OWNER_PARTY_ID_EDEFAULT = null;
+	protected FacilityType facilityTypeId;
 
 	/**
-	 * The cached value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String ownerPartyId = OWNER_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getParentFacilityId() <em>Parent Facility Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentFacilityId() <em>Parent Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentFacilityId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_FACILITY_ID_EDEFAULT = null;
+	protected Facility parentFacilityId;
 
 	/**
-	 * The cached value of the '{@link #getParentFacilityId() <em>Parent Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentFacilityId = PARENT_FACILITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPrimaryFacilityGroupId() <em>Primary Facility Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getPrimaryFacilityGroupId() <em>Primary Facility Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPrimaryFacilityGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRIMARY_FACILITY_GROUP_ID_EDEFAULT = null;
+	protected FacilityGroup primaryFacilityGroupId;
 
 	/**
-	 * The cached value of the '{@link #getPrimaryFacilityGroupId() <em>Primary Facility Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrimaryFacilityGroupId()
+	 * @see #getOwnerPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String primaryFacilityGroupId = PRIMARY_FACILITY_GROUP_ID_EDEFAULT;
+	protected Party ownerPartyId;
 
 	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
+	 * The cached value of the '{@link #getDefaultInventoryItemTypeId() <em>Default Inventory Item Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultInventoryItemTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItemType defaultInventoryItemTypeId;
+
+	/**
+	 * The cached value of the '{@link #getDefaultDimensionUomId() <em>Default Dimension Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultDimensionUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom defaultDimensionUomId;
+
+	/**
+	 * The cached value of the '{@link #getDefaultWeightUomId() <em>Default Weight Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultWeightUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom defaultWeightUomId;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductStoreId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
+	protected ProductStore productStoreId;
 
 	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
+	 * The cached value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
+	 * @see #getGeoPointId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
+	protected GeoPoint geoPointId;
+
+	/**
+	 * The cached value of the '{@link #getFacilitySizeUomId() <em>Facility Size Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilitySizeUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom facilitySizeUomId;
 
 	/**
 	 * The cached value of the '{@link #getFacilityAttributes() <em>Facility Attributes</em>}' attribute list.
@@ -513,7 +421,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getDefaultDimensionUomId() {
+	public Uom getDefaultDimensionUomId() {
+		if (defaultDimensionUomId != null && ((EObject)defaultDimensionUomId).eIsProxy()) {
+			InternalEObject oldDefaultDimensionUomId = (InternalEObject)defaultDimensionUomId;
+			defaultDimensionUomId = (Uom)eResolveProxy(oldDefaultDimensionUomId);
+			if (defaultDimensionUomId != oldDefaultDimensionUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID, oldDefaultDimensionUomId, defaultDimensionUomId));
+			}
+		}
+		return defaultDimensionUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetDefaultDimensionUomId() {
 		return defaultDimensionUomId;
 	}
 
@@ -523,8 +448,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setDefaultDimensionUomId(String newDefaultDimensionUomId) {
-		String oldDefaultDimensionUomId = defaultDimensionUomId;
+	public void setDefaultDimensionUomId(Uom newDefaultDimensionUomId) {
+		Uom oldDefaultDimensionUomId = defaultDimensionUomId;
 		defaultDimensionUomId = newDefaultDimensionUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID, oldDefaultDimensionUomId, defaultDimensionUomId));
@@ -536,7 +461,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getDefaultInventoryItemTypeId() {
+	public InventoryItemType getDefaultInventoryItemTypeId() {
+		if (defaultInventoryItemTypeId != null && ((EObject)defaultInventoryItemTypeId).eIsProxy()) {
+			InternalEObject oldDefaultInventoryItemTypeId = (InternalEObject)defaultInventoryItemTypeId;
+			defaultInventoryItemTypeId = (InventoryItemType)eResolveProxy(oldDefaultInventoryItemTypeId);
+			if (defaultInventoryItemTypeId != oldDefaultInventoryItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID, oldDefaultInventoryItemTypeId, defaultInventoryItemTypeId));
+			}
+		}
+		return defaultInventoryItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItemType basicGetDefaultInventoryItemTypeId() {
 		return defaultInventoryItemTypeId;
 	}
 
@@ -546,8 +488,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setDefaultInventoryItemTypeId(String newDefaultInventoryItemTypeId) {
-		String oldDefaultInventoryItemTypeId = defaultInventoryItemTypeId;
+	public void setDefaultInventoryItemTypeId(InventoryItemType newDefaultInventoryItemTypeId) {
+		InventoryItemType oldDefaultInventoryItemTypeId = defaultInventoryItemTypeId;
 		defaultInventoryItemTypeId = newDefaultInventoryItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID, oldDefaultInventoryItemTypeId, defaultInventoryItemTypeId));
@@ -559,7 +501,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getDefaultWeightUomId() {
+	public Uom getDefaultWeightUomId() {
+		if (defaultWeightUomId != null && ((EObject)defaultWeightUomId).eIsProxy()) {
+			InternalEObject oldDefaultWeightUomId = (InternalEObject)defaultWeightUomId;
+			defaultWeightUomId = (Uom)eResolveProxy(oldDefaultWeightUomId);
+			if (defaultWeightUomId != oldDefaultWeightUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID, oldDefaultWeightUomId, defaultWeightUomId));
+			}
+		}
+		return defaultWeightUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetDefaultWeightUomId() {
 		return defaultWeightUomId;
 	}
 
@@ -569,8 +528,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setDefaultWeightUomId(String newDefaultWeightUomId) {
-		String oldDefaultWeightUomId = defaultWeightUomId;
+	public void setDefaultWeightUomId(Uom newDefaultWeightUomId) {
+		Uom oldDefaultWeightUomId = defaultWeightUomId;
 		defaultWeightUomId = newDefaultWeightUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID, oldDefaultWeightUomId, defaultWeightUomId));
@@ -651,7 +610,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getFacilitySizeUomId() {
+	public Uom getFacilitySizeUomId() {
+		if (facilitySizeUomId != null && ((EObject)facilitySizeUomId).eIsProxy()) {
+			InternalEObject oldFacilitySizeUomId = (InternalEObject)facilitySizeUomId;
+			facilitySizeUomId = (Uom)eResolveProxy(oldFacilitySizeUomId);
+			if (facilitySizeUomId != oldFacilitySizeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID, oldFacilitySizeUomId, facilitySizeUomId));
+			}
+		}
+		return facilitySizeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetFacilitySizeUomId() {
 		return facilitySizeUomId;
 	}
 
@@ -661,8 +637,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setFacilitySizeUomId(String newFacilitySizeUomId) {
-		String oldFacilitySizeUomId = facilitySizeUomId;
+	public void setFacilitySizeUomId(Uom newFacilitySizeUomId) {
+		Uom oldFacilitySizeUomId = facilitySizeUomId;
 		facilitySizeUomId = newFacilitySizeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID, oldFacilitySizeUomId, facilitySizeUomId));
@@ -674,7 +650,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getGeoPointId() {
+	public GeoPoint getGeoPointId() {
+		if (geoPointId != null && ((EObject)geoPointId).eIsProxy()) {
+			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
+			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
+			if (geoPointId != oldGeoPointId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__GEO_POINT_ID, oldGeoPointId, geoPointId));
+			}
+		}
+		return geoPointId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeoPoint basicGetGeoPointId() {
 		return geoPointId;
 	}
 
@@ -684,8 +677,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setGeoPointId(String newGeoPointId) {
-		String oldGeoPointId = geoPointId;
+	public void setGeoPointId(GeoPoint newGeoPointId) {
+		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__GEO_POINT_ID, oldGeoPointId, geoPointId));
@@ -743,7 +736,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getOwnerPartyId() {
+	public Party getOwnerPartyId() {
+		if (ownerPartyId != null && ((EObject)ownerPartyId).eIsProxy()) {
+			InternalEObject oldOwnerPartyId = (InternalEObject)ownerPartyId;
+			ownerPartyId = (Party)eResolveProxy(oldOwnerPartyId);
+			if (ownerPartyId != oldOwnerPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
+			}
+		}
+		return ownerPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOwnerPartyId() {
 		return ownerPartyId;
 	}
 
@@ -753,8 +763,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setOwnerPartyId(String newOwnerPartyId) {
-		String oldOwnerPartyId = ownerPartyId;
+	public void setOwnerPartyId(Party newOwnerPartyId) {
+		Party oldOwnerPartyId = ownerPartyId;
 		ownerPartyId = newOwnerPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
@@ -766,7 +776,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -776,8 +803,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -1067,7 +1094,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getParentFacilityId() {
+	public Facility getParentFacilityId() {
+		if (parentFacilityId != null && ((EObject)parentFacilityId).eIsProxy()) {
+			InternalEObject oldParentFacilityId = (InternalEObject)parentFacilityId;
+			parentFacilityId = (Facility)eResolveProxy(oldParentFacilityId);
+			if (parentFacilityId != oldParentFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__PARENT_FACILITY_ID, oldParentFacilityId, parentFacilityId));
+			}
+		}
+		return parentFacilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetParentFacilityId() {
 		return parentFacilityId;
 	}
 
@@ -1077,8 +1121,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setParentFacilityId(String newParentFacilityId) {
-		String oldParentFacilityId = parentFacilityId;
+	public void setParentFacilityId(Facility newParentFacilityId) {
+		Facility oldParentFacilityId = parentFacilityId;
 		parentFacilityId = newParentFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__PARENT_FACILITY_ID, oldParentFacilityId, parentFacilityId));
@@ -1090,7 +1134,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getPrimaryFacilityGroupId() {
+	public FacilityGroup getPrimaryFacilityGroupId() {
+		if (primaryFacilityGroupId != null && ((EObject)primaryFacilityGroupId).eIsProxy()) {
+			InternalEObject oldPrimaryFacilityGroupId = (InternalEObject)primaryFacilityGroupId;
+			primaryFacilityGroupId = (FacilityGroup)eResolveProxy(oldPrimaryFacilityGroupId);
+			if (primaryFacilityGroupId != oldPrimaryFacilityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__PRIMARY_FACILITY_GROUP_ID, oldPrimaryFacilityGroupId, primaryFacilityGroupId));
+			}
+		}
+		return primaryFacilityGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacilityGroup basicGetPrimaryFacilityGroupId() {
 		return primaryFacilityGroupId;
 	}
 
@@ -1100,8 +1161,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setPrimaryFacilityGroupId(String newPrimaryFacilityGroupId) {
-		String oldPrimaryFacilityGroupId = primaryFacilityGroupId;
+	public void setPrimaryFacilityGroupId(FacilityGroup newPrimaryFacilityGroupId) {
+		FacilityGroup oldPrimaryFacilityGroupId = primaryFacilityGroupId;
 		primaryFacilityGroupId = newPrimaryFacilityGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__PRIMARY_FACILITY_GROUP_ID, oldPrimaryFacilityGroupId, primaryFacilityGroupId));
@@ -1113,7 +1174,24 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public String getFacilityTypeId() {
+	public FacilityType getFacilityTypeId() {
+		if (facilityTypeId != null && ((EObject)facilityTypeId).eIsProxy()) {
+			InternalEObject oldFacilityTypeId = (InternalEObject)facilityTypeId;
+			facilityTypeId = (FacilityType)eResolveProxy(oldFacilityTypeId);
+			if (facilityTypeId != oldFacilityTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY__FACILITY_TYPE_ID, oldFacilityTypeId, facilityTypeId));
+			}
+		}
+		return facilityTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacilityType basicGetFacilityTypeId() {
 		return facilityTypeId;
 	}
 
@@ -1123,8 +1201,8 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 	 * @generated
 	 */
 	@Override
-	public void setFacilityTypeId(String newFacilityTypeId) {
-		String oldFacilityTypeId = facilityTypeId;
+	public void setFacilityTypeId(FacilityType newFacilityTypeId) {
+		FacilityType oldFacilityTypeId = facilityTypeId;
 		facilityTypeId = newFacilityTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY__FACILITY_TYPE_ID, oldFacilityTypeId, facilityTypeId));
@@ -1167,36 +1245,46 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 				return getClosedDate();
 			case FacilityPackage.FACILITY__DEFAULT_DAYS_TO_SHIP:
 				return getDefaultDaysToShip();
-			case FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID:
-				return getDefaultDimensionUomId();
-			case FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID:
-				return getDefaultInventoryItemTypeId();
-			case FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID:
-				return getDefaultWeightUomId();
 			case FacilityPackage.FACILITY__DESCRIPTION:
 				return getDescription();
 			case FacilityPackage.FACILITY__FACILITY_NAME:
 				return getFacilityName();
 			case FacilityPackage.FACILITY__FACILITY_SIZE:
 				return getFacilitySize();
-			case FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID:
-				return getFacilitySizeUomId();
-			case FacilityPackage.FACILITY__FACILITY_TYPE_ID:
-				return getFacilityTypeId();
-			case FacilityPackage.FACILITY__GEO_POINT_ID:
-				return getGeoPointId();
 			case FacilityPackage.FACILITY__OLD_SQUARE_FOOTAGE:
 				return getOldSquareFootage();
 			case FacilityPackage.FACILITY__OPENED_DATE:
 				return getOpenedDate();
-			case FacilityPackage.FACILITY__OWNER_PARTY_ID:
-				return getOwnerPartyId();
+			case FacilityPackage.FACILITY__FACILITY_TYPE_ID:
+				if (resolve) return getFacilityTypeId();
+				return basicGetFacilityTypeId();
 			case FacilityPackage.FACILITY__PARENT_FACILITY_ID:
-				return getParentFacilityId();
+				if (resolve) return getParentFacilityId();
+				return basicGetParentFacilityId();
 			case FacilityPackage.FACILITY__PRIMARY_FACILITY_GROUP_ID:
-				return getPrimaryFacilityGroupId();
+				if (resolve) return getPrimaryFacilityGroupId();
+				return basicGetPrimaryFacilityGroupId();
+			case FacilityPackage.FACILITY__OWNER_PARTY_ID:
+				if (resolve) return getOwnerPartyId();
+				return basicGetOwnerPartyId();
+			case FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID:
+				if (resolve) return getDefaultInventoryItemTypeId();
+				return basicGetDefaultInventoryItemTypeId();
+			case FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID:
+				if (resolve) return getDefaultDimensionUomId();
+				return basicGetDefaultDimensionUomId();
+			case FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID:
+				if (resolve) return getDefaultWeightUomId();
+				return basicGetDefaultWeightUomId();
 			case FacilityPackage.FACILITY__PRODUCT_STORE_ID:
-				return getProductStoreId();
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
+			case FacilityPackage.FACILITY__GEO_POINT_ID:
+				if (resolve) return getGeoPointId();
+				return basicGetGeoPointId();
+			case FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID:
+				if (resolve) return getFacilitySizeUomId();
+				return basicGetFacilitySizeUomId();
 			case FacilityPackage.FACILITY__FACILITY_ATTRIBUTES:
 				return getFacilityAttributes();
 			case FacilityPackage.FACILITY__FACILITY_LOCATIONS:
@@ -1223,15 +1311,6 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			case FacilityPackage.FACILITY__DEFAULT_DAYS_TO_SHIP:
 				setDefaultDaysToShip((Long)newValue);
 				return;
-			case FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID:
-				setDefaultDimensionUomId((String)newValue);
-				return;
-			case FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID:
-				setDefaultInventoryItemTypeId((String)newValue);
-				return;
-			case FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID:
-				setDefaultWeightUomId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -1241,32 +1320,41 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			case FacilityPackage.FACILITY__FACILITY_SIZE:
 				setFacilitySize((BigDecimal)newValue);
 				return;
-			case FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID:
-				setFacilitySizeUomId((String)newValue);
-				return;
-			case FacilityPackage.FACILITY__FACILITY_TYPE_ID:
-				setFacilityTypeId((String)newValue);
-				return;
-			case FacilityPackage.FACILITY__GEO_POINT_ID:
-				setGeoPointId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY__OLD_SQUARE_FOOTAGE:
 				setOldSquareFootage((Long)newValue);
 				return;
 			case FacilityPackage.FACILITY__OPENED_DATE:
 				setOpenedDate((Date)newValue);
 				return;
-			case FacilityPackage.FACILITY__OWNER_PARTY_ID:
-				setOwnerPartyId((String)newValue);
+			case FacilityPackage.FACILITY__FACILITY_TYPE_ID:
+				setFacilityTypeId((FacilityType)newValue);
 				return;
 			case FacilityPackage.FACILITY__PARENT_FACILITY_ID:
-				setParentFacilityId((String)newValue);
+				setParentFacilityId((Facility)newValue);
 				return;
 			case FacilityPackage.FACILITY__PRIMARY_FACILITY_GROUP_ID:
-				setPrimaryFacilityGroupId((String)newValue);
+				setPrimaryFacilityGroupId((FacilityGroup)newValue);
+				return;
+			case FacilityPackage.FACILITY__OWNER_PARTY_ID:
+				setOwnerPartyId((Party)newValue);
+				return;
+			case FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID:
+				setDefaultInventoryItemTypeId((InventoryItemType)newValue);
+				return;
+			case FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID:
+				setDefaultDimensionUomId((Uom)newValue);
+				return;
+			case FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID:
+				setDefaultWeightUomId((Uom)newValue);
 				return;
 			case FacilityPackage.FACILITY__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
+				setProductStoreId((ProductStore)newValue);
+				return;
+			case FacilityPackage.FACILITY__GEO_POINT_ID:
+				setGeoPointId((GeoPoint)newValue);
+				return;
+			case FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID:
+				setFacilitySizeUomId((Uom)newValue);
 				return;
 			case FacilityPackage.FACILITY__FACILITY_ATTRIBUTES:
 				getFacilityAttributes().clear();
@@ -1297,15 +1385,6 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			case FacilityPackage.FACILITY__DEFAULT_DAYS_TO_SHIP:
 				setDefaultDaysToShip(DEFAULT_DAYS_TO_SHIP_EDEFAULT);
 				return;
-			case FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID:
-				setDefaultDimensionUomId(DEFAULT_DIMENSION_UOM_ID_EDEFAULT);
-				return;
-			case FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID:
-				setDefaultInventoryItemTypeId(DEFAULT_INVENTORY_ITEM_TYPE_ID_EDEFAULT);
-				return;
-			case FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID:
-				setDefaultWeightUomId(DEFAULT_WEIGHT_UOM_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -1315,32 +1394,41 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 			case FacilityPackage.FACILITY__FACILITY_SIZE:
 				setFacilitySize(FACILITY_SIZE_EDEFAULT);
 				return;
-			case FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID:
-				setFacilitySizeUomId(FACILITY_SIZE_UOM_ID_EDEFAULT);
-				return;
-			case FacilityPackage.FACILITY__FACILITY_TYPE_ID:
-				setFacilityTypeId(FACILITY_TYPE_ID_EDEFAULT);
-				return;
-			case FacilityPackage.FACILITY__GEO_POINT_ID:
-				setGeoPointId(GEO_POINT_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY__OLD_SQUARE_FOOTAGE:
 				setOldSquareFootage(OLD_SQUARE_FOOTAGE_EDEFAULT);
 				return;
 			case FacilityPackage.FACILITY__OPENED_DATE:
 				setOpenedDate(OPENED_DATE_EDEFAULT);
 				return;
-			case FacilityPackage.FACILITY__OWNER_PARTY_ID:
-				setOwnerPartyId(OWNER_PARTY_ID_EDEFAULT);
+			case FacilityPackage.FACILITY__FACILITY_TYPE_ID:
+				setFacilityTypeId((FacilityType)null);
 				return;
 			case FacilityPackage.FACILITY__PARENT_FACILITY_ID:
-				setParentFacilityId(PARENT_FACILITY_ID_EDEFAULT);
+				setParentFacilityId((Facility)null);
 				return;
 			case FacilityPackage.FACILITY__PRIMARY_FACILITY_GROUP_ID:
-				setPrimaryFacilityGroupId(PRIMARY_FACILITY_GROUP_ID_EDEFAULT);
+				setPrimaryFacilityGroupId((FacilityGroup)null);
+				return;
+			case FacilityPackage.FACILITY__OWNER_PARTY_ID:
+				setOwnerPartyId((Party)null);
+				return;
+			case FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID:
+				setDefaultInventoryItemTypeId((InventoryItemType)null);
+				return;
+			case FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID:
+				setDefaultDimensionUomId((Uom)null);
+				return;
+			case FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID:
+				setDefaultWeightUomId((Uom)null);
 				return;
 			case FacilityPackage.FACILITY__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
+				setProductStoreId((ProductStore)null);
+				return;
+			case FacilityPackage.FACILITY__GEO_POINT_ID:
+				setGeoPointId((GeoPoint)null);
+				return;
+			case FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID:
+				setFacilitySizeUomId((Uom)null);
 				return;
 			case FacilityPackage.FACILITY__FACILITY_ATTRIBUTES:
 				getFacilityAttributes().clear();
@@ -1366,36 +1454,36 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 				return CLOSED_DATE_EDEFAULT == null ? closedDate != null : !CLOSED_DATE_EDEFAULT.equals(closedDate);
 			case FacilityPackage.FACILITY__DEFAULT_DAYS_TO_SHIP:
 				return defaultDaysToShip != DEFAULT_DAYS_TO_SHIP_EDEFAULT;
-			case FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID:
-				return DEFAULT_DIMENSION_UOM_ID_EDEFAULT == null ? defaultDimensionUomId != null : !DEFAULT_DIMENSION_UOM_ID_EDEFAULT.equals(defaultDimensionUomId);
-			case FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID:
-				return DEFAULT_INVENTORY_ITEM_TYPE_ID_EDEFAULT == null ? defaultInventoryItemTypeId != null : !DEFAULT_INVENTORY_ITEM_TYPE_ID_EDEFAULT.equals(defaultInventoryItemTypeId);
-			case FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID:
-				return DEFAULT_WEIGHT_UOM_ID_EDEFAULT == null ? defaultWeightUomId != null : !DEFAULT_WEIGHT_UOM_ID_EDEFAULT.equals(defaultWeightUomId);
 			case FacilityPackage.FACILITY__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case FacilityPackage.FACILITY__FACILITY_NAME:
 				return FACILITY_NAME_EDEFAULT == null ? facilityName != null : !FACILITY_NAME_EDEFAULT.equals(facilityName);
 			case FacilityPackage.FACILITY__FACILITY_SIZE:
 				return FACILITY_SIZE_EDEFAULT == null ? facilitySize != null : !FACILITY_SIZE_EDEFAULT.equals(facilitySize);
-			case FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID:
-				return FACILITY_SIZE_UOM_ID_EDEFAULT == null ? facilitySizeUomId != null : !FACILITY_SIZE_UOM_ID_EDEFAULT.equals(facilitySizeUomId);
-			case FacilityPackage.FACILITY__FACILITY_TYPE_ID:
-				return FACILITY_TYPE_ID_EDEFAULT == null ? facilityTypeId != null : !FACILITY_TYPE_ID_EDEFAULT.equals(facilityTypeId);
-			case FacilityPackage.FACILITY__GEO_POINT_ID:
-				return GEO_POINT_ID_EDEFAULT == null ? geoPointId != null : !GEO_POINT_ID_EDEFAULT.equals(geoPointId);
 			case FacilityPackage.FACILITY__OLD_SQUARE_FOOTAGE:
 				return oldSquareFootage != OLD_SQUARE_FOOTAGE_EDEFAULT;
 			case FacilityPackage.FACILITY__OPENED_DATE:
 				return OPENED_DATE_EDEFAULT == null ? openedDate != null : !OPENED_DATE_EDEFAULT.equals(openedDate);
-			case FacilityPackage.FACILITY__OWNER_PARTY_ID:
-				return OWNER_PARTY_ID_EDEFAULT == null ? ownerPartyId != null : !OWNER_PARTY_ID_EDEFAULT.equals(ownerPartyId);
+			case FacilityPackage.FACILITY__FACILITY_TYPE_ID:
+				return facilityTypeId != null;
 			case FacilityPackage.FACILITY__PARENT_FACILITY_ID:
-				return PARENT_FACILITY_ID_EDEFAULT == null ? parentFacilityId != null : !PARENT_FACILITY_ID_EDEFAULT.equals(parentFacilityId);
+				return parentFacilityId != null;
 			case FacilityPackage.FACILITY__PRIMARY_FACILITY_GROUP_ID:
-				return PRIMARY_FACILITY_GROUP_ID_EDEFAULT == null ? primaryFacilityGroupId != null : !PRIMARY_FACILITY_GROUP_ID_EDEFAULT.equals(primaryFacilityGroupId);
+				return primaryFacilityGroupId != null;
+			case FacilityPackage.FACILITY__OWNER_PARTY_ID:
+				return ownerPartyId != null;
+			case FacilityPackage.FACILITY__DEFAULT_INVENTORY_ITEM_TYPE_ID:
+				return defaultInventoryItemTypeId != null;
+			case FacilityPackage.FACILITY__DEFAULT_DIMENSION_UOM_ID:
+				return defaultDimensionUomId != null;
+			case FacilityPackage.FACILITY__DEFAULT_WEIGHT_UOM_ID:
+				return defaultWeightUomId != null;
 			case FacilityPackage.FACILITY__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
+				return productStoreId != null;
+			case FacilityPackage.FACILITY__GEO_POINT_ID:
+				return geoPointId != null;
+			case FacilityPackage.FACILITY__FACILITY_SIZE_UOM_ID:
+				return facilitySizeUomId != null;
 			case FacilityPackage.FACILITY__FACILITY_ATTRIBUTES:
 				return facilityAttributes != null && !facilityAttributes.isEmpty();
 			case FacilityPackage.FACILITY__FACILITY_LOCATIONS:
@@ -1420,36 +1508,16 @@ public class FacilityImpl extends BizEntityTypedImpl<FacilityType> implements Fa
 		result.append(closedDate);
 		result.append(", defaultDaysToShip: ");
 		result.append(defaultDaysToShip);
-		result.append(", defaultDimensionUomId: ");
-		result.append(defaultDimensionUomId);
-		result.append(", defaultInventoryItemTypeId: ");
-		result.append(defaultInventoryItemTypeId);
-		result.append(", defaultWeightUomId: ");
-		result.append(defaultWeightUomId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", facilityName: ");
 		result.append(facilityName);
 		result.append(", facilitySize: ");
 		result.append(facilitySize);
-		result.append(", facilitySizeUomId: ");
-		result.append(facilitySizeUomId);
-		result.append(", facilityTypeId: ");
-		result.append(facilityTypeId);
-		result.append(", geoPointId: ");
-		result.append(geoPointId);
 		result.append(", oldSquareFootage: ");
 		result.append(oldSquareFootage);
 		result.append(", openedDate: ");
 		result.append(openedDate);
-		result.append(", ownerPartyId: ");
-		result.append(ownerPartyId);
-		result.append(", parentFacilityId: ");
-		result.append(parentFacilityId);
-		result.append(", primaryFacilityGroupId: ");
-		result.append(primaryFacilityGroupId);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
 		result.append(", facilityAttributes: ");
 		result.append(facilityAttributes);
 		result.append(", facilityLocations: ");

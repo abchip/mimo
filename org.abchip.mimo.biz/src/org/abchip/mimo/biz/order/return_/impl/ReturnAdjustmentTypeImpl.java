@@ -17,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -102,24 +104,14 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected ReturnAdjustmentType parentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,7 +184,24 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public ReturnAdjustmentType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (ReturnAdjustmentType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnAdjustmentType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -202,8 +211,8 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(ReturnAdjustmentType newParentTypeId) {
+		ReturnAdjustmentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -283,7 +292,8 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 			case ReturnPackage.RETURN_ADJUSTMENT_TYPE__HAS_TABLE:
 				return isHasTable();
 			case ReturnPackage.RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -306,7 +316,7 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 				setHasTable((Boolean)newValue);
 				return;
 			case ReturnPackage.RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((ReturnAdjustmentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -330,7 +340,7 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case ReturnPackage.RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((ReturnAdjustmentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -351,7 +361,7 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 			case ReturnPackage.RETURN_ADJUSTMENT_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case ReturnPackage.RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -372,8 +382,6 @@ public class ReturnAdjustmentTypeImpl extends BizEntityTypeImpl<ReturnAdjustment
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(')');
 		return result.toString();
 	}

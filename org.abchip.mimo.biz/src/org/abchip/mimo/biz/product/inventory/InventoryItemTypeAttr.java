@@ -65,7 +65,8 @@ public interface InventoryItemTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface InventoryItemTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Inventory Item Type Id</em>' attribute.
 	 * @see #setInventoryItemTypeId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItemTypeAttr_InventoryItemTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItemType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInventoryItemTypeId();

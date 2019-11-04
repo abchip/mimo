@@ -221,6 +221,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -532,6 +533,22 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.marketing.contact.ContactPackage.eNS_URI);
+		org.abchip.mimo.biz.marketing.contact.impl.ContactPackageImpl theContactPackage = (org.abchip.mimo.biz.marketing.contact.impl.ContactPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.marketing.contact.impl.ContactPackageImpl ? registeredPackage : org.abchip.mimo.biz.marketing.contact.ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -548,22 +565,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.marketing.contact.ContactPackage.eNS_URI);
-		org.abchip.mimo.biz.marketing.contact.impl.ContactPackageImpl theContactPackage = (org.abchip.mimo.biz.marketing.contact.impl.ContactPackageImpl)(registeredPackage instanceof org.abchip.mimo.biz.marketing.contact.impl.ContactPackageImpl ? registeredPackage : org.abchip.mimo.biz.marketing.contact.ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
 		CommunicationPackageImpl theCommunicationPackage = (CommunicationPackageImpl)(registeredPackage instanceof CommunicationPackageImpl ? registeredPackage : CommunicationPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
@@ -674,6 +675,14 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -682,14 +691,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
 		theNeedPackage.createPackageContents();
@@ -769,6 +770,14 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -777,14 +786,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
 		theNeedPackage.initializePackageContents();
@@ -881,8 +882,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAddendum_AgreementId() {
-		return (EAttribute)addendumEClass.getEStructuralFeatures().get(4);
+	public EReference getAddendum_AgreementId() {
+		return (EReference)addendumEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -892,7 +893,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAddendum_AgreementItemSeqId() {
-		return (EAttribute)addendumEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)addendumEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -931,8 +932,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreement_AgreementTypeId() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(2);
+	public EReference getAgreement_AgreementTypeId() {
+		return (EReference)agreementEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -942,7 +943,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreement_Description() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)agreementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -952,7 +953,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreement_FromDate() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)agreementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -961,8 +962,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreement_PartyIdFrom() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(5);
+	public EReference getAgreement_PartyIdFrom() {
+		return (EReference)agreementEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -971,8 +972,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreement_PartyIdTo() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(6);
+	public EReference getAgreement_PartyIdTo() {
+		return (EReference)agreementEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -981,8 +982,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreement_ProductId() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(7);
+	public EReference getAgreement_ProductId() {
+		return (EReference)agreementEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -991,8 +992,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreement_RoleTypeIdFrom() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(8);
+	public EReference getAgreement_RoleTypeIdFrom() {
+		return (EReference)agreementEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1001,8 +1002,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreement_RoleTypeIdTo() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(9);
+	public EReference getAgreement_RoleTypeIdTo() {
+		return (EReference)agreementEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1012,7 +1013,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreement_TextData() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)agreementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1022,7 +1023,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreement_ThruDate() {
-		return (EAttribute)agreementEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)agreementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1121,8 +1122,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementContent_AgreementId() {
-		return (EAttribute)agreementContentEClass.getEStructuralFeatures().get(1);
+	public EReference getAgreementContent_AgreementId() {
+		return (EReference)agreementContentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1132,7 +1133,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementContent_AgreementItemSeqId() {
-		return (EAttribute)agreementContentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)agreementContentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1141,8 +1142,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementContent_AgreementContentTypeId() {
-		return (EAttribute)agreementContentEClass.getEStructuralFeatures().get(3);
+	public EReference getAgreementContent_AgreementContentTypeId() {
+		return (EReference)agreementContentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1152,7 +1153,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementContent_FromDate() {
-		return (EAttribute)agreementContentEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)agreementContentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1162,7 +1163,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementContent_ThruDate() {
-		return (EAttribute)agreementContentEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)agreementContentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1211,8 +1212,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementContentType_ParentTypeId() {
-		return (EAttribute)agreementContentTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getAgreementContentType_ParentTypeId() {
+		return (EReference)agreementContentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1351,8 +1352,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementFacilityAppl_FacilityId() {
-		return (EAttribute)agreementFacilityApplEClass.getEStructuralFeatures().get(2);
+	public EReference getAgreementFacilityAppl_FacilityId() {
+		return (EReference)agreementFacilityApplEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1391,8 +1392,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementGeographicalApplic_GeoId() {
-		return (EAttribute)agreementGeographicalApplicEClass.getEStructuralFeatures().get(2);
+	public EReference getAgreementGeographicalApplic_GeoId() {
+		return (EReference)agreementGeographicalApplicEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1441,8 +1442,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementItem_AgreementItemTypeId() {
-		return (EAttribute)agreementItemEClass.getEStructuralFeatures().get(3);
+	public EReference getAgreementItem_AgreementItemTypeId() {
+		return (EReference)agreementItemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1452,7 +1453,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementItem_AgreementText() {
-		return (EAttribute)agreementItemEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)agreementItemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1462,7 +1463,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementItem_CurrencyUomId() {
-		return (EAttribute)agreementItemEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)agreementItemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1571,8 +1572,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementItemType_ParentTypeId() {
-		return (EAttribute)agreementItemTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getAgreementItemType_ParentTypeId() {
+		return (EReference)agreementItemTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1661,8 +1662,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementPartyApplic_PartyId() {
-		return (EAttribute)agreementPartyApplicEClass.getEStructuralFeatures().get(2);
+	public EReference getAgreementPartyApplic_PartyId() {
+		return (EReference)agreementPartyApplicEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1701,8 +1702,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementProductAppl_ProductId() {
-		return (EAttribute)agreementProductApplEClass.getEStructuralFeatures().get(2);
+	public EReference getAgreementProductAppl_ProductId() {
+		return (EReference)agreementProductApplEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1712,7 +1713,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementProductAppl_Price() {
-		return (EAttribute)agreementProductApplEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)agreementProductApplEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1751,8 +1752,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementPromoAppl_ProductPromoId() {
-		return (EAttribute)agreementPromoApplEClass.getEStructuralFeatures().get(2);
+	public EReference getAgreementPromoAppl_ProductPromoId() {
+		return (EReference)agreementPromoApplEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1762,7 +1763,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementPromoAppl_FromDate() {
-		return (EAttribute)agreementPromoApplEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)agreementPromoApplEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1772,7 +1773,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementPromoAppl_SequenceNum() {
-		return (EAttribute)agreementPromoApplEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)agreementPromoApplEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1782,7 +1783,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementPromoAppl_ThruDate() {
-		return (EAttribute)agreementPromoApplEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)agreementPromoApplEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1811,8 +1812,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementRole_PartyId() {
-		return (EAttribute)agreementRoleEClass.getEStructuralFeatures().get(1);
+	public EReference getAgreementRole_PartyId() {
+		return (EReference)agreementRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1821,8 +1822,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementRole_RoleTypeId() {
-		return (EAttribute)agreementRoleEClass.getEStructuralFeatures().get(2);
+	public EReference getAgreementRole_RoleTypeId() {
+		return (EReference)agreementRoleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1851,8 +1852,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementTerm_AgreementId() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(1);
+	public EReference getAgreementTerm_AgreementId() {
+		return (EReference)agreementTermEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1862,7 +1863,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_AgreementItemSeqId() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1872,7 +1873,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_Description() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1882,7 +1883,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_FromDate() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1891,8 +1892,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementTerm_InvoiceItemTypeId() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(5);
+	public EReference getAgreementTerm_InvoiceItemTypeId() {
+		return (EReference)agreementTermEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1902,7 +1903,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_MaxQuantity() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1912,7 +1913,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_MinQuantity() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1922,7 +1923,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_TermDays() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1931,8 +1932,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementTerm_TermTypeId() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(9);
+	public EReference getAgreementTerm_TermTypeId() {
+		return (EReference)agreementTermEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1942,7 +1943,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_TermValue() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1952,7 +1953,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_TextValue() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1962,7 +1963,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 */
 	@Override
 	public EAttribute getAgreementTerm_ThruDate() {
-		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)agreementTermEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2071,8 +2072,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementType_ParentTypeId() {
-		return (EAttribute)agreementTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getAgreementType_ParentTypeId() {
+		return (EReference)agreementTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2161,8 +2162,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAgreementWorkEffortApplic_WorkEffortId() {
-		return (EAttribute)agreementWorkEffortApplicEClass.getEStructuralFeatures().get(2);
+	public EReference getAgreementWorkEffortApplic_WorkEffortId() {
+		return (EReference)agreementWorkEffortApplicEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2211,8 +2212,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTermType_ParentTypeId() {
-		return (EAttribute)termTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getTermType_ParentTypeId() {
+		return (EReference)termTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2299,22 +2300,22 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		createEAttribute(addendumEClass, ADDENDUM__ADDENDUM_CREATION_DATE);
 		createEAttribute(addendumEClass, ADDENDUM__ADDENDUM_EFFECTIVE_DATE);
 		createEAttribute(addendumEClass, ADDENDUM__ADDENDUM_TEXT);
-		createEAttribute(addendumEClass, ADDENDUM__AGREEMENT_ID);
 		createEAttribute(addendumEClass, ADDENDUM__AGREEMENT_ITEM_SEQ_ID);
+		createEReference(addendumEClass, ADDENDUM__AGREEMENT_ID);
 
 		agreementEClass = createEClass(AGREEMENT);
 		createEAttribute(agreementEClass, AGREEMENT__AGREEMENT_ID);
 		createEAttribute(agreementEClass, AGREEMENT__AGREEMENT_DATE);
-		createEAttribute(agreementEClass, AGREEMENT__AGREEMENT_TYPE_ID);
 		createEAttribute(agreementEClass, AGREEMENT__DESCRIPTION);
 		createEAttribute(agreementEClass, AGREEMENT__FROM_DATE);
-		createEAttribute(agreementEClass, AGREEMENT__PARTY_ID_FROM);
-		createEAttribute(agreementEClass, AGREEMENT__PARTY_ID_TO);
-		createEAttribute(agreementEClass, AGREEMENT__PRODUCT_ID);
-		createEAttribute(agreementEClass, AGREEMENT__ROLE_TYPE_ID_FROM);
-		createEAttribute(agreementEClass, AGREEMENT__ROLE_TYPE_ID_TO);
 		createEAttribute(agreementEClass, AGREEMENT__TEXT_DATA);
 		createEAttribute(agreementEClass, AGREEMENT__THRU_DATE);
+		createEReference(agreementEClass, AGREEMENT__PRODUCT_ID);
+		createEReference(agreementEClass, AGREEMENT__PARTY_ID_FROM);
+		createEReference(agreementEClass, AGREEMENT__ROLE_TYPE_ID_FROM);
+		createEReference(agreementEClass, AGREEMENT__PARTY_ID_TO);
+		createEReference(agreementEClass, AGREEMENT__ROLE_TYPE_ID_TO);
+		createEReference(agreementEClass, AGREEMENT__AGREEMENT_TYPE_ID);
 		createEAttribute(agreementEClass, AGREEMENT__AGREEMENT_ATTRIBUTES);
 		createEAttribute(agreementEClass, AGREEMENT__AGREEMENT_ITEMS);
 
@@ -2326,17 +2327,17 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		agreementContentEClass = createEClass(AGREEMENT_CONTENT);
 		createEAttribute(agreementContentEClass, AGREEMENT_CONTENT__CONTENT_ID);
-		createEAttribute(agreementContentEClass, AGREEMENT_CONTENT__AGREEMENT_ID);
 		createEAttribute(agreementContentEClass, AGREEMENT_CONTENT__AGREEMENT_ITEM_SEQ_ID);
-		createEAttribute(agreementContentEClass, AGREEMENT_CONTENT__AGREEMENT_CONTENT_TYPE_ID);
 		createEAttribute(agreementContentEClass, AGREEMENT_CONTENT__FROM_DATE);
 		createEAttribute(agreementContentEClass, AGREEMENT_CONTENT__THRU_DATE);
+		createEReference(agreementContentEClass, AGREEMENT_CONTENT__AGREEMENT_ID);
+		createEReference(agreementContentEClass, AGREEMENT_CONTENT__AGREEMENT_CONTENT_TYPE_ID);
 
 		agreementContentTypeEClass = createEClass(AGREEMENT_CONTENT_TYPE);
 		createEAttribute(agreementContentTypeEClass, AGREEMENT_CONTENT_TYPE__AGREEMENT_CONTENT_TYPE_ID);
 		createEAttribute(agreementContentTypeEClass, AGREEMENT_CONTENT_TYPE__DESCRIPTION);
 		createEAttribute(agreementContentTypeEClass, AGREEMENT_CONTENT_TYPE__HAS_TABLE);
-		createEAttribute(agreementContentTypeEClass, AGREEMENT_CONTENT_TYPE__PARENT_TYPE_ID);
+		createEReference(agreementContentTypeEClass, AGREEMENT_CONTENT_TYPE__PARENT_TYPE_ID);
 
 		agreementEmploymentApplEClass = createEClass(AGREEMENT_EMPLOYMENT_APPL);
 		createEAttribute(agreementEmploymentApplEClass, AGREEMENT_EMPLOYMENT_APPL__AGREEMENT_ID);
@@ -2352,20 +2353,20 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		agreementFacilityApplEClass = createEClass(AGREEMENT_FACILITY_APPL);
 		createEAttribute(agreementFacilityApplEClass, AGREEMENT_FACILITY_APPL__AGREEMENT_ID);
 		createEAttribute(agreementFacilityApplEClass, AGREEMENT_FACILITY_APPL__AGREEMENT_ITEM_SEQ_ID);
-		createEAttribute(agreementFacilityApplEClass, AGREEMENT_FACILITY_APPL__FACILITY_ID);
+		createEReference(agreementFacilityApplEClass, AGREEMENT_FACILITY_APPL__FACILITY_ID);
 
 		agreementGeographicalApplicEClass = createEClass(AGREEMENT_GEOGRAPHICAL_APPLIC);
 		createEAttribute(agreementGeographicalApplicEClass, AGREEMENT_GEOGRAPHICAL_APPLIC__AGREEMENT_ID);
 		createEAttribute(agreementGeographicalApplicEClass, AGREEMENT_GEOGRAPHICAL_APPLIC__AGREEMENT_ITEM_SEQ_ID);
-		createEAttribute(agreementGeographicalApplicEClass, AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID);
+		createEReference(agreementGeographicalApplicEClass, AGREEMENT_GEOGRAPHICAL_APPLIC__GEO_ID);
 
 		agreementItemEClass = createEClass(AGREEMENT_ITEM);
 		createEAttribute(agreementItemEClass, AGREEMENT_ITEM__AGREEMENT_ID);
 		createEAttribute(agreementItemEClass, AGREEMENT_ITEM__AGREEMENT_ITEM_SEQ_ID);
 		createEAttribute(agreementItemEClass, AGREEMENT_ITEM__AGREEMENT_IMAGE);
-		createEAttribute(agreementItemEClass, AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID);
 		createEAttribute(agreementItemEClass, AGREEMENT_ITEM__AGREEMENT_TEXT);
 		createEAttribute(agreementItemEClass, AGREEMENT_ITEM__CURRENCY_UOM_ID);
+		createEReference(agreementItemEClass, AGREEMENT_ITEM__AGREEMENT_ITEM_TYPE_ID);
 
 		agreementItemAttributeEClass = createEClass(AGREEMENT_ITEM_ATTRIBUTE);
 		createEAttribute(agreementItemAttributeEClass, AGREEMENT_ITEM_ATTRIBUTE__AGREEMENT_ID);
@@ -2378,7 +2379,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		createEAttribute(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ID);
 		createEAttribute(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__DESCRIPTION);
 		createEAttribute(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__HAS_TABLE);
-		createEAttribute(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__PARENT_TYPE_ID);
+		createEReference(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__PARENT_TYPE_ID);
 		createEAttribute(agreementItemTypeEClass, AGREEMENT_ITEM_TYPE__AGREEMENT_ITEM_TYPE_ATTRS);
 
 		agreementItemTypeAttrEClass = createEClass(AGREEMENT_ITEM_TYPE_ATTR);
@@ -2389,41 +2390,41 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		agreementPartyApplicEClass = createEClass(AGREEMENT_PARTY_APPLIC);
 		createEAttribute(agreementPartyApplicEClass, AGREEMENT_PARTY_APPLIC__AGREEMENT_ID);
 		createEAttribute(agreementPartyApplicEClass, AGREEMENT_PARTY_APPLIC__AGREEMENT_ITEM_SEQ_ID);
-		createEAttribute(agreementPartyApplicEClass, AGREEMENT_PARTY_APPLIC__PARTY_ID);
+		createEReference(agreementPartyApplicEClass, AGREEMENT_PARTY_APPLIC__PARTY_ID);
 
 		agreementProductApplEClass = createEClass(AGREEMENT_PRODUCT_APPL);
 		createEAttribute(agreementProductApplEClass, AGREEMENT_PRODUCT_APPL__AGREEMENT_ID);
 		createEAttribute(agreementProductApplEClass, AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID);
-		createEAttribute(agreementProductApplEClass, AGREEMENT_PRODUCT_APPL__PRODUCT_ID);
 		createEAttribute(agreementProductApplEClass, AGREEMENT_PRODUCT_APPL__PRICE);
+		createEReference(agreementProductApplEClass, AGREEMENT_PRODUCT_APPL__PRODUCT_ID);
 
 		agreementPromoApplEClass = createEClass(AGREEMENT_PROMO_APPL);
 		createEAttribute(agreementPromoApplEClass, AGREEMENT_PROMO_APPL__AGREEMENT_ID);
 		createEAttribute(agreementPromoApplEClass, AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID);
-		createEAttribute(agreementPromoApplEClass, AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID);
 		createEAttribute(agreementPromoApplEClass, AGREEMENT_PROMO_APPL__FROM_DATE);
 		createEAttribute(agreementPromoApplEClass, AGREEMENT_PROMO_APPL__SEQUENCE_NUM);
 		createEAttribute(agreementPromoApplEClass, AGREEMENT_PROMO_APPL__THRU_DATE);
+		createEReference(agreementPromoApplEClass, AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID);
 
 		agreementRoleEClass = createEClass(AGREEMENT_ROLE);
 		createEAttribute(agreementRoleEClass, AGREEMENT_ROLE__AGREEMENT_ID);
-		createEAttribute(agreementRoleEClass, AGREEMENT_ROLE__PARTY_ID);
-		createEAttribute(agreementRoleEClass, AGREEMENT_ROLE__ROLE_TYPE_ID);
+		createEReference(agreementRoleEClass, AGREEMENT_ROLE__PARTY_ID);
+		createEReference(agreementRoleEClass, AGREEMENT_ROLE__ROLE_TYPE_ID);
 
 		agreementTermEClass = createEClass(AGREEMENT_TERM);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__AGREEMENT_TERM_ID);
-		createEAttribute(agreementTermEClass, AGREEMENT_TERM__AGREEMENT_ID);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__DESCRIPTION);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__FROM_DATE);
-		createEAttribute(agreementTermEClass, AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__MAX_QUANTITY);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__MIN_QUANTITY);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__TERM_DAYS);
-		createEAttribute(agreementTermEClass, AGREEMENT_TERM__TERM_TYPE_ID);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__TERM_VALUE);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__TEXT_VALUE);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__THRU_DATE);
+		createEReference(agreementTermEClass, AGREEMENT_TERM__TERM_TYPE_ID);
+		createEReference(agreementTermEClass, AGREEMENT_TERM__AGREEMENT_ID);
+		createEReference(agreementTermEClass, AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID);
 		createEAttribute(agreementTermEClass, AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES);
 
 		agreementTermAttributeEClass = createEClass(AGREEMENT_TERM_ATTRIBUTE);
@@ -2436,7 +2437,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		createEAttribute(agreementTypeEClass, AGREEMENT_TYPE__AGREEMENT_TYPE_ID);
 		createEAttribute(agreementTypeEClass, AGREEMENT_TYPE__DESCRIPTION);
 		createEAttribute(agreementTypeEClass, AGREEMENT_TYPE__HAS_TABLE);
-		createEAttribute(agreementTypeEClass, AGREEMENT_TYPE__PARENT_TYPE_ID);
+		createEReference(agreementTypeEClass, AGREEMENT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(agreementTypeEClass, AGREEMENT_TYPE__AGREEMENT_TYPE_ATTRS);
 
 		agreementTypeAttrEClass = createEClass(AGREEMENT_TYPE_ATTR);
@@ -2447,13 +2448,13 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		agreementWorkEffortApplicEClass = createEClass(AGREEMENT_WORK_EFFORT_APPLIC);
 		createEAttribute(agreementWorkEffortApplicEClass, AGREEMENT_WORK_EFFORT_APPLIC__AGREEMENT_ID);
 		createEAttribute(agreementWorkEffortApplicEClass, AGREEMENT_WORK_EFFORT_APPLIC__AGREEMENT_ITEM_SEQ_ID);
-		createEAttribute(agreementWorkEffortApplicEClass, AGREEMENT_WORK_EFFORT_APPLIC__WORK_EFFORT_ID);
+		createEReference(agreementWorkEffortApplicEClass, AGREEMENT_WORK_EFFORT_APPLIC__WORK_EFFORT_ID);
 
 		termTypeEClass = createEClass(TERM_TYPE);
 		createEAttribute(termTypeEClass, TERM_TYPE__TERM_TYPE_ID);
 		createEAttribute(termTypeEClass, TERM_TYPE__DESCRIPTION);
 		createEAttribute(termTypeEClass, TERM_TYPE__HAS_TABLE);
-		createEAttribute(termTypeEClass, TERM_TYPE__PARENT_TYPE_ID);
+		createEReference(termTypeEClass, TERM_TYPE__PARENT_TYPE_ID);
 		createEAttribute(termTypeEClass, TERM_TYPE__TERM_TYPE_ATTRS);
 
 		termTypeAttrEClass = createEClass(TERM_TYPE_ATTR);
@@ -2487,6 +2488,13 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
+		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
+		PromoPackage thePromoPackage = (PromoPackage)EPackage.Registry.INSTANCE.getEPackage(PromoPackage.eNS_URI);
+		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -2541,22 +2549,29 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEAttribute(getAddendum_AddendumCreationDate(), ecorePackage.getEDate(), "addendumCreationDate", null, 0, 1, Addendum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddendum_AddendumEffectiveDate(), ecorePackage.getEDate(), "addendumEffectiveDate", null, 0, 1, Addendum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddendum_AddendumText(), ecorePackage.getEString(), "addendumText", null, 0, 1, Addendum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAddendum_AgreementId(), ecorePackage.getEString(), "agreementId", null, 0, 1, Addendum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddendum_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 0, 1, Addendum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAddendum_AgreementId(), this.getAgreement(), null, "agreementId", null, 0, 1, Addendum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAddendum_AgreementId().getEKeys().add(this.getAgreement_AgreementId());
 
 		initEClass(agreementEClass, Agreement.class, "Agreement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreement_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreement_AgreementDate(), ecorePackage.getEDate(), "agreementDate", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreement_AgreementTypeId(), ecorePackage.getEString(), "agreementTypeId", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreement_Description(), ecorePackage.getEString(), "description", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreement_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreement_PartyIdFrom(), ecorePackage.getEString(), "partyIdFrom", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreement_PartyIdTo(), ecorePackage.getEString(), "partyIdTo", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreement_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreement_RoleTypeIdFrom(), ecorePackage.getEString(), "roleTypeIdFrom", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreement_RoleTypeIdTo(), ecorePackage.getEString(), "roleTypeIdTo", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreement_TextData(), ecorePackage.getEString(), "textData", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreement_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreement_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEReference(getAgreement_PartyIdFrom(), thePartyPackage.getParty(), null, "partyIdFrom", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_PartyIdFrom().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getAgreement_RoleTypeIdFrom(), thePartyPackage.getRoleType(), null, "roleTypeIdFrom", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_RoleTypeIdFrom().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
+		initEReference(getAgreement_PartyIdTo(), thePartyPackage.getParty(), null, "partyIdTo", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_PartyIdTo().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getAgreement_RoleTypeIdTo(), thePartyPackage.getRoleType(), null, "roleTypeIdTo", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_RoleTypeIdTo().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
+		initEReference(getAgreement_AgreementTypeId(), this.getAgreementType(), null, "agreementTypeId", null, 0, 1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreement_AgreementTypeId().getEKeys().add(this.getAgreementType_AgreementTypeId());
 		initEAttribute(getAgreement_AgreementAttributes(), ecorePackage.getEString(), "agreementAttributes", null, 0, -1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreement_AgreementItems(), ecorePackage.getEString(), "agreementItems", null, 0, -1, Agreement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2574,17 +2589,20 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 
 		initEClass(agreementContentEClass, AgreementContent.class, "AgreementContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementContent_ContentId(), ecorePackage.getEString(), "contentId", null, 1, 1, AgreementContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementContent_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementContent_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 1, 1, AgreementContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementContent_AgreementContentTypeId(), ecorePackage.getEString(), "agreementContentTypeId", null, 1, 1, AgreementContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementContent_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, AgreementContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementContent_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, AgreementContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementContent_AgreementId(), this.getAgreement(), null, "agreementId", null, 0, 1, AgreementContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementContent_AgreementId().getEKeys().add(this.getAgreement_AgreementId());
+		initEReference(getAgreementContent_AgreementContentTypeId(), this.getAgreementContentType(), null, "agreementContentTypeId", null, 0, 1, AgreementContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementContent_AgreementContentTypeId().getEKeys().add(this.getAgreementContentType_AgreementContentTypeId());
 
 		initEClass(agreementContentTypeEClass, AgreementContentType.class, "AgreementContentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementContentType_AgreementContentTypeId(), ecorePackage.getEString(), "agreementContentTypeId", null, 1, 1, AgreementContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementContentType_Description(), ecorePackage.getEString(), "description", null, 0, 1, AgreementContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementContentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, AgreementContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementContentType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, AgreementContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementContentType_ParentTypeId(), this.getAgreementContentType(), null, "parentTypeId", null, 0, 1, AgreementContentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementContentType_ParentTypeId().getEKeys().add(this.getAgreementContentType_AgreementContentTypeId());
 
 		addEOperation(agreementContentTypeEClass, ecorePackage.getEString(), "childAgreementContentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -2602,20 +2620,23 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEClass(agreementFacilityApplEClass, AgreementFacilityAppl.class, "AgreementFacilityAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementFacilityAppl_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementFacilityAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementFacilityAppl_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 1, 1, AgreementFacilityAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementFacilityAppl_FacilityId(), ecorePackage.getEString(), "facilityId", null, 1, 1, AgreementFacilityAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementFacilityAppl_FacilityId(), theFacilityPackage.getFacility(), null, "facilityId", null, 0, 1, AgreementFacilityAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementFacilityAppl_FacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
 
 		initEClass(agreementGeographicalApplicEClass, AgreementGeographicalApplic.class, "AgreementGeographicalApplic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementGeographicalApplic_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementGeographicalApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementGeographicalApplic_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 1, 1, AgreementGeographicalApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementGeographicalApplic_GeoId(), ecorePackage.getEString(), "geoId", null, 1, 1, AgreementGeographicalApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementGeographicalApplic_GeoId(), theGeoPackage.getGeo(), null, "geoId", null, 0, 1, AgreementGeographicalApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementGeographicalApplic_GeoId().getEKeys().add(theGeoPackage.getGeo_GeoId());
 
 		initEClass(agreementItemEClass, AgreementItem.class, "AgreementItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementItem_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementItem_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 1, 1, AgreementItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementItem_AgreementImage(), ecorePackage.getEJavaObject(), "agreementImage", null, 0, 1, AgreementItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementItem_AgreementItemTypeId(), ecorePackage.getEString(), "agreementItemTypeId", null, 0, 1, AgreementItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementItem_AgreementText(), ecorePackage.getEString(), "agreementText", null, 0, 1, AgreementItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementItem_CurrencyUomId(), ecorePackage.getEString(), "currencyUomId", null, 0, 1, AgreementItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementItem_AgreementItemTypeId(), this.getAgreementItemType(), null, "agreementItemTypeId", null, 0, 1, AgreementItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementItem_AgreementItemTypeId().getEKeys().add(this.getAgreementItemType_AgreementItemTypeId());
 
 		initEClass(agreementItemAttributeEClass, AgreementItemAttribute.class, "AgreementItemAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementItemAttribute_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementItemAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2628,7 +2649,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEAttribute(getAgreementItemType_AgreementItemTypeId(), ecorePackage.getEString(), "agreementItemTypeId", null, 1, 1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementItemType_Description(), ecorePackage.getEString(), "description", null, 0, 1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementItemType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementItemType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementItemType_ParentTypeId(), this.getAgreementItemType(), null, "parentTypeId", null, 0, 1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementItemType_ParentTypeId().getEKeys().add(this.getAgreementItemType_AgreementItemTypeId());
 		initEAttribute(getAgreementItemType_AgreementItemTypeAttrs(), ecorePackage.getEString(), "agreementItemTypeAttrs", null, 0, -1, AgreementItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(agreementItemTypeEClass, ecorePackage.getEString(), "agreementItems", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -2643,41 +2665,49 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEClass(agreementPartyApplicEClass, AgreementPartyApplic.class, "AgreementPartyApplic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementPartyApplic_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementPartyApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementPartyApplic_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 1, 1, AgreementPartyApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementPartyApplic_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, AgreementPartyApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementPartyApplic_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, AgreementPartyApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementPartyApplic_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		initEClass(agreementProductApplEClass, AgreementProductAppl.class, "AgreementProductAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementProductAppl_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementProductAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementProductAppl_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 1, 1, AgreementProductAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementProductAppl_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, AgreementProductAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementProductAppl_Price(), ecorePackage.getEBigDecimal(), "price", null, 0, 1, AgreementProductAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementProductAppl_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, AgreementProductAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementProductAppl_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
 
 		initEClass(agreementPromoApplEClass, AgreementPromoAppl.class, "AgreementPromoAppl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementPromoAppl_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementPromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementPromoAppl_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 1, 1, AgreementPromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementPromoAppl_ProductPromoId(), ecorePackage.getEString(), "productPromoId", null, 1, 1, AgreementPromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementPromoAppl_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, AgreementPromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementPromoAppl_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, AgreementPromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementPromoAppl_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, AgreementPromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementPromoAppl_ProductPromoId(), thePromoPackage.getProductPromo(), null, "productPromoId", null, 0, 1, AgreementPromoAppl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementPromoAppl_ProductPromoId().getEKeys().add(thePromoPackage.getProductPromo_ProductPromoId());
 
 		initEClass(agreementRoleEClass, AgreementRole.class, "AgreementRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementRole_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementRole_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getAgreementRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, AgreementRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
 
 		initEClass(agreementTermEClass, AgreementTerm.class, "AgreementTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementTerm_AgreementTermId(), ecorePackage.getEString(), "agreementTermId", null, 1, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementTerm_AgreementId(), ecorePackage.getEString(), "agreementId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_Description(), ecorePackage.getEString(), "description", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementTerm_InvoiceItemTypeId(), ecorePackage.getEString(), "invoiceItemTypeId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_MaxQuantity(), ecorePackage.getEDouble(), "maxQuantity", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_MinQuantity(), ecorePackage.getEDouble(), "minQuantity", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_TermDays(), ecorePackage.getELong(), "termDays", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementTerm_TermTypeId(), ecorePackage.getEString(), "termTypeId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_TermValue(), ecorePackage.getEBigDecimal(), "termValue", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_TextValue(), ecorePackage.getEString(), "textValue", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementTerm_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementTerm_TermTypeId(), this.getTermType(), null, "termTypeId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementTerm_TermTypeId().getEKeys().add(this.getTermType_TermTypeId());
+		initEReference(getAgreementTerm_AgreementId(), this.getAgreement(), null, "agreementId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementTerm_AgreementId().getEKeys().add(this.getAgreement_AgreementId());
+		initEReference(getAgreementTerm_InvoiceItemTypeId(), theInvoicePackage.getInvoiceItemType(), null, "invoiceItemTypeId", null, 0, 1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementTerm_InvoiceItemTypeId().getEKeys().add(theInvoicePackage.getInvoiceItemType_InvoiceItemTypeId());
 		initEAttribute(getAgreementTerm_AgreementTermAttributes(), ecorePackage.getEString(), "agreementTermAttributes", null, 0, -1, AgreementTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agreementTermAttributeEClass, AgreementTermAttribute.class, "AgreementTermAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2690,7 +2720,8 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEAttribute(getAgreementType_AgreementTypeId(), ecorePackage.getEString(), "agreementTypeId", null, 1, 1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementType_Description(), ecorePackage.getEString(), "description", null, 0, 1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementType_ParentTypeId(), this.getAgreementType(), null, "parentTypeId", null, 0, 1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementType_ParentTypeId().getEKeys().add(this.getAgreementType_AgreementTypeId());
 		initEAttribute(getAgreementType_AgreementTypeAttrs(), ecorePackage.getEString(), "agreementTypeAttrs", null, 0, -1, AgreementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(agreementTypeEClass, ecorePackage.getEString(), "agreements", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -2705,13 +2736,15 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		initEClass(agreementWorkEffortApplicEClass, AgreementWorkEffortApplic.class, "AgreementWorkEffortApplic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgreementWorkEffortApplic_AgreementId(), ecorePackage.getEString(), "agreementId", null, 1, 1, AgreementWorkEffortApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAgreementWorkEffortApplic_AgreementItemSeqId(), ecorePackage.getEString(), "agreementItemSeqId", null, 1, 1, AgreementWorkEffortApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAgreementWorkEffortApplic_WorkEffortId(), ecorePackage.getEString(), "workEffortId", null, 1, 1, AgreementWorkEffortApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgreementWorkEffortApplic_WorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "workEffortId", null, 0, 1, AgreementWorkEffortApplic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAgreementWorkEffortApplic_WorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
 
 		initEClass(termTypeEClass, TermType.class, "TermType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTermType_TermTypeId(), ecorePackage.getEString(), "termTypeId", null, 1, 1, TermType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTermType_Description(), ecorePackage.getEString(), "description", null, 0, 1, TermType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTermType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, TermType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTermType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, TermType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTermType_ParentTypeId(), this.getTermType(), null, "parentTypeId", null, 0, 1, TermType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTermType_ParentTypeId().getEKeys().add(this.getTermType_TermTypeId());
 		initEAttribute(getTermType_TermTypeAttrs(), ecorePackage.getEString(), "termTypeAttrs", null, 0, -1, TermType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(termTypeEClass, ecorePackage.getEString(), "agreementTerms", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -2730,10 +2763,10 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		// Create annotations
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-domain
+		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -2805,19 +2838,7 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getAgreementContent_AgreementId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getAgreementContent_AgreementItemSeqId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getAgreementContent_AgreementContentTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2895,12 +2916,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getAgreementFacilityAppl_FacilityId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getAgreementGeographicalApplic_AgreementId(),
 		   source,
 		   new String[] {
@@ -2908,12 +2923,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   });
 		addAnnotation
 		  (getAgreementGeographicalApplic_AgreementItemSeqId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getAgreementGeographicalApplic_GeoId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -2997,12 +3006,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getAgreementPartyApplic_PartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getAgreementProductAppl_AgreementId(),
 		   source,
 		   new String[] {
@@ -3010,12 +3013,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   });
 		addAnnotation
 		  (getAgreementProductAppl_AgreementItemSeqId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getAgreementProductAppl_ProductId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3033,12 +3030,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getAgreementPromoAppl_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getAgreementPromoAppl_FromDate(),
 		   source,
 		   new String[] {
@@ -3046,18 +3037,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 		   });
 		addAnnotation
 		  (getAgreementRole_AgreementId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getAgreementRole_PartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getAgreementRole_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -3135,12 +3114,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getAgreementWorkEffortApplic_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (termTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -3199,15 +3172,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getAddendum_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (agreementEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -3238,60 +3202,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getAgreement_AgreementTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreement_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreement_PartyIdTo(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreement_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreement_RoleTypeIdFrom(),
-		   source,
-		   new String[] {
-			   "frame", "RoleType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreement_RoleTypeIdTo(),
-		   source,
-		   new String[] {
-			   "frame", "RoleType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getAgreement_AgreementAttributes(),
 		   source,
 		   new String[] {
@@ -3310,110 +3220,11 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getAgreementAttribute_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementContent_ContentId(),
-		   source,
-		   new String[] {
-			   "frame", "Content"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementContent_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementContent_AgreementContentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementContentType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (agreementContentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "AgreementContentType",
 			   "route", "parentTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementContentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementContentType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementFacilityAppl_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementFacilityAppl_FacilityId(),
-		   source,
-		   new String[] {
-			   "frame", "Facility"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementGeographicalApplic_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementGeographicalApplic_GeoId(),
-		   source,
-		   new String[] {
-			   "frame", "Geo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementItem_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementItem_AgreementItemTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementItemType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -3439,15 +3250,6 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getAgreementItemType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementItemType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getAgreementItemType_AgreementItemTypeAttrs(),
 		   source,
 		   new String[] {
@@ -3457,136 +3259,10 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getAgreementItemTypeAttr_AgreementItemTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementItemType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementPartyApplic_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementPartyApplic_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementProductAppl_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementProductAppl_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementPromoAppl_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementPromoAppl_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductPromo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementRole_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementRole_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "RoleType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementTerm_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementTerm_InvoiceItemTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "InvoiceItemType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementTerm_TermTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "TermType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getAgreementTerm_AgreementTermAttributes(),
 		   source,
 		   new String[] {
 			   "frame", "AgreementTermAttribute"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementTermAttribute_AgreementTermId(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementTerm"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -3612,46 +3288,10 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getAgreementType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getAgreementType_AgreementTypeAttrs(),
 		   source,
 		   new String[] {
 			   "frame", "AgreementTypeAttr"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementTypeAttr_AgreementTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "AgreementType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementWorkEffortApplic_AgreementId(),
-		   source,
-		   new String[] {
-			   "frame", "Agreement"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAgreementWorkEffortApplic_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "frame", "WorkEffort"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -3697,28 +3337,10 @@ public class AgreementPackageImpl extends EPackageImpl implements AgreementPacka
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getTermType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "TermType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getTermType_TermTypeAttrs(),
 		   source,
 		   new String[] {
 			   "frame", "TermTypeAttr"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTermTypeAttr_TermTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "TermType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

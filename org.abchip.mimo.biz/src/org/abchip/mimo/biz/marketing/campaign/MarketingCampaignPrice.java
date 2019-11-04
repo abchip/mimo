@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.marketing.campaign;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.price.ProductPriceRule;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +22,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice()
@@ -42,7 +43,8 @@ public interface MarketingCampaignPrice extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -68,8 +70,8 @@ public interface MarketingCampaignPrice extends BizEntity {
 	 * @return the value of the '<em>Marketing Campaign Id</em>' attribute.
 	 * @see #setMarketingCampaignId(String)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice_MarketingCampaignId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='MarketingCampaign'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getMarketingCampaignId();
@@ -85,31 +87,30 @@ public interface MarketingCampaignPrice extends BizEntity {
 	void setMarketingCampaignId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Price Rule Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Price Rule Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Price Rule Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Price Rule Id</em>' attribute.
-	 * @see #setProductPriceRuleId(String)
+	 * @return the value of the '<em>Product Price Rule Id</em>' reference.
+	 * @see #setProductPriceRuleId(ProductPriceRule)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPrice_ProductPriceRuleId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPriceRule'"
+	 * @model keys="productPriceRuleId"
 	 * @generated
 	 */
-	String getProductPriceRuleId();
+	ProductPriceRule getProductPriceRuleId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getProductPriceRuleId <em>Product Price Rule Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getProductPriceRuleId <em>Product Price Rule Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Price Rule Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Price Rule Id</em>' reference.
 	 * @see #getProductPriceRuleId()
 	 * @generated
 	 */
-	void setProductPriceRuleId(String value);
+	void setProductPriceRuleId(ProductPriceRule value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

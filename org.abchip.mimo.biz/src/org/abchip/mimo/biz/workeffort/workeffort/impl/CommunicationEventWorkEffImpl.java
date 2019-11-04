@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.workeffort.workeffort.CommunicationEventWorkEff;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.CommunicationEventWorkEffImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.CommunicationEventWorkEffImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.CommunicationEventWorkEffImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.CommunicationEventWorkEffImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,26 +61,6 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMUNICATION_EVENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String communicationEventId = COMMUNICATION_EVENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96,6 +79,16 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommunicationEventId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CommunicationEvent communicationEventId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,7 +115,24 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	 * @generated
 	 */
 	@Override
-	public String getCommunicationEventId() {
+	public CommunicationEvent getCommunicationEventId() {
+		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
+			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
+			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
+			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
+			}
+		}
+		return communicationEventId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEvent basicGetCommunicationEventId() {
 		return communicationEventId;
 	}
 
@@ -132,8 +142,8 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 	 * @generated
 	 */
 	@Override
-	public void setCommunicationEventId(String newCommunicationEventId) {
-		String oldCommunicationEventId = communicationEventId;
+	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
@@ -195,10 +205,11 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 		switch (featureID) {
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
 				return getWorkEffortId();
-			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
-				return getCommunicationEventId();
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__DESCRIPTION:
 				return getDescription();
+			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
+				if (resolve) return getCommunicationEventId();
+				return basicGetCommunicationEventId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,11 +225,11 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
-			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((String)newValue);
-				return;
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
+				setCommunicationEventId((CommunicationEvent)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,11 +246,11 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId(COMMUNICATION_EVENT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
+				setCommunicationEventId((CommunicationEvent)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -255,10 +266,10 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 		switch (featureID) {
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
-				return COMMUNICATION_EVENT_ID_EDEFAULT == null ? communicationEventId != null : !COMMUNICATION_EVENT_ID_EDEFAULT.equals(communicationEventId);
 			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case WorkeffortPackage.COMMUNICATION_EVENT_WORK_EFF__COMMUNICATION_EVENT_ID:
+				return communicationEventId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -275,8 +286,6 @@ public class CommunicationEventWorkEffImpl extends BizEntityImpl implements Comm
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", communicationEventId: ");
-		result.append(communicationEventId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

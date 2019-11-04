@@ -75,7 +75,7 @@ public interface AccommodationMapType extends BizEntityType<AccommodationMap> {
 	 * @return the value of the '<em>Accommodation Map Type Id</em>' attribute.
 	 * @see #setAccommodationMapTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getAccommodationMapType_AccommodationMapTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

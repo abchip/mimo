@@ -10,12 +10,15 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,8 +33,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.ApplicationSandboxImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.ApplicationSandboxImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.ApplicationSandboxImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.ApplicationSandboxImpl#getRuntimeDataId <em>Runtime Data Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.ApplicationSandboxImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.ApplicationSandboxImpl#getRuntimeDataId <em>Runtime Data Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,26 +126,6 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRuntimeDataId() <em>Runtime Data Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuntimeDataId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RUNTIME_DATA_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRuntimeDataId() <em>Runtime Data Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuntimeDataId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String runtimeDataId = RUNTIME_DATA_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +144,16 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	 * @ordered
 	 */
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRuntimeDataId() <em>Runtime Data Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuntimeDataId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RuntimeData runtimeDataId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,7 +272,24 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	 * @generated
 	 */
 	@Override
-	public String getRuntimeDataId() {
+	public RuntimeData getRuntimeDataId() {
+		if (runtimeDataId != null && ((EObject)runtimeDataId).eIsProxy()) {
+			InternalEObject oldRuntimeDataId = (InternalEObject)runtimeDataId;
+			runtimeDataId = (RuntimeData)eResolveProxy(oldRuntimeDataId);
+			if (runtimeDataId != oldRuntimeDataId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
+			}
+		}
+		return runtimeDataId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeData basicGetRuntimeDataId() {
 		return runtimeDataId;
 	}
 
@@ -289,8 +299,8 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 	 * @generated
 	 */
 	@Override
-	public void setRuntimeDataId(String newRuntimeDataId) {
-		String oldRuntimeDataId = runtimeDataId;
+	public void setRuntimeDataId(RuntimeData newRuntimeDataId) {
+		RuntimeData oldRuntimeDataId = runtimeDataId;
 		runtimeDataId = newRuntimeDataId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
@@ -335,10 +345,11 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 				return getPartyId();
 			case WorkeffortPackage.APPLICATION_SANDBOX__ROLE_TYPE_ID:
 				return getRoleTypeId();
-			case WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID:
-				return getRuntimeDataId();
 			case WorkeffortPackage.APPLICATION_SANDBOX__WORK_EFFORT_ID:
 				return getWorkEffortId();
+			case WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID:
+				if (resolve) return getRuntimeDataId();
+				return basicGetRuntimeDataId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,11 +374,11 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 			case WorkeffortPackage.APPLICATION_SANDBOX__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
 				return;
-			case WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID:
-				setRuntimeDataId((String)newValue);
-				return;
 			case WorkeffortPackage.APPLICATION_SANDBOX__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
+				return;
+			case WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID:
+				setRuntimeDataId((RuntimeData)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -393,11 +404,11 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 			case WorkeffortPackage.APPLICATION_SANDBOX__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID:
-				setRuntimeDataId(RUNTIME_DATA_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.APPLICATION_SANDBOX__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
+				return;
+			case WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID:
+				setRuntimeDataId((RuntimeData)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -419,10 +430,10 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case WorkeffortPackage.APPLICATION_SANDBOX__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID:
-				return RUNTIME_DATA_ID_EDEFAULT == null ? runtimeDataId != null : !RUNTIME_DATA_ID_EDEFAULT.equals(runtimeDataId);
 			case WorkeffortPackage.APPLICATION_SANDBOX__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
+			case WorkeffortPackage.APPLICATION_SANDBOX__RUNTIME_DATA_ID:
+				return runtimeDataId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -445,8 +456,6 @@ public class ApplicationSandboxImpl extends BizEntityImpl implements Application
 		result.append(partyId);
 		result.append(", roleTypeId: ");
 		result.append(roleTypeId);
-		result.append(", runtimeDataId: ");
-		result.append(runtimeDataId);
 		result.append(", workEffortId: ");
 		result.append(workEffortId);
 		result.append(')');

@@ -9,11 +9,15 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentPackage;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,10 +34,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getBoxLength <em>Box Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getBoxWidth <em>Box Width</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getDateCreated <em>Date Created</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getDimensionUomId <em>Dimension Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getInsuredValue <em>Insured Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getWeight <em>Weight</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getDimensionUomId <em>Dimension Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageImpl#getWeightUomId <em>Weight Uom Id</em>}</li>
  * </ul>
  *
@@ -161,26 +165,6 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	protected Date dateCreated = DATE_CREATED_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDimensionUomId() <em>Dimension Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDimensionUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DIMENSION_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDimensionUomId() <em>Dimension Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDimensionUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dimensionUomId = DIMENSION_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getInsuredValue() <em>Insured Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,26 +183,6 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 * @ordered
 	 */
 	protected BigDecimal insuredValue = INSURED_VALUE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getShipmentBoxTypeId() <em>Shipment Box Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentBoxTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_BOX_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentBoxTypeId() <em>Shipment Box Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentBoxTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentBoxTypeId = SHIPMENT_BOX_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getWeight() <em>Weight</em>}' attribute.
@@ -241,24 +205,34 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	protected BigDecimal weight = WEIGHT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getWeightUomId() <em>Weight Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getShipmentBoxTypeId() <em>Shipment Box Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWeightUomId()
+	 * @see #getShipmentBoxTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WEIGHT_UOM_ID_EDEFAULT = null;
+	protected ShipmentBoxType shipmentBoxTypeId;
 
 	/**
-	 * The cached value of the '{@link #getWeightUomId() <em>Weight Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getDimensionUomId() <em>Dimension Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDimensionUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom dimensionUomId;
+
+	/**
+	 * The cached value of the '{@link #getWeightUomId() <em>Weight Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWeightUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String weightUomId = WEIGHT_UOM_ID_EDEFAULT;
+	protected Uom weightUomId;
 
 	/**
 	 * 
@@ -428,7 +402,24 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 * @generated
 	 */
 	@Override
-	public String getDimensionUomId() {
+	public Uom getDimensionUomId() {
+		if (dimensionUomId != null && ((EObject)dimensionUomId).eIsProxy()) {
+			InternalEObject oldDimensionUomId = (InternalEObject)dimensionUomId;
+			dimensionUomId = (Uom)eResolveProxy(oldDimensionUomId);
+			if (dimensionUomId != oldDimensionUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID, oldDimensionUomId, dimensionUomId));
+			}
+		}
+		return dimensionUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetDimensionUomId() {
 		return dimensionUomId;
 	}
 
@@ -438,8 +429,8 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 * @generated
 	 */
 	@Override
-	public void setDimensionUomId(String newDimensionUomId) {
-		String oldDimensionUomId = dimensionUomId;
+	public void setDimensionUomId(Uom newDimensionUomId) {
+		Uom oldDimensionUomId = dimensionUomId;
 		dimensionUomId = newDimensionUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID, oldDimensionUomId, dimensionUomId));
@@ -474,7 +465,24 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 * @generated
 	 */
 	@Override
-	public String getShipmentBoxTypeId() {
+	public ShipmentBoxType getShipmentBoxTypeId() {
+		if (shipmentBoxTypeId != null && ((EObject)shipmentBoxTypeId).eIsProxy()) {
+			InternalEObject oldShipmentBoxTypeId = (InternalEObject)shipmentBoxTypeId;
+			shipmentBoxTypeId = (ShipmentBoxType)eResolveProxy(oldShipmentBoxTypeId);
+			if (shipmentBoxTypeId != oldShipmentBoxTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID, oldShipmentBoxTypeId, shipmentBoxTypeId));
+			}
+		}
+		return shipmentBoxTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShipmentBoxType basicGetShipmentBoxTypeId() {
 		return shipmentBoxTypeId;
 	}
 
@@ -484,8 +492,8 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 * @generated
 	 */
 	@Override
-	public void setShipmentBoxTypeId(String newShipmentBoxTypeId) {
-		String oldShipmentBoxTypeId = shipmentBoxTypeId;
+	public void setShipmentBoxTypeId(ShipmentBoxType newShipmentBoxTypeId) {
+		ShipmentBoxType oldShipmentBoxTypeId = shipmentBoxTypeId;
 		shipmentBoxTypeId = newShipmentBoxTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID, oldShipmentBoxTypeId, shipmentBoxTypeId));
@@ -520,7 +528,24 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 * @generated
 	 */
 	@Override
-	public String getWeightUomId() {
+	public Uom getWeightUomId() {
+		if (weightUomId != null && ((EObject)weightUomId).eIsProxy()) {
+			InternalEObject oldWeightUomId = (InternalEObject)weightUomId;
+			weightUomId = (Uom)eResolveProxy(oldWeightUomId);
+			if (weightUomId != oldWeightUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
+			}
+		}
+		return weightUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetWeightUomId() {
 		return weightUomId;
 	}
 
@@ -530,8 +555,8 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 	 * @generated
 	 */
 	@Override
-	public void setWeightUomId(String newWeightUomId) {
-		String oldWeightUomId = weightUomId;
+	public void setWeightUomId(Uom newWeightUomId) {
+		Uom oldWeightUomId = weightUomId;
 		weightUomId = newWeightUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
@@ -557,16 +582,19 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 				return getBoxWidth();
 			case Shipment_Package.SHIPMENT_PACKAGE__DATE_CREATED:
 				return getDateCreated();
-			case Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID:
-				return getDimensionUomId();
 			case Shipment_Package.SHIPMENT_PACKAGE__INSURED_VALUE:
 				return getInsuredValue();
-			case Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID:
-				return getShipmentBoxTypeId();
 			case Shipment_Package.SHIPMENT_PACKAGE__WEIGHT:
 				return getWeight();
+			case Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID:
+				if (resolve) return getShipmentBoxTypeId();
+				return basicGetShipmentBoxTypeId();
+			case Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID:
+				if (resolve) return getDimensionUomId();
+				return basicGetDimensionUomId();
 			case Shipment_Package.SHIPMENT_PACKAGE__WEIGHT_UOM_ID:
-				return getWeightUomId();
+				if (resolve) return getWeightUomId();
+				return basicGetWeightUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -597,20 +625,20 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 			case Shipment_Package.SHIPMENT_PACKAGE__DATE_CREATED:
 				setDateCreated((Date)newValue);
 				return;
-			case Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID:
-				setDimensionUomId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_PACKAGE__INSURED_VALUE:
 				setInsuredValue((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID:
-				setShipmentBoxTypeId((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE__WEIGHT:
 				setWeight((BigDecimal)newValue);
 				return;
+			case Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID:
+				setShipmentBoxTypeId((ShipmentBoxType)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID:
+				setDimensionUomId((Uom)newValue);
+				return;
 			case Shipment_Package.SHIPMENT_PACKAGE__WEIGHT_UOM_ID:
-				setWeightUomId((String)newValue);
+				setWeightUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -642,20 +670,20 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 			case Shipment_Package.SHIPMENT_PACKAGE__DATE_CREATED:
 				setDateCreated(DATE_CREATED_EDEFAULT);
 				return;
-			case Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID:
-				setDimensionUomId(DIMENSION_UOM_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_PACKAGE__INSURED_VALUE:
 				setInsuredValue(INSURED_VALUE_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID:
-				setShipmentBoxTypeId(SHIPMENT_BOX_TYPE_ID_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE__WEIGHT:
 				setWeight(WEIGHT_EDEFAULT);
 				return;
+			case Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID:
+				setShipmentBoxTypeId((ShipmentBoxType)null);
+				return;
+			case Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID:
+				setDimensionUomId((Uom)null);
+				return;
 			case Shipment_Package.SHIPMENT_PACKAGE__WEIGHT_UOM_ID:
-				setWeightUomId(WEIGHT_UOM_ID_EDEFAULT);
+				setWeightUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -681,16 +709,16 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 				return BOX_WIDTH_EDEFAULT == null ? boxWidth != null : !BOX_WIDTH_EDEFAULT.equals(boxWidth);
 			case Shipment_Package.SHIPMENT_PACKAGE__DATE_CREATED:
 				return DATE_CREATED_EDEFAULT == null ? dateCreated != null : !DATE_CREATED_EDEFAULT.equals(dateCreated);
-			case Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID:
-				return DIMENSION_UOM_ID_EDEFAULT == null ? dimensionUomId != null : !DIMENSION_UOM_ID_EDEFAULT.equals(dimensionUomId);
 			case Shipment_Package.SHIPMENT_PACKAGE__INSURED_VALUE:
 				return INSURED_VALUE_EDEFAULT == null ? insuredValue != null : !INSURED_VALUE_EDEFAULT.equals(insuredValue);
-			case Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID:
-				return SHIPMENT_BOX_TYPE_ID_EDEFAULT == null ? shipmentBoxTypeId != null : !SHIPMENT_BOX_TYPE_ID_EDEFAULT.equals(shipmentBoxTypeId);
 			case Shipment_Package.SHIPMENT_PACKAGE__WEIGHT:
 				return WEIGHT_EDEFAULT == null ? weight != null : !WEIGHT_EDEFAULT.equals(weight);
+			case Shipment_Package.SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID:
+				return shipmentBoxTypeId != null;
+			case Shipment_Package.SHIPMENT_PACKAGE__DIMENSION_UOM_ID:
+				return dimensionUomId != null;
 			case Shipment_Package.SHIPMENT_PACKAGE__WEIGHT_UOM_ID:
-				return WEIGHT_UOM_ID_EDEFAULT == null ? weightUomId != null : !WEIGHT_UOM_ID_EDEFAULT.equals(weightUomId);
+				return weightUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -717,16 +745,10 @@ public class ShipmentPackageImpl extends BizEntityImpl implements ShipmentPackag
 		result.append(boxWidth);
 		result.append(", dateCreated: ");
 		result.append(dateCreated);
-		result.append(", dimensionUomId: ");
-		result.append(dimensionUomId);
 		result.append(", insuredValue: ");
 		result.append(insuredValue);
-		result.append(", shipmentBoxTypeId: ");
-		result.append(shipmentBoxTypeId);
 		result.append(", weight: ");
 		result.append(weight);
-		result.append(", weightUomId: ");
-		result.append(weightUomId);
 		result.append(')');
 		return result.toString();
 	}

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.request;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,31 +29,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface CustRequestCommEvent extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Communication Event Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Communication Event Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Communication Event Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Id</em>' attribute.
-	 * @see #setCommunicationEventId(String)
+	 * @return the value of the '<em>Communication Event Id</em>' reference.
+	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCommEvent_CommunicationEventId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent'"
+	 * @model keys="communicationEventId"
 	 * @generated
 	 */
-	String getCommunicationEventId();
+	CommunicationEvent getCommunicationEventId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestCommEvent#getCommunicationEventId <em>Communication Event Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.request.CustRequestCommEvent#getCommunicationEventId <em>Communication Event Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Communication Event Id</em>' attribute.
+	 * @param value the new value of the '<em>Communication Event Id</em>' reference.
 	 * @see #getCommunicationEventId()
 	 * @generated
 	 */
-	void setCommunicationEventId(String value);
+	void setCommunicationEventId(CommunicationEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Cust Request Id</b></em>' attribute.
@@ -65,8 +65,8 @@ public interface CustRequestCommEvent extends BizEntity {
 	 * @return the value of the '<em>Cust Request Id</em>' attribute.
 	 * @see #setCustRequestId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestCommEvent_CustRequestId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequest'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestId();

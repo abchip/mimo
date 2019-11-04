@@ -10,12 +10,16 @@ package org.abchip.mimo.biz.shipment.picklist.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.picklist.PicklistBin;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,9 +32,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistBinImpl#getPicklistBinId <em>Picklist Bin Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistBinImpl#getBinLocationNumber <em>Bin Location Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistBinImpl#getPrimaryShipGroupSeqId <em>Primary Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistBinImpl#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistBinImpl#getPrimaryOrderId <em>Primary Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistBinImpl#getPrimaryShipGroupSeqId <em>Primary Ship Group Seq Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,46 +86,6 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 	protected long binLocationNumber = BIN_LOCATION_NUMBER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPicklistId() <em>Picklist Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicklistId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PICKLIST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPicklistId() <em>Picklist Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPicklistId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String picklistId = PICKLIST_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPrimaryOrderId() <em>Primary Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRIMARY_ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPrimaryOrderId() <em>Primary Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrimaryOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String primaryOrderId = PRIMARY_ORDER_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPrimaryShipGroupSeqId() <em>Primary Ship Group Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,6 +104,26 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 	 * @ordered
 	 */
 	protected String primaryShipGroupSeqId = PRIMARY_SHIP_GROUP_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPicklistId() <em>Picklist Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPicklistId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Picklist picklistId;
+
+	/**
+	 * The cached value of the '{@link #getPrimaryOrderId() <em>Primary Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrimaryOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader primaryOrderId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +196,24 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 	 * @generated
 	 */
 	@Override
-	public String getPicklistId() {
+	public Picklist getPicklistId() {
+		if (picklistId != null && ((EObject)picklistId).eIsProxy()) {
+			InternalEObject oldPicklistId = (InternalEObject)picklistId;
+			picklistId = (Picklist)eResolveProxy(oldPicklistId);
+			if (picklistId != oldPicklistId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_BIN__PICKLIST_ID, oldPicklistId, picklistId));
+			}
+		}
+		return picklistId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Picklist basicGetPicklistId() {
 		return picklistId;
 	}
 
@@ -222,8 +223,8 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 	 * @generated
 	 */
 	@Override
-	public void setPicklistId(String newPicklistId) {
-		String oldPicklistId = picklistId;
+	public void setPicklistId(Picklist newPicklistId) {
+		Picklist oldPicklistId = picklistId;
 		picklistId = newPicklistId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_BIN__PICKLIST_ID, oldPicklistId, picklistId));
@@ -235,7 +236,24 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 	 * @generated
 	 */
 	@Override
-	public String getPrimaryOrderId() {
+	public OrderHeader getPrimaryOrderId() {
+		if (primaryOrderId != null && ((EObject)primaryOrderId).eIsProxy()) {
+			InternalEObject oldPrimaryOrderId = (InternalEObject)primaryOrderId;
+			primaryOrderId = (OrderHeader)eResolveProxy(oldPrimaryOrderId);
+			if (primaryOrderId != oldPrimaryOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID, oldPrimaryOrderId, primaryOrderId));
+			}
+		}
+		return primaryOrderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetPrimaryOrderId() {
 		return primaryOrderId;
 	}
 
@@ -245,8 +263,8 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 	 * @generated
 	 */
 	@Override
-	public void setPrimaryOrderId(String newPrimaryOrderId) {
-		String oldPrimaryOrderId = primaryOrderId;
+	public void setPrimaryOrderId(OrderHeader newPrimaryOrderId) {
+		OrderHeader oldPrimaryOrderId = primaryOrderId;
 		primaryOrderId = newPrimaryOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID, oldPrimaryOrderId, primaryOrderId));
@@ -299,12 +317,14 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 				return getPicklistBinId();
 			case PicklistPackage.PICKLIST_BIN__BIN_LOCATION_NUMBER:
 				return getBinLocationNumber();
-			case PicklistPackage.PICKLIST_BIN__PICKLIST_ID:
-				return getPicklistId();
-			case PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID:
-				return getPrimaryOrderId();
 			case PicklistPackage.PICKLIST_BIN__PRIMARY_SHIP_GROUP_SEQ_ID:
 				return getPrimaryShipGroupSeqId();
+			case PicklistPackage.PICKLIST_BIN__PICKLIST_ID:
+				if (resolve) return getPicklistId();
+				return basicGetPicklistId();
+			case PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID:
+				if (resolve) return getPrimaryOrderId();
+				return basicGetPrimaryOrderId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -323,14 +343,14 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 			case PicklistPackage.PICKLIST_BIN__BIN_LOCATION_NUMBER:
 				setBinLocationNumber((Long)newValue);
 				return;
-			case PicklistPackage.PICKLIST_BIN__PICKLIST_ID:
-				setPicklistId((String)newValue);
-				return;
-			case PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID:
-				setPrimaryOrderId((String)newValue);
-				return;
 			case PicklistPackage.PICKLIST_BIN__PRIMARY_SHIP_GROUP_SEQ_ID:
 				setPrimaryShipGroupSeqId((String)newValue);
+				return;
+			case PicklistPackage.PICKLIST_BIN__PICKLIST_ID:
+				setPicklistId((Picklist)newValue);
+				return;
+			case PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID:
+				setPrimaryOrderId((OrderHeader)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -350,14 +370,14 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 			case PicklistPackage.PICKLIST_BIN__BIN_LOCATION_NUMBER:
 				setBinLocationNumber(BIN_LOCATION_NUMBER_EDEFAULT);
 				return;
-			case PicklistPackage.PICKLIST_BIN__PICKLIST_ID:
-				setPicklistId(PICKLIST_ID_EDEFAULT);
-				return;
-			case PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID:
-				setPrimaryOrderId(PRIMARY_ORDER_ID_EDEFAULT);
-				return;
 			case PicklistPackage.PICKLIST_BIN__PRIMARY_SHIP_GROUP_SEQ_ID:
 				setPrimaryShipGroupSeqId(PRIMARY_SHIP_GROUP_SEQ_ID_EDEFAULT);
+				return;
+			case PicklistPackage.PICKLIST_BIN__PICKLIST_ID:
+				setPicklistId((Picklist)null);
+				return;
+			case PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID:
+				setPrimaryOrderId((OrderHeader)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -375,12 +395,12 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 				return PICKLIST_BIN_ID_EDEFAULT == null ? picklistBinId != null : !PICKLIST_BIN_ID_EDEFAULT.equals(picklistBinId);
 			case PicklistPackage.PICKLIST_BIN__BIN_LOCATION_NUMBER:
 				return binLocationNumber != BIN_LOCATION_NUMBER_EDEFAULT;
-			case PicklistPackage.PICKLIST_BIN__PICKLIST_ID:
-				return PICKLIST_ID_EDEFAULT == null ? picklistId != null : !PICKLIST_ID_EDEFAULT.equals(picklistId);
-			case PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID:
-				return PRIMARY_ORDER_ID_EDEFAULT == null ? primaryOrderId != null : !PRIMARY_ORDER_ID_EDEFAULT.equals(primaryOrderId);
 			case PicklistPackage.PICKLIST_BIN__PRIMARY_SHIP_GROUP_SEQ_ID:
 				return PRIMARY_SHIP_GROUP_SEQ_ID_EDEFAULT == null ? primaryShipGroupSeqId != null : !PRIMARY_SHIP_GROUP_SEQ_ID_EDEFAULT.equals(primaryShipGroupSeqId);
+			case PicklistPackage.PICKLIST_BIN__PICKLIST_ID:
+				return picklistId != null;
+			case PicklistPackage.PICKLIST_BIN__PRIMARY_ORDER_ID:
+				return primaryOrderId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -399,10 +419,6 @@ public class PicklistBinImpl extends BizEntityImpl implements PicklistBin {
 		result.append(picklistBinId);
 		result.append(", binLocationNumber: ");
 		result.append(binLocationNumber);
-		result.append(", picklistId: ");
-		result.append(picklistId);
-		result.append(", primaryOrderId: ");
-		result.append(primaryOrderId);
 		result.append(", primaryShipGroupSeqId: ");
 		result.append(primaryShipGroupSeqId);
 		result.append(')');

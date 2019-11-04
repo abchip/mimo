@@ -50,7 +50,7 @@ public interface SequencePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-entity-sequence";
+	String eNS_PREFIX = "biz-sequence";
 
 	/**
 	 * The singleton instance of the package.

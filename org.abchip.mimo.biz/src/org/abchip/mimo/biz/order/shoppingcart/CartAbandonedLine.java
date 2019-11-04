@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.catalog.ProdCatalog;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,8 +27,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getCartAbandonedLineSeqId <em>Cart Abandoned Line Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getConfigId <em>Config Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProdCatalogId <em>Prod Catalog Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getReserv2ndPPPerc <em>Reserv2nd PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getReservLength <em>Reserv Length</em>}</li>
@@ -36,6 +36,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getTotalWithAdjustments <em>Total With Adjustments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getUnitPrice <em>Unit Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#isWasReserved <em>Was Reserved</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine()
@@ -54,7 +56,8 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Cart Abandoned Line Seq Id</em>' attribute.
 	 * @see #setCartAbandonedLineSeqId(String)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_CartAbandonedLineSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCartAbandonedLineSeqId();
@@ -96,56 +99,56 @@ public interface CartAbandonedLine extends BizEntity {
 	void setConfigId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Prod Catalog Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Prod Catalog Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Prod Catalog Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Prod Catalog Id</em>' attribute.
-	 * @see #setProdCatalogId(String)
+	 * @return the value of the '<em>Prod Catalog Id</em>' reference.
+	 * @see #setProdCatalogId(ProdCatalog)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ProdCatalogId()
-	 * @model annotation="mimo-ent-domain frame='ProdCatalog'"
+	 * @model keys="prodCatalogId"
 	 * @generated
 	 */
-	String getProdCatalogId();
+	ProdCatalog getProdCatalogId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProdCatalogId <em>Prod Catalog Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProdCatalogId <em>Prod Catalog Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prod Catalog Id</em>' attribute.
+	 * @param value the new value of the '<em>Prod Catalog Id</em>' reference.
 	 * @see #getProdCatalogId()
 	 * @generated
 	 */
-	void setProdCatalogId(String value);
+	void setProdCatalogId(ProdCatalog value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.
@@ -392,7 +395,8 @@ public interface CartAbandonedLine extends BizEntity {
 	 * @return the value of the '<em>Visit Id</em>' attribute.
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage#getCartAbandonedLine_VisitId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getVisitId();

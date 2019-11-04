@@ -7,12 +7,16 @@
  */
 package org.abchip.mimo.biz.product.facility.impl;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.FacilityLocation;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,11 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getLocationSeqId <em>Location Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getAisleId <em>Aisle Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getAreaId <em>Area Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getLevelId <em>Level Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getLocationTypeEnumId <em>Location Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getPositionId <em>Position Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getSectionId <em>Section Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getLocationTypeEnumId <em>Location Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityLocationImpl#getGeoPointId <em>Geo Point Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,26 +127,6 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	protected String areaId = AREA_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_POINT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoPointId = GEO_POINT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getLevelId() <em>Level Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,26 +145,6 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 * @ordered
 	 */
 	protected String levelId = LEVEL_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLocationTypeEnumId() <em>Location Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocationTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LOCATION_TYPE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLocationTypeEnumId() <em>Location Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocationTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String locationTypeEnumId = LOCATION_TYPE_ENUM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPositionId() <em>Position Id</em>}' attribute.
@@ -221,6 +185,26 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 * @ordered
 	 */
 	protected String sectionId = SECTION_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getLocationTypeEnumId() <em>Location Type Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocationTypeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration locationTypeEnumId;
+
+	/**
+	 * The cached value of the '{@link #getGeoPointId() <em>Geo Point Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoPointId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeoPoint geoPointId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,7 +277,24 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 * @generated
 	 */
 	@Override
-	public String getGeoPointId() {
+	public GeoPoint getGeoPointId() {
+		if (geoPointId != null && ((EObject)geoPointId).eIsProxy()) {
+			InternalEObject oldGeoPointId = (InternalEObject)geoPointId;
+			geoPointId = (GeoPoint)eResolveProxy(oldGeoPointId);
+			if (geoPointId != oldGeoPointId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID, oldGeoPointId, geoPointId));
+			}
+		}
+		return geoPointId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeoPoint basicGetGeoPointId() {
 		return geoPointId;
 	}
 
@@ -303,8 +304,8 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 * @generated
 	 */
 	@Override
-	public void setGeoPointId(String newGeoPointId) {
-		String oldGeoPointId = geoPointId;
+	public void setGeoPointId(GeoPoint newGeoPointId) {
+		GeoPoint oldGeoPointId = geoPointId;
 		geoPointId = newGeoPointId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID, oldGeoPointId, geoPointId));
@@ -362,7 +363,24 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 * @generated
 	 */
 	@Override
-	public String getLocationTypeEnumId() {
+	public Enumeration getLocationTypeEnumId() {
+		if (locationTypeEnumId != null && ((EObject)locationTypeEnumId).eIsProxy()) {
+			InternalEObject oldLocationTypeEnumId = (InternalEObject)locationTypeEnumId;
+			locationTypeEnumId = (Enumeration)eResolveProxy(oldLocationTypeEnumId);
+			if (locationTypeEnumId != oldLocationTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID, oldLocationTypeEnumId, locationTypeEnumId));
+			}
+		}
+		return locationTypeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetLocationTypeEnumId() {
 		return locationTypeEnumId;
 	}
 
@@ -372,8 +390,8 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 	 * @generated
 	 */
 	@Override
-	public void setLocationTypeEnumId(String newLocationTypeEnumId) {
-		String oldLocationTypeEnumId = locationTypeEnumId;
+	public void setLocationTypeEnumId(Enumeration newLocationTypeEnumId) {
+		Enumeration oldLocationTypeEnumId = locationTypeEnumId;
 		locationTypeEnumId = newLocationTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID, oldLocationTypeEnumId, locationTypeEnumId));
@@ -464,16 +482,18 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 				return getAisleId();
 			case FacilityPackage.FACILITY_LOCATION__AREA_ID:
 				return getAreaId();
-			case FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID:
-				return getGeoPointId();
 			case FacilityPackage.FACILITY_LOCATION__LEVEL_ID:
 				return getLevelId();
-			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
-				return getLocationTypeEnumId();
 			case FacilityPackage.FACILITY_LOCATION__POSITION_ID:
 				return getPositionId();
 			case FacilityPackage.FACILITY_LOCATION__SECTION_ID:
 				return getSectionId();
+			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
+				if (resolve) return getLocationTypeEnumId();
+				return basicGetLocationTypeEnumId();
+			case FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID:
+				if (resolve) return getGeoPointId();
+				return basicGetGeoPointId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -498,20 +518,20 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 			case FacilityPackage.FACILITY_LOCATION__AREA_ID:
 				setAreaId((String)newValue);
 				return;
-			case FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID:
-				setGeoPointId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_LOCATION__LEVEL_ID:
 				setLevelId((String)newValue);
-				return;
-			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
-				setLocationTypeEnumId((String)newValue);
 				return;
 			case FacilityPackage.FACILITY_LOCATION__POSITION_ID:
 				setPositionId((String)newValue);
 				return;
 			case FacilityPackage.FACILITY_LOCATION__SECTION_ID:
 				setSectionId((String)newValue);
+				return;
+			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
+				setLocationTypeEnumId((Enumeration)newValue);
+				return;
+			case FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID:
+				setGeoPointId((GeoPoint)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -537,20 +557,20 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 			case FacilityPackage.FACILITY_LOCATION__AREA_ID:
 				setAreaId(AREA_ID_EDEFAULT);
 				return;
-			case FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID:
-				setGeoPointId(GEO_POINT_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_LOCATION__LEVEL_ID:
 				setLevelId(LEVEL_ID_EDEFAULT);
-				return;
-			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
-				setLocationTypeEnumId(LOCATION_TYPE_ENUM_ID_EDEFAULT);
 				return;
 			case FacilityPackage.FACILITY_LOCATION__POSITION_ID:
 				setPositionId(POSITION_ID_EDEFAULT);
 				return;
 			case FacilityPackage.FACILITY_LOCATION__SECTION_ID:
 				setSectionId(SECTION_ID_EDEFAULT);
+				return;
+			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
+				setLocationTypeEnumId((Enumeration)null);
+				return;
+			case FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID:
+				setGeoPointId((GeoPoint)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -572,16 +592,16 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 				return AISLE_ID_EDEFAULT == null ? aisleId != null : !AISLE_ID_EDEFAULT.equals(aisleId);
 			case FacilityPackage.FACILITY_LOCATION__AREA_ID:
 				return AREA_ID_EDEFAULT == null ? areaId != null : !AREA_ID_EDEFAULT.equals(areaId);
-			case FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID:
-				return GEO_POINT_ID_EDEFAULT == null ? geoPointId != null : !GEO_POINT_ID_EDEFAULT.equals(geoPointId);
 			case FacilityPackage.FACILITY_LOCATION__LEVEL_ID:
 				return LEVEL_ID_EDEFAULT == null ? levelId != null : !LEVEL_ID_EDEFAULT.equals(levelId);
-			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
-				return LOCATION_TYPE_ENUM_ID_EDEFAULT == null ? locationTypeEnumId != null : !LOCATION_TYPE_ENUM_ID_EDEFAULT.equals(locationTypeEnumId);
 			case FacilityPackage.FACILITY_LOCATION__POSITION_ID:
 				return POSITION_ID_EDEFAULT == null ? positionId != null : !POSITION_ID_EDEFAULT.equals(positionId);
 			case FacilityPackage.FACILITY_LOCATION__SECTION_ID:
 				return SECTION_ID_EDEFAULT == null ? sectionId != null : !SECTION_ID_EDEFAULT.equals(sectionId);
+			case FacilityPackage.FACILITY_LOCATION__LOCATION_TYPE_ENUM_ID:
+				return locationTypeEnumId != null;
+			case FacilityPackage.FACILITY_LOCATION__GEO_POINT_ID:
+				return geoPointId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -604,12 +624,8 @@ public class FacilityLocationImpl extends BizEntityImpl implements FacilityLocat
 		result.append(aisleId);
 		result.append(", areaId: ");
 		result.append(areaId);
-		result.append(", geoPointId: ");
-		result.append(geoPointId);
 		result.append(", levelId: ");
 		result.append(levelId);
-		result.append(", locationTypeEnumId: ");
-		result.append(locationTypeEnumId);
 		result.append(", positionId: ");
 		result.append(positionId);
 		result.append(", sectionId: ");

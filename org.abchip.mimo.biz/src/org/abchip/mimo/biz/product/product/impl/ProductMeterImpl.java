@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.product.product.impl;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
@@ -14,6 +15,8 @@ import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterImpl#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterImpl#getMeterName <em>Meter Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterImpl#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterImpl#getMeterUomId <em>Meter Uom Id</em>}</li>
  * </ul>
  *
@@ -59,26 +62,6 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductMeterTypeId() <em>Product Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_METER_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductMeterTypeId() <em>Product Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productMeterTypeId = PRODUCT_METER_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getMeterName() <em>Meter Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,24 +82,24 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	protected String meterName = METER_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMeterUomId() <em>Meter Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductMeterTypeId() <em>Product Meter Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMeterUomId()
+	 * @see #getProductMeterTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String METER_UOM_ID_EDEFAULT = null;
+	protected ProductMeterType productMeterTypeId;
 
 	/**
-	 * The cached value of the '{@link #getMeterUomId() <em>Meter Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getMeterUomId() <em>Meter Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMeterUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String meterUomId = METER_UOM_ID_EDEFAULT;
+	protected Uom meterUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,7 +149,24 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	 * @generated
 	 */
 	@Override
-	public String getMeterUomId() {
+	public Uom getMeterUomId() {
+		if (meterUomId != null && ((EObject)meterUomId).eIsProxy()) {
+			InternalEObject oldMeterUomId = (InternalEObject)meterUomId;
+			meterUomId = (Uom)eResolveProxy(oldMeterUomId);
+			if (meterUomId != oldMeterUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_METER__METER_UOM_ID, oldMeterUomId, meterUomId));
+			}
+		}
+		return meterUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetMeterUomId() {
 		return meterUomId;
 	}
 
@@ -176,8 +176,8 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	 * @generated
 	 */
 	@Override
-	public void setMeterUomId(String newMeterUomId) {
-		String oldMeterUomId = meterUomId;
+	public void setMeterUomId(Uom newMeterUomId) {
+		Uom oldMeterUomId = meterUomId;
 		meterUomId = newMeterUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER__METER_UOM_ID, oldMeterUomId, meterUomId));
@@ -212,7 +212,24 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductMeterTypeId() {
+	public ProductMeterType getProductMeterTypeId() {
+		if (productMeterTypeId != null && ((EObject)productMeterTypeId).eIsProxy()) {
+			InternalEObject oldProductMeterTypeId = (InternalEObject)productMeterTypeId;
+			productMeterTypeId = (ProductMeterType)eResolveProxy(oldProductMeterTypeId);
+			if (productMeterTypeId != oldProductMeterTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
+			}
+		}
+		return productMeterTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductMeterType basicGetProductMeterTypeId() {
 		return productMeterTypeId;
 	}
 
@@ -222,8 +239,8 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductMeterTypeId(String newProductMeterTypeId) {
-		String oldProductMeterTypeId = productMeterTypeId;
+	public void setProductMeterTypeId(ProductMeterType newProductMeterTypeId) {
+		ProductMeterType oldProductMeterTypeId = productMeterTypeId;
 		productMeterTypeId = newProductMeterTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
@@ -239,12 +256,14 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 		switch (featureID) {
 			case ProductPackage.PRODUCT_METER__PRODUCT_ID:
 				return getProductId();
-			case ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID:
-				return getProductMeterTypeId();
 			case ProductPackage.PRODUCT_METER__METER_NAME:
 				return getMeterName();
+			case ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID:
+				if (resolve) return getProductMeterTypeId();
+				return basicGetProductMeterTypeId();
 			case ProductPackage.PRODUCT_METER__METER_UOM_ID:
-				return getMeterUomId();
+				if (resolve) return getMeterUomId();
+				return basicGetMeterUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,14 +279,14 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 			case ProductPackage.PRODUCT_METER__PRODUCT_ID:
 				setProductId((String)newValue);
 				return;
-			case ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID:
-				setProductMeterTypeId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_METER__METER_NAME:
 				setMeterName((String)newValue);
 				return;
+			case ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID:
+				setProductMeterTypeId((ProductMeterType)newValue);
+				return;
 			case ProductPackage.PRODUCT_METER__METER_UOM_ID:
-				setMeterUomId((String)newValue);
+				setMeterUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,14 +303,14 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 			case ProductPackage.PRODUCT_METER__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
-			case ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID:
-				setProductMeterTypeId(PRODUCT_METER_TYPE_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_METER__METER_NAME:
 				setMeterName(METER_NAME_EDEFAULT);
 				return;
+			case ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID:
+				setProductMeterTypeId((ProductMeterType)null);
+				return;
 			case ProductPackage.PRODUCT_METER__METER_UOM_ID:
-				setMeterUomId(METER_UOM_ID_EDEFAULT);
+				setMeterUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,12 +326,12 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 		switch (featureID) {
 			case ProductPackage.PRODUCT_METER__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID:
-				return PRODUCT_METER_TYPE_ID_EDEFAULT == null ? productMeterTypeId != null : !PRODUCT_METER_TYPE_ID_EDEFAULT.equals(productMeterTypeId);
 			case ProductPackage.PRODUCT_METER__METER_NAME:
 				return METER_NAME_EDEFAULT == null ? meterName != null : !METER_NAME_EDEFAULT.equals(meterName);
+			case ProductPackage.PRODUCT_METER__PRODUCT_METER_TYPE_ID:
+				return productMeterTypeId != null;
 			case ProductPackage.PRODUCT_METER__METER_UOM_ID:
-				return METER_UOM_ID_EDEFAULT == null ? meterUomId != null : !METER_UOM_ID_EDEFAULT.equals(meterUomId);
+				return meterUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -329,12 +348,8 @@ public class ProductMeterImpl extends BizEntityTypedImpl<ProductMeterType> imple
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", productMeterTypeId: ");
-		result.append(productMeterTypeId);
 		result.append(", meterName: ");
 		result.append(meterName);
-		result.append(", meterUomId: ");
-		result.append(meterUomId);
 		result.append(')');
 		return result.toString();
 	}

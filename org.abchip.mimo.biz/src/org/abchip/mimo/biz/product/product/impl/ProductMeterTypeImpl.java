@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.product.product.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.product.product.ProductMeter;
 import org.abchip.mimo.biz.product.product.ProductMeterType;
@@ -16,6 +17,8 @@ import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterTypeImpl#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterTypeImpl#getDefaultUomId <em>Default Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterTypeImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMeterTypeImpl#getDefaultUomId <em>Default Uom Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,26 +63,6 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	protected String productMeterTypeId = PRODUCT_METER_TYPE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDefaultUomId() <em>Default Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDefaultUomId() <em>Default Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultUomId = DEFAULT_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,6 +81,16 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDefaultUomId() <em>Default Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom defaultUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +117,24 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 * @generated
 	 */
 	@Override
-	public String getDefaultUomId() {
+	public Uom getDefaultUomId() {
+		if (defaultUomId != null && ((EObject)defaultUomId).eIsProxy()) {
+			InternalEObject oldDefaultUomId = (InternalEObject)defaultUomId;
+			defaultUomId = (Uom)eResolveProxy(oldDefaultUomId);
+			if (defaultUomId != oldDefaultUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID, oldDefaultUomId, defaultUomId));
+			}
+		}
+		return defaultUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetDefaultUomId() {
 		return defaultUomId;
 	}
 
@@ -134,8 +144,8 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 	 * @generated
 	 */
 	@Override
-	public void setDefaultUomId(String newDefaultUomId) {
-		String oldDefaultUomId = defaultUomId;
+	public void setDefaultUomId(Uom newDefaultUomId) {
+		Uom oldDefaultUomId = defaultUomId;
 		defaultUomId = newDefaultUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID, oldDefaultUomId, defaultUomId));
@@ -233,10 +243,11 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 		switch (featureID) {
 			case ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID:
 				return getProductMeterTypeId();
-			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
-				return getDefaultUomId();
 			case ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION:
 				return getDescription();
+			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
+				if (resolve) return getDefaultUomId();
+				return basicGetDefaultUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,11 +263,11 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 			case ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID:
 				setProductMeterTypeId((String)newValue);
 				return;
-			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
-				setDefaultUomId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
+				setDefaultUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -273,11 +284,11 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 			case ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID:
 				setProductMeterTypeId(PRODUCT_METER_TYPE_ID_EDEFAULT);
 				return;
-			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
-				setDefaultUomId(DEFAULT_UOM_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
+				setDefaultUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -293,10 +304,10 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 		switch (featureID) {
 			case ProductPackage.PRODUCT_METER_TYPE__PRODUCT_METER_TYPE_ID:
 				return PRODUCT_METER_TYPE_ID_EDEFAULT == null ? productMeterTypeId != null : !PRODUCT_METER_TYPE_ID_EDEFAULT.equals(productMeterTypeId);
-			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
-				return DEFAULT_UOM_ID_EDEFAULT == null ? defaultUomId != null : !DEFAULT_UOM_ID_EDEFAULT.equals(defaultUomId);
 			case ProductPackage.PRODUCT_METER_TYPE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case ProductPackage.PRODUCT_METER_TYPE__DEFAULT_UOM_ID:
+				return defaultUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -313,8 +324,6 @@ public class ProductMeterTypeImpl extends BizEntityTypeImpl<ProductMeter> implem
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productMeterTypeId: ");
 		result.append(productMeterTypeId);
-		result.append(", defaultUomId: ");
-		result.append(defaultUomId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

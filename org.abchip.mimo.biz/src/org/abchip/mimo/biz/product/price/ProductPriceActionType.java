@@ -75,7 +75,7 @@ public interface ProductPriceActionType extends BizEntityType<ProductPriceAction
 	 * @return the value of the '<em>Product Price Action Type Id</em>' attribute.
 	 * @see #setProductPriceActionTypeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceActionType_ProductPriceActionTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

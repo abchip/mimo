@@ -94,7 +94,6 @@ public interface DocumentTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.document.DocumentPackage#getDocumentTypeAttr_DocumentTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='DocumentType'"
 	 * @generated
 	 */
 	String getDocumentTypeId();

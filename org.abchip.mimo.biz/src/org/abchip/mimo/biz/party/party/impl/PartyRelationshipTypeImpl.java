@@ -13,8 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyRelationship;
 import org.abchip.mimo.biz.party.party.PartyRelationshipType;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,8 +31,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipTypeImpl#getPartyRelationshipTypeId <em>Party Relationship Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipTypeImpl#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipTypeImpl#getPartyRelationshipName <em>Party Relationship Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipTypeImpl#getRoleTypeIdValidFrom <em>Role Type Id Valid From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyRelationshipTypeImpl#getRoleTypeIdValidTo <em>Role Type Id Valid To</em>}</li>
  * </ul>
@@ -97,24 +100,6 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	 */
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getPartyRelationshipName() <em>Party Relationship Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,43 +117,34 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	 * @ordered
 	 */
 	protected String partyRelationshipName = PARTY_RELATIONSHIP_NAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PartyRelationshipType parentTypeId;
 
 	/**
-	 * The default value of the '{@link #getRoleTypeIdValidFrom() <em>Role Type Id Valid From</em>}' attribute.
+	 * The cached value of the '{@link #getRoleTypeIdValidFrom() <em>Role Type Id Valid From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoleTypeIdValidFrom()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_TYPE_ID_VALID_FROM_EDEFAULT = null;
+	protected RoleType roleTypeIdValidFrom;
 	/**
-	 * The cached value of the '{@link #getRoleTypeIdValidFrom() <em>Role Type Id Valid From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdValidFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeIdValidFrom = ROLE_TYPE_ID_VALID_FROM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoleTypeIdValidTo() <em>Role Type Id Valid To</em>}' attribute.
+	 * The cached value of the '{@link #getRoleTypeIdValidTo() <em>Role Type Id Valid To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoleTypeIdValidTo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_TYPE_ID_VALID_TO_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeIdValidTo() <em>Role Type Id Valid To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdValidTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeIdValidTo = ROLE_TYPE_ID_VALID_TO_EDEFAULT;
+	protected RoleType roleTypeIdValidTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,7 +240,24 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public PartyRelationshipType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (PartyRelationshipType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyRelationshipType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -274,8 +267,8 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(PartyRelationshipType newParentTypeId) {
+		PartyRelationshipType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -287,7 +280,24 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeIdValidFrom() {
+	public RoleType getRoleTypeIdValidFrom() {
+		if (roleTypeIdValidFrom != null && ((EObject)roleTypeIdValidFrom).eIsProxy()) {
+			InternalEObject oldRoleTypeIdValidFrom = (InternalEObject)roleTypeIdValidFrom;
+			roleTypeIdValidFrom = (RoleType)eResolveProxy(oldRoleTypeIdValidFrom);
+			if (roleTypeIdValidFrom != oldRoleTypeIdValidFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_FROM, oldRoleTypeIdValidFrom, roleTypeIdValidFrom));
+			}
+		}
+		return roleTypeIdValidFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeIdValidFrom() {
 		return roleTypeIdValidFrom;
 	}
 
@@ -297,8 +307,8 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeIdValidFrom(String newRoleTypeIdValidFrom) {
-		String oldRoleTypeIdValidFrom = roleTypeIdValidFrom;
+	public void setRoleTypeIdValidFrom(RoleType newRoleTypeIdValidFrom) {
+		RoleType oldRoleTypeIdValidFrom = roleTypeIdValidFrom;
 		roleTypeIdValidFrom = newRoleTypeIdValidFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_FROM, oldRoleTypeIdValidFrom, roleTypeIdValidFrom));
@@ -310,7 +320,24 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeIdValidTo() {
+	public RoleType getRoleTypeIdValidTo() {
+		if (roleTypeIdValidTo != null && ((EObject)roleTypeIdValidTo).eIsProxy()) {
+			InternalEObject oldRoleTypeIdValidTo = (InternalEObject)roleTypeIdValidTo;
+			roleTypeIdValidTo = (RoleType)eResolveProxy(oldRoleTypeIdValidTo);
+			if (roleTypeIdValidTo != oldRoleTypeIdValidTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_TO, oldRoleTypeIdValidTo, roleTypeIdValidTo));
+			}
+		}
+		return roleTypeIdValidTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeIdValidTo() {
 		return roleTypeIdValidTo;
 	}
 
@@ -320,8 +347,8 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeIdValidTo(String newRoleTypeIdValidTo) {
-		String oldRoleTypeIdValidTo = roleTypeIdValidTo;
+	public void setRoleTypeIdValidTo(RoleType newRoleTypeIdValidTo) {
+		RoleType oldRoleTypeIdValidTo = roleTypeIdValidTo;
 		roleTypeIdValidTo = newRoleTypeIdValidTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_TO, oldRoleTypeIdValidTo, roleTypeIdValidTo));
@@ -376,14 +403,17 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 				return getDescription();
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__HAS_TABLE:
 				return isHasTable();
-			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARTY_RELATIONSHIP_NAME:
 				return getPartyRelationshipName();
+			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID:
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_FROM:
-				return getRoleTypeIdValidFrom();
+				if (resolve) return getRoleTypeIdValidFrom();
+				return basicGetRoleTypeIdValidFrom();
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_TO:
-				return getRoleTypeIdValidTo();
+				if (resolve) return getRoleTypeIdValidTo();
+				return basicGetRoleTypeIdValidTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -405,17 +435,17 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__HAS_TABLE:
 				setHasTable((Boolean)newValue);
 				return;
-			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
-				return;
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARTY_RELATIONSHIP_NAME:
 				setPartyRelationshipName((String)newValue);
 				return;
+			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID:
+				setParentTypeId((PartyRelationshipType)newValue);
+				return;
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_FROM:
-				setRoleTypeIdValidFrom((String)newValue);
+				setRoleTypeIdValidFrom((RoleType)newValue);
 				return;
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_TO:
-				setRoleTypeIdValidTo((String)newValue);
+				setRoleTypeIdValidTo((RoleType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -438,17 +468,17 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__HAS_TABLE:
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
-			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARTY_RELATIONSHIP_NAME:
 				setPartyRelationshipName(PARTY_RELATIONSHIP_NAME_EDEFAULT);
 				return;
+			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID:
+				setParentTypeId((PartyRelationshipType)null);
+				return;
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_FROM:
-				setRoleTypeIdValidFrom(ROLE_TYPE_ID_VALID_FROM_EDEFAULT);
+				setRoleTypeIdValidFrom((RoleType)null);
 				return;
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_TO:
-				setRoleTypeIdValidTo(ROLE_TYPE_ID_VALID_TO_EDEFAULT);
+				setRoleTypeIdValidTo((RoleType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -468,14 +498,14 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
-			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARTY_RELATIONSHIP_NAME:
 				return PARTY_RELATIONSHIP_NAME_EDEFAULT == null ? partyRelationshipName != null : !PARTY_RELATIONSHIP_NAME_EDEFAULT.equals(partyRelationshipName);
+			case PartyPackage.PARTY_RELATIONSHIP_TYPE__PARENT_TYPE_ID:
+				return parentTypeId != null;
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_FROM:
-				return ROLE_TYPE_ID_VALID_FROM_EDEFAULT == null ? roleTypeIdValidFrom != null : !ROLE_TYPE_ID_VALID_FROM_EDEFAULT.equals(roleTypeIdValidFrom);
+				return roleTypeIdValidFrom != null;
 			case PartyPackage.PARTY_RELATIONSHIP_TYPE__ROLE_TYPE_ID_VALID_TO:
-				return ROLE_TYPE_ID_VALID_TO_EDEFAULT == null ? roleTypeIdValidTo != null : !ROLE_TYPE_ID_VALID_TO_EDEFAULT.equals(roleTypeIdValidTo);
+				return roleTypeIdValidTo != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -496,14 +526,8 @@ public class PartyRelationshipTypeImpl extends BizEntityTypeImpl<PartyRelationsh
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", partyRelationshipName: ");
 		result.append(partyRelationshipName);
-		result.append(", roleTypeIdValidFrom: ");
-		result.append(roleTypeIdValidFrom);
-		result.append(", roleTypeIdValidTo: ");
-		result.append(roleTypeIdValidTo);
 		result.append(')');
 		return result.toString();
 	}

@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.accounting.budget.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetScenarioRule;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioRuleImpl#getBudgetScenarioId <em>Budget Scenario Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioRuleImpl#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioRuleImpl#getAmountChange <em>Amount Change</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioRuleImpl#getPercentageChange <em>Percentage Change</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetScenarioRuleImpl#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,24 +59,6 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 	 * @ordered
 	 */
 	protected String budgetScenarioId = BUDGET_SCENARIO_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ITEM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetItemTypeId = BUDGET_ITEM_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAmountChange() <em>Amount Change</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -110,6 +95,15 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 	 * @ordered
 	 */
 	protected BigDecimal percentageChange = PERCENTAGE_CHANGE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetItemTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected BudgetItemType budgetItemTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,7 +199,24 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 	 * @generated
 	 */
 	@Override
-	public String getBudgetItemTypeId() {
+	public BudgetItemType getBudgetItemTypeId() {
+		if (budgetItemTypeId != null && ((EObject)budgetItemTypeId).eIsProxy()) {
+			InternalEObject oldBudgetItemTypeId = (InternalEObject)budgetItemTypeId;
+			budgetItemTypeId = (BudgetItemType)eResolveProxy(oldBudgetItemTypeId);
+			if (budgetItemTypeId != oldBudgetItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
+			}
+		}
+		return budgetItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BudgetItemType basicGetBudgetItemTypeId() {
 		return budgetItemTypeId;
 	}
 
@@ -215,8 +226,8 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 	 * @generated
 	 */
 	@Override
-	public void setBudgetItemTypeId(String newBudgetItemTypeId) {
-		String oldBudgetItemTypeId = budgetItemTypeId;
+	public void setBudgetItemTypeId(BudgetItemType newBudgetItemTypeId) {
+		BudgetItemType oldBudgetItemTypeId = budgetItemTypeId;
 		budgetItemTypeId = newBudgetItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
@@ -232,12 +243,13 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 		switch (featureID) {
 			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID:
 				return getBudgetScenarioId();
-			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID:
-				return getBudgetItemTypeId();
 			case BudgetPackage.BUDGET_SCENARIO_RULE__AMOUNT_CHANGE:
 				return getAmountChange();
 			case BudgetPackage.BUDGET_SCENARIO_RULE__PERCENTAGE_CHANGE:
 				return getPercentageChange();
+			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID:
+				if (resolve) return getBudgetItemTypeId();
+				return basicGetBudgetItemTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,14 +265,14 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID:
 				setBudgetScenarioId((String)newValue);
 				return;
-			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID:
-				setBudgetItemTypeId((String)newValue);
-				return;
 			case BudgetPackage.BUDGET_SCENARIO_RULE__AMOUNT_CHANGE:
 				setAmountChange((BigDecimal)newValue);
 				return;
 			case BudgetPackage.BUDGET_SCENARIO_RULE__PERCENTAGE_CHANGE:
 				setPercentageChange((BigDecimal)newValue);
+				return;
+			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID:
+				setBudgetItemTypeId((BudgetItemType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -277,14 +289,14 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID:
 				setBudgetScenarioId(BUDGET_SCENARIO_ID_EDEFAULT);
 				return;
-			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID:
-				setBudgetItemTypeId(BUDGET_ITEM_TYPE_ID_EDEFAULT);
-				return;
 			case BudgetPackage.BUDGET_SCENARIO_RULE__AMOUNT_CHANGE:
 				setAmountChange(AMOUNT_CHANGE_EDEFAULT);
 				return;
 			case BudgetPackage.BUDGET_SCENARIO_RULE__PERCENTAGE_CHANGE:
 				setPercentageChange(PERCENTAGE_CHANGE_EDEFAULT);
+				return;
+			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID:
+				setBudgetItemTypeId((BudgetItemType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -300,12 +312,12 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 		switch (featureID) {
 			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_SCENARIO_ID:
 				return BUDGET_SCENARIO_ID_EDEFAULT == null ? budgetScenarioId != null : !BUDGET_SCENARIO_ID_EDEFAULT.equals(budgetScenarioId);
-			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID:
-				return BUDGET_ITEM_TYPE_ID_EDEFAULT == null ? budgetItemTypeId != null : !BUDGET_ITEM_TYPE_ID_EDEFAULT.equals(budgetItemTypeId);
 			case BudgetPackage.BUDGET_SCENARIO_RULE__AMOUNT_CHANGE:
 				return AMOUNT_CHANGE_EDEFAULT == null ? amountChange != null : !AMOUNT_CHANGE_EDEFAULT.equals(amountChange);
 			case BudgetPackage.BUDGET_SCENARIO_RULE__PERCENTAGE_CHANGE:
 				return PERCENTAGE_CHANGE_EDEFAULT == null ? percentageChange != null : !PERCENTAGE_CHANGE_EDEFAULT.equals(percentageChange);
+			case BudgetPackage.BUDGET_SCENARIO_RULE__BUDGET_ITEM_TYPE_ID:
+				return budgetItemTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -322,8 +334,6 @@ public class BudgetScenarioRuleImpl extends BizEntityImpl implements BudgetScena
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (budgetScenarioId: ");
 		result.append(budgetScenarioId);
-		result.append(", budgetItemTypeId: ");
-		result.append(budgetItemTypeId);
 		result.append(", amountChange: ");
 		result.append(amountChange);
 		result.append(", percentageChange: ");

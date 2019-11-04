@@ -11,12 +11,15 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountAuth;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,9 +34,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAuthImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAuthImpl#getAuthorizationDate <em>Authorization Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAuthImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAuthImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAuthImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAuthImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountAuthImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -118,24 +121,6 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountId = FIN_ACCOUNT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,6 +156,15 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FinAccount finAccountId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -335,7 +329,24 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountId() {
+	public FinAccount getFinAccountId() {
+		if (finAccountId != null && ((EObject)finAccountId).eIsProxy()) {
+			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
+			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
+			if (finAccountId != oldFinAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
+			}
+		}
+		return finAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccount basicGetFinAccountId() {
 		return finAccountId;
 	}
 
@@ -345,8 +356,8 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountId(String newFinAccountId) {
-		String oldFinAccountId = finAccountId;
+	public void setFinAccountId(FinAccount newFinAccountId) {
+		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
@@ -368,12 +379,13 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 				return getAuthorizationDate();
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__CURRENCY_UOM_ID:
 				return getCurrencyUomId();
-			case FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID:
-				return getFinAccountId();
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__FROM_DATE:
 				return getFromDate();
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__THRU_DATE:
 				return getThruDate();
+			case FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID:
+				if (resolve) return getFinAccountId();
+				return basicGetFinAccountId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -398,14 +410,14 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__CURRENCY_UOM_ID:
 				setCurrencyUomId((String)newValue);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID:
-				setFinAccountId((String)newValue);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -431,14 +443,14 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__CURRENCY_UOM_ID:
 				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID:
-				setFinAccountId(FIN_ACCOUNT_ID_EDEFAULT);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -460,12 +472,12 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 				return AUTHORIZATION_DATE_EDEFAULT == null ? authorizationDate != null : !AUTHORIZATION_DATE_EDEFAULT.equals(authorizationDate);
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__CURRENCY_UOM_ID:
 				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
-			case FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID:
-				return FIN_ACCOUNT_ID_EDEFAULT == null ? finAccountId != null : !FIN_ACCOUNT_ID_EDEFAULT.equals(finAccountId);
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FinaccountPackage.FIN_ACCOUNT_AUTH__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FinaccountPackage.FIN_ACCOUNT_AUTH__FIN_ACCOUNT_ID:
+				return finAccountId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -488,8 +500,6 @@ public class FinAccountAuthImpl extends BizEntityImpl implements FinAccountAuth 
 		result.append(authorizationDate);
 		result.append(", currencyUomId: ");
 		result.append(currencyUomId);
-		result.append(", finAccountId: ");
-		result.append(finAccountId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

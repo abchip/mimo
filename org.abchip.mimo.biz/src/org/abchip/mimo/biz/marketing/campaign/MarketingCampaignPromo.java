@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.marketing.campaign;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +22,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getProductPromoId <em>Product Promo Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPromo()
@@ -42,7 +43,8 @@ public interface MarketingCampaignPromo extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPromo_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -68,8 +70,8 @@ public interface MarketingCampaignPromo extends BizEntity {
 	 * @return the value of the '<em>Marketing Campaign Id</em>' attribute.
 	 * @see #setMarketingCampaignId(String)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPromo_MarketingCampaignId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='MarketingCampaign'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getMarketingCampaignId();
@@ -85,31 +87,30 @@ public interface MarketingCampaignPromo extends BizEntity {
 	void setMarketingCampaignId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Id</em>' attribute.
-	 * @see #setProductPromoId(String)
+	 * @return the value of the '<em>Product Promo Id</em>' reference.
+	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaignPromo_ProductPromoId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPromo'"
+	 * @model keys="productPromoId"
 	 * @generated
 	 */
-	String getProductPromoId();
+	ProductPromo getProductPromoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getProductPromoId <em>Product Promo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getProductPromoId <em>Product Promo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Id</em>' reference.
 	 * @see #getProductPromoId()
 	 * @generated
 	 */
-	void setProductPromoId(String value);
+	void setProductPromoId(ProductPromo value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

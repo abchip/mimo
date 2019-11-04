@@ -9,10 +9,13 @@ package org.abchip.mimo.biz.product.config.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
+import org.abchip.mimo.biz.product.config.ProductConfigItem;
 import org.abchip.mimo.biz.product.config.ProductConfigOptionIactn;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,11 +28,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigOptionIactnImpl#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigOptionIactnImpl#getConfigOptionId <em>Config Option Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigOptionIactnImpl#getConfigItemIdTo <em>Config Item Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigOptionIactnImpl#getConfigOptionIdTo <em>Config Option Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigOptionIactnImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigOptionIactnImpl#getConfigIactnTypeId <em>Config Iactn Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigOptionIactnImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigOptionIactnImpl#getConfigItemIdTo <em>Config Item Id To</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,26 +82,6 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 * @ordered
 	 */
 	protected String configOptionId = CONFIG_OPTION_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getConfigItemIdTo() <em>Config Item Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigItemIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONFIG_ITEM_ID_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getConfigItemIdTo() <em>Config Item Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigItemIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String configItemIdTo = CONFIG_ITEM_ID_TO_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getConfigOptionIdTo() <em>Config Option Id To</em>}' attribute.
@@ -179,6 +162,16 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getConfigItemIdTo() <em>Config Item Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfigItemIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductConfigItem configItemIdTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -343,7 +336,24 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getConfigItemIdTo() {
+	public ProductConfigItem getConfigItemIdTo() {
+		if (configItemIdTo != null && ((EObject)configItemIdTo).eIsProxy()) {
+			InternalEObject oldConfigItemIdTo = (InternalEObject)configItemIdTo;
+			configItemIdTo = (ProductConfigItem)eResolveProxy(oldConfigItemIdTo);
+			if (configItemIdTo != oldConfigItemIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO, oldConfigItemIdTo, configItemIdTo));
+			}
+		}
+		return configItemIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductConfigItem basicGetConfigItemIdTo() {
 		return configItemIdTo;
 	}
 
@@ -353,8 +363,8 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setConfigItemIdTo(String newConfigItemIdTo) {
-		String oldConfigItemIdTo = configItemIdTo;
+	public void setConfigItemIdTo(ProductConfigItem newConfigItemIdTo) {
+		ProductConfigItem oldConfigItemIdTo = configItemIdTo;
 		configItemIdTo = newConfigItemIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO, oldConfigItemIdTo, configItemIdTo));
@@ -372,8 +382,6 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 				return getConfigItemId();
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID:
 				return getConfigOptionId();
-			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO:
-				return getConfigItemIdTo();
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID_TO:
 				return getConfigOptionIdTo();
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__SEQUENCE_NUM:
@@ -382,6 +390,9 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 				return getConfigIactnTypeId();
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__DESCRIPTION:
 				return getDescription();
+			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO:
+				if (resolve) return getConfigItemIdTo();
+				return basicGetConfigItemIdTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -400,9 +411,6 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID:
 				setConfigOptionId((String)newValue);
 				return;
-			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO:
-				setConfigItemIdTo((String)newValue);
-				return;
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID_TO:
 				setConfigOptionIdTo((String)newValue);
 				return;
@@ -414,6 +422,9 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 				return;
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO:
+				setConfigItemIdTo((ProductConfigItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -433,9 +444,6 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID:
 				setConfigOptionId(CONFIG_OPTION_ID_EDEFAULT);
 				return;
-			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO:
-				setConfigItemIdTo(CONFIG_ITEM_ID_TO_EDEFAULT);
-				return;
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID_TO:
 				setConfigOptionIdTo(CONFIG_OPTION_ID_TO_EDEFAULT);
 				return;
@@ -447,6 +455,9 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 				return;
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO:
+				setConfigItemIdTo((ProductConfigItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -464,8 +475,6 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 				return CONFIG_ITEM_ID_EDEFAULT == null ? configItemId != null : !CONFIG_ITEM_ID_EDEFAULT.equals(configItemId);
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID:
 				return CONFIG_OPTION_ID_EDEFAULT == null ? configOptionId != null : !CONFIG_OPTION_ID_EDEFAULT.equals(configOptionId);
-			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO:
-				return CONFIG_ITEM_ID_TO_EDEFAULT == null ? configItemIdTo != null : !CONFIG_ITEM_ID_TO_EDEFAULT.equals(configItemIdTo);
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_OPTION_ID_TO:
 				return CONFIG_OPTION_ID_TO_EDEFAULT == null ? configOptionIdTo != null : !CONFIG_OPTION_ID_TO_EDEFAULT.equals(configOptionIdTo);
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__SEQUENCE_NUM:
@@ -474,6 +483,8 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 				return CONFIG_IACTN_TYPE_ID_EDEFAULT == null ? configIactnTypeId != null : !CONFIG_IACTN_TYPE_ID_EDEFAULT.equals(configIactnTypeId);
 			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case ConfigPackage.PRODUCT_CONFIG_OPTION_IACTN__CONFIG_ITEM_ID_TO:
+				return configItemIdTo != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -492,8 +503,6 @@ public class ProductConfigOptionIactnImpl extends BizEntityImpl implements Produ
 		result.append(configItemId);
 		result.append(", configOptionId: ");
 		result.append(configOptionId);
-		result.append(", configItemIdTo: ");
-		result.append(configItemIdTo);
 		result.append(", configOptionIdTo: ");
 		result.append(configOptionIdTo);
 		result.append(", sequenceNum: ");

@@ -75,7 +75,7 @@ public interface GlXbrlClass extends BizEntity {
 	 * @return the value of the '<em>Gl Xbrl Class Id</em>' attribute.
 	 * @see #setGlXbrlClassId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlXbrlClass_GlXbrlClassId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -39,7 +39,8 @@ public interface QuoteTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface QuoteTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Quote Type Id</em>' attribute.
 	 * @see #setQuoteTypeId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTypeAttr_QuoteTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='QuoteType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getQuoteTypeId();

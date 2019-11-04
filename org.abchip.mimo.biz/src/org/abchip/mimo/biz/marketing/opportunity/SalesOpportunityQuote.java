@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.marketing.opportunity;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.order.quote.Quote;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,31 +29,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface SalesOpportunityQuote extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Quote Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quote Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Id</em>' attribute.
-	 * @see #setQuoteId(String)
+	 * @return the value of the '<em>Quote Id</em>' reference.
+	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityQuote_QuoteId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Quote'"
+	 * @model keys="quoteId"
 	 * @generated
 	 */
-	String getQuoteId();
+	Quote getQuoteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote#getQuoteId <em>Quote Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote#getQuoteId <em>Quote Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quote Id</em>' attribute.
+	 * @param value the new value of the '<em>Quote Id</em>' reference.
 	 * @see #getQuoteId()
 	 * @generated
 	 */
-	void setQuoteId(String value);
+	void setQuoteId(Quote value);
 
 	/**
 	 * Returns the value of the '<em><b>Sales Opportunity Id</b></em>' attribute.
@@ -65,8 +65,8 @@ public interface SalesOpportunityQuote extends BizEntity {
 	 * @return the value of the '<em>Sales Opportunity Id</em>' attribute.
 	 * @see #setSalesOpportunityId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityQuote_SalesOpportunityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SalesOpportunity'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSalesOpportunityId();

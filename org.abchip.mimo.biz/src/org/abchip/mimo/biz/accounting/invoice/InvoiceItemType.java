@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.invoice;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +22,10 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeAttrs <em>Invoice Item Type Attrs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getInvoiceItemTypeGlAccounts <em>Invoice Item Type Gl Accounts</em>}</li>
  * </ul>
@@ -35,30 +36,30 @@ import org.abchip.mimo.biz.BizEntityType;
  */
 public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	/**
-	 * Returns the value of the '<em><b>Default Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Default Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Default Gl Account Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Gl Account Id</em>' attribute.
-	 * @see #setDefaultGlAccountId(String)
+	 * @return the value of the '<em>Default Gl Account Id</em>' reference.
+	 * @see #setDefaultGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_DefaultGlAccountId()
-	 * @model annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getDefaultGlAccountId();
+	GlAccount getDefaultGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getDefaultGlAccountId <em>Default Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getDefaultGlAccountId <em>Default Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Default Gl Account Id</em>' reference.
 	 * @see #getDefaultGlAccountId()
 	 * @generated
 	 */
-	void setDefaultGlAccountId(String value);
+	void setDefaultGlAccountId(GlAccount value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -113,30 +114,30 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(InvoiceItemType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='InvoiceItemType'"
+	 * @model keys="invoiceItemTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	InvoiceItemType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceItemType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(InvoiceItemType value);
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Item Type Attrs</b></em>' attribute list.
@@ -219,7 +220,7 @@ public interface InvoiceItemType extends BizEntityType<InvoiceItem> {
 	 * @return the value of the '<em>Invoice Item Type Id</em>' attribute.
 	 * @see #setInvoiceItemTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemType_InvoiceItemTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

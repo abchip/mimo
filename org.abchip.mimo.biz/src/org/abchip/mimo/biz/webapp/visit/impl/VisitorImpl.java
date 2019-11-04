@@ -10,12 +10,15 @@ package org.abchip.mimo.biz.webapp.visit.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.abchip.mimo.biz.webapp.visit.Visitor;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -80,24 +83,14 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
+	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUserLoginId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
+	protected UserLogin userLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,7 +163,24 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 * @generated
 	 */
 	@Override
-	public String getUserLoginId() {
+	public UserLogin getUserLoginId() {
+		if (userLoginId != null && ((EObject)userLoginId).eIsProxy()) {
+			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
+			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
+			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.VISITOR__USER_LOGIN_ID, oldUserLoginId, userLoginId));
+			}
+		}
+		return userLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetUserLoginId() {
 		return userLoginId;
 	}
 
@@ -180,8 +190,8 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 	 * @generated
 	 */
 	@Override
-	public void setUserLoginId(String newUserLoginId) {
-		String oldUserLoginId = userLoginId;
+	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISITOR__USER_LOGIN_ID, oldUserLoginId, userLoginId));
@@ -212,7 +222,8 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 			case VisitPackage.VISITOR__PARTY_ID:
 				return getPartyId();
 			case VisitPackage.VISITOR__USER_LOGIN_ID:
-				return getUserLoginId();
+				if (resolve) return getUserLoginId();
+				return basicGetUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -232,7 +243,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 				setPartyId((String)newValue);
 				return;
 			case VisitPackage.VISITOR__USER_LOGIN_ID:
-				setUserLoginId((String)newValue);
+				setUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,7 +264,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
 			case VisitPackage.VISITOR__USER_LOGIN_ID:
-				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
+				setUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -272,7 +283,7 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 			case VisitPackage.VISITOR__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case VisitPackage.VISITOR__USER_LOGIN_ID:
-				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
+				return userLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -291,8 +302,6 @@ public class VisitorImpl extends BizEntityImpl implements Visitor {
 		result.append(visitorId);
 		result.append(", partyId: ");
 		result.append(partyId);
-		result.append(", userLoginId: ");
-		result.append(userLoginId);
 		result.append(')');
 		return result.toString();
 	}

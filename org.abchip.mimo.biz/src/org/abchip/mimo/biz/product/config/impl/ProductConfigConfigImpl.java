@@ -10,9 +10,12 @@ package org.abchip.mimo.biz.product.config.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProductConfigConfig;
+import org.abchip.mimo.biz.product.config.ProductConfigItem;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,10 +27,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigConfigImpl#getConfigId <em>Config Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigConfigImpl#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigConfigImpl#getConfigOptionId <em>Config Option Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigConfigImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigConfigImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigConfigImpl#getConfigItemId <em>Config Item Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,26 +60,6 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 	 * @ordered
 	 */
 	protected String configId = CONFIG_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getConfigItemId() <em>Config Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONFIG_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getConfigItemId() <em>Config Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String configItemId = CONFIG_ITEM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getConfigOptionId() <em>Config Option Id</em>}' attribute.
@@ -137,6 +120,16 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getConfigItemId() <em>Config Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfigItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductConfigItem configItemId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,7 +248,24 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 	 * @generated
 	 */
 	@Override
-	public String getConfigItemId() {
+	public ProductConfigItem getConfigItemId() {
+		if (configItemId != null && ((EObject)configItemId).eIsProxy()) {
+			InternalEObject oldConfigItemId = (InternalEObject)configItemId;
+			configItemId = (ProductConfigItem)eResolveProxy(oldConfigItemId);
+			if (configItemId != oldConfigItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
+			}
+		}
+		return configItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductConfigItem basicGetConfigItemId() {
 		return configItemId;
 	}
 
@@ -265,8 +275,8 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 	 * @generated
 	 */
 	@Override
-	public void setConfigItemId(String newConfigItemId) {
-		String oldConfigItemId = configItemId;
+	public void setConfigItemId(ProductConfigItem newConfigItemId) {
+		ProductConfigItem oldConfigItemId = configItemId;
 		configItemId = newConfigItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID, oldConfigItemId, configItemId));
@@ -282,14 +292,15 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 		switch (featureID) {
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ID:
 				return getConfigId();
-			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID:
-				return getConfigItemId();
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_OPTION_ID:
 				return getConfigOptionId();
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__SEQUENCE_NUM:
 				return getSequenceNum();
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__DESCRIPTION:
 				return getDescription();
+			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID:
+				if (resolve) return getConfigItemId();
+				return basicGetConfigItemId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -305,9 +316,6 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ID:
 				setConfigId((String)newValue);
 				return;
-			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID:
-				setConfigItemId((String)newValue);
-				return;
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_OPTION_ID:
 				setConfigOptionId((String)newValue);
 				return;
@@ -316,6 +324,9 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 				return;
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID:
+				setConfigItemId((ProductConfigItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -332,9 +343,6 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ID:
 				setConfigId(CONFIG_ID_EDEFAULT);
 				return;
-			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID:
-				setConfigItemId(CONFIG_ITEM_ID_EDEFAULT);
-				return;
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_OPTION_ID:
 				setConfigOptionId(CONFIG_OPTION_ID_EDEFAULT);
 				return;
@@ -343,6 +351,9 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 				return;
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID:
+				setConfigItemId((ProductConfigItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -358,14 +369,14 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 		switch (featureID) {
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ID:
 				return CONFIG_ID_EDEFAULT == null ? configId != null : !CONFIG_ID_EDEFAULT.equals(configId);
-			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID:
-				return CONFIG_ITEM_ID_EDEFAULT == null ? configItemId != null : !CONFIG_ITEM_ID_EDEFAULT.equals(configItemId);
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_OPTION_ID:
 				return CONFIG_OPTION_ID_EDEFAULT == null ? configOptionId != null : !CONFIG_OPTION_ID_EDEFAULT.equals(configOptionId);
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case ConfigPackage.PRODUCT_CONFIG_CONFIG__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case ConfigPackage.PRODUCT_CONFIG_CONFIG__CONFIG_ITEM_ID:
+				return configItemId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -382,8 +393,6 @@ public class ProductConfigConfigImpl extends BizEntityImpl implements ProductCon
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (configId: ");
 		result.append(configId);
-		result.append(", configItemId: ");
-		result.append(configItemId);
 		result.append(", configOptionId: ");
 		result.append(configOptionId);
 		result.append(", sequenceNum: ");

@@ -75,7 +75,7 @@ public interface ProductStoreGroupType extends BizEntityType<ProductStoreGroup> 
 	 * @return the value of the '<em>Product Store Group Type Id</em>' attribute.
 	 * @see #setProductStoreGroupTypeId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupType_ProductStoreGroupTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

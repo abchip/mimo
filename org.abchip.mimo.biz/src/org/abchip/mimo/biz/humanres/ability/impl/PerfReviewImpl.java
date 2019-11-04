@@ -9,13 +9,18 @@ package org.abchip.mimo.biz.humanres.ability.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
 import org.abchip.mimo.biz.humanres.ability.PerfReview;
+import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,12 +35,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getEmployeeRoleTypeId <em>Employee Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getPerfReviewId <em>Perf Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getEmplPositionId <em>Empl Position Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getManagerPartyId <em>Manager Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getManagerRoleTypeId <em>Manager Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getPaymentId <em>Payment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getManagerPartyId <em>Manager Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getPaymentId <em>Payment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl#getEmplPositionId <em>Empl Position Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -127,26 +132,6 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	protected String comments = COMMENTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEmplPositionId() <em>Empl Position Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPL_POSITION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmplPositionId() <em>Empl Position Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emplPositionId = EMPL_POSITION_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,26 +150,6 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 * @ordered
 	 */
 	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getManagerPartyId() <em>Manager Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManagerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MANAGER_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getManagerPartyId() <em>Manager Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManagerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String managerPartyId = MANAGER_PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getManagerRoleTypeId() <em>Manager Role Type Id</em>}' attribute.
@@ -207,26 +172,6 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	protected String managerRoleTypeId = MANAGER_ROLE_TYPE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPaymentId() <em>Payment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentId = PAYMENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +190,36 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getManagerPartyId() <em>Manager Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManagerPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party managerPartyId;
+
+	/**
+	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Payment paymentId;
+
+	/**
+	 * The cached value of the '{@link #getEmplPositionId() <em>Empl Position Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmplPositionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EmplPosition emplPositionId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,7 +269,24 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 * @generated
 	 */
 	@Override
-	public String getEmplPositionId() {
+	public EmplPosition getEmplPositionId() {
+		if (emplPositionId != null && ((EObject)emplPositionId).eIsProxy()) {
+			InternalEObject oldEmplPositionId = (InternalEObject)emplPositionId;
+			emplPositionId = (EmplPosition)eResolveProxy(oldEmplPositionId);
+			if (emplPositionId != oldEmplPositionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
+			}
+		}
+		return emplPositionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmplPosition basicGetEmplPositionId() {
 		return emplPositionId;
 	}
 
@@ -304,8 +296,8 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 * @generated
 	 */
 	@Override
-	public void setEmplPositionId(String newEmplPositionId) {
-		String oldEmplPositionId = emplPositionId;
+	public void setEmplPositionId(EmplPosition newEmplPositionId) {
+		EmplPosition oldEmplPositionId = emplPositionId;
 		emplPositionId = newEmplPositionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
@@ -386,7 +378,24 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 * @generated
 	 */
 	@Override
-	public String getManagerPartyId() {
+	public Party getManagerPartyId() {
+		if (managerPartyId != null && ((EObject)managerPartyId).eIsProxy()) {
+			InternalEObject oldManagerPartyId = (InternalEObject)managerPartyId;
+			managerPartyId = (Party)eResolveProxy(oldManagerPartyId);
+			if (managerPartyId != oldManagerPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID, oldManagerPartyId, managerPartyId));
+			}
+		}
+		return managerPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetManagerPartyId() {
 		return managerPartyId;
 	}
 
@@ -396,8 +405,8 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 * @generated
 	 */
 	@Override
-	public void setManagerPartyId(String newManagerPartyId) {
-		String oldManagerPartyId = managerPartyId;
+	public void setManagerPartyId(Party newManagerPartyId) {
+		Party oldManagerPartyId = managerPartyId;
 		managerPartyId = newManagerPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID, oldManagerPartyId, managerPartyId));
@@ -432,7 +441,24 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 * @generated
 	 */
 	@Override
-	public String getPaymentId() {
+	public Payment getPaymentId() {
+		if (paymentId != null && ((EObject)paymentId).eIsProxy()) {
+			InternalEObject oldPaymentId = (InternalEObject)paymentId;
+			paymentId = (Payment)eResolveProxy(oldPaymentId);
+			if (paymentId != oldPaymentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW__PAYMENT_ID, oldPaymentId, paymentId));
+			}
+		}
+		return paymentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Payment basicGetPaymentId() {
 		return paymentId;
 	}
 
@@ -442,8 +468,8 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 	 * @generated
 	 */
 	@Override
-	public void setPaymentId(String newPaymentId) {
-		String oldPaymentId = paymentId;
+	public void setPaymentId(Payment newPaymentId) {
+		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW__PAYMENT_ID, oldPaymentId, paymentId));
@@ -511,18 +537,21 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 				return getPerfReviewId();
 			case AbilityPackage.PERF_REVIEW__COMMENTS:
 				return getComments();
-			case AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID:
-				return getEmplPositionId();
 			case AbilityPackage.PERF_REVIEW__FROM_DATE:
 				return getFromDate();
-			case AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID:
-				return getManagerPartyId();
 			case AbilityPackage.PERF_REVIEW__MANAGER_ROLE_TYPE_ID:
 				return getManagerRoleTypeId();
-			case AbilityPackage.PERF_REVIEW__PAYMENT_ID:
-				return getPaymentId();
 			case AbilityPackage.PERF_REVIEW__THRU_DATE:
 				return getThruDate();
+			case AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID:
+				if (resolve) return getManagerPartyId();
+				return basicGetManagerPartyId();
+			case AbilityPackage.PERF_REVIEW__PAYMENT_ID:
+				if (resolve) return getPaymentId();
+				return basicGetPaymentId();
+			case AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID:
+				if (resolve) return getEmplPositionId();
+				return basicGetEmplPositionId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -547,23 +576,23 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 			case AbilityPackage.PERF_REVIEW__COMMENTS:
 				setComments((String)newValue);
 				return;
-			case AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID:
-				setEmplPositionId((String)newValue);
-				return;
 			case AbilityPackage.PERF_REVIEW__FROM_DATE:
 				setFromDate((Date)newValue);
-				return;
-			case AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID:
-				setManagerPartyId((String)newValue);
 				return;
 			case AbilityPackage.PERF_REVIEW__MANAGER_ROLE_TYPE_ID:
 				setManagerRoleTypeId((String)newValue);
 				return;
-			case AbilityPackage.PERF_REVIEW__PAYMENT_ID:
-				setPaymentId((String)newValue);
-				return;
 			case AbilityPackage.PERF_REVIEW__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID:
+				setManagerPartyId((Party)newValue);
+				return;
+			case AbilityPackage.PERF_REVIEW__PAYMENT_ID:
+				setPaymentId((Payment)newValue);
+				return;
+			case AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID:
+				setEmplPositionId((EmplPosition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -589,23 +618,23 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 			case AbilityPackage.PERF_REVIEW__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
-			case AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID:
-				setEmplPositionId(EMPL_POSITION_ID_EDEFAULT);
-				return;
 			case AbilityPackage.PERF_REVIEW__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID:
-				setManagerPartyId(MANAGER_PARTY_ID_EDEFAULT);
 				return;
 			case AbilityPackage.PERF_REVIEW__MANAGER_ROLE_TYPE_ID:
 				setManagerRoleTypeId(MANAGER_ROLE_TYPE_ID_EDEFAULT);
 				return;
-			case AbilityPackage.PERF_REVIEW__PAYMENT_ID:
-				setPaymentId(PAYMENT_ID_EDEFAULT);
-				return;
 			case AbilityPackage.PERF_REVIEW__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID:
+				setManagerPartyId((Party)null);
+				return;
+			case AbilityPackage.PERF_REVIEW__PAYMENT_ID:
+				setPaymentId((Payment)null);
+				return;
+			case AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID:
+				setEmplPositionId((EmplPosition)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -627,18 +656,18 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 				return PERF_REVIEW_ID_EDEFAULT == null ? perfReviewId != null : !PERF_REVIEW_ID_EDEFAULT.equals(perfReviewId);
 			case AbilityPackage.PERF_REVIEW__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID:
-				return EMPL_POSITION_ID_EDEFAULT == null ? emplPositionId != null : !EMPL_POSITION_ID_EDEFAULT.equals(emplPositionId);
 			case AbilityPackage.PERF_REVIEW__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID:
-				return MANAGER_PARTY_ID_EDEFAULT == null ? managerPartyId != null : !MANAGER_PARTY_ID_EDEFAULT.equals(managerPartyId);
 			case AbilityPackage.PERF_REVIEW__MANAGER_ROLE_TYPE_ID:
 				return MANAGER_ROLE_TYPE_ID_EDEFAULT == null ? managerRoleTypeId != null : !MANAGER_ROLE_TYPE_ID_EDEFAULT.equals(managerRoleTypeId);
-			case AbilityPackage.PERF_REVIEW__PAYMENT_ID:
-				return PAYMENT_ID_EDEFAULT == null ? paymentId != null : !PAYMENT_ID_EDEFAULT.equals(paymentId);
 			case AbilityPackage.PERF_REVIEW__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case AbilityPackage.PERF_REVIEW__MANAGER_PARTY_ID:
+				return managerPartyId != null;
+			case AbilityPackage.PERF_REVIEW__PAYMENT_ID:
+				return paymentId != null;
+			case AbilityPackage.PERF_REVIEW__EMPL_POSITION_ID:
+				return emplPositionId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -661,16 +690,10 @@ public class PerfReviewImpl extends BizEntityImpl implements PerfReview {
 		result.append(perfReviewId);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", emplPositionId: ");
-		result.append(emplPositionId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", managerPartyId: ");
-		result.append(managerPartyId);
 		result.append(", managerRoleTypeId: ");
 		result.append(managerRoleTypeId);
-		result.append(", paymentId: ");
-		result.append(paymentId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

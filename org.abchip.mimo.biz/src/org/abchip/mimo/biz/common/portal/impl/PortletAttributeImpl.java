@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.common.portal.impl;
 
 import org.abchip.mimo.biz.common.portal.PortalPackage;
+import org.abchip.mimo.biz.common.portal.PortalPortlet;
 import org.abchip.mimo.biz.common.portal.PortletAttribute;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,12 +27,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl#getPortalPageId <em>Portal Page Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl#getPortalPortletId <em>Portal Portlet Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl#getPortletSeqId <em>Portlet Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl#getAttrDescription <em>Attr Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl#getAttrType <em>Attr Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.impl.PortletAttributeImpl#getPortalPortletId <em>Portal Portlet Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,24 +62,6 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 */
 	protected String portalPageId = PORTAL_PAGE_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getPortalPortletId() <em>Portal Portlet Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortalPortletId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PORTAL_PORTLET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPortalPortletId() <em>Portal Portlet Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortalPortletId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String portalPortletId = PORTAL_PORTLET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getPortletSeqId() <em>Portlet Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -167,6 +152,15 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPortalPortletId() <em>Portal Portlet Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortalPortletId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PortalPortlet portalPortletId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -331,7 +325,24 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 * @generated
 	 */
 	@Override
-	public String getPortalPortletId() {
+	public PortalPortlet getPortalPortletId() {
+		if (portalPortletId != null && ((EObject)portalPortletId).eIsProxy()) {
+			InternalEObject oldPortalPortletId = (InternalEObject)portalPortletId;
+			portalPortletId = (PortalPortlet)eResolveProxy(oldPortalPortletId);
+			if (portalPortletId != oldPortalPortletId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
+			}
+		}
+		return portalPortletId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortalPortlet basicGetPortalPortletId() {
 		return portalPortletId;
 	}
 
@@ -341,8 +352,8 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 	 * @generated
 	 */
 	@Override
-	public void setPortalPortletId(String newPortalPortletId) {
-		String oldPortalPortletId = portalPortletId;
+	public void setPortalPortletId(PortalPortlet newPortalPortletId) {
+		PortalPortlet oldPortalPortletId = portalPortletId;
 		portalPortletId = newPortalPortletId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID, oldPortalPortletId, portalPortletId));
@@ -358,8 +369,6 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 		switch (featureID) {
 			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PAGE_ID:
 				return getPortalPageId();
-			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID:
-				return getPortalPortletId();
 			case PortalPackage.PORTLET_ATTRIBUTE__PORTLET_SEQ_ID:
 				return getPortletSeqId();
 			case PortalPackage.PORTLET_ATTRIBUTE__ATTR_NAME:
@@ -370,6 +379,9 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 				return getAttrType();
 			case PortalPackage.PORTLET_ATTRIBUTE__ATTR_VALUE:
 				return getAttrValue();
+			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID:
+				if (resolve) return getPortalPortletId();
+				return basicGetPortalPortletId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -384,9 +396,6 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 		switch (featureID) {
 			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PAGE_ID:
 				setPortalPageId((String)newValue);
-				return;
-			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID:
-				setPortalPortletId((String)newValue);
 				return;
 			case PortalPackage.PORTLET_ATTRIBUTE__PORTLET_SEQ_ID:
 				setPortletSeqId((String)newValue);
@@ -403,6 +412,9 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 			case PortalPackage.PORTLET_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue((String)newValue);
 				return;
+			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID:
+				setPortalPortletId((PortalPortlet)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -417,9 +429,6 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 		switch (featureID) {
 			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PAGE_ID:
 				setPortalPageId(PORTAL_PAGE_ID_EDEFAULT);
-				return;
-			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID:
-				setPortalPortletId(PORTAL_PORTLET_ID_EDEFAULT);
 				return;
 			case PortalPackage.PORTLET_ATTRIBUTE__PORTLET_SEQ_ID:
 				setPortletSeqId(PORTLET_SEQ_ID_EDEFAULT);
@@ -436,6 +445,9 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 			case PortalPackage.PORTLET_ATTRIBUTE__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
 				return;
+			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID:
+				setPortalPortletId((PortalPortlet)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -450,8 +462,6 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 		switch (featureID) {
 			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PAGE_ID:
 				return PORTAL_PAGE_ID_EDEFAULT == null ? portalPageId != null : !PORTAL_PAGE_ID_EDEFAULT.equals(portalPageId);
-			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID:
-				return PORTAL_PORTLET_ID_EDEFAULT == null ? portalPortletId != null : !PORTAL_PORTLET_ID_EDEFAULT.equals(portalPortletId);
 			case PortalPackage.PORTLET_ATTRIBUTE__PORTLET_SEQ_ID:
 				return PORTLET_SEQ_ID_EDEFAULT == null ? portletSeqId != null : !PORTLET_SEQ_ID_EDEFAULT.equals(portletSeqId);
 			case PortalPackage.PORTLET_ATTRIBUTE__ATTR_NAME:
@@ -462,6 +472,8 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 				return ATTR_TYPE_EDEFAULT == null ? attrType != null : !ATTR_TYPE_EDEFAULT.equals(attrType);
 			case PortalPackage.PORTLET_ATTRIBUTE__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case PortalPackage.PORTLET_ATTRIBUTE__PORTAL_PORTLET_ID:
+				return portalPortletId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -478,8 +490,6 @@ public class PortletAttributeImpl extends BizEntityImpl implements PortletAttrib
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (portalPageId: ");
 		result.append(portalPageId);
-		result.append(", portalPortletId: ");
-		result.append(portalPortletId);
 		result.append(", portletSeqId: ");
 		result.append(portletSeqId);
 		result.append(", attrName: ");

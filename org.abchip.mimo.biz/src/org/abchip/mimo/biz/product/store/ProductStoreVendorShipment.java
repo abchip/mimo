@@ -8,6 +8,8 @@
 package org.abchip.mimo.biz.product.store;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,85 +32,82 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ProductStoreVendorShipment extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Carrier Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Carrier Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Carrier Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Carrier Party Id</em>' attribute.
-	 * @see #setCarrierPartyId(String)
+	 * @return the value of the '<em>Carrier Party Id</em>' reference.
+	 * @see #setCarrierPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_CarrierPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getCarrierPartyId();
+	Party getCarrierPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreVendorShipment#getCarrierPartyId <em>Carrier Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreVendorShipment#getCarrierPartyId <em>Carrier Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Carrier Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Carrier Party Id</em>' reference.
 	 * @see #getCarrierPartyId()
 	 * @generated
 	 */
-	void setCarrierPartyId(String value);
+	void setCarrierPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Method Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Method Type Id</em>' attribute.
-	 * @see #setShipmentMethodTypeId(String)
+	 * @return the value of the '<em>Shipment Method Type Id</em>' reference.
+	 * @see #setShipmentMethodTypeId(ShipmentMethodType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_ShipmentMethodTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentMethodType'"
+	 * @model keys="shipmentMethodTypeId"
 	 * @generated
 	 */
-	String getShipmentMethodTypeId();
+	ShipmentMethodType getShipmentMethodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreVendorShipment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreVendorShipment#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Method Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Method Type Id</em>' reference.
 	 * @see #getShipmentMethodTypeId()
 	 * @generated
 	 */
-	void setShipmentMethodTypeId(String value);
+	void setShipmentMethodTypeId(ShipmentMethodType value);
 
 	/**
-	 * Returns the value of the '<em><b>Vendor Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Vendor Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Vendor Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vendor Party Id</em>' attribute.
-	 * @see #setVendorPartyId(String)
+	 * @return the value of the '<em>Vendor Party Id</em>' reference.
+	 * @see #setVendorPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_VendorPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getVendorPartyId();
+	Party getVendorPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreVendorShipment#getVendorPartyId <em>Vendor Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreVendorShipment#getVendorPartyId <em>Vendor Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Vendor Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Vendor Party Id</em>' reference.
 	 * @see #getVendorPartyId()
 	 * @generated
 	 */
-	void setVendorPartyId(String value);
+	void setVendorPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Store Id</b></em>' attribute.
@@ -121,8 +120,8 @@ public interface ProductStoreVendorShipment extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreVendorShipment_ProductStoreId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreId();

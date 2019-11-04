@@ -9,13 +9,20 @@ package org.abchip.mimo.biz.workeffort.timesheet.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.rate.RateType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.workeffort.timesheet.TimeEntry;
+import org.abchip.mimo.biz.workeffort.timesheet.Timesheet;
 import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,13 +37,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getHours <em>Hours</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getRateTypeId <em>Rate Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getTimesheetId <em>Timesheet Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getTimesheetId <em>Timesheet Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimeEntryImpl#getInvoiceId <em>Invoice Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -128,26 +135,6 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	protected double hours = HOURS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceId = INVOICE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getInvoiceItemSeqId() <em>Invoice Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,46 +153,6 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @ordered
 	 */
 	protected String invoiceItemSeqId = INVOICE_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RATE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRateTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String rateTypeId = RATE_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
@@ -228,44 +175,54 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTimesheetId() <em>Timesheet Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimesheetId()
+	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TIMESHEET_ID_EDEFAULT = null;
+	protected Party partyId;
 
 	/**
-	 * The cached value of the '{@link #getTimesheetId() <em>Timesheet Id</em>}' attribute.
+	 * The cached value of the '{@link #getRateTypeId() <em>Rate Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimesheetId()
+	 * @see #getRateTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String timesheetId = TIMESHEET_ID_EDEFAULT;
+	protected RateType rateTypeId;
 
 	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWorkEffortId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
+	protected WorkEffort workEffortId;
 
 	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
+	 * The cached value of the '{@link #getTimesheetId() <em>Timesheet Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
+	 * @see #getTimesheetId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
+	protected Timesheet timesheetId;
+
+	/**
+	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoiceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Invoice invoiceId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -361,7 +318,24 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceId() {
+	public Invoice getInvoiceId() {
+		if (invoiceId != null && ((EObject)invoiceId).eIsProxy()) {
+			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
+			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
+			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__INVOICE_ID, oldInvoiceId, invoiceId));
+			}
+		}
+		return invoiceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Invoice basicGetInvoiceId() {
 		return invoiceId;
 	}
 
@@ -371,8 +345,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceId(String newInvoiceId) {
-		String oldInvoiceId = invoiceId;
+	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__INVOICE_ID, oldInvoiceId, invoiceId));
@@ -407,7 +381,24 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -417,8 +408,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__PARTY_ID, oldPartyId, partyId));
@@ -430,7 +421,24 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public String getRateTypeId() {
+	public RateType getRateTypeId() {
+		if (rateTypeId != null && ((EObject)rateTypeId).eIsProxy()) {
+			InternalEObject oldRateTypeId = (InternalEObject)rateTypeId;
+			rateTypeId = (RateType)eResolveProxy(oldRateTypeId);
+			if (rateTypeId != oldRateTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
+			}
+		}
+		return rateTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RateType basicGetRateTypeId() {
 		return rateTypeId;
 	}
 
@@ -440,8 +448,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public void setRateTypeId(String newRateTypeId) {
-		String oldRateTypeId = rateTypeId;
+	public void setRateTypeId(RateType newRateTypeId) {
+		RateType oldRateTypeId = rateTypeId;
 		rateTypeId = newRateTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID, oldRateTypeId, rateTypeId));
@@ -499,7 +507,24 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public String getTimesheetId() {
+	public Timesheet getTimesheetId() {
+		if (timesheetId != null && ((EObject)timesheetId).eIsProxy()) {
+			InternalEObject oldTimesheetId = (InternalEObject)timesheetId;
+			timesheetId = (Timesheet)eResolveProxy(oldTimesheetId);
+			if (timesheetId != oldTimesheetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__TIMESHEET_ID, oldTimesheetId, timesheetId));
+			}
+		}
+		return timesheetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Timesheet basicGetTimesheetId() {
 		return timesheetId;
 	}
 
@@ -509,8 +534,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public void setTimesheetId(String newTimesheetId) {
-		String oldTimesheetId = timesheetId;
+	public void setTimesheetId(Timesheet newTimesheetId) {
+		Timesheet oldTimesheetId = timesheetId;
 		timesheetId = newTimesheetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__TIMESHEET_ID, oldTimesheetId, timesheetId));
@@ -522,7 +547,24 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimesheetPackage.TIME_ENTRY__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -532,8 +574,8 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimesheetPackage.TIME_ENTRY__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -555,20 +597,25 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 				return getFromDate();
 			case TimesheetPackage.TIME_ENTRY__HOURS:
 				return getHours();
-			case TimesheetPackage.TIME_ENTRY__INVOICE_ID:
-				return getInvoiceId();
 			case TimesheetPackage.TIME_ENTRY__INVOICE_ITEM_SEQ_ID:
 				return getInvoiceItemSeqId();
-			case TimesheetPackage.TIME_ENTRY__PARTY_ID:
-				return getPartyId();
-			case TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID:
-				return getRateTypeId();
 			case TimesheetPackage.TIME_ENTRY__THRU_DATE:
 				return getThruDate();
-			case TimesheetPackage.TIME_ENTRY__TIMESHEET_ID:
-				return getTimesheetId();
+			case TimesheetPackage.TIME_ENTRY__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID:
+				if (resolve) return getRateTypeId();
+				return basicGetRateTypeId();
 			case TimesheetPackage.TIME_ENTRY__WORK_EFFORT_ID:
-				return getWorkEffortId();
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
+			case TimesheetPackage.TIME_ENTRY__TIMESHEET_ID:
+				if (resolve) return getTimesheetId();
+				return basicGetTimesheetId();
+			case TimesheetPackage.TIME_ENTRY__INVOICE_ID:
+				if (resolve) return getInvoiceId();
+				return basicGetInvoiceId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -593,26 +640,26 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 			case TimesheetPackage.TIME_ENTRY__HOURS:
 				setHours((Double)newValue);
 				return;
-			case TimesheetPackage.TIME_ENTRY__INVOICE_ID:
-				setInvoiceId((String)newValue);
-				return;
 			case TimesheetPackage.TIME_ENTRY__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId((String)newValue);
-				return;
-			case TimesheetPackage.TIME_ENTRY__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID:
-				setRateTypeId((String)newValue);
 				return;
 			case TimesheetPackage.TIME_ENTRY__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
-			case TimesheetPackage.TIME_ENTRY__TIMESHEET_ID:
-				setTimesheetId((String)newValue);
+			case TimesheetPackage.TIME_ENTRY__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID:
+				setRateTypeId((RateType)newValue);
 				return;
 			case TimesheetPackage.TIME_ENTRY__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
+				setWorkEffortId((WorkEffort)newValue);
+				return;
+			case TimesheetPackage.TIME_ENTRY__TIMESHEET_ID:
+				setTimesheetId((Timesheet)newValue);
+				return;
+			case TimesheetPackage.TIME_ENTRY__INVOICE_ID:
+				setInvoiceId((Invoice)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -638,26 +685,26 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 			case TimesheetPackage.TIME_ENTRY__HOURS:
 				setHours(HOURS_EDEFAULT);
 				return;
-			case TimesheetPackage.TIME_ENTRY__INVOICE_ID:
-				setInvoiceId(INVOICE_ID_EDEFAULT);
-				return;
 			case TimesheetPackage.TIME_ENTRY__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId(INVOICE_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case TimesheetPackage.TIME_ENTRY__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID:
-				setRateTypeId(RATE_TYPE_ID_EDEFAULT);
 				return;
 			case TimesheetPackage.TIME_ENTRY__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
-			case TimesheetPackage.TIME_ENTRY__TIMESHEET_ID:
-				setTimesheetId(TIMESHEET_ID_EDEFAULT);
+			case TimesheetPackage.TIME_ENTRY__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID:
+				setRateTypeId((RateType)null);
 				return;
 			case TimesheetPackage.TIME_ENTRY__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
+				setWorkEffortId((WorkEffort)null);
+				return;
+			case TimesheetPackage.TIME_ENTRY__TIMESHEET_ID:
+				setTimesheetId((Timesheet)null);
+				return;
+			case TimesheetPackage.TIME_ENTRY__INVOICE_ID:
+				setInvoiceId((Invoice)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -679,20 +726,20 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case TimesheetPackage.TIME_ENTRY__HOURS:
 				return hours != HOURS_EDEFAULT;
-			case TimesheetPackage.TIME_ENTRY__INVOICE_ID:
-				return INVOICE_ID_EDEFAULT == null ? invoiceId != null : !INVOICE_ID_EDEFAULT.equals(invoiceId);
 			case TimesheetPackage.TIME_ENTRY__INVOICE_ITEM_SEQ_ID:
 				return INVOICE_ITEM_SEQ_ID_EDEFAULT == null ? invoiceItemSeqId != null : !INVOICE_ITEM_SEQ_ID_EDEFAULT.equals(invoiceItemSeqId);
-			case TimesheetPackage.TIME_ENTRY__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID:
-				return RATE_TYPE_ID_EDEFAULT == null ? rateTypeId != null : !RATE_TYPE_ID_EDEFAULT.equals(rateTypeId);
 			case TimesheetPackage.TIME_ENTRY__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case TimesheetPackage.TIME_ENTRY__TIMESHEET_ID:
-				return TIMESHEET_ID_EDEFAULT == null ? timesheetId != null : !TIMESHEET_ID_EDEFAULT.equals(timesheetId);
+			case TimesheetPackage.TIME_ENTRY__PARTY_ID:
+				return partyId != null;
+			case TimesheetPackage.TIME_ENTRY__RATE_TYPE_ID:
+				return rateTypeId != null;
 			case TimesheetPackage.TIME_ENTRY__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
+				return workEffortId != null;
+			case TimesheetPackage.TIME_ENTRY__TIMESHEET_ID:
+				return timesheetId != null;
+			case TimesheetPackage.TIME_ENTRY__INVOICE_ID:
+				return invoiceId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -715,20 +762,10 @@ public class TimeEntryImpl extends BizEntityImpl implements TimeEntry {
 		result.append(fromDate);
 		result.append(", hours: ");
 		result.append(hours);
-		result.append(", invoiceId: ");
-		result.append(invoiceId);
 		result.append(", invoiceItemSeqId: ");
 		result.append(invoiceItemSeqId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", rateTypeId: ");
-		result.append(rateTypeId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
-		result.append(", timesheetId: ");
-		result.append(timesheetId);
-		result.append(", workEffortId: ");
-		result.append(workEffortId);
 		result.append(')');
 		return result.toString();
 	}

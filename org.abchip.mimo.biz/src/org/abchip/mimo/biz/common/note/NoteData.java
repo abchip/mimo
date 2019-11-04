@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -221,30 +222,30 @@ public interface NoteData extends BizEntity {
 	void setNoteName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Note Party</b></em>' attribute.
+	 * Returns the value of the '<em><b>Note Party</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Note Party</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Note Party</em>' attribute.
-	 * @see #setNoteParty(String)
+	 * @return the value of the '<em>Note Party</em>' reference.
+	 * @see #setNoteParty(Party)
 	 * @see org.abchip.mimo.biz.common.note.NotePackage#getNoteData_NoteParty()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getNoteParty();
+	Party getNoteParty();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.note.NoteData#getNoteParty <em>Note Party</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.note.NoteData#getNoteParty <em>Note Party</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Note Party</em>' attribute.
+	 * @param value the new value of the '<em>Note Party</em>' reference.
 	 * @see #getNoteParty()
 	 * @generated
 	 */
-	void setNoteParty(String value);
+	void setNoteParty(Party value);
 
 	/**
 	 * <!-- begin-user-doc -->

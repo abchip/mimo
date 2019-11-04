@@ -11,11 +11,14 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.accounting.payment.Deduction;
 import org.abchip.mimo.biz.accounting.payment.DeductionType;
+import org.abchip.mimo.biz.accounting.payment.Payment;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -78,42 +81,24 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDeductionTypeId() <em>Deduction Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getDeductionTypeId() <em>Deduction Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDeductionTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DEDUCTION_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDeductionTypeId() <em>Deduction Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeductionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deductionTypeId = DEDUCTION_TYPE_ID_EDEFAULT;
+	protected DeductionType deductionTypeId;
 
 	/**
-	 * The default value of the '{@link #getPaymentId() <em>Payment Id</em>}' attribute.
+	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPaymentId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PAYMENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentId = PAYMENT_ID_EDEFAULT;
+	protected Payment paymentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,7 +171,24 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getDeductionTypeId() {
+	public DeductionType getDeductionTypeId() {
+		if (deductionTypeId != null && ((EObject)deductionTypeId).eIsProxy()) {
+			InternalEObject oldDeductionTypeId = (InternalEObject)deductionTypeId;
+			deductionTypeId = (DeductionType)eResolveProxy(oldDeductionTypeId);
+			if (deductionTypeId != oldDeductionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.DEDUCTION__DEDUCTION_TYPE_ID, oldDeductionTypeId, deductionTypeId));
+			}
+		}
+		return deductionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeductionType basicGetDeductionTypeId() {
 		return deductionTypeId;
 	}
 
@@ -196,8 +198,8 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setDeductionTypeId(String newDeductionTypeId) {
-		String oldDeductionTypeId = deductionTypeId;
+	public void setDeductionTypeId(DeductionType newDeductionTypeId) {
+		DeductionType oldDeductionTypeId = deductionTypeId;
 		deductionTypeId = newDeductionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.DEDUCTION__DEDUCTION_TYPE_ID, oldDeductionTypeId, deductionTypeId));
@@ -209,7 +211,24 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getPaymentId() {
+	public Payment getPaymentId() {
+		if (paymentId != null && ((EObject)paymentId).eIsProxy()) {
+			InternalEObject oldPaymentId = (InternalEObject)paymentId;
+			paymentId = (Payment)eResolveProxy(oldPaymentId);
+			if (paymentId != oldPaymentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.DEDUCTION__PAYMENT_ID, oldPaymentId, paymentId));
+			}
+		}
+		return paymentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Payment basicGetPaymentId() {
 		return paymentId;
 	}
 
@@ -219,8 +238,8 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setPaymentId(String newPaymentId) {
-		String oldPaymentId = paymentId;
+	public void setPaymentId(Payment newPaymentId) {
+		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.DEDUCTION__PAYMENT_ID, oldPaymentId, paymentId));
@@ -239,9 +258,11 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 			case PaymentPackage.DEDUCTION__AMOUNT:
 				return getAmount();
 			case PaymentPackage.DEDUCTION__DEDUCTION_TYPE_ID:
-				return getDeductionTypeId();
+				if (resolve) return getDeductionTypeId();
+				return basicGetDeductionTypeId();
 			case PaymentPackage.DEDUCTION__PAYMENT_ID:
-				return getPaymentId();
+				if (resolve) return getPaymentId();
+				return basicGetPaymentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,10 +282,10 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 				setAmount((BigDecimal)newValue);
 				return;
 			case PaymentPackage.DEDUCTION__DEDUCTION_TYPE_ID:
-				setDeductionTypeId((String)newValue);
+				setDeductionTypeId((DeductionType)newValue);
 				return;
 			case PaymentPackage.DEDUCTION__PAYMENT_ID:
-				setPaymentId((String)newValue);
+				setPaymentId((Payment)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -285,10 +306,10 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 				setAmount(AMOUNT_EDEFAULT);
 				return;
 			case PaymentPackage.DEDUCTION__DEDUCTION_TYPE_ID:
-				setDeductionTypeId(DEDUCTION_TYPE_ID_EDEFAULT);
+				setDeductionTypeId((DeductionType)null);
 				return;
 			case PaymentPackage.DEDUCTION__PAYMENT_ID:
-				setPaymentId(PAYMENT_ID_EDEFAULT);
+				setPaymentId((Payment)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,9 +328,9 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 			case PaymentPackage.DEDUCTION__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
 			case PaymentPackage.DEDUCTION__DEDUCTION_TYPE_ID:
-				return DEDUCTION_TYPE_ID_EDEFAULT == null ? deductionTypeId != null : !DEDUCTION_TYPE_ID_EDEFAULT.equals(deductionTypeId);
+				return deductionTypeId != null;
 			case PaymentPackage.DEDUCTION__PAYMENT_ID:
-				return PAYMENT_ID_EDEFAULT == null ? paymentId != null : !PAYMENT_ID_EDEFAULT.equals(paymentId);
+				return paymentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -328,10 +349,6 @@ public class DeductionImpl extends BizEntityTypedImpl<DeductionType> implements 
 		result.append(deductionId);
 		result.append(", amount: ");
 		result.append(amount);
-		result.append(", deductionTypeId: ");
-		result.append(deductionTypeId);
-		result.append(", paymentId: ");
-		result.append(paymentId);
 		result.append(')');
 		return result.toString();
 	}

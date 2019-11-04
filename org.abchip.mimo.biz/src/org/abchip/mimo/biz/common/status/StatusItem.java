@@ -113,30 +113,30 @@ public interface StatusItem extends BizEntityTyped<StatusType> {
 	void setStatusCode(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Type Id</em>' attribute.
-	 * @see #setStatusTypeId(String)
+	 * @return the value of the '<em>Status Type Id</em>' reference.
+	 * @see #setStatusTypeId(StatusType)
 	 * @see org.abchip.mimo.biz.common.status.StatusPackage#getStatusItem_StatusTypeId()
-	 * @model annotation="mimo-ent-domain frame='StatusType'"
+	 * @model keys="statusTypeId"
 	 * @generated
 	 */
-	String getStatusTypeId();
+	StatusType getStatusTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.status.StatusItem#getStatusTypeId <em>Status Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.status.StatusItem#getStatusTypeId <em>Status Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Type Id</em>' reference.
 	 * @see #getStatusTypeId()
 	 * @generated
 	 */
-	void setStatusTypeId(String value);
+	void setStatusTypeId(StatusType value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Statuss</b></em>' attribute list.

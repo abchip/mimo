@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.common.keyword;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,29 +84,29 @@ public interface KeywordThesaurus extends BizEntity {
 	void setEnteredKeyword(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Relationship Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Relationship Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Relationship Enum Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Relationship Enum Id</em>' attribute.
-	 * @see #setRelationshipEnumId(String)
+	 * @return the value of the '<em>Relationship Enum Id</em>' reference.
+	 * @see #setRelationshipEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.common.keyword.KeywordPackage#getKeywordThesaurus_RelationshipEnumId()
-	 * @model
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getRelationshipEnumId();
+	Enumeration getRelationshipEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.keyword.KeywordThesaurus#getRelationshipEnumId <em>Relationship Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.keyword.KeywordThesaurus#getRelationshipEnumId <em>Relationship Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Relationship Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Relationship Enum Id</em>' reference.
 	 * @see #getRelationshipEnumId()
 	 * @generated
 	 */
-	void setRelationshipEnumId(String value);
+	void setRelationshipEnumId(Enumeration value);
 
 } // KeywordThesaurus

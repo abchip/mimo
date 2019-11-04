@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.party;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.datasource.DataSource;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +22,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#isIsCreate <em>Is Create</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyDataSource#getDataSourceId <em>Data Source Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource()
@@ -86,32 +87,30 @@ public interface PartyDataSource extends BizEntity {
 	void setIsCreate(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Source Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Source Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Source Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Source Id</em>' attribute.
-	 * @see #setDataSourceId(String)
+	 * @return the value of the '<em>Data Source Id</em>' reference.
+	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_DataSourceId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='DataSource'"
+	 * @model keys="dataSourceId"
 	 * @generated
 	 */
-	String getDataSourceId();
+	DataSource getDataSourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyDataSource#getDataSourceId <em>Data Source Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyDataSource#getDataSourceId <em>Data Source Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Source Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Source Id</em>' reference.
 	 * @see #getDataSourceId()
 	 * @generated
 	 */
-	void setDataSourceId(String value);
+	void setDataSourceId(DataSource value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -179,7 +178,6 @@ public interface PartyDataSource extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyDataSource_PartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();

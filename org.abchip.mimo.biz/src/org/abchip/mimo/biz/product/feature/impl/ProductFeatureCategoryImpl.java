@@ -15,6 +15,8 @@ import org.abchip.mimo.biz.product.feature.ProductFeatureCategory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -79,24 +81,14 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentCategoryId() <em>Parent Category Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentCategoryId() <em>Parent Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentCategoryId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentCategoryId() <em>Parent Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentCategoryId = PARENT_CATEGORY_ID_EDEFAULT;
+	protected ProductFeatureCategory parentCategoryId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,7 +138,24 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 	 * @generated
 	 */
 	@Override
-	public String getParentCategoryId() {
+	public ProductFeatureCategory getParentCategoryId() {
+		if (parentCategoryId != null && ((EObject)parentCategoryId).eIsProxy()) {
+			InternalEObject oldParentCategoryId = (InternalEObject)parentCategoryId;
+			parentCategoryId = (ProductFeatureCategory)eResolveProxy(oldParentCategoryId);
+			if (parentCategoryId != oldParentCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
+			}
+		}
+		return parentCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeatureCategory basicGetParentCategoryId() {
 		return parentCategoryId;
 	}
 
@@ -156,8 +165,8 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 	 * @generated
 	 */
 	@Override
-	public void setParentCategoryId(String newParentCategoryId) {
-		String oldParentCategoryId = parentCategoryId;
+	public void setParentCategoryId(ProductFeatureCategory newParentCategoryId) {
+		ProductFeatureCategory oldParentCategoryId = parentCategoryId;
 		parentCategoryId = newParentCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
@@ -223,7 +232,8 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY__DESCRIPTION:
 				return getDescription();
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID:
-				return getParentCategoryId();
+				if (resolve) return getParentCategoryId();
+				return basicGetParentCategoryId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,7 +253,7 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 				setDescription((String)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID:
-				setParentCategoryId((String)newValue);
+				setParentCategoryId((ProductFeatureCategory)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,7 +274,7 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID:
-				setParentCategoryId(PARENT_CATEGORY_ID_EDEFAULT);
+				setParentCategoryId((ProductFeatureCategory)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -283,7 +293,7 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case FeaturePackage.PRODUCT_FEATURE_CATEGORY__PARENT_CATEGORY_ID:
-				return PARENT_CATEGORY_ID_EDEFAULT == null ? parentCategoryId != null : !PARENT_CATEGORY_ID_EDEFAULT.equals(parentCategoryId);
+				return parentCategoryId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -302,8 +312,6 @@ public class ProductFeatureCategoryImpl extends BizEntityImpl implements Product
 		result.append(productFeatureCategoryId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", parentCategoryId: ");
-		result.append(parentCategoryId);
 		result.append(')');
 		return result.toString();
 	}

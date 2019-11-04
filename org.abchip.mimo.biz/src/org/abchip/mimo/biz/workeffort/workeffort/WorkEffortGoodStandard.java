@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,13 +25,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getWorkEffortGoodStdTypeId <em>Work Effort Good Std Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getEstimatedCost <em>Estimated Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getEstimatedQuantity <em>Estimated Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getWorkEffortGoodStdTypeId <em>Work Effort Good Std Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortGoodStandard()
@@ -117,58 +119,56 @@ public interface WorkEffortGoodStandard extends BizEntityTyped<WorkEffortGoodSta
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortGoodStandard_ProductId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortGoodStandard_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -197,32 +197,30 @@ public interface WorkEffortGoodStandard extends BizEntityTyped<WorkEffortGoodSta
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Good Std Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Good Std Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Good Std Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Good Std Type Id</em>' attribute.
-	 * @see #setWorkEffortGoodStdTypeId(String)
+	 * @return the value of the '<em>Work Effort Good Std Type Id</em>' reference.
+	 * @see #setWorkEffortGoodStdTypeId(WorkEffortGoodStandardType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortGoodStandard_WorkEffortGoodStdTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortGoodStandardType'"
+	 * @model keys="workEffortGoodStdTypeId"
 	 * @generated
 	 */
-	String getWorkEffortGoodStdTypeId();
+	WorkEffortGoodStandardType getWorkEffortGoodStdTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getWorkEffortGoodStdTypeId <em>Work Effort Good Std Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard#getWorkEffortGoodStdTypeId <em>Work Effort Good Std Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Good Std Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Good Std Type Id</em>' reference.
 	 * @see #getWorkEffortGoodStdTypeId()
 	 * @generated
 	 */
-	void setWorkEffortGoodStdTypeId(String value);
+	void setWorkEffortGoodStdTypeId(WorkEffortGoodStandardType value);
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
@@ -237,7 +235,6 @@ public interface WorkEffortGoodStandard extends BizEntityTyped<WorkEffortGoodSta
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortGoodStandard_WorkEffortId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
 	 * @generated
 	 */
 	String getWorkEffortId();

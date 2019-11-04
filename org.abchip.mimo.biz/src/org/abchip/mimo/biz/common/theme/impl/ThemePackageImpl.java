@@ -199,6 +199,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -368,6 +369,22 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -384,22 +401,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -511,6 +512,14 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -519,14 +528,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -606,6 +607,14 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -614,14 +623,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -699,8 +700,8 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVisualTheme_VisualThemeSetId() {
-		return (EAttribute)visualThemeEClass.getEStructuralFeatures().get(2);
+	public EReference getVisualTheme_VisualThemeSetId() {
+		return (EReference)visualThemeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -729,8 +730,8 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVisualThemeResource_ResourceTypeEnumId() {
-		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(1);
+	public EReference getVisualThemeResource_ResourceTypeEnumId() {
+		return (EReference)visualThemeResourceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -740,7 +741,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 */
 	@Override
 	public EAttribute getVisualThemeResource_SequenceId() {
-		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -750,7 +751,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 */
 	@Override
 	public EAttribute getVisualThemeResource_ResourceValue() {
-		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)visualThemeResourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -815,13 +816,13 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		visualThemeEClass = createEClass(VISUAL_THEME);
 		createEAttribute(visualThemeEClass, VISUAL_THEME__VISUAL_THEME_ID);
 		createEAttribute(visualThemeEClass, VISUAL_THEME__DESCRIPTION);
-		createEAttribute(visualThemeEClass, VISUAL_THEME__VISUAL_THEME_SET_ID);
+		createEReference(visualThemeEClass, VISUAL_THEME__VISUAL_THEME_SET_ID);
 
 		visualThemeResourceEClass = createEClass(VISUAL_THEME_RESOURCE);
 		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__VISUAL_THEME_ID);
-		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID);
 		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__SEQUENCE_ID);
 		createEAttribute(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__RESOURCE_VALUE);
+		createEReference(visualThemeResourceEClass, VISUAL_THEME_RESOURCE__RESOURCE_TYPE_ENUM_ID);
 
 		visualThemeSetEClass = createEClass(VISUAL_THEME_SET);
 		createEAttribute(visualThemeSetEClass, VISUAL_THEME_SET__VISUAL_THEME_SET_ID);
@@ -853,6 +854,7 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -867,13 +869,15 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 		initEClass(visualThemeEClass, VisualTheme.class, "VisualTheme", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualTheme_VisualThemeId(), ecorePackage.getEString(), "visualThemeId", null, 1, 1, VisualTheme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualTheme_Description(), ecorePackage.getEString(), "description", null, 0, 1, VisualTheme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualTheme_VisualThemeSetId(), ecorePackage.getEString(), "visualThemeSetId", null, 0, 1, VisualTheme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisualTheme_VisualThemeSetId(), this.getVisualThemeSet(), null, "visualThemeSetId", null, 0, 1, VisualTheme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVisualTheme_VisualThemeSetId().getEKeys().add(this.getVisualThemeSet_VisualThemeSetId());
 
 		initEClass(visualThemeResourceEClass, VisualThemeResource.class, "VisualThemeResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualThemeResource_VisualThemeId(), ecorePackage.getEString(), "visualThemeId", null, 1, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVisualThemeResource_ResourceTypeEnumId(), ecorePackage.getEString(), "resourceTypeEnumId", null, 1, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualThemeResource_SequenceId(), ecorePackage.getEString(), "sequenceId", null, 1, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVisualThemeResource_ResourceValue(), ecorePackage.getEString(), "resourceValue", null, 0, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVisualThemeResource_ResourceTypeEnumId(), theEnumPackage.getEnumeration(), null, "resourceTypeEnumId", null, 0, 1, VisualThemeResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getVisualThemeResource_ResourceTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		initEClass(visualThemeSetEClass, VisualThemeSet.class, "VisualThemeSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVisualThemeSet_VisualThemeSetId(), ecorePackage.getEString(), "visualThemeSetId", null, 1, 1, VisualThemeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -935,12 +939,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getVisualThemeResource_ResourceTypeEnumId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getVisualThemeResource_SequenceId(),
 		   source,
 		   new String[] {
@@ -974,33 +972,6 @@ public class ThemePackageImpl extends EPackageImpl implements ThemePackage {
 	 */
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
-		addAnnotation
-		  (getVisualTheme_VisualThemeSetId(),
-		   source,
-		   new String[] {
-			   "frame", "VisualThemeSet"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getVisualThemeResource_VisualThemeId(),
-		   source,
-		   new String[] {
-			   "frame", "VisualTheme"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getVisualThemeResource_ResourceTypeEnumId(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
 		addAnnotation
 		  (visualThemeSetEClass.getEOperations().get(0),
 		   source,

@@ -12,10 +12,18 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderItemShipGroup;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.party.agreement.Agreement;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.contact.TelecomNumber;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,24 +36,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getCarrierRoleTypeId <em>Carrier Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getEstimatedDeliveryDate <em>Estimated Delivery Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getEstimatedShipDate <em>Estimated Ship Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getGiftMessage <em>Gift Message</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#isIsGift <em>Is Gift</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#isMaySplit <em>May Split</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getShipAfterDate <em>Ship After Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getShipByDate <em>Ship By Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getShippingInstructions <em>Shipping Instructions</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getSupplierAgreementId <em>Supplier Agreement Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getSupplierPartyId <em>Supplier Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getTelecomContactMechId <em>Telecom Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getTrackingNumber <em>Tracking Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getSupplierPartyId <em>Supplier Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getSupplierAgreementId <em>Supplier Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getVendorPartyId <em>Vendor Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getCarrierPartyId <em>Carrier Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGroupImpl#getTelecomContactMechId <em>Telecom Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,26 +105,6 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	protected String shipGroupSeqId = SHIP_GROUP_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CARRIER_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String carrierPartyId = CARRIER_PARTY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCarrierRoleTypeId() <em>Carrier Role Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,26 +123,6 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @ordered
 	 */
 	protected String carrierRoleTypeId = CARRIER_ROLE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEstimatedDeliveryDate() <em>Estimated Delivery Date</em>}' attribute.
@@ -195,26 +163,6 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @ordered
 	 */
 	protected Date estimatedShipDate = ESTIMATED_SHIP_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getGiftMessage() <em>Gift Message</em>}' attribute.
@@ -317,26 +265,6 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	protected Date shipByDate = SHIP_BY_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_METHOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentMethodTypeId = SHIPMENT_METHOD_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getShippingInstructions() <em>Shipping Instructions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -355,66 +283,6 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @ordered
 	 */
 	protected String shippingInstructions = SHIPPING_INSTRUCTIONS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSupplierAgreementId() <em>Supplier Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupplierAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUPPLIER_AGREEMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSupplierAgreementId() <em>Supplier Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupplierAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String supplierAgreementId = SUPPLIER_AGREEMENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSupplierPartyId() <em>Supplier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupplierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUPPLIER_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSupplierPartyId() <em>Supplier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupplierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String supplierPartyId = SUPPLIER_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTelecomContactMechId() <em>Telecom Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTelecomContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TELECOM_CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTelecomContactMechId() <em>Telecom Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTelecomContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String telecomContactMechId = TELECOM_CONTACT_MECH_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTrackingNumber() <em>Tracking Number</em>}' attribute.
@@ -437,24 +305,84 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	protected String trackingNumber = TRACKING_NUMBER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getSupplierPartyId() <em>Supplier Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVendorPartyId()
+	 * @see #getSupplierPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VENDOR_PARTY_ID_EDEFAULT = null;
+	protected Party supplierPartyId;
 
 	/**
-	 * The cached value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getSupplierAgreementId() <em>Supplier Agreement Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSupplierAgreementId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Agreement supplierAgreementId;
+
+	/**
+	 * The cached value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVendorPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String vendorPartyId = VENDOR_PARTY_ID_EDEFAULT;
+	protected Party vendorPartyId;
+
+	/**
+	 * The cached value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCarrierPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party carrierPartyId;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
+
+	/**
+	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ShipmentMethodType shipmentMethodTypeId;
+
+	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PostalAddress contactMechId;
+
+	/**
+	 * The cached value of the '{@link #getTelecomContactMechId() <em>Telecom Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTelecomContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TelecomNumber telecomContactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -481,7 +409,24 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public String getCarrierPartyId() {
+	public Party getCarrierPartyId() {
+		if (carrierPartyId != null && ((EObject)carrierPartyId).eIsProxy()) {
+			InternalEObject oldCarrierPartyId = (InternalEObject)carrierPartyId;
+			carrierPartyId = (Party)eResolveProxy(oldCarrierPartyId);
+			if (carrierPartyId != oldCarrierPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
+			}
+		}
+		return carrierPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetCarrierPartyId() {
 		return carrierPartyId;
 	}
 
@@ -491,8 +436,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public void setCarrierPartyId(String newCarrierPartyId) {
-		String oldCarrierPartyId = carrierPartyId;
+	public void setCarrierPartyId(Party newCarrierPartyId) {
+		Party oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
@@ -527,7 +472,24 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public PostalAddress getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostalAddress basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -537,8 +499,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(PostalAddress newContactMechId) {
+		PostalAddress oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -596,7 +558,24 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -606,8 +585,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID, oldFacilityId, facilityId));
@@ -780,7 +759,24 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public String getShipmentMethodTypeId() {
+	public ShipmentMethodType getShipmentMethodTypeId() {
+		if (shipmentMethodTypeId != null && ((EObject)shipmentMethodTypeId).eIsProxy()) {
+			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
+			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
+			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
+			}
+		}
+		return shipmentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShipmentMethodType basicGetShipmentMethodTypeId() {
 		return shipmentMethodTypeId;
 	}
 
@@ -790,8 +786,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
-		String oldShipmentMethodTypeId = shipmentMethodTypeId;
+	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
@@ -826,7 +822,24 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public String getSupplierAgreementId() {
+	public Agreement getSupplierAgreementId() {
+		if (supplierAgreementId != null && ((EObject)supplierAgreementId).eIsProxy()) {
+			InternalEObject oldSupplierAgreementId = (InternalEObject)supplierAgreementId;
+			supplierAgreementId = (Agreement)eResolveProxy(oldSupplierAgreementId);
+			if (supplierAgreementId != oldSupplierAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID, oldSupplierAgreementId, supplierAgreementId));
+			}
+		}
+		return supplierAgreementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Agreement basicGetSupplierAgreementId() {
 		return supplierAgreementId;
 	}
 
@@ -836,8 +849,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public void setSupplierAgreementId(String newSupplierAgreementId) {
-		String oldSupplierAgreementId = supplierAgreementId;
+	public void setSupplierAgreementId(Agreement newSupplierAgreementId) {
+		Agreement oldSupplierAgreementId = supplierAgreementId;
 		supplierAgreementId = newSupplierAgreementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID, oldSupplierAgreementId, supplierAgreementId));
@@ -849,7 +862,24 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public String getSupplierPartyId() {
+	public Party getSupplierPartyId() {
+		if (supplierPartyId != null && ((EObject)supplierPartyId).eIsProxy()) {
+			InternalEObject oldSupplierPartyId = (InternalEObject)supplierPartyId;
+			supplierPartyId = (Party)eResolveProxy(oldSupplierPartyId);
+			if (supplierPartyId != oldSupplierPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID, oldSupplierPartyId, supplierPartyId));
+			}
+		}
+		return supplierPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetSupplierPartyId() {
 		return supplierPartyId;
 	}
 
@@ -859,8 +889,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public void setSupplierPartyId(String newSupplierPartyId) {
-		String oldSupplierPartyId = supplierPartyId;
+	public void setSupplierPartyId(Party newSupplierPartyId) {
+		Party oldSupplierPartyId = supplierPartyId;
 		supplierPartyId = newSupplierPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID, oldSupplierPartyId, supplierPartyId));
@@ -872,7 +902,24 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public String getTelecomContactMechId() {
+	public TelecomNumber getTelecomContactMechId() {
+		if (telecomContactMechId != null && ((EObject)telecomContactMechId).eIsProxy()) {
+			InternalEObject oldTelecomContactMechId = (InternalEObject)telecomContactMechId;
+			telecomContactMechId = (TelecomNumber)eResolveProxy(oldTelecomContactMechId);
+			if (telecomContactMechId != oldTelecomContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID, oldTelecomContactMechId, telecomContactMechId));
+			}
+		}
+		return telecomContactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TelecomNumber basicGetTelecomContactMechId() {
 		return telecomContactMechId;
 	}
 
@@ -882,8 +929,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public void setTelecomContactMechId(String newTelecomContactMechId) {
-		String oldTelecomContactMechId = telecomContactMechId;
+	public void setTelecomContactMechId(TelecomNumber newTelecomContactMechId) {
+		TelecomNumber oldTelecomContactMechId = telecomContactMechId;
 		telecomContactMechId = newTelecomContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID, oldTelecomContactMechId, telecomContactMechId));
@@ -918,7 +965,24 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public String getVendorPartyId() {
+	public Party getVendorPartyId() {
+		if (vendorPartyId != null && ((EObject)vendorPartyId).eIsProxy()) {
+			InternalEObject oldVendorPartyId = (InternalEObject)vendorPartyId;
+			vendorPartyId = (Party)eResolveProxy(oldVendorPartyId);
+			if (vendorPartyId != oldVendorPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GROUP__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
+			}
+		}
+		return vendorPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetVendorPartyId() {
 		return vendorPartyId;
 	}
 
@@ -928,8 +992,8 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 	 * @generated
 	 */
 	@Override
-	public void setVendorPartyId(String newVendorPartyId) {
-		String oldVendorPartyId = vendorPartyId;
+	public void setVendorPartyId(Party newVendorPartyId) {
+		Party oldVendorPartyId = vendorPartyId;
 		vendorPartyId = newVendorPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GROUP__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
@@ -947,18 +1011,12 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 				return getOrderId();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_GROUP_SEQ_ID:
 				return getShipGroupSeqId();
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID:
-				return getCarrierPartyId();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_ROLE_TYPE_ID:
 				return getCarrierRoleTypeId();
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID:
-				return getContactMechId();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_DELIVERY_DATE:
 				return getEstimatedDeliveryDate();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_SHIP_DATE:
 				return getEstimatedShipDate();
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID:
-				return getFacilityId();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__GIFT_MESSAGE:
 				return getGiftMessage();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__IS_GIFT:
@@ -969,20 +1027,34 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 				return getShipAfterDate();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_BY_DATE:
 				return getShipByDate();
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID:
-				return getShipmentMethodTypeId();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPPING_INSTRUCTIONS:
 				return getShippingInstructions();
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID:
-				return getSupplierAgreementId();
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID:
-				return getSupplierPartyId();
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID:
-				return getTelecomContactMechId();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TRACKING_NUMBER:
 				return getTrackingNumber();
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID:
+				if (resolve) return getSupplierPartyId();
+				return basicGetSupplierPartyId();
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID:
+				if (resolve) return getSupplierAgreementId();
+				return basicGetSupplierAgreementId();
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__VENDOR_PARTY_ID:
-				return getVendorPartyId();
+				if (resolve) return getVendorPartyId();
+				return basicGetVendorPartyId();
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID:
+				if (resolve) return getCarrierPartyId();
+				return basicGetCarrierPartyId();
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID:
+				if (resolve) return getShipmentMethodTypeId();
+				return basicGetShipmentMethodTypeId();
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID:
+				if (resolve) return getTelecomContactMechId();
+				return basicGetTelecomContactMechId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1001,23 +1073,14 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_GROUP_SEQ_ID:
 				setShipGroupSeqId((String)newValue);
 				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID:
-				setCarrierPartyId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_ROLE_TYPE_ID:
 				setCarrierRoleTypeId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_DELIVERY_DATE:
 				setEstimatedDeliveryDate((Date)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_SHIP_DATE:
 				setEstimatedShipDate((Date)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID:
-				setFacilityId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__GIFT_MESSAGE:
 				setGiftMessage((String)newValue);
@@ -1034,26 +1097,35 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_BY_DATE:
 				setShipByDate((Date)newValue);
 				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPPING_INSTRUCTIONS:
 				setShippingInstructions((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID:
-				setSupplierAgreementId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID:
-				setSupplierPartyId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID:
-				setTelecomContactMechId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TRACKING_NUMBER:
 				setTrackingNumber((String)newValue);
 				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID:
+				setSupplierPartyId((Party)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID:
+				setSupplierAgreementId((Agreement)newValue);
+				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__VENDOR_PARTY_ID:
-				setVendorPartyId((String)newValue);
+				setVendorPartyId((Party)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID:
+				setCarrierPartyId((Party)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID:
+				setFacilityId((Facility)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID:
+				setShipmentMethodTypeId((ShipmentMethodType)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID:
+				setTelecomContactMechId((TelecomNumber)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1073,23 +1145,14 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_GROUP_SEQ_ID:
 				setShipGroupSeqId(SHIP_GROUP_SEQ_ID_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID:
-				setCarrierPartyId(CARRIER_PARTY_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_ROLE_TYPE_ID:
 				setCarrierRoleTypeId(CARRIER_ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_DELIVERY_DATE:
 				setEstimatedDeliveryDate(ESTIMATED_DELIVERY_DATE_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_SHIP_DATE:
 				setEstimatedShipDate(ESTIMATED_SHIP_DATE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__GIFT_MESSAGE:
 				setGiftMessage(GIFT_MESSAGE_EDEFAULT);
@@ -1106,26 +1169,35 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_BY_DATE:
 				setShipByDate(SHIP_BY_DATE_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId(SHIPMENT_METHOD_TYPE_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPPING_INSTRUCTIONS:
 				setShippingInstructions(SHIPPING_INSTRUCTIONS_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID:
-				setSupplierAgreementId(SUPPLIER_AGREEMENT_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID:
-				setSupplierPartyId(SUPPLIER_PARTY_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID:
-				setTelecomContactMechId(TELECOM_CONTACT_MECH_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TRACKING_NUMBER:
 				setTrackingNumber(TRACKING_NUMBER_EDEFAULT);
 				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID:
+				setSupplierPartyId((Party)null);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID:
+				setSupplierAgreementId((Agreement)null);
+				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__VENDOR_PARTY_ID:
-				setVendorPartyId(VENDOR_PARTY_ID_EDEFAULT);
+				setVendorPartyId((Party)null);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID:
+				setCarrierPartyId((Party)null);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID:
+				setFacilityId((Facility)null);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID:
+				setShipmentMethodTypeId((ShipmentMethodType)null);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)null);
+				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID:
+				setTelecomContactMechId((TelecomNumber)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1143,18 +1215,12 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_GROUP_SEQ_ID:
 				return SHIP_GROUP_SEQ_ID_EDEFAULT == null ? shipGroupSeqId != null : !SHIP_GROUP_SEQ_ID_EDEFAULT.equals(shipGroupSeqId);
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID:
-				return CARRIER_PARTY_ID_EDEFAULT == null ? carrierPartyId != null : !CARRIER_PARTY_ID_EDEFAULT.equals(carrierPartyId);
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_ROLE_TYPE_ID:
 				return CARRIER_ROLE_TYPE_ID_EDEFAULT == null ? carrierRoleTypeId != null : !CARRIER_ROLE_TYPE_ID_EDEFAULT.equals(carrierRoleTypeId);
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_DELIVERY_DATE:
 				return ESTIMATED_DELIVERY_DATE_EDEFAULT == null ? estimatedDeliveryDate != null : !ESTIMATED_DELIVERY_DATE_EDEFAULT.equals(estimatedDeliveryDate);
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__ESTIMATED_SHIP_DATE:
 				return ESTIMATED_SHIP_DATE_EDEFAULT == null ? estimatedShipDate != null : !ESTIMATED_SHIP_DATE_EDEFAULT.equals(estimatedShipDate);
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__GIFT_MESSAGE:
 				return GIFT_MESSAGE_EDEFAULT == null ? giftMessage != null : !GIFT_MESSAGE_EDEFAULT.equals(giftMessage);
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__IS_GIFT:
@@ -1165,20 +1231,26 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 				return SHIP_AFTER_DATE_EDEFAULT == null ? shipAfterDate != null : !SHIP_AFTER_DATE_EDEFAULT.equals(shipAfterDate);
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIP_BY_DATE:
 				return SHIP_BY_DATE_EDEFAULT == null ? shipByDate != null : !SHIP_BY_DATE_EDEFAULT.equals(shipByDate);
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID:
-				return SHIPMENT_METHOD_TYPE_ID_EDEFAULT == null ? shipmentMethodTypeId != null : !SHIPMENT_METHOD_TYPE_ID_EDEFAULT.equals(shipmentMethodTypeId);
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPPING_INSTRUCTIONS:
 				return SHIPPING_INSTRUCTIONS_EDEFAULT == null ? shippingInstructions != null : !SHIPPING_INSTRUCTIONS_EDEFAULT.equals(shippingInstructions);
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID:
-				return SUPPLIER_AGREEMENT_ID_EDEFAULT == null ? supplierAgreementId != null : !SUPPLIER_AGREEMENT_ID_EDEFAULT.equals(supplierAgreementId);
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID:
-				return SUPPLIER_PARTY_ID_EDEFAULT == null ? supplierPartyId != null : !SUPPLIER_PARTY_ID_EDEFAULT.equals(supplierPartyId);
-			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID:
-				return TELECOM_CONTACT_MECH_ID_EDEFAULT == null ? telecomContactMechId != null : !TELECOM_CONTACT_MECH_ID_EDEFAULT.equals(telecomContactMechId);
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TRACKING_NUMBER:
 				return TRACKING_NUMBER_EDEFAULT == null ? trackingNumber != null : !TRACKING_NUMBER_EDEFAULT.equals(trackingNumber);
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_PARTY_ID:
+				return supplierPartyId != null;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SUPPLIER_AGREEMENT_ID:
+				return supplierAgreementId != null;
 			case OrderPackage.ORDER_ITEM_SHIP_GROUP__VENDOR_PARTY_ID:
-				return VENDOR_PARTY_ID_EDEFAULT == null ? vendorPartyId != null : !VENDOR_PARTY_ID_EDEFAULT.equals(vendorPartyId);
+				return vendorPartyId != null;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CARRIER_PARTY_ID:
+				return carrierPartyId != null;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__FACILITY_ID:
+				return facilityId != null;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__SHIPMENT_METHOD_TYPE_ID:
+				return shipmentMethodTypeId != null;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__CONTACT_MECH_ID:
+				return contactMechId != null;
+			case OrderPackage.ORDER_ITEM_SHIP_GROUP__TELECOM_CONTACT_MECH_ID:
+				return telecomContactMechId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1197,18 +1269,12 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 		result.append(orderId);
 		result.append(", shipGroupSeqId: ");
 		result.append(shipGroupSeqId);
-		result.append(", carrierPartyId: ");
-		result.append(carrierPartyId);
 		result.append(", carrierRoleTypeId: ");
 		result.append(carrierRoleTypeId);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
 		result.append(", estimatedDeliveryDate: ");
 		result.append(estimatedDeliveryDate);
 		result.append(", estimatedShipDate: ");
 		result.append(estimatedShipDate);
-		result.append(", facilityId: ");
-		result.append(facilityId);
 		result.append(", giftMessage: ");
 		result.append(giftMessage);
 		result.append(", isGift: ");
@@ -1219,20 +1285,10 @@ public class OrderItemShipGroupImpl extends BizEntityImpl implements OrderItemSh
 		result.append(shipAfterDate);
 		result.append(", shipByDate: ");
 		result.append(shipByDate);
-		result.append(", shipmentMethodTypeId: ");
-		result.append(shipmentMethodTypeId);
 		result.append(", shippingInstructions: ");
 		result.append(shippingInstructions);
-		result.append(", supplierAgreementId: ");
-		result.append(supplierAgreementId);
-		result.append(", supplierPartyId: ");
-		result.append(supplierPartyId);
-		result.append(", telecomContactMechId: ");
-		result.append(telecomContactMechId);
 		result.append(", trackingNumber: ");
 		result.append(trackingNumber);
-		result.append(", vendorPartyId: ");
-		result.append(vendorPartyId);
 		result.append(')');
 		return result.toString();
 	}

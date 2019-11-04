@@ -39,7 +39,8 @@ public interface OrderItemTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface OrderItemTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Order Item Type Id</em>' attribute.
 	 * @see #setOrderItemTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemTypeAttr_OrderItemTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderItemType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemTypeId();

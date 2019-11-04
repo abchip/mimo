@@ -50,7 +50,7 @@ public interface TrainingsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-humanres-trainings";
+	String eNS_PREFIX = "biz-trainings";
 
 	/**
 	 * The singleton instance of the package.

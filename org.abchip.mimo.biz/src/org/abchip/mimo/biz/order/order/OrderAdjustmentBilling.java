@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.order;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +22,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getOrderAdjustmentId <em>Order Adjustment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceId <em>Invoice Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling()
@@ -58,31 +59,30 @@ public interface OrderAdjustmentBilling extends BizEntity {
 	void setAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Id</em>' attribute.
-	 * @see #setInvoiceId(String)
+	 * @return the value of the '<em>Invoice Id</em>' reference.
+	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling_InvoiceId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Invoice'"
+	 * @model keys="invoiceId"
 	 * @generated
 	 */
-	String getInvoiceId();
+	Invoice getInvoiceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceId <em>Invoice Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustmentBilling#getInvoiceId <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Id</em>' reference.
 	 * @see #getInvoiceId()
 	 * @generated
 	 */
-	void setInvoiceId(String value);
+	void setInvoiceId(Invoice value);
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Item Seq Id</b></em>' attribute.
@@ -95,7 +95,8 @@ public interface OrderAdjustmentBilling extends BizEntity {
 	 * @return the value of the '<em>Invoice Item Seq Id</em>' attribute.
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling_InvoiceItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -121,8 +122,8 @@ public interface OrderAdjustmentBilling extends BizEntity {
 	 * @return the value of the '<em>Order Adjustment Id</em>' attribute.
 	 * @see #setOrderAdjustmentId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentBilling_OrderAdjustmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderAdjustment'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderAdjustmentId();

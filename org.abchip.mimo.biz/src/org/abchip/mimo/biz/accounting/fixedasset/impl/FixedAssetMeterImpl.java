@@ -14,10 +14,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.ProductMeterType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,12 +32,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMeterImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMeterImpl#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMeterImpl#getReadingDate <em>Reading Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMeterImpl#getMaintHistSeqId <em>Maint Hist Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMeterImpl#getMeterValue <em>Meter Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMeterImpl#getReadingReasonEnumId <em>Reading Reason Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMeterImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMeterImpl#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,26 +66,6 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 * @ordered
 	 */
 	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductMeterTypeId() <em>Product Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_METER_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductMeterTypeId() <em>Product Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productMeterTypeId = PRODUCT_METER_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReadingDate() <em>Reading Date</em>}' attribute.
@@ -179,6 +162,15 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 * @ordered
 	 */
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getProductMeterTypeId() <em>Product Meter Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductMeterTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductMeterType productMeterTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,7 +266,24 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 * @generated
 	 */
 	@Override
-	public String getProductMeterTypeId() {
+	public ProductMeterType getProductMeterTypeId() {
+		if (productMeterTypeId != null && ((EObject)productMeterTypeId).eIsProxy()) {
+			InternalEObject oldProductMeterTypeId = (InternalEObject)productMeterTypeId;
+			productMeterTypeId = (ProductMeterType)eResolveProxy(oldProductMeterTypeId);
+			if (productMeterTypeId != oldProductMeterTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
+			}
+		}
+		return productMeterTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductMeterType basicGetProductMeterTypeId() {
 		return productMeterTypeId;
 	}
 
@@ -284,8 +293,8 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 	 * @generated
 	 */
 	@Override
-	public void setProductMeterTypeId(String newProductMeterTypeId) {
-		String oldProductMeterTypeId = productMeterTypeId;
+	public void setProductMeterTypeId(ProductMeterType newProductMeterTypeId) {
+		ProductMeterType oldProductMeterTypeId = productMeterTypeId;
 		productMeterTypeId = newProductMeterTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID, oldProductMeterTypeId, productMeterTypeId));
@@ -370,8 +379,6 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_METER__FIXED_ASSET_ID:
 				return getFixedAssetId();
-			case FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID:
-				return getProductMeterTypeId();
 			case FixedassetPackage.FIXED_ASSET_METER__READING_DATE:
 				return getReadingDate();
 			case FixedassetPackage.FIXED_ASSET_METER__MAINT_HIST_SEQ_ID:
@@ -382,6 +389,9 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 				return getReadingReasonEnumId();
 			case FixedassetPackage.FIXED_ASSET_METER__WORK_EFFORT_ID:
 				return getWorkEffortId();
+			case FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID:
+				if (resolve) return getProductMeterTypeId();
+				return basicGetProductMeterTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -396,9 +406,6 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_METER__FIXED_ASSET_ID:
 				setFixedAssetId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID:
-				setProductMeterTypeId((String)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_METER__READING_DATE:
 				setReadingDate((Date)newValue);
@@ -415,6 +422,9 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 			case FixedassetPackage.FIXED_ASSET_METER__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
+			case FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID:
+				setProductMeterTypeId((ProductMeterType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -429,9 +439,6 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_METER__FIXED_ASSET_ID:
 				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID:
-				setProductMeterTypeId(PRODUCT_METER_TYPE_ID_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET_METER__READING_DATE:
 				setReadingDate(READING_DATE_EDEFAULT);
@@ -448,6 +455,9 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 			case FixedassetPackage.FIXED_ASSET_METER__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
+			case FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID:
+				setProductMeterTypeId((ProductMeterType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -462,8 +472,6 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_METER__FIXED_ASSET_ID:
 				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
-			case FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID:
-				return PRODUCT_METER_TYPE_ID_EDEFAULT == null ? productMeterTypeId != null : !PRODUCT_METER_TYPE_ID_EDEFAULT.equals(productMeterTypeId);
 			case FixedassetPackage.FIXED_ASSET_METER__READING_DATE:
 				return READING_DATE_EDEFAULT == null ? readingDate != null : !READING_DATE_EDEFAULT.equals(readingDate);
 			case FixedassetPackage.FIXED_ASSET_METER__MAINT_HIST_SEQ_ID:
@@ -474,6 +482,8 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 				return READING_REASON_ENUM_ID_EDEFAULT == null ? readingReasonEnumId != null : !READING_REASON_ENUM_ID_EDEFAULT.equals(readingReasonEnumId);
 			case FixedassetPackage.FIXED_ASSET_METER__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
+			case FixedassetPackage.FIXED_ASSET_METER__PRODUCT_METER_TYPE_ID:
+				return productMeterTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -490,8 +500,6 @@ public class FixedAssetMeterImpl extends BizEntityImpl implements FixedAssetMete
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (fixedAssetId: ");
 		result.append(fixedAssetId);
-		result.append(", productMeterTypeId: ");
-		result.append(productMeterTypeId);
 		result.append(", readingDate: ");
 		result.append(readingDate);
 		result.append(", maintHistSeqId: ");

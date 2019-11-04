@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,22 +135,22 @@ public interface PassportPackage extends EPackage {
 	int GIT_HUB_USER__ENV_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GIT_HUB_USER__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Token Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GIT_HUB_USER__TOKEN_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int GIT_HUB_USER__TOKEN_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIT_HUB_USER__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Git Hub User</em>' class.
@@ -234,22 +235,22 @@ public interface PassportPackage extends EPackage {
 	int GOOGLE_USER__ENV_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GOOGLE_USER__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Token Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOOGLE_USER__TOKEN_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int GOOGLE_USER__TOKEN_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOOGLE_USER__PRODUCT_STORE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Google User</em>' class.
@@ -334,7 +335,7 @@ public interface PassportPackage extends EPackage {
 	int LINKED_IN_USER__ENV_PREFIX = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Product Store Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -895,15 +896,15 @@ public interface PassportPackage extends EPackage {
 	EAttribute getGitHubUser_EnvPrefix();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.GitHubUser#getProductStoreId <em>Product Store Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.passport.GitHubUser#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Id</em>'.
 	 * @see org.abchip.mimo.biz.passport.GitHubUser#getProductStoreId()
 	 * @see #getGitHubUser()
 	 * @generated
 	 */
-	EAttribute getGitHubUser_ProductStoreId();
+	EReference getGitHubUser_ProductStoreId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.GitHubUser#getTokenType <em>Token Type</em>}'.
@@ -960,15 +961,15 @@ public interface PassportPackage extends EPackage {
 	EAttribute getGoogleUser_EnvPrefix();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.GoogleUser#getProductStoreId <em>Product Store Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.passport.GoogleUser#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Id</em>'.
 	 * @see org.abchip.mimo.biz.passport.GoogleUser#getProductStoreId()
 	 * @see #getGoogleUser()
 	 * @generated
 	 */
-	EAttribute getGoogleUser_ProductStoreId();
+	EReference getGoogleUser_ProductStoreId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.GoogleUser#getTokenType <em>Token Type</em>}'.
@@ -1025,15 +1026,15 @@ public interface PassportPackage extends EPackage {
 	EAttribute getLinkedInUser_EnvPrefix();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.passport.LinkedInUser#getProductStoreId <em>Product Store Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.passport.LinkedInUser#getProductStoreId <em>Product Store Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Id</em>'.
 	 * @see org.abchip.mimo.biz.passport.LinkedInUser#getProductStoreId()
 	 * @see #getLinkedInUser()
 	 * @generated
 	 */
-	EAttribute getLinkedInUser_ProductStoreId();
+	EReference getLinkedInUser_ProductStoreId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.passport.OAuth2GitHub <em>OAuth2 Git Hub</em>}'.
@@ -1473,12 +1474,12 @@ public interface PassportPackage extends EPackage {
 		EAttribute GIT_HUB_USER__ENV_PREFIX = eINSTANCE.getGitHubUser_EnvPrefix();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GIT_HUB_USER__PRODUCT_STORE_ID = eINSTANCE.getGitHubUser_ProductStoreId();
+		EReference GIT_HUB_USER__PRODUCT_STORE_ID = eINSTANCE.getGitHubUser_ProductStoreId();
 
 		/**
 		 * The meta object literal for the '<em><b>Token Type</b></em>' attribute feature.
@@ -1523,12 +1524,12 @@ public interface PassportPackage extends EPackage {
 		EAttribute GOOGLE_USER__ENV_PREFIX = eINSTANCE.getGoogleUser_EnvPrefix();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GOOGLE_USER__PRODUCT_STORE_ID = eINSTANCE.getGoogleUser_ProductStoreId();
+		EReference GOOGLE_USER__PRODUCT_STORE_ID = eINSTANCE.getGoogleUser_ProductStoreId();
 
 		/**
 		 * The meta object literal for the '<em><b>Token Type</b></em>' attribute feature.
@@ -1573,12 +1574,12 @@ public interface PassportPackage extends EPackage {
 		EAttribute LINKED_IN_USER__ENV_PREFIX = eINSTANCE.getLinkedInUser_EnvPrefix();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LINKED_IN_USER__PRODUCT_STORE_ID = eINSTANCE.getLinkedInUser_ProductStoreId();
+		EReference LINKED_IN_USER__PRODUCT_STORE_ID = eINSTANCE.getLinkedInUser_ProductStoreId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.passport.impl.OAuth2GitHubImpl <em>OAuth2 Git Hub</em>}' class.

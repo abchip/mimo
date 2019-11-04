@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,14 +25,14 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getFixedAssetProductTypeId <em>Fixed Asset Product Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getFixedAssetProductTypeId <em>Fixed Asset Product Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct()
@@ -75,7 +77,8 @@ public interface FixedAssetProduct extends BizEntityTyped<FixedAssetProductType>
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -91,31 +94,30 @@ public interface FixedAssetProduct extends BizEntityTyped<FixedAssetProductType>
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.
@@ -144,30 +146,30 @@ public interface FixedAssetProduct extends BizEntityTyped<FixedAssetProductType>
 	void setQuantity(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Quantity Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quantity Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quantity Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quantity Uom Id</em>' attribute.
-	 * @see #setQuantityUomId(String)
+	 * @return the value of the '<em>Quantity Uom Id</em>' reference.
+	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct_QuantityUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getQuantityUomId();
+	Uom getQuantityUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getQuantityUomId <em>Quantity Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getQuantityUomId <em>Quantity Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Quantity Uom Id</em>' reference.
 	 * @see #getQuantityUomId()
 	 * @generated
 	 */
-	void setQuantityUomId(String value);
+	void setQuantityUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.
@@ -232,8 +234,8 @@ public interface FixedAssetProduct extends BizEntityTyped<FixedAssetProductType>
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct_FixedAssetId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFixedAssetId();
@@ -249,30 +251,29 @@ public interface FixedAssetProduct extends BizEntityTyped<FixedAssetProductType>
 	void setFixedAssetId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Product Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Product Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Product Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Product Type Id</em>' attribute.
-	 * @see #setFixedAssetProductTypeId(String)
+	 * @return the value of the '<em>Fixed Asset Product Type Id</em>' reference.
+	 * @see #setFixedAssetProductTypeId(FixedAssetProductType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetProduct_FixedAssetProductTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAssetProductType'"
+	 * @model keys="fixedAssetProductTypeId"
 	 * @generated
 	 */
-	String getFixedAssetProductTypeId();
+	FixedAssetProductType getFixedAssetProductTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getFixedAssetProductTypeId <em>Fixed Asset Product Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct#getFixedAssetProductTypeId <em>Fixed Asset Product Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Product Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Product Type Id</em>' reference.
 	 * @see #getFixedAssetProductTypeId()
 	 * @generated
 	 */
-	void setFixedAssetProductTypeId(String value);
+	void setFixedAssetProductTypeId(FixedAssetProductType value);
 
 } // FixedAssetProduct

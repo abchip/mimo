@@ -10,13 +10,19 @@ package org.abchip.mimo.biz.marketing.contact.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.marketing.contact.ContactListType;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
+import org.abchip.mimo.biz.party.contact.ContactMechType;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,20 +36,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getContactListId <em>Contact List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getContactListName <em>Contact List Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getContactListTypeId <em>Contact List Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#isIsPublic <em>Is Public</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getOptOutScreen <em>Opt Out Screen</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getOwnerPartyId <em>Owner Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#isSingleUse <em>Single Use</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getVerifyEmailFrom <em>Verify Email From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getVerifyEmailScreen <em>Verify Email Screen</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getVerifyEmailSubject <em>Verify Email Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getVerifyEmailWebSiteId <em>Verify Email Web Site Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getContactListTypeId <em>Contact List Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListImpl#getOwnerPartyId <em>Owner Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -115,66 +121,6 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	protected String contactListName = CONTACT_LIST_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContactListTypeId() <em>Contact List Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_LIST_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactListTypeId() <em>Contact List Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactListTypeId = CONTACT_LIST_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechTypeId = CONTACT_MECH_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -215,46 +161,6 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	protected boolean isPublic = IS_PUBLIC_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMarketingCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MARKETING_CAMPAIGN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMarketingCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String marketingCampaignId = MARKETING_CAMPAIGN_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOptOutScreen() <em>Opt Out Screen</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -273,26 +179,6 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @ordered
 	 */
 	protected String optOutScreen = OPT_OUT_SCREEN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OWNER_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String ownerPartyId = OWNER_PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isSingleUse() <em>Single Use</em>}' attribute.
@@ -395,6 +281,66 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	protected String verifyEmailWebSiteId = VERIFY_EMAIL_WEB_SITE_ID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMarketingCampaignId()
+	 * @generated
+	 * @ordered
+	 */
+	protected MarketingCampaign marketingCampaignId;
+
+	/**
+	 * The cached value of the '{@link #getContactListTypeId() <em>Contact List Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactListTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactListType contactListTypeId;
+
+	/**
+	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMechType contactMechTypeId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnerPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party ownerPartyId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -488,7 +434,24 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getContactListTypeId() {
+	public ContactListType getContactListTypeId() {
+		if (contactListTypeId != null && ((EObject)contactListTypeId).eIsProxy()) {
+			InternalEObject oldContactListTypeId = (InternalEObject)contactListTypeId;
+			contactListTypeId = (ContactListType)eResolveProxy(oldContactListTypeId);
+			if (contactListTypeId != oldContactListTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID, oldContactListTypeId, contactListTypeId));
+			}
+		}
+		return contactListTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactListType basicGetContactListTypeId() {
 		return contactListTypeId;
 	}
 
@@ -498,8 +461,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setContactListTypeId(String newContactListTypeId) {
-		String oldContactListTypeId = contactListTypeId;
+	public void setContactListTypeId(ContactListType newContactListTypeId) {
+		ContactListType oldContactListTypeId = contactListTypeId;
 		contactListTypeId = newContactListTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID, oldContactListTypeId, contactListTypeId));
@@ -511,7 +474,24 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getContactMechTypeId() {
+	public ContactMechType getContactMechTypeId() {
+		if (contactMechTypeId != null && ((EObject)contactMechTypeId).eIsProxy()) {
+			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
+			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
+			if (contactMechTypeId != oldContactMechTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
+			}
+		}
+		return contactMechTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMechType basicGetContactMechTypeId() {
 		return contactMechTypeId;
 	}
 
@@ -521,8 +501,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setContactMechTypeId(String newContactMechTypeId) {
-		String oldContactMechTypeId = contactMechTypeId;
+	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
+		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
@@ -534,7 +514,24 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -544,8 +541,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -603,7 +600,24 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -613,8 +627,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -626,7 +640,24 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getMarketingCampaignId() {
+	public MarketingCampaign getMarketingCampaignId() {
+		if (marketingCampaignId != null && ((EObject)marketingCampaignId).eIsProxy()) {
+			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
+			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
+			if (marketingCampaignId != oldMarketingCampaignId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
+			}
+		}
+		return marketingCampaignId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MarketingCampaign basicGetMarketingCampaignId() {
 		return marketingCampaignId;
 	}
 
@@ -636,8 +667,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setMarketingCampaignId(String newMarketingCampaignId) {
-		String oldMarketingCampaignId = marketingCampaignId;
+	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
+		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
@@ -672,7 +703,24 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getOwnerPartyId() {
+	public Party getOwnerPartyId() {
+		if (ownerPartyId != null && ((EObject)ownerPartyId).eIsProxy()) {
+			InternalEObject oldOwnerPartyId = (InternalEObject)ownerPartyId;
+			ownerPartyId = (Party)eResolveProxy(oldOwnerPartyId);
+			if (ownerPartyId != oldOwnerPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
+			}
+		}
+		return ownerPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOwnerPartyId() {
 		return ownerPartyId;
 	}
 
@@ -682,8 +730,8 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setOwnerPartyId(String newOwnerPartyId) {
-		String oldOwnerPartyId = ownerPartyId;
+	public void setOwnerPartyId(Party newOwnerPartyId) {
+		Party oldOwnerPartyId = ownerPartyId;
 		ownerPartyId = newOwnerPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
@@ -830,24 +878,12 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 				return getComments();
 			case ContactPackage.CONTACT_LIST__CONTACT_LIST_NAME:
 				return getContactListName();
-			case ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID:
-				return getContactListTypeId();
-			case ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID:
-				return getContactMechTypeId();
-			case ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case ContactPackage.CONTACT_LIST__DESCRIPTION:
 				return getDescription();
 			case ContactPackage.CONTACT_LIST__IS_PUBLIC:
 				return isIsPublic();
-			case ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
-			case ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID:
-				return getMarketingCampaignId();
 			case ContactPackage.CONTACT_LIST__OPT_OUT_SCREEN:
 				return getOptOutScreen();
-			case ContactPackage.CONTACT_LIST__OWNER_PARTY_ID:
-				return getOwnerPartyId();
 			case ContactPackage.CONTACT_LIST__SINGLE_USE:
 				return isSingleUse();
 			case ContactPackage.CONTACT_LIST__VERIFY_EMAIL_FROM:
@@ -858,6 +894,24 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 				return getVerifyEmailSubject();
 			case ContactPackage.CONTACT_LIST__VERIFY_EMAIL_WEB_SITE_ID:
 				return getVerifyEmailWebSiteId();
+			case ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID:
+				if (resolve) return getMarketingCampaignId();
+				return basicGetMarketingCampaignId();
+			case ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID:
+				if (resolve) return getContactListTypeId();
+				return basicGetContactListTypeId();
+			case ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID:
+				if (resolve) return getContactMechTypeId();
+				return basicGetContactMechTypeId();
+			case ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
+			case ContactPackage.CONTACT_LIST__OWNER_PARTY_ID:
+				if (resolve) return getOwnerPartyId();
+				return basicGetOwnerPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -879,32 +933,14 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 			case ContactPackage.CONTACT_LIST__CONTACT_LIST_NAME:
 				setContactListName((String)newValue);
 				return;
-			case ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID:
-				setContactListTypeId((String)newValue);
-				return;
-			case ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId((String)newValue);
-				return;
-			case ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
 			case ContactPackage.CONTACT_LIST__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case ContactPackage.CONTACT_LIST__IS_PUBLIC:
 				setIsPublic((Boolean)newValue);
 				return;
-			case ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
-				return;
-			case ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId((String)newValue);
-				return;
 			case ContactPackage.CONTACT_LIST__OPT_OUT_SCREEN:
 				setOptOutScreen((String)newValue);
-				return;
-			case ContactPackage.CONTACT_LIST__OWNER_PARTY_ID:
-				setOwnerPartyId((String)newValue);
 				return;
 			case ContactPackage.CONTACT_LIST__SINGLE_USE:
 				setSingleUse((Boolean)newValue);
@@ -920,6 +956,24 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 				return;
 			case ContactPackage.CONTACT_LIST__VERIFY_EMAIL_WEB_SITE_ID:
 				setVerifyEmailWebSiteId((String)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID:
+				setMarketingCampaignId((MarketingCampaign)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID:
+				setContactListTypeId((ContactListType)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID:
+				setContactMechTypeId((ContactMechType)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST__OWNER_PARTY_ID:
+				setOwnerPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -942,32 +996,14 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 			case ContactPackage.CONTACT_LIST__CONTACT_LIST_NAME:
 				setContactListName(CONTACT_LIST_NAME_EDEFAULT);
 				return;
-			case ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID:
-				setContactListTypeId(CONTACT_LIST_TYPE_ID_EDEFAULT);
-				return;
-			case ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId(CONTACT_MECH_TYPE_ID_EDEFAULT);
-				return;
-			case ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case ContactPackage.CONTACT_LIST__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case ContactPackage.CONTACT_LIST__IS_PUBLIC:
 				setIsPublic(IS_PUBLIC_EDEFAULT);
 				return;
-			case ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
-				return;
-			case ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId(MARKETING_CAMPAIGN_ID_EDEFAULT);
-				return;
 			case ContactPackage.CONTACT_LIST__OPT_OUT_SCREEN:
 				setOptOutScreen(OPT_OUT_SCREEN_EDEFAULT);
-				return;
-			case ContactPackage.CONTACT_LIST__OWNER_PARTY_ID:
-				setOwnerPartyId(OWNER_PARTY_ID_EDEFAULT);
 				return;
 			case ContactPackage.CONTACT_LIST__SINGLE_USE:
 				setSingleUse(SINGLE_USE_EDEFAULT);
@@ -983,6 +1019,24 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 				return;
 			case ContactPackage.CONTACT_LIST__VERIFY_EMAIL_WEB_SITE_ID:
 				setVerifyEmailWebSiteId(VERIFY_EMAIL_WEB_SITE_ID_EDEFAULT);
+				return;
+			case ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID:
+				setMarketingCampaignId((MarketingCampaign)null);
+				return;
+			case ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID:
+				setContactListTypeId((ContactListType)null);
+				return;
+			case ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID:
+				setContactMechTypeId((ContactMechType)null);
+				return;
+			case ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
+				return;
+			case ContactPackage.CONTACT_LIST__OWNER_PARTY_ID:
+				setOwnerPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1002,24 +1056,12 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case ContactPackage.CONTACT_LIST__CONTACT_LIST_NAME:
 				return CONTACT_LIST_NAME_EDEFAULT == null ? contactListName != null : !CONTACT_LIST_NAME_EDEFAULT.equals(contactListName);
-			case ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID:
-				return CONTACT_LIST_TYPE_ID_EDEFAULT == null ? contactListTypeId != null : !CONTACT_LIST_TYPE_ID_EDEFAULT.equals(contactListTypeId);
-			case ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID:
-				return CONTACT_MECH_TYPE_ID_EDEFAULT == null ? contactMechTypeId != null : !CONTACT_MECH_TYPE_ID_EDEFAULT.equals(contactMechTypeId);
-			case ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case ContactPackage.CONTACT_LIST__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ContactPackage.CONTACT_LIST__IS_PUBLIC:
 				return isPublic != IS_PUBLIC_EDEFAULT;
-			case ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
-			case ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID:
-				return MARKETING_CAMPAIGN_ID_EDEFAULT == null ? marketingCampaignId != null : !MARKETING_CAMPAIGN_ID_EDEFAULT.equals(marketingCampaignId);
 			case ContactPackage.CONTACT_LIST__OPT_OUT_SCREEN:
 				return OPT_OUT_SCREEN_EDEFAULT == null ? optOutScreen != null : !OPT_OUT_SCREEN_EDEFAULT.equals(optOutScreen);
-			case ContactPackage.CONTACT_LIST__OWNER_PARTY_ID:
-				return OWNER_PARTY_ID_EDEFAULT == null ? ownerPartyId != null : !OWNER_PARTY_ID_EDEFAULT.equals(ownerPartyId);
 			case ContactPackage.CONTACT_LIST__SINGLE_USE:
 				return singleUse != SINGLE_USE_EDEFAULT;
 			case ContactPackage.CONTACT_LIST__VERIFY_EMAIL_FROM:
@@ -1030,6 +1072,18 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 				return VERIFY_EMAIL_SUBJECT_EDEFAULT == null ? verifyEmailSubject != null : !VERIFY_EMAIL_SUBJECT_EDEFAULT.equals(verifyEmailSubject);
 			case ContactPackage.CONTACT_LIST__VERIFY_EMAIL_WEB_SITE_ID:
 				return VERIFY_EMAIL_WEB_SITE_ID_EDEFAULT == null ? verifyEmailWebSiteId != null : !VERIFY_EMAIL_WEB_SITE_ID_EDEFAULT.equals(verifyEmailWebSiteId);
+			case ContactPackage.CONTACT_LIST__MARKETING_CAMPAIGN_ID:
+				return marketingCampaignId != null;
+			case ContactPackage.CONTACT_LIST__CONTACT_LIST_TYPE_ID:
+				return contactListTypeId != null;
+			case ContactPackage.CONTACT_LIST__CONTACT_MECH_TYPE_ID:
+				return contactMechTypeId != null;
+			case ContactPackage.CONTACT_LIST__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case ContactPackage.CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
+			case ContactPackage.CONTACT_LIST__OWNER_PARTY_ID:
+				return ownerPartyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1050,24 +1104,12 @@ public class ContactListImpl extends BizEntityTypedImpl<ContactListType> impleme
 		result.append(comments);
 		result.append(", contactListName: ");
 		result.append(contactListName);
-		result.append(", contactListTypeId: ");
-		result.append(contactListTypeId);
-		result.append(", contactMechTypeId: ");
-		result.append(contactMechTypeId);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", isPublic: ");
 		result.append(isPublic);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
-		result.append(", marketingCampaignId: ");
-		result.append(marketingCampaignId);
 		result.append(", optOutScreen: ");
 		result.append(optOutScreen);
-		result.append(", ownerPartyId: ");
-		result.append(ownerPartyId);
 		result.append(", singleUse: ");
 		result.append(singleUse);
 		result.append(", verifyEmailFrom: ");

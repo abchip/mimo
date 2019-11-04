@@ -14,10 +14,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,7 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getCreatedDatetime <em>Created Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getCurrentPromisedDate <em>Current Promised Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getOldPickStartDate <em>Old Pick Start Date</em>}</li>
@@ -42,6 +44,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getReservedDatetime <em>Reserved Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemShipGrpInvResImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,26 +114,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * @ordered
 	 */
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCreatedDatetime() <em>Created Datetime</em>}' attribute.
@@ -333,6 +316,16 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	protected long sequenceId = SEQUENCE_ID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -403,7 +396,24 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -413,8 +423,8 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -687,8 +697,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 				return getShipGroupSeqId();
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__CREATED_DATETIME:
 				return getCreatedDatetime();
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__CURRENT_PROMISED_DATE:
@@ -709,6 +717,9 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 				return getReservedDatetime();
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID:
 				return getSequenceId();
+			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -729,9 +740,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__CREATED_DATETIME:
 				setCreatedDatetime((Date)newValue);
@@ -763,6 +771,9 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID:
 				setSequenceId((Long)newValue);
 				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -783,9 +794,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__CREATED_DATETIME:
 				setCreatedDatetime(CREATED_DATETIME_EDEFAULT);
@@ -817,6 +825,9 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID:
 				setSequenceId(SEQUENCE_ID_EDEFAULT);
 				return;
+			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -835,8 +846,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 				return SHIP_GROUP_SEQ_ID_EDEFAULT == null ? shipGroupSeqId != null : !SHIP_GROUP_SEQ_ID_EDEFAULT.equals(shipGroupSeqId);
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__CREATED_DATETIME:
 				return CREATED_DATETIME_EDEFAULT == null ? createdDatetime != null : !CREATED_DATETIME_EDEFAULT.equals(createdDatetime);
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__CURRENT_PROMISED_DATE:
@@ -857,6 +866,8 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 				return RESERVED_DATETIME_EDEFAULT == null ? reservedDatetime != null : !RESERVED_DATETIME_EDEFAULT.equals(reservedDatetime);
 			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__SEQUENCE_ID:
 				return sequenceId != SEQUENCE_ID_EDEFAULT;
+			case OrderPackage.ORDER_ITEM_SHIP_GRP_INV_RES__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -877,8 +888,6 @@ public class OrderItemShipGrpInvResImpl extends BizEntityImpl implements OrderIt
 		result.append(shipGroupSeqId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", inventoryItemId: ");
-		result.append(inventoryItemId);
 		result.append(", createdDatetime: ");
 		result.append(createdDatetime);
 		result.append(", currentPromisedDate: ");

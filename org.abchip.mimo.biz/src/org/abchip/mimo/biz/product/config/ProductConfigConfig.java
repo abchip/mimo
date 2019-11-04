@@ -19,10 +19,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigConfig#getConfigId <em>Config Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigConfig#getConfigItemId <em>Config Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigConfig#getConfigOptionId <em>Config Option Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigConfig#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigConfig#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.ProductConfigConfig#getConfigItemId <em>Config Item Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigConfig()
@@ -41,7 +41,8 @@ public interface ProductConfigConfig extends BizEntity {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigConfig_ConfigId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -67,7 +68,8 @@ public interface ProductConfigConfig extends BizEntity {
 	 * @return the value of the '<em>Config Option Id</em>' attribute.
 	 * @see #setConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigConfig_ConfigOptionId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigOptionId();
@@ -119,7 +121,8 @@ public interface ProductConfigConfig extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigConfig_SequenceNum()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	long getSequenceNum();
@@ -135,30 +138,29 @@ public interface ProductConfigConfig extends BizEntity {
 	void setSequenceNum(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Config Item Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Config Item Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Config Item Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Config Item Id</em>' attribute.
-	 * @see #setConfigItemId(String)
+	 * @return the value of the '<em>Config Item Id</em>' reference.
+	 * @see #setConfigItemId(ProductConfigItem)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigConfig_ConfigItemId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductConfigItem'"
+	 * @model keys="configItemId"
 	 * @generated
 	 */
-	String getConfigItemId();
+	ProductConfigItem getConfigItemId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigConfig#getConfigItemId <em>Config Item Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.config.ProductConfigConfig#getConfigItemId <em>Config Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Config Item Id</em>' attribute.
+	 * @param value the new value of the '<em>Config Item Id</em>' reference.
 	 * @see #getConfigItemId()
 	 * @generated
 	 */
-	void setConfigItemId(String value);
+	void setConfigItemId(ProductConfigItem value);
 
 } // ProductConfigConfig

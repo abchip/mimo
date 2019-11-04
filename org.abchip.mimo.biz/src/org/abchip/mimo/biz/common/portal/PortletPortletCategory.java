@@ -40,7 +40,6 @@ public interface PortletPortletCategory extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletPortletCategory_PortalPortletId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PortalPortlet'"
 	 * @generated
 	 */
 	String getPortalPortletId();
@@ -56,31 +55,29 @@ public interface PortletPortletCategory extends BizEntity {
 	void setPortalPortletId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Portlet Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Portlet Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Portlet Category Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portlet Category Id</em>' attribute.
-	 * @see #setPortletCategoryId(String)
+	 * @return the value of the '<em>Portlet Category Id</em>' reference.
+	 * @see #setPortletCategoryId(PortletCategory)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortletPortletCategory_PortletCategoryId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PortletCategory'"
+	 * @model keys="portletCategoryId"
 	 * @generated
 	 */
-	String getPortletCategoryId();
+	PortletCategory getPortletCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortletPortletCategory#getPortletCategoryId <em>Portlet Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortletPortletCategory#getPortletCategoryId <em>Portlet Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Portlet Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Portlet Category Id</em>' reference.
 	 * @see #getPortletCategoryId()
 	 * @generated
 	 */
-	void setPortletCategoryId(String value);
+	void setPortletCategoryId(PortletCategory value);
 
 } // PortletPortletCategory

@@ -8,6 +8,8 @@
 package org.abchip.mimo.biz.product.promo;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,9 +24,9 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductPromoCondSeqId <em>Product Promo Cond Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getAndGroupId <em>And Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#isIncludeSubCategories <em>Include Sub Categories</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductCategoryId <em>Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductPromoApplEnumId <em>Product Promo Appl Enum Id</em>}</li>
  * </ul>
  *
@@ -44,7 +46,8 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @return the value of the '<em>And Group Id</em>' attribute.
 	 * @see #setAndGroupId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_AndGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAndGroupId();
@@ -96,7 +99,8 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @return the value of the '<em>Product Promo Action Seq Id</em>' attribute.
 	 * @see #setProductPromoActionSeqId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_ProductPromoActionSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductPromoActionSeqId();
@@ -112,30 +116,30 @@ public interface ProductPromoCategory extends BizEntity {
 	void setProductPromoActionSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Appl Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Appl Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Appl Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Appl Enum Id</em>' attribute.
-	 * @see #setProductPromoApplEnumId(String)
+	 * @return the value of the '<em>Product Promo Appl Enum Id</em>' reference.
+	 * @see #setProductPromoApplEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_ProductPromoApplEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getProductPromoApplEnumId();
+	Enumeration getProductPromoApplEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductPromoApplEnumId <em>Product Promo Appl Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductPromoApplEnumId <em>Product Promo Appl Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Appl Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Appl Enum Id</em>' reference.
 	 * @see #getProductPromoApplEnumId()
 	 * @generated
 	 */
-	void setProductPromoApplEnumId(String value);
+	void setProductPromoApplEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Promo Cond Seq Id</b></em>' attribute.
@@ -148,7 +152,8 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @return the value of the '<em>Product Promo Cond Seq Id</em>' attribute.
 	 * @see #setProductPromoCondSeqId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_ProductPromoCondSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductPromoCondSeqId();
@@ -174,7 +179,8 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @return the value of the '<em>Product Promo Rule Id</em>' attribute.
 	 * @see #setProductPromoRuleId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_ProductPromoRuleId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductPromoRuleId();
@@ -200,8 +206,8 @@ public interface ProductPromoCategory extends BizEntity {
 	 * @return the value of the '<em>Product Promo Id</em>' attribute.
 	 * @see #setProductPromoId(String)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_ProductPromoId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPromo'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductPromoId();
@@ -217,30 +223,29 @@ public interface ProductPromoCategory extends BizEntity {
 	void setProductPromoId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Id</em>' attribute.
-	 * @see #setProductCategoryId(String)
+	 * @return the value of the '<em>Product Category Id</em>' reference.
+	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.promo.PromoPackage#getProductPromoCategory_ProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model keys="productCategoryId"
 	 * @generated
 	 */
-	String getProductCategoryId();
+	ProductCategory getProductCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductCategoryId <em>Product Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductCategoryId <em>Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Category Id</em>' reference.
 	 * @see #getProductCategoryId()
 	 * @generated
 	 */
-	void setProductCategoryId(String value);
+	void setProductCategoryId(ProductCategory value);
 
 } // ProductPromoCategory

@@ -22,8 +22,8 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.OrderRequirementCommitment#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.OrderRequirementCommitment#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.OrderRequirementCommitment#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.OrderRequirementCommitment#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.OrderRequirementCommitment#getRequirementId <em>Requirement Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getOrderRequirementCommitment()
@@ -42,8 +42,8 @@ public interface OrderRequirementCommitment extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getOrderRequirementCommitment_OrderId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -69,7 +69,8 @@ public interface OrderRequirementCommitment extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getOrderRequirementCommitment_OrderItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -111,30 +112,29 @@ public interface OrderRequirementCommitment extends BizEntity {
 	void setQuantity(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Id</em>' attribute.
-	 * @see #setRequirementId(String)
+	 * @return the value of the '<em>Requirement Id</em>' reference.
+	 * @see #setRequirementId(Requirement)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getOrderRequirementCommitment_RequirementId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Requirement'"
+	 * @model keys="requirementId"
 	 * @generated
 	 */
-	String getRequirementId();
+	Requirement getRequirementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.OrderRequirementCommitment#getRequirementId <em>Requirement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.OrderRequirementCommitment#getRequirementId <em>Requirement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Id</em>' reference.
 	 * @see #getRequirementId()
 	 * @generated
 	 */
-	void setRequirementId(String value);
+	void setRequirementId(Requirement value);
 
 } // OrderRequirementCommitment

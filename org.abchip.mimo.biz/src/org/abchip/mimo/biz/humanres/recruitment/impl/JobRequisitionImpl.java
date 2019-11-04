@@ -11,6 +11,8 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -18,6 +20,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,17 +35,17 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getJobRequisitionId <em>Job Requisition Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getAge <em>Age</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getDurationMonths <em>Duration Months</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getExamTypeEnumId <em>Exam Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getExperienceMonths <em>Experience Months</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getExperienceYears <em>Experience Years</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#isGender <em>Gender</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getJobLocation <em>Job Location</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getJobRequisitionDate <em>Job Requisition Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getNoOfResources <em>No Of Resources</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getQualification <em>Qualification</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getRequiredOnDate <em>Required On Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getSkillTypeId <em>Skill Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getExamTypeEnumId <em>Exam Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobRequisitionImpl#getJobPostingTypeEnumId <em>Job Posting Type Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,26 +115,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @ordered
 	 */
 	protected long durationMonths = DURATION_MONTHS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getExamTypeEnumId() <em>Exam Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExamTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EXAM_TYPE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExamTypeEnumId() <em>Exam Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExamTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String examTypeEnumId = EXAM_TYPE_ENUM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getExperienceMonths() <em>Experience Months</em>}' attribute.
@@ -213,26 +197,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	protected String jobLocation = JOB_LOCATION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getJobPostingTypeEnumId() <em>Job Posting Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobPostingTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String JOB_POSTING_TYPE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getJobPostingTypeEnumId() <em>Job Posting Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobPostingTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String jobPostingTypeEnumId = JOB_POSTING_TYPE_ENUM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getJobRequisitionDate() <em>Job Requisition Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -313,24 +277,34 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	protected Date requiredOnDate = REQUIRED_ON_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSkillTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SKILL_TYPE_ID_EDEFAULT = null;
+	protected SkillType skillTypeId;
 
 	/**
-	 * The cached value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getExamTypeEnumId() <em>Exam Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSkillTypeId()
+	 * @see #getExamTypeEnumId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String skillTypeId = SKILL_TYPE_ID_EDEFAULT;
+	protected Enumeration examTypeEnumId;
+
+	/**
+	 * The cached value of the '{@link #getJobPostingTypeEnumId() <em>Job Posting Type Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobPostingTypeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration jobPostingTypeEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -403,7 +377,24 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public String getExamTypeEnumId() {
+	public Enumeration getExamTypeEnumId() {
+		if (examTypeEnumId != null && ((EObject)examTypeEnumId).eIsProxy()) {
+			InternalEObject oldExamTypeEnumId = (InternalEObject)examTypeEnumId;
+			examTypeEnumId = (Enumeration)eResolveProxy(oldExamTypeEnumId);
+			if (examTypeEnumId != oldExamTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID, oldExamTypeEnumId, examTypeEnumId));
+			}
+		}
+		return examTypeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetExamTypeEnumId() {
 		return examTypeEnumId;
 	}
 
@@ -413,8 +404,8 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public void setExamTypeEnumId(String newExamTypeEnumId) {
-		String oldExamTypeEnumId = examTypeEnumId;
+	public void setExamTypeEnumId(Enumeration newExamTypeEnumId) {
+		Enumeration oldExamTypeEnumId = examTypeEnumId;
 		examTypeEnumId = newExamTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID, oldExamTypeEnumId, examTypeEnumId));
@@ -518,7 +509,24 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public String getJobPostingTypeEnumId() {
+	public Enumeration getJobPostingTypeEnumId() {
+		if (jobPostingTypeEnumId != null && ((EObject)jobPostingTypeEnumId).eIsProxy()) {
+			InternalEObject oldJobPostingTypeEnumId = (InternalEObject)jobPostingTypeEnumId;
+			jobPostingTypeEnumId = (Enumeration)eResolveProxy(oldJobPostingTypeEnumId);
+			if (jobPostingTypeEnumId != oldJobPostingTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID, oldJobPostingTypeEnumId, jobPostingTypeEnumId));
+			}
+		}
+		return jobPostingTypeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetJobPostingTypeEnumId() {
 		return jobPostingTypeEnumId;
 	}
 
@@ -528,8 +536,8 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public void setJobPostingTypeEnumId(String newJobPostingTypeEnumId) {
-		String oldJobPostingTypeEnumId = jobPostingTypeEnumId;
+	public void setJobPostingTypeEnumId(Enumeration newJobPostingTypeEnumId) {
+		Enumeration oldJobPostingTypeEnumId = jobPostingTypeEnumId;
 		jobPostingTypeEnumId = newJobPostingTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID, oldJobPostingTypeEnumId, jobPostingTypeEnumId));
@@ -656,7 +664,24 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public String getSkillTypeId() {
+	public SkillType getSkillTypeId() {
+		if (skillTypeId != null && ((EObject)skillTypeId).eIsProxy()) {
+			InternalEObject oldSkillTypeId = (InternalEObject)skillTypeId;
+			skillTypeId = (SkillType)eResolveProxy(oldSkillTypeId);
+			if (skillTypeId != oldSkillTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_REQUISITION__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
+			}
+		}
+		return skillTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SkillType basicGetSkillTypeId() {
 		return skillTypeId;
 	}
 
@@ -666,8 +691,8 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 	 * @generated
 	 */
 	@Override
-	public void setSkillTypeId(String newSkillTypeId) {
-		String oldSkillTypeId = skillTypeId;
+	public void setSkillTypeId(SkillType newSkillTypeId) {
+		SkillType oldSkillTypeId = skillTypeId;
 		skillTypeId = newSkillTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_REQUISITION__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
@@ -711,8 +736,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 				return getAge();
 			case RecruitmentPackage.JOB_REQUISITION__DURATION_MONTHS:
 				return getDurationMonths();
-			case RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID:
-				return getExamTypeEnumId();
 			case RecruitmentPackage.JOB_REQUISITION__EXPERIENCE_MONTHS:
 				return getExperienceMonths();
 			case RecruitmentPackage.JOB_REQUISITION__EXPERIENCE_YEARS:
@@ -721,8 +744,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 				return isGender();
 			case RecruitmentPackage.JOB_REQUISITION__JOB_LOCATION:
 				return getJobLocation();
-			case RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID:
-				return getJobPostingTypeEnumId();
 			case RecruitmentPackage.JOB_REQUISITION__JOB_REQUISITION_DATE:
 				return getJobRequisitionDate();
 			case RecruitmentPackage.JOB_REQUISITION__NO_OF_RESOURCES:
@@ -732,7 +753,14 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 			case RecruitmentPackage.JOB_REQUISITION__REQUIRED_ON_DATE:
 				return getRequiredOnDate();
 			case RecruitmentPackage.JOB_REQUISITION__SKILL_TYPE_ID:
-				return getSkillTypeId();
+				if (resolve) return getSkillTypeId();
+				return basicGetSkillTypeId();
+			case RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID:
+				if (resolve) return getExamTypeEnumId();
+				return basicGetExamTypeEnumId();
+			case RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID:
+				if (resolve) return getJobPostingTypeEnumId();
+				return basicGetJobPostingTypeEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -754,9 +782,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 			case RecruitmentPackage.JOB_REQUISITION__DURATION_MONTHS:
 				setDurationMonths((Long)newValue);
 				return;
-			case RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID:
-				setExamTypeEnumId((String)newValue);
-				return;
 			case RecruitmentPackage.JOB_REQUISITION__EXPERIENCE_MONTHS:
 				setExperienceMonths((Long)newValue);
 				return;
@@ -768,9 +793,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 				return;
 			case RecruitmentPackage.JOB_REQUISITION__JOB_LOCATION:
 				setJobLocation((String)newValue);
-				return;
-			case RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID:
-				setJobPostingTypeEnumId((String)newValue);
 				return;
 			case RecruitmentPackage.JOB_REQUISITION__JOB_REQUISITION_DATE:
 				setJobRequisitionDate((Date)newValue);
@@ -785,7 +807,13 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 				setRequiredOnDate((Date)newValue);
 				return;
 			case RecruitmentPackage.JOB_REQUISITION__SKILL_TYPE_ID:
-				setSkillTypeId((String)newValue);
+				setSkillTypeId((SkillType)newValue);
+				return;
+			case RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID:
+				setExamTypeEnumId((Enumeration)newValue);
+				return;
+			case RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID:
+				setJobPostingTypeEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -808,9 +836,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 			case RecruitmentPackage.JOB_REQUISITION__DURATION_MONTHS:
 				setDurationMonths(DURATION_MONTHS_EDEFAULT);
 				return;
-			case RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID:
-				setExamTypeEnumId(EXAM_TYPE_ENUM_ID_EDEFAULT);
-				return;
 			case RecruitmentPackage.JOB_REQUISITION__EXPERIENCE_MONTHS:
 				setExperienceMonths(EXPERIENCE_MONTHS_EDEFAULT);
 				return;
@@ -822,9 +847,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 				return;
 			case RecruitmentPackage.JOB_REQUISITION__JOB_LOCATION:
 				setJobLocation(JOB_LOCATION_EDEFAULT);
-				return;
-			case RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID:
-				setJobPostingTypeEnumId(JOB_POSTING_TYPE_ENUM_ID_EDEFAULT);
 				return;
 			case RecruitmentPackage.JOB_REQUISITION__JOB_REQUISITION_DATE:
 				setJobRequisitionDate(JOB_REQUISITION_DATE_EDEFAULT);
@@ -839,7 +861,13 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 				setRequiredOnDate(REQUIRED_ON_DATE_EDEFAULT);
 				return;
 			case RecruitmentPackage.JOB_REQUISITION__SKILL_TYPE_ID:
-				setSkillTypeId(SKILL_TYPE_ID_EDEFAULT);
+				setSkillTypeId((SkillType)null);
+				return;
+			case RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID:
+				setExamTypeEnumId((Enumeration)null);
+				return;
+			case RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID:
+				setJobPostingTypeEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -859,8 +887,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 				return age != AGE_EDEFAULT;
 			case RecruitmentPackage.JOB_REQUISITION__DURATION_MONTHS:
 				return durationMonths != DURATION_MONTHS_EDEFAULT;
-			case RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID:
-				return EXAM_TYPE_ENUM_ID_EDEFAULT == null ? examTypeEnumId != null : !EXAM_TYPE_ENUM_ID_EDEFAULT.equals(examTypeEnumId);
 			case RecruitmentPackage.JOB_REQUISITION__EXPERIENCE_MONTHS:
 				return experienceMonths != EXPERIENCE_MONTHS_EDEFAULT;
 			case RecruitmentPackage.JOB_REQUISITION__EXPERIENCE_YEARS:
@@ -869,8 +895,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 				return gender != GENDER_EDEFAULT;
 			case RecruitmentPackage.JOB_REQUISITION__JOB_LOCATION:
 				return JOB_LOCATION_EDEFAULT == null ? jobLocation != null : !JOB_LOCATION_EDEFAULT.equals(jobLocation);
-			case RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID:
-				return JOB_POSTING_TYPE_ENUM_ID_EDEFAULT == null ? jobPostingTypeEnumId != null : !JOB_POSTING_TYPE_ENUM_ID_EDEFAULT.equals(jobPostingTypeEnumId);
 			case RecruitmentPackage.JOB_REQUISITION__JOB_REQUISITION_DATE:
 				return JOB_REQUISITION_DATE_EDEFAULT == null ? jobRequisitionDate != null : !JOB_REQUISITION_DATE_EDEFAULT.equals(jobRequisitionDate);
 			case RecruitmentPackage.JOB_REQUISITION__NO_OF_RESOURCES:
@@ -880,7 +904,11 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 			case RecruitmentPackage.JOB_REQUISITION__REQUIRED_ON_DATE:
 				return REQUIRED_ON_DATE_EDEFAULT == null ? requiredOnDate != null : !REQUIRED_ON_DATE_EDEFAULT.equals(requiredOnDate);
 			case RecruitmentPackage.JOB_REQUISITION__SKILL_TYPE_ID:
-				return SKILL_TYPE_ID_EDEFAULT == null ? skillTypeId != null : !SKILL_TYPE_ID_EDEFAULT.equals(skillTypeId);
+				return skillTypeId != null;
+			case RecruitmentPackage.JOB_REQUISITION__EXAM_TYPE_ENUM_ID:
+				return examTypeEnumId != null;
+			case RecruitmentPackage.JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID:
+				return jobPostingTypeEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -901,8 +929,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 		result.append(age);
 		result.append(", durationMonths: ");
 		result.append(durationMonths);
-		result.append(", examTypeEnumId: ");
-		result.append(examTypeEnumId);
 		result.append(", experienceMonths: ");
 		result.append(experienceMonths);
 		result.append(", experienceYears: ");
@@ -911,8 +937,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 		result.append(gender);
 		result.append(", jobLocation: ");
 		result.append(jobLocation);
-		result.append(", jobPostingTypeEnumId: ");
-		result.append(jobPostingTypeEnumId);
 		result.append(", jobRequisitionDate: ");
 		result.append(jobRequisitionDate);
 		result.append(", noOfResources: ");
@@ -921,8 +945,6 @@ public class JobRequisitionImpl extends BizEntityImpl implements JobRequisition 
 		result.append(qualification);
 		result.append(", requiredOnDate: ");
 		result.append(requiredOnDate);
-		result.append(", skillTypeId: ");
-		result.append(skillTypeId);
 		result.append(')');
 		return result.toString();
 	}

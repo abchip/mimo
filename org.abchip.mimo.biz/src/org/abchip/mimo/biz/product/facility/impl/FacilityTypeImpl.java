@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -105,24 +107,14 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected FacilityType parentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getFacilityTypeAttrs() <em>Facility Type Attrs</em>}' attribute list.
@@ -205,7 +197,24 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public FacilityType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (FacilityType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacilityType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -215,8 +224,8 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(FacilityType newParentTypeId) {
+		FacilityType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -297,7 +306,8 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 			case FacilityPackage.FACILITY_TYPE__HAS_TABLE:
 				return isHasTable();
 			case FacilityPackage.FACILITY_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case FacilityPackage.FACILITY_TYPE__FACILITY_TYPE_ATTRS:
 				return getFacilityTypeAttrs();
 		}
@@ -323,7 +333,7 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 				setHasTable((Boolean)newValue);
 				return;
 			case FacilityPackage.FACILITY_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((FacilityType)newValue);
 				return;
 			case FacilityPackage.FACILITY_TYPE__FACILITY_TYPE_ATTRS:
 				getFacilityTypeAttrs().clear();
@@ -351,7 +361,7 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case FacilityPackage.FACILITY_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((FacilityType)null);
 				return;
 			case FacilityPackage.FACILITY_TYPE__FACILITY_TYPE_ATTRS:
 				getFacilityTypeAttrs().clear();
@@ -375,7 +385,7 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 			case FacilityPackage.FACILITY_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case FacilityPackage.FACILITY_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case FacilityPackage.FACILITY_TYPE__FACILITY_TYPE_ATTRS:
 				return facilityTypeAttrs != null && !facilityTypeAttrs.isEmpty();
 		}
@@ -398,8 +408,6 @@ public class FacilityTypeImpl extends BizEntityTypeImpl<Facility> implements Fac
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", facilityTypeAttrs: ");
 		result.append(facilityTypeAttrs);
 		result.append(')');

@@ -7,12 +7,16 @@
  */
 package org.abchip.mimo.biz.accounting.payment.impl;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -54,41 +58,23 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 */
 	protected String paymentTypeId = PAYMENT_TYPE_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
+	protected Party organizationPartyId;
 	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlAccountTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GL_ACCOUNT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountTypeId = GL_ACCOUNT_TYPE_ID_EDEFAULT;
+	protected GlAccountType glAccountTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +101,24 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -125,8 +128,8 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -161,7 +164,24 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountTypeId() {
+	public GlAccountType getGlAccountTypeId() {
+		if (glAccountTypeId != null && ((EObject)glAccountTypeId).eIsProxy()) {
+			InternalEObject oldGlAccountTypeId = (InternalEObject)glAccountTypeId;
+			glAccountTypeId = (GlAccountType)eResolveProxy(oldGlAccountTypeId);
+			if (glAccountTypeId != oldGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
+			}
+		}
+		return glAccountTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountType basicGetGlAccountTypeId() {
 		return glAccountTypeId;
 	}
 
@@ -171,8 +191,8 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountTypeId(String newGlAccountTypeId) {
-		String oldGlAccountTypeId = glAccountTypeId;
+	public void setGlAccountTypeId(GlAccountType newGlAccountTypeId) {
+		GlAccountType oldGlAccountTypeId = glAccountTypeId;
 		glAccountTypeId = newGlAccountTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
@@ -189,9 +209,11 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID:
 				return getPaymentTypeId();
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID:
-				return getGlAccountTypeId();
+				if (resolve) return getGlAccountTypeId();
+				return basicGetGlAccountTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,10 +230,10 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 				setPaymentTypeId((String)newValue);
 				return;
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
+				setOrganizationPartyId((Party)newValue);
 				return;
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID:
-				setGlAccountTypeId((String)newValue);
+				setGlAccountTypeId((GlAccountType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,10 +251,10 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 				setPaymentTypeId(PAYMENT_TYPE_ID_EDEFAULT);
 				return;
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
+				setOrganizationPartyId((Party)null);
 				return;
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID:
-				setGlAccountTypeId(GL_ACCOUNT_TYPE_ID_EDEFAULT);
+				setGlAccountTypeId((GlAccountType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -249,9 +271,9 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID:
 				return PAYMENT_TYPE_ID_EDEFAULT == null ? paymentTypeId != null : !PAYMENT_TYPE_ID_EDEFAULT.equals(paymentTypeId);
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
+				return organizationPartyId != null;
 			case PaymentPackage.PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID:
-				return GL_ACCOUNT_TYPE_ID_EDEFAULT == null ? glAccountTypeId != null : !GL_ACCOUNT_TYPE_ID_EDEFAULT.equals(glAccountTypeId);
+				return glAccountTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,10 +290,6 @@ public class PaymentGlAccountTypeMapImpl extends BizEntityImpl implements Paymen
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (paymentTypeId: ");
 		result.append(paymentTypeId);
-		result.append(", organizationPartyId: ");
-		result.append(organizationPartyId);
-		result.append(", glAccountTypeId: ");
-		result.append(glAccountTypeId);
 		result.append(')');
 		return result.toString();
 	}

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.facility;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,9 +23,9 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getLocationSeqId <em>Location Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getGeoPointId <em>Geo Point Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint()
@@ -43,7 +44,8 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' attribute.
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_FacilityId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFacilityId();
@@ -69,7 +71,8 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -85,31 +88,30 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Point Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Point Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Point Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Point Id</em>' attribute.
-	 * @see #setGeoPointId(String)
+	 * @return the value of the '<em>Geo Point Id</em>' reference.
+	 * @see #setGeoPointId(GeoPoint)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_GeoPointId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='GeoPoint'"
+	 * @model keys="geoPointId"
 	 * @generated
 	 */
-	String getGeoPointId();
+	GeoPoint getGeoPointId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getGeoPointId <em>Geo Point Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityLocationGeoPoint#getGeoPointId <em>Geo Point Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Point Id</em>' attribute.
+	 * @param value the new value of the '<em>Geo Point Id</em>' reference.
 	 * @see #getGeoPointId()
 	 * @generated
 	 */
-	void setGeoPointId(String value);
+	void setGeoPointId(GeoPoint value);
 
 	/**
 	 * Returns the value of the '<em><b>Location Seq Id</b></em>' attribute.
@@ -122,7 +124,8 @@ public interface FacilityLocationGeoPoint extends BizEntity {
 	 * @return the value of the '<em>Location Seq Id</em>' attribute.
 	 * @see #setLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocationGeoPoint_LocationSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getLocationSeqId();

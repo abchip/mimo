@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface ShoppingcartPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-order-shoppingcart";
+	String eNS_PREFIX = "biz-shoppingcart";
 
 	/**
 	 * The singleton instance of the package.
@@ -134,31 +135,13 @@ public interface ShoppingcartPackage extends EPackage {
 	int CART_ABANDONED_LINE__CONFIG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Prod Catalog Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CART_ABANDONED_LINE__PROD_CATALOG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CART_ABANDONED_LINE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CART_ABANDONED_LINE__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int CART_ABANDONED_LINE__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Reserv2nd PP Perc</b></em>' attribute.
@@ -167,7 +150,7 @@ public interface ShoppingcartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CART_ABANDONED_LINE__RESERV2ND_PP_PERC = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int CART_ABANDONED_LINE__RESERV2ND_PP_PERC = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Length</b></em>' attribute.
@@ -176,7 +159,7 @@ public interface ShoppingcartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CART_ABANDONED_LINE__RESERV_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int CART_ABANDONED_LINE__RESERV_LENGTH = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Nth PP Perc</b></em>' attribute.
@@ -185,7 +168,7 @@ public interface ShoppingcartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CART_ABANDONED_LINE__RESERV_NTH_PP_PERC = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int CART_ABANDONED_LINE__RESERV_NTH_PP_PERC = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Persons</b></em>' attribute.
@@ -194,7 +177,7 @@ public interface ShoppingcartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CART_ABANDONED_LINE__RESERV_PERSONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int CART_ABANDONED_LINE__RESERV_PERSONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Reserv Start</b></em>' attribute.
@@ -203,7 +186,7 @@ public interface ShoppingcartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CART_ABANDONED_LINE__RESERV_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int CART_ABANDONED_LINE__RESERV_START = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Total With Adjustments</b></em>' attribute.
@@ -212,7 +195,7 @@ public interface ShoppingcartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CART_ABANDONED_LINE__TOTAL_WITH_ADJUSTMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int CART_ABANDONED_LINE__TOTAL_WITH_ADJUSTMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Unit Price</b></em>' attribute.
@@ -221,7 +204,7 @@ public interface ShoppingcartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CART_ABANDONED_LINE__UNIT_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int CART_ABANDONED_LINE__UNIT_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Was Reserved</b></em>' attribute.
@@ -230,7 +213,25 @@ public interface ShoppingcartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CART_ABANDONED_LINE__WAS_RESERVED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int CART_ABANDONED_LINE__WAS_RESERVED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Product Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CART_ABANDONED_LINE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Prod Catalog Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CART_ABANDONED_LINE__PROD_CATALOG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Cart Abandoned Line</em>' class.
@@ -286,26 +287,26 @@ public interface ShoppingcartPackage extends EPackage {
 	EAttribute getCartAbandonedLine_ConfigId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProdCatalogId <em>Prod Catalog Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProdCatalogId <em>Prod Catalog Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Prod Catalog Id</em>'.
+	 * @return the meta object for the reference '<em>Prod Catalog Id</em>'.
 	 * @see org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProdCatalogId()
 	 * @see #getCartAbandonedLine()
 	 * @generated
 	 */
-	EAttribute getCartAbandonedLine_ProdCatalogId();
+	EReference getCartAbandonedLine_ProdCatalogId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProductId <em>Product Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProductId <em>Product Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id</em>'.
+	 * @return the meta object for the reference '<em>Product Id</em>'.
 	 * @see org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getProductId()
 	 * @see #getCartAbandonedLine()
 	 * @generated
 	 */
-	EAttribute getCartAbandonedLine_ProductId();
+	EReference getCartAbandonedLine_ProductId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine#getQuantity <em>Quantity</em>}'.
@@ -463,20 +464,20 @@ public interface ShoppingcartPackage extends EPackage {
 		EAttribute CART_ABANDONED_LINE__CONFIG_ID = eINSTANCE.getCartAbandonedLine_ConfigId();
 
 		/**
-		 * The meta object literal for the '<em><b>Prod Catalog Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Prod Catalog Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CART_ABANDONED_LINE__PROD_CATALOG_ID = eINSTANCE.getCartAbandonedLine_ProdCatalogId();
+		EReference CART_ABANDONED_LINE__PROD_CATALOG_ID = eINSTANCE.getCartAbandonedLine_ProdCatalogId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CART_ABANDONED_LINE__PRODUCT_ID = eINSTANCE.getCartAbandonedLine_ProductId();
+		EReference CART_ABANDONED_LINE__PRODUCT_ID = eINSTANCE.getCartAbandonedLine_ProductId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.

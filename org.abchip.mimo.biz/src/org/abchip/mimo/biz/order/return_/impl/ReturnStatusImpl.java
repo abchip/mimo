@@ -9,13 +9,18 @@ package org.abchip.mimo.biz.order.return_.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
 import org.abchip.mimo.biz.order.return_.ReturnStatus;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,11 +32,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl#getReturnStatusId <em>Return Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl#getStatusDatetime <em>Status Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl#getReturnId <em>Return Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,46 +66,6 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 * @ordered
 	 */
 	protected String returnStatusId = RETURN_STATUS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHANGE_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String changeByUserLoginId = CHANGE_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnId = RETURN_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReturnItemSeqId() <em>Return Item Seq Id</em>}' attribute.
@@ -143,24 +108,34 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	protected Date statusDatetime = STATUS_DATETIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getReturnId() <em>Return Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getReturnId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected ReturnHeader returnId;
+
+	/**
+	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChangeByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin changeByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,7 +162,24 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 * @generated
 	 */
 	@Override
-	public String getChangeByUserLoginId() {
+	public UserLogin getChangeByUserLoginId() {
+		if (changeByUserLoginId != null && ((EObject)changeByUserLoginId).eIsProxy()) {
+			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
+			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
+			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
+			}
+		}
+		return changeByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangeByUserLoginId() {
 		return changeByUserLoginId;
 	}
 
@@ -197,8 +189,8 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 * @generated
 	 */
 	@Override
-	public void setChangeByUserLoginId(String newChangeByUserLoginId) {
-		String oldChangeByUserLoginId = changeByUserLoginId;
+	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
@@ -210,7 +202,24 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 * @generated
 	 */
 	@Override
-	public String getReturnId() {
+	public ReturnHeader getReturnId() {
+		if (returnId != null && ((EObject)returnId).eIsProxy()) {
+			InternalEObject oldReturnId = (InternalEObject)returnId;
+			returnId = (ReturnHeader)eResolveProxy(oldReturnId);
+			if (returnId != oldReturnId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_STATUS__RETURN_ID, oldReturnId, returnId));
+			}
+		}
+		return returnId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnHeader basicGetReturnId() {
 		return returnId;
 	}
 
@@ -220,8 +229,8 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 * @generated
 	 */
 	@Override
-	public void setReturnId(String newReturnId) {
-		String oldReturnId = returnId;
+	public void setReturnId(ReturnHeader newReturnId) {
+		ReturnHeader oldReturnId = returnId;
 		returnId = newReturnId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_STATUS__RETURN_ID, oldReturnId, returnId));
@@ -302,7 +311,24 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_STATUS__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -312,8 +338,8 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_STATUS__STATUS_ID, oldStatusId, statusId));
@@ -329,16 +355,19 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 		switch (featureID) {
 			case ReturnPackage.RETURN_STATUS__RETURN_STATUS_ID:
 				return getReturnStatusId();
-			case ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return getChangeByUserLoginId();
-			case ReturnPackage.RETURN_STATUS__RETURN_ID:
-				return getReturnId();
 			case ReturnPackage.RETURN_STATUS__RETURN_ITEM_SEQ_ID:
 				return getReturnItemSeqId();
 			case ReturnPackage.RETURN_STATUS__STATUS_DATETIME:
 				return getStatusDatetime();
 			case ReturnPackage.RETURN_STATUS__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case ReturnPackage.RETURN_STATUS__RETURN_ID:
+				if (resolve) return getReturnId();
+				return basicGetReturnId();
+			case ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				if (resolve) return getChangeByUserLoginId();
+				return basicGetChangeByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,12 +383,6 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 			case ReturnPackage.RETURN_STATUS__RETURN_STATUS_ID:
 				setReturnStatusId((String)newValue);
 				return;
-			case ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_STATUS__RETURN_ID:
-				setReturnId((String)newValue);
-				return;
 			case ReturnPackage.RETURN_STATUS__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId((String)newValue);
 				return;
@@ -367,7 +390,13 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 				setStatusDatetime((Date)newValue);
 				return;
 			case ReturnPackage.RETURN_STATUS__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
+				return;
+			case ReturnPackage.RETURN_STATUS__RETURN_ID:
+				setReturnId((ReturnHeader)newValue);
+				return;
+			case ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -384,12 +413,6 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 			case ReturnPackage.RETURN_STATUS__RETURN_STATUS_ID:
 				setReturnStatusId(RETURN_STATUS_ID_EDEFAULT);
 				return;
-			case ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId(CHANGE_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_STATUS__RETURN_ID:
-				setReturnId(RETURN_ID_EDEFAULT);
-				return;
 			case ReturnPackage.RETURN_STATUS__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId(RETURN_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -397,7 +420,13 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 				setStatusDatetime(STATUS_DATETIME_EDEFAULT);
 				return;
 			case ReturnPackage.RETURN_STATUS__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
+				return;
+			case ReturnPackage.RETURN_STATUS__RETURN_ID:
+				setReturnId((ReturnHeader)null);
+				return;
+			case ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -413,16 +442,16 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 		switch (featureID) {
 			case ReturnPackage.RETURN_STATUS__RETURN_STATUS_ID:
 				return RETURN_STATUS_ID_EDEFAULT == null ? returnStatusId != null : !RETURN_STATUS_ID_EDEFAULT.equals(returnStatusId);
-			case ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return CHANGE_BY_USER_LOGIN_ID_EDEFAULT == null ? changeByUserLoginId != null : !CHANGE_BY_USER_LOGIN_ID_EDEFAULT.equals(changeByUserLoginId);
-			case ReturnPackage.RETURN_STATUS__RETURN_ID:
-				return RETURN_ID_EDEFAULT == null ? returnId != null : !RETURN_ID_EDEFAULT.equals(returnId);
 			case ReturnPackage.RETURN_STATUS__RETURN_ITEM_SEQ_ID:
 				return RETURN_ITEM_SEQ_ID_EDEFAULT == null ? returnItemSeqId != null : !RETURN_ITEM_SEQ_ID_EDEFAULT.equals(returnItemSeqId);
 			case ReturnPackage.RETURN_STATUS__STATUS_DATETIME:
 				return STATUS_DATETIME_EDEFAULT == null ? statusDatetime != null : !STATUS_DATETIME_EDEFAULT.equals(statusDatetime);
 			case ReturnPackage.RETURN_STATUS__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
+			case ReturnPackage.RETURN_STATUS__RETURN_ID:
+				return returnId != null;
+			case ReturnPackage.RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				return changeByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -439,16 +468,10 @@ public class ReturnStatusImpl extends BizEntityImpl implements ReturnStatus {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (returnStatusId: ");
 		result.append(returnStatusId);
-		result.append(", changeByUserLoginId: ");
-		result.append(changeByUserLoginId);
-		result.append(", returnId: ");
-		result.append(returnId);
 		result.append(", returnItemSeqId: ");
 		result.append(returnItemSeqId);
 		result.append(", statusDatetime: ");
 		result.append(statusDatetime);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(')');
 		return result.toString();
 	}

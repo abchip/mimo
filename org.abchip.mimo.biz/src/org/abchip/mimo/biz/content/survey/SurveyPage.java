@@ -94,7 +94,6 @@ public interface SurveyPage extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyPage_SurveyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Survey'"
 	 * @generated
 	 */
 	String getSurveyId();

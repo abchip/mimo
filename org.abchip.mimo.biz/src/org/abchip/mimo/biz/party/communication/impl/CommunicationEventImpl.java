@@ -10,12 +10,22 @@ package org.abchip.mimo.biz.party.communication.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.content.data.MimeType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.contact.ContactList;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.contact.ContactMechType;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,13 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getBccString <em>Bcc String</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getCcString <em>Cc String</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getCommunicationEventTypeId <em>Communication Event Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContactListId <em>Contact List Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContactMechIdFrom <em>Contact Mech Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContactMechIdTo <em>Contact Mech Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContent <em>Content</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContentMimeTypeId <em>Content Mime Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getDatetimeEnded <em>Datetime Ended</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getDatetimeStarted <em>Datetime Started</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getEntryDate <em>Entry Date</em>}</li>
@@ -45,14 +49,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getNote <em>Note</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getOrigCommEventId <em>Orig Comm Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getParentCommEventId <em>Parent Comm Event Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getPartyIdTo <em>Party Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getReasonEnumId <em>Reason Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getToString <em>To String</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getCommunicationEventTypeId <em>Communication Event Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContactMechIdFrom <em>Contact Mech Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContactMechIdTo <em>Contact Mech Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContactListId <em>Contact List Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getContentMimeTypeId <em>Content Mime Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventImpl#getReasonEnumId <em>Reason Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -118,96 +128,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	protected String ccString = CC_STRING_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCommunicationEventTypeId() <em>Communication Event Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMUNICATION_EVENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCommunicationEventTypeId() <em>Communication Event Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String communicationEventTypeId = COMMUNICATION_EVENT_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContactListId() <em>Contact List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_LIST_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactListId() <em>Contact List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactListId = CONTACT_LIST_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContactMechIdFrom() <em>Contact Mech Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_FROM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechIdFrom() <em>Contact Mech Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechIdFrom = CONTACT_MECH_ID_FROM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContactMechIdTo() <em>Contact Mech Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_TO_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechIdTo() <em>Contact Mech Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechIdTo = CONTACT_MECH_ID_TO_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechTypeId = CONTACT_MECH_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -225,24 +145,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @ordered
 	 */
 	protected String content = CONTENT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContentMimeTypeId() <em>Content Mime Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentMimeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_MIME_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContentMimeTypeId() <em>Content Mime Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentMimeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentMimeTypeId = CONTENT_MIME_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDatetimeEnded() <em>Datetime Ended</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -406,114 +308,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 */
 	protected String parentCommEventId = PARENT_COMM_EVENT_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_FROM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdFrom = PARTY_ID_FROM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_TO_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdTo = PARTY_ID_TO_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getReasonEnumId() <em>Reason Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReasonEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REASON_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getReasonEnumId() <em>Reason Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReasonEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String reasonEnumId = REASON_ENUM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoleTypeIdFrom() <em>Role Type Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_FROM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeIdFrom() <em>Role Type Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeIdFrom = ROLE_TYPE_ID_FROM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoleTypeIdTo() <em>Role Type Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_TO_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeIdTo() <em>Role Type Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeIdTo = ROLE_TYPE_ID_TO_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getSubject() <em>Subject</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -549,6 +343,114 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @ordered
 	 */
 	protected String toString = TO_STRING_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getCommunicationEventTypeId() <em>Communication Event Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommunicationEventTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CommunicationEventType communicationEventTypeId;
+	/**
+	 * The cached value of the '{@link #getPartyIdTo() <em>Party Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyIdTo;
+	/**
+	 * The cached value of the '{@link #getRoleTypeIdTo() <em>Role Type Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeIdTo;
+	/**
+	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyIdFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyIdFrom;
+	/**
+	 * The cached value of the '{@link #getRoleTypeIdFrom() <em>Role Type Id From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeIdFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeIdFrom;
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+	/**
+	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMechType contactMechTypeId;
+	/**
+	 * The cached value of the '{@link #getContactMechIdFrom() <em>Contact Mech Id From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechIdFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech contactMechIdFrom;
+	/**
+	 * The cached value of the '{@link #getContactMechIdTo() <em>Contact Mech Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech contactMechIdTo;
+	/**
+	 * The cached value of the '{@link #getContactListId() <em>Contact List Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactListId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactList contactListId;
+	/**
+	 * The cached value of the '{@link #getContentMimeTypeId() <em>Content Mime Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentMimeTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected MimeType contentMimeTypeId;
+	/**
+	 * The cached value of the '{@link #getReasonEnumId() <em>Reason Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReasonEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration reasonEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -621,7 +523,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getContactListId() {
+	public ContactList getContactListId() {
+		if (contactListId != null && ((EObject)contactListId).eIsProxy()) {
+			InternalEObject oldContactListId = (InternalEObject)contactListId;
+			contactListId = (ContactList)eResolveProxy(oldContactListId);
+			if (contactListId != oldContactListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID, oldContactListId, contactListId));
+			}
+		}
+		return contactListId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactList basicGetContactListId() {
 		return contactListId;
 	}
 
@@ -631,8 +550,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setContactListId(String newContactListId) {
-		String oldContactListId = contactListId;
+	public void setContactListId(ContactList newContactListId) {
+		ContactList oldContactListId = contactListId;
 		contactListId = newContactListId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID, oldContactListId, contactListId));
@@ -644,7 +563,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getContactMechIdFrom() {
+	public ContactMech getContactMechIdFrom() {
+		if (contactMechIdFrom != null && ((EObject)contactMechIdFrom).eIsProxy()) {
+			InternalEObject oldContactMechIdFrom = (InternalEObject)contactMechIdFrom;
+			contactMechIdFrom = (ContactMech)eResolveProxy(oldContactMechIdFrom);
+			if (contactMechIdFrom != oldContactMechIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM, oldContactMechIdFrom, contactMechIdFrom));
+			}
+		}
+		return contactMechIdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetContactMechIdFrom() {
 		return contactMechIdFrom;
 	}
 
@@ -654,8 +590,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setContactMechIdFrom(String newContactMechIdFrom) {
-		String oldContactMechIdFrom = contactMechIdFrom;
+	public void setContactMechIdFrom(ContactMech newContactMechIdFrom) {
+		ContactMech oldContactMechIdFrom = contactMechIdFrom;
 		contactMechIdFrom = newContactMechIdFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM, oldContactMechIdFrom, contactMechIdFrom));
@@ -667,7 +603,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getContactMechIdTo() {
+	public ContactMech getContactMechIdTo() {
+		if (contactMechIdTo != null && ((EObject)contactMechIdTo).eIsProxy()) {
+			InternalEObject oldContactMechIdTo = (InternalEObject)contactMechIdTo;
+			contactMechIdTo = (ContactMech)eResolveProxy(oldContactMechIdTo);
+			if (contactMechIdTo != oldContactMechIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO, oldContactMechIdTo, contactMechIdTo));
+			}
+		}
+		return contactMechIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetContactMechIdTo() {
 		return contactMechIdTo;
 	}
 
@@ -677,8 +630,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setContactMechIdTo(String newContactMechIdTo) {
-		String oldContactMechIdTo = contactMechIdTo;
+	public void setContactMechIdTo(ContactMech newContactMechIdTo) {
+		ContactMech oldContactMechIdTo = contactMechIdTo;
 		contactMechIdTo = newContactMechIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO, oldContactMechIdTo, contactMechIdTo));
@@ -690,7 +643,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getContactMechTypeId() {
+	public ContactMechType getContactMechTypeId() {
+		if (contactMechTypeId != null && ((EObject)contactMechTypeId).eIsProxy()) {
+			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
+			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
+			if (contactMechTypeId != oldContactMechTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
+			}
+		}
+		return contactMechTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMechType basicGetContactMechTypeId() {
 		return contactMechTypeId;
 	}
 
@@ -700,8 +670,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setContactMechTypeId(String newContactMechTypeId) {
-		String oldContactMechTypeId = contactMechTypeId;
+	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
+		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
@@ -736,7 +706,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getContentMimeTypeId() {
+	public MimeType getContentMimeTypeId() {
+		if (contentMimeTypeId != null && ((EObject)contentMimeTypeId).eIsProxy()) {
+			InternalEObject oldContentMimeTypeId = (InternalEObject)contentMimeTypeId;
+			contentMimeTypeId = (MimeType)eResolveProxy(oldContentMimeTypeId);
+			if (contentMimeTypeId != oldContentMimeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID, oldContentMimeTypeId, contentMimeTypeId));
+			}
+		}
+		return contentMimeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MimeType basicGetContentMimeTypeId() {
 		return contentMimeTypeId;
 	}
 
@@ -746,8 +733,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setContentMimeTypeId(String newContentMimeTypeId) {
-		String oldContentMimeTypeId = contentMimeTypeId;
+	public void setContentMimeTypeId(MimeType newContentMimeTypeId) {
+		MimeType oldContentMimeTypeId = contentMimeTypeId;
 		contentMimeTypeId = newContentMimeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID, oldContentMimeTypeId, contentMimeTypeId));
@@ -966,7 +953,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getPartyIdFrom() {
+	public Party getPartyIdFrom() {
+		if (partyIdFrom != null && ((EObject)partyIdFrom).eIsProxy()) {
+			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
+			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
+			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
+			}
+		}
+		return partyIdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyIdFrom() {
 		return partyIdFrom;
 	}
 
@@ -976,8 +980,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setPartyIdFrom(String newPartyIdFrom) {
-		String oldPartyIdFrom = partyIdFrom;
+	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
@@ -989,7 +993,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getPartyIdTo() {
+	public Party getPartyIdTo() {
+		if (partyIdTo != null && ((EObject)partyIdTo).eIsProxy()) {
+			InternalEObject oldPartyIdTo = (InternalEObject)partyIdTo;
+			partyIdTo = (Party)eResolveProxy(oldPartyIdTo);
+			if (partyIdTo != oldPartyIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
+			}
+		}
+		return partyIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyIdTo() {
 		return partyIdTo;
 	}
 
@@ -999,8 +1020,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setPartyIdTo(String newPartyIdTo) {
-		String oldPartyIdTo = partyIdTo;
+	public void setPartyIdTo(Party newPartyIdTo) {
+		Party oldPartyIdTo = partyIdTo;
 		partyIdTo = newPartyIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO, oldPartyIdTo, partyIdTo));
@@ -1012,7 +1033,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getReasonEnumId() {
+	public Enumeration getReasonEnumId() {
+		if (reasonEnumId != null && ((EObject)reasonEnumId).eIsProxy()) {
+			InternalEObject oldReasonEnumId = (InternalEObject)reasonEnumId;
+			reasonEnumId = (Enumeration)eResolveProxy(oldReasonEnumId);
+			if (reasonEnumId != oldReasonEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
+			}
+		}
+		return reasonEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetReasonEnumId() {
 		return reasonEnumId;
 	}
 
@@ -1022,8 +1060,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setReasonEnumId(String newReasonEnumId) {
-		String oldReasonEnumId = reasonEnumId;
+	public void setReasonEnumId(Enumeration newReasonEnumId) {
+		Enumeration oldReasonEnumId = reasonEnumId;
 		reasonEnumId = newReasonEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
@@ -1035,7 +1073,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeIdFrom() {
+	public RoleType getRoleTypeIdFrom() {
+		if (roleTypeIdFrom != null && ((EObject)roleTypeIdFrom).eIsProxy()) {
+			InternalEObject oldRoleTypeIdFrom = (InternalEObject)roleTypeIdFrom;
+			roleTypeIdFrom = (RoleType)eResolveProxy(oldRoleTypeIdFrom);
+			if (roleTypeIdFrom != oldRoleTypeIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
+			}
+		}
+		return roleTypeIdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeIdFrom() {
 		return roleTypeIdFrom;
 	}
 
@@ -1045,8 +1100,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeIdFrom(String newRoleTypeIdFrom) {
-		String oldRoleTypeIdFrom = roleTypeIdFrom;
+	public void setRoleTypeIdFrom(RoleType newRoleTypeIdFrom) {
+		RoleType oldRoleTypeIdFrom = roleTypeIdFrom;
 		roleTypeIdFrom = newRoleTypeIdFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM, oldRoleTypeIdFrom, roleTypeIdFrom));
@@ -1058,7 +1113,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeIdTo() {
+	public RoleType getRoleTypeIdTo() {
+		if (roleTypeIdTo != null && ((EObject)roleTypeIdTo).eIsProxy()) {
+			InternalEObject oldRoleTypeIdTo = (InternalEObject)roleTypeIdTo;
+			roleTypeIdTo = (RoleType)eResolveProxy(oldRoleTypeIdTo);
+			if (roleTypeIdTo != oldRoleTypeIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
+			}
+		}
+		return roleTypeIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeIdTo() {
 		return roleTypeIdTo;
 	}
 
@@ -1068,8 +1140,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeIdTo(String newRoleTypeIdTo) {
-		String oldRoleTypeIdTo = roleTypeIdTo;
+	public void setRoleTypeIdTo(RoleType newRoleTypeIdTo) {
+		RoleType oldRoleTypeIdTo = roleTypeIdTo;
 		roleTypeIdTo = newRoleTypeIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO, oldRoleTypeIdTo, roleTypeIdTo));
@@ -1081,7 +1153,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -1091,8 +1180,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID, oldStatusId, statusId));
@@ -1234,7 +1323,24 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public String getCommunicationEventTypeId() {
+	public CommunicationEventType getCommunicationEventTypeId() {
+		if (communicationEventTypeId != null && ((EObject)communicationEventTypeId).eIsProxy()) {
+			InternalEObject oldCommunicationEventTypeId = (InternalEObject)communicationEventTypeId;
+			communicationEventTypeId = (CommunicationEventType)eResolveProxy(oldCommunicationEventTypeId);
+			if (communicationEventTypeId != oldCommunicationEventTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID, oldCommunicationEventTypeId, communicationEventTypeId));
+			}
+		}
+		return communicationEventTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEventType basicGetCommunicationEventTypeId() {
 		return communicationEventTypeId;
 	}
 
@@ -1244,8 +1350,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 	 * @generated
 	 */
 	@Override
-	public void setCommunicationEventTypeId(String newCommunicationEventTypeId) {
-		String oldCommunicationEventTypeId = communicationEventTypeId;
+	public void setCommunicationEventTypeId(CommunicationEventType newCommunicationEventTypeId) {
+		CommunicationEventType oldCommunicationEventTypeId = communicationEventTypeId;
 		communicationEventTypeId = newCommunicationEventTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID, oldCommunicationEventTypeId, communicationEventTypeId));
@@ -1288,20 +1394,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 				return getBccString();
 			case CommunicationPackage.COMMUNICATION_EVENT__CC_STRING:
 				return getCcString();
-			case CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID:
-				return getCommunicationEventTypeId();
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID:
-				return getContactListId();
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM:
-				return getContactMechIdFrom();
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO:
-				return getContactMechIdTo();
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID:
-				return getContactMechTypeId();
 			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT:
 				return getContent();
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID:
-				return getContentMimeTypeId();
 			case CommunicationPackage.COMMUNICATION_EVENT__DATETIME_ENDED:
 				return getDatetimeEnded();
 			case CommunicationPackage.COMMUNICATION_EVENT__DATETIME_STARTED:
@@ -1320,22 +1414,46 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 				return getOrigCommEventId();
 			case CommunicationPackage.COMMUNICATION_EVENT__PARENT_COMM_EVENT_ID:
 				return getParentCommEventId();
-			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM:
-				return getPartyIdFrom();
-			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO:
-				return getPartyIdTo();
-			case CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID:
-				return getReasonEnumId();
-			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM:
-				return getRoleTypeIdFrom();
-			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO:
-				return getRoleTypeIdTo();
-			case CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID:
-				return getStatusId();
 			case CommunicationPackage.COMMUNICATION_EVENT__SUBJECT:
 				return getSubject();
 			case CommunicationPackage.COMMUNICATION_EVENT__TO_STRING:
 				return getToString();
+			case CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID:
+				if (resolve) return getCommunicationEventTypeId();
+				return basicGetCommunicationEventTypeId();
+			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO:
+				if (resolve) return getPartyIdTo();
+				return basicGetPartyIdTo();
+			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO:
+				if (resolve) return getRoleTypeIdTo();
+				return basicGetRoleTypeIdTo();
+			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM:
+				if (resolve) return getPartyIdFrom();
+				return basicGetPartyIdFrom();
+			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM:
+				if (resolve) return getRoleTypeIdFrom();
+				return basicGetRoleTypeIdFrom();
+			case CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID:
+				if (resolve) return getContactMechTypeId();
+				return basicGetContactMechTypeId();
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM:
+				if (resolve) return getContactMechIdFrom();
+				return basicGetContactMechIdFrom();
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO:
+				if (resolve) return getContactMechIdTo();
+				return basicGetContactMechIdTo();
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID:
+				if (resolve) return getContactListId();
+				return basicGetContactListId();
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID:
+				if (resolve) return getContentMimeTypeId();
+				return basicGetContentMimeTypeId();
+			case CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID:
+				if (resolve) return getReasonEnumId();
+				return basicGetReasonEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1357,26 +1475,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			case CommunicationPackage.COMMUNICATION_EVENT__CC_STRING:
 				setCcString((String)newValue);
 				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID:
-				setCommunicationEventTypeId((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID:
-				setContactListId((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM:
-				setContactMechIdFrom((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO:
-				setContactMechIdTo((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId((String)newValue);
-				return;
 			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT:
 				setContent((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID:
-				setContentMimeTypeId((String)newValue);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT__DATETIME_ENDED:
 				setDatetimeEnded((Date)newValue);
@@ -1405,29 +1505,47 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			case CommunicationPackage.COMMUNICATION_EVENT__PARENT_COMM_EVENT_ID:
 				setParentCommEventId((String)newValue);
 				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM:
-				setPartyIdFrom((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO:
-				setPartyIdTo((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID:
-				setReasonEnumId((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM:
-				setRoleTypeIdFrom((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO:
-				setRoleTypeIdTo((String)newValue);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case CommunicationPackage.COMMUNICATION_EVENT__SUBJECT:
 				setSubject((String)newValue);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT__TO_STRING:
 				setToString((String)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID:
+				setCommunicationEventTypeId((CommunicationEventType)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO:
+				setPartyIdTo((Party)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO:
+				setRoleTypeIdTo((RoleType)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM:
+				setPartyIdFrom((Party)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM:
+				setRoleTypeIdFrom((RoleType)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID:
+				setContactMechTypeId((ContactMechType)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM:
+				setContactMechIdFrom((ContactMech)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO:
+				setContactMechIdTo((ContactMech)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID:
+				setContactListId((ContactList)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID:
+				setContentMimeTypeId((MimeType)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID:
+				setReasonEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1450,26 +1568,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			case CommunicationPackage.COMMUNICATION_EVENT__CC_STRING:
 				setCcString(CC_STRING_EDEFAULT);
 				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID:
-				setCommunicationEventTypeId(COMMUNICATION_EVENT_TYPE_ID_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID:
-				setContactListId(CONTACT_LIST_ID_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM:
-				setContactMechIdFrom(CONTACT_MECH_ID_FROM_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO:
-				setContactMechIdTo(CONTACT_MECH_ID_TO_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId(CONTACT_MECH_TYPE_ID_EDEFAULT);
-				return;
 			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT:
 				setContent(CONTENT_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID:
-				setContentMimeTypeId(CONTENT_MIME_TYPE_ID_EDEFAULT);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT__DATETIME_ENDED:
 				setDatetimeEnded(DATETIME_ENDED_EDEFAULT);
@@ -1498,29 +1598,47 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 			case CommunicationPackage.COMMUNICATION_EVENT__PARENT_COMM_EVENT_ID:
 				setParentCommEventId(PARENT_COMM_EVENT_ID_EDEFAULT);
 				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM:
-				setPartyIdFrom(PARTY_ID_FROM_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO:
-				setPartyIdTo(PARTY_ID_TO_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID:
-				setReasonEnumId(REASON_ENUM_ID_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM:
-				setRoleTypeIdFrom(ROLE_TYPE_ID_FROM_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO:
-				setRoleTypeIdTo(ROLE_TYPE_ID_TO_EDEFAULT);
-				return;
-			case CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case CommunicationPackage.COMMUNICATION_EVENT__SUBJECT:
 				setSubject(SUBJECT_EDEFAULT);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT__TO_STRING:
 				setToString(TO_STRING_EDEFAULT);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID:
+				setCommunicationEventTypeId((CommunicationEventType)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO:
+				setPartyIdTo((Party)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO:
+				setRoleTypeIdTo((RoleType)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM:
+				setPartyIdFrom((Party)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM:
+				setRoleTypeIdFrom((RoleType)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID:
+				setContactMechTypeId((ContactMechType)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM:
+				setContactMechIdFrom((ContactMech)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO:
+				setContactMechIdTo((ContactMech)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID:
+				setContactListId((ContactList)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID:
+				setContentMimeTypeId((MimeType)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID:
+				setReasonEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1540,20 +1658,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 				return BCC_STRING_EDEFAULT == null ? bccString != null : !BCC_STRING_EDEFAULT.equals(bccString);
 			case CommunicationPackage.COMMUNICATION_EVENT__CC_STRING:
 				return CC_STRING_EDEFAULT == null ? ccString != null : !CC_STRING_EDEFAULT.equals(ccString);
-			case CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID:
-				return COMMUNICATION_EVENT_TYPE_ID_EDEFAULT == null ? communicationEventTypeId != null : !COMMUNICATION_EVENT_TYPE_ID_EDEFAULT.equals(communicationEventTypeId);
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID:
-				return CONTACT_LIST_ID_EDEFAULT == null ? contactListId != null : !CONTACT_LIST_ID_EDEFAULT.equals(contactListId);
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM:
-				return CONTACT_MECH_ID_FROM_EDEFAULT == null ? contactMechIdFrom != null : !CONTACT_MECH_ID_FROM_EDEFAULT.equals(contactMechIdFrom);
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO:
-				return CONTACT_MECH_ID_TO_EDEFAULT == null ? contactMechIdTo != null : !CONTACT_MECH_ID_TO_EDEFAULT.equals(contactMechIdTo);
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID:
-				return CONTACT_MECH_TYPE_ID_EDEFAULT == null ? contactMechTypeId != null : !CONTACT_MECH_TYPE_ID_EDEFAULT.equals(contactMechTypeId);
 			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT:
 				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
-			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID:
-				return CONTENT_MIME_TYPE_ID_EDEFAULT == null ? contentMimeTypeId != null : !CONTENT_MIME_TYPE_ID_EDEFAULT.equals(contentMimeTypeId);
 			case CommunicationPackage.COMMUNICATION_EVENT__DATETIME_ENDED:
 				return DATETIME_ENDED_EDEFAULT == null ? datetimeEnded != null : !DATETIME_ENDED_EDEFAULT.equals(datetimeEnded);
 			case CommunicationPackage.COMMUNICATION_EVENT__DATETIME_STARTED:
@@ -1572,22 +1678,34 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 				return ORIG_COMM_EVENT_ID_EDEFAULT == null ? origCommEventId != null : !ORIG_COMM_EVENT_ID_EDEFAULT.equals(origCommEventId);
 			case CommunicationPackage.COMMUNICATION_EVENT__PARENT_COMM_EVENT_ID:
 				return PARENT_COMM_EVENT_ID_EDEFAULT == null ? parentCommEventId != null : !PARENT_COMM_EVENT_ID_EDEFAULT.equals(parentCommEventId);
-			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM:
-				return PARTY_ID_FROM_EDEFAULT == null ? partyIdFrom != null : !PARTY_ID_FROM_EDEFAULT.equals(partyIdFrom);
-			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO:
-				return PARTY_ID_TO_EDEFAULT == null ? partyIdTo != null : !PARTY_ID_TO_EDEFAULT.equals(partyIdTo);
-			case CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID:
-				return REASON_ENUM_ID_EDEFAULT == null ? reasonEnumId != null : !REASON_ENUM_ID_EDEFAULT.equals(reasonEnumId);
-			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM:
-				return ROLE_TYPE_ID_FROM_EDEFAULT == null ? roleTypeIdFrom != null : !ROLE_TYPE_ID_FROM_EDEFAULT.equals(roleTypeIdFrom);
-			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO:
-				return ROLE_TYPE_ID_TO_EDEFAULT == null ? roleTypeIdTo != null : !ROLE_TYPE_ID_TO_EDEFAULT.equals(roleTypeIdTo);
-			case CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case CommunicationPackage.COMMUNICATION_EVENT__SUBJECT:
 				return SUBJECT_EDEFAULT == null ? subject != null : !SUBJECT_EDEFAULT.equals(subject);
 			case CommunicationPackage.COMMUNICATION_EVENT__TO_STRING:
 				return TO_STRING_EDEFAULT == null ? toString != null : !TO_STRING_EDEFAULT.equals(toString);
+			case CommunicationPackage.COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID:
+				return communicationEventTypeId != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_TO:
+				return partyIdTo != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_TO:
+				return roleTypeIdTo != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__PARTY_ID_FROM:
+				return partyIdFrom != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM:
+				return roleTypeIdFrom != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__STATUS_ID:
+				return statusId != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID:
+				return contactMechTypeId != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM:
+				return contactMechIdFrom != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_MECH_ID_TO:
+				return contactMechIdTo != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTACT_LIST_ID:
+				return contactListId != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID:
+				return contentMimeTypeId != null;
+			case CommunicationPackage.COMMUNICATION_EVENT__REASON_ENUM_ID:
+				return reasonEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1608,20 +1726,8 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 		result.append(bccString);
 		result.append(", ccString: ");
 		result.append(ccString);
-		result.append(", communicationEventTypeId: ");
-		result.append(communicationEventTypeId);
-		result.append(", contactListId: ");
-		result.append(contactListId);
-		result.append(", contactMechIdFrom: ");
-		result.append(contactMechIdFrom);
-		result.append(", contactMechIdTo: ");
-		result.append(contactMechIdTo);
-		result.append(", contactMechTypeId: ");
-		result.append(contactMechTypeId);
 		result.append(", content: ");
 		result.append(content);
-		result.append(", contentMimeTypeId: ");
-		result.append(contentMimeTypeId);
 		result.append(", datetimeEnded: ");
 		result.append(datetimeEnded);
 		result.append(", datetimeStarted: ");
@@ -1640,18 +1746,6 @@ public class CommunicationEventImpl extends BizEntityTypedImpl<CommunicationEven
 		result.append(origCommEventId);
 		result.append(", parentCommEventId: ");
 		result.append(parentCommEventId);
-		result.append(", partyIdFrom: ");
-		result.append(partyIdFrom);
-		result.append(", partyIdTo: ");
-		result.append(partyIdTo);
-		result.append(", reasonEnumId: ");
-		result.append(reasonEnumId);
-		result.append(", roleTypeIdFrom: ");
-		result.append(roleTypeIdFrom);
-		result.append(", roleTypeIdTo: ");
-		result.append(roleTypeIdTo);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", subject: ");
 		result.append(subject);
 		result.append(", toString: ");

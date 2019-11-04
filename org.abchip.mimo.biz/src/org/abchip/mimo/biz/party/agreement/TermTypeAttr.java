@@ -94,7 +94,6 @@ public interface TermTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getTermTypeAttr_TermTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='TermType'"
 	 * @generated
 	 */
 	String getTermTypeId();

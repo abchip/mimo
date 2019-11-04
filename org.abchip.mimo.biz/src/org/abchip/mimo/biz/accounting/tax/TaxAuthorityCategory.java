@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.tax;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,31 +30,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface TaxAuthorityCategory extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Product Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Id</em>' attribute.
-	 * @see #setProductCategoryId(String)
+	 * @return the value of the '<em>Product Category Id</em>' reference.
+	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityCategory_ProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model keys="productCategoryId"
 	 * @generated
 	 */
-	String getProductCategoryId();
+	ProductCategory getProductCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityCategory#getProductCategoryId <em>Product Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityCategory#getProductCategoryId <em>Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Category Id</em>' reference.
 	 * @see #getProductCategoryId()
 	 * @generated
 	 */
-	void setProductCategoryId(String value);
+	void setProductCategoryId(ProductCategory value);
 
 	/**
 	 * Returns the value of the '<em><b>Tax Auth Geo Id</b></em>' attribute.
@@ -66,7 +66,8 @@ public interface TaxAuthorityCategory extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Geo Id</em>' attribute.
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityCategory_TaxAuthGeoId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -92,7 +93,8 @@ public interface TaxAuthorityCategory extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Party Id</em>' attribute.
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityCategory_TaxAuthPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();

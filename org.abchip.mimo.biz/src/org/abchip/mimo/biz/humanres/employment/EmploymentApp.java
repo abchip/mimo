@@ -10,6 +10,10 @@ package org.abchip.mimo.biz.humanres.employment;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.humanres.position.EmplPosition;
+import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,13 +26,13 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplicationId <em>Application Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplicationDate <em>Application Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplyingPartyId <em>Applying Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApproverPartyId <em>Approver Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmplPositionId <em>Empl Position Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getJobRequisitionId <em>Job Requisition Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getReferredByPartyId <em>Referred By Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplyingPartyId <em>Applying Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getReferredByPartyId <em>Referred By Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApproverPartyId <em>Approver Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getJobRequisitionId <em>Job Requisition Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp()
@@ -73,7 +77,7 @@ public interface EmploymentApp extends BizEntity {
 	 * @return the value of the '<em>Application Id</em>' attribute.
 	 * @see #setApplicationId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ApplicationId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -90,185 +94,185 @@ public interface EmploymentApp extends BizEntity {
 	void setApplicationId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Applying Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Applying Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Applying Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Applying Party Id</em>' attribute.
-	 * @see #setApplyingPartyId(String)
+	 * @return the value of the '<em>Applying Party Id</em>' reference.
+	 * @see #setApplyingPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ApplyingPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getApplyingPartyId();
+	Party getApplyingPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplyingPartyId <em>Applying Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplyingPartyId <em>Applying Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Applying Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Applying Party Id</em>' reference.
 	 * @see #getApplyingPartyId()
 	 * @generated
 	 */
-	void setApplyingPartyId(String value);
+	void setApplyingPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Approver Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Approver Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Approver Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Approver Party Id</em>' attribute.
-	 * @see #setApproverPartyId(String)
+	 * @return the value of the '<em>Approver Party Id</em>' reference.
+	 * @see #setApproverPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ApproverPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getApproverPartyId();
+	Party getApproverPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApproverPartyId <em>Approver Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApproverPartyId <em>Approver Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Approver Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Approver Party Id</em>' reference.
 	 * @see #getApproverPartyId()
 	 * @generated
 	 */
-	void setApproverPartyId(String value);
+	void setApproverPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Empl Position Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Empl Position Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Empl Position Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Empl Position Id</em>' attribute.
-	 * @see #setEmplPositionId(String)
+	 * @return the value of the '<em>Empl Position Id</em>' reference.
+	 * @see #setEmplPositionId(EmplPosition)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_EmplPositionId()
-	 * @model annotation="mimo-ent-domain frame='EmplPosition'"
+	 * @model keys="emplPositionId"
 	 * @generated
 	 */
-	String getEmplPositionId();
+	EmplPosition getEmplPositionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmplPositionId <em>Empl Position Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmplPositionId <em>Empl Position Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Empl Position Id</em>' attribute.
+	 * @param value the new value of the '<em>Empl Position Id</em>' reference.
 	 * @see #getEmplPositionId()
 	 * @generated
 	 */
-	void setEmplPositionId(String value);
+	void setEmplPositionId(EmplPosition value);
 
 	/**
-	 * Returns the value of the '<em><b>Employment App Source Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Employment App Source Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Employment App Source Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Employment App Source Type Id</em>' attribute.
-	 * @see #setEmploymentAppSourceTypeId(String)
+	 * @return the value of the '<em>Employment App Source Type Id</em>' reference.
+	 * @see #setEmploymentAppSourceTypeId(EmploymentAppSourceType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_EmploymentAppSourceTypeId()
-	 * @model annotation="mimo-ent-domain frame='EmploymentAppSourceType'"
+	 * @model keys="employmentAppSourceTypeId"
 	 * @generated
 	 */
-	String getEmploymentAppSourceTypeId();
+	EmploymentAppSourceType getEmploymentAppSourceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Employment App Source Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Employment App Source Type Id</em>' reference.
 	 * @see #getEmploymentAppSourceTypeId()
 	 * @generated
 	 */
-	void setEmploymentAppSourceTypeId(String value);
+	void setEmploymentAppSourceTypeId(EmploymentAppSourceType value);
 
 	/**
-	 * Returns the value of the '<em><b>Job Requisition Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Job Requisition Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Job Requisition Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Job Requisition Id</em>' attribute.
-	 * @see #setJobRequisitionId(String)
+	 * @return the value of the '<em>Job Requisition Id</em>' reference.
+	 * @see #setJobRequisitionId(JobRequisition)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_JobRequisitionId()
-	 * @model annotation="mimo-ent-domain frame='JobRequisition'"
+	 * @model keys="jobRequisitionId"
 	 * @generated
 	 */
-	String getJobRequisitionId();
+	JobRequisition getJobRequisitionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getJobRequisitionId <em>Job Requisition Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getJobRequisitionId <em>Job Requisition Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Job Requisition Id</em>' attribute.
+	 * @param value the new value of the '<em>Job Requisition Id</em>' reference.
 	 * @see #getJobRequisitionId()
 	 * @generated
 	 */
-	void setJobRequisitionId(String value);
+	void setJobRequisitionId(JobRequisition value);
 
 	/**
-	 * Returns the value of the '<em><b>Referred By Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Referred By Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Referred By Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Referred By Party Id</em>' attribute.
-	 * @see #setReferredByPartyId(String)
+	 * @return the value of the '<em>Referred By Party Id</em>' reference.
+	 * @see #setReferredByPartyId(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_ReferredByPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getReferredByPartyId();
+	Party getReferredByPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getReferredByPartyId <em>Referred By Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getReferredByPartyId <em>Referred By Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Referred By Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Referred By Party Id</em>' reference.
 	 * @see #getReferredByPartyId()
 	 * @generated
 	 */
-	void setReferredByPartyId(String value);
+	void setReferredByPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmploymentApp_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 } // EmploymentApp

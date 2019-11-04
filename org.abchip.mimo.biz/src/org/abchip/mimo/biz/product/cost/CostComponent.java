@@ -13,6 +13,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,17 +32,17 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentId <em>Cost Component Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCost <em>Cost</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostUomId <em>Cost Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getGeoId <em>Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductFeatureId <em>Product Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostUomId <em>Cost Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentAttributes <em>Cost Component Attributes</em>}</li>
  * </ul>
  *
@@ -71,56 +78,56 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	void setCost(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Cost Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cost Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cost Uom Id</em>' attribute.
-	 * @see #setCostUomId(String)
+	 * @return the value of the '<em>Cost Uom Id</em>' reference.
+	 * @see #setCostUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCostUomId();
+	Uom getCostUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostUomId <em>Cost Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostUomId <em>Cost Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cost Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Cost Uom Id</em>' reference.
 	 * @see #getCostUomId()
 	 * @generated
 	 */
-	void setCostUomId(String value);
+	void setCostUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
-	 * @see #setFixedAssetId(String)
+	 * @return the value of the '<em>Fixed Asset Id</em>' reference.
+	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_FixedAssetId()
-	 * @model annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model keys="fixedAssetId"
 	 * @generated
 	 */
-	String getFixedAssetId();
+	FixedAsset getFixedAssetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getFixedAssetId <em>Fixed Asset Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getFixedAssetId <em>Fixed Asset Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Id</em>' reference.
 	 * @see #getFixedAssetId()
 	 * @generated
 	 */
-	void setFixedAssetId(String value);
+	void setFixedAssetId(FixedAsset value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -149,108 +156,108 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Id</em>' attribute.
-	 * @see #setGeoId(String)
+	 * @return the value of the '<em>Geo Id</em>' reference.
+	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_GeoId()
-	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getGeoId();
+	Geo getGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getGeoId <em>Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getGeoId <em>Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Geo Id</em>' reference.
 	 * @see #getGeoId()
 	 * @generated
 	 */
-	void setGeoId(String value);
+	void setGeoId(Geo value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Id</em>' attribute.
-	 * @see #setProductFeatureId(String)
+	 * @return the value of the '<em>Product Feature Id</em>' reference.
+	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_ProductFeatureId()
-	 * @model annotation="mimo-ent-domain frame='ProductFeature'"
+	 * @model keys="productFeatureId"
 	 * @generated
 	 */
-	String getProductFeatureId();
+	ProductFeature getProductFeatureId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductFeatureId <em>Product Feature Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductFeatureId <em>Product Feature Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Id</em>' reference.
 	 * @see #getProductFeatureId()
 	 * @generated
 	 */
-	void setProductFeatureId(String value);
+	void setProductFeatureId(ProductFeature value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -279,30 +286,30 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Id</em>' attribute.
-	 * @see #setWorkEffortId(String)
+	 * @return the value of the '<em>Work Effort Id</em>' reference.
+	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_WorkEffortId()
-	 * @model annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @model keys="workEffortId"
 	 * @generated
 	 */
-	String getWorkEffortId();
+	WorkEffort getWorkEffortId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getWorkEffortId <em>Work Effort Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getWorkEffortId <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Id</em>' reference.
 	 * @see #getWorkEffortId()
 	 * @generated
 	 */
-	void setWorkEffortId(String value);
+	void setWorkEffortId(WorkEffort value);
 
 	/**
 	 * Returns the value of the '<em><b>Cost Component Attributes</b></em>' attribute list.
@@ -322,56 +329,56 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	List<String> getCostComponentAttributes();
 
 	/**
-	 * Returns the value of the '<em><b>Cost Component Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cost Component Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost Component Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cost Component Type Id</em>' attribute.
-	 * @see #setCostComponentTypeId(String)
+	 * @return the value of the '<em>Cost Component Type Id</em>' reference.
+	 * @see #setCostComponentTypeId(CostComponentType)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentTypeId()
-	 * @model annotation="mimo-ent-domain frame='CostComponentType'"
+	 * @model keys="costComponentTypeId"
 	 * @generated
 	 */
-	String getCostComponentTypeId();
+	CostComponentType getCostComponentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentTypeId <em>Cost Component Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentTypeId <em>Cost Component Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cost Component Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Cost Component Type Id</em>' reference.
 	 * @see #getCostComponentTypeId()
 	 * @generated
 	 */
-	void setCostComponentTypeId(String value);
+	void setCostComponentTypeId(CostComponentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Cost Component Calc Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cost Component Calc Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost Component Calc Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cost Component Calc Id</em>' attribute.
-	 * @see #setCostComponentCalcId(String)
+	 * @return the value of the '<em>Cost Component Calc Id</em>' reference.
+	 * @see #setCostComponentCalcId(CostComponentCalc)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentCalcId()
-	 * @model annotation="mimo-ent-domain frame='CostComponentCalc'"
+	 * @model keys="costComponentCalcId"
 	 * @generated
 	 */
-	String getCostComponentCalcId();
+	CostComponentCalc getCostComponentCalcId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentCalcId <em>Cost Component Calc Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.cost.CostComponent#getCostComponentCalcId <em>Cost Component Calc Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cost Component Calc Id</em>' attribute.
+	 * @param value the new value of the '<em>Cost Component Calc Id</em>' reference.
 	 * @see #getCostComponentCalcId()
 	 * @generated
 	 */
-	void setCostComponentCalcId(String value);
+	void setCostComponentCalcId(CostComponentCalc value);
 
 	/**
 	 * Returns the value of the '<em><b>Cost Component Id</b></em>' attribute.
@@ -384,7 +391,7 @@ public interface CostComponent extends BizEntityTyped<CostComponentType> {
 	 * @return the value of the '<em>Cost Component Id</em>' attribute.
 	 * @see #setCostComponentId(String)
 	 * @see org.abchip.mimo.biz.product.cost.CostPackage#getCostComponent_CostComponentId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

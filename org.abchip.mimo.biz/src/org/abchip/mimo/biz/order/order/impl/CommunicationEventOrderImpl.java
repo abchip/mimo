@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.order.order.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.CommunicationEventOrder;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -57,24 +60,14 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
+	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCommunicationEventId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMMUNICATION_EVENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String communicationEventId = COMMUNICATION_EVENT_ID_EDEFAULT;
+	protected CommunicationEvent communicationEventId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +94,24 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	 * @generated
 	 */
 	@Override
-	public String getCommunicationEventId() {
+	public CommunicationEvent getCommunicationEventId() {
+		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
+			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
+			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
+			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
+			}
+		}
+		return communicationEventId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEvent basicGetCommunicationEventId() {
 		return communicationEventId;
 	}
 
@@ -111,8 +121,8 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 	 * @generated
 	 */
 	@Override
-	public void setCommunicationEventId(String newCommunicationEventId) {
-		String oldCommunicationEventId = communicationEventId;
+	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
@@ -152,7 +162,8 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 			case OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID:
 				return getOrderId();
 			case OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID:
-				return getCommunicationEventId();
+				if (resolve) return getCommunicationEventId();
+				return basicGetCommunicationEventId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,7 +180,7 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 				setOrderId((String)newValue);
 				return;
 			case OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((String)newValue);
+				setCommunicationEventId((CommunicationEvent)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +198,7 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 				setOrderId(ORDER_ID_EDEFAULT);
 				return;
 			case OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId(COMMUNICATION_EVENT_ID_EDEFAULT);
+				setCommunicationEventId((CommunicationEvent)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,7 +215,7 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 			case OrderPackage.COMMUNICATION_EVENT_ORDER__ORDER_ID:
 				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.COMMUNICATION_EVENT_ORDER__COMMUNICATION_EVENT_ID:
-				return COMMUNICATION_EVENT_ID_EDEFAULT == null ? communicationEventId != null : !COMMUNICATION_EVENT_ID_EDEFAULT.equals(communicationEventId);
+				return communicationEventId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,8 +232,6 @@ public class CommunicationEventOrderImpl extends BizEntityImpl implements Commun
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (orderId: ");
 		result.append(orderId);
-		result.append(", communicationEventId: ");
-		result.append(communicationEventId);
 		result.append(')');
 		return result.toString();
 	}

@@ -15,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getCustomScreenId <em>Custom Screen Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getCustomScreenLocation <em>Custom Screen Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getCustomScreenName <em>Custom Screen Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getCustomScreenTypeId <em>Custom Screen Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.screen.impl.CustomScreenImpl#getCustomScreenTypeId <em>Custom Screen Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -101,26 +103,6 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 	protected String customScreenName = CUSTOM_SCREEN_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCustomScreenTypeId() <em>Custom Screen Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomScreenTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUSTOM_SCREEN_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustomScreenTypeId() <em>Custom Screen Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomScreenTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String customScreenTypeId = CUSTOM_SCREEN_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,6 +121,16 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCustomScreenTypeId() <em>Custom Screen Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomScreenTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomScreenType customScreenTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,7 +226,24 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCustomScreenTypeId() {
+	public CustomScreenType getCustomScreenTypeId() {
+		if (customScreenTypeId != null && ((EObject)customScreenTypeId).eIsProxy()) {
+			InternalEObject oldCustomScreenTypeId = (InternalEObject)customScreenTypeId;
+			customScreenTypeId = (CustomScreenType)eResolveProxy(oldCustomScreenTypeId);
+			if (customScreenTypeId != oldCustomScreenTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID, oldCustomScreenTypeId, customScreenTypeId));
+			}
+		}
+		return customScreenTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomScreenType basicGetCustomScreenTypeId() {
 		return customScreenTypeId;
 	}
 
@@ -244,8 +253,8 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCustomScreenTypeId(String newCustomScreenTypeId) {
-		String oldCustomScreenTypeId = customScreenTypeId;
+	public void setCustomScreenTypeId(CustomScreenType newCustomScreenTypeId) {
+		CustomScreenType oldCustomScreenTypeId = customScreenTypeId;
 		customScreenTypeId = newCustomScreenTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID, oldCustomScreenTypeId, customScreenTypeId));
@@ -288,10 +297,11 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 				return getCustomScreenLocation();
 			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_NAME:
 				return getCustomScreenName();
-			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID:
-				return getCustomScreenTypeId();
 			case ScreenPackage.CUSTOM_SCREEN__DESCRIPTION:
 				return getDescription();
+			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID:
+				if (resolve) return getCustomScreenTypeId();
+				return basicGetCustomScreenTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,11 +323,11 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_NAME:
 				setCustomScreenName((String)newValue);
 				return;
-			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID:
-				setCustomScreenTypeId((String)newValue);
-				return;
 			case ScreenPackage.CUSTOM_SCREEN__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID:
+				setCustomScreenTypeId((CustomScreenType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -340,11 +350,11 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_NAME:
 				setCustomScreenName(CUSTOM_SCREEN_NAME_EDEFAULT);
 				return;
-			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID:
-				setCustomScreenTypeId(CUSTOM_SCREEN_TYPE_ID_EDEFAULT);
-				return;
 			case ScreenPackage.CUSTOM_SCREEN__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID:
+				setCustomScreenTypeId((CustomScreenType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -364,10 +374,10 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 				return CUSTOM_SCREEN_LOCATION_EDEFAULT == null ? customScreenLocation != null : !CUSTOM_SCREEN_LOCATION_EDEFAULT.equals(customScreenLocation);
 			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_NAME:
 				return CUSTOM_SCREEN_NAME_EDEFAULT == null ? customScreenName != null : !CUSTOM_SCREEN_NAME_EDEFAULT.equals(customScreenName);
-			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID:
-				return CUSTOM_SCREEN_TYPE_ID_EDEFAULT == null ? customScreenTypeId != null : !CUSTOM_SCREEN_TYPE_ID_EDEFAULT.equals(customScreenTypeId);
 			case ScreenPackage.CUSTOM_SCREEN__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case ScreenPackage.CUSTOM_SCREEN__CUSTOM_SCREEN_TYPE_ID:
+				return customScreenTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -388,8 +398,6 @@ public class CustomScreenImpl extends BizEntityTypedImpl<CustomScreenType> imple
 		result.append(customScreenLocation);
 		result.append(", customScreenName: ");
 		result.append(customScreenName);
-		result.append(", customScreenTypeId: ");
-		result.append(customScreenTypeId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

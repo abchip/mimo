@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.product.promo.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromoCodeParty;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -56,24 +59,14 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	protected String productPromoCodeId = PRODUCT_PROMO_CODE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
+	protected Party partyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +93,24 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -110,8 +120,8 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID, oldPartyId, partyId));
@@ -151,7 +161,8 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID:
 				return getProductPromoCodeId();
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID:
-				return getPartyId();
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,7 +179,7 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 				setProductPromoCodeId((String)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID:
-				setPartyId((String)newValue);
+				setPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,7 +197,7 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 				setProductPromoCodeId(PRODUCT_PROMO_CODE_ID_EDEFAULT);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
+				setPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -203,7 +214,7 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID:
 				return PRODUCT_PROMO_CODE_ID_EDEFAULT == null ? productPromoCodeId != null : !PRODUCT_PROMO_CODE_ID_EDEFAULT.equals(productPromoCodeId);
 			case PromoPackage.PRODUCT_PROMO_CODE_PARTY__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
+				return partyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,8 +231,6 @@ public class ProductPromoCodePartyImpl extends BizEntityImpl implements ProductP
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productPromoCodeId: ");
 		result.append(productPromoCodeId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(')');
 		return result.toString();
 	}

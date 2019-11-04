@@ -85,30 +85,30 @@ public interface FacilityType extends BizEntityType<Facility> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(FacilityType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='FacilityType'"
+	 * @model keys="facilityTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	FacilityType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(FacilityType value);
 
 	/**
 	 * Returns the value of the '<em><b>Facility Type Attrs</b></em>' attribute list.
@@ -156,7 +156,7 @@ public interface FacilityType extends BizEntityType<Facility> {
 	 * @return the value of the '<em>Facility Type Id</em>' attribute.
 	 * @see #setFacilityTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityType_FacilityTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

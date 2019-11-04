@@ -39,7 +39,8 @@ public interface CustRequestTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -65,8 +66,8 @@ public interface CustRequestTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Cust Request Type Id</em>' attribute.
 	 * @see #setCustRequestTypeId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestTypeAttr_CustRequestTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequestType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestTypeId();

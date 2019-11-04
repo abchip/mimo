@@ -50,7 +50,7 @@ public interface CryptoPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-entity-crypto";
+	String eNS_PREFIX = "biz-crypto";
 
 	/**
 	 * The singleton instance of the package.

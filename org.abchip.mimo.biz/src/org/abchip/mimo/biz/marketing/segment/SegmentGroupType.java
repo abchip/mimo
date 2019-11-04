@@ -75,7 +75,7 @@ public interface SegmentGroupType extends BizEntityType<SegmentGroup> {
 	 * @return the value of the '<em>Segment Group Type Id</em>' attribute.
 	 * @see #setSegmentGroupTypeId(String)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupType_SegmentGroupTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

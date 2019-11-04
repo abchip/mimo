@@ -23,9 +23,9 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getJustification <em>Justification</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getPurpose <em>Purpose</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItem()
@@ -70,7 +70,8 @@ public interface BudgetItem extends BizEntityTyped<BudgetItemType> {
 	 * @return the value of the '<em>Budget Item Seq Id</em>' attribute.
 	 * @see #setBudgetItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItem_BudgetItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -148,8 +149,8 @@ public interface BudgetItem extends BizEntityTyped<BudgetItemType> {
 	 * @return the value of the '<em>Budget Id</em>' attribute.
 	 * @see #setBudgetId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItem_BudgetId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Budget'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBudgetId();
@@ -165,29 +166,29 @@ public interface BudgetItem extends BizEntityTyped<BudgetItemType> {
 	void setBudgetId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Budget Item Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Budget Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Item Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Item Type Id</em>' attribute.
-	 * @see #setBudgetItemTypeId(String)
+	 * @return the value of the '<em>Budget Item Type Id</em>' reference.
+	 * @see #setBudgetItemTypeId(BudgetItemType)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetItem_BudgetItemTypeId()
-	 * @model annotation="mimo-ent-domain frame='BudgetItemType'"
+	 * @model keys="budgetItemTypeId"
 	 * @generated
 	 */
-	String getBudgetItemTypeId();
+	BudgetItemType getBudgetItemTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetItemTypeId <em>Budget Item Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.BudgetItem#getBudgetItemTypeId <em>Budget Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Budget Item Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Budget Item Type Id</em>' reference.
 	 * @see #getBudgetItemTypeId()
 	 * @generated
 	 */
-	void setBudgetItemTypeId(String value);
+	void setBudgetItemTypeId(BudgetItemType value);
 
 } // BudgetItem

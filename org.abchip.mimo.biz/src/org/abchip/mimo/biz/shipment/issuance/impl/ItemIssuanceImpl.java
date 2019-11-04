@@ -14,12 +14,18 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.issuance.IssuancePackage;
 import org.abchip.mimo.biz.shipment.issuance.ItemIssuance;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -33,16 +39,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getItemIssuanceId <em>Item Issuance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getCancelQuantity <em>Cancel Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getIssuedByUserLoginId <em>Issued By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getIssuedDateTime <em>Issued Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getMaintHistSeqId <em>Maint Hist Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getShipmentId <em>Shipment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.issuance.impl.ItemIssuanceImpl#getIssuedByUserLoginId <em>Issued By User Login Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -114,46 +120,6 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getIssuedByUserLoginId() <em>Issued By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIssuedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ISSUED_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIssuedByUserLoginId() <em>Issued By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIssuedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String issuedByUserLoginId = ISSUED_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getIssuedDateTime() <em>Issued Date Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,26 +158,6 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @ordered
 	 */
 	protected String maintHistSeqId = MAINT_HIST_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -274,26 +220,6 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	protected String shipGroupSeqId = SHIP_GROUP_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getShipmentItemSeqId() <em>Shipment Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -312,6 +238,46 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @ordered
 	 */
 	protected String shipmentItemSeqId = SHIPMENT_ITEM_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
+
+	/**
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shipment shipmentId;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
+	 * The cached value of the '{@link #getIssuedByUserLoginId() <em>Issued By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIssuedByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin issuedByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -384,7 +350,24 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -394,8 +377,8 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -407,7 +390,24 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @generated
 	 */
 	@Override
-	public String getIssuedByUserLoginId() {
+	public UserLogin getIssuedByUserLoginId() {
+		if (issuedByUserLoginId != null && ((EObject)issuedByUserLoginId).eIsProxy()) {
+			InternalEObject oldIssuedByUserLoginId = (InternalEObject)issuedByUserLoginId;
+			issuedByUserLoginId = (UserLogin)eResolveProxy(oldIssuedByUserLoginId);
+			if (issuedByUserLoginId != oldIssuedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID, oldIssuedByUserLoginId, issuedByUserLoginId));
+			}
+		}
+		return issuedByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetIssuedByUserLoginId() {
 		return issuedByUserLoginId;
 	}
 
@@ -417,8 +417,8 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @generated
 	 */
 	@Override
-	public void setIssuedByUserLoginId(String newIssuedByUserLoginId) {
-		String oldIssuedByUserLoginId = issuedByUserLoginId;
+	public void setIssuedByUserLoginId(UserLogin newIssuedByUserLoginId) {
+		UserLogin oldIssuedByUserLoginId = issuedByUserLoginId;
 		issuedByUserLoginId = newIssuedByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID, oldIssuedByUserLoginId, issuedByUserLoginId));
@@ -499,7 +499,24 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -509,8 +526,8 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__ORDER_ID, oldOrderId, orderId));
@@ -591,7 +608,24 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -601,8 +635,8 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -669,26 +703,30 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 				return getCancelQuantity();
 			case IssuancePackage.ITEM_ISSUANCE__FIXED_ASSET_ID:
 				return getFixedAssetId();
-			case IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
-			case IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID:
-				return getIssuedByUserLoginId();
 			case IssuancePackage.ITEM_ISSUANCE__ISSUED_DATE_TIME:
 				return getIssuedDateTime();
 			case IssuancePackage.ITEM_ISSUANCE__MAINT_HIST_SEQ_ID:
 				return getMaintHistSeqId();
-			case IssuancePackage.ITEM_ISSUANCE__ORDER_ID:
-				return getOrderId();
 			case IssuancePackage.ITEM_ISSUANCE__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case IssuancePackage.ITEM_ISSUANCE__QUANTITY:
 				return getQuantity();
 			case IssuancePackage.ITEM_ISSUANCE__SHIP_GROUP_SEQ_ID:
 				return getShipGroupSeqId();
-			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID:
-				return getShipmentId();
 			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ITEM_SEQ_ID:
 				return getShipmentItemSeqId();
+			case IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
+			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID:
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
+			case IssuancePackage.ITEM_ISSUANCE__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
+			case IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID:
+				if (resolve) return getIssuedByUserLoginId();
+				return basicGetIssuedByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -710,20 +748,11 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 			case IssuancePackage.ITEM_ISSUANCE__FIXED_ASSET_ID:
 				setFixedAssetId((String)newValue);
 				return;
-			case IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
-			case IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID:
-				setIssuedByUserLoginId((String)newValue);
-				return;
 			case IssuancePackage.ITEM_ISSUANCE__ISSUED_DATE_TIME:
 				setIssuedDateTime((Date)newValue);
 				return;
 			case IssuancePackage.ITEM_ISSUANCE__MAINT_HIST_SEQ_ID:
 				setMaintHistSeqId((String)newValue);
-				return;
-			case IssuancePackage.ITEM_ISSUANCE__ORDER_ID:
-				setOrderId((String)newValue);
 				return;
 			case IssuancePackage.ITEM_ISSUANCE__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
@@ -734,11 +763,20 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 			case IssuancePackage.ITEM_ISSUANCE__SHIP_GROUP_SEQ_ID:
 				setShipGroupSeqId((String)newValue);
 				return;
-			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID:
-				setShipmentId((String)newValue);
-				return;
 			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId((String)newValue);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID:
+				setShipmentId((Shipment)newValue);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID:
+				setIssuedByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -761,20 +799,11 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 			case IssuancePackage.ITEM_ISSUANCE__FIXED_ASSET_ID:
 				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
 				return;
-			case IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
-			case IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID:
-				setIssuedByUserLoginId(ISSUED_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
 			case IssuancePackage.ITEM_ISSUANCE__ISSUED_DATE_TIME:
 				setIssuedDateTime(ISSUED_DATE_TIME_EDEFAULT);
 				return;
 			case IssuancePackage.ITEM_ISSUANCE__MAINT_HIST_SEQ_ID:
 				setMaintHistSeqId(MAINT_HIST_SEQ_ID_EDEFAULT);
-				return;
-			case IssuancePackage.ITEM_ISSUANCE__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
 				return;
 			case IssuancePackage.ITEM_ISSUANCE__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
@@ -785,11 +814,20 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 			case IssuancePackage.ITEM_ISSUANCE__SHIP_GROUP_SEQ_ID:
 				setShipGroupSeqId(SHIP_GROUP_SEQ_ID_EDEFAULT);
 				return;
-			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
-				return;
 			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId(SHIPMENT_ITEM_SEQ_ID_EDEFAULT);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID:
+				setShipmentId((Shipment)null);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
+			case IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID:
+				setIssuedByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -809,26 +847,26 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 				return CANCEL_QUANTITY_EDEFAULT == null ? cancelQuantity != null : !CANCEL_QUANTITY_EDEFAULT.equals(cancelQuantity);
 			case IssuancePackage.ITEM_ISSUANCE__FIXED_ASSET_ID:
 				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
-			case IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
-			case IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID:
-				return ISSUED_BY_USER_LOGIN_ID_EDEFAULT == null ? issuedByUserLoginId != null : !ISSUED_BY_USER_LOGIN_ID_EDEFAULT.equals(issuedByUserLoginId);
 			case IssuancePackage.ITEM_ISSUANCE__ISSUED_DATE_TIME:
 				return ISSUED_DATE_TIME_EDEFAULT == null ? issuedDateTime != null : !ISSUED_DATE_TIME_EDEFAULT.equals(issuedDateTime);
 			case IssuancePackage.ITEM_ISSUANCE__MAINT_HIST_SEQ_ID:
 				return MAINT_HIST_SEQ_ID_EDEFAULT == null ? maintHistSeqId != null : !MAINT_HIST_SEQ_ID_EDEFAULT.equals(maintHistSeqId);
-			case IssuancePackage.ITEM_ISSUANCE__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case IssuancePackage.ITEM_ISSUANCE__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case IssuancePackage.ITEM_ISSUANCE__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case IssuancePackage.ITEM_ISSUANCE__SHIP_GROUP_SEQ_ID:
 				return SHIP_GROUP_SEQ_ID_EDEFAULT == null ? shipGroupSeqId != null : !SHIP_GROUP_SEQ_ID_EDEFAULT.equals(shipGroupSeqId);
-			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
 			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ITEM_SEQ_ID:
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
+			case IssuancePackage.ITEM_ISSUANCE__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
+			case IssuancePackage.ITEM_ISSUANCE__SHIPMENT_ID:
+				return shipmentId != null;
+			case IssuancePackage.ITEM_ISSUANCE__ORDER_ID:
+				return orderId != null;
+			case IssuancePackage.ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID:
+				return issuedByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -849,24 +887,16 @@ public class ItemIssuanceImpl extends BizEntityImpl implements ItemIssuance {
 		result.append(cancelQuantity);
 		result.append(", fixedAssetId: ");
 		result.append(fixedAssetId);
-		result.append(", inventoryItemId: ");
-		result.append(inventoryItemId);
-		result.append(", issuedByUserLoginId: ");
-		result.append(issuedByUserLoginId);
 		result.append(", issuedDateTime: ");
 		result.append(issuedDateTime);
 		result.append(", maintHistSeqId: ");
 		result.append(maintHistSeqId);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", shipGroupSeqId: ");
 		result.append(shipGroupSeqId);
-		result.append(", shipmentId: ");
-		result.append(shipmentId);
 		result.append(", shipmentItemSeqId: ");
 		result.append(shipmentItemSeqId);
 		result.append(')');

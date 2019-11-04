@@ -65,7 +65,8 @@ public interface FacilityTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface FacilityTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Facility Type Id</em>' attribute.
 	 * @see #setFacilityTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityTypeAttr_FacilityTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FacilityType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFacilityTypeId();

@@ -12,9 +12,12 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementPromoAppl;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementPromoApplImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,24 +79,6 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 * @ordered
 	 */
 	protected String agreementItemSeqId = AGREEMENT_ITEM_SEQ_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoId = PRODUCT_PROMO_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -148,6 +133,15 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromo productPromoId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +214,24 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoId() {
+	public ProductPromo getProductPromoId() {
+		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
+			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
+			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
+			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
+			}
+		}
+		return productPromoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromo basicGetProductPromoId() {
 		return productPromoId;
 	}
 
@@ -230,8 +241,8 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoId(String newProductPromoId) {
-		String oldProductPromoId = productPromoId;
+	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
@@ -318,14 +329,15 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 				return getAgreementId();
 			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
-			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
-				return getProductPromoId();
 			case AgreementPackage.AGREEMENT_PROMO_APPL__FROM_DATE:
 				return getFromDate();
 			case AgreementPackage.AGREEMENT_PROMO_APPL__SEQUENCE_NUM:
 				return getSequenceNum();
 			case AgreementPackage.AGREEMENT_PROMO_APPL__THRU_DATE:
 				return getThruDate();
+			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
+				if (resolve) return getProductPromoId();
+				return basicGetProductPromoId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -344,9 +356,6 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId((String)newValue);
 				return;
-			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
-				setProductPromoId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_PROMO_APPL__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -355,6 +364,9 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 				return;
 			case AgreementPackage.AGREEMENT_PROMO_APPL__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -374,9 +386,6 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
-				setProductPromoId(PRODUCT_PROMO_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_PROMO_APPL__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -385,6 +394,9 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 				return;
 			case AgreementPackage.AGREEMENT_PROMO_APPL__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -402,14 +414,14 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
 			case AgreementPackage.AGREEMENT_PROMO_APPL__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
-			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
-				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
 			case AgreementPackage.AGREEMENT_PROMO_APPL__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case AgreementPackage.AGREEMENT_PROMO_APPL__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case AgreementPackage.AGREEMENT_PROMO_APPL__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case AgreementPackage.AGREEMENT_PROMO_APPL__PRODUCT_PROMO_ID:
+				return productPromoId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -428,8 +440,6 @@ public class AgreementPromoApplImpl extends BizEntityImpl implements AgreementPr
 		result.append(agreementId);
 		result.append(", agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
-		result.append(", productPromoId: ");
-		result.append(productPromoId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

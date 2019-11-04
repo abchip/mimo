@@ -23,13 +23,13 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getSalaryStepSeqId <em>Salary Step Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getPayGradeId <em>Pay Grade Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getDateModified <em>Date Modified</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getPayGradeId <em>Pay Grade Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep()
@@ -126,7 +126,8 @@ public interface SalaryStep extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -168,31 +169,30 @@ public interface SalaryStep extends BizEntity {
 	void setLastModifiedByUserLogin(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Pay Grade Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Pay Grade Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pay Grade Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pay Grade Id</em>' attribute.
-	 * @see #setPayGradeId(String)
+	 * @return the value of the '<em>Pay Grade Id</em>' reference.
+	 * @see #setPayGradeId(PayGrade)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_PayGradeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PayGrade'"
+	 * @model keys="payGradeId"
 	 * @generated
 	 */
-	String getPayGradeId();
+	PayGrade getPayGradeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getPayGradeId <em>Pay Grade Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getPayGradeId <em>Pay Grade Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pay Grade Id</em>' attribute.
+	 * @param value the new value of the '<em>Pay Grade Id</em>' reference.
 	 * @see #getPayGradeId()
 	 * @generated
 	 */
-	void setPayGradeId(String value);
+	void setPayGradeId(PayGrade value);
 
 	/**
 	 * Returns the value of the '<em><b>Salary Step Seq Id</b></em>' attribute.
@@ -205,7 +205,8 @@ public interface SalaryStep extends BizEntity {
 	 * @return the value of the '<em>Salary Step Seq Id</em>' attribute.
 	 * @see #setSalaryStepSeqId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getSalaryStep_SalaryStepSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSalaryStepSeqId();

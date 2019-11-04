@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface PositionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-humanres-position";
+	String eNS_PREFIX = "biz-position";
 
 	/**
 	 * The singleton instance of the package.
@@ -152,22 +153,13 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Empl Position Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION__EMPL_POSITION_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Estimated From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION__ESTIMATED_FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int EMPL_POSITION__ESTIMATED_FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Estimated Thru Date</b></em>' attribute.
@@ -176,7 +168,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION__ESTIMATED_THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int EMPL_POSITION__ESTIMATED_THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Exempt Flag</b></em>' attribute.
@@ -185,7 +177,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION__EXEMPT_FLAG = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int EMPL_POSITION__EXEMPT_FLAG = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Fulltime Flag</b></em>' attribute.
@@ -194,16 +186,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION__FULLTIME_FLAG = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int EMPL_POSITION__FULLTIME_FLAG = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Salary Flag</b></em>' attribute.
@@ -212,16 +195,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION__SALARY_FLAG = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int EMPL_POSITION__SALARY_FLAG = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Temporary Flag</b></em>' attribute.
@@ -230,7 +204,34 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION__TEMPORARY_FLAG = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int EMPL_POSITION__TEMPORARY_FLAG = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_POSITION__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_POSITION__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Empl Position Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_POSITION__EMPL_POSITION_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Empl Position</em>' class.
@@ -315,7 +316,7 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_CLASS_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -388,22 +389,13 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_FULFILLMENT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_FULFILLMENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int EMPL_POSITION_FULFILLMENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -412,7 +404,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_FULFILLMENT__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int EMPL_POSITION_FULFILLMENT__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -421,7 +413,16 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_FULFILLMENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int EMPL_POSITION_FULFILLMENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_POSITION_FULFILLMENT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Empl Position Fulfillment</em>' class.
@@ -488,22 +489,13 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Empl Position Id Managed By</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_REPORTING_STRUCT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int EMPL_POSITION_REPORTING_STRUCT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -512,7 +504,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_REPORTING_STRUCT__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int EMPL_POSITION_REPORTING_STRUCT__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Primary Flag</b></em>' attribute.
@@ -521,7 +513,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_REPORTING_STRUCT__PRIMARY_FLAG = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int EMPL_POSITION_REPORTING_STRUCT__PRIMARY_FLAG = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -530,7 +522,16 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_REPORTING_STRUCT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int EMPL_POSITION_REPORTING_STRUCT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Empl Position Id Managed By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Empl Position Reporting Struct</em>' class.
@@ -597,22 +598,13 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_RESPONSIBILITY__EMPL_POSITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Responsibility Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_RESPONSIBILITY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int EMPL_POSITION_RESPONSIBILITY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -621,7 +613,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_RESPONSIBILITY__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int EMPL_POSITION_RESPONSIBILITY__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -630,7 +622,16 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_RESPONSIBILITY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int EMPL_POSITION_RESPONSIBILITY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Responsibility Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Empl Position Responsibility</em>' class.
@@ -724,7 +725,7 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -797,22 +798,13 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Empl Position Class Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_TYPE_CLASS__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int EMPL_POSITION_TYPE_CLASS__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Standard Hours Per Week</b></em>' attribute.
@@ -821,7 +813,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int EMPL_POSITION_TYPE_CLASS__STANDARD_HOURS_PER_WEEK = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -830,7 +822,16 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_TYPE_CLASS__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int EMPL_POSITION_TYPE_CLASS__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Empl Position Class Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Empl Position Type Class</em>' class.
@@ -897,22 +898,13 @@ public interface PositionPackage extends EPackage {
 	int EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rate Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_TYPE_RATE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int EMPL_POSITION_TYPE_RATE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Pay Grade Id</b></em>' attribute.
@@ -921,7 +913,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_TYPE_RATE__PAY_GRADE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int EMPL_POSITION_TYPE_RATE__PAY_GRADE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Salary Step Seq Id</b></em>' attribute.
@@ -930,7 +922,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_TYPE_RATE__SALARY_STEP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int EMPL_POSITION_TYPE_RATE__SALARY_STEP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -939,7 +931,16 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_POSITION_TYPE_RATE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int EMPL_POSITION_TYPE_RATE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Rate Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Empl Position Type Rate</em>' class.
@@ -1006,22 +1007,13 @@ public interface PositionPackage extends EPackage {
 	int VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Responsibility Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALID_RESPONSIBILITY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int VALID_RESPONSIBILITY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1030,7 +1022,7 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALID_RESPONSIBILITY__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int VALID_RESPONSIBILITY__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1039,7 +1031,16 @@ public interface PositionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALID_RESPONSIBILITY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int VALID_RESPONSIBILITY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Responsibility Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Valid Responsibility</em>' class.
@@ -1117,15 +1118,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPosition_BudgetItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEmplPositionTypeId <em>Empl Position Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEmplPositionTypeId <em>Empl Position Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Empl Position Type Id</em>'.
+	 * @return the meta object for the reference '<em>Empl Position Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#getEmplPositionTypeId()
 	 * @see #getEmplPosition()
 	 * @generated
 	 */
-	EAttribute getEmplPosition_EmplPositionTypeId();
+	EReference getEmplPosition_EmplPositionTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getEstimatedFromDate <em>Estimated From Date</em>}'.
@@ -1172,15 +1173,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPosition_FulltimeFlag();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#getPartyId()
 	 * @see #getEmplPosition()
 	 * @generated
 	 */
-	EAttribute getEmplPosition_PartyId();
+	EReference getEmplPosition_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isSalaryFlag <em>Salary Flag</em>}'.
@@ -1194,15 +1195,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPosition_SalaryFlag();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPosition#getStatusId()
 	 * @see #getEmplPosition()
 	 * @generated
 	 */
-	EAttribute getEmplPosition_StatusId();
+	EReference getEmplPosition_StatusId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPosition#isTemporaryFlag <em>Temporary Flag</em>}'.
@@ -1259,15 +1260,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPositionClassType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionClassType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPositionClassType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionClassType#getParentTypeId()
 	 * @see #getEmplPositionClassType()
 	 * @generated
 	 */
-	EAttribute getEmplPositionClassType_ParentTypeId();
+	EReference getEmplPositionClassType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.position.EmplPositionFulfillment <em>Empl Position Fulfillment</em>}'.
@@ -1291,15 +1292,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPositionFulfillment_EmplPositionId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionFulfillment#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPositionFulfillment#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionFulfillment#getPartyId()
 	 * @see #getEmplPositionFulfillment()
 	 * @generated
 	 */
-	EAttribute getEmplPositionFulfillment_PartyId();
+	EReference getEmplPositionFulfillment_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionFulfillment#getFromDate <em>From Date</em>}'.
@@ -1356,15 +1357,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPositionReportingStruct_EmplPositionIdReportingTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy <em>Empl Position Id Managed By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Empl Position Id Managed By</em>'.
+	 * @return the meta object for the reference '<em>Empl Position Id Managed By</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getEmplPositionIdManagedBy()
 	 * @see #getEmplPositionReportingStruct()
 	 * @generated
 	 */
-	EAttribute getEmplPositionReportingStruct_EmplPositionIdManagedBy();
+	EReference getEmplPositionReportingStruct_EmplPositionIdManagedBy();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionReportingStruct#getFromDate <em>From Date</em>}'.
@@ -1432,15 +1433,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPositionResponsibility_EmplPositionId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Responsibility Type Id</em>'.
+	 * @return the meta object for the reference '<em>Responsibility Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getResponsibilityTypeId()
 	 * @see #getEmplPositionResponsibility()
 	 * @generated
 	 */
-	EAttribute getEmplPositionResponsibility_ResponsibilityTypeId();
+	EReference getEmplPositionResponsibility_ResponsibilityTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getFromDate <em>From Date</em>}'.
@@ -1519,15 +1520,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPositionType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPositionType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionType#getParentTypeId()
 	 * @see #getEmplPositionType()
 	 * @generated
 	 */
-	EAttribute getEmplPositionType_ParentTypeId();
+	EReference getEmplPositionType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass <em>Empl Position Type Class</em>}'.
@@ -1551,15 +1552,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPositionTypeClass_EmplPositionTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionClassTypeId <em>Empl Position Class Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionClassTypeId <em>Empl Position Class Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Empl Position Class Type Id</em>'.
+	 * @return the meta object for the reference '<em>Empl Position Class Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionClassTypeId()
 	 * @see #getEmplPositionTypeClass()
 	 * @generated
 	 */
-	EAttribute getEmplPositionTypeClass_EmplPositionClassTypeId();
+	EReference getEmplPositionTypeClass_EmplPositionClassTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getFromDate <em>From Date</em>}'.
@@ -1616,15 +1617,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getEmplPositionTypeRate_EmplPositionTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getRateTypeId <em>Rate Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getRateTypeId <em>Rate Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rate Type Id</em>'.
+	 * @return the meta object for the reference '<em>Rate Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getRateTypeId()
 	 * @see #getEmplPositionTypeRate()
 	 * @generated
 	 */
-	EAttribute getEmplPositionTypeRate_RateTypeId();
+	EReference getEmplPositionTypeRate_RateTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeRate#getFromDate <em>From Date</em>}'.
@@ -1692,15 +1693,15 @@ public interface PositionPackage extends EPackage {
 	EAttribute getValidResponsibility_EmplPositionTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Responsibility Type Id</em>'.
+	 * @return the meta object for the reference '<em>Responsibility Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.position.ValidResponsibility#getResponsibilityTypeId()
 	 * @see #getValidResponsibility()
 	 * @generated
 	 */
-	EAttribute getValidResponsibility_ResponsibilityTypeId();
+	EReference getValidResponsibility_ResponsibilityTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getFromDate <em>From Date</em>}'.
@@ -1808,12 +1809,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION__BUDGET_ITEM_SEQ_ID = eINSTANCE.getEmplPosition_BudgetItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Empl Position Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Empl Position Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION__EMPL_POSITION_TYPE_ID = eINSTANCE.getEmplPosition_EmplPositionTypeId();
+		EReference EMPL_POSITION__EMPL_POSITION_TYPE_ID = eINSTANCE.getEmplPosition_EmplPositionTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Estimated From Date</b></em>' attribute feature.
@@ -1848,12 +1849,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION__FULLTIME_FLAG = eINSTANCE.getEmplPosition_FulltimeFlag();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION__PARTY_ID = eINSTANCE.getEmplPosition_PartyId();
+		EReference EMPL_POSITION__PARTY_ID = eINSTANCE.getEmplPosition_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Salary Flag</b></em>' attribute feature.
@@ -1864,12 +1865,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION__SALARY_FLAG = eINSTANCE.getEmplPosition_SalaryFlag();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION__STATUS_ID = eINSTANCE.getEmplPosition_StatusId();
+		EReference EMPL_POSITION__STATUS_ID = eINSTANCE.getEmplPosition_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Temporary Flag</b></em>' attribute feature.
@@ -1914,12 +1915,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION_CLASS_TYPE__HAS_TABLE = eINSTANCE.getEmplPositionClassType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION_CLASS_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplPositionClassType_ParentTypeId();
+		EReference EMPL_POSITION_CLASS_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplPositionClassType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionFulfillmentImpl <em>Empl Position Fulfillment</em>}' class.
@@ -1940,12 +1941,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION_FULFILLMENT__EMPL_POSITION_ID = eINSTANCE.getEmplPositionFulfillment_EmplPositionId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION_FULFILLMENT__PARTY_ID = eINSTANCE.getEmplPositionFulfillment_PartyId();
+		EReference EMPL_POSITION_FULFILLMENT__PARTY_ID = eINSTANCE.getEmplPositionFulfillment_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -1990,12 +1991,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_REPORTING_TO = eINSTANCE.getEmplPositionReportingStruct_EmplPositionIdReportingTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Empl Position Id Managed By</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Empl Position Id Managed By</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY = eINSTANCE.getEmplPositionReportingStruct_EmplPositionIdManagedBy();
+		EReference EMPL_POSITION_REPORTING_STRUCT__EMPL_POSITION_ID_MANAGED_BY = eINSTANCE.getEmplPositionReportingStruct_EmplPositionIdManagedBy();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -2048,12 +2049,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION_RESPONSIBILITY__EMPL_POSITION_ID = eINSTANCE.getEmplPositionResponsibility_EmplPositionId();
 
 		/**
-		 * The meta object literal for the '<em><b>Responsibility Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Responsibility Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID = eINSTANCE.getEmplPositionResponsibility_ResponsibilityTypeId();
+		EReference EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID = eINSTANCE.getEmplPositionResponsibility_ResponsibilityTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -2114,12 +2115,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION_TYPE__HAS_TABLE = eINSTANCE.getEmplPositionType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplPositionType_ParentTypeId();
+		EReference EMPL_POSITION_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplPositionType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionTypeClassImpl <em>Empl Position Type Class</em>}' class.
@@ -2140,12 +2141,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_TYPE_ID = eINSTANCE.getEmplPositionTypeClass_EmplPositionTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Empl Position Class Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Empl Position Class Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID = eINSTANCE.getEmplPositionTypeClass_EmplPositionClassTypeId();
+		EReference EMPL_POSITION_TYPE_CLASS__EMPL_POSITION_CLASS_TYPE_ID = eINSTANCE.getEmplPositionTypeClass_EmplPositionClassTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -2190,12 +2191,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute EMPL_POSITION_TYPE_RATE__EMPL_POSITION_TYPE_ID = eINSTANCE.getEmplPositionTypeRate_EmplPositionTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Rate Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Rate Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID = eINSTANCE.getEmplPositionTypeRate_RateTypeId();
+		EReference EMPL_POSITION_TYPE_RATE__RATE_TYPE_ID = eINSTANCE.getEmplPositionTypeRate_RateTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -2248,12 +2249,12 @@ public interface PositionPackage extends EPackage {
 		EAttribute VALID_RESPONSIBILITY__EMPL_POSITION_TYPE_ID = eINSTANCE.getValidResponsibility_EmplPositionTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Responsibility Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Responsibility Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID = eINSTANCE.getValidResponsibility_ResponsibilityTypeId();
+		EReference VALID_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID = eINSTANCE.getValidResponsibility_ResponsibilityTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.

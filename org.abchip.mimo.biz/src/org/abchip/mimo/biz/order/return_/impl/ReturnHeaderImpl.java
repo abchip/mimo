@@ -11,15 +11,26 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
+import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.return_.ReturnHeader;
 import org.abchip.mimo.biz.order.return_.ReturnHeaderType;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -32,20 +43,20 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getReturnId <em>Return Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getCreatedBy <em>Created By</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getDestinationFacilityId <em>Destination Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getEntryDate <em>Entry Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getFinAccountId <em>Fin Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getFromPartyId <em>From Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#isNeedsInventoryReceive <em>Needs Inventory Receive</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getSupplierRmaId <em>Supplier Rma Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getReturnHeaderTypeId <em>Return Header Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getFromPartyId <em>From Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getToPartyId <em>To Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getFinAccountId <em>Fin Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getDestinationFacilityId <em>Destination Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getOriginContactMechId <em>Origin Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getCreatedBy <em>Created By</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getCommunicationEventReturns <em>Communication Event Returns</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl#getReturnItems <em>Return Items</em>}</li>
  * </ul>
@@ -79,86 +90,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	protected String returnId = RETURN_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BILLING_ACCOUNT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String billingAccountId = BILLING_ACCOUNT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedBy() <em>Created By</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedBy() <em>Created By</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdBy = CREATED_BY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDestinationFacilityId() <em>Destination Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestinationFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESTINATION_FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDestinationFacilityId() <em>Destination Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDestinationFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String destinationFacilityId = DESTINATION_FACILITY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getEntryDate() <em>Entry Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -177,46 +108,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @ordered
 	 */
 	protected Date entryDate = ENTRY_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountId = FIN_ACCOUNT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFromPartyId() <em>From Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FROM_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFromPartyId() <em>From Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fromPartyId = FROM_PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isNeedsInventoryReceive() <em>Needs Inventory Receive</em>}' attribute.
@@ -239,86 +130,6 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	protected boolean needsInventoryReceive = NEEDS_INVENTORY_RECEIVE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOriginContactMechId() <em>Origin Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORIGIN_CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOriginContactMechId() <em>Origin Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String originContactMechId = ORIGIN_CONTACT_MECH_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_METHOD_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodId = PAYMENT_METHOD_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReturnHeaderTypeId() <em>Return Header Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnHeaderTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RETURN_HEADER_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnHeaderTypeId() <em>Return Header Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnHeaderTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnHeaderTypeId = RETURN_HEADER_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSupplierRmaId() <em>Supplier Rma Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,24 +150,114 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	protected String supplierRmaId = SUPPLIER_RMA_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getToPartyId() <em>To Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getReturnHeaderTypeId() <em>Return Header Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToPartyId()
+	 * @see #getReturnHeaderTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TO_PARTY_ID_EDEFAULT = null;
+	protected ReturnHeaderType returnHeaderTypeId;
 
 	/**
-	 * The cached value of the '{@link #getToPartyId() <em>To Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getFromPartyId() <em>From Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party fromPartyId;
+
+	/**
+	 * The cached value of the '{@link #getToPartyId() <em>To Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getToPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String toPartyId = TO_PARTY_ID_EDEFAULT;
+	protected Party toPartyId;
+
+	/**
+	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBillingAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected BillingAccount billingAccountId;
+
+	/**
+	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FinAccount finAccountId;
+
+	/**
+	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethod paymentMethodId;
+
+	/**
+	 * The cached value of the '{@link #getDestinationFacilityId() <em>Destination Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDestinationFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility destinationFacilityId;
+
+	/**
+	 * The cached value of the '{@link #getOriginContactMechId() <em>Origin Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PostalAddress originContactMechId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedBy() <em>Created By</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdBy;
 
 	/**
 	 * The cached value of the '{@link #getCommunicationEventReturns() <em>Communication Event Returns</em>}' attribute list.
@@ -403,7 +304,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getBillingAccountId() {
+	public BillingAccount getBillingAccountId() {
+		if (billingAccountId != null && ((EObject)billingAccountId).eIsProxy()) {
+			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
+			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
+			if (billingAccountId != oldBillingAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
+			}
+		}
+		return billingAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BillingAccount basicGetBillingAccountId() {
 		return billingAccountId;
 	}
 
@@ -413,8 +331,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setBillingAccountId(String newBillingAccountId) {
-		String oldBillingAccountId = billingAccountId;
+	public void setBillingAccountId(BillingAccount newBillingAccountId) {
+		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
@@ -426,7 +344,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCreatedBy() {
+	public UserLogin getCreatedBy() {
+		if (createdBy != null && ((EObject)createdBy).eIsProxy()) {
+			InternalEObject oldCreatedBy = (InternalEObject)createdBy;
+			createdBy = (UserLogin)eResolveProxy(oldCreatedBy);
+			if (createdBy != oldCreatedBy) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__CREATED_BY, oldCreatedBy, createdBy));
+			}
+		}
+		return createdBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedBy() {
 		return createdBy;
 	}
 
@@ -436,8 +371,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCreatedBy(String newCreatedBy) {
-		String oldCreatedBy = createdBy;
+	public void setCreatedBy(UserLogin newCreatedBy) {
+		UserLogin oldCreatedBy = createdBy;
 		createdBy = newCreatedBy;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__CREATED_BY, oldCreatedBy, createdBy));
@@ -449,7 +384,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -459,8 +411,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -472,7 +424,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getDestinationFacilityId() {
+	public Facility getDestinationFacilityId() {
+		if (destinationFacilityId != null && ((EObject)destinationFacilityId).eIsProxy()) {
+			InternalEObject oldDestinationFacilityId = (InternalEObject)destinationFacilityId;
+			destinationFacilityId = (Facility)eResolveProxy(oldDestinationFacilityId);
+			if (destinationFacilityId != oldDestinationFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID, oldDestinationFacilityId, destinationFacilityId));
+			}
+		}
+		return destinationFacilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetDestinationFacilityId() {
 		return destinationFacilityId;
 	}
 
@@ -482,8 +451,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setDestinationFacilityId(String newDestinationFacilityId) {
-		String oldDestinationFacilityId = destinationFacilityId;
+	public void setDestinationFacilityId(Facility newDestinationFacilityId) {
+		Facility oldDestinationFacilityId = destinationFacilityId;
 		destinationFacilityId = newDestinationFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID, oldDestinationFacilityId, destinationFacilityId));
@@ -518,7 +487,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountId() {
+	public FinAccount getFinAccountId() {
+		if (finAccountId != null && ((EObject)finAccountId).eIsProxy()) {
+			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
+			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
+			if (finAccountId != oldFinAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
+			}
+		}
+		return finAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccount basicGetFinAccountId() {
 		return finAccountId;
 	}
 
@@ -528,8 +514,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountId(String newFinAccountId) {
-		String oldFinAccountId = finAccountId;
+	public void setFinAccountId(FinAccount newFinAccountId) {
+		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
@@ -541,7 +527,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getFromPartyId() {
+	public Party getFromPartyId() {
+		if (fromPartyId != null && ((EObject)fromPartyId).eIsProxy()) {
+			InternalEObject oldFromPartyId = (InternalEObject)fromPartyId;
+			fromPartyId = (Party)eResolveProxy(oldFromPartyId);
+			if (fromPartyId != oldFromPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__FROM_PARTY_ID, oldFromPartyId, fromPartyId));
+			}
+		}
+		return fromPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetFromPartyId() {
 		return fromPartyId;
 	}
 
@@ -551,8 +554,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setFromPartyId(String newFromPartyId) {
-		String oldFromPartyId = fromPartyId;
+	public void setFromPartyId(Party newFromPartyId) {
+		Party oldFromPartyId = fromPartyId;
 		fromPartyId = newFromPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__FROM_PARTY_ID, oldFromPartyId, fromPartyId));
@@ -587,7 +590,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getOriginContactMechId() {
+	public PostalAddress getOriginContactMechId() {
+		if (originContactMechId != null && ((EObject)originContactMechId).eIsProxy()) {
+			InternalEObject oldOriginContactMechId = (InternalEObject)originContactMechId;
+			originContactMechId = (PostalAddress)eResolveProxy(oldOriginContactMechId);
+			if (originContactMechId != oldOriginContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
+			}
+		}
+		return originContactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostalAddress basicGetOriginContactMechId() {
 		return originContactMechId;
 	}
 
@@ -597,8 +617,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setOriginContactMechId(String newOriginContactMechId) {
-		String oldOriginContactMechId = originContactMechId;
+	public void setOriginContactMechId(PostalAddress newOriginContactMechId) {
+		PostalAddress oldOriginContactMechId = originContactMechId;
 		originContactMechId = newOriginContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID, oldOriginContactMechId, originContactMechId));
@@ -610,7 +630,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodId() {
+	public PaymentMethod getPaymentMethodId() {
+		if (paymentMethodId != null && ((EObject)paymentMethodId).eIsProxy()) {
+			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
+			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
+			if (paymentMethodId != oldPaymentMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
+			}
+		}
+		return paymentMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethod basicGetPaymentMethodId() {
 		return paymentMethodId;
 	}
 
@@ -620,8 +657,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodId(String newPaymentMethodId) {
-		String oldPaymentMethodId = paymentMethodId;
+	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
@@ -633,7 +670,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getReturnHeaderTypeId() {
+	public ReturnHeaderType getReturnHeaderTypeId() {
+		if (returnHeaderTypeId != null && ((EObject)returnHeaderTypeId).eIsProxy()) {
+			InternalEObject oldReturnHeaderTypeId = (InternalEObject)returnHeaderTypeId;
+			returnHeaderTypeId = (ReturnHeaderType)eResolveProxy(oldReturnHeaderTypeId);
+			if (returnHeaderTypeId != oldReturnHeaderTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID, oldReturnHeaderTypeId, returnHeaderTypeId));
+			}
+		}
+		return returnHeaderTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReturnHeaderType basicGetReturnHeaderTypeId() {
 		return returnHeaderTypeId;
 	}
 
@@ -643,8 +697,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setReturnHeaderTypeId(String newReturnHeaderTypeId) {
-		String oldReturnHeaderTypeId = returnHeaderTypeId;
+	public void setReturnHeaderTypeId(ReturnHeaderType newReturnHeaderTypeId) {
+		ReturnHeaderType oldReturnHeaderTypeId = returnHeaderTypeId;
 		returnHeaderTypeId = newReturnHeaderTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID, oldReturnHeaderTypeId, returnHeaderTypeId));
@@ -679,7 +733,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -689,8 +760,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__STATUS_ID, oldStatusId, statusId));
@@ -725,7 +796,24 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public String getToPartyId() {
+	public Party getToPartyId() {
+		if (toPartyId != null && ((EObject)toPartyId).eIsProxy()) {
+			InternalEObject oldToPartyId = (InternalEObject)toPartyId;
+			toPartyId = (Party)eResolveProxy(oldToPartyId);
+			if (toPartyId != oldToPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_HEADER__TO_PARTY_ID, oldToPartyId, toPartyId));
+			}
+		}
+		return toPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetToPartyId() {
 		return toPartyId;
 	}
 
@@ -735,8 +823,8 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 	 * @generated
 	 */
 	@Override
-	public void setToPartyId(String newToPartyId) {
-		String oldToPartyId = toPartyId;
+	public void setToPartyId(Party newToPartyId) {
+		Party oldToPartyId = toPartyId;
 		toPartyId = newToPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_HEADER__TO_PARTY_ID, oldToPartyId, toPartyId));
@@ -814,34 +902,45 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 		switch (featureID) {
 			case ReturnPackage.RETURN_HEADER__RETURN_ID:
 				return getReturnId();
-			case ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID:
-				return getBillingAccountId();
-			case ReturnPackage.RETURN_HEADER__CREATED_BY:
-				return getCreatedBy();
-			case ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
-			case ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID:
-				return getDestinationFacilityId();
 			case ReturnPackage.RETURN_HEADER__ENTRY_DATE:
 				return getEntryDate();
-			case ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID:
-				return getFinAccountId();
-			case ReturnPackage.RETURN_HEADER__FROM_PARTY_ID:
-				return getFromPartyId();
 			case ReturnPackage.RETURN_HEADER__NEEDS_INVENTORY_RECEIVE:
 				return isNeedsInventoryReceive();
-			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
-				return getOriginContactMechId();
-			case ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID:
-				return getPaymentMethodId();
-			case ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID:
-				return getReturnHeaderTypeId();
-			case ReturnPackage.RETURN_HEADER__STATUS_ID:
-				return getStatusId();
 			case ReturnPackage.RETURN_HEADER__SUPPLIER_RMA_ID:
 				return getSupplierRmaId();
+			case ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID:
+				if (resolve) return getReturnHeaderTypeId();
+				return basicGetReturnHeaderTypeId();
+			case ReturnPackage.RETURN_HEADER__FROM_PARTY_ID:
+				if (resolve) return getFromPartyId();
+				return basicGetFromPartyId();
 			case ReturnPackage.RETURN_HEADER__TO_PARTY_ID:
-				return getToPartyId();
+				if (resolve) return getToPartyId();
+				return basicGetToPartyId();
+			case ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID:
+				if (resolve) return getBillingAccountId();
+				return basicGetBillingAccountId();
+			case ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID:
+				if (resolve) return getFinAccountId();
+				return basicGetFinAccountId();
+			case ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID:
+				if (resolve) return getPaymentMethodId();
+				return basicGetPaymentMethodId();
+			case ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID:
+				if (resolve) return getDestinationFacilityId();
+				return basicGetDestinationFacilityId();
+			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
+				if (resolve) return getOriginContactMechId();
+				return basicGetOriginContactMechId();
+			case ReturnPackage.RETURN_HEADER__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case ReturnPackage.RETURN_HEADER__CREATED_BY:
+				if (resolve) return getCreatedBy();
+				return basicGetCreatedBy();
 			case ReturnPackage.RETURN_HEADER__COMMUNICATION_EVENT_RETURNS:
 				return getCommunicationEventReturns();
 			case ReturnPackage.RETURN_HEADER__RETURN_ITEMS:
@@ -862,47 +961,47 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			case ReturnPackage.RETURN_HEADER__RETURN_ID:
 				setReturnId((String)newValue);
 				return;
-			case ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID:
-				setBillingAccountId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_HEADER__CREATED_BY:
-				setCreatedBy((String)newValue);
-				return;
-			case ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID:
-				setDestinationFacilityId((String)newValue);
-				return;
 			case ReturnPackage.RETURN_HEADER__ENTRY_DATE:
 				setEntryDate((Date)newValue);
-				return;
-			case ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID:
-				setFinAccountId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_HEADER__FROM_PARTY_ID:
-				setFromPartyId((String)newValue);
 				return;
 			case ReturnPackage.RETURN_HEADER__NEEDS_INVENTORY_RECEIVE:
 				setNeedsInventoryReceive((Boolean)newValue);
 				return;
-			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
-				setOriginContactMechId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID:
-				setPaymentMethodId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID:
-				setReturnHeaderTypeId((String)newValue);
-				return;
-			case ReturnPackage.RETURN_HEADER__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case ReturnPackage.RETURN_HEADER__SUPPLIER_RMA_ID:
 				setSupplierRmaId((String)newValue);
 				return;
+			case ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID:
+				setReturnHeaderTypeId((ReturnHeaderType)newValue);
+				return;
+			case ReturnPackage.RETURN_HEADER__FROM_PARTY_ID:
+				setFromPartyId((Party)newValue);
+				return;
 			case ReturnPackage.RETURN_HEADER__TO_PARTY_ID:
-				setToPartyId((String)newValue);
+				setToPartyId((Party)newValue);
+				return;
+			case ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID:
+				setBillingAccountId((BillingAccount)newValue);
+				return;
+			case ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)newValue);
+				return;
+			case ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)newValue);
+				return;
+			case ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID:
+				setDestinationFacilityId((Facility)newValue);
+				return;
+			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
+				setOriginContactMechId((PostalAddress)newValue);
+				return;
+			case ReturnPackage.RETURN_HEADER__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case ReturnPackage.RETURN_HEADER__CREATED_BY:
+				setCreatedBy((UserLogin)newValue);
 				return;
 			case ReturnPackage.RETURN_HEADER__COMMUNICATION_EVENT_RETURNS:
 				getCommunicationEventReturns().clear();
@@ -927,47 +1026,47 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 			case ReturnPackage.RETURN_HEADER__RETURN_ID:
 				setReturnId(RETURN_ID_EDEFAULT);
 				return;
-			case ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID:
-				setBillingAccountId(BILLING_ACCOUNT_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_HEADER__CREATED_BY:
-				setCreatedBy(CREATED_BY_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID:
-				setDestinationFacilityId(DESTINATION_FACILITY_ID_EDEFAULT);
-				return;
 			case ReturnPackage.RETURN_HEADER__ENTRY_DATE:
 				setEntryDate(ENTRY_DATE_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID:
-				setFinAccountId(FIN_ACCOUNT_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_HEADER__FROM_PARTY_ID:
-				setFromPartyId(FROM_PARTY_ID_EDEFAULT);
 				return;
 			case ReturnPackage.RETURN_HEADER__NEEDS_INVENTORY_RECEIVE:
 				setNeedsInventoryReceive(NEEDS_INVENTORY_RECEIVE_EDEFAULT);
 				return;
-			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
-				setOriginContactMechId(ORIGIN_CONTACT_MECH_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID:
-				setPaymentMethodId(PAYMENT_METHOD_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID:
-				setReturnHeaderTypeId(RETURN_HEADER_TYPE_ID_EDEFAULT);
-				return;
-			case ReturnPackage.RETURN_HEADER__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case ReturnPackage.RETURN_HEADER__SUPPLIER_RMA_ID:
 				setSupplierRmaId(SUPPLIER_RMA_ID_EDEFAULT);
 				return;
+			case ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID:
+				setReturnHeaderTypeId((ReturnHeaderType)null);
+				return;
+			case ReturnPackage.RETURN_HEADER__FROM_PARTY_ID:
+				setFromPartyId((Party)null);
+				return;
 			case ReturnPackage.RETURN_HEADER__TO_PARTY_ID:
-				setToPartyId(TO_PARTY_ID_EDEFAULT);
+				setToPartyId((Party)null);
+				return;
+			case ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID:
+				setBillingAccountId((BillingAccount)null);
+				return;
+			case ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)null);
+				return;
+			case ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)null);
+				return;
+			case ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID:
+				setDestinationFacilityId((Facility)null);
+				return;
+			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
+				setOriginContactMechId((PostalAddress)null);
+				return;
+			case ReturnPackage.RETURN_HEADER__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case ReturnPackage.RETURN_HEADER__CREATED_BY:
+				setCreatedBy((UserLogin)null);
 				return;
 			case ReturnPackage.RETURN_HEADER__COMMUNICATION_EVENT_RETURNS:
 				getCommunicationEventReturns().clear();
@@ -989,34 +1088,34 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 		switch (featureID) {
 			case ReturnPackage.RETURN_HEADER__RETURN_ID:
 				return RETURN_ID_EDEFAULT == null ? returnId != null : !RETURN_ID_EDEFAULT.equals(returnId);
-			case ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID:
-				return BILLING_ACCOUNT_ID_EDEFAULT == null ? billingAccountId != null : !BILLING_ACCOUNT_ID_EDEFAULT.equals(billingAccountId);
-			case ReturnPackage.RETURN_HEADER__CREATED_BY:
-				return CREATED_BY_EDEFAULT == null ? createdBy != null : !CREATED_BY_EDEFAULT.equals(createdBy);
-			case ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
-			case ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID:
-				return DESTINATION_FACILITY_ID_EDEFAULT == null ? destinationFacilityId != null : !DESTINATION_FACILITY_ID_EDEFAULT.equals(destinationFacilityId);
 			case ReturnPackage.RETURN_HEADER__ENTRY_DATE:
 				return ENTRY_DATE_EDEFAULT == null ? entryDate != null : !ENTRY_DATE_EDEFAULT.equals(entryDate);
-			case ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID:
-				return FIN_ACCOUNT_ID_EDEFAULT == null ? finAccountId != null : !FIN_ACCOUNT_ID_EDEFAULT.equals(finAccountId);
-			case ReturnPackage.RETURN_HEADER__FROM_PARTY_ID:
-				return FROM_PARTY_ID_EDEFAULT == null ? fromPartyId != null : !FROM_PARTY_ID_EDEFAULT.equals(fromPartyId);
 			case ReturnPackage.RETURN_HEADER__NEEDS_INVENTORY_RECEIVE:
 				return needsInventoryReceive != NEEDS_INVENTORY_RECEIVE_EDEFAULT;
-			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
-				return ORIGIN_CONTACT_MECH_ID_EDEFAULT == null ? originContactMechId != null : !ORIGIN_CONTACT_MECH_ID_EDEFAULT.equals(originContactMechId);
-			case ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID:
-				return PAYMENT_METHOD_ID_EDEFAULT == null ? paymentMethodId != null : !PAYMENT_METHOD_ID_EDEFAULT.equals(paymentMethodId);
-			case ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID:
-				return RETURN_HEADER_TYPE_ID_EDEFAULT == null ? returnHeaderTypeId != null : !RETURN_HEADER_TYPE_ID_EDEFAULT.equals(returnHeaderTypeId);
-			case ReturnPackage.RETURN_HEADER__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case ReturnPackage.RETURN_HEADER__SUPPLIER_RMA_ID:
 				return SUPPLIER_RMA_ID_EDEFAULT == null ? supplierRmaId != null : !SUPPLIER_RMA_ID_EDEFAULT.equals(supplierRmaId);
+			case ReturnPackage.RETURN_HEADER__RETURN_HEADER_TYPE_ID:
+				return returnHeaderTypeId != null;
+			case ReturnPackage.RETURN_HEADER__FROM_PARTY_ID:
+				return fromPartyId != null;
 			case ReturnPackage.RETURN_HEADER__TO_PARTY_ID:
-				return TO_PARTY_ID_EDEFAULT == null ? toPartyId != null : !TO_PARTY_ID_EDEFAULT.equals(toPartyId);
+				return toPartyId != null;
+			case ReturnPackage.RETURN_HEADER__BILLING_ACCOUNT_ID:
+				return billingAccountId != null;
+			case ReturnPackage.RETURN_HEADER__FIN_ACCOUNT_ID:
+				return finAccountId != null;
+			case ReturnPackage.RETURN_HEADER__PAYMENT_METHOD_ID:
+				return paymentMethodId != null;
+			case ReturnPackage.RETURN_HEADER__DESTINATION_FACILITY_ID:
+				return destinationFacilityId != null;
+			case ReturnPackage.RETURN_HEADER__ORIGIN_CONTACT_MECH_ID:
+				return originContactMechId != null;
+			case ReturnPackage.RETURN_HEADER__STATUS_ID:
+				return statusId != null;
+			case ReturnPackage.RETURN_HEADER__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case ReturnPackage.RETURN_HEADER__CREATED_BY:
+				return createdBy != null;
 			case ReturnPackage.RETURN_HEADER__COMMUNICATION_EVENT_RETURNS:
 				return communicationEventReturns != null && !communicationEventReturns.isEmpty();
 			case ReturnPackage.RETURN_HEADER__RETURN_ITEMS:
@@ -1037,34 +1136,12 @@ public class ReturnHeaderImpl extends BizEntityTypedImpl<ReturnHeaderType> imple
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (returnId: ");
 		result.append(returnId);
-		result.append(", billingAccountId: ");
-		result.append(billingAccountId);
-		result.append(", createdBy: ");
-		result.append(createdBy);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
-		result.append(", destinationFacilityId: ");
-		result.append(destinationFacilityId);
 		result.append(", entryDate: ");
 		result.append(entryDate);
-		result.append(", finAccountId: ");
-		result.append(finAccountId);
-		result.append(", fromPartyId: ");
-		result.append(fromPartyId);
 		result.append(", needsInventoryReceive: ");
 		result.append(needsInventoryReceive);
-		result.append(", originContactMechId: ");
-		result.append(originContactMechId);
-		result.append(", paymentMethodId: ");
-		result.append(paymentMethodId);
-		result.append(", returnHeaderTypeId: ");
-		result.append(returnHeaderTypeId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", supplierRmaId: ");
 		result.append(supplierRmaId);
-		result.append(", toPartyId: ");
-		result.append(toPartyId);
 		result.append(", communicationEventReturns: ");
 		result.append(communicationEventReturns);
 		result.append(", returnItems: ");

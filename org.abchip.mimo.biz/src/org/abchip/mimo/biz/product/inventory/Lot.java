@@ -132,7 +132,7 @@ public interface Lot extends BizEntity {
 	 * @return the value of the '<em>Lot Id</em>' attribute.
 	 * @see #setLotId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getLot_LotId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

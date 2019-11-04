@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.humanres.ability;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.status.StatusItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,12 +22,12 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId <em>Party Qual Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getQualificationDesc <em>Qualification Desc</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getTitle <em>Title</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId <em>Party Qual Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getVerifStatusId <em>Verif Status Id</em>}</li>
  * </ul>
  *
@@ -46,7 +47,8 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -72,8 +74,8 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -89,31 +91,30 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	void setPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Qual Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Qual Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Qual Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Qual Type Id</em>' attribute.
-	 * @see #setPartyQualTypeId(String)
+	 * @return the value of the '<em>Party Qual Type Id</em>' reference.
+	 * @see #setPartyQualTypeId(PartyQualType)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_PartyQualTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PartyQualType'"
+	 * @model keys="partyQualTypeId"
 	 * @generated
 	 */
-	String getPartyQualTypeId();
+	PartyQualType getPartyQualTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId <em>Party Qual Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId <em>Party Qual Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Qual Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Qual Type Id</em>' reference.
 	 * @see #getPartyQualTypeId()
 	 * @generated
 	 */
-	void setPartyQualTypeId(String value);
+	void setPartyQualTypeId(PartyQualType value);
 
 	/**
 	 * Returns the value of the '<em><b>Qualification Desc</b></em>' attribute.
@@ -142,30 +143,30 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	void setQualificationDesc(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -220,29 +221,29 @@ public interface PartyQual extends BizEntityTyped<PartyQualType> {
 	void setTitle(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Verif Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Verif Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Verif Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Verif Status Id</em>' attribute.
-	 * @see #setVerifStatusId(String)
+	 * @return the value of the '<em>Verif Status Id</em>' reference.
+	 * @see #setVerifStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPartyQual_VerifStatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getVerifStatusId();
+	StatusItem getVerifStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getVerifStatusId <em>Verif Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getVerifStatusId <em>Verif Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Verif Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Verif Status Id</em>' reference.
 	 * @see #getVerifStatusId()
 	 * @generated
 	 */
-	void setVerifStatusId(String value);
+	void setVerifStatusId(StatusItem value);
 
 } // PartyQual

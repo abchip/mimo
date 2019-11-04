@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssoc;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortAssocType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
@@ -17,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,11 +31,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl#getWorkEffortIdFrom <em>Work Effort Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl#getWorkEffortIdTo <em>Work Effort Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl#getWorkEffortAssocTypeId <em>Work Effort Assoc Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortAssocImpl#getWorkEffortIdTo <em>Work Effort Id To</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,46 +65,6 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 * @ordered
 	 */
 	protected String workEffortIdFrom = WORK_EFFORT_ID_FROM_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortIdTo() <em>Work Effort Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ID_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortIdTo() <em>Work Effort Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortIdTo = WORK_EFFORT_ID_TO_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortAssocTypeId() <em>Work Effort Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortAssocTypeId() <em>Work Effort Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortAssocTypeId = WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -162,6 +125,26 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortAssocTypeId() <em>Work Effort Assoc Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortAssocTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffortAssocType workEffortAssocTypeId;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortIdTo() <em>Work Effort Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortIdTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +240,24 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortAssocTypeId() {
+	public WorkEffortAssocType getWorkEffortAssocTypeId() {
+		if (workEffortAssocTypeId != null && ((EObject)workEffortAssocTypeId).eIsProxy()) {
+			InternalEObject oldWorkEffortAssocTypeId = (InternalEObject)workEffortAssocTypeId;
+			workEffortAssocTypeId = (WorkEffortAssocType)eResolveProxy(oldWorkEffortAssocTypeId);
+			if (workEffortAssocTypeId != oldWorkEffortAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID, oldWorkEffortAssocTypeId, workEffortAssocTypeId));
+			}
+		}
+		return workEffortAssocTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffortAssocType basicGetWorkEffortAssocTypeId() {
 		return workEffortAssocTypeId;
 	}
 
@@ -267,8 +267,8 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortAssocTypeId(String newWorkEffortAssocTypeId) {
-		String oldWorkEffortAssocTypeId = workEffortAssocTypeId;
+	public void setWorkEffortAssocTypeId(WorkEffortAssocType newWorkEffortAssocTypeId) {
+		WorkEffortAssocType oldWorkEffortAssocTypeId = workEffortAssocTypeId;
 		workEffortAssocTypeId = newWorkEffortAssocTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID, oldWorkEffortAssocTypeId, workEffortAssocTypeId));
@@ -303,7 +303,24 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortIdTo() {
+	public WorkEffort getWorkEffortIdTo() {
+		if (workEffortIdTo != null && ((EObject)workEffortIdTo).eIsProxy()) {
+			InternalEObject oldWorkEffortIdTo = (InternalEObject)workEffortIdTo;
+			workEffortIdTo = (WorkEffort)eResolveProxy(oldWorkEffortIdTo);
+			if (workEffortIdTo != oldWorkEffortIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO, oldWorkEffortIdTo, workEffortIdTo));
+			}
+		}
+		return workEffortIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortIdTo() {
 		return workEffortIdTo;
 	}
 
@@ -313,8 +330,8 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortIdTo(String newWorkEffortIdTo) {
-		String oldWorkEffortIdTo = workEffortIdTo;
+	public void setWorkEffortIdTo(WorkEffort newWorkEffortIdTo) {
+		WorkEffort oldWorkEffortIdTo = workEffortIdTo;
 		workEffortIdTo = newWorkEffortIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO, oldWorkEffortIdTo, workEffortIdTo));
@@ -330,16 +347,18 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_FROM:
 				return getWorkEffortIdFrom();
-			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO:
-				return getWorkEffortIdTo();
-			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID:
-				return getWorkEffortAssocTypeId();
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__FROM_DATE:
 				return getFromDate();
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__SEQUENCE_NUM:
 				return getSequenceNum();
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID:
+				if (resolve) return getWorkEffortAssocTypeId();
+				return basicGetWorkEffortAssocTypeId();
+			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO:
+				if (resolve) return getWorkEffortIdTo();
+				return basicGetWorkEffortIdTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -355,12 +374,6 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_FROM:
 				setWorkEffortIdFrom((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO:
-				setWorkEffortIdTo((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID:
-				setWorkEffortAssocTypeId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -369,6 +382,12 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 				return;
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID:
+				setWorkEffortAssocTypeId((WorkEffortAssocType)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO:
+				setWorkEffortIdTo((WorkEffort)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -385,12 +404,6 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_FROM:
 				setWorkEffortIdFrom(WORK_EFFORT_ID_FROM_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO:
-				setWorkEffortIdTo(WORK_EFFORT_ID_TO_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID:
-				setWorkEffortAssocTypeId(WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -399,6 +412,12 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 				return;
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID:
+				setWorkEffortAssocTypeId((WorkEffortAssocType)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO:
+				setWorkEffortIdTo((WorkEffort)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -414,16 +433,16 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_FROM:
 				return WORK_EFFORT_ID_FROM_EDEFAULT == null ? workEffortIdFrom != null : !WORK_EFFORT_ID_FROM_EDEFAULT.equals(workEffortIdFrom);
-			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO:
-				return WORK_EFFORT_ID_TO_EDEFAULT == null ? workEffortIdTo != null : !WORK_EFFORT_ID_TO_EDEFAULT.equals(workEffortIdTo);
-			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID:
-				return WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT == null ? workEffortAssocTypeId != null : !WORK_EFFORT_ASSOC_TYPE_ID_EDEFAULT.equals(workEffortAssocTypeId);
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT_ASSOC__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ASSOC_TYPE_ID:
+				return workEffortAssocTypeId != null;
+			case WorkeffortPackage.WORK_EFFORT_ASSOC__WORK_EFFORT_ID_TO:
+				return workEffortIdTo != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -440,10 +459,6 @@ public class WorkEffortAssocImpl extends BizEntityTypedImpl<WorkEffortAssocType>
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortIdFrom: ");
 		result.append(workEffortIdFrom);
-		result.append(", workEffortIdTo: ");
-		result.append(workEffortIdTo);
-		result.append(", workEffortAssocTypeId: ");
-		result.append(workEffortAssocTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

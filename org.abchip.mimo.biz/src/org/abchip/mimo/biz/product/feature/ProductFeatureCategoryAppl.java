@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getProductFeatureCategoryId <em>Product Feature Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getProductFeatureCategoryId <em>Product Feature Category Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategoryAppl()
@@ -42,7 +42,8 @@ public interface ProductFeatureCategoryAppl extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategoryAppl_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -94,8 +95,8 @@ public interface ProductFeatureCategoryAppl extends BizEntity {
 	 * @return the value of the '<em>Product Category Id</em>' attribute.
 	 * @see #setProductCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategoryAppl_ProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductCategoryId();
@@ -111,30 +112,29 @@ public interface ProductFeatureCategoryAppl extends BizEntity {
 	void setProductCategoryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Category Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Category Id</em>' attribute.
-	 * @see #setProductFeatureCategoryId(String)
+	 * @return the value of the '<em>Product Feature Category Id</em>' reference.
+	 * @see #setProductFeatureCategoryId(ProductFeatureCategory)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCategoryAppl_ProductFeatureCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeatureCategory'"
+	 * @model keys="productFeatureCategoryId"
 	 * @generated
 	 */
-	String getProductFeatureCategoryId();
+	ProductFeatureCategory getProductFeatureCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getProductFeatureCategoryId <em>Product Feature Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCategoryAppl#getProductFeatureCategoryId <em>Product Feature Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Category Id</em>' reference.
 	 * @see #getProductFeatureCategoryId()
 	 * @generated
 	 */
-	void setProductFeatureCategoryId(String value);
+	void setProductFeatureCategoryId(ProductFeatureCategory value);
 
 } // ProductFeatureCategoryAppl

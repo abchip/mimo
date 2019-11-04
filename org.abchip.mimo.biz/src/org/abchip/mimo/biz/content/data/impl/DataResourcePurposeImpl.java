@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.content.data.impl;
 
+import org.abchip.mimo.biz.content.content.ContentPurposeType;
 import org.abchip.mimo.biz.content.data.DataPackage;
 import org.abchip.mimo.biz.content.data.DataResourcePurpose;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -57,24 +60,14 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContentPurposeTypeId() <em>Content Purpose Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getContentPurposeTypeId() <em>Content Purpose Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContentPurposeTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTENT_PURPOSE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentPurposeTypeId() <em>Content Purpose Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentPurposeTypeId = CONTENT_PURPOSE_TYPE_ID_EDEFAULT;
+	protected ContentPurposeType contentPurposeTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +94,24 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	 * @generated
 	 */
 	@Override
-	public String getContentPurposeTypeId() {
+	public ContentPurposeType getContentPurposeTypeId() {
+		if (contentPurposeTypeId != null && ((EObject)contentPurposeTypeId).eIsProxy()) {
+			InternalEObject oldContentPurposeTypeId = (InternalEObject)contentPurposeTypeId;
+			contentPurposeTypeId = (ContentPurposeType)eResolveProxy(oldContentPurposeTypeId);
+			if (contentPurposeTypeId != oldContentPurposeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
+			}
+		}
+		return contentPurposeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentPurposeType basicGetContentPurposeTypeId() {
 		return contentPurposeTypeId;
 	}
 
@@ -111,8 +121,8 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 	 * @generated
 	 */
 	@Override
-	public void setContentPurposeTypeId(String newContentPurposeTypeId) {
-		String oldContentPurposeTypeId = contentPurposeTypeId;
+	public void setContentPurposeTypeId(ContentPurposeType newContentPurposeTypeId) {
+		ContentPurposeType oldContentPurposeTypeId = contentPurposeTypeId;
 		contentPurposeTypeId = newContentPurposeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID, oldContentPurposeTypeId, contentPurposeTypeId));
@@ -152,7 +162,8 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 			case DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID:
 				return getDataResourceId();
 			case DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				return getContentPurposeTypeId();
+				if (resolve) return getContentPurposeTypeId();
+				return basicGetContentPurposeTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,7 +180,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 				setDataResourceId((String)newValue);
 				return;
 			case DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				setContentPurposeTypeId((String)newValue);
+				setContentPurposeTypeId((ContentPurposeType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +198,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
 				return;
 			case DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				setContentPurposeTypeId(CONTENT_PURPOSE_TYPE_ID_EDEFAULT);
+				setContentPurposeTypeId((ContentPurposeType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,7 +215,7 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 			case DataPackage.DATA_RESOURCE_PURPOSE__DATA_RESOURCE_ID:
 				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
 			case DataPackage.DATA_RESOURCE_PURPOSE__CONTENT_PURPOSE_TYPE_ID:
-				return CONTENT_PURPOSE_TYPE_ID_EDEFAULT == null ? contentPurposeTypeId != null : !CONTENT_PURPOSE_TYPE_ID_EDEFAULT.equals(contentPurposeTypeId);
+				return contentPurposeTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,8 +232,6 @@ public class DataResourcePurposeImpl extends BizEntityImpl implements DataResour
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (dataResourceId: ");
 		result.append(dataResourceId);
-		result.append(", contentPurposeTypeId: ");
-		result.append(contentPurposeTypeId);
 		result.append(')');
 		return result.toString();
 	}

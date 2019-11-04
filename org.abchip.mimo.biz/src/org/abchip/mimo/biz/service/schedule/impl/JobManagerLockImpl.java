@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.service.schedule.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.JobManagerLock;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -33,8 +36,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getReasonEnumId <em>Reason Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobManagerLockImpl#getReasonEnumId <em>Reason Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -186,26 +189,6 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getReasonEnumId() <em>Reason Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReasonEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REASON_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReasonEnumId() <em>Reason Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReasonEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String reasonEnumId = REASON_ENUM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,6 +207,16 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getReasonEnumId() <em>Reason Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReasonEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration reasonEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -411,7 +404,24 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 * @generated
 	 */
 	@Override
-	public String getReasonEnumId() {
+	public Enumeration getReasonEnumId() {
+		if (reasonEnumId != null && ((EObject)reasonEnumId).eIsProxy()) {
+			InternalEObject oldReasonEnumId = (InternalEObject)reasonEnumId;
+			reasonEnumId = (Enumeration)eResolveProxy(oldReasonEnumId);
+			if (reasonEnumId != oldReasonEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
+			}
+		}
+		return reasonEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetReasonEnumId() {
 		return reasonEnumId;
 	}
 
@@ -421,8 +431,8 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 	 * @generated
 	 */
 	@Override
-	public void setReasonEnumId(String newReasonEnumId) {
-		String oldReasonEnumId = reasonEnumId;
+	public void setReasonEnumId(Enumeration newReasonEnumId) {
+		Enumeration oldReasonEnumId = reasonEnumId;
 		reasonEnumId = newReasonEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
@@ -473,10 +483,11 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 				return getLastModifiedByUserLogin();
 			case SchedulePackage.JOB_MANAGER_LOCK__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
-			case SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID:
-				return getReasonEnumId();
 			case SchedulePackage.JOB_MANAGER_LOCK__THRU_DATE:
 				return getThruDate();
+			case SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID:
+				if (resolve) return getReasonEnumId();
+				return basicGetReasonEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -510,11 +521,11 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 			case SchedulePackage.JOB_MANAGER_LOCK__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
 				return;
-			case SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID:
-				setReasonEnumId((String)newValue);
-				return;
 			case SchedulePackage.JOB_MANAGER_LOCK__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID:
+				setReasonEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -549,11 +560,11 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 			case SchedulePackage.JOB_MANAGER_LOCK__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
 				return;
-			case SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID:
-				setReasonEnumId(REASON_ENUM_ID_EDEFAULT);
-				return;
 			case SchedulePackage.JOB_MANAGER_LOCK__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID:
+				setReasonEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -581,10 +592,10 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case SchedulePackage.JOB_MANAGER_LOCK__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
-			case SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID:
-				return REASON_ENUM_ID_EDEFAULT == null ? reasonEnumId != null : !REASON_ENUM_ID_EDEFAULT.equals(reasonEnumId);
 			case SchedulePackage.JOB_MANAGER_LOCK__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case SchedulePackage.JOB_MANAGER_LOCK__REASON_ENUM_ID:
+				return reasonEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -613,8 +624,6 @@ public class JobManagerLockImpl extends BizEntityImpl implements JobManagerLock 
 		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
-		result.append(", reasonEnumId: ");
-		result.append(reasonEnumId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

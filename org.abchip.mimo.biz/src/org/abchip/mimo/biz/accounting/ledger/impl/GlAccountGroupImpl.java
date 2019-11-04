@@ -15,6 +15,8 @@ import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -75,23 +77,14 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getGlAccountGroupTypeId() <em>Gl Account Group Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountGroupTypeId() <em>Gl Account Group Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlAccountGroupTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GL_ACCOUNT_GROUP_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountGroupTypeId() <em>Gl Account Group Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountGroupTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountGroupTypeId = GL_ACCOUNT_GROUP_TYPE_ID_EDEFAULT;
+	protected GlAccountGroupType glAccountGroupTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,7 +134,24 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountGroupTypeId() {
+	public GlAccountGroupType getGlAccountGroupTypeId() {
+		if (glAccountGroupTypeId != null && ((EObject)glAccountGroupTypeId).eIsProxy()) {
+			InternalEObject oldGlAccountGroupTypeId = (InternalEObject)glAccountGroupTypeId;
+			glAccountGroupTypeId = (GlAccountGroupType)eResolveProxy(oldGlAccountGroupTypeId);
+			if (glAccountGroupTypeId != oldGlAccountGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID, oldGlAccountGroupTypeId, glAccountGroupTypeId));
+			}
+		}
+		return glAccountGroupTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountGroupType basicGetGlAccountGroupTypeId() {
 		return glAccountGroupTypeId;
 	}
 
@@ -151,8 +161,8 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountGroupTypeId(String newGlAccountGroupTypeId) {
-		String oldGlAccountGroupTypeId = glAccountGroupTypeId;
+	public void setGlAccountGroupTypeId(GlAccountGroupType newGlAccountGroupTypeId) {
+		GlAccountGroupType oldGlAccountGroupTypeId = glAccountGroupTypeId;
 		glAccountGroupTypeId = newGlAccountGroupTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID, oldGlAccountGroupTypeId, glAccountGroupTypeId));
@@ -206,7 +216,8 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 			case LedgerPackage.GL_ACCOUNT_GROUP__DESCRIPTION:
 				return getDescription();
 			case LedgerPackage.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID:
-				return getGlAccountGroupTypeId();
+				if (resolve) return getGlAccountGroupTypeId();
+				return basicGetGlAccountGroupTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -226,7 +237,7 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 				setDescription((String)newValue);
 				return;
 			case LedgerPackage.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID:
-				setGlAccountGroupTypeId((String)newValue);
+				setGlAccountGroupTypeId((GlAccountGroupType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,7 +258,7 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case LedgerPackage.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID:
-				setGlAccountGroupTypeId(GL_ACCOUNT_GROUP_TYPE_ID_EDEFAULT);
+				setGlAccountGroupTypeId((GlAccountGroupType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -266,7 +277,7 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 			case LedgerPackage.GL_ACCOUNT_GROUP__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case LedgerPackage.GL_ACCOUNT_GROUP__GL_ACCOUNT_GROUP_TYPE_ID:
-				return GL_ACCOUNT_GROUP_TYPE_ID_EDEFAULT == null ? glAccountGroupTypeId != null : !GL_ACCOUNT_GROUP_TYPE_ID_EDEFAULT.equals(glAccountGroupTypeId);
+				return glAccountGroupTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -285,8 +296,6 @@ public class GlAccountGroupImpl extends BizEntityTypedImpl<GlAccountGroupType> i
 		result.append(glAccountGroupId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", glAccountGroupTypeId: ");
-		result.append(glAccountGroupTypeId);
 		result.append(')');
 		return result.toString();
 	}

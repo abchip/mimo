@@ -10,11 +10,15 @@ package org.abchip.mimo.biz.product.catalog.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
+import org.abchip.mimo.biz.product.catalog.ProdCatalog;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogRole;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogRoleImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogRoleImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogRoleImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogRoleImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,46 +64,6 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROD_CATALOG_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String prodCatalogId = PROD_CATALOG_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -160,6 +124,26 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProdCatalogId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProdCatalog prodCatalogId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,7 +216,24 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -242,8 +243,8 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -301,7 +302,24 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 	 * @generated
 	 */
 	@Override
-	public String getProdCatalogId() {
+	public ProdCatalog getProdCatalogId() {
+		if (prodCatalogId != null && ((EObject)prodCatalogId).eIsProxy()) {
+			InternalEObject oldProdCatalogId = (InternalEObject)prodCatalogId;
+			prodCatalogId = (ProdCatalog)eResolveProxy(oldProdCatalogId);
+			if (prodCatalogId != oldProdCatalogId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
+			}
+		}
+		return prodCatalogId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProdCatalog basicGetProdCatalogId() {
 		return prodCatalogId;
 	}
 
@@ -311,8 +329,8 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 	 * @generated
 	 */
 	@Override
-	public void setProdCatalogId(String newProdCatalogId) {
-		String oldProdCatalogId = prodCatalogId;
+	public void setProdCatalogId(ProdCatalog newProdCatalogId) {
+		ProdCatalog oldProdCatalogId = prodCatalogId;
 		prodCatalogId = newProdCatalogId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
@@ -328,16 +346,18 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 		switch (featureID) {
 			case CatalogPackage.PROD_CATALOG_ROLE__PARTY_ID:
 				return getPartyId();
-			case CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID:
-				return getRoleTypeId();
-			case CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID:
-				return getProdCatalogId();
 			case CatalogPackage.PROD_CATALOG_ROLE__FROM_DATE:
 				return getFromDate();
 			case CatalogPackage.PROD_CATALOG_ROLE__SEQUENCE_NUM:
 				return getSequenceNum();
 			case CatalogPackage.PROD_CATALOG_ROLE__THRU_DATE:
 				return getThruDate();
+			case CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID:
+				if (resolve) return getProdCatalogId();
+				return basicGetProdCatalogId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -353,12 +373,6 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 			case CatalogPackage.PROD_CATALOG_ROLE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
-			case CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID:
-				setProdCatalogId((String)newValue);
-				return;
 			case CatalogPackage.PROD_CATALOG_ROLE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -367,6 +381,12 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 				return;
 			case CatalogPackage.PROD_CATALOG_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID:
+				setProdCatalogId((ProdCatalog)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -383,12 +403,6 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 			case CatalogPackage.PROD_CATALOG_ROLE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID:
-				setProdCatalogId(PROD_CATALOG_ID_EDEFAULT);
-				return;
 			case CatalogPackage.PROD_CATALOG_ROLE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -397,6 +411,12 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 				return;
 			case CatalogPackage.PROD_CATALOG_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID:
+				setProdCatalogId((ProdCatalog)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -412,16 +432,16 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 		switch (featureID) {
 			case CatalogPackage.PROD_CATALOG_ROLE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID:
-				return PROD_CATALOG_ID_EDEFAULT == null ? prodCatalogId != null : !PROD_CATALOG_ID_EDEFAULT.equals(prodCatalogId);
 			case CatalogPackage.PROD_CATALOG_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CatalogPackage.PROD_CATALOG_ROLE__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case CatalogPackage.PROD_CATALOG_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CatalogPackage.PROD_CATALOG_ROLE__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case CatalogPackage.PROD_CATALOG_ROLE__PROD_CATALOG_ID:
+				return prodCatalogId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -438,10 +458,6 @@ public class ProdCatalogRoleImpl extends BizEntityImpl implements ProdCatalogRol
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", prodCatalogId: ");
-		result.append(prodCatalogId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

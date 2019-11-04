@@ -14,13 +14,18 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementTerm;
+import org.abchip.mimo.biz.party.agreement.TermType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -33,18 +38,18 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getAgreementTermId <em>Agreement Term Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getMaxQuantity <em>Max Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getMinQuantity <em>Min Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getTermDays <em>Term Days</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getTermValue <em>Term Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getTextValue <em>Text Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getAgreementId <em>Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementTermImpl#getAgreementTermAttributes <em>Agreement Term Attributes</em>}</li>
  * </ul>
  *
@@ -74,24 +79,6 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 * @ordered
 	 */
 	protected String agreementTermId = AGREEMENT_TERM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementId = AGREEMENT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -147,24 +134,6 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ITEM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceItemTypeId = INVOICE_ITEM_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getMaxQuantity() <em>Max Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -219,24 +188,6 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 */
 	protected long termDays = TERM_DAYS_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getTermTypeId() <em>Term Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTermTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TERM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTermTypeId() <em>Term Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTermTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String termTypeId = TERM_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getTermValue() <em>Term Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,6 +241,33 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getTermTypeId() <em>Term Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTermTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TermType termTypeId;
+	/**
+	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Agreement agreementId;
+	/**
+	 * The cached value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoiceItemTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InvoiceItemType invoiceItemTypeId;
 
 	/**
 	 * The cached value of the '{@link #getAgreementTermAttributes() <em>Agreement Term Attributes</em>}' attribute list.
@@ -395,7 +373,24 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceItemTypeId() {
+	public InvoiceItemType getInvoiceItemTypeId() {
+		if (invoiceItemTypeId != null && ((EObject)invoiceItemTypeId).eIsProxy()) {
+			InternalEObject oldInvoiceItemTypeId = (InternalEObject)invoiceItemTypeId;
+			invoiceItemTypeId = (InvoiceItemType)eResolveProxy(oldInvoiceItemTypeId);
+			if (invoiceItemTypeId != oldInvoiceItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
+			}
+		}
+		return invoiceItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvoiceItemType basicGetInvoiceItemTypeId() {
 		return invoiceItemTypeId;
 	}
 
@@ -405,8 +400,8 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceItemTypeId(String newInvoiceItemTypeId) {
-		String oldInvoiceItemTypeId = invoiceItemTypeId;
+	public void setInvoiceItemTypeId(InvoiceItemType newInvoiceItemTypeId) {
+		InvoiceItemType oldInvoiceItemTypeId = invoiceItemTypeId;
 		invoiceItemTypeId = newInvoiceItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
@@ -569,7 +564,24 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 * @generated
 	 */
 	@Override
-	public String getTermTypeId() {
+	public TermType getTermTypeId() {
+		if (termTypeId != null && ((EObject)termTypeId).eIsProxy()) {
+			InternalEObject oldTermTypeId = (InternalEObject)termTypeId;
+			termTypeId = (TermType)eResolveProxy(oldTermTypeId);
+			if (termTypeId != oldTermTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
+			}
+		}
+		return termTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TermType basicGetTermTypeId() {
 		return termTypeId;
 	}
 
@@ -579,8 +591,8 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 * @generated
 	 */
 	@Override
-	public void setTermTypeId(String newTermTypeId) {
-		String oldTermTypeId = termTypeId;
+	public void setTermTypeId(TermType newTermTypeId) {
+		TermType oldTermTypeId = termTypeId;
 		termTypeId = newTermTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID, oldTermTypeId, termTypeId));
@@ -592,7 +604,24 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 * @generated
 	 */
 	@Override
-	public String getAgreementId() {
+	public Agreement getAgreementId() {
+		if (agreementId != null && ((EObject)agreementId).eIsProxy()) {
+			InternalEObject oldAgreementId = (InternalEObject)agreementId;
+			agreementId = (Agreement)eResolveProxy(oldAgreementId);
+			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID, oldAgreementId, agreementId));
+			}
+		}
+		return agreementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Agreement basicGetAgreementId() {
 		return agreementId;
 	}
 
@@ -602,8 +631,8 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 	 * @generated
 	 */
 	@Override
-	public void setAgreementId(String newAgreementId) {
-		String oldAgreementId = agreementId;
+	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID, oldAgreementId, agreementId));
@@ -642,30 +671,33 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 		switch (featureID) {
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ID:
 				return getAgreementTermId();
-			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID:
-				return getAgreementId();
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
 			case AgreementPackage.AGREEMENT_TERM__DESCRIPTION:
 				return getDescription();
 			case AgreementPackage.AGREEMENT_TERM__FROM_DATE:
 				return getFromDate();
-			case AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID:
-				return getInvoiceItemTypeId();
 			case AgreementPackage.AGREEMENT_TERM__MAX_QUANTITY:
 				return getMaxQuantity();
 			case AgreementPackage.AGREEMENT_TERM__MIN_QUANTITY:
 				return getMinQuantity();
 			case AgreementPackage.AGREEMENT_TERM__TERM_DAYS:
 				return getTermDays();
-			case AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID:
-				return getTermTypeId();
 			case AgreementPackage.AGREEMENT_TERM__TERM_VALUE:
 				return getTermValue();
 			case AgreementPackage.AGREEMENT_TERM__TEXT_VALUE:
 				return getTextValue();
 			case AgreementPackage.AGREEMENT_TERM__THRU_DATE:
 				return getThruDate();
+			case AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID:
+				if (resolve) return getTermTypeId();
+				return basicGetTermTypeId();
+			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID:
+				if (resolve) return getAgreementId();
+				return basicGetAgreementId();
+			case AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID:
+				if (resolve) return getInvoiceItemTypeId();
+				return basicGetInvoiceItemTypeId();
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES:
 				return getAgreementTermAttributes();
 		}
@@ -684,9 +716,6 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ID:
 				setAgreementTermId((String)newValue);
 				return;
-			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID:
-				setAgreementId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId((String)newValue);
 				return;
@@ -695,9 +724,6 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 				return;
 			case AgreementPackage.AGREEMENT_TERM__FROM_DATE:
 				setFromDate((Date)newValue);
-				return;
-			case AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId((String)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_TERM__MAX_QUANTITY:
 				setMaxQuantity((Double)newValue);
@@ -708,9 +734,6 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 			case AgreementPackage.AGREEMENT_TERM__TERM_DAYS:
 				setTermDays((Long)newValue);
 				return;
-			case AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID:
-				setTermTypeId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_TERM__TERM_VALUE:
 				setTermValue((BigDecimal)newValue);
 				return;
@@ -719,6 +742,15 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 				return;
 			case AgreementPackage.AGREEMENT_TERM__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID:
+				setTermTypeId((TermType)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID:
+				setAgreementId((Agreement)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID:
+				setInvoiceItemTypeId((InvoiceItemType)newValue);
 				return;
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES:
 				getAgreementTermAttributes().clear();
@@ -739,9 +771,6 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ID:
 				setAgreementTermId(AGREEMENT_TERM_ID_EDEFAULT);
 				return;
-			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID:
-				setAgreementId(AGREEMENT_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -750,9 +779,6 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 				return;
 			case AgreementPackage.AGREEMENT_TERM__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId(INVOICE_ITEM_TYPE_ID_EDEFAULT);
 				return;
 			case AgreementPackage.AGREEMENT_TERM__MAX_QUANTITY:
 				setMaxQuantity(MAX_QUANTITY_EDEFAULT);
@@ -763,9 +789,6 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 			case AgreementPackage.AGREEMENT_TERM__TERM_DAYS:
 				setTermDays(TERM_DAYS_EDEFAULT);
 				return;
-			case AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID:
-				setTermTypeId(TERM_TYPE_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_TERM__TERM_VALUE:
 				setTermValue(TERM_VALUE_EDEFAULT);
 				return;
@@ -774,6 +797,15 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 				return;
 			case AgreementPackage.AGREEMENT_TERM__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID:
+				setTermTypeId((TermType)null);
+				return;
+			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID:
+				setAgreementId((Agreement)null);
+				return;
+			case AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID:
+				setInvoiceItemTypeId((InvoiceItemType)null);
 				return;
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES:
 				getAgreementTermAttributes().clear();
@@ -792,30 +824,30 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 		switch (featureID) {
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ID:
 				return AGREEMENT_TERM_ID_EDEFAULT == null ? agreementTermId != null : !AGREEMENT_TERM_ID_EDEFAULT.equals(agreementTermId);
-			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID:
-				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
 			case AgreementPackage.AGREEMENT_TERM__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case AgreementPackage.AGREEMENT_TERM__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID:
-				return INVOICE_ITEM_TYPE_ID_EDEFAULT == null ? invoiceItemTypeId != null : !INVOICE_ITEM_TYPE_ID_EDEFAULT.equals(invoiceItemTypeId);
 			case AgreementPackage.AGREEMENT_TERM__MAX_QUANTITY:
 				return maxQuantity != MAX_QUANTITY_EDEFAULT;
 			case AgreementPackage.AGREEMENT_TERM__MIN_QUANTITY:
 				return minQuantity != MIN_QUANTITY_EDEFAULT;
 			case AgreementPackage.AGREEMENT_TERM__TERM_DAYS:
 				return termDays != TERM_DAYS_EDEFAULT;
-			case AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID:
-				return TERM_TYPE_ID_EDEFAULT == null ? termTypeId != null : !TERM_TYPE_ID_EDEFAULT.equals(termTypeId);
 			case AgreementPackage.AGREEMENT_TERM__TERM_VALUE:
 				return TERM_VALUE_EDEFAULT == null ? termValue != null : !TERM_VALUE_EDEFAULT.equals(termValue);
 			case AgreementPackage.AGREEMENT_TERM__TEXT_VALUE:
 				return TEXT_VALUE_EDEFAULT == null ? textValue != null : !TEXT_VALUE_EDEFAULT.equals(textValue);
 			case AgreementPackage.AGREEMENT_TERM__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case AgreementPackage.AGREEMENT_TERM__TERM_TYPE_ID:
+				return termTypeId != null;
+			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_ID:
+				return agreementId != null;
+			case AgreementPackage.AGREEMENT_TERM__INVOICE_ITEM_TYPE_ID:
+				return invoiceItemTypeId != null;
 			case AgreementPackage.AGREEMENT_TERM__AGREEMENT_TERM_ATTRIBUTES:
 				return agreementTermAttributes != null && !agreementTermAttributes.isEmpty();
 		}
@@ -834,24 +866,18 @@ public class AgreementTermImpl extends BizEntityImpl implements AgreementTerm {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (agreementTermId: ");
 		result.append(agreementTermId);
-		result.append(", agreementId: ");
-		result.append(agreementId);
 		result.append(", agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", invoiceItemTypeId: ");
-		result.append(invoiceItemTypeId);
 		result.append(", maxQuantity: ");
 		result.append(maxQuantity);
 		result.append(", minQuantity: ");
 		result.append(minQuantity);
 		result.append(", termDays: ");
 		result.append(termDays);
-		result.append(", termTypeId: ");
-		result.append(termTypeId);
 		result.append(", termValue: ");
 		result.append(termValue);
 		result.append(", textValue: ");

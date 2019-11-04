@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface EmploymentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-humanres-employment";
+	String eNS_PREFIX = "biz-employment";
 
 	/**
 	 * The singleton instance of the package.
@@ -152,7 +153,7 @@ public interface EmploymentPackage extends EPackage {
 	int BENEFIT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -225,31 +226,13 @@ public interface EmploymentPackage extends EPackage {
 	int EMPL_LEAVE__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Leave Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_LEAVE__LEAVE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_LEAVE__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Approver Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_LEAVE__APPROVER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int EMPL_LEAVE__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -258,25 +241,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_LEAVE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Empl Leave Reason Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Leave Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPL_LEAVE__LEAVE_STATUS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int EMPL_LEAVE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -285,7 +250,43 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPL_LEAVE__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int EMPL_LEAVE__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Leave Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_LEAVE__LEAVE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Empl Leave Reason Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Approver Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_LEAVE__APPROVER_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Leave Status</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPL_LEAVE__LEAVE_STATUS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Empl Leave</em>' class.
@@ -370,7 +371,7 @@ public interface EmploymentPackage extends EPackage {
 	int EMPL_LEAVE_REASON_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -470,7 +471,7 @@ public interface EmploymentPackage extends EPackage {
 	int EMPL_LEAVE_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -552,49 +553,13 @@ public interface EmploymentPackage extends EPackage {
 	int EMPLOYMENT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Party Id From</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPLOYMENT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Party Id To</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPLOYMENT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Termination Reason Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPLOYMENT__TERMINATION_REASON_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Termination Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMPLOYMENT__TERMINATION_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int EMPLOYMENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -603,7 +568,43 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int EMPLOYMENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Party Id To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYMENT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Party Id From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYMENT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Termination Reason Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYMENT__TERMINATION_REASON_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Termination Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYMENT__TERMINATION_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Employment</em>' class.
@@ -679,67 +680,67 @@ public interface EmploymentPackage extends EPackage {
 	int EMPLOYMENT_APP__APPLICATION_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Applying Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Empl Position Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__APPLYING_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int EMPLOYMENT_APP__EMPL_POSITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Approver Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__APPROVER_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int EMPLOYMENT_APP__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Empl Position Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Employment App Source Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__EMPL_POSITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Employment App Source Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Applying Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int EMPLOYMENT_APP__APPLYING_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Job Requisition Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Referred By Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__JOB_REQUISITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int EMPLOYMENT_APP__REFERRED_BY_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Referred By Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Approver Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__REFERRED_BY_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int EMPLOYMENT_APP__APPROVER_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Job Requisition Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYMENT_APP__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int EMPLOYMENT_APP__JOB_REQUISITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>App</em>' class.
@@ -824,7 +825,7 @@ public interface EmploymentPackage extends EPackage {
 	int EMPLOYMENT_APP_SOURCE_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -906,40 +907,13 @@ public interface EmploymentPackage extends EPackage {
 	int PARTY_BENEFIT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Party Id From</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_BENEFIT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Party Id To</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_BENEFIT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Benefit Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_BENEFIT__BENEFIT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PARTY_BENEFIT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Actual Employer Paid Percent</b></em>' attribute.
@@ -948,7 +922,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__ACTUAL_EMPLOYER_PAID_PERCENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PARTY_BENEFIT__ACTUAL_EMPLOYER_PAID_PERCENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Available Time</b></em>' attribute.
@@ -957,7 +931,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__AVAILABLE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PARTY_BENEFIT__AVAILABLE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cost</b></em>' attribute.
@@ -966,16 +940,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Period Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_BENEFIT__PERIOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PARTY_BENEFIT__COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -984,7 +949,43 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_BENEFIT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PARTY_BENEFIT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Party Id To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_BENEFIT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Party Id From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_BENEFIT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Benefit Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_BENEFIT__BENEFIT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Period Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_BENEFIT__PERIOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Party Benefit</em>' class.
@@ -1187,31 +1188,13 @@ public interface EmploymentPackage extends EPackage {
 	int PAY_HISTORY__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Pay Grade Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAY_HISTORY__PAY_GRADE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Period Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAY_HISTORY__PERIOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
-
-	/**
 	 * The feature id for the '<em><b>Salary Step Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_HISTORY__SALARY_STEP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PAY_HISTORY__SALARY_STEP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1220,7 +1203,25 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_HISTORY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAY_HISTORY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Pay Grade Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAY_HISTORY__PAY_GRADE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Period Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAY_HISTORY__PERIOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Pay History</em>' class.
@@ -1323,22 +1324,13 @@ public interface EmploymentPackage extends EPackage {
 	int PAYROLL_PREFERENCE__BANK_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Deduction Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Flat Amount</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__FLAT_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYROLL_PREFERENCE__FLAT_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -1347,16 +1339,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYROLL_PREFERENCE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Percentage</b></em>' attribute.
@@ -1365,16 +1348,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__PERCENTAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Period Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYROLL_PREFERENCE__PERIOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PAYROLL_PREFERENCE__PERCENTAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Routing Number</b></em>' attribute.
@@ -1383,7 +1357,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__ROUTING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PAYROLL_PREFERENCE__ROUTING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1392,7 +1366,34 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYROLL_PREFERENCE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int PAYROLL_PREFERENCE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Deduction Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Period Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYROLL_PREFERENCE__PERIOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Payroll Preference</em>' class.
@@ -1459,22 +1460,13 @@ public interface EmploymentPackage extends EPackage {
 	int SALARY_STEP__SALARY_STEP_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Pay Grade Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SALARY_STEP__PAY_GRADE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SALARY_STEP__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int SALARY_STEP__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -1483,7 +1475,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SALARY_STEP__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int SALARY_STEP__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Created By User Login</b></em>' attribute.
@@ -1492,7 +1484,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SALARY_STEP__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int SALARY_STEP__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Date Modified</b></em>' attribute.
@@ -1501,7 +1493,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SALARY_STEP__DATE_MODIFIED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int SALARY_STEP__DATE_MODIFIED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' attribute.
@@ -1510,7 +1502,7 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SALARY_STEP__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1519,7 +1511,16 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SALARY_STEP__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int SALARY_STEP__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Pay Grade Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SALARY_STEP__PAY_GRADE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Salary Step</em>' class.
@@ -1677,7 +1678,7 @@ public interface EmploymentPackage extends EPackage {
 	int TERMINATION_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1804,22 +1805,13 @@ public interface EmploymentPackage extends EPackage {
 	int UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNEMPLOYMENT_CLAIM__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNEMPLOYMENT_CLAIM__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int UNEMPLOYMENT_CLAIM__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Unemployment Claim Date</b></em>' attribute.
@@ -1828,7 +1820,16 @@ public interface EmploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int UNEMPLOYMENT_CLAIM__UNEMPLOYMENT_CLAIM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNEMPLOYMENT_CLAIM__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Unemployment Claim</em>' class.
@@ -1906,15 +1907,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getBenefitType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.BenefitType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.BenefitType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.BenefitType#getParentTypeId()
 	 * @see #getBenefitType()
 	 * @generated
 	 */
-	EAttribute getBenefitType_ParentTypeId();
+	EReference getBenefitType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave <em>Empl Leave</em>}'.
@@ -1938,15 +1939,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getEmplLeave_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getLeaveTypeId <em>Leave Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getLeaveTypeId <em>Leave Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Leave Type Id</em>'.
+	 * @return the meta object for the reference '<em>Leave Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmplLeave#getLeaveTypeId()
 	 * @see #getEmplLeave()
 	 * @generated
 	 */
-	EAttribute getEmplLeave_LeaveTypeId();
+	EReference getEmplLeave_LeaveTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getFromDate <em>From Date</em>}'.
@@ -1960,15 +1961,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getEmplLeave_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getApproverPartyId <em>Approver Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getApproverPartyId <em>Approver Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Approver Party Id</em>'.
+	 * @return the meta object for the reference '<em>Approver Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmplLeave#getApproverPartyId()
 	 * @see #getEmplLeave()
 	 * @generated
 	 */
-	EAttribute getEmplLeave_ApproverPartyId();
+	EReference getEmplLeave_ApproverPartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getDescription <em>Description</em>}'.
@@ -1982,26 +1983,26 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getEmplLeave_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getEmplLeaveReasonTypeId <em>Empl Leave Reason Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getEmplLeaveReasonTypeId <em>Empl Leave Reason Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Empl Leave Reason Type Id</em>'.
+	 * @return the meta object for the reference '<em>Empl Leave Reason Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmplLeave#getEmplLeaveReasonTypeId()
 	 * @see #getEmplLeave()
 	 * @generated
 	 */
-	EAttribute getEmplLeave_EmplLeaveReasonTypeId();
+	EReference getEmplLeave_EmplLeaveReasonTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getLeaveStatus <em>Leave Status</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getLeaveStatus <em>Leave Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Leave Status</em>'.
+	 * @return the meta object for the reference '<em>Leave Status</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmplLeave#getLeaveStatus()
 	 * @see #getEmplLeave()
 	 * @generated
 	 */
-	EAttribute getEmplLeave_LeaveStatus();
+	EReference getEmplLeave_LeaveStatus();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeave#getThruDate <em>Thru Date</em>}'.
@@ -2058,15 +2059,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getEmplLeaveReasonType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeaveReasonType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmplLeaveReasonType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmplLeaveReasonType#getParentTypeId()
 	 * @see #getEmplLeaveReasonType()
 	 * @generated
 	 */
-	EAttribute getEmplLeaveReasonType_ParentTypeId();
+	EReference getEmplLeaveReasonType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.employment.EmplLeaveType <em>Empl Leave Type</em>}'.
@@ -2112,15 +2113,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getEmplLeaveType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmplLeaveType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmplLeaveType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmplLeaveType#getParentTypeId()
 	 * @see #getEmplLeaveType()
 	 * @generated
 	 */
-	EAttribute getEmplLeaveType_ParentTypeId();
+	EReference getEmplLeaveType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.employment.Employment <em>Employment</em>}'.
@@ -2155,26 +2156,26 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getEmployment_RoleTypeIdTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdFrom <em>Party Id From</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdFrom <em>Party Id From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id From</em>'.
+	 * @return the meta object for the reference '<em>Party Id From</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdFrom()
 	 * @see #getEmployment()
 	 * @generated
 	 */
-	EAttribute getEmployment_PartyIdFrom();
+	EReference getEmployment_PartyIdFrom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdTo <em>Party Id To</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdTo <em>Party Id To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id To</em>'.
+	 * @return the meta object for the reference '<em>Party Id To</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdTo()
 	 * @see #getEmployment()
 	 * @generated
 	 */
-	EAttribute getEmployment_PartyIdTo();
+	EReference getEmployment_PartyIdTo();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.Employment#getFromDate <em>From Date</em>}'.
@@ -2188,26 +2189,26 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getEmployment_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationReasonId <em>Termination Reason Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationReasonId <em>Termination Reason Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Termination Reason Id</em>'.
+	 * @return the meta object for the reference '<em>Termination Reason Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.Employment#getTerminationReasonId()
 	 * @see #getEmployment()
 	 * @generated
 	 */
-	EAttribute getEmployment_TerminationReasonId();
+	EReference getEmployment_TerminationReasonId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationTypeId <em>Termination Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationTypeId <em>Termination Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Termination Type Id</em>'.
+	 * @return the meta object for the reference '<em>Termination Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.Employment#getTerminationTypeId()
 	 * @see #getEmployment()
 	 * @generated
 	 */
-	EAttribute getEmployment_TerminationTypeId();
+	EReference getEmployment_TerminationTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.Employment#getThruDate <em>Thru Date</em>}'.
@@ -2253,81 +2254,81 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getEmploymentApp_ApplicationDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplyingPartyId <em>Applying Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplyingPartyId <em>Applying Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Applying Party Id</em>'.
+	 * @return the meta object for the reference '<em>Applying Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApplyingPartyId()
 	 * @see #getEmploymentApp()
 	 * @generated
 	 */
-	EAttribute getEmploymentApp_ApplyingPartyId();
+	EReference getEmploymentApp_ApplyingPartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApproverPartyId <em>Approver Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApproverPartyId <em>Approver Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Approver Party Id</em>'.
+	 * @return the meta object for the reference '<em>Approver Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentApp#getApproverPartyId()
 	 * @see #getEmploymentApp()
 	 * @generated
 	 */
-	EAttribute getEmploymentApp_ApproverPartyId();
+	EReference getEmploymentApp_ApproverPartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmplPositionId <em>Empl Position Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmplPositionId <em>Empl Position Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Empl Position Id</em>'.
+	 * @return the meta object for the reference '<em>Empl Position Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmplPositionId()
 	 * @see #getEmploymentApp()
 	 * @generated
 	 */
-	EAttribute getEmploymentApp_EmplPositionId();
+	EReference getEmploymentApp_EmplPositionId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Employment App Source Type Id</em>'.
+	 * @return the meta object for the reference '<em>Employment App Source Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentApp#getEmploymentAppSourceTypeId()
 	 * @see #getEmploymentApp()
 	 * @generated
 	 */
-	EAttribute getEmploymentApp_EmploymentAppSourceTypeId();
+	EReference getEmploymentApp_EmploymentAppSourceTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getJobRequisitionId <em>Job Requisition Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getJobRequisitionId <em>Job Requisition Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Job Requisition Id</em>'.
+	 * @return the meta object for the reference '<em>Job Requisition Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentApp#getJobRequisitionId()
 	 * @see #getEmploymentApp()
 	 * @generated
 	 */
-	EAttribute getEmploymentApp_JobRequisitionId();
+	EReference getEmploymentApp_JobRequisitionId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getReferredByPartyId <em>Referred By Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getReferredByPartyId <em>Referred By Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Referred By Party Id</em>'.
+	 * @return the meta object for the reference '<em>Referred By Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentApp#getReferredByPartyId()
 	 * @see #getEmploymentApp()
 	 * @generated
 	 */
-	EAttribute getEmploymentApp_ReferredByPartyId();
+	EReference getEmploymentApp_ReferredByPartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmploymentApp#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentApp#getStatusId()
 	 * @see #getEmploymentApp()
 	 * @generated
 	 */
-	EAttribute getEmploymentApp_StatusId();
+	EReference getEmploymentApp_StatusId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType <em>App Source Type</em>}'.
@@ -2373,15 +2374,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getEmploymentAppSourceType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType#getParentTypeId()
 	 * @see #getEmploymentAppSourceType()
 	 * @generated
 	 */
-	EAttribute getEmploymentAppSourceType_ParentTypeId();
+	EReference getEmploymentAppSourceType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit <em>Party Benefit</em>}'.
@@ -2416,37 +2417,37 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getPartyBenefit_RoleTypeIdTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdFrom <em>Party Id From</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdFrom <em>Party Id From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id From</em>'.
+	 * @return the meta object for the reference '<em>Party Id From</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdFrom()
 	 * @see #getPartyBenefit()
 	 * @generated
 	 */
-	EAttribute getPartyBenefit_PartyIdFrom();
+	EReference getPartyBenefit_PartyIdFrom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdTo <em>Party Id To</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdTo <em>Party Id To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id To</em>'.
+	 * @return the meta object for the reference '<em>Party Id To</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdTo()
 	 * @see #getPartyBenefit()
 	 * @generated
 	 */
-	EAttribute getPartyBenefit_PartyIdTo();
+	EReference getPartyBenefit_PartyIdTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getBenefitTypeId <em>Benefit Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getBenefitTypeId <em>Benefit Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Benefit Type Id</em>'.
+	 * @return the meta object for the reference '<em>Benefit Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PartyBenefit#getBenefitTypeId()
 	 * @see #getPartyBenefit()
 	 * @generated
 	 */
-	EAttribute getPartyBenefit_BenefitTypeId();
+	EReference getPartyBenefit_BenefitTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getFromDate <em>From Date</em>}'.
@@ -2493,15 +2494,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getPartyBenefit_Cost();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPeriodTypeId <em>Period Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPeriodTypeId <em>Period Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Period Type Id</em>'.
+	 * @return the meta object for the reference '<em>Period Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPeriodTypeId()
 	 * @see #getPartyBenefit()
 	 * @generated
 	 */
-	EAttribute getPartyBenefit_PeriodTypeId();
+	EReference getPartyBenefit_PeriodTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getThruDate <em>Thru Date</em>}'.
@@ -2645,26 +2646,26 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getPayHistory_Comments();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPayGradeId <em>Pay Grade Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPayGradeId <em>Pay Grade Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pay Grade Id</em>'.
+	 * @return the meta object for the reference '<em>Pay Grade Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PayHistory#getPayGradeId()
 	 * @see #getPayHistory()
 	 * @generated
 	 */
-	EAttribute getPayHistory_PayGradeId();
+	EReference getPayHistory_PayGradeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPeriodTypeId <em>Period Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getPeriodTypeId <em>Period Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Period Type Id</em>'.
+	 * @return the meta object for the reference '<em>Period Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PayHistory#getPeriodTypeId()
 	 * @see #getPayHistory()
 	 * @generated
 	 */
-	EAttribute getPayHistory_PeriodTypeId();
+	EReference getPayHistory_PeriodTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayHistory#getSalaryStepSeqId <em>Salary Step Seq Id</em>}'.
@@ -2754,15 +2755,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getPayrollPreference_BankName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getDeductionTypeId <em>Deduction Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getDeductionTypeId <em>Deduction Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Deduction Type Id</em>'.
+	 * @return the meta object for the reference '<em>Deduction Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PayrollPreference#getDeductionTypeId()
 	 * @see #getPayrollPreference()
 	 * @generated
 	 */
-	EAttribute getPayrollPreference_DeductionTypeId();
+	EReference getPayrollPreference_DeductionTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getFlatAmount <em>Flat Amount</em>}'.
@@ -2787,15 +2788,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getPayrollPreference_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPaymentMethodTypeId()
 	 * @see #getPayrollPreference()
 	 * @generated
 	 */
-	EAttribute getPayrollPreference_PaymentMethodTypeId();
+	EReference getPayrollPreference_PaymentMethodTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPercentage <em>Percentage</em>}'.
@@ -2809,15 +2810,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getPayrollPreference_Percentage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPeriodTypeId <em>Period Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPeriodTypeId <em>Period Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Period Type Id</em>'.
+	 * @return the meta object for the reference '<em>Period Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.PayrollPreference#getPeriodTypeId()
 	 * @see #getPayrollPreference()
 	 * @generated
 	 */
-	EAttribute getPayrollPreference_PeriodTypeId();
+	EReference getPayrollPreference_PeriodTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.PayrollPreference#getRoutingNumber <em>Routing Number</em>}'.
@@ -2863,15 +2864,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getSalaryStep_SalaryStepSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getPayGradeId <em>Pay Grade Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getPayGradeId <em>Pay Grade Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pay Grade Id</em>'.
+	 * @return the meta object for the reference '<em>Pay Grade Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.SalaryStep#getPayGradeId()
 	 * @see #getSalaryStep()
 	 * @generated
 	 */
-	EAttribute getSalaryStep_PayGradeId();
+	EReference getSalaryStep_PayGradeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.SalaryStep#getFromDate <em>From Date</em>}'.
@@ -3015,15 +3016,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getTerminationType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.TerminationType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.TerminationType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.TerminationType#getParentTypeId()
 	 * @see #getTerminationType()
 	 * @generated
 	 */
-	EAttribute getTerminationType_ParentTypeId();
+	EReference getTerminationType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim <em>Unemployment Claim</em>}'.
@@ -3113,15 +3114,15 @@ public interface EmploymentPackage extends EPackage {
 	EAttribute getUnemploymentClaim_RoleTypeIdTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getStatusId()
 	 * @see #getUnemploymentClaim()
 	 * @generated
 	 */
-	EAttribute getUnemploymentClaim_StatusId();
+	EReference getUnemploymentClaim_StatusId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getThruDate <em>Thru Date</em>}'.
@@ -3218,12 +3219,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute BENEFIT_TYPE__HAS_TABLE = eINSTANCE.getBenefitType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BENEFIT_TYPE__PARENT_TYPE_ID = eINSTANCE.getBenefitType_ParentTypeId();
+		EReference BENEFIT_TYPE__PARENT_TYPE_ID = eINSTANCE.getBenefitType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveImpl <em>Empl Leave</em>}' class.
@@ -3244,12 +3245,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute EMPL_LEAVE__PARTY_ID = eINSTANCE.getEmplLeave_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Leave Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Leave Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_LEAVE__LEAVE_TYPE_ID = eINSTANCE.getEmplLeave_LeaveTypeId();
+		EReference EMPL_LEAVE__LEAVE_TYPE_ID = eINSTANCE.getEmplLeave_LeaveTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -3260,12 +3261,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute EMPL_LEAVE__FROM_DATE = eINSTANCE.getEmplLeave_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Approver Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Approver Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_LEAVE__APPROVER_PARTY_ID = eINSTANCE.getEmplLeave_ApproverPartyId();
+		EReference EMPL_LEAVE__APPROVER_PARTY_ID = eINSTANCE.getEmplLeave_ApproverPartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -3276,20 +3277,20 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute EMPL_LEAVE__DESCRIPTION = eINSTANCE.getEmplLeave_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Empl Leave Reason Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Empl Leave Reason Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID = eINSTANCE.getEmplLeave_EmplLeaveReasonTypeId();
+		EReference EMPL_LEAVE__EMPL_LEAVE_REASON_TYPE_ID = eINSTANCE.getEmplLeave_EmplLeaveReasonTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Leave Status</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Leave Status</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_LEAVE__LEAVE_STATUS = eINSTANCE.getEmplLeave_LeaveStatus();
+		EReference EMPL_LEAVE__LEAVE_STATUS = eINSTANCE.getEmplLeave_LeaveStatus();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -3334,12 +3335,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute EMPL_LEAVE_REASON_TYPE__HAS_TABLE = eINSTANCE.getEmplLeaveReasonType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_LEAVE_REASON_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplLeaveReasonType_ParentTypeId();
+		EReference EMPL_LEAVE_REASON_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplLeaveReasonType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.employment.impl.EmplLeaveTypeImpl <em>Empl Leave Type</em>}' class.
@@ -3376,12 +3377,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute EMPL_LEAVE_TYPE__HAS_TABLE = eINSTANCE.getEmplLeaveType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPL_LEAVE_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplLeaveType_ParentTypeId();
+		EReference EMPL_LEAVE_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmplLeaveType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentImpl <em>Employment</em>}' class.
@@ -3410,20 +3411,20 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute EMPLOYMENT__ROLE_TYPE_ID_TO = eINSTANCE.getEmployment_RoleTypeIdTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id From</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT__PARTY_ID_FROM = eINSTANCE.getEmployment_PartyIdFrom();
+		EReference EMPLOYMENT__PARTY_ID_FROM = eINSTANCE.getEmployment_PartyIdFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id To</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT__PARTY_ID_TO = eINSTANCE.getEmployment_PartyIdTo();
+		EReference EMPLOYMENT__PARTY_ID_TO = eINSTANCE.getEmployment_PartyIdTo();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -3434,20 +3435,20 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute EMPLOYMENT__FROM_DATE = eINSTANCE.getEmployment_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Termination Reason Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Termination Reason Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT__TERMINATION_REASON_ID = eINSTANCE.getEmployment_TerminationReasonId();
+		EReference EMPLOYMENT__TERMINATION_REASON_ID = eINSTANCE.getEmployment_TerminationReasonId();
 
 		/**
-		 * The meta object literal for the '<em><b>Termination Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Termination Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT__TERMINATION_TYPE_ID = eINSTANCE.getEmployment_TerminationTypeId();
+		EReference EMPLOYMENT__TERMINATION_TYPE_ID = eINSTANCE.getEmployment_TerminationTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -3484,60 +3485,60 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute EMPLOYMENT_APP__APPLICATION_DATE = eINSTANCE.getEmploymentApp_ApplicationDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Applying Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Applying Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT_APP__APPLYING_PARTY_ID = eINSTANCE.getEmploymentApp_ApplyingPartyId();
+		EReference EMPLOYMENT_APP__APPLYING_PARTY_ID = eINSTANCE.getEmploymentApp_ApplyingPartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Approver Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Approver Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT_APP__APPROVER_PARTY_ID = eINSTANCE.getEmploymentApp_ApproverPartyId();
+		EReference EMPLOYMENT_APP__APPROVER_PARTY_ID = eINSTANCE.getEmploymentApp_ApproverPartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Empl Position Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Empl Position Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT_APP__EMPL_POSITION_ID = eINSTANCE.getEmploymentApp_EmplPositionId();
+		EReference EMPLOYMENT_APP__EMPL_POSITION_ID = eINSTANCE.getEmploymentApp_EmplPositionId();
 
 		/**
-		 * The meta object literal for the '<em><b>Employment App Source Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Employment App Source Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID = eINSTANCE.getEmploymentApp_EmploymentAppSourceTypeId();
+		EReference EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID = eINSTANCE.getEmploymentApp_EmploymentAppSourceTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Job Requisition Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Job Requisition Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT_APP__JOB_REQUISITION_ID = eINSTANCE.getEmploymentApp_JobRequisitionId();
+		EReference EMPLOYMENT_APP__JOB_REQUISITION_ID = eINSTANCE.getEmploymentApp_JobRequisitionId();
 
 		/**
-		 * The meta object literal for the '<em><b>Referred By Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Referred By Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT_APP__REFERRED_BY_PARTY_ID = eINSTANCE.getEmploymentApp_ReferredByPartyId();
+		EReference EMPLOYMENT_APP__REFERRED_BY_PARTY_ID = eINSTANCE.getEmploymentApp_ReferredByPartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT_APP__STATUS_ID = eINSTANCE.getEmploymentApp_StatusId();
+		EReference EMPLOYMENT_APP__STATUS_ID = eINSTANCE.getEmploymentApp_StatusId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppSourceTypeImpl <em>App Source Type</em>}' class.
@@ -3574,12 +3575,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute EMPLOYMENT_APP_SOURCE_TYPE__HAS_TABLE = eINSTANCE.getEmploymentAppSourceType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMPLOYMENT_APP_SOURCE_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmploymentAppSourceType_ParentTypeId();
+		EReference EMPLOYMENT_APP_SOURCE_TYPE__PARENT_TYPE_ID = eINSTANCE.getEmploymentAppSourceType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.employment.impl.PartyBenefitImpl <em>Party Benefit</em>}' class.
@@ -3608,28 +3609,28 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute PARTY_BENEFIT__ROLE_TYPE_ID_TO = eINSTANCE.getPartyBenefit_RoleTypeIdTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id From</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_BENEFIT__PARTY_ID_FROM = eINSTANCE.getPartyBenefit_PartyIdFrom();
+		EReference PARTY_BENEFIT__PARTY_ID_FROM = eINSTANCE.getPartyBenefit_PartyIdFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id To</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_BENEFIT__PARTY_ID_TO = eINSTANCE.getPartyBenefit_PartyIdTo();
+		EReference PARTY_BENEFIT__PARTY_ID_TO = eINSTANCE.getPartyBenefit_PartyIdTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Benefit Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Benefit Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_BENEFIT__BENEFIT_TYPE_ID = eINSTANCE.getPartyBenefit_BenefitTypeId();
+		EReference PARTY_BENEFIT__BENEFIT_TYPE_ID = eINSTANCE.getPartyBenefit_BenefitTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -3664,12 +3665,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute PARTY_BENEFIT__COST = eINSTANCE.getPartyBenefit_Cost();
 
 		/**
-		 * The meta object literal for the '<em><b>Period Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Period Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_BENEFIT__PERIOD_TYPE_ID = eINSTANCE.getPartyBenefit_PeriodTypeId();
+		EReference PARTY_BENEFIT__PERIOD_TYPE_ID = eINSTANCE.getPartyBenefit_PeriodTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -3780,20 +3781,20 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute PAY_HISTORY__COMMENTS = eINSTANCE.getPayHistory_Comments();
 
 		/**
-		 * The meta object literal for the '<em><b>Pay Grade Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Pay Grade Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAY_HISTORY__PAY_GRADE_ID = eINSTANCE.getPayHistory_PayGradeId();
+		EReference PAY_HISTORY__PAY_GRADE_ID = eINSTANCE.getPayHistory_PayGradeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Period Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Period Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAY_HISTORY__PERIOD_TYPE_ID = eINSTANCE.getPayHistory_PeriodTypeId();
+		EReference PAY_HISTORY__PERIOD_TYPE_ID = eINSTANCE.getPayHistory_PeriodTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Salary Step Seq Id</b></em>' attribute feature.
@@ -3862,12 +3863,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute PAYROLL_PREFERENCE__BANK_NAME = eINSTANCE.getPayrollPreference_BankName();
 
 		/**
-		 * The meta object literal for the '<em><b>Deduction Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Deduction Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID = eINSTANCE.getPayrollPreference_DeductionTypeId();
+		EReference PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID = eINSTANCE.getPayrollPreference_DeductionTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Flat Amount</b></em>' attribute feature.
@@ -3886,12 +3887,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute PAYROLL_PREFERENCE__FROM_DATE = eINSTANCE.getPayrollPreference_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPayrollPreference_PaymentMethodTypeId();
+		EReference PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPayrollPreference_PaymentMethodTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Percentage</b></em>' attribute feature.
@@ -3902,12 +3903,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute PAYROLL_PREFERENCE__PERCENTAGE = eINSTANCE.getPayrollPreference_Percentage();
 
 		/**
-		 * The meta object literal for the '<em><b>Period Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Period Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYROLL_PREFERENCE__PERIOD_TYPE_ID = eINSTANCE.getPayrollPreference_PeriodTypeId();
+		EReference PAYROLL_PREFERENCE__PERIOD_TYPE_ID = eINSTANCE.getPayrollPreference_PeriodTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Routing Number</b></em>' attribute feature.
@@ -3944,12 +3945,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute SALARY_STEP__SALARY_STEP_SEQ_ID = eINSTANCE.getSalaryStep_SalaryStepSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Pay Grade Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Pay Grade Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SALARY_STEP__PAY_GRADE_ID = eINSTANCE.getSalaryStep_PayGradeId();
+		EReference SALARY_STEP__PAY_GRADE_ID = eINSTANCE.getSalaryStep_PayGradeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -4060,12 +4061,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute TERMINATION_TYPE__HAS_TABLE = eINSTANCE.getTerminationType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TERMINATION_TYPE__PARENT_TYPE_ID = eINSTANCE.getTerminationType_ParentTypeId();
+		EReference TERMINATION_TYPE__PARENT_TYPE_ID = eINSTANCE.getTerminationType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.employment.impl.UnemploymentClaimImpl <em>Unemployment Claim</em>}' class.
@@ -4134,12 +4135,12 @@ public interface EmploymentPackage extends EPackage {
 		EAttribute UNEMPLOYMENT_CLAIM__ROLE_TYPE_ID_TO = eINSTANCE.getUnemploymentClaim_RoleTypeIdTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute UNEMPLOYMENT_CLAIM__STATUS_ID = eINSTANCE.getUnemploymentClaim_StatusId();
+		EReference UNEMPLOYMENT_CLAIM__STATUS_ID = eINSTANCE.getUnemploymentClaim_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.

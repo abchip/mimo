@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getParentProductCategoryId <em>Parent Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getParentProductCategoryId <em>Parent Product Category Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRollup()
@@ -43,7 +43,8 @@ public interface ProductCategoryRollup extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRollup_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -121,8 +122,8 @@ public interface ProductCategoryRollup extends BizEntity {
 	 * @return the value of the '<em>Product Category Id</em>' attribute.
 	 * @see #setProductCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRollup_ProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductCategoryId();
@@ -138,30 +139,29 @@ public interface ProductCategoryRollup extends BizEntity {
 	void setProductCategoryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Product Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Product Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Product Category Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Product Category Id</em>' attribute.
-	 * @see #setParentProductCategoryId(String)
+	 * @return the value of the '<em>Parent Product Category Id</em>' reference.
+	 * @see #setParentProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategoryRollup_ParentProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model keys="productCategoryId"
 	 * @generated
 	 */
-	String getParentProductCategoryId();
+	ProductCategory getParentProductCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getParentProductCategoryId <em>Parent Product Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategoryRollup#getParentProductCategoryId <em>Parent Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Product Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Product Category Id</em>' reference.
 	 * @see #getParentProductCategoryId()
 	 * @generated
 	 */
-	void setParentProductCategoryId(String value);
+	void setParentProductCategoryId(ProductCategory value);
 
 } // ProductCategoryRollup

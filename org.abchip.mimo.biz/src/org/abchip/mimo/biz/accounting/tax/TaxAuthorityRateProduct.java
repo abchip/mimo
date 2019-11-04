@@ -13,6 +13,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.store.ProductStore;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,16 +31,16 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isIsTaxInShippingPrice <em>Is Tax In Shipping Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getMinItemPrice <em>Min Item Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getMinPurchase <em>Min Purchase</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxAuthorityRateTypeId <em>Tax Authority Rate Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxPercentage <em>Tax Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxPromotions <em>Tax Promotions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#isTaxShipping <em>Tax Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTitleTransferEnumId <em>Title Transfer Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxAuthorityRateTypeId <em>Tax Authority Rate Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getProductCategoryId <em>Product Category Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct()
@@ -177,56 +179,56 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	void setMinPurchase(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Id</em>' attribute.
-	 * @see #setProductCategoryId(String)
+	 * @return the value of the '<em>Product Category Id</em>' reference.
+	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_ProductCategoryId()
-	 * @model annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model keys="productCategoryId"
 	 * @generated
 	 */
-	String getProductCategoryId();
+	ProductCategory getProductCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getProductCategoryId <em>Product Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getProductCategoryId <em>Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Category Id</em>' reference.
 	 * @see #getProductCategoryId()
 	 * @generated
 	 */
-	void setProductCategoryId(String value);
+	void setProductCategoryId(ProductCategory value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Store Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Id</em>' attribute.
-	 * @see #setProductStoreId(String)
+	 * @return the value of the '<em>Product Store Id</em>' reference.
+	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_ProductStoreId()
-	 * @model annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model keys="productStoreId"
 	 * @generated
 	 */
-	String getProductStoreId();
+	ProductStore getProductStoreId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getProductStoreId <em>Product Store Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getProductStoreId <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Store Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Store Id</em>' reference.
 	 * @see #getProductStoreId()
 	 * @generated
 	 */
-	void setProductStoreId(String value);
+	void setProductStoreId(ProductStore value);
 
 	/**
 	 * Returns the value of the '<em><b>Tax Auth Geo Id</b></em>' attribute.
@@ -438,30 +440,30 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	List<String> returnAdjustments();
 
 	/**
-	 * Returns the value of the '<em><b>Tax Authority Rate Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tax Authority Rate Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tax Authority Rate Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tax Authority Rate Type Id</em>' attribute.
-	 * @see #setTaxAuthorityRateTypeId(String)
+	 * @return the value of the '<em>Tax Authority Rate Type Id</em>' reference.
+	 * @see #setTaxAuthorityRateTypeId(TaxAuthorityRateType)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_TaxAuthorityRateTypeId()
-	 * @model annotation="mimo-ent-domain frame='TaxAuthorityRateType'"
+	 * @model keys="taxAuthorityRateTypeId"
 	 * @generated
 	 */
-	String getTaxAuthorityRateTypeId();
+	TaxAuthorityRateType getTaxAuthorityRateTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxAuthorityRateTypeId <em>Tax Authority Rate Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct#getTaxAuthorityRateTypeId <em>Tax Authority Rate Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tax Authority Rate Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Tax Authority Rate Type Id</em>' reference.
 	 * @see #getTaxAuthorityRateTypeId()
 	 * @generated
 	 */
-	void setTaxAuthorityRateTypeId(String value);
+	void setTaxAuthorityRateTypeId(TaxAuthorityRateType value);
 
 	/**
 	 * Returns the value of the '<em><b>Tax Authority Rate Seq Id</b></em>' attribute.
@@ -474,7 +476,7 @@ public interface TaxAuthorityRateProduct extends BizEntity {
 	 * @return the value of the '<em>Tax Authority Rate Seq Id</em>' attribute.
 	 * @see #setTaxAuthorityRateSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateProduct_TaxAuthorityRateSeqId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

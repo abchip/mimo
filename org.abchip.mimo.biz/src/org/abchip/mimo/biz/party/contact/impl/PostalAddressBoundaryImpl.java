@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.party.contact.impl;
 
+import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.abchip.mimo.biz.party.contact.PostalAddressBoundary;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -53,23 +56,14 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	 */
 	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
+	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGeoId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoId = GEO_ID_EDEFAULT;
+	protected Geo geoId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,7 +90,24 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	 * @generated
 	 */
 	@Override
-	public String getGeoId() {
+	public Geo getGeoId() {
+		if (geoId != null && ((EObject)geoId).eIsProxy()) {
+			InternalEObject oldGeoId = (InternalEObject)geoId;
+			geoId = (Geo)eResolveProxy(oldGeoId);
+			if (geoId != oldGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID, oldGeoId, geoId));
+			}
+		}
+		return geoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetGeoId() {
 		return geoId;
 	}
 
@@ -106,8 +117,8 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 	 * @generated
 	 */
 	@Override
-	public void setGeoId(String newGeoId) {
-		String oldGeoId = geoId;
+	public void setGeoId(Geo newGeoId) {
+		Geo oldGeoId = geoId;
 		geoId = newGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID, oldGeoId, geoId));
@@ -147,7 +158,8 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID:
 				return getContactMechId();
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID:
-				return getGeoId();
+				if (resolve) return getGeoId();
+				return basicGetGeoId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,7 +176,7 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 				setContactMechId((String)newValue);
 				return;
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID:
-				setGeoId((String)newValue);
+				setGeoId((Geo)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,7 +194,7 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
 				return;
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID:
-				setGeoId(GEO_ID_EDEFAULT);
+				setGeoId((Geo)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -199,7 +211,7 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__CONTACT_MECH_ID:
 				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
 			case ContactPackage.POSTAL_ADDRESS_BOUNDARY__GEO_ID:
-				return GEO_ID_EDEFAULT == null ? geoId != null : !GEO_ID_EDEFAULT.equals(geoId);
+				return geoId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,8 +228,6 @@ public class PostalAddressBoundaryImpl extends BizEntityImpl implements PostalAd
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contactMechId: ");
 		result.append(contactMechId);
-		result.append(", geoId: ");
-		result.append(geoId);
 		result.append(')');
 		return result.toString();
 	}

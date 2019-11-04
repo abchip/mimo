@@ -63,4 +63,9 @@ public class EMFFrameManagerImpl implements FrameManager {
 		if(false)
 			throw new SecurityException("Permission denied for frame: " + frame.getName());
 	}
+
+	@Override
+	public <E extends Entity> E createProxy(Class<E> klass, String name) {
+		return null;
+	}
 }

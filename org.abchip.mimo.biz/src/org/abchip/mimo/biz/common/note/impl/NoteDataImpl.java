@@ -13,8 +13,11 @@ import java.util.List;
 import org.abchip.mimo.biz.common.note.NoteData;
 import org.abchip.mimo.biz.common.note.NotePackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -165,23 +168,14 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 */
 	protected String noteName = NOTE_NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getNoteParty() <em>Note Party</em>}' attribute.
+	 * The cached value of the '{@link #getNoteParty() <em>Note Party</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNoteParty()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOTE_PARTY_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getNoteParty() <em>Note Party</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteParty()
-	 * @generated
-	 * @ordered
-	 */
-	protected String noteParty = NOTE_PARTY_EDEFAULT;
+	protected Party noteParty;
 	/**
 	 * 
 	 */
@@ -372,7 +366,24 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public String getNoteParty() {
+	public Party getNoteParty() {
+		if (noteParty != null && ((EObject)noteParty).eIsProxy()) {
+			InternalEObject oldNoteParty = (InternalEObject)noteParty;
+			noteParty = (Party)eResolveProxy(oldNoteParty);
+			if (noteParty != oldNoteParty) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NotePackage.NOTE_DATA__NOTE_PARTY, oldNoteParty, noteParty));
+			}
+		}
+		return noteParty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetNoteParty() {
 		return noteParty;
 	}
 
@@ -382,8 +393,8 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 	 * @generated
 	 */
 	@Override
-	public void setNoteParty(String newNoteParty) {
-		String oldNoteParty = noteParty;
+	public void setNoteParty(Party newNoteParty) {
+		Party oldNoteParty = noteParty;
 		noteParty = newNoteParty;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NotePackage.NOTE_DATA__NOTE_PARTY, oldNoteParty, noteParty));
@@ -508,7 +519,8 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 			case NotePackage.NOTE_DATA__NOTE_NAME:
 				return getNoteName();
 			case NotePackage.NOTE_DATA__NOTE_PARTY:
-				return getNoteParty();
+				if (resolve) return getNoteParty();
+				return basicGetNoteParty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -543,7 +555,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 				setNoteName((String)newValue);
 				return;
 			case NotePackage.NOTE_DATA__NOTE_PARTY:
-				setNoteParty((String)newValue);
+				setNoteParty((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -579,7 +591,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 				setNoteName(NOTE_NAME_EDEFAULT);
 				return;
 			case NotePackage.NOTE_DATA__NOTE_PARTY:
-				setNoteParty(NOTE_PARTY_EDEFAULT);
+				setNoteParty((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -608,7 +620,7 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 			case NotePackage.NOTE_DATA__NOTE_NAME:
 				return NOTE_NAME_EDEFAULT == null ? noteName != null : !NOTE_NAME_EDEFAULT.equals(noteName);
 			case NotePackage.NOTE_DATA__NOTE_PARTY:
-				return NOTE_PARTY_EDEFAULT == null ? noteParty != null : !NOTE_PARTY_EDEFAULT.equals(noteParty);
+				return noteParty != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -637,8 +649,6 @@ public class NoteDataImpl extends BizEntityImpl implements NoteData {
 		result.append(noteInfo);
 		result.append(", noteName: ");
 		result.append(noteName);
-		result.append(", noteParty: ");
-		result.append(noteParty);
 		result.append(')');
 		return result.toString();
 	}

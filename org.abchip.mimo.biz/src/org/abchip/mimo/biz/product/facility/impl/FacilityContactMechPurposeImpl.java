@@ -10,11 +10,15 @@ package org.abchip.mimo.biz.product.facility.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.contact.ContactMechPurposeType;
 import org.abchip.mimo.biz.product.facility.FacilityContactMechPurpose;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechPurposeImpl#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechPurposeImpl#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechPurposeImpl#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechPurposeImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechPurposeImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechPurposeImpl#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContactMechPurposeImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,46 +63,6 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 	 * @ordered
 	 */
 	protected String facilityId = FACILITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContactMechPurposeTypeId() <em>Contact Mech Purpose Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechPurposeTypeId() <em>Contact Mech Purpose Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechPurposeTypeId = CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -141,6 +105,26 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContactMechPurposeTypeId() <em>Contact Mech Purpose Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechPurposeTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMechPurposeType contactMechPurposeTypeId;
+
+	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech contactMechId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -165,7 +149,24 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public ContactMech getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -175,8 +176,8 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -188,7 +189,24 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 	 * @generated
 	 */
 	@Override
-	public String getContactMechPurposeTypeId() {
+	public ContactMechPurposeType getContactMechPurposeTypeId() {
+		if (contactMechPurposeTypeId != null && ((EObject)contactMechPurposeTypeId).eIsProxy()) {
+			InternalEObject oldContactMechPurposeTypeId = (InternalEObject)contactMechPurposeTypeId;
+			contactMechPurposeTypeId = (ContactMechPurposeType)eResolveProxy(oldContactMechPurposeTypeId);
+			if (contactMechPurposeTypeId != oldContactMechPurposeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
+			}
+		}
+		return contactMechPurposeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMechPurposeType basicGetContactMechPurposeTypeId() {
 		return contactMechPurposeTypeId;
 	}
 
@@ -198,8 +216,8 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 	 * @generated
 	 */
 	@Override
-	public void setContactMechPurposeTypeId(String newContactMechPurposeTypeId) {
-		String oldContactMechPurposeTypeId = contactMechPurposeTypeId;
+	public void setContactMechPurposeTypeId(ContactMechPurposeType newContactMechPurposeTypeId) {
+		ContactMechPurposeType oldContactMechPurposeTypeId = contactMechPurposeTypeId;
 		contactMechPurposeTypeId = newContactMechPurposeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID, oldContactMechPurposeTypeId, contactMechPurposeTypeId));
@@ -284,14 +302,16 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 		switch (featureID) {
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__FACILITY_ID:
 				return getFacilityId();
-			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				return getContactMechId();
-			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
-				return getContactMechPurposeTypeId();
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				return getFromDate();
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__THRU_DATE:
 				return getThruDate();
+			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
+				if (resolve) return getContactMechPurposeTypeId();
+				return basicGetContactMechPurposeTypeId();
+			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,17 +327,17 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__FACILITY_ID:
 				setFacilityId((String)newValue);
 				return;
-			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
-				return;
-			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
-				setContactMechPurposeTypeId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
+				setContactMechPurposeTypeId((ContactMechPurposeType)newValue);
+				return;
+			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,17 +354,17 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__FACILITY_ID:
 				setFacilityId(FACILITY_ID_EDEFAULT);
 				return;
-			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
-				return;
-			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
-				setContactMechPurposeTypeId(CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
+				setContactMechPurposeTypeId((ContactMechPurposeType)null);
+				return;
+			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -360,14 +380,14 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 		switch (featureID) {
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__FACILITY_ID:
 				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
-			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
-			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
-				return CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT == null ? contactMechPurposeTypeId != null : !CONTACT_MECH_PURPOSE_TYPE_ID_EDEFAULT.equals(contactMechPurposeTypeId);
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_PURPOSE_TYPE_ID:
+				return contactMechPurposeTypeId != null;
+			case FacilityPackage.FACILITY_CONTACT_MECH_PURPOSE__CONTACT_MECH_ID:
+				return contactMechId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -384,10 +404,6 @@ public class FacilityContactMechPurposeImpl extends BizEntityImpl implements Fac
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (facilityId: ");
 		result.append(facilityId);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
-		result.append(", contactMechPurposeTypeId: ");
-		result.append(contactMechPurposeTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

@@ -14,6 +14,18 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.note.NoteData;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
+import org.abchip.mimo.biz.service.schedule.RuntimeData;
+import org.abchip.mimo.biz.service.schedule.TemporalExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,56 +37,56 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getAccommodationMapId <em>Accommodation Map Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getAccommodationSpotId <em>Accommodation Spot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getActualCompletionDate <em>Actual Completion Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getActualMilliSeconds <em>Actual Milli Seconds</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getActualSetupMillis <em>Actual Setup Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getActualStartDate <em>Actual Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCurrentStatusId <em>Current Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getEstimateCalcMethod <em>Estimate Calc Method</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getEstimatedCompletionDate <em>Estimated Completion Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getEstimatedMilliSeconds <em>Estimated Milli Seconds</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getEstimatedSetupMillis <em>Estimated Setup Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getEstimatedStartDate <em>Estimated Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getInfoUrl <em>Info Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getLastStatusUpdate <em>Last Status Update</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getLocationDesc <em>Location Desc</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getMoneyUomId <em>Money Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getNoteId <em>Note Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getPercentComplete <em>Percent Complete</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getQuantityProduced <em>Quantity Produced</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getQuantityRejected <em>Quantity Rejected</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getQuantityToProduce <em>Quantity To Produce</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getReserv2ndPPPerc <em>Reserv2nd PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getReservNthPPPerc <em>Reserv Nth PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getReservPersons <em>Reserv Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getRevisionNumber <em>Revision Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getRuntimeDataId <em>Runtime Data Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getScopeEnumId <em>Scope Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#isSendNotificationEmail <em>Send Notification Email</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getServiceLoaderName <em>Service Loader Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getShowAsEnumId <em>Show As Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getSourceReferenceId <em>Source Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getSpecialTerms <em>Special Terms</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getTempExprId <em>Temp Expr Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getTimeTransparency <em>Time Transparency</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getTotalMilliSecondsAllowed <em>Total Milli Seconds Allowed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getTotalMoneyAllowed <em>Total Money Allowed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getUniversalId <em>Universal Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortName <em>Work Effort Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortParentId <em>Work Effort Parent Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortPurposeTypeId <em>Work Effort Purpose Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortTypeId <em>Work Effort Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortPurposeTypeId <em>Work Effort Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortParentId <em>Work Effort Parent Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCurrentStatusId <em>Current Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getScopeEnumId <em>Scope Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getMoneyUomId <em>Money Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getTempExprId <em>Temp Expr Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getRuntimeDataId <em>Runtime Data Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getNoteId <em>Note Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getEstimateCalcMethod <em>Estimate Calc Method</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getAccommodationMapId <em>Accommodation Map Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getAccommodationSpotId <em>Accommodation Spot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCommunicationEventWorkEffs <em>Communication Event Work Effs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortAttributes <em>Work Effort Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortDeliverableProds <em>Work Effort Deliverable Prods</em>}</li>
@@ -93,56 +105,56 @@ import org.abchip.mimo.biz.BizEntityTyped;
  */
 public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	/**
-	 * Returns the value of the '<em><b>Accommodation Map Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Accommodation Map Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Accommodation Map Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Accommodation Map Id</em>' attribute.
-	 * @see #setAccommodationMapId(String)
+	 * @return the value of the '<em>Accommodation Map Id</em>' reference.
+	 * @see #setAccommodationMapId(AccommodationMap)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_AccommodationMapId()
-	 * @model annotation="mimo-ent-domain frame='AccommodationMap'"
+	 * @model keys="accommodationMapId"
 	 * @generated
 	 */
-	String getAccommodationMapId();
+	AccommodationMap getAccommodationMapId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getAccommodationMapId <em>Accommodation Map Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getAccommodationMapId <em>Accommodation Map Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Accommodation Map Id</em>' attribute.
+	 * @param value the new value of the '<em>Accommodation Map Id</em>' reference.
 	 * @see #getAccommodationMapId()
 	 * @generated
 	 */
-	void setAccommodationMapId(String value);
+	void setAccommodationMapId(AccommodationMap value);
 
 	/**
-	 * Returns the value of the '<em><b>Accommodation Spot Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Accommodation Spot Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Accommodation Spot Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Accommodation Spot Id</em>' attribute.
-	 * @see #setAccommodationSpotId(String)
+	 * @return the value of the '<em>Accommodation Spot Id</em>' reference.
+	 * @see #setAccommodationSpotId(AccommodationSpot)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_AccommodationSpotId()
-	 * @model annotation="mimo-ent-domain frame='AccommodationSpot'"
+	 * @model keys="accommodationSpotId"
 	 * @generated
 	 */
-	String getAccommodationSpotId();
+	AccommodationSpot getAccommodationSpotId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getAccommodationSpotId <em>Accommodation Spot Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getAccommodationSpotId <em>Accommodation Spot Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Accommodation Spot Id</em>' attribute.
+	 * @param value the new value of the '<em>Accommodation Spot Id</em>' reference.
 	 * @see #getAccommodationSpotId()
 	 * @generated
 	 */
-	void setAccommodationSpotId(String value);
+	void setAccommodationSpotId(AccommodationSpot value);
 
 	/**
 	 * Returns the value of the '<em><b>Actual Completion Date</b></em>' attribute.
@@ -301,30 +313,30 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setCreatedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Current Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Current Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Current Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Current Status Id</em>' attribute.
-	 * @see #setCurrentStatusId(String)
+	 * @return the value of the '<em>Current Status Id</em>' reference.
+	 * @see #setCurrentStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_CurrentStatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getCurrentStatusId();
+	StatusItem getCurrentStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCurrentStatusId <em>Current Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getCurrentStatusId <em>Current Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Current Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Current Status Id</em>' reference.
 	 * @see #getCurrentStatusId()
 	 * @generated
 	 */
-	void setCurrentStatusId(String value);
+	void setCurrentStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -353,30 +365,30 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Estimate Calc Method</b></em>' attribute.
+	 * Returns the value of the '<em><b>Estimate Calc Method</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Estimate Calc Method</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Estimate Calc Method</em>' attribute.
-	 * @see #setEstimateCalcMethod(String)
+	 * @return the value of the '<em>Estimate Calc Method</em>' reference.
+	 * @see #setEstimateCalcMethod(CustomMethod)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_EstimateCalcMethod()
-	 * @model annotation="mimo-ent-domain frame='CustomMethod'"
+	 * @model keys="customMethodId"
 	 * @generated
 	 */
-	String getEstimateCalcMethod();
+	CustomMethod getEstimateCalcMethod();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getEstimateCalcMethod <em>Estimate Calc Method</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getEstimateCalcMethod <em>Estimate Calc Method</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Estimate Calc Method</em>' attribute.
+	 * @param value the new value of the '<em>Estimate Calc Method</em>' reference.
 	 * @see #getEstimateCalcMethod()
 	 * @generated
 	 */
-	void setEstimateCalcMethod(String value);
+	void setEstimateCalcMethod(CustomMethod value);
 
 	/**
 	 * Returns the value of the '<em><b>Estimated Completion Date</b></em>' attribute.
@@ -483,56 +495,56 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setEstimatedStartDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_FacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
-	 * @see #setFixedAssetId(String)
+	 * @return the value of the '<em>Fixed Asset Id</em>' reference.
+	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_FixedAssetId()
-	 * @model annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model keys="fixedAssetId"
 	 * @generated
 	 */
-	String getFixedAssetId();
+	FixedAsset getFixedAssetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getFixedAssetId <em>Fixed Asset Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getFixedAssetId <em>Fixed Asset Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Id</em>' reference.
 	 * @see #getFixedAssetId()
 	 * @generated
 	 */
-	void setFixedAssetId(String value);
+	void setFixedAssetId(FixedAsset value);
 
 	/**
 	 * Returns the value of the '<em><b>Info Url</b></em>' attribute.
@@ -665,56 +677,56 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setLocationDesc(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Money Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Money Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Money Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Money Uom Id</em>' attribute.
-	 * @see #setMoneyUomId(String)
+	 * @return the value of the '<em>Money Uom Id</em>' reference.
+	 * @see #setMoneyUomId(Uom)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_MoneyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getMoneyUomId();
+	Uom getMoneyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getMoneyUomId <em>Money Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getMoneyUomId <em>Money Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Money Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Money Uom Id</em>' reference.
 	 * @see #getMoneyUomId()
 	 * @generated
 	 */
-	void setMoneyUomId(String value);
+	void setMoneyUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Note Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Note Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Note Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Note Id</em>' attribute.
-	 * @see #setNoteId(String)
+	 * @return the value of the '<em>Note Id</em>' reference.
+	 * @see #setNoteId(NoteData)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_NoteId()
-	 * @model annotation="mimo-ent-domain frame='NoteData'"
+	 * @model keys="noteId"
 	 * @generated
 	 */
-	String getNoteId();
+	NoteData getNoteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getNoteId <em>Note Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getNoteId <em>Note Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Note Id</em>' attribute.
+	 * @param value the new value of the '<em>Note Id</em>' reference.
 	 * @see #getNoteId()
 	 * @generated
 	 */
-	void setNoteId(String value);
+	void setNoteId(NoteData value);
 
 	/**
 	 * Returns the value of the '<em><b>Percent Complete</b></em>' attribute.
@@ -847,30 +859,30 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setQuantityToProduce(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Recurrence Info Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Recurrence Info Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Recurrence Info Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recurrence Info Id</em>' attribute.
-	 * @see #setRecurrenceInfoId(String)
+	 * @return the value of the '<em>Recurrence Info Id</em>' reference.
+	 * @see #setRecurrenceInfoId(RecurrenceInfo)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_RecurrenceInfoId()
-	 * @model annotation="mimo-ent-domain frame='RecurrenceInfo'"
+	 * @model keys="recurrenceInfoId"
 	 * @generated
 	 */
-	String getRecurrenceInfoId();
+	RecurrenceInfo getRecurrenceInfoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getRecurrenceInfoId <em>Recurrence Info Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getRecurrenceInfoId <em>Recurrence Info Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Recurrence Info Id</em>' attribute.
+	 * @param value the new value of the '<em>Recurrence Info Id</em>' reference.
 	 * @see #getRecurrenceInfoId()
 	 * @generated
 	 */
-	void setRecurrenceInfoId(String value);
+	void setRecurrenceInfoId(RecurrenceInfo value);
 
 	/**
 	 * Returns the value of the '<em><b>Reserv2nd PP Perc</b></em>' attribute.
@@ -977,56 +989,56 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setRevisionNumber(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Runtime Data Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Runtime Data Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Runtime Data Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Runtime Data Id</em>' attribute.
-	 * @see #setRuntimeDataId(String)
+	 * @return the value of the '<em>Runtime Data Id</em>' reference.
+	 * @see #setRuntimeDataId(RuntimeData)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_RuntimeDataId()
-	 * @model annotation="mimo-ent-domain frame='RuntimeData'"
+	 * @model keys="runtimeDataId"
 	 * @generated
 	 */
-	String getRuntimeDataId();
+	RuntimeData getRuntimeDataId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getRuntimeDataId <em>Runtime Data Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getRuntimeDataId <em>Runtime Data Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Runtime Data Id</em>' attribute.
+	 * @param value the new value of the '<em>Runtime Data Id</em>' reference.
 	 * @see #getRuntimeDataId()
 	 * @generated
 	 */
-	void setRuntimeDataId(String value);
+	void setRuntimeDataId(RuntimeData value);
 
 	/**
-	 * Returns the value of the '<em><b>Scope Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Scope Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Scope Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scope Enum Id</em>' attribute.
-	 * @see #setScopeEnumId(String)
+	 * @return the value of the '<em>Scope Enum Id</em>' reference.
+	 * @see #setScopeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_ScopeEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getScopeEnumId();
+	Enumeration getScopeEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getScopeEnumId <em>Scope Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getScopeEnumId <em>Scope Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scope Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Scope Enum Id</em>' reference.
 	 * @see #getScopeEnumId()
 	 * @generated
 	 */
-	void setScopeEnumId(String value);
+	void setScopeEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Send Notification Email</b></em>' attribute.
@@ -1159,30 +1171,30 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setSpecialTerms(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Temp Expr Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Temp Expr Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Temp Expr Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Temp Expr Id</em>' attribute.
-	 * @see #setTempExprId(String)
+	 * @return the value of the '<em>Temp Expr Id</em>' reference.
+	 * @see #setTempExprId(TemporalExpression)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_TempExprId()
-	 * @model annotation="mimo-ent-domain frame='TemporalExpression'"
+	 * @model keys="tempExprId"
 	 * @generated
 	 */
-	String getTempExprId();
+	TemporalExpression getTempExprId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getTempExprId <em>Temp Expr Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getTempExprId <em>Temp Expr Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Temp Expr Id</em>' attribute.
+	 * @param value the new value of the '<em>Temp Expr Id</em>' reference.
 	 * @see #getTempExprId()
 	 * @generated
 	 */
-	void setTempExprId(String value);
+	void setTempExprId(TemporalExpression value);
 
 	/**
 	 * Returns the value of the '<em><b>Time Transparency</b></em>' attribute.
@@ -1342,82 +1354,82 @@ public interface WorkEffort extends BizEntityTyped<WorkEffortType> {
 	void setWorkEffortName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Parent Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Parent Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Parent Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Parent Id</em>' attribute.
-	 * @see #setWorkEffortParentId(String)
+	 * @return the value of the '<em>Work Effort Parent Id</em>' reference.
+	 * @see #setWorkEffortParentId(WorkEffort)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortParentId()
-	 * @model annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @model keys="workEffortId"
 	 * @generated
 	 */
-	String getWorkEffortParentId();
+	WorkEffort getWorkEffortParentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortParentId <em>Work Effort Parent Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortParentId <em>Work Effort Parent Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Parent Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Parent Id</em>' reference.
 	 * @see #getWorkEffortParentId()
 	 * @generated
 	 */
-	void setWorkEffortParentId(String value);
+	void setWorkEffortParentId(WorkEffort value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Purpose Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Purpose Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Purpose Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Purpose Type Id</em>' attribute.
-	 * @see #setWorkEffortPurposeTypeId(String)
+	 * @return the value of the '<em>Work Effort Purpose Type Id</em>' reference.
+	 * @see #setWorkEffortPurposeTypeId(WorkEffortPurposeType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortPurposeTypeId()
-	 * @model annotation="mimo-ent-domain frame='WorkEffortPurposeType'"
+	 * @model keys="workEffortPurposeTypeId"
 	 * @generated
 	 */
-	String getWorkEffortPurposeTypeId();
+	WorkEffortPurposeType getWorkEffortPurposeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortPurposeTypeId <em>Work Effort Purpose Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortPurposeTypeId <em>Work Effort Purpose Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Purpose Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Purpose Type Id</em>' reference.
 	 * @see #getWorkEffortPurposeTypeId()
 	 * @generated
 	 */
-	void setWorkEffortPurposeTypeId(String value);
+	void setWorkEffortPurposeTypeId(WorkEffortPurposeType value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Type Id</em>' attribute.
-	 * @see #setWorkEffortTypeId(String)
+	 * @return the value of the '<em>Work Effort Type Id</em>' reference.
+	 * @see #setWorkEffortTypeId(WorkEffortType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffort_WorkEffortTypeId()
-	 * @model annotation="mimo-ent-domain frame='WorkEffortType'"
+	 * @model keys="workEffortTypeId"
 	 * @generated
 	 */
-	String getWorkEffortTypeId();
+	WorkEffortType getWorkEffortTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortTypeId <em>Work Effort Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffort#getWorkEffortTypeId <em>Work Effort Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Type Id</em>' reference.
 	 * @see #getWorkEffortTypeId()
 	 * @generated
 	 */
-	void setWorkEffortTypeId(String value);
+	void setWorkEffortTypeId(WorkEffortType value);
 
 	/**
 	 * Returns the value of the '<em><b>Communication Event Work Effs</b></em>' attribute list.

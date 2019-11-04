@@ -75,7 +75,7 @@ public interface TaxAuthorityRateType extends BizEntity {
 	 * @return the value of the '<em>Tax Authority Rate Type Id</em>' attribute.
 	 * @see #setTaxAuthorityRateTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityRateType_TaxAuthorityRateTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

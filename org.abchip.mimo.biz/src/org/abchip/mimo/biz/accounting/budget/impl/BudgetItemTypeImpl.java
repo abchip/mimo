@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -98,23 +100,14 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 */
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected BudgetItemType parentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getBudgetItemTypeAttrs() <em>Budget Item Type Attrs</em>}' attribute list.
@@ -197,7 +190,24 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public BudgetItemType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (BudgetItemType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BudgetItemType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -207,8 +217,8 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(BudgetItemType newParentTypeId) {
+		BudgetItemType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -301,7 +311,8 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 			case BudgetPackage.BUDGET_ITEM_TYPE__HAS_TABLE:
 				return isHasTable();
 			case BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS:
 				return getBudgetItemTypeAttrs();
 		}
@@ -327,7 +338,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 				setHasTable((Boolean)newValue);
 				return;
 			case BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((BudgetItemType)newValue);
 				return;
 			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS:
 				getBudgetItemTypeAttrs().clear();
@@ -355,7 +366,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((BudgetItemType)null);
 				return;
 			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS:
 				getBudgetItemTypeAttrs().clear();
@@ -379,7 +390,7 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 			case BudgetPackage.BUDGET_ITEM_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case BudgetPackage.BUDGET_ITEM_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case BudgetPackage.BUDGET_ITEM_TYPE__BUDGET_ITEM_TYPE_ATTRS:
 				return budgetItemTypeAttrs != null && !budgetItemTypeAttrs.isEmpty();
 		}
@@ -402,8 +413,6 @@ public class BudgetItemTypeImpl extends BizEntityTypeImpl<BudgetItem> implements
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", budgetItemTypeAttrs: ");
 		result.append(budgetItemTypeAttrs);
 		result.append(')');

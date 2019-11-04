@@ -75,7 +75,7 @@ public interface FixedAssetIdentType extends BizEntityType<FixedAssetIdent> {
 	 * @return the value of the '<em>Fixed Asset Ident Type Id</em>' attribute.
 	 * @see #setFixedAssetIdentTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetIdentType_FixedAssetIdentTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

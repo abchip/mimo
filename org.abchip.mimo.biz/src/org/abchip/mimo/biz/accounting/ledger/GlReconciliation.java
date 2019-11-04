@@ -13,6 +13,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,14 +29,14 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getGlAccountId <em>Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getGlReconciliationName <em>Gl Reconciliation Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getOpeningBalance <em>Opening Balance</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getReconciledBalance <em>Reconciled Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getReconciledDate <em>Reconciled Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getGlAccountId <em>Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
@@ -226,30 +228,30 @@ public interface GlReconciliation extends BizEntity {
 	void setOpeningBalance(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Organization Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Organization Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Organization Party Id</em>' attribute.
-	 * @see #setOrganizationPartyId(String)
+	 * @return the value of the '<em>Organization Party Id</em>' reference.
+	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_OrganizationPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getOrganizationPartyId();
+	Party getOrganizationPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getOrganizationPartyId <em>Organization Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getOrganizationPartyId <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Organization Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Organization Party Id</em>' reference.
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 */
-	void setOrganizationPartyId(String value);
+	void setOrganizationPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Reconciled Balance</b></em>' attribute.
@@ -304,30 +306,30 @@ public interface GlReconciliation extends BizEntity {
 	void setReconciledDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -339,30 +341,30 @@ public interface GlReconciliation extends BizEntity {
 	List<String> finAccountTranss();
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Id</em>' attribute.
-	 * @see #setGlAccountId(String)
+	 * @return the value of the '<em>Gl Account Id</em>' reference.
+	 * @see #setGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_GlAccountId()
-	 * @model annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getGlAccountId();
+	GlAccount getGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getGlAccountId <em>Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliation#getGlAccountId <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Id</em>' reference.
 	 * @see #getGlAccountId()
 	 * @generated
 	 */
-	void setGlAccountId(String value);
+	void setGlAccountId(GlAccount value);
 
 	/**
 	 * Returns the value of the '<em><b>Gl Reconciliation Id</b></em>' attribute.
@@ -375,7 +377,7 @@ public interface GlReconciliation extends BizEntity {
 	 * @return the value of the '<em>Gl Reconciliation Id</em>' attribute.
 	 * @see #setGlReconciliationId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliation_GlReconciliationId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

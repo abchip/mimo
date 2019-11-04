@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.workeffort.workeffort.Deliverable;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortDeliverableProd;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -57,24 +60,14 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDeliverableId() <em>Deliverable Id</em>}' attribute.
+	 * The cached value of the '{@link #getDeliverableId() <em>Deliverable Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDeliverableId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DELIVERABLE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDeliverableId() <em>Deliverable Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deliverableId = DELIVERABLE_ID_EDEFAULT;
+	protected Deliverable deliverableId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +94,24 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getDeliverableId() {
+	public Deliverable getDeliverableId() {
+		if (deliverableId != null && ((EObject)deliverableId).eIsProxy()) {
+			InternalEObject oldDeliverableId = (InternalEObject)deliverableId;
+			deliverableId = (Deliverable)eResolveProxy(oldDeliverableId);
+			if (deliverableId != oldDeliverableId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__DELIVERABLE_ID, oldDeliverableId, deliverableId));
+			}
+		}
+		return deliverableId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Deliverable basicGetDeliverableId() {
 		return deliverableId;
 	}
 
@@ -111,8 +121,8 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setDeliverableId(String newDeliverableId) {
-		String oldDeliverableId = deliverableId;
+	public void setDeliverableId(Deliverable newDeliverableId) {
+		Deliverable oldDeliverableId = deliverableId;
 		deliverableId = newDeliverableId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__DELIVERABLE_ID, oldDeliverableId, deliverableId));
@@ -152,7 +162,8 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 			case WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__WORK_EFFORT_ID:
 				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__DELIVERABLE_ID:
-				return getDeliverableId();
+				if (resolve) return getDeliverableId();
+				return basicGetDeliverableId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,7 +180,7 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 				setWorkEffortId((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__DELIVERABLE_ID:
-				setDeliverableId((String)newValue);
+				setDeliverableId((Deliverable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +198,7 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__DELIVERABLE_ID:
-				setDeliverableId(DELIVERABLE_ID_EDEFAULT);
+				setDeliverableId((Deliverable)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,7 +215,7 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 			case WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_DELIVERABLE_PROD__DELIVERABLE_ID:
-				return DELIVERABLE_ID_EDEFAULT == null ? deliverableId != null : !DELIVERABLE_ID_EDEFAULT.equals(deliverableId);
+				return deliverableId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,8 +232,6 @@ public class WorkEffortDeliverableProdImpl extends BizEntityImpl implements Work
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", deliverableId: ");
-		result.append(deliverableId);
 		result.append(')');
 		return result.toString();
 	}

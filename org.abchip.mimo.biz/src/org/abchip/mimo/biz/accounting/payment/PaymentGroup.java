@@ -55,30 +55,30 @@ public interface PaymentGroup extends BizEntityTyped<PaymentGroupType> {
 	void setPaymentGroupName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Group Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Group Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Group Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Group Type Id</em>' attribute.
-	 * @see #setPaymentGroupTypeId(String)
+	 * @return the value of the '<em>Payment Group Type Id</em>' reference.
+	 * @see #setPaymentGroupTypeId(PaymentGroupType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroup_PaymentGroupTypeId()
-	 * @model annotation="mimo-ent-domain frame='PaymentGroupType'"
+	 * @model keys="paymentGroupTypeId"
 	 * @generated
 	 */
-	String getPaymentGroupTypeId();
+	PaymentGroupType getPaymentGroupTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroup#getPaymentGroupTypeId <em>Payment Group Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroup#getPaymentGroupTypeId <em>Payment Group Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Group Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Group Type Id</em>' reference.
 	 * @see #getPaymentGroupTypeId()
 	 * @generated
 	 */
-	void setPaymentGroupTypeId(String value);
+	void setPaymentGroupTypeId(PaymentGroupType value);
 
 	/**
 	 * Returns the value of the '<em><b>Payment Group Id</b></em>' attribute.
@@ -91,7 +91,7 @@ public interface PaymentGroup extends BizEntityTyped<PaymentGroupType> {
 	 * @return the value of the '<em>Payment Group Id</em>' attribute.
 	 * @see #setPaymentGroupId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroup_PaymentGroupId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

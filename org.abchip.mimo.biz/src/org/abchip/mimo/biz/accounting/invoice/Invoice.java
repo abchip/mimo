@@ -11,6 +11,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,21 +29,21 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceId <em>Invoice Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceDate <em>Invoice Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceMessage <em>Invoice Message</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPaidDate <em>Paid Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getReferenceNumber <em>Reference Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceAttributes <em>Invoice Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceItems <em>Invoice Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceNotes <em>Invoice Notes</em>}</li>
@@ -48,82 +55,82 @@ import org.abchip.mimo.biz.BizEntityTyped;
  */
 public interface Invoice extends BizEntityTyped<InvoiceType> {
 	/**
-	 * Returns the value of the '<em><b>Billing Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Billing Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Billing Account Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Billing Account Id</em>' attribute.
-	 * @see #setBillingAccountId(String)
+	 * @return the value of the '<em>Billing Account Id</em>' reference.
+	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_BillingAccountId()
-	 * @model annotation="mimo-ent-domain frame='BillingAccount'"
+	 * @model keys="billingAccountId"
 	 * @generated
 	 */
-	String getBillingAccountId();
+	BillingAccount getBillingAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getBillingAccountId <em>Billing Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getBillingAccountId <em>Billing Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Billing Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Billing Account Id</em>' reference.
 	 * @see #getBillingAccountId()
 	 * @generated
 	 */
-	void setBillingAccountId(String value);
+	void setBillingAccountId(BillingAccount value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_ContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(ContactMech value);
 
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_CurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -256,82 +263,82 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	void setPaidDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id From</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id From</em>' attribute.
-	 * @see #setPartyIdFrom(String)
+	 * @return the value of the '<em>Party Id From</em>' reference.
+	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_PartyIdFrom()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdFrom();
+	Party getPartyIdFrom();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPartyIdFrom <em>Party Id From</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getPartyIdFrom <em>Party Id From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id From</em>' attribute.
+	 * @param value the new value of the '<em>Party Id From</em>' reference.
 	 * @see #getPartyIdFrom()
 	 * @generated
 	 */
-	void setPartyIdFrom(String value);
+	void setPartyIdFrom(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Recurrence Info Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Recurrence Info Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Recurrence Info Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recurrence Info Id</em>' attribute.
-	 * @see #setRecurrenceInfoId(String)
+	 * @return the value of the '<em>Recurrence Info Id</em>' reference.
+	 * @see #setRecurrenceInfoId(RecurrenceInfo)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_RecurrenceInfoId()
-	 * @model annotation="mimo-ent-domain frame='RecurrenceInfo'"
+	 * @model keys="recurrenceInfoId"
 	 * @generated
 	 */
-	String getRecurrenceInfoId();
+	RecurrenceInfo getRecurrenceInfoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getRecurrenceInfoId <em>Recurrence Info Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getRecurrenceInfoId <em>Recurrence Info Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Recurrence Info Id</em>' attribute.
+	 * @param value the new value of the '<em>Recurrence Info Id</em>' reference.
 	 * @see #getRecurrenceInfoId()
 	 * @generated
 	 */
-	void setRecurrenceInfoId(String value);
+	void setRecurrenceInfoId(RecurrenceInfo value);
 
 	/**
 	 * Returns the value of the '<em><b>Reference Number</b></em>' attribute.
@@ -360,56 +367,56 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	void setReferenceNumber(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id</em>' attribute.
-	 * @see #setRoleTypeId(String)
+	 * @return the value of the '<em>Role Type Id</em>' reference.
+	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_RoleTypeId()
-	 * @model annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeId();
+	RoleType getRoleTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getRoleTypeId <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
 	 */
-	void setRoleTypeId(String value);
+	void setRoleTypeId(RoleType value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Attributes</b></em>' attribute list.
@@ -499,30 +506,30 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	List<String> timeEntries();
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Type Id</em>' attribute.
-	 * @see #setInvoiceTypeId(String)
+	 * @return the value of the '<em>Invoice Type Id</em>' reference.
+	 * @see #setInvoiceTypeId(InvoiceType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceTypeId()
-	 * @model annotation="mimo-ent-domain frame='InvoiceType'"
+	 * @model keys="invoiceTypeId"
 	 * @generated
 	 */
-	String getInvoiceTypeId();
+	InvoiceType getInvoiceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceTypeId <em>Invoice Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.Invoice#getInvoiceTypeId <em>Invoice Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Type Id</em>' reference.
 	 * @see #getInvoiceTypeId()
 	 * @generated
 	 */
-	void setInvoiceTypeId(String value);
+	void setInvoiceTypeId(InvoiceType value);
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Id</b></em>' attribute.
@@ -535,7 +542,7 @@ public interface Invoice extends BizEntityTyped<InvoiceType> {
 	 * @return the value of the '<em>Invoice Id</em>' attribute.
 	 * @see #setInvoiceId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoice_InvoiceId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

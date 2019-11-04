@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentPurpose#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.ContentPurpose#getContentPurposeTypeId <em>Content Purpose Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.ContentPurpose#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.ContentPurpose#getContentPurposeTypeId <em>Content Purpose Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurpose()
@@ -41,7 +41,6 @@ public interface ContentPurpose extends BizEntityTyped<ContentPurposeType> {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurpose_ContentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
 	 * @generated
 	 */
 	String getContentId();
@@ -57,32 +56,30 @@ public interface ContentPurpose extends BizEntityTyped<ContentPurposeType> {
 	void setContentId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Content Purpose Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Content Purpose Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Purpose Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Purpose Type Id</em>' attribute.
-	 * @see #setContentPurposeTypeId(String)
+	 * @return the value of the '<em>Content Purpose Type Id</em>' reference.
+	 * @see #setContentPurposeTypeId(ContentPurposeType)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentPurpose_ContentPurposeTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContentPurposeType'"
+	 * @model keys="contentPurposeTypeId"
 	 * @generated
 	 */
-	String getContentPurposeTypeId();
+	ContentPurposeType getContentPurposeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentPurpose#getContentPurposeTypeId <em>Content Purpose Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentPurpose#getContentPurposeTypeId <em>Content Purpose Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content Purpose Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Content Purpose Type Id</em>' reference.
 	 * @see #getContentPurposeTypeId()
 	 * @generated
 	 */
-	void setContentPurposeTypeId(String value);
+	void setContentPurposeTypeId(ContentPurposeType value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.

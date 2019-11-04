@@ -7,12 +7,17 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.store.ProductStoreVendorPayment;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -58,64 +63,34 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVendorPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VENDOR_PARTY_ID_EDEFAULT = null;
+	protected Party vendorPartyId;
 
 	/**
-	 * The cached value of the '{@link #getVendorPartyId() <em>Vendor Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVendorPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String vendorPartyId = VENDOR_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPaymentMethodTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PAYMENT_METHOD_TYPE_ID_EDEFAULT = null;
+	protected PaymentMethodType paymentMethodTypeId;
 
 	/**
-	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodTypeId = PAYMENT_METHOD_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreditCardEnumId() <em>Credit Card Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getCreditCardEnumId() <em>Credit Card Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCreditCardEnumId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CREDIT_CARD_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreditCardEnumId() <em>Credit Card Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreditCardEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String creditCardEnumId = CREDIT_CARD_ENUM_ID_EDEFAULT;
+	protected Enumeration creditCardEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,7 +117,24 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public String getCreditCardEnumId() {
+	public Enumeration getCreditCardEnumId() {
+		if (creditCardEnumId != null && ((EObject)creditCardEnumId).eIsProxy()) {
+			InternalEObject oldCreditCardEnumId = (InternalEObject)creditCardEnumId;
+			creditCardEnumId = (Enumeration)eResolveProxy(oldCreditCardEnumId);
+			if (creditCardEnumId != oldCreditCardEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__CREDIT_CARD_ENUM_ID, oldCreditCardEnumId, creditCardEnumId));
+			}
+		}
+		return creditCardEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetCreditCardEnumId() {
 		return creditCardEnumId;
 	}
 
@@ -152,8 +144,8 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setCreditCardEnumId(String newCreditCardEnumId) {
-		String oldCreditCardEnumId = creditCardEnumId;
+	public void setCreditCardEnumId(Enumeration newCreditCardEnumId) {
+		Enumeration oldCreditCardEnumId = creditCardEnumId;
 		creditCardEnumId = newCreditCardEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__CREDIT_CARD_ENUM_ID, oldCreditCardEnumId, creditCardEnumId));
@@ -165,7 +157,24 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodTypeId() {
+	public PaymentMethodType getPaymentMethodTypeId() {
+		if (paymentMethodTypeId != null && ((EObject)paymentMethodTypeId).eIsProxy()) {
+			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
+			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
+			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
+			}
+		}
+		return paymentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethodType basicGetPaymentMethodTypeId() {
 		return paymentMethodTypeId;
 	}
 
@@ -175,8 +184,8 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodTypeId(String newPaymentMethodTypeId) {
-		String oldPaymentMethodTypeId = paymentMethodTypeId;
+	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
@@ -188,7 +197,24 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public String getVendorPartyId() {
+	public Party getVendorPartyId() {
+		if (vendorPartyId != null && ((EObject)vendorPartyId).eIsProxy()) {
+			InternalEObject oldVendorPartyId = (InternalEObject)vendorPartyId;
+			vendorPartyId = (Party)eResolveProxy(oldVendorPartyId);
+			if (vendorPartyId != oldVendorPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
+			}
+		}
+		return vendorPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetVendorPartyId() {
 		return vendorPartyId;
 	}
 
@@ -198,8 +224,8 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 	 * @generated
 	 */
 	@Override
-	public void setVendorPartyId(String newVendorPartyId) {
-		String oldVendorPartyId = vendorPartyId;
+	public void setVendorPartyId(Party newVendorPartyId) {
+		Party oldVendorPartyId = vendorPartyId;
 		vendorPartyId = newVendorPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID, oldVendorPartyId, vendorPartyId));
@@ -239,11 +265,14 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID:
 				return getProductStoreId();
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID:
-				return getVendorPartyId();
+				if (resolve) return getVendorPartyId();
+				return basicGetVendorPartyId();
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PAYMENT_METHOD_TYPE_ID:
-				return getPaymentMethodTypeId();
+				if (resolve) return getPaymentMethodTypeId();
+				return basicGetPaymentMethodTypeId();
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__CREDIT_CARD_ENUM_ID:
-				return getCreditCardEnumId();
+				if (resolve) return getCreditCardEnumId();
+				return basicGetCreditCardEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,13 +289,13 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 				setProductStoreId((String)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID:
-				setVendorPartyId((String)newValue);
+				setVendorPartyId((Party)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((String)newValue);
+				setPaymentMethodTypeId((PaymentMethodType)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__CREDIT_CARD_ENUM_ID:
-				setCreditCardEnumId((String)newValue);
+				setCreditCardEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,13 +313,13 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID:
-				setVendorPartyId(VENDOR_PARTY_ID_EDEFAULT);
+				setVendorPartyId((Party)null);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId(PAYMENT_METHOD_TYPE_ID_EDEFAULT);
+				setPaymentMethodTypeId((PaymentMethodType)null);
 				return;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__CREDIT_CARD_ENUM_ID:
-				setCreditCardEnumId(CREDIT_CARD_ENUM_ID_EDEFAULT);
+				setCreditCardEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,11 +336,11 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PRODUCT_STORE_ID:
 				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__VENDOR_PARTY_ID:
-				return VENDOR_PARTY_ID_EDEFAULT == null ? vendorPartyId != null : !VENDOR_PARTY_ID_EDEFAULT.equals(vendorPartyId);
+				return vendorPartyId != null;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__PAYMENT_METHOD_TYPE_ID:
-				return PAYMENT_METHOD_TYPE_ID_EDEFAULT == null ? paymentMethodTypeId != null : !PAYMENT_METHOD_TYPE_ID_EDEFAULT.equals(paymentMethodTypeId);
+				return paymentMethodTypeId != null;
 			case StorePackage.PRODUCT_STORE_VENDOR_PAYMENT__CREDIT_CARD_ENUM_ID:
-				return CREDIT_CARD_ENUM_ID_EDEFAULT == null ? creditCardEnumId != null : !CREDIT_CARD_ENUM_ID_EDEFAULT.equals(creditCardEnumId);
+				return creditCardEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -328,12 +357,6 @@ public class ProductStoreVendorPaymentImpl extends BizEntityImpl implements Prod
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productStoreId: ");
 		result.append(productStoreId);
-		result.append(", vendorPartyId: ");
-		result.append(vendorPartyId);
-		result.append(", paymentMethodTypeId: ");
-		result.append(paymentMethodTypeId);
-		result.append(", creditCardEnumId: ");
-		result.append(creditCardEnumId);
 		result.append(')');
 		return result.toString();
 	}

@@ -201,6 +201,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -370,6 +371,22 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		PositionPackageImpl thePositionPackage = (PositionPackageImpl)(registeredPackage instanceof PositionPackageImpl ? registeredPackage : PositionPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -386,22 +403,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -513,6 +514,14 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		theEmploymentPackage.createPackageContents();
 		thePositionPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -521,14 +530,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -608,6 +609,14 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		theEmploymentPackage.initializePackageContents();
 		thePositionPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -616,14 +625,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -691,8 +692,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobInterview_GradeSecuredEnumId() {
-		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(1);
+	public EReference getJobInterview_GradeSecuredEnumId() {
+		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -702,7 +703,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobInterview_JobInterviewDate() {
-		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -712,7 +713,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobInterview_JobInterviewResult() {
-		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -721,8 +722,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobInterview_JobInterviewTypeId() {
-		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(4);
+	public EReference getJobInterview_JobInterviewTypeId() {
+		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -731,8 +732,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobInterview_JobIntervieweePartyId() {
-		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(5);
+	public EReference getJobInterview_JobIntervieweePartyId() {
+		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -741,8 +742,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobInterview_JobInterviewerPartyId() {
-		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(6);
+	public EReference getJobInterview_JobInterviewerPartyId() {
+		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -751,8 +752,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobInterview_JobRequisitionId() {
-		return (EAttribute)jobInterviewEClass.getEStructuralFeatures().get(7);
+	public EReference getJobInterview_JobRequisitionId() {
+		return (EReference)jobInterviewEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -831,8 +832,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobRequisition_ExamTypeEnumId() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(3);
+	public EReference getJobRequisition_ExamTypeEnumId() {
+		return (EReference)jobRequisitionEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -842,7 +843,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobRequisition_ExperienceMonths() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -852,7 +853,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobRequisition_ExperienceYears() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -862,7 +863,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobRequisition_Gender() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -872,7 +873,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobRequisition_JobLocation() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -881,8 +882,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobRequisition_JobPostingTypeEnumId() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(8);
+	public EReference getJobRequisition_JobPostingTypeEnumId() {
+		return (EReference)jobRequisitionEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -892,7 +893,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobRequisition_JobRequisitionDate() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -902,7 +903,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobRequisition_NoOfResources() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -912,7 +913,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobRequisition_Qualification() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -922,7 +923,7 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 */
 	@Override
 	public EAttribute getJobRequisition_RequiredOnDate() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -931,8 +932,8 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getJobRequisition_SkillTypeId() {
-		return (EAttribute)jobRequisitionEClass.getEStructuralFeatures().get(13);
+	public EReference getJobRequisition_SkillTypeId() {
+		return (EReference)jobRequisitionEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -966,13 +967,13 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		// Create classes and their features
 		jobInterviewEClass = createEClass(JOB_INTERVIEW);
 		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_ID);
-		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__GRADE_SECURED_ENUM_ID);
 		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_DATE);
 		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_RESULT);
-		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID);
-		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID);
-		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID);
-		createEAttribute(jobInterviewEClass, JOB_INTERVIEW__JOB_REQUISITION_ID);
+		createEReference(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID);
+		createEReference(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID);
+		createEReference(jobInterviewEClass, JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID);
+		createEReference(jobInterviewEClass, JOB_INTERVIEW__JOB_REQUISITION_ID);
+		createEReference(jobInterviewEClass, JOB_INTERVIEW__GRADE_SECURED_ENUM_ID);
 
 		jobInterviewTypeEClass = createEClass(JOB_INTERVIEW_TYPE);
 		createEAttribute(jobInterviewTypeEClass, JOB_INTERVIEW_TYPE__JOB_INTERVIEW_TYPE_ID);
@@ -982,17 +983,17 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__JOB_REQUISITION_ID);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__AGE);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__DURATION_MONTHS);
-		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__EXAM_TYPE_ENUM_ID);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__EXPERIENCE_MONTHS);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__EXPERIENCE_YEARS);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__GENDER);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__JOB_LOCATION);
-		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__JOB_REQUISITION_DATE);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__NO_OF_RESOURCES);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__QUALIFICATION);
 		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__REQUIRED_ON_DATE);
-		createEAttribute(jobRequisitionEClass, JOB_REQUISITION__SKILL_TYPE_ID);
+		createEReference(jobRequisitionEClass, JOB_REQUISITION__SKILL_TYPE_ID);
+		createEReference(jobRequisitionEClass, JOB_REQUISITION__EXAM_TYPE_ENUM_ID);
+		createEReference(jobRequisitionEClass, JOB_REQUISITION__JOB_POSTING_TYPE_ENUM_ID);
 	}
 
 	/**
@@ -1020,6 +1021,9 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
+		AbilityPackage theAbilityPackage = (AbilityPackage)EPackage.Registry.INSTANCE.getEPackage(AbilityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1038,36 +1042,44 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(jobInterviewEClass, JobInterview.class, "JobInterview", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getJobInterview_JobInterviewId(), ecorePackage.getEString(), "jobInterviewId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobInterview_GradeSecuredEnumId(), ecorePackage.getEString(), "gradeSecuredEnumId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJobInterview_JobInterviewId(), ecorePackage.getEString(), "jobInterviewId", null, 1, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobInterview_JobInterviewDate(), ecorePackage.getEDate(), "jobInterviewDate", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobInterview_JobInterviewResult(), ecorePackage.getEString(), "jobInterviewResult", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobInterview_JobInterviewTypeId(), ecorePackage.getEString(), "jobInterviewTypeId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobInterview_JobIntervieweePartyId(), ecorePackage.getEString(), "jobIntervieweePartyId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobInterview_JobInterviewerPartyId(), ecorePackage.getEString(), "jobInterviewerPartyId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobInterview_JobRequisitionId(), ecorePackage.getEString(), "jobRequisitionId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJobInterview_JobIntervieweePartyId(), thePartyPackage.getParty(), null, "jobIntervieweePartyId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobInterview_JobIntervieweePartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getJobInterview_JobInterviewerPartyId(), thePartyPackage.getParty(), null, "jobInterviewerPartyId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobInterview_JobInterviewerPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getJobInterview_JobInterviewTypeId(), this.getJobInterviewType(), null, "jobInterviewTypeId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobInterview_JobInterviewTypeId().getEKeys().add(this.getJobInterviewType_JobInterviewTypeId());
+		initEReference(getJobInterview_JobRequisitionId(), this.getJobRequisition(), null, "jobRequisitionId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobInterview_JobRequisitionId().getEKeys().add(this.getJobRequisition_JobRequisitionId());
+		initEReference(getJobInterview_GradeSecuredEnumId(), theEnumPackage.getEnumeration(), null, "gradeSecuredEnumId", null, 0, 1, JobInterview.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobInterview_GradeSecuredEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		initEClass(jobInterviewTypeEClass, JobInterviewType.class, "JobInterviewType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getJobInterviewType_JobInterviewTypeId(), ecorePackage.getEString(), "jobInterviewTypeId", null, 0, 1, JobInterviewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJobInterviewType_JobInterviewTypeId(), ecorePackage.getEString(), "jobInterviewTypeId", null, 1, 1, JobInterviewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobInterviewType_Description(), ecorePackage.getEString(), "description", null, 0, 1, JobInterviewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(jobInterviewTypeEClass, ecorePackage.getEString(), "jobInterviews", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(jobRequisitionEClass, JobRequisition.class, "JobRequisition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getJobRequisition_JobRequisitionId(), ecorePackage.getEString(), "jobRequisitionId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJobRequisition_JobRequisitionId(), ecorePackage.getEString(), "jobRequisitionId", null, 1, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_Age(), ecorePackage.getELong(), "age", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_DurationMonths(), ecorePackage.getELong(), "durationMonths", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobRequisition_ExamTypeEnumId(), ecorePackage.getEString(), "examTypeEnumId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_ExperienceMonths(), ecorePackage.getELong(), "experienceMonths", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_ExperienceYears(), ecorePackage.getELong(), "experienceYears", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_Gender(), ecorePackage.getEBoolean(), "gender", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_JobLocation(), ecorePackage.getEString(), "jobLocation", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobRequisition_JobPostingTypeEnumId(), ecorePackage.getEString(), "jobPostingTypeEnumId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_JobRequisitionDate(), ecorePackage.getEDate(), "jobRequisitionDate", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_NoOfResources(), ecorePackage.getELong(), "noOfResources", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_Qualification(), ecorePackage.getEString(), "qualification", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobRequisition_RequiredOnDate(), ecorePackage.getEDate(), "requiredOnDate", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJobRequisition_SkillTypeId(), ecorePackage.getEString(), "skillTypeId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJobRequisition_SkillTypeId(), theAbilityPackage.getSkillType(), null, "skillTypeId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobRequisition_SkillTypeId().getEKeys().add(theAbilityPackage.getSkillType_SkillTypeId());
+		initEReference(getJobRequisition_ExamTypeEnumId(), theEnumPackage.getEnumeration(), null, "examTypeEnumId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobRequisition_ExamTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
+		initEReference(getJobRequisition_JobPostingTypeEnumId(), theEnumPackage.getEnumeration(), null, "jobPostingTypeEnumId", null, 0, 1, JobRequisition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getJobRequisition_JobPostingTypeEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		addEOperation(jobRequisitionEClass, ecorePackage.getEString(), "employmentApps", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1076,10 +1088,10 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		// Create annotations
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-domain
+		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -1137,51 +1149,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getJobInterview_GradeSecuredEnumId(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getJobInterview_JobInterviewTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "JobInterviewType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getJobInterview_JobIntervieweePartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getJobInterview_JobInterviewerPartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getJobInterview_JobRequisitionId(),
-		   source,
-		   new String[] {
-			   "frame", "JobRequisition"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (jobInterviewTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -1207,33 +1174,6 @@ public class RecruitmentPackageImpl extends EPackageImpl implements RecruitmentP
 		   new String[] {
 			   "frame", "JobInterview",
 			   "route", "jobRequisitionId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getJobRequisition_ExamTypeEnumId(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getJobRequisition_JobPostingTypeEnumId(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getJobRequisition_SkillTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "SkillType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

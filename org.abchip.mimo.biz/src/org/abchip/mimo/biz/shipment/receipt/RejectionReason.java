@@ -75,7 +75,7 @@ public interface RejectionReason extends BizEntity {
 	 * @return the value of the '<em>Rejection Id</em>' attribute.
 	 * @see #setRejectionId(String)
 	 * @see org.abchip.mimo.biz.shipment.receipt.ReceiptPackage#getRejectionReason_RejectionId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

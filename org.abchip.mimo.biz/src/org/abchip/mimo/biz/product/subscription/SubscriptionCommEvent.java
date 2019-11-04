@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.subscription;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,31 +29,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface SubscriptionCommEvent extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Communication Event Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Communication Event Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Communication Event Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Id</em>' attribute.
-	 * @see #setCommunicationEventId(String)
+	 * @return the value of the '<em>Communication Event Id</em>' reference.
+	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionCommEvent_CommunicationEventId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent'"
+	 * @model keys="communicationEventId"
 	 * @generated
 	 */
-	String getCommunicationEventId();
+	CommunicationEvent getCommunicationEventId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent#getCommunicationEventId <em>Communication Event Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionCommEvent#getCommunicationEventId <em>Communication Event Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Communication Event Id</em>' attribute.
+	 * @param value the new value of the '<em>Communication Event Id</em>' reference.
 	 * @see #getCommunicationEventId()
 	 * @generated
 	 */
-	void setCommunicationEventId(String value);
+	void setCommunicationEventId(CommunicationEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Subscription Id</b></em>' attribute.
@@ -65,8 +65,8 @@ public interface SubscriptionCommEvent extends BizEntity {
 	 * @return the value of the '<em>Subscription Id</em>' attribute.
 	 * @see #setSubscriptionId(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionCommEvent_SubscriptionId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Subscription'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSubscriptionId();

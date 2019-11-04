@@ -55,30 +55,30 @@ public interface VisualTheme extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Visual Theme Set Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Visual Theme Set Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Visual Theme Set Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Visual Theme Set Id</em>' attribute.
-	 * @see #setVisualThemeSetId(String)
+	 * @return the value of the '<em>Visual Theme Set Id</em>' reference.
+	 * @see #setVisualThemeSetId(VisualThemeSet)
 	 * @see org.abchip.mimo.biz.common.theme.ThemePackage#getVisualTheme_VisualThemeSetId()
-	 * @model annotation="mimo-ent-domain frame='VisualThemeSet'"
+	 * @model keys="visualThemeSetId"
 	 * @generated
 	 */
-	String getVisualThemeSetId();
+	VisualThemeSet getVisualThemeSetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.theme.VisualTheme#getVisualThemeSetId <em>Visual Theme Set Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.theme.VisualTheme#getVisualThemeSetId <em>Visual Theme Set Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Visual Theme Set Id</em>' attribute.
+	 * @param value the new value of the '<em>Visual Theme Set Id</em>' reference.
 	 * @see #getVisualThemeSetId()
 	 * @generated
 	 */
-	void setVisualThemeSetId(String value);
+	void setVisualThemeSetId(VisualThemeSet value);
 
 	/**
 	 * Returns the value of the '<em><b>Visual Theme Id</b></em>' attribute.

@@ -15,6 +15,8 @@ import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -93,23 +95,14 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	 */
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected PaymentGroupType parentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +175,24 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public PaymentGroupType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (PaymentGroupType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GROUP_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGroupType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -192,8 +202,8 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(PaymentGroupType newParentTypeId) {
+		PaymentGroupType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -261,7 +271,8 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 			case PaymentPackage.PAYMENT_GROUP_TYPE__HAS_TABLE:
 				return isHasTable();
 			case PaymentPackage.PAYMENT_GROUP_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -284,7 +295,7 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 				setHasTable((Boolean)newValue);
 				return;
 			case PaymentPackage.PAYMENT_GROUP_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((PaymentGroupType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -308,7 +319,7 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case PaymentPackage.PAYMENT_GROUP_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((PaymentGroupType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -329,7 +340,7 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 			case PaymentPackage.PAYMENT_GROUP_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case PaymentPackage.PAYMENT_GROUP_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -350,8 +361,6 @@ public class PaymentGroupTypeImpl extends BizEntityTypeImpl<PaymentGroup> implem
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(')');
 		return result.toString();
 	}

@@ -25,12 +25,12 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getAccountName <em>Account Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getExternalId <em>External Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl Resource Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlXbrlClassId <em>Gl Xbrl Class Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getParentGlAccountId <em>Parent Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountGroupMembers <em>Gl Account Group Members</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountOrganizations <em>Gl Account Organizations</em>}</li>
  * </ul>
@@ -376,134 +376,134 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	List<String> varianceReasonGlAccounts();
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Type Id</em>' attribute.
-	 * @see #setGlAccountTypeId(String)
+	 * @return the value of the '<em>Gl Account Type Id</em>' reference.
+	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountTypeId()
-	 * @model annotation="mimo-ent-domain frame='GlAccountType'"
+	 * @model keys="glAccountTypeId"
 	 * @generated
 	 */
-	String getGlAccountTypeId();
+	GlAccountType getGlAccountTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountTypeId <em>Gl Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Type Id</em>' reference.
 	 * @see #getGlAccountTypeId()
 	 * @generated
 	 */
-	void setGlAccountTypeId(String value);
+	void setGlAccountTypeId(GlAccountType value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Class Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Class Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Class Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Class Id</em>' attribute.
-	 * @see #setGlAccountClassId(String)
+	 * @return the value of the '<em>Gl Account Class Id</em>' reference.
+	 * @see #setGlAccountClassId(GlAccountClass)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountClassId()
-	 * @model annotation="mimo-ent-domain frame='GlAccountClass'"
+	 * @model keys="glAccountClassId"
 	 * @generated
 	 */
-	String getGlAccountClassId();
+	GlAccountClass getGlAccountClassId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountClassId <em>Gl Account Class Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlAccountClassId <em>Gl Account Class Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Class Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Class Id</em>' reference.
 	 * @see #getGlAccountClassId()
 	 * @generated
 	 */
-	void setGlAccountClassId(String value);
+	void setGlAccountClassId(GlAccountClass value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Resource Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Resource Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Resource Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Resource Type Id</em>' attribute.
-	 * @see #setGlResourceTypeId(String)
+	 * @return the value of the '<em>Gl Resource Type Id</em>' reference.
+	 * @see #setGlResourceTypeId(GlResourceType)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlResourceTypeId()
-	 * @model annotation="mimo-ent-domain frame='GlResourceType'"
+	 * @model keys="glResourceTypeId"
 	 * @generated
 	 */
-	String getGlResourceTypeId();
+	GlResourceType getGlResourceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl Resource Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlResourceTypeId <em>Gl Resource Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Resource Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Resource Type Id</em>' reference.
 	 * @see #getGlResourceTypeId()
 	 * @generated
 	 */
-	void setGlResourceTypeId(String value);
+	void setGlResourceTypeId(GlResourceType value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Xbrl Class Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Xbrl Class Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Xbrl Class Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Xbrl Class Id</em>' attribute.
-	 * @see #setGlXbrlClassId(String)
+	 * @return the value of the '<em>Gl Xbrl Class Id</em>' reference.
+	 * @see #setGlXbrlClassId(GlXbrlClass)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlXbrlClassId()
-	 * @model annotation="mimo-ent-domain frame='GlXbrlClass'"
+	 * @model keys="glXbrlClassId"
 	 * @generated
 	 */
-	String getGlXbrlClassId();
+	GlXbrlClass getGlXbrlClassId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlXbrlClassId <em>Gl Xbrl Class Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getGlXbrlClassId <em>Gl Xbrl Class Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Xbrl Class Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Xbrl Class Id</em>' reference.
 	 * @see #getGlXbrlClassId()
 	 * @generated
 	 */
-	void setGlXbrlClassId(String value);
+	void setGlXbrlClassId(GlXbrlClass value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Gl Account Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Gl Account Id</em>' attribute.
-	 * @see #setParentGlAccountId(String)
+	 * @return the value of the '<em>Parent Gl Account Id</em>' reference.
+	 * @see #setParentGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_ParentGlAccountId()
-	 * @model annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getParentGlAccountId();
+	GlAccount getParentGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getParentGlAccountId <em>Parent Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccount#getParentGlAccountId <em>Parent Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Gl Account Id</em>' reference.
 	 * @see #getParentGlAccountId()
 	 * @generated
 	 */
-	void setParentGlAccountId(String value);
+	void setParentGlAccountId(GlAccount value);
 
 	/**
 	 * Returns the value of the '<em><b>Gl Account Id</b></em>' attribute.
@@ -516,7 +516,7 @@ public interface GlAccount extends BizEntityTyped<GlAccountType> {
 	 * @return the value of the '<em>Gl Account Id</em>' attribute.
 	 * @see #setGlAccountId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccount_GlAccountId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

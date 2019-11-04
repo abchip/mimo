@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.accounting.payment;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.common.geo.Geo;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,13 +25,13 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getPaymentApplicationId <em>Payment Application Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getAmountApplied <em>Amount Applied</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getPaymentId <em>Payment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getInvoiceId <em>Invoice Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getBillingAccountId <em>Billing Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getToPaymentId <em>To Payment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication()
@@ -99,7 +102,7 @@ public interface PaymentApplication extends BizEntity {
 	 * @return the value of the '<em>Payment Application Id</em>' attribute.
 	 * @see #setPaymentApplicationId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_PaymentApplicationId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -116,159 +119,159 @@ public interface PaymentApplication extends BizEntity {
 	void setPaymentApplicationId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tax Auth Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tax Auth Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tax Auth Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tax Auth Geo Id</em>' attribute.
-	 * @see #setTaxAuthGeoId(String)
+	 * @return the value of the '<em>Tax Auth Geo Id</em>' reference.
+	 * @see #setTaxAuthGeoId(Geo)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_TaxAuthGeoId()
-	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getTaxAuthGeoId();
+	Geo getTaxAuthGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tax Auth Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Tax Auth Geo Id</em>' reference.
 	 * @see #getTaxAuthGeoId()
 	 * @generated
 	 */
-	void setTaxAuthGeoId(String value);
+	void setTaxAuthGeoId(Geo value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Id</em>' attribute.
-	 * @see #setPaymentId(String)
+	 * @return the value of the '<em>Payment Id</em>' reference.
+	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_PaymentId()
-	 * @model annotation="mimo-ent-domain frame='Payment'"
+	 * @model keys="paymentId"
 	 * @generated
 	 */
-	String getPaymentId();
+	Payment getPaymentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getPaymentId <em>Payment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getPaymentId <em>Payment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Id</em>' reference.
 	 * @see #getPaymentId()
 	 * @generated
 	 */
-	void setPaymentId(String value);
+	void setPaymentId(Payment value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Id</em>' attribute.
-	 * @see #setInvoiceId(String)
+	 * @return the value of the '<em>Invoice Id</em>' reference.
+	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_InvoiceId()
-	 * @model annotation="mimo-ent-domain frame='Invoice'"
+	 * @model keys="invoiceId"
 	 * @generated
 	 */
-	String getInvoiceId();
+	Invoice getInvoiceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getInvoiceId <em>Invoice Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getInvoiceId <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Id</em>' reference.
 	 * @see #getInvoiceId()
 	 * @generated
 	 */
-	void setInvoiceId(String value);
+	void setInvoiceId(Invoice value);
 
 	/**
-	 * Returns the value of the '<em><b>Billing Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Billing Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Billing Account Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Billing Account Id</em>' attribute.
-	 * @see #setBillingAccountId(String)
+	 * @return the value of the '<em>Billing Account Id</em>' reference.
+	 * @see #setBillingAccountId(BillingAccount)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_BillingAccountId()
-	 * @model annotation="mimo-ent-domain frame='BillingAccount'"
+	 * @model keys="billingAccountId"
 	 * @generated
 	 */
-	String getBillingAccountId();
+	BillingAccount getBillingAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getBillingAccountId <em>Billing Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getBillingAccountId <em>Billing Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Billing Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Billing Account Id</em>' reference.
 	 * @see #getBillingAccountId()
 	 * @generated
 	 */
-	void setBillingAccountId(String value);
+	void setBillingAccountId(BillingAccount value);
 
 	/**
-	 * Returns the value of the '<em><b>To Payment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>To Payment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To Payment Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Payment Id</em>' attribute.
-	 * @see #setToPaymentId(String)
+	 * @return the value of the '<em>To Payment Id</em>' reference.
+	 * @see #setToPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_ToPaymentId()
-	 * @model annotation="mimo-ent-domain frame='Payment'"
+	 * @model keys="paymentId"
 	 * @generated
 	 */
-	String getToPaymentId();
+	Payment getToPaymentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getToPaymentId <em>To Payment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getToPaymentId <em>To Payment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Payment Id</em>' attribute.
+	 * @param value the new value of the '<em>To Payment Id</em>' reference.
 	 * @see #getToPaymentId()
 	 * @generated
 	 */
-	void setToPaymentId(String value);
+	void setToPaymentId(Payment value);
 
 	/**
-	 * Returns the value of the '<em><b>Override Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Override Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Override Gl Account Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Override Gl Account Id</em>' attribute.
-	 * @see #setOverrideGlAccountId(String)
+	 * @return the value of the '<em>Override Gl Account Id</em>' reference.
+	 * @see #setOverrideGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentApplication_OverrideGlAccountId()
-	 * @model annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getOverrideGlAccountId();
+	GlAccount getOverrideGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getOverrideGlAccountId <em>Override Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getOverrideGlAccountId <em>Override Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Override Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Override Gl Account Id</em>' reference.
 	 * @see #getOverrideGlAccountId()
 	 * @generated
 	 */
-	void setOverrideGlAccountId(String value);
+	void setOverrideGlAccountId(GlAccount value);
 
 } // PaymentApplication

@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetDepMethod;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getDepreciationCustomMethodId <em>Depreciation Custom Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetDepMethodImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,24 +61,6 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 */
 	protected String depreciationCustomMethodId = DEPRECIATION_CUSTOM_METHOD_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,6 +97,15 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,7 +201,24 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -217,8 +228,8 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -234,12 +245,13 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
 				return getDepreciationCustomMethodId();
-			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FROM_DATE:
 				return getFromDate();
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__THRU_DATE:
 				return getThruDate();
+			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -255,14 +267,14 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
 				setDepreciationCustomMethodId((String)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -279,14 +291,14 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
 				setDepreciationCustomMethodId(DEPRECIATION_CUSTOM_METHOD_ID_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -302,12 +314,12 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__DEPRECIATION_CUSTOM_METHOD_ID:
 				return DEPRECIATION_CUSTOM_METHOD_ID_EDEFAULT == null ? depreciationCustomMethodId != null : !DEPRECIATION_CUSTOM_METHOD_ID_EDEFAULT.equals(depreciationCustomMethodId);
-			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FixedassetPackage.FIXED_ASSET_DEP_METHOD__FIXED_ASSET_ID:
+				return fixedAssetId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -324,8 +336,6 @@ public class FixedAssetDepMethodImpl extends BizEntityImpl implements FixedAsset
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (depreciationCustomMethodId: ");
 		result.append(depreciationCustomMethodId);
-		result.append(", fixedAssetId: ");
-		result.append(fixedAssetId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

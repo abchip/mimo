@@ -10,11 +10,15 @@ package org.abchip.mimo.biz.party.communication.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.communication.CommContentAssocType;
 import org.abchip.mimo.biz.party.communication.CommEventContentAssoc;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommEventContentAssocImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommEventContentAssocImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommEventContentAssocImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommEventContentAssocImpl#getCommContentAssocTypeId <em>Comm Content Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommEventContentAssocImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommEventContentAssocImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommEventContentAssocImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommEventContentAssocImpl#getCommContentAssocTypeId <em>Comm Content Assoc Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,24 +63,6 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 */
 	protected String contentId = CONTENT_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMUNICATION_EVENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String communicationEventId = COMMUNICATION_EVENT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,24 +80,6 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 * @ordered
 	 */
 	protected Date fromDate = FROM_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCommContentAssocTypeId() <em>Comm Content Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommContentAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMM_CONTENT_ASSOC_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCommContentAssocTypeId() <em>Comm Content Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommContentAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String commContentAssocTypeId = COMM_CONTENT_ASSOC_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -148,6 +116,24 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommunicationEventId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CommunicationEvent communicationEventId;
+	/**
+	 * The cached value of the '{@link #getCommContentAssocTypeId() <em>Comm Content Assoc Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommContentAssocTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CommContentAssocType commContentAssocTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -266,7 +252,24 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 * @generated
 	 */
 	@Override
-	public String getCommunicationEventId() {
+	public CommunicationEvent getCommunicationEventId() {
+		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
+			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
+			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
+			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
+			}
+		}
+		return communicationEventId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEvent basicGetCommunicationEventId() {
 		return communicationEventId;
 	}
 
@@ -276,8 +279,8 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 * @generated
 	 */
 	@Override
-	public void setCommunicationEventId(String newCommunicationEventId) {
-		String oldCommunicationEventId = communicationEventId;
+	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
@@ -289,7 +292,24 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 * @generated
 	 */
 	@Override
-	public String getCommContentAssocTypeId() {
+	public CommContentAssocType getCommContentAssocTypeId() {
+		if (commContentAssocTypeId != null && ((EObject)commContentAssocTypeId).eIsProxy()) {
+			InternalEObject oldCommContentAssocTypeId = (InternalEObject)commContentAssocTypeId;
+			commContentAssocTypeId = (CommContentAssocType)eResolveProxy(oldCommContentAssocTypeId);
+			if (commContentAssocTypeId != oldCommContentAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID, oldCommContentAssocTypeId, commContentAssocTypeId));
+			}
+		}
+		return commContentAssocTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommContentAssocType basicGetCommContentAssocTypeId() {
 		return commContentAssocTypeId;
 	}
 
@@ -299,8 +319,8 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 	 * @generated
 	 */
 	@Override
-	public void setCommContentAssocTypeId(String newCommContentAssocTypeId) {
-		String oldCommContentAssocTypeId = commContentAssocTypeId;
+	public void setCommContentAssocTypeId(CommContentAssocType newCommContentAssocTypeId) {
+		CommContentAssocType oldCommContentAssocTypeId = commContentAssocTypeId;
 		commContentAssocTypeId = newCommContentAssocTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID, oldCommContentAssocTypeId, commContentAssocTypeId));
@@ -316,16 +336,18 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 		switch (featureID) {
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__CONTENT_ID:
 				return getContentId();
-			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID:
-				return getCommunicationEventId();
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__FROM_DATE:
 				return getFromDate();
-			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID:
-				return getCommContentAssocTypeId();
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__SEQUENCE_NUM:
 				return getSequenceNum();
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__THRU_DATE:
 				return getThruDate();
+			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID:
+				if (resolve) return getCommunicationEventId();
+				return basicGetCommunicationEventId();
+			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID:
+				if (resolve) return getCommContentAssocTypeId();
+				return basicGetCommContentAssocTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -341,20 +363,20 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__CONTENT_ID:
 				setContentId((String)newValue);
 				return;
-			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((String)newValue);
-				return;
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__FROM_DATE:
 				setFromDate((Date)newValue);
-				return;
-			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID:
-				setCommContentAssocTypeId((String)newValue);
 				return;
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
 				return;
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID:
+				setCommunicationEventId((CommunicationEvent)newValue);
+				return;
+			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID:
+				setCommContentAssocTypeId((CommContentAssocType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -371,20 +393,20 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__CONTENT_ID:
 				setContentId(CONTENT_ID_EDEFAULT);
 				return;
-			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId(COMMUNICATION_EVENT_ID_EDEFAULT);
-				return;
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID:
-				setCommContentAssocTypeId(COMM_CONTENT_ASSOC_TYPE_ID_EDEFAULT);
 				return;
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
 				return;
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID:
+				setCommunicationEventId((CommunicationEvent)null);
+				return;
+			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID:
+				setCommContentAssocTypeId((CommContentAssocType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -400,16 +422,16 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 		switch (featureID) {
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__CONTENT_ID:
 				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID:
-				return COMMUNICATION_EVENT_ID_EDEFAULT == null ? communicationEventId != null : !COMMUNICATION_EVENT_ID_EDEFAULT.equals(communicationEventId);
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID:
-				return COMM_CONTENT_ASSOC_TYPE_ID_EDEFAULT == null ? commContentAssocTypeId != null : !COMM_CONTENT_ASSOC_TYPE_ID_EDEFAULT.equals(commContentAssocTypeId);
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID:
+				return communicationEventId != null;
+			case CommunicationPackage.COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID:
+				return commContentAssocTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -426,12 +448,8 @@ public class CommEventContentAssocImpl extends BizEntityImpl implements CommEven
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contentId: ");
 		result.append(contentId);
-		result.append(", communicationEventId: ");
-		result.append(communicationEventId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", commContentAssocTypeId: ");
-		result.append(commContentAssocTypeId);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(", thruDate: ");

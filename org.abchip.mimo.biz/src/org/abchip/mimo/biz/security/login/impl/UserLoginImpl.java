@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.PartyGroup;
 import org.abchip.mimo.biz.security.login.LoginPackage;
 import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +21,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -42,11 +45,11 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getLastCurrencyUom <em>Last Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getLastLocale <em>Last Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getLastTimeZone <em>Last Time Zone</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getPasswordHint <em>Password Hint</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#isRequirePasswordChange <em>Require Password Change</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getSuccessiveFailedLogins <em>Successive Failed Logins</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getUserLdapDn <em>User Ldap Dn</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getUserLoginHistories <em>User Login Histories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getUserLoginPasswordHistories <em>User Login Password Histories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginImpl#getUserPreferences <em>User Preferences</em>}</li>
@@ -303,28 +306,6 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-
-	/**
 	 * The default value of the '{@link #getPasswordHint() <em>Password Hint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -410,6 +391,17 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @ordered
 	 */
 	protected String userLdapDn = USER_LDAP_DN_EDEFAULT;
+
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PartyGroup partyId;
 
 	/**
 	 * The cached value of the '{@link #getUserLoginHistories() <em>User Login Histories</em>}' attribute list.
@@ -698,7 +690,24 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public PartyGroup getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (PartyGroup)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyGroup basicGetPartyId() {
 		return partyId;
 	}
 
@@ -708,8 +717,8 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(PartyGroup newPartyId) {
+		PartyGroup oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN__PARTY_ID, oldPartyId, partyId));
@@ -1439,8 +1448,6 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 				return getLastLocale();
 			case LoginPackage.USER_LOGIN__LAST_TIME_ZONE:
 				return getLastTimeZone();
-			case LoginPackage.USER_LOGIN__PARTY_ID:
-				return getPartyId();
 			case LoginPackage.USER_LOGIN__PASSWORD_HINT:
 				return getPasswordHint();
 			case LoginPackage.USER_LOGIN__REQUIRE_PASSWORD_CHANGE:
@@ -1449,6 +1456,9 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 				return getSuccessiveFailedLogins();
 			case LoginPackage.USER_LOGIN__USER_LDAP_DN:
 				return getUserLdapDn();
+			case LoginPackage.USER_LOGIN__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case LoginPackage.USER_LOGIN__USER_LOGIN_HISTORIES:
 				return getUserLoginHistories();
 			case LoginPackage.USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES:
@@ -1501,9 +1511,6 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 			case LoginPackage.USER_LOGIN__LAST_TIME_ZONE:
 				setLastTimeZone((String)newValue);
 				return;
-			case LoginPackage.USER_LOGIN__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case LoginPackage.USER_LOGIN__PASSWORD_HINT:
 				setPasswordHint((String)newValue);
 				return;
@@ -1515,6 +1522,9 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 				return;
 			case LoginPackage.USER_LOGIN__USER_LDAP_DN:
 				setUserLdapDn((String)newValue);
+				return;
+			case LoginPackage.USER_LOGIN__PARTY_ID:
+				setPartyId((PartyGroup)newValue);
 				return;
 			case LoginPackage.USER_LOGIN__USER_LOGIN_HISTORIES:
 				getUserLoginHistories().clear();
@@ -1573,9 +1583,6 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 			case LoginPackage.USER_LOGIN__LAST_TIME_ZONE:
 				setLastTimeZone(LAST_TIME_ZONE_EDEFAULT);
 				return;
-			case LoginPackage.USER_LOGIN__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case LoginPackage.USER_LOGIN__PASSWORD_HINT:
 				setPasswordHint(PASSWORD_HINT_EDEFAULT);
 				return;
@@ -1587,6 +1594,9 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 				return;
 			case LoginPackage.USER_LOGIN__USER_LDAP_DN:
 				setUserLdapDn(USER_LDAP_DN_EDEFAULT);
+				return;
+			case LoginPackage.USER_LOGIN__PARTY_ID:
+				setPartyId((PartyGroup)null);
 				return;
 			case LoginPackage.USER_LOGIN__USER_LOGIN_HISTORIES:
 				getUserLoginHistories().clear();
@@ -1631,8 +1641,6 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 				return LAST_LOCALE_EDEFAULT == null ? lastLocale != null : !LAST_LOCALE_EDEFAULT.equals(lastLocale);
 			case LoginPackage.USER_LOGIN__LAST_TIME_ZONE:
 				return LAST_TIME_ZONE_EDEFAULT == null ? lastTimeZone != null : !LAST_TIME_ZONE_EDEFAULT.equals(lastTimeZone);
-			case LoginPackage.USER_LOGIN__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case LoginPackage.USER_LOGIN__PASSWORD_HINT:
 				return PASSWORD_HINT_EDEFAULT == null ? passwordHint != null : !PASSWORD_HINT_EDEFAULT.equals(passwordHint);
 			case LoginPackage.USER_LOGIN__REQUIRE_PASSWORD_CHANGE:
@@ -1641,6 +1649,8 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 				return successiveFailedLogins != SUCCESSIVE_FAILED_LOGINS_EDEFAULT;
 			case LoginPackage.USER_LOGIN__USER_LDAP_DN:
 				return USER_LDAP_DN_EDEFAULT == null ? userLdapDn != null : !USER_LDAP_DN_EDEFAULT.equals(userLdapDn);
+			case LoginPackage.USER_LOGIN__PARTY_ID:
+				return partyId != null;
 			case LoginPackage.USER_LOGIN__USER_LOGIN_HISTORIES:
 				return userLoginHistories != null && !userLoginHistories.isEmpty();
 			case LoginPackage.USER_LOGIN__USER_LOGIN_PASSWORD_HISTORIES:
@@ -1683,8 +1693,6 @@ public class UserLoginImpl extends BizEntityImpl implements UserLogin {
 		result.append(lastLocale);
 		result.append(", lastTimeZone: ");
 		result.append(lastTimeZone);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", passwordHint: ");
 		result.append(passwordHint);
 		result.append(", requirePasswordChange: ");

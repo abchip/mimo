@@ -192,7 +192,7 @@ public interface ProductConfigItem extends BizEntity {
 	 * @return the value of the '<em>Config Item Id</em>' attribute.
 	 * @see #setConfigItemId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigItem_ConfigItemId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

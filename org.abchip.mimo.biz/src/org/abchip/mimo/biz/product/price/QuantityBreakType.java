@@ -75,7 +75,7 @@ public interface QuantityBreakType extends BizEntityType<QuantityBreak> {
 	 * @return the value of the '<em>Quantity Break Type Id</em>' attribute.
 	 * @see #setQuantityBreakTypeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getQuantityBreakType_QuantityBreakTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

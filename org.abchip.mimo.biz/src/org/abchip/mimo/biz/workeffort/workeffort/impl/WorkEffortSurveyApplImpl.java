@@ -10,12 +10,15 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.store.ProductStoreSurveyAppl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortSurveyAppl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSurveyApplImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSurveyApplImpl#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSurveyApplImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSurveyApplImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortSurveyApplImpl#getSurveyId <em>Survey Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +62,6 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 	 * @ordered
 	 */
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyId = SURVEY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -119,6 +102,16 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSurveyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStoreSurveyAppl surveyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +161,24 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 	 * @generated
 	 */
 	@Override
-	public String getSurveyId() {
+	public ProductStoreSurveyAppl getSurveyId() {
+		if (surveyId != null && ((EObject)surveyId).eIsProxy()) {
+			InternalEObject oldSurveyId = (InternalEObject)surveyId;
+			surveyId = (ProductStoreSurveyAppl)eResolveProxy(oldSurveyId);
+			if (surveyId != oldSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID, oldSurveyId, surveyId));
+			}
+		}
+		return surveyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStoreSurveyAppl basicGetSurveyId() {
 		return surveyId;
 	}
 
@@ -178,8 +188,8 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 	 * @generated
 	 */
 	@Override
-	public void setSurveyId(String newSurveyId) {
-		String oldSurveyId = surveyId;
+	public void setSurveyId(ProductStoreSurveyAppl newSurveyId) {
+		ProductStoreSurveyAppl oldSurveyId = surveyId;
 		surveyId = newSurveyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID, oldSurveyId, surveyId));
@@ -241,12 +251,13 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__WORK_EFFORT_ID:
 				return getWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID:
-				return getSurveyId();
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__FROM_DATE:
 				return getFromDate();
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID:
+				if (resolve) return getSurveyId();
+				return basicGetSurveyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -262,14 +273,14 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID:
-				setSurveyId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID:
+				setSurveyId((ProductStoreSurveyAppl)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,14 +297,14 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID:
-				setSurveyId(SURVEY_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID:
+				setSurveyId((ProductStoreSurveyAppl)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,12 +320,12 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID:
-				return SURVEY_ID_EDEFAULT == null ? surveyId != null : !SURVEY_ID_EDEFAULT.equals(surveyId);
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_SURVEY_APPL__SURVEY_ID:
+				return surveyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -331,8 +342,6 @@ public class WorkEffortSurveyApplImpl extends BizEntityImpl implements WorkEffor
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", surveyId: ");
-		result.append(surveyId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

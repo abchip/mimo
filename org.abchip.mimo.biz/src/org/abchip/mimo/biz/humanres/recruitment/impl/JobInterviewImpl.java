@@ -9,14 +9,19 @@ package org.abchip.mimo.biz.humanres.recruitment.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.humanres.recruitment.JobInterview;
 import org.abchip.mimo.biz.humanres.recruitment.JobInterviewType;
+import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,13 +33,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getJobInterviewId <em>Job Interview Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getGradeSecuredEnumId <em>Grade Secured Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getJobInterviewDate <em>Job Interview Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getJobInterviewResult <em>Job Interview Result</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getJobInterviewTypeId <em>Job Interview Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getJobIntervieweePartyId <em>Job Interviewee Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getJobInterviewerPartyId <em>Job Interviewer Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getJobInterviewTypeId <em>Job Interview Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getJobRequisitionId <em>Job Requisition Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.recruitment.impl.JobInterviewImpl#getGradeSecuredEnumId <em>Grade Secured Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,26 +69,6 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @ordered
 	 */
 	protected String jobInterviewId = JOB_INTERVIEW_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGradeSecuredEnumId() <em>Grade Secured Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGradeSecuredEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GRADE_SECURED_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGradeSecuredEnumId() <em>Grade Secured Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGradeSecuredEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String gradeSecuredEnumId = GRADE_SECURED_ENUM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getJobInterviewDate() <em>Job Interview Date</em>}' attribute.
@@ -126,84 +111,54 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	protected String jobInterviewResult = JOB_INTERVIEW_RESULT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getJobInterviewTypeId() <em>Job Interview Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String JOB_INTERVIEW_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getJobInterviewTypeId() <em>Job Interview Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String jobInterviewTypeId = JOB_INTERVIEW_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getJobIntervieweePartyId() <em>Job Interviewee Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getJobIntervieweePartyId() <em>Job Interviewee Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getJobIntervieweePartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String JOB_INTERVIEWEE_PARTY_ID_EDEFAULT = null;
+	protected Party jobIntervieweePartyId;
 
 	/**
-	 * The cached value of the '{@link #getJobIntervieweePartyId() <em>Job Interviewee Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobIntervieweePartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String jobIntervieweePartyId = JOB_INTERVIEWEE_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getJobInterviewerPartyId() <em>Job Interviewer Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getJobInterviewerPartyId() <em>Job Interviewer Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getJobInterviewerPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String JOB_INTERVIEWER_PARTY_ID_EDEFAULT = null;
+	protected Party jobInterviewerPartyId;
 
 	/**
-	 * The cached value of the '{@link #getJobInterviewerPartyId() <em>Job Interviewer Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getJobInterviewTypeId() <em>Job Interview Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getJobInterviewerPartyId()
+	 * @see #getJobInterviewTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String jobInterviewerPartyId = JOB_INTERVIEWER_PARTY_ID_EDEFAULT;
+	protected JobInterviewType jobInterviewTypeId;
 
 	/**
-	 * The default value of the '{@link #getJobRequisitionId() <em>Job Requisition Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobRequisitionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String JOB_REQUISITION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getJobRequisitionId() <em>Job Requisition Id</em>}' attribute.
+	 * The cached value of the '{@link #getJobRequisitionId() <em>Job Requisition Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getJobRequisitionId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String jobRequisitionId = JOB_REQUISITION_ID_EDEFAULT;
+	protected JobRequisition jobRequisitionId;
+
+	/**
+	 * The cached value of the '{@link #getGradeSecuredEnumId() <em>Grade Secured Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGradeSecuredEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration gradeSecuredEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +185,24 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public String getGradeSecuredEnumId() {
+	public Enumeration getGradeSecuredEnumId() {
+		if (gradeSecuredEnumId != null && ((EObject)gradeSecuredEnumId).eIsProxy()) {
+			InternalEObject oldGradeSecuredEnumId = (InternalEObject)gradeSecuredEnumId;
+			gradeSecuredEnumId = (Enumeration)eResolveProxy(oldGradeSecuredEnumId);
+			if (gradeSecuredEnumId != oldGradeSecuredEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID, oldGradeSecuredEnumId, gradeSecuredEnumId));
+			}
+		}
+		return gradeSecuredEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetGradeSecuredEnumId() {
 		return gradeSecuredEnumId;
 	}
 
@@ -240,8 +212,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public void setGradeSecuredEnumId(String newGradeSecuredEnumId) {
-		String oldGradeSecuredEnumId = gradeSecuredEnumId;
+	public void setGradeSecuredEnumId(Enumeration newGradeSecuredEnumId) {
+		Enumeration oldGradeSecuredEnumId = gradeSecuredEnumId;
 		gradeSecuredEnumId = newGradeSecuredEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID, oldGradeSecuredEnumId, gradeSecuredEnumId));
@@ -322,7 +294,24 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public String getJobInterviewTypeId() {
+	public JobInterviewType getJobInterviewTypeId() {
+		if (jobInterviewTypeId != null && ((EObject)jobInterviewTypeId).eIsProxy()) {
+			InternalEObject oldJobInterviewTypeId = (InternalEObject)jobInterviewTypeId;
+			jobInterviewTypeId = (JobInterviewType)eResolveProxy(oldJobInterviewTypeId);
+			if (jobInterviewTypeId != oldJobInterviewTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID, oldJobInterviewTypeId, jobInterviewTypeId));
+			}
+		}
+		return jobInterviewTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JobInterviewType basicGetJobInterviewTypeId() {
 		return jobInterviewTypeId;
 	}
 
@@ -332,8 +321,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public void setJobInterviewTypeId(String newJobInterviewTypeId) {
-		String oldJobInterviewTypeId = jobInterviewTypeId;
+	public void setJobInterviewTypeId(JobInterviewType newJobInterviewTypeId) {
+		JobInterviewType oldJobInterviewTypeId = jobInterviewTypeId;
 		jobInterviewTypeId = newJobInterviewTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID, oldJobInterviewTypeId, jobInterviewTypeId));
@@ -345,7 +334,24 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public String getJobIntervieweePartyId() {
+	public Party getJobIntervieweePartyId() {
+		if (jobIntervieweePartyId != null && ((EObject)jobIntervieweePartyId).eIsProxy()) {
+			InternalEObject oldJobIntervieweePartyId = (InternalEObject)jobIntervieweePartyId;
+			jobIntervieweePartyId = (Party)eResolveProxy(oldJobIntervieweePartyId);
+			if (jobIntervieweePartyId != oldJobIntervieweePartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID, oldJobIntervieweePartyId, jobIntervieweePartyId));
+			}
+		}
+		return jobIntervieweePartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetJobIntervieweePartyId() {
 		return jobIntervieweePartyId;
 	}
 
@@ -355,8 +361,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public void setJobIntervieweePartyId(String newJobIntervieweePartyId) {
-		String oldJobIntervieweePartyId = jobIntervieweePartyId;
+	public void setJobIntervieweePartyId(Party newJobIntervieweePartyId) {
+		Party oldJobIntervieweePartyId = jobIntervieweePartyId;
 		jobIntervieweePartyId = newJobIntervieweePartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID, oldJobIntervieweePartyId, jobIntervieweePartyId));
@@ -368,7 +374,24 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public String getJobInterviewerPartyId() {
+	public Party getJobInterviewerPartyId() {
+		if (jobInterviewerPartyId != null && ((EObject)jobInterviewerPartyId).eIsProxy()) {
+			InternalEObject oldJobInterviewerPartyId = (InternalEObject)jobInterviewerPartyId;
+			jobInterviewerPartyId = (Party)eResolveProxy(oldJobInterviewerPartyId);
+			if (jobInterviewerPartyId != oldJobInterviewerPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID, oldJobInterviewerPartyId, jobInterviewerPartyId));
+			}
+		}
+		return jobInterviewerPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetJobInterviewerPartyId() {
 		return jobInterviewerPartyId;
 	}
 
@@ -378,8 +401,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public void setJobInterviewerPartyId(String newJobInterviewerPartyId) {
-		String oldJobInterviewerPartyId = jobInterviewerPartyId;
+	public void setJobInterviewerPartyId(Party newJobInterviewerPartyId) {
+		Party oldJobInterviewerPartyId = jobInterviewerPartyId;
 		jobInterviewerPartyId = newJobInterviewerPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID, oldJobInterviewerPartyId, jobInterviewerPartyId));
@@ -391,7 +414,24 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public String getJobRequisitionId() {
+	public JobRequisition getJobRequisitionId() {
+		if (jobRequisitionId != null && ((EObject)jobRequisitionId).eIsProxy()) {
+			InternalEObject oldJobRequisitionId = (InternalEObject)jobRequisitionId;
+			jobRequisitionId = (JobRequisition)eResolveProxy(oldJobRequisitionId);
+			if (jobRequisitionId != oldJobRequisitionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
+			}
+		}
+		return jobRequisitionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JobRequisition basicGetJobRequisitionId() {
 		return jobRequisitionId;
 	}
 
@@ -401,8 +441,8 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 	 * @generated
 	 */
 	@Override
-	public void setJobRequisitionId(String newJobRequisitionId) {
-		String oldJobRequisitionId = jobRequisitionId;
+	public void setJobRequisitionId(JobRequisition newJobRequisitionId) {
+		JobRequisition oldJobRequisitionId = jobRequisitionId;
 		jobRequisitionId = newJobRequisitionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
@@ -418,20 +458,25 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 		switch (featureID) {
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID:
 				return getJobInterviewId();
-			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
-				return getGradeSecuredEnumId();
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE:
 				return getJobInterviewDate();
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT:
 				return getJobInterviewResult();
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
-				return getJobInterviewTypeId();
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID:
-				return getJobIntervieweePartyId();
+				if (resolve) return getJobIntervieweePartyId();
+				return basicGetJobIntervieweePartyId();
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID:
-				return getJobInterviewerPartyId();
+				if (resolve) return getJobInterviewerPartyId();
+				return basicGetJobInterviewerPartyId();
+			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
+				if (resolve) return getJobInterviewTypeId();
+				return basicGetJobInterviewTypeId();
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID:
-				return getJobRequisitionId();
+				if (resolve) return getJobRequisitionId();
+				return basicGetJobRequisitionId();
+			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
+				if (resolve) return getGradeSecuredEnumId();
+				return basicGetGradeSecuredEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -447,26 +492,26 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID:
 				setJobInterviewId((String)newValue);
 				return;
-			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
-				setGradeSecuredEnumId((String)newValue);
-				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE:
 				setJobInterviewDate((Date)newValue);
 				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT:
 				setJobInterviewResult((String)newValue);
 				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
-				setJobInterviewTypeId((String)newValue);
-				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID:
-				setJobIntervieweePartyId((String)newValue);
+				setJobIntervieweePartyId((Party)newValue);
 				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID:
-				setJobInterviewerPartyId((String)newValue);
+				setJobInterviewerPartyId((Party)newValue);
+				return;
+			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
+				setJobInterviewTypeId((JobInterviewType)newValue);
 				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID:
-				setJobRequisitionId((String)newValue);
+				setJobRequisitionId((JobRequisition)newValue);
+				return;
+			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
+				setGradeSecuredEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -483,26 +528,26 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID:
 				setJobInterviewId(JOB_INTERVIEW_ID_EDEFAULT);
 				return;
-			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
-				setGradeSecuredEnumId(GRADE_SECURED_ENUM_ID_EDEFAULT);
-				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE:
 				setJobInterviewDate(JOB_INTERVIEW_DATE_EDEFAULT);
 				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT:
 				setJobInterviewResult(JOB_INTERVIEW_RESULT_EDEFAULT);
 				return;
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
-				setJobInterviewTypeId(JOB_INTERVIEW_TYPE_ID_EDEFAULT);
-				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID:
-				setJobIntervieweePartyId(JOB_INTERVIEWEE_PARTY_ID_EDEFAULT);
+				setJobIntervieweePartyId((Party)null);
 				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID:
-				setJobInterviewerPartyId(JOB_INTERVIEWER_PARTY_ID_EDEFAULT);
+				setJobInterviewerPartyId((Party)null);
+				return;
+			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
+				setJobInterviewTypeId((JobInterviewType)null);
 				return;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID:
-				setJobRequisitionId(JOB_REQUISITION_ID_EDEFAULT);
+				setJobRequisitionId((JobRequisition)null);
+				return;
+			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
+				setGradeSecuredEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -518,20 +563,20 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 		switch (featureID) {
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_ID:
 				return JOB_INTERVIEW_ID_EDEFAULT == null ? jobInterviewId != null : !JOB_INTERVIEW_ID_EDEFAULT.equals(jobInterviewId);
-			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
-				return GRADE_SECURED_ENUM_ID_EDEFAULT == null ? gradeSecuredEnumId != null : !GRADE_SECURED_ENUM_ID_EDEFAULT.equals(gradeSecuredEnumId);
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_DATE:
 				return JOB_INTERVIEW_DATE_EDEFAULT == null ? jobInterviewDate != null : !JOB_INTERVIEW_DATE_EDEFAULT.equals(jobInterviewDate);
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_RESULT:
 				return JOB_INTERVIEW_RESULT_EDEFAULT == null ? jobInterviewResult != null : !JOB_INTERVIEW_RESULT_EDEFAULT.equals(jobInterviewResult);
-			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
-				return JOB_INTERVIEW_TYPE_ID_EDEFAULT == null ? jobInterviewTypeId != null : !JOB_INTERVIEW_TYPE_ID_EDEFAULT.equals(jobInterviewTypeId);
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWEE_PARTY_ID:
-				return JOB_INTERVIEWEE_PARTY_ID_EDEFAULT == null ? jobIntervieweePartyId != null : !JOB_INTERVIEWEE_PARTY_ID_EDEFAULT.equals(jobIntervieweePartyId);
+				return jobIntervieweePartyId != null;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEWER_PARTY_ID:
-				return JOB_INTERVIEWER_PARTY_ID_EDEFAULT == null ? jobInterviewerPartyId != null : !JOB_INTERVIEWER_PARTY_ID_EDEFAULT.equals(jobInterviewerPartyId);
+				return jobInterviewerPartyId != null;
+			case RecruitmentPackage.JOB_INTERVIEW__JOB_INTERVIEW_TYPE_ID:
+				return jobInterviewTypeId != null;
 			case RecruitmentPackage.JOB_INTERVIEW__JOB_REQUISITION_ID:
-				return JOB_REQUISITION_ID_EDEFAULT == null ? jobRequisitionId != null : !JOB_REQUISITION_ID_EDEFAULT.equals(jobRequisitionId);
+				return jobRequisitionId != null;
+			case RecruitmentPackage.JOB_INTERVIEW__GRADE_SECURED_ENUM_ID:
+				return gradeSecuredEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -548,20 +593,10 @@ public class JobInterviewImpl extends BizEntityTypedImpl<JobInterviewType> imple
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (jobInterviewId: ");
 		result.append(jobInterviewId);
-		result.append(", gradeSecuredEnumId: ");
-		result.append(gradeSecuredEnumId);
 		result.append(", jobInterviewDate: ");
 		result.append(jobInterviewDate);
 		result.append(", jobInterviewResult: ");
 		result.append(jobInterviewResult);
-		result.append(", jobInterviewTypeId: ");
-		result.append(jobInterviewTypeId);
-		result.append(", jobIntervieweePartyId: ");
-		result.append(jobIntervieweePartyId);
-		result.append(", jobInterviewerPartyId: ");
-		result.append(jobInterviewerPartyId);
-		result.append(", jobRequisitionId: ");
-		result.append(jobRequisitionId);
 		result.append(')');
 		return result.toString();
 	}

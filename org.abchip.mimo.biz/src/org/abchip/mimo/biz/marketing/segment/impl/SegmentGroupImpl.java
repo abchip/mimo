@@ -14,11 +14,14 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroup;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupType;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -32,8 +35,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getSegmentGroupId <em>Segment Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getSegmentGroupTypeId <em>Segment Group Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getSegmentGroupClassifications <em>Segment Group Classifications</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.impl.SegmentGroupImpl#getSegmentGroupGeos <em>Segment Group Geos</em>}</li>
  * </ul>
@@ -87,44 +90,24 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSegmentGroupTypeId() <em>Segment Group Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getSegmentGroupTypeId() <em>Segment Group Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSegmentGroupTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SEGMENT_GROUP_TYPE_ID_EDEFAULT = null;
+	protected SegmentGroupType segmentGroupTypeId;
 
 	/**
-	 * The cached value of the '{@link #getSegmentGroupTypeId() <em>Segment Group Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSegmentGroupTypeId()
+	 * @see #getProductStoreId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String segmentGroupTypeId = SEGMENT_GROUP_TYPE_ID_EDEFAULT;
+	protected ProductStore productStoreId;
 
 	/**
 	 * The cached value of the '{@link #getSegmentGroupClassifications() <em>Segment Group Classifications</em>}' attribute list.
@@ -194,7 +177,24 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -204,8 +204,8 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -240,7 +240,24 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 * @generated
 	 */
 	@Override
-	public String getSegmentGroupTypeId() {
+	public SegmentGroupType getSegmentGroupTypeId() {
+		if (segmentGroupTypeId != null && ((EObject)segmentGroupTypeId).eIsProxy()) {
+			InternalEObject oldSegmentGroupTypeId = (InternalEObject)segmentGroupTypeId;
+			segmentGroupTypeId = (SegmentGroupType)eResolveProxy(oldSegmentGroupTypeId);
+			if (segmentGroupTypeId != oldSegmentGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID, oldSegmentGroupTypeId, segmentGroupTypeId));
+			}
+		}
+		return segmentGroupTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SegmentGroupType basicGetSegmentGroupTypeId() {
 		return segmentGroupTypeId;
 	}
 
@@ -250,8 +267,8 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 	 * @generated
 	 */
 	@Override
-	public void setSegmentGroupTypeId(String newSegmentGroupTypeId) {
-		String oldSegmentGroupTypeId = segmentGroupTypeId;
+	public void setSegmentGroupTypeId(SegmentGroupType newSegmentGroupTypeId) {
+		SegmentGroupType oldSegmentGroupTypeId = segmentGroupTypeId;
 		segmentGroupTypeId = newSegmentGroupTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID, oldSegmentGroupTypeId, segmentGroupTypeId));
@@ -295,10 +312,12 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 				return getSegmentGroupId();
 			case SegmentPackage.SEGMENT_GROUP__DESCRIPTION:
 				return getDescription();
-			case SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID:
-				return getSegmentGroupTypeId();
+				if (resolve) return getSegmentGroupTypeId();
+				return basicGetSegmentGroupTypeId();
+			case SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS:
 				return getSegmentGroupClassifications();
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_GEOS:
@@ -322,11 +341,11 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 			case SegmentPackage.SEGMENT_GROUP__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID:
-				setSegmentGroupTypeId((String)newValue);
+				setSegmentGroupTypeId((SegmentGroupType)newValue);
+				return;
+			case SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
 				return;
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS:
 				getSegmentGroupClassifications().clear();
@@ -354,11 +373,11 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 			case SegmentPackage.SEGMENT_GROUP__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID:
-				setSegmentGroupTypeId(SEGMENT_GROUP_TYPE_ID_EDEFAULT);
+				setSegmentGroupTypeId((SegmentGroupType)null);
+				return;
+			case SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
 				return;
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS:
 				getSegmentGroupClassifications().clear();
@@ -382,10 +401,10 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 				return SEGMENT_GROUP_ID_EDEFAULT == null ? segmentGroupId != null : !SEGMENT_GROUP_ID_EDEFAULT.equals(segmentGroupId);
 			case SegmentPackage.SEGMENT_GROUP__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_TYPE_ID:
-				return SEGMENT_GROUP_TYPE_ID_EDEFAULT == null ? segmentGroupTypeId != null : !SEGMENT_GROUP_TYPE_ID_EDEFAULT.equals(segmentGroupTypeId);
+				return segmentGroupTypeId != null;
+			case SegmentPackage.SEGMENT_GROUP__PRODUCT_STORE_ID:
+				return productStoreId != null;
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_CLASSIFICATIONS:
 				return segmentGroupClassifications != null && !segmentGroupClassifications.isEmpty();
 			case SegmentPackage.SEGMENT_GROUP__SEGMENT_GROUP_GEOS:
@@ -408,10 +427,6 @@ public class SegmentGroupImpl extends BizEntityTypedImpl<SegmentGroupType> imple
 		result.append(segmentGroupId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
-		result.append(", segmentGroupTypeId: ");
-		result.append(segmentGroupTypeId);
 		result.append(", segmentGroupClassifications: ");
 		result.append(segmentGroupClassifications);
 		result.append(", segmentGroupGeos: ");

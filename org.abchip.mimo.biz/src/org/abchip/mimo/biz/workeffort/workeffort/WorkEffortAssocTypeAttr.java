@@ -94,7 +94,6 @@ public interface WorkEffortAssocTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortAssocTypeAttr_WorkEffortAssocTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffortAssocType'"
 	 * @generated
 	 */
 	String getWorkEffortAssocTypeId();

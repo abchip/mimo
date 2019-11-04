@@ -84,7 +84,7 @@ public interface TrackingCodeType extends BizEntityType<TrackingCode> {
 	 * @return the value of the '<em>Tracking Code Type Id</em>' attribute.
 	 * @see #setTrackingCodeTypeId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeType_TrackingCodeTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

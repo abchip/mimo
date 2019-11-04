@@ -65,7 +65,8 @@ public interface AcctgTransTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface AcctgTransTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Acctg Trans Type Id</em>' attribute.
 	 * @see #setAcctgTransTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getAcctgTransTypeAttr_AcctgTransTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTransType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAcctgTransTypeId();

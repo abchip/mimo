@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.product.config.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.config.ConfigPackage;
 import org.abchip.mimo.biz.product.config.ProductConfigStats;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,9 +28,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getConfigId <em>Config Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getConfigTypeId <em>Config Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getNumOfConfs <em>Num Of Confs</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.config.impl.ProductConfigStatsImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,26 +60,6 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 	 * @ordered
 	 */
 	protected String configId = CONFIG_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getConfigTypeId() <em>Config Type Id</em>}' attribute.
@@ -117,6 +100,16 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 	 * @ordered
 	 */
 	protected long numOfConfs = NUM_OF_CONFS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +205,24 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -222,8 +232,8 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID, oldProductId, productId));
@@ -239,12 +249,13 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 		switch (featureID) {
 			case ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_ID:
 				return getConfigId();
-			case ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID:
-				return getProductId();
 			case ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_TYPE_ID:
 				return getConfigTypeId();
 			case ConfigPackage.PRODUCT_CONFIG_STATS__NUM_OF_CONFS:
 				return getNumOfConfs();
+			case ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,14 +271,14 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 			case ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_ID:
 				setConfigId((String)newValue);
 				return;
-			case ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_TYPE_ID:
 				setConfigTypeId((String)newValue);
 				return;
 			case ConfigPackage.PRODUCT_CONFIG_STATS__NUM_OF_CONFS:
 				setNumOfConfs((Long)newValue);
+				return;
+			case ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,14 +295,14 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 			case ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_ID:
 				setConfigId(CONFIG_ID_EDEFAULT);
 				return;
-			case ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_TYPE_ID:
 				setConfigTypeId(CONFIG_TYPE_ID_EDEFAULT);
 				return;
 			case ConfigPackage.PRODUCT_CONFIG_STATS__NUM_OF_CONFS:
 				setNumOfConfs(NUM_OF_CONFS_EDEFAULT);
+				return;
+			case ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,12 +318,12 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 		switch (featureID) {
 			case ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_ID:
 				return CONFIG_ID_EDEFAULT == null ? configId != null : !CONFIG_ID_EDEFAULT.equals(configId);
-			case ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ConfigPackage.PRODUCT_CONFIG_STATS__CONFIG_TYPE_ID:
 				return CONFIG_TYPE_ID_EDEFAULT == null ? configTypeId != null : !CONFIG_TYPE_ID_EDEFAULT.equals(configTypeId);
 			case ConfigPackage.PRODUCT_CONFIG_STATS__NUM_OF_CONFS:
 				return numOfConfs != NUM_OF_CONFS_EDEFAULT;
+			case ConfigPackage.PRODUCT_CONFIG_STATS__PRODUCT_ID:
+				return productId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -329,8 +340,6 @@ public class ProductConfigStatsImpl extends BizEntityImpl implements ProductConf
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (configId: ");
 		result.append(configId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", configTypeId: ");
 		result.append(configTypeId);
 		result.append(", numOfConfs: ");

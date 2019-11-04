@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.product.facility.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.facility.FacilityContent;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContentImpl#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContentImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityContentImpl#getContentId <em>Content Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,26 +61,6 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 	 * @ordered
 	 */
 	protected String facilityId = FACILITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -120,6 +103,16 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -144,7 +137,24 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -154,8 +164,8 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -240,12 +250,13 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 		switch (featureID) {
 			case FacilityPackage.FACILITY_CONTENT__FACILITY_ID:
 				return getFacilityId();
-			case FacilityPackage.FACILITY_CONTENT__CONTENT_ID:
-				return getContentId();
 			case FacilityPackage.FACILITY_CONTENT__FROM_DATE:
 				return getFromDate();
 			case FacilityPackage.FACILITY_CONTENT__THRU_DATE:
 				return getThruDate();
+			case FacilityPackage.FACILITY_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,14 +272,14 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 			case FacilityPackage.FACILITY_CONTENT__FACILITY_ID:
 				setFacilityId((String)newValue);
 				return;
-			case FacilityPackage.FACILITY_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FacilityPackage.FACILITY_CONTENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FacilityPackage.FACILITY_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -285,14 +296,14 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 			case FacilityPackage.FACILITY_CONTENT__FACILITY_ID:
 				setFacilityId(FACILITY_ID_EDEFAULT);
 				return;
-			case FacilityPackage.FACILITY_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FacilityPackage.FACILITY_CONTENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FacilityPackage.FACILITY_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -308,12 +319,12 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 		switch (featureID) {
 			case FacilityPackage.FACILITY_CONTENT__FACILITY_ID:
 				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
-			case FacilityPackage.FACILITY_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case FacilityPackage.FACILITY_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FacilityPackage.FACILITY_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FacilityPackage.FACILITY_CONTENT__CONTENT_ID:
+				return contentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -330,8 +341,6 @@ public class FacilityContentImpl extends BizEntityImpl implements FacilityConten
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (facilityId: ");
 		result.append(facilityId);
-		result.append(", contentId: ");
-		result.append(contentId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

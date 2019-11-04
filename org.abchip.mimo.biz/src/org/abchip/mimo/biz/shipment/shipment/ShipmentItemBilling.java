@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.shipment.shipment;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,8 +21,8 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getInvoiceId <em>Invoice Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemBilling()
@@ -30,31 +31,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ShipmentItemBilling extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Invoice Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Id</em>' attribute.
-	 * @see #setInvoiceId(String)
+	 * @return the value of the '<em>Invoice Id</em>' reference.
+	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemBilling_InvoiceId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Invoice'"
+	 * @model keys="invoiceId"
 	 * @generated
 	 */
-	String getInvoiceId();
+	Invoice getInvoiceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getInvoiceId <em>Invoice Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling#getInvoiceId <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Id</em>' reference.
 	 * @see #getInvoiceId()
 	 * @generated
 	 */
-	void setInvoiceId(String value);
+	void setInvoiceId(Invoice value);
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Item Seq Id</b></em>' attribute.
@@ -67,7 +67,8 @@ public interface ShipmentItemBilling extends BizEntity {
 	 * @return the value of the '<em>Invoice Item Seq Id</em>' attribute.
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemBilling_InvoiceItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -93,8 +94,8 @@ public interface ShipmentItemBilling extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemBilling_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentId();
@@ -120,7 +121,8 @@ public interface ShipmentItemBilling extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentItemBilling_ShipmentItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();

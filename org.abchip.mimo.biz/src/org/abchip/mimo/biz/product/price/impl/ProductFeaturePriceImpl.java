@@ -11,12 +11,17 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductFeaturePrice;
+import org.abchip.mimo.biz.product.price.ProductPriceType;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,15 +33,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getPrice <em>Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getProductPriceTypeId <em>Product Price Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductFeaturePriceImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,46 +73,6 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductPriceTypeId() <em>Product Price Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PRICE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPriceTypeId() <em>Product Price Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPriceTypeId = PRODUCT_PRICE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,26 +93,6 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,26 +111,6 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 * @ordered
 	 */
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
@@ -248,6 +173,46 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductPriceTypeId() <em>Product Price Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPriceTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPriceType productPriceTypeId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -272,7 +237,24 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -282,8 +264,8 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -318,7 +300,24 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -328,8 +327,8 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -364,7 +363,24 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -374,8 +390,8 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -479,7 +495,24 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 * @generated
 	 */
 	@Override
-	public String getProductPriceTypeId() {
+	public ProductPriceType getProductPriceTypeId() {
+		if (productPriceTypeId != null && ((EObject)productPriceTypeId).eIsProxy()) {
+			InternalEObject oldProductPriceTypeId = (InternalEObject)productPriceTypeId;
+			productPriceTypeId = (ProductPriceType)eResolveProxy(oldProductPriceTypeId);
+			if (productPriceTypeId != oldProductPriceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
+			}
+		}
+		return productPriceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPriceType basicGetProductPriceTypeId() {
 		return productPriceTypeId;
 	}
 
@@ -489,8 +522,8 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 	 * @generated
 	 */
 	@Override
-	public void setProductPriceTypeId(String newProductPriceTypeId) {
-		String oldProductPriceTypeId = productPriceTypeId;
+	public void setProductPriceTypeId(ProductPriceType newProductPriceTypeId) {
+		ProductPriceType oldProductPriceTypeId = productPriceTypeId;
 		productPriceTypeId = newProductPriceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID, oldProductPriceTypeId, productPriceTypeId));
@@ -506,24 +539,28 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 		switch (featureID) {
 			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_FEATURE_ID:
 				return getProductFeatureId();
-			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID:
-				return getProductPriceTypeId();
-			case PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case PricePackage.PRODUCT_FEATURE_PRICE__FROM_DATE:
 				return getFromDate();
-			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_DATE:
 				return getCreatedDate();
-			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
 			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
 			case PricePackage.PRODUCT_FEATURE_PRICE__PRICE:
 				return getPrice();
 			case PricePackage.PRODUCT_FEATURE_PRICE__THRU_DATE:
 				return getThruDate();
+			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID:
+				if (resolve) return getProductPriceTypeId();
+				return basicGetProductPriceTypeId();
+			case PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -539,23 +576,11 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_FEATURE_ID:
 				setProductFeatureId((String)newValue);
 				return;
-			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID:
-				setProductPriceTypeId((String)newValue);
-				return;
-			case PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case PricePackage.PRODUCT_FEATURE_PRICE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
 			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_DATE:
 				setCreatedDate((Date)newValue);
-				return;
-			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
 				return;
 			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
@@ -565,6 +590,18 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 				return;
 			case PricePackage.PRODUCT_FEATURE_PRICE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID:
+				setProductPriceTypeId((ProductPriceType)newValue);
+				return;
+			case PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -581,23 +618,11 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_FEATURE_ID:
 				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
 				return;
-			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID:
-				setProductPriceTypeId(PRODUCT_PRICE_TYPE_ID_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_FEATURE_PRICE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
 				return;
 			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
@@ -607,6 +632,18 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 				return;
 			case PricePackage.PRODUCT_FEATURE_PRICE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID:
+				setProductPriceTypeId((ProductPriceType)null);
+				return;
+			case PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -622,24 +659,24 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 		switch (featureID) {
 			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_FEATURE_ID:
 				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
-			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID:
-				return PRODUCT_PRICE_TYPE_ID_EDEFAULT == null ? productPriceTypeId != null : !PRODUCT_PRICE_TYPE_ID_EDEFAULT.equals(productPriceTypeId);
-			case PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case PricePackage.PRODUCT_FEATURE_PRICE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
 			case PricePackage.PRODUCT_FEATURE_PRICE__PRICE:
 				return PRICE_EDEFAULT == null ? price != null : !PRICE_EDEFAULT.equals(price);
 			case PricePackage.PRODUCT_FEATURE_PRICE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PricePackage.PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID:
+				return productPriceTypeId != null;
+			case PricePackage.PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case PricePackage.PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case PricePackage.PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -656,18 +693,10 @@ public class ProductFeaturePriceImpl extends BizEntityImpl implements ProductFea
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productFeatureId: ");
 		result.append(productFeatureId);
-		result.append(", productPriceTypeId: ");
-		result.append(productPriceTypeId);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
 		result.append(", price: ");

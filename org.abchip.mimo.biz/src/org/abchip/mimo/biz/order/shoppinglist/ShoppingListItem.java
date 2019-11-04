@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,12 +27,12 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getShoppingListItemSeqId <em>Shopping List Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getConfigId <em>Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getModifiedPrice <em>Modified Price</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getQuantityPurchased <em>Quantity Purchased</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getReservLength <em>Reserv Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getReservPersons <em>Reserv Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getReservStart <em>Reserv Start</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem()
@@ -92,30 +93,30 @@ public interface ShoppingListItem extends BizEntity {
 	void setModifiedPrice(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingListItem#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.
@@ -258,8 +259,8 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Shopping List Id</em>' attribute.
 	 * @see #setShoppingListId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ShoppingListId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ShoppingList'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShoppingListId();
@@ -285,7 +286,8 @@ public interface ShoppingListItem extends BizEntity {
 	 * @return the value of the '<em>Shopping List Item Seq Id</em>' attribute.
 	 * @see #setShoppingListItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListItem_ShoppingListItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShoppingListItemSeqId();

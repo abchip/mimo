@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.common.status.impl;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.common.status.StatusPackage;
 import org.abchip.mimo.biz.common.status.StatusValidChange;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusValidChangeImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusValidChangeImpl#getStatusIdTo <em>Status Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusValidChangeImpl#getConditionExpression <em>Condition Expression</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusValidChangeImpl#getTransitionName <em>Transition Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.status.impl.StatusValidChangeImpl#getStatusIdTo <em>Status Id To</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,24 +58,6 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 	 */
 	protected String statusId = STATUS_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getStatusIdTo() <em>Status Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_TO_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusIdTo() <em>Status Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusIdTo = STATUS_ID_TO_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getConditionExpression() <em>Condition Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -109,6 +94,15 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 	 * @ordered
 	 */
 	protected String transitionName = TRANSITION_NAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getStatusIdTo() <em>Status Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusIdTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -204,7 +198,24 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 	 * @generated
 	 */
 	@Override
-	public String getStatusIdTo() {
+	public StatusItem getStatusIdTo() {
+		if (statusIdTo != null && ((EObject)statusIdTo).eIsProxy()) {
+			InternalEObject oldStatusIdTo = (InternalEObject)statusIdTo;
+			statusIdTo = (StatusItem)eResolveProxy(oldStatusIdTo);
+			if (statusIdTo != oldStatusIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO, oldStatusIdTo, statusIdTo));
+			}
+		}
+		return statusIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusIdTo() {
 		return statusIdTo;
 	}
 
@@ -214,8 +225,8 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 	 * @generated
 	 */
 	@Override
-	public void setStatusIdTo(String newStatusIdTo) {
-		String oldStatusIdTo = statusIdTo;
+	public void setStatusIdTo(StatusItem newStatusIdTo) {
+		StatusItem oldStatusIdTo = statusIdTo;
 		statusIdTo = newStatusIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO, oldStatusIdTo, statusIdTo));
@@ -231,12 +242,13 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 		switch (featureID) {
 			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID:
 				return getStatusId();
-			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO:
-				return getStatusIdTo();
 			case StatusPackage.STATUS_VALID_CHANGE__CONDITION_EXPRESSION:
 				return getConditionExpression();
 			case StatusPackage.STATUS_VALID_CHANGE__TRANSITION_NAME:
 				return getTransitionName();
+			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO:
+				if (resolve) return getStatusIdTo();
+				return basicGetStatusIdTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,14 +264,14 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID:
 				setStatusId((String)newValue);
 				return;
-			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO:
-				setStatusIdTo((String)newValue);
-				return;
 			case StatusPackage.STATUS_VALID_CHANGE__CONDITION_EXPRESSION:
 				setConditionExpression((String)newValue);
 				return;
 			case StatusPackage.STATUS_VALID_CHANGE__TRANSITION_NAME:
 				setTransitionName((String)newValue);
+				return;
+			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO:
+				setStatusIdTo((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -276,14 +288,14 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID:
 				setStatusId(STATUS_ID_EDEFAULT);
 				return;
-			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO:
-				setStatusIdTo(STATUS_ID_TO_EDEFAULT);
-				return;
 			case StatusPackage.STATUS_VALID_CHANGE__CONDITION_EXPRESSION:
 				setConditionExpression(CONDITION_EXPRESSION_EDEFAULT);
 				return;
 			case StatusPackage.STATUS_VALID_CHANGE__TRANSITION_NAME:
 				setTransitionName(TRANSITION_NAME_EDEFAULT);
+				return;
+			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO:
+				setStatusIdTo((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -299,12 +311,12 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 		switch (featureID) {
 			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID:
 				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
-			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO:
-				return STATUS_ID_TO_EDEFAULT == null ? statusIdTo != null : !STATUS_ID_TO_EDEFAULT.equals(statusIdTo);
 			case StatusPackage.STATUS_VALID_CHANGE__CONDITION_EXPRESSION:
 				return CONDITION_EXPRESSION_EDEFAULT == null ? conditionExpression != null : !CONDITION_EXPRESSION_EDEFAULT.equals(conditionExpression);
 			case StatusPackage.STATUS_VALID_CHANGE__TRANSITION_NAME:
 				return TRANSITION_NAME_EDEFAULT == null ? transitionName != null : !TRANSITION_NAME_EDEFAULT.equals(transitionName);
+			case StatusPackage.STATUS_VALID_CHANGE__STATUS_ID_TO:
+				return statusIdTo != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -321,8 +333,6 @@ public class StatusValidChangeImpl extends BizEntityImpl implements StatusValidC
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (statusId: ");
 		result.append(statusId);
-		result.append(", statusIdTo: ");
-		result.append(statusIdTo);
 		result.append(", conditionExpression: ");
 		result.append(conditionExpression);
 		result.append(", transitionName: ");

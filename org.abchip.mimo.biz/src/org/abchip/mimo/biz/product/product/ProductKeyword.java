@@ -8,6 +8,8 @@
 package org.abchip.mimo.biz.product.product;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.status.StatusItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,8 +22,8 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getKeyword <em>Keyword</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getKeywordTypeId <em>Keyword Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getRelevancyWeight <em>Relevancy Weight</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getKeywordTypeId <em>Keyword Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductKeyword#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
@@ -41,7 +43,8 @@ public interface ProductKeyword extends BizEntity {
 	 * @return the value of the '<em>Keyword</em>' attribute.
 	 * @see #setKeyword(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_Keyword()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getKeyword();
@@ -57,31 +60,30 @@ public interface ProductKeyword extends BizEntity {
 	void setKeyword(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Keyword Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Keyword Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Keyword Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Keyword Type Id</em>' attribute.
-	 * @see #setKeywordTypeId(String)
+	 * @return the value of the '<em>Keyword Type Id</em>' reference.
+	 * @see #setKeywordTypeId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_KeywordTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getKeywordTypeId();
+	Enumeration getKeywordTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductKeyword#getKeywordTypeId <em>Keyword Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductKeyword#getKeywordTypeId <em>Keyword Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Keyword Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Keyword Type Id</em>' reference.
 	 * @see #getKeywordTypeId()
 	 * @generated
 	 */
-	void setKeywordTypeId(String value);
+	void setKeywordTypeId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Relevancy Weight</b></em>' attribute.
@@ -110,30 +112,30 @@ public interface ProductKeyword extends BizEntity {
 	void setRelevancyWeight(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductKeyword#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductKeyword#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
@@ -146,8 +148,8 @@ public interface ProductKeyword extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductKeyword_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();

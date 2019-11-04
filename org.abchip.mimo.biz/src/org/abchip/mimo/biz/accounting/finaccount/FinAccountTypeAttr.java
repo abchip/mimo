@@ -92,7 +92,8 @@ public interface FinAccountTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -118,8 +119,8 @@ public interface FinAccountTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Fin Account Type Id</em>' attribute.
 	 * @see #setFinAccountTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTypeAttr_FinAccountTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFinAccountTypeId();

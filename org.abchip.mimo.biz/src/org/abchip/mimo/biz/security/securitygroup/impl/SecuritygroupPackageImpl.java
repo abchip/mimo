@@ -202,6 +202,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -394,6 +395,22 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -410,22 +427,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -536,6 +537,14 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -544,14 +553,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -631,6 +632,14 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -639,14 +648,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -823,8 +824,8 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSecurityGroupPermission_PermissionId() {
-		return (EAttribute)securityGroupPermissionEClass.getEStructuralFeatures().get(1);
+	public EReference getSecurityGroupPermission_PermissionId() {
+		return (EReference)securityGroupPermissionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -834,7 +835,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getSecurityGroupPermission_FromDate() {
-		return (EAttribute)securityGroupPermissionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)securityGroupPermissionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -844,7 +845,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getSecurityGroupPermission_ThruDate() {
-		return (EAttribute)securityGroupPermissionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)securityGroupPermissionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -943,8 +944,8 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getUserLoginSecurityGroup_GroupId() {
-		return (EAttribute)userLoginSecurityGroupEClass.getEStructuralFeatures().get(1);
+	public EReference getUserLoginSecurityGroup_GroupId() {
+		return (EReference)userLoginSecurityGroupEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -954,7 +955,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getUserLoginSecurityGroup_FromDate() {
-		return (EAttribute)userLoginSecurityGroupEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)userLoginSecurityGroupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -964,7 +965,7 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	 */
 	@Override
 	public EAttribute getUserLoginSecurityGroup_ThruDate() {
-		return (EAttribute)userLoginSecurityGroupEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)userLoginSecurityGroupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1011,9 +1012,9 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 
 		securityGroupPermissionEClass = createEClass(SECURITY_GROUP_PERMISSION);
 		createEAttribute(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__GROUP_ID);
-		createEAttribute(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__PERMISSION_ID);
 		createEAttribute(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__FROM_DATE);
 		createEAttribute(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__THRU_DATE);
+		createEReference(securityGroupPermissionEClass, SECURITY_GROUP_PERMISSION__PERMISSION_ID);
 
 		securityPermissionEClass = createEClass(SECURITY_PERMISSION);
 		createEAttribute(securityPermissionEClass, SECURITY_PERMISSION__PERMISSION_ID);
@@ -1026,9 +1027,9 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 
 		userLoginSecurityGroupEClass = createEClass(USER_LOGIN_SECURITY_GROUP);
 		createEAttribute(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__USER_LOGIN_ID);
-		createEAttribute(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__GROUP_ID);
 		createEAttribute(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__FROM_DATE);
 		createEAttribute(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__THRU_DATE);
+		createEReference(userLoginSecurityGroupEClass, USER_LOGIN_SECURITY_GROUP__GROUP_ID);
 	}
 
 	/**
@@ -1087,9 +1088,10 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 
 		initEClass(securityGroupPermissionEClass, SecurityGroupPermission.class, "SecurityGroupPermission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSecurityGroupPermission_GroupId(), ecorePackage.getEString(), "groupId", null, 1, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecurityGroupPermission_PermissionId(), ecorePackage.getEString(), "permissionId", null, 1, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroupPermission_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSecurityGroupPermission_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityGroupPermission_PermissionId(), this.getSecurityPermission(), null, "permissionId", null, 0, 1, SecurityGroupPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getSecurityGroupPermission_PermissionId().getEKeys().add(this.getSecurityPermission_PermissionId());
 
 		initEClass(securityPermissionEClass, SecurityPermission.class, "SecurityPermission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSecurityPermission_PermissionId(), ecorePackage.getEString(), "permissionId", null, 1, 1, SecurityPermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1102,17 +1104,18 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 
 		initEClass(userLoginSecurityGroupEClass, UserLoginSecurityGroup.class, "UserLoginSecurityGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserLoginSecurityGroup_UserLoginId(), ecorePackage.getEString(), "userLoginId", null, 1, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUserLoginSecurityGroup_GroupId(), ecorePackage.getEString(), "groupId", null, 1, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginSecurityGroup_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUserLoginSecurityGroup_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserLoginSecurityGroup_GroupId(), this.getSecurityGroup(), null, "groupId", null, 0, 1, UserLoginSecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getUserLoginSecurityGroup_GroupId().getEKeys().add(this.getSecurityGroup_GroupId());
 
 		// Create annotations
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
+		// mimo-ent-domain
+		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -1160,12 +1163,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getSecurityGroupPermission_PermissionId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getSecurityGroupPermission_FromDate(),
 		   source,
 		   new String[] {
@@ -1196,12 +1193,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getUserLoginSecurityGroup_GroupId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getUserLoginSecurityGroup_FromDate(),
 		   source,
 		   new String[] {
@@ -1218,15 +1209,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getProtectedView_GroupId(),
-		   source,
-		   new String[] {
-			   "frame", "SecurityGroup"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (securityGroupEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -1241,42 +1223,6 @@ public class SecuritygroupPackageImpl extends EPackageImpl implements Securitygr
 		   source,
 		   new String[] {
 			   "frame", "ProtectedView"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getSecurityGroupPermission_GroupId(),
-		   source,
-		   new String[] {
-			   "frame", "SecurityGroup"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getSecurityGroupPermission_PermissionId(),
-		   source,
-		   new String[] {
-			   "frame", "SecurityPermission"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getUserLoginSecurityGroup_UserLoginId(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getUserLoginSecurityGroup_GroupId(),
-		   source,
-		   new String[] {
-			   "frame", "SecurityGroup"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

@@ -57,30 +57,30 @@ public interface ShipmentGatewayConfig extends BizEntityTyped<ShipmentGatewayCon
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Gateway Conf Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Gateway Conf Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Gateway Conf Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Gateway Conf Type Id</em>' attribute.
-	 * @see #setShipmentGatewayConfTypeId(String)
+	 * @return the value of the '<em>Shipment Gateway Conf Type Id</em>' reference.
+	 * @see #setShipmentGatewayConfTypeId(ShipmentGatewayConfigType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayConfig_ShipmentGatewayConfTypeId()
-	 * @model annotation="mimo-ent-domain frame='ShipmentGatewayConfigType'"
+	 * @model keys="shipmentGatewayConfTypeId"
 	 * @generated
 	 */
-	String getShipmentGatewayConfTypeId();
+	ShipmentGatewayConfigType getShipmentGatewayConfTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig#getShipmentGatewayConfTypeId <em>Shipment Gateway Conf Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentGatewayConfig#getShipmentGatewayConfTypeId <em>Shipment Gateway Conf Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Gateway Conf Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Gateway Conf Type Id</em>' reference.
 	 * @see #getShipmentGatewayConfTypeId()
 	 * @generated
 	 */
-	void setShipmentGatewayConfTypeId(String value);
+	void setShipmentGatewayConfTypeId(ShipmentGatewayConfigType value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,9 +102,8 @@ public interface ShipmentGatewayConfig extends BizEntityTyped<ShipmentGatewayCon
 	 * @return the value of the '<em>Shipment Gateway Config Id</em>' attribute.
 	 * @see #setShipmentGatewayConfigId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentGatewayConfig_ShipmentGatewayConfigId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentGatewayConfig'"
 	 * @generated
 	 */
 	String getShipmentGatewayConfigId();

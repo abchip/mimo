@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,6 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getOverrideCss <em>Override Css</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getOverrideLogo <em>Override Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getProdCatalogId <em>Prod Catalog Id</em>}</li>
@@ -39,6 +39,7 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getSubgroupId <em>Subgroup Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getTrackableLifetime <em>Trackable Lifetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
  * </ul>
  *
@@ -282,30 +283,30 @@ public interface TrackingCode extends BizEntityTyped<TrackingCodeType> {
 	void setLastModifiedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Marketing Campaign Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Marketing Campaign Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Marketing Campaign Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Marketing Campaign Id</em>' attribute.
-	 * @see #setMarketingCampaignId(String)
+	 * @return the value of the '<em>Marketing Campaign Id</em>' reference.
+	 * @see #setMarketingCampaignId(MarketingCampaign)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_MarketingCampaignId()
-	 * @model annotation="mimo-ent-domain frame='MarketingCampaign'"
+	 * @model keys="marketingCampaignId"
 	 * @generated
 	 */
-	String getMarketingCampaignId();
+	MarketingCampaign getMarketingCampaignId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getMarketingCampaignId <em>Marketing Campaign Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getMarketingCampaignId <em>Marketing Campaign Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Marketing Campaign Id</em>' attribute.
+	 * @param value the new value of the '<em>Marketing Campaign Id</em>' reference.
 	 * @see #getMarketingCampaignId()
 	 * @generated
 	 */
-	void setMarketingCampaignId(String value);
+	void setMarketingCampaignId(MarketingCampaign value);
 
 	/**
 	 * Returns the value of the '<em><b>Override Css</b></em>' attribute.
@@ -500,7 +501,7 @@ public interface TrackingCode extends BizEntityTyped<TrackingCodeType> {
 	 * @return the value of the '<em>Tracking Code Id</em>' attribute.
 	 * @see #setTrackingCodeId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_TrackingCodeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -517,30 +518,30 @@ public interface TrackingCode extends BizEntityTyped<TrackingCodeType> {
 	void setTrackingCodeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tracking Code Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tracking Code Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tracking Code Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tracking Code Type Id</em>' attribute.
-	 * @see #setTrackingCodeTypeId(String)
+	 * @return the value of the '<em>Tracking Code Type Id</em>' reference.
+	 * @see #setTrackingCodeTypeId(TrackingCodeType)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCode_TrackingCodeTypeId()
-	 * @model annotation="mimo-ent-domain frame='TrackingCodeType'"
+	 * @model keys="trackingCodeTypeId"
 	 * @generated
 	 */
-	String getTrackingCodeTypeId();
+	TrackingCodeType getTrackingCodeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tracking Code Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Tracking Code Type Id</em>' reference.
 	 * @see #getTrackingCodeTypeId()
 	 * @generated
 	 */
-	void setTrackingCodeTypeId(String value);
+	void setTrackingCodeTypeId(TrackingCodeType value);
 
 	/**
 	 * <!-- begin-user-doc -->

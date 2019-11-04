@@ -13,6 +13,15 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.common.uom.UomType;
+import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.inventory.InventoryItemType;
+import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,59 +33,44 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getAmountUomTypeId <em>Amount Uom Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isAutoCreateKeywords <em>Auto Create Keywords</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getBillOfMaterialLevel <em>Bill Of Material Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getBrandName <em>Brand Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isChargeShipping <em>Charge Shipping</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getConfigId <em>Config Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDefaultShipmentBoxTypeId <em>Default Shipment Box Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDepthUomId <em>Depth Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDetailImageUrl <em>Detail Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDetailScreen <em>Detail Screen</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDiameterUomId <em>Diameter Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getFixedAmount <em>Fixed Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getHeightUomId <em>Height Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isInShippingBox <em>In Shipping Box</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isIncludeInPromotions <em>Include In Promotions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getInternalName <em>Internal Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getIntroductionDate <em>Introduction Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getInventoryMessage <em>Inventory Message</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isIsVirtual <em>Is Virtual</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLargeImageUrl <em>Large Image Url</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLongDescription <em>Long Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLotIdFilledIn <em>Lot Id Filled In</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getMediumImageUrl <em>Medium Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isOrderDecimalQuantity <em>Order Decimal Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getOriginGeoId <em>Origin Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getOriginalImageUrl <em>Original Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPiecesIncluded <em>Pieces Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPriceDetailText <em>Price Detail Text</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductDepth <em>Product Depth</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductDiameter <em>Product Diameter</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductHeight <em>Product Height</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductName <em>Product Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductRating <em>Product Rating</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductTypeId <em>Product Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductWeight <em>Product Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductWidth <em>Product Width</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getQuantityIncluded <em>Quantity Included</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getQuantityUomId <em>Quantity Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getRatingTypeEnum <em>Rating Type Enum</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getReleaseDate <em>Release Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isRequireAmount <em>Require Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isRequireInventory <em>Require Inventory</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getReserv2ndPPPerc <em>Reserv2nd PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getReservMaxPersons <em>Reserv Max Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getReservNthPPPerc <em>Reserv Nth PP Perc</em>}</li>
@@ -90,9 +84,24 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getSmallImageUrl <em>Small Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getSupportDiscontinuationDate <em>Support Discontinuation Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#isTaxable <em>Taxable</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.Product#getVirtualVariantMethodEnum <em>Virtual Variant Method Enum</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductTypeId <em>Product Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getQuantityUomId <em>Quantity Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getAmountUomTypeId <em>Amount Uom Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getWeightUomId <em>Weight Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getHeightUomId <em>Height Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getWidthUomId <em>Width Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDepthUomId <em>Depth Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDiameterUomId <em>Diameter Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getVirtualVariantMethodEnum <em>Virtual Variant Method Enum</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getRatingTypeEnum <em>Rating Type Enum</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getOriginGeoId <em>Origin Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getDefaultShipmentBoxTypeId <em>Default Shipment Box Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.Product#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getCommunicationEventProducts <em>Communication Event Products</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductAttributes <em>Product Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.Product#getProductFacilities <em>Product Facilities</em>}</li>
@@ -107,30 +116,30 @@ import org.abchip.mimo.biz.BizEntityTyped;
  */
 public interface Product extends BizEntityTyped<ProductType> {
 	/**
-	 * Returns the value of the '<em><b>Amount Uom Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Amount Uom Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Amount Uom Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Amount Uom Type Id</em>' attribute.
-	 * @see #setAmountUomTypeId(String)
+	 * @return the value of the '<em>Amount Uom Type Id</em>' reference.
+	 * @see #setAmountUomTypeId(UomType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_AmountUomTypeId()
-	 * @model annotation="mimo-ent-domain frame='UomType'"
+	 * @model keys="uomTypeId"
 	 * @generated
 	 */
-	String getAmountUomTypeId();
+	UomType getAmountUomTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getAmountUomTypeId <em>Amount Uom Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getAmountUomTypeId <em>Amount Uom Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Amount Uom Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Amount Uom Type Id</em>' reference.
 	 * @see #getAmountUomTypeId()
 	 * @generated
 	 */
-	void setAmountUomTypeId(String value);
+	void setAmountUomTypeId(UomType value);
 
 	/**
 	 * Returns the value of the '<em><b>Auto Create Keywords</b></em>' attribute.
@@ -289,30 +298,30 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setConfigId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Created By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Created By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Created By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Created By User Login</em>' attribute.
-	 * @see #setCreatedByUserLogin(String)
+	 * @return the value of the '<em>Created By User Login</em>' reference.
+	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getCreatedByUserLogin();
+	UserLogin getCreatedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getCreatedByUserLogin <em>Created By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getCreatedByUserLogin <em>Created By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Created By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Created By User Login</em>' reference.
 	 * @see #getCreatedByUserLogin()
 	 * @generated
 	 */
-	void setCreatedByUserLogin(String value);
+	void setCreatedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Created Date</b></em>' attribute.
@@ -341,56 +350,56 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setCreatedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Default Shipment Box Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Default Shipment Box Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Default Shipment Box Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Shipment Box Type Id</em>' attribute.
-	 * @see #setDefaultShipmentBoxTypeId(String)
+	 * @return the value of the '<em>Default Shipment Box Type Id</em>' reference.
+	 * @see #setDefaultShipmentBoxTypeId(ShipmentBoxType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_DefaultShipmentBoxTypeId()
-	 * @model annotation="mimo-ent-domain frame='ShipmentBoxType'"
+	 * @model keys="shipmentBoxTypeId"
 	 * @generated
 	 */
-	String getDefaultShipmentBoxTypeId();
+	ShipmentBoxType getDefaultShipmentBoxTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getDefaultShipmentBoxTypeId <em>Default Shipment Box Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getDefaultShipmentBoxTypeId <em>Default Shipment Box Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Shipment Box Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Default Shipment Box Type Id</em>' reference.
 	 * @see #getDefaultShipmentBoxTypeId()
 	 * @generated
 	 */
-	void setDefaultShipmentBoxTypeId(String value);
+	void setDefaultShipmentBoxTypeId(ShipmentBoxType value);
 
 	/**
-	 * Returns the value of the '<em><b>Depth Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Depth Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Depth Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Depth Uom Id</em>' attribute.
-	 * @see #setDepthUomId(String)
+	 * @return the value of the '<em>Depth Uom Id</em>' reference.
+	 * @see #setDepthUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_DepthUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getDepthUomId();
+	Uom getDepthUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getDepthUomId <em>Depth Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getDepthUomId <em>Depth Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Depth Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Depth Uom Id</em>' reference.
 	 * @see #getDepthUomId()
 	 * @generated
 	 */
-	void setDepthUomId(String value);
+	void setDepthUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -471,30 +480,30 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setDetailScreen(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Diameter Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Diameter Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Diameter Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Diameter Uom Id</em>' attribute.
-	 * @see #setDiameterUomId(String)
+	 * @return the value of the '<em>Diameter Uom Id</em>' reference.
+	 * @see #setDiameterUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_DiameterUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getDiameterUomId();
+	Uom getDiameterUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getDiameterUomId <em>Diameter Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getDiameterUomId <em>Diameter Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Diameter Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Diameter Uom Id</em>' reference.
 	 * @see #getDiameterUomId()
 	 * @generated
 	 */
-	void setDiameterUomId(String value);
+	void setDiameterUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Fixed Amount</b></em>' attribute.
@@ -523,30 +532,30 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setFixedAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Height Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Height Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Height Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Height Uom Id</em>' attribute.
-	 * @see #setHeightUomId(String)
+	 * @return the value of the '<em>Height Uom Id</em>' reference.
+	 * @see #setHeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_HeightUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getHeightUomId();
+	Uom getHeightUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getHeightUomId <em>Height Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getHeightUomId <em>Height Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Height Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Height Uom Id</em>' reference.
 	 * @see #getHeightUomId()
 	 * @generated
 	 */
-	void setHeightUomId(String value);
+	void setHeightUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>In Shipping Box</b></em>' attribute.
@@ -757,30 +766,30 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setLargeImageUrl(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Last Modified By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
-	 * @see #setLastModifiedByUserLogin(String)
+	 * @return the value of the '<em>Last Modified By User Login</em>' reference.
+	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getLastModifiedByUserLogin();
+	UserLogin getLastModifiedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Last Modified By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Last Modified By User Login</em>' reference.
 	 * @see #getLastModifiedByUserLogin()
 	 * @generated
 	 */
-	void setLastModifiedByUserLogin(String value);
+	void setLastModifiedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Last Modified Date</b></em>' attribute.
@@ -913,30 +922,30 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setOrderDecimalQuantity(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Origin Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Origin Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Origin Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Origin Geo Id</em>' attribute.
-	 * @see #setOriginGeoId(String)
+	 * @return the value of the '<em>Origin Geo Id</em>' reference.
+	 * @see #setOriginGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_OriginGeoId()
-	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getOriginGeoId();
+	Geo getOriginGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getOriginGeoId <em>Origin Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getOriginGeoId <em>Origin Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Origin Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Origin Geo Id</em>' reference.
 	 * @see #getOriginGeoId()
 	 * @generated
 	 */
-	void setOriginGeoId(String value);
+	void setOriginGeoId(Geo value);
 
 	/**
 	 * Returns the value of the '<em><b>Original Image Url</b></em>' attribute.
@@ -1225,56 +1234,56 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setQuantityIncluded(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Quantity Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quantity Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quantity Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quantity Uom Id</em>' attribute.
-	 * @see #setQuantityUomId(String)
+	 * @return the value of the '<em>Quantity Uom Id</em>' reference.
+	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_QuantityUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getQuantityUomId();
+	Uom getQuantityUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getQuantityUomId <em>Quantity Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getQuantityUomId <em>Quantity Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Quantity Uom Id</em>' reference.
 	 * @see #getQuantityUomId()
 	 * @generated
 	 */
-	void setQuantityUomId(String value);
+	void setQuantityUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Rating Type Enum</b></em>' attribute.
+	 * Returns the value of the '<em><b>Rating Type Enum</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Rating Type Enum</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rating Type Enum</em>' attribute.
-	 * @see #setRatingTypeEnum(String)
+	 * @return the value of the '<em>Rating Type Enum</em>' reference.
+	 * @see #setRatingTypeEnum(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_RatingTypeEnum()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getRatingTypeEnum();
+	Enumeration getRatingTypeEnum();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getRatingTypeEnum <em>Rating Type Enum</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getRatingTypeEnum <em>Rating Type Enum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rating Type Enum</em>' attribute.
+	 * @param value the new value of the '<em>Rating Type Enum</em>' reference.
 	 * @see #getRatingTypeEnum()
 	 * @generated
 	 */
-	void setRatingTypeEnum(String value);
+	void setRatingTypeEnum(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Release Date</b></em>' attribute.
@@ -1355,30 +1364,30 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setRequireInventory(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Method Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Method Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Method Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Method Enum Id</em>' attribute.
-	 * @see #setRequirementMethodEnumId(String)
+	 * @return the value of the '<em>Requirement Method Enum Id</em>' reference.
+	 * @see #setRequirementMethodEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_RequirementMethodEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getRequirementMethodEnumId();
+	Enumeration getRequirementMethodEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getRequirementMethodEnumId <em>Requirement Method Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Method Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Method Enum Id</em>' reference.
 	 * @see #getRequirementMethodEnumId()
 	 * @generated
 	 */
-	void setRequirementMethodEnumId(String value);
+	void setRequirementMethodEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Reserv2nd PP Perc</b></em>' attribute.
@@ -1719,82 +1728,82 @@ public interface Product extends BizEntityTyped<ProductType> {
 	void setTaxable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Virtual Variant Method Enum</b></em>' attribute.
+	 * Returns the value of the '<em><b>Virtual Variant Method Enum</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Virtual Variant Method Enum</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Virtual Variant Method Enum</em>' attribute.
-	 * @see #setVirtualVariantMethodEnum(String)
+	 * @return the value of the '<em>Virtual Variant Method Enum</em>' reference.
+	 * @see #setVirtualVariantMethodEnum(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_VirtualVariantMethodEnum()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getVirtualVariantMethodEnum();
+	Enumeration getVirtualVariantMethodEnum();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getVirtualVariantMethodEnum <em>Virtual Variant Method Enum</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getVirtualVariantMethodEnum <em>Virtual Variant Method Enum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Virtual Variant Method Enum</em>' attribute.
+	 * @param value the new value of the '<em>Virtual Variant Method Enum</em>' reference.
 	 * @see #getVirtualVariantMethodEnum()
 	 * @generated
 	 */
-	void setVirtualVariantMethodEnum(String value);
+	void setVirtualVariantMethodEnum(Enumeration value);
 
 	/**
-	 * Returns the value of the '<em><b>Weight Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Weight Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Weight Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Weight Uom Id</em>' attribute.
-	 * @see #setWeightUomId(String)
+	 * @return the value of the '<em>Weight Uom Id</em>' reference.
+	 * @see #setWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_WeightUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getWeightUomId();
+	Uom getWeightUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getWeightUomId <em>Weight Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getWeightUomId <em>Weight Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Weight Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Weight Uom Id</em>' reference.
 	 * @see #getWeightUomId()
 	 * @generated
 	 */
-	void setWeightUomId(String value);
+	void setWeightUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Width Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Width Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Width Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Width Uom Id</em>' attribute.
-	 * @see #setWidthUomId(String)
+	 * @return the value of the '<em>Width Uom Id</em>' reference.
+	 * @see #setWidthUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_WidthUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getWidthUomId();
+	Uom getWidthUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getWidthUomId <em>Width Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getWidthUomId <em>Width Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Width Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Width Uom Id</em>' reference.
 	 * @see #getWidthUomId()
 	 * @generated
 	 */
-	void setWidthUomId(String value);
+	void setWidthUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Communication Event Products</b></em>' attribute list.
@@ -2133,108 +2142,108 @@ public interface Product extends BizEntityTyped<ProductType> {
 	List<String> subscriptions();
 
 	/**
-	 * Returns the value of the '<em><b>Product Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Type Id</em>' attribute.
-	 * @see #setProductTypeId(String)
+	 * @return the value of the '<em>Product Type Id</em>' reference.
+	 * @see #setProductTypeId(ProductType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductType'"
+	 * @model keys="productTypeId"
 	 * @generated
 	 */
-	String getProductTypeId();
+	ProductType getProductTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getProductTypeId <em>Product Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getProductTypeId <em>Product Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Type Id</em>' reference.
 	 * @see #getProductTypeId()
 	 * @generated
 	 */
-	void setProductTypeId(String value);
+	void setProductTypeId(ProductType value);
 
 	/**
-	 * Returns the value of the '<em><b>Primary Product Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Primary Product Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Primary Product Category Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Primary Product Category Id</em>' attribute.
-	 * @see #setPrimaryProductCategoryId(String)
+	 * @return the value of the '<em>Primary Product Category Id</em>' reference.
+	 * @see #setPrimaryProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_PrimaryProductCategoryId()
-	 * @model annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model keys="productCategoryId"
 	 * @generated
 	 */
-	String getPrimaryProductCategoryId();
+	ProductCategory getPrimaryProductCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getPrimaryProductCategoryId <em>Primary Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Primary Product Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Primary Product Category Id</em>' reference.
 	 * @see #getPrimaryProductCategoryId()
 	 * @generated
 	 */
-	void setPrimaryProductCategoryId(String value);
+	void setPrimaryProductCategoryId(ProductCategory value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_FacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inventory Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Type Id</em>' attribute.
-	 * @see #setInventoryItemTypeId(String)
+	 * @return the value of the '<em>Inventory Item Type Id</em>' reference.
+	 * @see #setInventoryItemTypeId(InventoryItemType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_InventoryItemTypeId()
-	 * @model annotation="mimo-ent-domain frame='InventoryItemType'"
+	 * @model keys="inventoryItemTypeId"
 	 * @generated
 	 */
-	String getInventoryItemTypeId();
+	InventoryItemType getInventoryItemTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getInventoryItemTypeId <em>Inventory Item Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.Product#getInventoryItemTypeId <em>Inventory Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Inventory Item Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Inventory Item Type Id</em>' reference.
 	 * @see #getInventoryItemTypeId()
 	 * @generated
 	 */
-	void setInventoryItemTypeId(String value);
+	void setInventoryItemTypeId(InventoryItemType value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
@@ -2247,7 +2256,7 @@ public interface Product extends BizEntityTyped<ProductType> {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProduct_ProductId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

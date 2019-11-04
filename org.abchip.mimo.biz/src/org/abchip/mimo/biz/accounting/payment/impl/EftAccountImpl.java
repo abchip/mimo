@@ -9,9 +9,12 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.payment.EftAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getAccountType <em>Account Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getBankName <em>Bank Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getCompanyNameOnAccount <em>Company Name On Account</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getNameOnAccount <em>Name On Account</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getRoutingNumber <em>Routing Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getYearsAtBank <em>Years At Bank</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,26 +123,6 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	protected String companyNameOnAccount = COMPANY_NAME_ON_ACCOUNT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getNameOnAccount() <em>Name On Account</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -195,6 +178,15 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 * @ordered
 	 */
 	protected long yearsAtBank = YEARS_AT_BANK_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PostalAddress contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -313,7 +305,24 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public PostalAddress getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostalAddress basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -323,8 +332,8 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(PostalAddress newContactMechId) {
+		PostalAddress oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -415,14 +424,15 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 				return getBankName();
 			case PaymentPackage.EFT_ACCOUNT__COMPANY_NAME_ON_ACCOUNT:
 				return getCompanyNameOnAccount();
-			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
-				return getContactMechId();
 			case PaymentPackage.EFT_ACCOUNT__NAME_ON_ACCOUNT:
 				return getNameOnAccount();
 			case PaymentPackage.EFT_ACCOUNT__ROUTING_NUMBER:
 				return getRoutingNumber();
 			case PaymentPackage.EFT_ACCOUNT__YEARS_AT_BANK:
 				return getYearsAtBank();
+			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -447,9 +457,6 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 			case PaymentPackage.EFT_ACCOUNT__COMPANY_NAME_ON_ACCOUNT:
 				setCompanyNameOnAccount((String)newValue);
 				return;
-			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
-				return;
 			case PaymentPackage.EFT_ACCOUNT__NAME_ON_ACCOUNT:
 				setNameOnAccount((String)newValue);
 				return;
@@ -458,6 +465,9 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 				return;
 			case PaymentPackage.EFT_ACCOUNT__YEARS_AT_BANK:
 				setYearsAtBank((Long)newValue);
+				return;
+			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -483,9 +493,6 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 			case PaymentPackage.EFT_ACCOUNT__COMPANY_NAME_ON_ACCOUNT:
 				setCompanyNameOnAccount(COMPANY_NAME_ON_ACCOUNT_EDEFAULT);
 				return;
-			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
-				return;
 			case PaymentPackage.EFT_ACCOUNT__NAME_ON_ACCOUNT:
 				setNameOnAccount(NAME_ON_ACCOUNT_EDEFAULT);
 				return;
@@ -494,6 +501,9 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 				return;
 			case PaymentPackage.EFT_ACCOUNT__YEARS_AT_BANK:
 				setYearsAtBank(YEARS_AT_BANK_EDEFAULT);
+				return;
+			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -515,14 +525,14 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 				return BANK_NAME_EDEFAULT == null ? bankName != null : !BANK_NAME_EDEFAULT.equals(bankName);
 			case PaymentPackage.EFT_ACCOUNT__COMPANY_NAME_ON_ACCOUNT:
 				return COMPANY_NAME_ON_ACCOUNT_EDEFAULT == null ? companyNameOnAccount != null : !COMPANY_NAME_ON_ACCOUNT_EDEFAULT.equals(companyNameOnAccount);
-			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
 			case PaymentPackage.EFT_ACCOUNT__NAME_ON_ACCOUNT:
 				return NAME_ON_ACCOUNT_EDEFAULT == null ? nameOnAccount != null : !NAME_ON_ACCOUNT_EDEFAULT.equals(nameOnAccount);
 			case PaymentPackage.EFT_ACCOUNT__ROUTING_NUMBER:
 				return ROUTING_NUMBER_EDEFAULT == null ? routingNumber != null : !ROUTING_NUMBER_EDEFAULT.equals(routingNumber);
 			case PaymentPackage.EFT_ACCOUNT__YEARS_AT_BANK:
 				return yearsAtBank != YEARS_AT_BANK_EDEFAULT;
+			case PaymentPackage.EFT_ACCOUNT__CONTACT_MECH_ID:
+				return contactMechId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -545,8 +555,6 @@ public class EftAccountImpl extends PaymentMethodImpl implements EftAccount {
 		result.append(bankName);
 		result.append(", companyNameOnAccount: ");
 		result.append(companyNameOnAccount);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
 		result.append(", nameOnAccount: ");
 		result.append(nameOnAccount);
 		result.append(", routingNumber: ");

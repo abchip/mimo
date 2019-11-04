@@ -65,7 +65,8 @@ public interface PaymentTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface PaymentTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Payment Type Id</em>' attribute.
 	 * @see #setPaymentTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentTypeAttr_PaymentTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPaymentTypeId();

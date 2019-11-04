@@ -9,13 +9,17 @@ package org.abchip.mimo.biz.shipment.picklist.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
 import org.abchip.mimo.biz.shipment.picklist.PicklistStatusHistory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -82,64 +86,34 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	protected Date changeDate = CHANGE_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getChangeUserLoginId() <em>Change User Login Id</em>}' attribute.
+	 * The cached value of the '{@link #getChangeUserLoginId() <em>Change User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getChangeUserLoginId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CHANGE_USER_LOGIN_ID_EDEFAULT = null;
+	protected UserLogin changeUserLoginId;
 
 	/**
-	 * The cached value of the '{@link #getChangeUserLoginId() <em>Change User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String changeUserLoginId = CHANGE_USER_LOGIN_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusIdTo() <em>Status Id To</em>}' attribute.
+	 * The cached value of the '{@link #getStatusIdTo() <em>Status Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusIdTo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusIdTo() <em>Status Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusIdTo = STATUS_ID_TO_EDEFAULT;
+	protected StatusItem statusIdTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,7 +163,24 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 * @generated
 	 */
 	@Override
-	public String getChangeUserLoginId() {
+	public UserLogin getChangeUserLoginId() {
+		if (changeUserLoginId != null && ((EObject)changeUserLoginId).eIsProxy()) {
+			InternalEObject oldChangeUserLoginId = (InternalEObject)changeUserLoginId;
+			changeUserLoginId = (UserLogin)eResolveProxy(oldChangeUserLoginId);
+			if (changeUserLoginId != oldChangeUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_USER_LOGIN_ID, oldChangeUserLoginId, changeUserLoginId));
+			}
+		}
+		return changeUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangeUserLoginId() {
 		return changeUserLoginId;
 	}
 
@@ -199,8 +190,8 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 * @generated
 	 */
 	@Override
-	public void setChangeUserLoginId(String newChangeUserLoginId) {
-		String oldChangeUserLoginId = changeUserLoginId;
+	public void setChangeUserLoginId(UserLogin newChangeUserLoginId) {
+		UserLogin oldChangeUserLoginId = changeUserLoginId;
 		changeUserLoginId = newChangeUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_USER_LOGIN_ID, oldChangeUserLoginId, changeUserLoginId));
@@ -235,7 +226,24 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -245,8 +253,8 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID, oldStatusId, statusId));
@@ -258,7 +266,24 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 * @generated
 	 */
 	@Override
-	public String getStatusIdTo() {
+	public StatusItem getStatusIdTo() {
+		if (statusIdTo != null && ((EObject)statusIdTo).eIsProxy()) {
+			InternalEObject oldStatusIdTo = (InternalEObject)statusIdTo;
+			statusIdTo = (StatusItem)eResolveProxy(oldStatusIdTo);
+			if (statusIdTo != oldStatusIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID_TO, oldStatusIdTo, statusIdTo));
+			}
+		}
+		return statusIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusIdTo() {
 		return statusIdTo;
 	}
 
@@ -268,8 +293,8 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 	 * @generated
 	 */
 	@Override
-	public void setStatusIdTo(String newStatusIdTo) {
-		String oldStatusIdTo = statusIdTo;
+	public void setStatusIdTo(StatusItem newStatusIdTo) {
+		StatusItem oldStatusIdTo = statusIdTo;
 		statusIdTo = newStatusIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID_TO, oldStatusIdTo, statusIdTo));
@@ -288,11 +313,14 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_DATE:
 				return getChangeDate();
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_USER_LOGIN_ID:
-				return getChangeUserLoginId();
+				if (resolve) return getChangeUserLoginId();
+				return basicGetChangeUserLoginId();
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID_TO:
-				return getStatusIdTo();
+				if (resolve) return getStatusIdTo();
+				return basicGetStatusIdTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -312,13 +340,13 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 				setChangeDate((Date)newValue);
 				return;
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_USER_LOGIN_ID:
-				setChangeUserLoginId((String)newValue);
+				setChangeUserLoginId((UserLogin)newValue);
 				return;
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
 				return;
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID_TO:
-				setStatusIdTo((String)newValue);
+				setStatusIdTo((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -339,13 +367,13 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 				setChangeDate(CHANGE_DATE_EDEFAULT);
 				return;
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_USER_LOGIN_ID:
-				setChangeUserLoginId(CHANGE_USER_LOGIN_ID_EDEFAULT);
+				setChangeUserLoginId((UserLogin)null);
 				return;
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
 				return;
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID_TO:
-				setStatusIdTo(STATUS_ID_TO_EDEFAULT);
+				setStatusIdTo((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -364,11 +392,11 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_DATE:
 				return CHANGE_DATE_EDEFAULT == null ? changeDate != null : !CHANGE_DATE_EDEFAULT.equals(changeDate);
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__CHANGE_USER_LOGIN_ID:
-				return CHANGE_USER_LOGIN_ID_EDEFAULT == null ? changeUserLoginId != null : !CHANGE_USER_LOGIN_ID_EDEFAULT.equals(changeUserLoginId);
+				return changeUserLoginId != null;
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
 			case PicklistPackage.PICKLIST_STATUS_HISTORY__STATUS_ID_TO:
-				return STATUS_ID_TO_EDEFAULT == null ? statusIdTo != null : !STATUS_ID_TO_EDEFAULT.equals(statusIdTo);
+				return statusIdTo != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -387,12 +415,6 @@ public class PicklistStatusHistoryImpl extends BizEntityImpl implements Picklist
 		result.append(picklistId);
 		result.append(", changeDate: ");
 		result.append(changeDate);
-		result.append(", changeUserLoginId: ");
-		result.append(changeUserLoginId);
-		result.append(", statusId: ");
-		result.append(statusId);
-		result.append(", statusIdTo: ");
-		result.append(statusIdTo);
 		result.append(')');
 		return result.toString();
 	}

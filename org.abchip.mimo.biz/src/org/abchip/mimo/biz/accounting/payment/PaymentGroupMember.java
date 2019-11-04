@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentGroupId <em>Payment Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentId <em>Payment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentId <em>Payment Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupMember()
@@ -43,7 +43,8 @@ public interface PaymentGroupMember extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupMember_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -121,8 +122,8 @@ public interface PaymentGroupMember extends BizEntity {
 	 * @return the value of the '<em>Payment Group Id</em>' attribute.
 	 * @see #setPaymentGroupId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupMember_PaymentGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentGroup'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPaymentGroupId();
@@ -138,30 +139,29 @@ public interface PaymentGroupMember extends BizEntity {
 	void setPaymentGroupId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Id</em>' attribute.
-	 * @see #setPaymentId(String)
+	 * @return the value of the '<em>Payment Id</em>' reference.
+	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGroupMember_PaymentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Payment'"
+	 * @model keys="paymentId"
 	 * @generated
 	 */
-	String getPaymentId();
+	Payment getPaymentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentId <em>Payment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentId <em>Payment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Id</em>' reference.
 	 * @see #getPaymentId()
 	 * @generated
 	 */
-	void setPaymentId(String value);
+	void setPaymentId(Payment value);
 
 } // PaymentGroupMember

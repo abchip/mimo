@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.shipment;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,10 +27,10 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getBoxLength <em>Box Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getBoxWidth <em>Box Width</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getDateCreated <em>Date Created</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getDimensionUomId <em>Dimension Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getInsuredValue <em>Insured Value</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getWeight <em>Weight</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getDimensionUomId <em>Dimension Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getWeightUomId <em>Weight Uom Id</em>}</li>
  * </ul>
  *
@@ -49,8 +50,8 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentId();
@@ -76,7 +77,8 @@ public interface ShipmentPackage extends BizEntity {
 	 * @return the value of the '<em>Shipment Package Seq Id</em>' attribute.
 	 * @see #setShipmentPackageSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_ShipmentPackageSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentPackageSeqId();
@@ -196,30 +198,30 @@ public interface ShipmentPackage extends BizEntity {
 	void setDateCreated(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Dimension Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Dimension Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Dimension Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dimension Uom Id</em>' attribute.
-	 * @see #setDimensionUomId(String)
+	 * @return the value of the '<em>Dimension Uom Id</em>' reference.
+	 * @see #setDimensionUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_DimensionUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getDimensionUomId();
+	Uom getDimensionUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getDimensionUomId <em>Dimension Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getDimensionUomId <em>Dimension Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dimension Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Dimension Uom Id</em>' reference.
 	 * @see #getDimensionUomId()
 	 * @generated
 	 */
-	void setDimensionUomId(String value);
+	void setDimensionUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Insured Value</b></em>' attribute.
@@ -248,30 +250,30 @@ public interface ShipmentPackage extends BizEntity {
 	void setInsuredValue(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Box Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Box Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Box Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Box Type Id</em>' attribute.
-	 * @see #setShipmentBoxTypeId(String)
+	 * @return the value of the '<em>Shipment Box Type Id</em>' reference.
+	 * @see #setShipmentBoxTypeId(ShipmentBoxType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_ShipmentBoxTypeId()
-	 * @model annotation="mimo-ent-domain frame='ShipmentBoxType'"
+	 * @model keys="shipmentBoxTypeId"
 	 * @generated
 	 */
-	String getShipmentBoxTypeId();
+	ShipmentBoxType getShipmentBoxTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getShipmentBoxTypeId <em>Shipment Box Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Box Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Box Type Id</em>' reference.
 	 * @see #getShipmentBoxTypeId()
 	 * @generated
 	 */
-	void setShipmentBoxTypeId(String value);
+	void setShipmentBoxTypeId(ShipmentBoxType value);
 
 	/**
 	 * Returns the value of the '<em><b>Weight</b></em>' attribute.
@@ -300,29 +302,29 @@ public interface ShipmentPackage extends BizEntity {
 	void setWeight(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Weight Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Weight Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Weight Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Weight Uom Id</em>' attribute.
-	 * @see #setWeightUomId(String)
+	 * @return the value of the '<em>Weight Uom Id</em>' reference.
+	 * @see #setWeightUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackage_WeightUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getWeightUomId();
+	Uom getWeightUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getWeightUomId <em>Weight Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackage#getWeightUomId <em>Weight Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Weight Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Weight Uom Id</em>' reference.
 	 * @see #getWeightUomId()
 	 * @generated
 	 */
-	void setWeightUomId(String value);
+	void setWeightUomId(Uom value);
 
 } // ShipmentPackage

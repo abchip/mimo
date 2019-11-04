@@ -9,12 +9,16 @@ package org.abchip.mimo.biz.accounting.invoice.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceStatus;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
@@ -57,24 +61,6 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 */
 	protected String statusId = STATUS_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceId = INVOICE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,23 +79,23 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 */
 	protected Date statusDate = STATUS_DATE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
+	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
+	 * @see #getInvoiceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CHANGE_BY_USER_LOGIN_ID_EDEFAULT = null;
+	protected Invoice invoiceId;
 	/**
-	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
+	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getChangeByUserLoginId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String changeByUserLoginId = CHANGE_BY_USER_LOGIN_ID_EDEFAULT;
+	protected UserLogin changeByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,7 +122,24 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 * @generated
 	 */
 	@Override
-	public String getChangeByUserLoginId() {
+	public UserLogin getChangeByUserLoginId() {
+		if (changeByUserLoginId != null && ((EObject)changeByUserLoginId).eIsProxy()) {
+			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
+			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
+			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
+			}
+		}
+		return changeByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangeByUserLoginId() {
 		return changeByUserLoginId;
 	}
 
@@ -146,8 +149,8 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 * @generated
 	 */
 	@Override
-	public void setChangeByUserLoginId(String newChangeByUserLoginId) {
-		String oldChangeByUserLoginId = changeByUserLoginId;
+	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
@@ -205,7 +208,24 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceId() {
+	public Invoice getInvoiceId() {
+		if (invoiceId != null && ((EObject)invoiceId).eIsProxy()) {
+			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
+			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
+			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_STATUS__INVOICE_ID, oldInvoiceId, invoiceId));
+			}
+		}
+		return invoiceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Invoice basicGetInvoiceId() {
 		return invoiceId;
 	}
 
@@ -215,8 +235,8 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceId(String newInvoiceId) {
-		String oldInvoiceId = invoiceId;
+	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_STATUS__INVOICE_ID, oldInvoiceId, invoiceId));
@@ -232,12 +252,14 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
 				return getStatusId();
-			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
-				return getInvoiceId();
 			case InvoicePackage.INVOICE_STATUS__STATUS_DATE:
 				return getStatusDate();
+			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
+				if (resolve) return getInvoiceId();
+				return basicGetInvoiceId();
 			case InvoicePackage.INVOICE_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return getChangeByUserLoginId();
+				if (resolve) return getChangeByUserLoginId();
+				return basicGetChangeByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,14 +275,14 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
 				setStatusId((String)newValue);
 				return;
-			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
-				setInvoiceId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_STATUS__STATUS_DATE:
 				setStatusDate((Date)newValue);
 				return;
+			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
+				setInvoiceId((Invoice)newValue);
+				return;
 			case InvoicePackage.INVOICE_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((String)newValue);
+				setChangeByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -277,14 +299,14 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
 				setStatusId(STATUS_ID_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
-				setInvoiceId(INVOICE_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_STATUS__STATUS_DATE:
 				setStatusDate(STATUS_DATE_EDEFAULT);
 				return;
+			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
+				setInvoiceId((Invoice)null);
+				return;
 			case InvoicePackage.INVOICE_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId(CHANGE_BY_USER_LOGIN_ID_EDEFAULT);
+				setChangeByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -300,12 +322,12 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_STATUS__STATUS_ID:
 				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
-			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
-				return INVOICE_ID_EDEFAULT == null ? invoiceId != null : !INVOICE_ID_EDEFAULT.equals(invoiceId);
 			case InvoicePackage.INVOICE_STATUS__STATUS_DATE:
 				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
+			case InvoicePackage.INVOICE_STATUS__INVOICE_ID:
+				return invoiceId != null;
 			case InvoicePackage.INVOICE_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return CHANGE_BY_USER_LOGIN_ID_EDEFAULT == null ? changeByUserLoginId != null : !CHANGE_BY_USER_LOGIN_ID_EDEFAULT.equals(changeByUserLoginId);
+				return changeByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -322,12 +344,8 @@ public class InvoiceStatusImpl extends BizEntityImpl implements InvoiceStatus {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (statusId: ");
 		result.append(statusId);
-		result.append(", invoiceId: ");
-		result.append(invoiceId);
 		result.append(", statusDate: ");
 		result.append(statusDate);
-		result.append(", changeByUserLoginId: ");
-		result.append(changeByUserLoginId);
 		result.append(')');
 		return result.toString();
 	}

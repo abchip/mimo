@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,16 +26,16 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getSalesOpportunityHistoryId <em>Sales Opportunity History Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getChangeNote <em>Change Note</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getEstimatedAmount <em>Estimated Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getEstimatedCloseDate <em>Estimated Close Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getEstimatedProbability <em>Estimated Probability</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getModifiedByUserLogin <em>Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getModifiedTimestamp <em>Modified Timestamp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getNextStep <em>Next Step</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getOpportunityStageId <em>Opportunity Stage Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getModifiedByUserLogin <em>Modified By User Login</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory()
@@ -68,30 +70,30 @@ public interface SalesOpportunityHistory extends BizEntity {
 	void setChangeNote(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_CurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -198,30 +200,30 @@ public interface SalesOpportunityHistory extends BizEntity {
 	void setEstimatedProbability(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Modified By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Modified By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Modified By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Modified By User Login</em>' attribute.
-	 * @see #setModifiedByUserLogin(String)
+	 * @return the value of the '<em>Modified By User Login</em>' reference.
+	 * @see #setModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_ModifiedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getModifiedByUserLogin();
+	UserLogin getModifiedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getModifiedByUserLogin <em>Modified By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getModifiedByUserLogin <em>Modified By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Modified By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Modified By User Login</em>' reference.
 	 * @see #getModifiedByUserLogin()
 	 * @generated
 	 */
-	void setModifiedByUserLogin(String value);
+	void setModifiedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Modified Timestamp</b></em>' attribute.
@@ -276,30 +278,30 @@ public interface SalesOpportunityHistory extends BizEntity {
 	void setNextStep(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Opportunity Stage Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Opportunity Stage Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Opportunity Stage Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Opportunity Stage Id</em>' attribute.
-	 * @see #setOpportunityStageId(String)
+	 * @return the value of the '<em>Opportunity Stage Id</em>' reference.
+	 * @see #setOpportunityStageId(SalesOpportunityStage)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_OpportunityStageId()
-	 * @model annotation="mimo-ent-domain frame='SalesOpportunityStage'"
+	 * @model keys="opportunityStageId"
 	 * @generated
 	 */
-	String getOpportunityStageId();
+	SalesOpportunityStage getOpportunityStageId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getOpportunityStageId <em>Opportunity Stage Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getOpportunityStageId <em>Opportunity Stage Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Opportunity Stage Id</em>' attribute.
+	 * @param value the new value of the '<em>Opportunity Stage Id</em>' reference.
 	 * @see #getOpportunityStageId()
 	 * @generated
 	 */
-	void setOpportunityStageId(String value);
+	void setOpportunityStageId(SalesOpportunityStage value);
 
 	/**
 	 * Returns the value of the '<em><b>Sales Opportunity History Id</b></em>' attribute.
@@ -312,7 +314,7 @@ public interface SalesOpportunityHistory extends BizEntity {
 	 * @return the value of the '<em>Sales Opportunity History Id</em>' attribute.
 	 * @see #setSalesOpportunityHistoryId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_SalesOpportunityHistoryId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -329,29 +331,29 @@ public interface SalesOpportunityHistory extends BizEntity {
 	void setSalesOpportunityHistoryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Sales Opportunity Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Sales Opportunity Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sales Opportunity Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sales Opportunity Id</em>' attribute.
-	 * @see #setSalesOpportunityId(String)
+	 * @return the value of the '<em>Sales Opportunity Id</em>' reference.
+	 * @see #setSalesOpportunityId(SalesOpportunity)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityHistory_SalesOpportunityId()
-	 * @model annotation="mimo-ent-domain frame='SalesOpportunity'"
+	 * @model keys="salesOpportunityId"
 	 * @generated
 	 */
-	String getSalesOpportunityId();
+	SalesOpportunity getSalesOpportunityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getSalesOpportunityId <em>Sales Opportunity Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory#getSalesOpportunityId <em>Sales Opportunity Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sales Opportunity Id</em>' attribute.
+	 * @param value the new value of the '<em>Sales Opportunity Id</em>' reference.
 	 * @see #getSalesOpportunityId()
 	 * @generated
 	 */
-	void setSalesOpportunityId(String value);
+	void setSalesOpportunityId(SalesOpportunity value);
 
 } // SalesOpportunityHistory

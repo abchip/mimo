@@ -39,7 +39,8 @@ public interface RequirementTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface RequirementTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Requirement Type Id</em>' attribute.
 	 * @see #setRequirementTypeId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementTypeAttr_RequirementTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='RequirementType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRequirementTypeId();

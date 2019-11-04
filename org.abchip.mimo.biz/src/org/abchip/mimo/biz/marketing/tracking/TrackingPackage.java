@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface TrackingPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-marketing-tracking";
+	String eNS_PREFIX = "biz-tracking";
 
 	/**
 	 * The singleton instance of the package.
@@ -197,22 +198,13 @@ public interface TrackingPackage extends EPackage {
 	int TRACKING_CODE__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Marketing Campaign Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACKING_CODE__MARKETING_CAMPAIGN_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
-
-	/**
 	 * The feature id for the '<em><b>Override Css</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE__OVERRIDE_CSS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int TRACKING_CODE__OVERRIDE_CSS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Override Logo</b></em>' attribute.
@@ -221,7 +213,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE__OVERRIDE_LOGO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int TRACKING_CODE__OVERRIDE_LOGO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Prod Catalog Id</b></em>' attribute.
@@ -230,7 +222,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE__PROD_CATALOG_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int TRACKING_CODE__PROD_CATALOG_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Redirect Url</b></em>' attribute.
@@ -239,7 +231,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE__REDIRECT_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int TRACKING_CODE__REDIRECT_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Subgroup Id</b></em>' attribute.
@@ -248,7 +240,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE__SUBGROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int TRACKING_CODE__SUBGROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -257,7 +249,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int TRACKING_CODE__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Trackable Lifetime</b></em>' attribute.
@@ -266,10 +258,19 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE__TRACKABLE_LIFETIME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+	int TRACKING_CODE__TRACKABLE_LIFETIME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
 
 	/**
-	 * The feature id for the '<em><b>Tracking Code Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Marketing Campaign Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACKING_CODE__MARKETING_CAMPAIGN_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Tracking Code Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -342,22 +343,13 @@ public interface TrackingPackage extends EPackage {
 	int TRACKING_CODE_ORDER__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Tracking Code Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Affiliate Referred Time Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Exported</b></em>' attribute.
@@ -366,7 +358,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER__HAS_EXPORTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int TRACKING_CODE_ORDER__HAS_EXPORTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Billable</b></em>' attribute.
@@ -375,7 +367,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER__IS_BILLABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TRACKING_CODE_ORDER__IS_BILLABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Site Id</b></em>' attribute.
@@ -384,16 +376,25 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER__SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int TRACKING_CODE_ORDER__SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Tracking Code Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Tracking Code Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER__TRACKING_CODE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int TRACKING_CODE_ORDER__TRACKING_CODE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Tracking Code Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Code Order</em>' class.
@@ -460,31 +461,13 @@ public interface TrackingPackage extends EPackage {
 	int TRACKING_CODE_ORDER_RETURN__RETURN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACKING_CODE_ORDER_RETURN__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Tracking Code Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Affiliate Referred Time Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER_RETURN__AFFILIATE_REFERRED_TIME_STAMP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int TRACKING_CODE_ORDER_RETURN__AFFILIATE_REFERRED_TIME_STAMP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Exported</b></em>' attribute.
@@ -493,7 +476,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER_RETURN__HAS_EXPORTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int TRACKING_CODE_ORDER_RETURN__HAS_EXPORTED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Billable</b></em>' attribute.
@@ -502,7 +485,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER_RETURN__IS_BILLABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int TRACKING_CODE_ORDER_RETURN__IS_BILLABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
@@ -511,7 +494,7 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER_RETURN__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int TRACKING_CODE_ORDER_RETURN__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Site Id</b></em>' attribute.
@@ -520,16 +503,34 @@ public interface TrackingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER_RETURN__SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int TRACKING_CODE_ORDER_RETURN__SITE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Tracking Code Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int TRACKING_CODE_ORDER_RETURN__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Tracking Code Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Tracking Code Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Code Order Return</em>' class.
@@ -696,7 +697,7 @@ public interface TrackingPackage extends EPackage {
 	int TRACKING_CODE_VISIT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Source Enum Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Source Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -835,15 +836,15 @@ public interface TrackingPackage extends EPackage {
 	EAttribute getTrackingCode_LastModifiedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getMarketingCampaignId <em>Marketing Campaign Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getMarketingCampaignId <em>Marketing Campaign Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Marketing Campaign Id</em>'.
+	 * @return the meta object for the reference '<em>Marketing Campaign Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingCode#getMarketingCampaignId()
 	 * @see #getTrackingCode()
 	 * @generated
 	 */
-	EAttribute getTrackingCode_MarketingCampaignId();
+	EReference getTrackingCode_MarketingCampaignId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getOverrideCss <em>Override Css</em>}'.
@@ -923,15 +924,15 @@ public interface TrackingPackage extends EPackage {
 	EAttribute getTrackingCode_TrackableLifetime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCode#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tracking Code Type Id</em>'.
+	 * @return the meta object for the reference '<em>Tracking Code Type Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingCode#getTrackingCodeTypeId()
 	 * @see #getTrackingCode()
 	 * @generated
 	 */
-	EAttribute getTrackingCode_TrackingCodeTypeId();
+	EReference getTrackingCode_TrackingCodeTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder <em>Code Order</em>}'.
@@ -955,15 +956,15 @@ public interface TrackingPackage extends EPackage {
 	EAttribute getTrackingCodeOrder_OrderId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tracking Code Type Id</em>'.
+	 * @return the meta object for the reference '<em>Tracking Code Type Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeTypeId()
 	 * @see #getTrackingCodeOrder()
 	 * @generated
 	 */
-	EAttribute getTrackingCodeOrder_TrackingCodeTypeId();
+	EReference getTrackingCodeOrder_TrackingCodeTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getAffiliateReferredTimeStamp <em>Affiliate Referred Time Stamp</em>}'.
@@ -1010,15 +1011,15 @@ public interface TrackingPackage extends EPackage {
 	EAttribute getTrackingCodeOrder_SiteId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeId <em>Tracking Code Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeId <em>Tracking Code Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tracking Code Id</em>'.
+	 * @return the meta object for the reference '<em>Tracking Code Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeId()
 	 * @see #getTrackingCodeOrder()
 	 * @generated
 	 */
-	EAttribute getTrackingCodeOrder_TrackingCodeId();
+	EReference getTrackingCodeOrder_TrackingCodeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn <em>Code Order Return</em>}'.
@@ -1042,26 +1043,26 @@ public interface TrackingPackage extends EPackage {
 	EAttribute getTrackingCodeOrderReturn_ReturnId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getOrderId()
 	 * @see #getTrackingCodeOrderReturn()
 	 * @generated
 	 */
-	EAttribute getTrackingCodeOrderReturn_OrderId();
+	EReference getTrackingCodeOrderReturn_OrderId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tracking Code Type Id</em>'.
+	 * @return the meta object for the reference '<em>Tracking Code Type Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getTrackingCodeTypeId()
 	 * @see #getTrackingCodeOrderReturn()
 	 * @generated
 	 */
-	EAttribute getTrackingCodeOrderReturn_TrackingCodeTypeId();
+	EReference getTrackingCodeOrderReturn_TrackingCodeTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getAffiliateReferredTimeStamp <em>Affiliate Referred Time Stamp</em>}'.
@@ -1119,15 +1120,15 @@ public interface TrackingPackage extends EPackage {
 	EAttribute getTrackingCodeOrderReturn_SiteId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getTrackingCodeId <em>Tracking Code Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getTrackingCodeId <em>Tracking Code Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tracking Code Id</em>'.
+	 * @return the meta object for the reference '<em>Tracking Code Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrderReturn#getTrackingCodeId()
 	 * @see #getTrackingCodeOrderReturn()
 	 * @generated
 	 */
-	EAttribute getTrackingCodeOrderReturn_TrackingCodeId();
+	EReference getTrackingCodeOrderReturn_TrackingCodeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeType <em>Code Type</em>}'.
@@ -1205,15 +1206,15 @@ public interface TrackingPackage extends EPackage {
 	EAttribute getTrackingCodeVisit_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getSourceEnumId <em>Source Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getSourceEnumId <em>Source Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Source Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Source Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getSourceEnumId()
 	 * @see #getTrackingCodeVisit()
 	 * @generated
 	 */
-	EAttribute getTrackingCodeVisit_SourceEnumId();
+	EReference getTrackingCodeVisit_SourceEnumId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1328,12 +1329,12 @@ public interface TrackingPackage extends EPackage {
 		EAttribute TRACKING_CODE__LAST_MODIFIED_DATE = eINSTANCE.getTrackingCode_LastModifiedDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Marketing Campaign Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Marketing Campaign Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRACKING_CODE__MARKETING_CAMPAIGN_ID = eINSTANCE.getTrackingCode_MarketingCampaignId();
+		EReference TRACKING_CODE__MARKETING_CAMPAIGN_ID = eINSTANCE.getTrackingCode_MarketingCampaignId();
 
 		/**
 		 * The meta object literal for the '<em><b>Override Css</b></em>' attribute feature.
@@ -1392,12 +1393,12 @@ public interface TrackingPackage extends EPackage {
 		EAttribute TRACKING_CODE__TRACKABLE_LIFETIME = eINSTANCE.getTrackingCode_TrackableLifetime();
 
 		/**
-		 * The meta object literal for the '<em><b>Tracking Code Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tracking Code Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRACKING_CODE__TRACKING_CODE_TYPE_ID = eINSTANCE.getTrackingCode_TrackingCodeTypeId();
+		EReference TRACKING_CODE__TRACKING_CODE_TYPE_ID = eINSTANCE.getTrackingCode_TrackingCodeTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl <em>Code Order</em>}' class.
@@ -1418,12 +1419,12 @@ public interface TrackingPackage extends EPackage {
 		EAttribute TRACKING_CODE_ORDER__ORDER_ID = eINSTANCE.getTrackingCodeOrder_OrderId();
 
 		/**
-		 * The meta object literal for the '<em><b>Tracking Code Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tracking Code Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID = eINSTANCE.getTrackingCodeOrder_TrackingCodeTypeId();
+		EReference TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID = eINSTANCE.getTrackingCodeOrder_TrackingCodeTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Affiliate Referred Time Stamp</b></em>' attribute feature.
@@ -1458,12 +1459,12 @@ public interface TrackingPackage extends EPackage {
 		EAttribute TRACKING_CODE_ORDER__SITE_ID = eINSTANCE.getTrackingCodeOrder_SiteId();
 
 		/**
-		 * The meta object literal for the '<em><b>Tracking Code Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tracking Code Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRACKING_CODE_ORDER__TRACKING_CODE_ID = eINSTANCE.getTrackingCodeOrder_TrackingCodeId();
+		EReference TRACKING_CODE_ORDER__TRACKING_CODE_ID = eINSTANCE.getTrackingCodeOrder_TrackingCodeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderReturnImpl <em>Code Order Return</em>}' class.
@@ -1484,20 +1485,20 @@ public interface TrackingPackage extends EPackage {
 		EAttribute TRACKING_CODE_ORDER_RETURN__RETURN_ID = eINSTANCE.getTrackingCodeOrderReturn_ReturnId();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRACKING_CODE_ORDER_RETURN__ORDER_ID = eINSTANCE.getTrackingCodeOrderReturn_OrderId();
+		EReference TRACKING_CODE_ORDER_RETURN__ORDER_ID = eINSTANCE.getTrackingCodeOrderReturn_OrderId();
 
 		/**
-		 * The meta object literal for the '<em><b>Tracking Code Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tracking Code Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_TYPE_ID = eINSTANCE.getTrackingCodeOrderReturn_TrackingCodeTypeId();
+		EReference TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_TYPE_ID = eINSTANCE.getTrackingCodeOrderReturn_TrackingCodeTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Affiliate Referred Time Stamp</b></em>' attribute feature.
@@ -1540,12 +1541,12 @@ public interface TrackingPackage extends EPackage {
 		EAttribute TRACKING_CODE_ORDER_RETURN__SITE_ID = eINSTANCE.getTrackingCodeOrderReturn_SiteId();
 
 		/**
-		 * The meta object literal for the '<em><b>Tracking Code Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tracking Code Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_ID = eINSTANCE.getTrackingCodeOrderReturn_TrackingCodeId();
+		EReference TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_ID = eINSTANCE.getTrackingCodeOrderReturn_TrackingCodeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeTypeImpl <em>Code Type</em>}' class.
@@ -1608,12 +1609,12 @@ public interface TrackingPackage extends EPackage {
 		EAttribute TRACKING_CODE_VISIT__FROM_DATE = eINSTANCE.getTrackingCodeVisit_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Source Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Source Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRACKING_CODE_VISIT__SOURCE_ENUM_ID = eINSTANCE.getTrackingCodeVisit_SourceEnumId();
+		EReference TRACKING_CODE_VISIT__SOURCE_ENUM_ID = eINSTANCE.getTrackingCodeVisit_SourceEnumId();
 
 	}
 

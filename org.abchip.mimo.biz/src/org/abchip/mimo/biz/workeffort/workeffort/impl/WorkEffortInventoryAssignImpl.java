@@ -7,13 +7,17 @@
  */
 package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortInventoryAssign;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,8 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortInventoryAssignImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortInventoryAssignImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortInventoryAssignImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortInventoryAssignImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortInventoryAssignImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
@@ -59,26 +63,6 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,24 +83,24 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	protected double quantity = QUANTITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getInventoryItemId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected InventoryItem inventoryItemId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,7 +127,24 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -153,8 +154,8 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -189,7 +190,24 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -199,8 +217,8 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__STATUS_ID, oldStatusId, statusId));
@@ -239,12 +257,14 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__WORK_EFFORT_ID:
 				return getWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__QUANTITY:
 				return getQuantity();
+			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,14 +280,14 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__QUANTITY:
 				setQuantity((Double)newValue);
 				return;
+			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
+				return;
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,14 +304,14 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
 				return;
+			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
+				return;
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,12 +327,12 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__QUANTITY:
 				return quantity != QUANTITY_EDEFAULT;
+			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
 			case WorkeffortPackage.WORK_EFFORT_INVENTORY_ASSIGN__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -329,12 +349,8 @@ public class WorkEffortInventoryAssignImpl extends BizEntityImpl implements Work
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", inventoryItemId: ");
-		result.append(inventoryItemId);
 		result.append(", quantity: ");
 		result.append(quantity);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(')');
 		return result.toString();
 	}

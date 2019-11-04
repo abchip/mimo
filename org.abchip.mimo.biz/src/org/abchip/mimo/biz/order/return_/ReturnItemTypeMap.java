@@ -29,31 +29,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ReturnItemTypeMap extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Return Header Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Return Header Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Return Header Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Header Type Id</em>' attribute.
-	 * @see #setReturnHeaderTypeId(String)
+	 * @return the value of the '<em>Return Header Type Id</em>' reference.
+	 * @see #setReturnHeaderTypeId(ReturnHeaderType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap_ReturnHeaderTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ReturnHeaderType'"
+	 * @model keys="returnHeaderTypeId"
 	 * @generated
 	 */
-	String getReturnHeaderTypeId();
+	ReturnHeaderType getReturnHeaderTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnHeaderTypeId <em>Return Header Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnHeaderTypeId <em>Return Header Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Header Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Return Header Type Id</em>' reference.
 	 * @see #getReturnHeaderTypeId()
 	 * @generated
 	 */
-	void setReturnHeaderTypeId(String value);
+	void setReturnHeaderTypeId(ReturnHeaderType value);
 
 	/**
 	 * Returns the value of the '<em><b>Return Item Map Key</b></em>' attribute.
@@ -66,7 +65,8 @@ public interface ReturnItemTypeMap extends BizEntity {
 	 * @return the value of the '<em>Return Item Map Key</em>' attribute.
 	 * @see #setReturnItemMapKey(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap_ReturnItemMapKey()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getReturnItemMapKey();
@@ -82,29 +82,29 @@ public interface ReturnItemTypeMap extends BizEntity {
 	void setReturnItemMapKey(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Return Item Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Return Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Return Item Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Item Type Id</em>' attribute.
-	 * @see #setReturnItemTypeId(String)
+	 * @return the value of the '<em>Return Item Type Id</em>' reference.
+	 * @see #setReturnItemTypeId(ReturnAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnItemTypeMap_ReturnItemTypeId()
-	 * @model annotation="mimo-ent-domain frame='ReturnItemType'"
+	 * @model keys="returnAdjustmentTypeId"
 	 * @generated
 	 */
-	String getReturnItemTypeId();
+	ReturnAdjustmentType getReturnItemTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemTypeId <em>Return Item Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemTypeId <em>Return Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Item Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Return Item Type Id</em>' reference.
 	 * @see #getReturnItemTypeId()
 	 * @generated
 	 */
-	void setReturnItemTypeId(String value);
+	void setReturnItemTypeId(ReturnAdjustmentType value);
 
 } // ReturnItemTypeMap

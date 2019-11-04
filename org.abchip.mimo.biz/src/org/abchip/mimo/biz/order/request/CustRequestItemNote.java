@@ -38,7 +38,8 @@ public interface CustRequestItemNote extends BizEntityNote {
 	 * @return the value of the '<em>Cust Request Id</em>' attribute.
 	 * @see #setCustRequestId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemNote_CustRequestId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestId();
@@ -64,7 +65,8 @@ public interface CustRequestItemNote extends BizEntityNote {
 	 * @return the value of the '<em>Cust Request Item Seq Id</em>' attribute.
 	 * @see #setCustRequestItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.request.RequestPackage#getCustRequestItemNote_CustRequestItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestItemSeqId();

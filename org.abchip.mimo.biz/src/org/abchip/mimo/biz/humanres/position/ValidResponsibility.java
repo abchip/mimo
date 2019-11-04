@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.humanres.position;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.humanres.ability.ResponsibilityType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +22,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility()
@@ -69,8 +70,8 @@ public interface ValidResponsibility extends BizEntity {
 	 * @return the value of the '<em>Empl Position Type Id</em>' attribute.
 	 * @see #setEmplPositionTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_EmplPositionTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='EmplPositionType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmplPositionTypeId();
@@ -96,7 +97,8 @@ public interface ValidResponsibility extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -112,31 +114,30 @@ public interface ValidResponsibility extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Responsibility Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Responsibility Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Responsibility Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Responsibility Type Id</em>' attribute.
-	 * @see #setResponsibilityTypeId(String)
+	 * @return the value of the '<em>Responsibility Type Id</em>' reference.
+	 * @see #setResponsibilityTypeId(ResponsibilityType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getValidResponsibility_ResponsibilityTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ResponsibilityType'"
+	 * @model keys="responsibilityTypeId"
 	 * @generated
 	 */
-	String getResponsibilityTypeId();
+	ResponsibilityType getResponsibilityTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.ValidResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Responsibility Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Responsibility Type Id</em>' reference.
 	 * @see #getResponsibilityTypeId()
 	 * @generated
 	 */
-	void setResponsibilityTypeId(String value);
+	void setResponsibilityTypeId(ResponsibilityType value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

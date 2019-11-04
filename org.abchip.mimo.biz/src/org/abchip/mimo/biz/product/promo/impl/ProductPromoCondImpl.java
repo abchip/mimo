@@ -7,12 +7,16 @@
  */
 package org.abchip.mimo.biz.product.promo.impl;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.promo.ProductPromoCond;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,10 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCondImpl#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCondImpl#getProductPromoCondSeqId <em>Product Promo Cond Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCondImpl#getCondValue <em>Cond Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCondImpl#getOtherValue <em>Other Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCondImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCondImpl#getInputParamEnumId <em>Input Param Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCondImpl#getOperatorEnumId <em>Operator Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCondImpl#getOtherValue <em>Other Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,66 +126,6 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 	protected String condValue = COND_VALUE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUSTOM_METHOD_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String customMethodId = CUSTOM_METHOD_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInputParamEnumId() <em>Input Param Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputParamEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INPUT_PARAM_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInputParamEnumId() <em>Input Param Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputParamEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inputParamEnumId = INPUT_PARAM_ENUM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOperatorEnumId() <em>Operator Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperatorEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OPERATOR_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOperatorEnumId() <em>Operator Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperatorEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String operatorEnumId = OPERATOR_ENUM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOtherValue() <em>Other Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -200,6 +144,36 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 	 * @ordered
 	 */
 	protected String otherValue = OTHER_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCustomMethodId() <em>Custom Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod customMethodId;
+
+	/**
+	 * The cached value of the '{@link #getInputParamEnumId() <em>Input Param Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputParamEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration inputParamEnumId;
+
+	/**
+	 * The cached value of the '{@link #getOperatorEnumId() <em>Operator Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperatorEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration operatorEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,7 +223,24 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public String getCustomMethodId() {
+	public CustomMethod getCustomMethodId() {
+		if (customMethodId != null && ((EObject)customMethodId).eIsProxy()) {
+			InternalEObject oldCustomMethodId = (InternalEObject)customMethodId;
+			customMethodId = (CustomMethod)eResolveProxy(oldCustomMethodId);
+			if (customMethodId != oldCustomMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
+			}
+		}
+		return customMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetCustomMethodId() {
 		return customMethodId;
 	}
 
@@ -259,8 +250,8 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public void setCustomMethodId(String newCustomMethodId) {
-		String oldCustomMethodId = customMethodId;
+	public void setCustomMethodId(CustomMethod newCustomMethodId) {
+		CustomMethod oldCustomMethodId = customMethodId;
 		customMethodId = newCustomMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID, oldCustomMethodId, customMethodId));
@@ -272,7 +263,24 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public String getInputParamEnumId() {
+	public Enumeration getInputParamEnumId() {
+		if (inputParamEnumId != null && ((EObject)inputParamEnumId).eIsProxy()) {
+			InternalEObject oldInputParamEnumId = (InternalEObject)inputParamEnumId;
+			inputParamEnumId = (Enumeration)eResolveProxy(oldInputParamEnumId);
+			if (inputParamEnumId != oldInputParamEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID, oldInputParamEnumId, inputParamEnumId));
+			}
+		}
+		return inputParamEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetInputParamEnumId() {
 		return inputParamEnumId;
 	}
 
@@ -282,8 +290,8 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public void setInputParamEnumId(String newInputParamEnumId) {
-		String oldInputParamEnumId = inputParamEnumId;
+	public void setInputParamEnumId(Enumeration newInputParamEnumId) {
+		Enumeration oldInputParamEnumId = inputParamEnumId;
 		inputParamEnumId = newInputParamEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID, oldInputParamEnumId, inputParamEnumId));
@@ -295,7 +303,24 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public String getOperatorEnumId() {
+	public Enumeration getOperatorEnumId() {
+		if (operatorEnumId != null && ((EObject)operatorEnumId).eIsProxy()) {
+			InternalEObject oldOperatorEnumId = (InternalEObject)operatorEnumId;
+			operatorEnumId = (Enumeration)eResolveProxy(oldOperatorEnumId);
+			if (operatorEnumId != oldOperatorEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID, oldOperatorEnumId, operatorEnumId));
+			}
+		}
+		return operatorEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetOperatorEnumId() {
 		return operatorEnumId;
 	}
 
@@ -305,8 +330,8 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public void setOperatorEnumId(String newOperatorEnumId) {
-		String oldOperatorEnumId = operatorEnumId;
+	public void setOperatorEnumId(Enumeration newOperatorEnumId) {
+		Enumeration oldOperatorEnumId = operatorEnumId;
 		operatorEnumId = newOperatorEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID, oldOperatorEnumId, operatorEnumId));
@@ -420,14 +445,17 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 				return getProductPromoCondSeqId();
 			case PromoPackage.PRODUCT_PROMO_COND__COND_VALUE:
 				return getCondValue();
-			case PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID:
-				return getCustomMethodId();
-			case PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID:
-				return getInputParamEnumId();
-			case PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID:
-				return getOperatorEnumId();
 			case PromoPackage.PRODUCT_PROMO_COND__OTHER_VALUE:
 				return getOtherValue();
+			case PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID:
+				if (resolve) return getCustomMethodId();
+				return basicGetCustomMethodId();
+			case PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID:
+				if (resolve) return getInputParamEnumId();
+				return basicGetInputParamEnumId();
+			case PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID:
+				if (resolve) return getOperatorEnumId();
+				return basicGetOperatorEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -452,17 +480,17 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 			case PromoPackage.PRODUCT_PROMO_COND__COND_VALUE:
 				setCondValue((String)newValue);
 				return;
-			case PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID:
-				setCustomMethodId((String)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID:
-				setInputParamEnumId((String)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID:
-				setOperatorEnumId((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO_COND__OTHER_VALUE:
 				setOtherValue((String)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID:
+				setCustomMethodId((CustomMethod)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID:
+				setInputParamEnumId((Enumeration)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID:
+				setOperatorEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -488,17 +516,17 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 			case PromoPackage.PRODUCT_PROMO_COND__COND_VALUE:
 				setCondValue(COND_VALUE_EDEFAULT);
 				return;
-			case PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID:
-				setCustomMethodId(CUSTOM_METHOD_ID_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID:
-				setInputParamEnumId(INPUT_PARAM_ENUM_ID_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID:
-				setOperatorEnumId(OPERATOR_ENUM_ID_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO_COND__OTHER_VALUE:
 				setOtherValue(OTHER_VALUE_EDEFAULT);
+				return;
+			case PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID:
+				setCustomMethodId((CustomMethod)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID:
+				setInputParamEnumId((Enumeration)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID:
+				setOperatorEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -520,14 +548,14 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 				return PRODUCT_PROMO_COND_SEQ_ID_EDEFAULT == null ? productPromoCondSeqId != null : !PRODUCT_PROMO_COND_SEQ_ID_EDEFAULT.equals(productPromoCondSeqId);
 			case PromoPackage.PRODUCT_PROMO_COND__COND_VALUE:
 				return COND_VALUE_EDEFAULT == null ? condValue != null : !COND_VALUE_EDEFAULT.equals(condValue);
-			case PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID:
-				return CUSTOM_METHOD_ID_EDEFAULT == null ? customMethodId != null : !CUSTOM_METHOD_ID_EDEFAULT.equals(customMethodId);
-			case PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID:
-				return INPUT_PARAM_ENUM_ID_EDEFAULT == null ? inputParamEnumId != null : !INPUT_PARAM_ENUM_ID_EDEFAULT.equals(inputParamEnumId);
-			case PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID:
-				return OPERATOR_ENUM_ID_EDEFAULT == null ? operatorEnumId != null : !OPERATOR_ENUM_ID_EDEFAULT.equals(operatorEnumId);
 			case PromoPackage.PRODUCT_PROMO_COND__OTHER_VALUE:
 				return OTHER_VALUE_EDEFAULT == null ? otherValue != null : !OTHER_VALUE_EDEFAULT.equals(otherValue);
+			case PromoPackage.PRODUCT_PROMO_COND__CUSTOM_METHOD_ID:
+				return customMethodId != null;
+			case PromoPackage.PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID:
+				return inputParamEnumId != null;
+			case PromoPackage.PRODUCT_PROMO_COND__OPERATOR_ENUM_ID:
+				return operatorEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -550,12 +578,6 @@ public class ProductPromoCondImpl extends BizEntityImpl implements ProductPromoC
 		result.append(productPromoCondSeqId);
 		result.append(", condValue: ");
 		result.append(condValue);
-		result.append(", customMethodId: ");
-		result.append(customMethodId);
-		result.append(", inputParamEnumId: ");
-		result.append(inputParamEnumId);
-		result.append(", operatorEnumId: ");
-		result.append(operatorEnumId);
 		result.append(", otherValue: ");
 		result.append(otherValue);
 		result.append(')');

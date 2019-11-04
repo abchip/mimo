@@ -197,12 +197,11 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -402,6 +401,22 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -418,22 +433,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -544,6 +543,14 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -552,14 +559,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -639,6 +638,14 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -647,14 +654,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -741,8 +740,8 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGitHubUser_ProductStoreId() {
-		return (EAttribute)gitHubUserEClass.getEStructuralFeatures().get(3);
+	public EReference getGitHubUser_ProductStoreId() {
+		return (EReference)gitHubUserEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -752,7 +751,7 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 	 */
 	@Override
 	public EAttribute getGitHubUser_TokenType() {
-		return (EAttribute)gitHubUserEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)gitHubUserEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -801,8 +800,8 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGoogleUser_ProductStoreId() {
-		return (EAttribute)googleUserEClass.getEStructuralFeatures().get(3);
+	public EReference getGoogleUser_ProductStoreId() {
+		return (EReference)googleUserEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -812,7 +811,7 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 	 */
 	@Override
 	public EAttribute getGoogleUser_TokenType() {
-		return (EAttribute)googleUserEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)googleUserEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -861,8 +860,8 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLinkedInUser_ProductStoreId() {
-		return (EAttribute)linkedInUserEClass.getEStructuralFeatures().get(3);
+	public EReference getLinkedInUser_ProductStoreId() {
+		return (EReference)linkedInUserEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1248,21 +1247,21 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		createEAttribute(gitHubUserEClass, GIT_HUB_USER__GIT_HUB_USER_ID);
 		createEAttribute(gitHubUserEClass, GIT_HUB_USER__ACCESS_TOKEN);
 		createEAttribute(gitHubUserEClass, GIT_HUB_USER__ENV_PREFIX);
-		createEAttribute(gitHubUserEClass, GIT_HUB_USER__PRODUCT_STORE_ID);
 		createEAttribute(gitHubUserEClass, GIT_HUB_USER__TOKEN_TYPE);
+		createEReference(gitHubUserEClass, GIT_HUB_USER__PRODUCT_STORE_ID);
 
 		googleUserEClass = createEClass(GOOGLE_USER);
 		createEAttribute(googleUserEClass, GOOGLE_USER__GOOGLE_USER_ID);
 		createEAttribute(googleUserEClass, GOOGLE_USER__ACCESS_TOKEN);
 		createEAttribute(googleUserEClass, GOOGLE_USER__ENV_PREFIX);
-		createEAttribute(googleUserEClass, GOOGLE_USER__PRODUCT_STORE_ID);
 		createEAttribute(googleUserEClass, GOOGLE_USER__TOKEN_TYPE);
+		createEReference(googleUserEClass, GOOGLE_USER__PRODUCT_STORE_ID);
 
 		linkedInUserEClass = createEClass(LINKED_IN_USER);
 		createEAttribute(linkedInUserEClass, LINKED_IN_USER__LINKED_IN_USER_ID);
 		createEAttribute(linkedInUserEClass, LINKED_IN_USER__ACCESS_TOKEN);
 		createEAttribute(linkedInUserEClass, LINKED_IN_USER__ENV_PREFIX);
-		createEAttribute(linkedInUserEClass, LINKED_IN_USER__PRODUCT_STORE_ID);
+		createEReference(linkedInUserEClass, LINKED_IN_USER__PRODUCT_STORE_ID);
 
 		oAuth2GitHubEClass = createEClass(OAUTH2_GIT_HUB);
 		createEAttribute(oAuth2GitHubEClass, OAUTH2_GIT_HUB__PRODUCT_STORE_ID);
@@ -1329,6 +1328,7 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1348,21 +1348,24 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		initEAttribute(getGitHubUser_GitHubUserId(), ecorePackage.getEString(), "gitHubUserId", null, 1, 1, GitHubUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGitHubUser_AccessToken(), ecorePackage.getEString(), "accessToken", null, 0, 1, GitHubUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGitHubUser_EnvPrefix(), ecorePackage.getEString(), "envPrefix", null, 0, 1, GitHubUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGitHubUser_ProductStoreId(), ecorePackage.getEString(), "productStoreId", null, 0, 1, GitHubUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGitHubUser_TokenType(), ecorePackage.getEString(), "tokenType", null, 0, 1, GitHubUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGitHubUser_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, GitHubUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getGitHubUser_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
 
 		initEClass(googleUserEClass, GoogleUser.class, "GoogleUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGoogleUser_GoogleUserId(), ecorePackage.getEString(), "googleUserId", null, 1, 1, GoogleUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoogleUser_AccessToken(), ecorePackage.getEString(), "accessToken", null, 0, 1, GoogleUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoogleUser_EnvPrefix(), ecorePackage.getEString(), "envPrefix", null, 0, 1, GoogleUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGoogleUser_ProductStoreId(), ecorePackage.getEString(), "productStoreId", null, 0, 1, GoogleUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoogleUser_TokenType(), ecorePackage.getEString(), "tokenType", null, 0, 1, GoogleUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoogleUser_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, GoogleUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getGoogleUser_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
 
 		initEClass(linkedInUserEClass, LinkedInUser.class, "LinkedInUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLinkedInUser_LinkedInUserId(), ecorePackage.getEString(), "linkedInUserId", null, 1, 1, LinkedInUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLinkedInUser_AccessToken(), ecorePackage.getEString(), "accessToken", null, 0, 1, LinkedInUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLinkedInUser_EnvPrefix(), ecorePackage.getEString(), "envPrefix", null, 0, 1, LinkedInUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLinkedInUser_ProductStoreId(), ecorePackage.getEString(), "productStoreId", null, 0, 1, LinkedInUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLinkedInUser_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, LinkedInUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getLinkedInUser_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
 
 		initEClass(oAuth2GitHubEClass, OAuth2GitHub.class, "OAuth2GitHub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOAuth2GitHub_ProductStoreId(), ecorePackage.getEString(), "productStoreId", null, 1, 1, OAuth2GitHub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1406,8 +1409,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		// Create annotations
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -1495,79 +1496,6 @@ public class PassportPackageImpl extends EPackageImpl implements PassportPackage
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (getGitHubUser_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getGoogleUser_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getLinkedInUser_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getOAuth2GitHub_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getOAuth2Google_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getOAuth2LinkedIn_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getThirdPartyLogin_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore"
-		   },
-		   new URI[] {
-			 URI.createURI(org.abchip.mimo.entity.EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

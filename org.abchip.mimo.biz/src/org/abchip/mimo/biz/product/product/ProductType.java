@@ -139,30 +139,30 @@ public interface ProductType extends BizEntityType<Product> {
 	void setIsPhysical(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(ProductType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductType'"
+	 * @model keys="productTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	ProductType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(ProductType value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Type Id</b></em>' attribute.
@@ -175,7 +175,7 @@ public interface ProductType extends BizEntityType<Product> {
 	 * @return the value of the '<em>Product Type Id</em>' attribute.
 	 * @see #setProductTypeId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductType_ProductTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

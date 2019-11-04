@@ -40,6 +40,14 @@ public interface FrameManager {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model required="true" klassRequired="true" nameRequired="true"
+	 * @generated
+	 */
+	<E extends Entity> E createProxy(Class<E> klass, String name);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model contextProviderRequired="true"
 	 * @generated
 	 */

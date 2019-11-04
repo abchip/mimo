@@ -93,7 +93,8 @@ public interface InvoiceItemAttribute extends BizEntity {
 	 * @return the value of the '<em>Invoice Id</em>' attribute.
 	 * @see #setInvoiceId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAttribute_InvoiceId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceId();
@@ -119,7 +120,8 @@ public interface InvoiceItemAttribute extends BizEntity {
 	 * @return the value of the '<em>Invoice Item Seq Id</em>' attribute.
 	 * @see #setInvoiceItemSeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAttribute_InvoiceItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getInvoiceItemSeqId();
@@ -145,7 +147,8 @@ public interface InvoiceItemAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceItemAttribute_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();

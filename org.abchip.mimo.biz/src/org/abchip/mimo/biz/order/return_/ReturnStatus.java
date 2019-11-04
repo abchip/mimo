@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.order.return_;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +23,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnStatusId <em>Return Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getStatusDatetime <em>Status Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnId <em>Return Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus()
@@ -34,56 +36,56 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ReturnStatus extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Change By User Login Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Change By User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Change By User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Change By User Login Id</em>' attribute.
-	 * @see #setChangeByUserLoginId(String)
+	 * @return the value of the '<em>Change By User Login Id</em>' reference.
+	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_ChangeByUserLoginId()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getChangeByUserLoginId();
+	UserLogin getChangeByUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Change By User Login Id</em>' attribute.
+	 * @param value the new value of the '<em>Change By User Login Id</em>' reference.
 	 * @see #getChangeByUserLoginId()
 	 * @generated
 	 */
-	void setChangeByUserLoginId(String value);
+	void setChangeByUserLoginId(UserLogin value);
 
 	/**
-	 * Returns the value of the '<em><b>Return Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Return Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Return Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Id</em>' attribute.
-	 * @see #setReturnId(String)
+	 * @return the value of the '<em>Return Id</em>' reference.
+	 * @see #setReturnId(ReturnHeader)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_ReturnId()
-	 * @model annotation="mimo-ent-domain frame='ReturnHeader'"
+	 * @model keys="returnId"
 	 * @generated
 	 */
-	String getReturnId();
+	ReturnHeader getReturnId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnId <em>Return Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnId <em>Return Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Id</em>' attribute.
+	 * @param value the new value of the '<em>Return Id</em>' reference.
 	 * @see #getReturnId()
 	 * @generated
 	 */
-	void setReturnId(String value);
+	void setReturnId(ReturnHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Return Item Seq Id</b></em>' attribute.
@@ -122,7 +124,7 @@ public interface ReturnStatus extends BizEntity {
 	 * @return the value of the '<em>Return Status Id</em>' attribute.
 	 * @see #setReturnStatusId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_ReturnStatusId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -165,29 +167,29 @@ public interface ReturnStatus extends BizEntity {
 	void setStatusDatetime(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnStatus_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 } // ReturnStatus

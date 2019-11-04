@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface AbilityPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-humanres-ability";
+	String eNS_PREFIX = "biz-ability";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,22 +117,13 @@ public interface AbilityPackage extends EPackage {
 	int PARTY_QUAL__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Party Qual Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_QUAL__PARTY_QUAL_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_QUAL__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+	int PARTY_QUAL__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Qualification Desc</b></em>' attribute.
@@ -140,16 +132,7 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_QUAL__QUALIFICATION_DESC = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_QUAL__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int PARTY_QUAL__QUALIFICATION_DESC = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -158,7 +141,7 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_QUAL__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int PARTY_QUAL__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -167,10 +150,28 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_QUAL__TITLE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int PARTY_QUAL__TITLE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Verif Status Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Qual Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL__PARTY_QUAL_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_QUAL__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Verif Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -270,7 +271,7 @@ public interface AbilityPackage extends EPackage {
 	int PARTY_QUAL_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -343,31 +344,13 @@ public interface AbilityPackage extends EPackage {
 	int PARTY_RESUME__RESUME_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Content Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_RESUME__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_RESUME__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Resume Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_RESUME__RESUME_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_RESUME__RESUME_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Resume Text</b></em>' attribute.
@@ -376,7 +359,25 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_RESUME__RESUME_TEXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PARTY_RESUME__RESUME_TEXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_RESUME__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Content Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_RESUME__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Party Resume</em>' class.
@@ -443,22 +444,13 @@ public interface AbilityPackage extends EPackage {
 	int PARTY_SKILL__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Skill Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTY_SKILL__SKILL_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Rating</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_SKILL__RATING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PARTY_SKILL__RATING = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Skill Level</b></em>' attribute.
@@ -467,7 +459,7 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_SKILL__SKILL_LEVEL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PARTY_SKILL__SKILL_LEVEL = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Started Using Date</b></em>' attribute.
@@ -476,7 +468,7 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_SKILL__STARTED_USING_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PARTY_SKILL__STARTED_USING_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Years Experience</b></em>' attribute.
@@ -485,7 +477,16 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARTY_SKILL__YEARS_EXPERIENCE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PARTY_SKILL__YEARS_EXPERIENCE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Skill Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_SKILL__SKILL_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Party Skill</em>' class.
@@ -570,7 +571,7 @@ public interface AbilityPackage extends EPackage {
 	int PERF_RATING_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -670,31 +671,13 @@ public interface AbilityPackage extends EPackage {
 	int PERF_REVIEW__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Empl Position Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERF_REVIEW__EMPL_POSITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERF_REVIEW__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Manager Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERF_REVIEW__MANAGER_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PERF_REVIEW__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Manager Role Type Id</b></em>' attribute.
@@ -703,16 +686,7 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERF_REVIEW__MANAGER_ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Payment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERF_REVIEW__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PERF_REVIEW__MANAGER_ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -721,7 +695,34 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERF_REVIEW__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PERF_REVIEW__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Manager Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW__MANAGER_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Empl Position Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERF_REVIEW__EMPL_POSITION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Perf Review</em>' class.
@@ -824,7 +825,7 @@ public interface AbilityPackage extends EPackage {
 	int PERF_REVIEW_ITEM__COMMENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Perf Rating Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Perf Rating Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -833,7 +834,7 @@ public interface AbilityPackage extends EPackage {
 	int PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Perf Review Item Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Perf Review Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -933,7 +934,7 @@ public interface AbilityPackage extends EPackage {
 	int PERF_REVIEW_ITEM_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1115,22 +1116,13 @@ public interface AbilityPackage extends EPackage {
 	int PERSON_TRAINING__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Training Class Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON_TRAINING__TRAINING_CLASS_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_TRAINING__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PERSON_TRAINING__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Approval Status</b></em>' attribute.
@@ -1139,16 +1131,7 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_TRAINING__APPROVAL_STATUS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Approver Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON_TRAINING__APPROVER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PERSON_TRAINING__APPROVAL_STATUS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Reason</b></em>' attribute.
@@ -1157,7 +1140,7 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_TRAINING__REASON = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PERSON_TRAINING__REASON = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1166,25 +1149,43 @@ public interface AbilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_TRAINING__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PERSON_TRAINING__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Training Request Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Approver Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_TRAINING__TRAINING_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PERSON_TRAINING__APPROVER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Training Class Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_TRAINING__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PERSON_TRAINING__TRAINING_CLASS_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_TRAINING__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Training Request Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_TRAINING__TRAINING_REQUEST_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Person Training</em>' class.
@@ -1269,7 +1270,7 @@ public interface AbilityPackage extends EPackage {
 	int RESPONSIBILITY_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1360,7 +1361,7 @@ public interface AbilityPackage extends EPackage {
 	int SKILL_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1451,7 +1452,7 @@ public interface AbilityPackage extends EPackage {
 	int TRAINING_CLASS_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1491,15 +1492,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPartyQual_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId <em>Party Qual Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId <em>Party Qual Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Qual Type Id</em>'.
+	 * @return the meta object for the reference '<em>Party Qual Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PartyQual#getPartyQualTypeId()
 	 * @see #getPartyQual()
 	 * @generated
 	 */
-	EAttribute getPartyQual_PartyQualTypeId();
+	EReference getPartyQual_PartyQualTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getFromDate <em>From Date</em>}'.
@@ -1524,15 +1525,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPartyQual_QualificationDesc();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PartyQual#getStatusId()
 	 * @see #getPartyQual()
 	 * @generated
 	 */
-	EAttribute getPartyQual_StatusId();
+	EReference getPartyQual_StatusId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getThruDate <em>Thru Date</em>}'.
@@ -1557,15 +1558,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPartyQual_Title();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getVerifStatusId <em>Verif Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PartyQual#getVerifStatusId <em>Verif Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Verif Status Id</em>'.
+	 * @return the meta object for the reference '<em>Verif Status Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PartyQual#getVerifStatusId()
 	 * @see #getPartyQual()
 	 * @generated
 	 */
-	EAttribute getPartyQual_VerifStatusId();
+	EReference getPartyQual_VerifStatusId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.PartyQualType <em>Party Qual Type</em>}'.
@@ -1611,15 +1612,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPartyQualType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartyQualType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PartyQualType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PartyQualType#getParentTypeId()
 	 * @see #getPartyQualType()
 	 * @generated
 	 */
-	EAttribute getPartyQualType_ParentTypeId();
+	EReference getPartyQualType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.PartyResume <em>Party Resume</em>}'.
@@ -1643,26 +1644,26 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPartyResume_ResumeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getContentId <em>Content Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getContentId <em>Content Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content Id</em>'.
+	 * @return the meta object for the reference '<em>Content Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PartyResume#getContentId()
 	 * @see #getPartyResume()
 	 * @generated
 	 */
-	EAttribute getPartyResume_ContentId();
+	EReference getPartyResume_ContentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PartyResume#getPartyId()
 	 * @see #getPartyResume()
 	 * @generated
 	 */
-	EAttribute getPartyResume_PartyId();
+	EReference getPartyResume_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartyResume#getResumeDate <em>Resume Date</em>}'.
@@ -1708,15 +1709,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPartySkill_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartySkill#getSkillTypeId <em>Skill Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PartySkill#getSkillTypeId <em>Skill Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Skill Type Id</em>'.
+	 * @return the meta object for the reference '<em>Skill Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PartySkill#getSkillTypeId()
 	 * @see #getPartySkill()
 	 * @generated
 	 */
-	EAttribute getPartySkill_SkillTypeId();
+	EReference getPartySkill_SkillTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PartySkill#getRating <em>Rating</em>}'.
@@ -1806,15 +1807,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPerfRatingType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfRatingType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PerfRatingType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PerfRatingType#getParentTypeId()
 	 * @see #getPerfRatingType()
 	 * @generated
 	 */
-	EAttribute getPerfRatingType_ParentTypeId();
+	EReference getPerfRatingType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.PerfReview <em>Perf Review</em>}'.
@@ -1871,15 +1872,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPerfReview_Comments();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getEmplPositionId <em>Empl Position Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getEmplPositionId <em>Empl Position Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Empl Position Id</em>'.
+	 * @return the meta object for the reference '<em>Empl Position Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PerfReview#getEmplPositionId()
 	 * @see #getPerfReview()
 	 * @generated
 	 */
-	EAttribute getPerfReview_EmplPositionId();
+	EReference getPerfReview_EmplPositionId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getFromDate <em>From Date</em>}'.
@@ -1893,15 +1894,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPerfReview_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getManagerPartyId <em>Manager Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getManagerPartyId <em>Manager Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Manager Party Id</em>'.
+	 * @return the meta object for the reference '<em>Manager Party Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PerfReview#getManagerPartyId()
 	 * @see #getPerfReview()
 	 * @generated
 	 */
-	EAttribute getPerfReview_ManagerPartyId();
+	EReference getPerfReview_ManagerPartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getManagerRoleTypeId <em>Manager Role Type Id</em>}'.
@@ -1915,15 +1916,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPerfReview_ManagerRoleTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getPaymentId <em>Payment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getPaymentId <em>Payment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PerfReview#getPaymentId()
 	 * @see #getPerfReview()
 	 * @generated
 	 */
-	EAttribute getPerfReview_PaymentId();
+	EReference getPerfReview_PaymentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfReview#getThruDate <em>Thru Date</em>}'.
@@ -2002,26 +2003,26 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPerfReviewItem_Comments();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfRatingTypeId <em>Perf Rating Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfRatingTypeId <em>Perf Rating Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Perf Rating Type Id</em>'.
+	 * @return the meta object for the reference '<em>Perf Rating Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfRatingTypeId()
 	 * @see #getPerfReviewItem()
 	 * @generated
 	 */
-	EAttribute getPerfReviewItem_PerfRatingTypeId();
+	EReference getPerfReviewItem_PerfRatingTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfReviewItemTypeId <em>Perf Review Item Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfReviewItemTypeId <em>Perf Review Item Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Perf Review Item Type Id</em>'.
+	 * @return the meta object for the reference '<em>Perf Review Item Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PerfReviewItem#getPerfReviewItemTypeId()
 	 * @see #getPerfReviewItem()
 	 * @generated
 	 */
-	EAttribute getPerfReviewItem_PerfReviewItemTypeId();
+	EReference getPerfReviewItem_PerfReviewItemTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItemType <em>Perf Review Item Type</em>}'.
@@ -2067,15 +2068,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPerfReviewItemType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItemType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PerfReviewItemType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PerfReviewItemType#getParentTypeId()
 	 * @see #getPerfReviewItemType()
 	 * @generated
 	 */
-	EAttribute getPerfReviewItemType_ParentTypeId();
+	EReference getPerfReviewItemType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.PerformanceNote <em>Performance Note</em>}'.
@@ -2175,15 +2176,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPersonTraining_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingClassTypeId <em>Training Class Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingClassTypeId <em>Training Class Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Training Class Type Id</em>'.
+	 * @return the meta object for the reference '<em>Training Class Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingClassTypeId()
 	 * @see #getPersonTraining()
 	 * @generated
 	 */
-	EAttribute getPersonTraining_TrainingClassTypeId();
+	EReference getPersonTraining_TrainingClassTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getFromDate <em>From Date</em>}'.
@@ -2208,15 +2209,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPersonTraining_ApprovalStatus();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApproverId <em>Approver Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getApproverId <em>Approver Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Approver Id</em>'.
+	 * @return the meta object for the reference '<em>Approver Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PersonTraining#getApproverId()
 	 * @see #getPersonTraining()
 	 * @generated
 	 */
-	EAttribute getPersonTraining_ApproverId();
+	EReference getPersonTraining_ApproverId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getReason <em>Reason</em>}'.
@@ -2241,26 +2242,26 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getPersonTraining_ThruDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingRequestId <em>Training Request Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingRequestId <em>Training Request Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Training Request Id</em>'.
+	 * @return the meta object for the reference '<em>Training Request Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PersonTraining#getTrainingRequestId()
 	 * @see #getPersonTraining()
 	 * @generated
 	 */
-	EAttribute getPersonTraining_TrainingRequestId();
+	EReference getPersonTraining_TrainingRequestId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getWorkEffortId <em>Work Effort Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.PersonTraining#getWorkEffortId <em>Work Effort Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Work Effort Id</em>'.
+	 * @return the meta object for the reference '<em>Work Effort Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.PersonTraining#getWorkEffortId()
 	 * @see #getPersonTraining()
 	 * @generated
 	 */
-	EAttribute getPersonTraining_WorkEffortId();
+	EReference getPersonTraining_WorkEffortId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.ResponsibilityType <em>Responsibility Type</em>}'.
@@ -2306,15 +2307,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getResponsibilityType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.ResponsibilityType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.ResponsibilityType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.ResponsibilityType#getParentTypeId()
 	 * @see #getResponsibilityType()
 	 * @generated
 	 */
-	EAttribute getResponsibilityType_ParentTypeId();
+	EReference getResponsibilityType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.SkillType <em>Skill Type</em>}'.
@@ -2360,15 +2361,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getSkillType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.SkillType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.SkillType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.SkillType#getParentTypeId()
 	 * @see #getSkillType()
 	 * @generated
 	 */
-	EAttribute getSkillType_ParentTypeId();
+	EReference getSkillType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.humanres.ability.TrainingClassType <em>Training Class Type</em>}'.
@@ -2414,15 +2415,15 @@ public interface AbilityPackage extends EPackage {
 	EAttribute getTrainingClassType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.humanres.ability.TrainingClassType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.humanres.ability.TrainingClassType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.humanres.ability.TrainingClassType#getParentTypeId()
 	 * @see #getTrainingClassType()
 	 * @generated
 	 */
-	EAttribute getTrainingClassType_ParentTypeId();
+	EReference getTrainingClassType_ParentTypeId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2465,12 +2466,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PARTY_QUAL__PARTY_ID = eINSTANCE.getPartyQual_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Qual Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Qual Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_QUAL__PARTY_QUAL_TYPE_ID = eINSTANCE.getPartyQual_PartyQualTypeId();
+		EReference PARTY_QUAL__PARTY_QUAL_TYPE_ID = eINSTANCE.getPartyQual_PartyQualTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -2489,12 +2490,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PARTY_QUAL__QUALIFICATION_DESC = eINSTANCE.getPartyQual_QualificationDesc();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_QUAL__STATUS_ID = eINSTANCE.getPartyQual_StatusId();
+		EReference PARTY_QUAL__STATUS_ID = eINSTANCE.getPartyQual_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -2513,12 +2514,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PARTY_QUAL__TITLE = eINSTANCE.getPartyQual_Title();
 
 		/**
-		 * The meta object literal for the '<em><b>Verif Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Verif Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_QUAL__VERIF_STATUS_ID = eINSTANCE.getPartyQual_VerifStatusId();
+		EReference PARTY_QUAL__VERIF_STATUS_ID = eINSTANCE.getPartyQual_VerifStatusId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PartyQualTypeImpl <em>Party Qual Type</em>}' class.
@@ -2555,12 +2556,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PARTY_QUAL_TYPE__HAS_TABLE = eINSTANCE.getPartyQualType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_QUAL_TYPE__PARENT_TYPE_ID = eINSTANCE.getPartyQualType_ParentTypeId();
+		EReference PARTY_QUAL_TYPE__PARENT_TYPE_ID = eINSTANCE.getPartyQualType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PartyResumeImpl <em>Party Resume</em>}' class.
@@ -2581,20 +2582,20 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PARTY_RESUME__RESUME_ID = eINSTANCE.getPartyResume_ResumeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_RESUME__CONTENT_ID = eINSTANCE.getPartyResume_ContentId();
+		EReference PARTY_RESUME__CONTENT_ID = eINSTANCE.getPartyResume_ContentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_RESUME__PARTY_ID = eINSTANCE.getPartyResume_PartyId();
+		EReference PARTY_RESUME__PARTY_ID = eINSTANCE.getPartyResume_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Resume Date</b></em>' attribute feature.
@@ -2631,12 +2632,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PARTY_SKILL__PARTY_ID = eINSTANCE.getPartySkill_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Skill Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Skill Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PARTY_SKILL__SKILL_TYPE_ID = eINSTANCE.getPartySkill_SkillTypeId();
+		EReference PARTY_SKILL__SKILL_TYPE_ID = eINSTANCE.getPartySkill_SkillTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Rating</b></em>' attribute feature.
@@ -2705,12 +2706,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PERF_RATING_TYPE__HAS_TABLE = eINSTANCE.getPerfRatingType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERF_RATING_TYPE__PARENT_TYPE_ID = eINSTANCE.getPerfRatingType_ParentTypeId();
+		EReference PERF_RATING_TYPE__PARENT_TYPE_ID = eINSTANCE.getPerfRatingType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewImpl <em>Perf Review</em>}' class.
@@ -2755,12 +2756,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PERF_REVIEW__COMMENTS = eINSTANCE.getPerfReview_Comments();
 
 		/**
-		 * The meta object literal for the '<em><b>Empl Position Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Empl Position Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERF_REVIEW__EMPL_POSITION_ID = eINSTANCE.getPerfReview_EmplPositionId();
+		EReference PERF_REVIEW__EMPL_POSITION_ID = eINSTANCE.getPerfReview_EmplPositionId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -2771,12 +2772,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PERF_REVIEW__FROM_DATE = eINSTANCE.getPerfReview_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Manager Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Manager Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERF_REVIEW__MANAGER_PARTY_ID = eINSTANCE.getPerfReview_ManagerPartyId();
+		EReference PERF_REVIEW__MANAGER_PARTY_ID = eINSTANCE.getPerfReview_ManagerPartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Manager Role Type Id</b></em>' attribute feature.
@@ -2787,12 +2788,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PERF_REVIEW__MANAGER_ROLE_TYPE_ID = eINSTANCE.getPerfReview_ManagerRoleTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERF_REVIEW__PAYMENT_ID = eINSTANCE.getPerfReview_PaymentId();
+		EReference PERF_REVIEW__PAYMENT_ID = eINSTANCE.getPerfReview_PaymentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -2853,20 +2854,20 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PERF_REVIEW_ITEM__COMMENTS = eINSTANCE.getPerfReviewItem_Comments();
 
 		/**
-		 * The meta object literal for the '<em><b>Perf Rating Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Perf Rating Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID = eINSTANCE.getPerfReviewItem_PerfRatingTypeId();
+		EReference PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID = eINSTANCE.getPerfReviewItem_PerfRatingTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Perf Review Item Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Perf Review Item Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID = eINSTANCE.getPerfReviewItem_PerfReviewItemTypeId();
+		EReference PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID = eINSTANCE.getPerfReviewItem_PerfReviewItemTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerfReviewItemTypeImpl <em>Perf Review Item Type</em>}' class.
@@ -2903,12 +2904,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PERF_REVIEW_ITEM_TYPE__HAS_TABLE = eINSTANCE.getPerfReviewItemType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERF_REVIEW_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getPerfReviewItemType_ParentTypeId();
+		EReference PERF_REVIEW_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getPerfReviewItemType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.PerformanceNoteImpl <em>Performance Note</em>}' class.
@@ -2987,12 +2988,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PERSON_TRAINING__PARTY_ID = eINSTANCE.getPersonTraining_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Training Class Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Training Class Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERSON_TRAINING__TRAINING_CLASS_TYPE_ID = eINSTANCE.getPersonTraining_TrainingClassTypeId();
+		EReference PERSON_TRAINING__TRAINING_CLASS_TYPE_ID = eINSTANCE.getPersonTraining_TrainingClassTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -3011,12 +3012,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PERSON_TRAINING__APPROVAL_STATUS = eINSTANCE.getPersonTraining_ApprovalStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Approver Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Approver Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERSON_TRAINING__APPROVER_ID = eINSTANCE.getPersonTraining_ApproverId();
+		EReference PERSON_TRAINING__APPROVER_ID = eINSTANCE.getPersonTraining_ApproverId();
 
 		/**
 		 * The meta object literal for the '<em><b>Reason</b></em>' attribute feature.
@@ -3035,20 +3036,20 @@ public interface AbilityPackage extends EPackage {
 		EAttribute PERSON_TRAINING__THRU_DATE = eINSTANCE.getPersonTraining_ThruDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Training Request Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Training Request Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERSON_TRAINING__TRAINING_REQUEST_ID = eINSTANCE.getPersonTraining_TrainingRequestId();
+		EReference PERSON_TRAINING__TRAINING_REQUEST_ID = eINSTANCE.getPersonTraining_TrainingRequestId();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERSON_TRAINING__WORK_EFFORT_ID = eINSTANCE.getPersonTraining_WorkEffortId();
+		EReference PERSON_TRAINING__WORK_EFFORT_ID = eINSTANCE.getPersonTraining_WorkEffortId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.ResponsibilityTypeImpl <em>Responsibility Type</em>}' class.
@@ -3085,12 +3086,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute RESPONSIBILITY_TYPE__HAS_TABLE = eINSTANCE.getResponsibilityType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESPONSIBILITY_TYPE__PARENT_TYPE_ID = eINSTANCE.getResponsibilityType_ParentTypeId();
+		EReference RESPONSIBILITY_TYPE__PARENT_TYPE_ID = eINSTANCE.getResponsibilityType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.SkillTypeImpl <em>Skill Type</em>}' class.
@@ -3127,12 +3128,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute SKILL_TYPE__HAS_TABLE = eINSTANCE.getSkillType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SKILL_TYPE__PARENT_TYPE_ID = eINSTANCE.getSkillType_ParentTypeId();
+		EReference SKILL_TYPE__PARENT_TYPE_ID = eINSTANCE.getSkillType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.humanres.ability.impl.TrainingClassTypeImpl <em>Training Class Type</em>}' class.
@@ -3169,12 +3170,12 @@ public interface AbilityPackage extends EPackage {
 		EAttribute TRAINING_CLASS_TYPE__HAS_TABLE = eINSTANCE.getTrainingClassType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRAINING_CLASS_TYPE__PARENT_TYPE_ID = eINSTANCE.getTrainingClassType_ParentTypeId();
+		EReference TRAINING_CLASS_TYPE__PARENT_TYPE_ID = eINSTANCE.getTrainingClassType_ParentTypeId();
 
 	}
 

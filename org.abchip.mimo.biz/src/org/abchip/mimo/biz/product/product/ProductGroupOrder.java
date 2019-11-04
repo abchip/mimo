@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.service.schedule.JobSandbox;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,12 +26,12 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getGroupOrderId <em>Group Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getJobId <em>Job Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getReqOrderQty <em>Req Order Qty</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getSoldOrderQty <em>Sold Order Qty</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getJobId <em>Job Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder()
@@ -74,7 +76,7 @@ public interface ProductGroupOrder extends BizEntity {
 	 * @return the value of the '<em>Group Order Id</em>' attribute.
 	 * @see #setGroupOrderId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_GroupOrderId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -91,30 +93,30 @@ public interface ProductGroupOrder extends BizEntity {
 	void setGroupOrderId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Job Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Job Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Job Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Job Id</em>' attribute.
-	 * @see #setJobId(String)
+	 * @return the value of the '<em>Job Id</em>' reference.
+	 * @see #setJobId(JobSandbox)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_JobId()
-	 * @model annotation="mimo-ent-domain frame='JobSandbox'"
+	 * @model keys="jobId"
 	 * @generated
 	 */
-	String getJobId();
+	JobSandbox getJobId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getJobId <em>Job Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getJobId <em>Job Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Job Id</em>' attribute.
+	 * @param value the new value of the '<em>Job Id</em>' reference.
 	 * @see #getJobId()
 	 * @generated
 	 */
-	void setJobId(String value);
+	void setJobId(JobSandbox value);
 
 	/**
 	 * Returns the value of the '<em><b>Req Order Qty</b></em>' attribute.
@@ -169,30 +171,30 @@ public interface ProductGroupOrder extends BizEntity {
 	void setSoldOrderQty(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -221,29 +223,29 @@ public interface ProductGroupOrder extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGroupOrder_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGroupOrder#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 } // ProductGroupOrder

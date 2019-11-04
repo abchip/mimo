@@ -9,10 +9,13 @@ package org.abchip.mimo.biz.common.theme.impl;
 
 import org.abchip.mimo.biz.common.theme.ThemePackage;
 import org.abchip.mimo.biz.common.theme.VisualTheme;
+import org.abchip.mimo.biz.common.theme.VisualThemeSet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -73,23 +76,14 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getVisualThemeSetId() <em>Visual Theme Set Id</em>}' attribute.
+	 * The cached value of the '{@link #getVisualThemeSetId() <em>Visual Theme Set Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVisualThemeSetId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VISUAL_THEME_SET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getVisualThemeSetId() <em>Visual Theme Set Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisualThemeSetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String visualThemeSetId = VISUAL_THEME_SET_ID_EDEFAULT;
+	protected VisualThemeSet visualThemeSetId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,7 +133,24 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 	 * @generated
 	 */
 	@Override
-	public String getVisualThemeSetId() {
+	public VisualThemeSet getVisualThemeSetId() {
+		if (visualThemeSetId != null && ((EObject)visualThemeSetId).eIsProxy()) {
+			InternalEObject oldVisualThemeSetId = (InternalEObject)visualThemeSetId;
+			visualThemeSetId = (VisualThemeSet)eResolveProxy(oldVisualThemeSetId);
+			if (visualThemeSetId != oldVisualThemeSetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ThemePackage.VISUAL_THEME__VISUAL_THEME_SET_ID, oldVisualThemeSetId, visualThemeSetId));
+			}
+		}
+		return visualThemeSetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VisualThemeSet basicGetVisualThemeSetId() {
 		return visualThemeSetId;
 	}
 
@@ -149,8 +160,8 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 	 * @generated
 	 */
 	@Override
-	public void setVisualThemeSetId(String newVisualThemeSetId) {
-		String oldVisualThemeSetId = visualThemeSetId;
+	public void setVisualThemeSetId(VisualThemeSet newVisualThemeSetId) {
+		VisualThemeSet oldVisualThemeSetId = visualThemeSetId;
 		visualThemeSetId = newVisualThemeSetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ThemePackage.VISUAL_THEME__VISUAL_THEME_SET_ID, oldVisualThemeSetId, visualThemeSetId));
@@ -192,7 +203,8 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 			case ThemePackage.VISUAL_THEME__DESCRIPTION:
 				return getDescription();
 			case ThemePackage.VISUAL_THEME__VISUAL_THEME_SET_ID:
-				return getVisualThemeSetId();
+				if (resolve) return getVisualThemeSetId();
+				return basicGetVisualThemeSetId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,7 +224,7 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 				setDescription((String)newValue);
 				return;
 			case ThemePackage.VISUAL_THEME__VISUAL_THEME_SET_ID:
-				setVisualThemeSetId((String)newValue);
+				setVisualThemeSetId((VisualThemeSet)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -233,7 +245,7 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case ThemePackage.VISUAL_THEME__VISUAL_THEME_SET_ID:
-				setVisualThemeSetId(VISUAL_THEME_SET_ID_EDEFAULT);
+				setVisualThemeSetId((VisualThemeSet)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -252,7 +264,7 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 			case ThemePackage.VISUAL_THEME__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ThemePackage.VISUAL_THEME__VISUAL_THEME_SET_ID:
-				return VISUAL_THEME_SET_ID_EDEFAULT == null ? visualThemeSetId != null : !VISUAL_THEME_SET_ID_EDEFAULT.equals(visualThemeSetId);
+				return visualThemeSetId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -271,8 +283,6 @@ public class VisualThemeImpl extends BizEntityImpl implements VisualTheme {
 		result.append(visualThemeId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", visualThemeSetId: ");
-		result.append(visualThemeSetId);
 		result.append(')');
 		return result.toString();
 	}

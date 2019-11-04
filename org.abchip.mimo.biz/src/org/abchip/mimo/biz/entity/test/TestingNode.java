@@ -57,30 +57,30 @@ public interface TestingNode extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Primary Parent Node Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Primary Parent Node Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Primary Parent Node Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Primary Parent Node Id</em>' attribute.
-	 * @see #setPrimaryParentNodeId(String)
+	 * @return the value of the '<em>Primary Parent Node Id</em>' reference.
+	 * @see #setPrimaryParentNodeId(TestingNode)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingNode_PrimaryParentNodeId()
-	 * @model annotation="mimo-ent-domain frame='TestingNode'"
+	 * @model keys="testingNodeId"
 	 * @generated
 	 */
-	String getPrimaryParentNodeId();
+	TestingNode getPrimaryParentNodeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.TestingNode#getPrimaryParentNodeId <em>Primary Parent Node Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.TestingNode#getPrimaryParentNodeId <em>Primary Parent Node Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Primary Parent Node Id</em>' attribute.
+	 * @param value the new value of the '<em>Primary Parent Node Id</em>' reference.
 	 * @see #getPrimaryParentNodeId()
 	 * @generated
 	 */
-	void setPrimaryParentNodeId(String value);
+	void setPrimaryParentNodeId(TestingNode value);
 
 	/**
 	 * <!-- begin-user-doc -->

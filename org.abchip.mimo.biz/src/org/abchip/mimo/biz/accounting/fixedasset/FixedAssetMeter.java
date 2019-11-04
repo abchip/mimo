@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.product.ProductMeterType;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,12 +24,12 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getReadingDate <em>Reading Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getMaintHistSeqId <em>Maint Hist Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getMeterValue <em>Meter Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getReadingReasonEnumId <em>Reading Reason Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter()
@@ -47,7 +48,8 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_FixedAssetId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFixedAssetId();
@@ -115,31 +117,30 @@ public interface FixedAssetMeter extends BizEntity {
 	void setMeterValue(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Meter Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Meter Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Meter Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Meter Type Id</em>' attribute.
-	 * @see #setProductMeterTypeId(String)
+	 * @return the value of the '<em>Product Meter Type Id</em>' reference.
+	 * @see #setProductMeterTypeId(ProductMeterType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_ProductMeterTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductMeterType'"
+	 * @model keys="productMeterTypeId"
 	 * @generated
 	 */
-	String getProductMeterTypeId();
+	ProductMeterType getProductMeterTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getProductMeterTypeId <em>Product Meter Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMeter#getProductMeterTypeId <em>Product Meter Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Meter Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Meter Type Id</em>' reference.
 	 * @see #getProductMeterTypeId()
 	 * @generated
 	 */
-	void setProductMeterTypeId(String value);
+	void setProductMeterTypeId(ProductMeterType value);
 
 	/**
 	 * Returns the value of the '<em><b>Reading Date</b></em>' attribute.
@@ -152,7 +153,8 @@ public interface FixedAssetMeter extends BizEntity {
 	 * @return the value of the '<em>Reading Date</em>' attribute.
 	 * @see #setReadingDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetMeter_ReadingDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getReadingDate();

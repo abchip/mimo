@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface CampaignPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-marketing-campaign";
+	String eNS_PREFIX = "biz-campaign";
 
 	/**
 	 * The singleton instance of the package.
@@ -170,22 +171,13 @@ public interface CampaignPackage extends EPackage {
 	int MARKETING_CAMPAIGN__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Currency Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Estimated Cost</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__ESTIMATED_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int MARKETING_CAMPAIGN__ESTIMATED_COST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Expected Response Percent</b></em>' attribute.
@@ -194,7 +186,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__EXPECTED_RESPONSE_PERCENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int MARKETING_CAMPAIGN__EXPECTED_RESPONSE_PERCENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Expected Revenue</b></em>' attribute.
@@ -203,7 +195,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__EXPECTED_REVENUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int MARKETING_CAMPAIGN__EXPECTED_REVENUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -212,7 +204,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int MARKETING_CAMPAIGN__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
@@ -221,7 +213,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__IS_ACTIVE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int MARKETING_CAMPAIGN__IS_ACTIVE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' attribute.
@@ -230,7 +222,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int MARKETING_CAMPAIGN__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Num Sent</b></em>' attribute.
@@ -239,16 +231,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__NUM_SENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>Parent Campaign Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int MARKETING_CAMPAIGN__NUM_SENT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
@@ -257,16 +240,7 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
-
-	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int MARKETING_CAMPAIGN__START_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -275,7 +249,34 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int MARKETING_CAMPAIGN__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Parent Campaign Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKETING_CAMPAIGN__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKETING_CAMPAIGN__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Marketing Campaign Notes</b></em>' attribute list.
@@ -433,22 +434,13 @@ public interface CampaignPackage extends EPackage {
 	int MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Product Price Rule Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN_PRICE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int MARKETING_CAMPAIGN_PRICE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -457,7 +449,16 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN_PRICE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int MARKETING_CAMPAIGN_PRICE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Product Price Rule Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Marketing Campaign Price</em>' class.
@@ -524,22 +525,13 @@ public interface CampaignPackage extends EPackage {
 	int MARKETING_CAMPAIGN_PROMO__MARKETING_CAMPAIGN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Product Promo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN_PROMO__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int MARKETING_CAMPAIGN_PROMO__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -548,7 +540,16 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN_PROMO__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int MARKETING_CAMPAIGN_PROMO__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Product Promo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Marketing Campaign Promo</em>' class.
@@ -615,31 +616,13 @@ public interface CampaignPackage extends EPackage {
 	int MARKETING_CAMPAIGN_ROLE__MARKETING_CAMPAIGN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int MARKETING_CAMPAIGN_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -648,7 +631,25 @@ public interface CampaignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARKETING_CAMPAIGN_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int MARKETING_CAMPAIGN_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKETING_CAMPAIGN_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Marketing Campaign Role</em>' class.
@@ -748,15 +749,15 @@ public interface CampaignPackage extends EPackage {
 	EAttribute getMarketingCampaign_CreatedByUserLogin();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getCurrencyUomId <em>Currency Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getCurrencyUomId <em>Currency Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Currency Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Currency Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getCurrencyUomId()
 	 * @see #getMarketingCampaign()
 	 * @generated
 	 */
-	EAttribute getMarketingCampaign_CurrencyUomId();
+	EReference getMarketingCampaign_CurrencyUomId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getEstimatedCost <em>Estimated Cost</em>}'.
@@ -836,15 +837,15 @@ public interface CampaignPackage extends EPackage {
 	EAttribute getMarketingCampaign_NumSent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getParentCampaignId <em>Parent Campaign Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getParentCampaignId <em>Parent Campaign Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Campaign Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Campaign Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getParentCampaignId()
 	 * @see #getMarketingCampaign()
 	 * @generated
 	 */
-	EAttribute getMarketingCampaign_ParentCampaignId();
+	EReference getMarketingCampaign_ParentCampaignId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStartDate <em>Start Date</em>}'.
@@ -858,15 +859,15 @@ public interface CampaignPackage extends EPackage {
 	EAttribute getMarketingCampaign_StartDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStatusId()
 	 * @see #getMarketingCampaign()
 	 * @generated
 	 */
-	EAttribute getMarketingCampaign_StatusId();
+	EReference getMarketingCampaign_StatusId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getThruDate <em>Thru Date</em>}'.
@@ -933,15 +934,15 @@ public interface CampaignPackage extends EPackage {
 	EAttribute getMarketingCampaignPrice_MarketingCampaignId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getProductPriceRuleId <em>Product Price Rule Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getProductPriceRuleId <em>Product Price Rule Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Price Rule Id</em>'.
+	 * @return the meta object for the reference '<em>Product Price Rule Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getProductPriceRuleId()
 	 * @see #getMarketingCampaignPrice()
 	 * @generated
 	 */
-	EAttribute getMarketingCampaignPrice_ProductPriceRuleId();
+	EReference getMarketingCampaignPrice_ProductPriceRuleId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPrice#getFromDate <em>From Date</em>}'.
@@ -987,15 +988,15 @@ public interface CampaignPackage extends EPackage {
 	EAttribute getMarketingCampaignPromo_MarketingCampaignId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getProductPromoId <em>Product Promo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getProductPromoId <em>Product Promo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getProductPromoId()
 	 * @see #getMarketingCampaignPromo()
 	 * @generated
 	 */
-	EAttribute getMarketingCampaignPromo_ProductPromoId();
+	EReference getMarketingCampaignPromo_ProductPromoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo#getFromDate <em>From Date</em>}'.
@@ -1041,26 +1042,26 @@ public interface CampaignPackage extends EPackage {
 	EAttribute getMarketingCampaignRole_MarketingCampaignId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignRole#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignRole#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaignRole#getPartyId()
 	 * @see #getMarketingCampaignRole()
 	 * @generated
 	 */
-	EAttribute getMarketingCampaignRole_PartyId();
+	EReference getMarketingCampaignRole_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignRole#getRoleTypeId <em>Role Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignRole#getRoleTypeId <em>Role Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id</em>'.
 	 * @see org.abchip.mimo.biz.marketing.campaign.MarketingCampaignRole#getRoleTypeId()
 	 * @see #getMarketingCampaignRole()
 	 * @generated
 	 */
-	EAttribute getMarketingCampaignRole_RoleTypeId();
+	EReference getMarketingCampaignRole_RoleTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaignRole#getFromDate <em>From Date</em>}'.
@@ -1173,12 +1174,12 @@ public interface CampaignPackage extends EPackage {
 		EAttribute MARKETING_CAMPAIGN__CREATED_BY_USER_LOGIN = eINSTANCE.getMarketingCampaign_CreatedByUserLogin();
 
 		/**
-		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MARKETING_CAMPAIGN__CURRENCY_UOM_ID = eINSTANCE.getMarketingCampaign_CurrencyUomId();
+		EReference MARKETING_CAMPAIGN__CURRENCY_UOM_ID = eINSTANCE.getMarketingCampaign_CurrencyUomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Estimated Cost</b></em>' attribute feature.
@@ -1237,12 +1238,12 @@ public interface CampaignPackage extends EPackage {
 		EAttribute MARKETING_CAMPAIGN__NUM_SENT = eINSTANCE.getMarketingCampaign_NumSent();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Campaign Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Campaign Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID = eINSTANCE.getMarketingCampaign_ParentCampaignId();
+		EReference MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID = eINSTANCE.getMarketingCampaign_ParentCampaignId();
 
 		/**
 		 * The meta object literal for the '<em><b>Start Date</b></em>' attribute feature.
@@ -1253,12 +1254,12 @@ public interface CampaignPackage extends EPackage {
 		EAttribute MARKETING_CAMPAIGN__START_DATE = eINSTANCE.getMarketingCampaign_StartDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MARKETING_CAMPAIGN__STATUS_ID = eINSTANCE.getMarketingCampaign_StatusId();
+		EReference MARKETING_CAMPAIGN__STATUS_ID = eINSTANCE.getMarketingCampaign_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -1313,12 +1314,12 @@ public interface CampaignPackage extends EPackage {
 		EAttribute MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID = eINSTANCE.getMarketingCampaignPrice_MarketingCampaignId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Price Rule Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Price Rule Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID = eINSTANCE.getMarketingCampaignPrice_ProductPriceRuleId();
+		EReference MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID = eINSTANCE.getMarketingCampaignPrice_ProductPriceRuleId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -1355,12 +1356,12 @@ public interface CampaignPackage extends EPackage {
 		EAttribute MARKETING_CAMPAIGN_PROMO__MARKETING_CAMPAIGN_ID = eINSTANCE.getMarketingCampaignPromo_MarketingCampaignId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID = eINSTANCE.getMarketingCampaignPromo_ProductPromoId();
+		EReference MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID = eINSTANCE.getMarketingCampaignPromo_ProductPromoId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -1397,20 +1398,20 @@ public interface CampaignPackage extends EPackage {
 		EAttribute MARKETING_CAMPAIGN_ROLE__MARKETING_CAMPAIGN_ID = eINSTANCE.getMarketingCampaignRole_MarketingCampaignId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MARKETING_CAMPAIGN_ROLE__PARTY_ID = eINSTANCE.getMarketingCampaignRole_PartyId();
+		EReference MARKETING_CAMPAIGN_ROLE__PARTY_ID = eINSTANCE.getMarketingCampaignRole_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID = eINSTANCE.getMarketingCampaignRole_RoleTypeId();
+		EReference MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID = eINSTANCE.getMarketingCampaignRole_RoleTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.

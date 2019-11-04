@@ -75,7 +75,7 @@ public interface RateType extends BizEntity {
 	 * @return the value of the '<em>Rate Type Id</em>' attribute.
 	 * @see #setRateTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.rate.RatePackage#getRateType_RateTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

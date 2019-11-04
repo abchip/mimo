@@ -11,14 +11,26 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.need.NeedType;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.subscription.Subscription;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
+import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.abchip.mimo.biz.product.subscription.SubscriptionType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -33,38 +45,38 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionId <em>Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#isAutomaticExtend <em>Automatic Extend</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getAvailableTime <em>Available Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getAvailableTimeUomId <em>Available Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getCanclAutmExtTime <em>Cancl Autm Ext Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getCanclAutmExtTimeUomId <em>Cancl Autm Ext Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getExpirationCompletedDate <em>Expiration Completed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getExternalSubscriptionId <em>External Subscription Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getGracePeriodOnExpiry <em>Grace Period On Expiry</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getGracePeriodOnExpiryUomId <em>Grace Period On Expiry Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getMaxLifeTime <em>Max Life Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getMaxLifeTimeUomId <em>Max Life Time Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getNeedTypeId <em>Need Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getOriginatedFromPartyId <em>Originated From Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getOriginatedFromRoleTypeId <em>Originated From Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getPartyNeedId <em>Party Need Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getUseCountLimit <em>Use Count Limit</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getUseTime <em>Use Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getUseTimeUomId <em>Use Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getCanclAutmExtTimeUomId <em>Cancl Autm Ext Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getAvailableTimeUomId <em>Available Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getMaxLifeTimeUomId <em>Max Life Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getOriginatedFromPartyId <em>Originated From Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getOriginatedFromRoleTypeId <em>Originated From Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getNeedTypeId <em>Need Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getProductCategoryId <em>Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionTypeId <em>Subscription Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getGracePeriodOnExpiryUomId <em>Grace Period On Expiry Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionAttributes <em>Subscription Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionImpl#getSubscriptionCommEvents <em>Subscription Comm Events</em>}</li>
  * </ul>
@@ -138,26 +150,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	protected long availableTime = AVAILABLE_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAvailableTimeUomId() <em>Available Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailableTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AVAILABLE_TIME_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAvailableTimeUomId() <em>Available Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailableTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String availableTimeUomId = AVAILABLE_TIME_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCanclAutmExtTime() <em>Cancl Autm Ext Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -178,26 +170,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	protected long canclAutmExtTime = CANCL_AUTM_EXT_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCanclAutmExtTimeUomId() <em>Cancl Autm Ext Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCanclAutmExtTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCanclAutmExtTimeUomId() <em>Cancl Autm Ext Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCanclAutmExtTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String canclAutmExtTimeUomId = CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -216,26 +188,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @ordered
 	 */
 	protected String communicationEventId = COMMUNICATION_EVENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -338,46 +290,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	protected long gracePeriodOnExpiry = GRACE_PERIOD_ON_EXPIRY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getGracePeriodOnExpiryUomId() <em>Grace Period On Expiry Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGracePeriodOnExpiryUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGracePeriodOnExpiryUomId() <em>Grace Period On Expiry Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGracePeriodOnExpiryUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String gracePeriodOnExpiryUomId = GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getMaxLifeTime() <em>Max Life Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,66 +308,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @ordered
 	 */
 	protected long maxLifeTime = MAX_LIFE_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaxLifeTimeUomId() <em>Max Life Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxLifeTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MAX_LIFE_TIME_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMaxLifeTimeUomId() <em>Max Life Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxLifeTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String maxLifeTimeUomId = MAX_LIFE_TIME_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNeedTypeId() <em>Need Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNeedTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NEED_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNeedTypeId() <em>Need Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNeedTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String needTypeId = NEED_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -478,66 +330,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOriginatedFromPartyId() <em>Originated From Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginatedFromPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORIGINATED_FROM_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOriginatedFromPartyId() <em>Originated From Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginatedFromPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String originatedFromPartyId = ORIGINATED_FROM_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOriginatedFromRoleTypeId() <em>Originated From Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginatedFromRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORIGINATED_FROM_ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOriginatedFromRoleTypeId() <em>Originated From Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginatedFromRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String originatedFromRoleTypeId = ORIGINATED_FROM_ROLE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPartyNeedId() <em>Party Need Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -556,46 +348,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @ordered
 	 */
 	protected String partyNeedId = PARTY_NEED_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPurchaseFromDate() <em>Purchase From Date</em>}' attribute.
@@ -636,66 +388,6 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @ordered
 	 */
 	protected Date purchaseThruDate = PURCHASE_THRU_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUBSCRIPTION_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subscriptionResourceId = SUBSCRIPTION_RESOURCE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSubscriptionTypeId() <em>Subscription Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUBSCRIPTION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSubscriptionTypeId() <em>Subscription Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subscriptionTypeId = SUBSCRIPTION_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
@@ -758,24 +450,174 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	protected long useTime = USE_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUseTimeUomId() <em>Use Time Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUseTimeUomId()
+	 * @see #getSubscriptionResourceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USE_TIME_UOM_ID_EDEFAULT = null;
+	protected SubscriptionResource subscriptionResourceId;
 
 	/**
-	 * The cached value of the '{@link #getUseTimeUomId() <em>Use Time Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech contactMechId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getUseTimeUomId() <em>Use Time Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUseTimeUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String useTimeUomId = USE_TIME_UOM_ID_EDEFAULT;
+	protected Uom useTimeUomId;
+
+	/**
+	 * The cached value of the '{@link #getCanclAutmExtTimeUomId() <em>Cancl Autm Ext Time Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCanclAutmExtTimeUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom canclAutmExtTimeUomId;
+
+	/**
+	 * The cached value of the '{@link #getAvailableTimeUomId() <em>Available Time Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAvailableTimeUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom availableTimeUomId;
+
+	/**
+	 * The cached value of the '{@link #getMaxLifeTimeUomId() <em>Max Life Time Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxLifeTimeUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom maxLifeTimeUomId;
+
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getOriginatedFromPartyId() <em>Originated From Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginatedFromPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party originatedFromPartyId;
+
+	/**
+	 * The cached value of the '{@link #getOriginatedFromRoleTypeId() <em>Originated From Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginatedFromRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType originatedFromRoleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getNeedTypeId() <em>Need Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNeedTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected NeedType needTypeId;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
+
+	/**
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
+
+	/**
+	 * The cached value of the '{@link #getSubscriptionTypeId() <em>Subscription Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubscriptionTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SubscriptionType subscriptionTypeId;
+
+	/**
+	 * The cached value of the '{@link #getGracePeriodOnExpiryUomId() <em>Grace Period On Expiry Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGracePeriodOnExpiryUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom gracePeriodOnExpiryUomId;
 
 	/**
 	 * The cached value of the '{@link #getSubscriptionAttributes() <em>Subscription Attributes</em>}' attribute list.
@@ -845,7 +687,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getAvailableTimeUomId() {
+	public Uom getAvailableTimeUomId() {
+		if (availableTimeUomId != null && ((EObject)availableTimeUomId).eIsProxy()) {
+			InternalEObject oldAvailableTimeUomId = (InternalEObject)availableTimeUomId;
+			availableTimeUomId = (Uom)eResolveProxy(oldAvailableTimeUomId);
+			if (availableTimeUomId != oldAvailableTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID, oldAvailableTimeUomId, availableTimeUomId));
+			}
+		}
+		return availableTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetAvailableTimeUomId() {
 		return availableTimeUomId;
 	}
 
@@ -855,8 +714,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setAvailableTimeUomId(String newAvailableTimeUomId) {
-		String oldAvailableTimeUomId = availableTimeUomId;
+	public void setAvailableTimeUomId(Uom newAvailableTimeUomId) {
+		Uom oldAvailableTimeUomId = availableTimeUomId;
 		availableTimeUomId = newAvailableTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID, oldAvailableTimeUomId, availableTimeUomId));
@@ -891,7 +750,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCanclAutmExtTimeUomId() {
+	public Uom getCanclAutmExtTimeUomId() {
+		if (canclAutmExtTimeUomId != null && ((EObject)canclAutmExtTimeUomId).eIsProxy()) {
+			InternalEObject oldCanclAutmExtTimeUomId = (InternalEObject)canclAutmExtTimeUomId;
+			canclAutmExtTimeUomId = (Uom)eResolveProxy(oldCanclAutmExtTimeUomId);
+			if (canclAutmExtTimeUomId != oldCanclAutmExtTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID, oldCanclAutmExtTimeUomId, canclAutmExtTimeUomId));
+			}
+		}
+		return canclAutmExtTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCanclAutmExtTimeUomId() {
 		return canclAutmExtTimeUomId;
 	}
 
@@ -901,8 +777,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCanclAutmExtTimeUomId(String newCanclAutmExtTimeUomId) {
-		String oldCanclAutmExtTimeUomId = canclAutmExtTimeUomId;
+	public void setCanclAutmExtTimeUomId(Uom newCanclAutmExtTimeUomId) {
+		Uom oldCanclAutmExtTimeUomId = canclAutmExtTimeUomId;
 		canclAutmExtTimeUomId = newCanclAutmExtTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID, oldCanclAutmExtTimeUomId, canclAutmExtTimeUomId));
@@ -937,7 +813,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public ContactMech getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -947,8 +840,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -1075,7 +968,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getGracePeriodOnExpiryUomId() {
+	public Uom getGracePeriodOnExpiryUomId() {
+		if (gracePeriodOnExpiryUomId != null && ((EObject)gracePeriodOnExpiryUomId).eIsProxy()) {
+			InternalEObject oldGracePeriodOnExpiryUomId = (InternalEObject)gracePeriodOnExpiryUomId;
+			gracePeriodOnExpiryUomId = (Uom)eResolveProxy(oldGracePeriodOnExpiryUomId);
+			if (gracePeriodOnExpiryUomId != oldGracePeriodOnExpiryUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID, oldGracePeriodOnExpiryUomId, gracePeriodOnExpiryUomId));
+			}
+		}
+		return gracePeriodOnExpiryUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetGracePeriodOnExpiryUomId() {
 		return gracePeriodOnExpiryUomId;
 	}
 
@@ -1085,8 +995,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setGracePeriodOnExpiryUomId(String newGracePeriodOnExpiryUomId) {
-		String oldGracePeriodOnExpiryUomId = gracePeriodOnExpiryUomId;
+	public void setGracePeriodOnExpiryUomId(Uom newGracePeriodOnExpiryUomId) {
+		Uom oldGracePeriodOnExpiryUomId = gracePeriodOnExpiryUomId;
 		gracePeriodOnExpiryUomId = newGracePeriodOnExpiryUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID, oldGracePeriodOnExpiryUomId, gracePeriodOnExpiryUomId));
@@ -1121,7 +1031,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getMaxLifeTimeUomId() {
+	public Uom getMaxLifeTimeUomId() {
+		if (maxLifeTimeUomId != null && ((EObject)maxLifeTimeUomId).eIsProxy()) {
+			InternalEObject oldMaxLifeTimeUomId = (InternalEObject)maxLifeTimeUomId;
+			maxLifeTimeUomId = (Uom)eResolveProxy(oldMaxLifeTimeUomId);
+			if (maxLifeTimeUomId != oldMaxLifeTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID, oldMaxLifeTimeUomId, maxLifeTimeUomId));
+			}
+		}
+		return maxLifeTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetMaxLifeTimeUomId() {
 		return maxLifeTimeUomId;
 	}
 
@@ -1131,8 +1058,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setMaxLifeTimeUomId(String newMaxLifeTimeUomId) {
-		String oldMaxLifeTimeUomId = maxLifeTimeUomId;
+	public void setMaxLifeTimeUomId(Uom newMaxLifeTimeUomId) {
+		Uom oldMaxLifeTimeUomId = maxLifeTimeUomId;
 		maxLifeTimeUomId = newMaxLifeTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID, oldMaxLifeTimeUomId, maxLifeTimeUomId));
@@ -1144,7 +1071,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getNeedTypeId() {
+	public NeedType getNeedTypeId() {
+		if (needTypeId != null && ((EObject)needTypeId).eIsProxy()) {
+			InternalEObject oldNeedTypeId = (InternalEObject)needTypeId;
+			needTypeId = (NeedType)eResolveProxy(oldNeedTypeId);
+			if (needTypeId != oldNeedTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
+			}
+		}
+		return needTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NeedType basicGetNeedTypeId() {
 		return needTypeId;
 	}
 
@@ -1154,8 +1098,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setNeedTypeId(String newNeedTypeId) {
-		String oldNeedTypeId = needTypeId;
+	public void setNeedTypeId(NeedType newNeedTypeId) {
+		NeedType oldNeedTypeId = needTypeId;
 		needTypeId = newNeedTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
@@ -1167,7 +1111,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -1177,8 +1138,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__ORDER_ID, oldOrderId, orderId));
@@ -1213,7 +1174,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getOriginatedFromPartyId() {
+	public Party getOriginatedFromPartyId() {
+		if (originatedFromPartyId != null && ((EObject)originatedFromPartyId).eIsProxy()) {
+			InternalEObject oldOriginatedFromPartyId = (InternalEObject)originatedFromPartyId;
+			originatedFromPartyId = (Party)eResolveProxy(oldOriginatedFromPartyId);
+			if (originatedFromPartyId != oldOriginatedFromPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID, oldOriginatedFromPartyId, originatedFromPartyId));
+			}
+		}
+		return originatedFromPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOriginatedFromPartyId() {
 		return originatedFromPartyId;
 	}
 
@@ -1223,8 +1201,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setOriginatedFromPartyId(String newOriginatedFromPartyId) {
-		String oldOriginatedFromPartyId = originatedFromPartyId;
+	public void setOriginatedFromPartyId(Party newOriginatedFromPartyId) {
+		Party oldOriginatedFromPartyId = originatedFromPartyId;
 		originatedFromPartyId = newOriginatedFromPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID, oldOriginatedFromPartyId, originatedFromPartyId));
@@ -1236,7 +1214,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getOriginatedFromRoleTypeId() {
+	public RoleType getOriginatedFromRoleTypeId() {
+		if (originatedFromRoleTypeId != null && ((EObject)originatedFromRoleTypeId).eIsProxy()) {
+			InternalEObject oldOriginatedFromRoleTypeId = (InternalEObject)originatedFromRoleTypeId;
+			originatedFromRoleTypeId = (RoleType)eResolveProxy(oldOriginatedFromRoleTypeId);
+			if (originatedFromRoleTypeId != oldOriginatedFromRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID, oldOriginatedFromRoleTypeId, originatedFromRoleTypeId));
+			}
+		}
+		return originatedFromRoleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetOriginatedFromRoleTypeId() {
 		return originatedFromRoleTypeId;
 	}
 
@@ -1246,8 +1241,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setOriginatedFromRoleTypeId(String newOriginatedFromRoleTypeId) {
-		String oldOriginatedFromRoleTypeId = originatedFromRoleTypeId;
+	public void setOriginatedFromRoleTypeId(RoleType newOriginatedFromRoleTypeId) {
+		RoleType oldOriginatedFromRoleTypeId = originatedFromRoleTypeId;
 		originatedFromRoleTypeId = newOriginatedFromRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID, oldOriginatedFromRoleTypeId, originatedFromRoleTypeId));
@@ -1259,7 +1254,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -1269,8 +1281,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__PARTY_ID, oldPartyId, partyId));
@@ -1351,7 +1363,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -1361,8 +1390,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -1443,7 +1472,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getUseTimeUomId() {
+	public Uom getUseTimeUomId() {
+		if (useTimeUomId != null && ((EObject)useTimeUomId).eIsProxy()) {
+			InternalEObject oldUseTimeUomId = (InternalEObject)useTimeUomId;
+			useTimeUomId = (Uom)eResolveProxy(oldUseTimeUomId);
+			if (useTimeUomId != oldUseTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
+			}
+		}
+		return useTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUseTimeUomId() {
 		return useTimeUomId;
 	}
 
@@ -1453,8 +1499,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setUseTimeUomId(String newUseTimeUomId) {
-		String oldUseTimeUomId = useTimeUomId;
+	public void setUseTimeUomId(Uom newUseTimeUomId) {
+		Uom oldUseTimeUomId = useTimeUomId;
 		useTimeUomId = newUseTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
@@ -1504,7 +1550,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getSubscriptionResourceId() {
+	public SubscriptionResource getSubscriptionResourceId() {
+		if (subscriptionResourceId != null && ((EObject)subscriptionResourceId).eIsProxy()) {
+			InternalEObject oldSubscriptionResourceId = (InternalEObject)subscriptionResourceId;
+			subscriptionResourceId = (SubscriptionResource)eResolveProxy(oldSubscriptionResourceId);
+			if (subscriptionResourceId != oldSubscriptionResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID, oldSubscriptionResourceId, subscriptionResourceId));
+			}
+		}
+		return subscriptionResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubscriptionResource basicGetSubscriptionResourceId() {
 		return subscriptionResourceId;
 	}
 
@@ -1514,8 +1577,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setSubscriptionResourceId(String newSubscriptionResourceId) {
-		String oldSubscriptionResourceId = subscriptionResourceId;
+	public void setSubscriptionResourceId(SubscriptionResource newSubscriptionResourceId) {
+		SubscriptionResource oldSubscriptionResourceId = subscriptionResourceId;
 		subscriptionResourceId = newSubscriptionResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID, oldSubscriptionResourceId, subscriptionResourceId));
@@ -1527,7 +1590,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -1537,8 +1617,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID, oldProductId, productId));
@@ -1550,7 +1630,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -1560,8 +1657,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -1573,7 +1670,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -1583,8 +1697,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -1596,7 +1710,24 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getSubscriptionTypeId() {
+	public SubscriptionType getSubscriptionTypeId() {
+		if (subscriptionTypeId != null && ((EObject)subscriptionTypeId).eIsProxy()) {
+			InternalEObject oldSubscriptionTypeId = (InternalEObject)subscriptionTypeId;
+			subscriptionTypeId = (SubscriptionType)eResolveProxy(oldSubscriptionTypeId);
+			if (subscriptionTypeId != oldSubscriptionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID, oldSubscriptionTypeId, subscriptionTypeId));
+			}
+		}
+		return subscriptionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubscriptionType basicGetSubscriptionTypeId() {
 		return subscriptionTypeId;
 	}
 
@@ -1606,8 +1737,8 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setSubscriptionTypeId(String newSubscriptionTypeId) {
-		String oldSubscriptionTypeId = subscriptionTypeId;
+	public void setSubscriptionTypeId(SubscriptionType newSubscriptionTypeId) {
+		SubscriptionType oldSubscriptionTypeId = subscriptionTypeId;
 		subscriptionTypeId = newSubscriptionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID, oldSubscriptionTypeId, subscriptionTypeId));
@@ -1673,16 +1804,10 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 				return isAutomaticExtend();
 			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME:
 				return getAvailableTime();
-			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID:
-				return getAvailableTimeUomId();
 			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME:
 				return getCanclAutmExtTime();
-			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID:
-				return getCanclAutmExtTimeUomId();
 			case SubscriptionPackage.SUBSCRIPTION__COMMUNICATION_EVENT_ID:
 				return getCommunicationEventId();
-			case SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID:
-				return getContactMechId();
 			case SubscriptionPackage.SUBSCRIPTION__DESCRIPTION:
 				return getDescription();
 			case SubscriptionPackage.SUBSCRIPTION__EXPIRATION_COMPLETED_DATE:
@@ -1693,50 +1818,73 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 				return getFromDate();
 			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY:
 				return getGracePeriodOnExpiry();
-			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
-				return getGracePeriodOnExpiryUomId();
-			case SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
 			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME:
 				return getMaxLifeTime();
-			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID:
-				return getMaxLifeTimeUomId();
-			case SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID:
-				return getNeedTypeId();
-			case SubscriptionPackage.SUBSCRIPTION__ORDER_ID:
-				return getOrderId();
 			case SubscriptionPackage.SUBSCRIPTION__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID:
-				return getOriginatedFromPartyId();
-			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID:
-				return getOriginatedFromRoleTypeId();
-			case SubscriptionPackage.SUBSCRIPTION__PARTY_ID:
-				return getPartyId();
 			case SubscriptionPackage.SUBSCRIPTION__PARTY_NEED_ID:
 				return getPartyNeedId();
-			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
-			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID:
-				return getProductId();
 			case SubscriptionPackage.SUBSCRIPTION__PURCHASE_FROM_DATE:
 				return getPurchaseFromDate();
 			case SubscriptionPackage.SUBSCRIPTION__PURCHASE_THRU_DATE:
 				return getPurchaseThruDate();
-			case SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID:
-				return getRoleTypeId();
-			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID:
-				return getSubscriptionResourceId();
-			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID:
-				return getSubscriptionTypeId();
 			case SubscriptionPackage.SUBSCRIPTION__THRU_DATE:
 				return getThruDate();
 			case SubscriptionPackage.SUBSCRIPTION__USE_COUNT_LIMIT:
 				return getUseCountLimit();
 			case SubscriptionPackage.SUBSCRIPTION__USE_TIME:
 				return getUseTime();
+			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID:
+				if (resolve) return getSubscriptionResourceId();
+				return basicGetSubscriptionResourceId();
+			case SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
+			case SubscriptionPackage.SUBSCRIPTION__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case SubscriptionPackage.SUBSCRIPTION__USE_TIME_UOM_ID:
-				return getUseTimeUomId();
+				if (resolve) return getUseTimeUomId();
+				return basicGetUseTimeUomId();
+			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID:
+				if (resolve) return getCanclAutmExtTimeUomId();
+				return basicGetCanclAutmExtTimeUomId();
+			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID:
+				if (resolve) return getAvailableTimeUomId();
+				return basicGetAvailableTimeUomId();
+			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID:
+				if (resolve) return getMaxLifeTimeUomId();
+				return basicGetMaxLifeTimeUomId();
+			case SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID:
+				if (resolve) return getOriginatedFromPartyId();
+				return basicGetOriginatedFromPartyId();
+			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID:
+				if (resolve) return getOriginatedFromRoleTypeId();
+				return basicGetOriginatedFromRoleTypeId();
+			case SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID:
+				if (resolve) return getNeedTypeId();
+				return basicGetNeedTypeId();
+			case SubscriptionPackage.SUBSCRIPTION__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
+			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
+			case SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
+			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID:
+				if (resolve) return getSubscriptionTypeId();
+				return basicGetSubscriptionTypeId();
+			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
+				if (resolve) return getGracePeriodOnExpiryUomId();
+				return basicGetGracePeriodOnExpiryUomId();
 			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES:
 				return getSubscriptionAttributes();
 			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS:
@@ -1763,20 +1911,11 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME:
 				setAvailableTime((Long)newValue);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID:
-				setAvailableTimeUomId((String)newValue);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME:
 				setCanclAutmExtTime((Long)newValue);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID:
-				setCanclAutmExtTimeUomId((String)newValue);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__DESCRIPTION:
 				setDescription((String)newValue);
@@ -1793,59 +1932,20 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY:
 				setGracePeriodOnExpiry((Long)newValue);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
-				setGracePeriodOnExpiryUomId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME:
 				setMaxLifeTime((Long)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID:
-				setMaxLifeTimeUomId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID:
-				setNeedTypeId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__ORDER_ID:
-				setOrderId((String)newValue);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID:
-				setOriginatedFromPartyId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID:
-				setOriginatedFromRoleTypeId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION__PARTY_NEED_ID:
 				setPartyNeedId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID:
-				setProductId((String)newValue);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__PURCHASE_FROM_DATE:
 				setPurchaseFromDate((Date)newValue);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__PURCHASE_THRU_DATE:
 				setPurchaseThruDate((Date)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID:
-				setSubscriptionResourceId((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID:
-				setSubscriptionTypeId((String)newValue);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__THRU_DATE:
 				setThruDate((Date)newValue);
@@ -1856,8 +1956,56 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			case SubscriptionPackage.SUBSCRIPTION__USE_TIME:
 				setUseTime((Long)newValue);
 				return;
+			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID:
+				setSubscriptionResourceId((SubscriptionResource)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
 			case SubscriptionPackage.SUBSCRIPTION__USE_TIME_UOM_ID:
-				setUseTimeUomId((String)newValue);
+				setUseTimeUomId((Uom)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID:
+				setCanclAutmExtTimeUomId((Uom)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID:
+				setAvailableTimeUomId((Uom)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID:
+				setMaxLifeTimeUomId((Uom)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID:
+				setOriginatedFromPartyId((Party)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID:
+				setOriginatedFromRoleTypeId((RoleType)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID:
+				setNeedTypeId((NeedType)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID:
+				setSubscriptionTypeId((SubscriptionType)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
+				setGracePeriodOnExpiryUomId((Uom)newValue);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES:
 				getSubscriptionAttributes().clear();
@@ -1888,20 +2036,11 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME:
 				setAvailableTime(AVAILABLE_TIME_EDEFAULT);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID:
-				setAvailableTimeUomId(AVAILABLE_TIME_UOM_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME:
 				setCanclAutmExtTime(CANCL_AUTM_EXT_TIME_EDEFAULT);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID:
-				setCanclAutmExtTimeUomId(CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION__COMMUNICATION_EVENT_ID:
 				setCommunicationEventId(COMMUNICATION_EVENT_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -1918,59 +2057,20 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY:
 				setGracePeriodOnExpiry(GRACE_PERIOD_ON_EXPIRY_EDEFAULT);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
-				setGracePeriodOnExpiryUomId(GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME:
 				setMaxLifeTime(MAX_LIFE_TIME_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID:
-				setMaxLifeTimeUomId(MAX_LIFE_TIME_UOM_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID:
-				setNeedTypeId(NEED_TYPE_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID:
-				setOriginatedFromPartyId(ORIGINATED_FROM_PARTY_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID:
-				setOriginatedFromRoleTypeId(ORIGINATED_FROM_ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION__PARTY_NEED_ID:
 				setPartyNeedId(PARTY_NEED_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__PURCHASE_FROM_DATE:
 				setPurchaseFromDate(PURCHASE_FROM_DATE_EDEFAULT);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__PURCHASE_THRU_DATE:
 				setPurchaseThruDate(PURCHASE_THRU_DATE_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID:
-				setSubscriptionResourceId(SUBSCRIPTION_RESOURCE_ID_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID:
-				setSubscriptionTypeId(SUBSCRIPTION_TYPE_ID_EDEFAULT);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
@@ -1981,8 +2081,56 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 			case SubscriptionPackage.SUBSCRIPTION__USE_TIME:
 				setUseTime(USE_TIME_EDEFAULT);
 				return;
+			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID:
+				setSubscriptionResourceId((SubscriptionResource)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__PARTY_ID:
+				setPartyId((Party)null);
+				return;
 			case SubscriptionPackage.SUBSCRIPTION__USE_TIME_UOM_ID:
-				setUseTimeUomId(USE_TIME_UOM_ID_EDEFAULT);
+				setUseTimeUomId((Uom)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID:
+				setCanclAutmExtTimeUomId((Uom)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID:
+				setAvailableTimeUomId((Uom)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID:
+				setMaxLifeTimeUomId((Uom)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID:
+				setOriginatedFromPartyId((Party)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID:
+				setOriginatedFromRoleTypeId((RoleType)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID:
+				setNeedTypeId((NeedType)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID:
+				setSubscriptionTypeId((SubscriptionType)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
+				setGracePeriodOnExpiryUomId((Uom)null);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES:
 				getSubscriptionAttributes().clear();
@@ -2008,16 +2156,10 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 				return automaticExtend != AUTOMATIC_EXTEND_EDEFAULT;
 			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME:
 				return availableTime != AVAILABLE_TIME_EDEFAULT;
-			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID:
-				return AVAILABLE_TIME_UOM_ID_EDEFAULT == null ? availableTimeUomId != null : !AVAILABLE_TIME_UOM_ID_EDEFAULT.equals(availableTimeUomId);
 			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME:
 				return canclAutmExtTime != CANCL_AUTM_EXT_TIME_EDEFAULT;
-			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID:
-				return CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT == null ? canclAutmExtTimeUomId != null : !CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT.equals(canclAutmExtTimeUomId);
 			case SubscriptionPackage.SUBSCRIPTION__COMMUNICATION_EVENT_ID:
 				return COMMUNICATION_EVENT_ID_EDEFAULT == null ? communicationEventId != null : !COMMUNICATION_EVENT_ID_EDEFAULT.equals(communicationEventId);
-			case SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
 			case SubscriptionPackage.SUBSCRIPTION__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SubscriptionPackage.SUBSCRIPTION__EXPIRATION_COMPLETED_DATE:
@@ -2028,50 +2170,56 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY:
 				return gracePeriodOnExpiry != GRACE_PERIOD_ON_EXPIRY_EDEFAULT;
-			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
-				return GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT == null ? gracePeriodOnExpiryUomId != null : !GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT.equals(gracePeriodOnExpiryUomId);
-			case SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
 			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME:
 				return maxLifeTime != MAX_LIFE_TIME_EDEFAULT;
-			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID:
-				return MAX_LIFE_TIME_UOM_ID_EDEFAULT == null ? maxLifeTimeUomId != null : !MAX_LIFE_TIME_UOM_ID_EDEFAULT.equals(maxLifeTimeUomId);
-			case SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID:
-				return NEED_TYPE_ID_EDEFAULT == null ? needTypeId != null : !NEED_TYPE_ID_EDEFAULT.equals(needTypeId);
-			case SubscriptionPackage.SUBSCRIPTION__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case SubscriptionPackage.SUBSCRIPTION__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID:
-				return ORIGINATED_FROM_PARTY_ID_EDEFAULT == null ? originatedFromPartyId != null : !ORIGINATED_FROM_PARTY_ID_EDEFAULT.equals(originatedFromPartyId);
-			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID:
-				return ORIGINATED_FROM_ROLE_TYPE_ID_EDEFAULT == null ? originatedFromRoleTypeId != null : !ORIGINATED_FROM_ROLE_TYPE_ID_EDEFAULT.equals(originatedFromRoleTypeId);
-			case SubscriptionPackage.SUBSCRIPTION__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case SubscriptionPackage.SUBSCRIPTION__PARTY_NEED_ID:
 				return PARTY_NEED_ID_EDEFAULT == null ? partyNeedId != null : !PARTY_NEED_ID_EDEFAULT.equals(partyNeedId);
-			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
-			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case SubscriptionPackage.SUBSCRIPTION__PURCHASE_FROM_DATE:
 				return PURCHASE_FROM_DATE_EDEFAULT == null ? purchaseFromDate != null : !PURCHASE_FROM_DATE_EDEFAULT.equals(purchaseFromDate);
 			case SubscriptionPackage.SUBSCRIPTION__PURCHASE_THRU_DATE:
 				return PURCHASE_THRU_DATE_EDEFAULT == null ? purchaseThruDate != null : !PURCHASE_THRU_DATE_EDEFAULT.equals(purchaseThruDate);
-			case SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID:
-				return SUBSCRIPTION_RESOURCE_ID_EDEFAULT == null ? subscriptionResourceId != null : !SUBSCRIPTION_RESOURCE_ID_EDEFAULT.equals(subscriptionResourceId);
-			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID:
-				return SUBSCRIPTION_TYPE_ID_EDEFAULT == null ? subscriptionTypeId != null : !SUBSCRIPTION_TYPE_ID_EDEFAULT.equals(subscriptionTypeId);
 			case SubscriptionPackage.SUBSCRIPTION__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case SubscriptionPackage.SUBSCRIPTION__USE_COUNT_LIMIT:
 				return useCountLimit != USE_COUNT_LIMIT_EDEFAULT;
 			case SubscriptionPackage.SUBSCRIPTION__USE_TIME:
 				return useTime != USE_TIME_EDEFAULT;
+			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_RESOURCE_ID:
+				return subscriptionResourceId != null;
+			case SubscriptionPackage.SUBSCRIPTION__CONTACT_MECH_ID:
+				return contactMechId != null;
+			case SubscriptionPackage.SUBSCRIPTION__PARTY_ID:
+				return partyId != null;
 			case SubscriptionPackage.SUBSCRIPTION__USE_TIME_UOM_ID:
-				return USE_TIME_UOM_ID_EDEFAULT == null ? useTimeUomId != null : !USE_TIME_UOM_ID_EDEFAULT.equals(useTimeUomId);
+				return useTimeUomId != null;
+			case SubscriptionPackage.SUBSCRIPTION__CANCL_AUTM_EXT_TIME_UOM_ID:
+				return canclAutmExtTimeUomId != null;
+			case SubscriptionPackage.SUBSCRIPTION__AVAILABLE_TIME_UOM_ID:
+				return availableTimeUomId != null;
+			case SubscriptionPackage.SUBSCRIPTION__MAX_LIFE_TIME_UOM_ID:
+				return maxLifeTimeUomId != null;
+			case SubscriptionPackage.SUBSCRIPTION__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_PARTY_ID:
+				return originatedFromPartyId != null;
+			case SubscriptionPackage.SUBSCRIPTION__ORIGINATED_FROM_ROLE_TYPE_ID:
+				return originatedFromRoleTypeId != null;
+			case SubscriptionPackage.SUBSCRIPTION__NEED_TYPE_ID:
+				return needTypeId != null;
+			case SubscriptionPackage.SUBSCRIPTION__ORDER_ID:
+				return orderId != null;
+			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_ID:
+				return productId != null;
+			case SubscriptionPackage.SUBSCRIPTION__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
+			case SubscriptionPackage.SUBSCRIPTION__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
+			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_TYPE_ID:
+				return subscriptionTypeId != null;
+			case SubscriptionPackage.SUBSCRIPTION__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
+				return gracePeriodOnExpiryUomId != null;
 			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_ATTRIBUTES:
 				return subscriptionAttributes != null && !subscriptionAttributes.isEmpty();
 			case SubscriptionPackage.SUBSCRIPTION__SUBSCRIPTION_COMM_EVENTS:
@@ -2096,16 +2244,10 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 		result.append(automaticExtend);
 		result.append(", availableTime: ");
 		result.append(availableTime);
-		result.append(", availableTimeUomId: ");
-		result.append(availableTimeUomId);
 		result.append(", canclAutmExtTime: ");
 		result.append(canclAutmExtTime);
-		result.append(", canclAutmExtTimeUomId: ");
-		result.append(canclAutmExtTimeUomId);
 		result.append(", communicationEventId: ");
 		result.append(communicationEventId);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", expirationCompletedDate: ");
@@ -2116,50 +2258,22 @@ public class SubscriptionImpl extends BizEntityTypedImpl<SubscriptionType> imple
 		result.append(fromDate);
 		result.append(", gracePeriodOnExpiry: ");
 		result.append(gracePeriodOnExpiry);
-		result.append(", gracePeriodOnExpiryUomId: ");
-		result.append(gracePeriodOnExpiryUomId);
-		result.append(", inventoryItemId: ");
-		result.append(inventoryItemId);
 		result.append(", maxLifeTime: ");
 		result.append(maxLifeTime);
-		result.append(", maxLifeTimeUomId: ");
-		result.append(maxLifeTimeUomId);
-		result.append(", needTypeId: ");
-		result.append(needTypeId);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", originatedFromPartyId: ");
-		result.append(originatedFromPartyId);
-		result.append(", originatedFromRoleTypeId: ");
-		result.append(originatedFromRoleTypeId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", partyNeedId: ");
 		result.append(partyNeedId);
-		result.append(", productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", purchaseFromDate: ");
 		result.append(purchaseFromDate);
 		result.append(", purchaseThruDate: ");
 		result.append(purchaseThruDate);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", subscriptionResourceId: ");
-		result.append(subscriptionResourceId);
-		result.append(", subscriptionTypeId: ");
-		result.append(subscriptionTypeId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(", useCountLimit: ");
 		result.append(useCountLimit);
 		result.append(", useTime: ");
 		result.append(useTime);
-		result.append(", useTimeUomId: ");
-		result.append(useTimeUomId);
 		result.append(", subscriptionAttributes: ");
 		result.append(subscriptionAttributes);
 		result.append(", subscriptionCommEvents: ");

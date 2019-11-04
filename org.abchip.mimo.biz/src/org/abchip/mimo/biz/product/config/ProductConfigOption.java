@@ -41,7 +41,8 @@ public interface ProductConfigOption extends BizEntity {
 	 * @return the value of the '<em>Config Option Id</em>' attribute.
 	 * @see #setConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOption_ConfigOptionId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigOptionId();
@@ -145,8 +146,8 @@ public interface ProductConfigOption extends BizEntity {
 	 * @return the value of the '<em>Config Item Id</em>' attribute.
 	 * @see #setConfigItemId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getProductConfigOption_ConfigItemId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductConfigItem'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigItemId();

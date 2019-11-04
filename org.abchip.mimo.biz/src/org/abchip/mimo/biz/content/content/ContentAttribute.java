@@ -121,7 +121,6 @@ public interface ContentAttribute extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentAttribute_ContentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
 	 * @generated
 	 */
 	String getContentId();

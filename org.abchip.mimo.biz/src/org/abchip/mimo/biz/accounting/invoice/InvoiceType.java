@@ -85,30 +85,30 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(InvoiceType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='InvoiceType'"
+	 * @model keys="invoiceTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	InvoiceType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(InvoiceType value);
 
 	/**
 	 * Returns the value of the '<em><b>Invoice Type Attrs</b></em>' attribute list.
@@ -174,7 +174,7 @@ public interface InvoiceType extends BizEntityType<Invoice> {
 	 * @return the value of the '<em>Invoice Type Id</em>' attribute.
 	 * @see #setInvoiceTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceType_InvoiceTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

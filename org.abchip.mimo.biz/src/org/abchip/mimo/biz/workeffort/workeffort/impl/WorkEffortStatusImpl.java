@@ -9,13 +9,17 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortStatus;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getStatusDatetime <em>Status Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getReason <em>Reason</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortStatusImpl#getSetByUserLogin <em>Set By User Login</em>}</li>
  * </ul>
  *
@@ -60,26 +64,6 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 * @ordered
 	 */
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStatusDatetime() <em>Status Datetime</em>}' attribute.
@@ -122,24 +106,24 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	protected String reason = REASON_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSetByUserLogin() <em>Set By User Login</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSetByUserLogin()
+	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SET_BY_USER_LOGIN_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getSetByUserLogin() <em>Set By User Login</em>}' attribute.
+	 * The cached value of the '{@link #getSetByUserLogin() <em>Set By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSetByUserLogin()
 	 * @generated
 	 * @ordered
 	 */
-	protected String setByUserLogin = SET_BY_USER_LOGIN_EDEFAULT;
+	protected UserLogin setByUserLogin;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,7 +173,24 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 * @generated
 	 */
 	@Override
-	public String getSetByUserLogin() {
+	public UserLogin getSetByUserLogin() {
+		if (setByUserLogin != null && ((EObject)setByUserLogin).eIsProxy()) {
+			InternalEObject oldSetByUserLogin = (InternalEObject)setByUserLogin;
+			setByUserLogin = (UserLogin)eResolveProxy(oldSetByUserLogin);
+			if (setByUserLogin != oldSetByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_STATUS__SET_BY_USER_LOGIN, oldSetByUserLogin, setByUserLogin));
+			}
+		}
+		return setByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetSetByUserLogin() {
 		return setByUserLogin;
 	}
 
@@ -199,8 +200,8 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 * @generated
 	 */
 	@Override
-	public void setSetByUserLogin(String newSetByUserLogin) {
-		String oldSetByUserLogin = setByUserLogin;
+	public void setSetByUserLogin(UserLogin newSetByUserLogin) {
+		UserLogin oldSetByUserLogin = setByUserLogin;
 		setByUserLogin = newSetByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_STATUS__SET_BY_USER_LOGIN, oldSetByUserLogin, setByUserLogin));
@@ -235,7 +236,24 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -245,8 +263,8 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID, oldStatusId, statusId));
@@ -285,14 +303,16 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
 				return getWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
-				return getStatusId();
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_DATETIME:
 				return getStatusDatetime();
 			case WorkeffortPackage.WORK_EFFORT_STATUS__REASON:
 				return getReason();
+			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 			case WorkeffortPackage.WORK_EFFORT_STATUS__SET_BY_USER_LOGIN:
-				return getSetByUserLogin();
+				if (resolve) return getSetByUserLogin();
+				return basicGetSetByUserLogin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,17 +328,17 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_DATETIME:
 				setStatusDatetime((Date)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__REASON:
 				setReason((String)newValue);
 				return;
+			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__SET_BY_USER_LOGIN:
-				setSetByUserLogin((String)newValue);
+				setSetByUserLogin((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,17 +355,17 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_DATETIME:
 				setStatusDatetime(STATUS_DATETIME_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__REASON:
 				setReason(REASON_EDEFAULT);
 				return;
+			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__SET_BY_USER_LOGIN:
-				setSetByUserLogin(SET_BY_USER_LOGIN_EDEFAULT);
+				setSetByUserLogin((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,14 +381,14 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_STATUS__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_DATETIME:
 				return STATUS_DATETIME_EDEFAULT == null ? statusDatetime != null : !STATUS_DATETIME_EDEFAULT.equals(statusDatetime);
 			case WorkeffortPackage.WORK_EFFORT_STATUS__REASON:
 				return REASON_EDEFAULT == null ? reason != null : !REASON_EDEFAULT.equals(reason);
+			case WorkeffortPackage.WORK_EFFORT_STATUS__STATUS_ID:
+				return statusId != null;
 			case WorkeffortPackage.WORK_EFFORT_STATUS__SET_BY_USER_LOGIN:
-				return SET_BY_USER_LOGIN_EDEFAULT == null ? setByUserLogin != null : !SET_BY_USER_LOGIN_EDEFAULT.equals(setByUserLogin);
+				return setByUserLogin != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,14 +405,10 @@ public class WorkEffortStatusImpl extends BizEntityImpl implements WorkEffortSta
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", statusDatetime: ");
 		result.append(statusDatetime);
 		result.append(", reason: ");
 		result.append(reason);
-		result.append(", setByUserLogin: ");
-		result.append(setByUserLogin);
 		result.append(')');
 		return result.toString();
 	}

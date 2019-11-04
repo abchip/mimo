@@ -22,8 +22,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#getDeliverableId <em>Deliverable Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#getDeliverableName <em>Deliverable Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#getDeliverableTypeId <em>Deliverable Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#getDeliverableTypeId <em>Deliverable Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getDeliverable()
@@ -85,30 +85,30 @@ public interface Deliverable extends BizEntityTyped<DeliverableType> {
 	void setDeliverableName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Deliverable Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Deliverable Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Deliverable Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deliverable Type Id</em>' attribute.
-	 * @see #setDeliverableTypeId(String)
+	 * @return the value of the '<em>Deliverable Type Id</em>' reference.
+	 * @see #setDeliverableTypeId(DeliverableType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getDeliverable_DeliverableTypeId()
-	 * @model annotation="mimo-ent-domain frame='DeliverableType'"
+	 * @model keys="deliverableTypeId"
 	 * @generated
 	 */
-	String getDeliverableTypeId();
+	DeliverableType getDeliverableTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#getDeliverableTypeId <em>Deliverable Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.Deliverable#getDeliverableTypeId <em>Deliverable Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deliverable Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Deliverable Type Id</em>' reference.
 	 * @see #getDeliverableTypeId()
 	 * @generated
 	 */
-	void setDeliverableTypeId(String value);
+	void setDeliverableTypeId(DeliverableType value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

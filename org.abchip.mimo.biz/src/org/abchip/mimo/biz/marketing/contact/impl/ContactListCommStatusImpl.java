@@ -7,13 +7,20 @@
  */
 package org.abchip.mimo.biz.marketing.contact.impl;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.contact.ContactListCommStatus;
 import org.abchip.mimo.biz.marketing.contact.ContactPackage;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,12 +32,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getContactListId <em>Contact List Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getMessageId <em>Message Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getMessageId <em>Message Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.contact.impl.ContactListCommStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,66 +69,6 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	protected String contactListId = CONTACT_LIST_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMUNICATION_EVENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String communicationEventId = COMMUNICATION_EVENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHANGE_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String changeByUserLoginId = CHANGE_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getMessageId() <em>Message Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -142,44 +89,54 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	protected String messageId = MESSAGE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommunicationEventId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CommunicationEvent communicationEventId;
+
+	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech contactMechId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
+	protected Party partyId;
 
 	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getChangeByUserLoginId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected UserLogin changeByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,7 +163,24 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public String getChangeByUserLoginId() {
+	public UserLogin getChangeByUserLoginId() {
+		if (changeByUserLoginId != null && ((EObject)changeByUserLoginId).eIsProxy()) {
+			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
+			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
+			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
+			}
+		}
+		return changeByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangeByUserLoginId() {
 		return changeByUserLoginId;
 	}
 
@@ -216,8 +190,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public void setChangeByUserLoginId(String newChangeByUserLoginId) {
-		String oldChangeByUserLoginId = changeByUserLoginId;
+	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
@@ -229,7 +203,24 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public String getCommunicationEventId() {
+	public CommunicationEvent getCommunicationEventId() {
+		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
+			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
+			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
+			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
+			}
+		}
+		return communicationEventId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEvent basicGetCommunicationEventId() {
 		return communicationEventId;
 	}
 
@@ -239,8 +230,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public void setCommunicationEventId(String newCommunicationEventId) {
-		String oldCommunicationEventId = communicationEventId;
+	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
@@ -275,7 +266,24 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public ContactMech getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -285,8 +293,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -321,7 +329,24 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -331,8 +356,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__PARTY_ID, oldPartyId, partyId));
@@ -344,7 +369,24 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_LIST_COMM_STATUS__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -354,8 +396,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_LIST_COMM_STATUS__STATUS_ID, oldStatusId, statusId));
@@ -371,18 +413,23 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 		switch (featureID) {
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
 				return getContactListId();
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
-				return getCommunicationEventId();
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID:
-				return getContactMechId();
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return getChangeByUserLoginId();
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__MESSAGE_ID:
 				return getMessageId();
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
+				if (resolve) return getCommunicationEventId();
+				return basicGetCommunicationEventId();
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__PARTY_ID:
-				return getPartyId();
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				if (resolve) return getChangeByUserLoginId();
+				return basicGetChangeByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -398,23 +445,23 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
 				setContactListId((String)newValue);
 				return;
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((String)newValue);
-				return;
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
-				return;
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((String)newValue);
-				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__MESSAGE_ID:
 				setMessageId((String)newValue);
 				return;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
+				setCommunicationEventId((CommunicationEvent)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)newValue);
+				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__PARTY_ID:
-				setPartyId((String)newValue);
+				setPartyId((Party)newValue);
 				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
+				return;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -431,23 +478,23 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
 				setContactListId(CONTACT_LIST_ID_EDEFAULT);
 				return;
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId(COMMUNICATION_EVENT_ID_EDEFAULT);
-				return;
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
-				return;
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId(CHANGE_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__MESSAGE_ID:
 				setMessageId(MESSAGE_ID_EDEFAULT);
 				return;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
+				setCommunicationEventId((CommunicationEvent)null);
+				return;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)null);
+				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
+				setPartyId((Party)null);
 				return;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
+				return;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -463,18 +510,18 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 		switch (featureID) {
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID:
 				return CONTACT_LIST_ID_EDEFAULT == null ? contactListId != null : !CONTACT_LIST_ID_EDEFAULT.equals(contactListId);
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
-				return COMMUNICATION_EVENT_ID_EDEFAULT == null ? communicationEventId != null : !COMMUNICATION_EVENT_ID_EDEFAULT.equals(communicationEventId);
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
-			case ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return CHANGE_BY_USER_LOGIN_ID_EDEFAULT == null ? changeByUserLoginId != null : !CHANGE_BY_USER_LOGIN_ID_EDEFAULT.equals(changeByUserLoginId);
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__MESSAGE_ID:
 				return MESSAGE_ID_EDEFAULT == null ? messageId != null : !MESSAGE_ID_EDEFAULT.equals(messageId);
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID:
+				return communicationEventId != null;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID:
+				return contactMechId != null;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
+				return partyId != null;
 			case ContactPackage.CONTACT_LIST_COMM_STATUS__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
+			case ContactPackage.CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				return changeByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -491,18 +538,8 @@ public class ContactListCommStatusImpl extends BizEntityImpl implements ContactL
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contactListId: ");
 		result.append(contactListId);
-		result.append(", communicationEventId: ");
-		result.append(communicationEventId);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
-		result.append(", changeByUserLoginId: ");
-		result.append(changeByUserLoginId);
 		result.append(", messageId: ");
 		result.append(messageId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(')');
 		return result.toString();
 	}

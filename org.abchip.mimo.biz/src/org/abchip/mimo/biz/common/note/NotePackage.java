@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface NotePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-common-note";
+	String eNS_PREFIX = "biz-note";
 
 	/**
 	 * The singleton instance of the package.
@@ -170,7 +171,7 @@ public interface NotePackage extends EPackage {
 	int NOTE_DATA__NOTE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Note Party</b></em>' attribute.
+	 * The feature id for the '<em><b>Note Party</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -276,15 +277,15 @@ public interface NotePackage extends EPackage {
 	EAttribute getNoteData_NoteName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.note.NoteData#getNoteParty <em>Note Party</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.note.NoteData#getNoteParty <em>Note Party</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Note Party</em>'.
+	 * @return the meta object for the reference '<em>Note Party</em>'.
 	 * @see org.abchip.mimo.biz.common.note.NoteData#getNoteParty()
 	 * @see #getNoteData()
 	 * @generated
 	 */
-	EAttribute getNoteData_NoteParty();
+	EReference getNoteData_NoteParty();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -375,12 +376,12 @@ public interface NotePackage extends EPackage {
 		EAttribute NOTE_DATA__NOTE_NAME = eINSTANCE.getNoteData_NoteName();
 
 		/**
-		 * The meta object literal for the '<em><b>Note Party</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Note Party</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NOTE_DATA__NOTE_PARTY = eINSTANCE.getNoteData_NoteParty();
+		EReference NOTE_DATA__NOTE_PARTY = eINSTANCE.getNoteData_NoteParty();
 
 	}
 

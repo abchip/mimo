@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,9 +27,9 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getEmailAddress <em>Email Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getLastInviteDate <em>Last Invite Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getToName <em>To Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getToName <em>To Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyInvitationGroupAssocs <em>Party Invitation Group Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyInvitationRoleAssocs <em>Party Invitation Role Assocs</em>}</li>
  * </ul>
@@ -117,30 +118,30 @@ public interface PartyInvitation extends BizEntity {
 	void setPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyInvitation#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyInvitation#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>To Name</b></em>' attribute.
@@ -203,30 +204,30 @@ public interface PartyInvitation extends BizEntity {
 	List<String> getPartyInvitationRoleAssocs();
 
 	/**
-	 * Returns the value of the '<em><b>Party Id From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id From</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id From</em>' attribute.
-	 * @see #setPartyIdFrom(String)
+	 * @return the value of the '<em>Party Id From</em>' reference.
+	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyInvitation_PartyIdFrom()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdFrom();
+	Party getPartyIdFrom();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyIdFrom <em>Party Id From</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyInvitation#getPartyIdFrom <em>Party Id From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id From</em>' attribute.
+	 * @param value the new value of the '<em>Party Id From</em>' reference.
 	 * @see #getPartyIdFrom()
 	 * @generated
 	 */
-	void setPartyIdFrom(String value);
+	void setPartyIdFrom(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Invitation Id</b></em>' attribute.

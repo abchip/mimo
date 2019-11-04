@@ -95,7 +95,6 @@ public interface UserLoginSession extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginSession_UserLoginId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='UserLogin'"
 	 * @generated
 	 */
 	String getUserLoginId();

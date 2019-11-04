@@ -17,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,8 +31,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.DeliverableImpl#getDeliverableId <em>Deliverable Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.DeliverableImpl#getDeliverableName <em>Deliverable Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.DeliverableImpl#getDeliverableTypeId <em>Deliverable Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.DeliverableImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.DeliverableImpl#getDeliverableTypeId <em>Deliverable Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,26 +84,6 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	protected String deliverableName = DELIVERABLE_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDeliverableTypeId() <em>Deliverable Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DELIVERABLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDeliverableTypeId() <em>Deliverable Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deliverableTypeId = DELIVERABLE_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,6 +102,16 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDeliverableTypeId() <em>Deliverable Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeliverableTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeliverableType deliverableTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,7 +184,24 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getDeliverableTypeId() {
+	public DeliverableType getDeliverableTypeId() {
+		if (deliverableTypeId != null && ((EObject)deliverableTypeId).eIsProxy()) {
+			InternalEObject oldDeliverableTypeId = (InternalEObject)deliverableTypeId;
+			deliverableTypeId = (DeliverableType)eResolveProxy(oldDeliverableTypeId);
+			if (deliverableTypeId != oldDeliverableTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
+			}
+		}
+		return deliverableTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeliverableType basicGetDeliverableTypeId() {
 		return deliverableTypeId;
 	}
 
@@ -202,8 +211,8 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setDeliverableTypeId(String newDeliverableTypeId) {
-		String oldDeliverableTypeId = deliverableTypeId;
+	public void setDeliverableTypeId(DeliverableType newDeliverableTypeId) {
+		DeliverableType oldDeliverableTypeId = deliverableTypeId;
 		deliverableTypeId = newDeliverableTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
@@ -268,10 +277,11 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 				return getDeliverableId();
 			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME:
 				return getDeliverableName();
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
-				return getDeliverableTypeId();
 			case WorkeffortPackage.DELIVERABLE__DESCRIPTION:
 				return getDescription();
+			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
+				if (resolve) return getDeliverableTypeId();
+				return basicGetDeliverableTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -290,11 +300,11 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME:
 				setDeliverableName((String)newValue);
 				return;
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
-				setDeliverableTypeId((String)newValue);
-				return;
 			case WorkeffortPackage.DELIVERABLE__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
+				setDeliverableTypeId((DeliverableType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -314,11 +324,11 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME:
 				setDeliverableName(DELIVERABLE_NAME_EDEFAULT);
 				return;
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
-				setDeliverableTypeId(DELIVERABLE_TYPE_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.DELIVERABLE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
+				setDeliverableTypeId((DeliverableType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -336,10 +346,10 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 				return DELIVERABLE_ID_EDEFAULT == null ? deliverableId != null : !DELIVERABLE_ID_EDEFAULT.equals(deliverableId);
 			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_NAME:
 				return DELIVERABLE_NAME_EDEFAULT == null ? deliverableName != null : !DELIVERABLE_NAME_EDEFAULT.equals(deliverableName);
-			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
-				return DELIVERABLE_TYPE_ID_EDEFAULT == null ? deliverableTypeId != null : !DELIVERABLE_TYPE_ID_EDEFAULT.equals(deliverableTypeId);
 			case WorkeffortPackage.DELIVERABLE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case WorkeffortPackage.DELIVERABLE__DELIVERABLE_TYPE_ID:
+				return deliverableTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -358,8 +368,6 @@ public class DeliverableImpl extends BizEntityTypedImpl<DeliverableType> impleme
 		result.append(deliverableId);
 		result.append(", deliverableName: ");
 		result.append(deliverableName);
-		result.append(", deliverableTypeId: ");
-		result.append(deliverableTypeId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

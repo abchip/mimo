@@ -37,7 +37,7 @@ public interface TrainingRequest extends BizEntity {
 	 * @return the value of the '<em>Training Request Id</em>' attribute.
 	 * @see #setTrainingRequestId(String)
 	 * @see org.abchip.mimo.biz.humanres.trainings.TrainingsPackage#getTrainingRequest_TrainingRequestId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

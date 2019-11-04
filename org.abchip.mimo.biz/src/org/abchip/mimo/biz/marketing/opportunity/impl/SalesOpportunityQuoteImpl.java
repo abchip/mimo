@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.marketing.opportunity.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityQuote;
+import org.abchip.mimo.biz.order.quote.Quote;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -57,24 +60,14 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 	protected String salesOpportunityId = SALES_OPPORTUNITY_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
+	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getQuoteId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String QUOTE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuoteId() <em>Quote Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quoteId = QUOTE_ID_EDEFAULT;
+	protected Quote quoteId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +94,24 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 	 * @generated
 	 */
 	@Override
-	public String getQuoteId() {
+	public Quote getQuoteId() {
+		if (quoteId != null && ((EObject)quoteId).eIsProxy()) {
+			InternalEObject oldQuoteId = (InternalEObject)quoteId;
+			quoteId = (Quote)eResolveProxy(oldQuoteId);
+			if (quoteId != oldQuoteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_QUOTE__QUOTE_ID, oldQuoteId, quoteId));
+			}
+		}
+		return quoteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quote basicGetQuoteId() {
 		return quoteId;
 	}
 
@@ -111,8 +121,8 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 	 * @generated
 	 */
 	@Override
-	public void setQuoteId(String newQuoteId) {
-		String oldQuoteId = quoteId;
+	public void setQuoteId(Quote newQuoteId) {
+		Quote oldQuoteId = quoteId;
 		quoteId = newQuoteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_QUOTE__QUOTE_ID, oldQuoteId, quoteId));
@@ -152,7 +162,8 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 			case OpportunityPackage.SALES_OPPORTUNITY_QUOTE__SALES_OPPORTUNITY_ID:
 				return getSalesOpportunityId();
 			case OpportunityPackage.SALES_OPPORTUNITY_QUOTE__QUOTE_ID:
-				return getQuoteId();
+				if (resolve) return getQuoteId();
+				return basicGetQuoteId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,7 +180,7 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 				setSalesOpportunityId((String)newValue);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_QUOTE__QUOTE_ID:
-				setQuoteId((String)newValue);
+				setQuoteId((Quote)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +198,7 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 				setSalesOpportunityId(SALES_OPPORTUNITY_ID_EDEFAULT);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_QUOTE__QUOTE_ID:
-				setQuoteId(QUOTE_ID_EDEFAULT);
+				setQuoteId((Quote)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,7 +215,7 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 			case OpportunityPackage.SALES_OPPORTUNITY_QUOTE__SALES_OPPORTUNITY_ID:
 				return SALES_OPPORTUNITY_ID_EDEFAULT == null ? salesOpportunityId != null : !SALES_OPPORTUNITY_ID_EDEFAULT.equals(salesOpportunityId);
 			case OpportunityPackage.SALES_OPPORTUNITY_QUOTE__QUOTE_ID:
-				return QUOTE_ID_EDEFAULT == null ? quoteId != null : !QUOTE_ID_EDEFAULT.equals(quoteId);
+				return quoteId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,8 +232,6 @@ public class SalesOpportunityQuoteImpl extends BizEntityImpl implements SalesOpp
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (salesOpportunityId: ");
 		result.append(salesOpportunityId);
-		result.append(", quoteId: ");
-		result.append(quoteId);
 		result.append(')');
 		return result.toString();
 	}

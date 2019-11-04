@@ -13,14 +13,23 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.product.inventory.InventoryItem;
 import org.abchip.mimo.biz.product.inventory.InventoryItemType;
 import org.abchip.mimo.biz.product.inventory.InventoryPackage;
+import org.abchip.mimo.biz.product.inventory.Lot;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -39,27 +48,27 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getAvailableToPromiseTotal <em>Available To Promise Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getBinNumber <em>Bin Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getContainerId <em>Container Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getDatetimeManufactured <em>Datetime Manufactured</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getDatetimeReceived <em>Datetime Received</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getExpireDate <em>Expire Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getLocationSeqId <em>Location Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getLotId <em>Lot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getOldAvailableToPromise <em>Old Available To Promise</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getOldQuantityOnHand <em>Old Quantity On Hand</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getOwnerPartyId <em>Owner Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getQuantityOnHandTotal <em>Quantity On Hand Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getSerialNumber <em>Serial Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getSoftIdentifier <em>Soft Identifier</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getUnitCost <em>Unit Cost</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getOwnerPartyId <em>Owner Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getContainerId <em>Container Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getLotId <em>Lot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getInventoryItemAttributes <em>Inventory Item Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getInventoryItemDetails <em>Inventory Item Details</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.impl.InventoryItemImpl#getInventoryItemLabelAppls <em>Inventory Item Label Appls</em>}</li>
@@ -215,46 +224,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	protected String comments = COMMENTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContainerId() <em>Container Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainerId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTAINER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContainerId() <em>Container Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainerId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String containerId = CONTAINER_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDatetimeManufactured() <em>Datetime Manufactured</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -315,66 +284,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	protected Date expireDate = EXPIRE_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInventoryItemTypeId() <em>Inventory Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemTypeId() <em>Inventory Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemTypeId = INVENTORY_ITEM_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getLocationSeqId() <em>Location Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -393,26 +302,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @ordered
 	 */
 	protected String locationSeqId = LOCATION_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLotId() <em>Lot Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLotId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LOT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLotId() <em>Lot Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLotId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lotId = LOT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOldAvailableToPromise() <em>Old Available To Promise</em>}' attribute.
@@ -453,66 +342,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @ordered
 	 */
 	protected BigDecimal oldQuantityOnHand = OLD_QUANTITY_ON_HAND_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OWNER_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String ownerPartyId = OWNER_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getQuantityOnHandTotal() <em>Quantity On Hand Total</em>}' attribute.
@@ -575,26 +404,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	protected String softIdentifier = SOFT_IDENTIFIER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getUnitCost() <em>Unit Cost</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -615,24 +424,114 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	protected BigDecimal unitCost = UNIT_COST_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getInventoryItemTypeId() <em>Inventory Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUomId()
+	 * @see #getInventoryItemTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_ID_EDEFAULT = null;
+	protected InventoryItemType inventoryItemTypeId;
 
 	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnerPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party ownerPartyId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
+
+	/**
+	 * The cached value of the '{@link #getContainerId() <em>Container Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainerId()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.abchip.mimo.biz.product.facility.Container containerId;
+
+	/**
+	 * The cached value of the '{@link #getLotId() <em>Lot Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLotId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Lot lotId;
+
+	/**
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String uomId = UOM_ID_EDEFAULT;
+	protected Uom uomId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
 
 	/**
 	 * The cached value of the '{@link #getInventoryItemAttributes() <em>Inventory Item Attributes</em>}' attribute list.
@@ -837,7 +736,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -847,8 +763,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -929,7 +845,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -939,8 +872,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -1021,7 +954,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getOwnerPartyId() {
+	public Party getOwnerPartyId() {
+		if (ownerPartyId != null && ((EObject)ownerPartyId).eIsProxy()) {
+			InternalEObject oldOwnerPartyId = (InternalEObject)ownerPartyId;
+			ownerPartyId = (Party)eResolveProxy(oldOwnerPartyId);
+			if (ownerPartyId != oldOwnerPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
+			}
+		}
+		return ownerPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOwnerPartyId() {
 		return ownerPartyId;
 	}
 
@@ -1031,8 +981,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setOwnerPartyId(String newOwnerPartyId) {
-		String oldOwnerPartyId = ownerPartyId;
+	public void setOwnerPartyId(Party newOwnerPartyId) {
+		Party oldOwnerPartyId = ownerPartyId;
 		ownerPartyId = newOwnerPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
@@ -1044,7 +994,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -1054,8 +1021,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__PARTY_ID, oldPartyId, partyId));
@@ -1067,7 +1034,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -1077,8 +1061,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__PRODUCT_ID, oldProductId, productId));
@@ -1159,7 +1143,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -1169,8 +1170,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__STATUS_ID, oldStatusId, statusId));
@@ -1205,7 +1206,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -1215,8 +1233,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__UOM_ID, oldUomId, uomId));
@@ -1400,7 +1418,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemTypeId() {
+	public InventoryItemType getInventoryItemTypeId() {
+		if (inventoryItemTypeId != null && ((EObject)inventoryItemTypeId).eIsProxy()) {
+			InternalEObject oldInventoryItemTypeId = (InternalEObject)inventoryItemTypeId;
+			inventoryItemTypeId = (InventoryItemType)eResolveProxy(oldInventoryItemTypeId);
+			if (inventoryItemTypeId != oldInventoryItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID, oldInventoryItemTypeId, inventoryItemTypeId));
+			}
+		}
+		return inventoryItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItemType basicGetInventoryItemTypeId() {
 		return inventoryItemTypeId;
 	}
 
@@ -1410,8 +1445,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemTypeId(String newInventoryItemTypeId) {
-		String oldInventoryItemTypeId = inventoryItemTypeId;
+	public void setInventoryItemTypeId(InventoryItemType newInventoryItemTypeId) {
+		InventoryItemType oldInventoryItemTypeId = inventoryItemTypeId;
 		inventoryItemTypeId = newInventoryItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID, oldInventoryItemTypeId, inventoryItemTypeId));
@@ -1423,7 +1458,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -1433,8 +1485,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__FACILITY_ID, oldFacilityId, facilityId));
@@ -1446,7 +1498,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getContainerId() {
+	public org.abchip.mimo.biz.product.facility.Container getContainerId() {
+		if (containerId != null && ((EObject)containerId).eIsProxy()) {
+			InternalEObject oldContainerId = (InternalEObject)containerId;
+			containerId = (org.abchip.mimo.biz.product.facility.Container)eResolveProxy(oldContainerId);
+			if (containerId != oldContainerId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__CONTAINER_ID, oldContainerId, containerId));
+			}
+		}
+		return containerId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public org.abchip.mimo.biz.product.facility.Container basicGetContainerId() {
 		return containerId;
 	}
 
@@ -1456,8 +1525,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setContainerId(String newContainerId) {
-		String oldContainerId = containerId;
+	public void setContainerId(org.abchip.mimo.biz.product.facility.Container newContainerId) {
+		org.abchip.mimo.biz.product.facility.Container oldContainerId = containerId;
 		containerId = newContainerId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__CONTAINER_ID, oldContainerId, containerId));
@@ -1469,7 +1538,24 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public String getLotId() {
+	public Lot getLotId() {
+		if (lotId != null && ((EObject)lotId).eIsProxy()) {
+			InternalEObject oldLotId = (InternalEObject)lotId;
+			lotId = (Lot)eResolveProxy(oldLotId);
+			if (lotId != oldLotId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InventoryPackage.INVENTORY_ITEM__LOT_ID, oldLotId, lotId));
+			}
+		}
+		return lotId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Lot basicGetLotId() {
 		return lotId;
 	}
 
@@ -1479,8 +1565,8 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 	 * @generated
 	 */
 	@Override
-	public void setLotId(String newLotId) {
-		String oldLotId = lotId;
+	public void setLotId(Lot newLotId) {
+		Lot oldLotId = lotId;
 		lotId = newLotId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InventoryPackage.INVENTORY_ITEM__LOT_ID, oldLotId, lotId));
@@ -1531,48 +1617,59 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 				return getBinNumber();
 			case InventoryPackage.INVENTORY_ITEM__COMMENTS:
 				return getComments();
-			case InventoryPackage.INVENTORY_ITEM__CONTAINER_ID:
-				return getContainerId();
-			case InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case InventoryPackage.INVENTORY_ITEM__DATETIME_MANUFACTURED:
 				return getDatetimeManufactured();
 			case InventoryPackage.INVENTORY_ITEM__DATETIME_RECEIVED:
 				return getDatetimeReceived();
 			case InventoryPackage.INVENTORY_ITEM__EXPIRE_DATE:
 				return getExpireDate();
-			case InventoryPackage.INVENTORY_ITEM__FACILITY_ID:
-				return getFacilityId();
-			case InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID:
-				return getFixedAssetId();
-			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID:
-				return getInventoryItemTypeId();
 			case InventoryPackage.INVENTORY_ITEM__LOCATION_SEQ_ID:
 				return getLocationSeqId();
-			case InventoryPackage.INVENTORY_ITEM__LOT_ID:
-				return getLotId();
 			case InventoryPackage.INVENTORY_ITEM__OLD_AVAILABLE_TO_PROMISE:
 				return getOldAvailableToPromise();
 			case InventoryPackage.INVENTORY_ITEM__OLD_QUANTITY_ON_HAND:
 				return getOldQuantityOnHand();
-			case InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID:
-				return getOwnerPartyId();
-			case InventoryPackage.INVENTORY_ITEM__PARTY_ID:
-				return getPartyId();
-			case InventoryPackage.INVENTORY_ITEM__PRODUCT_ID:
-				return getProductId();
 			case InventoryPackage.INVENTORY_ITEM__QUANTITY_ON_HAND_TOTAL:
 				return getQuantityOnHandTotal();
 			case InventoryPackage.INVENTORY_ITEM__SERIAL_NUMBER:
 				return getSerialNumber();
 			case InventoryPackage.INVENTORY_ITEM__SOFT_IDENTIFIER:
 				return getSoftIdentifier();
-			case InventoryPackage.INVENTORY_ITEM__STATUS_ID:
-				return getStatusId();
 			case InventoryPackage.INVENTORY_ITEM__UNIT_COST:
 				return getUnitCost();
+			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID:
+				if (resolve) return getInventoryItemTypeId();
+				return basicGetInventoryItemTypeId();
+			case InventoryPackage.INVENTORY_ITEM__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case InventoryPackage.INVENTORY_ITEM__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID:
+				if (resolve) return getOwnerPartyId();
+				return basicGetOwnerPartyId();
+			case InventoryPackage.INVENTORY_ITEM__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case InventoryPackage.INVENTORY_ITEM__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
+			case InventoryPackage.INVENTORY_ITEM__CONTAINER_ID:
+				if (resolve) return getContainerId();
+				return basicGetContainerId();
+			case InventoryPackage.INVENTORY_ITEM__LOT_ID:
+				if (resolve) return getLotId();
+				return basicGetLotId();
 			case InventoryPackage.INVENTORY_ITEM__UOM_ID:
-				return getUomId();
+				if (resolve) return getUomId();
+				return basicGetUomId();
+			case InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
 			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES:
 				return getInventoryItemAttributes();
 			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_DETAILS:
@@ -1615,12 +1712,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			case InventoryPackage.INVENTORY_ITEM__COMMENTS:
 				setComments((String)newValue);
 				return;
-			case InventoryPackage.INVENTORY_ITEM__CONTAINER_ID:
-				setContainerId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case InventoryPackage.INVENTORY_ITEM__DATETIME_MANUFACTURED:
 				setDatetimeManufactured((Date)newValue);
 				return;
@@ -1630,35 +1721,14 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			case InventoryPackage.INVENTORY_ITEM__EXPIRE_DATE:
 				setExpireDate((Date)newValue);
 				return;
-			case InventoryPackage.INVENTORY_ITEM__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID:
-				setInventoryItemTypeId((String)newValue);
-				return;
 			case InventoryPackage.INVENTORY_ITEM__LOCATION_SEQ_ID:
 				setLocationSeqId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__LOT_ID:
-				setLotId((String)newValue);
 				return;
 			case InventoryPackage.INVENTORY_ITEM__OLD_AVAILABLE_TO_PROMISE:
 				setOldAvailableToPromise((BigDecimal)newValue);
 				return;
 			case InventoryPackage.INVENTORY_ITEM__OLD_QUANTITY_ON_HAND:
 				setOldQuantityOnHand((BigDecimal)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID:
-				setOwnerPartyId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__PRODUCT_ID:
-				setProductId((String)newValue);
 				return;
 			case InventoryPackage.INVENTORY_ITEM__QUANTITY_ON_HAND_TOTAL:
 				setQuantityOnHandTotal((BigDecimal)newValue);
@@ -1669,14 +1739,41 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			case InventoryPackage.INVENTORY_ITEM__SOFT_IDENTIFIER:
 				setSoftIdentifier((String)newValue);
 				return;
-			case InventoryPackage.INVENTORY_ITEM__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case InventoryPackage.INVENTORY_ITEM__UNIT_COST:
 				setUnitCost((BigDecimal)newValue);
 				return;
+			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID:
+				setInventoryItemTypeId((InventoryItemType)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID:
+				setOwnerPartyId((Party)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__FACILITY_ID:
+				setFacilityId((Facility)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__CONTAINER_ID:
+				setContainerId((org.abchip.mimo.biz.product.facility.Container)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__LOT_ID:
+				setLotId((Lot)newValue);
+				return;
 			case InventoryPackage.INVENTORY_ITEM__UOM_ID:
-				setUomId((String)newValue);
+				setUomId((Uom)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
 				return;
 			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES:
 				getInventoryItemAttributes().clear();
@@ -1727,12 +1824,6 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			case InventoryPackage.INVENTORY_ITEM__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
-			case InventoryPackage.INVENTORY_ITEM__CONTAINER_ID:
-				setContainerId(CONTAINER_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case InventoryPackage.INVENTORY_ITEM__DATETIME_MANUFACTURED:
 				setDatetimeManufactured(DATETIME_MANUFACTURED_EDEFAULT);
 				return;
@@ -1742,35 +1833,14 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			case InventoryPackage.INVENTORY_ITEM__EXPIRE_DATE:
 				setExpireDate(EXPIRE_DATE_EDEFAULT);
 				return;
-			case InventoryPackage.INVENTORY_ITEM__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID:
-				setInventoryItemTypeId(INVENTORY_ITEM_TYPE_ID_EDEFAULT);
-				return;
 			case InventoryPackage.INVENTORY_ITEM__LOCATION_SEQ_ID:
 				setLocationSeqId(LOCATION_SEQ_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__LOT_ID:
-				setLotId(LOT_ID_EDEFAULT);
 				return;
 			case InventoryPackage.INVENTORY_ITEM__OLD_AVAILABLE_TO_PROMISE:
 				setOldAvailableToPromise(OLD_AVAILABLE_TO_PROMISE_EDEFAULT);
 				return;
 			case InventoryPackage.INVENTORY_ITEM__OLD_QUANTITY_ON_HAND:
 				setOldQuantityOnHand(OLD_QUANTITY_ON_HAND_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID:
-				setOwnerPartyId(OWNER_PARTY_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case InventoryPackage.INVENTORY_ITEM__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case InventoryPackage.INVENTORY_ITEM__QUANTITY_ON_HAND_TOTAL:
 				setQuantityOnHandTotal(QUANTITY_ON_HAND_TOTAL_EDEFAULT);
@@ -1781,14 +1851,41 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 			case InventoryPackage.INVENTORY_ITEM__SOFT_IDENTIFIER:
 				setSoftIdentifier(SOFT_IDENTIFIER_EDEFAULT);
 				return;
-			case InventoryPackage.INVENTORY_ITEM__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case InventoryPackage.INVENTORY_ITEM__UNIT_COST:
 				setUnitCost(UNIT_COST_EDEFAULT);
 				return;
+			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID:
+				setInventoryItemTypeId((InventoryItemType)null);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID:
+				setOwnerPartyId((Party)null);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__FACILITY_ID:
+				setFacilityId((Facility)null);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__CONTAINER_ID:
+				setContainerId((org.abchip.mimo.biz.product.facility.Container)null);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__LOT_ID:
+				setLotId((Lot)null);
+				return;
 			case InventoryPackage.INVENTORY_ITEM__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
+				setUomId((Uom)null);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
 				return;
 			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES:
 				getInventoryItemAttributes().clear();
@@ -1828,48 +1925,48 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 				return BIN_NUMBER_EDEFAULT == null ? binNumber != null : !BIN_NUMBER_EDEFAULT.equals(binNumber);
 			case InventoryPackage.INVENTORY_ITEM__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case InventoryPackage.INVENTORY_ITEM__CONTAINER_ID:
-				return CONTAINER_ID_EDEFAULT == null ? containerId != null : !CONTAINER_ID_EDEFAULT.equals(containerId);
-			case InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case InventoryPackage.INVENTORY_ITEM__DATETIME_MANUFACTURED:
 				return DATETIME_MANUFACTURED_EDEFAULT == null ? datetimeManufactured != null : !DATETIME_MANUFACTURED_EDEFAULT.equals(datetimeManufactured);
 			case InventoryPackage.INVENTORY_ITEM__DATETIME_RECEIVED:
 				return DATETIME_RECEIVED_EDEFAULT == null ? datetimeReceived != null : !DATETIME_RECEIVED_EDEFAULT.equals(datetimeReceived);
 			case InventoryPackage.INVENTORY_ITEM__EXPIRE_DATE:
 				return EXPIRE_DATE_EDEFAULT == null ? expireDate != null : !EXPIRE_DATE_EDEFAULT.equals(expireDate);
-			case InventoryPackage.INVENTORY_ITEM__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
-			case InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
-			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID:
-				return INVENTORY_ITEM_TYPE_ID_EDEFAULT == null ? inventoryItemTypeId != null : !INVENTORY_ITEM_TYPE_ID_EDEFAULT.equals(inventoryItemTypeId);
 			case InventoryPackage.INVENTORY_ITEM__LOCATION_SEQ_ID:
 				return LOCATION_SEQ_ID_EDEFAULT == null ? locationSeqId != null : !LOCATION_SEQ_ID_EDEFAULT.equals(locationSeqId);
-			case InventoryPackage.INVENTORY_ITEM__LOT_ID:
-				return LOT_ID_EDEFAULT == null ? lotId != null : !LOT_ID_EDEFAULT.equals(lotId);
 			case InventoryPackage.INVENTORY_ITEM__OLD_AVAILABLE_TO_PROMISE:
 				return OLD_AVAILABLE_TO_PROMISE_EDEFAULT == null ? oldAvailableToPromise != null : !OLD_AVAILABLE_TO_PROMISE_EDEFAULT.equals(oldAvailableToPromise);
 			case InventoryPackage.INVENTORY_ITEM__OLD_QUANTITY_ON_HAND:
 				return OLD_QUANTITY_ON_HAND_EDEFAULT == null ? oldQuantityOnHand != null : !OLD_QUANTITY_ON_HAND_EDEFAULT.equals(oldQuantityOnHand);
-			case InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID:
-				return OWNER_PARTY_ID_EDEFAULT == null ? ownerPartyId != null : !OWNER_PARTY_ID_EDEFAULT.equals(ownerPartyId);
-			case InventoryPackage.INVENTORY_ITEM__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case InventoryPackage.INVENTORY_ITEM__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case InventoryPackage.INVENTORY_ITEM__QUANTITY_ON_HAND_TOTAL:
 				return QUANTITY_ON_HAND_TOTAL_EDEFAULT == null ? quantityOnHandTotal != null : !QUANTITY_ON_HAND_TOTAL_EDEFAULT.equals(quantityOnHandTotal);
 			case InventoryPackage.INVENTORY_ITEM__SERIAL_NUMBER:
 				return SERIAL_NUMBER_EDEFAULT == null ? serialNumber != null : !SERIAL_NUMBER_EDEFAULT.equals(serialNumber);
 			case InventoryPackage.INVENTORY_ITEM__SOFT_IDENTIFIER:
 				return SOFT_IDENTIFIER_EDEFAULT == null ? softIdentifier != null : !SOFT_IDENTIFIER_EDEFAULT.equals(softIdentifier);
-			case InventoryPackage.INVENTORY_ITEM__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case InventoryPackage.INVENTORY_ITEM__UNIT_COST:
 				return UNIT_COST_EDEFAULT == null ? unitCost != null : !UNIT_COST_EDEFAULT.equals(unitCost);
+			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_TYPE_ID:
+				return inventoryItemTypeId != null;
+			case InventoryPackage.INVENTORY_ITEM__PRODUCT_ID:
+				return productId != null;
+			case InventoryPackage.INVENTORY_ITEM__PARTY_ID:
+				return partyId != null;
+			case InventoryPackage.INVENTORY_ITEM__OWNER_PARTY_ID:
+				return ownerPartyId != null;
+			case InventoryPackage.INVENTORY_ITEM__STATUS_ID:
+				return statusId != null;
+			case InventoryPackage.INVENTORY_ITEM__FACILITY_ID:
+				return facilityId != null;
+			case InventoryPackage.INVENTORY_ITEM__CONTAINER_ID:
+				return containerId != null;
+			case InventoryPackage.INVENTORY_ITEM__LOT_ID:
+				return lotId != null;
 			case InventoryPackage.INVENTORY_ITEM__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+				return uomId != null;
+			case InventoryPackage.INVENTORY_ITEM__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case InventoryPackage.INVENTORY_ITEM__FIXED_ASSET_ID:
+				return fixedAssetId != null;
 			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_ATTRIBUTES:
 				return inventoryItemAttributes != null && !inventoryItemAttributes.isEmpty();
 			case InventoryPackage.INVENTORY_ITEM__INVENTORY_ITEM_DETAILS:
@@ -1906,48 +2003,26 @@ public class InventoryItemImpl extends BizEntityTypedImpl<InventoryItemType> imp
 		result.append(binNumber);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", containerId: ");
-		result.append(containerId);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", datetimeManufactured: ");
 		result.append(datetimeManufactured);
 		result.append(", datetimeReceived: ");
 		result.append(datetimeReceived);
 		result.append(", expireDate: ");
 		result.append(expireDate);
-		result.append(", facilityId: ");
-		result.append(facilityId);
-		result.append(", fixedAssetId: ");
-		result.append(fixedAssetId);
-		result.append(", inventoryItemTypeId: ");
-		result.append(inventoryItemTypeId);
 		result.append(", locationSeqId: ");
 		result.append(locationSeqId);
-		result.append(", lotId: ");
-		result.append(lotId);
 		result.append(", oldAvailableToPromise: ");
 		result.append(oldAvailableToPromise);
 		result.append(", oldQuantityOnHand: ");
 		result.append(oldQuantityOnHand);
-		result.append(", ownerPartyId: ");
-		result.append(ownerPartyId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", quantityOnHandTotal: ");
 		result.append(quantityOnHandTotal);
 		result.append(", serialNumber: ");
 		result.append(serialNumber);
 		result.append(", softIdentifier: ");
 		result.append(softIdentifier);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", unitCost: ");
 		result.append(unitCost);
-		result.append(", uomId: ");
-		result.append(uomId);
 		result.append(", inventoryItemAttributes: ");
 		result.append(inventoryItemAttributes);
 		result.append(", inventoryItemDetails: ");

@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -30,8 +32,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getInfoString <em>Info String</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getContactMechAttributes <em>Contact Mech Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.contact.impl.ContactMechImpl#getFromContactMechLinks <em>From Contact Mech Links</em>}</li>
  * </ul>
@@ -63,24 +65,6 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechTypeId = CONTACT_MECH_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getInfoString() <em>Info String</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,6 +82,15 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 	 * @ordered
 	 */
 	protected String infoString = INFO_STRING_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMechType contactMechTypeId;
 
 	/**
 	 * The cached value of the '{@link #getContactMechAttributes() <em>Contact Mech Attributes</em>}' attribute list.
@@ -456,7 +449,24 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getContactMechTypeId() {
+	public ContactMechType getContactMechTypeId() {
+		if (contactMechTypeId != null && ((EObject)contactMechTypeId).eIsProxy()) {
+			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
+			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
+			if (contactMechTypeId != oldContactMechTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
+			}
+		}
+		return contactMechTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMechType basicGetContactMechTypeId() {
 		return contactMechTypeId;
 	}
 
@@ -466,8 +476,8 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setContactMechTypeId(String newContactMechTypeId) {
-		String oldContactMechTypeId = contactMechTypeId;
+	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
+		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
@@ -506,10 +516,11 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH__CONTACT_MECH_ID:
 				return getContactMechId();
-			case ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID:
-				return getContactMechTypeId();
 			case ContactPackage.CONTACT_MECH__INFO_STRING:
 				return getInfoString();
+			case ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID:
+				if (resolve) return getContactMechTypeId();
+				return basicGetContactMechTypeId();
 			case ContactPackage.CONTACT_MECH__CONTACT_MECH_ATTRIBUTES:
 				return getContactMechAttributes();
 			case ContactPackage.CONTACT_MECH__FROM_CONTACT_MECH_LINKS:
@@ -530,11 +541,11 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 			case ContactPackage.CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId((String)newValue);
 				return;
-			case ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId((String)newValue);
-				return;
 			case ContactPackage.CONTACT_MECH__INFO_STRING:
 				setInfoString((String)newValue);
+				return;
+			case ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID:
+				setContactMechTypeId((ContactMechType)newValue);
 				return;
 			case ContactPackage.CONTACT_MECH__CONTACT_MECH_ATTRIBUTES:
 				getContactMechAttributes().clear();
@@ -559,11 +570,11 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 			case ContactPackage.CONTACT_MECH__CONTACT_MECH_ID:
 				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
 				return;
-			case ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId(CONTACT_MECH_TYPE_ID_EDEFAULT);
-				return;
 			case ContactPackage.CONTACT_MECH__INFO_STRING:
 				setInfoString(INFO_STRING_EDEFAULT);
+				return;
+			case ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID:
+				setContactMechTypeId((ContactMechType)null);
 				return;
 			case ContactPackage.CONTACT_MECH__CONTACT_MECH_ATTRIBUTES:
 				getContactMechAttributes().clear();
@@ -585,10 +596,10 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 		switch (featureID) {
 			case ContactPackage.CONTACT_MECH__CONTACT_MECH_ID:
 				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
-			case ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID:
-				return CONTACT_MECH_TYPE_ID_EDEFAULT == null ? contactMechTypeId != null : !CONTACT_MECH_TYPE_ID_EDEFAULT.equals(contactMechTypeId);
 			case ContactPackage.CONTACT_MECH__INFO_STRING:
 				return INFO_STRING_EDEFAULT == null ? infoString != null : !INFO_STRING_EDEFAULT.equals(infoString);
+			case ContactPackage.CONTACT_MECH__CONTACT_MECH_TYPE_ID:
+				return contactMechTypeId != null;
 			case ContactPackage.CONTACT_MECH__CONTACT_MECH_ATTRIBUTES:
 				return contactMechAttributes != null && !contactMechAttributes.isEmpty();
 			case ContactPackage.CONTACT_MECH__FROM_CONTACT_MECH_LINKS:
@@ -609,8 +620,6 @@ public class ContactMechImpl extends BizEntityTypedImpl<ContactMechType> impleme
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contactMechId: ");
 		result.append(contactMechId);
-		result.append(", contactMechTypeId: ");
-		result.append(contactMechTypeId);
 		result.append(", infoString: ");
 		result.append(infoString);
 		result.append(", contactMechAttributes: ");

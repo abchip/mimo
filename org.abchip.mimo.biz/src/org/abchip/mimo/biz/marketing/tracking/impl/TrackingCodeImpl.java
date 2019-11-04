@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.campaign.MarketingCampaign;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
@@ -18,6 +19,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -38,7 +41,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getGroupId <em>Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getOverrideCss <em>Override Css</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getOverrideLogo <em>Override Logo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
@@ -46,6 +48,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getSubgroupId <em>Subgroup Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getTrackableLifetime <em>Trackable Lifetime</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeImpl#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
  * </ul>
  *
@@ -258,26 +261,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMarketingCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MARKETING_CAMPAIGN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMarketingCampaignId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String marketingCampaignId = MARKETING_CAMPAIGN_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOverrideCss() <em>Override Css</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,24 +401,24 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	protected long trackableLifetime = TRACKABLE_LIFETIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTrackingCodeTypeId() <em>Tracking Code Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getMarketingCampaignId() <em>Marketing Campaign Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTrackingCodeTypeId()
+	 * @see #getMarketingCampaignId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TRACKING_CODE_TYPE_ID_EDEFAULT = null;
+	protected MarketingCampaign marketingCampaignId;
 
 	/**
-	 * The cached value of the '{@link #getTrackingCodeTypeId() <em>Tracking Code Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getTrackingCodeTypeId() <em>Tracking Code Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTrackingCodeTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String trackingCodeTypeId = TRACKING_CODE_TYPE_ID_EDEFAULT;
+	protected TrackingCodeType trackingCodeTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -669,7 +652,24 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 * @generated
 	 */
 	@Override
-	public String getMarketingCampaignId() {
+	public MarketingCampaign getMarketingCampaignId() {
+		if (marketingCampaignId != null && ((EObject)marketingCampaignId).eIsProxy()) {
+			InternalEObject oldMarketingCampaignId = (InternalEObject)marketingCampaignId;
+			marketingCampaignId = (MarketingCampaign)eResolveProxy(oldMarketingCampaignId);
+			if (marketingCampaignId != oldMarketingCampaignId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
+			}
+		}
+		return marketingCampaignId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MarketingCampaign basicGetMarketingCampaignId() {
 		return marketingCampaignId;
 	}
 
@@ -679,8 +679,8 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 * @generated
 	 */
 	@Override
-	public void setMarketingCampaignId(String newMarketingCampaignId) {
-		String oldMarketingCampaignId = marketingCampaignId;
+	public void setMarketingCampaignId(MarketingCampaign newMarketingCampaignId) {
+		MarketingCampaign oldMarketingCampaignId = marketingCampaignId;
 		marketingCampaignId = newMarketingCampaignId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID, oldMarketingCampaignId, marketingCampaignId));
@@ -876,7 +876,24 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 * @generated
 	 */
 	@Override
-	public String getTrackingCodeTypeId() {
+	public TrackingCodeType getTrackingCodeTypeId() {
+		if (trackingCodeTypeId != null && ((EObject)trackingCodeTypeId).eIsProxy()) {
+			InternalEObject oldTrackingCodeTypeId = (InternalEObject)trackingCodeTypeId;
+			trackingCodeTypeId = (TrackingCodeType)eResolveProxy(oldTrackingCodeTypeId);
+			if (trackingCodeTypeId != oldTrackingCodeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
+			}
+		}
+		return trackingCodeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TrackingCodeType basicGetTrackingCodeTypeId() {
 		return trackingCodeTypeId;
 	}
 
@@ -886,8 +903,8 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 	 * @generated
 	 */
 	@Override
-	public void setTrackingCodeTypeId(String newTrackingCodeTypeId) {
-		String oldTrackingCodeTypeId = trackingCodeTypeId;
+	public void setTrackingCodeTypeId(TrackingCodeType newTrackingCodeTypeId) {
+		TrackingCodeType oldTrackingCodeTypeId = trackingCodeTypeId;
 		trackingCodeTypeId = newTrackingCodeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
@@ -933,8 +950,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 				return getLastModifiedByUserLogin();
 			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
-			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
-				return getMarketingCampaignId();
 			case TrackingPackage.TRACKING_CODE__OVERRIDE_CSS:
 				return getOverrideCss();
 			case TrackingPackage.TRACKING_CODE__OVERRIDE_LOGO:
@@ -949,8 +964,12 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 				return getThruDate();
 			case TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME:
 				return getTrackableLifetime();
+			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
+				if (resolve) return getMarketingCampaignId();
+				return basicGetMarketingCampaignId();
 			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID:
-				return getTrackingCodeTypeId();
+				if (resolve) return getTrackingCodeTypeId();
+				return basicGetTrackingCodeTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -993,9 +1012,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
 				return;
-			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId((String)newValue);
-				return;
 			case TrackingPackage.TRACKING_CODE__OVERRIDE_CSS:
 				setOverrideCss((String)newValue);
 				return;
@@ -1017,8 +1033,11 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 			case TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME:
 				setTrackableLifetime((Long)newValue);
 				return;
+			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
+				setMarketingCampaignId((MarketingCampaign)newValue);
+				return;
 			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID:
-				setTrackingCodeTypeId((String)newValue);
+				setTrackingCodeTypeId((TrackingCodeType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1062,9 +1081,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
 				return;
-			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
-				setMarketingCampaignId(MARKETING_CAMPAIGN_ID_EDEFAULT);
-				return;
 			case TrackingPackage.TRACKING_CODE__OVERRIDE_CSS:
 				setOverrideCss(OVERRIDE_CSS_EDEFAULT);
 				return;
@@ -1086,8 +1102,11 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 			case TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME:
 				setTrackableLifetime(TRACKABLE_LIFETIME_EDEFAULT);
 				return;
+			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
+				setMarketingCampaignId((MarketingCampaign)null);
+				return;
 			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID:
-				setTrackingCodeTypeId(TRACKING_CODE_TYPE_ID_EDEFAULT);
+				setTrackingCodeTypeId((TrackingCodeType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1121,8 +1140,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case TrackingPackage.TRACKING_CODE__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
-			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
-				return MARKETING_CAMPAIGN_ID_EDEFAULT == null ? marketingCampaignId != null : !MARKETING_CAMPAIGN_ID_EDEFAULT.equals(marketingCampaignId);
 			case TrackingPackage.TRACKING_CODE__OVERRIDE_CSS:
 				return OVERRIDE_CSS_EDEFAULT == null ? overrideCss != null : !OVERRIDE_CSS_EDEFAULT.equals(overrideCss);
 			case TrackingPackage.TRACKING_CODE__OVERRIDE_LOGO:
@@ -1137,8 +1154,10 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case TrackingPackage.TRACKING_CODE__TRACKABLE_LIFETIME:
 				return trackableLifetime != TRACKABLE_LIFETIME_EDEFAULT;
+			case TrackingPackage.TRACKING_CODE__MARKETING_CAMPAIGN_ID:
+				return marketingCampaignId != null;
 			case TrackingPackage.TRACKING_CODE__TRACKING_CODE_TYPE_ID:
-				return TRACKING_CODE_TYPE_ID_EDEFAULT == null ? trackingCodeTypeId != null : !TRACKING_CODE_TYPE_ID_EDEFAULT.equals(trackingCodeTypeId);
+				return trackingCodeTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1173,8 +1192,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
-		result.append(", marketingCampaignId: ");
-		result.append(marketingCampaignId);
 		result.append(", overrideCss: ");
 		result.append(overrideCss);
 		result.append(", overrideLogo: ");
@@ -1189,8 +1206,6 @@ public class TrackingCodeImpl extends BizEntityTypedImpl<TrackingCodeType> imple
 		result.append(thruDate);
 		result.append(", trackableLifetime: ");
 		result.append(trackableLifetime);
-		result.append(", trackingCodeTypeId: ");
-		result.append(trackingCodeTypeId);
 		result.append(')');
 		return result.toString();
 	}

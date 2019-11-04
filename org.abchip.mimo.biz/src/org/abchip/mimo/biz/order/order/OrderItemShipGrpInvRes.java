@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +26,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getCreatedDatetime <em>Created Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getCurrentPromisedDate <em>Current Promised Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getOldPickStartDate <em>Old Pick Start Date</em>}</li>
@@ -36,6 +36,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getReserveOrderEnumId <em>Reserve Order Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getReservedDatetime <em>Reserved Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getInventoryItemId <em>Inventory Item Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes()
@@ -96,31 +97,30 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	void setCurrentPromisedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Id</em>' attribute.
-	 * @see #setInventoryItemId(String)
+	 * @return the value of the '<em>Inventory Item Id</em>' reference.
+	 * @see #setInventoryItemId(InventoryItem)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_InventoryItemId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InventoryItem'"
+	 * @model keys="inventoryItemId"
 	 * @generated
 	 */
-	String getInventoryItemId();
+	InventoryItem getInventoryItemId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getInventoryItemId <em>Inventory Item Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderItemShipGrpInvRes#getInventoryItemId <em>Inventory Item Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Inventory Item Id</em>' attribute.
+	 * @param value the new value of the '<em>Inventory Item Id</em>' reference.
 	 * @see #getInventoryItemId()
 	 * @generated
 	 */
-	void setInventoryItemId(String value);
+	void setInventoryItemId(InventoryItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Old Pick Start Date</b></em>' attribute.
@@ -185,8 +185,8 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_OrderId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -212,7 +212,8 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_OrderItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -394,7 +395,8 @@ public interface OrderItemShipGrpInvRes extends BizEntity {
 	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemShipGrpInvRes_ShipGroupSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.catalog;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.RoleType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +22,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogRole()
@@ -44,7 +45,8 @@ public interface ProdCatalogRole extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogRole_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -70,8 +72,8 @@ public interface ProdCatalogRole extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogRole_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -87,31 +89,30 @@ public interface ProdCatalogRole extends BizEntity {
 	void setPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id</em>' attribute.
-	 * @see #setRoleTypeId(String)
+	 * @return the value of the '<em>Role Type Id</em>' reference.
+	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogRole_RoleTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeId();
+	RoleType getRoleTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getRoleTypeId <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
 	 */
-	void setRoleTypeId(String value);
+	void setRoleTypeId(RoleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.
@@ -166,30 +167,29 @@ public interface ProdCatalogRole extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Prod Catalog Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Prod Catalog Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Prod Catalog Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Prod Catalog Id</em>' attribute.
-	 * @see #setProdCatalogId(String)
+	 * @return the value of the '<em>Prod Catalog Id</em>' reference.
+	 * @see #setProdCatalogId(ProdCatalog)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogRole_ProdCatalogId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProdCatalog'"
+	 * @model keys="prodCatalogId"
 	 * @generated
 	 */
-	String getProdCatalogId();
+	ProdCatalog getProdCatalogId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getProdCatalogId <em>Prod Catalog Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogRole#getProdCatalogId <em>Prod Catalog Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prod Catalog Id</em>' attribute.
+	 * @param value the new value of the '<em>Prod Catalog Id</em>' reference.
 	 * @see #getProdCatalogId()
 	 * @generated
 	 */
-	void setProdCatalogId(String value);
+	void setProdCatalogId(ProdCatalog value);
 
 } // ProdCatalogRole

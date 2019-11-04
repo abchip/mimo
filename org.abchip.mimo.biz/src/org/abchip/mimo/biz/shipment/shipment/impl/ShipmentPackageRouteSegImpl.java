@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,7 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getShipmentRouteSegmentId <em>Shipment Route Segment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getBoxNumber <em>Box Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getCodAmount <em>Cod Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getInsuredAmount <em>Insured Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getInternationalInvoice <em>International Invoice</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getLabelHtml <em>Label Html</em>}</li>
@@ -42,6 +44,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getPackageServiceCost <em>Package Service Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getPackageTransportCost <em>Package Transport Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getTrackingCode <em>Tracking Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageRouteSegImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -151,26 +154,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 * @ordered
 	 */
 	protected BigDecimal codAmount = COD_AMOUNT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInsuredAmount() <em>Insured Amount</em>}' attribute.
@@ -373,6 +356,16 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	protected String trackingCode = TRACKING_CODE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -443,7 +436,24 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -453,8 +463,8 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -777,8 +787,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 				return getBoxNumber();
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__COD_AMOUNT:
 				return getCodAmount();
-			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__INSURED_AMOUNT:
 				return getInsuredAmount();
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__INTERNATIONAL_INVOICE:
@@ -799,6 +807,9 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 				return getPackageTransportCost();
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE:
 				return getTrackingCode();
+			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -825,9 +836,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__COD_AMOUNT:
 				setCodAmount((BigDecimal)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__INSURED_AMOUNT:
 				setInsuredAmount((BigDecimal)newValue);
@@ -859,6 +867,9 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE:
 				setTrackingCode((String)newValue);
 				return;
+			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -885,9 +896,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__COD_AMOUNT:
 				setCodAmount(COD_AMOUNT_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__INSURED_AMOUNT:
 				setInsuredAmount(INSURED_AMOUNT_EDEFAULT);
@@ -919,6 +927,9 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE:
 				setTrackingCode(TRACKING_CODE_EDEFAULT);
 				return;
+			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -941,8 +952,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 				return BOX_NUMBER_EDEFAULT == null ? boxNumber != null : !BOX_NUMBER_EDEFAULT.equals(boxNumber);
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__COD_AMOUNT:
 				return COD_AMOUNT_EDEFAULT == null ? codAmount != null : !COD_AMOUNT_EDEFAULT.equals(codAmount);
-			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__INSURED_AMOUNT:
 				return INSURED_AMOUNT_EDEFAULT == null ? insuredAmount != null : !INSURED_AMOUNT_EDEFAULT.equals(insuredAmount);
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__INTERNATIONAL_INVOICE:
@@ -963,6 +972,8 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 				return PACKAGE_TRANSPORT_COST_EDEFAULT == null ? packageTransportCost != null : !PACKAGE_TRANSPORT_COST_EDEFAULT.equals(packageTransportCost);
 			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE:
 				return TRACKING_CODE_EDEFAULT == null ? trackingCode != null : !TRACKING_CODE_EDEFAULT.equals(trackingCode);
+			case Shipment_Package.SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID:
+				return currencyUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -987,8 +998,6 @@ public class ShipmentPackageRouteSegImpl extends BizEntityImpl implements Shipme
 		result.append(boxNumber);
 		result.append(", codAmount: ");
 		result.append(codAmount);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", insuredAmount: ");
 		result.append(insuredAmount);
 		result.append(", internationalInvoice: ");

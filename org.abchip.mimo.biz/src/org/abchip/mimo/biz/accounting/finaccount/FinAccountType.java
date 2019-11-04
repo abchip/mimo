@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.finaccount;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,30 +115,30 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	void setIsRefundable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Replenish Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Replenish Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Replenish Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Replenish Enum Id</em>' attribute.
-	 * @see #setReplenishEnumId(String)
+	 * @return the value of the '<em>Replenish Enum Id</em>' reference.
+	 * @see #setReplenishEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_ReplenishEnumId()
-	 * @model
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getReplenishEnumId();
+	Enumeration getReplenishEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getReplenishEnumId <em>Replenish Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getReplenishEnumId <em>Replenish Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Replenish Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Replenish Enum Id</em>' reference.
 	 * @see #getReplenishEnumId()
 	 * @generated
 	 */
-	void setReplenishEnumId(String value);
+	void setReplenishEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Fin Account Type Attrs</b></em>' attribute list.
@@ -201,30 +202,30 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	List<String> productStoreFinActSettings();
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(FinAccountType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='FinAccountType'"
+	 * @model keys="finAccountTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	FinAccountType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(FinAccountType value);
 
 	/**
 	 * Returns the value of the '<em><b>Fin Account Type Id</b></em>' attribute.
@@ -237,7 +238,7 @@ public interface FinAccountType extends BizEntityType<FinAccount> {
 	 * @return the value of the '<em>Fin Account Type Id</em>' attribute.
 	 * @see #setFinAccountTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountType_FinAccountTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

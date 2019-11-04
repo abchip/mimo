@@ -24,8 +24,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAddendumCreationDate <em>Addendum Creation Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAddendumEffectiveDate <em>Addendum Effective Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAddendumText <em>Addendum Text</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Addendum#getAgreementId <em>Agreement Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum()
@@ -165,29 +165,29 @@ public interface Addendum extends BizEntity {
 	void setAgreementItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Agreement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Id</em>' attribute.
-	 * @see #setAgreementId(String)
+	 * @return the value of the '<em>Agreement Id</em>' reference.
+	 * @see #setAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAddendum_AgreementId()
-	 * @model annotation="mimo-ent-domain frame='Agreement'"
+	 * @model keys="agreementId"
 	 * @generated
 	 */
-	String getAgreementId();
+	Agreement getAgreementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Addendum#getAgreementId <em>Agreement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Addendum#getAgreementId <em>Agreement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agreement Id</em>' attribute.
+	 * @param value the new value of the '<em>Agreement Id</em>' reference.
 	 * @see #getAgreementId()
 	 * @generated
 	 */
-	void setAgreementId(String value);
+	void setAgreementId(Agreement value);
 
 } // Addendum

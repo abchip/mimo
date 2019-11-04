@@ -11,12 +11,18 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
+import org.abchip.mimo.biz.product.supplier.SupplierPrefOrder;
 import org.abchip.mimo.biz.product.supplier.SupplierProduct;
+import org.abchip.mimo.biz.product.supplier.SupplierRatingType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,8 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getMinimumOrderQuantity <em>Minimum Order Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getAvailableFromDate <em>Available From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getAgreementId <em>Agreement Id</em>}</li>
@@ -39,14 +43,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getLastPrice <em>Last Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getOrderQtyIncrements <em>Order Qty Increments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getShippingPrice <em>Shipping Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getStandardLeadTimeDays <em>Standard Lead Time Days</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierProductId <em>Supplier Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierProductName <em>Supplier Product Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierRatingTypeId <em>Supplier Rating Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getUnitsIncluded <em>Units Included</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getSupplierRatingTypeId <em>Supplier Rating Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.SupplierProductImpl#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,46 +82,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @ordered
 	 */
 	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMinimumOrderQuantity() <em>Minimum Order Quantity</em>}' attribute.
@@ -298,26 +264,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	protected BigDecimal orderQtyIncrements = ORDER_QTY_INCREMENTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUANTITY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quantityUomId = QUANTITY_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getShippingPrice() <em>Shipping Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -356,26 +302,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @ordered
 	 */
 	protected BigDecimal standardLeadTimeDays = STANDARD_LEAD_TIME_DAYS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSupplierPrefOrderId() <em>Supplier Pref Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupplierPrefOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUPPLIER_PREF_ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSupplierPrefOrderId() <em>Supplier Pref Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupplierPrefOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String supplierPrefOrderId = SUPPLIER_PREF_ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSupplierProductId() <em>Supplier Product Id</em>}' attribute.
@@ -418,26 +344,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	protected String supplierProductName = SUPPLIER_PRODUCT_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSupplierRatingTypeId() <em>Supplier Rating Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupplierRatingTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUPPLIER_RATING_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSupplierRatingTypeId() <em>Supplier Rating Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSupplierRatingTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String supplierRatingTypeId = SUPPLIER_RATING_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getUnitsIncluded() <em>Units Included</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -456,6 +362,56 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @ordered
 	 */
 	protected BigDecimal unitsIncluded = UNITS_INCLUDED_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getSupplierPrefOrderId() <em>Supplier Pref Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSupplierPrefOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SupplierPrefOrder supplierPrefOrderId;
+
+	/**
+	 * The cached value of the '{@link #getSupplierRatingTypeId() <em>Supplier Rating Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSupplierRatingTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SupplierRatingType supplierRatingTypeId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantityUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom quantityUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -620,7 +576,24 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -630,8 +603,8 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -712,7 +685,24 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -722,8 +712,8 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID, oldPartyId, partyId));
@@ -735,7 +725,24 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public String getQuantityUomId() {
+	public Uom getQuantityUomId() {
+		if (quantityUomId != null && ((EObject)quantityUomId).eIsProxy()) {
+			InternalEObject oldQuantityUomId = (InternalEObject)quantityUomId;
+			quantityUomId = (Uom)eResolveProxy(oldQuantityUomId);
+			if (quantityUomId != oldQuantityUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
+			}
+		}
+		return quantityUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetQuantityUomId() {
 		return quantityUomId;
 	}
 
@@ -745,8 +752,8 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public void setQuantityUomId(String newQuantityUomId) {
-		String oldQuantityUomId = quantityUomId;
+	public void setQuantityUomId(Uom newQuantityUomId) {
+		Uom oldQuantityUomId = quantityUomId;
 		quantityUomId = newQuantityUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
@@ -896,7 +903,24 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public String getSupplierPrefOrderId() {
+	public SupplierPrefOrder getSupplierPrefOrderId() {
+		if (supplierPrefOrderId != null && ((EObject)supplierPrefOrderId).eIsProxy()) {
+			InternalEObject oldSupplierPrefOrderId = (InternalEObject)supplierPrefOrderId;
+			supplierPrefOrderId = (SupplierPrefOrder)eResolveProxy(oldSupplierPrefOrderId);
+			if (supplierPrefOrderId != oldSupplierPrefOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID, oldSupplierPrefOrderId, supplierPrefOrderId));
+			}
+		}
+		return supplierPrefOrderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SupplierPrefOrder basicGetSupplierPrefOrderId() {
 		return supplierPrefOrderId;
 	}
 
@@ -906,8 +930,8 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public void setSupplierPrefOrderId(String newSupplierPrefOrderId) {
-		String oldSupplierPrefOrderId = supplierPrefOrderId;
+	public void setSupplierPrefOrderId(SupplierPrefOrder newSupplierPrefOrderId) {
+		SupplierPrefOrder oldSupplierPrefOrderId = supplierPrefOrderId;
 		supplierPrefOrderId = newSupplierPrefOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID, oldSupplierPrefOrderId, supplierPrefOrderId));
@@ -919,7 +943,24 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public String getSupplierRatingTypeId() {
+	public SupplierRatingType getSupplierRatingTypeId() {
+		if (supplierRatingTypeId != null && ((EObject)supplierRatingTypeId).eIsProxy()) {
+			InternalEObject oldSupplierRatingTypeId = (InternalEObject)supplierRatingTypeId;
+			supplierRatingTypeId = (SupplierRatingType)eResolveProxy(oldSupplierRatingTypeId);
+			if (supplierRatingTypeId != oldSupplierRatingTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID, oldSupplierRatingTypeId, supplierRatingTypeId));
+			}
+		}
+		return supplierRatingTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SupplierRatingType basicGetSupplierRatingTypeId() {
 		return supplierRatingTypeId;
 	}
 
@@ -929,8 +970,8 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 	 * @generated
 	 */
 	@Override
-	public void setSupplierRatingTypeId(String newSupplierRatingTypeId) {
-		String oldSupplierRatingTypeId = supplierRatingTypeId;
+	public void setSupplierRatingTypeId(SupplierRatingType newSupplierRatingTypeId) {
+		SupplierRatingType oldSupplierRatingTypeId = supplierRatingTypeId;
 		supplierRatingTypeId = newSupplierRatingTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID, oldSupplierRatingTypeId, supplierRatingTypeId));
@@ -946,10 +987,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 		switch (featureID) {
 			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
 				return getProductId();
-			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
-				return getPartyId();
-			case SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case SupplierPackage.SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY:
 				return getMinimumOrderQuantity();
 			case SupplierPackage.SUPPLIER_PRODUCT__AVAILABLE_FROM_DATE:
@@ -968,22 +1005,31 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 				return getLastPrice();
 			case SupplierPackage.SUPPLIER_PRODUCT__ORDER_QTY_INCREMENTS:
 				return getOrderQtyIncrements();
-			case SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID:
-				return getQuantityUomId();
 			case SupplierPackage.SUPPLIER_PRODUCT__SHIPPING_PRICE:
 				return getShippingPrice();
 			case SupplierPackage.SUPPLIER_PRODUCT__STANDARD_LEAD_TIME_DAYS:
 				return getStandardLeadTimeDays();
-			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID:
-				return getSupplierPrefOrderId();
 			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_ID:
 				return getSupplierProductId();
 			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_NAME:
 				return getSupplierProductName();
-			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID:
-				return getSupplierRatingTypeId();
 			case SupplierPackage.SUPPLIER_PRODUCT__UNITS_INCLUDED:
 				return getUnitsIncluded();
+			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID:
+				if (resolve) return getSupplierPrefOrderId();
+				return basicGetSupplierPrefOrderId();
+			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID:
+				if (resolve) return getSupplierRatingTypeId();
+				return basicGetSupplierRatingTypeId();
+			case SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID:
+				if (resolve) return getQuantityUomId();
+				return basicGetQuantityUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -998,12 +1044,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 		switch (featureID) {
 			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
 				setProductId((String)newValue);
-				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY:
 				setMinimumOrderQuantity((BigDecimal)newValue);
@@ -1032,17 +1072,11 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			case SupplierPackage.SUPPLIER_PRODUCT__ORDER_QTY_INCREMENTS:
 				setOrderQtyIncrements((BigDecimal)newValue);
 				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID:
-				setQuantityUomId((String)newValue);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__SHIPPING_PRICE:
 				setShippingPrice((BigDecimal)newValue);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__STANDARD_LEAD_TIME_DAYS:
 				setStandardLeadTimeDays((BigDecimal)newValue);
-				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID:
-				setSupplierPrefOrderId((String)newValue);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_ID:
 				setSupplierProductId((String)newValue);
@@ -1050,11 +1084,23 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_NAME:
 				setSupplierProductName((String)newValue);
 				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID:
-				setSupplierRatingTypeId((String)newValue);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__UNITS_INCLUDED:
 				setUnitsIncluded((BigDecimal)newValue);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID:
+				setSupplierPrefOrderId((SupplierPrefOrder)newValue);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID:
+				setSupplierRatingTypeId((SupplierRatingType)newValue);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID:
+				setQuantityUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1070,12 +1116,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 		switch (featureID) {
 			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY:
 				setMinimumOrderQuantity(MINIMUM_ORDER_QUANTITY_EDEFAULT);
@@ -1104,17 +1144,11 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			case SupplierPackage.SUPPLIER_PRODUCT__ORDER_QTY_INCREMENTS:
 				setOrderQtyIncrements(ORDER_QTY_INCREMENTS_EDEFAULT);
 				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID:
-				setQuantityUomId(QUANTITY_UOM_ID_EDEFAULT);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__SHIPPING_PRICE:
 				setShippingPrice(SHIPPING_PRICE_EDEFAULT);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__STANDARD_LEAD_TIME_DAYS:
 				setStandardLeadTimeDays(STANDARD_LEAD_TIME_DAYS_EDEFAULT);
-				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID:
-				setSupplierPrefOrderId(SUPPLIER_PREF_ORDER_ID_EDEFAULT);
 				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_ID:
 				setSupplierProductId(SUPPLIER_PRODUCT_ID_EDEFAULT);
@@ -1122,11 +1156,23 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_NAME:
 				setSupplierProductName(SUPPLIER_PRODUCT_NAME_EDEFAULT);
 				return;
-			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID:
-				setSupplierRatingTypeId(SUPPLIER_RATING_TYPE_ID_EDEFAULT);
-				return;
 			case SupplierPackage.SUPPLIER_PRODUCT__UNITS_INCLUDED:
 				setUnitsIncluded(UNITS_INCLUDED_EDEFAULT);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID:
+				setSupplierPrefOrderId((SupplierPrefOrder)null);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID:
+				setSupplierRatingTypeId((SupplierRatingType)null);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID:
+				setQuantityUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1142,10 +1188,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 		switch (featureID) {
 			case SupplierPackage.SUPPLIER_PRODUCT__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case SupplierPackage.SUPPLIER_PRODUCT__MINIMUM_ORDER_QUANTITY:
 				return MINIMUM_ORDER_QUANTITY_EDEFAULT == null ? minimumOrderQuantity != null : !MINIMUM_ORDER_QUANTITY_EDEFAULT.equals(minimumOrderQuantity);
 			case SupplierPackage.SUPPLIER_PRODUCT__AVAILABLE_FROM_DATE:
@@ -1164,22 +1206,26 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 				return LAST_PRICE_EDEFAULT == null ? lastPrice != null : !LAST_PRICE_EDEFAULT.equals(lastPrice);
 			case SupplierPackage.SUPPLIER_PRODUCT__ORDER_QTY_INCREMENTS:
 				return ORDER_QTY_INCREMENTS_EDEFAULT == null ? orderQtyIncrements != null : !ORDER_QTY_INCREMENTS_EDEFAULT.equals(orderQtyIncrements);
-			case SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID:
-				return QUANTITY_UOM_ID_EDEFAULT == null ? quantityUomId != null : !QUANTITY_UOM_ID_EDEFAULT.equals(quantityUomId);
 			case SupplierPackage.SUPPLIER_PRODUCT__SHIPPING_PRICE:
 				return SHIPPING_PRICE_EDEFAULT == null ? shippingPrice != null : !SHIPPING_PRICE_EDEFAULT.equals(shippingPrice);
 			case SupplierPackage.SUPPLIER_PRODUCT__STANDARD_LEAD_TIME_DAYS:
 				return STANDARD_LEAD_TIME_DAYS_EDEFAULT == null ? standardLeadTimeDays != null : !STANDARD_LEAD_TIME_DAYS_EDEFAULT.equals(standardLeadTimeDays);
-			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID:
-				return SUPPLIER_PREF_ORDER_ID_EDEFAULT == null ? supplierPrefOrderId != null : !SUPPLIER_PREF_ORDER_ID_EDEFAULT.equals(supplierPrefOrderId);
 			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_ID:
 				return SUPPLIER_PRODUCT_ID_EDEFAULT == null ? supplierProductId != null : !SUPPLIER_PRODUCT_ID_EDEFAULT.equals(supplierProductId);
 			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PRODUCT_NAME:
 				return SUPPLIER_PRODUCT_NAME_EDEFAULT == null ? supplierProductName != null : !SUPPLIER_PRODUCT_NAME_EDEFAULT.equals(supplierProductName);
-			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID:
-				return SUPPLIER_RATING_TYPE_ID_EDEFAULT == null ? supplierRatingTypeId != null : !SUPPLIER_RATING_TYPE_ID_EDEFAULT.equals(supplierRatingTypeId);
 			case SupplierPackage.SUPPLIER_PRODUCT__UNITS_INCLUDED:
 				return UNITS_INCLUDED_EDEFAULT == null ? unitsIncluded != null : !UNITS_INCLUDED_EDEFAULT.equals(unitsIncluded);
+			case SupplierPackage.SUPPLIER_PRODUCT__PARTY_ID:
+				return partyId != null;
+			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_PREF_ORDER_ID:
+				return supplierPrefOrderId != null;
+			case SupplierPackage.SUPPLIER_PRODUCT__SUPPLIER_RATING_TYPE_ID:
+				return supplierRatingTypeId != null;
+			case SupplierPackage.SUPPLIER_PRODUCT__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case SupplierPackage.SUPPLIER_PRODUCT__QUANTITY_UOM_ID:
+				return quantityUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1196,10 +1242,6 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", minimumOrderQuantity: ");
 		result.append(minimumOrderQuantity);
 		result.append(", availableFromDate: ");
@@ -1218,20 +1260,14 @@ public class SupplierProductImpl extends BizEntityImpl implements SupplierProduc
 		result.append(lastPrice);
 		result.append(", orderQtyIncrements: ");
 		result.append(orderQtyIncrements);
-		result.append(", quantityUomId: ");
-		result.append(quantityUomId);
 		result.append(", shippingPrice: ");
 		result.append(shippingPrice);
 		result.append(", standardLeadTimeDays: ");
 		result.append(standardLeadTimeDays);
-		result.append(", supplierPrefOrderId: ");
-		result.append(supplierPrefOrderId);
 		result.append(", supplierProductId: ");
 		result.append(supplierProductId);
 		result.append(", supplierProductName: ");
 		result.append(supplierProductName);
-		result.append(", supplierRatingTypeId: ");
-		result.append(supplierRatingTypeId);
 		result.append(", unitsIncluded: ");
 		result.append(unitsIncluded);
 		result.append(')');

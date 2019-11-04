@@ -11,12 +11,15 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.budget.BudgetItemType;
 import org.abchip.mimo.biz.accounting.ledger.GlBudgetXref;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,10 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlBudgetXrefImpl#getGlAccountId <em>Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlBudgetXrefImpl#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlBudgetXrefImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlBudgetXrefImpl#getAllocationPercentage <em>Allocation Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlBudgetXrefImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlBudgetXrefImpl#getBudgetItemTypeId <em>Budget Item Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,24 +62,6 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 	 * @ordered
 	 */
 	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_ITEM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetItemTypeId = BUDGET_ITEM_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -131,6 +116,15 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getBudgetItemTypeId() <em>Budget Item Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBudgetItemTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected BudgetItemType budgetItemTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,7 +243,24 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 	 * @generated
 	 */
 	@Override
-	public String getBudgetItemTypeId() {
+	public BudgetItemType getBudgetItemTypeId() {
+		if (budgetItemTypeId != null && ((EObject)budgetItemTypeId).eIsProxy()) {
+			InternalEObject oldBudgetItemTypeId = (InternalEObject)budgetItemTypeId;
+			budgetItemTypeId = (BudgetItemType)eResolveProxy(oldBudgetItemTypeId);
+			if (budgetItemTypeId != oldBudgetItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
+			}
+		}
+		return budgetItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BudgetItemType basicGetBudgetItemTypeId() {
 		return budgetItemTypeId;
 	}
 
@@ -259,8 +270,8 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 	 * @generated
 	 */
 	@Override
-	public void setBudgetItemTypeId(String newBudgetItemTypeId) {
-		String oldBudgetItemTypeId = budgetItemTypeId;
+	public void setBudgetItemTypeId(BudgetItemType newBudgetItemTypeId) {
+		BudgetItemType oldBudgetItemTypeId = budgetItemTypeId;
 		budgetItemTypeId = newBudgetItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID, oldBudgetItemTypeId, budgetItemTypeId));
@@ -276,14 +287,15 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 		switch (featureID) {
 			case LedgerPackage.GL_BUDGET_XREF__GL_ACCOUNT_ID:
 				return getGlAccountId();
-			case LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID:
-				return getBudgetItemTypeId();
 			case LedgerPackage.GL_BUDGET_XREF__FROM_DATE:
 				return getFromDate();
 			case LedgerPackage.GL_BUDGET_XREF__ALLOCATION_PERCENTAGE:
 				return getAllocationPercentage();
 			case LedgerPackage.GL_BUDGET_XREF__THRU_DATE:
 				return getThruDate();
+			case LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID:
+				if (resolve) return getBudgetItemTypeId();
+				return basicGetBudgetItemTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -299,9 +311,6 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 			case LedgerPackage.GL_BUDGET_XREF__GL_ACCOUNT_ID:
 				setGlAccountId((String)newValue);
 				return;
-			case LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID:
-				setBudgetItemTypeId((String)newValue);
-				return;
 			case LedgerPackage.GL_BUDGET_XREF__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -310,6 +319,9 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 				return;
 			case LedgerPackage.GL_BUDGET_XREF__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID:
+				setBudgetItemTypeId((BudgetItemType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -326,9 +338,6 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 			case LedgerPackage.GL_BUDGET_XREF__GL_ACCOUNT_ID:
 				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
 				return;
-			case LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID:
-				setBudgetItemTypeId(BUDGET_ITEM_TYPE_ID_EDEFAULT);
-				return;
 			case LedgerPackage.GL_BUDGET_XREF__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -337,6 +346,9 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 				return;
 			case LedgerPackage.GL_BUDGET_XREF__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID:
+				setBudgetItemTypeId((BudgetItemType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -352,14 +364,14 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 		switch (featureID) {
 			case LedgerPackage.GL_BUDGET_XREF__GL_ACCOUNT_ID:
 				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
-			case LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID:
-				return BUDGET_ITEM_TYPE_ID_EDEFAULT == null ? budgetItemTypeId != null : !BUDGET_ITEM_TYPE_ID_EDEFAULT.equals(budgetItemTypeId);
 			case LedgerPackage.GL_BUDGET_XREF__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case LedgerPackage.GL_BUDGET_XREF__ALLOCATION_PERCENTAGE:
 				return ALLOCATION_PERCENTAGE_EDEFAULT == null ? allocationPercentage != null : !ALLOCATION_PERCENTAGE_EDEFAULT.equals(allocationPercentage);
 			case LedgerPackage.GL_BUDGET_XREF__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case LedgerPackage.GL_BUDGET_XREF__BUDGET_ITEM_TYPE_ID:
+				return budgetItemTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -376,8 +388,6 @@ public class GlBudgetXrefImpl extends BizEntityImpl implements GlBudgetXref {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (glAccountId: ");
 		result.append(glAccountId);
-		result.append(", budgetItemTypeId: ");
-		result.append(budgetItemTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", allocationPercentage: ");

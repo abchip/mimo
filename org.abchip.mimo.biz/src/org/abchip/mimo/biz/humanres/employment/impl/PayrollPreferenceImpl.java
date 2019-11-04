@@ -11,6 +11,9 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.payment.DeductionType;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.common.period.PeriodType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
 import org.abchip.mimo.biz.humanres.employment.PayrollPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -18,6 +21,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -33,14 +38,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPayrollPreferenceSeqId <em>Payroll Preference Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getAccountNumber <em>Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getBankName <em>Bank Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getDeductionTypeId <em>Deduction Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getFlatAmount <em>Flat Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPercentage <em>Percentage</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getRoutingNumber <em>Routing Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getDeductionTypeId <em>Deduction Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.PayrollPreferenceImpl#getPeriodTypeId <em>Period Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -152,26 +157,6 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	protected String bankName = BANK_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDeductionTypeId() <em>Deduction Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeductionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEDUCTION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDeductionTypeId() <em>Deduction Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeductionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deductionTypeId = DEDUCTION_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFlatAmount() <em>Flat Amount</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,26 +197,6 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_METHOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodTypeId = PAYMENT_METHOD_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPercentage() <em>Percentage</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -250,26 +215,6 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @ordered
 	 */
 	protected double percentage = PERCENTAGE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PERIOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String periodTypeId = PERIOD_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRoutingNumber() <em>Routing Number</em>}' attribute.
@@ -310,6 +255,36 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDeductionTypeId() <em>Deduction Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeductionTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeductionType deductionTypeId;
+
+	/**
+	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethodType paymentMethodTypeId;
+
+	/**
+	 * The cached value of the '{@link #getPeriodTypeId() <em>Period Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPeriodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PeriodType periodTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -382,7 +357,24 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @generated
 	 */
 	@Override
-	public String getDeductionTypeId() {
+	public DeductionType getDeductionTypeId() {
+		if (deductionTypeId != null && ((EObject)deductionTypeId).eIsProxy()) {
+			InternalEObject oldDeductionTypeId = (InternalEObject)deductionTypeId;
+			deductionTypeId = (DeductionType)eResolveProxy(oldDeductionTypeId);
+			if (deductionTypeId != oldDeductionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID, oldDeductionTypeId, deductionTypeId));
+			}
+		}
+		return deductionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeductionType basicGetDeductionTypeId() {
 		return deductionTypeId;
 	}
 
@@ -392,8 +384,8 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @generated
 	 */
 	@Override
-	public void setDeductionTypeId(String newDeductionTypeId) {
-		String oldDeductionTypeId = deductionTypeId;
+	public void setDeductionTypeId(DeductionType newDeductionTypeId) {
+		DeductionType oldDeductionTypeId = deductionTypeId;
 		deductionTypeId = newDeductionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID, oldDeductionTypeId, deductionTypeId));
@@ -474,7 +466,24 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodTypeId() {
+	public PaymentMethodType getPaymentMethodTypeId() {
+		if (paymentMethodTypeId != null && ((EObject)paymentMethodTypeId).eIsProxy()) {
+			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
+			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
+			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
+			}
+		}
+		return paymentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethodType basicGetPaymentMethodTypeId() {
 		return paymentMethodTypeId;
 	}
 
@@ -484,8 +493,8 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodTypeId(String newPaymentMethodTypeId) {
-		String oldPaymentMethodTypeId = paymentMethodTypeId;
+	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
@@ -543,7 +552,24 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @generated
 	 */
 	@Override
-	public String getPeriodTypeId() {
+	public PeriodType getPeriodTypeId() {
+		if (periodTypeId != null && ((EObject)periodTypeId).eIsProxy()) {
+			InternalEObject oldPeriodTypeId = (InternalEObject)periodTypeId;
+			periodTypeId = (PeriodType)eResolveProxy(oldPeriodTypeId);
+			if (periodTypeId != oldPeriodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
+			}
+		}
+		return periodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PeriodType basicGetPeriodTypeId() {
 		return periodTypeId;
 	}
 
@@ -553,8 +579,8 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 	 * @generated
 	 */
 	@Override
-	public void setPeriodTypeId(String newPeriodTypeId) {
-		String oldPeriodTypeId = periodTypeId;
+	public void setPeriodTypeId(PeriodType newPeriodTypeId) {
+		PeriodType oldPeriodTypeId = periodTypeId;
 		periodTypeId = newPeriodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID, oldPeriodTypeId, periodTypeId));
@@ -647,22 +673,25 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 				return getAccountNumber();
 			case EmploymentPackage.PAYROLL_PREFERENCE__BANK_NAME:
 				return getBankName();
-			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
-				return getDeductionTypeId();
 			case EmploymentPackage.PAYROLL_PREFERENCE__FLAT_AMOUNT:
 				return getFlatAmount();
 			case EmploymentPackage.PAYROLL_PREFERENCE__FROM_DATE:
 				return getFromDate();
-			case EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
-				return getPaymentMethodTypeId();
 			case EmploymentPackage.PAYROLL_PREFERENCE__PERCENTAGE:
 				return getPercentage();
-			case EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID:
-				return getPeriodTypeId();
 			case EmploymentPackage.PAYROLL_PREFERENCE__ROUTING_NUMBER:
 				return getRoutingNumber();
 			case EmploymentPackage.PAYROLL_PREFERENCE__THRU_DATE:
 				return getThruDate();
+			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
+				if (resolve) return getDeductionTypeId();
+				return basicGetDeductionTypeId();
+			case EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
+				if (resolve) return getPaymentMethodTypeId();
+				return basicGetPaymentMethodTypeId();
+			case EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID:
+				if (resolve) return getPeriodTypeId();
+				return basicGetPeriodTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -690,29 +719,29 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 			case EmploymentPackage.PAYROLL_PREFERENCE__BANK_NAME:
 				setBankName((String)newValue);
 				return;
-			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
-				setDeductionTypeId((String)newValue);
-				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__FLAT_AMOUNT:
 				setFlatAmount((BigDecimal)newValue);
 				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((String)newValue);
-				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__PERCENTAGE:
 				setPercentage((Double)newValue);
-				return;
-			case EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID:
-				setPeriodTypeId((String)newValue);
 				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__ROUTING_NUMBER:
 				setRoutingNumber((String)newValue);
 				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
+				setDeductionTypeId((DeductionType)newValue);
+				return;
+			case EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)newValue);
+				return;
+			case EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID:
+				setPeriodTypeId((PeriodType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -741,29 +770,29 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 			case EmploymentPackage.PAYROLL_PREFERENCE__BANK_NAME:
 				setBankName(BANK_NAME_EDEFAULT);
 				return;
-			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
-				setDeductionTypeId(DEDUCTION_TYPE_ID_EDEFAULT);
-				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__FLAT_AMOUNT:
 				setFlatAmount(FLAT_AMOUNT_EDEFAULT);
 				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId(PAYMENT_METHOD_TYPE_ID_EDEFAULT);
-				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__PERCENTAGE:
 				setPercentage(PERCENTAGE_EDEFAULT);
-				return;
-			case EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID:
-				setPeriodTypeId(PERIOD_TYPE_ID_EDEFAULT);
 				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__ROUTING_NUMBER:
 				setRoutingNumber(ROUTING_NUMBER_EDEFAULT);
 				return;
 			case EmploymentPackage.PAYROLL_PREFERENCE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
+				setDeductionTypeId((DeductionType)null);
+				return;
+			case EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)null);
+				return;
+			case EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID:
+				setPeriodTypeId((PeriodType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -787,22 +816,22 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 				return ACCOUNT_NUMBER_EDEFAULT == null ? accountNumber != null : !ACCOUNT_NUMBER_EDEFAULT.equals(accountNumber);
 			case EmploymentPackage.PAYROLL_PREFERENCE__BANK_NAME:
 				return BANK_NAME_EDEFAULT == null ? bankName != null : !BANK_NAME_EDEFAULT.equals(bankName);
-			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
-				return DEDUCTION_TYPE_ID_EDEFAULT == null ? deductionTypeId != null : !DEDUCTION_TYPE_ID_EDEFAULT.equals(deductionTypeId);
 			case EmploymentPackage.PAYROLL_PREFERENCE__FLAT_AMOUNT:
 				return FLAT_AMOUNT_EDEFAULT == null ? flatAmount != null : !FLAT_AMOUNT_EDEFAULT.equals(flatAmount);
 			case EmploymentPackage.PAYROLL_PREFERENCE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
-				return PAYMENT_METHOD_TYPE_ID_EDEFAULT == null ? paymentMethodTypeId != null : !PAYMENT_METHOD_TYPE_ID_EDEFAULT.equals(paymentMethodTypeId);
 			case EmploymentPackage.PAYROLL_PREFERENCE__PERCENTAGE:
 				return percentage != PERCENTAGE_EDEFAULT;
-			case EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID:
-				return PERIOD_TYPE_ID_EDEFAULT == null ? periodTypeId != null : !PERIOD_TYPE_ID_EDEFAULT.equals(periodTypeId);
 			case EmploymentPackage.PAYROLL_PREFERENCE__ROUTING_NUMBER:
 				return ROUTING_NUMBER_EDEFAULT == null ? routingNumber != null : !ROUTING_NUMBER_EDEFAULT.equals(routingNumber);
 			case EmploymentPackage.PAYROLL_PREFERENCE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case EmploymentPackage.PAYROLL_PREFERENCE__DEDUCTION_TYPE_ID:
+				return deductionTypeId != null;
+			case EmploymentPackage.PAYROLL_PREFERENCE__PAYMENT_METHOD_TYPE_ID:
+				return paymentMethodTypeId != null;
+			case EmploymentPackage.PAYROLL_PREFERENCE__PERIOD_TYPE_ID:
+				return periodTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -827,18 +856,12 @@ public class PayrollPreferenceImpl extends BizEntityImpl implements PayrollPrefe
 		result.append(accountNumber);
 		result.append(", bankName: ");
 		result.append(bankName);
-		result.append(", deductionTypeId: ");
-		result.append(deductionTypeId);
 		result.append(", flatAmount: ");
 		result.append(flatAmount);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", paymentMethodTypeId: ");
-		result.append(paymentMethodTypeId);
 		result.append(", percentage: ");
 		result.append(percentage);
-		result.append(", periodTypeId: ");
-		result.append(periodTypeId);
 		result.append(", routingNumber: ");
 		result.append(routingNumber);
 		result.append(", thruDate: ");

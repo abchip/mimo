@@ -75,7 +75,7 @@ public interface ContainerType extends BizEntityType<Container> {
 	 * @return the value of the '<em>Container Type Id</em>' attribute.
 	 * @see #setContainerTypeId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getContainerType_ContainerTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

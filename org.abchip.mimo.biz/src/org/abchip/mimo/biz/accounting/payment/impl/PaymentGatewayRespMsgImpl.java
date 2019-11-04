@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.accounting.payment.impl;
 
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg;
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayRespMsgImpl#getPaymentGatewayRespMsgId <em>Payment Gateway Resp Msg Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayRespMsgImpl#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayRespMsgImpl#getPgrMessage <em>Pgr Message</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayRespMsgImpl#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,24 +59,6 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 	protected String paymentGatewayRespMsgId = PAYMENT_GATEWAY_RESP_MSG_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPaymentGatewayResponseId() <em>Payment Gateway Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayResponseId() <em>Payment Gateway Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayResponseId = PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getPgrMessage() <em>Pgr Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,6 +76,15 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 	 * @ordered
 	 */
 	protected String pgrMessage = PGR_MESSAGE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentGatewayResponseId() <em>Payment Gateway Response Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentGatewayResponseId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentGatewayResponse paymentGatewayResponseId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,7 +157,24 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayResponseId() {
+	public PaymentGatewayResponse getPaymentGatewayResponseId() {
+		if (paymentGatewayResponseId != null && ((EObject)paymentGatewayResponseId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayResponseId = (InternalEObject)paymentGatewayResponseId;
+			paymentGatewayResponseId = (PaymentGatewayResponse)eResolveProxy(oldPaymentGatewayResponseId);
+			if (paymentGatewayResponseId != oldPaymentGatewayResponseId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID, oldPaymentGatewayResponseId, paymentGatewayResponseId));
+			}
+		}
+		return paymentGatewayResponseId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayResponse basicGetPaymentGatewayResponseId() {
 		return paymentGatewayResponseId;
 	}
 
@@ -173,8 +184,8 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayResponseId(String newPaymentGatewayResponseId) {
-		String oldPaymentGatewayResponseId = paymentGatewayResponseId;
+	public void setPaymentGatewayResponseId(PaymentGatewayResponse newPaymentGatewayResponseId) {
+		PaymentGatewayResponse oldPaymentGatewayResponseId = paymentGatewayResponseId;
 		paymentGatewayResponseId = newPaymentGatewayResponseId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID, oldPaymentGatewayResponseId, paymentGatewayResponseId));
@@ -190,10 +201,11 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESP_MSG_ID:
 				return getPaymentGatewayRespMsgId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID:
-				return getPaymentGatewayResponseId();
 			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PGR_MESSAGE:
 				return getPgrMessage();
+			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID:
+				if (resolve) return getPaymentGatewayResponseId();
+				return basicGetPaymentGatewayResponseId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,11 +221,11 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESP_MSG_ID:
 				setPaymentGatewayRespMsgId((String)newValue);
 				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID:
-				setPaymentGatewayResponseId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PGR_MESSAGE:
 				setPgrMessage((String)newValue);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID:
+				setPaymentGatewayResponseId((PaymentGatewayResponse)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,11 +242,11 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESP_MSG_ID:
 				setPaymentGatewayRespMsgId(PAYMENT_GATEWAY_RESP_MSG_ID_EDEFAULT);
 				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID:
-				setPaymentGatewayResponseId(PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PGR_MESSAGE:
 				setPgrMessage(PGR_MESSAGE_EDEFAULT);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID:
+				setPaymentGatewayResponseId((PaymentGatewayResponse)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -250,10 +262,10 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESP_MSG_ID:
 				return PAYMENT_GATEWAY_RESP_MSG_ID_EDEFAULT == null ? paymentGatewayRespMsgId != null : !PAYMENT_GATEWAY_RESP_MSG_ID_EDEFAULT.equals(paymentGatewayRespMsgId);
-			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID:
-				return PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT == null ? paymentGatewayResponseId != null : !PAYMENT_GATEWAY_RESPONSE_ID_EDEFAULT.equals(paymentGatewayResponseId);
 			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PGR_MESSAGE:
 				return PGR_MESSAGE_EDEFAULT == null ? pgrMessage != null : !PGR_MESSAGE_EDEFAULT.equals(pgrMessage);
+			case PaymentPackage.PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID:
+				return paymentGatewayResponseId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,8 +282,6 @@ public class PaymentGatewayRespMsgImpl extends BizEntityImpl implements PaymentG
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (paymentGatewayRespMsgId: ");
 		result.append(paymentGatewayRespMsgId);
-		result.append(", paymentGatewayResponseId: ");
-		result.append(paymentGatewayResponseId);
 		result.append(", pgrMessage: ");
 		result.append(pgrMessage);
 		result.append(')');

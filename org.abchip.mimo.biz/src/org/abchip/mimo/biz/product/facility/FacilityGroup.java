@@ -85,56 +85,56 @@ public interface FacilityGroup extends BizEntityTyped<FacilityGroupType> {
 	void setFacilityGroupName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Group Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Group Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Group Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Group Type Id</em>' attribute.
-	 * @see #setFacilityGroupTypeId(String)
+	 * @return the value of the '<em>Facility Group Type Id</em>' reference.
+	 * @see #setFacilityGroupTypeId(FacilityGroupType)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroup_FacilityGroupTypeId()
-	 * @model annotation="mimo-ent-domain frame='FacilityGroupType'"
+	 * @model keys="facilityGroupTypeId"
 	 * @generated
 	 */
-	String getFacilityGroupTypeId();
+	FacilityGroupType getFacilityGroupTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroup#getFacilityGroupTypeId <em>Facility Group Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroup#getFacilityGroupTypeId <em>Facility Group Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Group Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Group Type Id</em>' reference.
 	 * @see #getFacilityGroupTypeId()
 	 * @generated
 	 */
-	void setFacilityGroupTypeId(String value);
+	void setFacilityGroupTypeId(FacilityGroupType value);
 
 	/**
-	 * Returns the value of the '<em><b>Primary Parent Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Primary Parent Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Primary Parent Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Primary Parent Group Id</em>' attribute.
-	 * @see #setPrimaryParentGroupId(String)
+	 * @return the value of the '<em>Primary Parent Group Id</em>' reference.
+	 * @see #setPrimaryParentGroupId(FacilityGroup)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroup_PrimaryParentGroupId()
-	 * @model annotation="mimo-ent-domain frame='FacilityGroup'"
+	 * @model keys="facilityGroupId"
 	 * @generated
 	 */
-	String getPrimaryParentGroupId();
+	FacilityGroup getPrimaryParentGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroup#getPrimaryParentGroupId <em>Primary Parent Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroup#getPrimaryParentGroupId <em>Primary Parent Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Primary Parent Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Primary Parent Group Id</em>' reference.
 	 * @see #getPrimaryParentGroupId()
 	 * @generated
 	 */
-	void setPrimaryParentGroupId(String value);
+	void setPrimaryParentGroupId(FacilityGroup value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,7 +156,7 @@ public interface FacilityGroup extends BizEntityTyped<FacilityGroupType> {
 	 * @return the value of the '<em>Facility Group Id</em>' attribute.
 	 * @see #setFacilityGroupId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroup_FacilityGroupId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

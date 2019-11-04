@@ -16,6 +16,8 @@ import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -80,24 +82,14 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected ProductMaintType parentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,7 +139,24 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public ProductMaintType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (ProductMaintType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductMaintType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -157,8 +166,8 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(ProductMaintType newParentTypeId) {
+		ProductMaintType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -236,7 +245,8 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 			case ProductPackage.PRODUCT_MAINT_TYPE__DESCRIPTION:
 				return getDescription();
 			case ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,7 +266,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 				setDescription((String)newValue);
 				return;
 			case ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((ProductMaintType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -277,7 +287,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((ProductMaintType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -296,7 +306,7 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 			case ProductPackage.PRODUCT_MAINT_TYPE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ProductPackage.PRODUCT_MAINT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -315,8 +325,6 @@ public class ProductMaintTypeImpl extends BizEntityTypeImpl<ProductMaint> implem
 		result.append(productMaintTypeId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(')');
 		return result.toString();
 	}

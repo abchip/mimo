@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.common.user.impl;
 
 import org.abchip.mimo.biz.common.user.UserPackage;
+import org.abchip.mimo.biz.common.user.UserPrefGroupType;
 import org.abchip.mimo.biz.common.user.UserPreference;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.common.user.impl.UserPreferenceImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.user.impl.UserPreferenceImpl#getUserPrefTypeId <em>User Pref Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.user.impl.UserPreferenceImpl#getUserPrefDataType <em>User Pref Data Type</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.user.impl.UserPreferenceImpl#getUserPrefGroupTypeId <em>User Pref Group Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.user.impl.UserPreferenceImpl#getUserPrefValue <em>User Pref Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.user.impl.UserPreferenceImpl#getUserPrefGroupTypeId <em>User Pref Group Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,25 +99,6 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 	 */
 	protected String userPrefDataType = USER_PREF_DATA_TYPE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getUserPrefGroupTypeId() <em>User Pref Group Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserPrefGroupTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_PREF_GROUP_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getUserPrefGroupTypeId() <em>User Pref Group Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserPrefGroupTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String userPrefGroupTypeId = USER_PREF_GROUP_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getUserPrefValue() <em>User Pref Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,6 +117,15 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 	 * @ordered
 	 */
 	protected String userPrefValue = USER_PREF_VALUE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getUserPrefGroupTypeId() <em>User Pref Group Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserPrefGroupTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserPrefGroupType userPrefGroupTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,7 +198,24 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 	 * @generated
 	 */
 	@Override
-	public String getUserPrefGroupTypeId() {
+	public UserPrefGroupType getUserPrefGroupTypeId() {
+		if (userPrefGroupTypeId != null && ((EObject)userPrefGroupTypeId).eIsProxy()) {
+			InternalEObject oldUserPrefGroupTypeId = (InternalEObject)userPrefGroupTypeId;
+			userPrefGroupTypeId = (UserPrefGroupType)eResolveProxy(oldUserPrefGroupTypeId);
+			if (userPrefGroupTypeId != oldUserPrefGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID, oldUserPrefGroupTypeId, userPrefGroupTypeId));
+			}
+		}
+		return userPrefGroupTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserPrefGroupType basicGetUserPrefGroupTypeId() {
 		return userPrefGroupTypeId;
 	}
 
@@ -215,8 +225,8 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 	 * @generated
 	 */
 	@Override
-	public void setUserPrefGroupTypeId(String newUserPrefGroupTypeId) {
-		String oldUserPrefGroupTypeId = userPrefGroupTypeId;
+	public void setUserPrefGroupTypeId(UserPrefGroupType newUserPrefGroupTypeId) {
+		UserPrefGroupType oldUserPrefGroupTypeId = userPrefGroupTypeId;
 		userPrefGroupTypeId = newUserPrefGroupTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID, oldUserPrefGroupTypeId, userPrefGroupTypeId));
@@ -282,10 +292,11 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 				return getUserPrefTypeId();
 			case UserPackage.USER_PREFERENCE__USER_PREF_DATA_TYPE:
 				return getUserPrefDataType();
-			case UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID:
-				return getUserPrefGroupTypeId();
 			case UserPackage.USER_PREFERENCE__USER_PREF_VALUE:
 				return getUserPrefValue();
+			case UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID:
+				if (resolve) return getUserPrefGroupTypeId();
+				return basicGetUserPrefGroupTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,11 +318,11 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 			case UserPackage.USER_PREFERENCE__USER_PREF_DATA_TYPE:
 				setUserPrefDataType((String)newValue);
 				return;
-			case UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID:
-				setUserPrefGroupTypeId((String)newValue);
-				return;
 			case UserPackage.USER_PREFERENCE__USER_PREF_VALUE:
 				setUserPrefValue((String)newValue);
+				return;
+			case UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID:
+				setUserPrefGroupTypeId((UserPrefGroupType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,11 +345,11 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 			case UserPackage.USER_PREFERENCE__USER_PREF_DATA_TYPE:
 				setUserPrefDataType(USER_PREF_DATA_TYPE_EDEFAULT);
 				return;
-			case UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID:
-				setUserPrefGroupTypeId(USER_PREF_GROUP_TYPE_ID_EDEFAULT);
-				return;
 			case UserPackage.USER_PREFERENCE__USER_PREF_VALUE:
 				setUserPrefValue(USER_PREF_VALUE_EDEFAULT);
+				return;
+			case UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID:
+				setUserPrefGroupTypeId((UserPrefGroupType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -358,10 +369,10 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 				return USER_PREF_TYPE_ID_EDEFAULT == null ? userPrefTypeId != null : !USER_PREF_TYPE_ID_EDEFAULT.equals(userPrefTypeId);
 			case UserPackage.USER_PREFERENCE__USER_PREF_DATA_TYPE:
 				return USER_PREF_DATA_TYPE_EDEFAULT == null ? userPrefDataType != null : !USER_PREF_DATA_TYPE_EDEFAULT.equals(userPrefDataType);
-			case UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID:
-				return USER_PREF_GROUP_TYPE_ID_EDEFAULT == null ? userPrefGroupTypeId != null : !USER_PREF_GROUP_TYPE_ID_EDEFAULT.equals(userPrefGroupTypeId);
 			case UserPackage.USER_PREFERENCE__USER_PREF_VALUE:
 				return USER_PREF_VALUE_EDEFAULT == null ? userPrefValue != null : !USER_PREF_VALUE_EDEFAULT.equals(userPrefValue);
+			case UserPackage.USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID:
+				return userPrefGroupTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -382,8 +393,6 @@ public class UserPreferenceImpl extends BizEntityImpl implements UserPreference 
 		result.append(userPrefTypeId);
 		result.append(", userPrefDataType: ");
 		result.append(userPrefDataType);
-		result.append(", userPrefGroupTypeId: ");
-		result.append(userPrefGroupTypeId);
 		result.append(", userPrefValue: ");
 		result.append(userPrefValue);
 		result.append(')');

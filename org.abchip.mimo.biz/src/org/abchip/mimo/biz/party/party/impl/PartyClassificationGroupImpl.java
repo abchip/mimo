@@ -11,9 +11,12 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
+import org.abchip.mimo.biz.party.party.PartyClassificationType;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -74,42 +77,24 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentGroupId() <em>Parent Group Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentGroupId() <em>Parent Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentGroupId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_GROUP_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentGroupId() <em>Parent Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentGroupId = PARENT_GROUP_ID_EDEFAULT;
+	protected PartyClassificationGroup parentGroupId;
 
 	/**
-	 * The default value of the '{@link #getPartyClassificationTypeId() <em>Party Classification Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyClassificationTypeId() <em>Party Classification Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyClassificationTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARTY_CLASSIFICATION_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyClassificationTypeId() <em>Party Classification Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyClassificationTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyClassificationTypeId = PARTY_CLASSIFICATION_TYPE_ID_EDEFAULT;
+	protected PartyClassificationType partyClassificationTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +144,24 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	 * @generated
 	 */
 	@Override
-	public String getParentGroupId() {
+	public PartyClassificationGroup getParentGroupId() {
+		if (parentGroupId != null && ((EObject)parentGroupId).eIsProxy()) {
+			InternalEObject oldParentGroupId = (InternalEObject)parentGroupId;
+			parentGroupId = (PartyClassificationGroup)eResolveProxy(oldParentGroupId);
+			if (parentGroupId != oldParentGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CLASSIFICATION_GROUP__PARENT_GROUP_ID, oldParentGroupId, parentGroupId));
+			}
+		}
+		return parentGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyClassificationGroup basicGetParentGroupId() {
 		return parentGroupId;
 	}
 
@@ -169,8 +171,8 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	 * @generated
 	 */
 	@Override
-	public void setParentGroupId(String newParentGroupId) {
-		String oldParentGroupId = parentGroupId;
+	public void setParentGroupId(PartyClassificationGroup newParentGroupId) {
+		PartyClassificationGroup oldParentGroupId = parentGroupId;
 		parentGroupId = newParentGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_GROUP__PARENT_GROUP_ID, oldParentGroupId, parentGroupId));
@@ -182,7 +184,24 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	 * @generated
 	 */
 	@Override
-	public String getPartyClassificationTypeId() {
+	public PartyClassificationType getPartyClassificationTypeId() {
+		if (partyClassificationTypeId != null && ((EObject)partyClassificationTypeId).eIsProxy()) {
+			InternalEObject oldPartyClassificationTypeId = (InternalEObject)partyClassificationTypeId;
+			partyClassificationTypeId = (PartyClassificationType)eResolveProxy(oldPartyClassificationTypeId);
+			if (partyClassificationTypeId != oldPartyClassificationTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_TYPE_ID, oldPartyClassificationTypeId, partyClassificationTypeId));
+			}
+		}
+		return partyClassificationTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyClassificationType basicGetPartyClassificationTypeId() {
 		return partyClassificationTypeId;
 	}
 
@@ -192,8 +211,8 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 	 * @generated
 	 */
 	@Override
-	public void setPartyClassificationTypeId(String newPartyClassificationTypeId) {
-		String oldPartyClassificationTypeId = partyClassificationTypeId;
+	public void setPartyClassificationTypeId(PartyClassificationType newPartyClassificationTypeId) {
+		PartyClassificationType oldPartyClassificationTypeId = partyClassificationTypeId;
 		partyClassificationTypeId = newPartyClassificationTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_TYPE_ID, oldPartyClassificationTypeId, partyClassificationTypeId));
@@ -259,9 +278,11 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__DESCRIPTION:
 				return getDescription();
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__PARENT_GROUP_ID:
-				return getParentGroupId();
+				if (resolve) return getParentGroupId();
+				return basicGetParentGroupId();
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_TYPE_ID:
-				return getPartyClassificationTypeId();
+				if (resolve) return getPartyClassificationTypeId();
+				return basicGetPartyClassificationTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,10 +302,10 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 				setDescription((String)newValue);
 				return;
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__PARENT_GROUP_ID:
-				setParentGroupId((String)newValue);
+				setParentGroupId((PartyClassificationGroup)newValue);
 				return;
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_TYPE_ID:
-				setPartyClassificationTypeId((String)newValue);
+				setPartyClassificationTypeId((PartyClassificationType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -305,10 +326,10 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__PARENT_GROUP_ID:
-				setParentGroupId(PARENT_GROUP_ID_EDEFAULT);
+				setParentGroupId((PartyClassificationGroup)null);
 				return;
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_TYPE_ID:
-				setPartyClassificationTypeId(PARTY_CLASSIFICATION_TYPE_ID_EDEFAULT);
+				setPartyClassificationTypeId((PartyClassificationType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -327,9 +348,9 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__PARENT_GROUP_ID:
-				return PARENT_GROUP_ID_EDEFAULT == null ? parentGroupId != null : !PARENT_GROUP_ID_EDEFAULT.equals(parentGroupId);
+				return parentGroupId != null;
 			case PartyPackage.PARTY_CLASSIFICATION_GROUP__PARTY_CLASSIFICATION_TYPE_ID:
-				return PARTY_CLASSIFICATION_TYPE_ID_EDEFAULT == null ? partyClassificationTypeId != null : !PARTY_CLASSIFICATION_TYPE_ID_EDEFAULT.equals(partyClassificationTypeId);
+				return partyClassificationTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -348,10 +369,6 @@ public class PartyClassificationGroupImpl extends BizEntityImpl implements Party
 		result.append(partyClassificationGroupId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", parentGroupId: ");
-		result.append(parentGroupId);
-		result.append(", partyClassificationTypeId: ");
-		result.append(partyClassificationTypeId);
 		result.append(')');
 		return result.toString();
 	}

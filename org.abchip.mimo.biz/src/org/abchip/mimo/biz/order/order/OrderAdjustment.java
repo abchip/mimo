@@ -13,6 +13,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
+import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +33,6 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getAmountAlreadyIncluded <em>Amount Already Included</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCorrespondingProductId <em>Corresponding Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCustomerReferenceId <em>Customer Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getDescription <em>Description</em>}</li>
@@ -40,24 +44,25 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOldAmountPerQuantity <em>Old Amount Per Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOldPercentage <em>Old Percentage</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOriginalAdjustmentId <em>Original Adjustment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoActionSeqId <em>Product Promo Action Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoRuleId <em>Product Promo Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getRecurringAmount <em>Recurring Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSourcePercentage <em>Source Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSourceReferenceId <em>Source Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoId <em>Product Promo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOriginalAdjustmentId <em>Original Adjustment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentAttributes <em>Order Adjustment Attributes</em>}</li>
  * </ul>
  *
@@ -171,30 +176,30 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	void setCorrespondingProductId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Created By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Created By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Created By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Created By User Login</em>' attribute.
-	 * @see #setCreatedByUserLogin(String)
+	 * @return the value of the '<em>Created By User Login</em>' reference.
+	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getCreatedByUserLogin();
+	UserLogin getCreatedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Created By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Created By User Login</em>' reference.
 	 * @see #getCreatedByUserLogin()
 	 * @generated
 	 */
-	void setCreatedByUserLogin(String value);
+	void setCreatedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Created Date</b></em>' attribute.
@@ -493,7 +498,7 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	 * @return the value of the '<em>Order Adjustment Id</em>' attribute.
 	 * @see #setOrderAdjustmentId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -510,56 +515,56 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	void setOrderAdjustmentId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Adjustment Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Adjustment Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Adjustment Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Adjustment Type Id</em>' attribute.
-	 * @see #setOrderAdjustmentTypeId(String)
+	 * @return the value of the '<em>Order Adjustment Type Id</em>' reference.
+	 * @see #setOrderAdjustmentTypeId(OrderAdjustmentType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderAdjustmentTypeId()
-	 * @model annotation="mimo-ent-domain frame='OrderAdjustmentType'"
+	 * @model keys="orderAdjustmentTypeId"
 	 * @generated
 	 */
-	String getOrderAdjustmentTypeId();
+	OrderAdjustmentType getOrderAdjustmentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Adjustment Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Adjustment Type Id</em>' reference.
 	 * @see #getOrderAdjustmentTypeId()
 	 * @generated
 	 */
-	void setOrderAdjustmentTypeId(String value);
+	void setOrderAdjustmentTypeId(OrderAdjustmentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Id</em>' attribute.
-	 * @see #setOrderId(String)
+	 * @return the value of the '<em>Order Id</em>' reference.
+	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OrderId()
-	 * @model annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getOrderId();
+	OrderHeader getOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderId <em>Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOrderId <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Id</em>' reference.
 	 * @see #getOrderId()
 	 * @generated
 	 */
-	void setOrderId(String value);
+	void setOrderId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Item Seq Id</b></em>' attribute.
@@ -588,82 +593,82 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	void setOrderItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Original Adjustment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Original Adjustment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Original Adjustment Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Original Adjustment Id</em>' attribute.
-	 * @see #setOriginalAdjustmentId(String)
+	 * @return the value of the '<em>Original Adjustment Id</em>' reference.
+	 * @see #setOriginalAdjustmentId(OrderAdjustment)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OriginalAdjustmentId()
-	 * @model annotation="mimo-ent-domain frame='OrderAdjustment'"
+	 * @model keys="orderAdjustmentId"
 	 * @generated
 	 */
-	String getOriginalAdjustmentId();
+	OrderAdjustment getOriginalAdjustmentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOriginalAdjustmentId <em>Original Adjustment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOriginalAdjustmentId <em>Original Adjustment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Original Adjustment Id</em>' attribute.
+	 * @param value the new value of the '<em>Original Adjustment Id</em>' reference.
 	 * @see #getOriginalAdjustmentId()
 	 * @generated
 	 */
-	void setOriginalAdjustmentId(String value);
+	void setOriginalAdjustmentId(OrderAdjustment value);
 
 	/**
-	 * Returns the value of the '<em><b>Override Gl Account Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Override Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Override Gl Account Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Override Gl Account Id</em>' attribute.
-	 * @see #setOverrideGlAccountId(String)
+	 * @return the value of the '<em>Override Gl Account Id</em>' reference.
+	 * @see #setOverrideGlAccountId(GlAccount)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_OverrideGlAccountId()
-	 * @model annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model keys="glAccountId"
 	 * @generated
 	 */
-	String getOverrideGlAccountId();
+	GlAccount getOverrideGlAccountId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Override Gl Account Id</em>' attribute.
+	 * @param value the new value of the '<em>Override Gl Account Id</em>' reference.
 	 * @see #getOverrideGlAccountId()
 	 * @generated
 	 */
-	void setOverrideGlAccountId(String value);
+	void setOverrideGlAccountId(GlAccount value);
 
 	/**
-	 * Returns the value of the '<em><b>Primary Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Primary Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Primary Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Primary Geo Id</em>' attribute.
-	 * @see #setPrimaryGeoId(String)
+	 * @return the value of the '<em>Primary Geo Id</em>' reference.
+	 * @see #setPrimaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_PrimaryGeoId()
-	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getPrimaryGeoId();
+	Geo getPrimaryGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Primary Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Primary Geo Id</em>' reference.
 	 * @see #getPrimaryGeoId()
 	 * @generated
 	 */
-	void setPrimaryGeoId(String value);
+	void setPrimaryGeoId(Geo value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Feature Id</b></em>' attribute.
@@ -718,30 +723,30 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	void setProductPromoActionSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Id</em>' attribute.
-	 * @see #setProductPromoId(String)
+	 * @return the value of the '<em>Product Promo Id</em>' reference.
+	 * @see #setProductPromoId(ProductPromo)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_ProductPromoId()
-	 * @model annotation="mimo-ent-domain frame='ProductPromo'"
+	 * @model keys="productPromoId"
 	 * @generated
 	 */
-	String getProductPromoId();
+	ProductPromo getProductPromoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoId <em>Product Promo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getProductPromoId <em>Product Promo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Id</em>' reference.
 	 * @see #getProductPromoId()
 	 * @generated
 	 */
-	void setProductPromoId(String value);
+	void setProductPromoId(ProductPromo value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Promo Rule Id</b></em>' attribute.
@@ -796,30 +801,30 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	void setRecurringAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Secondary Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Secondary Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Secondary Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Secondary Geo Id</em>' attribute.
-	 * @see #setSecondaryGeoId(String)
+	 * @return the value of the '<em>Secondary Geo Id</em>' reference.
+	 * @see #setSecondaryGeoId(Geo)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_SecondaryGeoId()
-	 * @model annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getSecondaryGeoId();
+	Geo getSecondaryGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Secondary Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Secondary Geo Id</em>' reference.
 	 * @see #getSecondaryGeoId()
 	 * @generated
 	 */
-	void setSecondaryGeoId(String value);
+	void setSecondaryGeoId(Geo value);
 
 	/**
 	 * Returns the value of the '<em><b>Ship Group Seq Id</b></em>' attribute.
@@ -952,30 +957,30 @@ public interface OrderAdjustment extends BizEntityTyped<OrderAdjustmentType> {
 	void setTaxAuthPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tax Authority Rate Seq Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tax Authority Rate Seq Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tax Authority Rate Seq Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tax Authority Rate Seq Id</em>' attribute.
-	 * @see #setTaxAuthorityRateSeqId(String)
+	 * @return the value of the '<em>Tax Authority Rate Seq Id</em>' reference.
+	 * @see #setTaxAuthorityRateSeqId(TaxAuthorityRateProduct)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustment_TaxAuthorityRateSeqId()
-	 * @model annotation="mimo-ent-domain frame='TaxAuthorityRateProduct'"
+	 * @model keys="taxAuthorityRateSeqId"
 	 * @generated
 	 */
-	String getTaxAuthorityRateSeqId();
+	TaxAuthorityRateProduct getTaxAuthorityRateSeqId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderAdjustment#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tax Authority Rate Seq Id</em>' attribute.
+	 * @param value the new value of the '<em>Tax Authority Rate Seq Id</em>' reference.
 	 * @see #getTaxAuthorityRateSeqId()
 	 * @generated
 	 */
-	void setTaxAuthorityRateSeqId(String value);
+	void setTaxAuthorityRateSeqId(TaxAuthorityRateProduct value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Adjustment Attributes</b></em>' attribute list.

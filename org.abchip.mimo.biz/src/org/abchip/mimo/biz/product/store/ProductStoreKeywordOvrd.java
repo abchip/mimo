@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.store;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +25,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getTarget <em>Target</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getTargetTypeEnumId <em>Target Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getTargetTypeEnumId <em>Target Type Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd()
@@ -44,7 +45,8 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -70,7 +72,8 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @return the value of the '<em>Keyword</em>' attribute.
 	 * @see #setKeyword(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_Keyword()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getKeyword();
@@ -112,30 +115,30 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	void setTarget(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Target Type Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Target Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target Type Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Type Enum Id</em>' attribute.
-	 * @see #setTargetTypeEnumId(String)
+	 * @return the value of the '<em>Target Type Enum Id</em>' reference.
+	 * @see #setTargetTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_TargetTypeEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getTargetTypeEnumId();
+	Enumeration getTargetTypeEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getTargetTypeEnumId <em>Target Type Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreKeywordOvrd#getTargetTypeEnumId <em>Target Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Type Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Target Type Enum Id</em>' reference.
 	 * @see #getTargetTypeEnumId()
 	 * @generated
 	 */
-	void setTargetTypeEnumId(String value);
+	void setTargetTypeEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -174,8 +177,8 @@ public interface ProductStoreKeywordOvrd extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreKeywordOvrd_ProductStoreId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreId();

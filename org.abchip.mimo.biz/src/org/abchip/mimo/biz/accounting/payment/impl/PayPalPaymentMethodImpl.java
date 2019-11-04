@@ -10,9 +10,12 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,12 +29,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#isAvsAddr <em>Avs Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#isAvsZip <em>Avs Zip</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getCorrelationId <em>Correlation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getExpressCheckoutToken <em>Express Checkout Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getPayerId <em>Payer Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getPayerStatus <em>Payer Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getTransactionId <em>Transaction Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,24 +98,6 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 * @ordered
 	 */
 	protected boolean avsZip = AVS_ZIP_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getCorrelationId() <em>Correlation Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -203,6 +188,15 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 * @ordered
 	 */
 	protected String transactionId = TRANSACTION_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PostalAddress contactMechId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,7 +223,24 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public PostalAddress getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (PostalAddress)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostalAddress basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -239,8 +250,8 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(PostalAddress newContactMechId) {
+		PostalAddress oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -444,8 +455,6 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 				return isAvsAddr();
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__AVS_ZIP:
 				return isAvsZip();
-			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID:
-				return getContactMechId();
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CORRELATION_ID:
 				return getCorrelationId();
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__EXPRESS_CHECKOUT_TOKEN:
@@ -456,6 +465,9 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 				return getPayerStatus();
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__TRANSACTION_ID:
 				return getTransactionId();
+			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -477,9 +489,6 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__AVS_ZIP:
 				setAvsZip((Boolean)newValue);
 				return;
-			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
-				return;
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CORRELATION_ID:
 				setCorrelationId((String)newValue);
 				return;
@@ -494,6 +503,9 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 				return;
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__TRANSACTION_ID:
 				setTransactionId((String)newValue);
+				return;
+			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -516,9 +528,6 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__AVS_ZIP:
 				setAvsZip(AVS_ZIP_EDEFAULT);
 				return;
-			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CORRELATION_ID:
 				setCorrelationId(CORRELATION_ID_EDEFAULT);
 				return;
@@ -533,6 +542,9 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 				return;
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__TRANSACTION_ID:
 				setTransactionId(TRANSACTION_ID_EDEFAULT);
+				return;
+			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID:
+				setContactMechId((PostalAddress)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -552,8 +564,6 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 				return avsAddr != AVS_ADDR_EDEFAULT;
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__AVS_ZIP:
 				return avsZip != AVS_ZIP_EDEFAULT;
-			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CORRELATION_ID:
 				return CORRELATION_ID_EDEFAULT == null ? correlationId != null : !CORRELATION_ID_EDEFAULT.equals(correlationId);
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__EXPRESS_CHECKOUT_TOKEN:
@@ -564,6 +574,8 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 				return PAYER_STATUS_EDEFAULT == null ? payerStatus != null : !PAYER_STATUS_EDEFAULT.equals(payerStatus);
 			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__TRANSACTION_ID:
 				return TRANSACTION_ID_EDEFAULT == null ? transactionId != null : !TRANSACTION_ID_EDEFAULT.equals(transactionId);
+			case PaymentPackage.PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID:
+				return contactMechId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -584,8 +596,6 @@ public class PayPalPaymentMethodImpl extends BizEntityImpl implements PayPalPaym
 		result.append(avsAddr);
 		result.append(", avsZip: ");
 		result.append(avsZip);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
 		result.append(", correlationId: ");
 		result.append(correlationId);
 		result.append(", expressCheckoutToken: ");

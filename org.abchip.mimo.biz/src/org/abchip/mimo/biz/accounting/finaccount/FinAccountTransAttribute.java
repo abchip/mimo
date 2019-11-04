@@ -92,8 +92,8 @@ public interface FinAccountTransAttribute extends BizEntity {
 	 * @return the value of the '<em>Fin Account Trans Id</em>' attribute.
 	 * @see #setFinAccountTransId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransAttribute_FinAccountTransId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountTrans'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFinAccountTransId();
@@ -119,7 +119,8 @@ public interface FinAccountTransAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransAttribute_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();

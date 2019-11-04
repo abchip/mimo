@@ -68,7 +68,8 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -120,7 +121,8 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Quote Id</em>' attribute.
 	 * @see #setQuoteId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_QuoteId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getQuoteId();
@@ -146,7 +148,8 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Quote Item Seq Id</em>' attribute.
 	 * @see #setQuoteItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_QuoteItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getQuoteItemSeqId();
@@ -172,7 +175,8 @@ public interface QuoteTermAttribute extends BizEntity {
 	 * @return the value of the '<em>Term Type Id</em>' attribute.
 	 * @see #setTermTypeId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTermAttribute_TermTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTermTypeId();

@@ -46,7 +46,8 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -124,8 +125,8 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -177,7 +178,8 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Geo Id</em>' attribute.
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_TaxAuthGeoId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -203,7 +205,8 @@ public interface PartyTaxAuthInfo extends BizEntity {
 	 * @return the value of the '<em>Tax Auth Party Id</em>' attribute.
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getPartyTaxAuthInfo_TaxAuthPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();

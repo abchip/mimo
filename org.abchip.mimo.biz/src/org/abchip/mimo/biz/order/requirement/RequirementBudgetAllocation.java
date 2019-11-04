@@ -22,8 +22,8 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getRequirementId <em>Requirement Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation()
@@ -68,8 +68,8 @@ public interface RequirementBudgetAllocation extends BizEntity {
 	 * @return the value of the '<em>Budget Id</em>' attribute.
 	 * @see #setBudgetId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation_BudgetId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Budget'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBudgetId();
@@ -95,7 +95,8 @@ public interface RequirementBudgetAllocation extends BizEntity {
 	 * @return the value of the '<em>Budget Item Seq Id</em>' attribute.
 	 * @see #setBudgetItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation_BudgetItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBudgetItemSeqId();
@@ -111,30 +112,29 @@ public interface RequirementBudgetAllocation extends BizEntity {
 	void setBudgetItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Id</em>' attribute.
-	 * @see #setRequirementId(String)
+	 * @return the value of the '<em>Requirement Id</em>' reference.
+	 * @see #setRequirementId(Requirement)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementBudgetAllocation_RequirementId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Requirement'"
+	 * @model keys="requirementId"
 	 * @generated
 	 */
-	String getRequirementId();
+	Requirement getRequirementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getRequirementId <em>Requirement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementBudgetAllocation#getRequirementId <em>Requirement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Id</em>' reference.
 	 * @see #getRequirementId()
 	 * @generated
 	 */
-	void setRequirementId(String value);
+	void setRequirementId(Requirement value);
 
 } // RequirementBudgetAllocation

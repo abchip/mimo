@@ -226,6 +226,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -572,6 +573,22 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -588,22 +605,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -714,6 +715,14 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -722,14 +731,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -809,6 +810,14 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -817,14 +826,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -891,8 +892,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCarrierShipmentBoxType_PartyId() {
-		return (EAttribute)carrierShipmentBoxTypeEClass.getEStructuralFeatures().get(1);
+	public EReference getCarrierShipmentBoxType_PartyId() {
+		return (EReference)carrierShipmentBoxTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -902,7 +903,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getCarrierShipmentBoxType_OversizeCode() {
-		return (EAttribute)carrierShipmentBoxTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)carrierShipmentBoxTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -912,7 +913,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getCarrierShipmentBoxType_PackagingTypeCode() {
-		return (EAttribute)carrierShipmentBoxTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)carrierShipmentBoxTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -941,8 +942,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCarrierShipmentMethod_PartyId() {
-		return (EAttribute)carrierShipmentMethodEClass.getEStructuralFeatures().get(1);
+	public EReference getCarrierShipmentMethod_PartyId() {
+		return (EReference)carrierShipmentMethodEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -952,7 +953,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getCarrierShipmentMethod_RoleTypeId() {
-		return (EAttribute)carrierShipmentMethodEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)carrierShipmentMethodEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -962,7 +963,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getCarrierShipmentMethod_CarrierServiceCode() {
-		return (EAttribute)carrierShipmentMethodEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)carrierShipmentMethodEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -972,7 +973,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getCarrierShipmentMethod_SequenceNumber() {
-		return (EAttribute)carrierShipmentMethodEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)carrierShipmentMethodEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1021,8 +1022,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDelivery_DestFacilityId() {
-		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(3);
+	public EReference getDelivery_DestFacilityId() {
+		return (EReference)deliveryEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1032,7 +1033,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getDelivery_EndMileage() {
-		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1042,7 +1043,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getDelivery_EstimatedArrivalDate() {
-		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1052,7 +1053,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getDelivery_EstimatedStartDate() {
-		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1061,8 +1062,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDelivery_FixedAssetId() {
-		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(7);
+	public EReference getDelivery_FixedAssetId() {
+		return (EReference)deliveryEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1072,7 +1073,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getDelivery_FuelUsed() {
-		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1081,8 +1082,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDelivery_OriginFacilityId() {
-		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(9);
+	public EReference getDelivery_OriginFacilityId() {
+		return (EReference)deliveryEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1092,7 +1093,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getDelivery_StartMileage() {
-		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)deliveryEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1161,8 +1162,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_CurrencyUomId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(5);
+	public EReference getShipment_CurrencyUomId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1171,8 +1172,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_DestinationContactMechId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(6);
+	public EReference getShipment_DestinationContactMechId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -1181,8 +1182,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_DestinationFacilityId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(7);
+	public EReference getShipment_DestinationFacilityId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -1191,8 +1192,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_DestinationTelecomNumberId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(8);
+	public EReference getShipment_DestinationTelecomNumberId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -1202,7 +1203,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipment_EstimatedArrivalDate() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1211,8 +1212,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_EstimatedArrivalWorkEffId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(10);
+	public EReference getShipment_EstimatedArrivalWorkEffId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -1222,7 +1223,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipment_EstimatedReadyDate() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1232,7 +1233,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipment_EstimatedShipCost() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1242,7 +1243,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipment_EstimatedShipDate() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1251,8 +1252,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_EstimatedShipWorkEffId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(14);
+	public EReference getShipment_EstimatedShipWorkEffId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -1262,7 +1263,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipment_HandlingInstructions() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1272,7 +1273,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipment_LastModifiedByUserLogin() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1282,7 +1283,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipment_LastModifiedDate() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1292,7 +1293,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipment_LatestCancelDate() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1301,8 +1302,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_OriginContactMechId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(19);
+	public EReference getShipment_OriginContactMechId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -1311,8 +1312,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_OriginFacilityId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(20);
+	public EReference getShipment_OriginFacilityId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -1321,8 +1322,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_OriginTelecomNumberId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(21);
+	public EReference getShipment_OriginTelecomNumberId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1331,8 +1332,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_PartyIdFrom() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(22);
+	public EReference getShipment_PartyIdFrom() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(29);
 	}
 
 	/**
@@ -1341,8 +1342,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_PartyIdTo() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(23);
+	public EReference getShipment_PartyIdTo() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(28);
 	}
 
 	/**
@@ -1351,8 +1352,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_PicklistBinId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(24);
+	public EReference getShipment_PicklistBinId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -1361,8 +1362,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_PrimaryOrderId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(25);
+	public EReference getShipment_PrimaryOrderId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -1371,8 +1372,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_PrimaryReturnId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(26);
+	public EReference getShipment_PrimaryReturnId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(26);
 	}
 
 	/**
@@ -1382,7 +1383,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipment_PrimaryShipGroupSeqId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(27);
+		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1391,8 +1392,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_ShipmentTypeId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(28);
+	public EReference getShipment_ShipmentTypeId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1401,8 +1402,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipment_StatusId() {
-		return (EAttribute)shipmentEClass.getEStructuralFeatures().get(29);
+	public EReference getShipment_StatusId() {
+		return (EReference)shipmentEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1581,8 +1582,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentBoxType_DimensionUomId() {
-		return (EAttribute)shipmentBoxTypeEClass.getEStructuralFeatures().get(6);
+	public EReference getShipmentBoxType_DimensionUomId() {
+		return (EReference)shipmentBoxTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1591,8 +1592,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentBoxType_WeightUomId() {
-		return (EAttribute)shipmentBoxTypeEClass.getEStructuralFeatures().get(7);
+	public EReference getShipmentBoxType_WeightUomId() {
+		return (EReference)shipmentBoxTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1631,8 +1632,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentContactMech_ShipmentContactMechTypeId() {
-		return (EAttribute)shipmentContactMechEClass.getEStructuralFeatures().get(1);
+	public EReference getShipmentContactMech_ShipmentContactMechTypeId() {
+		return (EReference)shipmentContactMechEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1641,8 +1642,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentContactMech_ContactMechId() {
-		return (EAttribute)shipmentContactMechEClass.getEStructuralFeatures().get(2);
+	public EReference getShipmentContactMech_ContactMechId() {
+		return (EReference)shipmentContactMechEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1741,8 +1742,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_GeoIdFrom() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(5);
+	public EReference getShipmentCostEstimate_GeoIdFrom() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -1751,8 +1752,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_GeoIdTo() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(6);
+	public EReference getShipmentCostEstimate_GeoIdTo() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -1762,7 +1763,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_OrderFlatPrice() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1772,7 +1773,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_OrderItemFlatPrice() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1782,7 +1783,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_OrderPricePercent() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1792,7 +1793,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_OversizePrice() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1802,7 +1803,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_OversizeUnit() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1811,8 +1812,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_PartyId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(12);
+	public EReference getShipmentCostEstimate_PartyId() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1821,8 +1822,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_PriceBreakId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(13);
+	public EReference getShipmentCostEstimate_PriceBreakId() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -1832,7 +1833,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_PriceUnitPrice() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1841,8 +1842,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_PriceUomId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(15);
+	public EReference getShipmentCostEstimate_PriceUomId() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1852,7 +1853,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_ProductFeatureGroupId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1862,7 +1863,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_ProductStoreId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1871,8 +1872,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_ProductStoreShipMethId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(18);
+	public EReference getShipmentCostEstimate_ProductStoreShipMethId() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -1881,8 +1882,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_QuantityBreakId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(19);
+	public EReference getShipmentCostEstimate_QuantityBreakId() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(26);
 	}
 
 	/**
@@ -1892,7 +1893,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_QuantityUnitPrice() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(20);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1901,8 +1902,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_QuantityUomId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(21);
+	public EReference getShipmentCostEstimate_QuantityUomId() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -1911,8 +1912,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_RoleTypeId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(22);
+	public EReference getShipmentCostEstimate_RoleTypeId() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -1922,7 +1923,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_ShipmentMethodTypeId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(23);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1932,7 +1933,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_ShippingPricePercent() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(24);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1941,8 +1942,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_WeightBreakId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(25);
+	public EReference getShipmentCostEstimate_WeightBreakId() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -1952,7 +1953,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentCostEstimate_WeightUnitPrice() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(26);
+		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -1961,8 +1962,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentCostEstimate_WeightUomId() {
-		return (EAttribute)shipmentCostEstimateEClass.getEStructuralFeatures().get(27);
+	public EReference getShipmentCostEstimate_WeightUomId() {
+		return (EReference)shipmentCostEstimateEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -2001,8 +2002,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentGatewayConfig_ShipmentGatewayConfTypeId() {
-		return (EAttribute)shipmentGatewayConfigEClass.getEStructuralFeatures().get(2);
+	public EReference getShipmentGatewayConfig_ShipmentGatewayConfTypeId() {
+		return (EReference)shipmentGatewayConfigEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2051,8 +2052,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentGatewayConfigType_ParentTypeId() {
-		return (EAttribute)shipmentGatewayConfigTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getShipmentGatewayConfigType_ParentTypeId() {
+		return (EReference)shipmentGatewayConfigTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2631,8 +2632,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentItem_ProductId() {
-		return (EAttribute)shipmentItemEClass.getEStructuralFeatures().get(2);
+	public EReference getShipmentItem_ProductId() {
+		return (EReference)shipmentItemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2642,7 +2643,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentItem_Quantity() {
-		return (EAttribute)shipmentItemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)shipmentItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2652,7 +2653,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentItem_ShipmentContentDescription() {
-		return (EAttribute)shipmentItemEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)shipmentItemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2691,8 +2692,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentItemBilling_InvoiceId() {
-		return (EAttribute)shipmentItemBillingEClass.getEStructuralFeatures().get(2);
+	public EReference getShipmentItemBilling_InvoiceId() {
+		return (EReference)shipmentItemBillingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2702,7 +2703,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentItemBilling_InvoiceItemSeqId() {
-		return (EAttribute)shipmentItemBillingEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)shipmentItemBillingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2741,8 +2742,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentItemFeature_ProductFeatureId() {
-		return (EAttribute)shipmentItemFeatureEClass.getEStructuralFeatures().get(2);
+	public EReference getShipmentItemFeature_ProductFeatureId() {
+		return (EReference)shipmentItemFeatureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2861,8 +2862,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentPackage_DimensionUomId() {
-		return (EAttribute)shipmentPackageEClass.getEStructuralFeatures().get(6);
+	public EReference getShipmentPackage_DimensionUomId() {
+		return (EReference)shipmentPackageEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2872,7 +2873,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackage_InsuredValue() {
-		return (EAttribute)shipmentPackageEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)shipmentPackageEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2881,8 +2882,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentPackage_ShipmentBoxTypeId() {
-		return (EAttribute)shipmentPackageEClass.getEStructuralFeatures().get(8);
+	public EReference getShipmentPackage_ShipmentBoxTypeId() {
+		return (EReference)shipmentPackageEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2892,7 +2893,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackage_Weight() {
-		return (EAttribute)shipmentPackageEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)shipmentPackageEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2901,8 +2902,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentPackage_WeightUomId() {
-		return (EAttribute)shipmentPackageEClass.getEStructuralFeatures().get(10);
+	public EReference getShipmentPackage_WeightUomId() {
+		return (EReference)shipmentPackageEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -2961,8 +2962,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentPackageContent_SubProductId() {
-		return (EAttribute)shipmentPackageContentEClass.getEStructuralFeatures().get(4);
+	public EReference getShipmentPackageContent_SubProductId() {
+		return (EReference)shipmentPackageContentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2972,7 +2973,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageContent_SubProductQuantity() {
-		return (EAttribute)shipmentPackageContentEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)shipmentPackageContentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3041,8 +3042,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentPackageRouteSeg_CurrencyUomId() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(5);
+	public EReference getShipmentPackageRouteSeg_CurrencyUomId() {
+		return (EReference)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -3052,7 +3053,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_InsuredAmount() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3062,7 +3063,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_InternationalInvoice() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3072,7 +3073,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_LabelHtml() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3082,7 +3083,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_LabelImage() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -3092,7 +3093,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_LabelIntlSignImage() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -3102,7 +3103,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_LabelPrinted() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -3112,7 +3113,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_PackageOtherCost() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -3122,7 +3123,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_PackageServiceCost() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -3132,7 +3133,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_PackageTransportCost() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -3142,7 +3143,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentPackageRouteSeg_TrackingCode() {
-		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)shipmentPackageRouteSegEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -3251,8 +3252,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_BillingWeightUomId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(9);
+	public EReference getShipmentRouteSegment_BillingWeightUomId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(35);
 	}
 
 	/**
@@ -3262,7 +3263,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_CarrierDeliveryZone() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -3271,8 +3272,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_CarrierPartyId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(11);
+	public EReference getShipmentRouteSegment_CarrierPartyId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -3282,7 +3283,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_CarrierRestrictionCodes() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -3292,7 +3293,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_CarrierRestrictionDesc() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -3301,8 +3302,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_CarrierServiceStatusId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(14);
+	public EReference getShipmentRouteSegment_CarrierServiceStatusId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(33);
 	}
 
 	/**
@@ -3311,8 +3312,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_CurrencyUomId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(15);
+	public EReference getShipmentRouteSegment_CurrencyUomId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(34);
 	}
 
 	/**
@@ -3321,8 +3322,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_DeliveryId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(16);
+	public EReference getShipmentRouteSegment_DeliveryId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -3331,8 +3332,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_DestContactMechId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(17);
+	public EReference getShipmentRouteSegment_DestContactMechId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(31);
 	}
 
 	/**
@@ -3341,8 +3342,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_DestFacilityId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(18);
+	public EReference getShipmentRouteSegment_DestFacilityId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(28);
 	}
 
 	/**
@@ -3351,8 +3352,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_DestTelecomNumberId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(19);
+	public EReference getShipmentRouteSegment_DestTelecomNumberId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(32);
 	}
 
 	/**
@@ -3362,7 +3363,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_EstimatedArrivalDate() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(20);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -3372,7 +3373,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_EstimatedStartDate() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(21);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -3382,7 +3383,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_HomeDeliveryDate() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(22);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -3392,7 +3393,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_HomeDeliveryType() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(23);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -3402,7 +3403,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_LastUpdatedDate() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(24);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -3411,8 +3412,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_OriginContactMechId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(25);
+	public EReference getShipmentRouteSegment_OriginContactMechId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(29);
 	}
 
 	/**
@@ -3421,8 +3422,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_OriginFacilityId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(26);
+	public EReference getShipmentRouteSegment_OriginFacilityId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -3431,8 +3432,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_OriginTelecomNumberId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(27);
+	public EReference getShipmentRouteSegment_OriginTelecomNumberId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(30);
 	}
 
 	/**
@@ -3441,8 +3442,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentRouteSegment_ShipmentMethodTypeId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(28);
+	public EReference getShipmentRouteSegment_ShipmentMethodTypeId() {
+		return (EReference)shipmentRouteSegmentEClass.getEStructuralFeatures().get(26);
 	}
 
 	/**
@@ -3452,7 +3453,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_ThirdPartyAccountNumber() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(29);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -3462,7 +3463,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_ThirdPartyCountryGeoCode() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(30);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -3472,7 +3473,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_ThirdPartyPostalCode() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(31);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -3482,7 +3483,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_TrackingDigest() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(32);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -3492,7 +3493,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_TrackingIdNumber() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(33);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -3502,7 +3503,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_UpdatedByUserLoginId() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(34);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -3512,7 +3513,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentRouteSegment_UpsHighValueReport() {
-		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(35);
+		return (EAttribute)shipmentRouteSegmentEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -3541,8 +3542,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentStatus_ShipmentId() {
-		return (EAttribute)shipmentStatusEClass.getEStructuralFeatures().get(1);
+	public EReference getShipmentStatus_ShipmentId() {
+		return (EReference)shipmentStatusEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3551,8 +3552,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentStatus_ChangeByUserLoginId() {
-		return (EAttribute)shipmentStatusEClass.getEStructuralFeatures().get(2);
+	public EReference getShipmentStatus_ChangeByUserLoginId() {
+		return (EReference)shipmentStatusEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3562,7 +3563,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentStatus_StatusDate() {
-		return (EAttribute)shipmentStatusEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)shipmentStatusEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3611,8 +3612,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentTimeEstimate_GeoIdTo() {
-		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(3);
+	public EReference getShipmentTimeEstimate_GeoIdTo() {
+		return (EReference)shipmentTimeEstimateEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3621,8 +3622,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentTimeEstimate_GeoIdFrom() {
-		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(4);
+	public EReference getShipmentTimeEstimate_GeoIdFrom() {
+		return (EReference)shipmentTimeEstimateEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -3632,7 +3633,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentTimeEstimate_FromDate() {
-		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3642,7 +3643,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentTimeEstimate_LeadTime() {
-		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3651,8 +3652,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentTimeEstimate_LeadTimeUomId() {
-		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(7);
+	public EReference getShipmentTimeEstimate_LeadTimeUomId() {
+		return (EReference)shipmentTimeEstimateEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -3662,7 +3663,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentTimeEstimate_SequenceNumber() {
-		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3672,7 +3673,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 */
 	@Override
 	public EAttribute getShipmentTimeEstimate_ThruDate() {
-		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)shipmentTimeEstimateEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3721,8 +3722,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getShipmentType_ParentTypeId() {
-		return (EAttribute)shipmentTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getShipmentType_ParentTypeId() {
+		return (EReference)shipmentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3856,29 +3857,29 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		// Create classes and their features
 		carrierShipmentBoxTypeEClass = createEClass(CARRIER_SHIPMENT_BOX_TYPE);
 		createEAttribute(carrierShipmentBoxTypeEClass, CARRIER_SHIPMENT_BOX_TYPE__SHIPMENT_BOX_TYPE_ID);
-		createEAttribute(carrierShipmentBoxTypeEClass, CARRIER_SHIPMENT_BOX_TYPE__PARTY_ID);
 		createEAttribute(carrierShipmentBoxTypeEClass, CARRIER_SHIPMENT_BOX_TYPE__OVERSIZE_CODE);
 		createEAttribute(carrierShipmentBoxTypeEClass, CARRIER_SHIPMENT_BOX_TYPE__PACKAGING_TYPE_CODE);
+		createEReference(carrierShipmentBoxTypeEClass, CARRIER_SHIPMENT_BOX_TYPE__PARTY_ID);
 
 		carrierShipmentMethodEClass = createEClass(CARRIER_SHIPMENT_METHOD);
 		createEAttribute(carrierShipmentMethodEClass, CARRIER_SHIPMENT_METHOD__SHIPMENT_METHOD_TYPE_ID);
-		createEAttribute(carrierShipmentMethodEClass, CARRIER_SHIPMENT_METHOD__PARTY_ID);
 		createEAttribute(carrierShipmentMethodEClass, CARRIER_SHIPMENT_METHOD__ROLE_TYPE_ID);
 		createEAttribute(carrierShipmentMethodEClass, CARRIER_SHIPMENT_METHOD__CARRIER_SERVICE_CODE);
 		createEAttribute(carrierShipmentMethodEClass, CARRIER_SHIPMENT_METHOD__SEQUENCE_NUMBER);
+		createEReference(carrierShipmentMethodEClass, CARRIER_SHIPMENT_METHOD__PARTY_ID);
 
 		deliveryEClass = createEClass(DELIVERY);
 		createEAttribute(deliveryEClass, DELIVERY__DELIVERY_ID);
 		createEAttribute(deliveryEClass, DELIVERY__ACTUAL_ARRIVAL_DATE);
 		createEAttribute(deliveryEClass, DELIVERY__ACTUAL_START_DATE);
-		createEAttribute(deliveryEClass, DELIVERY__DEST_FACILITY_ID);
 		createEAttribute(deliveryEClass, DELIVERY__END_MILEAGE);
 		createEAttribute(deliveryEClass, DELIVERY__ESTIMATED_ARRIVAL_DATE);
 		createEAttribute(deliveryEClass, DELIVERY__ESTIMATED_START_DATE);
-		createEAttribute(deliveryEClass, DELIVERY__FIXED_ASSET_ID);
 		createEAttribute(deliveryEClass, DELIVERY__FUEL_USED);
-		createEAttribute(deliveryEClass, DELIVERY__ORIGIN_FACILITY_ID);
 		createEAttribute(deliveryEClass, DELIVERY__START_MILEAGE);
+		createEReference(deliveryEClass, DELIVERY__FIXED_ASSET_ID);
+		createEReference(deliveryEClass, DELIVERY__ORIGIN_FACILITY_ID);
+		createEReference(deliveryEClass, DELIVERY__DEST_FACILITY_ID);
 
 		shipmentEClass = createEClass(SHIPMENT);
 		createEAttribute(shipmentEClass, SHIPMENT__SHIPMENT_ID);
@@ -3886,31 +3887,31 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		createEAttribute(shipmentEClass, SHIPMENT__ADDTL_SHIPPING_CHARGE_DESC);
 		createEAttribute(shipmentEClass, SHIPMENT__CREATED_BY_USER_LOGIN);
 		createEAttribute(shipmentEClass, SHIPMENT__CREATED_DATE);
-		createEAttribute(shipmentEClass, SHIPMENT__CURRENCY_UOM_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__DESTINATION_CONTACT_MECH_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__DESTINATION_FACILITY_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__DESTINATION_TELECOM_NUMBER_ID);
 		createEAttribute(shipmentEClass, SHIPMENT__ESTIMATED_ARRIVAL_DATE);
-		createEAttribute(shipmentEClass, SHIPMENT__ESTIMATED_ARRIVAL_WORK_EFF_ID);
 		createEAttribute(shipmentEClass, SHIPMENT__ESTIMATED_READY_DATE);
 		createEAttribute(shipmentEClass, SHIPMENT__ESTIMATED_SHIP_COST);
 		createEAttribute(shipmentEClass, SHIPMENT__ESTIMATED_SHIP_DATE);
-		createEAttribute(shipmentEClass, SHIPMENT__ESTIMATED_SHIP_WORK_EFF_ID);
 		createEAttribute(shipmentEClass, SHIPMENT__HANDLING_INSTRUCTIONS);
 		createEAttribute(shipmentEClass, SHIPMENT__LAST_MODIFIED_BY_USER_LOGIN);
 		createEAttribute(shipmentEClass, SHIPMENT__LAST_MODIFIED_DATE);
 		createEAttribute(shipmentEClass, SHIPMENT__LATEST_CANCEL_DATE);
-		createEAttribute(shipmentEClass, SHIPMENT__ORIGIN_CONTACT_MECH_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__ORIGIN_FACILITY_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__ORIGIN_TELECOM_NUMBER_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__PARTY_ID_FROM);
-		createEAttribute(shipmentEClass, SHIPMENT__PARTY_ID_TO);
-		createEAttribute(shipmentEClass, SHIPMENT__PICKLIST_BIN_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__PRIMARY_ORDER_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__PRIMARY_RETURN_ID);
 		createEAttribute(shipmentEClass, SHIPMENT__PRIMARY_SHIP_GROUP_SEQ_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__SHIPMENT_TYPE_ID);
-		createEAttribute(shipmentEClass, SHIPMENT__STATUS_ID);
+		createEReference(shipmentEClass, SHIPMENT__SHIPMENT_TYPE_ID);
+		createEReference(shipmentEClass, SHIPMENT__STATUS_ID);
+		createEReference(shipmentEClass, SHIPMENT__ESTIMATED_SHIP_WORK_EFF_ID);
+		createEReference(shipmentEClass, SHIPMENT__ESTIMATED_ARRIVAL_WORK_EFF_ID);
+		createEReference(shipmentEClass, SHIPMENT__CURRENCY_UOM_ID);
+		createEReference(shipmentEClass, SHIPMENT__ORIGIN_FACILITY_ID);
+		createEReference(shipmentEClass, SHIPMENT__DESTINATION_FACILITY_ID);
+		createEReference(shipmentEClass, SHIPMENT__ORIGIN_CONTACT_MECH_ID);
+		createEReference(shipmentEClass, SHIPMENT__ORIGIN_TELECOM_NUMBER_ID);
+		createEReference(shipmentEClass, SHIPMENT__DESTINATION_CONTACT_MECH_ID);
+		createEReference(shipmentEClass, SHIPMENT__DESTINATION_TELECOM_NUMBER_ID);
+		createEReference(shipmentEClass, SHIPMENT__PRIMARY_ORDER_ID);
+		createEReference(shipmentEClass, SHIPMENT__PRIMARY_RETURN_ID);
+		createEReference(shipmentEClass, SHIPMENT__PICKLIST_BIN_ID);
+		createEReference(shipmentEClass, SHIPMENT__PARTY_ID_TO);
+		createEReference(shipmentEClass, SHIPMENT__PARTY_ID_FROM);
 		createEAttribute(shipmentEClass, SHIPMENT__SHIPMENT_ATTRIBUTES);
 		createEAttribute(shipmentEClass, SHIPMENT__SHIPMENT_CONTACT_MECHS);
 		createEAttribute(shipmentEClass, SHIPMENT__SHIPMENT_ITEMS);
@@ -3930,14 +3931,14 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		createEAttribute(shipmentBoxTypeEClass, SHIPMENT_BOX_TYPE__BOX_WEIGHT);
 		createEAttribute(shipmentBoxTypeEClass, SHIPMENT_BOX_TYPE__BOX_WIDTH);
 		createEAttribute(shipmentBoxTypeEClass, SHIPMENT_BOX_TYPE__DESCRIPTION);
-		createEAttribute(shipmentBoxTypeEClass, SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID);
-		createEAttribute(shipmentBoxTypeEClass, SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID);
+		createEReference(shipmentBoxTypeEClass, SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID);
+		createEReference(shipmentBoxTypeEClass, SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID);
 		createEAttribute(shipmentBoxTypeEClass, SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES);
 
 		shipmentContactMechEClass = createEClass(SHIPMENT_CONTACT_MECH);
 		createEAttribute(shipmentContactMechEClass, SHIPMENT_CONTACT_MECH__SHIPMENT_ID);
-		createEAttribute(shipmentContactMechEClass, SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID);
-		createEAttribute(shipmentContactMechEClass, SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID);
+		createEReference(shipmentContactMechEClass, SHIPMENT_CONTACT_MECH__CONTACT_MECH_ID);
+		createEReference(shipmentContactMechEClass, SHIPMENT_CONTACT_MECH__SHIPMENT_CONTACT_MECH_TYPE_ID);
 
 		shipmentContactMechTypeEClass = createEClass(SHIPMENT_CONTACT_MECH_TYPE);
 		createEAttribute(shipmentContactMechTypeEClass, SHIPMENT_CONTACT_MECH_TYPE__SHIPMENT_CONTACT_MECH_TYPE_ID);
@@ -3949,40 +3950,40 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__CARRIER_ROLE_TYPE_ID);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__FEATURE_PERCENT);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__FEATURE_PRICE);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__GEO_ID_FROM);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__GEO_ID_TO);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__ORDER_FLAT_PRICE);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__ORDER_ITEM_FLAT_PRICE);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__ORDER_PRICE_PERCENT);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__OVERSIZE_PRICE);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__OVERSIZE_UNIT);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PARTY_ID);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PRICE_UNIT_PRICE);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PRODUCT_FEATURE_GROUP_ID);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_ID);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__QUANTITY_UNIT_PRICE);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__SHIPMENT_METHOD_TYPE_ID);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__SHIPPING_PRICE_PERCENT);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID);
 		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__WEIGHT_UNIT_PRICE);
-		createEAttribute(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PRODUCT_STORE_SHIP_METH_ID);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PARTY_ID);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__ROLE_TYPE_ID);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__WEIGHT_UOM_ID);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__QUANTITY_UOM_ID);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PRICE_UOM_ID);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__GEO_ID_TO);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__GEO_ID_FROM);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__WEIGHT_BREAK_ID);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__QUANTITY_BREAK_ID);
+		createEReference(shipmentCostEstimateEClass, SHIPMENT_COST_ESTIMATE__PRICE_BREAK_ID);
 
 		shipmentGatewayConfigEClass = createEClass(SHIPMENT_GATEWAY_CONFIG);
 		createEAttribute(shipmentGatewayConfigEClass, SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONFIG_ID);
 		createEAttribute(shipmentGatewayConfigEClass, SHIPMENT_GATEWAY_CONFIG__DESCRIPTION);
-		createEAttribute(shipmentGatewayConfigEClass, SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID);
+		createEReference(shipmentGatewayConfigEClass, SHIPMENT_GATEWAY_CONFIG__SHIPMENT_GATEWAY_CONF_TYPE_ID);
 
 		shipmentGatewayConfigTypeEClass = createEClass(SHIPMENT_GATEWAY_CONFIG_TYPE);
 		createEAttribute(shipmentGatewayConfigTypeEClass, SHIPMENT_GATEWAY_CONFIG_TYPE__SHIPMENT_GATEWAY_CONF_TYPE_ID);
 		createEAttribute(shipmentGatewayConfigTypeEClass, SHIPMENT_GATEWAY_CONFIG_TYPE__DESCRIPTION);
 		createEAttribute(shipmentGatewayConfigTypeEClass, SHIPMENT_GATEWAY_CONFIG_TYPE__HAS_TABLE);
-		createEAttribute(shipmentGatewayConfigTypeEClass, SHIPMENT_GATEWAY_CONFIG_TYPE__PARENT_TYPE_ID);
+		createEReference(shipmentGatewayConfigTypeEClass, SHIPMENT_GATEWAY_CONFIG_TYPE__PARENT_TYPE_ID);
 
 		shipmentGatewayDhlEClass = createEClass(SHIPMENT_GATEWAY_DHL);
 		createEAttribute(shipmentGatewayDhlEClass, SHIPMENT_GATEWAY_DHL__ACCESS_ACCOUNT_NBR);
@@ -4045,20 +4046,20 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		shipmentItemEClass = createEClass(SHIPMENT_ITEM);
 		createEAttribute(shipmentItemEClass, SHIPMENT_ITEM__SHIPMENT_ID);
 		createEAttribute(shipmentItemEClass, SHIPMENT_ITEM__SHIPMENT_ITEM_SEQ_ID);
-		createEAttribute(shipmentItemEClass, SHIPMENT_ITEM__PRODUCT_ID);
 		createEAttribute(shipmentItemEClass, SHIPMENT_ITEM__QUANTITY);
 		createEAttribute(shipmentItemEClass, SHIPMENT_ITEM__SHIPMENT_CONTENT_DESCRIPTION);
+		createEReference(shipmentItemEClass, SHIPMENT_ITEM__PRODUCT_ID);
 
 		shipmentItemBillingEClass = createEClass(SHIPMENT_ITEM_BILLING);
 		createEAttribute(shipmentItemBillingEClass, SHIPMENT_ITEM_BILLING__SHIPMENT_ID);
 		createEAttribute(shipmentItemBillingEClass, SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID);
-		createEAttribute(shipmentItemBillingEClass, SHIPMENT_ITEM_BILLING__INVOICE_ID);
 		createEAttribute(shipmentItemBillingEClass, SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID);
+		createEReference(shipmentItemBillingEClass, SHIPMENT_ITEM_BILLING__INVOICE_ID);
 
 		shipmentItemFeatureEClass = createEClass(SHIPMENT_ITEM_FEATURE);
 		createEAttribute(shipmentItemFeatureEClass, SHIPMENT_ITEM_FEATURE__SHIPMENT_ID);
 		createEAttribute(shipmentItemFeatureEClass, SHIPMENT_ITEM_FEATURE__SHIPMENT_ITEM_SEQ_ID);
-		createEAttribute(shipmentItemFeatureEClass, SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID);
+		createEReference(shipmentItemFeatureEClass, SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID);
 
 		shipmentMethodTypeEClass = createEClass(SHIPMENT_METHOD_TYPE);
 		createEAttribute(shipmentMethodTypeEClass, SHIPMENT_METHOD_TYPE__SHIPMENT_METHOD_TYPE_ID);
@@ -4072,19 +4073,19 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		createEAttribute(shipmentPackageEClass, SHIPMENT_PACKAGE__BOX_LENGTH);
 		createEAttribute(shipmentPackageEClass, SHIPMENT_PACKAGE__BOX_WIDTH);
 		createEAttribute(shipmentPackageEClass, SHIPMENT_PACKAGE__DATE_CREATED);
-		createEAttribute(shipmentPackageEClass, SHIPMENT_PACKAGE__DIMENSION_UOM_ID);
 		createEAttribute(shipmentPackageEClass, SHIPMENT_PACKAGE__INSURED_VALUE);
-		createEAttribute(shipmentPackageEClass, SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID);
 		createEAttribute(shipmentPackageEClass, SHIPMENT_PACKAGE__WEIGHT);
-		createEAttribute(shipmentPackageEClass, SHIPMENT_PACKAGE__WEIGHT_UOM_ID);
+		createEReference(shipmentPackageEClass, SHIPMENT_PACKAGE__SHIPMENT_BOX_TYPE_ID);
+		createEReference(shipmentPackageEClass, SHIPMENT_PACKAGE__DIMENSION_UOM_ID);
+		createEReference(shipmentPackageEClass, SHIPMENT_PACKAGE__WEIGHT_UOM_ID);
 
 		shipmentPackageContentEClass = createEClass(SHIPMENT_PACKAGE_CONTENT);
 		createEAttribute(shipmentPackageContentEClass, SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ID);
 		createEAttribute(shipmentPackageContentEClass, SHIPMENT_PACKAGE_CONTENT__SHIPMENT_PACKAGE_SEQ_ID);
 		createEAttribute(shipmentPackageContentEClass, SHIPMENT_PACKAGE_CONTENT__SHIPMENT_ITEM_SEQ_ID);
 		createEAttribute(shipmentPackageContentEClass, SHIPMENT_PACKAGE_CONTENT__QUANTITY);
-		createEAttribute(shipmentPackageContentEClass, SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID);
 		createEAttribute(shipmentPackageContentEClass, SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY);
+		createEReference(shipmentPackageContentEClass, SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID);
 
 		shipmentPackageRouteSegEClass = createEClass(SHIPMENT_PACKAGE_ROUTE_SEG);
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ID);
@@ -4092,7 +4093,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__SHIPMENT_ROUTE_SEGMENT_ID);
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__BOX_NUMBER);
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__COD_AMOUNT);
-		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID);
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__INSURED_AMOUNT);
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__INTERNATIONAL_INVOICE);
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__LABEL_HTML);
@@ -4103,6 +4103,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_SERVICE_COST);
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__PACKAGE_TRANSPORT_COST);
 		createEAttribute(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__TRACKING_CODE);
+		createEReference(shipmentPackageRouteSegEClass, SHIPMENT_PACKAGE_ROUTE_SEG__CURRENCY_UOM_ID);
 
 		shipmentRouteSegmentEClass = createEClass(SHIPMENT_ROUTE_SEGMENT);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__SHIPMENT_ID);
@@ -4114,26 +4115,14 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ACTUAL_START_DATE);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ACTUAL_TRANSPORT_COST);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__CARRIER_DELIVERY_ZONE);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_CODES);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__CARRIER_RESTRICTION_DESC);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ESTIMATED_ARRIVAL_DATE);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ESTIMATED_START_DATE);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__HOME_DELIVERY_DATE);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__HOME_DELIVERY_TYPE);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__LAST_UPDATED_DATE);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID);
-		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_ACCOUNT_NUMBER);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_COUNTRY_GEO_CODE);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__THIRD_PARTY_POSTAL_CODE);
@@ -4141,30 +4130,42 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__TRACKING_ID_NUMBER);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__UPDATED_BY_USER_LOGIN_ID);
 		createEAttribute(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__UPS_HIGH_VALUE_REPORT);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__DELIVERY_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__CARRIER_PARTY_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__SHIPMENT_METHOD_TYPE_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ORIGIN_FACILITY_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__DEST_FACILITY_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ORIGIN_CONTACT_MECH_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__ORIGIN_TELECOM_NUMBER_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__DEST_CONTACT_MECH_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__DEST_TELECOM_NUMBER_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__CARRIER_SERVICE_STATUS_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__CURRENCY_UOM_ID);
+		createEReference(shipmentRouteSegmentEClass, SHIPMENT_ROUTE_SEGMENT__BILLING_WEIGHT_UOM_ID);
 
 		shipmentStatusEClass = createEClass(SHIPMENT_STATUS);
 		createEAttribute(shipmentStatusEClass, SHIPMENT_STATUS__STATUS_ID);
-		createEAttribute(shipmentStatusEClass, SHIPMENT_STATUS__SHIPMENT_ID);
-		createEAttribute(shipmentStatusEClass, SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID);
 		createEAttribute(shipmentStatusEClass, SHIPMENT_STATUS__STATUS_DATE);
+		createEReference(shipmentStatusEClass, SHIPMENT_STATUS__SHIPMENT_ID);
+		createEReference(shipmentStatusEClass, SHIPMENT_STATUS__CHANGE_BY_USER_LOGIN_ID);
 
 		shipmentTimeEstimateEClass = createEClass(SHIPMENT_TIME_ESTIMATE);
 		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__SHIPMENT_METHOD_TYPE_ID);
 		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__PARTY_ID);
 		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__ROLE_TYPE_ID);
-		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__GEO_ID_TO);
-		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM);
 		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__FROM_DATE);
 		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__LEAD_TIME);
-		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID);
 		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__SEQUENCE_NUMBER);
 		createEAttribute(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__THRU_DATE);
+		createEReference(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__GEO_ID_TO);
+		createEReference(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM);
+		createEReference(shipmentTimeEstimateEClass, SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID);
 
 		shipmentTypeEClass = createEClass(SHIPMENT_TYPE);
 		createEAttribute(shipmentTypeEClass, SHIPMENT_TYPE__SHIPMENT_TYPE_ID);
 		createEAttribute(shipmentTypeEClass, SHIPMENT_TYPE__DESCRIPTION);
 		createEAttribute(shipmentTypeEClass, SHIPMENT_TYPE__HAS_TABLE);
-		createEAttribute(shipmentTypeEClass, SHIPMENT_TYPE__PARENT_TYPE_ID);
+		createEReference(shipmentTypeEClass, SHIPMENT_TYPE__PARENT_TYPE_ID);
 		createEAttribute(shipmentTypeEClass, SHIPMENT_TYPE__SHIPMENT_TYPE_ATTRS);
 
 		shipmentTypeAttrEClass = createEClass(SHIPMENT_TYPE_ATTR);
@@ -4204,6 +4205,23 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
+		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
+		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
+		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
+		org.abchip.mimo.biz.party.contact.ContactPackage theContactPackage_1 = (org.abchip.mimo.biz.party.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.contact.ContactPackage.eNS_URI);
+		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		ReturnPackage theReturnPackage = (ReturnPackage)EPackage.Registry.INSTANCE.getEPackage(ReturnPackage.eNS_URI);
+		PicklistPackage thePicklistPackage = (PicklistPackage)EPackage.Registry.INSTANCE.getEPackage(PicklistPackage.eNS_URI);
+		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
+		GeoPackage theGeoPackage = (GeoPackage)EPackage.Registry.INSTANCE.getEPackage(GeoPackage.eNS_URI);
+		PricePackage thePricePackage = (PricePackage)EPackage.Registry.INSTANCE.getEPackage(PricePackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
+		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
+		FeaturePackage theFeaturePackage = (FeaturePackage)EPackage.Registry.INSTANCE.getEPackage(FeaturePackage.eNS_URI);
+		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 		DocumentPackage theDocumentPackage = (DocumentPackage)EPackage.Registry.INSTANCE.getEPackage(DocumentPackage.eNS_URI);
 
 		// Create type parameters
@@ -4260,64 +4278,85 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(carrierShipmentBoxTypeEClass, CarrierShipmentBoxType.class, "CarrierShipmentBoxType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCarrierShipmentBoxType_ShipmentBoxTypeId(), ecorePackage.getEString(), "shipmentBoxTypeId", null, 0, 1, CarrierShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCarrierShipmentBoxType_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, CarrierShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCarrierShipmentBoxType_ShipmentBoxTypeId(), ecorePackage.getEString(), "shipmentBoxTypeId", null, 1, 1, CarrierShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCarrierShipmentBoxType_OversizeCode(), ecorePackage.getEString(), "oversizeCode", null, 0, 1, CarrierShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCarrierShipmentBoxType_PackagingTypeCode(), ecorePackage.getEString(), "packagingTypeCode", null, 0, 1, CarrierShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCarrierShipmentBoxType_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, CarrierShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCarrierShipmentBoxType_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		initEClass(carrierShipmentMethodEClass, CarrierShipmentMethod.class, "CarrierShipmentMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCarrierShipmentMethod_ShipmentMethodTypeId(), ecorePackage.getEString(), "shipmentMethodTypeId", null, 0, 1, CarrierShipmentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCarrierShipmentMethod_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, CarrierShipmentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCarrierShipmentMethod_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 0, 1, CarrierShipmentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCarrierShipmentMethod_ShipmentMethodTypeId(), ecorePackage.getEString(), "shipmentMethodTypeId", null, 1, 1, CarrierShipmentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCarrierShipmentMethod_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, CarrierShipmentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCarrierShipmentMethod_CarrierServiceCode(), ecorePackage.getEString(), "carrierServiceCode", null, 0, 1, CarrierShipmentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCarrierShipmentMethod_SequenceNumber(), ecorePackage.getELong(), "sequenceNumber", null, 0, 1, CarrierShipmentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCarrierShipmentMethod_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, CarrierShipmentMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCarrierShipmentMethod_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		initEClass(deliveryEClass, Delivery.class, "Delivery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDelivery_DeliveryId(), ecorePackage.getEString(), "deliveryId", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDelivery_DeliveryId(), ecorePackage.getEString(), "deliveryId", null, 1, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelivery_ActualArrivalDate(), ecorePackage.getEDate(), "actualArrivalDate", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelivery_ActualStartDate(), ecorePackage.getEDate(), "actualStartDate", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDelivery_DestFacilityId(), ecorePackage.getEString(), "destFacilityId", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelivery_EndMileage(), ecorePackage.getEBigDecimal(), "endMileage", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelivery_EstimatedArrivalDate(), ecorePackage.getEDate(), "estimatedArrivalDate", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelivery_EstimatedStartDate(), ecorePackage.getEDate(), "estimatedStartDate", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDelivery_FixedAssetId(), ecorePackage.getEString(), "fixedAssetId", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelivery_FuelUsed(), ecorePackage.getEBigDecimal(), "fuelUsed", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDelivery_OriginFacilityId(), ecorePackage.getEString(), "originFacilityId", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDelivery_StartMileage(), ecorePackage.getEBigDecimal(), "startMileage", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDelivery_FixedAssetId(), theFixedassetPackage.getFixedAsset(), null, "fixedAssetId", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDelivery_FixedAssetId().getEKeys().add(theFixedassetPackage.getFixedAsset_FixedAssetId());
+		initEReference(getDelivery_OriginFacilityId(), theFacilityPackage.getFacility(), null, "originFacilityId", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDelivery_OriginFacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
+		initEReference(getDelivery_DestFacilityId(), theFacilityPackage.getFacility(), null, "destFacilityId", null, 0, 1, Delivery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getDelivery_DestFacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
 
 		addEOperation(deliveryEClass, ecorePackage.getEString(), "shipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentEClass, Shipment.class, "Shipment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipment_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipment_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_AdditionalShippingCharge(), ecorePackage.getEBigDecimal(), "additionalShippingCharge", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_AddtlShippingChargeDesc(), ecorePackage.getEString(), "addtlShippingChargeDesc", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_CreatedByUserLogin(), ecorePackage.getEString(), "createdByUserLogin", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_CreatedDate(), ecorePackage.getEDate(), "createdDate", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_CurrencyUomId(), ecorePackage.getEString(), "currencyUomId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_DestinationContactMechId(), ecorePackage.getEString(), "destinationContactMechId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_DestinationFacilityId(), ecorePackage.getEString(), "destinationFacilityId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_DestinationTelecomNumberId(), ecorePackage.getEString(), "destinationTelecomNumberId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_EstimatedArrivalDate(), ecorePackage.getEDate(), "estimatedArrivalDate", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_EstimatedArrivalWorkEffId(), ecorePackage.getEString(), "estimatedArrivalWorkEffId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_EstimatedReadyDate(), ecorePackage.getEDate(), "estimatedReadyDate", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_EstimatedShipCost(), ecorePackage.getEBigDecimal(), "estimatedShipCost", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_EstimatedShipDate(), ecorePackage.getEDate(), "estimatedShipDate", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_EstimatedShipWorkEffId(), ecorePackage.getEString(), "estimatedShipWorkEffId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_HandlingInstructions(), ecorePackage.getEString(), "handlingInstructions", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_LastModifiedByUserLogin(), ecorePackage.getEString(), "lastModifiedByUserLogin", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_LastModifiedDate(), ecorePackage.getEDate(), "lastModifiedDate", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_LatestCancelDate(), ecorePackage.getEDate(), "latestCancelDate", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_OriginContactMechId(), ecorePackage.getEString(), "originContactMechId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_OriginFacilityId(), ecorePackage.getEString(), "originFacilityId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_OriginTelecomNumberId(), ecorePackage.getEString(), "originTelecomNumberId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_PartyIdFrom(), ecorePackage.getEString(), "partyIdFrom", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_PartyIdTo(), ecorePackage.getEString(), "partyIdTo", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_PicklistBinId(), ecorePackage.getEString(), "picklistBinId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_PrimaryOrderId(), ecorePackage.getEString(), "primaryOrderId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_PrimaryReturnId(), ecorePackage.getEString(), "primaryReturnId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_PrimaryShipGroupSeqId(), ecorePackage.getEString(), "primaryShipGroupSeqId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_ShipmentTypeId(), ecorePackage.getEString(), "shipmentTypeId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipment_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipment_ShipmentTypeId(), this.getShipmentType(), null, "shipmentTypeId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_ShipmentTypeId().getEKeys().add(this.getShipmentType_ShipmentTypeId());
+		initEReference(getShipment_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEReference(getShipment_EstimatedShipWorkEffId(), theWorkeffortPackage.getWorkEffort(), null, "estimatedShipWorkEffId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_EstimatedShipWorkEffId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
+		initEReference(getShipment_EstimatedArrivalWorkEffId(), theWorkeffortPackage.getWorkEffort(), null, "estimatedArrivalWorkEffId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_EstimatedArrivalWorkEffId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
+		initEReference(getShipment_CurrencyUomId(), theUomPackage.getUom(), null, "currencyUomId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_CurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getShipment_OriginFacilityId(), theFacilityPackage.getFacility(), null, "originFacilityId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_OriginFacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
+		initEReference(getShipment_DestinationFacilityId(), theFacilityPackage.getFacility(), null, "destinationFacilityId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_DestinationFacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
+		initEReference(getShipment_OriginContactMechId(), theContactPackage_1.getPostalAddress(), null, "originContactMechId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_OriginContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getShipment_OriginTelecomNumberId(), theContactPackage_1.getTelecomNumber(), null, "originTelecomNumberId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_OriginTelecomNumberId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getShipment_DestinationContactMechId(), theContactPackage_1.getPostalAddress(), null, "destinationContactMechId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_DestinationContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getShipment_DestinationTelecomNumberId(), theContactPackage_1.getTelecomNumber(), null, "destinationTelecomNumberId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_DestinationTelecomNumberId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getShipment_PrimaryOrderId(), theOrderPackage.getOrderHeader(), null, "primaryOrderId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_PrimaryOrderId().getEKeys().add(theOrderPackage.getOrderHeader_OrderId());
+		initEReference(getShipment_PrimaryReturnId(), theReturnPackage.getReturnHeader(), null, "primaryReturnId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_PrimaryReturnId().getEKeys().add(theReturnPackage.getReturnHeader_ReturnId());
+		initEReference(getShipment_PicklistBinId(), thePicklistPackage.getPicklistBin(), null, "picklistBinId", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_PicklistBinId().getEKeys().add(thePicklistPackage.getPicklistBin_PicklistBinId());
+		initEReference(getShipment_PartyIdTo(), thePartyPackage.getPartyGroup(), null, "partyIdTo", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_PartyIdTo().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getShipment_PartyIdFrom(), thePartyPackage.getPartyGroup(), null, "partyIdFrom", null, 0, 1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipment_PartyIdFrom().getEKeys().add(thePartyPackage.getParty_PartyId());
 		initEAttribute(getShipment_ShipmentAttributes(), ecorePackage.getEString(), "shipmentAttributes", null, 0, -1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_ShipmentContactMechs(), ecorePackage.getEString(), "shipmentContactMechs", null, 0, -1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipment_ShipmentItems(), ecorePackage.getEString(), "shipmentItems", null, 0, -1, Shipment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4333,20 +4372,22 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		addEOperation(shipmentEClass, ecorePackage.getEString(), "shipmentStatuss", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentAttributeEClass, ShipmentAttribute.class, "ShipmentAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentAttribute_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 0, 1, ShipmentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentAttribute_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, ShipmentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentAttribute_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, ShipmentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentAttribute_AttrDescription(), ecorePackage.getEString(), "attrDescription", null, 0, 1, ShipmentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentAttribute_AttrValue(), ecorePackage.getEString(), "attrValue", null, 0, 1, ShipmentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(shipmentBoxTypeEClass, ShipmentBoxType.class, "ShipmentBoxType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentBoxType_ShipmentBoxTypeId(), ecorePackage.getEString(), "shipmentBoxTypeId", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentBoxType_ShipmentBoxTypeId(), ecorePackage.getEString(), "shipmentBoxTypeId", null, 1, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentBoxType_BoxHeight(), ecorePackage.getEBigDecimal(), "boxHeight", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentBoxType_BoxLength(), ecorePackage.getEBigDecimal(), "boxLength", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentBoxType_BoxWeight(), ecorePackage.getEBigDecimal(), "boxWeight", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentBoxType_BoxWidth(), ecorePackage.getEBigDecimal(), "boxWidth", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentBoxType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentBoxType_DimensionUomId(), ecorePackage.getEString(), "dimensionUomId", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentBoxType_WeightUomId(), ecorePackage.getEString(), "weightUomId", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentBoxType_DimensionUomId(), theUomPackage.getUom(), null, "dimensionUomId", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentBoxType_DimensionUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getShipmentBoxType_WeightUomId(), theUomPackage.getUom(), null, "weightUomId", null, 0, 1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentBoxType_WeightUomId().getEKeys().add(theUomPackage.getUom_UomId());
 		initEAttribute(getShipmentBoxType_CarrierShipmentBoxTypes(), ecorePackage.getEString(), "carrierShipmentBoxTypes", null, 0, -1, ShipmentBoxType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(shipmentBoxTypeEClass, ecorePackage.getEString(), "defaultProducts", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -4354,58 +4395,73 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		addEOperation(shipmentBoxTypeEClass, ecorePackage.getEString(), "shipmentPackages", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentContactMechEClass, ShipmentContactMech.class, "ShipmentContactMech", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentContactMech_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentContactMech_ShipmentContactMechTypeId(), ecorePackage.getEString(), "shipmentContactMechTypeId", null, 0, 1, ShipmentContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentContactMech_ContactMechId(), ecorePackage.getEString(), "contactMechId", null, 0, 1, ShipmentContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentContactMech_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, ShipmentContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentContactMech_ContactMechId(), theContactPackage_1.getContactMech(), null, "contactMechId", null, 0, 1, ShipmentContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentContactMech_ContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getShipmentContactMech_ShipmentContactMechTypeId(), this.getShipmentContactMechType(), null, "shipmentContactMechTypeId", null, 0, 1, ShipmentContactMech.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentContactMech_ShipmentContactMechTypeId().getEKeys().add(this.getShipmentContactMechType_ShipmentContactMechTypeId());
 
 		initEClass(shipmentContactMechTypeEClass, ShipmentContactMechType.class, "ShipmentContactMechType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentContactMechType_ShipmentContactMechTypeId(), ecorePackage.getEString(), "shipmentContactMechTypeId", null, 0, 1, ShipmentContactMechType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentContactMechType_ShipmentContactMechTypeId(), ecorePackage.getEString(), "shipmentContactMechTypeId", null, 1, 1, ShipmentContactMechType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentContactMechType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ShipmentContactMechType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(shipmentContactMechTypeEClass, ecorePackage.getEString(), "shipmentContactMechs", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentCostEstimateEClass, ShipmentCostEstimate.class, "ShipmentCostEstimate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentCostEstimate_ShipmentCostEstimateId(), ecorePackage.getEString(), "shipmentCostEstimateId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentCostEstimate_ShipmentCostEstimateId(), ecorePackage.getEString(), "shipmentCostEstimateId", null, 1, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_CarrierPartyId(), ecorePackage.getEString(), "carrierPartyId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_CarrierRoleTypeId(), ecorePackage.getEString(), "carrierRoleTypeId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_FeaturePercent(), ecorePackage.getEBigDecimal(), "featurePercent", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_FeaturePrice(), ecorePackage.getEBigDecimal(), "featurePrice", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_GeoIdFrom(), ecorePackage.getEString(), "geoIdFrom", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_GeoIdTo(), ecorePackage.getEString(), "geoIdTo", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_OrderFlatPrice(), ecorePackage.getEBigDecimal(), "orderFlatPrice", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_OrderItemFlatPrice(), ecorePackage.getEBigDecimal(), "orderItemFlatPrice", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_OrderPricePercent(), ecorePackage.getEBigDecimal(), "orderPricePercent", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_OversizePrice(), ecorePackage.getEBigDecimal(), "oversizePrice", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_OversizeUnit(), ecorePackage.getEBigDecimal(), "oversizeUnit", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_PriceBreakId(), ecorePackage.getEString(), "priceBreakId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_PriceUnitPrice(), ecorePackage.getEBigDecimal(), "priceUnitPrice", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_PriceUomId(), ecorePackage.getEString(), "priceUomId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_ProductFeatureGroupId(), ecorePackage.getEString(), "productFeatureGroupId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_ProductStoreId(), ecorePackage.getEString(), "productStoreId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_ProductStoreShipMethId(), ecorePackage.getEString(), "productStoreShipMethId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_QuantityBreakId(), ecorePackage.getEString(), "quantityBreakId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_QuantityUnitPrice(), ecorePackage.getEBigDecimal(), "quantityUnitPrice", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_QuantityUomId(), ecorePackage.getEString(), "quantityUomId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_ShipmentMethodTypeId(), ecorePackage.getEString(), "shipmentMethodTypeId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_ShippingPricePercent(), ecorePackage.getEBigDecimal(), "shippingPricePercent", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_WeightBreakId(), ecorePackage.getEString(), "weightBreakId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentCostEstimate_WeightUnitPrice(), ecorePackage.getEBigDecimal(), "weightUnitPrice", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentCostEstimate_WeightUomId(), ecorePackage.getEString(), "weightUomId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentCostEstimate_ProductStoreShipMethId(), theStorePackage.getProductStoreShipmentMeth(), null, "productStoreShipMethId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_ProductStoreShipMethId().getEKeys().add(theStorePackage.getProductStoreShipmentMeth_ProductStoreShipMethId());
+		initEReference(getShipmentCostEstimate_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getShipmentCostEstimate_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
+		initEReference(getShipmentCostEstimate_WeightUomId(), theUomPackage.getUom(), null, "weightUomId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_WeightUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getShipmentCostEstimate_QuantityUomId(), theUomPackage.getUom(), null, "quantityUomId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_QuantityUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getShipmentCostEstimate_PriceUomId(), theUomPackage.getUom(), null, "priceUomId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_PriceUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getShipmentCostEstimate_GeoIdTo(), theGeoPackage.getGeo(), null, "geoIdTo", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_GeoIdTo().getEKeys().add(theGeoPackage.getGeo_GeoId());
+		initEReference(getShipmentCostEstimate_GeoIdFrom(), theGeoPackage.getGeo(), null, "geoIdFrom", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_GeoIdFrom().getEKeys().add(theGeoPackage.getGeo_GeoId());
+		initEReference(getShipmentCostEstimate_WeightBreakId(), thePricePackage.getQuantityBreak(), null, "weightBreakId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_WeightBreakId().getEKeys().add(thePricePackage.getQuantityBreak_QuantityBreakId());
+		initEReference(getShipmentCostEstimate_QuantityBreakId(), thePricePackage.getQuantityBreak(), null, "quantityBreakId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_QuantityBreakId().getEKeys().add(thePricePackage.getQuantityBreak_QuantityBreakId());
+		initEReference(getShipmentCostEstimate_PriceBreakId(), thePricePackage.getQuantityBreak(), null, "priceBreakId", null, 0, 1, ShipmentCostEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentCostEstimate_PriceBreakId().getEKeys().add(thePricePackage.getQuantityBreak_QuantityBreakId());
 
 		initEClass(shipmentGatewayConfigEClass, ShipmentGatewayConfig.class, "ShipmentGatewayConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentGatewayConfig_ShipmentGatewayConfigId(), ecorePackage.getEString(), "shipmentGatewayConfigId", null, 0, 1, ShipmentGatewayConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentGatewayConfig_ShipmentGatewayConfigId(), ecorePackage.getEString(), "shipmentGatewayConfigId", null, 1, 1, ShipmentGatewayConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentGatewayConfig_Description(), ecorePackage.getEString(), "description", null, 0, 1, ShipmentGatewayConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentGatewayConfig_ShipmentGatewayConfTypeId(), ecorePackage.getEString(), "shipmentGatewayConfTypeId", null, 0, 1, ShipmentGatewayConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentGatewayConfig_ShipmentGatewayConfTypeId(), this.getShipmentGatewayConfigType(), null, "shipmentGatewayConfTypeId", null, 0, 1, ShipmentGatewayConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentGatewayConfig_ShipmentGatewayConfTypeId().getEKeys().add(this.getShipmentGatewayConfigType_ShipmentGatewayConfTypeId());
 
 		addEOperation(shipmentGatewayConfigEClass, ecorePackage.getEString(), "productStoreShipmentMeths", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentGatewayConfigTypeEClass, ShipmentGatewayConfigType.class, "ShipmentGatewayConfigType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentGatewayConfigType_ShipmentGatewayConfTypeId(), ecorePackage.getEString(), "shipmentGatewayConfTypeId", null, 0, 1, ShipmentGatewayConfigType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentGatewayConfigType_ShipmentGatewayConfTypeId(), ecorePackage.getEString(), "shipmentGatewayConfTypeId", null, 1, 1, ShipmentGatewayConfigType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentGatewayConfigType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ShipmentGatewayConfigType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentGatewayConfigType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, ShipmentGatewayConfigType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentGatewayConfigType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, ShipmentGatewayConfigType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentGatewayConfigType_ParentTypeId(), this.getShipmentGatewayConfigType(), null, "parentTypeId", null, 0, 1, ShipmentGatewayConfigType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentGatewayConfigType_ParentTypeId().getEKeys().add(this.getShipmentGatewayConfigType_ShipmentGatewayConfTypeId());
 
 		addEOperation(shipmentGatewayConfigTypeEClass, ecorePackage.getEString(), "childShipmentGatewayConfigTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -4470,25 +4526,28 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		initEAttribute(getShipmentGatewayUsps_Test(), ecorePackage.getEString(), "test", null, 0, 1, ShipmentGatewayUsps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(shipmentItemEClass, ShipmentItem.class, "ShipmentItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentItem_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentItem_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 0, 1, ShipmentItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentItem_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ShipmentItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentItem_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, ShipmentItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentItem_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 1, 1, ShipmentItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentItem_Quantity(), ecorePackage.getEBigDecimal(), "quantity", null, 0, 1, ShipmentItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentItem_ShipmentContentDescription(), ecorePackage.getEString(), "shipmentContentDescription", null, 0, 1, ShipmentItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentItem_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, ShipmentItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentItem_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
 
 		initEClass(shipmentItemBillingEClass, ShipmentItemBilling.class, "ShipmentItemBilling", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentItemBilling_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentItemBilling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentItemBilling_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 0, 1, ShipmentItemBilling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentItemBilling_InvoiceId(), ecorePackage.getEString(), "invoiceId", null, 0, 1, ShipmentItemBilling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentItemBilling_InvoiceItemSeqId(), ecorePackage.getEString(), "invoiceItemSeqId", null, 0, 1, ShipmentItemBilling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentItemBilling_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, ShipmentItemBilling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentItemBilling_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 1, 1, ShipmentItemBilling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentItemBilling_InvoiceItemSeqId(), ecorePackage.getEString(), "invoiceItemSeqId", null, 1, 1, ShipmentItemBilling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentItemBilling_InvoiceId(), theInvoicePackage.getInvoice(), null, "invoiceId", null, 0, 1, ShipmentItemBilling.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentItemBilling_InvoiceId().getEKeys().add(theInvoicePackage.getInvoice_InvoiceId());
 
 		initEClass(shipmentItemFeatureEClass, ShipmentItemFeature.class, "ShipmentItemFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentItemFeature_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentItemFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentItemFeature_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 0, 1, ShipmentItemFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentItemFeature_ProductFeatureId(), ecorePackage.getEString(), "productFeatureId", null, 0, 1, ShipmentItemFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentItemFeature_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, ShipmentItemFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentItemFeature_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 1, 1, ShipmentItemFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentItemFeature_ProductFeatureId(), theFeaturePackage.getProductFeature(), null, "productFeatureId", null, 0, 1, ShipmentItemFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentItemFeature_ProductFeatureId().getEKeys().add(theFeaturePackage.getProductFeature_ProductFeatureId());
 
 		initEClass(shipmentMethodTypeEClass, ShipmentMethodType.class, "ShipmentMethodType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentMethodType_ShipmentMethodTypeId(), ecorePackage.getEString(), "shipmentMethodTypeId", null, 0, 1, ShipmentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentMethodType_ShipmentMethodTypeId(), ecorePackage.getEString(), "shipmentMethodTypeId", null, 1, 1, ShipmentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentMethodType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ShipmentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentMethodType_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, ShipmentMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4501,33 +4560,36 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		addEOperation(shipmentMethodTypeEClass, ecorePackage.getEString(), "shipmentRouteSegments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentPackageEClass, ShipmentPackage.class, "ShipmentPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentPackage_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackage_ShipmentPackageSeqId(), ecorePackage.getEString(), "shipmentPackageSeqId", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentPackage_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentPackage_ShipmentPackageSeqId(), ecorePackage.getEString(), "shipmentPackageSeqId", null, 1, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackage_BoxHeight(), ecorePackage.getEBigDecimal(), "boxHeight", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackage_BoxLength(), ecorePackage.getEBigDecimal(), "boxLength", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackage_BoxWidth(), ecorePackage.getEBigDecimal(), "boxWidth", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackage_DateCreated(), ecorePackage.getEDate(), "dateCreated", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackage_DimensionUomId(), ecorePackage.getEString(), "dimensionUomId", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackage_InsuredValue(), ecorePackage.getEBigDecimal(), "insuredValue", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackage_ShipmentBoxTypeId(), ecorePackage.getEString(), "shipmentBoxTypeId", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackage_Weight(), ecorePackage.getEBigDecimal(), "weight", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackage_WeightUomId(), ecorePackage.getEString(), "weightUomId", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentPackage_ShipmentBoxTypeId(), this.getShipmentBoxType(), null, "shipmentBoxTypeId", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentPackage_ShipmentBoxTypeId().getEKeys().add(this.getShipmentBoxType_ShipmentBoxTypeId());
+		initEReference(getShipmentPackage_DimensionUomId(), theUomPackage.getUom(), null, "dimensionUomId", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentPackage_DimensionUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getShipmentPackage_WeightUomId(), theUomPackage.getUom(), null, "weightUomId", null, 0, 1, ShipmentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentPackage_WeightUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
 		initEClass(shipmentPackageContentEClass, ShipmentPackageContent.class, "ShipmentPackageContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentPackageContent_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackageContent_ShipmentPackageSeqId(), ecorePackage.getEString(), "shipmentPackageSeqId", null, 0, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackageContent_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 0, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentPackageContent_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentPackageContent_ShipmentPackageSeqId(), ecorePackage.getEString(), "shipmentPackageSeqId", null, 1, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentPackageContent_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 1, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackageContent_Quantity(), ecorePackage.getEBigDecimal(), "quantity", null, 0, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackageContent_SubProductId(), ecorePackage.getEString(), "subProductId", null, 0, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackageContent_SubProductQuantity(), ecorePackage.getEBigDecimal(), "subProductQuantity", null, 0, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentPackageContent_SubProductId(), theProductPackage.getProduct(), null, "subProductId", null, 0, 1, ShipmentPackageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentPackageContent_SubProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
 
 		initEClass(shipmentPackageRouteSegEClass, ShipmentPackageRouteSeg.class, "ShipmentPackageRouteSeg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentPackageRouteSeg_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackageRouteSeg_ShipmentPackageSeqId(), ecorePackage.getEString(), "shipmentPackageSeqId", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackageRouteSeg_ShipmentRouteSegmentId(), ecorePackage.getEString(), "shipmentRouteSegmentId", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentPackageRouteSeg_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentPackageRouteSeg_ShipmentPackageSeqId(), ecorePackage.getEString(), "shipmentPackageSeqId", null, 1, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentPackageRouteSeg_ShipmentRouteSegmentId(), ecorePackage.getEString(), "shipmentRouteSegmentId", null, 1, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackageRouteSeg_BoxNumber(), ecorePackage.getEString(), "boxNumber", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackageRouteSeg_CodAmount(), ecorePackage.getEBigDecimal(), "codAmount", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentPackageRouteSeg_CurrencyUomId(), ecorePackage.getEString(), "currencyUomId", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackageRouteSeg_InsuredAmount(), ecorePackage.getEBigDecimal(), "insuredAmount", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackageRouteSeg_InternationalInvoice(), ecorePackage.getEByteArray(), "internationalInvoice", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackageRouteSeg_LabelHtml(), ecorePackage.getEString(), "labelHtml", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4538,10 +4600,12 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		initEAttribute(getShipmentPackageRouteSeg_PackageServiceCost(), ecorePackage.getEBigDecimal(), "packageServiceCost", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackageRouteSeg_PackageTransportCost(), ecorePackage.getEBigDecimal(), "packageTransportCost", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentPackageRouteSeg_TrackingCode(), ecorePackage.getEString(), "trackingCode", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentPackageRouteSeg_CurrencyUomId(), theUomPackage.getUom(), null, "currencyUomId", null, 0, 1, ShipmentPackageRouteSeg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentPackageRouteSeg_CurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
 		initEClass(shipmentRouteSegmentEClass, ShipmentRouteSegment.class, "ShipmentRouteSegment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentRouteSegment_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_ShipmentRouteSegmentId(), ecorePackage.getEString(), "shipmentRouteSegmentId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentRouteSegment_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 1, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentRouteSegment_ShipmentRouteSegmentId(), ecorePackage.getEString(), "shipmentRouteSegmentId", null, 1, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_ActualArrivalDate(), ecorePackage.getEDate(), "actualArrivalDate", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_ActualCost(), ecorePackage.getEBigDecimal(), "actualCost", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_ActualOtherCost(), ecorePackage.getEBigDecimal(), "actualOtherCost", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4549,26 +4613,14 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		initEAttribute(getShipmentRouteSegment_ActualStartDate(), ecorePackage.getEDate(), "actualStartDate", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_ActualTransportCost(), ecorePackage.getEBigDecimal(), "actualTransportCost", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_BillingWeight(), ecorePackage.getEBigDecimal(), "billingWeight", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_BillingWeightUomId(), ecorePackage.getEString(), "billingWeightUomId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_CarrierDeliveryZone(), ecorePackage.getEString(), "carrierDeliveryZone", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_CarrierPartyId(), ecorePackage.getEString(), "carrierPartyId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_CarrierRestrictionCodes(), ecorePackage.getEString(), "carrierRestrictionCodes", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_CarrierRestrictionDesc(), ecorePackage.getEString(), "carrierRestrictionDesc", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_CarrierServiceStatusId(), ecorePackage.getEString(), "carrierServiceStatusId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_CurrencyUomId(), ecorePackage.getEString(), "currencyUomId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_DeliveryId(), ecorePackage.getEString(), "deliveryId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_DestContactMechId(), ecorePackage.getEString(), "destContactMechId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_DestFacilityId(), ecorePackage.getEString(), "destFacilityId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_DestTelecomNumberId(), ecorePackage.getEString(), "destTelecomNumberId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_EstimatedArrivalDate(), ecorePackage.getEDate(), "estimatedArrivalDate", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_EstimatedStartDate(), ecorePackage.getEDate(), "estimatedStartDate", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_HomeDeliveryDate(), ecorePackage.getEDate(), "homeDeliveryDate", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_HomeDeliveryType(), ecorePackage.getEString(), "homeDeliveryType", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_LastUpdatedDate(), ecorePackage.getEDate(), "lastUpdatedDate", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_OriginContactMechId(), ecorePackage.getEString(), "originContactMechId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_OriginFacilityId(), ecorePackage.getEString(), "originFacilityId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_OriginTelecomNumberId(), ecorePackage.getEString(), "originTelecomNumberId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentRouteSegment_ShipmentMethodTypeId(), ecorePackage.getEString(), "shipmentMethodTypeId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_ThirdPartyAccountNumber(), ecorePackage.getEString(), "thirdPartyAccountNumber", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_ThirdPartyCountryGeoCode(), ecorePackage.getEString(), "thirdPartyCountryGeoCode", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_ThirdPartyPostalCode(), ecorePackage.getEString(), "thirdPartyPostalCode", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4576,30 +4628,60 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		initEAttribute(getShipmentRouteSegment_TrackingIdNumber(), ecorePackage.getEString(), "trackingIdNumber", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_UpdatedByUserLoginId(), ecorePackage.getEString(), "updatedByUserLoginId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentRouteSegment_UpsHighValueReport(), ecorePackage.getEByteArray(), "upsHighValueReport", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentRouteSegment_DeliveryId(), this.getDelivery(), null, "deliveryId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_DeliveryId().getEKeys().add(this.getDelivery_DeliveryId());
+		initEReference(getShipmentRouteSegment_CarrierPartyId(), thePartyPackage.getPartyGroup(), null, "carrierPartyId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_CarrierPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getShipmentRouteSegment_ShipmentMethodTypeId(), this.getShipmentMethodType(), null, "shipmentMethodTypeId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_ShipmentMethodTypeId().getEKeys().add(this.getShipmentMethodType_ShipmentMethodTypeId());
+		initEReference(getShipmentRouteSegment_OriginFacilityId(), theFacilityPackage.getFacility(), null, "originFacilityId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_OriginFacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
+		initEReference(getShipmentRouteSegment_DestFacilityId(), theFacilityPackage.getFacility(), null, "destFacilityId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_DestFacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
+		initEReference(getShipmentRouteSegment_OriginContactMechId(), theContactPackage_1.getPostalAddress(), null, "originContactMechId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_OriginContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getShipmentRouteSegment_OriginTelecomNumberId(), theContactPackage_1.getTelecomNumber(), null, "originTelecomNumberId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_OriginTelecomNumberId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getShipmentRouteSegment_DestContactMechId(), theContactPackage_1.getPostalAddress(), null, "destContactMechId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_DestContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getShipmentRouteSegment_DestTelecomNumberId(), theContactPackage_1.getTelecomNumber(), null, "destTelecomNumberId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_DestTelecomNumberId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getShipmentRouteSegment_CarrierServiceStatusId(), theStatusPackage.getStatusItem(), null, "carrierServiceStatusId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_CarrierServiceStatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEReference(getShipmentRouteSegment_CurrencyUomId(), theUomPackage.getUom(), null, "currencyUomId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_CurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
+		initEReference(getShipmentRouteSegment_BillingWeightUomId(), theUomPackage.getUom(), null, "billingWeightUomId", null, 0, 1, ShipmentRouteSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentRouteSegment_BillingWeightUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
 		initEClass(shipmentStatusEClass, ShipmentStatus.class, "ShipmentStatus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentStatus_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, ShipmentStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentStatus_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ShipmentStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentStatus_ChangeByUserLoginId(), ecorePackage.getEString(), "changeByUserLoginId", null, 0, 1, ShipmentStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentStatus_StatusId(), ecorePackage.getEString(), "statusId", null, 1, 1, ShipmentStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentStatus_StatusDate(), ecorePackage.getEDate(), "statusDate", null, 0, 1, ShipmentStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentStatus_ShipmentId(), this.getShipment(), null, "shipmentId", null, 0, 1, ShipmentStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentStatus_ShipmentId().getEKeys().add(this.getShipment_ShipmentId());
+		initEReference(getShipmentStatus_ChangeByUserLoginId(), theLoginPackage.getUserLogin(), null, "changeByUserLoginId", null, 0, 1, ShipmentStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentStatus_ChangeByUserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
 		initEClass(shipmentTimeEstimateEClass, ShipmentTimeEstimate.class, "ShipmentTimeEstimate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentTimeEstimate_ShipmentMethodTypeId(), ecorePackage.getEString(), "shipmentMethodTypeId", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentTimeEstimate_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentTimeEstimate_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentTimeEstimate_GeoIdTo(), ecorePackage.getEString(), "geoIdTo", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentTimeEstimate_GeoIdFrom(), ecorePackage.getEString(), "geoIdFrom", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentTimeEstimate_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentTimeEstimate_ShipmentMethodTypeId(), ecorePackage.getEString(), "shipmentMethodTypeId", null, 1, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentTimeEstimate_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentTimeEstimate_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentTimeEstimate_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentTimeEstimate_LeadTime(), ecorePackage.getEBigDecimal(), "leadTime", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentTimeEstimate_LeadTimeUomId(), ecorePackage.getEString(), "leadTimeUomId", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentTimeEstimate_SequenceNumber(), ecorePackage.getELong(), "sequenceNumber", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentTimeEstimate_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentTimeEstimate_GeoIdTo(), theGeoPackage.getGeo(), null, "geoIdTo", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentTimeEstimate_GeoIdTo().getEKeys().add(theGeoPackage.getGeo_GeoId());
+		initEReference(getShipmentTimeEstimate_GeoIdFrom(), theGeoPackage.getGeo(), null, "geoIdFrom", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentTimeEstimate_GeoIdFrom().getEKeys().add(theGeoPackage.getGeo_GeoId());
+		initEReference(getShipmentTimeEstimate_LeadTimeUomId(), theUomPackage.getUom(), null, "leadTimeUomId", null, 0, 1, ShipmentTimeEstimate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentTimeEstimate_LeadTimeUomId().getEKeys().add(theUomPackage.getUom_UomId());
 
 		initEClass(shipmentTypeEClass, ShipmentType.class, "ShipmentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentType_ShipmentTypeId(), ecorePackage.getEString(), "shipmentTypeId", null, 0, 1, ShipmentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentType_ShipmentTypeId(), ecorePackage.getEString(), "shipmentTypeId", null, 1, 1, ShipmentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ShipmentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, ShipmentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, ShipmentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getShipmentType_ParentTypeId(), this.getShipmentType(), null, "parentTypeId", null, 0, 1, ShipmentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getShipmentType_ParentTypeId().getEKeys().add(this.getShipmentType_ShipmentTypeId());
 		initEAttribute(getShipmentType_ShipmentTypeAttrs(), ecorePackage.getEString(), "shipmentTypeAttrs", null, 0, -1, ShipmentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(shipmentTypeEClass, ecorePackage.getEString(), "childShipmentTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -4607,8 +4689,8 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		addEOperation(shipmentTypeEClass, ecorePackage.getEString(), "shipments", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(shipmentTypeAttrEClass, ShipmentTypeAttr.class, "ShipmentTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShipmentTypeAttr_ShipmentTypeId(), ecorePackage.getEString(), "shipmentTypeId", null, 0, 1, ShipmentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getShipmentTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 0, 1, ShipmentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentTypeAttr_ShipmentTypeId(), ecorePackage.getEString(), "shipmentTypeId", null, 1, 1, ShipmentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShipmentTypeAttr_AttrName(), ecorePackage.getEString(), "attrName", null, 1, 1, ShipmentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShipmentTypeAttr_Description(), ecorePackage.getEString(), "description", null, 0, 1, ShipmentTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(shippingDocumentEClass, ShippingDocument.class, "ShippingDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4641,19 +4723,7 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getCarrierShipmentBoxType_PartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getCarrierShipmentMethod_ShipmentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getCarrierShipmentMethod_PartyId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -4779,12 +4849,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getShipmentContactMech_ShipmentContactMechTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (shipmentContactMechTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -4857,12 +4921,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getShipmentItemBilling_InvoiceId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getShipmentItemBilling_InvoiceItemSeqId(),
 		   source,
 		   new String[] {
@@ -4876,12 +4934,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   });
 		addAnnotation
 		  (getShipmentItemFeature_ShipmentItemSeqId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getShipmentItemFeature_ProductFeatureId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -4983,12 +5035,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getShipmentStatus_ShipmentId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getShipmentTimeEstimate_ShipmentMethodTypeId(),
 		   source,
 		   new String[] {
@@ -5002,18 +5048,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   });
 		addAnnotation
 		  (getShipmentTimeEstimate_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getShipmentTimeEstimate_GeoIdTo(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getShipmentTimeEstimate_GeoIdFrom(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -5071,74 +5105,11 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getCarrierShipmentBoxType_ShipmentBoxTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentBoxType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getCarrierShipmentBoxType_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getCarrierShipmentMethod_ShipmentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentMethodType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getCarrierShipmentMethod_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (deliveryEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentRouteSegment",
 			   "route", "deliveryId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getDelivery_DestFacilityId(),
-		   source,
-		   new String[] {
-			   "frame", "Facility"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getDelivery_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "frame", "FixedAsset"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getDelivery_OriginFacilityId(),
-		   source,
-		   new String[] {
-			   "frame", "Facility"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -5179,150 +5150,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   new String[] {
 			   "frame", "ShipmentStatus",
 			   "route", "shipmentId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_DestinationContactMechId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMech"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_DestinationFacilityId(),
-		   source,
-		   new String[] {
-			   "frame", "Facility"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_DestinationTelecomNumberId(),
-		   source,
-		   new String[] {
-			   "frame", "TelecomNumber"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_EstimatedArrivalWorkEffId(),
-		   source,
-		   new String[] {
-			   "frame", "WorkEffort"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_EstimatedShipWorkEffId(),
-		   source,
-		   new String[] {
-			   "frame", "WorkEffort"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_OriginContactMechId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMech"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_OriginFacilityId(),
-		   source,
-		   new String[] {
-			   "frame", "Facility"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_OriginTelecomNumberId(),
-		   source,
-		   new String[] {
-			   "frame", "TelecomNumber"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_PartyIdFrom(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_PartyIdTo(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_PicklistBinId(),
-		   source,
-		   new String[] {
-			   "frame", "PicklistBin"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_PrimaryOrderId(),
-		   source,
-		   new String[] {
-			   "frame", "OrderHeader"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_PrimaryReturnId(),
-		   source,
-		   new String[] {
-			   "frame", "ReturnHeader"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_ShipmentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipment_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -5373,15 +5200,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getShipmentAttribute_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (shipmentBoxTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -5402,55 +5220,10 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getShipmentBoxType_DimensionUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentBoxType_WeightUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getShipmentBoxType_CarrierShipmentBoxTypes(),
 		   source,
 		   new String[] {
 			   "frame", "CarrierShipmentBoxType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentContactMech_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentContactMech_ShipmentContactMechTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentContactMechType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentContactMech_ContactMechId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMech"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -5466,128 +5239,11 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getShipmentCostEstimate_GeoIdFrom(),
-		   source,
-		   new String[] {
-			   "frame", "Geo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_GeoIdTo(),
-		   source,
-		   new String[] {
-			   "frame", "Geo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_PriceBreakId(),
-		   source,
-		   new String[] {
-			   "frame", "QuantityBreak"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_PriceUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_ProductStoreShipMethId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStoreShipmentMeth"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_QuantityBreakId(),
-		   source,
-		   new String[] {
-			   "frame", "QuantityBreak"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_QuantityUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "RoleType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_WeightBreakId(),
-		   source,
-		   new String[] {
-			   "frame", "QuantityBreak"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentCostEstimate_WeightUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (shipmentGatewayConfigEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ProductStoreShipmentMeth",
 			   "route", "shipmentGatewayConfigId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentGatewayConfig_ShipmentGatewayConfigId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentGatewayConfig"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentGatewayConfig_ShipmentGatewayConfTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentGatewayConfigType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -5608,69 +5264,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 		   new String[] {
 			   "frame", "ShipmentGatewayConfig",
 			   "route", "shipmentGatewayConfTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentGatewayConfigType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentGatewayConfigType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentItem_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentItem_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentItemBilling_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentItemBilling_InvoiceId(),
-		   source,
-		   new String[] {
-			   "frame", "Invoice"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentItemFeature_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentItemFeature_ProductFeatureId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductFeature"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
@@ -5716,249 +5309,6 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getShipmentPackage_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentPackage_DimensionUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentPackage_ShipmentBoxTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentBoxType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentPackage_WeightUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentPackageContent_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentPackageContent_SubProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentPackageRouteSeg_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentPackageRouteSeg_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_BillingWeightUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_CarrierPartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_CarrierServiceStatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_DeliveryId(),
-		   source,
-		   new String[] {
-			   "frame", "Delivery"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_DestContactMechId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMech"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_DestFacilityId(),
-		   source,
-		   new String[] {
-			   "frame", "Facility"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_DestTelecomNumberId(),
-		   source,
-		   new String[] {
-			   "frame", "TelecomNumber"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_OriginContactMechId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMech"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_OriginFacilityId(),
-		   source,
-		   new String[] {
-			   "frame", "Facility"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_OriginTelecomNumberId(),
-		   source,
-		   new String[] {
-			   "frame", "TelecomNumber"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentRouteSegment_ShipmentMethodTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentMethodType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentStatus_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentTimeEstimate_GeoIdTo(),
-		   source,
-		   new String[] {
-			   "frame", "Geo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentTimeEstimate_GeoIdFrom(),
-		   source,
-		   new String[] {
-			   "frame", "Geo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentTimeEstimate_LeadTimeUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (shipmentTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -5979,28 +5329,10 @@ public class Shipment_PackageImpl extends EPackageImpl implements Shipment_Packa
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getShipmentType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getShipmentType_ShipmentTypeAttrs(),
 		   source,
 		   new String[] {
 			   "frame", "ShipmentTypeAttr"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getShipmentTypeAttr_ShipmentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ShipmentType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

@@ -14,6 +14,8 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -73,23 +75,14 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 	 */
 	protected String paymentGroupName = PAYMENT_GROUP_NAME_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPaymentGroupTypeId() <em>Payment Group Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPaymentGroupTypeId() <em>Payment Group Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPaymentGroupTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PAYMENT_GROUP_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentGroupTypeId() <em>Payment Group Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGroupTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGroupTypeId = PAYMENT_GROUP_TYPE_ID_EDEFAULT;
+	protected PaymentGroupType paymentGroupTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,7 +132,24 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGroupTypeId() {
+	public PaymentGroupType getPaymentGroupTypeId() {
+		if (paymentGroupTypeId != null && ((EObject)paymentGroupTypeId).eIsProxy()) {
+			InternalEObject oldPaymentGroupTypeId = (InternalEObject)paymentGroupTypeId;
+			paymentGroupTypeId = (PaymentGroupType)eResolveProxy(oldPaymentGroupTypeId);
+			if (paymentGroupTypeId != oldPaymentGroupTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID, oldPaymentGroupTypeId, paymentGroupTypeId));
+			}
+		}
+		return paymentGroupTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGroupType basicGetPaymentGroupTypeId() {
 		return paymentGroupTypeId;
 	}
 
@@ -149,8 +159,8 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGroupTypeId(String newPaymentGroupTypeId) {
-		String oldPaymentGroupTypeId = paymentGroupTypeId;
+	public void setPaymentGroupTypeId(PaymentGroupType newPaymentGroupTypeId) {
+		PaymentGroupType oldPaymentGroupTypeId = paymentGroupTypeId;
 		paymentGroupTypeId = newPaymentGroupTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID, oldPaymentGroupTypeId, paymentGroupTypeId));
@@ -192,7 +202,8 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 			case PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_NAME:
 				return getPaymentGroupName();
 			case PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID:
-				return getPaymentGroupTypeId();
+				if (resolve) return getPaymentGroupTypeId();
+				return basicGetPaymentGroupTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,7 +223,7 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 				setPaymentGroupName((String)newValue);
 				return;
 			case PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID:
-				setPaymentGroupTypeId((String)newValue);
+				setPaymentGroupTypeId((PaymentGroupType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -233,7 +244,7 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 				setPaymentGroupName(PAYMENT_GROUP_NAME_EDEFAULT);
 				return;
 			case PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID:
-				setPaymentGroupTypeId(PAYMENT_GROUP_TYPE_ID_EDEFAULT);
+				setPaymentGroupTypeId((PaymentGroupType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -252,7 +263,7 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 			case PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_NAME:
 				return PAYMENT_GROUP_NAME_EDEFAULT == null ? paymentGroupName != null : !PAYMENT_GROUP_NAME_EDEFAULT.equals(paymentGroupName);
 			case PaymentPackage.PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID:
-				return PAYMENT_GROUP_TYPE_ID_EDEFAULT == null ? paymentGroupTypeId != null : !PAYMENT_GROUP_TYPE_ID_EDEFAULT.equals(paymentGroupTypeId);
+				return paymentGroupTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -271,8 +282,6 @@ public class PaymentGroupImpl extends BizEntityTypedImpl<PaymentGroupType> imple
 		result.append(paymentGroupId);
 		result.append(", paymentGroupName: ");
 		result.append(paymentGroupName);
-		result.append(", paymentGroupTypeId: ");
-		result.append(paymentGroupTypeId);
 		result.append(')');
 		return result.toString();
 	}

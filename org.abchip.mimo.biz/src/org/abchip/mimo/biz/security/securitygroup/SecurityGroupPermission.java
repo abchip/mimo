@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getGroupId <em>Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId <em>Permission Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId <em>Permission Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission()
@@ -71,7 +71,6 @@ public interface SecurityGroupPermission extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission_GroupId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SecurityGroup'"
 	 * @generated
 	 */
 	String getGroupId();
@@ -87,32 +86,30 @@ public interface SecurityGroupPermission extends BizEntity {
 	void setGroupId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Permission Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Permission Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Permission Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Permission Id</em>' attribute.
-	 * @see #setPermissionId(String)
+	 * @return the value of the '<em>Permission Id</em>' reference.
+	 * @see #setPermissionId(SecurityPermission)
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getSecurityGroupPermission_PermissionId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SecurityPermission'"
+	 * @model keys="permissionId"
 	 * @generated
 	 */
-	String getPermissionId();
+	SecurityPermission getPermissionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId <em>Permission Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission#getPermissionId <em>Permission Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Permission Id</em>' attribute.
+	 * @param value the new value of the '<em>Permission Id</em>' reference.
 	 * @see #getPermissionId()
 	 * @generated
 	 */
-	void setPermissionId(String value);
+	void setPermissionId(SecurityPermission value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

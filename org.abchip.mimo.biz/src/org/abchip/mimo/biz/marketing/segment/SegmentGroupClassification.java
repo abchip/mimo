@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.marketing.segment;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.PartyClassificationGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,31 +29,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface SegmentGroupClassification extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Party Classification Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Classification Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Classification Group Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Classification Group Id</em>' attribute.
-	 * @see #setPartyClassificationGroupId(String)
+	 * @return the value of the '<em>Party Classification Group Id</em>' reference.
+	 * @see #setPartyClassificationGroupId(PartyClassificationGroup)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupClassification_PartyClassificationGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PartyClassificationGroup'"
+	 * @model keys="partyClassificationGroupId"
 	 * @generated
 	 */
-	String getPartyClassificationGroupId();
+	PartyClassificationGroup getPartyClassificationGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification#getPartyClassificationGroupId <em>Party Classification Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroupClassification#getPartyClassificationGroupId <em>Party Classification Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Classification Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Classification Group Id</em>' reference.
 	 * @see #getPartyClassificationGroupId()
 	 * @generated
 	 */
-	void setPartyClassificationGroupId(String value);
+	void setPartyClassificationGroupId(PartyClassificationGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Segment Group Id</b></em>' attribute.
@@ -65,8 +65,8 @@ public interface SegmentGroupClassification extends BizEntity {
 	 * @return the value of the '<em>Segment Group Id</em>' attribute.
 	 * @see #setSegmentGroupId(String)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroupClassification_SegmentGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SegmentGroup'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSegmentGroupId();

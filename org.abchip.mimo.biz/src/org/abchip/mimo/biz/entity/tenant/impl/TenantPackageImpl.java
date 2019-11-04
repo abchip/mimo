@@ -202,6 +202,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -392,6 +393,22 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -408,22 +425,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -535,6 +536,14 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -543,14 +552,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -630,6 +631,14 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -638,14 +647,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -813,8 +814,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTenantComponent_TenantId() {
-		return (EAttribute)tenantComponentEClass.getEStructuralFeatures().get(1);
+	public EReference getTenantComponent_TenantId() {
+		return (EReference)tenantComponentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -824,7 +825,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 */
 	@Override
 	public EAttribute getTenantComponent_SequenceNum() {
-		return (EAttribute)tenantComponentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)tenantComponentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -913,8 +914,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTenantDomainName_TenantId() {
-		return (EAttribute)tenantDomainNameEClass.getEStructuralFeatures().get(1);
+	public EReference getTenantDomainName_TenantId() {
+		return (EReference)tenantDomainNameEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -990,8 +991,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 
 		tenantComponentEClass = createEClass(TENANT_COMPONENT);
 		createEAttribute(tenantComponentEClass, TENANT_COMPONENT__COMPONENT_NAME);
-		createEAttribute(tenantComponentEClass, TENANT_COMPONENT__TENANT_ID);
 		createEAttribute(tenantComponentEClass, TENANT_COMPONENT__SEQUENCE_NUM);
+		createEReference(tenantComponentEClass, TENANT_COMPONENT__TENANT_ID);
 
 		tenantDataSourceEClass = createEClass(TENANT_DATA_SOURCE);
 		createEAttribute(tenantDataSourceEClass, TENANT_DATA_SOURCE__TENANT_ID);
@@ -1002,7 +1003,7 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 
 		tenantDomainNameEClass = createEClass(TENANT_DOMAIN_NAME);
 		createEAttribute(tenantDomainNameEClass, TENANT_DOMAIN_NAME__DOMAIN_NAME);
-		createEAttribute(tenantDomainNameEClass, TENANT_DOMAIN_NAME__TENANT_ID);
+		createEReference(tenantDomainNameEClass, TENANT_DOMAIN_NAME__TENANT_ID);
 
 		tenantKeyEncryptingKeyEClass = createEClass(TENANT_KEY_ENCRYPTING_KEY);
 		createEAttribute(tenantKeyEncryptingKeyEClass, TENANT_KEY_ENCRYPTING_KEY__TENANT_ID);
@@ -1066,8 +1067,9 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 
 		initEClass(tenantComponentEClass, TenantComponent.class, "TenantComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTenantComponent_ComponentName(), ecorePackage.getEString(), "componentName", null, 1, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTenantComponent_TenantId(), ecorePackage.getEString(), "tenantId", null, 1, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTenantComponent_SequenceNum(), ecorePackage.getELong(), "sequenceNum", null, 0, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTenantComponent_TenantId(), this.getTenant(), null, "tenantId", null, 0, 1, TenantComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTenantComponent_TenantId().getEKeys().add(this.getTenant_TenantId());
 
 		initEClass(tenantDataSourceEClass, TenantDataSource.class, "TenantDataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTenantDataSource_TenantId(), ecorePackage.getEString(), "tenantId", null, 1, 1, TenantDataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1078,7 +1080,8 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 
 		initEClass(tenantDomainNameEClass, TenantDomainName.class, "TenantDomainName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTenantDomainName_DomainName(), ecorePackage.getEString(), "domainName", null, 1, 1, TenantDomainName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTenantDomainName_TenantId(), ecorePackage.getEString(), "tenantId", null, 0, 1, TenantDomainName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTenantDomainName_TenantId(), this.getTenant(), null, "tenantId", null, 0, 1, TenantDomainName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTenantDomainName_TenantId().getEKeys().add(this.getTenant_TenantId());
 
 		initEClass(tenantKeyEncryptingKeyEClass, TenantKeyEncryptingKey.class, "TenantKeyEncryptingKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTenantKeyEncryptingKey_TenantId(), ecorePackage.getEString(), "tenantId", null, 1, 1, TenantKeyEncryptingKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1137,12 +1140,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		   });
 		addAnnotation
 		  (getTenantComponent_ComponentName(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTenantComponent_TenantId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1215,51 +1212,6 @@ public class TenantPackageImpl extends EPackageImpl implements TenantPackage {
 		   source,
 		   new String[] {
 			   "frame", "TenantDataSource"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTenantComponent_ComponentName(),
-		   source,
-		   new String[] {
-			   "frame", "Component"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTenantComponent_TenantId(),
-		   source,
-		   new String[] {
-			   "frame", "Tenant"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTenantDataSource_TenantId(),
-		   source,
-		   new String[] {
-			   "frame", "Tenant"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTenantDomainName_TenantId(),
-		   source,
-		   new String[] {
-			   "frame", "Tenant"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTenantKeyEncryptingKey_TenantId(),
-		   source,
-		   new String[] {
-			   "frame", "Tenant"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

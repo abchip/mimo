@@ -73,7 +73,8 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Constraint Seq Id</em>' attribute.
 	 * @see #setConstraintSeqId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_ConstraintSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConstraintSeqId();
@@ -307,8 +308,8 @@ public interface ProductSearchConstraint extends BizEntity {
 	 * @return the value of the '<em>Product Search Result Id</em>' attribute.
 	 * @see #setProductSearchResultId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchConstraint_ProductSearchResultId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductSearchResult'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductSearchResultId();

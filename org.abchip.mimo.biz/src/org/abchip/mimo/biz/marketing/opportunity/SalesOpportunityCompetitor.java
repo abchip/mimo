@@ -41,7 +41,8 @@ public interface SalesOpportunityCompetitor extends BizEntity {
 	 * @return the value of the '<em>Competitor Party Id</em>' attribute.
 	 * @see #setCompetitorPartyId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor_CompetitorPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCompetitorPartyId();
@@ -93,8 +94,8 @@ public interface SalesOpportunityCompetitor extends BizEntity {
 	 * @return the value of the '<em>Sales Opportunity Id</em>' attribute.
 	 * @see #setSalesOpportunityId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityCompetitor_SalesOpportunityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SalesOpportunity'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSalesOpportunityId();

@@ -195,7 +195,7 @@ public interface ProductSearchResult extends BizEntity {
 	 * @return the value of the '<em>Product Search Result Id</em>' attribute.
 	 * @see #setProductSearchResultId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductSearchResult_ProductSearchResultId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

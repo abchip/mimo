@@ -14,8 +14,21 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.note.NoteData;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
+import org.abchip.mimo.biz.service.schedule.RuntimeData;
+import org.abchip.mimo.biz.service.schedule.TemporalExpression;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPurposeType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -23,6 +36,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -35,56 +50,56 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getAccommodationMapId <em>Accommodation Map Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getAccommodationSpotId <em>Accommodation Spot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getActualCompletionDate <em>Actual Completion Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getActualMilliSeconds <em>Actual Milli Seconds</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getActualSetupMillis <em>Actual Setup Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getActualStartDate <em>Actual Start Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getCurrentStatusId <em>Current Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getEstimateCalcMethod <em>Estimate Calc Method</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getEstimatedCompletionDate <em>Estimated Completion Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getEstimatedMilliSeconds <em>Estimated Milli Seconds</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getEstimatedSetupMillis <em>Estimated Setup Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getEstimatedStartDate <em>Estimated Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getInfoUrl <em>Info Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getLastStatusUpdate <em>Last Status Update</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getLocationDesc <em>Location Desc</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getMoneyUomId <em>Money Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getNoteId <em>Note Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getPercentComplete <em>Percent Complete</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getQuantityProduced <em>Quantity Produced</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getQuantityRejected <em>Quantity Rejected</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getQuantityToProduce <em>Quantity To Produce</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getReserv2ndPPPerc <em>Reserv2nd PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getReservNthPPPerc <em>Reserv Nth PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getReservPersons <em>Reserv Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getRevisionNumber <em>Revision Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getRuntimeDataId <em>Runtime Data Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getScopeEnumId <em>Scope Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#isSendNotificationEmail <em>Send Notification Email</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getServiceLoaderName <em>Service Loader Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getShowAsEnumId <em>Show As Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getSourceReferenceId <em>Source Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getSpecialTerms <em>Special Terms</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getTempExprId <em>Temp Expr Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getTimeTransparency <em>Time Transparency</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getTotalMilliSecondsAllowed <em>Total Milli Seconds Allowed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getTotalMoneyAllowed <em>Total Money Allowed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getUniversalId <em>Universal Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortName <em>Work Effort Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortParentId <em>Work Effort Parent Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortPurposeTypeId <em>Work Effort Purpose Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortTypeId <em>Work Effort Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortPurposeTypeId <em>Work Effort Purpose Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortParentId <em>Work Effort Parent Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getCurrentStatusId <em>Current Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getScopeEnumId <em>Scope Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getMoneyUomId <em>Money Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getTempExprId <em>Temp Expr Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getRuntimeDataId <em>Runtime Data Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getNoteId <em>Note Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getEstimateCalcMethod <em>Estimate Calc Method</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getAccommodationMapId <em>Accommodation Map Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getAccommodationSpotId <em>Accommodation Spot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getCommunicationEventWorkEffs <em>Communication Event Work Effs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortAttributes <em>Work Effort Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortImpl#getWorkEffortDeliverableProds <em>Work Effort Deliverable Prods</em>}</li>
@@ -124,46 +139,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @ordered
 	 */
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAccommodationMapId() <em>Accommodation Map Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationMapId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCOMMODATION_MAP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAccommodationMapId() <em>Accommodation Map Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationMapId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accommodationMapId = ACCOMMODATION_MAP_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAccommodationSpotId() <em>Accommodation Spot Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationSpotId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCOMMODATION_SPOT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAccommodationSpotId() <em>Accommodation Spot Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationSpotId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accommodationSpotId = ACCOMMODATION_SPOT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getActualCompletionDate() <em>Actual Completion Date</em>}' attribute.
@@ -286,26 +261,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCurrentStatusId() <em>Current Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrentStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENT_STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrentStatusId() <em>Current Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrentStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currentStatusId = CURRENT_STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,26 +279,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEstimateCalcMethod() <em>Estimate Calc Method</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimateCalcMethod()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ESTIMATE_CALC_METHOD_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEstimateCalcMethod() <em>Estimate Calc Method</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEstimateCalcMethod()
-	 * @generated
-	 * @ordered
-	 */
-	protected String estimateCalcMethod = ESTIMATE_CALC_METHOD_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEstimatedCompletionDate() <em>Estimated Completion Date</em>}' attribute.
@@ -424,46 +359,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @ordered
 	 */
 	protected Date estimatedStartDate = ESTIMATED_START_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInfoUrl() <em>Info Url</em>}' attribute.
@@ -566,46 +461,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	protected String locationDesc = LOCATION_DESC_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMoneyUomId() <em>Money Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMoneyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MONEY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMoneyUomId() <em>Money Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMoneyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String moneyUomId = MONEY_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNoteId() <em>Note Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOTE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNoteId() <em>Note Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNoteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String noteId = NOTE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPercentComplete() <em>Percent Complete</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -706,26 +561,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	protected BigDecimal quantityToProduce = QUANTITY_TO_PRODUCE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceInfoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RECURRENCE_INFO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceInfoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String recurrenceInfoId = RECURRENCE_INFO_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getReserv2ndPPPerc() <em>Reserv2nd PP Perc</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -804,46 +639,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @ordered
 	 */
 	protected long revisionNumber = REVISION_NUMBER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRuntimeDataId() <em>Runtime Data Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuntimeDataId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RUNTIME_DATA_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRuntimeDataId() <em>Runtime Data Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuntimeDataId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String runtimeDataId = RUNTIME_DATA_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getScopeEnumId() <em>Scope Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScopeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SCOPE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getScopeEnumId() <em>Scope Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScopeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String scopeEnumId = SCOPE_ENUM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isSendNotificationEmail() <em>Send Notification Email</em>}' attribute.
@@ -946,26 +741,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	protected String specialTerms = SPECIAL_TERMS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTempExprId() <em>Temp Expr Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTempExprId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TEMP_EXPR_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTempExprId() <em>Temp Expr Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTempExprId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String tempExprId = TEMP_EXPR_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getTimeTransparency() <em>Time Transparency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1066,64 +841,154 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	protected String workEffortName = WORK_EFFORT_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getWorkEffortParentId() <em>Work Effort Parent Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortParentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_PARENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortParentId() <em>Work Effort Parent Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortParentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortParentId = WORK_EFFORT_PARENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortPurposeTypeId() <em>Work Effort Purpose Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_PURPOSE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortPurposeTypeId() <em>Work Effort Purpose Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortPurposeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortPurposeTypeId = WORK_EFFORT_PURPOSE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortTypeId() <em>Work Effort Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getWorkEffortTypeId() <em>Work Effort Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWorkEffortTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WORK_EFFORT_TYPE_ID_EDEFAULT = null;
+	protected WorkEffortType workEffortTypeId;
 
 	/**
-	 * The cached value of the '{@link #getWorkEffortTypeId() <em>Work Effort Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getWorkEffortPurposeTypeId() <em>Work Effort Purpose Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortTypeId()
+	 * @see #getWorkEffortPurposeTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String workEffortTypeId = WORK_EFFORT_TYPE_ID_EDEFAULT;
+	protected WorkEffortPurposeType workEffortPurposeTypeId;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortParentId() <em>Work Effort Parent Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortParentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort workEffortParentId;
+
+	/**
+	 * The cached value of the '{@link #getCurrentStatusId() <em>Current Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrentStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem currentStatusId;
+
+	/**
+	 * The cached value of the '{@link #getScopeEnumId() <em>Scope Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScopeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration scopeEnumId;
+
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
+
+	/**
+	 * The cached value of the '{@link #getMoneyUomId() <em>Money Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMoneyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom moneyUomId;
+
+	/**
+	 * The cached value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecurrenceInfoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RecurrenceInfo recurrenceInfoId;
+
+	/**
+	 * The cached value of the '{@link #getTempExprId() <em>Temp Expr Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTempExprId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TemporalExpression tempExprId;
+
+	/**
+	 * The cached value of the '{@link #getRuntimeDataId() <em>Runtime Data Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuntimeDataId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RuntimeData runtimeDataId;
+
+	/**
+	 * The cached value of the '{@link #getNoteId() <em>Note Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNoteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected NoteData noteId;
+
+	/**
+	 * The cached value of the '{@link #getEstimateCalcMethod() <em>Estimate Calc Method</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEstimateCalcMethod()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod estimateCalcMethod;
+
+	/**
+	 * The cached value of the '{@link #getAccommodationMapId() <em>Accommodation Map Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccommodationMapId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AccommodationMap accommodationMapId;
+
+	/**
+	 * The cached value of the '{@link #getAccommodationSpotId() <em>Accommodation Spot Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccommodationSpotId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AccommodationSpot accommodationSpotId;
 
 	/**
 	 * The cached value of the '{@link #getCommunicationEventWorkEffs() <em>Communication Event Work Effs</em>}' attribute list.
@@ -1250,7 +1115,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getAccommodationMapId() {
+	public AccommodationMap getAccommodationMapId() {
+		if (accommodationMapId != null && ((EObject)accommodationMapId).eIsProxy()) {
+			InternalEObject oldAccommodationMapId = (InternalEObject)accommodationMapId;
+			accommodationMapId = (AccommodationMap)eResolveProxy(oldAccommodationMapId);
+			if (accommodationMapId != oldAccommodationMapId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID, oldAccommodationMapId, accommodationMapId));
+			}
+		}
+		return accommodationMapId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccommodationMap basicGetAccommodationMapId() {
 		return accommodationMapId;
 	}
 
@@ -1260,8 +1142,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setAccommodationMapId(String newAccommodationMapId) {
-		String oldAccommodationMapId = accommodationMapId;
+	public void setAccommodationMapId(AccommodationMap newAccommodationMapId) {
+		AccommodationMap oldAccommodationMapId = accommodationMapId;
 		accommodationMapId = newAccommodationMapId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID, oldAccommodationMapId, accommodationMapId));
@@ -1273,7 +1155,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getAccommodationSpotId() {
+	public AccommodationSpot getAccommodationSpotId() {
+		if (accommodationSpotId != null && ((EObject)accommodationSpotId).eIsProxy()) {
+			InternalEObject oldAccommodationSpotId = (InternalEObject)accommodationSpotId;
+			accommodationSpotId = (AccommodationSpot)eResolveProxy(oldAccommodationSpotId);
+			if (accommodationSpotId != oldAccommodationSpotId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID, oldAccommodationSpotId, accommodationSpotId));
+			}
+		}
+		return accommodationSpotId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccommodationSpot basicGetAccommodationSpotId() {
 		return accommodationSpotId;
 	}
 
@@ -1283,8 +1182,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setAccommodationSpotId(String newAccommodationSpotId) {
-		String oldAccommodationSpotId = accommodationSpotId;
+	public void setAccommodationSpotId(AccommodationSpot newAccommodationSpotId) {
+		AccommodationSpot oldAccommodationSpotId = accommodationSpotId;
 		accommodationSpotId = newAccommodationSpotId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID, oldAccommodationSpotId, accommodationSpotId));
@@ -1434,7 +1333,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getCurrentStatusId() {
+	public StatusItem getCurrentStatusId() {
+		if (currentStatusId != null && ((EObject)currentStatusId).eIsProxy()) {
+			InternalEObject oldCurrentStatusId = (InternalEObject)currentStatusId;
+			currentStatusId = (StatusItem)eResolveProxy(oldCurrentStatusId);
+			if (currentStatusId != oldCurrentStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID, oldCurrentStatusId, currentStatusId));
+			}
+		}
+		return currentStatusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetCurrentStatusId() {
 		return currentStatusId;
 	}
 
@@ -1444,8 +1360,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setCurrentStatusId(String newCurrentStatusId) {
-		String oldCurrentStatusId = currentStatusId;
+	public void setCurrentStatusId(StatusItem newCurrentStatusId) {
+		StatusItem oldCurrentStatusId = currentStatusId;
 		currentStatusId = newCurrentStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID, oldCurrentStatusId, currentStatusId));
@@ -1480,7 +1396,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getEstimateCalcMethod() {
+	public CustomMethod getEstimateCalcMethod() {
+		if (estimateCalcMethod != null && ((EObject)estimateCalcMethod).eIsProxy()) {
+			InternalEObject oldEstimateCalcMethod = (InternalEObject)estimateCalcMethod;
+			estimateCalcMethod = (CustomMethod)eResolveProxy(oldEstimateCalcMethod);
+			if (estimateCalcMethod != oldEstimateCalcMethod) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD, oldEstimateCalcMethod, estimateCalcMethod));
+			}
+		}
+		return estimateCalcMethod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetEstimateCalcMethod() {
 		return estimateCalcMethod;
 	}
 
@@ -1490,8 +1423,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setEstimateCalcMethod(String newEstimateCalcMethod) {
-		String oldEstimateCalcMethod = estimateCalcMethod;
+	public void setEstimateCalcMethod(CustomMethod newEstimateCalcMethod) {
+		CustomMethod oldEstimateCalcMethod = estimateCalcMethod;
 		estimateCalcMethod = newEstimateCalcMethod;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD, oldEstimateCalcMethod, estimateCalcMethod));
@@ -1595,7 +1528,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -1605,8 +1555,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__FACILITY_ID, oldFacilityId, facilityId));
@@ -1618,7 +1568,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -1628,8 +1595,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -1756,7 +1723,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getMoneyUomId() {
+	public Uom getMoneyUomId() {
+		if (moneyUomId != null && ((EObject)moneyUomId).eIsProxy()) {
+			InternalEObject oldMoneyUomId = (InternalEObject)moneyUomId;
+			moneyUomId = (Uom)eResolveProxy(oldMoneyUomId);
+			if (moneyUomId != oldMoneyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID, oldMoneyUomId, moneyUomId));
+			}
+		}
+		return moneyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetMoneyUomId() {
 		return moneyUomId;
 	}
 
@@ -1766,8 +1750,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setMoneyUomId(String newMoneyUomId) {
-		String oldMoneyUomId = moneyUomId;
+	public void setMoneyUomId(Uom newMoneyUomId) {
+		Uom oldMoneyUomId = moneyUomId;
 		moneyUomId = newMoneyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID, oldMoneyUomId, moneyUomId));
@@ -1779,7 +1763,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getNoteId() {
+	public NoteData getNoteId() {
+		if (noteId != null && ((EObject)noteId).eIsProxy()) {
+			InternalEObject oldNoteId = (InternalEObject)noteId;
+			noteId = (NoteData)eResolveProxy(oldNoteId);
+			if (noteId != oldNoteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__NOTE_ID, oldNoteId, noteId));
+			}
+		}
+		return noteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NoteData basicGetNoteId() {
 		return noteId;
 	}
 
@@ -1789,8 +1790,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setNoteId(String newNoteId) {
-		String oldNoteId = noteId;
+	public void setNoteId(NoteData newNoteId) {
+		NoteData oldNoteId = noteId;
 		noteId = newNoteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__NOTE_ID, oldNoteId, noteId));
@@ -1917,7 +1918,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getRecurrenceInfoId() {
+	public RecurrenceInfo getRecurrenceInfoId() {
+		if (recurrenceInfoId != null && ((EObject)recurrenceInfoId).eIsProxy()) {
+			InternalEObject oldRecurrenceInfoId = (InternalEObject)recurrenceInfoId;
+			recurrenceInfoId = (RecurrenceInfo)eResolveProxy(oldRecurrenceInfoId);
+			if (recurrenceInfoId != oldRecurrenceInfoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
+			}
+		}
+		return recurrenceInfoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RecurrenceInfo basicGetRecurrenceInfoId() {
 		return recurrenceInfoId;
 	}
 
@@ -1927,8 +1945,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setRecurrenceInfoId(String newRecurrenceInfoId) {
-		String oldRecurrenceInfoId = recurrenceInfoId;
+	public void setRecurrenceInfoId(RecurrenceInfo newRecurrenceInfoId) {
+		RecurrenceInfo oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
@@ -2032,7 +2050,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getRuntimeDataId() {
+	public RuntimeData getRuntimeDataId() {
+		if (runtimeDataId != null && ((EObject)runtimeDataId).eIsProxy()) {
+			InternalEObject oldRuntimeDataId = (InternalEObject)runtimeDataId;
+			runtimeDataId = (RuntimeData)eResolveProxy(oldRuntimeDataId);
+			if (runtimeDataId != oldRuntimeDataId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
+			}
+		}
+		return runtimeDataId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeData basicGetRuntimeDataId() {
 		return runtimeDataId;
 	}
 
@@ -2042,8 +2077,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setRuntimeDataId(String newRuntimeDataId) {
-		String oldRuntimeDataId = runtimeDataId;
+	public void setRuntimeDataId(RuntimeData newRuntimeDataId) {
+		RuntimeData oldRuntimeDataId = runtimeDataId;
 		runtimeDataId = newRuntimeDataId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
@@ -2055,7 +2090,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getScopeEnumId() {
+	public Enumeration getScopeEnumId() {
+		if (scopeEnumId != null && ((EObject)scopeEnumId).eIsProxy()) {
+			InternalEObject oldScopeEnumId = (InternalEObject)scopeEnumId;
+			scopeEnumId = (Enumeration)eResolveProxy(oldScopeEnumId);
+			if (scopeEnumId != oldScopeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID, oldScopeEnumId, scopeEnumId));
+			}
+		}
+		return scopeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetScopeEnumId() {
 		return scopeEnumId;
 	}
 
@@ -2065,8 +2117,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setScopeEnumId(String newScopeEnumId) {
-		String oldScopeEnumId = scopeEnumId;
+	public void setScopeEnumId(Enumeration newScopeEnumId) {
+		Enumeration oldScopeEnumId = scopeEnumId;
 		scopeEnumId = newScopeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID, oldScopeEnumId, scopeEnumId));
@@ -2193,7 +2245,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getTempExprId() {
+	public TemporalExpression getTempExprId() {
+		if (tempExprId != null && ((EObject)tempExprId).eIsProxy()) {
+			InternalEObject oldTempExprId = (InternalEObject)tempExprId;
+			tempExprId = (TemporalExpression)eResolveProxy(oldTempExprId);
+			if (tempExprId != oldTempExprId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID, oldTempExprId, tempExprId));
+			}
+		}
+		return tempExprId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TemporalExpression basicGetTempExprId() {
 		return tempExprId;
 	}
 
@@ -2203,8 +2272,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setTempExprId(String newTempExprId) {
-		String oldTempExprId = tempExprId;
+	public void setTempExprId(TemporalExpression newTempExprId) {
+		TemporalExpression oldTempExprId = tempExprId;
 		tempExprId = newTempExprId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID, oldTempExprId, tempExprId));
@@ -2354,7 +2423,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortParentId() {
+	public WorkEffort getWorkEffortParentId() {
+		if (workEffortParentId != null && ((EObject)workEffortParentId).eIsProxy()) {
+			InternalEObject oldWorkEffortParentId = (InternalEObject)workEffortParentId;
+			workEffortParentId = (WorkEffort)eResolveProxy(oldWorkEffortParentId);
+			if (workEffortParentId != oldWorkEffortParentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID, oldWorkEffortParentId, workEffortParentId));
+			}
+		}
+		return workEffortParentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortParentId() {
 		return workEffortParentId;
 	}
 
@@ -2364,8 +2450,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortParentId(String newWorkEffortParentId) {
-		String oldWorkEffortParentId = workEffortParentId;
+	public void setWorkEffortParentId(WorkEffort newWorkEffortParentId) {
+		WorkEffort oldWorkEffortParentId = workEffortParentId;
 		workEffortParentId = newWorkEffortParentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID, oldWorkEffortParentId, workEffortParentId));
@@ -2377,7 +2463,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortPurposeTypeId() {
+	public WorkEffortPurposeType getWorkEffortPurposeTypeId() {
+		if (workEffortPurposeTypeId != null && ((EObject)workEffortPurposeTypeId).eIsProxy()) {
+			InternalEObject oldWorkEffortPurposeTypeId = (InternalEObject)workEffortPurposeTypeId;
+			workEffortPurposeTypeId = (WorkEffortPurposeType)eResolveProxy(oldWorkEffortPurposeTypeId);
+			if (workEffortPurposeTypeId != oldWorkEffortPurposeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID, oldWorkEffortPurposeTypeId, workEffortPurposeTypeId));
+			}
+		}
+		return workEffortPurposeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffortPurposeType basicGetWorkEffortPurposeTypeId() {
 		return workEffortPurposeTypeId;
 	}
 
@@ -2387,8 +2490,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortPurposeTypeId(String newWorkEffortPurposeTypeId) {
-		String oldWorkEffortPurposeTypeId = workEffortPurposeTypeId;
+	public void setWorkEffortPurposeTypeId(WorkEffortPurposeType newWorkEffortPurposeTypeId) {
+		WorkEffortPurposeType oldWorkEffortPurposeTypeId = workEffortPurposeTypeId;
 		workEffortPurposeTypeId = newWorkEffortPurposeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID, oldWorkEffortPurposeTypeId, workEffortPurposeTypeId));
@@ -2400,7 +2503,24 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortTypeId() {
+	public WorkEffortType getWorkEffortTypeId() {
+		if (workEffortTypeId != null && ((EObject)workEffortTypeId).eIsProxy()) {
+			InternalEObject oldWorkEffortTypeId = (InternalEObject)workEffortTypeId;
+			workEffortTypeId = (WorkEffortType)eResolveProxy(oldWorkEffortTypeId);
+			if (workEffortTypeId != oldWorkEffortTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID, oldWorkEffortTypeId, workEffortTypeId));
+			}
+		}
+		return workEffortTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffortType basicGetWorkEffortTypeId() {
 		return workEffortTypeId;
 	}
 
@@ -2410,8 +2530,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortTypeId(String newWorkEffortTypeId) {
-		String oldWorkEffortTypeId = workEffortTypeId;
+	public void setWorkEffortTypeId(WorkEffortType newWorkEffortTypeId) {
+		WorkEffortType oldWorkEffortTypeId = workEffortTypeId;
 		workEffortTypeId = newWorkEffortTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID, oldWorkEffortTypeId, workEffortTypeId));
@@ -2749,10 +2869,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_ID:
 				return getWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID:
-				return getAccommodationMapId();
-			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID:
-				return getAccommodationSpotId();
 			case WorkeffortPackage.WORK_EFFORT__ACTUAL_COMPLETION_DATE:
 				return getActualCompletionDate();
 			case WorkeffortPackage.WORK_EFFORT__ACTUAL_MILLI_SECONDS:
@@ -2765,12 +2881,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return getCreatedByUserLogin();
 			case WorkeffortPackage.WORK_EFFORT__CREATED_DATE:
 				return getCreatedDate();
-			case WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID:
-				return getCurrentStatusId();
 			case WorkeffortPackage.WORK_EFFORT__DESCRIPTION:
 				return getDescription();
-			case WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD:
-				return getEstimateCalcMethod();
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_COMPLETION_DATE:
 				return getEstimatedCompletionDate();
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_MILLI_SECONDS:
@@ -2779,10 +2891,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return getEstimatedSetupMillis();
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_START_DATE:
 				return getEstimatedStartDate();
-			case WorkeffortPackage.WORK_EFFORT__FACILITY_ID:
-				return getFacilityId();
-			case WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case WorkeffortPackage.WORK_EFFORT__INFO_URL:
 				return getInfoUrl();
 			case WorkeffortPackage.WORK_EFFORT__LAST_MODIFIED_BY_USER_LOGIN:
@@ -2793,10 +2901,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return getLastStatusUpdate();
 			case WorkeffortPackage.WORK_EFFORT__LOCATION_DESC:
 				return getLocationDesc();
-			case WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID:
-				return getMoneyUomId();
-			case WorkeffortPackage.WORK_EFFORT__NOTE_ID:
-				return getNoteId();
 			case WorkeffortPackage.WORK_EFFORT__PERCENT_COMPLETE:
 				return getPercentComplete();
 			case WorkeffortPackage.WORK_EFFORT__PRIORITY:
@@ -2807,8 +2911,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return getQuantityRejected();
 			case WorkeffortPackage.WORK_EFFORT__QUANTITY_TO_PRODUCE:
 				return getQuantityToProduce();
-			case WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID:
-				return getRecurrenceInfoId();
 			case WorkeffortPackage.WORK_EFFORT__RESERV2ND_PP_PERC:
 				return getReserv2ndPPPerc();
 			case WorkeffortPackage.WORK_EFFORT__RESERV_NTH_PP_PERC:
@@ -2817,10 +2919,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return getReservPersons();
 			case WorkeffortPackage.WORK_EFFORT__REVISION_NUMBER:
 				return getRevisionNumber();
-			case WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID:
-				return getRuntimeDataId();
-			case WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID:
-				return getScopeEnumId();
 			case WorkeffortPackage.WORK_EFFORT__SEND_NOTIFICATION_EMAIL:
 				return isSendNotificationEmail();
 			case WorkeffortPackage.WORK_EFFORT__SERVICE_LOADER_NAME:
@@ -2831,8 +2929,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return getSourceReferenceId();
 			case WorkeffortPackage.WORK_EFFORT__SPECIAL_TERMS:
 				return getSpecialTerms();
-			case WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID:
-				return getTempExprId();
 			case WorkeffortPackage.WORK_EFFORT__TIME_TRANSPARENCY:
 				return getTimeTransparency();
 			case WorkeffortPackage.WORK_EFFORT__TOTAL_MILLI_SECONDS_ALLOWED:
@@ -2843,12 +2939,51 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return getUniversalId();
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_NAME:
 				return getWorkEffortName();
-			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID:
-				return getWorkEffortParentId();
-			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID:
-				return getWorkEffortPurposeTypeId();
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID:
-				return getWorkEffortTypeId();
+				if (resolve) return getWorkEffortTypeId();
+				return basicGetWorkEffortTypeId();
+			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID:
+				if (resolve) return getWorkEffortPurposeTypeId();
+				return basicGetWorkEffortPurposeTypeId();
+			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID:
+				if (resolve) return getWorkEffortParentId();
+				return basicGetWorkEffortParentId();
+			case WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID:
+				if (resolve) return getCurrentStatusId();
+				return basicGetCurrentStatusId();
+			case WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID:
+				if (resolve) return getScopeEnumId();
+				return basicGetScopeEnumId();
+			case WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
+			case WorkeffortPackage.WORK_EFFORT__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
+			case WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID:
+				if (resolve) return getMoneyUomId();
+				return basicGetMoneyUomId();
+			case WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID:
+				if (resolve) return getRecurrenceInfoId();
+				return basicGetRecurrenceInfoId();
+			case WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID:
+				if (resolve) return getTempExprId();
+				return basicGetTempExprId();
+			case WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID:
+				if (resolve) return getRuntimeDataId();
+				return basicGetRuntimeDataId();
+			case WorkeffortPackage.WORK_EFFORT__NOTE_ID:
+				if (resolve) return getNoteId();
+				return basicGetNoteId();
+			case WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD:
+				if (resolve) return getEstimateCalcMethod();
+				return basicGetEstimateCalcMethod();
+			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID:
+				if (resolve) return getAccommodationMapId();
+				return basicGetAccommodationMapId();
+			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID:
+				if (resolve) return getAccommodationSpotId();
+				return basicGetAccommodationSpotId();
 			case WorkeffortPackage.WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS:
 				return getCommunicationEventWorkEffs();
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_ATTRIBUTES:
@@ -2885,12 +3020,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID:
-				setAccommodationMapId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID:
-				setAccommodationSpotId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__ACTUAL_COMPLETION_DATE:
 				setActualCompletionDate((Date)newValue);
 				return;
@@ -2909,14 +3038,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__CREATED_DATE:
 				setCreatedDate((Date)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID:
-				setCurrentStatusId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__DESCRIPTION:
 				setDescription((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD:
-				setEstimateCalcMethod((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_COMPLETION_DATE:
 				setEstimatedCompletionDate((Date)newValue);
@@ -2929,12 +3052,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return;
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_START_DATE:
 				setEstimatedStartDate((Date)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__INFO_URL:
 				setInfoUrl((String)newValue);
@@ -2951,12 +3068,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__LOCATION_DESC:
 				setLocationDesc((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID:
-				setMoneyUomId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__NOTE_ID:
-				setNoteId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__PERCENT_COMPLETE:
 				setPercentComplete((Long)newValue);
 				return;
@@ -2972,9 +3083,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__QUANTITY_TO_PRODUCE:
 				setQuantityToProduce((BigDecimal)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID:
-				setRecurrenceInfoId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__RESERV2ND_PP_PERC:
 				setReserv2ndPPPerc((BigDecimal)newValue);
 				return;
@@ -2986,12 +3094,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return;
 			case WorkeffortPackage.WORK_EFFORT__REVISION_NUMBER:
 				setRevisionNumber((Long)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID:
-				setRuntimeDataId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID:
-				setScopeEnumId((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__SEND_NOTIFICATION_EMAIL:
 				setSendNotificationEmail((Boolean)newValue);
@@ -3008,9 +3110,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__SPECIAL_TERMS:
 				setSpecialTerms((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID:
-				setTempExprId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__TIME_TRANSPARENCY:
 				setTimeTransparency((Long)newValue);
 				return;
@@ -3026,14 +3125,50 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_NAME:
 				setWorkEffortName((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID:
-				setWorkEffortParentId((String)newValue);
+			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID:
+				setWorkEffortTypeId((WorkEffortType)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID:
-				setWorkEffortPurposeTypeId((String)newValue);
+				setWorkEffortPurposeTypeId((WorkEffortPurposeType)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID:
-				setWorkEffortTypeId((String)newValue);
+			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID:
+				setWorkEffortParentId((WorkEffort)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID:
+				setCurrentStatusId((StatusItem)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID:
+				setScopeEnumId((Enumeration)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__FACILITY_ID:
+				setFacilityId((Facility)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID:
+				setMoneyUomId((Uom)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID:
+				setRecurrenceInfoId((RecurrenceInfo)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID:
+				setTempExprId((TemporalExpression)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID:
+				setRuntimeDataId((RuntimeData)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__NOTE_ID:
+				setNoteId((NoteData)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD:
+				setEstimateCalcMethod((CustomMethod)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID:
+				setAccommodationMapId((AccommodationMap)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID:
+				setAccommodationSpotId((AccommodationSpot)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS:
 				getCommunicationEventWorkEffs().clear();
@@ -3090,12 +3225,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID:
-				setAccommodationMapId(ACCOMMODATION_MAP_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID:
-				setAccommodationSpotId(ACCOMMODATION_SPOT_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__ACTUAL_COMPLETION_DATE:
 				setActualCompletionDate(ACTUAL_COMPLETION_DATE_EDEFAULT);
 				return;
@@ -3114,14 +3243,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID:
-				setCurrentStatusId(CURRENT_STATUS_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD:
-				setEstimateCalcMethod(ESTIMATE_CALC_METHOD_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_COMPLETION_DATE:
 				setEstimatedCompletionDate(ESTIMATED_COMPLETION_DATE_EDEFAULT);
@@ -3134,12 +3257,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return;
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_START_DATE:
 				setEstimatedStartDate(ESTIMATED_START_DATE_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__INFO_URL:
 				setInfoUrl(INFO_URL_EDEFAULT);
@@ -3156,12 +3273,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__LOCATION_DESC:
 				setLocationDesc(LOCATION_DESC_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID:
-				setMoneyUomId(MONEY_UOM_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__NOTE_ID:
-				setNoteId(NOTE_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__PERCENT_COMPLETE:
 				setPercentComplete(PERCENT_COMPLETE_EDEFAULT);
 				return;
@@ -3177,9 +3288,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__QUANTITY_TO_PRODUCE:
 				setQuantityToProduce(QUANTITY_TO_PRODUCE_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID:
-				setRecurrenceInfoId(RECURRENCE_INFO_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__RESERV2ND_PP_PERC:
 				setReserv2ndPPPerc(RESERV2ND_PP_PERC_EDEFAULT);
 				return;
@@ -3191,12 +3299,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return;
 			case WorkeffortPackage.WORK_EFFORT__REVISION_NUMBER:
 				setRevisionNumber(REVISION_NUMBER_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID:
-				setRuntimeDataId(RUNTIME_DATA_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID:
-				setScopeEnumId(SCOPE_ENUM_ID_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__SEND_NOTIFICATION_EMAIL:
 				setSendNotificationEmail(SEND_NOTIFICATION_EMAIL_EDEFAULT);
@@ -3213,9 +3315,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__SPECIAL_TERMS:
 				setSpecialTerms(SPECIAL_TERMS_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID:
-				setTempExprId(TEMP_EXPR_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT__TIME_TRANSPARENCY:
 				setTimeTransparency(TIME_TRANSPARENCY_EDEFAULT);
 				return;
@@ -3231,14 +3330,50 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_NAME:
 				setWorkEffortName(WORK_EFFORT_NAME_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID:
-				setWorkEffortParentId(WORK_EFFORT_PARENT_ID_EDEFAULT);
+			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID:
+				setWorkEffortTypeId((WorkEffortType)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID:
-				setWorkEffortPurposeTypeId(WORK_EFFORT_PURPOSE_TYPE_ID_EDEFAULT);
+				setWorkEffortPurposeTypeId((WorkEffortPurposeType)null);
 				return;
-			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID:
-				setWorkEffortTypeId(WORK_EFFORT_TYPE_ID_EDEFAULT);
+			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID:
+				setWorkEffortParentId((WorkEffort)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID:
+				setCurrentStatusId((StatusItem)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID:
+				setScopeEnumId((Enumeration)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__FACILITY_ID:
+				setFacilityId((Facility)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID:
+				setMoneyUomId((Uom)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID:
+				setRecurrenceInfoId((RecurrenceInfo)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID:
+				setTempExprId((TemporalExpression)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID:
+				setRuntimeDataId((RuntimeData)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__NOTE_ID:
+				setNoteId((NoteData)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD:
+				setEstimateCalcMethod((CustomMethod)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID:
+				setAccommodationMapId((AccommodationMap)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID:
+				setAccommodationSpotId((AccommodationSpot)null);
 				return;
 			case WorkeffortPackage.WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS:
 				getCommunicationEventWorkEffs().clear();
@@ -3284,10 +3419,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID:
-				return ACCOMMODATION_MAP_ID_EDEFAULT == null ? accommodationMapId != null : !ACCOMMODATION_MAP_ID_EDEFAULT.equals(accommodationMapId);
-			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID:
-				return ACCOMMODATION_SPOT_ID_EDEFAULT == null ? accommodationSpotId != null : !ACCOMMODATION_SPOT_ID_EDEFAULT.equals(accommodationSpotId);
 			case WorkeffortPackage.WORK_EFFORT__ACTUAL_COMPLETION_DATE:
 				return ACTUAL_COMPLETION_DATE_EDEFAULT == null ? actualCompletionDate != null : !ACTUAL_COMPLETION_DATE_EDEFAULT.equals(actualCompletionDate);
 			case WorkeffortPackage.WORK_EFFORT__ACTUAL_MILLI_SECONDS:
@@ -3300,12 +3431,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case WorkeffortPackage.WORK_EFFORT__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID:
-				return CURRENT_STATUS_ID_EDEFAULT == null ? currentStatusId != null : !CURRENT_STATUS_ID_EDEFAULT.equals(currentStatusId);
 			case WorkeffortPackage.WORK_EFFORT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD:
-				return ESTIMATE_CALC_METHOD_EDEFAULT == null ? estimateCalcMethod != null : !ESTIMATE_CALC_METHOD_EDEFAULT.equals(estimateCalcMethod);
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_COMPLETION_DATE:
 				return ESTIMATED_COMPLETION_DATE_EDEFAULT == null ? estimatedCompletionDate != null : !ESTIMATED_COMPLETION_DATE_EDEFAULT.equals(estimatedCompletionDate);
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_MILLI_SECONDS:
@@ -3314,10 +3441,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return estimatedSetupMillis != ESTIMATED_SETUP_MILLIS_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT__ESTIMATED_START_DATE:
 				return ESTIMATED_START_DATE_EDEFAULT == null ? estimatedStartDate != null : !ESTIMATED_START_DATE_EDEFAULT.equals(estimatedStartDate);
-			case WorkeffortPackage.WORK_EFFORT__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
-			case WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case WorkeffortPackage.WORK_EFFORT__INFO_URL:
 				return INFO_URL_EDEFAULT == null ? infoUrl != null : !INFO_URL_EDEFAULT.equals(infoUrl);
 			case WorkeffortPackage.WORK_EFFORT__LAST_MODIFIED_BY_USER_LOGIN:
@@ -3328,10 +3451,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return LAST_STATUS_UPDATE_EDEFAULT == null ? lastStatusUpdate != null : !LAST_STATUS_UPDATE_EDEFAULT.equals(lastStatusUpdate);
 			case WorkeffortPackage.WORK_EFFORT__LOCATION_DESC:
 				return LOCATION_DESC_EDEFAULT == null ? locationDesc != null : !LOCATION_DESC_EDEFAULT.equals(locationDesc);
-			case WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID:
-				return MONEY_UOM_ID_EDEFAULT == null ? moneyUomId != null : !MONEY_UOM_ID_EDEFAULT.equals(moneyUomId);
-			case WorkeffortPackage.WORK_EFFORT__NOTE_ID:
-				return NOTE_ID_EDEFAULT == null ? noteId != null : !NOTE_ID_EDEFAULT.equals(noteId);
 			case WorkeffortPackage.WORK_EFFORT__PERCENT_COMPLETE:
 				return percentComplete != PERCENT_COMPLETE_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT__PRIORITY:
@@ -3342,8 +3461,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return QUANTITY_REJECTED_EDEFAULT == null ? quantityRejected != null : !QUANTITY_REJECTED_EDEFAULT.equals(quantityRejected);
 			case WorkeffortPackage.WORK_EFFORT__QUANTITY_TO_PRODUCE:
 				return QUANTITY_TO_PRODUCE_EDEFAULT == null ? quantityToProduce != null : !QUANTITY_TO_PRODUCE_EDEFAULT.equals(quantityToProduce);
-			case WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID:
-				return RECURRENCE_INFO_ID_EDEFAULT == null ? recurrenceInfoId != null : !RECURRENCE_INFO_ID_EDEFAULT.equals(recurrenceInfoId);
 			case WorkeffortPackage.WORK_EFFORT__RESERV2ND_PP_PERC:
 				return RESERV2ND_PP_PERC_EDEFAULT == null ? reserv2ndPPPerc != null : !RESERV2ND_PP_PERC_EDEFAULT.equals(reserv2ndPPPerc);
 			case WorkeffortPackage.WORK_EFFORT__RESERV_NTH_PP_PERC:
@@ -3352,10 +3469,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return RESERV_PERSONS_EDEFAULT == null ? reservPersons != null : !RESERV_PERSONS_EDEFAULT.equals(reservPersons);
 			case WorkeffortPackage.WORK_EFFORT__REVISION_NUMBER:
 				return revisionNumber != REVISION_NUMBER_EDEFAULT;
-			case WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID:
-				return RUNTIME_DATA_ID_EDEFAULT == null ? runtimeDataId != null : !RUNTIME_DATA_ID_EDEFAULT.equals(runtimeDataId);
-			case WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID:
-				return SCOPE_ENUM_ID_EDEFAULT == null ? scopeEnumId != null : !SCOPE_ENUM_ID_EDEFAULT.equals(scopeEnumId);
 			case WorkeffortPackage.WORK_EFFORT__SEND_NOTIFICATION_EMAIL:
 				return sendNotificationEmail != SEND_NOTIFICATION_EMAIL_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT__SERVICE_LOADER_NAME:
@@ -3366,8 +3479,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return SOURCE_REFERENCE_ID_EDEFAULT == null ? sourceReferenceId != null : !SOURCE_REFERENCE_ID_EDEFAULT.equals(sourceReferenceId);
 			case WorkeffortPackage.WORK_EFFORT__SPECIAL_TERMS:
 				return SPECIAL_TERMS_EDEFAULT == null ? specialTerms != null : !SPECIAL_TERMS_EDEFAULT.equals(specialTerms);
-			case WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID:
-				return TEMP_EXPR_ID_EDEFAULT == null ? tempExprId != null : !TEMP_EXPR_ID_EDEFAULT.equals(tempExprId);
 			case WorkeffortPackage.WORK_EFFORT__TIME_TRANSPARENCY:
 				return timeTransparency != TIME_TRANSPARENCY_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT__TOTAL_MILLI_SECONDS_ALLOWED:
@@ -3378,12 +3489,36 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 				return UNIVERSAL_ID_EDEFAULT == null ? universalId != null : !UNIVERSAL_ID_EDEFAULT.equals(universalId);
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_NAME:
 				return WORK_EFFORT_NAME_EDEFAULT == null ? workEffortName != null : !WORK_EFFORT_NAME_EDEFAULT.equals(workEffortName);
-			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID:
-				return WORK_EFFORT_PARENT_ID_EDEFAULT == null ? workEffortParentId != null : !WORK_EFFORT_PARENT_ID_EDEFAULT.equals(workEffortParentId);
-			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID:
-				return WORK_EFFORT_PURPOSE_TYPE_ID_EDEFAULT == null ? workEffortPurposeTypeId != null : !WORK_EFFORT_PURPOSE_TYPE_ID_EDEFAULT.equals(workEffortPurposeTypeId);
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_TYPE_ID:
-				return WORK_EFFORT_TYPE_ID_EDEFAULT == null ? workEffortTypeId != null : !WORK_EFFORT_TYPE_ID_EDEFAULT.equals(workEffortTypeId);
+				return workEffortTypeId != null;
+			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PURPOSE_TYPE_ID:
+				return workEffortPurposeTypeId != null;
+			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_PARENT_ID:
+				return workEffortParentId != null;
+			case WorkeffortPackage.WORK_EFFORT__CURRENT_STATUS_ID:
+				return currentStatusId != null;
+			case WorkeffortPackage.WORK_EFFORT__SCOPE_ENUM_ID:
+				return scopeEnumId != null;
+			case WorkeffortPackage.WORK_EFFORT__FIXED_ASSET_ID:
+				return fixedAssetId != null;
+			case WorkeffortPackage.WORK_EFFORT__FACILITY_ID:
+				return facilityId != null;
+			case WorkeffortPackage.WORK_EFFORT__MONEY_UOM_ID:
+				return moneyUomId != null;
+			case WorkeffortPackage.WORK_EFFORT__RECURRENCE_INFO_ID:
+				return recurrenceInfoId != null;
+			case WorkeffortPackage.WORK_EFFORT__TEMP_EXPR_ID:
+				return tempExprId != null;
+			case WorkeffortPackage.WORK_EFFORT__RUNTIME_DATA_ID:
+				return runtimeDataId != null;
+			case WorkeffortPackage.WORK_EFFORT__NOTE_ID:
+				return noteId != null;
+			case WorkeffortPackage.WORK_EFFORT__ESTIMATE_CALC_METHOD:
+				return estimateCalcMethod != null;
+			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_MAP_ID:
+				return accommodationMapId != null;
+			case WorkeffortPackage.WORK_EFFORT__ACCOMMODATION_SPOT_ID:
+				return accommodationSpotId != null;
 			case WorkeffortPackage.WORK_EFFORT__COMMUNICATION_EVENT_WORK_EFFS:
 				return communicationEventWorkEffs != null && !communicationEventWorkEffs.isEmpty();
 			case WorkeffortPackage.WORK_EFFORT__WORK_EFFORT_ATTRIBUTES:
@@ -3420,10 +3555,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", accommodationMapId: ");
-		result.append(accommodationMapId);
-		result.append(", accommodationSpotId: ");
-		result.append(accommodationSpotId);
 		result.append(", actualCompletionDate: ");
 		result.append(actualCompletionDate);
 		result.append(", actualMilliSeconds: ");
@@ -3436,12 +3567,8 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
-		result.append(", currentStatusId: ");
-		result.append(currentStatusId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", estimateCalcMethod: ");
-		result.append(estimateCalcMethod);
 		result.append(", estimatedCompletionDate: ");
 		result.append(estimatedCompletionDate);
 		result.append(", estimatedMilliSeconds: ");
@@ -3450,10 +3577,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		result.append(estimatedSetupMillis);
 		result.append(", estimatedStartDate: ");
 		result.append(estimatedStartDate);
-		result.append(", facilityId: ");
-		result.append(facilityId);
-		result.append(", fixedAssetId: ");
-		result.append(fixedAssetId);
 		result.append(", infoUrl: ");
 		result.append(infoUrl);
 		result.append(", lastModifiedByUserLogin: ");
@@ -3464,10 +3587,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		result.append(lastStatusUpdate);
 		result.append(", locationDesc: ");
 		result.append(locationDesc);
-		result.append(", moneyUomId: ");
-		result.append(moneyUomId);
-		result.append(", noteId: ");
-		result.append(noteId);
 		result.append(", percentComplete: ");
 		result.append(percentComplete);
 		result.append(", priority: ");
@@ -3478,8 +3597,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		result.append(quantityRejected);
 		result.append(", quantityToProduce: ");
 		result.append(quantityToProduce);
-		result.append(", recurrenceInfoId: ");
-		result.append(recurrenceInfoId);
 		result.append(", reserv2ndPPPerc: ");
 		result.append(reserv2ndPPPerc);
 		result.append(", reservNthPPPerc: ");
@@ -3488,10 +3605,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		result.append(reservPersons);
 		result.append(", revisionNumber: ");
 		result.append(revisionNumber);
-		result.append(", runtimeDataId: ");
-		result.append(runtimeDataId);
-		result.append(", scopeEnumId: ");
-		result.append(scopeEnumId);
 		result.append(", sendNotificationEmail: ");
 		result.append(sendNotificationEmail);
 		result.append(", serviceLoaderName: ");
@@ -3502,8 +3615,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		result.append(sourceReferenceId);
 		result.append(", specialTerms: ");
 		result.append(specialTerms);
-		result.append(", tempExprId: ");
-		result.append(tempExprId);
 		result.append(", timeTransparency: ");
 		result.append(timeTransparency);
 		result.append(", totalMilliSecondsAllowed: ");
@@ -3514,12 +3625,6 @@ public class WorkEffortImpl extends BizEntityTypedImpl<WorkEffortType> implement
 		result.append(universalId);
 		result.append(", workEffortName: ");
 		result.append(workEffortName);
-		result.append(", workEffortParentId: ");
-		result.append(workEffortParentId);
-		result.append(", workEffortPurposeTypeId: ");
-		result.append(workEffortPurposeTypeId);
-		result.append(", workEffortTypeId: ");
-		result.append(workEffortTypeId);
 		result.append(", communicationEventWorkEffs: ");
 		result.append(communicationEventWorkEffs);
 		result.append(", workEffortAttributes: ");

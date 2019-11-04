@@ -23,8 +23,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumId <em>Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumCode <em>Enum Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumTypeId <em>Enum Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getSequenceId <em>Sequence Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumTypeId <em>Enum Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.enum_.Enumeration#getUserLoginSecurityQuestions <em>User Login Security Questions</em>}</li>
  * </ul>
  *
@@ -534,30 +534,30 @@ public interface Enumeration extends BizEntityTyped<EnumerationType> {
 	List<String> virtualVariantMethodProducts();
 
 	/**
-	 * Returns the value of the '<em><b>Enum Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Enum Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Enum Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Enum Type Id</em>' attribute.
-	 * @see #setEnumTypeId(String)
+	 * @return the value of the '<em>Enum Type Id</em>' reference.
+	 * @see #setEnumTypeId(EnumerationType)
 	 * @see org.abchip.mimo.biz.common.enum_.EnumPackage#getEnumeration_EnumTypeId()
-	 * @model annotation="mimo-ent-domain frame='EnumerationType'"
+	 * @model keys="enumTypeId"
 	 * @generated
 	 */
-	String getEnumTypeId();
+	EnumerationType getEnumTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumTypeId <em>Enum Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumTypeId <em>Enum Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enum Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Enum Type Id</em>' reference.
 	 * @see #getEnumTypeId()
 	 * @generated
 	 */
-	void setEnumTypeId(String value);
+	void setEnumTypeId(EnumerationType value);
 
 	/**
 	 * Returns the value of the '<em><b>Enum Id</b></em>' attribute.

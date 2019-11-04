@@ -40,7 +40,6 @@ public interface MimeTypeHtmlTemplate extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getMimeTypeHtmlTemplate_MimeTypeId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='MimeType'"
 	 * @generated
 	 */
 	String getMimeTypeId();

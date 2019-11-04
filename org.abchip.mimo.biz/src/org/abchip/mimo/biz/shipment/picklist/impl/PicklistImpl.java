@@ -12,14 +12,19 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.facility.Facility;
 import org.abchip.mimo.biz.shipment.picklist.Picklist;
 import org.abchip.mimo.biz.shipment.picklist.PicklistPackage;
+import org.abchip.mimo.biz.shipment.shipment.ShipmentMethodType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,9 +39,9 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getPicklistId <em>Picklist Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getPicklistDate <em>Picklist Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.picklist.impl.PicklistImpl#getPicklistStatusHistories <em>Picklist Status Histories</em>}</li>
@@ -111,26 +116,6 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,44 +156,34 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	protected Date picklistDate = PICKLIST_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
+
+	/**
+	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getShipmentMethodTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SHIPMENT_METHOD_TYPE_ID_EDEFAULT = null;
+	protected ShipmentMethodType shipmentMethodTypeId;
 
 	/**
-	 * The cached value of the '{@link #getShipmentMethodTypeId() <em>Shipment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentMethodTypeId = SHIPMENT_METHOD_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected StatusItem statusId;
 
 	/**
 	 * The cached value of the '{@link #getPicklistStatusHistories() <em>Picklist Status Histories</em>}' attribute list.
@@ -291,7 +266,24 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -301,8 +293,8 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__FACILITY_ID, oldFacilityId, facilityId));
@@ -383,7 +375,24 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 * @generated
 	 */
 	@Override
-	public String getShipmentMethodTypeId() {
+	public ShipmentMethodType getShipmentMethodTypeId() {
+		if (shipmentMethodTypeId != null && ((EObject)shipmentMethodTypeId).eIsProxy()) {
+			InternalEObject oldShipmentMethodTypeId = (InternalEObject)shipmentMethodTypeId;
+			shipmentMethodTypeId = (ShipmentMethodType)eResolveProxy(oldShipmentMethodTypeId);
+			if (shipmentMethodTypeId != oldShipmentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
+			}
+		}
+		return shipmentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShipmentMethodType basicGetShipmentMethodTypeId() {
 		return shipmentMethodTypeId;
 	}
 
@@ -393,8 +402,8 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 * @generated
 	 */
 	@Override
-	public void setShipmentMethodTypeId(String newShipmentMethodTypeId) {
-		String oldShipmentMethodTypeId = shipmentMethodTypeId;
+	public void setShipmentMethodTypeId(ShipmentMethodType newShipmentMethodTypeId) {
+		ShipmentMethodType oldShipmentMethodTypeId = shipmentMethodTypeId;
 		shipmentMethodTypeId = newShipmentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__SHIPMENT_METHOD_TYPE_ID, oldShipmentMethodTypeId, shipmentMethodTypeId));
@@ -406,7 +415,24 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PicklistPackage.PICKLIST__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -416,8 +442,8 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PicklistPackage.PICKLIST__STATUS_ID, oldStatusId, statusId));
@@ -462,16 +488,19 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 				return getCreatedByUserLogin();
 			case PicklistPackage.PICKLIST__DESCRIPTION:
 				return getDescription();
-			case PicklistPackage.PICKLIST__FACILITY_ID:
-				return getFacilityId();
 			case PicklistPackage.PICKLIST__LAST_MODIFIED_BY_USER_LOGIN:
 				return getLastModifiedByUserLogin();
 			case PicklistPackage.PICKLIST__PICKLIST_DATE:
 				return getPicklistDate();
+			case PicklistPackage.PICKLIST__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
 			case PicklistPackage.PICKLIST__SHIPMENT_METHOD_TYPE_ID:
-				return getShipmentMethodTypeId();
+				if (resolve) return getShipmentMethodTypeId();
+				return basicGetShipmentMethodTypeId();
 			case PicklistPackage.PICKLIST__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 			case PicklistPackage.PICKLIST__PICKLIST_STATUS_HISTORIES:
 				return getPicklistStatusHistories();
 		}
@@ -496,20 +525,20 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 			case PicklistPackage.PICKLIST__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case PicklistPackage.PICKLIST__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
 			case PicklistPackage.PICKLIST__LAST_MODIFIED_BY_USER_LOGIN:
 				setLastModifiedByUserLogin((String)newValue);
 				return;
 			case PicklistPackage.PICKLIST__PICKLIST_DATE:
 				setPicklistDate((Date)newValue);
 				return;
+			case PicklistPackage.PICKLIST__FACILITY_ID:
+				setFacilityId((Facility)newValue);
+				return;
 			case PicklistPackage.PICKLIST__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId((String)newValue);
+				setShipmentMethodTypeId((ShipmentMethodType)newValue);
 				return;
 			case PicklistPackage.PICKLIST__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
 				return;
 			case PicklistPackage.PICKLIST__PICKLIST_STATUS_HISTORIES:
 				getPicklistStatusHistories().clear();
@@ -536,20 +565,20 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 			case PicklistPackage.PICKLIST__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case PicklistPackage.PICKLIST__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
 			case PicklistPackage.PICKLIST__LAST_MODIFIED_BY_USER_LOGIN:
 				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
 				return;
 			case PicklistPackage.PICKLIST__PICKLIST_DATE:
 				setPicklistDate(PICKLIST_DATE_EDEFAULT);
 				return;
+			case PicklistPackage.PICKLIST__FACILITY_ID:
+				setFacilityId((Facility)null);
+				return;
 			case PicklistPackage.PICKLIST__SHIPMENT_METHOD_TYPE_ID:
-				setShipmentMethodTypeId(SHIPMENT_METHOD_TYPE_ID_EDEFAULT);
+				setShipmentMethodTypeId((ShipmentMethodType)null);
 				return;
 			case PicklistPackage.PICKLIST__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
 				return;
 			case PicklistPackage.PICKLIST__PICKLIST_STATUS_HISTORIES:
 				getPicklistStatusHistories().clear();
@@ -572,16 +601,16 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case PicklistPackage.PICKLIST__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PicklistPackage.PICKLIST__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case PicklistPackage.PICKLIST__LAST_MODIFIED_BY_USER_LOGIN:
 				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case PicklistPackage.PICKLIST__PICKLIST_DATE:
 				return PICKLIST_DATE_EDEFAULT == null ? picklistDate != null : !PICKLIST_DATE_EDEFAULT.equals(picklistDate);
+			case PicklistPackage.PICKLIST__FACILITY_ID:
+				return facilityId != null;
 			case PicklistPackage.PICKLIST__SHIPMENT_METHOD_TYPE_ID:
-				return SHIPMENT_METHOD_TYPE_ID_EDEFAULT == null ? shipmentMethodTypeId != null : !SHIPMENT_METHOD_TYPE_ID_EDEFAULT.equals(shipmentMethodTypeId);
+				return shipmentMethodTypeId != null;
 			case PicklistPackage.PICKLIST__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
 			case PicklistPackage.PICKLIST__PICKLIST_STATUS_HISTORIES:
 				return picklistStatusHistories != null && !picklistStatusHistories.isEmpty();
 		}
@@ -604,16 +633,10 @@ public class PicklistImpl extends BizEntityImpl implements Picklist {
 		result.append(createdByUserLogin);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", facilityId: ");
-		result.append(facilityId);
 		result.append(", lastModifiedByUserLogin: ");
 		result.append(lastModifiedByUserLogin);
 		result.append(", picklistDate: ");
 		result.append(picklistDate);
-		result.append(", shipmentMethodTypeId: ");
-		result.append(shipmentMethodTypeId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", picklistStatusHistories: ");
 		result.append(picklistStatusHistories);
 		result.append(')');

@@ -13,6 +13,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.facility.Container;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,27 +37,27 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getAvailableToPromiseTotal <em>Available To Promise Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getBinNumber <em>Bin Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getContainerId <em>Container Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getDatetimeManufactured <em>Datetime Manufactured</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getDatetimeReceived <em>Datetime Received</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getExpireDate <em>Expire Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLocationSeqId <em>Location Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLotId <em>Lot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOldAvailableToPromise <em>Old Available To Promise</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOldQuantityOnHand <em>Old Quantity On Hand</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOwnerPartyId <em>Owner Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getQuantityOnHandTotal <em>Quantity On Hand Total</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getSerialNumber <em>Serial Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getSoftIdentifier <em>Soft Identifier</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getUnitCost <em>Unit Cost</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemTypeId <em>Inventory Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOwnerPartyId <em>Owner Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getContainerId <em>Container Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLotId <em>Lot Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemAttributes <em>Inventory Item Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemDetails <em>Inventory Item Details</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemLabelAppls <em>Inventory Item Label Appls</em>}</li>
@@ -219,30 +226,30 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_CurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Datetime Manufactured</b></em>' attribute.
@@ -323,30 +330,30 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	void setExpireDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
-	 * @see #setFixedAssetId(String)
+	 * @return the value of the '<em>Fixed Asset Id</em>' reference.
+	 * @see #setFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_FixedAssetId()
-	 * @model annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model keys="fixedAssetId"
 	 * @generated
 	 */
-	String getFixedAssetId();
+	FixedAsset getFixedAssetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFixedAssetId <em>Fixed Asset Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFixedAssetId <em>Fixed Asset Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Id</em>' reference.
 	 * @see #getFixedAssetId()
 	 * @generated
 	 */
-	void setFixedAssetId(String value);
+	void setFixedAssetId(FixedAsset value);
 
 	/**
 	 * Returns the value of the '<em><b>Location Seq Id</b></em>' attribute.
@@ -427,82 +434,82 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	void setOldQuantityOnHand(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Owner Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Owner Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owner Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owner Party Id</em>' attribute.
-	 * @see #setOwnerPartyId(String)
+	 * @return the value of the '<em>Owner Party Id</em>' reference.
+	 * @see #setOwnerPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_OwnerPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getOwnerPartyId();
+	Party getOwnerPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOwnerPartyId <em>Owner Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getOwnerPartyId <em>Owner Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owner Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Owner Party Id</em>' reference.
 	 * @see #getOwnerPartyId()
 	 * @generated
 	 */
-	void setOwnerPartyId(String value);
+	void setOwnerPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity On Hand Total</b></em>' attribute.
@@ -583,30 +590,30 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	void setSoftIdentifier(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Unit Cost</b></em>' attribute.
@@ -635,30 +642,30 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	void setUnitCost(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uom Id</em>' attribute.
-	 * @see #setUomId(String)
+	 * @return the value of the '<em>Uom Id</em>' reference.
+	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_UomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getUomId();
+	Uom getUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getUomId <em>Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getUomId <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Uom Id</em>' reference.
 	 * @see #getUomId()
 	 * @generated
 	 */
-	void setUomId(String value);
+	void setUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Item Attributes</b></em>' attribute list.
@@ -819,108 +826,108 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	List<String> workEffortInventoryProduceds();
 
 	/**
-	 * Returns the value of the '<em><b>Inventory Item Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inventory Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Inventory Item Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inventory Item Type Id</em>' attribute.
-	 * @see #setInventoryItemTypeId(String)
+	 * @return the value of the '<em>Inventory Item Type Id</em>' reference.
+	 * @see #setInventoryItemTypeId(InventoryItemType)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemTypeId()
-	 * @model annotation="mimo-ent-domain frame='InventoryItemType'"
+	 * @model keys="inventoryItemTypeId"
 	 * @generated
 	 */
-	String getInventoryItemTypeId();
+	InventoryItemType getInventoryItemTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemTypeId <em>Inventory Item Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getInventoryItemTypeId <em>Inventory Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Inventory Item Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Inventory Item Type Id</em>' reference.
 	 * @see #getInventoryItemTypeId()
 	 * @generated
 	 */
-	void setInventoryItemTypeId(String value);
+	void setInventoryItemTypeId(InventoryItemType value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Id</em>' attribute.
-	 * @see #setFacilityId(String)
+	 * @return the value of the '<em>Facility Id</em>' reference.
+	 * @see #setFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_FacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getFacilityId();
+	Facility getFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFacilityId <em>Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getFacilityId <em>Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Id</em>' reference.
 	 * @see #getFacilityId()
 	 * @generated
 	 */
-	void setFacilityId(String value);
+	void setFacilityId(Facility value);
 
 	/**
-	 * Returns the value of the '<em><b>Container Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Container Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Container Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Container Id</em>' attribute.
-	 * @see #setContainerId(String)
+	 * @return the value of the '<em>Container Id</em>' reference.
+	 * @see #setContainerId(Container)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_ContainerId()
-	 * @model annotation="mimo-ent-domain frame='Container'"
+	 * @model keys="containerId"
 	 * @generated
 	 */
-	String getContainerId();
+	Container getContainerId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getContainerId <em>Container Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getContainerId <em>Container Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Container Id</em>' attribute.
+	 * @param value the new value of the '<em>Container Id</em>' reference.
 	 * @see #getContainerId()
 	 * @generated
 	 */
-	void setContainerId(String value);
+	void setContainerId(Container value);
 
 	/**
-	 * Returns the value of the '<em><b>Lot Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Lot Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Lot Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lot Id</em>' attribute.
-	 * @see #setLotId(String)
+	 * @return the value of the '<em>Lot Id</em>' reference.
+	 * @see #setLotId(Lot)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_LotId()
-	 * @model annotation="mimo-ent-domain frame='Lot'"
+	 * @model keys="lotId"
 	 * @generated
 	 */
-	String getLotId();
+	Lot getLotId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLotId <em>Lot Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.inventory.InventoryItem#getLotId <em>Lot Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Lot Id</em>' attribute.
+	 * @param value the new value of the '<em>Lot Id</em>' reference.
 	 * @see #getLotId()
 	 * @generated
 	 */
-	void setLotId(String value);
+	void setLotId(Lot value);
 
 	/**
 	 * Returns the value of the '<em><b>Inventory Item Id</b></em>' attribute.
@@ -933,7 +940,7 @@ public interface InventoryItem extends BizEntityTyped<InventoryItemType> {
 	 * @return the value of the '<em>Inventory Item Id</em>' attribute.
 	 * @see #setInventoryItemId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getInventoryItem_InventoryItemId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.marketing.segment.impl;
 
+import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.segment.SegmentGroupGeo;
 import org.abchip.mimo.biz.marketing.segment.SegmentPackage;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -57,24 +60,14 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	protected String segmentGroupId = SEGMENT_GROUP_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
+	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGeoId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GEO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoId = GEO_ID_EDEFAULT;
+	protected Geo geoId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,7 +94,24 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	 * @generated
 	 */
 	@Override
-	public String getGeoId() {
+	public Geo getGeoId() {
+		if (geoId != null && ((EObject)geoId).eIsProxy()) {
+			InternalEObject oldGeoId = (InternalEObject)geoId;
+			geoId = (Geo)eResolveProxy(oldGeoId);
+			if (geoId != oldGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID, oldGeoId, geoId));
+			}
+		}
+		return geoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetGeoId() {
 		return geoId;
 	}
 
@@ -111,8 +121,8 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 	 * @generated
 	 */
 	@Override
-	public void setGeoId(String newGeoId) {
-		String oldGeoId = geoId;
+	public void setGeoId(Geo newGeoId) {
+		Geo oldGeoId = geoId;
 		geoId = newGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID, oldGeoId, geoId));
@@ -152,7 +162,8 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 			case SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID:
 				return getSegmentGroupId();
 			case SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID:
-				return getGeoId();
+				if (resolve) return getGeoId();
+				return basicGetGeoId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,7 +180,7 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 				setSegmentGroupId((String)newValue);
 				return;
 			case SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID:
-				setGeoId((String)newValue);
+				setGeoId((Geo)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +198,7 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 				setSegmentGroupId(SEGMENT_GROUP_ID_EDEFAULT);
 				return;
 			case SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID:
-				setGeoId(GEO_ID_EDEFAULT);
+				setGeoId((Geo)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,7 +215,7 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 			case SegmentPackage.SEGMENT_GROUP_GEO__SEGMENT_GROUP_ID:
 				return SEGMENT_GROUP_ID_EDEFAULT == null ? segmentGroupId != null : !SEGMENT_GROUP_ID_EDEFAULT.equals(segmentGroupId);
 			case SegmentPackage.SEGMENT_GROUP_GEO__GEO_ID:
-				return GEO_ID_EDEFAULT == null ? geoId != null : !GEO_ID_EDEFAULT.equals(geoId);
+				return geoId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,8 +232,6 @@ public class SegmentGroupGeoImpl extends BizEntityImpl implements SegmentGroupGe
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (segmentGroupId: ");
 		result.append(segmentGroupId);
-		result.append(", geoId: ");
-		result.append(geoId);
 		result.append(')');
 		return result.toString();
 	}

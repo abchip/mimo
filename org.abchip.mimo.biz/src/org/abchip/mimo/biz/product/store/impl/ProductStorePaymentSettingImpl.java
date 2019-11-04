@@ -7,12 +7,18 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
+import org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.method.CustomMethod;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStorePaymentSetting;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,13 +30,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#isApplyToAllProducts <em>Apply To All Products</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentCustomMethodId <em>Payment Custom Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentPropertiesPath <em>Payment Properties Path</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentService <em>Payment Service</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentGatewayConfigId <em>Payment Gateway Config Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStorePaymentSettingImpl#getPaymentCustomMethodId <em>Payment Custom Method Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,46 +68,6 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_METHOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodTypeId = PAYMENT_METHOD_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPaymentServiceTypeEnumId() <em>Payment Service Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentServiceTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPaymentServiceTypeEnumId() <em>Payment Service Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentServiceTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentServiceTypeEnumId = PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isApplyToAllProducts() <em>Apply To All Products</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,46 +86,6 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @ordered
 	 */
 	protected boolean applyToAllProducts = APPLY_TO_ALL_PRODUCTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPaymentCustomMethodId() <em>Payment Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_CUSTOM_METHOD_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPaymentCustomMethodId() <em>Payment Custom Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentCustomMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentCustomMethodId = PAYMENT_CUSTOM_METHOD_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentGatewayConfigId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentGatewayConfigId = PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPaymentPropertiesPath() <em>Payment Properties Path</em>}' attribute.
@@ -202,6 +128,46 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	protected String paymentService = PAYMENT_SERVICE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethodType paymentMethodTypeId;
+
+	/**
+	 * The cached value of the '{@link #getPaymentServiceTypeEnumId() <em>Payment Service Type Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentServiceTypeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration paymentServiceTypeEnumId;
+
+	/**
+	 * The cached value of the '{@link #getPaymentGatewayConfigId() <em>Payment Gateway Config Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentGatewayConfigId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentGatewayConfig paymentGatewayConfigId;
+
+	/**
+	 * The cached value of the '{@link #getPaymentCustomMethodId() <em>Payment Custom Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentCustomMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod paymentCustomMethodId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -226,7 +192,24 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public String getPaymentCustomMethodId() {
+	public CustomMethod getPaymentCustomMethodId() {
+		if (paymentCustomMethodId != null && ((EObject)paymentCustomMethodId).eIsProxy()) {
+			InternalEObject oldPaymentCustomMethodId = (InternalEObject)paymentCustomMethodId;
+			paymentCustomMethodId = (CustomMethod)eResolveProxy(oldPaymentCustomMethodId);
+			if (paymentCustomMethodId != oldPaymentCustomMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID, oldPaymentCustomMethodId, paymentCustomMethodId));
+			}
+		}
+		return paymentCustomMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetPaymentCustomMethodId() {
 		return paymentCustomMethodId;
 	}
 
@@ -236,8 +219,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public void setPaymentCustomMethodId(String newPaymentCustomMethodId) {
-		String oldPaymentCustomMethodId = paymentCustomMethodId;
+	public void setPaymentCustomMethodId(CustomMethod newPaymentCustomMethodId) {
+		CustomMethod oldPaymentCustomMethodId = paymentCustomMethodId;
 		paymentCustomMethodId = newPaymentCustomMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID, oldPaymentCustomMethodId, paymentCustomMethodId));
@@ -249,7 +232,24 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public String getPaymentGatewayConfigId() {
+	public PaymentGatewayConfig getPaymentGatewayConfigId() {
+		if (paymentGatewayConfigId != null && ((EObject)paymentGatewayConfigId).eIsProxy()) {
+			InternalEObject oldPaymentGatewayConfigId = (InternalEObject)paymentGatewayConfigId;
+			paymentGatewayConfigId = (PaymentGatewayConfig)eResolveProxy(oldPaymentGatewayConfigId);
+			if (paymentGatewayConfigId != oldPaymentGatewayConfigId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
+			}
+		}
+		return paymentGatewayConfigId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentGatewayConfig basicGetPaymentGatewayConfigId() {
 		return paymentGatewayConfigId;
 	}
 
@@ -259,8 +259,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public void setPaymentGatewayConfigId(String newPaymentGatewayConfigId) {
-		String oldPaymentGatewayConfigId = paymentGatewayConfigId;
+	public void setPaymentGatewayConfigId(PaymentGatewayConfig newPaymentGatewayConfigId) {
+		PaymentGatewayConfig oldPaymentGatewayConfigId = paymentGatewayConfigId;
 		paymentGatewayConfigId = newPaymentGatewayConfigId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID, oldPaymentGatewayConfigId, paymentGatewayConfigId));
@@ -272,7 +272,24 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodTypeId() {
+	public PaymentMethodType getPaymentMethodTypeId() {
+		if (paymentMethodTypeId != null && ((EObject)paymentMethodTypeId).eIsProxy()) {
+			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
+			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
+			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
+			}
+		}
+		return paymentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethodType basicGetPaymentMethodTypeId() {
 		return paymentMethodTypeId;
 	}
 
@@ -282,8 +299,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodTypeId(String newPaymentMethodTypeId) {
-		String oldPaymentMethodTypeId = paymentMethodTypeId;
+	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
@@ -341,7 +358,24 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public String getPaymentServiceTypeEnumId() {
+	public Enumeration getPaymentServiceTypeEnumId() {
+		if (paymentServiceTypeEnumId != null && ((EObject)paymentServiceTypeEnumId).eIsProxy()) {
+			InternalEObject oldPaymentServiceTypeEnumId = (InternalEObject)paymentServiceTypeEnumId;
+			paymentServiceTypeEnumId = (Enumeration)eResolveProxy(oldPaymentServiceTypeEnumId);
+			if (paymentServiceTypeEnumId != oldPaymentServiceTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
+			}
+		}
+		return paymentServiceTypeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetPaymentServiceTypeEnumId() {
 		return paymentServiceTypeEnumId;
 	}
 
@@ -351,8 +385,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public void setPaymentServiceTypeEnumId(String newPaymentServiceTypeEnumId) {
-		String oldPaymentServiceTypeEnumId = paymentServiceTypeEnumId;
+	public void setPaymentServiceTypeEnumId(Enumeration newPaymentServiceTypeEnumId) {
+		Enumeration oldPaymentServiceTypeEnumId = paymentServiceTypeEnumId;
 		paymentServiceTypeEnumId = newPaymentServiceTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
@@ -414,20 +448,24 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
 				return getProductStoreId();
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
-				return getPaymentMethodTypeId();
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				return getPaymentServiceTypeEnumId();
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS:
 				return isApplyToAllProducts();
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID:
-				return getPaymentCustomMethodId();
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID:
-				return getPaymentGatewayConfigId();
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_PROPERTIES_PATH:
 				return getPaymentPropertiesPath();
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE:
 				return getPaymentService();
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
+				if (resolve) return getPaymentMethodTypeId();
+				return basicGetPaymentMethodTypeId();
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID:
+				if (resolve) return getPaymentServiceTypeEnumId();
+				return basicGetPaymentServiceTypeEnumId();
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID:
+				if (resolve) return getPaymentGatewayConfigId();
+				return basicGetPaymentGatewayConfigId();
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID:
+				if (resolve) return getPaymentCustomMethodId();
+				return basicGetPaymentCustomMethodId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -443,26 +481,26 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
 				setProductStoreId((String)newValue);
 				return;
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				setPaymentServiceTypeEnumId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS:
 				setApplyToAllProducts((Boolean)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID:
-				setPaymentCustomMethodId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId((String)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_PROPERTIES_PATH:
 				setPaymentPropertiesPath((String)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE:
 				setPaymentService((String)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID:
+				setPaymentServiceTypeEnumId((Enumeration)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID:
+				setPaymentCustomMethodId((CustomMethod)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -479,26 +517,26 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
 				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
 				return;
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId(PAYMENT_METHOD_TYPE_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				setPaymentServiceTypeEnumId(PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS:
 				setApplyToAllProducts(APPLY_TO_ALL_PRODUCTS_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID:
-				setPaymentCustomMethodId(PAYMENT_CUSTOM_METHOD_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID:
-				setPaymentGatewayConfigId(PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT);
 				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_PROPERTIES_PATH:
 				setPaymentPropertiesPath(PAYMENT_PROPERTIES_PATH_EDEFAULT);
 				return;
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE:
 				setPaymentService(PAYMENT_SERVICE_EDEFAULT);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)null);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID:
+				setPaymentServiceTypeEnumId((Enumeration)null);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID:
+				setPaymentGatewayConfigId((PaymentGatewayConfig)null);
+				return;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID:
+				setPaymentCustomMethodId((CustomMethod)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -514,20 +552,20 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PRODUCT_STORE_ID:
 				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
-				return PAYMENT_METHOD_TYPE_ID_EDEFAULT == null ? paymentMethodTypeId != null : !PAYMENT_METHOD_TYPE_ID_EDEFAULT.equals(paymentMethodTypeId);
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				return PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT == null ? paymentServiceTypeEnumId != null : !PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT.equals(paymentServiceTypeEnumId);
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__APPLY_TO_ALL_PRODUCTS:
 				return applyToAllProducts != APPLY_TO_ALL_PRODUCTS_EDEFAULT;
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID:
-				return PAYMENT_CUSTOM_METHOD_ID_EDEFAULT == null ? paymentCustomMethodId != null : !PAYMENT_CUSTOM_METHOD_ID_EDEFAULT.equals(paymentCustomMethodId);
-			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID:
-				return PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT == null ? paymentGatewayConfigId != null : !PAYMENT_GATEWAY_CONFIG_ID_EDEFAULT.equals(paymentGatewayConfigId);
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_PROPERTIES_PATH:
 				return PAYMENT_PROPERTIES_PATH_EDEFAULT == null ? paymentPropertiesPath != null : !PAYMENT_PROPERTIES_PATH_EDEFAULT.equals(paymentPropertiesPath);
 			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE:
 				return PAYMENT_SERVICE_EDEFAULT == null ? paymentService != null : !PAYMENT_SERVICE_EDEFAULT.equals(paymentService);
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_METHOD_TYPE_ID:
+				return paymentMethodTypeId != null;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_SERVICE_TYPE_ENUM_ID:
+				return paymentServiceTypeEnumId != null;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_GATEWAY_CONFIG_ID:
+				return paymentGatewayConfigId != null;
+			case StorePackage.PRODUCT_STORE_PAYMENT_SETTING__PAYMENT_CUSTOM_METHOD_ID:
+				return paymentCustomMethodId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -544,16 +582,8 @@ public class ProductStorePaymentSettingImpl extends BizEntityImpl implements Pro
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productStoreId: ");
 		result.append(productStoreId);
-		result.append(", paymentMethodTypeId: ");
-		result.append(paymentMethodTypeId);
-		result.append(", paymentServiceTypeEnumId: ");
-		result.append(paymentServiceTypeEnumId);
 		result.append(", applyToAllProducts: ");
 		result.append(applyToAllProducts);
-		result.append(", paymentCustomMethodId: ");
-		result.append(paymentCustomMethodId);
-		result.append(", paymentGatewayConfigId: ");
-		result.append(paymentGatewayConfigId);
 		result.append(", paymentPropertiesPath: ");
 		result.append(paymentPropertiesPath);
 		result.append(", paymentService: ");

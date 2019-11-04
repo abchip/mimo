@@ -15,11 +15,20 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
+import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -32,21 +41,21 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceId <em>Invoice Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getContactMechId <em>Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceDate <em>Invoice Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceMessage <em>Invoice Message</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getPaidDate <em>Paid Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getReferenceNumber <em>Reference Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceAttributes <em>Invoice Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceItems <em>Invoice Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceImpl#getInvoiceNotes <em>Invoice Notes</em>}</li>
@@ -77,60 +86,6 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @ordered
 	 */
 	protected String invoiceId = INVOICE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BILLING_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String billingAccountId = BILLING_ACCOUNT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -204,24 +159,6 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	protected String invoiceMessage = INVOICE_MESSAGE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceTypeId = INVOICE_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getPaidDate() <em>Paid Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -239,60 +176,6 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @ordered
 	 */
 	protected Date paidDate = PAID_DATE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_FROM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdFrom = PARTY_ID_FROM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceInfoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RECURRENCE_INFO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceInfoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String recurrenceInfoId = RECURRENCE_INFO_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getReferenceNumber() <em>Reference Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -312,41 +195,86 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 */
 	protected String referenceNumber = REFERENCE_NUMBER_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoiceTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InvoiceType invoiceTypeId;
+	/**
+	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyIdFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyIdFrom;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoleTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
+	protected RoleType roleTypeId;
 	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getBillingAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected BillingAccount billingAccountId;
+	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech contactMechId;
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+	/**
+	 * The cached value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecurrenceInfoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RecurrenceInfo recurrenceInfoId;
 
 	/**
 	 * The cached value of the '{@link #getInvoiceAttributes() <em>Invoice Attributes</em>}' attribute list.
@@ -401,7 +329,24 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public String getBillingAccountId() {
+	public BillingAccount getBillingAccountId() {
+		if (billingAccountId != null && ((EObject)billingAccountId).eIsProxy()) {
+			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
+			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
+			if (billingAccountId != oldBillingAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
+			}
+		}
+		return billingAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BillingAccount basicGetBillingAccountId() {
 		return billingAccountId;
 	}
 
@@ -411,8 +356,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public void setBillingAccountId(String newBillingAccountId) {
-		String oldBillingAccountId = billingAccountId;
+	public void setBillingAccountId(BillingAccount newBillingAccountId) {
+		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
@@ -424,7 +369,24 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public ContactMech getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -434,8 +396,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -447,7 +409,24 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -457,8 +436,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -585,7 +564,24 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -595,8 +591,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__PARTY_ID, oldPartyId, partyId));
@@ -608,7 +604,24 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public String getPartyIdFrom() {
+	public Party getPartyIdFrom() {
+		if (partyIdFrom != null && ((EObject)partyIdFrom).eIsProxy()) {
+			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
+			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
+			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
+			}
+		}
+		return partyIdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyIdFrom() {
 		return partyIdFrom;
 	}
 
@@ -618,8 +631,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public void setPartyIdFrom(String newPartyIdFrom) {
-		String oldPartyIdFrom = partyIdFrom;
+	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
@@ -631,7 +644,24 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public String getRecurrenceInfoId() {
+	public RecurrenceInfo getRecurrenceInfoId() {
+		if (recurrenceInfoId != null && ((EObject)recurrenceInfoId).eIsProxy()) {
+			InternalEObject oldRecurrenceInfoId = (InternalEObject)recurrenceInfoId;
+			recurrenceInfoId = (RecurrenceInfo)eResolveProxy(oldRecurrenceInfoId);
+			if (recurrenceInfoId != oldRecurrenceInfoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
+			}
+		}
+		return recurrenceInfoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RecurrenceInfo basicGetRecurrenceInfoId() {
 		return recurrenceInfoId;
 	}
 
@@ -641,8 +671,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public void setRecurrenceInfoId(String newRecurrenceInfoId) {
-		String oldRecurrenceInfoId = recurrenceInfoId;
+	public void setRecurrenceInfoId(RecurrenceInfo newRecurrenceInfoId) {
+		RecurrenceInfo oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
@@ -677,7 +707,24 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -687,8 +734,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -700,7 +747,24 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -710,8 +774,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__STATUS_ID, oldStatusId, statusId));
@@ -810,7 +874,24 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceTypeId() {
+	public InvoiceType getInvoiceTypeId() {
+		if (invoiceTypeId != null && ((EObject)invoiceTypeId).eIsProxy()) {
+			InternalEObject oldInvoiceTypeId = (InternalEObject)invoiceTypeId;
+			invoiceTypeId = (InvoiceType)eResolveProxy(oldInvoiceTypeId);
+			if (invoiceTypeId != oldInvoiceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
+			}
+		}
+		return invoiceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvoiceType basicGetInvoiceTypeId() {
 		return invoiceTypeId;
 	}
 
@@ -820,8 +901,8 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceTypeId(String newInvoiceTypeId) {
-		String oldInvoiceTypeId = invoiceTypeId;
+	public void setInvoiceTypeId(InvoiceType newInvoiceTypeId) {
+		InvoiceType oldInvoiceTypeId = invoiceTypeId;
 		invoiceTypeId = newInvoiceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
@@ -860,12 +941,6 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 		switch (featureID) {
 			case InvoicePackage.INVOICE__INVOICE_ID:
 				return getInvoiceId();
-			case InvoicePackage.INVOICE__BILLING_ACCOUNT_ID:
-				return getBillingAccountId();
-			case InvoicePackage.INVOICE__CONTACT_MECH_ID:
-				return getContactMechId();
-			case InvoicePackage.INVOICE__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case InvoicePackage.INVOICE__DESCRIPTION:
 				return getDescription();
 			case InvoicePackage.INVOICE__DUE_DATE:
@@ -874,22 +949,37 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 				return getInvoiceDate();
 			case InvoicePackage.INVOICE__INVOICE_MESSAGE:
 				return getInvoiceMessage();
-			case InvoicePackage.INVOICE__INVOICE_TYPE_ID:
-				return getInvoiceTypeId();
 			case InvoicePackage.INVOICE__PAID_DATE:
 				return getPaidDate();
-			case InvoicePackage.INVOICE__PARTY_ID:
-				return getPartyId();
-			case InvoicePackage.INVOICE__PARTY_ID_FROM:
-				return getPartyIdFrom();
-			case InvoicePackage.INVOICE__RECURRENCE_INFO_ID:
-				return getRecurrenceInfoId();
 			case InvoicePackage.INVOICE__REFERENCE_NUMBER:
 				return getReferenceNumber();
+			case InvoicePackage.INVOICE__INVOICE_TYPE_ID:
+				if (resolve) return getInvoiceTypeId();
+				return basicGetInvoiceTypeId();
+			case InvoicePackage.INVOICE__PARTY_ID_FROM:
+				if (resolve) return getPartyIdFrom();
+				return basicGetPartyIdFrom();
+			case InvoicePackage.INVOICE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case InvoicePackage.INVOICE__ROLE_TYPE_ID:
-				return getRoleTypeId();
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
 			case InvoicePackage.INVOICE__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case InvoicePackage.INVOICE__BILLING_ACCOUNT_ID:
+				if (resolve) return getBillingAccountId();
+				return basicGetBillingAccountId();
+			case InvoicePackage.INVOICE__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
+			case InvoicePackage.INVOICE__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case InvoicePackage.INVOICE__RECURRENCE_INFO_ID:
+				if (resolve) return getRecurrenceInfoId();
+				return basicGetRecurrenceInfoId();
 			case InvoicePackage.INVOICE__INVOICE_ATTRIBUTES:
 				return getInvoiceAttributes();
 			case InvoicePackage.INVOICE__INVOICE_ITEMS:
@@ -912,15 +1002,6 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			case InvoicePackage.INVOICE__INVOICE_ID:
 				setInvoiceId((String)newValue);
 				return;
-			case InvoicePackage.INVOICE__BILLING_ACCOUNT_ID:
-				setBillingAccountId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -933,29 +1014,38 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			case InvoicePackage.INVOICE__INVOICE_MESSAGE:
 				setInvoiceMessage((String)newValue);
 				return;
-			case InvoicePackage.INVOICE__INVOICE_TYPE_ID:
-				setInvoiceTypeId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE__PAID_DATE:
 				setPaidDate((Date)newValue);
-				return;
-			case InvoicePackage.INVOICE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE__PARTY_ID_FROM:
-				setPartyIdFrom((String)newValue);
-				return;
-			case InvoicePackage.INVOICE__RECURRENCE_INFO_ID:
-				setRecurrenceInfoId((String)newValue);
 				return;
 			case InvoicePackage.INVOICE__REFERENCE_NUMBER:
 				setReferenceNumber((String)newValue);
 				return;
+			case InvoicePackage.INVOICE__INVOICE_TYPE_ID:
+				setInvoiceTypeId((InvoiceType)newValue);
+				return;
+			case InvoicePackage.INVOICE__PARTY_ID_FROM:
+				setPartyIdFrom((Party)newValue);
+				return;
+			case InvoicePackage.INVOICE__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
 			case InvoicePackage.INVOICE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
+				setRoleTypeId((RoleType)newValue);
 				return;
 			case InvoicePackage.INVOICE__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
+				return;
+			case InvoicePackage.INVOICE__BILLING_ACCOUNT_ID:
+				setBillingAccountId((BillingAccount)newValue);
+				return;
+			case InvoicePackage.INVOICE__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)newValue);
+				return;
+			case InvoicePackage.INVOICE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case InvoicePackage.INVOICE__RECURRENCE_INFO_ID:
+				setRecurrenceInfoId((RecurrenceInfo)newValue);
 				return;
 			case InvoicePackage.INVOICE__INVOICE_ATTRIBUTES:
 				getInvoiceAttributes().clear();
@@ -984,15 +1074,6 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			case InvoicePackage.INVOICE__INVOICE_ID:
 				setInvoiceId(INVOICE_ID_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE__BILLING_ACCOUNT_ID:
-				setBillingAccountId(BILLING_ACCOUNT_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -1005,29 +1086,38 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 			case InvoicePackage.INVOICE__INVOICE_MESSAGE:
 				setInvoiceMessage(INVOICE_MESSAGE_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE__INVOICE_TYPE_ID:
-				setInvoiceTypeId(INVOICE_TYPE_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE__PAID_DATE:
 				setPaidDate(PAID_DATE_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE__PARTY_ID_FROM:
-				setPartyIdFrom(PARTY_ID_FROM_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE__RECURRENCE_INFO_ID:
-				setRecurrenceInfoId(RECURRENCE_INFO_ID_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE__REFERENCE_NUMBER:
 				setReferenceNumber(REFERENCE_NUMBER_EDEFAULT);
 				return;
+			case InvoicePackage.INVOICE__INVOICE_TYPE_ID:
+				setInvoiceTypeId((InvoiceType)null);
+				return;
+			case InvoicePackage.INVOICE__PARTY_ID_FROM:
+				setPartyIdFrom((Party)null);
+				return;
+			case InvoicePackage.INVOICE__PARTY_ID:
+				setPartyId((Party)null);
+				return;
 			case InvoicePackage.INVOICE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				setRoleTypeId((RoleType)null);
 				return;
 			case InvoicePackage.INVOICE__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
+				return;
+			case InvoicePackage.INVOICE__BILLING_ACCOUNT_ID:
+				setBillingAccountId((BillingAccount)null);
+				return;
+			case InvoicePackage.INVOICE__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)null);
+				return;
+			case InvoicePackage.INVOICE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case InvoicePackage.INVOICE__RECURRENCE_INFO_ID:
+				setRecurrenceInfoId((RecurrenceInfo)null);
 				return;
 			case InvoicePackage.INVOICE__INVOICE_ATTRIBUTES:
 				getInvoiceAttributes().clear();
@@ -1052,12 +1142,6 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 		switch (featureID) {
 			case InvoicePackage.INVOICE__INVOICE_ID:
 				return INVOICE_ID_EDEFAULT == null ? invoiceId != null : !INVOICE_ID_EDEFAULT.equals(invoiceId);
-			case InvoicePackage.INVOICE__BILLING_ACCOUNT_ID:
-				return BILLING_ACCOUNT_ID_EDEFAULT == null ? billingAccountId != null : !BILLING_ACCOUNT_ID_EDEFAULT.equals(billingAccountId);
-			case InvoicePackage.INVOICE__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
-			case InvoicePackage.INVOICE__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case InvoicePackage.INVOICE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case InvoicePackage.INVOICE__DUE_DATE:
@@ -1066,22 +1150,28 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 				return INVOICE_DATE_EDEFAULT == null ? invoiceDate != null : !INVOICE_DATE_EDEFAULT.equals(invoiceDate);
 			case InvoicePackage.INVOICE__INVOICE_MESSAGE:
 				return INVOICE_MESSAGE_EDEFAULT == null ? invoiceMessage != null : !INVOICE_MESSAGE_EDEFAULT.equals(invoiceMessage);
-			case InvoicePackage.INVOICE__INVOICE_TYPE_ID:
-				return INVOICE_TYPE_ID_EDEFAULT == null ? invoiceTypeId != null : !INVOICE_TYPE_ID_EDEFAULT.equals(invoiceTypeId);
 			case InvoicePackage.INVOICE__PAID_DATE:
 				return PAID_DATE_EDEFAULT == null ? paidDate != null : !PAID_DATE_EDEFAULT.equals(paidDate);
-			case InvoicePackage.INVOICE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case InvoicePackage.INVOICE__PARTY_ID_FROM:
-				return PARTY_ID_FROM_EDEFAULT == null ? partyIdFrom != null : !PARTY_ID_FROM_EDEFAULT.equals(partyIdFrom);
-			case InvoicePackage.INVOICE__RECURRENCE_INFO_ID:
-				return RECURRENCE_INFO_ID_EDEFAULT == null ? recurrenceInfoId != null : !RECURRENCE_INFO_ID_EDEFAULT.equals(recurrenceInfoId);
 			case InvoicePackage.INVOICE__REFERENCE_NUMBER:
 				return REFERENCE_NUMBER_EDEFAULT == null ? referenceNumber != null : !REFERENCE_NUMBER_EDEFAULT.equals(referenceNumber);
+			case InvoicePackage.INVOICE__INVOICE_TYPE_ID:
+				return invoiceTypeId != null;
+			case InvoicePackage.INVOICE__PARTY_ID_FROM:
+				return partyIdFrom != null;
+			case InvoicePackage.INVOICE__PARTY_ID:
+				return partyId != null;
 			case InvoicePackage.INVOICE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+				return roleTypeId != null;
 			case InvoicePackage.INVOICE__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
+			case InvoicePackage.INVOICE__BILLING_ACCOUNT_ID:
+				return billingAccountId != null;
+			case InvoicePackage.INVOICE__CONTACT_MECH_ID:
+				return contactMechId != null;
+			case InvoicePackage.INVOICE__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case InvoicePackage.INVOICE__RECURRENCE_INFO_ID:
+				return recurrenceInfoId != null;
 			case InvoicePackage.INVOICE__INVOICE_ATTRIBUTES:
 				return invoiceAttributes != null && !invoiceAttributes.isEmpty();
 			case InvoicePackage.INVOICE__INVOICE_ITEMS:
@@ -1104,12 +1194,6 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (invoiceId: ");
 		result.append(invoiceId);
-		result.append(", billingAccountId: ");
-		result.append(billingAccountId);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", dueDate: ");
@@ -1118,22 +1202,10 @@ public class InvoiceImpl extends BizEntityTypedImpl<InvoiceType> implements Invo
 		result.append(invoiceDate);
 		result.append(", invoiceMessage: ");
 		result.append(invoiceMessage);
-		result.append(", invoiceTypeId: ");
-		result.append(invoiceTypeId);
 		result.append(", paidDate: ");
 		result.append(paidDate);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", partyIdFrom: ");
-		result.append(partyIdFrom);
-		result.append(", recurrenceInfoId: ");
-		result.append(recurrenceInfoId);
 		result.append(", referenceNumber: ");
 		result.append(referenceNumber);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", invoiceAttributes: ");
 		result.append(invoiceAttributes);
 		result.append(", invoiceItems: ");

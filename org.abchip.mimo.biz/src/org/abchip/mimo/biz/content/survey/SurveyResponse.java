@@ -12,6 +12,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,13 +28,13 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getSurveyResponseId <em>Survey Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getGeneralFeedback <em>General Feedback</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getReferenceId <em>Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getResponseDate <em>Response Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getSurveyId <em>Survey Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse()
@@ -92,30 +95,30 @@ public interface SurveyResponse extends BizEntity {
 	void setLastModifiedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Id</em>' attribute.
-	 * @see #setOrderId(String)
+	 * @return the value of the '<em>Order Id</em>' reference.
+	 * @see #setOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_OrderId()
-	 * @model annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getOrderId();
+	OrderHeader getOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getOrderId <em>Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getOrderId <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Id</em>' reference.
 	 * @see #getOrderId()
 	 * @generated
 	 */
-	void setOrderId(String value);
+	void setOrderId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Order Item Seq Id</b></em>' attribute.
@@ -144,30 +147,30 @@ public interface SurveyResponse extends BizEntity {
 	void setOrderItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Reference Id</b></em>' attribute.
@@ -222,56 +225,56 @@ public interface SurveyResponse extends BizEntity {
 	void setResponseDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Survey Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Id</em>' attribute.
-	 * @see #setSurveyId(String)
+	 * @return the value of the '<em>Survey Id</em>' reference.
+	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyResponse_SurveyId()
-	 * @model annotation="mimo-ent-domain frame='Survey'"
+	 * @model keys="surveyId"
 	 * @generated
 	 */
-	String getSurveyId();
+	Survey getSurveyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getSurveyId <em>Survey Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyResponse#getSurveyId <em>Survey Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Survey Id</em>' attribute.
+	 * @param value the new value of the '<em>Survey Id</em>' reference.
 	 * @see #getSurveyId()
 	 * @generated
 	 */
-	void setSurveyId(String value);
+	void setSurveyId(Survey value);
 
 	/**
 	 * <!-- begin-user-doc -->

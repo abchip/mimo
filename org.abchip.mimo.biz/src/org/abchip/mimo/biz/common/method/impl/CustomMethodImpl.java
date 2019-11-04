@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -31,8 +33,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getCustomMethodId <em>Custom Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getCustomMethodName <em>Custom Method Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getCustomMethodTypeId <em>Custom Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getCustomMethodTypeId <em>Custom Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.method.impl.CustomMethodImpl#getFixedAssetDepMethods <em>Fixed Asset Dep Methods</em>}</li>
  * </ul>
  *
@@ -84,24 +86,6 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	protected String customMethodName = CUSTOM_METHOD_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCustomMethodTypeId() <em>Custom Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUSTOM_METHOD_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCustomMethodTypeId() <em>Custom Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String customMethodTypeId = CUSTOM_METHOD_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,6 +103,15 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getCustomMethodTypeId() <em>Custom Method Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethodType customMethodTypeId;
 
 	/**
 	 * The cached value of the '{@link #getFixedAssetDepMethods() <em>Fixed Asset Dep Methods</em>}' attribute list.
@@ -333,7 +326,24 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public String getCustomMethodTypeId() {
+	public CustomMethodType getCustomMethodTypeId() {
+		if (customMethodTypeId != null && ((EObject)customMethodTypeId).eIsProxy()) {
+			InternalEObject oldCustomMethodTypeId = (InternalEObject)customMethodTypeId;
+			customMethodTypeId = (CustomMethodType)eResolveProxy(oldCustomMethodTypeId);
+			if (customMethodTypeId != oldCustomMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID, oldCustomMethodTypeId, customMethodTypeId));
+			}
+		}
+		return customMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethodType basicGetCustomMethodTypeId() {
 		return customMethodTypeId;
 	}
 
@@ -343,8 +353,8 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 	 * @generated
 	 */
 	@Override
-	public void setCustomMethodTypeId(String newCustomMethodTypeId) {
-		String oldCustomMethodTypeId = customMethodTypeId;
+	public void setCustomMethodTypeId(CustomMethodType newCustomMethodTypeId) {
+		CustomMethodType oldCustomMethodTypeId = customMethodTypeId;
 		customMethodTypeId = newCustomMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID, oldCustomMethodTypeId, customMethodTypeId));
@@ -362,10 +372,11 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 				return getCustomMethodId();
 			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_NAME:
 				return getCustomMethodName();
-			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID:
-				return getCustomMethodTypeId();
 			case MethodPackage.CUSTOM_METHOD__DESCRIPTION:
 				return getDescription();
+			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID:
+				if (resolve) return getCustomMethodTypeId();
+				return basicGetCustomMethodTypeId();
 			case MethodPackage.CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS:
 				return getFixedAssetDepMethods();
 		}
@@ -387,11 +398,11 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_NAME:
 				setCustomMethodName((String)newValue);
 				return;
-			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID:
-				setCustomMethodTypeId((String)newValue);
-				return;
 			case MethodPackage.CUSTOM_METHOD__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID:
+				setCustomMethodTypeId((CustomMethodType)newValue);
 				return;
 			case MethodPackage.CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS:
 				getFixedAssetDepMethods().clear();
@@ -415,11 +426,11 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_NAME:
 				setCustomMethodName(CUSTOM_METHOD_NAME_EDEFAULT);
 				return;
-			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID:
-				setCustomMethodTypeId(CUSTOM_METHOD_TYPE_ID_EDEFAULT);
-				return;
 			case MethodPackage.CUSTOM_METHOD__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID:
+				setCustomMethodTypeId((CustomMethodType)null);
 				return;
 			case MethodPackage.CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS:
 				getFixedAssetDepMethods().clear();
@@ -440,10 +451,10 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 				return CUSTOM_METHOD_ID_EDEFAULT == null ? customMethodId != null : !CUSTOM_METHOD_ID_EDEFAULT.equals(customMethodId);
 			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_NAME:
 				return CUSTOM_METHOD_NAME_EDEFAULT == null ? customMethodName != null : !CUSTOM_METHOD_NAME_EDEFAULT.equals(customMethodName);
-			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID:
-				return CUSTOM_METHOD_TYPE_ID_EDEFAULT == null ? customMethodTypeId != null : !CUSTOM_METHOD_TYPE_ID_EDEFAULT.equals(customMethodTypeId);
 			case MethodPackage.CUSTOM_METHOD__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case MethodPackage.CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID:
+				return customMethodTypeId != null;
 			case MethodPackage.CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS:
 				return fixedAssetDepMethods != null && !fixedAssetDepMethods.isEmpty();
 		}
@@ -464,8 +475,6 @@ public class CustomMethodImpl extends BizEntityTypedImpl<CustomMethodType> imple
 		result.append(customMethodId);
 		result.append(", customMethodName: ");
 		result.append(customMethodName);
-		result.append(", customMethodTypeId: ");
-		result.append(customMethodTypeId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", fixedAssetDepMethods: ");

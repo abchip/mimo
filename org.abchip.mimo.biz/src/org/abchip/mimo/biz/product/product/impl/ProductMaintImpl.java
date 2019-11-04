@@ -9,13 +9,18 @@ package org.abchip.mimo.biz.product.product.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.product.ProductMaint;
 import org.abchip.mimo.biz.product.product.ProductMaintType;
+import org.abchip.mimo.biz.product.product.ProductMeterType;
 import org.abchip.mimo.biz.product.product.ProductPackage;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,13 +33,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getProductMaintSeqId <em>Product Maint Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getIntervalMeterTypeId <em>Interval Meter Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getIntervalQuantity <em>Interval Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getIntervalUomId <em>Interval Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getMaintName <em>Maint Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getMaintTemplateWorkEffortId <em>Maint Template Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getProductMaintTypeId <em>Product Maint Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getRepeatCount <em>Repeat Count</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getProductMaintTypeId <em>Product Maint Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getMaintTemplateWorkEffortId <em>Maint Template Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getIntervalUomId <em>Interval Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductMaintImpl#getIntervalMeterTypeId <em>Interval Meter Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,26 +91,6 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	protected String productMaintSeqId = PRODUCT_MAINT_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getIntervalMeterTypeId() <em>Interval Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntervalMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INTERVAL_METER_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIntervalMeterTypeId() <em>Interval Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntervalMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String intervalMeterTypeId = INTERVAL_METER_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getIntervalQuantity() <em>Interval Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,26 +109,6 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @ordered
 	 */
 	protected BigDecimal intervalQuantity = INTERVAL_QUANTITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getIntervalUomId() <em>Interval Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntervalUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INTERVAL_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIntervalUomId() <em>Interval Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntervalUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String intervalUomId = INTERVAL_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaintName() <em>Maint Name</em>}' attribute.
@@ -166,46 +131,6 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	protected String maintName = MAINT_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMaintTemplateWorkEffortId() <em>Maint Template Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaintTemplateWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MAINT_TEMPLATE_WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMaintTemplateWorkEffortId() <em>Maint Template Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaintTemplateWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String maintTemplateWorkEffortId = MAINT_TEMPLATE_WORK_EFFORT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMaintTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_MAINT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMaintTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productMaintTypeId = PRODUCT_MAINT_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getRepeatCount() <em>Repeat Count</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,6 +149,46 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @ordered
 	 */
 	protected long repeatCount = REPEAT_COUNT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductMaintTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductMaintType productMaintTypeId;
+
+	/**
+	 * The cached value of the '{@link #getMaintTemplateWorkEffortId() <em>Maint Template Work Effort Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaintTemplateWorkEffortId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffort maintTemplateWorkEffortId;
+
+	/**
+	 * The cached value of the '{@link #getIntervalUomId() <em>Interval Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntervalUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom intervalUomId;
+
+	/**
+	 * The cached value of the '{@link #getIntervalMeterTypeId() <em>Interval Meter Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntervalMeterTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductMeterType intervalMeterTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,7 +238,24 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public String getIntervalUomId() {
+	public Uom getIntervalUomId() {
+		if (intervalUomId != null && ((EObject)intervalUomId).eIsProxy()) {
+			InternalEObject oldIntervalUomId = (InternalEObject)intervalUomId;
+			intervalUomId = (Uom)eResolveProxy(oldIntervalUomId);
+			if (intervalUomId != oldIntervalUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID, oldIntervalUomId, intervalUomId));
+			}
+		}
+		return intervalUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetIntervalUomId() {
 		return intervalUomId;
 	}
 
@@ -283,8 +265,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public void setIntervalUomId(String newIntervalUomId) {
-		String oldIntervalUomId = intervalUomId;
+	public void setIntervalUomId(Uom newIntervalUomId) {
+		Uom oldIntervalUomId = intervalUomId;
 		intervalUomId = newIntervalUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID, oldIntervalUomId, intervalUomId));
@@ -319,7 +301,24 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public String getMaintTemplateWorkEffortId() {
+	public WorkEffort getMaintTemplateWorkEffortId() {
+		if (maintTemplateWorkEffortId != null && ((EObject)maintTemplateWorkEffortId).eIsProxy()) {
+			InternalEObject oldMaintTemplateWorkEffortId = (InternalEObject)maintTemplateWorkEffortId;
+			maintTemplateWorkEffortId = (WorkEffort)eResolveProxy(oldMaintTemplateWorkEffortId);
+			if (maintTemplateWorkEffortId != oldMaintTemplateWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID, oldMaintTemplateWorkEffortId, maintTemplateWorkEffortId));
+			}
+		}
+		return maintTemplateWorkEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetMaintTemplateWorkEffortId() {
 		return maintTemplateWorkEffortId;
 	}
 
@@ -329,8 +328,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public void setMaintTemplateWorkEffortId(String newMaintTemplateWorkEffortId) {
-		String oldMaintTemplateWorkEffortId = maintTemplateWorkEffortId;
+	public void setMaintTemplateWorkEffortId(WorkEffort newMaintTemplateWorkEffortId) {
+		WorkEffort oldMaintTemplateWorkEffortId = maintTemplateWorkEffortId;
 		maintTemplateWorkEffortId = newMaintTemplateWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID, oldMaintTemplateWorkEffortId, maintTemplateWorkEffortId));
@@ -411,7 +410,24 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public String getProductMaintTypeId() {
+	public ProductMaintType getProductMaintTypeId() {
+		if (productMaintTypeId != null && ((EObject)productMaintTypeId).eIsProxy()) {
+			InternalEObject oldProductMaintTypeId = (InternalEObject)productMaintTypeId;
+			productMaintTypeId = (ProductMaintType)eResolveProxy(oldProductMaintTypeId);
+			if (productMaintTypeId != oldProductMaintTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
+			}
+		}
+		return productMaintTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductMaintType basicGetProductMaintTypeId() {
 		return productMaintTypeId;
 	}
 
@@ -421,8 +437,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public void setProductMaintTypeId(String newProductMaintTypeId) {
-		String oldProductMaintTypeId = productMaintTypeId;
+	public void setProductMaintTypeId(ProductMaintType newProductMaintTypeId) {
+		ProductMaintType oldProductMaintTypeId = productMaintTypeId;
 		productMaintTypeId = newProductMaintTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
@@ -434,7 +450,24 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public String getIntervalMeterTypeId() {
+	public ProductMeterType getIntervalMeterTypeId() {
+		if (intervalMeterTypeId != null && ((EObject)intervalMeterTypeId).eIsProxy()) {
+			InternalEObject oldIntervalMeterTypeId = (InternalEObject)intervalMeterTypeId;
+			intervalMeterTypeId = (ProductMeterType)eResolveProxy(oldIntervalMeterTypeId);
+			if (intervalMeterTypeId != oldIntervalMeterTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID, oldIntervalMeterTypeId, intervalMeterTypeId));
+			}
+		}
+		return intervalMeterTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductMeterType basicGetIntervalMeterTypeId() {
 		return intervalMeterTypeId;
 	}
 
@@ -444,8 +477,8 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 	 * @generated
 	 */
 	@Override
-	public void setIntervalMeterTypeId(String newIntervalMeterTypeId) {
-		String oldIntervalMeterTypeId = intervalMeterTypeId;
+	public void setIntervalMeterTypeId(ProductMeterType newIntervalMeterTypeId) {
+		ProductMeterType oldIntervalMeterTypeId = intervalMeterTypeId;
 		intervalMeterTypeId = newIntervalMeterTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID, oldIntervalMeterTypeId, intervalMeterTypeId));
@@ -463,20 +496,24 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 				return getProductId();
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID:
 				return getProductMaintSeqId();
-			case ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID:
-				return getIntervalMeterTypeId();
 			case ProductPackage.PRODUCT_MAINT__INTERVAL_QUANTITY:
 				return getIntervalQuantity();
-			case ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID:
-				return getIntervalUomId();
 			case ProductPackage.PRODUCT_MAINT__MAINT_NAME:
 				return getMaintName();
-			case ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID:
-				return getMaintTemplateWorkEffortId();
-			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
-				return getProductMaintTypeId();
 			case ProductPackage.PRODUCT_MAINT__REPEAT_COUNT:
 				return getRepeatCount();
+			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
+				if (resolve) return getProductMaintTypeId();
+				return basicGetProductMaintTypeId();
+			case ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID:
+				if (resolve) return getMaintTemplateWorkEffortId();
+				return basicGetMaintTemplateWorkEffortId();
+			case ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID:
+				if (resolve) return getIntervalUomId();
+				return basicGetIntervalUomId();
+			case ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID:
+				if (resolve) return getIntervalMeterTypeId();
+				return basicGetIntervalMeterTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -495,26 +532,26 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID:
 				setProductMaintSeqId((String)newValue);
 				return;
-			case ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID:
-				setIntervalMeterTypeId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_MAINT__INTERVAL_QUANTITY:
 				setIntervalQuantity((BigDecimal)newValue);
-				return;
-			case ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID:
-				setIntervalUomId((String)newValue);
 				return;
 			case ProductPackage.PRODUCT_MAINT__MAINT_NAME:
 				setMaintName((String)newValue);
 				return;
-			case ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID:
-				setMaintTemplateWorkEffortId((String)newValue);
-				return;
-			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
-				setProductMaintTypeId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_MAINT__REPEAT_COUNT:
 				setRepeatCount((Long)newValue);
+				return;
+			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
+				setProductMaintTypeId((ProductMaintType)newValue);
+				return;
+			case ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID:
+				setMaintTemplateWorkEffortId((WorkEffort)newValue);
+				return;
+			case ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID:
+				setIntervalUomId((Uom)newValue);
+				return;
+			case ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID:
+				setIntervalMeterTypeId((ProductMeterType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -534,26 +571,26 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID:
 				setProductMaintSeqId(PRODUCT_MAINT_SEQ_ID_EDEFAULT);
 				return;
-			case ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID:
-				setIntervalMeterTypeId(INTERVAL_METER_TYPE_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_MAINT__INTERVAL_QUANTITY:
 				setIntervalQuantity(INTERVAL_QUANTITY_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID:
-				setIntervalUomId(INTERVAL_UOM_ID_EDEFAULT);
 				return;
 			case ProductPackage.PRODUCT_MAINT__MAINT_NAME:
 				setMaintName(MAINT_NAME_EDEFAULT);
 				return;
-			case ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID:
-				setMaintTemplateWorkEffortId(MAINT_TEMPLATE_WORK_EFFORT_ID_EDEFAULT);
-				return;
-			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
-				setProductMaintTypeId(PRODUCT_MAINT_TYPE_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_MAINT__REPEAT_COUNT:
 				setRepeatCount(REPEAT_COUNT_EDEFAULT);
+				return;
+			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
+				setProductMaintTypeId((ProductMaintType)null);
+				return;
+			case ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID:
+				setMaintTemplateWorkEffortId((WorkEffort)null);
+				return;
+			case ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID:
+				setIntervalUomId((Uom)null);
+				return;
+			case ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID:
+				setIntervalMeterTypeId((ProductMeterType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -571,20 +608,20 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_SEQ_ID:
 				return PRODUCT_MAINT_SEQ_ID_EDEFAULT == null ? productMaintSeqId != null : !PRODUCT_MAINT_SEQ_ID_EDEFAULT.equals(productMaintSeqId);
-			case ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID:
-				return INTERVAL_METER_TYPE_ID_EDEFAULT == null ? intervalMeterTypeId != null : !INTERVAL_METER_TYPE_ID_EDEFAULT.equals(intervalMeterTypeId);
 			case ProductPackage.PRODUCT_MAINT__INTERVAL_QUANTITY:
 				return INTERVAL_QUANTITY_EDEFAULT == null ? intervalQuantity != null : !INTERVAL_QUANTITY_EDEFAULT.equals(intervalQuantity);
-			case ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID:
-				return INTERVAL_UOM_ID_EDEFAULT == null ? intervalUomId != null : !INTERVAL_UOM_ID_EDEFAULT.equals(intervalUomId);
 			case ProductPackage.PRODUCT_MAINT__MAINT_NAME:
 				return MAINT_NAME_EDEFAULT == null ? maintName != null : !MAINT_NAME_EDEFAULT.equals(maintName);
-			case ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID:
-				return MAINT_TEMPLATE_WORK_EFFORT_ID_EDEFAULT == null ? maintTemplateWorkEffortId != null : !MAINT_TEMPLATE_WORK_EFFORT_ID_EDEFAULT.equals(maintTemplateWorkEffortId);
-			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
-				return PRODUCT_MAINT_TYPE_ID_EDEFAULT == null ? productMaintTypeId != null : !PRODUCT_MAINT_TYPE_ID_EDEFAULT.equals(productMaintTypeId);
 			case ProductPackage.PRODUCT_MAINT__REPEAT_COUNT:
 				return repeatCount != REPEAT_COUNT_EDEFAULT;
+			case ProductPackage.PRODUCT_MAINT__PRODUCT_MAINT_TYPE_ID:
+				return productMaintTypeId != null;
+			case ProductPackage.PRODUCT_MAINT__MAINT_TEMPLATE_WORK_EFFORT_ID:
+				return maintTemplateWorkEffortId != null;
+			case ProductPackage.PRODUCT_MAINT__INTERVAL_UOM_ID:
+				return intervalUomId != null;
+			case ProductPackage.PRODUCT_MAINT__INTERVAL_METER_TYPE_ID:
+				return intervalMeterTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -603,18 +640,10 @@ public class ProductMaintImpl extends BizEntityTypedImpl<ProductMaintType> imple
 		result.append(productId);
 		result.append(", productMaintSeqId: ");
 		result.append(productMaintSeqId);
-		result.append(", intervalMeterTypeId: ");
-		result.append(intervalMeterTypeId);
 		result.append(", intervalQuantity: ");
 		result.append(intervalQuantity);
-		result.append(", intervalUomId: ");
-		result.append(intervalUomId);
 		result.append(", maintName: ");
 		result.append(maintName);
-		result.append(", maintTemplateWorkEffortId: ");
-		result.append(maintTemplateWorkEffortId);
-		result.append(", productMaintTypeId: ");
-		result.append(productMaintTypeId);
 		result.append(", repeatCount: ");
 		result.append(repeatCount);
 		result.append(')');

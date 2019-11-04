@@ -10,12 +10,15 @@ package org.abchip.mimo.biz.shipment.shipment.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,8 +33,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getSubProductId <em>Sub Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getSubProductQuantity <em>Sub Product Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentPackageContentImpl#getSubProductId <em>Sub Product Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,26 +126,6 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSubProductId() <em>Sub Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUB_PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSubProductId() <em>Sub Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subProductId = SUB_PRODUCT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSubProductQuantity() <em>Sub Product Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +144,16 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 * @ordered
 	 */
 	protected BigDecimal subProductQuantity = SUB_PRODUCT_QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSubProductId() <em>Sub Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product subProductId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,7 +272,24 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 * @generated
 	 */
 	@Override
-	public String getSubProductId() {
+	public Product getSubProductId() {
+		if (subProductId != null && ((EObject)subProductId).eIsProxy()) {
+			InternalEObject oldSubProductId = (InternalEObject)subProductId;
+			subProductId = (Product)eResolveProxy(oldSubProductId);
+			if (subProductId != oldSubProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID, oldSubProductId, subProductId));
+			}
+		}
+		return subProductId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetSubProductId() {
 		return subProductId;
 	}
 
@@ -289,8 +299,8 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 	 * @generated
 	 */
 	@Override
-	public void setSubProductId(String newSubProductId) {
-		String oldSubProductId = subProductId;
+	public void setSubProductId(Product newSubProductId) {
+		Product oldSubProductId = subProductId;
 		subProductId = newSubProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID, oldSubProductId, subProductId));
@@ -335,10 +345,11 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 				return getShipmentItemSeqId();
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__QUANTITY:
 				return getQuantity();
-			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
-				return getSubProductId();
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY:
 				return getSubProductQuantity();
+			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
+				if (resolve) return getSubProductId();
+				return basicGetSubProductId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,11 +374,11 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__QUANTITY:
 				setQuantity((BigDecimal)newValue);
 				return;
-			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
-				setSubProductId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY:
 				setSubProductQuantity((BigDecimal)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
+				setSubProductId((Product)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -393,11 +404,11 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
 				return;
-			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
-				setSubProductId(SUB_PRODUCT_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY:
 				setSubProductQuantity(SUB_PRODUCT_QUANTITY_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
+				setSubProductId((Product)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -419,10 +430,10 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
-			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
-				return SUB_PRODUCT_ID_EDEFAULT == null ? subProductId != null : !SUB_PRODUCT_ID_EDEFAULT.equals(subProductId);
 			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_QUANTITY:
 				return SUB_PRODUCT_QUANTITY_EDEFAULT == null ? subProductQuantity != null : !SUB_PRODUCT_QUANTITY_EDEFAULT.equals(subProductQuantity);
+			case Shipment_Package.SHIPMENT_PACKAGE_CONTENT__SUB_PRODUCT_ID:
+				return subProductId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -445,8 +456,6 @@ public class ShipmentPackageContentImpl extends BizEntityImpl implements Shipmen
 		result.append(shipmentItemSeqId);
 		result.append(", quantity: ");
 		result.append(quantity);
-		result.append(", subProductId: ");
-		result.append(subProductId);
 		result.append(", subProductQuantity: ");
 		result.append(subProductQuantity);
 		result.append(')');

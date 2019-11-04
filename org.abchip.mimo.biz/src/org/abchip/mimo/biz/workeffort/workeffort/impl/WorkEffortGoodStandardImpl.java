@@ -11,7 +11,9 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandard;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortGoodStandardType;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
@@ -19,6 +21,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,13 +34,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getWorkEffortGoodStdTypeId <em>Work Effort Good Std Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getEstimatedCost <em>Estimated Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getEstimatedQuantity <em>Estimated Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getWorkEffortGoodStdTypeId <em>Work Effort Good Std Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortGoodStandardImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,46 +70,6 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 * @ordered
 	 */
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortGoodStdTypeId() <em>Work Effort Good Std Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortGoodStdTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORK_EFFORT_GOOD_STD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortGoodStdTypeId() <em>Work Effort Good Std Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortGoodStdTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortGoodStdTypeId = WORK_EFFORT_GOOD_STD_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -168,26 +132,6 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	protected double estimatedQuantity = ESTIMATED_QUANTITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -206,6 +150,36 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWorkEffortGoodStdTypeId() <em>Work Effort Good Std Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkEffortGoodStdTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkEffortGoodStandardType workEffortGoodStdTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,7 +275,24 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -311,8 +302,8 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID, oldProductId, productId));
@@ -324,7 +315,24 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -334,8 +342,8 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID, oldStatusId, statusId));
@@ -370,7 +378,24 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortGoodStdTypeId() {
+	public WorkEffortGoodStandardType getWorkEffortGoodStdTypeId() {
+		if (workEffortGoodStdTypeId != null && ((EObject)workEffortGoodStdTypeId).eIsProxy()) {
+			InternalEObject oldWorkEffortGoodStdTypeId = (InternalEObject)workEffortGoodStdTypeId;
+			workEffortGoodStdTypeId = (WorkEffortGoodStandardType)eResolveProxy(oldWorkEffortGoodStdTypeId);
+			if (workEffortGoodStdTypeId != oldWorkEffortGoodStdTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID, oldWorkEffortGoodStdTypeId, workEffortGoodStdTypeId));
+			}
+		}
+		return workEffortGoodStdTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffortGoodStandardType basicGetWorkEffortGoodStdTypeId() {
 		return workEffortGoodStdTypeId;
 	}
 
@@ -380,8 +405,8 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortGoodStdTypeId(String newWorkEffortGoodStdTypeId) {
-		String oldWorkEffortGoodStdTypeId = workEffortGoodStdTypeId;
+	public void setWorkEffortGoodStdTypeId(WorkEffortGoodStandardType newWorkEffortGoodStdTypeId) {
+		WorkEffortGoodStandardType oldWorkEffortGoodStdTypeId = workEffortGoodStdTypeId;
 		workEffortGoodStdTypeId = newWorkEffortGoodStdTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID, oldWorkEffortGoodStdTypeId, workEffortGoodStdTypeId));
@@ -420,20 +445,23 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_ID:
 				return getWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID:
-				return getProductId();
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID:
-				return getWorkEffortGoodStdTypeId();
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__FROM_DATE:
 				return getFromDate();
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__ESTIMATED_COST:
 				return getEstimatedCost();
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__ESTIMATED_QUANTITY:
 				return getEstimatedQuantity();
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID:
-				return getStatusId();
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID:
+				if (resolve) return getWorkEffortGoodStdTypeId();
+				return basicGetWorkEffortGoodStdTypeId();
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -449,12 +477,6 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID:
-				setWorkEffortGoodStdTypeId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -464,11 +486,17 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__ESTIMATED_QUANTITY:
 				setEstimatedQuantity((Double)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID:
+				setWorkEffortGoodStdTypeId((WorkEffortGoodStandardType)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -485,12 +513,6 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID:
-				setWorkEffortGoodStdTypeId(WORK_EFFORT_GOOD_STD_TYPE_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -500,11 +522,17 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__ESTIMATED_QUANTITY:
 				setEstimatedQuantity(ESTIMATED_QUANTITY_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID:
+				setWorkEffortGoodStdTypeId((WorkEffortGoodStandardType)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -520,20 +548,20 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID:
-				return WORK_EFFORT_GOOD_STD_TYPE_ID_EDEFAULT == null ? workEffortGoodStdTypeId != null : !WORK_EFFORT_GOOD_STD_TYPE_ID_EDEFAULT.equals(workEffortGoodStdTypeId);
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__ESTIMATED_COST:
 				return ESTIMATED_COST_EDEFAULT == null ? estimatedCost != null : !ESTIMATED_COST_EDEFAULT.equals(estimatedCost);
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__ESTIMATED_QUANTITY:
 				return estimatedQuantity != ESTIMATED_QUANTITY_EDEFAULT;
-			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__WORK_EFFORT_GOOD_STD_TYPE_ID:
+				return workEffortGoodStdTypeId != null;
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__PRODUCT_ID:
+				return productId != null;
+			case WorkeffortPackage.WORK_EFFORT_GOOD_STANDARD__STATUS_ID:
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -550,18 +578,12 @@ public class WorkEffortGoodStandardImpl extends BizEntityTypedImpl<WorkEffortGoo
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", productId: ");
-		result.append(productId);
-		result.append(", workEffortGoodStdTypeId: ");
-		result.append(workEffortGoodStdTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", estimatedCost: ");
 		result.append(estimatedCost);
 		result.append(", estimatedQuantity: ");
 		result.append(estimatedQuantity);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

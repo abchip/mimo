@@ -43,7 +43,8 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @return the value of the '<em>Config Id</em>' attribute.
 	 * @see #setConfigId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_ConfigId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigId();
@@ -69,7 +70,8 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @return the value of the '<em>Config Item Id</em>' attribute.
 	 * @see #setConfigItemId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_ConfigItemId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigItemId();
@@ -95,7 +97,8 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @return the value of the '<em>Config Option Id</em>' attribute.
 	 * @see #setConfigOptionId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_ConfigOptionId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getConfigOptionId();
@@ -147,7 +150,8 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();
@@ -199,7 +203,8 @@ public interface ConfigOptionProductOption extends BizEntity {
 	 * @return the value of the '<em>Sequence Num</em>' attribute.
 	 * @see #setSequenceNum(long)
 	 * @see org.abchip.mimo.biz.product.config.ConfigPackage#getConfigOptionProductOption_SequenceNum()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	long getSequenceNum();

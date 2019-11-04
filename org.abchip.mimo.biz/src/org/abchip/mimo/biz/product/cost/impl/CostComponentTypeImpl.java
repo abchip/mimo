@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -105,24 +107,14 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected CostComponentType parentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getCostComponentTypeAttrs() <em>Cost Component Type Attrs</em>}' attribute list.
@@ -205,7 +197,24 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public CostComponentType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (CostComponentType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CostComponentType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -215,8 +224,8 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(CostComponentType newParentTypeId) {
+		CostComponentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -297,7 +306,8 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 			case CostPackage.COST_COMPONENT_TYPE__HAS_TABLE:
 				return isHasTable();
 			case CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS:
 				return getCostComponentTypeAttrs();
 		}
@@ -323,7 +333,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 				setHasTable((Boolean)newValue);
 				return;
 			case CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((CostComponentType)newValue);
 				return;
 			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS:
 				getCostComponentTypeAttrs().clear();
@@ -351,7 +361,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((CostComponentType)null);
 				return;
 			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS:
 				getCostComponentTypeAttrs().clear();
@@ -375,7 +385,7 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 			case CostPackage.COST_COMPONENT_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case CostPackage.COST_COMPONENT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case CostPackage.COST_COMPONENT_TYPE__COST_COMPONENT_TYPE_ATTRS:
 				return costComponentTypeAttrs != null && !costComponentTypeAttrs.isEmpty();
 		}
@@ -398,8 +408,6 @@ public class CostComponentTypeImpl extends BizEntityTypeImpl<CostComponent> impl
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", costComponentTypeAttrs: ");
 		result.append(costComponentTypeAttrs);
 		result.append(')');

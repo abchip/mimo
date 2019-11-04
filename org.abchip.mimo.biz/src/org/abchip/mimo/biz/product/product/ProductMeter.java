@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.product;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,8 +20,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getMeterName <em>Meter Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeter#getMeterUomId <em>Meter Uom Id</em>}</li>
  * </ul>
  *
@@ -56,30 +57,30 @@ public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
 	void setMeterName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Meter Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Meter Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Meter Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Meter Uom Id</em>' attribute.
-	 * @see #setMeterUomId(String)
+	 * @return the value of the '<em>Meter Uom Id</em>' reference.
+	 * @see #setMeterUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter_MeterUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getMeterUomId();
+	Uom getMeterUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMeter#getMeterUomId <em>Meter Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMeter#getMeterUomId <em>Meter Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Meter Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Meter Uom Id</em>' reference.
 	 * @see #getMeterUomId()
 	 * @generated
 	 */
-	void setMeterUomId(String value);
+	void setMeterUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
@@ -92,8 +93,8 @@ public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();
@@ -109,30 +110,29 @@ public interface ProductMeter extends BizEntityTyped<ProductMeterType> {
 	void setProductId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Meter Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Meter Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Meter Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Meter Type Id</em>' attribute.
-	 * @see #setProductMeterTypeId(String)
+	 * @return the value of the '<em>Product Meter Type Id</em>' reference.
+	 * @see #setProductMeterTypeId(ProductMeterType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeter_ProductMeterTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductMeterType'"
+	 * @model keys="productMeterTypeId"
 	 * @generated
 	 */
-	String getProductMeterTypeId();
+	ProductMeterType getProductMeterTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMeter#getProductMeterTypeId <em>Product Meter Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMeter#getProductMeterTypeId <em>Product Meter Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Meter Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Meter Type Id</em>' reference.
 	 * @see #getProductMeterTypeId()
 	 * @generated
 	 */
-	void setProductMeterTypeId(String value);
+	void setProductMeterTypeId(ProductMeterType value);
 
 } // ProductMeter

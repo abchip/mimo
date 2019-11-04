@@ -204,6 +204,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -396,6 +397,20 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -412,20 +427,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -538,6 +539,13 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -546,13 +554,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -633,6 +634,13 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -641,13 +649,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -735,8 +736,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactList_ContactListTypeId() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(3);
+	public EReference getContactList_ContactListTypeId() {
+		return (EReference)contactListEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -745,8 +746,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactList_ContactMechTypeId() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(4);
+	public EReference getContactList_ContactMechTypeId() {
+		return (EReference)contactListEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -755,8 +756,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactList_CreatedByUserLogin() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(5);
+	public EReference getContactList_CreatedByUserLogin() {
+		return (EReference)contactListEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -766,7 +767,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactList_Description() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)contactListEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -776,7 +777,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactList_IsPublic() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)contactListEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -785,8 +786,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactList_LastModifiedByUserLogin() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(8);
+	public EReference getContactList_LastModifiedByUserLogin() {
+		return (EReference)contactListEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -795,8 +796,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactList_MarketingCampaignId() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(9);
+	public EReference getContactList_MarketingCampaignId() {
+		return (EReference)contactListEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -806,7 +807,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactList_OptOutScreen() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)contactListEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -815,8 +816,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactList_OwnerPartyId() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(11);
+	public EReference getContactList_OwnerPartyId() {
+		return (EReference)contactListEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -826,7 +827,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactList_SingleUse() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)contactListEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -836,7 +837,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactList_VerifyEmailFrom() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)contactListEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -846,7 +847,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactList_VerifyEmailScreen() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)contactListEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -856,7 +857,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactList_VerifyEmailSubject() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)contactListEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -866,7 +867,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactList_VerifyEmailWebSiteId() {
-		return (EAttribute)contactListEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)contactListEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -895,8 +896,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactListCommStatus_CommunicationEventId() {
-		return (EAttribute)contactListCommStatusEClass.getEStructuralFeatures().get(1);
+	public EReference getContactListCommStatus_CommunicationEventId() {
+		return (EReference)contactListCommStatusEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -905,8 +906,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactListCommStatus_ContactMechId() {
-		return (EAttribute)contactListCommStatusEClass.getEStructuralFeatures().get(2);
+	public EReference getContactListCommStatus_ContactMechId() {
+		return (EReference)contactListCommStatusEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -915,8 +916,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactListCommStatus_ChangeByUserLoginId() {
-		return (EAttribute)contactListCommStatusEClass.getEStructuralFeatures().get(3);
+	public EReference getContactListCommStatus_ChangeByUserLoginId() {
+		return (EReference)contactListCommStatusEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -926,7 +927,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactListCommStatus_MessageId() {
-		return (EAttribute)contactListCommStatusEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)contactListCommStatusEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -935,8 +936,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactListCommStatus_PartyId() {
-		return (EAttribute)contactListCommStatusEClass.getEStructuralFeatures().get(5);
+	public EReference getContactListCommStatus_PartyId() {
+		return (EReference)contactListCommStatusEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -945,8 +946,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactListCommStatus_StatusId() {
-		return (EAttribute)contactListCommStatusEClass.getEStructuralFeatures().get(6);
+	public EReference getContactListCommStatus_StatusId() {
+		return (EReference)contactListCommStatusEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -975,8 +976,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactListParty_PartyId() {
-		return (EAttribute)contactListPartyEClass.getEStructuralFeatures().get(1);
+	public EReference getContactListParty_PartyId() {
+		return (EReference)contactListPartyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -986,7 +987,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactListParty_FromDate() {
-		return (EAttribute)contactListPartyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)contactListPartyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -995,8 +996,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactListParty_PreferredContactMechId() {
-		return (EAttribute)contactListPartyEClass.getEStructuralFeatures().get(3);
+	public EReference getContactListParty_PreferredContactMechId() {
+		return (EReference)contactListPartyEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1005,8 +1006,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContactListParty_StatusId() {
-		return (EAttribute)contactListPartyEClass.getEStructuralFeatures().get(4);
+	public EReference getContactListParty_StatusId() {
+		return (EReference)contactListPartyEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1016,7 +1017,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getContactListParty_ThruDate() {
-		return (EAttribute)contactListPartyEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)contactListPartyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1155,8 +1156,8 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWebSiteContactList_ContactListId() {
-		return (EAttribute)webSiteContactListEClass.getEStructuralFeatures().get(1);
+	public EReference getWebSiteContactList_ContactListId() {
+		return (EReference)webSiteContactListEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1166,7 +1167,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getWebSiteContactList_FromDate() {
-		return (EAttribute)webSiteContactListEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)webSiteContactListEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1176,7 +1177,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 	 */
 	@Override
 	public EAttribute getWebSiteContactList_ThruDate() {
-		return (EAttribute)webSiteContactListEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)webSiteContactListEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1212,37 +1213,37 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 		createEAttribute(contactListEClass, CONTACT_LIST__CONTACT_LIST_ID);
 		createEAttribute(contactListEClass, CONTACT_LIST__COMMENTS);
 		createEAttribute(contactListEClass, CONTACT_LIST__CONTACT_LIST_NAME);
-		createEAttribute(contactListEClass, CONTACT_LIST__CONTACT_LIST_TYPE_ID);
-		createEAttribute(contactListEClass, CONTACT_LIST__CONTACT_MECH_TYPE_ID);
-		createEAttribute(contactListEClass, CONTACT_LIST__CREATED_BY_USER_LOGIN);
 		createEAttribute(contactListEClass, CONTACT_LIST__DESCRIPTION);
 		createEAttribute(contactListEClass, CONTACT_LIST__IS_PUBLIC);
-		createEAttribute(contactListEClass, CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN);
-		createEAttribute(contactListEClass, CONTACT_LIST__MARKETING_CAMPAIGN_ID);
 		createEAttribute(contactListEClass, CONTACT_LIST__OPT_OUT_SCREEN);
-		createEAttribute(contactListEClass, CONTACT_LIST__OWNER_PARTY_ID);
 		createEAttribute(contactListEClass, CONTACT_LIST__SINGLE_USE);
 		createEAttribute(contactListEClass, CONTACT_LIST__VERIFY_EMAIL_FROM);
 		createEAttribute(contactListEClass, CONTACT_LIST__VERIFY_EMAIL_SCREEN);
 		createEAttribute(contactListEClass, CONTACT_LIST__VERIFY_EMAIL_SUBJECT);
 		createEAttribute(contactListEClass, CONTACT_LIST__VERIFY_EMAIL_WEB_SITE_ID);
+		createEReference(contactListEClass, CONTACT_LIST__MARKETING_CAMPAIGN_ID);
+		createEReference(contactListEClass, CONTACT_LIST__CONTACT_LIST_TYPE_ID);
+		createEReference(contactListEClass, CONTACT_LIST__CONTACT_MECH_TYPE_ID);
+		createEReference(contactListEClass, CONTACT_LIST__CREATED_BY_USER_LOGIN);
+		createEReference(contactListEClass, CONTACT_LIST__LAST_MODIFIED_BY_USER_LOGIN);
+		createEReference(contactListEClass, CONTACT_LIST__OWNER_PARTY_ID);
 
 		contactListCommStatusEClass = createEClass(CONTACT_LIST_COMM_STATUS);
 		createEAttribute(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__CONTACT_LIST_ID);
-		createEAttribute(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID);
-		createEAttribute(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID);
-		createEAttribute(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID);
 		createEAttribute(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__MESSAGE_ID);
-		createEAttribute(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__PARTY_ID);
-		createEAttribute(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__STATUS_ID);
+		createEReference(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__COMMUNICATION_EVENT_ID);
+		createEReference(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__CONTACT_MECH_ID);
+		createEReference(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__PARTY_ID);
+		createEReference(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__STATUS_ID);
+		createEReference(contactListCommStatusEClass, CONTACT_LIST_COMM_STATUS__CHANGE_BY_USER_LOGIN_ID);
 
 		contactListPartyEClass = createEClass(CONTACT_LIST_PARTY);
 		createEAttribute(contactListPartyEClass, CONTACT_LIST_PARTY__CONTACT_LIST_ID);
-		createEAttribute(contactListPartyEClass, CONTACT_LIST_PARTY__PARTY_ID);
 		createEAttribute(contactListPartyEClass, CONTACT_LIST_PARTY__FROM_DATE);
-		createEAttribute(contactListPartyEClass, CONTACT_LIST_PARTY__PREFERRED_CONTACT_MECH_ID);
-		createEAttribute(contactListPartyEClass, CONTACT_LIST_PARTY__STATUS_ID);
 		createEAttribute(contactListPartyEClass, CONTACT_LIST_PARTY__THRU_DATE);
+		createEReference(contactListPartyEClass, CONTACT_LIST_PARTY__PARTY_ID);
+		createEReference(contactListPartyEClass, CONTACT_LIST_PARTY__STATUS_ID);
+		createEReference(contactListPartyEClass, CONTACT_LIST_PARTY__PREFERRED_CONTACT_MECH_ID);
 
 		contactListPartyStatusEClass = createEClass(CONTACT_LIST_PARTY_STATUS);
 		createEAttribute(contactListPartyStatusEClass, CONTACT_LIST_PARTY_STATUS__CONTACT_LIST_ID);
@@ -1259,9 +1260,9 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 
 		webSiteContactListEClass = createEClass(WEB_SITE_CONTACT_LIST);
 		createEAttribute(webSiteContactListEClass, WEB_SITE_CONTACT_LIST__WEB_SITE_ID);
-		createEAttribute(webSiteContactListEClass, WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID);
 		createEAttribute(webSiteContactListEClass, WEB_SITE_CONTACT_LIST__FROM_DATE);
 		createEAttribute(webSiteContactListEClass, WEB_SITE_CONTACT_LIST__THRU_DATE);
+		createEReference(webSiteContactListEClass, WEB_SITE_CONTACT_LIST__CONTACT_LIST_ID);
 	}
 
 	/**
@@ -1289,6 +1290,12 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		CampaignPackage theCampaignPackage = (CampaignPackage)EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		org.abchip.mimo.biz.party.contact.ContactPackage theContactPackage_1 = (org.abchip.mimo.biz.party.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.contact.ContactPackage.eNS_URI);
+		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		CommunicationPackage theCommunicationPackage = (CommunicationPackage)EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
+		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1310,63 +1317,78 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contactListEClass, ContactList.class, "ContactList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContactList_ContactListId(), ecorePackage.getEString(), "contactListId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContactList_ContactListId(), ecorePackage.getEString(), "contactListId", null, 1, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_ContactListName(), ecorePackage.getEString(), "contactListName", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactList_ContactListTypeId(), ecorePackage.getEString(), "contactListTypeId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactList_ContactMechTypeId(), ecorePackage.getEString(), "contactMechTypeId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactList_CreatedByUserLogin(), ecorePackage.getEString(), "createdByUserLogin", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_Description(), ecorePackage.getEString(), "description", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_IsPublic(), ecorePackage.getEBoolean(), "isPublic", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactList_LastModifiedByUserLogin(), ecorePackage.getEString(), "lastModifiedByUserLogin", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactList_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_OptOutScreen(), ecorePackage.getEString(), "optOutScreen", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactList_OwnerPartyId(), ecorePackage.getEString(), "ownerPartyId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_SingleUse(), ecorePackage.getEBoolean(), "singleUse", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_VerifyEmailFrom(), ecorePackage.getEString(), "verifyEmailFrom", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_VerifyEmailScreen(), ecorePackage.getEString(), "verifyEmailScreen", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_VerifyEmailSubject(), ecorePackage.getEString(), "verifyEmailSubject", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactList_VerifyEmailWebSiteId(), ecorePackage.getEString(), "verifyEmailWebSiteId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContactList_MarketingCampaignId(), theCampaignPackage.getMarketingCampaign(), null, "marketingCampaignId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactList_MarketingCampaignId().getEKeys().add(theCampaignPackage.getMarketingCampaign_MarketingCampaignId());
+		initEReference(getContactList_ContactListTypeId(), this.getContactListType(), null, "contactListTypeId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactList_ContactListTypeId().getEKeys().add(this.getContactListType_ContactListTypeId());
+		initEReference(getContactList_ContactMechTypeId(), theContactPackage_1.getContactMechType(), null, "contactMechTypeId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactList_ContactMechTypeId().getEKeys().add(theContactPackage_1.getContactMechType_ContactMechTypeId());
+		initEReference(getContactList_CreatedByUserLogin(), theLoginPackage.getUserLogin(), null, "createdByUserLogin", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactList_CreatedByUserLogin().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
+		initEReference(getContactList_LastModifiedByUserLogin(), theLoginPackage.getUserLogin(), null, "lastModifiedByUserLogin", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactList_LastModifiedByUserLogin().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
+		initEReference(getContactList_OwnerPartyId(), thePartyPackage.getParty(), null, "ownerPartyId", null, 0, 1, ContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactList_OwnerPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		addEOperation(contactListEClass, ecorePackage.getEString(), "communicationEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(contactListCommStatusEClass, ContactListCommStatus.class, "ContactListCommStatus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContactListCommStatus_ContactListId(), ecorePackage.getEString(), "contactListId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListCommStatus_CommunicationEventId(), ecorePackage.getEString(), "communicationEventId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListCommStatus_ContactMechId(), ecorePackage.getEString(), "contactMechId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListCommStatus_ChangeByUserLoginId(), ecorePackage.getEString(), "changeByUserLoginId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContactListCommStatus_ContactListId(), ecorePackage.getEString(), "contactListId", null, 1, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactListCommStatus_MessageId(), ecorePackage.getEString(), "messageId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListCommStatus_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListCommStatus_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContactListCommStatus_CommunicationEventId(), theCommunicationPackage.getCommunicationEvent(), null, "communicationEventId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactListCommStatus_CommunicationEventId().getEKeys().add(theCommunicationPackage.getCommunicationEvent_CommunicationEventId());
+		initEReference(getContactListCommStatus_ContactMechId(), theContactPackage_1.getContactMech(), null, "contactMechId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactListCommStatus_ContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
+		initEReference(getContactListCommStatus_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactListCommStatus_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getContactListCommStatus_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactListCommStatus_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEReference(getContactListCommStatus_ChangeByUserLoginId(), theLoginPackage.getUserLogin(), null, "changeByUserLoginId", null, 0, 1, ContactListCommStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactListCommStatus_ChangeByUserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
 		initEClass(contactListPartyEClass, ContactListParty.class, "ContactListParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContactListParty_ContactListId(), ecorePackage.getEString(), "contactListId", null, 0, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListParty_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListParty_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListParty_PreferredContactMechId(), ecorePackage.getEString(), "preferredContactMechId", null, 0, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListParty_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContactListParty_ContactListId(), ecorePackage.getEString(), "contactListId", null, 1, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContactListParty_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactListParty_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContactListParty_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactListParty_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getContactListParty_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactListParty_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEReference(getContactListParty_PreferredContactMechId(), theContactPackage_1.getContactMech(), null, "preferredContactMechId", null, 0, 1, ContactListParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getContactListParty_PreferredContactMechId().getEKeys().add(theContactPackage_1.getContactMech_ContactMechId());
 
 		initEClass(contactListPartyStatusEClass, ContactListPartyStatus.class, "ContactListPartyStatus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContactListPartyStatus_ContactListId(), ecorePackage.getEString(), "contactListId", null, 0, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListPartyStatus_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListPartyStatus_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContactListPartyStatus_StatusDate(), ecorePackage.getEDate(), "statusDate", null, 0, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContactListPartyStatus_ContactListId(), ecorePackage.getEString(), "contactListId", null, 1, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContactListPartyStatus_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContactListPartyStatus_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContactListPartyStatus_StatusDate(), ecorePackage.getEDate(), "statusDate", null, 1, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactListPartyStatus_OptInVerifyCode(), ecorePackage.getEString(), "optInVerifyCode", null, 0, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactListPartyStatus_SetByUserLoginId(), ecorePackage.getEString(), "setByUserLoginId", null, 0, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactListPartyStatus_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, ContactListPartyStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contactListTypeEClass, ContactListType.class, "ContactListType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContactListType_ContactListTypeId(), ecorePackage.getEString(), "contactListTypeId", null, 0, 1, ContactListType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContactListType_ContactListTypeId(), ecorePackage.getEString(), "contactListTypeId", null, 1, 1, ContactListType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContactListType_Description(), ecorePackage.getEString(), "description", null, 0, 1, ContactListType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(contactListTypeEClass, ecorePackage.getEString(), "contactLists", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(webSiteContactListEClass, WebSiteContactList.class, "WebSiteContactList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWebSiteContactList_WebSiteId(), ecorePackage.getEString(), "webSiteId", null, 0, 1, WebSiteContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebSiteContactList_ContactListId(), ecorePackage.getEString(), "contactListId", null, 0, 1, WebSiteContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebSiteContactList_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, WebSiteContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebSiteContactList_WebSiteId(), ecorePackage.getEString(), "webSiteId", null, 1, 1, WebSiteContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebSiteContactList_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, WebSiteContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSiteContactList_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, WebSiteContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebSiteContactList_ContactListId(), this.getContactList(), null, "contactListId", null, 0, 1, WebSiteContactList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebSiteContactList_ContactListId().getEKeys().add(this.getContactList_ContactListId());
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1426,25 +1448,7 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getContactListCommStatus_CommunicationEventId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getContactListCommStatus_ContactMechId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getContactListParty_ContactListId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getContactListParty_PartyId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1498,12 +1502,6 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getWebSiteContactList_ContactListId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getWebSiteContactList_FromDate(),
 		   source,
 		   new String[] {
@@ -1530,173 +1528,11 @@ public class ContactPackageImpl extends EPackageImpl implements ContactPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getContactList_ContactListTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactListType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactList_ContactMechTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMechType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactList_CreatedByUserLogin(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactList_LastModifiedByUserLogin(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactList_MarketingCampaignId(),
-		   source,
-		   new String[] {
-			   "frame", "MarketingCampaign"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactList_OwnerPartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListCommStatus_ContactListId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactList"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListCommStatus_CommunicationEventId(),
-		   source,
-		   new String[] {
-			   "frame", "CommunicationEvent"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListCommStatus_ContactMechId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMech"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListCommStatus_ChangeByUserLoginId(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListCommStatus_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListCommStatus_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListParty_ContactListId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactList"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListParty_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListParty_PreferredContactMechId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactMech"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getContactListParty_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (contactListTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "ContactList",
 			   "route", "contactListTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getWebSiteContactList_WebSiteId(),
-		   source,
-		   new String[] {
-			   "frame", "WebSite"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getWebSiteContactList_ContactListId(),
-		   source,
-		   new String[] {
-			   "frame", "ContactList"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

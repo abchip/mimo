@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface CommunicationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-party-communication";
+	String eNS_PREFIX = "biz-communication";
 
 	/**
 	 * The singleton instance of the package.
@@ -189,31 +190,13 @@ public interface CommunicationPackage extends EPackage {
 	int COMM_EVENT_CONTENT_ASSOC__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Communication Event Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMM_EVENT_CONTENT_ASSOC__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Comm Content Assoc Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int COMM_EVENT_CONTENT_ASSOC__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -222,7 +205,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMM_EVENT_CONTENT_ASSOC__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int COMM_EVENT_CONTENT_ASSOC__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -231,7 +214,25 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMM_EVENT_CONTENT_ASSOC__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int COMM_EVENT_CONTENT_ASSOC__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Communication Event Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Comm Content Assoc Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Comm Event Content Assoc</em>' class.
@@ -316,67 +317,13 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT__CC_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Communication Event Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Contact List Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__CONTACT_LIST_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Contact Mech Id From</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Contact Mech Id To</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__CONTACT_MECH_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__CONTENT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Content Mime Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int COMMUNICATION_EVENT__CONTENT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Datetime Ended</b></em>' attribute.
@@ -385,7 +332,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__DATETIME_ENDED = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int COMMUNICATION_EVENT__DATETIME_ENDED = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Datetime Started</b></em>' attribute.
@@ -394,7 +341,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__DATETIME_STARTED = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int COMMUNICATION_EVENT__DATETIME_STARTED = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Entry Date</b></em>' attribute.
@@ -403,7 +350,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__ENTRY_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int COMMUNICATION_EVENT__ENTRY_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>From String</b></em>' attribute.
@@ -412,7 +359,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__FROM_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int COMMUNICATION_EVENT__FROM_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Header String</b></em>' attribute.
@@ -421,7 +368,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__HEADER_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int COMMUNICATION_EVENT__HEADER_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Message Id</b></em>' attribute.
@@ -430,7 +377,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__MESSAGE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int COMMUNICATION_EVENT__MESSAGE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Note</b></em>' attribute.
@@ -439,7 +386,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__NOTE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int COMMUNICATION_EVENT__NOTE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Orig Comm Event Id</b></em>' attribute.
@@ -448,7 +395,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__ORIG_COMM_EVENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+	int COMMUNICATION_EVENT__ORIG_COMM_EVENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Parent Comm Event Id</b></em>' attribute.
@@ -457,61 +404,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__PARENT_COMM_EVENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
-
-	/**
-	 * The feature id for the '<em><b>Party Id From</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
-
-	/**
-	 * The feature id for the '<em><b>Party Id To</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
-
-	/**
-	 * The feature id for the '<em><b>Reason Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__REASON_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
-
-	/**
-	 * The feature id for the '<em><b>Role Type Id From</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
-
-	/**
-	 * The feature id for the '<em><b>Role Type Id To</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
-
-	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 24;
+	int COMMUNICATION_EVENT__PARENT_COMM_EVENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' attribute.
@@ -520,7 +413,7 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__SUBJECT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 25;
+	int COMMUNICATION_EVENT__SUBJECT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>To String</b></em>' attribute.
@@ -529,7 +422,115 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT__TO_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 26;
+	int COMMUNICATION_EVENT__TO_STRING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Communication Event Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Party Id To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Role Type Id To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Party Id From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Role Type Id From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__CONTACT_MECH_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
+
+	/**
+	 * The feature id for the '<em><b>Contact List Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__CONTACT_LIST_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 24;
+
+	/**
+	 * The feature id for the '<em><b>Content Mime Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 25;
+
+	/**
+	 * The feature id for the '<em><b>Reason Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT__REASON_ENUM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 26;
 
 	/**
 	 * The number of structural features of the '<em>Event</em>' class.
@@ -596,7 +597,7 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Communication Event Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Communication Event Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -687,7 +688,7 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_PRP_TYP__HAS_TABLE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -769,22 +770,22 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Communication Event Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT_PURPOSE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int COMMUNICATION_EVENT_PURPOSE__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Communication Event Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Event Purpose</em>' class.
@@ -851,7 +852,7 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -860,7 +861,7 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -869,7 +870,7 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -878,7 +879,7 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_ROLE__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -960,22 +961,13 @@ public interface CommunicationPackage extends EPackage {
 	int COMMUNICATION_EVENT_TYPE__COMMUNICATION_EVENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int COMMUNICATION_EVENT_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Has Table</b></em>' attribute.
@@ -984,16 +976,25 @@ public interface CommunicationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+	int COMMUNICATION_EVENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
+	int COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Event Type</em>' class.
@@ -1059,15 +1060,15 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommEventContentAssoc_ContentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommunicationEventId <em>Communication Event Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommunicationEventId <em>Communication Event Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Communication Event Id</em>'.
+	 * @return the meta object for the reference '<em>Communication Event Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommunicationEventId()
 	 * @see #getCommEventContentAssoc()
 	 * @generated
 	 */
-	EAttribute getCommEventContentAssoc_CommunicationEventId();
+	EReference getCommEventContentAssoc_CommunicationEventId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getFromDate <em>From Date</em>}'.
@@ -1081,15 +1082,15 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommEventContentAssoc_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommContentAssocTypeId <em>Comm Content Assoc Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommContentAssocTypeId <em>Comm Content Assoc Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Comm Content Assoc Type Id</em>'.
+	 * @return the meta object for the reference '<em>Comm Content Assoc Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommContentAssocTypeId()
 	 * @see #getCommEventContentAssoc()
 	 * @generated
 	 */
-	EAttribute getCommEventContentAssoc_CommContentAssocTypeId();
+	EReference getCommEventContentAssoc_CommContentAssocTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getSequenceNum <em>Sequence Num</em>}'.
@@ -1157,59 +1158,59 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEvent_CcString();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getCommunicationEventTypeId <em>Communication Event Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getCommunicationEventTypeId <em>Communication Event Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Communication Event Type Id</em>'.
+	 * @return the meta object for the reference '<em>Communication Event Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getCommunicationEventTypeId()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_CommunicationEventTypeId();
+	EReference getCommunicationEvent_CommunicationEventTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactListId <em>Contact List Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactListId <em>Contact List Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact List Id</em>'.
+	 * @return the meta object for the reference '<em>Contact List Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactListId()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_ContactListId();
+	EReference getCommunicationEvent_ContactListId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdFrom <em>Contact Mech Id From</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdFrom <em>Contact Mech Id From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id From</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id From</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdFrom()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_ContactMechIdFrom();
+	EReference getCommunicationEvent_ContactMechIdFrom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdTo <em>Contact Mech Id To</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdTo <em>Contact Mech Id To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id To</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id To</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechIdTo()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_ContactMechIdTo();
+	EReference getCommunicationEvent_ContactMechIdTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechTypeId <em>Contact Mech Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechTypeId <em>Contact Mech Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Type Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getContactMechTypeId()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_ContactMechTypeId();
+	EReference getCommunicationEvent_ContactMechTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContent <em>Content</em>}'.
@@ -1223,15 +1224,15 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEvent_Content();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContentMimeTypeId <em>Content Mime Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getContentMimeTypeId <em>Content Mime Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content Mime Type Id</em>'.
+	 * @return the meta object for the reference '<em>Content Mime Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getContentMimeTypeId()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_ContentMimeTypeId();
+	EReference getCommunicationEvent_ContentMimeTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getDatetimeEnded <em>Datetime Ended</em>}'.
@@ -1333,70 +1334,70 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEvent_ParentCommEventId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdFrom <em>Party Id From</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdFrom <em>Party Id From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id From</em>'.
+	 * @return the meta object for the reference '<em>Party Id From</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdFrom()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_PartyIdFrom();
+	EReference getCommunicationEvent_PartyIdFrom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdTo <em>Party Id To</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdTo <em>Party Id To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id To</em>'.
+	 * @return the meta object for the reference '<em>Party Id To</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getPartyIdTo()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_PartyIdTo();
+	EReference getCommunicationEvent_PartyIdTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getReasonEnumId <em>Reason Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getReasonEnumId <em>Reason Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reason Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Reason Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getReasonEnumId()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_ReasonEnumId();
+	EReference getCommunicationEvent_ReasonEnumId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdFrom <em>Role Type Id From</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdFrom <em>Role Type Id From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id From</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id From</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdFrom()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_RoleTypeIdFrom();
+	EReference getCommunicationEvent_RoleTypeIdFrom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdTo <em>Role Type Id To</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdTo <em>Role Type Id To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id To</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id To</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getRoleTypeIdTo()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_RoleTypeIdTo();
+	EReference getCommunicationEvent_RoleTypeIdTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEvent#getStatusId()
 	 * @see #getCommunicationEvent()
 	 * @generated
 	 */
-	EAttribute getCommunicationEvent_StatusId();
+	EReference getCommunicationEvent_StatusId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEvent#getSubject <em>Subject</em>}'.
@@ -1442,15 +1443,15 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEventProduct_ProductId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventProduct#getCommunicationEventId <em>Communication Event Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEventProduct#getCommunicationEventId <em>Communication Event Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Communication Event Id</em>'.
+	 * @return the meta object for the reference '<em>Communication Event Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventProduct#getCommunicationEventId()
 	 * @see #getCommunicationEventProduct()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventProduct_CommunicationEventId();
+	EReference getCommunicationEventProduct_CommunicationEventId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp <em>Event Prp Typ</em>}'.
@@ -1496,15 +1497,15 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEventPrpTyp_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getParentTypeId()
 	 * @see #getCommunicationEventPrpTyp()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventPrpTyp_ParentTypeId();
+	EReference getCommunicationEventPrpTyp_ParentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPrpTyp#getCommunicationEventPurposes <em>Communication Event Purposes</em>}'.
@@ -1539,15 +1540,15 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEventPurpose_CommunicationEventPrpTypId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventId <em>Communication Event Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventId <em>Communication Event Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Communication Event Id</em>'.
+	 * @return the meta object for the reference '<em>Communication Event Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getCommunicationEventId()
 	 * @see #getCommunicationEventPurpose()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventPurpose_CommunicationEventId();
+	EReference getCommunicationEventPurpose_CommunicationEventId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventPurpose#getDescription <em>Description</em>}'.
@@ -1582,48 +1583,48 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEventRole_CommunicationEventId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventRole#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEventRole#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventRole#getPartyId()
 	 * @see #getCommunicationEventRole()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventRole_PartyId();
+	EReference getCommunicationEventRole_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventRole#getRoleTypeId <em>Role Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEventRole#getRoleTypeId <em>Role Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventRole#getRoleTypeId()
 	 * @see #getCommunicationEventRole()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventRole_RoleTypeId();
+	EReference getCommunicationEventRole_RoleTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventRole#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEventRole#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventRole#getContactMechId()
 	 * @see #getCommunicationEventRole()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventRole_ContactMechId();
+	EReference getCommunicationEventRole_ContactMechId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventRole#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEventRole#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventRole#getStatusId()
 	 * @see #getCommunicationEventRole()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventRole_StatusId();
+	EReference getCommunicationEventRole_StatusId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType <em>Event Type</em>}'.
@@ -1647,15 +1648,15 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEventType_CommunicationEventTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getContactMechTypeId <em>Contact Mech Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getContactMechTypeId <em>Contact Mech Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Type Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventType#getContactMechTypeId()
 	 * @see #getCommunicationEventType()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventType_ContactMechTypeId();
+	EReference getCommunicationEventType_ContactMechTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getDescription <em>Description</em>}'.
@@ -1680,15 +1681,15 @@ public interface CommunicationPackage extends EPackage {
 	EAttribute getCommunicationEventType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.party.communication.CommunicationEventType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationEventType#getParentTypeId()
 	 * @see #getCommunicationEventType()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventType_ParentTypeId();
+	EReference getCommunicationEventType_ParentTypeId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1757,12 +1758,12 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMM_EVENT_CONTENT_ASSOC__CONTENT_ID = eINSTANCE.getCommEventContentAssoc_ContentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID = eINSTANCE.getCommEventContentAssoc_CommunicationEventId();
+		EReference COMM_EVENT_CONTENT_ASSOC__COMMUNICATION_EVENT_ID = eINSTANCE.getCommEventContentAssoc_CommunicationEventId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -1773,12 +1774,12 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMM_EVENT_CONTENT_ASSOC__FROM_DATE = eINSTANCE.getCommEventContentAssoc_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Comm Content Assoc Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Comm Content Assoc Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID = eINSTANCE.getCommEventContentAssoc_CommContentAssocTypeId();
+		EReference COMM_EVENT_CONTENT_ASSOC__COMM_CONTENT_ASSOC_TYPE_ID = eINSTANCE.getCommEventContentAssoc_CommContentAssocTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Sequence Num</b></em>' attribute feature.
@@ -1831,44 +1832,44 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT__CC_STRING = eINSTANCE.getCommunicationEvent_CcString();
 
 		/**
-		 * The meta object literal for the '<em><b>Communication Event Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Communication Event Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID = eINSTANCE.getCommunicationEvent_CommunicationEventTypeId();
+		EReference COMMUNICATION_EVENT__COMMUNICATION_EVENT_TYPE_ID = eINSTANCE.getCommunicationEvent_CommunicationEventTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact List Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact List Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__CONTACT_LIST_ID = eINSTANCE.getCommunicationEvent_ContactListId();
+		EReference COMMUNICATION_EVENT__CONTACT_LIST_ID = eINSTANCE.getCommunicationEvent_ContactListId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id From</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM = eINSTANCE.getCommunicationEvent_ContactMechIdFrom();
+		EReference COMMUNICATION_EVENT__CONTACT_MECH_ID_FROM = eINSTANCE.getCommunicationEvent_ContactMechIdFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id To</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__CONTACT_MECH_ID_TO = eINSTANCE.getCommunicationEvent_ContactMechIdTo();
+		EReference COMMUNICATION_EVENT__CONTACT_MECH_ID_TO = eINSTANCE.getCommunicationEvent_ContactMechIdTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID = eINSTANCE.getCommunicationEvent_ContactMechTypeId();
+		EReference COMMUNICATION_EVENT__CONTACT_MECH_TYPE_ID = eINSTANCE.getCommunicationEvent_ContactMechTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
@@ -1879,12 +1880,12 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT__CONTENT = eINSTANCE.getCommunicationEvent_Content();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Mime Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content Mime Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID = eINSTANCE.getCommunicationEvent_ContentMimeTypeId();
+		EReference COMMUNICATION_EVENT__CONTENT_MIME_TYPE_ID = eINSTANCE.getCommunicationEvent_ContentMimeTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Datetime Ended</b></em>' attribute feature.
@@ -1959,52 +1960,52 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT__PARENT_COMM_EVENT_ID = eINSTANCE.getCommunicationEvent_ParentCommEventId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id From</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__PARTY_ID_FROM = eINSTANCE.getCommunicationEvent_PartyIdFrom();
+		EReference COMMUNICATION_EVENT__PARTY_ID_FROM = eINSTANCE.getCommunicationEvent_PartyIdFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id To</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__PARTY_ID_TO = eINSTANCE.getCommunicationEvent_PartyIdTo();
+		EReference COMMUNICATION_EVENT__PARTY_ID_TO = eINSTANCE.getCommunicationEvent_PartyIdTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Reason Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Reason Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__REASON_ENUM_ID = eINSTANCE.getCommunicationEvent_ReasonEnumId();
+		EReference COMMUNICATION_EVENT__REASON_ENUM_ID = eINSTANCE.getCommunicationEvent_ReasonEnumId();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id From</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM = eINSTANCE.getCommunicationEvent_RoleTypeIdFrom();
+		EReference COMMUNICATION_EVENT__ROLE_TYPE_ID_FROM = eINSTANCE.getCommunicationEvent_RoleTypeIdFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id To</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__ROLE_TYPE_ID_TO = eINSTANCE.getCommunicationEvent_RoleTypeIdTo();
+		EReference COMMUNICATION_EVENT__ROLE_TYPE_ID_TO = eINSTANCE.getCommunicationEvent_RoleTypeIdTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT__STATUS_ID = eINSTANCE.getCommunicationEvent_StatusId();
+		EReference COMMUNICATION_EVENT__STATUS_ID = eINSTANCE.getCommunicationEvent_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Subject</b></em>' attribute feature.
@@ -2041,12 +2042,12 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT_PRODUCT__PRODUCT_ID = eINSTANCE.getCommunicationEventProduct_ProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID = eINSTANCE.getCommunicationEventProduct_CommunicationEventId();
+		EReference COMMUNICATION_EVENT_PRODUCT__COMMUNICATION_EVENT_ID = eINSTANCE.getCommunicationEventProduct_CommunicationEventId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventPrpTypImpl <em>Event Prp Typ</em>}' class.
@@ -2083,12 +2084,12 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT_PRP_TYP__HAS_TABLE = eINSTANCE.getCommunicationEventPrpTyp_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID = eINSTANCE.getCommunicationEventPrpTyp_ParentTypeId();
+		EReference COMMUNICATION_EVENT_PRP_TYP__PARENT_TYPE_ID = eINSTANCE.getCommunicationEventPrpTyp_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Communication Event Purposes</b></em>' attribute list feature.
@@ -2117,12 +2118,12 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_PRP_TYP_ID = eINSTANCE.getCommunicationEventPurpose_CommunicationEventPrpTypId();
 
 		/**
-		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID = eINSTANCE.getCommunicationEventPurpose_CommunicationEventId();
+		EReference COMMUNICATION_EVENT_PURPOSE__COMMUNICATION_EVENT_ID = eINSTANCE.getCommunicationEventPurpose_CommunicationEventId();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -2151,36 +2152,36 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT_ROLE__COMMUNICATION_EVENT_ID = eINSTANCE.getCommunicationEventRole_CommunicationEventId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_ROLE__PARTY_ID = eINSTANCE.getCommunicationEventRole_PartyId();
+		EReference COMMUNICATION_EVENT_ROLE__PARTY_ID = eINSTANCE.getCommunicationEventRole_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_ROLE__ROLE_TYPE_ID = eINSTANCE.getCommunicationEventRole_RoleTypeId();
+		EReference COMMUNICATION_EVENT_ROLE__ROLE_TYPE_ID = eINSTANCE.getCommunicationEventRole_RoleTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_ROLE__CONTACT_MECH_ID = eINSTANCE.getCommunicationEventRole_ContactMechId();
+		EReference COMMUNICATION_EVENT_ROLE__CONTACT_MECH_ID = eINSTANCE.getCommunicationEventRole_ContactMechId();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_ROLE__STATUS_ID = eINSTANCE.getCommunicationEventRole_StatusId();
+		EReference COMMUNICATION_EVENT_ROLE__STATUS_ID = eINSTANCE.getCommunicationEventRole_StatusId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventTypeImpl <em>Event Type</em>}' class.
@@ -2201,12 +2202,12 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT_TYPE__COMMUNICATION_EVENT_TYPE_ID = eINSTANCE.getCommunicationEventType_CommunicationEventTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID = eINSTANCE.getCommunicationEventType_ContactMechTypeId();
+		EReference COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID = eINSTANCE.getCommunicationEventType_ContactMechTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -2225,12 +2226,12 @@ public interface CommunicationPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT_TYPE__HAS_TABLE = eINSTANCE.getCommunicationEventType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getCommunicationEventType_ParentTypeId();
+		EReference COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getCommunicationEventType_ParentTypeId();
 
 	}
 

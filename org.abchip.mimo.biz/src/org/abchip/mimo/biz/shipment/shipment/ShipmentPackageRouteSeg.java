@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.shipment;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +26,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getShipmentRouteSegmentId <em>Shipment Route Segment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getBoxNumber <em>Box Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getCodAmount <em>Cod Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getInsuredAmount <em>Insured Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getInternationalInvoice <em>International Invoice</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getLabelHtml <em>Label Html</em>}</li>
@@ -36,6 +36,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getPackageServiceCost <em>Package Service Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getPackageTransportCost <em>Package Transport Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getTrackingCode <em>Tracking Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg()
@@ -96,30 +97,30 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	void setCodAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_CurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageRouteSeg#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Insured Amount</b></em>' attribute.
@@ -366,8 +367,8 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentId();
@@ -393,7 +394,8 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Shipment Package Seq Id</em>' attribute.
 	 * @see #setShipmentPackageSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_ShipmentPackageSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentPackageSeqId();
@@ -419,7 +421,8 @@ public interface ShipmentPackageRouteSeg extends BizEntity {
 	 * @return the value of the '<em>Shipment Route Segment Id</em>' attribute.
 	 * @see #setShipmentRouteSegmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageRouteSeg_ShipmentRouteSegmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentRouteSegmentId();

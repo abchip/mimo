@@ -9,10 +9,13 @@ package org.abchip.mimo.biz.product.feature.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureDataResource;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -56,24 +59,14 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	protected String dataResourceId = DATA_RESOURCE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductFeatureId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_FEATURE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
+	protected ProductFeature productFeatureId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,7 +116,24 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureId() {
+	public ProductFeature getProductFeatureId() {
+		if (productFeatureId != null && ((EObject)productFeatureId).eIsProxy()) {
+			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
+			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
+			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
+			}
+		}
+		return productFeatureId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature basicGetProductFeatureId() {
 		return productFeatureId;
 	}
 
@@ -133,8 +143,8 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
+	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
@@ -151,7 +161,8 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
 				return getDataResourceId();
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
-				return getProductFeatureId();
+				if (resolve) return getProductFeatureId();
+				return basicGetProductFeatureId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,7 +179,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 				setDataResourceId((String)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
-				setProductFeatureId((String)newValue);
+				setProductFeatureId((ProductFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,7 +197,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 				setDataResourceId(DATA_RESOURCE_ID_EDEFAULT);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
-				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
+				setProductFeatureId((ProductFeature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -203,7 +214,7 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__DATA_RESOURCE_ID:
 				return DATA_RESOURCE_ID_EDEFAULT == null ? dataResourceId != null : !DATA_RESOURCE_ID_EDEFAULT.equals(dataResourceId);
 			case FeaturePackage.PRODUCT_FEATURE_DATA_RESOURCE__PRODUCT_FEATURE_ID:
-				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
+				return productFeatureId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,8 +231,6 @@ public class ProductFeatureDataResourceImpl extends BizEntityImpl implements Pro
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (dataResourceId: ");
 		result.append(dataResourceId);
-		result.append(", productFeatureId: ");
-		result.append(productFeatureId);
 		result.append(')');
 		return result.toString();
 	}

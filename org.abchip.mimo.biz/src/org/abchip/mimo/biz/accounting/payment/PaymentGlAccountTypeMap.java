@@ -8,6 +8,8 @@
 package org.abchip.mimo.biz.accounting.payment;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,31 +31,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PaymentGlAccountTypeMap extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Organization Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Organization Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Organization Party Id</em>' attribute.
-	 * @see #setOrganizationPartyId(String)
+	 * @return the value of the '<em>Organization Party Id</em>' reference.
+	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap_OrganizationPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getOrganizationPartyId();
+	Party getOrganizationPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getOrganizationPartyId <em>Organization Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getOrganizationPartyId <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Organization Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Organization Party Id</em>' reference.
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 */
-	void setOrganizationPartyId(String value);
+	void setOrganizationPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Payment Type Id</b></em>' attribute.
@@ -66,8 +67,8 @@ public interface PaymentGlAccountTypeMap extends BizEntity {
 	 * @return the value of the '<em>Payment Type Id</em>' attribute.
 	 * @see #setPaymentTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap_PaymentTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPaymentTypeId();
@@ -83,29 +84,29 @@ public interface PaymentGlAccountTypeMap extends BizEntity {
 	void setPaymentTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Type Id</em>' attribute.
-	 * @see #setGlAccountTypeId(String)
+	 * @return the value of the '<em>Gl Account Type Id</em>' reference.
+	 * @see #setGlAccountTypeId(GlAccountType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGlAccountTypeMap_GlAccountTypeId()
-	 * @model annotation="mimo-ent-domain frame='GlAccountType'"
+	 * @model keys="glAccountTypeId"
 	 * @generated
 	 */
-	String getGlAccountTypeId();
+	GlAccountType getGlAccountTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getGlAccountTypeId <em>Gl Account Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getGlAccountTypeId <em>Gl Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Type Id</em>' reference.
 	 * @see #getGlAccountTypeId()
 	 * @generated
 	 */
-	void setGlAccountTypeId(String value);
+	void setGlAccountTypeId(GlAccountType value);
 
 } // PaymentGlAccountTypeMap

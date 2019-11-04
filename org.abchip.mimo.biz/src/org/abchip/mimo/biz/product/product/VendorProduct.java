@@ -8,6 +8,8 @@
 package org.abchip.mimo.biz.product.product;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,58 +31,56 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface VendorProduct extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Product Store Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Store Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Group Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Group Id</em>' attribute.
-	 * @see #setProductStoreGroupId(String)
+	 * @return the value of the '<em>Product Store Group Id</em>' reference.
+	 * @see #setProductStoreGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct_ProductStoreGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreGroup'"
+	 * @model keys="productStoreGroupId"
 	 * @generated
 	 */
-	String getProductStoreGroupId();
+	ProductStoreGroup getProductStoreGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.VendorProduct#getProductStoreGroupId <em>Product Store Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.VendorProduct#getProductStoreGroupId <em>Product Store Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Store Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Store Group Id</em>' reference.
 	 * @see #getProductStoreGroupId()
 	 * @generated
 	 */
-	void setProductStoreGroupId(String value);
+	void setProductStoreGroupId(ProductStoreGroup value);
 
 	/**
-	 * Returns the value of the '<em><b>Vendor Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Vendor Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Vendor Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vendor Party Id</em>' attribute.
-	 * @see #setVendorPartyId(String)
+	 * @return the value of the '<em>Vendor Party Id</em>' reference.
+	 * @see #setVendorPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct_VendorPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getVendorPartyId();
+	Party getVendorPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.VendorProduct#getVendorPartyId <em>Vendor Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.VendorProduct#getVendorPartyId <em>Vendor Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Vendor Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Vendor Party Id</em>' reference.
 	 * @see #getVendorPartyId()
 	 * @generated
 	 */
-	void setVendorPartyId(String value);
+	void setVendorPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
@@ -93,8 +93,8 @@ public interface VendorProduct extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getVendorProduct_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();

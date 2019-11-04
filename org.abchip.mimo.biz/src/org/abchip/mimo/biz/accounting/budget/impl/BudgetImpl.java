@@ -13,11 +13,14 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.budget.Budget;
 import org.abchip.mimo.biz.accounting.budget.BudgetPackage;
 import org.abchip.mimo.biz.accounting.budget.BudgetType;
+import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -30,8 +33,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetImpl#getBudgetId <em>Budget Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetImpl#getBudgetTypeId <em>Budget Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetImpl#getBudgetTypeId <em>Budget Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetImpl#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetImpl#getBudgetAttributes <em>Budget Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.impl.BudgetImpl#getBudgetItems <em>Budget Items</em>}</li>
@@ -66,24 +69,6 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	protected String budgetId = BUDGET_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getBudgetTypeId() <em>Budget Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BUDGET_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBudgetTypeId() <em>Budget Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBudgetTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String budgetTypeId = BUDGET_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,23 +87,23 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 */
 	protected String comments = COMMENTS_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getCustomTimePeriodId() <em>Custom Time Period Id</em>}' attribute.
+	 * The cached value of the '{@link #getBudgetTypeId() <em>Budget Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCustomTimePeriodId()
+	 * @see #getBudgetTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CUSTOM_TIME_PERIOD_ID_EDEFAULT = null;
+	protected BudgetType budgetTypeId;
 	/**
-	 * The cached value of the '{@link #getCustomTimePeriodId() <em>Custom Time Period Id</em>}' attribute.
+	 * The cached value of the '{@link #getCustomTimePeriodId() <em>Custom Time Period Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCustomTimePeriodId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String customTimePeriodId = CUSTOM_TIME_PERIOD_ID_EDEFAULT;
+	protected CustomTimePeriod customTimePeriodId;
 
 	/**
 	 * The cached value of the '{@link #getBudgetAttributes() <em>Budget Attributes</em>}' attribute list.
@@ -205,7 +190,24 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 * @generated
 	 */
 	@Override
-	public String getCustomTimePeriodId() {
+	public CustomTimePeriod getCustomTimePeriodId() {
+		if (customTimePeriodId != null && ((EObject)customTimePeriodId).eIsProxy()) {
+			InternalEObject oldCustomTimePeriodId = (InternalEObject)customTimePeriodId;
+			customTimePeriodId = (CustomTimePeriod)eResolveProxy(oldCustomTimePeriodId);
+			if (customTimePeriodId != oldCustomTimePeriodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
+			}
+		}
+		return customTimePeriodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomTimePeriod basicGetCustomTimePeriodId() {
 		return customTimePeriodId;
 	}
 
@@ -215,8 +217,8 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 * @generated
 	 */
 	@Override
-	public void setCustomTimePeriodId(String newCustomTimePeriodId) {
-		String oldCustomTimePeriodId = customTimePeriodId;
+	public void setCustomTimePeriodId(CustomTimePeriod newCustomTimePeriodId) {
+		CustomTimePeriod oldCustomTimePeriodId = customTimePeriodId;
 		customTimePeriodId = newCustomTimePeriodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
@@ -292,7 +294,24 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 * @generated
 	 */
 	@Override
-	public String getBudgetTypeId() {
+	public BudgetType getBudgetTypeId() {
+		if (budgetTypeId != null && ((EObject)budgetTypeId).eIsProxy()) {
+			InternalEObject oldBudgetTypeId = (InternalEObject)budgetTypeId;
+			budgetTypeId = (BudgetType)eResolveProxy(oldBudgetTypeId);
+			if (budgetTypeId != oldBudgetTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BudgetPackage.BUDGET__BUDGET_TYPE_ID, oldBudgetTypeId, budgetTypeId));
+			}
+		}
+		return budgetTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BudgetType basicGetBudgetTypeId() {
 		return budgetTypeId;
 	}
 
@@ -302,8 +321,8 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 	 * @generated
 	 */
 	@Override
-	public void setBudgetTypeId(String newBudgetTypeId) {
-		String oldBudgetTypeId = budgetTypeId;
+	public void setBudgetTypeId(BudgetType newBudgetTypeId) {
+		BudgetType oldBudgetTypeId = budgetTypeId;
 		budgetTypeId = newBudgetTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BudgetPackage.BUDGET__BUDGET_TYPE_ID, oldBudgetTypeId, budgetTypeId));
@@ -342,12 +361,14 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 		switch (featureID) {
 			case BudgetPackage.BUDGET__BUDGET_ID:
 				return getBudgetId();
-			case BudgetPackage.BUDGET__BUDGET_TYPE_ID:
-				return getBudgetTypeId();
 			case BudgetPackage.BUDGET__COMMENTS:
 				return getComments();
+			case BudgetPackage.BUDGET__BUDGET_TYPE_ID:
+				if (resolve) return getBudgetTypeId();
+				return basicGetBudgetTypeId();
 			case BudgetPackage.BUDGET__CUSTOM_TIME_PERIOD_ID:
-				return getCustomTimePeriodId();
+				if (resolve) return getCustomTimePeriodId();
+				return basicGetCustomTimePeriodId();
 			case BudgetPackage.BUDGET__BUDGET_ATTRIBUTES:
 				return getBudgetAttributes();
 			case BudgetPackage.BUDGET__BUDGET_ITEMS:
@@ -372,14 +393,14 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 			case BudgetPackage.BUDGET__BUDGET_ID:
 				setBudgetId((String)newValue);
 				return;
-			case BudgetPackage.BUDGET__BUDGET_TYPE_ID:
-				setBudgetTypeId((String)newValue);
-				return;
 			case BudgetPackage.BUDGET__COMMENTS:
 				setComments((String)newValue);
 				return;
+			case BudgetPackage.BUDGET__BUDGET_TYPE_ID:
+				setBudgetTypeId((BudgetType)newValue);
+				return;
 			case BudgetPackage.BUDGET__CUSTOM_TIME_PERIOD_ID:
-				setCustomTimePeriodId((String)newValue);
+				setCustomTimePeriodId((CustomTimePeriod)newValue);
 				return;
 			case BudgetPackage.BUDGET__BUDGET_ATTRIBUTES:
 				getBudgetAttributes().clear();
@@ -412,14 +433,14 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 			case BudgetPackage.BUDGET__BUDGET_ID:
 				setBudgetId(BUDGET_ID_EDEFAULT);
 				return;
-			case BudgetPackage.BUDGET__BUDGET_TYPE_ID:
-				setBudgetTypeId(BUDGET_TYPE_ID_EDEFAULT);
-				return;
 			case BudgetPackage.BUDGET__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
 				return;
+			case BudgetPackage.BUDGET__BUDGET_TYPE_ID:
+				setBudgetTypeId((BudgetType)null);
+				return;
 			case BudgetPackage.BUDGET__CUSTOM_TIME_PERIOD_ID:
-				setCustomTimePeriodId(CUSTOM_TIME_PERIOD_ID_EDEFAULT);
+				setCustomTimePeriodId((CustomTimePeriod)null);
 				return;
 			case BudgetPackage.BUDGET__BUDGET_ATTRIBUTES:
 				getBudgetAttributes().clear();
@@ -447,12 +468,12 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 		switch (featureID) {
 			case BudgetPackage.BUDGET__BUDGET_ID:
 				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
-			case BudgetPackage.BUDGET__BUDGET_TYPE_ID:
-				return BUDGET_TYPE_ID_EDEFAULT == null ? budgetTypeId != null : !BUDGET_TYPE_ID_EDEFAULT.equals(budgetTypeId);
 			case BudgetPackage.BUDGET__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
+			case BudgetPackage.BUDGET__BUDGET_TYPE_ID:
+				return budgetTypeId != null;
 			case BudgetPackage.BUDGET__CUSTOM_TIME_PERIOD_ID:
-				return CUSTOM_TIME_PERIOD_ID_EDEFAULT == null ? customTimePeriodId != null : !CUSTOM_TIME_PERIOD_ID_EDEFAULT.equals(customTimePeriodId);
+				return customTimePeriodId != null;
 			case BudgetPackage.BUDGET__BUDGET_ATTRIBUTES:
 				return budgetAttributes != null && !budgetAttributes.isEmpty();
 			case BudgetPackage.BUDGET__BUDGET_ITEMS:
@@ -477,12 +498,8 @@ public class BudgetImpl extends BizEntityTypedImpl<BudgetType> implements Budget
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (budgetId: ");
 		result.append(budgetId);
-		result.append(", budgetTypeId: ");
-		result.append(budgetTypeId);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", customTimePeriodId: ");
-		result.append(customTimePeriodId);
 		result.append(", budgetAttributes: ");
 		result.append(budgetAttributes);
 		result.append(", budgetItems: ");

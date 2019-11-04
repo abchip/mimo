@@ -10,12 +10,16 @@ package org.abchip.mimo.biz.webapp.visit.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.webapp.visit.UserAgent;
 import org.abchip.mimo.biz.webapp.visit.Visit;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
+import org.abchip.mimo.biz.webapp.visit.Visitor;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -47,11 +51,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getSessionId <em>Session Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getThruDate <em>Thru Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getUserAgentId <em>User Agent Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#isUserCreated <em>User Created</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getUserLoginId <em>User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getVisitorId <em>Visitor Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getWebappName <em>Webapp Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getVisitorId <em>Visitor Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.VisitImpl#getUserAgentId <em>User Agent Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -483,26 +487,6 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUserAgentId() <em>User Agent Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserAgentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_AGENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUserAgentId() <em>User Agent Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserAgentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String userAgentId = USER_AGENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isUserCreated() <em>User Created</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -543,26 +527,6 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getVisitorId() <em>Visitor Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitorId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VISITOR_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getVisitorId() <em>Visitor Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisitorId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String visitorId = VISITOR_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getWebappName() <em>Webapp Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -581,6 +545,26 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 * @ordered
 	 */
 	protected String webappName = WEBAPP_NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getVisitorId() <em>Visitor Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisitorId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Visitor visitorId;
+
+	/**
+	 * The cached value of the '{@link #getUserAgentId() <em>User Agent Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserAgentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserAgent userAgentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1090,7 +1074,24 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 * @generated
 	 */
 	@Override
-	public String getUserAgentId() {
+	public UserAgent getUserAgentId() {
+		if (userAgentId != null && ((EObject)userAgentId).eIsProxy()) {
+			InternalEObject oldUserAgentId = (InternalEObject)userAgentId;
+			userAgentId = (UserAgent)eResolveProxy(oldUserAgentId);
+			if (userAgentId != oldUserAgentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.VISIT__USER_AGENT_ID, oldUserAgentId, userAgentId));
+			}
+		}
+		return userAgentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserAgent basicGetUserAgentId() {
 		return userAgentId;
 	}
 
@@ -1100,8 +1101,8 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 * @generated
 	 */
 	@Override
-	public void setUserAgentId(String newUserAgentId) {
-		String oldUserAgentId = userAgentId;
+	public void setUserAgentId(UserAgent newUserAgentId) {
+		UserAgent oldUserAgentId = userAgentId;
 		userAgentId = newUserAgentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__USER_AGENT_ID, oldUserAgentId, userAgentId));
@@ -1159,7 +1160,24 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 * @generated
 	 */
 	@Override
-	public String getVisitorId() {
+	public Visitor getVisitorId() {
+		if (visitorId != null && ((EObject)visitorId).eIsProxy()) {
+			InternalEObject oldVisitorId = (InternalEObject)visitorId;
+			visitorId = (Visitor)eResolveProxy(oldVisitorId);
+			if (visitorId != oldVisitorId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.VISIT__VISITOR_ID, oldVisitorId, visitorId));
+			}
+		}
+		return visitorId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Visitor basicGetVisitorId() {
 		return visitorId;
 	}
 
@@ -1169,8 +1187,8 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 	 * @generated
 	 */
 	@Override
-	public void setVisitorId(String newVisitorId) {
-		String oldVisitorId = visitorId;
+	public void setVisitorId(Visitor newVisitorId) {
+		Visitor oldVisitorId = visitorId;
 		visitorId = newVisitorId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.VISIT__VISITOR_ID, oldVisitorId, visitorId));
@@ -1249,16 +1267,18 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 				return getSessionId();
 			case VisitPackage.VISIT__THRU_DATE:
 				return getThruDate();
-			case VisitPackage.VISIT__USER_AGENT_ID:
-				return getUserAgentId();
 			case VisitPackage.VISIT__USER_CREATED:
 				return isUserCreated();
 			case VisitPackage.VISIT__USER_LOGIN_ID:
 				return getUserLoginId();
-			case VisitPackage.VISIT__VISITOR_ID:
-				return getVisitorId();
 			case VisitPackage.VISIT__WEBAPP_NAME:
 				return getWebappName();
+			case VisitPackage.VISIT__VISITOR_ID:
+				if (resolve) return getVisitorId();
+				return basicGetVisitorId();
+			case VisitPackage.VISIT__USER_AGENT_ID:
+				if (resolve) return getUserAgentId();
+				return basicGetUserAgentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1334,20 +1354,20 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 			case VisitPackage.VISIT__THRU_DATE:
 				setThruDate((Date)newValue);
 				return;
-			case VisitPackage.VISIT__USER_AGENT_ID:
-				setUserAgentId((String)newValue);
-				return;
 			case VisitPackage.VISIT__USER_CREATED:
 				setUserCreated((Boolean)newValue);
 				return;
 			case VisitPackage.VISIT__USER_LOGIN_ID:
 				setUserLoginId((String)newValue);
 				return;
-			case VisitPackage.VISIT__VISITOR_ID:
-				setVisitorId((String)newValue);
-				return;
 			case VisitPackage.VISIT__WEBAPP_NAME:
 				setWebappName((String)newValue);
+				return;
+			case VisitPackage.VISIT__VISITOR_ID:
+				setVisitorId((Visitor)newValue);
+				return;
+			case VisitPackage.VISIT__USER_AGENT_ID:
+				setUserAgentId((UserAgent)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1424,20 +1444,20 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 			case VisitPackage.VISIT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
 				return;
-			case VisitPackage.VISIT__USER_AGENT_ID:
-				setUserAgentId(USER_AGENT_ID_EDEFAULT);
-				return;
 			case VisitPackage.VISIT__USER_CREATED:
 				setUserCreated(USER_CREATED_EDEFAULT);
 				return;
 			case VisitPackage.VISIT__USER_LOGIN_ID:
 				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
 				return;
-			case VisitPackage.VISIT__VISITOR_ID:
-				setVisitorId(VISITOR_ID_EDEFAULT);
-				return;
 			case VisitPackage.VISIT__WEBAPP_NAME:
 				setWebappName(WEBAPP_NAME_EDEFAULT);
+				return;
+			case VisitPackage.VISIT__VISITOR_ID:
+				setVisitorId((Visitor)null);
+				return;
+			case VisitPackage.VISIT__USER_AGENT_ID:
+				setUserAgentId((UserAgent)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1493,16 +1513,16 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 				return SESSION_ID_EDEFAULT == null ? sessionId != null : !SESSION_ID_EDEFAULT.equals(sessionId);
 			case VisitPackage.VISIT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
-			case VisitPackage.VISIT__USER_AGENT_ID:
-				return USER_AGENT_ID_EDEFAULT == null ? userAgentId != null : !USER_AGENT_ID_EDEFAULT.equals(userAgentId);
 			case VisitPackage.VISIT__USER_CREATED:
 				return userCreated != USER_CREATED_EDEFAULT;
 			case VisitPackage.VISIT__USER_LOGIN_ID:
 				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
-			case VisitPackage.VISIT__VISITOR_ID:
-				return VISITOR_ID_EDEFAULT == null ? visitorId != null : !VISITOR_ID_EDEFAULT.equals(visitorId);
 			case VisitPackage.VISIT__WEBAPP_NAME:
 				return WEBAPP_NAME_EDEFAULT == null ? webappName != null : !WEBAPP_NAME_EDEFAULT.equals(webappName);
+			case VisitPackage.VISIT__VISITOR_ID:
+				return visitorId != null;
+			case VisitPackage.VISIT__USER_AGENT_ID:
+				return userAgentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1559,14 +1579,10 @@ public class VisitImpl extends BizEntityImpl implements Visit {
 		result.append(sessionId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
-		result.append(", userAgentId: ");
-		result.append(userAgentId);
 		result.append(", userCreated: ");
 		result.append(userCreated);
 		result.append(", userLoginId: ");
 		result.append(userLoginId);
-		result.append(", visitorId: ");
-		result.append(visitorId);
 		result.append(", webappName: ");
 		result.append(webappName);
 		result.append(')');

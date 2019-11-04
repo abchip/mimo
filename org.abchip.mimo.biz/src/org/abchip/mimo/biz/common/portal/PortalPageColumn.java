@@ -121,7 +121,6 @@ public interface PortalPageColumn extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPageColumn_PortalPageId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PortalPage'"
 	 * @generated
 	 */
 	String getPortalPageId();

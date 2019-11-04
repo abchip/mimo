@@ -84,30 +84,30 @@ public interface ProductFeatureIactnType extends BizEntityType<ProductFeatureIac
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(ProductFeatureIactnType)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureIactnType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductFeatureIactnType'"
+	 * @model keys="productFeatureIactnTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	ProductFeatureIactnType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactnType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureIactnType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(ProductFeatureIactnType value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,7 +138,7 @@ public interface ProductFeatureIactnType extends BizEntityType<ProductFeatureIac
 	 * @return the value of the '<em>Product Feature Iactn Type Id</em>' attribute.
 	 * @see #setProductFeatureIactnTypeId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureIactnType_ProductFeatureIactnTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

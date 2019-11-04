@@ -10,9 +10,12 @@ package org.abchip.mimo.biz.party.party.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyRole;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -54,23 +57,14 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoleTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
+	protected RoleType roleTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,7 +91,24 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -107,8 +118,8 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -148,7 +159,8 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 			case PartyPackage.PARTY_ROLE__PARTY_ID:
 				return getPartyId();
 			case PartyPackage.PARTY_ROLE__ROLE_TYPE_ID:
-				return getRoleTypeId();
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,7 +177,7 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 				setPartyId((String)newValue);
 				return;
 			case PartyPackage.PARTY_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
+				setRoleTypeId((RoleType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,7 +195,7 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
 			case PartyPackage.PARTY_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				setRoleTypeId((RoleType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -200,7 +212,7 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 			case PartyPackage.PARTY_ROLE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case PartyPackage.PARTY_ROLE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,8 +229,6 @@ public class PartyRoleImpl extends BizEntityImpl implements PartyRole {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
 		result.append(')');
 		return result.toString();
 	}

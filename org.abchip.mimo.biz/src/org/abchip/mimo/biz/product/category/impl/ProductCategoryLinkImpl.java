@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.product.category.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.category.CategoryPackage;
 import org.abchip.mimo.biz.product.category.ProductCategoryLink;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -34,10 +37,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getImageTwoUrl <em>Image Two Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getImageUrl <em>Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getLinkInfo <em>Link Info</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getLinkTypeEnumId <em>Link Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getTitleText <em>Title Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.impl.ProductCategoryLinkImpl#getLinkTypeEnumId <em>Link Type Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -229,26 +232,6 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	protected String linkInfo = LINK_INFO_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLinkTypeEnumId() <em>Link Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinkTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LINK_TYPE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLinkTypeEnumId() <em>Link Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinkTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String linkTypeEnumId = LINK_TYPE_ENUM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -307,6 +290,16 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 * @ordered
 	 */
 	protected String titleText = TITLE_TEXT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getLinkTypeEnumId() <em>Link Type Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinkTypeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration linkTypeEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -517,7 +510,24 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 * @generated
 	 */
 	@Override
-	public String getLinkTypeEnumId() {
+	public Enumeration getLinkTypeEnumId() {
+		if (linkTypeEnumId != null && ((EObject)linkTypeEnumId).eIsProxy()) {
+			InternalEObject oldLinkTypeEnumId = (InternalEObject)linkTypeEnumId;
+			linkTypeEnumId = (Enumeration)eResolveProxy(oldLinkTypeEnumId);
+			if (linkTypeEnumId != oldLinkTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID, oldLinkTypeEnumId, linkTypeEnumId));
+			}
+		}
+		return linkTypeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetLinkTypeEnumId() {
 		return linkTypeEnumId;
 	}
 
@@ -527,8 +537,8 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 	 * @generated
 	 */
 	@Override
-	public void setLinkTypeEnumId(String newLinkTypeEnumId) {
-		String oldLinkTypeEnumId = linkTypeEnumId;
+	public void setLinkTypeEnumId(Enumeration newLinkTypeEnumId) {
+		Enumeration oldLinkTypeEnumId = linkTypeEnumId;
 		linkTypeEnumId = newLinkTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID, oldLinkTypeEnumId, linkTypeEnumId));
@@ -652,14 +662,15 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 				return getImageUrl();
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_INFO:
 				return getLinkInfo();
-			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
-				return getLinkTypeEnumId();
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__SEQUENCE_NUM:
 				return getSequenceNum();
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__THRU_DATE:
 				return getThruDate();
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__TITLE_TEXT:
 				return getTitleText();
+			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
+				if (resolve) return getLinkTypeEnumId();
+				return basicGetLinkTypeEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -699,9 +710,6 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_INFO:
 				setLinkInfo((String)newValue);
 				return;
-			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
-				setLinkTypeEnumId((String)newValue);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
 				return;
@@ -710,6 +718,9 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__TITLE_TEXT:
 				setTitleText((String)newValue);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
+				setLinkTypeEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -750,9 +761,6 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_INFO:
 				setLinkInfo(LINK_INFO_EDEFAULT);
 				return;
-			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
-				setLinkTypeEnumId(LINK_TYPE_ENUM_ID_EDEFAULT);
-				return;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
 				return;
@@ -761,6 +769,9 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 				return;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__TITLE_TEXT:
 				setTitleText(TITLE_TEXT_EDEFAULT);
+				return;
+			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
+				setLinkTypeEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -792,14 +803,14 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 				return IMAGE_URL_EDEFAULT == null ? imageUrl != null : !IMAGE_URL_EDEFAULT.equals(imageUrl);
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_INFO:
 				return LINK_INFO_EDEFAULT == null ? linkInfo != null : !LINK_INFO_EDEFAULT.equals(linkInfo);
-			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
-				return LINK_TYPE_ENUM_ID_EDEFAULT == null ? linkTypeEnumId != null : !LINK_TYPE_ENUM_ID_EDEFAULT.equals(linkTypeEnumId);
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case CategoryPackage.PRODUCT_CATEGORY_LINK__TITLE_TEXT:
 				return TITLE_TEXT_EDEFAULT == null ? titleText != null : !TITLE_TEXT_EDEFAULT.equals(titleText);
+			case CategoryPackage.PRODUCT_CATEGORY_LINK__LINK_TYPE_ENUM_ID:
+				return linkTypeEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -832,8 +843,6 @@ public class ProductCategoryLinkImpl extends BizEntityImpl implements ProductCat
 		result.append(imageUrl);
 		result.append(", linkInfo: ");
 		result.append(linkInfo);
-		result.append(", linkTypeEnumId: ");
-		result.append(linkTypeEnumId);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(", thruDate: ");

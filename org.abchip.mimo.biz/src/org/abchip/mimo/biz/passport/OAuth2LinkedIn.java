@@ -49,7 +49,6 @@ public interface OAuth2LinkedIn extends BizEntity {
 	 * @see org.abchip.mimo.biz.passport.PassportPackage#getOAuth2LinkedIn_ProductStoreId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStore'"
 	 * @generated
 	 */
 	String getProductStoreId();

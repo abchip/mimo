@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionClassTypeId <em>Empl Position Class Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getStandardHoursPerWeek <em>Standard Hours Per Week</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionClassTypeId <em>Empl Position Class Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass()
@@ -33,31 +33,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface EmplPositionTypeClass extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Empl Position Class Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Empl Position Class Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Empl Position Class Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Empl Position Class Type Id</em>' attribute.
-	 * @see #setEmplPositionClassTypeId(String)
+	 * @return the value of the '<em>Empl Position Class Type Id</em>' reference.
+	 * @see #setEmplPositionClassTypeId(EmplPositionClassType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_EmplPositionClassTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='EmplPositionClassType'"
+	 * @model keys="emplPositionClassTypeId"
 	 * @generated
 	 */
-	String getEmplPositionClassTypeId();
+	EmplPositionClassType getEmplPositionClassTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionClassTypeId <em>Empl Position Class Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionTypeClass#getEmplPositionClassTypeId <em>Empl Position Class Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Empl Position Class Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Empl Position Class Type Id</em>' reference.
 	 * @see #getEmplPositionClassTypeId()
 	 * @generated
 	 */
-	void setEmplPositionClassTypeId(String value);
+	void setEmplPositionClassTypeId(EmplPositionClassType value);
 
 	/**
 	 * Returns the value of the '<em><b>Empl Position Type Id</b></em>' attribute.
@@ -70,8 +69,8 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @return the value of the '<em>Empl Position Type Id</em>' attribute.
 	 * @see #setEmplPositionTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_EmplPositionTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='EmplPositionType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmplPositionTypeId();
@@ -97,7 +96,8 @@ public interface EmplPositionTypeClass extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionTypeClass_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();

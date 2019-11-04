@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface VisitPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-webapp-visit";
+	String eNS_PREFIX = "biz-visit";
 
 	/**
 	 * The singleton instance of the package.
@@ -371,58 +372,13 @@ public interface VisitPackage extends EPackage {
 	int SERVER_HIT__HIT_START_DATE_TIME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Hit Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVER_HIT__HIT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Id By Ip Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Internal Content Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVER_HIT__INTERNAL_CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Num Of Bytes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__NUM_OF_BYTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVER_HIT__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Ref By Web Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int SERVER_HIT__NUM_OF_BYTES = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Referrer Url</b></em>' attribute.
@@ -431,7 +387,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__REFERRER_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int SERVER_HIT__REFERRER_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Request Url</b></em>' attribute.
@@ -440,7 +396,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__REQUEST_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int SERVER_HIT__REQUEST_URL = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Running Time Millis</b></em>' attribute.
@@ -449,7 +405,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__RUNNING_TIME_MILLIS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int SERVER_HIT__RUNNING_TIME_MILLIS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Server Host Name</b></em>' attribute.
@@ -458,7 +414,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__SERVER_HOST_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int SERVER_HIT__SERVER_HOST_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Server Ip Address</b></em>' attribute.
@@ -467,7 +423,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__SERVER_IP_ADDRESS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int SERVER_HIT__SERVER_IP_ADDRESS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
@@ -476,7 +432,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int SERVER_HIT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>User Login Id</b></em>' attribute.
@@ -485,7 +441,52 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int SERVER_HIT__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Hit Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT__HIT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Id By Ip Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Ref By Web Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Internal Content Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT__INTERNAL_CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Server Hit</em>' class.
@@ -579,31 +580,13 @@ public interface VisitPackage extends EPackage {
 	int SERVER_HIT_BIN__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Hit Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVER_HIT_BIN__HIT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Internal Content Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVER_HIT_BIN__INTERNAL_CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Max Time Millis</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT_BIN__MAX_TIME_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int SERVER_HIT_BIN__MAX_TIME_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Min Time Millis</b></em>' attribute.
@@ -612,7 +595,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT_BIN__MIN_TIME_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int SERVER_HIT_BIN__MIN_TIME_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Number Hits</b></em>' attribute.
@@ -621,7 +604,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT_BIN__NUMBER_HITS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int SERVER_HIT_BIN__NUMBER_HITS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Server Host Name</b></em>' attribute.
@@ -630,7 +613,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT_BIN__SERVER_HOST_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int SERVER_HIT_BIN__SERVER_HOST_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Server Ip Address</b></em>' attribute.
@@ -639,7 +622,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT_BIN__SERVER_IP_ADDRESS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int SERVER_HIT_BIN__SERVER_IP_ADDRESS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Total Time Millis</b></em>' attribute.
@@ -648,7 +631,25 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVER_HIT_BIN__TOTAL_TIME_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int SERVER_HIT_BIN__TOTAL_TIME_MILLIS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Hit Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_BIN__HIT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Internal Content Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVER_HIT_BIN__INTERNAL_CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Server Hit Bin</em>' class.
@@ -797,7 +798,7 @@ public interface VisitPackage extends EPackage {
 	int USER_AGENT__USER_AGENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Browser Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Browser Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -806,7 +807,7 @@ public interface VisitPackage extends EPackage {
 	int USER_AGENT__BROWSER_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Platform Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Platform Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -815,7 +816,7 @@ public interface VisitPackage extends EPackage {
 	int USER_AGENT__PLATFORM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Protocol Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Protocol Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -824,22 +825,22 @@ public interface VisitPackage extends EPackage {
 	int USER_AGENT__PROTOCOL_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>User Agent Method Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>User Agent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_AGENT__USER_AGENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int USER_AGENT__USER_AGENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>User Agent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>User Agent Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_AGENT__USER_AGENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int USER_AGENT__USER_AGENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>User Agent</em>' class.
@@ -1241,22 +1242,13 @@ public interface VisitPackage extends EPackage {
 	int VISIT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
 
 	/**
-	 * The feature id for the '<em><b>User Agent Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISIT__USER_AGENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
-
-	/**
 	 * The feature id for the '<em><b>User Created</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VISIT__USER_CREATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+	int VISIT__USER_CREATED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>User Login Id</b></em>' attribute.
@@ -1265,16 +1257,7 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VISIT__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
-
-	/**
-	 * The feature id for the '<em><b>Visitor Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VISIT__VISITOR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 24;
+	int VISIT__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Webapp Name</b></em>' attribute.
@@ -1283,7 +1266,25 @@ public interface VisitPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VISIT__WEBAPP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 25;
+	int VISIT__WEBAPP_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 23;
+
+	/**
+	 * The feature id for the '<em><b>Visitor Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISIT__VISITOR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 24;
+
+	/**
+	 * The feature id for the '<em><b>User Agent Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISIT__USER_AGENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 25;
 
 	/**
 	 * The number of structural features of the '<em>Visit</em>' class.
@@ -1359,7 +1360,7 @@ public interface VisitPackage extends EPackage {
 	int VISITOR__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>User Login Id</b></em>' attribute.
+	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1539,37 +1540,37 @@ public interface VisitPackage extends EPackage {
 	EAttribute getServerHit_HitStartDateTime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitTypeId <em>Hit Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getHitTypeId <em>Hit Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Hit Type Id</em>'.
+	 * @return the meta object for the reference '<em>Hit Type Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.ServerHit#getHitTypeId()
 	 * @see #getServerHit()
 	 * @generated
 	 */
-	EAttribute getServerHit_HitTypeId();
+	EReference getServerHit_HitTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id By Ip Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Id By Ip Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.ServerHit#getIdByIpContactMechId()
 	 * @see #getServerHit()
 	 * @generated
 	 */
-	EAttribute getServerHit_IdByIpContactMechId();
+	EReference getServerHit_IdByIpContactMechId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getInternalContentId <em>Internal Content Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getInternalContentId <em>Internal Content Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Internal Content Id</em>'.
+	 * @return the meta object for the reference '<em>Internal Content Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.ServerHit#getInternalContentId()
 	 * @see #getServerHit()
 	 * @generated
 	 */
-	EAttribute getServerHit_InternalContentId();
+	EReference getServerHit_InternalContentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getNumOfBytes <em>Num Of Bytes</em>}'.
@@ -1583,26 +1584,26 @@ public interface VisitPackage extends EPackage {
 	EAttribute getServerHit_NumOfBytes();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.ServerHit#getPartyId()
 	 * @see #getServerHit()
 	 * @generated
 	 */
-	EAttribute getServerHit_PartyId();
+	EReference getServerHit_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ref By Web Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Ref By Web Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.ServerHit#getRefByWebContactMechId()
 	 * @see #getServerHit()
 	 * @generated
 	 */
-	EAttribute getServerHit_RefByWebContactMechId();
+	EReference getServerHit_RefByWebContactMechId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHit#getReferrerUrl <em>Referrer Url</em>}'.
@@ -1736,26 +1737,26 @@ public interface VisitPackage extends EPackage {
 	EAttribute getServerHitBin_ContentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getHitTypeId <em>Hit Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getHitTypeId <em>Hit Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Hit Type Id</em>'.
+	 * @return the meta object for the reference '<em>Hit Type Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.ServerHitBin#getHitTypeId()
 	 * @see #getServerHitBin()
 	 * @generated
 	 */
-	EAttribute getServerHitBin_HitTypeId();
+	EReference getServerHitBin_HitTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getInternalContentId <em>Internal Content Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getInternalContentId <em>Internal Content Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Internal Content Id</em>'.
+	 * @return the meta object for the reference '<em>Internal Content Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.ServerHitBin#getInternalContentId()
 	 * @see #getServerHitBin()
 	 * @generated
 	 */
-	EAttribute getServerHitBin_InternalContentId();
+	EReference getServerHitBin_InternalContentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getMaxTimeMillis <em>Max Time Millis</em>}'.
@@ -1877,59 +1878,59 @@ public interface VisitPackage extends EPackage {
 	EAttribute getUserAgent_UserAgentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getBrowserTypeId <em>Browser Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getBrowserTypeId <em>Browser Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Browser Type Id</em>'.
+	 * @return the meta object for the reference '<em>Browser Type Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.UserAgent#getBrowserTypeId()
 	 * @see #getUserAgent()
 	 * @generated
 	 */
-	EAttribute getUserAgent_BrowserTypeId();
+	EReference getUserAgent_BrowserTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getPlatformTypeId <em>Platform Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getPlatformTypeId <em>Platform Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Platform Type Id</em>'.
+	 * @return the meta object for the reference '<em>Platform Type Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.UserAgent#getPlatformTypeId()
 	 * @see #getUserAgent()
 	 * @generated
 	 */
-	EAttribute getUserAgent_PlatformTypeId();
+	EReference getUserAgent_PlatformTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getProtocolTypeId <em>Protocol Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getProtocolTypeId <em>Protocol Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Protocol Type Id</em>'.
+	 * @return the meta object for the reference '<em>Protocol Type Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.UserAgent#getProtocolTypeId()
 	 * @see #getUserAgent()
 	 * @generated
 	 */
-	EAttribute getUserAgent_ProtocolTypeId();
+	EReference getUserAgent_ProtocolTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentMethodTypeId <em>User Agent Method Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentMethodTypeId <em>User Agent Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User Agent Method Type Id</em>'.
+	 * @return the meta object for the reference '<em>User Agent Method Type Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentMethodTypeId()
 	 * @see #getUserAgent()
 	 * @generated
 	 */
-	EAttribute getUserAgent_UserAgentMethodTypeId();
+	EReference getUserAgent_UserAgentMethodTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentTypeId <em>User Agent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentTypeId <em>User Agent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User Agent Type Id</em>'.
+	 * @return the meta object for the reference '<em>User Agent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.UserAgent#getUserAgentTypeId()
 	 * @see #getUserAgent()
 	 * @generated
 	 */
-	EAttribute getUserAgent_UserAgentTypeId();
+	EReference getUserAgent_UserAgentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.webapp.visit.UserAgentMethodType <em>User Agent Method Type</em>}'.
@@ -2237,15 +2238,15 @@ public interface VisitPackage extends EPackage {
 	EAttribute getVisit_ThruDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserAgentId <em>User Agent Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.Visit#getUserAgentId <em>User Agent Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User Agent Id</em>'.
+	 * @return the meta object for the reference '<em>User Agent Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.Visit#getUserAgentId()
 	 * @see #getVisit()
 	 * @generated
 	 */
-	EAttribute getVisit_UserAgentId();
+	EReference getVisit_UserAgentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.Visit#isUserCreated <em>User Created</em>}'.
@@ -2270,15 +2271,15 @@ public interface VisitPackage extends EPackage {
 	EAttribute getVisit_UserLoginId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.Visit#getVisitorId <em>Visitor Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.Visit#getVisitorId <em>Visitor Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Visitor Id</em>'.
+	 * @return the meta object for the reference '<em>Visitor Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.Visit#getVisitorId()
 	 * @see #getVisit()
 	 * @generated
 	 */
-	EAttribute getVisit_VisitorId();
+	EReference getVisit_VisitorId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.Visit#getWebappName <em>Webapp Name</em>}'.
@@ -2324,15 +2325,15 @@ public interface VisitPackage extends EPackage {
 	EAttribute getVisitor_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.webapp.visit.Visitor#getUserLoginId <em>User Login Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.webapp.visit.Visitor#getUserLoginId <em>User Login Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User Login Id</em>'.
+	 * @return the meta object for the reference '<em>User Login Id</em>'.
 	 * @see org.abchip.mimo.biz.webapp.visit.Visitor#getUserLoginId()
 	 * @see #getVisitor()
 	 * @generated
 	 */
-	EAttribute getVisitor_UserLoginId();
+	EReference getVisitor_UserLoginId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2485,28 +2486,28 @@ public interface VisitPackage extends EPackage {
 		EAttribute SERVER_HIT__HIT_START_DATE_TIME = eINSTANCE.getServerHit_HitStartDateTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Hit Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Hit Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVER_HIT__HIT_TYPE_ID = eINSTANCE.getServerHit_HitTypeId();
+		EReference SERVER_HIT__HIT_TYPE_ID = eINSTANCE.getServerHit_HitTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Id By Ip Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Id By Ip Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID = eINSTANCE.getServerHit_IdByIpContactMechId();
+		EReference SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID = eINSTANCE.getServerHit_IdByIpContactMechId();
 
 		/**
-		 * The meta object literal for the '<em><b>Internal Content Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Internal Content Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVER_HIT__INTERNAL_CONTENT_ID = eINSTANCE.getServerHit_InternalContentId();
+		EReference SERVER_HIT__INTERNAL_CONTENT_ID = eINSTANCE.getServerHit_InternalContentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Num Of Bytes</b></em>' attribute feature.
@@ -2517,20 +2518,20 @@ public interface VisitPackage extends EPackage {
 		EAttribute SERVER_HIT__NUM_OF_BYTES = eINSTANCE.getServerHit_NumOfBytes();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVER_HIT__PARTY_ID = eINSTANCE.getServerHit_PartyId();
+		EReference SERVER_HIT__PARTY_ID = eINSTANCE.getServerHit_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Ref By Web Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Ref By Web Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID = eINSTANCE.getServerHit_RefByWebContactMechId();
+		EReference SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID = eINSTANCE.getServerHit_RefByWebContactMechId();
 
 		/**
 		 * The meta object literal for the '<em><b>Referrer Url</b></em>' attribute feature.
@@ -2631,20 +2632,20 @@ public interface VisitPackage extends EPackage {
 		EAttribute SERVER_HIT_BIN__CONTENT_ID = eINSTANCE.getServerHitBin_ContentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Hit Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Hit Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVER_HIT_BIN__HIT_TYPE_ID = eINSTANCE.getServerHitBin_HitTypeId();
+		EReference SERVER_HIT_BIN__HIT_TYPE_ID = eINSTANCE.getServerHitBin_HitTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Internal Content Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Internal Content Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SERVER_HIT_BIN__INTERNAL_CONTENT_ID = eINSTANCE.getServerHitBin_InternalContentId();
+		EReference SERVER_HIT_BIN__INTERNAL_CONTENT_ID = eINSTANCE.getServerHitBin_InternalContentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Max Time Millis</b></em>' attribute feature.
@@ -2739,44 +2740,44 @@ public interface VisitPackage extends EPackage {
 		EAttribute USER_AGENT__USER_AGENT_ID = eINSTANCE.getUserAgent_UserAgentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Browser Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Browser Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_AGENT__BROWSER_TYPE_ID = eINSTANCE.getUserAgent_BrowserTypeId();
+		EReference USER_AGENT__BROWSER_TYPE_ID = eINSTANCE.getUserAgent_BrowserTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Platform Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Platform Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_AGENT__PLATFORM_TYPE_ID = eINSTANCE.getUserAgent_PlatformTypeId();
+		EReference USER_AGENT__PLATFORM_TYPE_ID = eINSTANCE.getUserAgent_PlatformTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Protocol Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Protocol Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_AGENT__PROTOCOL_TYPE_ID = eINSTANCE.getUserAgent_ProtocolTypeId();
+		EReference USER_AGENT__PROTOCOL_TYPE_ID = eINSTANCE.getUserAgent_ProtocolTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>User Agent Method Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>User Agent Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_AGENT__USER_AGENT_METHOD_TYPE_ID = eINSTANCE.getUserAgent_UserAgentMethodTypeId();
+		EReference USER_AGENT__USER_AGENT_METHOD_TYPE_ID = eINSTANCE.getUserAgent_UserAgentMethodTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>User Agent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>User Agent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_AGENT__USER_AGENT_TYPE_ID = eINSTANCE.getUserAgent_UserAgentTypeId();
+		EReference USER_AGENT__USER_AGENT_TYPE_ID = eINSTANCE.getUserAgent_UserAgentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentMethodTypeImpl <em>User Agent Method Type</em>}' class.
@@ -3009,12 +3010,12 @@ public interface VisitPackage extends EPackage {
 		EAttribute VISIT__THRU_DATE = eINSTANCE.getVisit_ThruDate();
 
 		/**
-		 * The meta object literal for the '<em><b>User Agent Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>User Agent Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VISIT__USER_AGENT_ID = eINSTANCE.getVisit_UserAgentId();
+		EReference VISIT__USER_AGENT_ID = eINSTANCE.getVisit_UserAgentId();
 
 		/**
 		 * The meta object literal for the '<em><b>User Created</b></em>' attribute feature.
@@ -3033,12 +3034,12 @@ public interface VisitPackage extends EPackage {
 		EAttribute VISIT__USER_LOGIN_ID = eINSTANCE.getVisit_UserLoginId();
 
 		/**
-		 * The meta object literal for the '<em><b>Visitor Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Visitor Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VISIT__VISITOR_ID = eINSTANCE.getVisit_VisitorId();
+		EReference VISIT__VISITOR_ID = eINSTANCE.getVisit_VisitorId();
 
 		/**
 		 * The meta object literal for the '<em><b>Webapp Name</b></em>' attribute feature.
@@ -3075,12 +3076,12 @@ public interface VisitPackage extends EPackage {
 		EAttribute VISITOR__PARTY_ID = eINSTANCE.getVisitor_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>User Login Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>User Login Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VISITOR__USER_LOGIN_ID = eINSTANCE.getVisitor_UserLoginId();
+		EReference VISITOR__USER_LOGIN_ID = eINSTANCE.getVisitor_UserLoginId();
 
 	}
 

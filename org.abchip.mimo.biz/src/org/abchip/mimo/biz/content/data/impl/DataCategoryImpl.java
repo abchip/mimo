@@ -16,6 +16,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -80,24 +82,14 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	protected String categoryName = CATEGORY_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentCategoryId() <em>Parent Category Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentCategoryId() <em>Parent Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentCategoryId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentCategoryId() <em>Parent Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentCategoryId = PARENT_CATEGORY_ID_EDEFAULT;
+	protected DataCategory parentCategoryId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,7 +162,24 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 * @generated
 	 */
 	@Override
-	public String getParentCategoryId() {
+	public DataCategory getParentCategoryId() {
+		if (parentCategoryId != null && ((EObject)parentCategoryId).eIsProxy()) {
+			InternalEObject oldParentCategoryId = (InternalEObject)parentCategoryId;
+			parentCategoryId = (DataCategory)eResolveProxy(oldParentCategoryId);
+			if (parentCategoryId != oldParentCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
+			}
+		}
+		return parentCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataCategory basicGetParentCategoryId() {
 		return parentCategoryId;
 	}
 
@@ -180,8 +189,8 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 	 * @generated
 	 */
 	@Override
-	public void setParentCategoryId(String newParentCategoryId) {
-		String oldParentCategoryId = parentCategoryId;
+	public void setParentCategoryId(DataCategory newParentCategoryId) {
+		DataCategory oldParentCategoryId = parentCategoryId;
 		parentCategoryId = newParentCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID, oldParentCategoryId, parentCategoryId));
@@ -224,7 +233,8 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 			case DataPackage.DATA_CATEGORY__CATEGORY_NAME:
 				return getCategoryName();
 			case DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID:
-				return getParentCategoryId();
+				if (resolve) return getParentCategoryId();
+				return basicGetParentCategoryId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,7 +254,7 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 				setCategoryName((String)newValue);
 				return;
 			case DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID:
-				setParentCategoryId((String)newValue);
+				setParentCategoryId((DataCategory)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -265,7 +275,7 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 				setCategoryName(CATEGORY_NAME_EDEFAULT);
 				return;
 			case DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID:
-				setParentCategoryId(PARENT_CATEGORY_ID_EDEFAULT);
+				setParentCategoryId((DataCategory)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -284,7 +294,7 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 			case DataPackage.DATA_CATEGORY__CATEGORY_NAME:
 				return CATEGORY_NAME_EDEFAULT == null ? categoryName != null : !CATEGORY_NAME_EDEFAULT.equals(categoryName);
 			case DataPackage.DATA_CATEGORY__PARENT_CATEGORY_ID:
-				return PARENT_CATEGORY_ID_EDEFAULT == null ? parentCategoryId != null : !PARENT_CATEGORY_ID_EDEFAULT.equals(parentCategoryId);
+				return parentCategoryId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -303,8 +313,6 @@ public class DataCategoryImpl extends BizEntityImpl implements DataCategory {
 		result.append(dataCategoryId);
 		result.append(", categoryName: ");
 		result.append(categoryName);
-		result.append(", parentCategoryId: ");
-		result.append(parentCategoryId);
 		result.append(')');
 		return result.toString();
 	}

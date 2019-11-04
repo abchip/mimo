@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface EmailPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-common-email";
+	String eNS_PREFIX = "biz-email";
 
 	/**
 	 * The singleton instance of the package.
@@ -161,22 +162,13 @@ public interface EmailPackage extends EPackage {
 	int EMAIL_TEMPLATE_SETTING__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Email Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMAIL_TEMPLATE_SETTING__EMAIL_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>From Address</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMAIL_TEMPLATE_SETTING__FROM_ADDRESS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int EMAIL_TEMPLATE_SETTING__FROM_ADDRESS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Subject</b></em>' attribute.
@@ -185,7 +177,7 @@ public interface EmailPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMAIL_TEMPLATE_SETTING__SUBJECT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int EMAIL_TEMPLATE_SETTING__SUBJECT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Xslfo Attach Screen Location</b></em>' attribute.
@@ -194,7 +186,16 @@ public interface EmailPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMAIL_TEMPLATE_SETTING__XSLFO_ATTACH_SCREEN_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int EMAIL_TEMPLATE_SETTING__XSLFO_ATTACH_SCREEN_LOCATION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Email Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMAIL_TEMPLATE_SETTING__EMAIL_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Template Setting</em>' class.
@@ -283,15 +284,15 @@ public interface EmailPackage extends EPackage {
 	EAttribute getEmailTemplateSetting_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getEmailType <em>Email Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getEmailType <em>Email Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Email Type</em>'.
+	 * @return the meta object for the reference '<em>Email Type</em>'.
 	 * @see org.abchip.mimo.biz.common.email.EmailTemplateSetting#getEmailType()
 	 * @see #getEmailTemplateSetting()
 	 * @generated
 	 */
-	EAttribute getEmailTemplateSetting_EmailType();
+	EReference getEmailTemplateSetting_EmailType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.email.EmailTemplateSetting#getFromAddress <em>From Address</em>}'.
@@ -407,12 +408,12 @@ public interface EmailPackage extends EPackage {
 		EAttribute EMAIL_TEMPLATE_SETTING__DESCRIPTION = eINSTANCE.getEmailTemplateSetting_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Email Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Email Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMAIL_TEMPLATE_SETTING__EMAIL_TYPE = eINSTANCE.getEmailTemplateSetting_EmailType();
+		EReference EMAIL_TEMPLATE_SETTING__EMAIL_TYPE = eINSTANCE.getEmailTemplateSetting_EmailType();
 
 		/**
 		 * The meta object literal for the '<em><b>From Address</b></em>' attribute feature.

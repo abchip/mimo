@@ -9,11 +9,14 @@ package org.abchip.mimo.biz.content.content.impl;
 
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentRevisionItem;
+import org.abchip.mimo.biz.content.data.DataResource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getContentRevisionSeqId <em>Content Revision Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getItemContentId <em>Item Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getNewDataResourceId <em>New Data Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getOldDataResourceId <em>Old Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.content.impl.ContentRevisionItemImpl#getNewDataResourceId <em>New Data Resource Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,44 +103,24 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	protected String itemContentId = ITEM_CONTENT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getNewDataResourceId() <em>New Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNewDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NEW_DATA_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNewDataResourceId() <em>New Data Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNewDataResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String newDataResourceId = NEW_DATA_RESOURCE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOldDataResourceId() <em>Old Data Resource Id</em>}' attribute.
+	 * The cached value of the '{@link #getOldDataResourceId() <em>Old Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOldDataResourceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OLD_DATA_RESOURCE_ID_EDEFAULT = null;
+	protected DataResource oldDataResourceId;
 
 	/**
-	 * The cached value of the '{@link #getOldDataResourceId() <em>Old Data Resource Id</em>}' attribute.
+	 * The cached value of the '{@link #getNewDataResourceId() <em>New Data Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOldDataResourceId()
+	 * @see #getNewDataResourceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String oldDataResourceId = OLD_DATA_RESOURCE_ID_EDEFAULT;
+	protected DataResource newDataResourceId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,7 +216,24 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	 * @generated
 	 */
 	@Override
-	public String getNewDataResourceId() {
+	public DataResource getNewDataResourceId() {
+		if (newDataResourceId != null && ((EObject)newDataResourceId).eIsProxy()) {
+			InternalEObject oldNewDataResourceId = (InternalEObject)newDataResourceId;
+			newDataResourceId = (DataResource)eResolveProxy(oldNewDataResourceId);
+			if (newDataResourceId != oldNewDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID, oldNewDataResourceId, newDataResourceId));
+			}
+		}
+		return newDataResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResource basicGetNewDataResourceId() {
 		return newDataResourceId;
 	}
 
@@ -243,8 +243,8 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	 * @generated
 	 */
 	@Override
-	public void setNewDataResourceId(String newNewDataResourceId) {
-		String oldNewDataResourceId = newDataResourceId;
+	public void setNewDataResourceId(DataResource newNewDataResourceId) {
+		DataResource oldNewDataResourceId = newDataResourceId;
 		newDataResourceId = newNewDataResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID, oldNewDataResourceId, newDataResourceId));
@@ -256,7 +256,24 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	 * @generated
 	 */
 	@Override
-	public String getOldDataResourceId() {
+	public DataResource getOldDataResourceId() {
+		if (oldDataResourceId != null && ((EObject)oldDataResourceId).eIsProxy()) {
+			InternalEObject oldOldDataResourceId = (InternalEObject)oldDataResourceId;
+			oldDataResourceId = (DataResource)eResolveProxy(oldOldDataResourceId);
+			if (oldDataResourceId != oldOldDataResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_REVISION_ITEM__OLD_DATA_RESOURCE_ID, oldOldDataResourceId, oldDataResourceId));
+			}
+		}
+		return oldDataResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataResource basicGetOldDataResourceId() {
 		return oldDataResourceId;
 	}
 
@@ -266,8 +283,8 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 	 * @generated
 	 */
 	@Override
-	public void setOldDataResourceId(String newOldDataResourceId) {
-		String oldOldDataResourceId = oldDataResourceId;
+	public void setOldDataResourceId(DataResource newOldDataResourceId) {
+		DataResource oldOldDataResourceId = oldDataResourceId;
 		oldDataResourceId = newOldDataResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION_ITEM__OLD_DATA_RESOURCE_ID, oldOldDataResourceId, oldDataResourceId));
@@ -287,10 +304,12 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 				return getContentRevisionSeqId();
 			case ContentPackage.CONTENT_REVISION_ITEM__ITEM_CONTENT_ID:
 				return getItemContentId();
-			case ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID:
-				return getNewDataResourceId();
 			case ContentPackage.CONTENT_REVISION_ITEM__OLD_DATA_RESOURCE_ID:
-				return getOldDataResourceId();
+				if (resolve) return getOldDataResourceId();
+				return basicGetOldDataResourceId();
+			case ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID:
+				if (resolve) return getNewDataResourceId();
+				return basicGetNewDataResourceId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -312,11 +331,11 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 			case ContentPackage.CONTENT_REVISION_ITEM__ITEM_CONTENT_ID:
 				setItemContentId((String)newValue);
 				return;
-			case ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID:
-				setNewDataResourceId((String)newValue);
-				return;
 			case ContentPackage.CONTENT_REVISION_ITEM__OLD_DATA_RESOURCE_ID:
-				setOldDataResourceId((String)newValue);
+				setOldDataResourceId((DataResource)newValue);
+				return;
+			case ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID:
+				setNewDataResourceId((DataResource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -339,11 +358,11 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 			case ContentPackage.CONTENT_REVISION_ITEM__ITEM_CONTENT_ID:
 				setItemContentId(ITEM_CONTENT_ID_EDEFAULT);
 				return;
-			case ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID:
-				setNewDataResourceId(NEW_DATA_RESOURCE_ID_EDEFAULT);
-				return;
 			case ContentPackage.CONTENT_REVISION_ITEM__OLD_DATA_RESOURCE_ID:
-				setOldDataResourceId(OLD_DATA_RESOURCE_ID_EDEFAULT);
+				setOldDataResourceId((DataResource)null);
+				return;
+			case ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID:
+				setNewDataResourceId((DataResource)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -363,10 +382,10 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 				return CONTENT_REVISION_SEQ_ID_EDEFAULT == null ? contentRevisionSeqId != null : !CONTENT_REVISION_SEQ_ID_EDEFAULT.equals(contentRevisionSeqId);
 			case ContentPackage.CONTENT_REVISION_ITEM__ITEM_CONTENT_ID:
 				return ITEM_CONTENT_ID_EDEFAULT == null ? itemContentId != null : !ITEM_CONTENT_ID_EDEFAULT.equals(itemContentId);
-			case ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID:
-				return NEW_DATA_RESOURCE_ID_EDEFAULT == null ? newDataResourceId != null : !NEW_DATA_RESOURCE_ID_EDEFAULT.equals(newDataResourceId);
 			case ContentPackage.CONTENT_REVISION_ITEM__OLD_DATA_RESOURCE_ID:
-				return OLD_DATA_RESOURCE_ID_EDEFAULT == null ? oldDataResourceId != null : !OLD_DATA_RESOURCE_ID_EDEFAULT.equals(oldDataResourceId);
+				return oldDataResourceId != null;
+			case ContentPackage.CONTENT_REVISION_ITEM__NEW_DATA_RESOURCE_ID:
+				return newDataResourceId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -387,10 +406,6 @@ public class ContentRevisionItemImpl extends BizEntityImpl implements ContentRev
 		result.append(contentRevisionSeqId);
 		result.append(", itemContentId: ");
 		result.append(itemContentId);
-		result.append(", newDataResourceId: ");
-		result.append(newDataResourceId);
-		result.append(", oldDataResourceId: ");
-		result.append(oldDataResourceId);
 		result.append(')');
 		return result.toString();
 	}

@@ -8,12 +8,16 @@
 package org.abchip.mimo.biz.order.order.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.ProductOrderItem;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.ProductOrderItemImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.ProductOrderItemImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.ProductOrderItemImpl#getEngagementId <em>Engagement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.ProductOrderItemImpl#getEngagementItemSeqId <em>Engagement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.ProductOrderItemImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.ProductOrderItemImpl#getEngagementId <em>Engagement Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,26 +84,6 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEngagementId() <em>Engagement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEngagementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENGAGEMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEngagementId() <em>Engagement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEngagementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String engagementId = ENGAGEMENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getEngagementItemSeqId() <em>Engagement Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,24 +104,24 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	protected String engagementItemSeqId = ENGAGEMENT_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
+	protected Product productId;
 
 	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * The cached value of the '{@link #getEngagementId() <em>Engagement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProductId()
+	 * @see #getEngagementId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
+	protected OrderHeader engagementId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,7 +148,24 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	 * @generated
 	 */
 	@Override
-	public String getEngagementId() {
+	public OrderHeader getEngagementId() {
+		if (engagementId != null && ((EObject)engagementId).eIsProxy()) {
+			InternalEObject oldEngagementId = (InternalEObject)engagementId;
+			engagementId = (OrderHeader)eResolveProxy(oldEngagementId);
+			if (engagementId != oldEngagementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID, oldEngagementId, engagementId));
+			}
+		}
+		return engagementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetEngagementId() {
 		return engagementId;
 	}
 
@@ -174,8 +175,8 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	 * @generated
 	 */
 	@Override
-	public void setEngagementId(String newEngagementId) {
-		String oldEngagementId = engagementId;
+	public void setEngagementId(OrderHeader newEngagementId) {
+		OrderHeader oldEngagementId = engagementId;
 		engagementId = newEngagementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID, oldEngagementId, engagementId));
@@ -256,7 +257,24 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.PRODUCT_ORDER_ITEM__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -266,8 +284,8 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.PRODUCT_ORDER_ITEM__PRODUCT_ID, oldProductId, productId));
@@ -285,12 +303,14 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 				return getOrderId();
 			case OrderPackage.PRODUCT_ORDER_ITEM__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID:
-				return getEngagementId();
 			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ITEM_SEQ_ID:
 				return getEngagementItemSeqId();
 			case OrderPackage.PRODUCT_ORDER_ITEM__PRODUCT_ID:
-				return getProductId();
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID:
+				if (resolve) return getEngagementId();
+				return basicGetEngagementId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -309,14 +329,14 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 			case OrderPackage.PRODUCT_ORDER_ITEM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
-			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID:
-				setEngagementId((String)newValue);
-				return;
 			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ITEM_SEQ_ID:
 				setEngagementItemSeqId((String)newValue);
 				return;
 			case OrderPackage.PRODUCT_ORDER_ITEM__PRODUCT_ID:
-				setProductId((String)newValue);
+				setProductId((Product)newValue);
+				return;
+			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID:
+				setEngagementId((OrderHeader)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,14 +356,14 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 			case OrderPackage.PRODUCT_ORDER_ITEM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID:
-				setEngagementId(ENGAGEMENT_ID_EDEFAULT);
-				return;
 			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ITEM_SEQ_ID:
 				setEngagementItemSeqId(ENGAGEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case OrderPackage.PRODUCT_ORDER_ITEM__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
+				setProductId((Product)null);
+				return;
+			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID:
+				setEngagementId((OrderHeader)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,12 +381,12 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.PRODUCT_ORDER_ITEM__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID:
-				return ENGAGEMENT_ID_EDEFAULT == null ? engagementId != null : !ENGAGEMENT_ID_EDEFAULT.equals(engagementId);
 			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ITEM_SEQ_ID:
 				return ENGAGEMENT_ITEM_SEQ_ID_EDEFAULT == null ? engagementItemSeqId != null : !ENGAGEMENT_ITEM_SEQ_ID_EDEFAULT.equals(engagementItemSeqId);
 			case OrderPackage.PRODUCT_ORDER_ITEM__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+				return productId != null;
+			case OrderPackage.PRODUCT_ORDER_ITEM__ENGAGEMENT_ID:
+				return engagementId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,12 +405,8 @@ public class ProductOrderItemImpl extends BizEntityImpl implements ProductOrderI
 		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", engagementId: ");
-		result.append(engagementId);
 		result.append(", engagementItemSeqId: ");
 		result.append(engagementItemSeqId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(')');
 		return result.toString();
 	}

@@ -17,11 +17,17 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -36,20 +42,20 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getActualBalance <em>Actual Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getAvailableBalance <em>Available Balance</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getFinAccountCode <em>Fin Account Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getFinAccountName <em>Fin Account Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getFinAccountPin <em>Fin Account Pin</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#isIsRefundable <em>Is Refundable</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getReplenishLevel <em>Replenish Level</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getOwnerPartyId <em>Owner Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getPostToGlAccountId <em>Post To Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getReplenishLevel <em>Replenish Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getReplenishPaymentId <em>Replenish Payment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountImpl#getFinAccountAttributes <em>Fin Account Attributes</em>}</li>
  * </ul>
  *
@@ -115,24 +121,6 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 */
 	protected BigDecimal availableBalance = AVAILABLE_BALANCE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getFinAccountCode() <em>Fin Account Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -187,24 +175,6 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 */
 	protected String finAccountPin = FIN_ACCOUNT_PIN_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountTypeId = FIN_ACCOUNT_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,60 +211,6 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 */
 	protected boolean isRefundable = IS_REFUNDABLE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OWNER_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnerPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String ownerPartyId = OWNER_PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPostToGlAccountId() <em>Post To Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostToGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String POST_TO_GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPostToGlAccountId() <em>Post To Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostToGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String postToGlAccountId = POST_TO_GL_ACCOUNT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getReplenishLevel() <em>Replenish Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -312,24 +228,6 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @ordered
 	 */
 	protected BigDecimal replenishLevel = REPLENISH_LEVEL_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getReplenishPaymentId() <em>Replenish Payment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReplenishPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REPLENISH_PAYMENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getReplenishPaymentId() <em>Replenish Payment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReplenishPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String replenishPaymentId = REPLENISH_PAYMENT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -366,6 +264,60 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFinAccountTypeId() <em>Fin Account Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinAccountTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FinAccountType finAccountTypeId;
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+	/**
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrganizationPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party organizationPartyId;
+	/**
+	 * The cached value of the '{@link #getOwnerPartyId() <em>Owner Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnerPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party ownerPartyId;
+	/**
+	 * The cached value of the '{@link #getPostToGlAccountId() <em>Post To Gl Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPostToGlAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccount postToGlAccountId;
+	/**
+	 * The cached value of the '{@link #getReplenishPaymentId() <em>Replenish Payment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReplenishPaymentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethod replenishPaymentId;
 
 	/**
 	 * The cached value of the '{@link #getFinAccountAttributes() <em>Fin Account Attributes</em>}' attribute list.
@@ -448,7 +400,24 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -458,8 +427,8 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -586,7 +555,24 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -596,8 +582,8 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -609,7 +595,24 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public String getOwnerPartyId() {
+	public Party getOwnerPartyId() {
+		if (ownerPartyId != null && ((EObject)ownerPartyId).eIsProxy()) {
+			InternalEObject oldOwnerPartyId = (InternalEObject)ownerPartyId;
+			ownerPartyId = (Party)eResolveProxy(oldOwnerPartyId);
+			if (ownerPartyId != oldOwnerPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
+			}
+		}
+		return ownerPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOwnerPartyId() {
 		return ownerPartyId;
 	}
 
@@ -619,8 +622,8 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public void setOwnerPartyId(String newOwnerPartyId) {
-		String oldOwnerPartyId = ownerPartyId;
+	public void setOwnerPartyId(Party newOwnerPartyId) {
+		Party oldOwnerPartyId = ownerPartyId;
 		ownerPartyId = newOwnerPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID, oldOwnerPartyId, ownerPartyId));
@@ -632,7 +635,24 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public String getPostToGlAccountId() {
+	public GlAccount getPostToGlAccountId() {
+		if (postToGlAccountId != null && ((EObject)postToGlAccountId).eIsProxy()) {
+			InternalEObject oldPostToGlAccountId = (InternalEObject)postToGlAccountId;
+			postToGlAccountId = (GlAccount)eResolveProxy(oldPostToGlAccountId);
+			if (postToGlAccountId != oldPostToGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID, oldPostToGlAccountId, postToGlAccountId));
+			}
+		}
+		return postToGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetPostToGlAccountId() {
 		return postToGlAccountId;
 	}
 
@@ -642,8 +662,8 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public void setPostToGlAccountId(String newPostToGlAccountId) {
-		String oldPostToGlAccountId = postToGlAccountId;
+	public void setPostToGlAccountId(GlAccount newPostToGlAccountId) {
+		GlAccount oldPostToGlAccountId = postToGlAccountId;
 		postToGlAccountId = newPostToGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID, oldPostToGlAccountId, postToGlAccountId));
@@ -678,7 +698,24 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public String getReplenishPaymentId() {
+	public PaymentMethod getReplenishPaymentId() {
+		if (replenishPaymentId != null && ((EObject)replenishPaymentId).eIsProxy()) {
+			InternalEObject oldReplenishPaymentId = (InternalEObject)replenishPaymentId;
+			replenishPaymentId = (PaymentMethod)eResolveProxy(oldReplenishPaymentId);
+			if (replenishPaymentId != oldReplenishPaymentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID, oldReplenishPaymentId, replenishPaymentId));
+			}
+		}
+		return replenishPaymentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethod basicGetReplenishPaymentId() {
 		return replenishPaymentId;
 	}
 
@@ -688,8 +725,8 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public void setReplenishPaymentId(String newReplenishPaymentId) {
-		String oldReplenishPaymentId = replenishPaymentId;
+	public void setReplenishPaymentId(PaymentMethod newReplenishPaymentId) {
+		PaymentMethod oldReplenishPaymentId = replenishPaymentId;
 		replenishPaymentId = newReplenishPaymentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID, oldReplenishPaymentId, replenishPaymentId));
@@ -820,7 +857,24 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountTypeId() {
+	public FinAccountType getFinAccountTypeId() {
+		if (finAccountTypeId != null && ((EObject)finAccountTypeId).eIsProxy()) {
+			InternalEObject oldFinAccountTypeId = (InternalEObject)finAccountTypeId;
+			finAccountTypeId = (FinAccountType)eResolveProxy(oldFinAccountTypeId);
+			if (finAccountTypeId != oldFinAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
+			}
+		}
+		return finAccountTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccountType basicGetFinAccountTypeId() {
 		return finAccountTypeId;
 	}
 
@@ -830,8 +884,8 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountTypeId(String newFinAccountTypeId) {
-		String oldFinAccountTypeId = finAccountTypeId;
+	public void setFinAccountTypeId(FinAccountType newFinAccountTypeId) {
+		FinAccountType oldFinAccountTypeId = finAccountTypeId;
 		finAccountTypeId = newFinAccountTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID, oldFinAccountTypeId, finAccountTypeId));
@@ -874,34 +928,40 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 				return getActualBalance();
 			case FinaccountPackage.FIN_ACCOUNT__AVAILABLE_BALANCE:
 				return getAvailableBalance();
-			case FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_CODE:
 				return getFinAccountCode();
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_NAME:
 				return getFinAccountName();
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_PIN:
 				return getFinAccountPin();
-			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
-				return getFinAccountTypeId();
 			case FinaccountPackage.FIN_ACCOUNT__FROM_DATE:
 				return getFromDate();
 			case FinaccountPackage.FIN_ACCOUNT__IS_REFUNDABLE:
 				return isIsRefundable();
-			case FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
-			case FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID:
-				return getOwnerPartyId();
-			case FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID:
-				return getPostToGlAccountId();
 			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_LEVEL:
 				return getReplenishLevel();
-			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID:
-				return getReplenishPaymentId();
 			case FinaccountPackage.FIN_ACCOUNT__STATUS_ID:
 				return getStatusId();
 			case FinaccountPackage.FIN_ACCOUNT__THRU_DATE:
 				return getThruDate();
+			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
+				if (resolve) return getFinAccountTypeId();
+				return basicGetFinAccountTypeId();
+			case FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID:
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
+			case FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID:
+				if (resolve) return getOwnerPartyId();
+				return basicGetOwnerPartyId();
+			case FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID:
+				if (resolve) return getPostToGlAccountId();
+				return basicGetPostToGlAccountId();
+			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID:
+				if (resolve) return getReplenishPaymentId();
+				return basicGetReplenishPaymentId();
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES:
 				return getFinAccountAttributes();
 		}
@@ -926,9 +986,6 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 			case FinaccountPackage.FIN_ACCOUNT__AVAILABLE_BALANCE:
 				setAvailableBalance((BigDecimal)newValue);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_CODE:
 				setFinAccountCode((String)newValue);
 				return;
@@ -938,35 +995,38 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_PIN:
 				setFinAccountPin((String)newValue);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
-				setFinAccountTypeId((String)newValue);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT__IS_REFUNDABLE:
 				setIsRefundable((Boolean)newValue);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID:
-				setOwnerPartyId((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID:
-				setPostToGlAccountId((String)newValue);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_LEVEL:
 				setReplenishLevel((BigDecimal)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID:
-				setReplenishPaymentId((String)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT__STATUS_ID:
 				setStatusId((String)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
+				setFinAccountTypeId((FinAccountType)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID:
+				setOwnerPartyId((Party)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID:
+				setPostToGlAccountId((GlAccount)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID:
+				setReplenishPaymentId((PaymentMethod)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES:
 				getFinAccountAttributes().clear();
@@ -993,9 +1053,6 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 			case FinaccountPackage.FIN_ACCOUNT__AVAILABLE_BALANCE:
 				setAvailableBalance(AVAILABLE_BALANCE_EDEFAULT);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_CODE:
 				setFinAccountCode(FIN_ACCOUNT_CODE_EDEFAULT);
 				return;
@@ -1005,35 +1062,38 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_PIN:
 				setFinAccountPin(FIN_ACCOUNT_PIN_EDEFAULT);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
-				setFinAccountTypeId(FIN_ACCOUNT_TYPE_ID_EDEFAULT);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT__IS_REFUNDABLE:
 				setIsRefundable(IS_REFUNDABLE_EDEFAULT);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID:
-				setOwnerPartyId(OWNER_PARTY_ID_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID:
-				setPostToGlAccountId(POST_TO_GL_ACCOUNT_ID_EDEFAULT);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_LEVEL:
 				setReplenishLevel(REPLENISH_LEVEL_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID:
-				setReplenishPaymentId(REPLENISH_PAYMENT_ID_EDEFAULT);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT__STATUS_ID:
 				setStatusId(STATUS_ID_EDEFAULT);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
+				setFinAccountTypeId((FinAccountType)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID:
+				setOwnerPartyId((Party)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID:
+				setPostToGlAccountId((GlAccount)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID:
+				setReplenishPaymentId((PaymentMethod)null);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES:
 				getFinAccountAttributes().clear();
@@ -1056,34 +1116,34 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 				return ACTUAL_BALANCE_EDEFAULT == null ? actualBalance != null : !ACTUAL_BALANCE_EDEFAULT.equals(actualBalance);
 			case FinaccountPackage.FIN_ACCOUNT__AVAILABLE_BALANCE:
 				return AVAILABLE_BALANCE_EDEFAULT == null ? availableBalance != null : !AVAILABLE_BALANCE_EDEFAULT.equals(availableBalance);
-			case FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_CODE:
 				return FIN_ACCOUNT_CODE_EDEFAULT == null ? finAccountCode != null : !FIN_ACCOUNT_CODE_EDEFAULT.equals(finAccountCode);
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_NAME:
 				return FIN_ACCOUNT_NAME_EDEFAULT == null ? finAccountName != null : !FIN_ACCOUNT_NAME_EDEFAULT.equals(finAccountName);
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_PIN:
 				return FIN_ACCOUNT_PIN_EDEFAULT == null ? finAccountPin != null : !FIN_ACCOUNT_PIN_EDEFAULT.equals(finAccountPin);
-			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
-				return FIN_ACCOUNT_TYPE_ID_EDEFAULT == null ? finAccountTypeId != null : !FIN_ACCOUNT_TYPE_ID_EDEFAULT.equals(finAccountTypeId);
 			case FinaccountPackage.FIN_ACCOUNT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FinaccountPackage.FIN_ACCOUNT__IS_REFUNDABLE:
 				return isRefundable != IS_REFUNDABLE_EDEFAULT;
-			case FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
-			case FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID:
-				return OWNER_PARTY_ID_EDEFAULT == null ? ownerPartyId != null : !OWNER_PARTY_ID_EDEFAULT.equals(ownerPartyId);
-			case FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID:
-				return POST_TO_GL_ACCOUNT_ID_EDEFAULT == null ? postToGlAccountId != null : !POST_TO_GL_ACCOUNT_ID_EDEFAULT.equals(postToGlAccountId);
 			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_LEVEL:
 				return REPLENISH_LEVEL_EDEFAULT == null ? replenishLevel != null : !REPLENISH_LEVEL_EDEFAULT.equals(replenishLevel);
-			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID:
-				return REPLENISH_PAYMENT_ID_EDEFAULT == null ? replenishPaymentId != null : !REPLENISH_PAYMENT_ID_EDEFAULT.equals(replenishPaymentId);
 			case FinaccountPackage.FIN_ACCOUNT__STATUS_ID:
 				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case FinaccountPackage.FIN_ACCOUNT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_TYPE_ID:
+				return finAccountTypeId != null;
+			case FinaccountPackage.FIN_ACCOUNT__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case FinaccountPackage.FIN_ACCOUNT__ORGANIZATION_PARTY_ID:
+				return organizationPartyId != null;
+			case FinaccountPackage.FIN_ACCOUNT__OWNER_PARTY_ID:
+				return ownerPartyId != null;
+			case FinaccountPackage.FIN_ACCOUNT__POST_TO_GL_ACCOUNT_ID:
+				return postToGlAccountId != null;
+			case FinaccountPackage.FIN_ACCOUNT__REPLENISH_PAYMENT_ID:
+				return replenishPaymentId != null;
 			case FinaccountPackage.FIN_ACCOUNT__FIN_ACCOUNT_ATTRIBUTES:
 				return finAccountAttributes != null && !finAccountAttributes.isEmpty();
 		}
@@ -1106,30 +1166,18 @@ public class FinAccountImpl extends BizEntityTypedImpl<FinAccountType> implement
 		result.append(actualBalance);
 		result.append(", availableBalance: ");
 		result.append(availableBalance);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", finAccountCode: ");
 		result.append(finAccountCode);
 		result.append(", finAccountName: ");
 		result.append(finAccountName);
 		result.append(", finAccountPin: ");
 		result.append(finAccountPin);
-		result.append(", finAccountTypeId: ");
-		result.append(finAccountTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", isRefundable: ");
 		result.append(isRefundable);
-		result.append(", organizationPartyId: ");
-		result.append(organizationPartyId);
-		result.append(", ownerPartyId: ");
-		result.append(ownerPartyId);
-		result.append(", postToGlAccountId: ");
-		result.append(postToGlAccountId);
 		result.append(", replenishLevel: ");
 		result.append(replenishLevel);
-		result.append(", replenishPaymentId: ");
-		result.append(replenishPaymentId);
 		result.append(", statusId: ");
 		result.append(statusId);
 		result.append(", thruDate: ");

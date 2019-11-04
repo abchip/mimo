@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.product.subscription;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +23,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getServiceNameOnExpiry <em>Service Name On Expiry</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getWebSiteId <em>Web Site Id</em>}</li>
  * </ul>
  *
@@ -34,30 +36,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface SubscriptionResource extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Content Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Content Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content Id</em>' attribute.
-	 * @see #setContentId(String)
+	 * @return the value of the '<em>Content Id</em>' reference.
+	 * @see #setContentId(Content)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_ContentId()
-	 * @model annotation="mimo-ent-domain frame='Content'"
+	 * @model keys="contentId"
 	 * @generated
 	 */
-	String getContentId();
+	Content getContentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getContentId <em>Content Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getContentId <em>Content Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content Id</em>' attribute.
+	 * @param value the new value of the '<em>Content Id</em>' reference.
 	 * @see #getContentId()
 	 * @generated
 	 */
-	void setContentId(String value);
+	void setContentId(Content value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -112,30 +114,30 @@ public interface SubscriptionResource extends BizEntity {
 	void setServiceNameOnExpiry(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Web Site Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Web Site Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Web Site Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Web Site Id</em>' attribute.
-	 * @see #setWebSiteId(String)
+	 * @return the value of the '<em>Web Site Id</em>' reference.
+	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_WebSiteId()
-	 * @model annotation="mimo-ent-domain frame='WebSite'"
+	 * @model keys="webSiteId"
 	 * @generated
 	 */
-	String getWebSiteId();
+	WebSite getWebSiteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getWebSiteId <em>Web Site Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getWebSiteId <em>Web Site Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Web Site Id</em>' attribute.
+	 * @param value the new value of the '<em>Web Site Id</em>' reference.
 	 * @see #getWebSiteId()
 	 * @generated
 	 */
-	void setWebSiteId(String value);
+	void setWebSiteId(WebSite value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,30 +158,30 @@ public interface SubscriptionResource extends BizEntity {
 	List<String> subscriptions();
 
 	/**
-	 * Returns the value of the '<em><b>Parent Resource Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Resource Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Resource Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Resource Id</em>' attribute.
-	 * @see #setParentResourceId(String)
+	 * @return the value of the '<em>Parent Resource Id</em>' reference.
+	 * @see #setParentResourceId(SubscriptionResource)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_ParentResourceId()
-	 * @model annotation="mimo-ent-domain frame='SubscriptionResource'"
+	 * @model keys="subscriptionResourceId"
 	 * @generated
 	 */
-	String getParentResourceId();
+	SubscriptionResource getParentResourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent Resource Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.subscription.SubscriptionResource#getParentResourceId <em>Parent Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Resource Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Resource Id</em>' reference.
 	 * @see #getParentResourceId()
 	 * @generated
 	 */
-	void setParentResourceId(String value);
+	void setParentResourceId(SubscriptionResource value);
 
 	/**
 	 * Returns the value of the '<em><b>Subscription Resource Id</b></em>' attribute.
@@ -192,7 +194,7 @@ public interface SubscriptionResource extends BizEntity {
 	 * @return the value of the '<em>Subscription Resource Id</em>' attribute.
 	 * @see #setSubscriptionResourceId(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionResource_SubscriptionResourceId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

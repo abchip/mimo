@@ -94,7 +94,6 @@ public interface PartyTypeAttr extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyTypeAttr_PartyTypeId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PartyType'"
 	 * @generated
 	 */
 	String getPartyTypeId();

@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface SynchronizationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-entity-synchronization";
+	String eNS_PREFIX = "biz-synchronization";
 
 	/**
 	 * The singleton instance of the package.
@@ -695,7 +696,7 @@ public interface SynchronizationPackage extends EPackage {
 	int ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Entity Group Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Entity Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1344,15 +1345,15 @@ public interface SynchronizationPackage extends EPackage {
 	EAttribute getEntitySyncIncludeGroup_EntitySyncId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup#getEntityGroupId <em>Entity Group Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup#getEntityGroupId <em>Entity Group Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Entity Group Id</em>'.
+	 * @return the meta object for the reference '<em>Entity Group Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.synchronization.EntitySyncIncludeGroup#getEntityGroupId()
 	 * @see #getEntitySyncIncludeGroup()
 	 * @generated
 	 */
-	EAttribute getEntitySyncIncludeGroup_EntityGroupId();
+	EReference getEntitySyncIncludeGroup_EntityGroupId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.synchronization.EntitySyncRemove <em>Entity Sync Remove</em>}'.
@@ -1825,12 +1826,12 @@ public interface SynchronizationPackage extends EPackage {
 		EAttribute ENTITY_SYNC_INCLUDE_GROUP__ENTITY_SYNC_ID = eINSTANCE.getEntitySyncIncludeGroup_EntitySyncId();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Group Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Entity Group Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID = eINSTANCE.getEntitySyncIncludeGroup_EntityGroupId();
+		EReference ENTITY_SYNC_INCLUDE_GROUP__ENTITY_GROUP_ID = eINSTANCE.getEntitySyncIncludeGroup_EntityGroupId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.synchronization.impl.EntitySyncRemoveImpl <em>Entity Sync Remove</em>}' class.

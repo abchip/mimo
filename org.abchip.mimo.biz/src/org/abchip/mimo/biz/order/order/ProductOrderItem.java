@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.order;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getEngagementId <em>Engagement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getEngagementItemSeqId <em>Engagement Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getEngagementId <em>Engagement Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem()
@@ -31,31 +32,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface ProductOrderItem extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Engagement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Engagement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Engagement Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Engagement Id</em>' attribute.
-	 * @see #setEngagementId(String)
+	 * @return the value of the '<em>Engagement Id</em>' reference.
+	 * @see #setEngagementId(OrderHeader)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_EngagementId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getEngagementId();
+	OrderHeader getEngagementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getEngagementId <em>Engagement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getEngagementId <em>Engagement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Engagement Id</em>' attribute.
+	 * @param value the new value of the '<em>Engagement Id</em>' reference.
 	 * @see #getEngagementId()
 	 * @generated
 	 */
-	void setEngagementId(String value);
+	void setEngagementId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Engagement Item Seq Id</b></em>' attribute.
@@ -68,7 +68,8 @@ public interface ProductOrderItem extends BizEntity {
 	 * @return the value of the '<em>Engagement Item Seq Id</em>' attribute.
 	 * @see #setEngagementItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_EngagementItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEngagementItemSeqId();
@@ -94,8 +95,8 @@ public interface ProductOrderItem extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_OrderId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -121,7 +122,8 @@ public interface ProductOrderItem extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_OrderItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -137,29 +139,29 @@ public interface ProductOrderItem extends BizEntity {
 	void setOrderItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getProductOrderItem_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.ProductOrderItem#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 } // ProductOrderItem

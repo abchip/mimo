@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.humanres.position;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.humanres.ability.ResponsibilityType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +22,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getEmplPositionId <em>Empl Position Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionResponsibility()
@@ -69,8 +70,8 @@ public interface EmplPositionResponsibility extends BizEntity {
 	 * @return the value of the '<em>Empl Position Id</em>' attribute.
 	 * @see #setEmplPositionId(String)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionResponsibility_EmplPositionId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='EmplPosition'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getEmplPositionId();
@@ -96,7 +97,8 @@ public interface EmplPositionResponsibility extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionResponsibility_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -112,31 +114,30 @@ public interface EmplPositionResponsibility extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Responsibility Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Responsibility Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Responsibility Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Responsibility Type Id</em>' attribute.
-	 * @see #setResponsibilityTypeId(String)
+	 * @return the value of the '<em>Responsibility Type Id</em>' reference.
+	 * @see #setResponsibilityTypeId(ResponsibilityType)
 	 * @see org.abchip.mimo.biz.humanres.position.PositionPackage#getEmplPositionResponsibility_ResponsibilityTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ResponsibilityType'"
+	 * @model keys="responsibilityTypeId"
 	 * @generated
 	 */
-	String getResponsibilityTypeId();
+	ResponsibilityType getResponsibilityTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility#getResponsibilityTypeId <em>Responsibility Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Responsibility Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Responsibility Type Id</em>' reference.
 	 * @see #getResponsibilityTypeId()
 	 * @generated
 	 */
-	void setResponsibilityTypeId(String value);
+	void setResponsibilityTypeId(ResponsibilityType value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

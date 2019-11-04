@@ -11,11 +11,14 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.securitygroup.SecurityGroupPermission;
+import org.abchip.mimo.biz.security.securitygroup.SecurityPermission;
 import org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getGroupId <em>Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getPermissionId <em>Permission Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.securitygroup.impl.SecurityGroupPermissionImpl#getPermissionId <em>Permission Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,27 +63,6 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 * @ordered
 	 */
 	protected String groupId = GROUP_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPermissionId() <em>Permission Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPermissionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PERMISSION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPermissionId() <em>Permission Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPermissionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String permissionId = PERMISSION_ID_EDEFAULT;
-
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -122,6 +104,17 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+
+	/**
+	 * The cached value of the '{@link #getPermissionId() <em>Permission Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPermissionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SecurityPermission permissionId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,7 +187,24 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 * @generated
 	 */
 	@Override
-	public String getPermissionId() {
+	public SecurityPermission getPermissionId() {
+		if (permissionId != null && ((EObject)permissionId).eIsProxy()) {
+			InternalEObject oldPermissionId = (InternalEObject)permissionId;
+			permissionId = (SecurityPermission)eResolveProxy(oldPermissionId);
+			if (permissionId != oldPermissionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID, oldPermissionId, permissionId));
+			}
+		}
+		return permissionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SecurityPermission basicGetPermissionId() {
 		return permissionId;
 	}
 
@@ -204,8 +214,8 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 	 * @generated
 	 */
 	@Override
-	public void setPermissionId(String newPermissionId) {
-		String oldPermissionId = permissionId;
+	public void setPermissionId(SecurityPermission newPermissionId) {
+		SecurityPermission oldPermissionId = permissionId;
 		permissionId = newPermissionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID, oldPermissionId, permissionId));
@@ -244,12 +254,13 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 		switch (featureID) {
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
 				return getGroupId();
-			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
-				return getPermissionId();
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__FROM_DATE:
 				return getFromDate();
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__THRU_DATE:
 				return getThruDate();
+			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
+				if (resolve) return getPermissionId();
+				return basicGetPermissionId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,14 +276,14 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
 				setGroupId((String)newValue);
 				return;
-			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
-				setPermissionId((String)newValue);
-				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
+				setPermissionId((SecurityPermission)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,14 +300,14 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
 				setGroupId(GROUP_ID_EDEFAULT);
 				return;
-			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
-				setPermissionId(PERMISSION_ID_EDEFAULT);
-				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
+				setPermissionId((SecurityPermission)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -312,12 +323,12 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 		switch (featureID) {
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__GROUP_ID:
 				return GROUP_ID_EDEFAULT == null ? groupId != null : !GROUP_ID_EDEFAULT.equals(groupId);
-			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
-				return PERMISSION_ID_EDEFAULT == null ? permissionId != null : !PERMISSION_ID_EDEFAULT.equals(permissionId);
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case SecuritygroupPackage.SECURITY_GROUP_PERMISSION__PERMISSION_ID:
+				return permissionId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -334,8 +345,6 @@ public class SecurityGroupPermissionImpl extends BizEntityImpl implements Securi
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (groupId: ");
 		result.append(groupId);
-		result.append(", permissionId: ");
-		result.append(permissionId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

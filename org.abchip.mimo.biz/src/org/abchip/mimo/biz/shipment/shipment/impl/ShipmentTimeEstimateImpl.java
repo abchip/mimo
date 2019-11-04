@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentTimeEstimate;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
@@ -18,6 +20,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,13 +35,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getGeoIdTo <em>Geo Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getGeoIdFrom <em>Geo Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getLeadTime <em>Lead Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getLeadTimeUomId <em>Lead Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getSequenceNumber <em>Sequence Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getGeoIdTo <em>Geo Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getGeoIdFrom <em>Geo Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentTimeEstimateImpl#getLeadTimeUomId <em>Lead Time Uom Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,46 +113,6 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getGeoIdTo() <em>Geo Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_ID_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeoIdTo() <em>Geo Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoIdTo = GEO_ID_TO_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGeoIdFrom() <em>Geo Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_ID_FROM_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeoIdFrom() <em>Geo Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoIdFrom = GEO_ID_FROM_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,26 +153,6 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	protected BigDecimal leadTime = LEAD_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLeadTimeUomId() <em>Lead Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLeadTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LEAD_TIME_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLeadTimeUomId() <em>Lead Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLeadTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String leadTimeUomId = LEAD_TIME_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSequenceNumber() <em>Sequence Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -247,6 +191,36 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGeoIdTo() <em>Geo Id To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoIdTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo geoIdTo;
+
+	/**
+	 * The cached value of the '{@link #getGeoIdFrom() <em>Geo Id From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoIdFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo geoIdFrom;
+
+	/**
+	 * The cached value of the '{@link #getLeadTimeUomId() <em>Lead Time Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLeadTimeUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom leadTimeUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,7 +270,24 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 * @generated
 	 */
 	@Override
-	public String getGeoIdFrom() {
+	public Geo getGeoIdFrom() {
+		if (geoIdFrom != null && ((EObject)geoIdFrom).eIsProxy()) {
+			InternalEObject oldGeoIdFrom = (InternalEObject)geoIdFrom;
+			geoIdFrom = (Geo)eResolveProxy(oldGeoIdFrom);
+			if (geoIdFrom != oldGeoIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM, oldGeoIdFrom, geoIdFrom));
+			}
+		}
+		return geoIdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetGeoIdFrom() {
 		return geoIdFrom;
 	}
 
@@ -306,8 +297,8 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 * @generated
 	 */
 	@Override
-	public void setGeoIdFrom(String newGeoIdFrom) {
-		String oldGeoIdFrom = geoIdFrom;
+	public void setGeoIdFrom(Geo newGeoIdFrom) {
+		Geo oldGeoIdFrom = geoIdFrom;
 		geoIdFrom = newGeoIdFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM, oldGeoIdFrom, geoIdFrom));
@@ -319,7 +310,24 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 * @generated
 	 */
 	@Override
-	public String getGeoIdTo() {
+	public Geo getGeoIdTo() {
+		if (geoIdTo != null && ((EObject)geoIdTo).eIsProxy()) {
+			InternalEObject oldGeoIdTo = (InternalEObject)geoIdTo;
+			geoIdTo = (Geo)eResolveProxy(oldGeoIdTo);
+			if (geoIdTo != oldGeoIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO, oldGeoIdTo, geoIdTo));
+			}
+		}
+		return geoIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetGeoIdTo() {
 		return geoIdTo;
 	}
 
@@ -329,8 +337,8 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 * @generated
 	 */
 	@Override
-	public void setGeoIdTo(String newGeoIdTo) {
-		String oldGeoIdTo = geoIdTo;
+	public void setGeoIdTo(Geo newGeoIdTo) {
+		Geo oldGeoIdTo = geoIdTo;
 		geoIdTo = newGeoIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO, oldGeoIdTo, geoIdTo));
@@ -365,7 +373,24 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 * @generated
 	 */
 	@Override
-	public String getLeadTimeUomId() {
+	public Uom getLeadTimeUomId() {
+		if (leadTimeUomId != null && ((EObject)leadTimeUomId).eIsProxy()) {
+			InternalEObject oldLeadTimeUomId = (InternalEObject)leadTimeUomId;
+			leadTimeUomId = (Uom)eResolveProxy(oldLeadTimeUomId);
+			if (leadTimeUomId != oldLeadTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID, oldLeadTimeUomId, leadTimeUomId));
+			}
+		}
+		return leadTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetLeadTimeUomId() {
 		return leadTimeUomId;
 	}
 
@@ -375,8 +400,8 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 	 * @generated
 	 */
 	@Override
-	public void setLeadTimeUomId(String newLeadTimeUomId) {
-		String oldLeadTimeUomId = leadTimeUomId;
+	public void setLeadTimeUomId(Uom newLeadTimeUomId) {
+		Uom oldLeadTimeUomId = leadTimeUomId;
 		leadTimeUomId = newLeadTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID, oldLeadTimeUomId, leadTimeUomId));
@@ -511,20 +536,23 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 				return getPartyId();
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__ROLE_TYPE_ID:
 				return getRoleTypeId();
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO:
-				return getGeoIdTo();
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM:
-				return getGeoIdFrom();
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__FROM_DATE:
 				return getFromDate();
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME:
 				return getLeadTime();
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID:
-				return getLeadTimeUomId();
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__SEQUENCE_NUMBER:
 				return getSequenceNumber();
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__THRU_DATE:
 				return getThruDate();
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO:
+				if (resolve) return getGeoIdTo();
+				return basicGetGeoIdTo();
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM:
+				if (resolve) return getGeoIdFrom();
+				return basicGetGeoIdFrom();
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID:
+				if (resolve) return getLeadTimeUomId();
+				return basicGetLeadTimeUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -546,26 +574,26 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
 				return;
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO:
-				setGeoIdTo((String)newValue);
-				return;
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM:
-				setGeoIdFrom((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME:
 				setLeadTime((BigDecimal)newValue);
 				return;
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID:
-				setLeadTimeUomId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__SEQUENCE_NUMBER:
 				setSequenceNumber((Long)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO:
+				setGeoIdTo((Geo)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM:
+				setGeoIdFrom((Geo)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID:
+				setLeadTimeUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -588,26 +616,26 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO:
-				setGeoIdTo(GEO_ID_TO_EDEFAULT);
-				return;
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM:
-				setGeoIdFrom(GEO_ID_FROM_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME:
 				setLeadTime(LEAD_TIME_EDEFAULT);
 				return;
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID:
-				setLeadTimeUomId(LEAD_TIME_UOM_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__SEQUENCE_NUMBER:
 				setSequenceNumber(SEQUENCE_NUMBER_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO:
+				setGeoIdTo((Geo)null);
+				return;
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM:
+				setGeoIdFrom((Geo)null);
+				return;
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID:
+				setLeadTimeUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -627,20 +655,20 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO:
-				return GEO_ID_TO_EDEFAULT == null ? geoIdTo != null : !GEO_ID_TO_EDEFAULT.equals(geoIdTo);
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM:
-				return GEO_ID_FROM_EDEFAULT == null ? geoIdFrom != null : !GEO_ID_FROM_EDEFAULT.equals(geoIdFrom);
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME:
 				return LEAD_TIME_EDEFAULT == null ? leadTime != null : !LEAD_TIME_EDEFAULT.equals(leadTime);
-			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID:
-				return LEAD_TIME_UOM_ID_EDEFAULT == null ? leadTimeUomId != null : !LEAD_TIME_UOM_ID_EDEFAULT.equals(leadTimeUomId);
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__SEQUENCE_NUMBER:
 				return sequenceNumber != SEQUENCE_NUMBER_EDEFAULT;
 			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_TO:
+				return geoIdTo != null;
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__GEO_ID_FROM:
+				return geoIdFrom != null;
+			case Shipment_Package.SHIPMENT_TIME_ESTIMATE__LEAD_TIME_UOM_ID:
+				return leadTimeUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -661,16 +689,10 @@ public class ShipmentTimeEstimateImpl extends BizEntityImpl implements ShipmentT
 		result.append(partyId);
 		result.append(", roleTypeId: ");
 		result.append(roleTypeId);
-		result.append(", geoIdTo: ");
-		result.append(geoIdTo);
-		result.append(", geoIdFrom: ");
-		result.append(geoIdFrom);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", leadTime: ");
 		result.append(leadTime);
-		result.append(", leadTimeUomId: ");
-		result.append(leadTimeUomId);
 		result.append(", sequenceNumber: ");
 		result.append(sequenceNumber);
 		result.append(", thruDate: ");

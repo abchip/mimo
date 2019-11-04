@@ -11,10 +11,18 @@ import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetMaint;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.product.product.ProductMaintType;
+import org.abchip.mimo.biz.product.product.ProductMeterType;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,13 +35,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getMaintHistSeqId <em>Maint Hist Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getIntervalMeterTypeId <em>Interval Meter Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getIntervalQuantity <em>Interval Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getIntervalUomId <em>Interval Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getProductMaintSeqId <em>Product Maint Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getProductMaintTypeId <em>Product Maint Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getPurchaseOrderId <em>Purchase Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getScheduleWorkEffortId <em>Schedule Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getIntervalUomId <em>Interval Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getIntervalMeterTypeId <em>Interval Meter Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getPurchaseOrderId <em>Purchase Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetMaintImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
@@ -81,24 +89,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	protected String maintHistSeqId = MAINT_HIST_SEQ_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getIntervalMeterTypeId() <em>Interval Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntervalMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INTERVAL_METER_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getIntervalMeterTypeId() <em>Interval Meter Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntervalMeterTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String intervalMeterTypeId = INTERVAL_METER_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getIntervalQuantity() <em>Interval Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,24 +106,6 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @ordered
 	 */
 	protected BigDecimal intervalQuantity = INTERVAL_QUANTITY_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getIntervalUomId() <em>Interval Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntervalUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INTERVAL_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getIntervalUomId() <em>Interval Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntervalUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String intervalUomId = INTERVAL_UOM_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getProductMaintSeqId() <em>Product Maint Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -153,77 +125,59 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 */
 	protected String productMaintSeqId = PRODUCT_MAINT_SEQ_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductMaintTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_MAINT_TYPE_ID_EDEFAULT = null;
+	protected ProductMaintType productMaintTypeId;
 	/**
-	 * The cached value of the '{@link #getProductMaintTypeId() <em>Product Maint Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductMaintTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productMaintTypeId = PRODUCT_MAINT_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPurchaseOrderId() <em>Purchase Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPurchaseOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PURCHASE_ORDER_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPurchaseOrderId() <em>Purchase Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPurchaseOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String purchaseOrderId = PURCHASE_ORDER_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getScheduleWorkEffortId() <em>Schedule Work Effort Id</em>}' attribute.
+	 * The cached value of the '{@link #getScheduleWorkEffortId() <em>Schedule Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getScheduleWorkEffortId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SCHEDULE_WORK_EFFORT_ID_EDEFAULT = null;
+	protected WorkEffort scheduleWorkEffortId;
 	/**
-	 * The cached value of the '{@link #getScheduleWorkEffortId() <em>Schedule Work Effort Id</em>}' attribute.
+	 * The cached value of the '{@link #getIntervalUomId() <em>Interval Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getScheduleWorkEffortId()
+	 * @see #getIntervalUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String scheduleWorkEffortId = SCHEDULE_WORK_EFFORT_ID_EDEFAULT;
+	protected Uom intervalUomId;
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getIntervalMeterTypeId() <em>Interval Meter Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntervalMeterTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductMeterType intervalMeterTypeId;
+	/**
+	 * The cached value of the '{@link #getPurchaseOrderId() <em>Purchase Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPurchaseOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader purchaseOrderId;
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +204,24 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public String getIntervalMeterTypeId() {
+	public ProductMeterType getIntervalMeterTypeId() {
+		if (intervalMeterTypeId != null && ((EObject)intervalMeterTypeId).eIsProxy()) {
+			InternalEObject oldIntervalMeterTypeId = (InternalEObject)intervalMeterTypeId;
+			intervalMeterTypeId = (ProductMeterType)eResolveProxy(oldIntervalMeterTypeId);
+			if (intervalMeterTypeId != oldIntervalMeterTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID, oldIntervalMeterTypeId, intervalMeterTypeId));
+			}
+		}
+		return intervalMeterTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductMeterType basicGetIntervalMeterTypeId() {
 		return intervalMeterTypeId;
 	}
 
@@ -260,8 +231,8 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public void setIntervalMeterTypeId(String newIntervalMeterTypeId) {
-		String oldIntervalMeterTypeId = intervalMeterTypeId;
+	public void setIntervalMeterTypeId(ProductMeterType newIntervalMeterTypeId) {
+		ProductMeterType oldIntervalMeterTypeId = intervalMeterTypeId;
 		intervalMeterTypeId = newIntervalMeterTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID, oldIntervalMeterTypeId, intervalMeterTypeId));
@@ -296,7 +267,24 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public String getIntervalUomId() {
+	public Uom getIntervalUomId() {
+		if (intervalUomId != null && ((EObject)intervalUomId).eIsProxy()) {
+			InternalEObject oldIntervalUomId = (InternalEObject)intervalUomId;
+			intervalUomId = (Uom)eResolveProxy(oldIntervalUomId);
+			if (intervalUomId != oldIntervalUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID, oldIntervalUomId, intervalUomId));
+			}
+		}
+		return intervalUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetIntervalUomId() {
 		return intervalUomId;
 	}
 
@@ -306,8 +294,8 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public void setIntervalUomId(String newIntervalUomId) {
-		String oldIntervalUomId = intervalUomId;
+	public void setIntervalUomId(Uom newIntervalUomId) {
+		Uom oldIntervalUomId = intervalUomId;
 		intervalUomId = newIntervalUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID, oldIntervalUomId, intervalUomId));
@@ -365,7 +353,24 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public String getProductMaintTypeId() {
+	public ProductMaintType getProductMaintTypeId() {
+		if (productMaintTypeId != null && ((EObject)productMaintTypeId).eIsProxy()) {
+			InternalEObject oldProductMaintTypeId = (InternalEObject)productMaintTypeId;
+			productMaintTypeId = (ProductMaintType)eResolveProxy(oldProductMaintTypeId);
+			if (productMaintTypeId != oldProductMaintTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
+			}
+		}
+		return productMaintTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductMaintType basicGetProductMaintTypeId() {
 		return productMaintTypeId;
 	}
 
@@ -375,8 +380,8 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public void setProductMaintTypeId(String newProductMaintTypeId) {
-		String oldProductMaintTypeId = productMaintTypeId;
+	public void setProductMaintTypeId(ProductMaintType newProductMaintTypeId) {
+		ProductMaintType oldProductMaintTypeId = productMaintTypeId;
 		productMaintTypeId = newProductMaintTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID, oldProductMaintTypeId, productMaintTypeId));
@@ -388,7 +393,24 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public String getPurchaseOrderId() {
+	public OrderHeader getPurchaseOrderId() {
+		if (purchaseOrderId != null && ((EObject)purchaseOrderId).eIsProxy()) {
+			InternalEObject oldPurchaseOrderId = (InternalEObject)purchaseOrderId;
+			purchaseOrderId = (OrderHeader)eResolveProxy(oldPurchaseOrderId);
+			if (purchaseOrderId != oldPurchaseOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID, oldPurchaseOrderId, purchaseOrderId));
+			}
+		}
+		return purchaseOrderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetPurchaseOrderId() {
 		return purchaseOrderId;
 	}
 
@@ -398,8 +420,8 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public void setPurchaseOrderId(String newPurchaseOrderId) {
-		String oldPurchaseOrderId = purchaseOrderId;
+	public void setPurchaseOrderId(OrderHeader newPurchaseOrderId) {
+		OrderHeader oldPurchaseOrderId = purchaseOrderId;
 		purchaseOrderId = newPurchaseOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID, oldPurchaseOrderId, purchaseOrderId));
@@ -411,7 +433,24 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public String getScheduleWorkEffortId() {
+	public WorkEffort getScheduleWorkEffortId() {
+		if (scheduleWorkEffortId != null && ((EObject)scheduleWorkEffortId).eIsProxy()) {
+			InternalEObject oldScheduleWorkEffortId = (InternalEObject)scheduleWorkEffortId;
+			scheduleWorkEffortId = (WorkEffort)eResolveProxy(oldScheduleWorkEffortId);
+			if (scheduleWorkEffortId != oldScheduleWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__SCHEDULE_WORK_EFFORT_ID, oldScheduleWorkEffortId, scheduleWorkEffortId));
+			}
+		}
+		return scheduleWorkEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetScheduleWorkEffortId() {
 		return scheduleWorkEffortId;
 	}
 
@@ -421,8 +460,8 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public void setScheduleWorkEffortId(String newScheduleWorkEffortId) {
-		String oldScheduleWorkEffortId = scheduleWorkEffortId;
+	public void setScheduleWorkEffortId(WorkEffort newScheduleWorkEffortId) {
+		WorkEffort oldScheduleWorkEffortId = scheduleWorkEffortId;
 		scheduleWorkEffortId = newScheduleWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__SCHEDULE_WORK_EFFORT_ID, oldScheduleWorkEffortId, scheduleWorkEffortId));
@@ -434,7 +473,24 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_MAINT__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -444,8 +500,8 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_MAINT__STATUS_ID, oldStatusId, statusId));
@@ -486,22 +542,28 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 				return getFixedAssetId();
 			case FixedassetPackage.FIXED_ASSET_MAINT__MAINT_HIST_SEQ_ID:
 				return getMaintHistSeqId();
-			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID:
-				return getIntervalMeterTypeId();
 			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_QUANTITY:
 				return getIntervalQuantity();
-			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID:
-				return getIntervalUomId();
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_SEQ_ID:
 				return getProductMaintSeqId();
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID:
-				return getProductMaintTypeId();
-			case FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID:
-				return getPurchaseOrderId();
+				if (resolve) return getProductMaintTypeId();
+				return basicGetProductMaintTypeId();
 			case FixedassetPackage.FIXED_ASSET_MAINT__SCHEDULE_WORK_EFFORT_ID:
-				return getScheduleWorkEffortId();
+				if (resolve) return getScheduleWorkEffortId();
+				return basicGetScheduleWorkEffortId();
+			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID:
+				if (resolve) return getIntervalUomId();
+				return basicGetIntervalUomId();
+			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID:
+				if (resolve) return getIntervalMeterTypeId();
+				return basicGetIntervalMeterTypeId();
+			case FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID:
+				if (resolve) return getPurchaseOrderId();
+				return basicGetPurchaseOrderId();
 			case FixedassetPackage.FIXED_ASSET_MAINT__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -520,29 +582,29 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 			case FixedassetPackage.FIXED_ASSET_MAINT__MAINT_HIST_SEQ_ID:
 				setMaintHistSeqId((String)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID:
-				setIntervalMeterTypeId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_QUANTITY:
 				setIntervalQuantity((BigDecimal)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID:
-				setIntervalUomId((String)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_SEQ_ID:
 				setProductMaintSeqId((String)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID:
-				setProductMaintTypeId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID:
-				setPurchaseOrderId((String)newValue);
+				setProductMaintTypeId((ProductMaintType)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__SCHEDULE_WORK_EFFORT_ID:
-				setScheduleWorkEffortId((String)newValue);
+				setScheduleWorkEffortId((WorkEffort)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID:
+				setIntervalUomId((Uom)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID:
+				setIntervalMeterTypeId((ProductMeterType)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID:
+				setPurchaseOrderId((OrderHeader)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -562,29 +624,29 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 			case FixedassetPackage.FIXED_ASSET_MAINT__MAINT_HIST_SEQ_ID:
 				setMaintHistSeqId(MAINT_HIST_SEQ_ID_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID:
-				setIntervalMeterTypeId(INTERVAL_METER_TYPE_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_QUANTITY:
 				setIntervalQuantity(INTERVAL_QUANTITY_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID:
-				setIntervalUomId(INTERVAL_UOM_ID_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_SEQ_ID:
 				setProductMaintSeqId(PRODUCT_MAINT_SEQ_ID_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID:
-				setProductMaintTypeId(PRODUCT_MAINT_TYPE_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID:
-				setPurchaseOrderId(PURCHASE_ORDER_ID_EDEFAULT);
+				setProductMaintTypeId((ProductMaintType)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__SCHEDULE_WORK_EFFORT_ID:
-				setScheduleWorkEffortId(SCHEDULE_WORK_EFFORT_ID_EDEFAULT);
+				setScheduleWorkEffortId((WorkEffort)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID:
+				setIntervalUomId((Uom)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID:
+				setIntervalMeterTypeId((ProductMeterType)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID:
+				setPurchaseOrderId((OrderHeader)null);
 				return;
 			case FixedassetPackage.FIXED_ASSET_MAINT__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -602,22 +664,22 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case FixedassetPackage.FIXED_ASSET_MAINT__MAINT_HIST_SEQ_ID:
 				return MAINT_HIST_SEQ_ID_EDEFAULT == null ? maintHistSeqId != null : !MAINT_HIST_SEQ_ID_EDEFAULT.equals(maintHistSeqId);
-			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID:
-				return INTERVAL_METER_TYPE_ID_EDEFAULT == null ? intervalMeterTypeId != null : !INTERVAL_METER_TYPE_ID_EDEFAULT.equals(intervalMeterTypeId);
 			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_QUANTITY:
 				return INTERVAL_QUANTITY_EDEFAULT == null ? intervalQuantity != null : !INTERVAL_QUANTITY_EDEFAULT.equals(intervalQuantity);
-			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID:
-				return INTERVAL_UOM_ID_EDEFAULT == null ? intervalUomId != null : !INTERVAL_UOM_ID_EDEFAULT.equals(intervalUomId);
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_SEQ_ID:
 				return PRODUCT_MAINT_SEQ_ID_EDEFAULT == null ? productMaintSeqId != null : !PRODUCT_MAINT_SEQ_ID_EDEFAULT.equals(productMaintSeqId);
 			case FixedassetPackage.FIXED_ASSET_MAINT__PRODUCT_MAINT_TYPE_ID:
-				return PRODUCT_MAINT_TYPE_ID_EDEFAULT == null ? productMaintTypeId != null : !PRODUCT_MAINT_TYPE_ID_EDEFAULT.equals(productMaintTypeId);
-			case FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID:
-				return PURCHASE_ORDER_ID_EDEFAULT == null ? purchaseOrderId != null : !PURCHASE_ORDER_ID_EDEFAULT.equals(purchaseOrderId);
+				return productMaintTypeId != null;
 			case FixedassetPackage.FIXED_ASSET_MAINT__SCHEDULE_WORK_EFFORT_ID:
-				return SCHEDULE_WORK_EFFORT_ID_EDEFAULT == null ? scheduleWorkEffortId != null : !SCHEDULE_WORK_EFFORT_ID_EDEFAULT.equals(scheduleWorkEffortId);
+				return scheduleWorkEffortId != null;
+			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_UOM_ID:
+				return intervalUomId != null;
+			case FixedassetPackage.FIXED_ASSET_MAINT__INTERVAL_METER_TYPE_ID:
+				return intervalMeterTypeId != null;
+			case FixedassetPackage.FIXED_ASSET_MAINT__PURCHASE_ORDER_ID:
+				return purchaseOrderId != null;
 			case FixedassetPackage.FIXED_ASSET_MAINT__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -636,22 +698,10 @@ public class FixedAssetMaintImpl extends BizEntityImpl implements FixedAssetMain
 		result.append(fixedAssetId);
 		result.append(", maintHistSeqId: ");
 		result.append(maintHistSeqId);
-		result.append(", intervalMeterTypeId: ");
-		result.append(intervalMeterTypeId);
 		result.append(", intervalQuantity: ");
 		result.append(intervalQuantity);
-		result.append(", intervalUomId: ");
-		result.append(intervalUomId);
 		result.append(", productMaintSeqId: ");
 		result.append(productMaintSeqId);
-		result.append(", productMaintTypeId: ");
-		result.append(productMaintTypeId);
-		result.append(", purchaseOrderId: ");
-		result.append(purchaseOrderId);
-		result.append(", scheduleWorkEffortId: ");
-		result.append(scheduleWorkEffortId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(')');
 		return result.toString();
 	}

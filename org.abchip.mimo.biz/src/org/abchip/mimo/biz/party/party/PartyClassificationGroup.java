@@ -58,56 +58,56 @@ public interface PartyClassificationGroup extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Group Id</em>' attribute.
-	 * @see #setParentGroupId(String)
+	 * @return the value of the '<em>Parent Group Id</em>' reference.
+	 * @see #setParentGroupId(PartyClassificationGroup)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassificationGroup_ParentGroupId()
-	 * @model annotation="mimo-ent-domain frame='PartyClassificationGroup'"
+	 * @model keys="partyClassificationGroupId"
 	 * @generated
 	 */
-	String getParentGroupId();
+	PartyClassificationGroup getParentGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyClassificationGroup#getParentGroupId <em>Parent Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyClassificationGroup#getParentGroupId <em>Parent Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Group Id</em>' reference.
 	 * @see #getParentGroupId()
 	 * @generated
 	 */
-	void setParentGroupId(String value);
+	void setParentGroupId(PartyClassificationGroup value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Classification Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Classification Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Classification Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Classification Type Id</em>' attribute.
-	 * @see #setPartyClassificationTypeId(String)
+	 * @return the value of the '<em>Party Classification Type Id</em>' reference.
+	 * @see #setPartyClassificationTypeId(PartyClassificationType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyClassificationGroup_PartyClassificationTypeId()
-	 * @model annotation="mimo-ent-domain frame='PartyClassificationType'"
+	 * @model keys="partyClassificationTypeId"
 	 * @generated
 	 */
-	String getPartyClassificationTypeId();
+	PartyClassificationType getPartyClassificationTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyClassificationGroup#getPartyClassificationTypeId <em>Party Classification Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyClassificationGroup#getPartyClassificationTypeId <em>Party Classification Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Classification Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Classification Type Id</em>' reference.
 	 * @see #getPartyClassificationTypeId()
 	 * @generated
 	 */
-	void setPartyClassificationTypeId(String value);
+	void setPartyClassificationTypeId(PartyClassificationType value);
 
 	/**
 	 * <!-- begin-user-doc -->

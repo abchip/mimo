@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface BomPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-manufacturing-bom";
+	String eNS_PREFIX = "biz-bom";
 
 	/**
 	 * The singleton instance of the package.
@@ -134,58 +135,13 @@ public interface BomPackage extends EPackage {
 	int PRODUCT_MANUFACTURING_RULE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Product Feature</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Product Id For</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Product Id In</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Product Id In Subst</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PRODUCT_MANUFACTURING_RULE__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Rule Operator</b></em>' attribute.
@@ -194,7 +150,7 @@ public interface BomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__RULE_OPERATOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PRODUCT_MANUFACTURING_RULE__RULE_OPERATOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Rule Seq Id</b></em>' attribute.
@@ -203,7 +159,7 @@ public interface BomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__RULE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PRODUCT_MANUFACTURING_RULE__RULE_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -212,7 +168,52 @@ public interface BomPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_MANUFACTURING_RULE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PRODUCT_MANUFACTURING_RULE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Product Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Product Id For</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Product Id In</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Product Id In Subst</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Product Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Product Manufacturing Rule</em>' class.
@@ -268,59 +269,59 @@ public interface BomPackage extends EPackage {
 	EAttribute getProductManufacturingRule_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductFeature <em>Product Feature</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductFeature <em>Product Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Feature</em>'.
+	 * @return the meta object for the reference '<em>Product Feature</em>'.
 	 * @see org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductFeature()
 	 * @see #getProductManufacturingRule()
 	 * @generated
 	 */
-	EAttribute getProductManufacturingRule_ProductFeature();
+	EReference getProductManufacturingRule_ProductFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductId <em>Product Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductId <em>Product Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id</em>'.
+	 * @return the meta object for the reference '<em>Product Id</em>'.
 	 * @see org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductId()
 	 * @see #getProductManufacturingRule()
 	 * @generated
 	 */
-	EAttribute getProductManufacturingRule_ProductId();
+	EReference getProductManufacturingRule_ProductId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdFor <em>Product Id For</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdFor <em>Product Id For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id For</em>'.
+	 * @return the meta object for the reference '<em>Product Id For</em>'.
 	 * @see org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdFor()
 	 * @see #getProductManufacturingRule()
 	 * @generated
 	 */
-	EAttribute getProductManufacturingRule_ProductIdFor();
+	EReference getProductManufacturingRule_ProductIdFor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdIn <em>Product Id In</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdIn <em>Product Id In</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id In</em>'.
+	 * @return the meta object for the reference '<em>Product Id In</em>'.
 	 * @see org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdIn()
 	 * @see #getProductManufacturingRule()
 	 * @generated
 	 */
-	EAttribute getProductManufacturingRule_ProductIdIn();
+	EReference getProductManufacturingRule_ProductIdIn();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdInSubst <em>Product Id In Subst</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdInSubst <em>Product Id In Subst</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id In Subst</em>'.
+	 * @return the meta object for the reference '<em>Product Id In Subst</em>'.
 	 * @see org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdInSubst()
 	 * @see #getProductManufacturingRule()
 	 * @generated
 	 */
-	EAttribute getProductManufacturingRule_ProductIdInSubst();
+	EReference getProductManufacturingRule_ProductIdInSubst();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getQuantity <em>Quantity</em>}'.
@@ -423,44 +424,44 @@ public interface BomPackage extends EPackage {
 		EAttribute PRODUCT_MANUFACTURING_RULE__FROM_DATE = eINSTANCE.getProductManufacturingRule_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Feature</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE = eINSTANCE.getProductManufacturingRule_ProductFeature();
+		EReference PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE = eINSTANCE.getProductManufacturingRule_ProductFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_MANUFACTURING_RULE__PRODUCT_ID = eINSTANCE.getProductManufacturingRule_ProductId();
+		EReference PRODUCT_MANUFACTURING_RULE__PRODUCT_ID = eINSTANCE.getProductManufacturingRule_ProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id For</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id For</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR = eINSTANCE.getProductManufacturingRule_ProductIdFor();
+		EReference PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR = eINSTANCE.getProductManufacturingRule_ProductIdFor();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id In</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id In</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN = eINSTANCE.getProductManufacturingRule_ProductIdIn();
+		EReference PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN = eINSTANCE.getProductManufacturingRule_ProductIdIn();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id In Subst</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id In Subst</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST = eINSTANCE.getProductManufacturingRule_ProductIdInSubst();
+		EReference PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST = eINSTANCE.getProductManufacturingRule_ProductIdInSubst();
 
 		/**
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.

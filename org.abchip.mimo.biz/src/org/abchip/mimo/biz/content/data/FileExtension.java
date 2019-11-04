@@ -55,29 +55,29 @@ public interface FileExtension extends BizEntity {
 	void setFileExtensionId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Mime Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Mime Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mime Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mime Type Id</em>' attribute.
-	 * @see #setMimeTypeId(String)
+	 * @return the value of the '<em>Mime Type Id</em>' reference.
+	 * @see #setMimeTypeId(MimeType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getFileExtension_MimeTypeId()
-	 * @model annotation="mimo-ent-domain frame='MimeType'"
+	 * @model keys="mimeTypeId"
 	 * @generated
 	 */
-	String getMimeTypeId();
+	MimeType getMimeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.FileExtension#getMimeTypeId <em>Mime Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.FileExtension#getMimeTypeId <em>Mime Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mime Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Mime Type Id</em>' reference.
 	 * @see #getMimeTypeId()
 	 * @generated
 	 */
-	void setMimeTypeId(String value);
+	void setMimeTypeId(MimeType value);
 
 } // FileExtension

@@ -10,7 +10,10 @@ package org.abchip.mimo.biz.base.command;
 
 import javax.inject.Inject;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.party.party.PartyGroup;
+import org.abchip.mimo.biz.party.party.PartyType;
 import org.abchip.mimo.biz.party.party.Person;
 import org.abchip.mimo.context.ContextRoot;
 import org.abchip.mimo.entity.EntityNameable;
@@ -39,9 +42,9 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		EntityWriter<Person> personWriter = resourceManager.getEntityWriter(contextRoot, Person.class);
 
 		Person person = frameManager.createEntity(Person.class);
-		person.setPreferredCurrencyUomId("EUR");
-		person.setStatusId("PARTY_ENABLED");
-		person.setPartyTypeId("PERSON");
+		person.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
+		person.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
+		person.setPartyTypeId(frameManager.createProxy(PartyType.class, "PERSON"));
 		person.setPartyId(id);
 		person.setFirstName("Test hacker party person");
 		personWriter.create(person);
@@ -50,9 +53,9 @@ public class PartyCommandProviderImpl implements CommandProvider {
 		EntityWriter<PartyGroup> groupWriter = resourceManager.getEntityWriter(contextRoot, PartyGroup.class);
 
 		PartyGroup partyGroup = frameManager.createEntity(PartyGroup.class);
-		partyGroup.setPreferredCurrencyUomId("EUR");
-		partyGroup.setStatusId("PARTY_ENABLED");
-		partyGroup.setPartyTypeId("PARTY_GROUP");
+		partyGroup.setPreferredCurrencyUomId(frameManager.createProxy(Uom.class, "EUR"));
+		partyGroup.setStatusId(frameManager.createProxy(StatusItem.class, "PARTY_ENABLED"));
+		partyGroup.setPartyTypeId(frameManager.createProxy(PartyType.class, "PARTY_GROUP"));
 		partyGroup.setPartyId(id);
 		partyGroup.setGroupName("Test hacker party group");
 		groupWriter.create(partyGroup);

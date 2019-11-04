@@ -12,14 +12,20 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.period.CustomTimePeriod;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
 import org.abchip.mimo.biz.marketing.opportunity.SalesForecast;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,18 +40,18 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getSalesForecastId <em>Sales Forecast Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getBestCaseAmount <em>Best Case Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getClosedAmount <em>Closed Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getCreatedByUserLoginId <em>Created By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getForecastAmount <em>Forecast Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getInternalPartyId <em>Internal Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getModifiedByUserLoginId <em>Modified By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getParentSalesForecastId <em>Parent Sales Forecast Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getPercentOfQuotaClosed <em>Percent Of Quota Closed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getPercentOfQuotaForecast <em>Percent Of Quota Forecast</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getPipelineAmount <em>Pipeline Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getQuotaAmount <em>Quota Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getParentSalesForecastId <em>Parent Sales Forecast Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getInternalPartyId <em>Internal Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getCreatedByUserLoginId <em>Created By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getModifiedByUserLoginId <em>Modified By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesForecastImpl#getSalesForecastDetails <em>Sales Forecast Details</em>}</li>
  * </ul>
  *
@@ -118,66 +124,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	protected BigDecimal closedAmount = CLOSED_AMOUNT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCreatedByUserLoginId() <em>Created By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLoginId() <em>Created By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLoginId = CREATED_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCustomTimePeriodId() <em>Custom Time Period Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomTimePeriodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUSTOM_TIME_PERIOD_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustomTimePeriodId() <em>Custom Time Period Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustomTimePeriodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String customTimePeriodId = CUSTOM_TIME_PERIOD_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getForecastAmount() <em>Forecast Amount</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,86 +142,6 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @ordered
 	 */
 	protected BigDecimal forecastAmount = FORECAST_AMOUNT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInternalPartyId() <em>Internal Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInternalPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INTERNAL_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInternalPartyId() <em>Internal Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInternalPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String internalPartyId = INTERNAL_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getModifiedByUserLoginId() <em>Modified By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModifiedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MODIFIED_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getModifiedByUserLoginId() <em>Modified By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModifiedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String modifiedByUserLoginId = MODIFIED_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getParentSalesForecastId() <em>Parent Sales Forecast Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentSalesForecastId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARENT_SALES_FORECAST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentSalesForecastId() <em>Parent Sales Forecast Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentSalesForecastId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentSalesForecastId = PARENT_SALES_FORECAST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPercentOfQuotaClosed() <em>Percent Of Quota Closed</em>}' attribute.
@@ -358,6 +224,76 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	protected BigDecimal quotaAmount = QUOTA_AMOUNT_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getParentSalesForecastId() <em>Parent Sales Forecast Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentSalesForecastId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SalesForecast parentSalesForecastId;
+
+	/**
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrganizationPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party organizationPartyId;
+
+	/**
+	 * The cached value of the '{@link #getInternalPartyId() <em>Internal Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInternalPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party internalPartyId;
+
+	/**
+	 * The cached value of the '{@link #getCustomTimePeriodId() <em>Custom Time Period Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomTimePeriodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomTimePeriod customTimePeriodId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLoginId() <em>Created By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLoginId;
+
+	/**
+	 * The cached value of the '{@link #getModifiedByUserLoginId() <em>Modified By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModifiedByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin modifiedByUserLoginId;
+
+	/**
 	 * The cached value of the '{@link #getSalesForecastDetails() <em>Sales Forecast Details</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -438,7 +374,24 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLoginId() {
+	public UserLogin getCreatedByUserLoginId() {
+		if (createdByUserLoginId != null && ((EObject)createdByUserLoginId).eIsProxy()) {
+			InternalEObject oldCreatedByUserLoginId = (InternalEObject)createdByUserLoginId;
+			createdByUserLoginId = (UserLogin)eResolveProxy(oldCreatedByUserLoginId);
+			if (createdByUserLoginId != oldCreatedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID, oldCreatedByUserLoginId, createdByUserLoginId));
+			}
+		}
+		return createdByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLoginId() {
 		return createdByUserLoginId;
 	}
 
@@ -448,8 +401,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLoginId(String newCreatedByUserLoginId) {
-		String oldCreatedByUserLoginId = createdByUserLoginId;
+	public void setCreatedByUserLoginId(UserLogin newCreatedByUserLoginId) {
+		UserLogin oldCreatedByUserLoginId = createdByUserLoginId;
 		createdByUserLoginId = newCreatedByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID, oldCreatedByUserLoginId, createdByUserLoginId));
@@ -461,7 +414,24 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -471,8 +441,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -484,7 +454,24 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public String getCustomTimePeriodId() {
+	public CustomTimePeriod getCustomTimePeriodId() {
+		if (customTimePeriodId != null && ((EObject)customTimePeriodId).eIsProxy()) {
+			InternalEObject oldCustomTimePeriodId = (InternalEObject)customTimePeriodId;
+			customTimePeriodId = (CustomTimePeriod)eResolveProxy(oldCustomTimePeriodId);
+			if (customTimePeriodId != oldCustomTimePeriodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
+			}
+		}
+		return customTimePeriodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomTimePeriod basicGetCustomTimePeriodId() {
 		return customTimePeriodId;
 	}
 
@@ -494,8 +481,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public void setCustomTimePeriodId(String newCustomTimePeriodId) {
-		String oldCustomTimePeriodId = customTimePeriodId;
+	public void setCustomTimePeriodId(CustomTimePeriod newCustomTimePeriodId) {
+		CustomTimePeriod oldCustomTimePeriodId = customTimePeriodId;
 		customTimePeriodId = newCustomTimePeriodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID, oldCustomTimePeriodId, customTimePeriodId));
@@ -530,7 +517,24 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public String getInternalPartyId() {
+	public Party getInternalPartyId() {
+		if (internalPartyId != null && ((EObject)internalPartyId).eIsProxy()) {
+			InternalEObject oldInternalPartyId = (InternalEObject)internalPartyId;
+			internalPartyId = (Party)eResolveProxy(oldInternalPartyId);
+			if (internalPartyId != oldInternalPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID, oldInternalPartyId, internalPartyId));
+			}
+		}
+		return internalPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetInternalPartyId() {
 		return internalPartyId;
 	}
 
@@ -540,8 +544,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public void setInternalPartyId(String newInternalPartyId) {
-		String oldInternalPartyId = internalPartyId;
+	public void setInternalPartyId(Party newInternalPartyId) {
+		Party oldInternalPartyId = internalPartyId;
 		internalPartyId = newInternalPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID, oldInternalPartyId, internalPartyId));
@@ -553,7 +557,24 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public String getModifiedByUserLoginId() {
+	public UserLogin getModifiedByUserLoginId() {
+		if (modifiedByUserLoginId != null && ((EObject)modifiedByUserLoginId).eIsProxy()) {
+			InternalEObject oldModifiedByUserLoginId = (InternalEObject)modifiedByUserLoginId;
+			modifiedByUserLoginId = (UserLogin)eResolveProxy(oldModifiedByUserLoginId);
+			if (modifiedByUserLoginId != oldModifiedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID, oldModifiedByUserLoginId, modifiedByUserLoginId));
+			}
+		}
+		return modifiedByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetModifiedByUserLoginId() {
 		return modifiedByUserLoginId;
 	}
 
@@ -563,8 +584,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public void setModifiedByUserLoginId(String newModifiedByUserLoginId) {
-		String oldModifiedByUserLoginId = modifiedByUserLoginId;
+	public void setModifiedByUserLoginId(UserLogin newModifiedByUserLoginId) {
+		UserLogin oldModifiedByUserLoginId = modifiedByUserLoginId;
 		modifiedByUserLoginId = newModifiedByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID, oldModifiedByUserLoginId, modifiedByUserLoginId));
@@ -576,7 +597,24 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -586,8 +624,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -599,7 +637,24 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public String getParentSalesForecastId() {
+	public SalesForecast getParentSalesForecastId() {
+		if (parentSalesForecastId != null && ((EObject)parentSalesForecastId).eIsProxy()) {
+			InternalEObject oldParentSalesForecastId = (InternalEObject)parentSalesForecastId;
+			parentSalesForecastId = (SalesForecast)eResolveProxy(oldParentSalesForecastId);
+			if (parentSalesForecastId != oldParentSalesForecastId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID, oldParentSalesForecastId, parentSalesForecastId));
+			}
+		}
+		return parentSalesForecastId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SalesForecast basicGetParentSalesForecastId() {
 		return parentSalesForecastId;
 	}
 
@@ -609,8 +664,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 	 * @generated
 	 */
 	@Override
-	public void setParentSalesForecastId(String newParentSalesForecastId) {
-		String oldParentSalesForecastId = parentSalesForecastId;
+	public void setParentSalesForecastId(SalesForecast newParentSalesForecastId) {
+		SalesForecast oldParentSalesForecastId = parentSalesForecastId;
 		parentSalesForecastId = newParentSalesForecastId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID, oldParentSalesForecastId, parentSalesForecastId));
@@ -782,22 +837,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 				return getBestCaseAmount();
 			case OpportunityPackage.SALES_FORECAST__CLOSED_AMOUNT:
 				return getClosedAmount();
-			case OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID:
-				return getCreatedByUserLoginId();
-			case OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
-			case OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID:
-				return getCustomTimePeriodId();
 			case OpportunityPackage.SALES_FORECAST__FORECAST_AMOUNT:
 				return getForecastAmount();
-			case OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID:
-				return getInternalPartyId();
-			case OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID:
-				return getModifiedByUserLoginId();
-			case OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
-			case OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID:
-				return getParentSalesForecastId();
 			case OpportunityPackage.SALES_FORECAST__PERCENT_OF_QUOTA_CLOSED:
 				return getPercentOfQuotaClosed();
 			case OpportunityPackage.SALES_FORECAST__PERCENT_OF_QUOTA_FORECAST:
@@ -806,6 +847,27 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 				return getPipelineAmount();
 			case OpportunityPackage.SALES_FORECAST__QUOTA_AMOUNT:
 				return getQuotaAmount();
+			case OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID:
+				if (resolve) return getParentSalesForecastId();
+				return basicGetParentSalesForecastId();
+			case OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID:
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
+			case OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID:
+				if (resolve) return getInternalPartyId();
+				return basicGetInternalPartyId();
+			case OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID:
+				if (resolve) return getCustomTimePeriodId();
+				return basicGetCustomTimePeriodId();
+			case OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID:
+				if (resolve) return getCreatedByUserLoginId();
+				return basicGetCreatedByUserLoginId();
+			case OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID:
+				if (resolve) return getModifiedByUserLoginId();
+				return basicGetModifiedByUserLoginId();
 			case OpportunityPackage.SALES_FORECAST__SALES_FORECAST_DETAILS:
 				return getSalesForecastDetails();
 		}
@@ -830,29 +892,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 			case OpportunityPackage.SALES_FORECAST__CLOSED_AMOUNT:
 				setClosedAmount((BigDecimal)newValue);
 				return;
-			case OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID:
-				setCreatedByUserLoginId((String)newValue);
-				return;
-			case OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
-			case OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID:
-				setCustomTimePeriodId((String)newValue);
-				return;
 			case OpportunityPackage.SALES_FORECAST__FORECAST_AMOUNT:
 				setForecastAmount((BigDecimal)newValue);
-				return;
-			case OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID:
-				setInternalPartyId((String)newValue);
-				return;
-			case OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID:
-				setModifiedByUserLoginId((String)newValue);
-				return;
-			case OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
-				return;
-			case OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID:
-				setParentSalesForecastId((String)newValue);
 				return;
 			case OpportunityPackage.SALES_FORECAST__PERCENT_OF_QUOTA_CLOSED:
 				setPercentOfQuotaClosed((BigDecimal)newValue);
@@ -865,6 +906,27 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 				return;
 			case OpportunityPackage.SALES_FORECAST__QUOTA_AMOUNT:
 				setQuotaAmount((BigDecimal)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID:
+				setParentSalesForecastId((SalesForecast)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID:
+				setInternalPartyId((Party)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID:
+				setCustomTimePeriodId((CustomTimePeriod)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID:
+				setCreatedByUserLoginId((UserLogin)newValue);
+				return;
+			case OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID:
+				setModifiedByUserLoginId((UserLogin)newValue);
 				return;
 			case OpportunityPackage.SALES_FORECAST__SALES_FORECAST_DETAILS:
 				getSalesForecastDetails().clear();
@@ -891,29 +953,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 			case OpportunityPackage.SALES_FORECAST__CLOSED_AMOUNT:
 				setClosedAmount(CLOSED_AMOUNT_EDEFAULT);
 				return;
-			case OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID:
-				setCreatedByUserLoginId(CREATED_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
-			case OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
-			case OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID:
-				setCustomTimePeriodId(CUSTOM_TIME_PERIOD_ID_EDEFAULT);
-				return;
 			case OpportunityPackage.SALES_FORECAST__FORECAST_AMOUNT:
 				setForecastAmount(FORECAST_AMOUNT_EDEFAULT);
-				return;
-			case OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID:
-				setInternalPartyId(INTERNAL_PARTY_ID_EDEFAULT);
-				return;
-			case OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID:
-				setModifiedByUserLoginId(MODIFIED_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
-			case OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
-				return;
-			case OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID:
-				setParentSalesForecastId(PARENT_SALES_FORECAST_ID_EDEFAULT);
 				return;
 			case OpportunityPackage.SALES_FORECAST__PERCENT_OF_QUOTA_CLOSED:
 				setPercentOfQuotaClosed(PERCENT_OF_QUOTA_CLOSED_EDEFAULT);
@@ -926,6 +967,27 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 				return;
 			case OpportunityPackage.SALES_FORECAST__QUOTA_AMOUNT:
 				setQuotaAmount(QUOTA_AMOUNT_EDEFAULT);
+				return;
+			case OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID:
+				setParentSalesForecastId((SalesForecast)null);
+				return;
+			case OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)null);
+				return;
+			case OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID:
+				setInternalPartyId((Party)null);
+				return;
+			case OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID:
+				setCustomTimePeriodId((CustomTimePeriod)null);
+				return;
+			case OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID:
+				setCreatedByUserLoginId((UserLogin)null);
+				return;
+			case OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID:
+				setModifiedByUserLoginId((UserLogin)null);
 				return;
 			case OpportunityPackage.SALES_FORECAST__SALES_FORECAST_DETAILS:
 				getSalesForecastDetails().clear();
@@ -948,22 +1010,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 				return BEST_CASE_AMOUNT_EDEFAULT == null ? bestCaseAmount != null : !BEST_CASE_AMOUNT_EDEFAULT.equals(bestCaseAmount);
 			case OpportunityPackage.SALES_FORECAST__CLOSED_AMOUNT:
 				return CLOSED_AMOUNT_EDEFAULT == null ? closedAmount != null : !CLOSED_AMOUNT_EDEFAULT.equals(closedAmount);
-			case OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID:
-				return CREATED_BY_USER_LOGIN_ID_EDEFAULT == null ? createdByUserLoginId != null : !CREATED_BY_USER_LOGIN_ID_EDEFAULT.equals(createdByUserLoginId);
-			case OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
-			case OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID:
-				return CUSTOM_TIME_PERIOD_ID_EDEFAULT == null ? customTimePeriodId != null : !CUSTOM_TIME_PERIOD_ID_EDEFAULT.equals(customTimePeriodId);
 			case OpportunityPackage.SALES_FORECAST__FORECAST_AMOUNT:
 				return FORECAST_AMOUNT_EDEFAULT == null ? forecastAmount != null : !FORECAST_AMOUNT_EDEFAULT.equals(forecastAmount);
-			case OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID:
-				return INTERNAL_PARTY_ID_EDEFAULT == null ? internalPartyId != null : !INTERNAL_PARTY_ID_EDEFAULT.equals(internalPartyId);
-			case OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID:
-				return MODIFIED_BY_USER_LOGIN_ID_EDEFAULT == null ? modifiedByUserLoginId != null : !MODIFIED_BY_USER_LOGIN_ID_EDEFAULT.equals(modifiedByUserLoginId);
-			case OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
-			case OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID:
-				return PARENT_SALES_FORECAST_ID_EDEFAULT == null ? parentSalesForecastId != null : !PARENT_SALES_FORECAST_ID_EDEFAULT.equals(parentSalesForecastId);
 			case OpportunityPackage.SALES_FORECAST__PERCENT_OF_QUOTA_CLOSED:
 				return PERCENT_OF_QUOTA_CLOSED_EDEFAULT == null ? percentOfQuotaClosed != null : !PERCENT_OF_QUOTA_CLOSED_EDEFAULT.equals(percentOfQuotaClosed);
 			case OpportunityPackage.SALES_FORECAST__PERCENT_OF_QUOTA_FORECAST:
@@ -972,6 +1020,20 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 				return PIPELINE_AMOUNT_EDEFAULT == null ? pipelineAmount != null : !PIPELINE_AMOUNT_EDEFAULT.equals(pipelineAmount);
 			case OpportunityPackage.SALES_FORECAST__QUOTA_AMOUNT:
 				return QUOTA_AMOUNT_EDEFAULT == null ? quotaAmount != null : !QUOTA_AMOUNT_EDEFAULT.equals(quotaAmount);
+			case OpportunityPackage.SALES_FORECAST__PARENT_SALES_FORECAST_ID:
+				return parentSalesForecastId != null;
+			case OpportunityPackage.SALES_FORECAST__ORGANIZATION_PARTY_ID:
+				return organizationPartyId != null;
+			case OpportunityPackage.SALES_FORECAST__INTERNAL_PARTY_ID:
+				return internalPartyId != null;
+			case OpportunityPackage.SALES_FORECAST__CUSTOM_TIME_PERIOD_ID:
+				return customTimePeriodId != null;
+			case OpportunityPackage.SALES_FORECAST__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case OpportunityPackage.SALES_FORECAST__CREATED_BY_USER_LOGIN_ID:
+				return createdByUserLoginId != null;
+			case OpportunityPackage.SALES_FORECAST__MODIFIED_BY_USER_LOGIN_ID:
+				return modifiedByUserLoginId != null;
 			case OpportunityPackage.SALES_FORECAST__SALES_FORECAST_DETAILS:
 				return salesForecastDetails != null && !salesForecastDetails.isEmpty();
 		}
@@ -994,22 +1056,8 @@ public class SalesForecastImpl extends BizEntityImpl implements SalesForecast {
 		result.append(bestCaseAmount);
 		result.append(", closedAmount: ");
 		result.append(closedAmount);
-		result.append(", createdByUserLoginId: ");
-		result.append(createdByUserLoginId);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
-		result.append(", customTimePeriodId: ");
-		result.append(customTimePeriodId);
 		result.append(", forecastAmount: ");
 		result.append(forecastAmount);
-		result.append(", internalPartyId: ");
-		result.append(internalPartyId);
-		result.append(", modifiedByUserLoginId: ");
-		result.append(modifiedByUserLoginId);
-		result.append(", organizationPartyId: ");
-		result.append(organizationPartyId);
-		result.append(", parentSalesForecastId: ");
-		result.append(parentSalesForecastId);
 		result.append(", percentOfQuotaClosed: ");
 		result.append(percentOfQuotaClosed);
 		result.append(", percentOfQuotaForecast: ");

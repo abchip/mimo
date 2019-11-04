@@ -10,7 +10,9 @@ package org.abchip.mimo.biz.webapp.website.impl;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.theme.VisualThemeSet;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.store.ProductStore;
 import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.abchip.mimo.biz.webapp.website.WebsitePackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -19,6 +21,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -42,12 +46,12 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getHttpsHost <em>Https Host</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getHttpsPort <em>Https Port</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#isIsDefault <em>Is Default</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getSecureContentPrefix <em>Secure Content Prefix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getStandardContentPrefix <em>Standard Content Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getVisualThemeSetId <em>Visual Theme Set Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getWebappPath <em>Webapp Path</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getVisualThemeSetId <em>Visual Theme Set Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.website.impl.WebSiteImpl#getWebAnalyticsConfigs <em>Web Analytics Configs</em>}</li>
  * </ul>
  *
@@ -280,26 +284,6 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSecureContentPrefix() <em>Secure Content Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -360,26 +344,6 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	protected String standardContentPrefix = STANDARD_CONTENT_PREFIX_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getVisualThemeSetId() <em>Visual Theme Set Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisualThemeSetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VISUAL_THEME_SET_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getVisualThemeSetId() <em>Visual Theme Set Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVisualThemeSetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String visualThemeSetId = VISUAL_THEME_SET_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getWebappPath() <em>Webapp Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -398,6 +362,26 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 * @ordered
 	 */
 	protected String webappPath = WEBAPP_PATH_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getVisualThemeSetId() <em>Visual Theme Set Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisualThemeSetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected VisualThemeSet visualThemeSetId;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStore productStoreId;
 
 	/**
 	 * The cached value of the '{@link #getWebAnalyticsConfigs() <em>Web Analytics Configs</em>}' attribute list.
@@ -687,7 +671,24 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -697,8 +698,8 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -779,7 +780,24 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 * @generated
 	 */
 	@Override
-	public String getVisualThemeSetId() {
+	public VisualThemeSet getVisualThemeSetId() {
+		if (visualThemeSetId != null && ((EObject)visualThemeSetId).eIsProxy()) {
+			InternalEObject oldVisualThemeSetId = (InternalEObject)visualThemeSetId;
+			visualThemeSetId = (VisualThemeSet)eResolveProxy(oldVisualThemeSetId);
+			if (visualThemeSetId != oldVisualThemeSetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID, oldVisualThemeSetId, visualThemeSetId));
+			}
+		}
+		return visualThemeSetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VisualThemeSet basicGetVisualThemeSetId() {
 		return visualThemeSetId;
 	}
 
@@ -789,8 +807,8 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 	 * @generated
 	 */
 	@Override
-	public void setVisualThemeSetId(String newVisualThemeSetId) {
-		String oldVisualThemeSetId = visualThemeSetId;
+	public void setVisualThemeSetId(VisualThemeSet newVisualThemeSetId) {
+		VisualThemeSet oldVisualThemeSetId = visualThemeSetId;
 		visualThemeSetId = newVisualThemeSetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID, oldVisualThemeSetId, visualThemeSetId));
@@ -898,18 +916,20 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 				return getHttpsPort();
 			case WebsitePackage.WEB_SITE__IS_DEFAULT:
 				return isIsDefault();
-			case WebsitePackage.WEB_SITE__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case WebsitePackage.WEB_SITE__SECURE_CONTENT_PREFIX:
 				return getSecureContentPrefix();
 			case WebsitePackage.WEB_SITE__SITE_NAME:
 				return getSiteName();
 			case WebsitePackage.WEB_SITE__STANDARD_CONTENT_PREFIX:
 				return getStandardContentPrefix();
-			case WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID:
-				return getVisualThemeSetId();
 			case WebsitePackage.WEB_SITE__WEBAPP_PATH:
 				return getWebappPath();
+			case WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID:
+				if (resolve) return getVisualThemeSetId();
+				return basicGetVisualThemeSetId();
+			case WebsitePackage.WEB_SITE__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
 			case WebsitePackage.WEB_SITE__WEB_ANALYTICS_CONFIGS:
 				return getWebAnalyticsConfigs();
 		}
@@ -958,9 +978,6 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 			case WebsitePackage.WEB_SITE__IS_DEFAULT:
 				setIsDefault((Boolean)newValue);
 				return;
-			case WebsitePackage.WEB_SITE__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case WebsitePackage.WEB_SITE__SECURE_CONTENT_PREFIX:
 				setSecureContentPrefix((String)newValue);
 				return;
@@ -970,11 +987,14 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 			case WebsitePackage.WEB_SITE__STANDARD_CONTENT_PREFIX:
 				setStandardContentPrefix((String)newValue);
 				return;
-			case WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID:
-				setVisualThemeSetId((String)newValue);
-				return;
 			case WebsitePackage.WEB_SITE__WEBAPP_PATH:
 				setWebappPath((String)newValue);
+				return;
+			case WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID:
+				setVisualThemeSetId((VisualThemeSet)newValue);
+				return;
+			case WebsitePackage.WEB_SITE__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
 				return;
 			case WebsitePackage.WEB_SITE__WEB_ANALYTICS_CONFIGS:
 				getWebAnalyticsConfigs().clear();
@@ -1025,9 +1045,6 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 			case WebsitePackage.WEB_SITE__IS_DEFAULT:
 				setIsDefault(IS_DEFAULT_EDEFAULT);
 				return;
-			case WebsitePackage.WEB_SITE__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case WebsitePackage.WEB_SITE__SECURE_CONTENT_PREFIX:
 				setSecureContentPrefix(SECURE_CONTENT_PREFIX_EDEFAULT);
 				return;
@@ -1037,11 +1054,14 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 			case WebsitePackage.WEB_SITE__STANDARD_CONTENT_PREFIX:
 				setStandardContentPrefix(STANDARD_CONTENT_PREFIX_EDEFAULT);
 				return;
-			case WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID:
-				setVisualThemeSetId(VISUAL_THEME_SET_ID_EDEFAULT);
-				return;
 			case WebsitePackage.WEB_SITE__WEBAPP_PATH:
 				setWebappPath(WEBAPP_PATH_EDEFAULT);
+				return;
+			case WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID:
+				setVisualThemeSetId((VisualThemeSet)null);
+				return;
+			case WebsitePackage.WEB_SITE__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
 				return;
 			case WebsitePackage.WEB_SITE__WEB_ANALYTICS_CONFIGS:
 				getWebAnalyticsConfigs().clear();
@@ -1080,18 +1100,18 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 				return HTTPS_PORT_EDEFAULT == null ? httpsPort != null : !HTTPS_PORT_EDEFAULT.equals(httpsPort);
 			case WebsitePackage.WEB_SITE__IS_DEFAULT:
 				return isDefault != IS_DEFAULT_EDEFAULT;
-			case WebsitePackage.WEB_SITE__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case WebsitePackage.WEB_SITE__SECURE_CONTENT_PREFIX:
 				return SECURE_CONTENT_PREFIX_EDEFAULT == null ? secureContentPrefix != null : !SECURE_CONTENT_PREFIX_EDEFAULT.equals(secureContentPrefix);
 			case WebsitePackage.WEB_SITE__SITE_NAME:
 				return SITE_NAME_EDEFAULT == null ? siteName != null : !SITE_NAME_EDEFAULT.equals(siteName);
 			case WebsitePackage.WEB_SITE__STANDARD_CONTENT_PREFIX:
 				return STANDARD_CONTENT_PREFIX_EDEFAULT == null ? standardContentPrefix != null : !STANDARD_CONTENT_PREFIX_EDEFAULT.equals(standardContentPrefix);
-			case WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID:
-				return VISUAL_THEME_SET_ID_EDEFAULT == null ? visualThemeSetId != null : !VISUAL_THEME_SET_ID_EDEFAULT.equals(visualThemeSetId);
 			case WebsitePackage.WEB_SITE__WEBAPP_PATH:
 				return WEBAPP_PATH_EDEFAULT == null ? webappPath != null : !WEBAPP_PATH_EDEFAULT.equals(webappPath);
+			case WebsitePackage.WEB_SITE__VISUAL_THEME_SET_ID:
+				return visualThemeSetId != null;
+			case WebsitePackage.WEB_SITE__PRODUCT_STORE_ID:
+				return productStoreId != null;
 			case WebsitePackage.WEB_SITE__WEB_ANALYTICS_CONFIGS:
 				return webAnalyticsConfigs != null && !webAnalyticsConfigs.isEmpty();
 		}
@@ -1130,16 +1150,12 @@ public class WebSiteImpl extends BizEntityImpl implements WebSite {
 		result.append(httpsPort);
 		result.append(", isDefault: ");
 		result.append(isDefault);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
 		result.append(", secureContentPrefix: ");
 		result.append(secureContentPrefix);
 		result.append(", siteName: ");
 		result.append(siteName);
 		result.append(", standardContentPrefix: ");
 		result.append(standardContentPrefix);
-		result.append(", visualThemeSetId: ");
-		result.append(visualThemeSetId);
 		result.append(", webappPath: ");
 		result.append(webappPath);
 		result.append(", webAnalyticsConfigs: ");

@@ -9,13 +9,21 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortPartyAssignment;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,19 +35,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getAssignedByUserLoginId <em>Assigned By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getAvailabilityStatusId <em>Availability Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getComments <em>Comments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getDelegateReasonEnumId <em>Delegate Reason Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getExpectationEnumId <em>Expectation Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#isMustRsvp <em>Must Rsvp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getStatusDateTime <em>Status Date Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getAssignedByUserLoginId <em>Assigned By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getExpectationEnumId <em>Expectation Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getDelegateReasonEnumId <em>Delegate Reason Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortPartyAssignmentImpl#getAvailabilityStatusId <em>Availability Status Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,46 +79,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,46 +99,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAssignedByUserLoginId() <em>Assigned By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAssignedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ASSIGNED_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAssignedByUserLoginId() <em>Assigned By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAssignedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String assignedByUserLoginId = ASSIGNED_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAvailabilityStatusId() <em>Availability Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailabilityStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AVAILABILITY_STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAvailabilityStatusId() <em>Availability Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailabilityStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String availabilityStatusId = AVAILABILITY_STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,66 +117,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @ordered
 	 */
 	protected String comments = COMMENTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDelegateReasonEnumId() <em>Delegate Reason Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDelegateReasonEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DELEGATE_REASON_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDelegateReasonEnumId() <em>Delegate Reason Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDelegateReasonEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String delegateReasonEnumId = DELEGATE_REASON_ENUM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getExpectationEnumId() <em>Expectation Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpectationEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EXPECTATION_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExpectationEnumId() <em>Expectation Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExpectationEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String expectationEnumId = EXPECTATION_ENUM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isMustRsvp() <em>Must Rsvp</em>}' attribute.
@@ -291,26 +159,6 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	protected Date statusDateTime = STATUS_DATE_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -329,6 +177,86 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getAssignedByUserLoginId() <em>Assigned By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssignedByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin assignedByUserLoginId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getExpectationEnumId() <em>Expectation Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpectationEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration expectationEnumId;
+
+	/**
+	 * The cached value of the '{@link #getDelegateReasonEnumId() <em>Delegate Reason Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelegateReasonEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration delegateReasonEnumId;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
+
+	/**
+	 * The cached value of the '{@link #getAvailabilityStatusId() <em>Availability Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAvailabilityStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem availabilityStatusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -355,7 +283,24 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getAssignedByUserLoginId() {
+	public UserLogin getAssignedByUserLoginId() {
+		if (assignedByUserLoginId != null && ((EObject)assignedByUserLoginId).eIsProxy()) {
+			InternalEObject oldAssignedByUserLoginId = (InternalEObject)assignedByUserLoginId;
+			assignedByUserLoginId = (UserLogin)eResolveProxy(oldAssignedByUserLoginId);
+			if (assignedByUserLoginId != oldAssignedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID, oldAssignedByUserLoginId, assignedByUserLoginId));
+			}
+		}
+		return assignedByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetAssignedByUserLoginId() {
 		return assignedByUserLoginId;
 	}
 
@@ -365,8 +310,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setAssignedByUserLoginId(String newAssignedByUserLoginId) {
-		String oldAssignedByUserLoginId = assignedByUserLoginId;
+	public void setAssignedByUserLoginId(UserLogin newAssignedByUserLoginId) {
+		UserLogin oldAssignedByUserLoginId = assignedByUserLoginId;
 		assignedByUserLoginId = newAssignedByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID, oldAssignedByUserLoginId, assignedByUserLoginId));
@@ -378,7 +323,24 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getAvailabilityStatusId() {
+	public StatusItem getAvailabilityStatusId() {
+		if (availabilityStatusId != null && ((EObject)availabilityStatusId).eIsProxy()) {
+			InternalEObject oldAvailabilityStatusId = (InternalEObject)availabilityStatusId;
+			availabilityStatusId = (StatusItem)eResolveProxy(oldAvailabilityStatusId);
+			if (availabilityStatusId != oldAvailabilityStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID, oldAvailabilityStatusId, availabilityStatusId));
+			}
+		}
+		return availabilityStatusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetAvailabilityStatusId() {
 		return availabilityStatusId;
 	}
 
@@ -388,8 +350,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setAvailabilityStatusId(String newAvailabilityStatusId) {
-		String oldAvailabilityStatusId = availabilityStatusId;
+	public void setAvailabilityStatusId(StatusItem newAvailabilityStatusId) {
+		StatusItem oldAvailabilityStatusId = availabilityStatusId;
 		availabilityStatusId = newAvailabilityStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID, oldAvailabilityStatusId, availabilityStatusId));
@@ -424,7 +386,24 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getDelegateReasonEnumId() {
+	public Enumeration getDelegateReasonEnumId() {
+		if (delegateReasonEnumId != null && ((EObject)delegateReasonEnumId).eIsProxy()) {
+			InternalEObject oldDelegateReasonEnumId = (InternalEObject)delegateReasonEnumId;
+			delegateReasonEnumId = (Enumeration)eResolveProxy(oldDelegateReasonEnumId);
+			if (delegateReasonEnumId != oldDelegateReasonEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID, oldDelegateReasonEnumId, delegateReasonEnumId));
+			}
+		}
+		return delegateReasonEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetDelegateReasonEnumId() {
 		return delegateReasonEnumId;
 	}
 
@@ -434,8 +413,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setDelegateReasonEnumId(String newDelegateReasonEnumId) {
-		String oldDelegateReasonEnumId = delegateReasonEnumId;
+	public void setDelegateReasonEnumId(Enumeration newDelegateReasonEnumId) {
+		Enumeration oldDelegateReasonEnumId = delegateReasonEnumId;
 		delegateReasonEnumId = newDelegateReasonEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID, oldDelegateReasonEnumId, delegateReasonEnumId));
@@ -447,7 +426,24 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getExpectationEnumId() {
+	public Enumeration getExpectationEnumId() {
+		if (expectationEnumId != null && ((EObject)expectationEnumId).eIsProxy()) {
+			InternalEObject oldExpectationEnumId = (InternalEObject)expectationEnumId;
+			expectationEnumId = (Enumeration)eResolveProxy(oldExpectationEnumId);
+			if (expectationEnumId != oldExpectationEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID, oldExpectationEnumId, expectationEnumId));
+			}
+		}
+		return expectationEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetExpectationEnumId() {
 		return expectationEnumId;
 	}
 
@@ -457,8 +453,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setExpectationEnumId(String newExpectationEnumId) {
-		String oldExpectationEnumId = expectationEnumId;
+	public void setExpectationEnumId(Enumeration newExpectationEnumId) {
+		Enumeration oldExpectationEnumId = expectationEnumId;
 		expectationEnumId = newExpectationEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID, oldExpectationEnumId, expectationEnumId));
@@ -470,7 +466,24 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -480,8 +493,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID, oldFacilityId, facilityId));
@@ -539,7 +552,24 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -549,8 +579,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID, oldPartyId, partyId));
@@ -562,7 +592,24 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -572,8 +619,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -608,7 +655,24 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -618,8 +682,8 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID, oldStatusId, statusId));
@@ -681,32 +745,40 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
 				return getWorkEffortId();
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
-				return getPartyId();
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID:
-				return getRoleTypeId();
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FROM_DATE:
 				return getFromDate();
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID:
-				return getAssignedByUserLoginId();
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID:
-				return getAvailabilityStatusId();
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__COMMENTS:
 				return getComments();
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID:
-				return getDelegateReasonEnumId();
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID:
-				return getExpectationEnumId();
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID:
-				return getFacilityId();
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__MUST_RSVP:
 				return isMustRsvp();
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_DATE_TIME:
 				return getStatusDateTime();
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID:
-				return getStatusId();
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__THRU_DATE:
 				return getThruDate();
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID:
+				if (resolve) return getAssignedByUserLoginId();
+				return basicGetAssignedByUserLoginId();
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID:
+				if (resolve) return getExpectationEnumId();
+				return basicGetExpectationEnumId();
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID:
+				if (resolve) return getDelegateReasonEnumId();
+				return basicGetDelegateReasonEnumId();
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID:
+				if (resolve) return getAvailabilityStatusId();
+				return basicGetAvailabilityStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -722,32 +794,11 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
 				setWorkEffortId((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID:
-				setAssignedByUserLoginId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID:
-				setAvailabilityStatusId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__COMMENTS:
 				setComments((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID:
-				setDelegateReasonEnumId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID:
-				setExpectationEnumId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID:
-				setFacilityId((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__MUST_RSVP:
 				setMustRsvp((Boolean)newValue);
@@ -755,11 +806,32 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_DATE_TIME:
 				setStatusDateTime((Date)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID:
+				setAssignedByUserLoginId((UserLogin)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID:
+				setExpectationEnumId((Enumeration)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID:
+				setDelegateReasonEnumId((Enumeration)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID:
+				setFacilityId((Facility)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID:
+				setAvailabilityStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -776,32 +848,11 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
 				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID:
-				setAssignedByUserLoginId(ASSIGNED_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID:
-				setAvailabilityStatusId(AVAILABILITY_STATUS_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__COMMENTS:
 				setComments(COMMENTS_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID:
-				setDelegateReasonEnumId(DELEGATE_REASON_ENUM_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID:
-				setExpectationEnumId(EXPECTATION_ENUM_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__MUST_RSVP:
 				setMustRsvp(MUST_RSVP_EDEFAULT);
@@ -809,11 +860,32 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_DATE_TIME:
 				setStatusDateTime(STATUS_DATE_TIME_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID:
+				setAssignedByUserLoginId((UserLogin)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID:
+				setExpectationEnumId((Enumeration)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID:
+				setDelegateReasonEnumId((Enumeration)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID:
+				setFacilityId((Facility)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID:
+				setAvailabilityStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -829,32 +901,32 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 		switch (featureID) {
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__WORK_EFFORT_ID:
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID:
-				return ASSIGNED_BY_USER_LOGIN_ID_EDEFAULT == null ? assignedByUserLoginId != null : !ASSIGNED_BY_USER_LOGIN_ID_EDEFAULT.equals(assignedByUserLoginId);
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID:
-				return AVAILABILITY_STATUS_ID_EDEFAULT == null ? availabilityStatusId != null : !AVAILABILITY_STATUS_ID_EDEFAULT.equals(availabilityStatusId);
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID:
-				return DELEGATE_REASON_ENUM_ID_EDEFAULT == null ? delegateReasonEnumId != null : !DELEGATE_REASON_ENUM_ID_EDEFAULT.equals(delegateReasonEnumId);
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID:
-				return EXPECTATION_ENUM_ID_EDEFAULT == null ? expectationEnumId != null : !EXPECTATION_ENUM_ID_EDEFAULT.equals(expectationEnumId);
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__MUST_RSVP:
 				return mustRsvp != MUST_RSVP_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_DATE_TIME:
 				return STATUS_DATE_TIME_EDEFAULT == null ? statusDateTime != null : !STATUS_DATE_TIME_EDEFAULT.equals(statusDateTime);
-			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__PARTY_ID:
+				return partyId != null;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__ASSIGNED_BY_USER_LOGIN_ID:
+				return assignedByUserLoginId != null;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__STATUS_ID:
+				return statusId != null;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__EXPECTATION_ENUM_ID:
+				return expectationEnumId != null;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__DELEGATE_REASON_ENUM_ID:
+				return delegateReasonEnumId != null;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__FACILITY_ID:
+				return facilityId != null;
+			case WorkeffortPackage.WORK_EFFORT_PARTY_ASSIGNMENT__AVAILABILITY_STATUS_ID:
+				return availabilityStatusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -871,30 +943,14 @@ public class WorkEffortPartyAssignmentImpl extends BizEntityImpl implements Work
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workEffortId: ");
 		result.append(workEffortId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", assignedByUserLoginId: ");
-		result.append(assignedByUserLoginId);
-		result.append(", availabilityStatusId: ");
-		result.append(availabilityStatusId);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", delegateReasonEnumId: ");
-		result.append(delegateReasonEnumId);
-		result.append(", expectationEnumId: ");
-		result.append(expectationEnumId);
-		result.append(", facilityId: ");
-		result.append(facilityId);
 		result.append(", mustRsvp: ");
 		result.append(mustRsvp);
 		result.append(", statusDateTime: ");
 		result.append(statusDateTime);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

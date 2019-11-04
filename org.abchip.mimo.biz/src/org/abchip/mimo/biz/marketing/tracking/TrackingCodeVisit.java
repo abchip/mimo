@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.marketing.tracking;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +43,8 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -58,30 +60,30 @@ public interface TrackingCodeVisit extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Source Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Source Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Enum Id</em>' attribute.
-	 * @see #setSourceEnumId(String)
+	 * @return the value of the '<em>Source Enum Id</em>' reference.
+	 * @see #setSourceEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_SourceEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getSourceEnumId();
+	Enumeration getSourceEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getSourceEnumId <em>Source Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeVisit#getSourceEnumId <em>Source Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Source Enum Id</em>' reference.
 	 * @see #getSourceEnumId()
 	 * @generated
 	 */
-	void setSourceEnumId(String value);
+	void setSourceEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Tracking Code Id</b></em>' attribute.
@@ -94,8 +96,8 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @return the value of the '<em>Tracking Code Id</em>' attribute.
 	 * @see #setTrackingCodeId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_TrackingCodeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='TrackingCode'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTrackingCodeId();
@@ -121,7 +123,8 @@ public interface TrackingCodeVisit extends BizEntity {
 	 * @return the value of the '<em>Visit Id</em>' attribute.
 	 * @see #setVisitId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeVisit_VisitId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getVisitId();

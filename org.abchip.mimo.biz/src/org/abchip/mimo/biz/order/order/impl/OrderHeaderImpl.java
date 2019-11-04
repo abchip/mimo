@@ -13,15 +13,26 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.payment.BillingAccount;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderType;
+import org.abchip.mimo.biz.order.shoppinglist.ShoppingList;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.security.login.UserLogin;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -35,10 +46,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAgreementId <em>Agreement Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAutoOrderShoppingListId <em>Auto Order Shopping List Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCreatedBy <em>Created By</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCurrencyUom <em>Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getEntryDate <em>Entry Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getExternalId <em>External Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getFirstAttemptOrderId <em>First Attempt Order Id</em>}</li>
@@ -50,18 +57,22 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isNeedsInventoryIssuance <em>Needs Inventory Issuance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderDate <em>Order Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderName <em>Order Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderTypeId <em>Order Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOriginFacilityId <em>Origin Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getPickSheetPrintedDate <em>Pick Sheet Printed Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#isPriority <em>Priority</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getRemainingSubTotal <em>Remaining Sub Total</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSyncStatusId <em>Sync Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTerminalId <em>Terminal Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getTransactionId <em>Transaction Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderTypeId <em>Order Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSalesChannelEnumId <em>Sales Channel Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOriginFacilityId <em>Origin Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getBillingAccountId <em>Billing Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getAutoOrderShoppingListId <em>Auto Order Shopping List Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCreatedBy <em>Created By</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getSyncStatusId <em>Sync Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCurrencyUom <em>Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getCommunicationEventOrders <em>Communication Event Orders</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderHeaderImpl#getOrderAttributes <em>Order Attributes</em>}</li>
@@ -123,86 +134,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @ordered
 	 */
 	protected String agreementId = AGREEMENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAutoOrderShoppingListId() <em>Auto Order Shopping List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAutoOrderShoppingListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAutoOrderShoppingListId() <em>Auto Order Shopping List Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAutoOrderShoppingListId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String autoOrderShoppingListId = AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BILLING_ACCOUNT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillingAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String billingAccountId = BILLING_ACCOUNT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedBy() <em>Created By</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedBy() <em>Created By</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdBy = CREATED_BY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUom() <em>Currency Uom</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUom() <em>Currency Uom</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUom = CURRENCY_UOM_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEntryDate() <em>Entry Date</em>}' attribute.
@@ -425,46 +356,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	protected String orderName = ORDER_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOrderTypeId() <em>Order Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderTypeId() <em>Order Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderTypeId = ORDER_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOriginFacilityId() <em>Origin Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORIGIN_FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOriginFacilityId() <em>Origin Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String originFacilityId = ORIGIN_FACILITY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPickSheetPrintedDate() <em>Pick Sheet Printed Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -505,26 +396,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	protected boolean priority = PRIORITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getRemainingSubTotal() <em>Remaining Sub Total</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -543,66 +414,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @ordered
 	 */
 	protected BigDecimal remainingSubTotal = REMAINING_SUB_TOTAL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSalesChannelEnumId() <em>Sales Channel Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesChannelEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SALES_CHANNEL_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSalesChannelEnumId() <em>Sales Channel Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesChannelEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String salesChannelEnumId = SALES_CHANNEL_ENUM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSyncStatusId() <em>Sync Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSyncStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SYNC_STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSyncStatusId() <em>Sync Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSyncStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String syncStatusId = SYNC_STATUS_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTerminalId() <em>Terminal Id</em>}' attribute.
@@ -665,24 +476,114 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	protected String visitId = VISIT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrderTypeId() <em>Order Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
+	 * @see #getOrderTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WEB_SITE_ID_EDEFAULT = null;
+	protected OrderType orderTypeId;
 
 	/**
-	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
+	 * The cached value of the '{@link #getSalesChannelEnumId() <em>Sales Channel Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesChannelEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration salesChannelEnumId;
+
+	/**
+	 * The cached value of the '{@link #getOriginFacilityId() <em>Origin Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOriginFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility originFacilityId;
+
+	/**
+	 * The cached value of the '{@link #getBillingAccountId() <em>Billing Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBillingAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected BillingAccount billingAccountId;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStore productStoreId;
+
+	/**
+	 * The cached value of the '{@link #getAutoOrderShoppingListId() <em>Auto Order Shopping List Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoOrderShoppingListId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ShoppingList autoOrderShoppingListId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedBy() <em>Created By</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdBy;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getSyncStatusId() <em>Sync Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSyncStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem syncStatusId;
+
+	/**
+	 * The cached value of the '{@link #getCurrencyUom() <em>Currency Uom</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUom;
+
+	/**
+	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWebSiteId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String webSiteId = WEB_SITE_ID_EDEFAULT;
+	protected WebSite webSiteId;
 
 	/**
 	 * The cached value of the '{@link #getCommunicationEventOrders() <em>Communication Event Orders</em>}' attribute list.
@@ -842,7 +743,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getAutoOrderShoppingListId() {
+	public ShoppingList getAutoOrderShoppingListId() {
+		if (autoOrderShoppingListId != null && ((EObject)autoOrderShoppingListId).eIsProxy()) {
+			InternalEObject oldAutoOrderShoppingListId = (InternalEObject)autoOrderShoppingListId;
+			autoOrderShoppingListId = (ShoppingList)eResolveProxy(oldAutoOrderShoppingListId);
+			if (autoOrderShoppingListId != oldAutoOrderShoppingListId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID, oldAutoOrderShoppingListId, autoOrderShoppingListId));
+			}
+		}
+		return autoOrderShoppingListId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShoppingList basicGetAutoOrderShoppingListId() {
 		return autoOrderShoppingListId;
 	}
 
@@ -852,8 +770,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setAutoOrderShoppingListId(String newAutoOrderShoppingListId) {
-		String oldAutoOrderShoppingListId = autoOrderShoppingListId;
+	public void setAutoOrderShoppingListId(ShoppingList newAutoOrderShoppingListId) {
+		ShoppingList oldAutoOrderShoppingListId = autoOrderShoppingListId;
 		autoOrderShoppingListId = newAutoOrderShoppingListId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID, oldAutoOrderShoppingListId, autoOrderShoppingListId));
@@ -865,7 +783,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getBillingAccountId() {
+	public BillingAccount getBillingAccountId() {
+		if (billingAccountId != null && ((EObject)billingAccountId).eIsProxy()) {
+			InternalEObject oldBillingAccountId = (InternalEObject)billingAccountId;
+			billingAccountId = (BillingAccount)eResolveProxy(oldBillingAccountId);
+			if (billingAccountId != oldBillingAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
+			}
+		}
+		return billingAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BillingAccount basicGetBillingAccountId() {
 		return billingAccountId;
 	}
 
@@ -875,8 +810,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setBillingAccountId(String newBillingAccountId) {
-		String oldBillingAccountId = billingAccountId;
+	public void setBillingAccountId(BillingAccount newBillingAccountId) {
+		BillingAccount oldBillingAccountId = billingAccountId;
 		billingAccountId = newBillingAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID, oldBillingAccountId, billingAccountId));
@@ -888,7 +823,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getCreatedBy() {
+	public UserLogin getCreatedBy() {
+		if (createdBy != null && ((EObject)createdBy).eIsProxy()) {
+			InternalEObject oldCreatedBy = (InternalEObject)createdBy;
+			createdBy = (UserLogin)eResolveProxy(oldCreatedBy);
+			if (createdBy != oldCreatedBy) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__CREATED_BY, oldCreatedBy, createdBy));
+			}
+		}
+		return createdBy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedBy() {
 		return createdBy;
 	}
 
@@ -898,8 +850,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setCreatedBy(String newCreatedBy) {
-		String oldCreatedBy = createdBy;
+	public void setCreatedBy(UserLogin newCreatedBy) {
+		UserLogin oldCreatedBy = createdBy;
 		createdBy = newCreatedBy;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__CREATED_BY, oldCreatedBy, createdBy));
@@ -911,7 +863,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUom() {
+	public Uom getCurrencyUom() {
+		if (currencyUom != null && ((EObject)currencyUom).eIsProxy()) {
+			InternalEObject oldCurrencyUom = (InternalEObject)currencyUom;
+			currencyUom = (Uom)eResolveProxy(oldCurrencyUom);
+			if (currencyUom != oldCurrencyUom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__CURRENCY_UOM, oldCurrencyUom, currencyUom));
+			}
+		}
+		return currencyUom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUom() {
 		return currencyUom;
 	}
 
@@ -921,8 +890,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUom(String newCurrencyUom) {
-		String oldCurrencyUom = currencyUom;
+	public void setCurrencyUom(Uom newCurrencyUom) {
+		Uom oldCurrencyUom = currencyUom;
 		currencyUom = newCurrencyUom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__CURRENCY_UOM, oldCurrencyUom, currencyUom));
@@ -1210,7 +1179,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getOrderTypeId() {
+	public OrderType getOrderTypeId() {
+		if (orderTypeId != null && ((EObject)orderTypeId).eIsProxy()) {
+			InternalEObject oldOrderTypeId = (InternalEObject)orderTypeId;
+			orderTypeId = (OrderType)eResolveProxy(oldOrderTypeId);
+			if (orderTypeId != oldOrderTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__ORDER_TYPE_ID, oldOrderTypeId, orderTypeId));
+			}
+		}
+		return orderTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderType basicGetOrderTypeId() {
 		return orderTypeId;
 	}
 
@@ -1220,8 +1206,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setOrderTypeId(String newOrderTypeId) {
-		String oldOrderTypeId = orderTypeId;
+	public void setOrderTypeId(OrderType newOrderTypeId) {
+		OrderType oldOrderTypeId = orderTypeId;
 		orderTypeId = newOrderTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORDER_TYPE_ID, oldOrderTypeId, orderTypeId));
@@ -1233,7 +1219,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getOriginFacilityId() {
+	public Facility getOriginFacilityId() {
+		if (originFacilityId != null && ((EObject)originFacilityId).eIsProxy()) {
+			InternalEObject oldOriginFacilityId = (InternalEObject)originFacilityId;
+			originFacilityId = (Facility)eResolveProxy(oldOriginFacilityId);
+			if (originFacilityId != oldOriginFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
+			}
+		}
+		return originFacilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetOriginFacilityId() {
 		return originFacilityId;
 	}
 
@@ -1243,8 +1246,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setOriginFacilityId(String newOriginFacilityId) {
-		String oldOriginFacilityId = originFacilityId;
+	public void setOriginFacilityId(Facility newOriginFacilityId) {
+		Facility oldOriginFacilityId = originFacilityId;
 		originFacilityId = newOriginFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID, oldOriginFacilityId, originFacilityId));
@@ -1302,7 +1305,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -1312,8 +1332,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -1348,7 +1368,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getSalesChannelEnumId() {
+	public Enumeration getSalesChannelEnumId() {
+		if (salesChannelEnumId != null && ((EObject)salesChannelEnumId).eIsProxy()) {
+			InternalEObject oldSalesChannelEnumId = (InternalEObject)salesChannelEnumId;
+			salesChannelEnumId = (Enumeration)eResolveProxy(oldSalesChannelEnumId);
+			if (salesChannelEnumId != oldSalesChannelEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
+			}
+		}
+		return salesChannelEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetSalesChannelEnumId() {
 		return salesChannelEnumId;
 	}
 
@@ -1358,8 +1395,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setSalesChannelEnumId(String newSalesChannelEnumId) {
-		String oldSalesChannelEnumId = salesChannelEnumId;
+	public void setSalesChannelEnumId(Enumeration newSalesChannelEnumId) {
+		Enumeration oldSalesChannelEnumId = salesChannelEnumId;
 		salesChannelEnumId = newSalesChannelEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID, oldSalesChannelEnumId, salesChannelEnumId));
@@ -1371,7 +1408,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -1381,8 +1435,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__STATUS_ID, oldStatusId, statusId));
@@ -1394,7 +1448,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getSyncStatusId() {
+	public StatusItem getSyncStatusId() {
+		if (syncStatusId != null && ((EObject)syncStatusId).eIsProxy()) {
+			InternalEObject oldSyncStatusId = (InternalEObject)syncStatusId;
+			syncStatusId = (StatusItem)eResolveProxy(oldSyncStatusId);
+			if (syncStatusId != oldSyncStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__SYNC_STATUS_ID, oldSyncStatusId, syncStatusId));
+			}
+		}
+		return syncStatusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetSyncStatusId() {
 		return syncStatusId;
 	}
 
@@ -1404,8 +1475,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setSyncStatusId(String newSyncStatusId) {
-		String oldSyncStatusId = syncStatusId;
+	public void setSyncStatusId(StatusItem newSyncStatusId) {
+		StatusItem oldSyncStatusId = syncStatusId;
 		syncStatusId = newSyncStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__SYNC_STATUS_ID, oldSyncStatusId, syncStatusId));
@@ -1486,7 +1557,24 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public String getWebSiteId() {
+	public WebSite getWebSiteId() {
+		if (webSiteId != null && ((EObject)webSiteId).eIsProxy()) {
+			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
+			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
+			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_HEADER__WEB_SITE_ID, oldWebSiteId, webSiteId));
+			}
+		}
+		return webSiteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebSite basicGetWebSiteId() {
 		return webSiteId;
 	}
 
@@ -1496,8 +1584,8 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 	 * @generated
 	 */
 	@Override
-	public void setWebSiteId(String newWebSiteId) {
-		String oldWebSiteId = webSiteId;
+	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_HEADER__WEB_SITE_ID, oldWebSiteId, webSiteId));
@@ -1862,14 +1950,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 				return getOrderId();
 			case OrderPackage.ORDER_HEADER__AGREEMENT_ID:
 				return getAgreementId();
-			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
-				return getAutoOrderShoppingListId();
-			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
-				return getBillingAccountId();
-			case OrderPackage.ORDER_HEADER__CREATED_BY:
-				return getCreatedBy();
-			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
-				return getCurrencyUom();
 			case OrderPackage.ORDER_HEADER__ENTRY_DATE:
 				return getEntryDate();
 			case OrderPackage.ORDER_HEADER__EXTERNAL_ID:
@@ -1892,32 +1972,51 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 				return getOrderDate();
 			case OrderPackage.ORDER_HEADER__ORDER_NAME:
 				return getOrderName();
-			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
-				return getOrderTypeId();
-			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
-				return getOriginFacilityId();
 			case OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE:
 				return getPickSheetPrintedDate();
 			case OrderPackage.ORDER_HEADER__PRIORITY:
 				return isPriority();
-			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
-				return getProductStoreId();
 			case OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL:
 				return getRemainingSubTotal();
-			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
-				return getSalesChannelEnumId();
-			case OrderPackage.ORDER_HEADER__STATUS_ID:
-				return getStatusId();
-			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
-				return getSyncStatusId();
 			case OrderPackage.ORDER_HEADER__TERMINAL_ID:
 				return getTerminalId();
 			case OrderPackage.ORDER_HEADER__TRANSACTION_ID:
 				return getTransactionId();
 			case OrderPackage.ORDER_HEADER__VISIT_ID:
 				return getVisitId();
+			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
+				if (resolve) return getOrderTypeId();
+				return basicGetOrderTypeId();
+			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
+				if (resolve) return getSalesChannelEnumId();
+				return basicGetSalesChannelEnumId();
+			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
+				if (resolve) return getOriginFacilityId();
+				return basicGetOriginFacilityId();
+			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
+				if (resolve) return getBillingAccountId();
+				return basicGetBillingAccountId();
+			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
+			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
+				if (resolve) return getAutoOrderShoppingListId();
+				return basicGetAutoOrderShoppingListId();
+			case OrderPackage.ORDER_HEADER__CREATED_BY:
+				if (resolve) return getCreatedBy();
+				return basicGetCreatedBy();
+			case OrderPackage.ORDER_HEADER__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
+				if (resolve) return getSyncStatusId();
+				return basicGetSyncStatusId();
+			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
+				if (resolve) return getCurrencyUom();
+				return basicGetCurrencyUom();
 			case OrderPackage.ORDER_HEADER__WEB_SITE_ID:
-				return getWebSiteId();
+				if (resolve) return getWebSiteId();
+				return basicGetWebSiteId();
 			case OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS:
 				return getCommunicationEventOrders();
 			case OrderPackage.ORDER_HEADER__ORDER_ATTRIBUTES:
@@ -1959,18 +2058,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			case OrderPackage.ORDER_HEADER__AGREEMENT_ID:
 				setAgreementId((String)newValue);
 				return;
-			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
-				setAutoOrderShoppingListId((String)newValue);
-				return;
-			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
-				setBillingAccountId((String)newValue);
-				return;
-			case OrderPackage.ORDER_HEADER__CREATED_BY:
-				setCreatedBy((String)newValue);
-				return;
-			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
-				setCurrencyUom((String)newValue);
-				return;
 			case OrderPackage.ORDER_HEADER__ENTRY_DATE:
 				setEntryDate((Date)newValue);
 				return;
@@ -2004,32 +2091,14 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			case OrderPackage.ORDER_HEADER__ORDER_NAME:
 				setOrderName((String)newValue);
 				return;
-			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
-				setOrderTypeId((String)newValue);
-				return;
-			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
-				setOriginFacilityId((String)newValue);
-				return;
 			case OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE:
 				setPickSheetPrintedDate((Date)newValue);
 				return;
 			case OrderPackage.ORDER_HEADER__PRIORITY:
 				setPriority((Boolean)newValue);
 				return;
-			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
-				return;
 			case OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL:
 				setRemainingSubTotal((BigDecimal)newValue);
-				return;
-			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
-				setSalesChannelEnumId((String)newValue);
-				return;
-			case OrderPackage.ORDER_HEADER__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
-			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
-				setSyncStatusId((String)newValue);
 				return;
 			case OrderPackage.ORDER_HEADER__TERMINAL_ID:
 				setTerminalId((String)newValue);
@@ -2040,8 +2109,38 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			case OrderPackage.ORDER_HEADER__VISIT_ID:
 				setVisitId((String)newValue);
 				return;
+			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
+				setOrderTypeId((OrderType)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
+				setSalesChannelEnumId((Enumeration)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
+				setOriginFacilityId((Facility)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
+				setBillingAccountId((BillingAccount)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
+				setAutoOrderShoppingListId((ShoppingList)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__CREATED_BY:
+				setCreatedBy((UserLogin)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
+				setSyncStatusId((StatusItem)newValue);
+				return;
+			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
+				setCurrencyUom((Uom)newValue);
+				return;
 			case OrderPackage.ORDER_HEADER__WEB_SITE_ID:
-				setWebSiteId((String)newValue);
+				setWebSiteId((WebSite)newValue);
 				return;
 			case OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS:
 				getCommunicationEventOrders().clear();
@@ -2105,18 +2204,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			case OrderPackage.ORDER_HEADER__AGREEMENT_ID:
 				setAgreementId(AGREEMENT_ID_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
-				setAutoOrderShoppingListId(AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
-				setBillingAccountId(BILLING_ACCOUNT_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_HEADER__CREATED_BY:
-				setCreatedBy(CREATED_BY_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
-				setCurrencyUom(CURRENCY_UOM_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_HEADER__ENTRY_DATE:
 				setEntryDate(ENTRY_DATE_EDEFAULT);
 				return;
@@ -2150,32 +2237,14 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			case OrderPackage.ORDER_HEADER__ORDER_NAME:
 				setOrderName(ORDER_NAME_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
-				setOrderTypeId(ORDER_TYPE_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
-				setOriginFacilityId(ORIGIN_FACILITY_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE:
 				setPickSheetPrintedDate(PICK_SHEET_PRINTED_DATE_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_HEADER__PRIORITY:
 				setPriority(PRIORITY_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL:
 				setRemainingSubTotal(REMAINING_SUB_TOTAL_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
-				setSalesChannelEnumId(SALES_CHANNEL_ENUM_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_HEADER__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
-				setSyncStatusId(SYNC_STATUS_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_HEADER__TERMINAL_ID:
 				setTerminalId(TERMINAL_ID_EDEFAULT);
@@ -2186,8 +2255,38 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 			case OrderPackage.ORDER_HEADER__VISIT_ID:
 				setVisitId(VISIT_ID_EDEFAULT);
 				return;
+			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
+				setOrderTypeId((OrderType)null);
+				return;
+			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
+				setSalesChannelEnumId((Enumeration)null);
+				return;
+			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
+				setOriginFacilityId((Facility)null);
+				return;
+			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
+				setBillingAccountId((BillingAccount)null);
+				return;
+			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
+				setProductStoreId((ProductStore)null);
+				return;
+			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
+				setAutoOrderShoppingListId((ShoppingList)null);
+				return;
+			case OrderPackage.ORDER_HEADER__CREATED_BY:
+				setCreatedBy((UserLogin)null);
+				return;
+			case OrderPackage.ORDER_HEADER__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
+				setSyncStatusId((StatusItem)null);
+				return;
+			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
+				setCurrencyUom((Uom)null);
+				return;
 			case OrderPackage.ORDER_HEADER__WEB_SITE_ID:
-				setWebSiteId(WEB_SITE_ID_EDEFAULT);
+				setWebSiteId((WebSite)null);
 				return;
 			case OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS:
 				getCommunicationEventOrders().clear();
@@ -2238,14 +2337,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_HEADER__AGREEMENT_ID:
 				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
-			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
-				return AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT == null ? autoOrderShoppingListId != null : !AUTO_ORDER_SHOPPING_LIST_ID_EDEFAULT.equals(autoOrderShoppingListId);
-			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
-				return BILLING_ACCOUNT_ID_EDEFAULT == null ? billingAccountId != null : !BILLING_ACCOUNT_ID_EDEFAULT.equals(billingAccountId);
-			case OrderPackage.ORDER_HEADER__CREATED_BY:
-				return CREATED_BY_EDEFAULT == null ? createdBy != null : !CREATED_BY_EDEFAULT.equals(createdBy);
-			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
-				return CURRENCY_UOM_EDEFAULT == null ? currencyUom != null : !CURRENCY_UOM_EDEFAULT.equals(currencyUom);
 			case OrderPackage.ORDER_HEADER__ENTRY_DATE:
 				return ENTRY_DATE_EDEFAULT == null ? entryDate != null : !ENTRY_DATE_EDEFAULT.equals(entryDate);
 			case OrderPackage.ORDER_HEADER__EXTERNAL_ID:
@@ -2268,32 +2359,40 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 				return ORDER_DATE_EDEFAULT == null ? orderDate != null : !ORDER_DATE_EDEFAULT.equals(orderDate);
 			case OrderPackage.ORDER_HEADER__ORDER_NAME:
 				return ORDER_NAME_EDEFAULT == null ? orderName != null : !ORDER_NAME_EDEFAULT.equals(orderName);
-			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
-				return ORDER_TYPE_ID_EDEFAULT == null ? orderTypeId != null : !ORDER_TYPE_ID_EDEFAULT.equals(orderTypeId);
-			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
-				return ORIGIN_FACILITY_ID_EDEFAULT == null ? originFacilityId != null : !ORIGIN_FACILITY_ID_EDEFAULT.equals(originFacilityId);
 			case OrderPackage.ORDER_HEADER__PICK_SHEET_PRINTED_DATE:
 				return PICK_SHEET_PRINTED_DATE_EDEFAULT == null ? pickSheetPrintedDate != null : !PICK_SHEET_PRINTED_DATE_EDEFAULT.equals(pickSheetPrintedDate);
 			case OrderPackage.ORDER_HEADER__PRIORITY:
 				return priority != PRIORITY_EDEFAULT;
-			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
 			case OrderPackage.ORDER_HEADER__REMAINING_SUB_TOTAL:
 				return REMAINING_SUB_TOTAL_EDEFAULT == null ? remainingSubTotal != null : !REMAINING_SUB_TOTAL_EDEFAULT.equals(remainingSubTotal);
-			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
-				return SALES_CHANNEL_ENUM_ID_EDEFAULT == null ? salesChannelEnumId != null : !SALES_CHANNEL_ENUM_ID_EDEFAULT.equals(salesChannelEnumId);
-			case OrderPackage.ORDER_HEADER__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
-			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
-				return SYNC_STATUS_ID_EDEFAULT == null ? syncStatusId != null : !SYNC_STATUS_ID_EDEFAULT.equals(syncStatusId);
 			case OrderPackage.ORDER_HEADER__TERMINAL_ID:
 				return TERMINAL_ID_EDEFAULT == null ? terminalId != null : !TERMINAL_ID_EDEFAULT.equals(terminalId);
 			case OrderPackage.ORDER_HEADER__TRANSACTION_ID:
 				return TRANSACTION_ID_EDEFAULT == null ? transactionId != null : !TRANSACTION_ID_EDEFAULT.equals(transactionId);
 			case OrderPackage.ORDER_HEADER__VISIT_ID:
 				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
+			case OrderPackage.ORDER_HEADER__ORDER_TYPE_ID:
+				return orderTypeId != null;
+			case OrderPackage.ORDER_HEADER__SALES_CHANNEL_ENUM_ID:
+				return salesChannelEnumId != null;
+			case OrderPackage.ORDER_HEADER__ORIGIN_FACILITY_ID:
+				return originFacilityId != null;
+			case OrderPackage.ORDER_HEADER__BILLING_ACCOUNT_ID:
+				return billingAccountId != null;
+			case OrderPackage.ORDER_HEADER__PRODUCT_STORE_ID:
+				return productStoreId != null;
+			case OrderPackage.ORDER_HEADER__AUTO_ORDER_SHOPPING_LIST_ID:
+				return autoOrderShoppingListId != null;
+			case OrderPackage.ORDER_HEADER__CREATED_BY:
+				return createdBy != null;
+			case OrderPackage.ORDER_HEADER__STATUS_ID:
+				return statusId != null;
+			case OrderPackage.ORDER_HEADER__SYNC_STATUS_ID:
+				return syncStatusId != null;
+			case OrderPackage.ORDER_HEADER__CURRENCY_UOM:
+				return currencyUom != null;
 			case OrderPackage.ORDER_HEADER__WEB_SITE_ID:
-				return WEB_SITE_ID_EDEFAULT == null ? webSiteId != null : !WEB_SITE_ID_EDEFAULT.equals(webSiteId);
+				return webSiteId != null;
 			case OrderPackage.ORDER_HEADER__COMMUNICATION_EVENT_ORDERS:
 				return communicationEventOrders != null && !communicationEventOrders.isEmpty();
 			case OrderPackage.ORDER_HEADER__ORDER_ATTRIBUTES:
@@ -2334,14 +2433,6 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 		result.append(orderId);
 		result.append(", agreementId: ");
 		result.append(agreementId);
-		result.append(", autoOrderShoppingListId: ");
-		result.append(autoOrderShoppingListId);
-		result.append(", billingAccountId: ");
-		result.append(billingAccountId);
-		result.append(", createdBy: ");
-		result.append(createdBy);
-		result.append(", currencyUom: ");
-		result.append(currencyUom);
 		result.append(", entryDate: ");
 		result.append(entryDate);
 		result.append(", externalId: ");
@@ -2364,32 +2455,18 @@ public class OrderHeaderImpl extends BizEntityTypedImpl<OrderType> implements Or
 		result.append(orderDate);
 		result.append(", orderName: ");
 		result.append(orderName);
-		result.append(", orderTypeId: ");
-		result.append(orderTypeId);
-		result.append(", originFacilityId: ");
-		result.append(originFacilityId);
 		result.append(", pickSheetPrintedDate: ");
 		result.append(pickSheetPrintedDate);
 		result.append(", priority: ");
 		result.append(priority);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
 		result.append(", remainingSubTotal: ");
 		result.append(remainingSubTotal);
-		result.append(", salesChannelEnumId: ");
-		result.append(salesChannelEnumId);
-		result.append(", statusId: ");
-		result.append(statusId);
-		result.append(", syncStatusId: ");
-		result.append(syncStatusId);
 		result.append(", terminalId: ");
 		result.append(terminalId);
 		result.append(", transactionId: ");
 		result.append(transactionId);
 		result.append(", visitId: ");
 		result.append(visitId);
-		result.append(", webSiteId: ");
-		result.append(webSiteId);
 		result.append(", communicationEventOrders: ");
 		result.append(communicationEventOrders);
 		result.append(", orderAttributes: ");

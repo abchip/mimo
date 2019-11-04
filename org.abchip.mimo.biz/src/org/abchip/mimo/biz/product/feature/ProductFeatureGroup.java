@@ -64,7 +64,7 @@ public interface ProductFeatureGroup extends BizEntity {
 	 * @return the value of the '<em>Product Feature Group Id</em>' attribute.
 	 * @see #setProductFeatureGroupId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureGroup_ProductFeatureGroupId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

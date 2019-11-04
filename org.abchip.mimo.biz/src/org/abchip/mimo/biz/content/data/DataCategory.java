@@ -84,30 +84,30 @@ public interface DataCategory extends BizEntity {
 	void setDataCategoryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Category Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Category Id</em>' attribute.
-	 * @see #setParentCategoryId(String)
+	 * @return the value of the '<em>Parent Category Id</em>' reference.
+	 * @see #setParentCategoryId(DataCategory)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataCategory_ParentCategoryId()
-	 * @model annotation="mimo-ent-domain frame='DataCategory'"
+	 * @model keys="dataCategoryId"
 	 * @generated
 	 */
-	String getParentCategoryId();
+	DataCategory getParentCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataCategory#getParentCategoryId <em>Parent Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataCategory#getParentCategoryId <em>Parent Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Category Id</em>' reference.
 	 * @see #getParentCategoryId()
 	 * @generated
 	 */
-	void setParentCategoryId(String value);
+	void setParentCategoryId(DataCategory value);
 
 	/**
 	 * <!-- begin-user-doc -->

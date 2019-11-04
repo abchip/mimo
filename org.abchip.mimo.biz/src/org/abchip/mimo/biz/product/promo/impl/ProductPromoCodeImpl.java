@@ -13,12 +13,16 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -31,17 +35,17 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#isRequireEmailOrParty <em>Require Email Or Party</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getUseLimitPerCode <em>Use Limit Per Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getUseLimitPerCustomer <em>Use Limit Per Customer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#isUserEntered <em>User Entered</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getProductPromoId <em>Product Promo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getProductPromoCodeEmails <em>Product Promo Code Emails</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl#getProductPromoCodeParties <em>Product Promo Code Parties</em>}</li>
  * </ul>
@@ -73,26 +77,6 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @ordered
 	 */
 	protected String productPromoCodeId = PRODUCT_PROMO_CODE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
@@ -135,26 +119,6 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,26 +137,6 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @ordered
 	 */
 	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoId = PRODUCT_PROMO_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isRequireEmailOrParty() <em>Require Email Or Party</em>}' attribute.
@@ -295,6 +239,36 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	protected boolean userEntered = USER_ENTERED_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromo productPromoId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
+
+	/**
 	 * The cached value of the '{@link #getProductPromoCodeEmails() <em>Product Promo Code Emails</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,7 +313,24 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -349,8 +340,8 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -408,7 +399,24 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -418,8 +426,8 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -608,7 +616,24 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoId() {
+	public ProductPromo getProductPromoId() {
+		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
+			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
+			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
+			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
+			}
+		}
+		return productPromoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromo basicGetProductPromoId() {
 		return productPromoId;
 	}
 
@@ -618,8 +643,8 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoId(String newProductPromoId) {
-		String oldProductPromoId = productPromoId;
+	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
@@ -681,18 +706,12 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 		switch (featureID) {
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
 				return getProductPromoCodeId();
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_DATE:
 				return getCreatedDate();
 			case PromoPackage.PRODUCT_PROMO_CODE__FROM_DATE:
 				return getFromDate();
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
 			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
-				return getProductPromoId();
 			case PromoPackage.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY:
 				return isRequireEmailOrParty();
 			case PromoPackage.PRODUCT_PROMO_CODE__THRU_DATE:
@@ -703,6 +722,15 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 				return getUseLimitPerCustomer();
 			case PromoPackage.PRODUCT_PROMO_CODE__USER_ENTERED:
 				return isUserEntered();
+			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
+				if (resolve) return getProductPromoId();
+				return basicGetProductPromoId();
+			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS:
 				return getProductPromoCodeEmails();
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES:
@@ -723,23 +751,14 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
 				setProductPromoCodeId((String)newValue);
 				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_DATE:
 				setCreatedDate((Date)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
-				setProductPromoId((String)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY:
 				setRequireEmailOrParty((Boolean)newValue);
@@ -755,6 +774,15 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__USER_ENTERED:
 				setUserEntered((Boolean)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS:
 				getProductPromoCodeEmails().clear();
@@ -779,23 +807,14 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
 				setProductPromoCodeId(PRODUCT_PROMO_CODE_ID_EDEFAULT);
 				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
-				setProductPromoId(PRODUCT_PROMO_ID_EDEFAULT);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY:
 				setRequireEmailOrParty(REQUIRE_EMAIL_OR_PARTY_EDEFAULT);
@@ -811,6 +830,15 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__USER_ENTERED:
 				setUserEntered(USER_ENTERED_EDEFAULT);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS:
 				getProductPromoCodeEmails().clear();
@@ -832,18 +860,12 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 		switch (featureID) {
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
 				return PRODUCT_PROMO_CODE_ID_EDEFAULT == null ? productPromoCodeId != null : !PRODUCT_PROMO_CODE_ID_EDEFAULT.equals(productPromoCodeId);
-			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
 			case PromoPackage.PRODUCT_PROMO_CODE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
-			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
-				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
 			case PromoPackage.PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY:
 				return requireEmailOrParty != REQUIRE_EMAIL_OR_PARTY_EDEFAULT;
 			case PromoPackage.PRODUCT_PROMO_CODE__THRU_DATE:
@@ -854,6 +876,12 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 				return useLimitPerCustomer != USE_LIMIT_PER_CUSTOMER_EDEFAULT;
 			case PromoPackage.PRODUCT_PROMO_CODE__USER_ENTERED:
 				return userEntered != USER_ENTERED_EDEFAULT;
+			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID:
+				return productPromoId != null;
+			case PromoPackage.PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case PromoPackage.PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_EMAILS:
 				return productPromoCodeEmails != null && !productPromoCodeEmails.isEmpty();
 			case PromoPackage.PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_PARTIES:
@@ -874,18 +902,12 @@ public class ProductPromoCodeImpl extends BizEntityImpl implements ProductPromoC
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productPromoCodeId: ");
 		result.append(productPromoCodeId);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
-		result.append(", productPromoId: ");
-		result.append(productPromoId);
 		result.append(", requireEmailOrParty: ");
 		result.append(requireEmailOrParty);
 		result.append(", thruDate: ");

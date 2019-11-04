@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.party.contact.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 import org.abchip.mimo.biz.party.contact.ContactMechLink;
 import org.abchip.mimo.biz.party.contact.ContactPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -54,23 +57,14 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	protected String contactMechIdFrom = CONTACT_MECH_ID_FROM_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContactMechIdTo() <em>Contact Mech Id To</em>}' attribute.
+	 * The cached value of the '{@link #getContactMechIdTo() <em>Contact Mech Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContactMechIdTo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTACT_MECH_ID_TO_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContactMechIdTo() <em>Contact Mech Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechIdTo = CONTACT_MECH_ID_TO_EDEFAULT;
+	protected ContactMech contactMechIdTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,7 +114,24 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	 * @generated
 	 */
 	@Override
-	public String getContactMechIdTo() {
+	public ContactMech getContactMechIdTo() {
+		if (contactMechIdTo != null && ((EObject)contactMechIdTo).eIsProxy()) {
+			InternalEObject oldContactMechIdTo = (InternalEObject)contactMechIdTo;
+			contactMechIdTo = (ContactMech)eResolveProxy(oldContactMechIdTo);
+			if (contactMechIdTo != oldContactMechIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO, oldContactMechIdTo, contactMechIdTo));
+			}
+		}
+		return contactMechIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetContactMechIdTo() {
 		return contactMechIdTo;
 	}
 
@@ -130,8 +141,8 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 	 * @generated
 	 */
 	@Override
-	public void setContactMechIdTo(String newContactMechIdTo) {
-		String oldContactMechIdTo = contactMechIdTo;
+	public void setContactMechIdTo(ContactMech newContactMechIdTo) {
+		ContactMech oldContactMechIdTo = contactMechIdTo;
 		contactMechIdTo = newContactMechIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO, oldContactMechIdTo, contactMechIdTo));
@@ -148,7 +159,8 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM:
 				return getContactMechIdFrom();
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO:
-				return getContactMechIdTo();
+				if (resolve) return getContactMechIdTo();
+				return basicGetContactMechIdTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,7 +177,7 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 				setContactMechIdFrom((String)newValue);
 				return;
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO:
-				setContactMechIdTo((String)newValue);
+				setContactMechIdTo((ContactMech)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,7 +195,7 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 				setContactMechIdFrom(CONTACT_MECH_ID_FROM_EDEFAULT);
 				return;
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO:
-				setContactMechIdTo(CONTACT_MECH_ID_TO_EDEFAULT);
+				setContactMechIdTo((ContactMech)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -200,7 +212,7 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_FROM:
 				return CONTACT_MECH_ID_FROM_EDEFAULT == null ? contactMechIdFrom != null : !CONTACT_MECH_ID_FROM_EDEFAULT.equals(contactMechIdFrom);
 			case ContactPackage.CONTACT_MECH_LINK__CONTACT_MECH_ID_TO:
-				return CONTACT_MECH_ID_TO_EDEFAULT == null ? contactMechIdTo != null : !CONTACT_MECH_ID_TO_EDEFAULT.equals(contactMechIdTo);
+				return contactMechIdTo != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,8 +229,6 @@ public class ContactMechLinkImpl extends BizEntityImpl implements ContactMechLin
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contactMechIdFrom: ");
 		result.append(contactMechIdFrom);
-		result.append(", contactMechIdTo: ");
-		result.append(contactMechIdTo);
 		result.append(')');
 		return result.toString();
 	}

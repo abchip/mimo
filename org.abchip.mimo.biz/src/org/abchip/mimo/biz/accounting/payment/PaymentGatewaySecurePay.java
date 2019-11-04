@@ -68,9 +68,8 @@ public interface PaymentGatewaySecurePay extends BizEntity {
 	 * @return the value of the '<em>Payment Gateway Config Id</em>' attribute.
 	 * @see #setPaymentGatewayConfigId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewaySecurePay_PaymentGatewayConfigId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentGatewayConfig'"
 	 * @generated
 	 */
 	String getPaymentGatewayConfigId();

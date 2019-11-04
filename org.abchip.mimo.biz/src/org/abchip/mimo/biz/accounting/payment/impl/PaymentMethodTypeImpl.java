@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.payment.impl;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
 import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
@@ -18,6 +19,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -30,8 +33,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl#getDefaultGlAccountId <em>Default Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodTypeImpl#getPaymentMethodTypeGlAccounts <em>Payment Method Type Gl Accounts</em>}</li>
  * </ul>
  *
@@ -62,24 +65,6 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 */
 	protected String paymentMethodTypeId = PAYMENT_METHOD_TYPE_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getDefaultGlAccountId() <em>Default Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDefaultGlAccountId() <em>Default Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultGlAccountId = DEFAULT_GL_ACCOUNT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,6 +82,15 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getDefaultGlAccountId() <em>Default Gl Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultGlAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccount defaultGlAccountId;
 
 	/**
 	 * The cached value of the '{@link #getPaymentMethodTypeGlAccounts() <em>Payment Method Type Gl Accounts</em>}' attribute list.
@@ -156,7 +150,24 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 * @generated
 	 */
 	@Override
-	public String getDefaultGlAccountId() {
+	public GlAccount getDefaultGlAccountId() {
+		if (defaultGlAccountId != null && ((EObject)defaultGlAccountId).eIsProxy()) {
+			InternalEObject oldDefaultGlAccountId = (InternalEObject)defaultGlAccountId;
+			defaultGlAccountId = (GlAccount)eResolveProxy(oldDefaultGlAccountId);
+			if (defaultGlAccountId != oldDefaultGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
+			}
+		}
+		return defaultGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetDefaultGlAccountId() {
 		return defaultGlAccountId;
 	}
 
@@ -166,8 +177,8 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 	 * @generated
 	 */
 	@Override
-	public void setDefaultGlAccountId(String newDefaultGlAccountId) {
-		String oldDefaultGlAccountId = defaultGlAccountId;
+	public void setDefaultGlAccountId(GlAccount newDefaultGlAccountId) {
+		GlAccount oldDefaultGlAccountId = defaultGlAccountId;
 		defaultGlAccountId = newDefaultGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID, oldDefaultGlAccountId, defaultGlAccountId));
@@ -267,10 +278,11 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
 				return getPaymentMethodTypeId();
-			case PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				return getDefaultGlAccountId();
 			case PaymentPackage.PAYMENT_METHOD_TYPE__DESCRIPTION:
 				return getDescription();
+			case PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID:
+				if (resolve) return getDefaultGlAccountId();
+				return basicGetDefaultGlAccountId();
 			case PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS:
 				return getPaymentMethodTypeGlAccounts();
 		}
@@ -289,11 +301,11 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 			case PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
 				setPaymentMethodTypeId((String)newValue);
 				return;
-			case PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				setDefaultGlAccountId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_METHOD_TYPE__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID:
+				setDefaultGlAccountId((GlAccount)newValue);
 				return;
 			case PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS:
 				getPaymentMethodTypeGlAccounts().clear();
@@ -314,11 +326,11 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 			case PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
 				setPaymentMethodTypeId(PAYMENT_METHOD_TYPE_ID_EDEFAULT);
 				return;
-			case PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				setDefaultGlAccountId(DEFAULT_GL_ACCOUNT_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_METHOD_TYPE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID:
+				setDefaultGlAccountId((GlAccount)null);
 				return;
 			case PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS:
 				getPaymentMethodTypeGlAccounts().clear();
@@ -337,10 +349,10 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 		switch (featureID) {
 			case PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
 				return PAYMENT_METHOD_TYPE_ID_EDEFAULT == null ? paymentMethodTypeId != null : !PAYMENT_METHOD_TYPE_ID_EDEFAULT.equals(paymentMethodTypeId);
-			case PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID:
-				return DEFAULT_GL_ACCOUNT_ID_EDEFAULT == null ? defaultGlAccountId != null : !DEFAULT_GL_ACCOUNT_ID_EDEFAULT.equals(defaultGlAccountId);
 			case PaymentPackage.PAYMENT_METHOD_TYPE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case PaymentPackage.PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID:
+				return defaultGlAccountId != null;
 			case PaymentPackage.PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_GL_ACCOUNTS:
 				return paymentMethodTypeGlAccounts != null && !paymentMethodTypeGlAccounts.isEmpty();
 		}
@@ -359,8 +371,6 @@ public class PaymentMethodTypeImpl extends BizEntityTypeImpl<PaymentMethod> impl
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (paymentMethodTypeId: ");
 		result.append(paymentMethodTypeId);
-		result.append(", defaultGlAccountId: ");
-		result.append(defaultGlAccountId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", paymentMethodTypeGlAccounts: ");

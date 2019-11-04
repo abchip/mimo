@@ -75,7 +75,7 @@ public interface GlFiscalType extends BizEntity {
 	 * @return the value of the '<em>Gl Fiscal Type Id</em>' attribute.
 	 * @see #setGlFiscalTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlFiscalType_GlFiscalTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -7,12 +7,16 @@
  */
 package org.abchip.mimo.biz.product.promo.impl;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.promo.ProductPromoProduct;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -120,44 +124,24 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	protected String productPromoCondSeqId = PRODUCT_PROMO_COND_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
+	protected Product productId;
 
 	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductPromoApplEnumId() <em>Product Promo Appl Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductPromoApplEnumId() <em>Product Promo Appl Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductPromoApplEnumId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_PROMO_APPL_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoApplEnumId() <em>Product Promo Appl Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoApplEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoApplEnumId = PRODUCT_PROMO_APPL_ENUM_ID_EDEFAULT;
+	protected Enumeration productPromoApplEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,7 +191,24 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoApplEnumId() {
+	public Enumeration getProductPromoApplEnumId() {
+		if (productPromoApplEnumId != null && ((EObject)productPromoApplEnumId).eIsProxy()) {
+			InternalEObject oldProductPromoApplEnumId = (InternalEObject)productPromoApplEnumId;
+			productPromoApplEnumId = (Enumeration)eResolveProxy(oldProductPromoApplEnumId);
+			if (productPromoApplEnumId != oldProductPromoApplEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID, oldProductPromoApplEnumId, productPromoApplEnumId));
+			}
+		}
+		return productPromoApplEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetProductPromoApplEnumId() {
 		return productPromoApplEnumId;
 	}
 
@@ -217,8 +218,8 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoApplEnumId(String newProductPromoApplEnumId) {
-		String oldProductPromoApplEnumId = productPromoApplEnumId;
+	public void setProductPromoApplEnumId(Enumeration newProductPromoApplEnumId) {
+		Enumeration oldProductPromoApplEnumId = productPromoApplEnumId;
 		productPromoApplEnumId = newProductPromoApplEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID, oldProductPromoApplEnumId, productPromoApplEnumId));
@@ -299,7 +300,24 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -309,8 +327,8 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_ID, oldProductId, productId));
@@ -333,9 +351,11 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_COND_SEQ_ID:
 				return getProductPromoCondSeqId();
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_ID:
-				return getProductId();
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID:
-				return getProductPromoApplEnumId();
+				if (resolve) return getProductPromoApplEnumId();
+				return basicGetProductPromoApplEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -361,10 +381,10 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 				setProductPromoCondSeqId((String)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_ID:
-				setProductId((String)newValue);
+				setProductId((Product)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID:
-				setProductPromoApplEnumId((String)newValue);
+				setProductPromoApplEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -391,10 +411,10 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 				setProductPromoCondSeqId(PRODUCT_PROMO_COND_SEQ_ID_EDEFAULT);
 				return;
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
+				setProductId((Product)null);
 				return;
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID:
-				setProductPromoApplEnumId(PRODUCT_PROMO_APPL_ENUM_ID_EDEFAULT);
+				setProductPromoApplEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -417,9 +437,9 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_COND_SEQ_ID:
 				return PRODUCT_PROMO_COND_SEQ_ID_EDEFAULT == null ? productPromoCondSeqId != null : !PRODUCT_PROMO_COND_SEQ_ID_EDEFAULT.equals(productPromoCondSeqId);
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+				return productId != null;
 			case PromoPackage.PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID:
-				return PRODUCT_PROMO_APPL_ENUM_ID_EDEFAULT == null ? productPromoApplEnumId != null : !PRODUCT_PROMO_APPL_ENUM_ID_EDEFAULT.equals(productPromoApplEnumId);
+				return productPromoApplEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -442,10 +462,6 @@ public class ProductPromoProductImpl extends BizEntityImpl implements ProductPro
 		result.append(productPromoActionSeqId);
 		result.append(", productPromoCondSeqId: ");
 		result.append(productPromoCondSeqId);
-		result.append(", productId: ");
-		result.append(productId);
-		result.append(", productPromoApplEnumId: ");
-		result.append(productPromoApplEnumId);
 		result.append(')');
 		return result.toString();
 	}

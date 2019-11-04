@@ -40,7 +40,6 @@ public interface CommunicationEventProduct extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventProduct_ProductId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
 	 * @generated
 	 */
 	String getProductId();
@@ -56,31 +55,29 @@ public interface CommunicationEventProduct extends BizEntity {
 	void setProductId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Communication Event Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Communication Event Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Communication Event Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Id</em>' attribute.
-	 * @see #setCommunicationEventId(String)
+	 * @return the value of the '<em>Communication Event Id</em>' reference.
+	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommunicationEventProduct_CommunicationEventId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent'"
+	 * @model keys="communicationEventId"
 	 * @generated
 	 */
-	String getCommunicationEventId();
+	CommunicationEvent getCommunicationEventId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventProduct#getCommunicationEventId <em>Communication Event Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommunicationEventProduct#getCommunicationEventId <em>Communication Event Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Communication Event Id</em>' attribute.
+	 * @param value the new value of the '<em>Communication Event Id</em>' reference.
 	 * @see #getCommunicationEventId()
 	 * @generated
 	 */
-	void setCommunicationEventId(String value);
+	void setCommunicationEventId(CommunicationEvent value);
 
 } // CommunicationEventProduct

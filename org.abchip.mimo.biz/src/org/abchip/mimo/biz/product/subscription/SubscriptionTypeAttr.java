@@ -65,7 +65,8 @@ public interface SubscriptionTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface SubscriptionTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Subscription Type Id</em>' attribute.
 	 * @see #setSubscriptionTypeId(String)
 	 * @see org.abchip.mimo.biz.product.subscription.SubscriptionPackage#getSubscriptionTypeAttr_SubscriptionTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SubscriptionType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getSubscriptionTypeId();

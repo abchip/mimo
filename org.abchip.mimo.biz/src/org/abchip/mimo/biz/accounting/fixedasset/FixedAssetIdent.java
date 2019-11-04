@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getFixedAssetIdentTypeId <em>Fixed Asset Ident Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getIdValue <em>Id Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getFixedAssetIdentTypeId <em>Fixed Asset Ident Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetIdent()
@@ -65,8 +65,8 @@ public interface FixedAssetIdent extends BizEntityTyped<FixedAssetIdentType> {
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetIdent_FixedAssetId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFixedAssetId();
@@ -82,30 +82,29 @@ public interface FixedAssetIdent extends BizEntityTyped<FixedAssetIdentType> {
 	void setFixedAssetId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Ident Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Ident Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Ident Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Ident Type Id</em>' attribute.
-	 * @see #setFixedAssetIdentTypeId(String)
+	 * @return the value of the '<em>Fixed Asset Ident Type Id</em>' reference.
+	 * @see #setFixedAssetIdentTypeId(FixedAssetIdentType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetIdent_FixedAssetIdentTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAssetIdentType'"
+	 * @model keys="fixedAssetIdentTypeId"
 	 * @generated
 	 */
-	String getFixedAssetIdentTypeId();
+	FixedAssetIdentType getFixedAssetIdentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getFixedAssetIdentTypeId <em>Fixed Asset Ident Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetIdent#getFixedAssetIdentTypeId <em>Fixed Asset Ident Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Ident Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Ident Type Id</em>' reference.
 	 * @see #getFixedAssetIdentTypeId()
 	 * @generated
 	 */
-	void setFixedAssetIdentTypeId(String value);
+	void setFixedAssetIdentTypeId(FixedAssetIdentType value);
 
 } // FixedAssetIdent

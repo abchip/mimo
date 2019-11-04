@@ -11,12 +11,17 @@ import java.math.BigDecimal;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.datasource.DataSource;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.common.geo.GeoPoint;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,14 +33,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getGeoPointId <em>Geo Point Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getElevation <em>Elevation</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getElevationUomId <em>Elevation Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getGeoPointTypeEnumId <em>Geo Point Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getInformation <em>Information</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getLatitude <em>Latitude</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getLongitude <em>Longitude</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getGeoPointTypeEnumId <em>Geo Point Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.GeoPointImpl#getElevationUomId <em>Elevation Uom Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,24 +68,6 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @ordered
 	 */
 	protected String geoPointId = GEO_POINT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,43 +104,6 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @ordered
 	 */
 	protected BigDecimal elevation = ELEVATION_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getElevationUomId() <em>Elevation Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElevationUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ELEVATION_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getElevationUomId() <em>Elevation Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElevationUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String elevationUomId = ELEVATION_UOM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGeoPointTypeEnumId() <em>Geo Point Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_POINT_TYPE_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeoPointTypeEnumId() <em>Geo Point Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoPointTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoPointTypeEnumId = GEO_POINT_TYPE_ENUM_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getInformation() <em>Information</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -208,6 +158,33 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @ordered
 	 */
 	protected String longitude = LONGITUDE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataSource dataSourceId;
+	/**
+	 * The cached value of the '{@link #getGeoPointTypeEnumId() <em>Geo Point Type Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoPointTypeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration geoPointTypeEnumId;
+	/**
+	 * The cached value of the '{@link #getElevationUomId() <em>Elevation Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getElevationUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom elevationUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,7 +257,24 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @generated
 	 */
 	@Override
-	public String getElevationUomId() {
+	public Uom getElevationUomId() {
+		if (elevationUomId != null && ((EObject)elevationUomId).eIsProxy()) {
+			InternalEObject oldElevationUomId = (InternalEObject)elevationUomId;
+			elevationUomId = (Uom)eResolveProxy(oldElevationUomId);
+			if (elevationUomId != oldElevationUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_POINT__ELEVATION_UOM_ID, oldElevationUomId, elevationUomId));
+			}
+		}
+		return elevationUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetElevationUomId() {
 		return elevationUomId;
 	}
 
@@ -290,8 +284,8 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @generated
 	 */
 	@Override
-	public void setElevationUomId(String newElevationUomId) {
-		String oldElevationUomId = elevationUomId;
+	public void setElevationUomId(Uom newElevationUomId) {
+		Uom oldElevationUomId = elevationUomId;
 		elevationUomId = newElevationUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__ELEVATION_UOM_ID, oldElevationUomId, elevationUomId));
@@ -431,7 +425,24 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @generated
 	 */
 	@Override
-	public String getDataSourceId() {
+	public DataSource getDataSourceId() {
+		if (dataSourceId != null && ((EObject)dataSourceId).eIsProxy()) {
+			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
+			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
+			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_POINT__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+			}
+		}
+		return dataSourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSource basicGetDataSourceId() {
 		return dataSourceId;
 	}
 
@@ -441,8 +452,8 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @generated
 	 */
 	@Override
-	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
+	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
@@ -454,7 +465,24 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @generated
 	 */
 	@Override
-	public String getGeoPointTypeEnumId() {
+	public Enumeration getGeoPointTypeEnumId() {
+		if (geoPointTypeEnumId != null && ((EObject)geoPointTypeEnumId).eIsProxy()) {
+			InternalEObject oldGeoPointTypeEnumId = (InternalEObject)geoPointTypeEnumId;
+			geoPointTypeEnumId = (Enumeration)eResolveProxy(oldGeoPointTypeEnumId);
+			if (geoPointTypeEnumId != oldGeoPointTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID, oldGeoPointTypeEnumId, geoPointTypeEnumId));
+			}
+		}
+		return geoPointTypeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetGeoPointTypeEnumId() {
 		return geoPointTypeEnumId;
 	}
 
@@ -464,8 +492,8 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 	 * @generated
 	 */
 	@Override
-	public void setGeoPointTypeEnumId(String newGeoPointTypeEnumId) {
-		String oldGeoPointTypeEnumId = geoPointTypeEnumId;
+	public void setGeoPointTypeEnumId(Enumeration newGeoPointTypeEnumId) {
+		Enumeration oldGeoPointTypeEnumId = geoPointTypeEnumId;
 		geoPointTypeEnumId = newGeoPointTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID, oldGeoPointTypeEnumId, geoPointTypeEnumId));
@@ -481,22 +509,25 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 		switch (featureID) {
 			case GeoPackage.GEO_POINT__GEO_POINT_ID:
 				return getGeoPointId();
-			case GeoPackage.GEO_POINT__DATA_SOURCE_ID:
-				return getDataSourceId();
 			case GeoPackage.GEO_POINT__DESCRIPTION:
 				return getDescription();
 			case GeoPackage.GEO_POINT__ELEVATION:
 				return getElevation();
-			case GeoPackage.GEO_POINT__ELEVATION_UOM_ID:
-				return getElevationUomId();
-			case GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID:
-				return getGeoPointTypeEnumId();
 			case GeoPackage.GEO_POINT__INFORMATION:
 				return getInformation();
 			case GeoPackage.GEO_POINT__LATITUDE:
 				return getLatitude();
 			case GeoPackage.GEO_POINT__LONGITUDE:
 				return getLongitude();
+			case GeoPackage.GEO_POINT__DATA_SOURCE_ID:
+				if (resolve) return getDataSourceId();
+				return basicGetDataSourceId();
+			case GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID:
+				if (resolve) return getGeoPointTypeEnumId();
+				return basicGetGeoPointTypeEnumId();
+			case GeoPackage.GEO_POINT__ELEVATION_UOM_ID:
+				if (resolve) return getElevationUomId();
+				return basicGetElevationUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -512,20 +543,11 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 			case GeoPackage.GEO_POINT__GEO_POINT_ID:
 				setGeoPointId((String)newValue);
 				return;
-			case GeoPackage.GEO_POINT__DATA_SOURCE_ID:
-				setDataSourceId((String)newValue);
-				return;
 			case GeoPackage.GEO_POINT__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case GeoPackage.GEO_POINT__ELEVATION:
 				setElevation((BigDecimal)newValue);
-				return;
-			case GeoPackage.GEO_POINT__ELEVATION_UOM_ID:
-				setElevationUomId((String)newValue);
-				return;
-			case GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID:
-				setGeoPointTypeEnumId((String)newValue);
 				return;
 			case GeoPackage.GEO_POINT__INFORMATION:
 				setInformation((String)newValue);
@@ -535,6 +557,15 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 				return;
 			case GeoPackage.GEO_POINT__LONGITUDE:
 				setLongitude((String)newValue);
+				return;
+			case GeoPackage.GEO_POINT__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)newValue);
+				return;
+			case GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID:
+				setGeoPointTypeEnumId((Enumeration)newValue);
+				return;
+			case GeoPackage.GEO_POINT__ELEVATION_UOM_ID:
+				setElevationUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -551,20 +582,11 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 			case GeoPackage.GEO_POINT__GEO_POINT_ID:
 				setGeoPointId(GEO_POINT_ID_EDEFAULT);
 				return;
-			case GeoPackage.GEO_POINT__DATA_SOURCE_ID:
-				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
-				return;
 			case GeoPackage.GEO_POINT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case GeoPackage.GEO_POINT__ELEVATION:
 				setElevation(ELEVATION_EDEFAULT);
-				return;
-			case GeoPackage.GEO_POINT__ELEVATION_UOM_ID:
-				setElevationUomId(ELEVATION_UOM_ID_EDEFAULT);
-				return;
-			case GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID:
-				setGeoPointTypeEnumId(GEO_POINT_TYPE_ENUM_ID_EDEFAULT);
 				return;
 			case GeoPackage.GEO_POINT__INFORMATION:
 				setInformation(INFORMATION_EDEFAULT);
@@ -574,6 +596,15 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 				return;
 			case GeoPackage.GEO_POINT__LONGITUDE:
 				setLongitude(LONGITUDE_EDEFAULT);
+				return;
+			case GeoPackage.GEO_POINT__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)null);
+				return;
+			case GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID:
+				setGeoPointTypeEnumId((Enumeration)null);
+				return;
+			case GeoPackage.GEO_POINT__ELEVATION_UOM_ID:
+				setElevationUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -589,22 +620,22 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 		switch (featureID) {
 			case GeoPackage.GEO_POINT__GEO_POINT_ID:
 				return GEO_POINT_ID_EDEFAULT == null ? geoPointId != null : !GEO_POINT_ID_EDEFAULT.equals(geoPointId);
-			case GeoPackage.GEO_POINT__DATA_SOURCE_ID:
-				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
 			case GeoPackage.GEO_POINT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case GeoPackage.GEO_POINT__ELEVATION:
 				return ELEVATION_EDEFAULT == null ? elevation != null : !ELEVATION_EDEFAULT.equals(elevation);
-			case GeoPackage.GEO_POINT__ELEVATION_UOM_ID:
-				return ELEVATION_UOM_ID_EDEFAULT == null ? elevationUomId != null : !ELEVATION_UOM_ID_EDEFAULT.equals(elevationUomId);
-			case GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID:
-				return GEO_POINT_TYPE_ENUM_ID_EDEFAULT == null ? geoPointTypeEnumId != null : !GEO_POINT_TYPE_ENUM_ID_EDEFAULT.equals(geoPointTypeEnumId);
 			case GeoPackage.GEO_POINT__INFORMATION:
 				return INFORMATION_EDEFAULT == null ? information != null : !INFORMATION_EDEFAULT.equals(information);
 			case GeoPackage.GEO_POINT__LATITUDE:
 				return LATITUDE_EDEFAULT == null ? latitude != null : !LATITUDE_EDEFAULT.equals(latitude);
 			case GeoPackage.GEO_POINT__LONGITUDE:
 				return LONGITUDE_EDEFAULT == null ? longitude != null : !LONGITUDE_EDEFAULT.equals(longitude);
+			case GeoPackage.GEO_POINT__DATA_SOURCE_ID:
+				return dataSourceId != null;
+			case GeoPackage.GEO_POINT__GEO_POINT_TYPE_ENUM_ID:
+				return geoPointTypeEnumId != null;
+			case GeoPackage.GEO_POINT__ELEVATION_UOM_ID:
+				return elevationUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -621,16 +652,10 @@ public class GeoPointImpl extends BizEntityImpl implements GeoPoint {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (geoPointId: ");
 		result.append(geoPointId);
-		result.append(", dataSourceId: ");
-		result.append(dataSourceId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", elevation: ");
 		result.append(elevation);
-		result.append(", elevationUomId: ");
-		result.append(elevationUomId);
-		result.append(", geoPointTypeEnumId: ");
-		result.append(geoPointTypeEnumId);
 		result.append(", information: ");
 		result.append(information);
 		result.append(", latitude: ");

@@ -75,7 +75,7 @@ public interface JobInterviewType extends BizEntityType<JobInterview> {
 	 * @return the value of the '<em>Job Interview Type Id</em>' attribute.
 	 * @see #setJobInterviewTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.recruitment.RecruitmentPackage#getJobInterviewType_JobInterviewTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

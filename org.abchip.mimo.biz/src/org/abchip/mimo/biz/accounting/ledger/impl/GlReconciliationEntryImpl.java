@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.accounting.ledger.AcctgTrans;
 import org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationEntryImpl#getGlReconciliationId <em>Gl Reconciliation Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationEntryImpl#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationEntryImpl#getAcctgTransEntrySeqId <em>Acctg Trans Entry Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationEntryImpl#getReconciledAmount <em>Reconciled Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationEntryImpl#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,24 +59,6 @@ public class GlReconciliationEntryImpl extends BizEntityImpl implements GlReconc
 	 * @ordered
 	 */
 	protected String glReconciliationId = GL_RECONCILIATION_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAcctgTransId() <em>Acctg Trans Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAcctgTransId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCTG_TRANS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAcctgTransId() <em>Acctg Trans Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAcctgTransId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String acctgTransId = ACCTG_TRANS_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getAcctgTransEntrySeqId() <em>Acctg Trans Entry Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -110,6 +95,15 @@ public class GlReconciliationEntryImpl extends BizEntityImpl implements GlReconc
 	 * @ordered
 	 */
 	protected BigDecimal reconciledAmount = RECONCILED_AMOUNT_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAcctgTransId() <em>Acctg Trans Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAcctgTransId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AcctgTrans acctgTransId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,7 +199,24 @@ public class GlReconciliationEntryImpl extends BizEntityImpl implements GlReconc
 	 * @generated
 	 */
 	@Override
-	public String getAcctgTransId() {
+	public AcctgTrans getAcctgTransId() {
+		if (acctgTransId != null && ((EObject)acctgTransId).eIsProxy()) {
+			InternalEObject oldAcctgTransId = (InternalEObject)acctgTransId;
+			acctgTransId = (AcctgTrans)eResolveProxy(oldAcctgTransId);
+			if (acctgTransId != oldAcctgTransId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID, oldAcctgTransId, acctgTransId));
+			}
+		}
+		return acctgTransId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AcctgTrans basicGetAcctgTransId() {
 		return acctgTransId;
 	}
 
@@ -215,8 +226,8 @@ public class GlReconciliationEntryImpl extends BizEntityImpl implements GlReconc
 	 * @generated
 	 */
 	@Override
-	public void setAcctgTransId(String newAcctgTransId) {
-		String oldAcctgTransId = acctgTransId;
+	public void setAcctgTransId(AcctgTrans newAcctgTransId) {
+		AcctgTrans oldAcctgTransId = acctgTransId;
 		acctgTransId = newAcctgTransId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID, oldAcctgTransId, acctgTransId));
@@ -232,12 +243,13 @@ public class GlReconciliationEntryImpl extends BizEntityImpl implements GlReconc
 		switch (featureID) {
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__GL_RECONCILIATION_ID:
 				return getGlReconciliationId();
-			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID:
-				return getAcctgTransId();
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID:
 				return getAcctgTransEntrySeqId();
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__RECONCILED_AMOUNT:
 				return getReconciledAmount();
+			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID:
+				if (resolve) return getAcctgTransId();
+				return basicGetAcctgTransId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,14 +265,14 @@ public class GlReconciliationEntryImpl extends BizEntityImpl implements GlReconc
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__GL_RECONCILIATION_ID:
 				setGlReconciliationId((String)newValue);
 				return;
-			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID:
-				setAcctgTransId((String)newValue);
-				return;
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID:
 				setAcctgTransEntrySeqId((String)newValue);
 				return;
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__RECONCILED_AMOUNT:
 				setReconciledAmount((BigDecimal)newValue);
+				return;
+			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID:
+				setAcctgTransId((AcctgTrans)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -277,14 +289,14 @@ public class GlReconciliationEntryImpl extends BizEntityImpl implements GlReconc
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__GL_RECONCILIATION_ID:
 				setGlReconciliationId(GL_RECONCILIATION_ID_EDEFAULT);
 				return;
-			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID:
-				setAcctgTransId(ACCTG_TRANS_ID_EDEFAULT);
-				return;
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID:
 				setAcctgTransEntrySeqId(ACCTG_TRANS_ENTRY_SEQ_ID_EDEFAULT);
 				return;
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__RECONCILED_AMOUNT:
 				setReconciledAmount(RECONCILED_AMOUNT_EDEFAULT);
+				return;
+			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID:
+				setAcctgTransId((AcctgTrans)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -300,12 +312,12 @@ public class GlReconciliationEntryImpl extends BizEntityImpl implements GlReconc
 		switch (featureID) {
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__GL_RECONCILIATION_ID:
 				return GL_RECONCILIATION_ID_EDEFAULT == null ? glReconciliationId != null : !GL_RECONCILIATION_ID_EDEFAULT.equals(glReconciliationId);
-			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID:
-				return ACCTG_TRANS_ID_EDEFAULT == null ? acctgTransId != null : !ACCTG_TRANS_ID_EDEFAULT.equals(acctgTransId);
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ENTRY_SEQ_ID:
 				return ACCTG_TRANS_ENTRY_SEQ_ID_EDEFAULT == null ? acctgTransEntrySeqId != null : !ACCTG_TRANS_ENTRY_SEQ_ID_EDEFAULT.equals(acctgTransEntrySeqId);
 			case LedgerPackage.GL_RECONCILIATION_ENTRY__RECONCILED_AMOUNT:
 				return RECONCILED_AMOUNT_EDEFAULT == null ? reconciledAmount != null : !RECONCILED_AMOUNT_EDEFAULT.equals(reconciledAmount);
+			case LedgerPackage.GL_RECONCILIATION_ENTRY__ACCTG_TRANS_ID:
+				return acctgTransId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -322,8 +334,6 @@ public class GlReconciliationEntryImpl extends BizEntityImpl implements GlReconc
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (glReconciliationId: ");
 		result.append(glReconciliationId);
-		result.append(", acctgTransId: ");
-		result.append(acctgTransId);
 		result.append(", acctgTransEntrySeqId: ");
 		result.append(acctgTransEntrySeqId);
 		result.append(", reconciledAmount: ");

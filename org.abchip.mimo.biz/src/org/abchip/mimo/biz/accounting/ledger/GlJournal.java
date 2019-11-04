@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +25,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#getGlJournalId <em>Gl Journal Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#getGlJournalName <em>Gl Journal Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#isIsPosted <em>Is Posted</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#getPostedDate <em>Posted Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal()
@@ -86,30 +87,30 @@ public interface GlJournal extends BizEntity {
 	void setIsPosted(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Organization Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Organization Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Organization Party Id</em>' attribute.
-	 * @see #setOrganizationPartyId(String)
+	 * @return the value of the '<em>Organization Party Id</em>' reference.
+	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal_OrganizationPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getOrganizationPartyId();
+	Party getOrganizationPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#getOrganizationPartyId <em>Organization Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlJournal#getOrganizationPartyId <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Organization Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Organization Party Id</em>' reference.
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 */
-	void setOrganizationPartyId(String value);
+	void setOrganizationPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Posted Date</b></em>' attribute.
@@ -166,7 +167,7 @@ public interface GlJournal extends BizEntity {
 	 * @return the value of the '<em>Gl Journal Id</em>' attribute.
 	 * @see #setGlJournalId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlJournal_GlJournalId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

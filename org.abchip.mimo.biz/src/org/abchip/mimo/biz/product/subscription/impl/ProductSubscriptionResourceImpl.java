@@ -9,12 +9,17 @@ package org.abchip.mimo.biz.product.subscription.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.product.subscription.ProductSubscriptionResource;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
+import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,24 +31,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#isAutomaticExtend <em>Automatic Extend</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getAvailableTime <em>Available Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getAvailableTimeUomId <em>Available Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getCanclAutmExtTime <em>Cancl Autm Ext Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getCanclAutmExtTimeUomId <em>Cancl Autm Ext Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getGracePeriodOnExpiry <em>Grace Period On Expiry</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getGracePeriodOnExpiryUomId <em>Grace Period On Expiry Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getMaxLifeTime <em>Max Life Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getMaxLifeTimeUomId <em>Max Life Time Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getPurchaseFromDate <em>Purchase From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getPurchaseThruDate <em>Purchase Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseCountLimit <em>Use Count Limit</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseRoleTypeId <em>Use Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseTime <em>Use Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseRoleTypeId <em>Use Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getUseTimeUomId <em>Use Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getCanclAutmExtTimeUomId <em>Cancl Autm Ext Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getAvailableTimeUomId <em>Available Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getMaxLifeTimeUomId <em>Max Life Time Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.ProductSubscriptionResourceImpl#getGracePeriodOnExpiryUomId <em>Grace Period On Expiry Uom Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,26 +78,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @ordered
 	 */
 	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUBSCRIPTION_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubscriptionResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String subscriptionResourceId = SUBSCRIPTION_RESOURCE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -155,26 +140,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	protected long availableTime = AVAILABLE_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAvailableTimeUomId() <em>Available Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailableTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AVAILABLE_TIME_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAvailableTimeUomId() <em>Available Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailableTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String availableTimeUomId = AVAILABLE_TIME_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCanclAutmExtTime() <em>Cancl Autm Ext Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,26 +158,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @ordered
 	 */
 	protected long canclAutmExtTime = CANCL_AUTM_EXT_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCanclAutmExtTimeUomId() <em>Cancl Autm Ext Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCanclAutmExtTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCanclAutmExtTimeUomId() <em>Cancl Autm Ext Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCanclAutmExtTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String canclAutmExtTimeUomId = CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getGracePeriodOnExpiry() <em>Grace Period On Expiry</em>}' attribute.
@@ -235,26 +180,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	protected long gracePeriodOnExpiry = GRACE_PERIOD_ON_EXPIRY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getGracePeriodOnExpiryUomId() <em>Grace Period On Expiry Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGracePeriodOnExpiryUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGracePeriodOnExpiryUomId() <em>Grace Period On Expiry Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGracePeriodOnExpiryUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String gracePeriodOnExpiryUomId = GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getMaxLifeTime() <em>Max Life Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -273,26 +198,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @ordered
 	 */
 	protected long maxLifeTime = MAX_LIFE_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaxLifeTimeUomId() <em>Max Life Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxLifeTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MAX_LIFE_TIME_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMaxLifeTimeUomId() <em>Max Life Time Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxLifeTimeUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String maxLifeTimeUomId = MAX_LIFE_TIME_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPurchaseFromDate() <em>Purchase From Date</em>}' attribute.
@@ -375,26 +280,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	protected long useCountLimit = USE_COUNT_LIMIT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUseRoleTypeId() <em>Use Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUseRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USE_ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUseRoleTypeId() <em>Use Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUseRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String useRoleTypeId = USE_ROLE_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getUseTime() <em>Use Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -415,24 +300,74 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	protected long useTime = USE_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUseTimeUomId() <em>Use Time Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getSubscriptionResourceId() <em>Subscription Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUseTimeUomId()
+	 * @see #getSubscriptionResourceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USE_TIME_UOM_ID_EDEFAULT = null;
+	protected SubscriptionResource subscriptionResourceId;
 
 	/**
-	 * The cached value of the '{@link #getUseTimeUomId() <em>Use Time Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getUseRoleTypeId() <em>Use Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUseRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType useRoleTypeId;
+
+	/**
+	 * The cached value of the '{@link #getUseTimeUomId() <em>Use Time Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUseTimeUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String useTimeUomId = USE_TIME_UOM_ID_EDEFAULT;
+	protected Uom useTimeUomId;
+
+	/**
+	 * The cached value of the '{@link #getCanclAutmExtTimeUomId() <em>Cancl Autm Ext Time Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCanclAutmExtTimeUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom canclAutmExtTimeUomId;
+
+	/**
+	 * The cached value of the '{@link #getAvailableTimeUomId() <em>Available Time Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAvailableTimeUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom availableTimeUomId;
+
+	/**
+	 * The cached value of the '{@link #getMaxLifeTimeUomId() <em>Max Life Time Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxLifeTimeUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom maxLifeTimeUomId;
+
+	/**
+	 * The cached value of the '{@link #getGracePeriodOnExpiryUomId() <em>Grace Period On Expiry Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGracePeriodOnExpiryUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom gracePeriodOnExpiryUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -482,7 +417,24 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public String getAvailableTimeUomId() {
+	public Uom getAvailableTimeUomId() {
+		if (availableTimeUomId != null && ((EObject)availableTimeUomId).eIsProxy()) {
+			InternalEObject oldAvailableTimeUomId = (InternalEObject)availableTimeUomId;
+			availableTimeUomId = (Uom)eResolveProxy(oldAvailableTimeUomId);
+			if (availableTimeUomId != oldAvailableTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID, oldAvailableTimeUomId, availableTimeUomId));
+			}
+		}
+		return availableTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetAvailableTimeUomId() {
 		return availableTimeUomId;
 	}
 
@@ -492,8 +444,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public void setAvailableTimeUomId(String newAvailableTimeUomId) {
-		String oldAvailableTimeUomId = availableTimeUomId;
+	public void setAvailableTimeUomId(Uom newAvailableTimeUomId) {
+		Uom oldAvailableTimeUomId = availableTimeUomId;
 		availableTimeUomId = newAvailableTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID, oldAvailableTimeUomId, availableTimeUomId));
@@ -528,7 +480,24 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public String getCanclAutmExtTimeUomId() {
+	public Uom getCanclAutmExtTimeUomId() {
+		if (canclAutmExtTimeUomId != null && ((EObject)canclAutmExtTimeUomId).eIsProxy()) {
+			InternalEObject oldCanclAutmExtTimeUomId = (InternalEObject)canclAutmExtTimeUomId;
+			canclAutmExtTimeUomId = (Uom)eResolveProxy(oldCanclAutmExtTimeUomId);
+			if (canclAutmExtTimeUomId != oldCanclAutmExtTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID, oldCanclAutmExtTimeUomId, canclAutmExtTimeUomId));
+			}
+		}
+		return canclAutmExtTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCanclAutmExtTimeUomId() {
 		return canclAutmExtTimeUomId;
 	}
 
@@ -538,8 +507,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public void setCanclAutmExtTimeUomId(String newCanclAutmExtTimeUomId) {
-		String oldCanclAutmExtTimeUomId = canclAutmExtTimeUomId;
+	public void setCanclAutmExtTimeUomId(Uom newCanclAutmExtTimeUomId) {
+		Uom oldCanclAutmExtTimeUomId = canclAutmExtTimeUomId;
 		canclAutmExtTimeUomId = newCanclAutmExtTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID, oldCanclAutmExtTimeUomId, canclAutmExtTimeUomId));
@@ -620,7 +589,24 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public String getGracePeriodOnExpiryUomId() {
+	public Uom getGracePeriodOnExpiryUomId() {
+		if (gracePeriodOnExpiryUomId != null && ((EObject)gracePeriodOnExpiryUomId).eIsProxy()) {
+			InternalEObject oldGracePeriodOnExpiryUomId = (InternalEObject)gracePeriodOnExpiryUomId;
+			gracePeriodOnExpiryUomId = (Uom)eResolveProxy(oldGracePeriodOnExpiryUomId);
+			if (gracePeriodOnExpiryUomId != oldGracePeriodOnExpiryUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID, oldGracePeriodOnExpiryUomId, gracePeriodOnExpiryUomId));
+			}
+		}
+		return gracePeriodOnExpiryUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetGracePeriodOnExpiryUomId() {
 		return gracePeriodOnExpiryUomId;
 	}
 
@@ -630,8 +616,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public void setGracePeriodOnExpiryUomId(String newGracePeriodOnExpiryUomId) {
-		String oldGracePeriodOnExpiryUomId = gracePeriodOnExpiryUomId;
+	public void setGracePeriodOnExpiryUomId(Uom newGracePeriodOnExpiryUomId) {
+		Uom oldGracePeriodOnExpiryUomId = gracePeriodOnExpiryUomId;
 		gracePeriodOnExpiryUomId = newGracePeriodOnExpiryUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID, oldGracePeriodOnExpiryUomId, gracePeriodOnExpiryUomId));
@@ -666,7 +652,24 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public String getMaxLifeTimeUomId() {
+	public Uom getMaxLifeTimeUomId() {
+		if (maxLifeTimeUomId != null && ((EObject)maxLifeTimeUomId).eIsProxy()) {
+			InternalEObject oldMaxLifeTimeUomId = (InternalEObject)maxLifeTimeUomId;
+			maxLifeTimeUomId = (Uom)eResolveProxy(oldMaxLifeTimeUomId);
+			if (maxLifeTimeUomId != oldMaxLifeTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID, oldMaxLifeTimeUomId, maxLifeTimeUomId));
+			}
+		}
+		return maxLifeTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetMaxLifeTimeUomId() {
 		return maxLifeTimeUomId;
 	}
 
@@ -676,8 +679,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public void setMaxLifeTimeUomId(String newMaxLifeTimeUomId) {
-		String oldMaxLifeTimeUomId = maxLifeTimeUomId;
+	public void setMaxLifeTimeUomId(Uom newMaxLifeTimeUomId) {
+		Uom oldMaxLifeTimeUomId = maxLifeTimeUomId;
 		maxLifeTimeUomId = newMaxLifeTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID, oldMaxLifeTimeUomId, maxLifeTimeUomId));
@@ -781,7 +784,24 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public String getUseRoleTypeId() {
+	public RoleType getUseRoleTypeId() {
+		if (useRoleTypeId != null && ((EObject)useRoleTypeId).eIsProxy()) {
+			InternalEObject oldUseRoleTypeId = (InternalEObject)useRoleTypeId;
+			useRoleTypeId = (RoleType)eResolveProxy(oldUseRoleTypeId);
+			if (useRoleTypeId != oldUseRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID, oldUseRoleTypeId, useRoleTypeId));
+			}
+		}
+		return useRoleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetUseRoleTypeId() {
 		return useRoleTypeId;
 	}
 
@@ -791,8 +811,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public void setUseRoleTypeId(String newUseRoleTypeId) {
-		String oldUseRoleTypeId = useRoleTypeId;
+	public void setUseRoleTypeId(RoleType newUseRoleTypeId) {
+		RoleType oldUseRoleTypeId = useRoleTypeId;
 		useRoleTypeId = newUseRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID, oldUseRoleTypeId, useRoleTypeId));
@@ -827,7 +847,24 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public String getUseTimeUomId() {
+	public Uom getUseTimeUomId() {
+		if (useTimeUomId != null && ((EObject)useTimeUomId).eIsProxy()) {
+			InternalEObject oldUseTimeUomId = (InternalEObject)useTimeUomId;
+			useTimeUomId = (Uom)eResolveProxy(oldUseTimeUomId);
+			if (useTimeUomId != oldUseTimeUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
+			}
+		}
+		return useTimeUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUseTimeUomId() {
 		return useTimeUomId;
 	}
 
@@ -837,8 +874,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public void setUseTimeUomId(String newUseTimeUomId) {
-		String oldUseTimeUomId = useTimeUomId;
+	public void setUseTimeUomId(Uom newUseTimeUomId) {
+		Uom oldUseTimeUomId = useTimeUomId;
 		useTimeUomId = newUseTimeUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME_UOM_ID, oldUseTimeUomId, useTimeUomId));
@@ -873,7 +910,24 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public String getSubscriptionResourceId() {
+	public SubscriptionResource getSubscriptionResourceId() {
+		if (subscriptionResourceId != null && ((EObject)subscriptionResourceId).eIsProxy()) {
+			InternalEObject oldSubscriptionResourceId = (InternalEObject)subscriptionResourceId;
+			subscriptionResourceId = (SubscriptionResource)eResolveProxy(oldSubscriptionResourceId);
+			if (subscriptionResourceId != oldSubscriptionResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID, oldSubscriptionResourceId, subscriptionResourceId));
+			}
+		}
+		return subscriptionResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubscriptionResource basicGetSubscriptionResourceId() {
 		return subscriptionResourceId;
 	}
 
@@ -883,8 +937,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 	 * @generated
 	 */
 	@Override
-	public void setSubscriptionResourceId(String newSubscriptionResourceId) {
-		String oldSubscriptionResourceId = subscriptionResourceId;
+	public void setSubscriptionResourceId(SubscriptionResource newSubscriptionResourceId) {
+		SubscriptionResource oldSubscriptionResourceId = subscriptionResourceId;
 		subscriptionResourceId = newSubscriptionResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID, oldSubscriptionResourceId, subscriptionResourceId));
@@ -900,28 +954,18 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 		switch (featureID) {
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
 				return getProductId();
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
-				return getSubscriptionResourceId();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE:
 				return getFromDate();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AUTOMATIC_EXTEND:
 				return isAutomaticExtend();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME:
 				return getAvailableTime();
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID:
-				return getAvailableTimeUomId();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME:
 				return getCanclAutmExtTime();
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID:
-				return getCanclAutmExtTimeUomId();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY:
 				return getGracePeriodOnExpiry();
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
-				return getGracePeriodOnExpiryUomId();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME:
 				return getMaxLifeTime();
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID:
-				return getMaxLifeTimeUomId();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PURCHASE_FROM_DATE:
 				return getPurchaseFromDate();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PURCHASE_THRU_DATE:
@@ -930,12 +974,29 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 				return getThruDate();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_COUNT_LIMIT:
 				return getUseCountLimit();
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID:
-				return getUseRoleTypeId();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME:
 				return getUseTime();
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
+				if (resolve) return getSubscriptionResourceId();
+				return basicGetSubscriptionResourceId();
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID:
+				if (resolve) return getUseRoleTypeId();
+				return basicGetUseRoleTypeId();
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME_UOM_ID:
-				return getUseTimeUomId();
+				if (resolve) return getUseTimeUomId();
+				return basicGetUseTimeUomId();
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID:
+				if (resolve) return getCanclAutmExtTimeUomId();
+				return basicGetCanclAutmExtTimeUomId();
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID:
+				if (resolve) return getAvailableTimeUomId();
+				return basicGetAvailableTimeUomId();
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID:
+				if (resolve) return getMaxLifeTimeUomId();
+				return basicGetMaxLifeTimeUomId();
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
+				if (resolve) return getGracePeriodOnExpiryUomId();
+				return basicGetGracePeriodOnExpiryUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -951,9 +1012,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
 				setProductId((String)newValue);
 				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
-				setSubscriptionResourceId((String)newValue);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -963,26 +1021,14 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME:
 				setAvailableTime((Long)newValue);
 				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID:
-				setAvailableTimeUomId((String)newValue);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME:
 				setCanclAutmExtTime((Long)newValue);
-				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID:
-				setCanclAutmExtTimeUomId((String)newValue);
 				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY:
 				setGracePeriodOnExpiry((Long)newValue);
 				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
-				setGracePeriodOnExpiryUomId((String)newValue);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME:
 				setMaxLifeTime((Long)newValue);
-				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID:
-				setMaxLifeTimeUomId((String)newValue);
 				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PURCHASE_FROM_DATE:
 				setPurchaseFromDate((Date)newValue);
@@ -996,14 +1042,29 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_COUNT_LIMIT:
 				setUseCountLimit((Long)newValue);
 				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID:
-				setUseRoleTypeId((String)newValue);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME:
 				setUseTime((Long)newValue);
 				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
+				setSubscriptionResourceId((SubscriptionResource)newValue);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID:
+				setUseRoleTypeId((RoleType)newValue);
+				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME_UOM_ID:
-				setUseTimeUomId((String)newValue);
+				setUseTimeUomId((Uom)newValue);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID:
+				setCanclAutmExtTimeUomId((Uom)newValue);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID:
+				setAvailableTimeUomId((Uom)newValue);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID:
+				setMaxLifeTimeUomId((Uom)newValue);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
+				setGracePeriodOnExpiryUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1020,9 +1081,6 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
-				setSubscriptionResourceId(SUBSCRIPTION_RESOURCE_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -1032,26 +1090,14 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME:
 				setAvailableTime(AVAILABLE_TIME_EDEFAULT);
 				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID:
-				setAvailableTimeUomId(AVAILABLE_TIME_UOM_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME:
 				setCanclAutmExtTime(CANCL_AUTM_EXT_TIME_EDEFAULT);
-				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID:
-				setCanclAutmExtTimeUomId(CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT);
 				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY:
 				setGracePeriodOnExpiry(GRACE_PERIOD_ON_EXPIRY_EDEFAULT);
 				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
-				setGracePeriodOnExpiryUomId(GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME:
 				setMaxLifeTime(MAX_LIFE_TIME_EDEFAULT);
-				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID:
-				setMaxLifeTimeUomId(MAX_LIFE_TIME_UOM_ID_EDEFAULT);
 				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PURCHASE_FROM_DATE:
 				setPurchaseFromDate(PURCHASE_FROM_DATE_EDEFAULT);
@@ -1065,14 +1111,29 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_COUNT_LIMIT:
 				setUseCountLimit(USE_COUNT_LIMIT_EDEFAULT);
 				return;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID:
-				setUseRoleTypeId(USE_ROLE_TYPE_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME:
 				setUseTime(USE_TIME_EDEFAULT);
 				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
+				setSubscriptionResourceId((SubscriptionResource)null);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID:
+				setUseRoleTypeId((RoleType)null);
+				return;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME_UOM_ID:
-				setUseTimeUomId(USE_TIME_UOM_ID_EDEFAULT);
+				setUseTimeUomId((Uom)null);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID:
+				setCanclAutmExtTimeUomId((Uom)null);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID:
+				setAvailableTimeUomId((Uom)null);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID:
+				setMaxLifeTimeUomId((Uom)null);
+				return;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
+				setGracePeriodOnExpiryUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1088,28 +1149,18 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 		switch (featureID) {
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
-				return SUBSCRIPTION_RESOURCE_ID_EDEFAULT == null ? subscriptionResourceId != null : !SUBSCRIPTION_RESOURCE_ID_EDEFAULT.equals(subscriptionResourceId);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AUTOMATIC_EXTEND:
 				return automaticExtend != AUTOMATIC_EXTEND_EDEFAULT;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME:
 				return availableTime != AVAILABLE_TIME_EDEFAULT;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID:
-				return AVAILABLE_TIME_UOM_ID_EDEFAULT == null ? availableTimeUomId != null : !AVAILABLE_TIME_UOM_ID_EDEFAULT.equals(availableTimeUomId);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME:
 				return canclAutmExtTime != CANCL_AUTM_EXT_TIME_EDEFAULT;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID:
-				return CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT == null ? canclAutmExtTimeUomId != null : !CANCL_AUTM_EXT_TIME_UOM_ID_EDEFAULT.equals(canclAutmExtTimeUomId);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY:
 				return gracePeriodOnExpiry != GRACE_PERIOD_ON_EXPIRY_EDEFAULT;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
-				return GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT == null ? gracePeriodOnExpiryUomId != null : !GRACE_PERIOD_ON_EXPIRY_UOM_ID_EDEFAULT.equals(gracePeriodOnExpiryUomId);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME:
 				return maxLifeTime != MAX_LIFE_TIME_EDEFAULT;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID:
-				return MAX_LIFE_TIME_UOM_ID_EDEFAULT == null ? maxLifeTimeUomId != null : !MAX_LIFE_TIME_UOM_ID_EDEFAULT.equals(maxLifeTimeUomId);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PURCHASE_FROM_DATE:
 				return PURCHASE_FROM_DATE_EDEFAULT == null ? purchaseFromDate != null : !PURCHASE_FROM_DATE_EDEFAULT.equals(purchaseFromDate);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__PURCHASE_THRU_DATE:
@@ -1118,12 +1169,22 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_COUNT_LIMIT:
 				return useCountLimit != USE_COUNT_LIMIT_EDEFAULT;
-			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID:
-				return USE_ROLE_TYPE_ID_EDEFAULT == null ? useRoleTypeId != null : !USE_ROLE_TYPE_ID_EDEFAULT.equals(useRoleTypeId);
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME:
 				return useTime != USE_TIME_EDEFAULT;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
+				return subscriptionResourceId != null;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_ROLE_TYPE_ID:
+				return useRoleTypeId != null;
 			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__USE_TIME_UOM_ID:
-				return USE_TIME_UOM_ID_EDEFAULT == null ? useTimeUomId != null : !USE_TIME_UOM_ID_EDEFAULT.equals(useTimeUomId);
+				return useTimeUomId != null;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__CANCL_AUTM_EXT_TIME_UOM_ID:
+				return canclAutmExtTimeUomId != null;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__AVAILABLE_TIME_UOM_ID:
+				return availableTimeUomId != null;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__MAX_LIFE_TIME_UOM_ID:
+				return maxLifeTimeUomId != null;
+			case SubscriptionPackage.PRODUCT_SUBSCRIPTION_RESOURCE__GRACE_PERIOD_ON_EXPIRY_UOM_ID:
+				return gracePeriodOnExpiryUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1140,28 +1201,18 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", subscriptionResourceId: ");
-		result.append(subscriptionResourceId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", automaticExtend: ");
 		result.append(automaticExtend);
 		result.append(", availableTime: ");
 		result.append(availableTime);
-		result.append(", availableTimeUomId: ");
-		result.append(availableTimeUomId);
 		result.append(", canclAutmExtTime: ");
 		result.append(canclAutmExtTime);
-		result.append(", canclAutmExtTimeUomId: ");
-		result.append(canclAutmExtTimeUomId);
 		result.append(", gracePeriodOnExpiry: ");
 		result.append(gracePeriodOnExpiry);
-		result.append(", gracePeriodOnExpiryUomId: ");
-		result.append(gracePeriodOnExpiryUomId);
 		result.append(", maxLifeTime: ");
 		result.append(maxLifeTime);
-		result.append(", maxLifeTimeUomId: ");
-		result.append(maxLifeTimeUomId);
 		result.append(", purchaseFromDate: ");
 		result.append(purchaseFromDate);
 		result.append(", purchaseThruDate: ");
@@ -1170,12 +1221,8 @@ public class ProductSubscriptionResourceImpl extends BizEntityImpl implements Pr
 		result.append(thruDate);
 		result.append(", useCountLimit: ");
 		result.append(useCountLimit);
-		result.append(", useRoleTypeId: ");
-		result.append(useRoleTypeId);
 		result.append(", useTime: ");
 		result.append(useTime);
-		result.append(", useTimeUomId: ");
-		result.append(useTimeUomId);
 		result.append(')');
 		return result.toString();
 	}

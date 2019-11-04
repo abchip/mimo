@@ -198,6 +198,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -362,6 +363,22 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -378,22 +395,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -504,6 +505,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -512,14 +521,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -599,6 +600,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -607,14 +616,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -681,8 +682,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWebPage_ContentId() {
-		return (EAttribute)webPageEClass.getEStructuralFeatures().get(1);
+	public EReference getWebPage_ContentId() {
+		return (EReference)webPageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -692,7 +693,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EAttribute getWebPage_PageName() {
-		return (EAttribute)webPageEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)webPageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -701,8 +702,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWebPage_WebSiteId() {
-		return (EAttribute)webPageEClass.getEStructuralFeatures().get(3);
+	public EReference getWebPage_WebSiteId() {
+		return (EReference)webPageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -831,8 +832,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWebSite_ProductStoreId() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(11);
+	public EReference getWebSite_ProductStoreId() {
+		return (EReference)webSiteEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -842,7 +843,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EAttribute getWebSite_SecureContentPrefix() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -852,7 +853,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EAttribute getWebSite_SiteName() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -862,7 +863,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EAttribute getWebSite_StandardContentPrefix() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -871,8 +872,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getWebSite_VisualThemeSetId() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(15);
+	public EReference getWebSite_VisualThemeSetId() {
+		return (EReference)webSiteEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -882,7 +883,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	@Override
 	public EAttribute getWebSite_WebappPath() {
-		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)webSiteEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -926,9 +927,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		// Create classes and their features
 		webPageEClass = createEClass(WEB_PAGE);
 		createEAttribute(webPageEClass, WEB_PAGE__WEB_PAGE_ID);
-		createEAttribute(webPageEClass, WEB_PAGE__CONTENT_ID);
 		createEAttribute(webPageEClass, WEB_PAGE__PAGE_NAME);
-		createEAttribute(webPageEClass, WEB_PAGE__WEB_SITE_ID);
+		createEReference(webPageEClass, WEB_PAGE__WEB_SITE_ID);
+		createEReference(webPageEClass, WEB_PAGE__CONTENT_ID);
 
 		webSiteEClass = createEClass(WEB_SITE);
 		createEAttribute(webSiteEClass, WEB_SITE__WEB_SITE_ID);
@@ -942,12 +943,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(webSiteEClass, WEB_SITE__HTTPS_HOST);
 		createEAttribute(webSiteEClass, WEB_SITE__HTTPS_PORT);
 		createEAttribute(webSiteEClass, WEB_SITE__IS_DEFAULT);
-		createEAttribute(webSiteEClass, WEB_SITE__PRODUCT_STORE_ID);
 		createEAttribute(webSiteEClass, WEB_SITE__SECURE_CONTENT_PREFIX);
 		createEAttribute(webSiteEClass, WEB_SITE__SITE_NAME);
 		createEAttribute(webSiteEClass, WEB_SITE__STANDARD_CONTENT_PREFIX);
-		createEAttribute(webSiteEClass, WEB_SITE__VISUAL_THEME_SET_ID);
 		createEAttribute(webSiteEClass, WEB_SITE__WEBAPP_PATH);
+		createEReference(webSiteEClass, WEB_SITE__VISUAL_THEME_SET_ID);
+		createEReference(webSiteEClass, WEB_SITE__PRODUCT_STORE_ID);
 		createEAttribute(webSiteEClass, WEB_SITE__WEB_ANALYTICS_CONFIGS);
 	}
 
@@ -976,6 +977,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		ThemePackage theThemePackage = (ThemePackage)EPackage.Registry.INSTANCE.getEPackage(ThemePackage.eNS_URI);
+		StorePackage theStorePackage = (StorePackage)EPackage.Registry.INSTANCE.getEPackage(StorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -988,9 +992,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(webPageEClass, WebPage.class, "WebPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebPage_WebPageId(), ecorePackage.getEString(), "webPageId", null, 1, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebPage_ContentId(), ecorePackage.getEString(), "contentId", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebPage_PageName(), ecorePackage.getEString(), "pageName", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebPage_WebSiteId(), ecorePackage.getEString(), "webSiteId", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebPage_WebSiteId(), this.getWebSite(), null, "webSiteId", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebPage_WebSiteId().getEKeys().add(this.getWebSite_WebSiteId());
+		initEReference(getWebPage_ContentId(), theContentPackage.getContent(), null, "contentId", null, 0, 1, WebPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebPage_ContentId().getEKeys().add(theContentPackage.getContent_ContentId());
 
 		initEClass(webSiteEClass, WebSite.class, "WebSite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebSite_WebSiteId(), ecorePackage.getEString(), "webSiteId", null, 1, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1004,12 +1010,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebSite_HttpsHost(), ecorePackage.getEString(), "httpsHost", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_HttpsPort(), ecorePackage.getEString(), "httpsPort", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_IsDefault(), ecorePackage.getEBoolean(), "isDefault", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebSite_ProductStoreId(), ecorePackage.getEString(), "productStoreId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_SecureContentPrefix(), ecorePackage.getEString(), "secureContentPrefix", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_SiteName(), ecorePackage.getEString(), "siteName", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_StandardContentPrefix(), ecorePackage.getEString(), "standardContentPrefix", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebSite_VisualThemeSetId(), ecorePackage.getEString(), "visualThemeSetId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebSite_WebappPath(), ecorePackage.getEString(), "webappPath", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebSite_VisualThemeSetId(), theThemePackage.getVisualThemeSet(), null, "visualThemeSetId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebSite_VisualThemeSetId().getEKeys().add(theThemePackage.getVisualThemeSet_VisualThemeSetId());
+		initEReference(getWebSite_ProductStoreId(), theStorePackage.getProductStore(), null, "productStoreId", null, 0, 1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getWebSite_ProductStoreId().getEKeys().add(theStorePackage.getProductStore_ProductStoreId());
 		initEAttribute(getWebSite_WebAnalyticsConfigs(), ecorePackage.getEString(), "webAnalyticsConfigs", null, 0, -1, WebSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(webSiteEClass, ecorePackage.getEString(), "orderHeaders", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -1080,24 +1088,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getWebPage_ContentId(),
-		   source,
-		   new String[] {
-			   "frame", "Content"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getWebPage_WebSiteId(),
-		   source,
-		   new String[] {
-			   "frame", "WebSite"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (webSiteEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -1123,24 +1113,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			   "frame", "WebPage",
 			   "route", "webSiteId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getWebSite_ProductStoreId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductStore"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getWebSite_VisualThemeSetId(),
-		   source,
-		   new String[] {
-			   "frame", "VisualThemeSet"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

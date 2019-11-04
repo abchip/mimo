@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.marketing.segment;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.product.store.ProductStore;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,8 +23,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupId <em>Segment Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupTypeId <em>Segment Group Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getProductStoreId <em>Product Store Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupClassifications <em>Segment Group Classifications</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupGeos <em>Segment Group Geos</em>}</li>
  * </ul>
@@ -60,30 +61,30 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Store Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Id</em>' attribute.
-	 * @see #setProductStoreId(String)
+	 * @return the value of the '<em>Product Store Id</em>' reference.
+	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_ProductStoreId()
-	 * @model annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model keys="productStoreId"
 	 * @generated
 	 */
-	String getProductStoreId();
+	ProductStore getProductStoreId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getProductStoreId <em>Product Store Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getProductStoreId <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Store Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Store Id</em>' reference.
 	 * @see #getProductStoreId()
 	 * @generated
 	 */
-	void setProductStoreId(String value);
+	void setProductStoreId(ProductStore value);
 
 	/**
 	 * Returns the value of the '<em><b>Segment Group Id</b></em>' attribute.
@@ -96,7 +97,7 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	 * @return the value of the '<em>Segment Group Id</em>' attribute.
 	 * @see #setSegmentGroupId(String)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -113,30 +114,30 @@ public interface SegmentGroup extends BizEntityTyped<SegmentGroupType> {
 	void setSegmentGroupId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Segment Group Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Segment Group Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Segment Group Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Segment Group Type Id</em>' attribute.
-	 * @see #setSegmentGroupTypeId(String)
+	 * @return the value of the '<em>Segment Group Type Id</em>' reference.
+	 * @see #setSegmentGroupTypeId(SegmentGroupType)
 	 * @see org.abchip.mimo.biz.marketing.segment.SegmentPackage#getSegmentGroup_SegmentGroupTypeId()
-	 * @model annotation="mimo-ent-domain frame='SegmentGroupType'"
+	 * @model keys="segmentGroupTypeId"
 	 * @generated
 	 */
-	String getSegmentGroupTypeId();
+	SegmentGroupType getSegmentGroupTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupTypeId <em>Segment Group Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.segment.SegmentGroup#getSegmentGroupTypeId <em>Segment Group Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Segment Group Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Segment Group Type Id</em>' reference.
 	 * @see #getSegmentGroupTypeId()
 	 * @generated
 	 */
-	void setSegmentGroupTypeId(String value);
+	void setSegmentGroupTypeId(SegmentGroupType value);
 
 	/**
 	 * Returns the value of the '<em><b>Segment Group Classifications</b></em>' attribute list.

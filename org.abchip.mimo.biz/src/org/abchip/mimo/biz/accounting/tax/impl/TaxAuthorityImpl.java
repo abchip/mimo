@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.accounting.tax.impl;
 import org.abchip.mimo.biz.accounting.tax.TaxAuthority;
 import org.abchip.mimo.biz.accounting.tax.TaxPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,10 +28,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityImpl#isIncludeTaxInPrice <em>Include Tax In Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityImpl#isRequireTaxIdForExemption <em>Require Tax Id For Exemption</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityImpl#getTaxIdFormatPattern <em>Tax Id Format Pattern</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,25 +61,6 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 */
 	protected String taxAuthGeoId = TAX_AUTH_GEO_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getTaxAuthPartyId() <em>Tax Auth Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TAX_AUTH_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTaxAuthPartyId() <em>Tax Auth Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String taxAuthPartyId = TAX_AUTH_PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isIncludeTaxInPrice() <em>Include Tax In Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -133,6 +117,15 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 * @ordered
 	 */
 	protected String taxIdFormatPattern = TAX_ID_FORMAT_PATTERN_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getTaxAuthPartyId() <em>Tax Auth Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaxAuthPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party taxAuthPartyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +175,24 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 * @generated
 	 */
 	@Override
-	public String getTaxAuthPartyId() {
+	public Party getTaxAuthPartyId() {
+		if (taxAuthPartyId != null && ((EObject)taxAuthPartyId).eIsProxy()) {
+			InternalEObject oldTaxAuthPartyId = (InternalEObject)taxAuthPartyId;
+			taxAuthPartyId = (Party)eResolveProxy(oldTaxAuthPartyId);
+			if (taxAuthPartyId != oldTaxAuthPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
+			}
+		}
+		return taxAuthPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetTaxAuthPartyId() {
 		return taxAuthPartyId;
 	}
 
@@ -192,8 +202,8 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 	 * @generated
 	 */
 	@Override
-	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
-		String oldTaxAuthPartyId = taxAuthPartyId;
+	public void setTaxAuthPartyId(Party newTaxAuthPartyId) {
+		Party oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
@@ -278,14 +288,15 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 		switch (featureID) {
 			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_GEO_ID:
 				return getTaxAuthGeoId();
-			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID:
-				return getTaxAuthPartyId();
 			case TaxPackage.TAX_AUTHORITY__INCLUDE_TAX_IN_PRICE:
 				return isIncludeTaxInPrice();
 			case TaxPackage.TAX_AUTHORITY__REQUIRE_TAX_ID_FOR_EXEMPTION:
 				return isRequireTaxIdForExemption();
 			case TaxPackage.TAX_AUTHORITY__TAX_ID_FORMAT_PATTERN:
 				return getTaxIdFormatPattern();
+			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID:
+				if (resolve) return getTaxAuthPartyId();
+				return basicGetTaxAuthPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -301,9 +312,6 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_GEO_ID:
 				setTaxAuthGeoId((String)newValue);
 				return;
-			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID:
-				setTaxAuthPartyId((String)newValue);
-				return;
 			case TaxPackage.TAX_AUTHORITY__INCLUDE_TAX_IN_PRICE:
 				setIncludeTaxInPrice((Boolean)newValue);
 				return;
@@ -312,6 +320,9 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 				return;
 			case TaxPackage.TAX_AUTHORITY__TAX_ID_FORMAT_PATTERN:
 				setTaxIdFormatPattern((String)newValue);
+				return;
+			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID:
+				setTaxAuthPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -328,9 +339,6 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_GEO_ID:
 				setTaxAuthGeoId(TAX_AUTH_GEO_ID_EDEFAULT);
 				return;
-			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID:
-				setTaxAuthPartyId(TAX_AUTH_PARTY_ID_EDEFAULT);
-				return;
 			case TaxPackage.TAX_AUTHORITY__INCLUDE_TAX_IN_PRICE:
 				setIncludeTaxInPrice(INCLUDE_TAX_IN_PRICE_EDEFAULT);
 				return;
@@ -339,6 +347,9 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 				return;
 			case TaxPackage.TAX_AUTHORITY__TAX_ID_FORMAT_PATTERN:
 				setTaxIdFormatPattern(TAX_ID_FORMAT_PATTERN_EDEFAULT);
+				return;
+			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID:
+				setTaxAuthPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -354,14 +365,14 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 		switch (featureID) {
 			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_GEO_ID:
 				return TAX_AUTH_GEO_ID_EDEFAULT == null ? taxAuthGeoId != null : !TAX_AUTH_GEO_ID_EDEFAULT.equals(taxAuthGeoId);
-			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID:
-				return TAX_AUTH_PARTY_ID_EDEFAULT == null ? taxAuthPartyId != null : !TAX_AUTH_PARTY_ID_EDEFAULT.equals(taxAuthPartyId);
 			case TaxPackage.TAX_AUTHORITY__INCLUDE_TAX_IN_PRICE:
 				return includeTaxInPrice != INCLUDE_TAX_IN_PRICE_EDEFAULT;
 			case TaxPackage.TAX_AUTHORITY__REQUIRE_TAX_ID_FOR_EXEMPTION:
 				return requireTaxIdForExemption != REQUIRE_TAX_ID_FOR_EXEMPTION_EDEFAULT;
 			case TaxPackage.TAX_AUTHORITY__TAX_ID_FORMAT_PATTERN:
 				return TAX_ID_FORMAT_PATTERN_EDEFAULT == null ? taxIdFormatPattern != null : !TAX_ID_FORMAT_PATTERN_EDEFAULT.equals(taxIdFormatPattern);
+			case TaxPackage.TAX_AUTHORITY__TAX_AUTH_PARTY_ID:
+				return taxAuthPartyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -378,8 +389,6 @@ public class TaxAuthorityImpl extends BizEntityImpl implements TaxAuthority {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (taxAuthGeoId: ");
 		result.append(taxAuthGeoId);
-		result.append(", taxAuthPartyId: ");
-		result.append(taxAuthPartyId);
 		result.append(", includeTaxInPrice: ");
 		result.append(includeTaxInPrice);
 		result.append(", requireTaxIdForExemption: ");

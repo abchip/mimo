@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -98,23 +100,14 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 */
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected GlAccountType parentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getGlAccountTypeDefaults() <em>Gl Account Type Defaults</em>}' attribute list.
@@ -197,7 +190,24 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public GlAccountType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (GlAccountType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -207,8 +217,8 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(GlAccountType newParentTypeId) {
+		GlAccountType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -337,7 +347,8 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 			case LedgerPackage.GL_ACCOUNT_TYPE__HAS_TABLE:
 				return isHasTable();
 			case LedgerPackage.GL_ACCOUNT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case LedgerPackage.GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS:
 				return getGlAccountTypeDefaults();
 		}
@@ -363,7 +374,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 				setHasTable((Boolean)newValue);
 				return;
 			case LedgerPackage.GL_ACCOUNT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((GlAccountType)newValue);
 				return;
 			case LedgerPackage.GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS:
 				getGlAccountTypeDefaults().clear();
@@ -391,7 +402,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case LedgerPackage.GL_ACCOUNT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((GlAccountType)null);
 				return;
 			case LedgerPackage.GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS:
 				getGlAccountTypeDefaults().clear();
@@ -415,7 +426,7 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 			case LedgerPackage.GL_ACCOUNT_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case LedgerPackage.GL_ACCOUNT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case LedgerPackage.GL_ACCOUNT_TYPE__GL_ACCOUNT_TYPE_DEFAULTS:
 				return glAccountTypeDefaults != null && !glAccountTypeDefaults.isEmpty();
 		}
@@ -438,8 +449,6 @@ public class GlAccountTypeImpl extends BizEntityTypeImpl<GlAccount> implements G
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", glAccountTypeDefaults: ");
 		result.append(glAccountTypeDefaults);
 		result.append(')');

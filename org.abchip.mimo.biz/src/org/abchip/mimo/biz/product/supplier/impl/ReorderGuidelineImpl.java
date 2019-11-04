@@ -11,12 +11,18 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.supplier.ReorderGuideline;
 import org.abchip.mimo.biz.product.supplier.SupplierPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,15 +34,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getReorderGuidelineId <em>Reorder Guideline Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getGeoId <em>Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getReorderLevel <em>Reorder Level</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getReorderQuantity <em>Reorder Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getFacilityId <em>Facility Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.impl.ReorderGuidelineImpl#getGeoId <em>Geo Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,26 +74,6 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	protected String reorderGuidelineId = REORDER_GUIDELINE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,66 +92,6 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 * @ordered
 	 */
 	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoId = GEO_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReorderLevel() <em>Reorder Level</em>}' attribute.
@@ -248,6 +174,46 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
+
+	/**
+	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo geoId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -295,7 +261,24 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 * @generated
 	 */
 	@Override
-	public String getGeoId() {
+	public Geo getGeoId() {
+		if (geoId != null && ((EObject)geoId).eIsProxy()) {
+			InternalEObject oldGeoId = (InternalEObject)geoId;
+			geoId = (Geo)eResolveProxy(oldGeoId);
+			if (geoId != oldGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.REORDER_GUIDELINE__GEO_ID, oldGeoId, geoId));
+			}
+		}
+		return geoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetGeoId() {
 		return geoId;
 	}
 
@@ -305,8 +288,8 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 * @generated
 	 */
 	@Override
-	public void setGeoId(String newGeoId) {
-		String oldGeoId = geoId;
+	public void setGeoId(Geo newGeoId) {
+		Geo oldGeoId = geoId;
 		geoId = newGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__GEO_ID, oldGeoId, geoId));
@@ -318,7 +301,24 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.REORDER_GUIDELINE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -328,8 +328,8 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__PARTY_ID, oldPartyId, partyId));
@@ -456,7 +456,24 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -466,8 +483,8 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID, oldProductId, productId));
@@ -479,7 +496,24 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SupplierPackage.REORDER_GUIDELINE__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -489,8 +523,8 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SupplierPackage.REORDER_GUIDELINE__FACILITY_ID, oldFacilityId, facilityId));
@@ -506,16 +540,8 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 		switch (featureID) {
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_GUIDELINE_ID:
 				return getReorderGuidelineId();
-			case SupplierPackage.REORDER_GUIDELINE__FACILITY_ID:
-				return getFacilityId();
 			case SupplierPackage.REORDER_GUIDELINE__FROM_DATE:
 				return getFromDate();
-			case SupplierPackage.REORDER_GUIDELINE__GEO_ID:
-				return getGeoId();
-			case SupplierPackage.REORDER_GUIDELINE__PARTY_ID:
-				return getPartyId();
-			case SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID:
-				return getProductId();
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_LEVEL:
 				return getReorderLevel();
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_QUANTITY:
@@ -524,6 +550,18 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 				return getRoleTypeId();
 			case SupplierPackage.REORDER_GUIDELINE__THRU_DATE:
 				return getThruDate();
+			case SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case SupplierPackage.REORDER_GUIDELINE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case SupplierPackage.REORDER_GUIDELINE__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
+			case SupplierPackage.REORDER_GUIDELINE__GEO_ID:
+				if (resolve) return getGeoId();
+				return basicGetGeoId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -539,20 +577,8 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_GUIDELINE_ID:
 				setReorderGuidelineId((String)newValue);
 				return;
-			case SupplierPackage.REORDER_GUIDELINE__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
 			case SupplierPackage.REORDER_GUIDELINE__FROM_DATE:
 				setFromDate((Date)newValue);
-				return;
-			case SupplierPackage.REORDER_GUIDELINE__GEO_ID:
-				setGeoId((String)newValue);
-				return;
-			case SupplierPackage.REORDER_GUIDELINE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID:
-				setProductId((String)newValue);
 				return;
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_LEVEL:
 				setReorderLevel((BigDecimal)newValue);
@@ -565,6 +591,18 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 				return;
 			case SupplierPackage.REORDER_GUIDELINE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case SupplierPackage.REORDER_GUIDELINE__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case SupplierPackage.REORDER_GUIDELINE__FACILITY_ID:
+				setFacilityId((Facility)newValue);
+				return;
+			case SupplierPackage.REORDER_GUIDELINE__GEO_ID:
+				setGeoId((Geo)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -581,20 +619,8 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_GUIDELINE_ID:
 				setReorderGuidelineId(REORDER_GUIDELINE_ID_EDEFAULT);
 				return;
-			case SupplierPackage.REORDER_GUIDELINE__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
 			case SupplierPackage.REORDER_GUIDELINE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
-				return;
-			case SupplierPackage.REORDER_GUIDELINE__GEO_ID:
-				setGeoId(GEO_ID_EDEFAULT);
-				return;
-			case SupplierPackage.REORDER_GUIDELINE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_LEVEL:
 				setReorderLevel(REORDER_LEVEL_EDEFAULT);
@@ -607,6 +633,18 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 				return;
 			case SupplierPackage.REORDER_GUIDELINE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case SupplierPackage.REORDER_GUIDELINE__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case SupplierPackage.REORDER_GUIDELINE__FACILITY_ID:
+				setFacilityId((Facility)null);
+				return;
+			case SupplierPackage.REORDER_GUIDELINE__GEO_ID:
+				setGeoId((Geo)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -622,16 +660,8 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 		switch (featureID) {
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_GUIDELINE_ID:
 				return REORDER_GUIDELINE_ID_EDEFAULT == null ? reorderGuidelineId != null : !REORDER_GUIDELINE_ID_EDEFAULT.equals(reorderGuidelineId);
-			case SupplierPackage.REORDER_GUIDELINE__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case SupplierPackage.REORDER_GUIDELINE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case SupplierPackage.REORDER_GUIDELINE__GEO_ID:
-				return GEO_ID_EDEFAULT == null ? geoId != null : !GEO_ID_EDEFAULT.equals(geoId);
-			case SupplierPackage.REORDER_GUIDELINE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_LEVEL:
 				return REORDER_LEVEL_EDEFAULT == null ? reorderLevel != null : !REORDER_LEVEL_EDEFAULT.equals(reorderLevel);
 			case SupplierPackage.REORDER_GUIDELINE__REORDER_QUANTITY:
@@ -640,6 +670,14 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case SupplierPackage.REORDER_GUIDELINE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case SupplierPackage.REORDER_GUIDELINE__PRODUCT_ID:
+				return productId != null;
+			case SupplierPackage.REORDER_GUIDELINE__PARTY_ID:
+				return partyId != null;
+			case SupplierPackage.REORDER_GUIDELINE__FACILITY_ID:
+				return facilityId != null;
+			case SupplierPackage.REORDER_GUIDELINE__GEO_ID:
+				return geoId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -656,16 +694,8 @@ public class ReorderGuidelineImpl extends BizEntityImpl implements ReorderGuidel
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (reorderGuidelineId: ");
 		result.append(reorderGuidelineId);
-		result.append(", facilityId: ");
-		result.append(facilityId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", geoId: ");
-		result.append(geoId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", reorderLevel: ");
 		result.append(reorderLevel);
 		result.append(", reorderQuantity: ");

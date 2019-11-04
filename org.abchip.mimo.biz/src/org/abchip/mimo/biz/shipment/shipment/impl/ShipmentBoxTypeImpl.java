@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentBoxType;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
@@ -20,6 +21,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -171,44 +174,24 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDimensionUomId() <em>Dimension Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getDimensionUomId() <em>Dimension Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDimensionUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DIMENSION_UOM_ID_EDEFAULT = null;
+	protected Uom dimensionUomId;
 
 	/**
-	 * The cached value of the '{@link #getDimensionUomId() <em>Dimension Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDimensionUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dimensionUomId = DIMENSION_UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWeightUomId() <em>Weight Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getWeightUomId() <em>Weight Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWeightUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WEIGHT_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWeightUomId() <em>Weight Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWeightUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String weightUomId = WEIGHT_UOM_ID_EDEFAULT;
+	protected Uom weightUomId;
 
 	/**
 	 * The cached value of the '{@link #getCarrierShipmentBoxTypes() <em>Carrier Shipment Box Types</em>}' attribute list.
@@ -360,7 +343,24 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 * @generated
 	 */
 	@Override
-	public String getDimensionUomId() {
+	public Uom getDimensionUomId() {
+		if (dimensionUomId != null && ((EObject)dimensionUomId).eIsProxy()) {
+			InternalEObject oldDimensionUomId = (InternalEObject)dimensionUomId;
+			dimensionUomId = (Uom)eResolveProxy(oldDimensionUomId);
+			if (dimensionUomId != oldDimensionUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID, oldDimensionUomId, dimensionUomId));
+			}
+		}
+		return dimensionUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetDimensionUomId() {
 		return dimensionUomId;
 	}
 
@@ -370,8 +370,8 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 * @generated
 	 */
 	@Override
-	public void setDimensionUomId(String newDimensionUomId) {
-		String oldDimensionUomId = dimensionUomId;
+	public void setDimensionUomId(Uom newDimensionUomId) {
+		Uom oldDimensionUomId = dimensionUomId;
 		dimensionUomId = newDimensionUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID, oldDimensionUomId, dimensionUomId));
@@ -406,7 +406,24 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 * @generated
 	 */
 	@Override
-	public String getWeightUomId() {
+	public Uom getWeightUomId() {
+		if (weightUomId != null && ((EObject)weightUomId).eIsProxy()) {
+			InternalEObject oldWeightUomId = (InternalEObject)weightUomId;
+			weightUomId = (Uom)eResolveProxy(oldWeightUomId);
+			if (weightUomId != oldWeightUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
+			}
+		}
+		return weightUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetWeightUomId() {
 		return weightUomId;
 	}
 
@@ -416,8 +433,8 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 	 * @generated
 	 */
 	@Override
-	public void setWeightUomId(String newWeightUomId) {
-		String oldWeightUomId = weightUomId;
+	public void setWeightUomId(Uom newWeightUomId) {
+		Uom oldWeightUomId = weightUomId;
 		weightUomId = newWeightUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID, oldWeightUomId, weightUomId));
@@ -481,9 +498,11 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 			case Shipment_Package.SHIPMENT_BOX_TYPE__DESCRIPTION:
 				return getDescription();
 			case Shipment_Package.SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID:
-				return getDimensionUomId();
+				if (resolve) return getDimensionUomId();
+				return basicGetDimensionUomId();
 			case Shipment_Package.SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID:
-				return getWeightUomId();
+				if (resolve) return getWeightUomId();
+				return basicGetWeightUomId();
 			case Shipment_Package.SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES:
 				return getCarrierShipmentBoxTypes();
 		}
@@ -518,10 +537,10 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 				setDescription((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID:
-				setDimensionUomId((String)newValue);
+				setDimensionUomId((Uom)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID:
-				setWeightUomId((String)newValue);
+				setWeightUomId((Uom)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES:
 				getCarrierShipmentBoxTypes().clear();
@@ -558,10 +577,10 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID:
-				setDimensionUomId(DIMENSION_UOM_ID_EDEFAULT);
+				setDimensionUomId((Uom)null);
 				return;
 			case Shipment_Package.SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID:
-				setWeightUomId(WEIGHT_UOM_ID_EDEFAULT);
+				setWeightUomId((Uom)null);
 				return;
 			case Shipment_Package.SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES:
 				getCarrierShipmentBoxTypes().clear();
@@ -591,9 +610,9 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 			case Shipment_Package.SHIPMENT_BOX_TYPE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case Shipment_Package.SHIPMENT_BOX_TYPE__DIMENSION_UOM_ID:
-				return DIMENSION_UOM_ID_EDEFAULT == null ? dimensionUomId != null : !DIMENSION_UOM_ID_EDEFAULT.equals(dimensionUomId);
+				return dimensionUomId != null;
 			case Shipment_Package.SHIPMENT_BOX_TYPE__WEIGHT_UOM_ID:
-				return WEIGHT_UOM_ID_EDEFAULT == null ? weightUomId != null : !WEIGHT_UOM_ID_EDEFAULT.equals(weightUomId);
+				return weightUomId != null;
 			case Shipment_Package.SHIPMENT_BOX_TYPE__CARRIER_SHIPMENT_BOX_TYPES:
 				return carrierShipmentBoxTypes != null && !carrierShipmentBoxTypes.isEmpty();
 		}
@@ -622,10 +641,6 @@ public class ShipmentBoxTypeImpl extends BizEntityImpl implements ShipmentBoxTyp
 		result.append(boxWidth);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", dimensionUomId: ");
-		result.append(dimensionUomId);
-		result.append(", weightUomId: ");
-		result.append(weightUomId);
 		result.append(", carrierShipmentBoxTypes: ");
 		result.append(carrierShipmentBoxTypes);
 		result.append(')');

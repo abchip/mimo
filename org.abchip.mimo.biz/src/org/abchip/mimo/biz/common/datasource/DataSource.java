@@ -21,8 +21,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceTypeId <em>Data Source Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.datasource.DataSource#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceTypeId <em>Data Source Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.datasource.DatasourcePackage#getDataSource()
@@ -138,29 +138,29 @@ public interface DataSource extends BizEntityTyped<DataSourceType> {
 	List<String> parties();
 
 	/**
-	 * Returns the value of the '<em><b>Data Source Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Source Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Source Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Source Type Id</em>' attribute.
-	 * @see #setDataSourceTypeId(String)
+	 * @return the value of the '<em>Data Source Type Id</em>' reference.
+	 * @see #setDataSourceTypeId(DataSourceType)
 	 * @see org.abchip.mimo.biz.common.datasource.DatasourcePackage#getDataSource_DataSourceTypeId()
-	 * @model annotation="mimo-ent-domain frame='DataSourceType'"
+	 * @model keys="dataSourceTypeId"
 	 * @generated
 	 */
-	String getDataSourceTypeId();
+	DataSourceType getDataSourceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceTypeId <em>Data Source Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.datasource.DataSource#getDataSourceTypeId <em>Data Source Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Source Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Source Type Id</em>' reference.
 	 * @see #getDataSourceTypeId()
 	 * @generated
 	 */
-	void setDataSourceTypeId(String value);
+	void setDataSourceTypeId(DataSourceType value);
 
 } // DataSource

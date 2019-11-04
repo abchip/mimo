@@ -12,9 +12,12 @@ import java.math.BigDecimal;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.abchip.mimo.biz.party.agreement.AgreementProductAppl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getPrice <em>Price</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AgreementProductApplImpl#getProductId <em>Product Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,24 +78,6 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 */
 	protected String agreementItemSeqId = AGREEMENT_ITEM_SEQ_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,6 +95,15 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 * @ordered
 	 */
 	protected BigDecimal price = PRICE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +176,24 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -192,8 +203,8 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID, oldProductId, productId));
@@ -234,10 +245,11 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 				return getAgreementId();
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
-			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
-				return getProductId();
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRICE:
 				return getPrice();
+			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,11 +268,11 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId((String)newValue);
 				return;
-			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRICE:
 				setPrice((BigDecimal)newValue);
+				return;
+			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,11 +292,11 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRICE:
 				setPrice(PRICE_EDEFAULT);
+				return;
+			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -302,10 +314,10 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
-			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRICE:
 				return PRICE_EDEFAULT == null ? price != null : !PRICE_EDEFAULT.equals(price);
+			case AgreementPackage.AGREEMENT_PRODUCT_APPL__PRODUCT_ID:
+				return productId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -324,8 +336,6 @@ public class AgreementProductApplImpl extends BizEntityImpl implements Agreement
 		result.append(agreementId);
 		result.append(", agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", price: ");
 		result.append(price);
 		result.append(')');

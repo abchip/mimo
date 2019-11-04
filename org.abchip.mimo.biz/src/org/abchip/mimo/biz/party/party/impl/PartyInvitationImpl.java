@@ -12,13 +12,17 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyInvitation;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,9 +38,9 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getEmailAddress <em>Email Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getLastInviteDate <em>Last Invite Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getToName <em>To Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getToName <em>To Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getPartyInvitationGroupAssocs <em>Party Invitation Group Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyInvitationImpl#getPartyInvitationRoleAssocs <em>Party Invitation Role Assocs</em>}</li>
  * </ul>
@@ -121,42 +125,6 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_FROM_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyIdFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyIdFrom = PARTY_ID_FROM_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getToName() <em>To Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,6 +142,24 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 * @ordered
 	 */
 	protected String toName = TO_NAME_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyIdFrom() <em>Party Id From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyIdFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyIdFrom;
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
 
 	/**
 	 * The cached value of the '{@link #getPartyInvitationGroupAssocs() <em>Party Invitation Group Assocs</em>}' attribute list.
@@ -288,7 +274,24 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_INVITATION__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -298,8 +301,8 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION__STATUS_ID, oldStatusId, statusId));
@@ -360,7 +363,24 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 * @generated
 	 */
 	@Override
-	public String getPartyIdFrom() {
+	public Party getPartyIdFrom() {
+		if (partyIdFrom != null && ((EObject)partyIdFrom).eIsProxy()) {
+			InternalEObject oldPartyIdFrom = (InternalEObject)partyIdFrom;
+			partyIdFrom = (Party)eResolveProxy(oldPartyIdFrom);
+			if (partyIdFrom != oldPartyIdFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_INVITATION__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
+			}
+		}
+		return partyIdFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyIdFrom() {
 		return partyIdFrom;
 	}
 
@@ -370,8 +390,8 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 	 * @generated
 	 */
 	@Override
-	public void setPartyIdFrom(String newPartyIdFrom) {
-		String oldPartyIdFrom = partyIdFrom;
+	public void setPartyIdFrom(Party newPartyIdFrom) {
+		Party oldPartyIdFrom = partyIdFrom;
 		partyIdFrom = newPartyIdFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_INVITATION__PARTY_ID_FROM, oldPartyIdFrom, partyIdFrom));
@@ -416,12 +436,14 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 				return getLastInviteDate();
 			case PartyPackage.PARTY_INVITATION__PARTY_ID:
 				return getPartyId();
-			case PartyPackage.PARTY_INVITATION__PARTY_ID_FROM:
-				return getPartyIdFrom();
-			case PartyPackage.PARTY_INVITATION__STATUS_ID:
-				return getStatusId();
 			case PartyPackage.PARTY_INVITATION__TO_NAME:
 				return getToName();
+			case PartyPackage.PARTY_INVITATION__PARTY_ID_FROM:
+				if (resolve) return getPartyIdFrom();
+				return basicGetPartyIdFrom();
+			case PartyPackage.PARTY_INVITATION__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 			case PartyPackage.PARTY_INVITATION__PARTY_INVITATION_GROUP_ASSOCS:
 				return getPartyInvitationGroupAssocs();
 			case PartyPackage.PARTY_INVITATION__PARTY_INVITATION_ROLE_ASSOCS:
@@ -451,14 +473,14 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 			case PartyPackage.PARTY_INVITATION__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case PartyPackage.PARTY_INVITATION__PARTY_ID_FROM:
-				setPartyIdFrom((String)newValue);
-				return;
-			case PartyPackage.PARTY_INVITATION__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case PartyPackage.PARTY_INVITATION__TO_NAME:
 				setToName((String)newValue);
+				return;
+			case PartyPackage.PARTY_INVITATION__PARTY_ID_FROM:
+				setPartyIdFrom((Party)newValue);
+				return;
+			case PartyPackage.PARTY_INVITATION__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 			case PartyPackage.PARTY_INVITATION__PARTY_INVITATION_GROUP_ASSOCS:
 				getPartyInvitationGroupAssocs().clear();
@@ -492,14 +514,14 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 			case PartyPackage.PARTY_INVITATION__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case PartyPackage.PARTY_INVITATION__PARTY_ID_FROM:
-				setPartyIdFrom(PARTY_ID_FROM_EDEFAULT);
-				return;
-			case PartyPackage.PARTY_INVITATION__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_INVITATION__TO_NAME:
 				setToName(TO_NAME_EDEFAULT);
+				return;
+			case PartyPackage.PARTY_INVITATION__PARTY_ID_FROM:
+				setPartyIdFrom((Party)null);
+				return;
+			case PartyPackage.PARTY_INVITATION__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 			case PartyPackage.PARTY_INVITATION__PARTY_INVITATION_GROUP_ASSOCS:
 				getPartyInvitationGroupAssocs().clear();
@@ -527,12 +549,12 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 				return LAST_INVITE_DATE_EDEFAULT == null ? lastInviteDate != null : !LAST_INVITE_DATE_EDEFAULT.equals(lastInviteDate);
 			case PartyPackage.PARTY_INVITATION__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PartyPackage.PARTY_INVITATION__PARTY_ID_FROM:
-				return PARTY_ID_FROM_EDEFAULT == null ? partyIdFrom != null : !PARTY_ID_FROM_EDEFAULT.equals(partyIdFrom);
-			case PartyPackage.PARTY_INVITATION__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case PartyPackage.PARTY_INVITATION__TO_NAME:
 				return TO_NAME_EDEFAULT == null ? toName != null : !TO_NAME_EDEFAULT.equals(toName);
+			case PartyPackage.PARTY_INVITATION__PARTY_ID_FROM:
+				return partyIdFrom != null;
+			case PartyPackage.PARTY_INVITATION__STATUS_ID:
+				return statusId != null;
 			case PartyPackage.PARTY_INVITATION__PARTY_INVITATION_GROUP_ASSOCS:
 				return partyInvitationGroupAssocs != null && !partyInvitationGroupAssocs.isEmpty();
 			case PartyPackage.PARTY_INVITATION__PARTY_INVITATION_ROLE_ASSOCS:
@@ -559,10 +581,6 @@ public class PartyInvitationImpl extends BizEntityImpl implements PartyInvitatio
 		result.append(lastInviteDate);
 		result.append(", partyId: ");
 		result.append(partyId);
-		result.append(", partyIdFrom: ");
-		result.append(partyIdFrom);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", toName: ");
 		result.append(toName);
 		result.append(", partyInvitationGroupAssocs: ");

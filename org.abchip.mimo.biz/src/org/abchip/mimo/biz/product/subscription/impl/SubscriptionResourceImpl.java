@@ -9,12 +9,16 @@ package org.abchip.mimo.biz.product.subscription.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.subscription.SubscriptionPackage;
 import org.abchip.mimo.biz.product.subscription.SubscriptionResource;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getSubscriptionResourceId <em>Subscription Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getParentResourceId <em>Parent Resource Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getServiceNameOnExpiry <em>Service Name On Expiry</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getParentResourceId <em>Parent Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.subscription.impl.SubscriptionResourceImpl#getWebSiteId <em>Web Site Id</em>}</li>
  * </ul>
  *
@@ -62,26 +66,6 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	protected String subscriptionResourceId = SUBSCRIPTION_RESOURCE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,26 +84,6 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getParentResourceId() <em>Parent Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARENT_RESOURCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentResourceId() <em>Parent Resource Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentResourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentResourceId = PARENT_RESOURCE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getServiceNameOnExpiry() <em>Service Name On Expiry</em>}' attribute.
@@ -142,24 +106,34 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	protected String serviceNameOnExpiry = SERVICE_NAME_ON_EXPIRY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentResourceId() <em>Parent Resource Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
+	 * @see #getParentResourceId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WEB_SITE_ID_EDEFAULT = null;
+	protected SubscriptionResource parentResourceId;
 
 	/**
-	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
+	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWebSiteId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String webSiteId = WEB_SITE_ID_EDEFAULT;
+	protected WebSite webSiteId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,7 +160,24 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -196,8 +187,8 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID, oldContentId, contentId));
@@ -255,7 +246,24 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 * @generated
 	 */
 	@Override
-	public String getWebSiteId() {
+	public WebSite getWebSiteId() {
+		if (webSiteId != null && ((EObject)webSiteId).eIsProxy()) {
+			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
+			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
+			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_RESOURCE__WEB_SITE_ID, oldWebSiteId, webSiteId));
+			}
+		}
+		return webSiteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebSite basicGetWebSiteId() {
 		return webSiteId;
 	}
 
@@ -265,8 +273,8 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 * @generated
 	 */
 	@Override
-	public void setWebSiteId(String newWebSiteId) {
-		String oldWebSiteId = webSiteId;
+	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_RESOURCE__WEB_SITE_ID, oldWebSiteId, webSiteId));
@@ -302,7 +310,24 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 * @generated
 	 */
 	@Override
-	public String getParentResourceId() {
+	public SubscriptionResource getParentResourceId() {
+		if (parentResourceId != null && ((EObject)parentResourceId).eIsProxy()) {
+			InternalEObject oldParentResourceId = (InternalEObject)parentResourceId;
+			parentResourceId = (SubscriptionResource)eResolveProxy(oldParentResourceId);
+			if (parentResourceId != oldParentResourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID, oldParentResourceId, parentResourceId));
+			}
+		}
+		return parentResourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubscriptionResource basicGetParentResourceId() {
 		return parentResourceId;
 	}
 
@@ -312,8 +337,8 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 	 * @generated
 	 */
 	@Override
-	public void setParentResourceId(String newParentResourceId) {
-		String oldParentResourceId = parentResourceId;
+	public void setParentResourceId(SubscriptionResource newParentResourceId) {
+		SubscriptionResource oldParentResourceId = parentResourceId;
 		parentResourceId = newParentResourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID, oldParentResourceId, parentResourceId));
@@ -352,16 +377,19 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 		switch (featureID) {
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
 				return getSubscriptionResourceId();
-			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID:
-				return getContentId();
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__DESCRIPTION:
 				return getDescription();
-			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID:
-				return getParentResourceId();
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__SERVICE_NAME_ON_EXPIRY:
 				return getServiceNameOnExpiry();
+			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID:
+				if (resolve) return getParentResourceId();
+				return basicGetParentResourceId();
+			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__WEB_SITE_ID:
-				return getWebSiteId();
+				if (resolve) return getWebSiteId();
+				return basicGetWebSiteId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -377,20 +405,20 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
 				setSubscriptionResourceId((String)newValue);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__DESCRIPTION:
 				setDescription((String)newValue);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID:
-				setParentResourceId((String)newValue);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__SERVICE_NAME_ON_EXPIRY:
 				setServiceNameOnExpiry((String)newValue);
 				return;
+			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID:
+				setParentResourceId((SubscriptionResource)newValue);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID:
+				setContentId((Content)newValue);
+				return;
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__WEB_SITE_ID:
-				setWebSiteId((String)newValue);
+				setWebSiteId((WebSite)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -407,20 +435,20 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
 				setSubscriptionResourceId(SUBSCRIPTION_RESOURCE_ID_EDEFAULT);
 				return;
-			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID:
-				setParentResourceId(PARENT_RESOURCE_ID_EDEFAULT);
 				return;
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__SERVICE_NAME_ON_EXPIRY:
 				setServiceNameOnExpiry(SERVICE_NAME_ON_EXPIRY_EDEFAULT);
 				return;
+			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID:
+				setParentResourceId((SubscriptionResource)null);
+				return;
+			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID:
+				setContentId((Content)null);
+				return;
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__WEB_SITE_ID:
-				setWebSiteId(WEB_SITE_ID_EDEFAULT);
+				setWebSiteId((WebSite)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -436,16 +464,16 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 		switch (featureID) {
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__SUBSCRIPTION_RESOURCE_ID:
 				return SUBSCRIPTION_RESOURCE_ID_EDEFAULT == null ? subscriptionResourceId != null : !SUBSCRIPTION_RESOURCE_ID_EDEFAULT.equals(subscriptionResourceId);
-			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID:
-				return PARENT_RESOURCE_ID_EDEFAULT == null ? parentResourceId != null : !PARENT_RESOURCE_ID_EDEFAULT.equals(parentResourceId);
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__SERVICE_NAME_ON_EXPIRY:
 				return SERVICE_NAME_ON_EXPIRY_EDEFAULT == null ? serviceNameOnExpiry != null : !SERVICE_NAME_ON_EXPIRY_EDEFAULT.equals(serviceNameOnExpiry);
+			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__PARENT_RESOURCE_ID:
+				return parentResourceId != null;
+			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__CONTENT_ID:
+				return contentId != null;
 			case SubscriptionPackage.SUBSCRIPTION_RESOURCE__WEB_SITE_ID:
-				return WEB_SITE_ID_EDEFAULT == null ? webSiteId != null : !WEB_SITE_ID_EDEFAULT.equals(webSiteId);
+				return webSiteId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -462,16 +490,10 @@ public class SubscriptionResourceImpl extends BizEntityImpl implements Subscript
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (subscriptionResourceId: ");
 		result.append(subscriptionResourceId);
-		result.append(", contentId: ");
-		result.append(contentId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", parentResourceId: ");
-		result.append(parentResourceId);
 		result.append(", serviceNameOnExpiry: ");
 		result.append(serviceNameOnExpiry);
-		result.append(", webSiteId: ");
-		result.append(webSiteId);
 		result.append(')');
 		return result.toString();
 	}

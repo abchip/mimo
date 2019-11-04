@@ -96,7 +96,8 @@ public interface PerformanceNote extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerformanceNote_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -122,8 +123,8 @@ public interface PerformanceNote extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerformanceNote_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -149,7 +150,8 @@ public interface PerformanceNote extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.humanres.ability.AbilityPackage#getPerformanceNote_RoleTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeId();

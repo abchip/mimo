@@ -9,13 +9,17 @@ package org.abchip.mimo.biz.order.order.impl;
 
 import java.math.BigDecimal;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderTerm;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,13 +31,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl#getTermTypeId <em>Term Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl#getTermDays <em>Term Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl#getTermValue <em>Term Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl#getTextValue <em>Text Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderTermImpl#getOrderId <em>Order Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,26 +67,6 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 * @ordered
 	 */
 	protected String termTypeId = TERM_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
@@ -185,24 +169,24 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	protected String textValue = TEXT_VALUE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_ID_EDEFAULT = null;
+	protected Uom uomId;
 
 	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUomId()
+	 * @see #getOrderId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String uomId = UOM_ID_EDEFAULT;
+	protected OrderHeader orderId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +236,24 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_TERM__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -262,8 +263,8 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__ORDER_ID, oldOrderId, orderId));
@@ -390,7 +391,24 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_TERM__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -400,8 +418,8 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_TERM__UOM_ID, oldUomId, uomId));
@@ -417,8 +435,6 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 		switch (featureID) {
 			case OrderPackage.ORDER_TERM__TERM_TYPE_ID:
 				return getTermTypeId();
-			case OrderPackage.ORDER_TERM__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_TERM__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.ORDER_TERM__DESCRIPTION:
@@ -430,7 +446,11 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 			case OrderPackage.ORDER_TERM__TEXT_VALUE:
 				return getTextValue();
 			case OrderPackage.ORDER_TERM__UOM_ID:
-				return getUomId();
+				if (resolve) return getUomId();
+				return basicGetUomId();
+			case OrderPackage.ORDER_TERM__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -445,9 +465,6 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 		switch (featureID) {
 			case OrderPackage.ORDER_TERM__TERM_TYPE_ID:
 				setTermTypeId((String)newValue);
-				return;
-			case OrderPackage.ORDER_TERM__ORDER_ID:
-				setOrderId((String)newValue);
 				return;
 			case OrderPackage.ORDER_TERM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
@@ -465,7 +482,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 				setTextValue((String)newValue);
 				return;
 			case OrderPackage.ORDER_TERM__UOM_ID:
-				setUomId((String)newValue);
+				setUomId((Uom)newValue);
+				return;
+			case OrderPackage.ORDER_TERM__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -481,9 +501,6 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 		switch (featureID) {
 			case OrderPackage.ORDER_TERM__TERM_TYPE_ID:
 				setTermTypeId(TERM_TYPE_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_TERM__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_TERM__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
@@ -501,7 +518,10 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 				setTextValue(TEXT_VALUE_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_TERM__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
+				setUomId((Uom)null);
+				return;
+			case OrderPackage.ORDER_TERM__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -517,8 +537,6 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 		switch (featureID) {
 			case OrderPackage.ORDER_TERM__TERM_TYPE_ID:
 				return TERM_TYPE_ID_EDEFAULT == null ? termTypeId != null : !TERM_TYPE_ID_EDEFAULT.equals(termTypeId);
-			case OrderPackage.ORDER_TERM__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_TERM__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.ORDER_TERM__DESCRIPTION:
@@ -530,7 +548,9 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 			case OrderPackage.ORDER_TERM__TEXT_VALUE:
 				return TEXT_VALUE_EDEFAULT == null ? textValue != null : !TEXT_VALUE_EDEFAULT.equals(textValue);
 			case OrderPackage.ORDER_TERM__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+				return uomId != null;
+			case OrderPackage.ORDER_TERM__ORDER_ID:
+				return orderId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -547,8 +567,6 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (termTypeId: ");
 		result.append(termTypeId);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", description: ");
@@ -559,8 +577,6 @@ public class OrderTermImpl extends BizEntityImpl implements OrderTerm {
 		result.append(termValue);
 		result.append(", textValue: ");
 		result.append(textValue);
-		result.append(", uomId: ");
-		result.append(uomId);
 		result.append(')');
 		return result.toString();
 	}

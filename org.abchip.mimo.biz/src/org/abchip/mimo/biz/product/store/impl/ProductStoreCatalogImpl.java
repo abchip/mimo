@@ -10,11 +10,14 @@ package org.abchip.mimo.biz.product.store.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.catalog.ProdCatalog;
 import org.abchip.mimo.biz.product.store.ProductStoreCatalog;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreCatalogImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +62,6 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 	 * @ordered
 	 */
 	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROD_CATALOG_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String prodCatalogId = PROD_CATALOG_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -139,6 +122,16 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProdCatalogId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProdCatalog prodCatalogId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +250,24 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 	 * @generated
 	 */
 	@Override
-	public String getProdCatalogId() {
+	public ProdCatalog getProdCatalogId() {
+		if (prodCatalogId != null && ((EObject)prodCatalogId).eIsProxy()) {
+			InternalEObject oldProdCatalogId = (InternalEObject)prodCatalogId;
+			prodCatalogId = (ProdCatalog)eResolveProxy(oldProdCatalogId);
+			if (prodCatalogId != oldProdCatalogId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
+			}
+		}
+		return prodCatalogId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProdCatalog basicGetProdCatalogId() {
 		return prodCatalogId;
 	}
 
@@ -267,8 +277,8 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 	 * @generated
 	 */
 	@Override
-	public void setProdCatalogId(String newProdCatalogId) {
-		String oldProdCatalogId = prodCatalogId;
+	public void setProdCatalogId(ProdCatalog newProdCatalogId) {
+		ProdCatalog oldProdCatalogId = prodCatalogId;
 		prodCatalogId = newProdCatalogId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
@@ -284,14 +294,15 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_CATALOG__PRODUCT_STORE_ID:
 				return getProductStoreId();
-			case StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID:
-				return getProdCatalogId();
 			case StorePackage.PRODUCT_STORE_CATALOG__FROM_DATE:
 				return getFromDate();
 			case StorePackage.PRODUCT_STORE_CATALOG__SEQUENCE_NUM:
 				return getSequenceNum();
 			case StorePackage.PRODUCT_STORE_CATALOG__THRU_DATE:
 				return getThruDate();
+			case StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID:
+				if (resolve) return getProdCatalogId();
+				return basicGetProdCatalogId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,9 +318,6 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 			case StorePackage.PRODUCT_STORE_CATALOG__PRODUCT_STORE_ID:
 				setProductStoreId((String)newValue);
 				return;
-			case StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID:
-				setProdCatalogId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_CATALOG__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -318,6 +326,9 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 				return;
 			case StorePackage.PRODUCT_STORE_CATALOG__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID:
+				setProdCatalogId((ProdCatalog)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,9 +345,6 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 			case StorePackage.PRODUCT_STORE_CATALOG__PRODUCT_STORE_ID:
 				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
 				return;
-			case StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID:
-				setProdCatalogId(PROD_CATALOG_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_CATALOG__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -345,6 +353,9 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 				return;
 			case StorePackage.PRODUCT_STORE_CATALOG__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID:
+				setProdCatalogId((ProdCatalog)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -360,14 +371,14 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_CATALOG__PRODUCT_STORE_ID:
 				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
-			case StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID:
-				return PROD_CATALOG_ID_EDEFAULT == null ? prodCatalogId != null : !PROD_CATALOG_ID_EDEFAULT.equals(prodCatalogId);
 			case StorePackage.PRODUCT_STORE_CATALOG__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case StorePackage.PRODUCT_STORE_CATALOG__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_CATALOG__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case StorePackage.PRODUCT_STORE_CATALOG__PROD_CATALOG_ID:
+				return prodCatalogId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -384,8 +395,6 @@ public class ProductStoreCatalogImpl extends BizEntityImpl implements ProductSto
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productStoreId: ");
 		result.append(productStoreId);
-		result.append(", prodCatalogId: ");
-		result.append(prodCatalogId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

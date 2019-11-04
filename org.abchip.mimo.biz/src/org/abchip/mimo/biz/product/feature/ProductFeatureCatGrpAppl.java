@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCatGrpAppl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCatGrpAppl#getProductFeatureGroupId <em>Product Feature Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCatGrpAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCatGrpAppl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureCatGrpAppl#getProductFeatureGroupId <em>Product Feature Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCatGrpAppl()
@@ -42,7 +42,8 @@ public interface ProductFeatureCatGrpAppl extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCatGrpAppl_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -94,8 +95,8 @@ public interface ProductFeatureCatGrpAppl extends BizEntity {
 	 * @return the value of the '<em>Product Category Id</em>' attribute.
 	 * @see #setProductCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCatGrpAppl_ProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductCategoryId();
@@ -111,30 +112,29 @@ public interface ProductFeatureCatGrpAppl extends BizEntity {
 	void setProductCategoryId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Group Id</em>' attribute.
-	 * @see #setProductFeatureGroupId(String)
+	 * @return the value of the '<em>Product Feature Group Id</em>' reference.
+	 * @see #setProductFeatureGroupId(ProductFeatureGroup)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureCatGrpAppl_ProductFeatureGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeatureGroup'"
+	 * @model keys="productFeatureGroupId"
 	 * @generated
 	 */
-	String getProductFeatureGroupId();
+	ProductFeatureGroup getProductFeatureGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCatGrpAppl#getProductFeatureGroupId <em>Product Feature Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureCatGrpAppl#getProductFeatureGroupId <em>Product Feature Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Group Id</em>' reference.
 	 * @see #getProductFeatureGroupId()
 	 * @generated
 	 */
-	void setProductFeatureGroupId(String value);
+	void setProductFeatureGroupId(ProductFeatureGroup value);
 
 } // ProductFeatureCatGrpAppl

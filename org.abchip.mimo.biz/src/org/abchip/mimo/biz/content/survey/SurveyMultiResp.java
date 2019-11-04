@@ -67,7 +67,6 @@ public interface SurveyMultiResp extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyMultiResp_SurveyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Survey'"
 	 * @generated
 	 */
 	String getSurveyId();

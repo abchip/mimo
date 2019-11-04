@@ -62,7 +62,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @return the value of the '<em>City</em>' attribute.
 	 * @see #setCity(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_City()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCity();
@@ -270,7 +271,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @return the value of the '<em>County</em>' attribute.
 	 * @see #setCounty(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_County()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCounty();
@@ -452,7 +454,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -530,7 +533,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @return the value of the '<em>State Code</em>' attribute.
 	 * @see #setStateCode(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_StateCode()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getStateCode();
@@ -608,7 +612,8 @@ public interface ZipSalesTaxLookup extends BizEntity {
 	 * @return the value of the '<em>Zip Code</em>' attribute.
 	 * @see #setZipCode(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getZipSalesTaxLookup_ZipCode()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getZipCode();

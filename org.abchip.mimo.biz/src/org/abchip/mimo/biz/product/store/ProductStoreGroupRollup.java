@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getParentGroupId <em>Parent Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getParentGroupId <em>Parent Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRollup()
@@ -43,7 +43,8 @@ public interface ProductStoreGroupRollup extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRollup_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -121,8 +122,8 @@ public interface ProductStoreGroupRollup extends BizEntity {
 	 * @return the value of the '<em>Product Store Group Id</em>' attribute.
 	 * @see #setProductStoreGroupId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRollup_ProductStoreGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreGroup'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreGroupId();
@@ -138,30 +139,29 @@ public interface ProductStoreGroupRollup extends BizEntity {
 	void setProductStoreGroupId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Group Id</em>' attribute.
-	 * @see #setParentGroupId(String)
+	 * @return the value of the '<em>Parent Group Id</em>' reference.
+	 * @see #setParentGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupRollup_ParentGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreGroup'"
+	 * @model keys="productStoreGroupId"
 	 * @generated
 	 */
-	String getParentGroupId();
+	ProductStoreGroup getParentGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getParentGroupId <em>Parent Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreGroupRollup#getParentGroupId <em>Parent Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Group Id</em>' reference.
 	 * @see #getParentGroupId()
 	 * @generated
 	 */
-	void setParentGroupId(String value);
+	void setParentGroupId(ProductStoreGroup value);
 
 } // ProductStoreGroupRollup

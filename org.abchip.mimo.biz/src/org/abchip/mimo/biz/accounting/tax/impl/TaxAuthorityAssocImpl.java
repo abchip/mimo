@@ -16,6 +16,8 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,8 +33,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityAssocImpl#getToTaxAuthGeoId <em>To Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityAssocImpl#getToTaxAuthPartyId <em>To Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityAssocImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityAssocImpl#getTaxAuthorityAssocTypeId <em>Tax Authority Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityAssocImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.impl.TaxAuthorityAssocImpl#getTaxAuthorityAssocTypeId <em>Tax Authority Assoc Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -137,24 +139,6 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 */
 	protected Date fromDate = FROM_DATE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getTaxAuthorityAssocTypeId() <em>Tax Authority Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthorityAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TAX_AUTHORITY_ASSOC_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTaxAuthorityAssocTypeId() <em>Tax Authority Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthorityAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String taxAuthorityAssocTypeId = TAX_AUTHORITY_ASSOC_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,6 +156,15 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getTaxAuthorityAssocTypeId() <em>Tax Authority Assoc Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaxAuthorityAssocTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TaxAuthorityAssocType taxAuthorityAssocTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -336,7 +329,24 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 * @generated
 	 */
 	@Override
-	public String getTaxAuthorityAssocTypeId() {
+	public TaxAuthorityAssocType getTaxAuthorityAssocTypeId() {
+		if (taxAuthorityAssocTypeId != null && ((EObject)taxAuthorityAssocTypeId).eIsProxy()) {
+			InternalEObject oldTaxAuthorityAssocTypeId = (InternalEObject)taxAuthorityAssocTypeId;
+			taxAuthorityAssocTypeId = (TaxAuthorityAssocType)eResolveProxy(oldTaxAuthorityAssocTypeId);
+			if (taxAuthorityAssocTypeId != oldTaxAuthorityAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID, oldTaxAuthorityAssocTypeId, taxAuthorityAssocTypeId));
+			}
+		}
+		return taxAuthorityAssocTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TaxAuthorityAssocType basicGetTaxAuthorityAssocTypeId() {
 		return taxAuthorityAssocTypeId;
 	}
 
@@ -346,8 +356,8 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 	 * @generated
 	 */
 	@Override
-	public void setTaxAuthorityAssocTypeId(String newTaxAuthorityAssocTypeId) {
-		String oldTaxAuthorityAssocTypeId = taxAuthorityAssocTypeId;
+	public void setTaxAuthorityAssocTypeId(TaxAuthorityAssocType newTaxAuthorityAssocTypeId) {
+		TaxAuthorityAssocType oldTaxAuthorityAssocTypeId = taxAuthorityAssocTypeId;
 		taxAuthorityAssocTypeId = newTaxAuthorityAssocTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID, oldTaxAuthorityAssocTypeId, taxAuthorityAssocTypeId));
@@ -371,10 +381,11 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 				return getToTaxAuthPartyId();
 			case TaxPackage.TAX_AUTHORITY_ASSOC__FROM_DATE:
 				return getFromDate();
-			case TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID:
-				return getTaxAuthorityAssocTypeId();
 			case TaxPackage.TAX_AUTHORITY_ASSOC__THRU_DATE:
 				return getThruDate();
+			case TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID:
+				if (resolve) return getTaxAuthorityAssocTypeId();
+				return basicGetTaxAuthorityAssocTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -402,11 +413,11 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 			case TaxPackage.TAX_AUTHORITY_ASSOC__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID:
-				setTaxAuthorityAssocTypeId((String)newValue);
-				return;
 			case TaxPackage.TAX_AUTHORITY_ASSOC__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID:
+				setTaxAuthorityAssocTypeId((TaxAuthorityAssocType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -435,11 +446,11 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 			case TaxPackage.TAX_AUTHORITY_ASSOC__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID:
-				setTaxAuthorityAssocTypeId(TAX_AUTHORITY_ASSOC_TYPE_ID_EDEFAULT);
-				return;
 			case TaxPackage.TAX_AUTHORITY_ASSOC__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID:
+				setTaxAuthorityAssocTypeId((TaxAuthorityAssocType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -463,10 +474,10 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 				return TO_TAX_AUTH_PARTY_ID_EDEFAULT == null ? toTaxAuthPartyId != null : !TO_TAX_AUTH_PARTY_ID_EDEFAULT.equals(toTaxAuthPartyId);
 			case TaxPackage.TAX_AUTHORITY_ASSOC__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID:
-				return TAX_AUTHORITY_ASSOC_TYPE_ID_EDEFAULT == null ? taxAuthorityAssocTypeId != null : !TAX_AUTHORITY_ASSOC_TYPE_ID_EDEFAULT.equals(taxAuthorityAssocTypeId);
 			case TaxPackage.TAX_AUTHORITY_ASSOC__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case TaxPackage.TAX_AUTHORITY_ASSOC__TAX_AUTHORITY_ASSOC_TYPE_ID:
+				return taxAuthorityAssocTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -491,8 +502,6 @@ public class TaxAuthorityAssocImpl extends BizEntityTypedImpl<TaxAuthorityAssocT
 		result.append(toTaxAuthPartyId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", taxAuthorityAssocTypeId: ");
-		result.append(taxAuthorityAssocTypeId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

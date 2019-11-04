@@ -154,7 +154,6 @@ public interface ContentSearchConstraint extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentSearchConstraint_ContentSearchResultId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ContentSearchResult'"
 	 * @generated
 	 */
 	String getContentSearchResultId();

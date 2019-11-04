@@ -17,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -98,23 +100,14 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 */
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected RoleType parentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getRoleTypeAttrs() <em>Role Type Attrs</em>}' attribute list.
@@ -206,7 +199,24 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public RoleType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (RoleType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.ROLE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -216,8 +226,8 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(RoleType newParentTypeId) {
+		RoleType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.ROLE_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -515,7 +525,8 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 			case PartyPackage.ROLE_TYPE__HAS_TABLE:
 				return isHasTable();
 			case PartyPackage.ROLE_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case PartyPackage.ROLE_TYPE__ROLE_TYPE_ATTRS:
 				return getRoleTypeAttrs();
 			case PartyPackage.ROLE_TYPE__VALID_CONTACT_MECH_ROLES:
@@ -543,7 +554,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 				setHasTable((Boolean)newValue);
 				return;
 			case PartyPackage.ROLE_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((RoleType)newValue);
 				return;
 			case PartyPackage.ROLE_TYPE__ROLE_TYPE_ATTRS:
 				getRoleTypeAttrs().clear();
@@ -575,7 +586,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case PartyPackage.ROLE_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((RoleType)null);
 				return;
 			case PartyPackage.ROLE_TYPE__ROLE_TYPE_ATTRS:
 				getRoleTypeAttrs().clear();
@@ -602,7 +613,7 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 			case PartyPackage.ROLE_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case PartyPackage.ROLE_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case PartyPackage.ROLE_TYPE__ROLE_TYPE_ATTRS:
 				return roleTypeAttrs != null && !roleTypeAttrs.isEmpty();
 			case PartyPackage.ROLE_TYPE__VALID_CONTACT_MECH_ROLES:
@@ -627,8 +638,6 @@ public class RoleTypeImpl extends BizEntityImpl implements RoleType {
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", roleTypeAttrs: ");
 		result.append(roleTypeAttrs);
 		result.append(", validContactMechRoles: ");

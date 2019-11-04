@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.workeffort.workeffort;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +22,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd#getEstimatedCost <em>Estimated Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd#getEstimatedDuration <em>Estimated Duration</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd#getEstimatedQuantity <em>Estimated Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortFixedAssetStd()
@@ -111,32 +112,30 @@ public interface WorkEffortFixedAssetStd extends BizEntity {
 	void setEstimatedQuantity(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Type Id</em>' attribute.
-	 * @see #setFixedAssetTypeId(String)
+	 * @return the value of the '<em>Fixed Asset Type Id</em>' reference.
+	 * @see #setFixedAssetTypeId(FixedAssetType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortFixedAssetStd_FixedAssetTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAssetType'"
+	 * @model keys="fixedAssetTypeId"
 	 * @generated
 	 */
-	String getFixedAssetTypeId();
+	FixedAssetType getFixedAssetTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortFixedAssetStd#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Type Id</em>' reference.
 	 * @see #getFixedAssetTypeId()
 	 * @generated
 	 */
-	void setFixedAssetTypeId(String value);
+	void setFixedAssetTypeId(FixedAssetType value);
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
@@ -151,7 +150,6 @@ public interface WorkEffortFixedAssetStd extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortFixedAssetStd_WorkEffortId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
 	 * @generated
 	 */
 	String getWorkEffortId();

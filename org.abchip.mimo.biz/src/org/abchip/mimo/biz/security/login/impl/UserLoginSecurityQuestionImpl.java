@@ -9,11 +9,14 @@ package org.abchip.mimo.biz.security.login.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.security.login.LoginPackage;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginSecurityQuestionImpl#getQuestionEnumId <em>Question Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginSecurityQuestionImpl#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginSecurityQuestionImpl#getSecurityAnswer <em>Security Answer</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.impl.UserLoginSecurityQuestionImpl#getUserLoginId <em>User Login Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,27 +62,6 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 	protected String questionEnumId = QUESTION_ENUM_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
-
-
-	/**
 	 * The default value of the '{@link #getSecurityAnswer() <em>Security Answer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,6 +81,17 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 	 * @ordered
 	 */
 	protected String securityAnswer = SECURITY_ANSWER_EDEFAULT;
+
+
+	/**
+	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin userLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,7 +164,24 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 	 * @generated
 	 */
 	@Override
-	public String getUserLoginId() {
+	public UserLogin getUserLoginId() {
+		if (userLoginId != null && ((EObject)userLoginId).eIsProxy()) {
+			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
+			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
+			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID, oldUserLoginId, userLoginId));
+			}
+		}
+		return userLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetUserLoginId() {
 		return userLoginId;
 	}
 
@@ -181,8 +191,8 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 	 * @generated
 	 */
 	@Override
-	public void setUserLoginId(String newUserLoginId) {
-		String oldUserLoginId = userLoginId;
+	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID, oldUserLoginId, userLoginId));
@@ -198,10 +208,11 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 		switch (featureID) {
 			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID:
 				return getQuestionEnumId();
-			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID:
-				return getUserLoginId();
 			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER:
 				return getSecurityAnswer();
+			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID:
+				if (resolve) return getUserLoginId();
+				return basicGetUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,11 +228,11 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID:
 				setQuestionEnumId((String)newValue);
 				return;
-			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID:
-				setUserLoginId((String)newValue);
-				return;
 			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER:
 				setSecurityAnswer((String)newValue);
+				return;
+			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID:
+				setUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,11 +249,11 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID:
 				setQuestionEnumId(QUESTION_ENUM_ID_EDEFAULT);
 				return;
-			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID:
-				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
-				return;
 			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER:
 				setSecurityAnswer(SECURITY_ANSWER_EDEFAULT);
+				return;
+			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID:
+				setUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -258,10 +269,10 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 		switch (featureID) {
 			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID:
 				return QUESTION_ENUM_ID_EDEFAULT == null ? questionEnumId != null : !QUESTION_ENUM_ID_EDEFAULT.equals(questionEnumId);
-			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID:
-				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
 			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER:
 				return SECURITY_ANSWER_EDEFAULT == null ? securityAnswer != null : !SECURITY_ANSWER_EDEFAULT.equals(securityAnswer);
+			case LoginPackage.USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID:
+				return userLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -278,8 +289,6 @@ public class UserLoginSecurityQuestionImpl extends BizEntityImpl implements User
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (questionEnumId: ");
 		result.append(questionEnumId);
-		result.append(", userLoginId: ");
-		result.append(userLoginId);
 		result.append(", securityAnswer: ");
 		result.append(securityAnswer);
 		result.append(')');

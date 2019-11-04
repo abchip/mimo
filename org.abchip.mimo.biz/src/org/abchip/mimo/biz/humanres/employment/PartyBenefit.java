@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.period.PeriodType;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,15 +26,15 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdTo <em>Party Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getBenefitTypeId <em>Benefit Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getActualEmployerPaidPercent <em>Actual Employer Paid Percent</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getAvailableTime <em>Available Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getCost <em>Cost</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPeriodTypeId <em>Period Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getBenefitTypeId <em>Benefit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPeriodTypeId <em>Period Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit()
@@ -93,31 +95,30 @@ public interface PartyBenefit extends BizEntity {
 	void setAvailableTime(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Benefit Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Benefit Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Benefit Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Benefit Type Id</em>' attribute.
-	 * @see #setBenefitTypeId(String)
+	 * @return the value of the '<em>Benefit Type Id</em>' reference.
+	 * @see #setBenefitTypeId(BenefitType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_BenefitTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='BenefitType'"
+	 * @model keys="benefitTypeId"
 	 * @generated
 	 */
-	String getBenefitTypeId();
+	BenefitType getBenefitTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getBenefitTypeId <em>Benefit Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getBenefitTypeId <em>Benefit Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Benefit Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Benefit Type Id</em>' reference.
 	 * @see #getBenefitTypeId()
 	 * @generated
 	 */
-	void setBenefitTypeId(String value);
+	void setBenefitTypeId(BenefitType value);
 
 	/**
 	 * Returns the value of the '<em><b>Cost</b></em>' attribute.
@@ -156,7 +157,8 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -172,84 +174,82 @@ public interface PartyBenefit extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id From</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id From</em>' attribute.
-	 * @see #setPartyIdFrom(String)
+	 * @return the value of the '<em>Party Id From</em>' reference.
+	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_PartyIdFrom()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdFrom();
+	Party getPartyIdFrom();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdFrom <em>Party Id From</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdFrom <em>Party Id From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id From</em>' attribute.
+	 * @param value the new value of the '<em>Party Id From</em>' reference.
 	 * @see #getPartyIdFrom()
 	 * @generated
 	 */
-	void setPartyIdFrom(String value);
+	void setPartyIdFrom(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id To</em>' attribute.
-	 * @see #setPartyIdTo(String)
+	 * @return the value of the '<em>Party Id To</em>' reference.
+	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_PartyIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdTo();
+	Party getPartyIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdTo <em>Party Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPartyIdTo <em>Party Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id To</em>' attribute.
+	 * @param value the new value of the '<em>Party Id To</em>' reference.
 	 * @see #getPartyIdTo()
 	 * @generated
 	 */
-	void setPartyIdTo(String value);
+	void setPartyIdTo(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Period Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Period Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Period Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Period Type Id</em>' attribute.
-	 * @see #setPeriodTypeId(String)
+	 * @return the value of the '<em>Period Type Id</em>' reference.
+	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_PeriodTypeId()
-	 * @model annotation="mimo-ent-domain frame='PeriodType'"
+	 * @model keys="periodTypeId"
 	 * @generated
 	 */
-	String getPeriodTypeId();
+	PeriodType getPeriodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPeriodTypeId <em>Period Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.PartyBenefit#getPeriodTypeId <em>Period Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Period Type Id</em>' reference.
 	 * @see #getPeriodTypeId()
 	 * @generated
 	 */
-	void setPeriodTypeId(String value);
+	void setPeriodTypeId(PeriodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id From</b></em>' attribute.
@@ -262,7 +262,8 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>Role Type Id From</em>' attribute.
 	 * @see #setRoleTypeIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_RoleTypeIdFrom()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeIdFrom();
@@ -288,7 +289,8 @@ public interface PartyBenefit extends BizEntity {
 	 * @return the value of the '<em>Role Type Id To</em>' attribute.
 	 * @see #setRoleTypeIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getPartyBenefit_RoleTypeIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeIdTo();

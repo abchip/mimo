@@ -8,11 +8,14 @@
 package org.abchip.mimo.biz.common.geo.impl;
 
 import org.abchip.mimo.biz.common.geo.CountryAddressFormat;
+import org.abchip.mimo.biz.common.geo.GeoAssocType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,12 +28,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getAddressFormat <em>Address Format</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getGeoAssocTypeId <em>Geo Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#isHasPostalCodeExt <em>Has Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getPostalCodeRegex <em>Postal Code Regex</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#isRequirePostalCode <em>Require Postal Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#isRequirePostalCodeExt <em>Require Postal Code Ext</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getRequireStateProvinceId <em>Require State Province Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.impl.CountryAddressFormatImpl#getGeoAssocTypeId <em>Geo Assoc Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,24 +79,6 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 * @ordered
 	 */
 	protected String addressFormat = ADDRESS_FORMAT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGeoAssocTypeId() <em>Geo Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_ASSOC_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoAssocTypeId() <em>Geo Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoAssocTypeId = GEO_ASSOC_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isHasPostalCodeExt() <em>Has Postal Code Ext</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -184,6 +169,15 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 * @ordered
 	 */
 	protected String requireStateProvinceId = REQUIRE_STATE_PROVINCE_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getGeoAssocTypeId() <em>Geo Assoc Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoAssocTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeoAssocType geoAssocTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -325,7 +319,24 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 * @generated
 	 */
 	@Override
-	public String getGeoAssocTypeId() {
+	public GeoAssocType getGeoAssocTypeId() {
+		if (geoAssocTypeId != null && ((EObject)geoAssocTypeId).eIsProxy()) {
+			InternalEObject oldGeoAssocTypeId = (InternalEObject)geoAssocTypeId;
+			geoAssocTypeId = (GeoAssocType)eResolveProxy(oldGeoAssocTypeId);
+			if (geoAssocTypeId != oldGeoAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
+			}
+		}
+		return geoAssocTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeoAssocType basicGetGeoAssocTypeId() {
 		return geoAssocTypeId;
 	}
 
@@ -335,8 +346,8 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 	 * @generated
 	 */
 	@Override
-	public void setGeoAssocTypeId(String newGeoAssocTypeId) {
-		String oldGeoAssocTypeId = geoAssocTypeId;
+	public void setGeoAssocTypeId(GeoAssocType newGeoAssocTypeId) {
+		GeoAssocType oldGeoAssocTypeId = geoAssocTypeId;
 		geoAssocTypeId = newGeoAssocTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
@@ -400,8 +411,6 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 				return getGeoId();
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__ADDRESS_FORMAT:
 				return getAddressFormat();
-			case GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID:
-				return getGeoAssocTypeId();
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT:
 				return isHasPostalCodeExt();
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__POSTAL_CODE_REGEX:
@@ -412,6 +421,9 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 				return isRequirePostalCodeExt();
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__REQUIRE_STATE_PROVINCE_ID:
 				return getRequireStateProvinceId();
+			case GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID:
+				if (resolve) return getGeoAssocTypeId();
+				return basicGetGeoAssocTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -430,9 +442,6 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__ADDRESS_FORMAT:
 				setAddressFormat((String)newValue);
 				return;
-			case GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID:
-				setGeoAssocTypeId((String)newValue);
-				return;
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT:
 				setHasPostalCodeExt((Boolean)newValue);
 				return;
@@ -447,6 +456,9 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 				return;
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__REQUIRE_STATE_PROVINCE_ID:
 				setRequireStateProvinceId((String)newValue);
+				return;
+			case GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID:
+				setGeoAssocTypeId((GeoAssocType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -466,9 +478,6 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__ADDRESS_FORMAT:
 				setAddressFormat(ADDRESS_FORMAT_EDEFAULT);
 				return;
-			case GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID:
-				setGeoAssocTypeId(GEO_ASSOC_TYPE_ID_EDEFAULT);
-				return;
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT:
 				setHasPostalCodeExt(HAS_POSTAL_CODE_EXT_EDEFAULT);
 				return;
@@ -483,6 +492,9 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 				return;
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__REQUIRE_STATE_PROVINCE_ID:
 				setRequireStateProvinceId(REQUIRE_STATE_PROVINCE_ID_EDEFAULT);
+				return;
+			case GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID:
+				setGeoAssocTypeId((GeoAssocType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -500,8 +512,6 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 				return GEO_ID_EDEFAULT == null ? geoId != null : !GEO_ID_EDEFAULT.equals(geoId);
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__ADDRESS_FORMAT:
 				return ADDRESS_FORMAT_EDEFAULT == null ? addressFormat != null : !ADDRESS_FORMAT_EDEFAULT.equals(addressFormat);
-			case GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID:
-				return GEO_ASSOC_TYPE_ID_EDEFAULT == null ? geoAssocTypeId != null : !GEO_ASSOC_TYPE_ID_EDEFAULT.equals(geoAssocTypeId);
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__HAS_POSTAL_CODE_EXT:
 				return hasPostalCodeExt != HAS_POSTAL_CODE_EXT_EDEFAULT;
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__POSTAL_CODE_REGEX:
@@ -512,6 +522,8 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 				return requirePostalCodeExt != REQUIRE_POSTAL_CODE_EXT_EDEFAULT;
 			case GeoPackage.COUNTRY_ADDRESS_FORMAT__REQUIRE_STATE_PROVINCE_ID:
 				return REQUIRE_STATE_PROVINCE_ID_EDEFAULT == null ? requireStateProvinceId != null : !REQUIRE_STATE_PROVINCE_ID_EDEFAULT.equals(requireStateProvinceId);
+			case GeoPackage.COUNTRY_ADDRESS_FORMAT__GEO_ASSOC_TYPE_ID:
+				return geoAssocTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -530,8 +542,6 @@ public class CountryAddressFormatImpl extends BizEntityImpl implements CountryAd
 		result.append(geoId);
 		result.append(", addressFormat: ");
 		result.append(addressFormat);
-		result.append(", geoAssocTypeId: ");
-		result.append(geoAssocTypeId);
 		result.append(", hasPostalCodeExt: ");
 		result.append(hasPostalCodeExt);
 		result.append(", postalCodeRegex: ");

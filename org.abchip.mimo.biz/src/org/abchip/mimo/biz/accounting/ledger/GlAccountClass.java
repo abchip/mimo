@@ -23,8 +23,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#getGlAccountClassId <em>Gl Account Class Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#isIsAssetClass <em>Is Asset Class</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#getParentClassId <em>Parent Class Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#getParentClassId <em>Parent Class Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass()
@@ -85,30 +85,30 @@ public interface GlAccountClass extends BizEntity {
 	void setIsAssetClass(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Class Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Class Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Class Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Class Id</em>' attribute.
-	 * @see #setParentClassId(String)
+	 * @return the value of the '<em>Parent Class Id</em>' reference.
+	 * @see #setParentClassId(GlAccountClass)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass_ParentClassId()
-	 * @model annotation="mimo-ent-domain frame='GlAccountClass'"
+	 * @model keys="glAccountClassId"
 	 * @generated
 	 */
-	String getParentClassId();
+	GlAccountClass getParentClassId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#getParentClassId <em>Parent Class Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountClass#getParentClassId <em>Parent Class Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Class Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Class Id</em>' reference.
 	 * @see #getParentClassId()
 	 * @generated
 	 */
-	void setParentClassId(String value);
+	void setParentClassId(GlAccountClass value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.
@@ -165,7 +165,7 @@ public interface GlAccountClass extends BizEntity {
 	 * @return the value of the '<em>Gl Account Class Id</em>' attribute.
 	 * @see #setGlAccountClassId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountClass_GlAccountClassId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

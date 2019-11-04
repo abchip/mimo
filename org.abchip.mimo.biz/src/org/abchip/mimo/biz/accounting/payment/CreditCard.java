@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.payment;
 
 import java.util.Date;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +24,6 @@ import java.util.Date;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getCompanyNameOnCard <em>Company Name On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getConsecutiveFailedAuths <em>Consecutive Failed Auths</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getConsecutiveFailedNsf <em>Consecutive Failed Nsf</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getExpireDate <em>Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getFirstNameOnCard <em>First Name On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getIssueNumber <em>Issue Number</em>}</li>
@@ -34,6 +34,7 @@ import java.util.Date;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getSuffixOnCard <em>Suffix On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getTitleOnCard <em>Title On Card</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getValidFromDate <em>Valid From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard()
@@ -172,30 +173,30 @@ public interface CreditCard extends PaymentMethod {
 	void setConsecutiveFailedNsf(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(PostalAddress)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getCreditCard_ContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	PostalAddress getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(PostalAddress value);
 
 	/**
 	 * Returns the value of the '<em><b>Expire Date</b></em>' attribute.

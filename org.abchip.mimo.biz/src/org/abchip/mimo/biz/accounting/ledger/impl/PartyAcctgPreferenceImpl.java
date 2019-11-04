@@ -10,11 +10,18 @@ package org.abchip.mimo.biz.accounting.ledger.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.GlJournal;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.accounting.ledger.PartyAcctgPreference;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.method.CustomMethod;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,28 +33,28 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getBaseCurrencyUomId <em>Base Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getCogsMethodId <em>Cogs Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#isEnableAccounting <em>Enable Accounting</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getErrorGlJournalId <em>Error Gl Journal Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getFiscalYearStartDay <em>Fiscal Year Start Day</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getFiscalYearStartMonth <em>Fiscal Year Start Month</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getInvoiceIdPrefix <em>Invoice Id Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getInvoiceSeqCustMethId <em>Invoice Seq Cust Meth Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getLastInvoiceNumber <em>Last Invoice Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getLastInvoiceRestartDate <em>Last Invoice Restart Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getLastOrderNumber <em>Last Order Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getLastQuoteNumber <em>Last Quote Number</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOldInvoiceSequenceEnumId <em>Old Invoice Sequence Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOldOrderSequenceEnumId <em>Old Order Sequence Enum Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOldQuoteSequenceEnumId <em>Old Quote Sequence Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOrderIdPrefix <em>Order Id Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOrderSeqCustMethId <em>Order Seq Cust Meth Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getQuoteIdPrefix <em>Quote Id Prefix</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getQuoteSeqCustMethId <em>Quote Seq Cust Meth Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getRefundPaymentMethodId <em>Refund Payment Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getTaxFormId <em>Tax Form Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#isUseInvoiceIdForReturns <em>Use Invoice Id For Returns</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getTaxFormId <em>Tax Form Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getCogsMethodId <em>Cogs Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getBaseCurrencyUomId <em>Base Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getInvoiceSeqCustMethId <em>Invoice Seq Cust Meth Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getQuoteSeqCustMethId <em>Quote Seq Cust Meth Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOrderSeqCustMethId <em>Order Seq Cust Meth Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getRefundPaymentMethodId <em>Refund Payment Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getErrorGlJournalId <em>Error Gl Journal Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOldInvoiceSequenceEnumId <em>Old Invoice Sequence Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOldQuoteSequenceEnumId <em>Old Quote Sequence Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.PartyAcctgPreferenceImpl#getOldOrderSequenceEnumId <em>Old Order Sequence Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,42 +83,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getBaseCurrencyUomId() <em>Base Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBaseCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BASE_CURRENCY_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getBaseCurrencyUomId() <em>Base Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBaseCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String baseCurrencyUomId = BASE_CURRENCY_UOM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCogsMethodId() <em>Cogs Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCogsMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COGS_METHOD_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCogsMethodId() <em>Cogs Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCogsMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String cogsMethodId = COGS_METHOD_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #isEnableAccounting() <em>Enable Accounting</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,24 +100,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @ordered
 	 */
 	protected boolean enableAccounting = ENABLE_ACCOUNTING_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getErrorGlJournalId() <em>Error Gl Journal Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getErrorGlJournalId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ERROR_GL_JOURNAL_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getErrorGlJournalId() <em>Error Gl Journal Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getErrorGlJournalId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String errorGlJournalId = ERROR_GL_JOURNAL_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFiscalYearStartDay() <em>Fiscal Year Start Day</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -201,24 +154,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @ordered
 	 */
 	protected String invoiceIdPrefix = INVOICE_ID_PREFIX_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getInvoiceSeqCustMethId() <em>Invoice Seq Cust Meth Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceSeqCustMethId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_SEQ_CUST_METH_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceSeqCustMethId() <em>Invoice Seq Cust Meth Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceSeqCustMethId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceSeqCustMethId = INVOICE_SEQ_CUST_METH_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getLastInvoiceNumber() <em>Last Invoice Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -292,60 +227,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	protected long lastQuoteNumber = LAST_QUOTE_NUMBER_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getOldInvoiceSequenceEnumId() <em>Old Invoice Sequence Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOldInvoiceSequenceEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OLD_INVOICE_SEQUENCE_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOldInvoiceSequenceEnumId() <em>Old Invoice Sequence Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOldInvoiceSequenceEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String oldInvoiceSequenceEnumId = OLD_INVOICE_SEQUENCE_ENUM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getOldOrderSequenceEnumId() <em>Old Order Sequence Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOldOrderSequenceEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OLD_ORDER_SEQUENCE_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOldOrderSequenceEnumId() <em>Old Order Sequence Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOldOrderSequenceEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String oldOrderSequenceEnumId = OLD_ORDER_SEQUENCE_ENUM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getOldQuoteSequenceEnumId() <em>Old Quote Sequence Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOldQuoteSequenceEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OLD_QUOTE_SEQUENCE_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOldQuoteSequenceEnumId() <em>Old Quote Sequence Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOldQuoteSequenceEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String oldQuoteSequenceEnumId = OLD_QUOTE_SEQUENCE_ENUM_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getOrderIdPrefix() <em>Order Id Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -363,24 +244,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @ordered
 	 */
 	protected String orderIdPrefix = ORDER_ID_PREFIX_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getOrderSeqCustMethId() <em>Order Seq Cust Meth Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderSeqCustMethId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_SEQ_CUST_METH_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOrderSeqCustMethId() <em>Order Seq Cust Meth Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderSeqCustMethId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderSeqCustMethId = ORDER_SEQ_CUST_METH_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getQuoteIdPrefix() <em>Quote Id Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -400,60 +263,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 */
 	protected String quoteIdPrefix = QUOTE_ID_PREFIX_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getQuoteSeqCustMethId() <em>Quote Seq Cust Meth Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteSeqCustMethId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUOTE_SEQ_CUST_METH_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getQuoteSeqCustMethId() <em>Quote Seq Cust Meth Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuoteSeqCustMethId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quoteSeqCustMethId = QUOTE_SEQ_CUST_METH_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRefundPaymentMethodId() <em>Refund Payment Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRefundPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REFUND_PAYMENT_METHOD_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRefundPaymentMethodId() <em>Refund Payment Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRefundPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String refundPaymentMethodId = REFUND_PAYMENT_METHOD_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getTaxFormId() <em>Tax Form Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxFormId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TAX_FORM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTaxFormId() <em>Tax Form Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxFormId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String taxFormId = TAX_FORM_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #isUseInvoiceIdForReturns() <em>Use Invoice Id For Returns</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -471,6 +280,105 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @ordered
 	 */
 	protected boolean useInvoiceIdForReturns = USE_INVOICE_ID_FOR_RETURNS_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getTaxFormId() <em>Tax Form Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaxFormId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration taxFormId;
+	/**
+	 * The cached value of the '{@link #getCogsMethodId() <em>Cogs Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCogsMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration cogsMethodId;
+	/**
+	 * The cached value of the '{@link #getBaseCurrencyUomId() <em>Base Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBaseCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom baseCurrencyUomId;
+	/**
+	 * The cached value of the '{@link #getInvoiceSeqCustMethId() <em>Invoice Seq Cust Meth Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoiceSeqCustMethId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod invoiceSeqCustMethId;
+	/**
+	 * The cached value of the '{@link #getQuoteSeqCustMethId() <em>Quote Seq Cust Meth Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuoteSeqCustMethId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod quoteSeqCustMethId;
+	/**
+	 * The cached value of the '{@link #getOrderSeqCustMethId() <em>Order Seq Cust Meth Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderSeqCustMethId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustomMethod orderSeqCustMethId;
+	/**
+	 * The cached value of the '{@link #getRefundPaymentMethodId() <em>Refund Payment Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefundPaymentMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethod refundPaymentMethodId;
+	/**
+	 * The cached value of the '{@link #getErrorGlJournalId() <em>Error Gl Journal Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getErrorGlJournalId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlJournal errorGlJournalId;
+	/**
+	 * The cached value of the '{@link #getOldInvoiceSequenceEnumId() <em>Old Invoice Sequence Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOldInvoiceSequenceEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration oldInvoiceSequenceEnumId;
+	/**
+	 * The cached value of the '{@link #getOldQuoteSequenceEnumId() <em>Old Quote Sequence Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOldQuoteSequenceEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration oldQuoteSequenceEnumId;
+	/**
+	 * The cached value of the '{@link #getOldOrderSequenceEnumId() <em>Old Order Sequence Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOldOrderSequenceEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration oldOrderSequenceEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -497,7 +405,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getBaseCurrencyUomId() {
+	public Uom getBaseCurrencyUomId() {
+		if (baseCurrencyUomId != null && ((EObject)baseCurrencyUomId).eIsProxy()) {
+			InternalEObject oldBaseCurrencyUomId = (InternalEObject)baseCurrencyUomId;
+			baseCurrencyUomId = (Uom)eResolveProxy(oldBaseCurrencyUomId);
+			if (baseCurrencyUomId != oldBaseCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID, oldBaseCurrencyUomId, baseCurrencyUomId));
+			}
+		}
+		return baseCurrencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetBaseCurrencyUomId() {
 		return baseCurrencyUomId;
 	}
 
@@ -507,8 +432,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setBaseCurrencyUomId(String newBaseCurrencyUomId) {
-		String oldBaseCurrencyUomId = baseCurrencyUomId;
+	public void setBaseCurrencyUomId(Uom newBaseCurrencyUomId) {
+		Uom oldBaseCurrencyUomId = baseCurrencyUomId;
 		baseCurrencyUomId = newBaseCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID, oldBaseCurrencyUomId, baseCurrencyUomId));
@@ -520,7 +445,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getCogsMethodId() {
+	public Enumeration getCogsMethodId() {
+		if (cogsMethodId != null && ((EObject)cogsMethodId).eIsProxy()) {
+			InternalEObject oldCogsMethodId = (InternalEObject)cogsMethodId;
+			cogsMethodId = (Enumeration)eResolveProxy(oldCogsMethodId);
+			if (cogsMethodId != oldCogsMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID, oldCogsMethodId, cogsMethodId));
+			}
+		}
+		return cogsMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetCogsMethodId() {
 		return cogsMethodId;
 	}
 
@@ -530,8 +472,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setCogsMethodId(String newCogsMethodId) {
-		String oldCogsMethodId = cogsMethodId;
+	public void setCogsMethodId(Enumeration newCogsMethodId) {
+		Enumeration oldCogsMethodId = cogsMethodId;
 		cogsMethodId = newCogsMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID, oldCogsMethodId, cogsMethodId));
@@ -635,7 +577,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceSeqCustMethId() {
+	public CustomMethod getInvoiceSeqCustMethId() {
+		if (invoiceSeqCustMethId != null && ((EObject)invoiceSeqCustMethId).eIsProxy()) {
+			InternalEObject oldInvoiceSeqCustMethId = (InternalEObject)invoiceSeqCustMethId;
+			invoiceSeqCustMethId = (CustomMethod)eResolveProxy(oldInvoiceSeqCustMethId);
+			if (invoiceSeqCustMethId != oldInvoiceSeqCustMethId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID, oldInvoiceSeqCustMethId, invoiceSeqCustMethId));
+			}
+		}
+		return invoiceSeqCustMethId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetInvoiceSeqCustMethId() {
 		return invoiceSeqCustMethId;
 	}
 
@@ -645,8 +604,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceSeqCustMethId(String newInvoiceSeqCustMethId) {
-		String oldInvoiceSeqCustMethId = invoiceSeqCustMethId;
+	public void setInvoiceSeqCustMethId(CustomMethod newInvoiceSeqCustMethId) {
+		CustomMethod oldInvoiceSeqCustMethId = invoiceSeqCustMethId;
 		invoiceSeqCustMethId = newInvoiceSeqCustMethId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID, oldInvoiceSeqCustMethId, invoiceSeqCustMethId));
@@ -750,7 +709,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getOldInvoiceSequenceEnumId() {
+	public Enumeration getOldInvoiceSequenceEnumId() {
+		if (oldInvoiceSequenceEnumId != null && ((EObject)oldInvoiceSequenceEnumId).eIsProxy()) {
+			InternalEObject oldOldInvoiceSequenceEnumId = (InternalEObject)oldInvoiceSequenceEnumId;
+			oldInvoiceSequenceEnumId = (Enumeration)eResolveProxy(oldOldInvoiceSequenceEnumId);
+			if (oldInvoiceSequenceEnumId != oldOldInvoiceSequenceEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID, oldOldInvoiceSequenceEnumId, oldInvoiceSequenceEnumId));
+			}
+		}
+		return oldInvoiceSequenceEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetOldInvoiceSequenceEnumId() {
 		return oldInvoiceSequenceEnumId;
 	}
 
@@ -760,8 +736,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setOldInvoiceSequenceEnumId(String newOldInvoiceSequenceEnumId) {
-		String oldOldInvoiceSequenceEnumId = oldInvoiceSequenceEnumId;
+	public void setOldInvoiceSequenceEnumId(Enumeration newOldInvoiceSequenceEnumId) {
+		Enumeration oldOldInvoiceSequenceEnumId = oldInvoiceSequenceEnumId;
 		oldInvoiceSequenceEnumId = newOldInvoiceSequenceEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID, oldOldInvoiceSequenceEnumId, oldInvoiceSequenceEnumId));
@@ -773,7 +749,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getOldOrderSequenceEnumId() {
+	public Enumeration getOldOrderSequenceEnumId() {
+		if (oldOrderSequenceEnumId != null && ((EObject)oldOrderSequenceEnumId).eIsProxy()) {
+			InternalEObject oldOldOrderSequenceEnumId = (InternalEObject)oldOrderSequenceEnumId;
+			oldOrderSequenceEnumId = (Enumeration)eResolveProxy(oldOldOrderSequenceEnumId);
+			if (oldOrderSequenceEnumId != oldOldOrderSequenceEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID, oldOldOrderSequenceEnumId, oldOrderSequenceEnumId));
+			}
+		}
+		return oldOrderSequenceEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetOldOrderSequenceEnumId() {
 		return oldOrderSequenceEnumId;
 	}
 
@@ -783,8 +776,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setOldOrderSequenceEnumId(String newOldOrderSequenceEnumId) {
-		String oldOldOrderSequenceEnumId = oldOrderSequenceEnumId;
+	public void setOldOrderSequenceEnumId(Enumeration newOldOrderSequenceEnumId) {
+		Enumeration oldOldOrderSequenceEnumId = oldOrderSequenceEnumId;
 		oldOrderSequenceEnumId = newOldOrderSequenceEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID, oldOldOrderSequenceEnumId, oldOrderSequenceEnumId));
@@ -796,7 +789,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getOldQuoteSequenceEnumId() {
+	public Enumeration getOldQuoteSequenceEnumId() {
+		if (oldQuoteSequenceEnumId != null && ((EObject)oldQuoteSequenceEnumId).eIsProxy()) {
+			InternalEObject oldOldQuoteSequenceEnumId = (InternalEObject)oldQuoteSequenceEnumId;
+			oldQuoteSequenceEnumId = (Enumeration)eResolveProxy(oldOldQuoteSequenceEnumId);
+			if (oldQuoteSequenceEnumId != oldOldQuoteSequenceEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID, oldOldQuoteSequenceEnumId, oldQuoteSequenceEnumId));
+			}
+		}
+		return oldQuoteSequenceEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetOldQuoteSequenceEnumId() {
 		return oldQuoteSequenceEnumId;
 	}
 
@@ -806,8 +816,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setOldQuoteSequenceEnumId(String newOldQuoteSequenceEnumId) {
-		String oldOldQuoteSequenceEnumId = oldQuoteSequenceEnumId;
+	public void setOldQuoteSequenceEnumId(Enumeration newOldQuoteSequenceEnumId) {
+		Enumeration oldOldQuoteSequenceEnumId = oldQuoteSequenceEnumId;
 		oldQuoteSequenceEnumId = newOldQuoteSequenceEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID, oldOldQuoteSequenceEnumId, oldQuoteSequenceEnumId));
@@ -842,7 +852,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getOrderSeqCustMethId() {
+	public CustomMethod getOrderSeqCustMethId() {
+		if (orderSeqCustMethId != null && ((EObject)orderSeqCustMethId).eIsProxy()) {
+			InternalEObject oldOrderSeqCustMethId = (InternalEObject)orderSeqCustMethId;
+			orderSeqCustMethId = (CustomMethod)eResolveProxy(oldOrderSeqCustMethId);
+			if (orderSeqCustMethId != oldOrderSeqCustMethId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID, oldOrderSeqCustMethId, orderSeqCustMethId));
+			}
+		}
+		return orderSeqCustMethId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetOrderSeqCustMethId() {
 		return orderSeqCustMethId;
 	}
 
@@ -852,8 +879,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setOrderSeqCustMethId(String newOrderSeqCustMethId) {
-		String oldOrderSeqCustMethId = orderSeqCustMethId;
+	public void setOrderSeqCustMethId(CustomMethod newOrderSeqCustMethId) {
+		CustomMethod oldOrderSeqCustMethId = orderSeqCustMethId;
 		orderSeqCustMethId = newOrderSeqCustMethId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID, oldOrderSeqCustMethId, orderSeqCustMethId));
@@ -911,7 +938,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getQuoteSeqCustMethId() {
+	public CustomMethod getQuoteSeqCustMethId() {
+		if (quoteSeqCustMethId != null && ((EObject)quoteSeqCustMethId).eIsProxy()) {
+			InternalEObject oldQuoteSeqCustMethId = (InternalEObject)quoteSeqCustMethId;
+			quoteSeqCustMethId = (CustomMethod)eResolveProxy(oldQuoteSeqCustMethId);
+			if (quoteSeqCustMethId != oldQuoteSeqCustMethId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID, oldQuoteSeqCustMethId, quoteSeqCustMethId));
+			}
+		}
+		return quoteSeqCustMethId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomMethod basicGetQuoteSeqCustMethId() {
 		return quoteSeqCustMethId;
 	}
 
@@ -921,8 +965,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setQuoteSeqCustMethId(String newQuoteSeqCustMethId) {
-		String oldQuoteSeqCustMethId = quoteSeqCustMethId;
+	public void setQuoteSeqCustMethId(CustomMethod newQuoteSeqCustMethId) {
+		CustomMethod oldQuoteSeqCustMethId = quoteSeqCustMethId;
 		quoteSeqCustMethId = newQuoteSeqCustMethId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID, oldQuoteSeqCustMethId, quoteSeqCustMethId));
@@ -934,7 +978,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getRefundPaymentMethodId() {
+	public PaymentMethod getRefundPaymentMethodId() {
+		if (refundPaymentMethodId != null && ((EObject)refundPaymentMethodId).eIsProxy()) {
+			InternalEObject oldRefundPaymentMethodId = (InternalEObject)refundPaymentMethodId;
+			refundPaymentMethodId = (PaymentMethod)eResolveProxy(oldRefundPaymentMethodId);
+			if (refundPaymentMethodId != oldRefundPaymentMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID, oldRefundPaymentMethodId, refundPaymentMethodId));
+			}
+		}
+		return refundPaymentMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethod basicGetRefundPaymentMethodId() {
 		return refundPaymentMethodId;
 	}
 
@@ -944,8 +1005,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setRefundPaymentMethodId(String newRefundPaymentMethodId) {
-		String oldRefundPaymentMethodId = refundPaymentMethodId;
+	public void setRefundPaymentMethodId(PaymentMethod newRefundPaymentMethodId) {
+		PaymentMethod oldRefundPaymentMethodId = refundPaymentMethodId;
 		refundPaymentMethodId = newRefundPaymentMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID, oldRefundPaymentMethodId, refundPaymentMethodId));
@@ -957,7 +1018,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getTaxFormId() {
+	public Enumeration getTaxFormId() {
+		if (taxFormId != null && ((EObject)taxFormId).eIsProxy()) {
+			InternalEObject oldTaxFormId = (InternalEObject)taxFormId;
+			taxFormId = (Enumeration)eResolveProxy(oldTaxFormId);
+			if (taxFormId != oldTaxFormId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID, oldTaxFormId, taxFormId));
+			}
+		}
+		return taxFormId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetTaxFormId() {
 		return taxFormId;
 	}
 
@@ -967,8 +1045,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setTaxFormId(String newTaxFormId) {
-		String oldTaxFormId = taxFormId;
+	public void setTaxFormId(Enumeration newTaxFormId) {
+		Enumeration oldTaxFormId = taxFormId;
 		taxFormId = newTaxFormId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID, oldTaxFormId, taxFormId));
@@ -1015,7 +1093,24 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public String getErrorGlJournalId() {
+	public GlJournal getErrorGlJournalId() {
+		if (errorGlJournalId != null && ((EObject)errorGlJournalId).eIsProxy()) {
+			InternalEObject oldErrorGlJournalId = (InternalEObject)errorGlJournalId;
+			errorGlJournalId = (GlJournal)eResolveProxy(oldErrorGlJournalId);
+			if (errorGlJournalId != oldErrorGlJournalId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID, oldErrorGlJournalId, errorGlJournalId));
+			}
+		}
+		return errorGlJournalId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlJournal basicGetErrorGlJournalId() {
 		return errorGlJournalId;
 	}
 
@@ -1025,8 +1120,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 	 * @generated
 	 */
 	@Override
-	public void setErrorGlJournalId(String newErrorGlJournalId) {
-		String oldErrorGlJournalId = errorGlJournalId;
+	public void setErrorGlJournalId(GlJournal newErrorGlJournalId) {
+		GlJournal oldErrorGlJournalId = errorGlJournalId;
 		errorGlJournalId = newErrorGlJournalId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID, oldErrorGlJournalId, errorGlJournalId));
@@ -1042,22 +1137,14 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 		switch (featureID) {
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
 				return getPartyId();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID:
-				return getBaseCurrencyUomId();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID:
-				return getCogsMethodId();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING:
 				return isEnableAccounting();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID:
-				return getErrorGlJournalId();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_DAY:
 				return getFiscalYearStartDay();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_MONTH:
 				return getFiscalYearStartMonth();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_ID_PREFIX:
 				return getInvoiceIdPrefix();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID:
-				return getInvoiceSeqCustMethId();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_INVOICE_NUMBER:
 				return getLastInvoiceNumber();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_INVOICE_RESTART_DATE:
@@ -1066,26 +1153,45 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 				return getLastOrderNumber();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_QUOTE_NUMBER:
 				return getLastQuoteNumber();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID:
-				return getOldInvoiceSequenceEnumId();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID:
-				return getOldOrderSequenceEnumId();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID:
-				return getOldQuoteSequenceEnumId();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_ID_PREFIX:
 				return getOrderIdPrefix();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID:
-				return getOrderSeqCustMethId();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_ID_PREFIX:
 				return getQuoteIdPrefix();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID:
-				return getQuoteSeqCustMethId();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID:
-				return getRefundPaymentMethodId();
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
-				return getTaxFormId();
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS:
 				return isUseInvoiceIdForReturns();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
+				if (resolve) return getTaxFormId();
+				return basicGetTaxFormId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID:
+				if (resolve) return getCogsMethodId();
+				return basicGetCogsMethodId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID:
+				if (resolve) return getBaseCurrencyUomId();
+				return basicGetBaseCurrencyUomId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID:
+				if (resolve) return getInvoiceSeqCustMethId();
+				return basicGetInvoiceSeqCustMethId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID:
+				if (resolve) return getQuoteSeqCustMethId();
+				return basicGetQuoteSeqCustMethId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID:
+				if (resolve) return getOrderSeqCustMethId();
+				return basicGetOrderSeqCustMethId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID:
+				if (resolve) return getRefundPaymentMethodId();
+				return basicGetRefundPaymentMethodId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID:
+				if (resolve) return getErrorGlJournalId();
+				return basicGetErrorGlJournalId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID:
+				if (resolve) return getOldInvoiceSequenceEnumId();
+				return basicGetOldInvoiceSequenceEnumId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID:
+				if (resolve) return getOldQuoteSequenceEnumId();
+				return basicGetOldQuoteSequenceEnumId();
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID:
+				if (resolve) return getOldOrderSequenceEnumId();
+				return basicGetOldOrderSequenceEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1101,17 +1207,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID:
-				setBaseCurrencyUomId((String)newValue);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID:
-				setCogsMethodId((String)newValue);
-				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING:
 				setEnableAccounting((Boolean)newValue);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID:
-				setErrorGlJournalId((String)newValue);
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_DAY:
 				setFiscalYearStartDay((Long)newValue);
@@ -1121,9 +1218,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_ID_PREFIX:
 				setInvoiceIdPrefix((String)newValue);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID:
-				setInvoiceSeqCustMethId((String)newValue);
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_INVOICE_NUMBER:
 				setLastInvoiceNumber((Long)newValue);
@@ -1137,35 +1231,47 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_QUOTE_NUMBER:
 				setLastQuoteNumber((Long)newValue);
 				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID:
-				setOldInvoiceSequenceEnumId((String)newValue);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID:
-				setOldOrderSequenceEnumId((String)newValue);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID:
-				setOldQuoteSequenceEnumId((String)newValue);
-				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_ID_PREFIX:
 				setOrderIdPrefix((String)newValue);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID:
-				setOrderSeqCustMethId((String)newValue);
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_ID_PREFIX:
 				setQuoteIdPrefix((String)newValue);
 				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID:
-				setQuoteSeqCustMethId((String)newValue);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID:
-				setRefundPaymentMethodId((String)newValue);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
-				setTaxFormId((String)newValue);
-				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS:
 				setUseInvoiceIdForReturns((Boolean)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
+				setTaxFormId((Enumeration)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID:
+				setCogsMethodId((Enumeration)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID:
+				setBaseCurrencyUomId((Uom)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID:
+				setInvoiceSeqCustMethId((CustomMethod)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID:
+				setQuoteSeqCustMethId((CustomMethod)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID:
+				setOrderSeqCustMethId((CustomMethod)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID:
+				setRefundPaymentMethodId((PaymentMethod)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID:
+				setErrorGlJournalId((GlJournal)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID:
+				setOldInvoiceSequenceEnumId((Enumeration)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID:
+				setOldQuoteSequenceEnumId((Enumeration)newValue);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID:
+				setOldOrderSequenceEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1182,17 +1288,8 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID:
-				setBaseCurrencyUomId(BASE_CURRENCY_UOM_ID_EDEFAULT);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID:
-				setCogsMethodId(COGS_METHOD_ID_EDEFAULT);
-				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING:
 				setEnableAccounting(ENABLE_ACCOUNTING_EDEFAULT);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID:
-				setErrorGlJournalId(ERROR_GL_JOURNAL_ID_EDEFAULT);
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_DAY:
 				setFiscalYearStartDay(FISCAL_YEAR_START_DAY_EDEFAULT);
@@ -1202,9 +1299,6 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_ID_PREFIX:
 				setInvoiceIdPrefix(INVOICE_ID_PREFIX_EDEFAULT);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID:
-				setInvoiceSeqCustMethId(INVOICE_SEQ_CUST_METH_ID_EDEFAULT);
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_INVOICE_NUMBER:
 				setLastInvoiceNumber(LAST_INVOICE_NUMBER_EDEFAULT);
@@ -1218,35 +1312,47 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_QUOTE_NUMBER:
 				setLastQuoteNumber(LAST_QUOTE_NUMBER_EDEFAULT);
 				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID:
-				setOldInvoiceSequenceEnumId(OLD_INVOICE_SEQUENCE_ENUM_ID_EDEFAULT);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID:
-				setOldOrderSequenceEnumId(OLD_ORDER_SEQUENCE_ENUM_ID_EDEFAULT);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID:
-				setOldQuoteSequenceEnumId(OLD_QUOTE_SEQUENCE_ENUM_ID_EDEFAULT);
-				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_ID_PREFIX:
 				setOrderIdPrefix(ORDER_ID_PREFIX_EDEFAULT);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID:
-				setOrderSeqCustMethId(ORDER_SEQ_CUST_METH_ID_EDEFAULT);
 				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_ID_PREFIX:
 				setQuoteIdPrefix(QUOTE_ID_PREFIX_EDEFAULT);
 				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID:
-				setQuoteSeqCustMethId(QUOTE_SEQ_CUST_METH_ID_EDEFAULT);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID:
-				setRefundPaymentMethodId(REFUND_PAYMENT_METHOD_ID_EDEFAULT);
-				return;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
-				setTaxFormId(TAX_FORM_ID_EDEFAULT);
-				return;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS:
 				setUseInvoiceIdForReturns(USE_INVOICE_ID_FOR_RETURNS_EDEFAULT);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
+				setTaxFormId((Enumeration)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID:
+				setCogsMethodId((Enumeration)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID:
+				setBaseCurrencyUomId((Uom)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID:
+				setInvoiceSeqCustMethId((CustomMethod)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID:
+				setQuoteSeqCustMethId((CustomMethod)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID:
+				setOrderSeqCustMethId((CustomMethod)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID:
+				setRefundPaymentMethodId((PaymentMethod)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID:
+				setErrorGlJournalId((GlJournal)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID:
+				setOldInvoiceSequenceEnumId((Enumeration)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID:
+				setOldQuoteSequenceEnumId((Enumeration)null);
+				return;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID:
+				setOldOrderSequenceEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1262,22 +1368,14 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 		switch (featureID) {
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID:
-				return BASE_CURRENCY_UOM_ID_EDEFAULT == null ? baseCurrencyUomId != null : !BASE_CURRENCY_UOM_ID_EDEFAULT.equals(baseCurrencyUomId);
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID:
-				return COGS_METHOD_ID_EDEFAULT == null ? cogsMethodId != null : !COGS_METHOD_ID_EDEFAULT.equals(cogsMethodId);
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ENABLE_ACCOUNTING:
 				return enableAccounting != ENABLE_ACCOUNTING_EDEFAULT;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID:
-				return ERROR_GL_JOURNAL_ID_EDEFAULT == null ? errorGlJournalId != null : !ERROR_GL_JOURNAL_ID_EDEFAULT.equals(errorGlJournalId);
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_DAY:
 				return fiscalYearStartDay != FISCAL_YEAR_START_DAY_EDEFAULT;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__FISCAL_YEAR_START_MONTH:
 				return fiscalYearStartMonth != FISCAL_YEAR_START_MONTH_EDEFAULT;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_ID_PREFIX:
 				return INVOICE_ID_PREFIX_EDEFAULT == null ? invoiceIdPrefix != null : !INVOICE_ID_PREFIX_EDEFAULT.equals(invoiceIdPrefix);
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID:
-				return INVOICE_SEQ_CUST_METH_ID_EDEFAULT == null ? invoiceSeqCustMethId != null : !INVOICE_SEQ_CUST_METH_ID_EDEFAULT.equals(invoiceSeqCustMethId);
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_INVOICE_NUMBER:
 				return lastInvoiceNumber != LAST_INVOICE_NUMBER_EDEFAULT;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_INVOICE_RESTART_DATE:
@@ -1286,26 +1384,34 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 				return lastOrderNumber != LAST_ORDER_NUMBER_EDEFAULT;
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__LAST_QUOTE_NUMBER:
 				return lastQuoteNumber != LAST_QUOTE_NUMBER_EDEFAULT;
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID:
-				return OLD_INVOICE_SEQUENCE_ENUM_ID_EDEFAULT == null ? oldInvoiceSequenceEnumId != null : !OLD_INVOICE_SEQUENCE_ENUM_ID_EDEFAULT.equals(oldInvoiceSequenceEnumId);
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID:
-				return OLD_ORDER_SEQUENCE_ENUM_ID_EDEFAULT == null ? oldOrderSequenceEnumId != null : !OLD_ORDER_SEQUENCE_ENUM_ID_EDEFAULT.equals(oldOrderSequenceEnumId);
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID:
-				return OLD_QUOTE_SEQUENCE_ENUM_ID_EDEFAULT == null ? oldQuoteSequenceEnumId != null : !OLD_QUOTE_SEQUENCE_ENUM_ID_EDEFAULT.equals(oldQuoteSequenceEnumId);
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_ID_PREFIX:
 				return ORDER_ID_PREFIX_EDEFAULT == null ? orderIdPrefix != null : !ORDER_ID_PREFIX_EDEFAULT.equals(orderIdPrefix);
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID:
-				return ORDER_SEQ_CUST_METH_ID_EDEFAULT == null ? orderSeqCustMethId != null : !ORDER_SEQ_CUST_METH_ID_EDEFAULT.equals(orderSeqCustMethId);
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_ID_PREFIX:
 				return QUOTE_ID_PREFIX_EDEFAULT == null ? quoteIdPrefix != null : !QUOTE_ID_PREFIX_EDEFAULT.equals(quoteIdPrefix);
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID:
-				return QUOTE_SEQ_CUST_METH_ID_EDEFAULT == null ? quoteSeqCustMethId != null : !QUOTE_SEQ_CUST_METH_ID_EDEFAULT.equals(quoteSeqCustMethId);
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID:
-				return REFUND_PAYMENT_METHOD_ID_EDEFAULT == null ? refundPaymentMethodId != null : !REFUND_PAYMENT_METHOD_ID_EDEFAULT.equals(refundPaymentMethodId);
-			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
-				return TAX_FORM_ID_EDEFAULT == null ? taxFormId != null : !TAX_FORM_ID_EDEFAULT.equals(taxFormId);
 			case LedgerPackage.PARTY_ACCTG_PREFERENCE__USE_INVOICE_ID_FOR_RETURNS:
 				return useInvoiceIdForReturns != USE_INVOICE_ID_FOR_RETURNS_EDEFAULT;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__TAX_FORM_ID:
+				return taxFormId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__COGS_METHOD_ID:
+				return cogsMethodId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__BASE_CURRENCY_UOM_ID:
+				return baseCurrencyUomId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__INVOICE_SEQ_CUST_METH_ID:
+				return invoiceSeqCustMethId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__QUOTE_SEQ_CUST_METH_ID:
+				return quoteSeqCustMethId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ORDER_SEQ_CUST_METH_ID:
+				return orderSeqCustMethId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__REFUND_PAYMENT_METHOD_ID:
+				return refundPaymentMethodId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__ERROR_GL_JOURNAL_ID:
+				return errorGlJournalId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_INVOICE_SEQUENCE_ENUM_ID:
+				return oldInvoiceSequenceEnumId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_QUOTE_SEQUENCE_ENUM_ID:
+				return oldQuoteSequenceEnumId != null;
+			case LedgerPackage.PARTY_ACCTG_PREFERENCE__OLD_ORDER_SEQUENCE_ENUM_ID:
+				return oldOrderSequenceEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1322,22 +1428,14 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", baseCurrencyUomId: ");
-		result.append(baseCurrencyUomId);
-		result.append(", cogsMethodId: ");
-		result.append(cogsMethodId);
 		result.append(", enableAccounting: ");
 		result.append(enableAccounting);
-		result.append(", errorGlJournalId: ");
-		result.append(errorGlJournalId);
 		result.append(", fiscalYearStartDay: ");
 		result.append(fiscalYearStartDay);
 		result.append(", fiscalYearStartMonth: ");
 		result.append(fiscalYearStartMonth);
 		result.append(", invoiceIdPrefix: ");
 		result.append(invoiceIdPrefix);
-		result.append(", invoiceSeqCustMethId: ");
-		result.append(invoiceSeqCustMethId);
 		result.append(", lastInvoiceNumber: ");
 		result.append(lastInvoiceNumber);
 		result.append(", lastInvoiceRestartDate: ");
@@ -1346,24 +1444,10 @@ public class PartyAcctgPreferenceImpl extends BizEntityImpl implements PartyAcct
 		result.append(lastOrderNumber);
 		result.append(", lastQuoteNumber: ");
 		result.append(lastQuoteNumber);
-		result.append(", oldInvoiceSequenceEnumId: ");
-		result.append(oldInvoiceSequenceEnumId);
-		result.append(", oldOrderSequenceEnumId: ");
-		result.append(oldOrderSequenceEnumId);
-		result.append(", oldQuoteSequenceEnumId: ");
-		result.append(oldQuoteSequenceEnumId);
 		result.append(", orderIdPrefix: ");
 		result.append(orderIdPrefix);
-		result.append(", orderSeqCustMethId: ");
-		result.append(orderSeqCustMethId);
 		result.append(", quoteIdPrefix: ");
 		result.append(quoteIdPrefix);
-		result.append(", quoteSeqCustMethId: ");
-		result.append(quoteSeqCustMethId);
-		result.append(", refundPaymentMethodId: ");
-		result.append(refundPaymentMethodId);
-		result.append(", taxFormId: ");
-		result.append(taxFormId);
 		result.append(", useInvoiceIdForReturns: ");
 		result.append(useInvoiceIdForReturns);
 		result.append(')');

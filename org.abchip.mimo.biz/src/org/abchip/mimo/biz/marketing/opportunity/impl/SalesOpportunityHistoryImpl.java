@@ -11,13 +11,19 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
 import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityHistory;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunityStage;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,16 +36,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getSalesOpportunityHistoryId <em>Sales Opportunity History Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getChangeNote <em>Change Note</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getEstimatedAmount <em>Estimated Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getEstimatedCloseDate <em>Estimated Close Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getEstimatedProbability <em>Estimated Probability</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getModifiedByUserLogin <em>Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getModifiedTimestamp <em>Modified Timestamp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getNextStep <em>Next Step</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getOpportunityStageId <em>Opportunity Stage Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.impl.SalesOpportunityHistoryImpl#getModifiedByUserLogin <em>Modified By User Login</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,26 +95,6 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 * @ordered
 	 */
 	protected String changeNote = CHANGE_NOTE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -191,26 +177,6 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	protected BigDecimal estimatedProbability = ESTIMATED_PROBABILITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getModifiedByUserLogin() <em>Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getModifiedByUserLogin() <em>Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String modifiedByUserLogin = MODIFIED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getModifiedTimestamp() <em>Modified Timestamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,44 +217,44 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	protected String nextStep = NEXT_STEP_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOpportunityStageId() <em>Opportunity Stage Id</em>}' attribute.
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+
+	/**
+	 * The cached value of the '{@link #getOpportunityStageId() <em>Opportunity Stage Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOpportunityStageId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPPORTUNITY_STAGE_ID_EDEFAULT = null;
+	protected SalesOpportunityStage opportunityStageId;
 
 	/**
-	 * The cached value of the '{@link #getOpportunityStageId() <em>Opportunity Stage Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOpportunityStageId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String opportunityStageId = OPPORTUNITY_STAGE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
+	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSalesOpportunityId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SALES_OPPORTUNITY_ID_EDEFAULT = null;
+	protected SalesOpportunity salesOpportunityId;
 
 	/**
-	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
+	 * The cached value of the '{@link #getModifiedByUserLogin() <em>Modified By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSalesOpportunityId()
+	 * @see #getModifiedByUserLogin()
 	 * @generated
 	 * @ordered
 	 */
-	protected String salesOpportunityId = SALES_OPPORTUNITY_ID_EDEFAULT;
+	protected UserLogin modifiedByUserLogin;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -338,7 +304,24 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -348,8 +331,8 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -453,7 +436,24 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 * @generated
 	 */
 	@Override
-	public String getModifiedByUserLogin() {
+	public UserLogin getModifiedByUserLogin() {
+		if (modifiedByUserLogin != null && ((EObject)modifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldModifiedByUserLogin = (InternalEObject)modifiedByUserLogin;
+			modifiedByUserLogin = (UserLogin)eResolveProxy(oldModifiedByUserLogin);
+			if (modifiedByUserLogin != oldModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN, oldModifiedByUserLogin, modifiedByUserLogin));
+			}
+		}
+		return modifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetModifiedByUserLogin() {
 		return modifiedByUserLogin;
 	}
 
@@ -463,8 +463,8 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 * @generated
 	 */
 	@Override
-	public void setModifiedByUserLogin(String newModifiedByUserLogin) {
-		String oldModifiedByUserLogin = modifiedByUserLogin;
+	public void setModifiedByUserLogin(UserLogin newModifiedByUserLogin) {
+		UserLogin oldModifiedByUserLogin = modifiedByUserLogin;
 		modifiedByUserLogin = newModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN, oldModifiedByUserLogin, modifiedByUserLogin));
@@ -522,7 +522,24 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 * @generated
 	 */
 	@Override
-	public String getOpportunityStageId() {
+	public SalesOpportunityStage getOpportunityStageId() {
+		if (opportunityStageId != null && ((EObject)opportunityStageId).eIsProxy()) {
+			InternalEObject oldOpportunityStageId = (InternalEObject)opportunityStageId;
+			opportunityStageId = (SalesOpportunityStage)eResolveProxy(oldOpportunityStageId);
+			if (opportunityStageId != oldOpportunityStageId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__OPPORTUNITY_STAGE_ID, oldOpportunityStageId, opportunityStageId));
+			}
+		}
+		return opportunityStageId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SalesOpportunityStage basicGetOpportunityStageId() {
 		return opportunityStageId;
 	}
 
@@ -532,8 +549,8 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 * @generated
 	 */
 	@Override
-	public void setOpportunityStageId(String newOpportunityStageId) {
-		String oldOpportunityStageId = opportunityStageId;
+	public void setOpportunityStageId(SalesOpportunityStage newOpportunityStageId) {
+		SalesOpportunityStage oldOpportunityStageId = opportunityStageId;
 		opportunityStageId = newOpportunityStageId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__OPPORTUNITY_STAGE_ID, oldOpportunityStageId, opportunityStageId));
@@ -568,7 +585,24 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 * @generated
 	 */
 	@Override
-	public String getSalesOpportunityId() {
+	public SalesOpportunity getSalesOpportunityId() {
+		if (salesOpportunityId != null && ((EObject)salesOpportunityId).eIsProxy()) {
+			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
+			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
+			if (salesOpportunityId != oldSalesOpportunityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
+			}
+		}
+		return salesOpportunityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SalesOpportunity basicGetSalesOpportunityId() {
 		return salesOpportunityId;
 	}
 
@@ -578,8 +612,8 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 	 * @generated
 	 */
 	@Override
-	public void setSalesOpportunityId(String newSalesOpportunityId) {
-		String oldSalesOpportunityId = salesOpportunityId;
+	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
+		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OpportunityPackage.SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
@@ -597,8 +631,6 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 				return getSalesOpportunityHistoryId();
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CHANGE_NOTE:
 				return getChangeNote();
-			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__DESCRIPTION:
 				return getDescription();
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__ESTIMATED_AMOUNT:
@@ -607,16 +639,22 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 				return getEstimatedCloseDate();
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__ESTIMATED_PROBABILITY:
 				return getEstimatedProbability();
-			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN:
-				return getModifiedByUserLogin();
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_TIMESTAMP:
 				return getModifiedTimestamp();
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__NEXT_STEP:
 				return getNextStep();
+			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__OPPORTUNITY_STAGE_ID:
-				return getOpportunityStageId();
+				if (resolve) return getOpportunityStageId();
+				return basicGetOpportunityStageId();
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_ID:
-				return getSalesOpportunityId();
+				if (resolve) return getSalesOpportunityId();
+				return basicGetSalesOpportunityId();
+			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getModifiedByUserLogin();
+				return basicGetModifiedByUserLogin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -635,9 +673,6 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CHANGE_NOTE:
 				setChangeNote((String)newValue);
 				return;
-			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -650,20 +685,23 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__ESTIMATED_PROBABILITY:
 				setEstimatedProbability((BigDecimal)newValue);
 				return;
-			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN:
-				setModifiedByUserLogin((String)newValue);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_TIMESTAMP:
 				setModifiedTimestamp((Date)newValue);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__NEXT_STEP:
 				setNextStep((String)newValue);
 				return;
+			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__OPPORTUNITY_STAGE_ID:
-				setOpportunityStageId((String)newValue);
+				setOpportunityStageId((SalesOpportunityStage)newValue);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId((String)newValue);
+				setSalesOpportunityId((SalesOpportunity)newValue);
+				return;
+			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN:
+				setModifiedByUserLogin((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -683,9 +721,6 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CHANGE_NOTE:
 				setChangeNote(CHANGE_NOTE_EDEFAULT);
 				return;
-			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -698,20 +733,23 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__ESTIMATED_PROBABILITY:
 				setEstimatedProbability(ESTIMATED_PROBABILITY_EDEFAULT);
 				return;
-			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN:
-				setModifiedByUserLogin(MODIFIED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_TIMESTAMP:
 				setModifiedTimestamp(MODIFIED_TIMESTAMP_EDEFAULT);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__NEXT_STEP:
 				setNextStep(NEXT_STEP_EDEFAULT);
 				return;
+			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__OPPORTUNITY_STAGE_ID:
-				setOpportunityStageId(OPPORTUNITY_STAGE_ID_EDEFAULT);
+				setOpportunityStageId((SalesOpportunityStage)null);
 				return;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId(SALES_OPPORTUNITY_ID_EDEFAULT);
+				setSalesOpportunityId((SalesOpportunity)null);
+				return;
+			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN:
+				setModifiedByUserLogin((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -729,8 +767,6 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 				return SALES_OPPORTUNITY_HISTORY_ID_EDEFAULT == null ? salesOpportunityHistoryId != null : !SALES_OPPORTUNITY_HISTORY_ID_EDEFAULT.equals(salesOpportunityHistoryId);
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CHANGE_NOTE:
 				return CHANGE_NOTE_EDEFAULT == null ? changeNote != null : !CHANGE_NOTE_EDEFAULT.equals(changeNote);
-			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__ESTIMATED_AMOUNT:
@@ -739,16 +775,18 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 				return ESTIMATED_CLOSE_DATE_EDEFAULT == null ? estimatedCloseDate != null : !ESTIMATED_CLOSE_DATE_EDEFAULT.equals(estimatedCloseDate);
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__ESTIMATED_PROBABILITY:
 				return ESTIMATED_PROBABILITY_EDEFAULT == null ? estimatedProbability != null : !ESTIMATED_PROBABILITY_EDEFAULT.equals(estimatedProbability);
-			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN:
-				return MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? modifiedByUserLogin != null : !MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(modifiedByUserLogin);
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_TIMESTAMP:
 				return MODIFIED_TIMESTAMP_EDEFAULT == null ? modifiedTimestamp != null : !MODIFIED_TIMESTAMP_EDEFAULT.equals(modifiedTimestamp);
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__NEXT_STEP:
 				return NEXT_STEP_EDEFAULT == null ? nextStep != null : !NEXT_STEP_EDEFAULT.equals(nextStep);
+			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__CURRENCY_UOM_ID:
+				return currencyUomId != null;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__OPPORTUNITY_STAGE_ID:
-				return OPPORTUNITY_STAGE_ID_EDEFAULT == null ? opportunityStageId != null : !OPPORTUNITY_STAGE_ID_EDEFAULT.equals(opportunityStageId);
+				return opportunityStageId != null;
 			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__SALES_OPPORTUNITY_ID:
-				return SALES_OPPORTUNITY_ID_EDEFAULT == null ? salesOpportunityId != null : !SALES_OPPORTUNITY_ID_EDEFAULT.equals(salesOpportunityId);
+				return salesOpportunityId != null;
+			case OpportunityPackage.SALES_OPPORTUNITY_HISTORY__MODIFIED_BY_USER_LOGIN:
+				return modifiedByUserLogin != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -767,8 +805,6 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 		result.append(salesOpportunityHistoryId);
 		result.append(", changeNote: ");
 		result.append(changeNote);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", estimatedAmount: ");
@@ -777,16 +813,10 @@ public class SalesOpportunityHistoryImpl extends BizEntityImpl implements SalesO
 		result.append(estimatedCloseDate);
 		result.append(", estimatedProbability: ");
 		result.append(estimatedProbability);
-		result.append(", modifiedByUserLogin: ");
-		result.append(modifiedByUserLogin);
 		result.append(", modifiedTimestamp: ");
 		result.append(modifiedTimestamp);
 		result.append(", nextStep: ");
 		result.append(nextStep);
-		result.append(", opportunityStageId: ");
-		result.append(opportunityStageId);
-		result.append(", salesOpportunityId: ");
-		result.append(salesOpportunityId);
 		result.append(')');
 		return result.toString();
 	}

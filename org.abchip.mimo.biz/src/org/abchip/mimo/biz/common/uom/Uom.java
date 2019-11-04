@@ -112,30 +112,30 @@ public interface Uom extends BizEntityTyped<UomType> {
 	void setNumericCode(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Uom Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uom Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uom Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uom Type Id</em>' attribute.
-	 * @see #setUomTypeId(String)
+	 * @return the value of the '<em>Uom Type Id</em>' reference.
+	 * @see #setUomTypeId(UomType)
 	 * @see org.abchip.mimo.biz.common.uom.UomPackage#getUom_UomTypeId()
-	 * @model annotation="mimo-ent-domain frame='UomType'"
+	 * @model keys="uomTypeId"
 	 * @generated
 	 */
-	String getUomTypeId();
+	UomType getUomTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.Uom#getUomTypeId <em>Uom Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.uom.Uom#getUomTypeId <em>Uom Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uom Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Uom Type Id</em>' reference.
 	 * @see #getUomTypeId()
 	 * @generated
 	 */
-	void setUomTypeId(String value);
+	void setUomTypeId(UomType value);
 
 	/**
 	 * Returns the value of the '<em><b>Main Uom Conversions</b></em>' attribute list.

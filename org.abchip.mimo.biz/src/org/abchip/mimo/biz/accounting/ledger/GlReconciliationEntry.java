@@ -21,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getGlReconciliationId <em>Gl Reconciliation Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransEntrySeqId <em>Acctg Trans Entry Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getReconciledAmount <em>Reconciled Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransId <em>Acctg Trans Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry()
@@ -42,7 +42,8 @@ public interface GlReconciliationEntry extends BizEntity {
 	 * @return the value of the '<em>Acctg Trans Entry Seq Id</em>' attribute.
 	 * @see #setAcctgTransEntrySeqId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_AcctgTransEntrySeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAcctgTransEntrySeqId();
@@ -94,8 +95,8 @@ public interface GlReconciliationEntry extends BizEntity {
 	 * @return the value of the '<em>Gl Reconciliation Id</em>' attribute.
 	 * @see #setGlReconciliationId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_GlReconciliationId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='GlReconciliation'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGlReconciliationId();
@@ -111,30 +112,29 @@ public interface GlReconciliationEntry extends BizEntity {
 	void setGlReconciliationId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Acctg Trans Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Acctg Trans Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Acctg Trans Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Acctg Trans Id</em>' attribute.
-	 * @see #setAcctgTransId(String)
+	 * @return the value of the '<em>Acctg Trans Id</em>' reference.
+	 * @see #setAcctgTransId(AcctgTrans)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlReconciliationEntry_AcctgTransId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='AcctgTrans'"
+	 * @model keys="acctgTransId"
 	 * @generated
 	 */
-	String getAcctgTransId();
+	AcctgTrans getAcctgTransId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransId <em>Acctg Trans Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlReconciliationEntry#getAcctgTransId <em>Acctg Trans Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Acctg Trans Id</em>' attribute.
+	 * @param value the new value of the '<em>Acctg Trans Id</em>' reference.
 	 * @see #getAcctgTransId()
 	 * @generated
 	 */
-	void setAcctgTransId(String value);
+	void setAcctgTransId(AcctgTrans value);
 
 } // GlReconciliationEntry

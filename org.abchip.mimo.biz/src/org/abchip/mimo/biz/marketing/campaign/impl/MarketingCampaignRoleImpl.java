@@ -12,10 +12,14 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignRole;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,10 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignRoleImpl#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignRoleImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignRoleImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,46 +64,6 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 * @ordered
 	 */
 	protected String marketingCampaignId = MARKETING_CAMPAIGN_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -140,6 +104,26 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +196,24 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -222,8 +223,8 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID, oldPartyId, partyId));
@@ -235,7 +236,24 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -245,8 +263,8 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -285,14 +303,16 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 		switch (featureID) {
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__MARKETING_CAMPAIGN_ID:
 				return getMarketingCampaignId();
-			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID:
-				return getPartyId();
-			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID:
-				return getRoleTypeId();
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__FROM_DATE:
 				return getFromDate();
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__THRU_DATE:
 				return getThruDate();
+			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,17 +328,17 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__MARKETING_CAMPAIGN_ID:
 				setMarketingCampaignId((String)newValue);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,17 +355,17 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__MARKETING_CAMPAIGN_ID:
 				setMarketingCampaignId(MARKETING_CAMPAIGN_ID_EDEFAULT);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,14 +381,14 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 		switch (featureID) {
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__MARKETING_CAMPAIGN_ID:
 				return MARKETING_CAMPAIGN_ID_EDEFAULT == null ? marketingCampaignId != null : !MARKETING_CAMPAIGN_ID_EDEFAULT.equals(marketingCampaignId);
-			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__PARTY_ID:
+				return partyId != null;
+			case CampaignPackage.MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID:
+				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,10 +405,6 @@ public class MarketingCampaignRoleImpl extends BizEntityImpl implements Marketin
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (marketingCampaignId: ");
 		result.append(marketingCampaignId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

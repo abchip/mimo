@@ -13,8 +13,11 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.communication.CommunicationEventType;
 import org.abchip.mimo.biz.party.communication.CommunicationPackage;
+import org.abchip.mimo.biz.party.contact.ContactMechType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventTypeImpl#getCommunicationEventTypeId <em>Communication Event Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventTypeImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventTypeImpl#isHasTable <em>Has Table</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventTypeImpl#getParentTypeId <em>Parent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.impl.CommunicationEventTypeImpl#getContactMechTypeId <em>Contact Mech Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +62,6 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 * @ordered
 	 */
 	protected String communicationEventTypeId = COMMUNICATION_EVENT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechTypeId = CONTACT_MECH_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -121,24 +104,24 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
+	protected CommunicationEventType parentTypeId;
 
 	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getContactMechTypeId() <em>Contact Mech Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
+	 * @see #getContactMechTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected ContactMechType contactMechTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,7 +148,24 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 * @generated
 	 */
 	@Override
-	public String getContactMechTypeId() {
+	public ContactMechType getContactMechTypeId() {
+		if (contactMechTypeId != null && ((EObject)contactMechTypeId).eIsProxy()) {
+			InternalEObject oldContactMechTypeId = (InternalEObject)contactMechTypeId;
+			contactMechTypeId = (ContactMechType)eResolveProxy(oldContactMechTypeId);
+			if (contactMechTypeId != oldContactMechTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
+			}
+		}
+		return contactMechTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMechType basicGetContactMechTypeId() {
 		return contactMechTypeId;
 	}
 
@@ -175,8 +175,8 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 * @generated
 	 */
 	@Override
-	public void setContactMechTypeId(String newContactMechTypeId) {
-		String oldContactMechTypeId = contactMechTypeId;
+	public void setContactMechTypeId(ContactMechType newContactMechTypeId) {
+		ContactMechType oldContactMechTypeId = contactMechTypeId;
 		contactMechTypeId = newContactMechTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID, oldContactMechTypeId, contactMechTypeId));
@@ -234,7 +234,24 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public CommunicationEventType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (CommunicationEventType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CommunicationPackage.COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEventType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -244,8 +261,8 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(CommunicationEventType newParentTypeId) {
+		CommunicationEventType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CommunicationPackage.COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -308,14 +325,16 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__COMMUNICATION_EVENT_TYPE_ID:
 				return getCommunicationEventTypeId();
-			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID:
-				return getContactMechTypeId();
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__DESCRIPTION:
 				return getDescription();
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__HAS_TABLE:
 				return isHasTable();
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
+			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID:
+				if (resolve) return getContactMechTypeId();
+				return basicGetContactMechTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -331,9 +350,6 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__COMMUNICATION_EVENT_TYPE_ID:
 				setCommunicationEventTypeId((String)newValue);
 				return;
-			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId((String)newValue);
-				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -341,7 +357,10 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 				setHasTable((Boolean)newValue);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((CommunicationEventType)newValue);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID:
+				setContactMechTypeId((ContactMechType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -358,9 +377,6 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__COMMUNICATION_EVENT_TYPE_ID:
 				setCommunicationEventTypeId(COMMUNICATION_EVENT_TYPE_ID_EDEFAULT);
 				return;
-			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID:
-				setContactMechTypeId(CONTACT_MECH_TYPE_ID_EDEFAULT);
-				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -368,7 +384,10 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((CommunicationEventType)null);
+				return;
+			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID:
+				setContactMechTypeId((ContactMechType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -384,14 +403,14 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 		switch (featureID) {
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__COMMUNICATION_EVENT_TYPE_ID:
 				return COMMUNICATION_EVENT_TYPE_ID_EDEFAULT == null ? communicationEventTypeId != null : !COMMUNICATION_EVENT_TYPE_ID_EDEFAULT.equals(communicationEventTypeId);
-			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID:
-				return CONTACT_MECH_TYPE_ID_EDEFAULT == null ? contactMechTypeId != null : !CONTACT_MECH_TYPE_ID_EDEFAULT.equals(contactMechTypeId);
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
+			case CommunicationPackage.COMMUNICATION_EVENT_TYPE__CONTACT_MECH_TYPE_ID:
+				return contactMechTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -408,14 +427,10 @@ public class CommunicationEventTypeImpl extends BizEntityTypeImpl<CommunicationE
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (communicationEventTypeId: ");
 		result.append(communicationEventTypeId);
-		result.append(", contactMechTypeId: ");
-		result.append(contactMechTypeId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(')');
 		return result.toString();
 	}

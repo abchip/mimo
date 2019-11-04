@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.humanres.employment;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,9 +28,9 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getUnemploymentClaimDate <em>Unemployment Claim Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim()
@@ -194,30 +195,30 @@ public interface UnemploymentClaim extends BizEntity {
 	void setRoleTypeIdTo(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.UnemploymentClaim#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.
@@ -282,7 +283,7 @@ public interface UnemploymentClaim extends BizEntity {
 	 * @return the value of the '<em>Unemployment Claim Id</em>' attribute.
 	 * @see #setUnemploymentClaimId(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getUnemploymentClaim_UnemploymentClaimId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

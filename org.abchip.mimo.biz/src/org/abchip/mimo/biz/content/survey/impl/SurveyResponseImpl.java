@@ -11,13 +11,19 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.content.survey.Survey;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,13 +37,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getSurveyResponseId <em>Survey Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getGeneralFeedback <em>General Feedback</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getReferenceId <em>Reference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getResponseDate <em>Response Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getSurveyId <em>Survey Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyResponseImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,26 +115,6 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -147,26 +133,6 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @ordered
 	 */
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReferenceId() <em>Reference Id</em>}' attribute.
@@ -209,44 +175,44 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	protected Date responseDate = RESPONSE_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected Party partyId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getOrderId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected OrderHeader orderId;
 
 	/**
-	 * The default value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
+	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSurveyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SURVEY_ID_EDEFAULT = null;
+	protected Survey surveyId;
 
 	/**
-	 * The cached value of the '{@link #getSurveyId() <em>Survey Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSurveyId()
+	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String surveyId = SURVEY_ID_EDEFAULT;
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -319,7 +285,24 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -329,8 +312,8 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__ORDER_ID, oldOrderId, orderId));
@@ -365,7 +348,24 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -375,8 +375,8 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__PARTY_ID, oldPartyId, partyId));
@@ -434,7 +434,24 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -444,8 +461,8 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__STATUS_ID, oldStatusId, statusId));
@@ -457,7 +474,24 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public String getSurveyId() {
+	public Survey getSurveyId() {
+		if (surveyId != null && ((EObject)surveyId).eIsProxy()) {
+			InternalEObject oldSurveyId = (InternalEObject)surveyId;
+			surveyId = (Survey)eResolveProxy(oldSurveyId);
+			if (surveyId != oldSurveyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_RESPONSE__SURVEY_ID, oldSurveyId, surveyId));
+			}
+		}
+		return surveyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Survey basicGetSurveyId() {
 		return surveyId;
 	}
 
@@ -467,8 +501,8 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 	 * @generated
 	 */
 	@Override
-	public void setSurveyId(String newSurveyId) {
-		String oldSurveyId = surveyId;
+	public void setSurveyId(Survey newSurveyId) {
+		Survey oldSurveyId = surveyId;
 		surveyId = newSurveyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_RESPONSE__SURVEY_ID, oldSurveyId, surveyId));
@@ -535,20 +569,24 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 				return getGeneralFeedback();
 			case SurveyPackage.SURVEY_RESPONSE__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
-			case SurveyPackage.SURVEY_RESPONSE__ORDER_ID:
-				return getOrderId();
 			case SurveyPackage.SURVEY_RESPONSE__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case SurveyPackage.SURVEY_RESPONSE__PARTY_ID:
-				return getPartyId();
 			case SurveyPackage.SURVEY_RESPONSE__REFERENCE_ID:
 				return getReferenceId();
 			case SurveyPackage.SURVEY_RESPONSE__RESPONSE_DATE:
 				return getResponseDate();
-			case SurveyPackage.SURVEY_RESPONSE__STATUS_ID:
-				return getStatusId();
+			case SurveyPackage.SURVEY_RESPONSE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case SurveyPackage.SURVEY_RESPONSE__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
 			case SurveyPackage.SURVEY_RESPONSE__SURVEY_ID:
-				return getSurveyId();
+				if (resolve) return getSurveyId();
+				return basicGetSurveyId();
+			case SurveyPackage.SURVEY_RESPONSE__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -570,14 +608,8 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 			case SurveyPackage.SURVEY_RESPONSE__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
 				return;
-			case SurveyPackage.SURVEY_RESPONSE__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case SurveyPackage.SURVEY_RESPONSE__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
-				return;
-			case SurveyPackage.SURVEY_RESPONSE__PARTY_ID:
-				setPartyId((String)newValue);
 				return;
 			case SurveyPackage.SURVEY_RESPONSE__REFERENCE_ID:
 				setReferenceId((String)newValue);
@@ -585,11 +617,17 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 			case SurveyPackage.SURVEY_RESPONSE__RESPONSE_DATE:
 				setResponseDate((Date)newValue);
 				return;
-			case SurveyPackage.SURVEY_RESPONSE__STATUS_ID:
-				setStatusId((String)newValue);
+			case SurveyPackage.SURVEY_RESPONSE__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case SurveyPackage.SURVEY_RESPONSE__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
 				return;
 			case SurveyPackage.SURVEY_RESPONSE__SURVEY_ID:
-				setSurveyId((String)newValue);
+				setSurveyId((Survey)newValue);
+				return;
+			case SurveyPackage.SURVEY_RESPONSE__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -612,14 +650,8 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 			case SurveyPackage.SURVEY_RESPONSE__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
 				return;
-			case SurveyPackage.SURVEY_RESPONSE__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case SurveyPackage.SURVEY_RESPONSE__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case SurveyPackage.SURVEY_RESPONSE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
 				return;
 			case SurveyPackage.SURVEY_RESPONSE__REFERENCE_ID:
 				setReferenceId(REFERENCE_ID_EDEFAULT);
@@ -627,11 +659,17 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 			case SurveyPackage.SURVEY_RESPONSE__RESPONSE_DATE:
 				setResponseDate(RESPONSE_DATE_EDEFAULT);
 				return;
-			case SurveyPackage.SURVEY_RESPONSE__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+			case SurveyPackage.SURVEY_RESPONSE__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case SurveyPackage.SURVEY_RESPONSE__ORDER_ID:
+				setOrderId((OrderHeader)null);
 				return;
 			case SurveyPackage.SURVEY_RESPONSE__SURVEY_ID:
-				setSurveyId(SURVEY_ID_EDEFAULT);
+				setSurveyId((Survey)null);
+				return;
+			case SurveyPackage.SURVEY_RESPONSE__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -651,20 +689,20 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 				return GENERAL_FEEDBACK_EDEFAULT == null ? generalFeedback != null : !GENERAL_FEEDBACK_EDEFAULT.equals(generalFeedback);
 			case SurveyPackage.SURVEY_RESPONSE__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
-			case SurveyPackage.SURVEY_RESPONSE__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case SurveyPackage.SURVEY_RESPONSE__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case SurveyPackage.SURVEY_RESPONSE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case SurveyPackage.SURVEY_RESPONSE__REFERENCE_ID:
 				return REFERENCE_ID_EDEFAULT == null ? referenceId != null : !REFERENCE_ID_EDEFAULT.equals(referenceId);
 			case SurveyPackage.SURVEY_RESPONSE__RESPONSE_DATE:
 				return RESPONSE_DATE_EDEFAULT == null ? responseDate != null : !RESPONSE_DATE_EDEFAULT.equals(responseDate);
-			case SurveyPackage.SURVEY_RESPONSE__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+			case SurveyPackage.SURVEY_RESPONSE__PARTY_ID:
+				return partyId != null;
+			case SurveyPackage.SURVEY_RESPONSE__ORDER_ID:
+				return orderId != null;
 			case SurveyPackage.SURVEY_RESPONSE__SURVEY_ID:
-				return SURVEY_ID_EDEFAULT == null ? surveyId != null : !SURVEY_ID_EDEFAULT.equals(surveyId);
+				return surveyId != null;
+			case SurveyPackage.SURVEY_RESPONSE__STATUS_ID:
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -685,20 +723,12 @@ public class SurveyResponseImpl extends BizEntityImpl implements SurveyResponse 
 		result.append(generalFeedback);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", referenceId: ");
 		result.append(referenceId);
 		result.append(", responseDate: ");
 		result.append(responseDate);
-		result.append(", statusId: ");
-		result.append(statusId);
-		result.append(", surveyId: ");
-		result.append(surveyId);
 		result.append(')');
 		return result.toString();
 	}

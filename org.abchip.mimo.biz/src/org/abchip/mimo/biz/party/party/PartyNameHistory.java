@@ -231,7 +231,6 @@ public interface PartyNameHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyNameHistory_PartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();

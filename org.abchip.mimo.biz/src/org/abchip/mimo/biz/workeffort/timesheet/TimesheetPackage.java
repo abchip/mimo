@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface TimesheetPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-workeffort-timesheet";
+	String eNS_PREFIX = "biz-timesheet";
 
 	/**
 	 * The singleton instance of the package.
@@ -143,40 +144,13 @@ public interface TimesheetPackage extends EPackage {
 	int TIME_ENTRY__HOURS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Invoice Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_ENTRY__INVOICE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Invoice Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_ENTRY__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_ENTRY__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Rate Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_ENTRY__RATE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int TIME_ENTRY__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -185,10 +159,37 @@ public interface TimesheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_ENTRY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int TIME_ENTRY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Timesheet Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_ENTRY__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Rate Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_ENTRY__RATE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Work Effort Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_ENTRY__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Timesheet Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -197,13 +198,13 @@ public interface TimesheetPackage extends EPackage {
 	int TIME_ENTRY__TIMESHEET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Work Effort Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Invoice Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_ENTRY__WORK_EFFORT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int TIME_ENTRY__INVOICE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Time Entry</em>' class.
@@ -270,31 +271,13 @@ public interface TimesheetPackage extends EPackage {
 	int TIMESHEET__TIMESHEET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Approved By User Login Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMESHEET__APPROVED_BY_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Client Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMESHEET__CLIENT_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMESHEET__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int TIMESHEET__COMMENTS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -303,25 +286,7 @@ public interface TimesheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIMESHEET__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMESHEET__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMESHEET__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int TIMESHEET__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -330,7 +295,43 @@ public interface TimesheetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIMESHEET__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int TIMESHEET__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMESHEET__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Client Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMESHEET__CLIENT_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMESHEET__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Approved By User Login Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMESHEET__APPROVED_BY_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Timesheet</em>' class.
@@ -397,7 +398,7 @@ public interface TimesheetPackage extends EPackage {
 	int TIMESHEET_ROLE__TIMESHEET_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -406,7 +407,7 @@ public interface TimesheetPackage extends EPackage {
 	int TIMESHEET_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -479,15 +480,15 @@ public interface TimesheetPackage extends EPackage {
 	EAttribute getTimeEntry_Hours();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceId <em>Invoice Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceId <em>Invoice Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Invoice Id</em>'.
+	 * @return the meta object for the reference '<em>Invoice Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceId()
 	 * @see #getTimeEntry()
 	 * @generated
 	 */
-	EAttribute getTimeEntry_InvoiceId();
+	EReference getTimeEntry_InvoiceId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}'.
@@ -501,26 +502,26 @@ public interface TimesheetPackage extends EPackage {
 	EAttribute getTimeEntry_InvoiceItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getPartyId()
 	 * @see #getTimeEntry()
 	 * @generated
 	 */
-	EAttribute getTimeEntry_PartyId();
+	EReference getTimeEntry_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getRateTypeId <em>Rate Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getRateTypeId <em>Rate Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rate Type Id</em>'.
+	 * @return the meta object for the reference '<em>Rate Type Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getRateTypeId()
 	 * @see #getTimeEntry()
 	 * @generated
 	 */
-	EAttribute getTimeEntry_RateTypeId();
+	EReference getTimeEntry_RateTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getThruDate <em>Thru Date</em>}'.
@@ -534,26 +535,26 @@ public interface TimesheetPackage extends EPackage {
 	EAttribute getTimeEntry_ThruDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getTimesheetId <em>Timesheet Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getTimesheetId <em>Timesheet Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Timesheet Id</em>'.
+	 * @return the meta object for the reference '<em>Timesheet Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getTimesheetId()
 	 * @see #getTimeEntry()
 	 * @generated
 	 */
-	EAttribute getTimeEntry_TimesheetId();
+	EReference getTimeEntry_TimesheetId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getWorkEffortId <em>Work Effort Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getWorkEffortId <em>Work Effort Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Work Effort Id</em>'.
+	 * @return the meta object for the reference '<em>Work Effort Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimeEntry#getWorkEffortId()
 	 * @see #getTimeEntry()
 	 * @generated
 	 */
-	EAttribute getTimeEntry_WorkEffortId();
+	EReference getTimeEntry_WorkEffortId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet <em>Timesheet</em>}'.
@@ -577,26 +578,26 @@ public interface TimesheetPackage extends EPackage {
 	EAttribute getTimesheet_TimesheetId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getApprovedByUserLoginId <em>Approved By User Login Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getApprovedByUserLoginId <em>Approved By User Login Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Approved By User Login Id</em>'.
+	 * @return the meta object for the reference '<em>Approved By User Login Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getApprovedByUserLoginId()
 	 * @see #getTimesheet()
 	 * @generated
 	 */
-	EAttribute getTimesheet_ApprovedByUserLoginId();
+	EReference getTimesheet_ApprovedByUserLoginId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getClientPartyId <em>Client Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getClientPartyId <em>Client Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Client Party Id</em>'.
+	 * @return the meta object for the reference '<em>Client Party Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getClientPartyId()
 	 * @see #getTimesheet()
 	 * @generated
 	 */
-	EAttribute getTimesheet_ClientPartyId();
+	EReference getTimesheet_ClientPartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getComments <em>Comments</em>}'.
@@ -621,26 +622,26 @@ public interface TimesheetPackage extends EPackage {
 	EAttribute getTimesheet_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getPartyId()
 	 * @see #getTimesheet()
 	 * @generated
 	 */
-	EAttribute getTimesheet_PartyId();
+	EReference getTimesheet_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getStatusId()
 	 * @see #getTimesheet()
 	 * @generated
 	 */
-	EAttribute getTimesheet_StatusId();
+	EReference getTimesheet_StatusId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.Timesheet#getThruDate <em>Thru Date</em>}'.
@@ -675,26 +676,26 @@ public interface TimesheetPackage extends EPackage {
 	EAttribute getTimesheetRole_TimesheetId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getPartyId()
 	 * @see #getTimesheetRole()
 	 * @generated
 	 */
-	EAttribute getTimesheetRole_PartyId();
+	EReference getTimesheetRole_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getRoleTypeId <em>Role Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getRoleTypeId <em>Role Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id</em>'.
 	 * @see org.abchip.mimo.biz.workeffort.timesheet.TimesheetRole#getRoleTypeId()
 	 * @see #getTimesheetRole()
 	 * @generated
 	 */
-	EAttribute getTimesheetRole_RoleTypeId();
+	EReference getTimesheetRole_RoleTypeId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -761,12 +762,12 @@ public interface TimesheetPackage extends EPackage {
 		EAttribute TIME_ENTRY__HOURS = eINSTANCE.getTimeEntry_Hours();
 
 		/**
-		 * The meta object literal for the '<em><b>Invoice Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Invoice Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIME_ENTRY__INVOICE_ID = eINSTANCE.getTimeEntry_InvoiceId();
+		EReference TIME_ENTRY__INVOICE_ID = eINSTANCE.getTimeEntry_InvoiceId();
 
 		/**
 		 * The meta object literal for the '<em><b>Invoice Item Seq Id</b></em>' attribute feature.
@@ -777,20 +778,20 @@ public interface TimesheetPackage extends EPackage {
 		EAttribute TIME_ENTRY__INVOICE_ITEM_SEQ_ID = eINSTANCE.getTimeEntry_InvoiceItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIME_ENTRY__PARTY_ID = eINSTANCE.getTimeEntry_PartyId();
+		EReference TIME_ENTRY__PARTY_ID = eINSTANCE.getTimeEntry_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Rate Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Rate Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIME_ENTRY__RATE_TYPE_ID = eINSTANCE.getTimeEntry_RateTypeId();
+		EReference TIME_ENTRY__RATE_TYPE_ID = eINSTANCE.getTimeEntry_RateTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -801,20 +802,20 @@ public interface TimesheetPackage extends EPackage {
 		EAttribute TIME_ENTRY__THRU_DATE = eINSTANCE.getTimeEntry_ThruDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Timesheet Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Timesheet Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIME_ENTRY__TIMESHEET_ID = eINSTANCE.getTimeEntry_TimesheetId();
+		EReference TIME_ENTRY__TIMESHEET_ID = eINSTANCE.getTimeEntry_TimesheetId();
 
 		/**
-		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Work Effort Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIME_ENTRY__WORK_EFFORT_ID = eINSTANCE.getTimeEntry_WorkEffortId();
+		EReference TIME_ENTRY__WORK_EFFORT_ID = eINSTANCE.getTimeEntry_WorkEffortId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetImpl <em>Timesheet</em>}' class.
@@ -835,20 +836,20 @@ public interface TimesheetPackage extends EPackage {
 		EAttribute TIMESHEET__TIMESHEET_ID = eINSTANCE.getTimesheet_TimesheetId();
 
 		/**
-		 * The meta object literal for the '<em><b>Approved By User Login Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Approved By User Login Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIMESHEET__APPROVED_BY_USER_LOGIN_ID = eINSTANCE.getTimesheet_ApprovedByUserLoginId();
+		EReference TIMESHEET__APPROVED_BY_USER_LOGIN_ID = eINSTANCE.getTimesheet_ApprovedByUserLoginId();
 
 		/**
-		 * The meta object literal for the '<em><b>Client Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Client Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIMESHEET__CLIENT_PARTY_ID = eINSTANCE.getTimesheet_ClientPartyId();
+		EReference TIMESHEET__CLIENT_PARTY_ID = eINSTANCE.getTimesheet_ClientPartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Comments</b></em>' attribute feature.
@@ -867,20 +868,20 @@ public interface TimesheetPackage extends EPackage {
 		EAttribute TIMESHEET__FROM_DATE = eINSTANCE.getTimesheet_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIMESHEET__PARTY_ID = eINSTANCE.getTimesheet_PartyId();
+		EReference TIMESHEET__PARTY_ID = eINSTANCE.getTimesheet_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIMESHEET__STATUS_ID = eINSTANCE.getTimesheet_StatusId();
+		EReference TIMESHEET__STATUS_ID = eINSTANCE.getTimesheet_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -909,20 +910,20 @@ public interface TimesheetPackage extends EPackage {
 		EAttribute TIMESHEET_ROLE__TIMESHEET_ID = eINSTANCE.getTimesheetRole_TimesheetId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIMESHEET_ROLE__PARTY_ID = eINSTANCE.getTimesheetRole_PartyId();
+		EReference TIMESHEET_ROLE__PARTY_ID = eINSTANCE.getTimesheetRole_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIMESHEET_ROLE__ROLE_TYPE_ID = eINSTANCE.getTimesheetRole_RoleTypeId();
+		EReference TIMESHEET_ROLE__ROLE_TYPE_ID = eINSTANCE.getTimesheetRole_RoleTypeId();
 
 	}
 

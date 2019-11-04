@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.accounting.budget;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.period.CustomTimePeriod;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,8 +22,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetId <em>Budget Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetTypeId <em>Budget Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetTypeId <em>Budget Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetAttributes <em>Budget Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetItems <em>Budget Items</em>}</li>
@@ -62,30 +63,30 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Custom Time Period Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Custom Time Period Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Custom Time Period Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Custom Time Period Id</em>' attribute.
-	 * @see #setCustomTimePeriodId(String)
+	 * @return the value of the '<em>Custom Time Period Id</em>' reference.
+	 * @see #setCustomTimePeriodId(CustomTimePeriod)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_CustomTimePeriodId()
-	 * @model annotation="mimo-ent-domain frame='CustomTimePeriod'"
+	 * @model keys="customTimePeriodId"
 	 * @generated
 	 */
-	String getCustomTimePeriodId();
+	CustomTimePeriod getCustomTimePeriodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.Budget#getCustomTimePeriodId <em>Custom Time Period Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.Budget#getCustomTimePeriodId <em>Custom Time Period Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Custom Time Period Id</em>' attribute.
+	 * @param value the new value of the '<em>Custom Time Period Id</em>' reference.
 	 * @see #getCustomTimePeriodId()
 	 * @generated
 	 */
-	void setCustomTimePeriodId(String value);
+	void setCustomTimePeriodId(CustomTimePeriod value);
 
 	/**
 	 * Returns the value of the '<em><b>Budget Attributes</b></em>' attribute list.
@@ -165,30 +166,30 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	List<String> budgetScenarioApplications();
 
 	/**
-	 * Returns the value of the '<em><b>Budget Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Budget Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Budget Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Budget Type Id</em>' attribute.
-	 * @see #setBudgetTypeId(String)
+	 * @return the value of the '<em>Budget Type Id</em>' reference.
+	 * @see #setBudgetTypeId(BudgetType)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetTypeId()
-	 * @model annotation="mimo-ent-domain frame='BudgetType'"
+	 * @model keys="budgetTypeId"
 	 * @generated
 	 */
-	String getBudgetTypeId();
+	BudgetType getBudgetTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetTypeId <em>Budget Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.budget.Budget#getBudgetTypeId <em>Budget Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Budget Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Budget Type Id</em>' reference.
 	 * @see #getBudgetTypeId()
 	 * @generated
 	 */
-	void setBudgetTypeId(String value);
+	void setBudgetTypeId(BudgetType value);
 
 	/**
 	 * Returns the value of the '<em><b>Budget Id</b></em>' attribute.
@@ -201,7 +202,7 @@ public interface Budget extends BizEntityTyped<BudgetType> {
 	 * @return the value of the '<em>Budget Id</em>' attribute.
 	 * @see #setBudgetId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudget_BudgetId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

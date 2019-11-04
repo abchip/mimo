@@ -14,11 +14,14 @@ import org.abchip.mimo.biz.impl.BizEntityTypeImpl;
 import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestType;
 import org.abchip.mimo.biz.order.request.RequestPackage;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -107,44 +110,24 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
+	protected CustRequestType parentTypeId;
 
 	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
+	protected Party partyId;
 
 	/**
 	 * The cached value of the '{@link #getCustRequestTypeAttrs() <em>Cust Request Type Attrs</em>}' attribute list.
@@ -250,7 +233,24 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public CustRequestType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (CustRequestType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequestType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -260,8 +260,8 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(CustRequestType newParentTypeId) {
+		CustRequestType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -273,7 +273,24 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_TYPE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -283,8 +300,8 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_TYPE__PARTY_ID, oldPartyId, partyId));
@@ -366,9 +383,11 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 			case RequestPackage.CUST_REQUEST_TYPE__HAS_TABLE:
 				return isHasTable();
 			case RequestPackage.CUST_REQUEST_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case RequestPackage.CUST_REQUEST_TYPE__PARTY_ID:
-				return getPartyId();
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case RequestPackage.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ATTRS:
 				return getCustRequestTypeAttrs();
 		}
@@ -394,10 +413,10 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 				setHasTable((Boolean)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((CustRequestType)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_TYPE__PARTY_ID:
-				setPartyId((String)newValue);
+				setPartyId((Party)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ATTRS:
 				getCustRequestTypeAttrs().clear();
@@ -425,10 +444,10 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case RequestPackage.CUST_REQUEST_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((CustRequestType)null);
 				return;
 			case RequestPackage.CUST_REQUEST_TYPE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
+				setPartyId((Party)null);
 				return;
 			case RequestPackage.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ATTRS:
 				getCustRequestTypeAttrs().clear();
@@ -452,9 +471,9 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 			case RequestPackage.CUST_REQUEST_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case RequestPackage.CUST_REQUEST_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case RequestPackage.CUST_REQUEST_TYPE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
+				return partyId != null;
 			case RequestPackage.CUST_REQUEST_TYPE__CUST_REQUEST_TYPE_ATTRS:
 				return custRequestTypeAttrs != null && !custRequestTypeAttrs.isEmpty();
 		}
@@ -477,10 +496,6 @@ public class CustRequestTypeImpl extends BizEntityTypeImpl<CustRequest> implemen
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", custRequestTypeAttrs: ");
 		result.append(custRequestTypeAttrs);
 		result.append(')');

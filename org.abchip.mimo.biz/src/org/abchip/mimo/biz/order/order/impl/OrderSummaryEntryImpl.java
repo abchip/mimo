@@ -14,10 +14,14 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderSummaryEntry;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,11 +33,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getEntryDate <em>Entry Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getFacilityId <em>Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getGrossSales <em>Gross Sales</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getProductCost <em>Product Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getTotalQuantity <em>Total Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderSummaryEntryImpl#getFacilityId <em>Facility Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,46 +67,6 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 * @ordered
 	 */
 	protected Date entryDate = ENTRY_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityId = FACILITY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getGrossSales() <em>Gross Sales</em>}' attribute.
@@ -165,6 +129,26 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	protected BigDecimal totalQuantity = TOTAL_QUANTITY_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getFacilityId() <em>Facility Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Facility facilityId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -212,7 +196,24 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 * @generated
 	 */
 	@Override
-	public String getFacilityId() {
+	public Facility getFacilityId() {
+		if (facilityId != null && ((EObject)facilityId).eIsProxy()) {
+			InternalEObject oldFacilityId = (InternalEObject)facilityId;
+			facilityId = (Facility)eResolveProxy(oldFacilityId);
+			if (facilityId != oldFacilityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID, oldFacilityId, facilityId));
+			}
+		}
+		return facilityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Facility basicGetFacilityId() {
 		return facilityId;
 	}
 
@@ -222,8 +223,8 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 * @generated
 	 */
 	@Override
-	public void setFacilityId(String newFacilityId) {
-		String oldFacilityId = facilityId;
+	public void setFacilityId(Facility newFacilityId) {
+		Facility oldFacilityId = facilityId;
 		facilityId = newFacilityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID, oldFacilityId, facilityId));
@@ -281,7 +282,24 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -291,8 +309,8 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID, oldProductId, productId));
@@ -331,16 +349,18 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 		switch (featureID) {
 			case OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE:
 				return getEntryDate();
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
-				return getProductId();
-			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
-				return getFacilityId();
 			case OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES:
 				return getGrossSales();
 			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_COST:
 				return getProductCost();
 			case OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY:
 				return getTotalQuantity();
+			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
+				if (resolve) return getFacilityId();
+				return basicGetFacilityId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -356,12 +376,6 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 			case OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE:
 				setEntryDate((Date)newValue);
 				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
-				setFacilityId((String)newValue);
-				return;
 			case OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES:
 				setGrossSales((BigDecimal)newValue);
 				return;
@@ -370,6 +384,12 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 				return;
 			case OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY:
 				setTotalQuantity((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
+				setFacilityId((Facility)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -386,12 +406,6 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 			case OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE:
 				setEntryDate(ENTRY_DATE_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
-				setFacilityId(FACILITY_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES:
 				setGrossSales(GROSS_SALES_EDEFAULT);
 				return;
@@ -400,6 +414,12 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 				return;
 			case OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY:
 				setTotalQuantity(TOTAL_QUANTITY_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
+				setFacilityId((Facility)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -415,16 +435,16 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 		switch (featureID) {
 			case OrderPackage.ORDER_SUMMARY_ENTRY__ENTRY_DATE:
 				return ENTRY_DATE_EDEFAULT == null ? entryDate != null : !ENTRY_DATE_EDEFAULT.equals(entryDate);
-			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
-				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
 			case OrderPackage.ORDER_SUMMARY_ENTRY__GROSS_SALES:
 				return GROSS_SALES_EDEFAULT == null ? grossSales != null : !GROSS_SALES_EDEFAULT.equals(grossSales);
 			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_COST:
 				return PRODUCT_COST_EDEFAULT == null ? productCost != null : !PRODUCT_COST_EDEFAULT.equals(productCost);
 			case OrderPackage.ORDER_SUMMARY_ENTRY__TOTAL_QUANTITY:
 				return TOTAL_QUANTITY_EDEFAULT == null ? totalQuantity != null : !TOTAL_QUANTITY_EDEFAULT.equals(totalQuantity);
+			case OrderPackage.ORDER_SUMMARY_ENTRY__PRODUCT_ID:
+				return productId != null;
+			case OrderPackage.ORDER_SUMMARY_ENTRY__FACILITY_ID:
+				return facilityId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -441,10 +461,6 @@ public class OrderSummaryEntryImpl extends BizEntityImpl implements OrderSummary
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (entryDate: ");
 		result.append(entryDate);
-		result.append(", productId: ");
-		result.append(productId);
-		result.append(", facilityId: ");
-		result.append(facilityId);
 		result.append(", grossSales: ");
 		result.append(grossSales);
 		result.append(", productCost: ");

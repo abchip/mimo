@@ -67,7 +67,7 @@ public interface ReturnReason extends BizEntity {
 	 * @return the value of the '<em>Return Reason Id</em>' attribute.
 	 * @see #setReturnReasonId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnReason_ReturnReasonId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

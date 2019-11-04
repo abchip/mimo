@@ -84,30 +84,30 @@ public interface ProductAssocType extends BizEntityType<ProductAssoc> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(ProductAssocType)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssocType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductAssocType'"
+	 * @model keys="productAssocTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	ProductAssocType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssocType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductAssocType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(ProductAssocType value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public interface ProductAssocType extends BizEntityType<ProductAssoc> {
 	 * @return the value of the '<em>Product Assoc Type Id</em>' attribute.
 	 * @see #setProductAssocTypeId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductAssocType_ProductAssocTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

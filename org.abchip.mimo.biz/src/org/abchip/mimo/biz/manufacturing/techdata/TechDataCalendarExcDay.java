@@ -47,7 +47,6 @@ public interface TechDataCalendarExcDay extends BizEntity {
 	 * @see org.abchip.mimo.biz.manufacturing.techdata.TechdataPackage#getTechDataCalendarExcDay_CalendarId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='TechDataCalendar'"
 	 * @generated
 	 */
 	String getCalendarId();

@@ -21,11 +21,11 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementContentTypeId <em>Agreement Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementId <em>Agreement Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementContentTypeId <em>Agreement Content Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent()
@@ -73,7 +73,6 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_ContentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
 	 * @generated
 	 */
 	String getContentId();
@@ -142,59 +141,55 @@ public interface AgreementContent extends BizEntityTyped<AgreementContentType> {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Agreement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Id</em>' attribute.
-	 * @see #setAgreementId(String)
+	 * @return the value of the '<em>Agreement Id</em>' reference.
+	 * @see #setAgreementId(Agreement)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_AgreementId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Agreement'"
+	 * @model keys="agreementId"
 	 * @generated
 	 */
-	String getAgreementId();
+	Agreement getAgreementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementId <em>Agreement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementId <em>Agreement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agreement Id</em>' attribute.
+	 * @param value the new value of the '<em>Agreement Id</em>' reference.
 	 * @see #getAgreementId()
 	 * @generated
 	 */
-	void setAgreementId(String value);
+	void setAgreementId(Agreement value);
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Content Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Agreement Content Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Content Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Content Type Id</em>' attribute.
-	 * @see #setAgreementContentTypeId(String)
+	 * @return the value of the '<em>Agreement Content Type Id</em>' reference.
+	 * @see #setAgreementContentTypeId(AgreementContentType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreementContent_AgreementContentTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='AgreementContentType'"
+	 * @model keys="agreementContentTypeId"
 	 * @generated
 	 */
-	String getAgreementContentTypeId();
+	AgreementContentType getAgreementContentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementContentTypeId <em>Agreement Content Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.AgreementContent#getAgreementContentTypeId <em>Agreement Content Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agreement Content Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Agreement Content Type Id</em>' reference.
 	 * @see #getAgreementContentTypeId()
 	 * @generated
 	 */
-	void setAgreementContentTypeId(String value);
+	void setAgreementContentTypeId(AgreementContentType value);
 
 } // AgreementContent

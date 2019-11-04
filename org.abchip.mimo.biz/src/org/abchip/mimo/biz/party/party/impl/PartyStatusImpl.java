@@ -10,11 +10,15 @@ package org.abchip.mimo.biz.party.party.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.PartyStatus;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyStatusImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyStatusImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyStatusImpl#getStatusDate <em>Status Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyStatusImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
@@ -57,24 +61,6 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 	 */
 	protected String statusId = STATUS_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getStatusDate() <em>Status Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,23 +79,23 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 	 */
 	protected Date statusDate = STATUS_DATE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
+	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CHANGE_BY_USER_LOGIN_ID_EDEFAULT = null;
+	protected Party partyId;
 	/**
-	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
+	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getChangeByUserLoginId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String changeByUserLoginId = CHANGE_BY_USER_LOGIN_ID_EDEFAULT;
+	protected UserLogin changeByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,7 +122,24 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 	 * @generated
 	 */
 	@Override
-	public String getChangeByUserLoginId() {
+	public UserLogin getChangeByUserLoginId() {
+		if (changeByUserLoginId != null && ((EObject)changeByUserLoginId).eIsProxy()) {
+			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
+			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
+			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
+			}
+		}
+		return changeByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangeByUserLoginId() {
 		return changeByUserLoginId;
 	}
 
@@ -146,8 +149,8 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 	 * @generated
 	 */
 	@Override
-	public void setChangeByUserLoginId(String newChangeByUserLoginId) {
-		String oldChangeByUserLoginId = changeByUserLoginId;
+	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
@@ -205,7 +208,24 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_STATUS__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -215,8 +235,8 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_STATUS__PARTY_ID, oldPartyId, partyId));
@@ -232,12 +252,14 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 		switch (featureID) {
 			case PartyPackage.PARTY_STATUS__STATUS_ID:
 				return getStatusId();
-			case PartyPackage.PARTY_STATUS__PARTY_ID:
-				return getPartyId();
 			case PartyPackage.PARTY_STATUS__STATUS_DATE:
 				return getStatusDate();
+			case PartyPackage.PARTY_STATUS__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case PartyPackage.PARTY_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return getChangeByUserLoginId();
+				if (resolve) return getChangeByUserLoginId();
+				return basicGetChangeByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,14 +275,14 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 			case PartyPackage.PARTY_STATUS__STATUS_ID:
 				setStatusId((String)newValue);
 				return;
-			case PartyPackage.PARTY_STATUS__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case PartyPackage.PARTY_STATUS__STATUS_DATE:
 				setStatusDate((Date)newValue);
 				return;
+			case PartyPackage.PARTY_STATUS__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
 			case PartyPackage.PARTY_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((String)newValue);
+				setChangeByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -277,14 +299,14 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 			case PartyPackage.PARTY_STATUS__STATUS_ID:
 				setStatusId(STATUS_ID_EDEFAULT);
 				return;
-			case PartyPackage.PARTY_STATUS__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_STATUS__STATUS_DATE:
 				setStatusDate(STATUS_DATE_EDEFAULT);
 				return;
+			case PartyPackage.PARTY_STATUS__PARTY_ID:
+				setPartyId((Party)null);
+				return;
 			case PartyPackage.PARTY_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId(CHANGE_BY_USER_LOGIN_ID_EDEFAULT);
+				setChangeByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -300,12 +322,12 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 		switch (featureID) {
 			case PartyPackage.PARTY_STATUS__STATUS_ID:
 				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
-			case PartyPackage.PARTY_STATUS__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case PartyPackage.PARTY_STATUS__STATUS_DATE:
 				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
+			case PartyPackage.PARTY_STATUS__PARTY_ID:
+				return partyId != null;
 			case PartyPackage.PARTY_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return CHANGE_BY_USER_LOGIN_ID_EDEFAULT == null ? changeByUserLoginId != null : !CHANGE_BY_USER_LOGIN_ID_EDEFAULT.equals(changeByUserLoginId);
+				return changeByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -322,12 +344,8 @@ public class PartyStatusImpl extends BizEntityImpl implements PartyStatus {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (statusId: ");
 		result.append(statusId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", statusDate: ");
 		result.append(statusDate);
-		result.append(", changeByUserLoginId: ");
-		result.append(changeByUserLoginId);
 		result.append(')');
 		return result.toString();
 	}

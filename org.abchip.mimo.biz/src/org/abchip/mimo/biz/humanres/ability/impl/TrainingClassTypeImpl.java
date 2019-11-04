@@ -16,6 +16,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -101,24 +103,14 @@ public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClas
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected TrainingClassType parentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,7 +183,24 @@ public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClas
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public TrainingClassType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (TrainingClassType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.TRAINING_CLASS_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TrainingClassType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -201,8 +210,8 @@ public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClas
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(TrainingClassType newParentTypeId) {
+		TrainingClassType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.TRAINING_CLASS_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -258,7 +267,8 @@ public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClas
 			case AbilityPackage.TRAINING_CLASS_TYPE__HAS_TABLE:
 				return isHasTable();
 			case AbilityPackage.TRAINING_CLASS_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,7 +291,7 @@ public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClas
 				setHasTable((Boolean)newValue);
 				return;
 			case AbilityPackage.TRAINING_CLASS_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((TrainingClassType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -305,7 +315,7 @@ public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClas
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case AbilityPackage.TRAINING_CLASS_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((TrainingClassType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -326,7 +336,7 @@ public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClas
 			case AbilityPackage.TRAINING_CLASS_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case AbilityPackage.TRAINING_CLASS_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -347,8 +357,6 @@ public class TrainingClassTypeImpl extends BizEntityImpl implements TrainingClas
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(')');
 		return result.toString();
 	}

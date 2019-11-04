@@ -11,6 +11,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.datasource.DataSource;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.content.survey.Survey;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,22 +27,22 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceId <em>Data Resource Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCharacterSetId <em>Character Set Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataCategoryId <em>Data Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceName <em>Data Resource Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataTemplateTypeId <em>Data Template Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#isIsPublic <em>Is Public</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getLocaleString <em>Locale String</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getMimeTypeId <em>Mime Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getObjectInfo <em>Object Info</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getRelatedDetailId <em>Related Detail Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data Resource Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataTemplateTypeId <em>Data Template Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataCategoryId <em>Data Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataSourceId <em>Data Source Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getMimeTypeId <em>Mime Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCharacterSetId <em>Character Set Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyId <em>Survey Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyResponseId <em>Survey Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceAttributes <em>Data Resource Attributes</em>}</li>
@@ -52,56 +57,56 @@ import org.abchip.mimo.biz.BizEntityTyped;
  */
 public interface DataResource extends BizEntityTyped<DataResourceType> {
 	/**
-	 * Returns the value of the '<em><b>Character Set Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Character Set Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Character Set Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Character Set Id</em>' attribute.
-	 * @see #setCharacterSetId(String)
+	 * @return the value of the '<em>Character Set Id</em>' reference.
+	 * @see #setCharacterSetId(CharacterSet)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_CharacterSetId()
-	 * @model annotation="mimo-ent-domain frame='CharacterSet'"
+	 * @model keys="characterSetId"
 	 * @generated
 	 */
-	String getCharacterSetId();
+	CharacterSet getCharacterSetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getCharacterSetId <em>Character Set Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getCharacterSetId <em>Character Set Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Character Set Id</em>' attribute.
+	 * @param value the new value of the '<em>Character Set Id</em>' reference.
 	 * @see #getCharacterSetId()
 	 * @generated
 	 */
-	void setCharacterSetId(String value);
+	void setCharacterSetId(CharacterSet value);
 
 	/**
-	 * Returns the value of the '<em><b>Created By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Created By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Created By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Created By User Login</em>' attribute.
-	 * @see #setCreatedByUserLogin(String)
+	 * @return the value of the '<em>Created By User Login</em>' reference.
+	 * @see #setCreatedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_CreatedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getCreatedByUserLogin();
+	UserLogin getCreatedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedByUserLogin <em>Created By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getCreatedByUserLogin <em>Created By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Created By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Created By User Login</em>' reference.
 	 * @see #getCreatedByUserLogin()
 	 * @generated
 	 */
-	void setCreatedByUserLogin(String value);
+	void setCreatedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Created Date</b></em>' attribute.
@@ -130,30 +135,30 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setCreatedDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Category Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Category Id</em>' attribute.
-	 * @see #setDataCategoryId(String)
+	 * @return the value of the '<em>Data Category Id</em>' reference.
+	 * @see #setDataCategoryId(DataCategory)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataCategoryId()
-	 * @model annotation="mimo-ent-domain frame='DataCategory'"
+	 * @model keys="dataCategoryId"
 	 * @generated
 	 */
-	String getDataCategoryId();
+	DataCategory getDataCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataCategoryId <em>Data Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataCategoryId <em>Data Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Category Id</em>' reference.
 	 * @see #getDataCategoryId()
 	 * @generated
 	 */
-	void setDataCategoryId(String value);
+	void setDataCategoryId(DataCategory value);
 
 	/**
 	 * Returns the value of the '<em><b>Data Resource Id</b></em>' attribute.
@@ -168,7 +173,6 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource'"
 	 * @generated
 	 */
 	String getDataResourceId();
@@ -210,82 +214,82 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setDataResourceName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Resource Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Resource Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Resource Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Resource Type Id</em>' attribute.
-	 * @see #setDataResourceTypeId(String)
+	 * @return the value of the '<em>Data Resource Type Id</em>' reference.
+	 * @see #setDataResourceTypeId(DataResourceType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataResourceTypeId()
-	 * @model annotation="mimo-ent-domain frame='DataResourceType'"
+	 * @model keys="dataResourceTypeId"
 	 * @generated
 	 */
-	String getDataResourceTypeId();
+	DataResourceType getDataResourceTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data Resource Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataResourceTypeId <em>Data Resource Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Resource Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Resource Type Id</em>' reference.
 	 * @see #getDataResourceTypeId()
 	 * @generated
 	 */
-	void setDataResourceTypeId(String value);
+	void setDataResourceTypeId(DataResourceType value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Source Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Source Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Source Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Source Id</em>' attribute.
-	 * @see #setDataSourceId(String)
+	 * @return the value of the '<em>Data Source Id</em>' reference.
+	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataSourceId()
-	 * @model annotation="mimo-ent-domain frame='DataSource'"
+	 * @model keys="dataSourceId"
 	 * @generated
 	 */
-	String getDataSourceId();
+	DataSource getDataSourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataSourceId <em>Data Source Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataSourceId <em>Data Source Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Source Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Source Id</em>' reference.
 	 * @see #getDataSourceId()
 	 * @generated
 	 */
-	void setDataSourceId(String value);
+	void setDataSourceId(DataSource value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Template Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Template Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Template Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Template Type Id</em>' attribute.
-	 * @see #setDataTemplateTypeId(String)
+	 * @return the value of the '<em>Data Template Type Id</em>' reference.
+	 * @see #setDataTemplateTypeId(DataTemplateType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_DataTemplateTypeId()
-	 * @model annotation="mimo-ent-domain frame='DataTemplateType'"
+	 * @model keys="dataTemplateTypeId"
 	 * @generated
 	 */
-	String getDataTemplateTypeId();
+	DataTemplateType getDataTemplateTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataTemplateTypeId <em>Data Template Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getDataTemplateTypeId <em>Data Template Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Template Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Template Type Id</em>' reference.
 	 * @see #getDataTemplateTypeId()
 	 * @generated
 	 */
-	void setDataTemplateTypeId(String value);
+	void setDataTemplateTypeId(DataTemplateType value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Public</b></em>' attribute.
@@ -314,30 +318,30 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setIsPublic(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' attribute.
+	 * Returns the value of the '<em><b>Last Modified By User Login</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Last Modified By User Login</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Last Modified By User Login</em>' attribute.
-	 * @see #setLastModifiedByUserLogin(String)
+	 * @return the value of the '<em>Last Modified By User Login</em>' reference.
+	 * @see #setLastModifiedByUserLogin(UserLogin)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_LastModifiedByUserLogin()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getLastModifiedByUserLogin();
+	UserLogin getLastModifiedByUserLogin();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Last Modified By User Login</em>' attribute.
+	 * @param value the new value of the '<em>Last Modified By User Login</em>' reference.
 	 * @see #getLastModifiedByUserLogin()
 	 * @generated
 	 */
-	void setLastModifiedByUserLogin(String value);
+	void setLastModifiedByUserLogin(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Last Modified Date</b></em>' attribute.
@@ -392,30 +396,30 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setLocaleString(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Mime Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Mime Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mime Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mime Type Id</em>' attribute.
-	 * @see #setMimeTypeId(String)
+	 * @return the value of the '<em>Mime Type Id</em>' reference.
+	 * @see #setMimeTypeId(MimeType)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_MimeTypeId()
-	 * @model annotation="mimo-ent-domain frame='MimeType'"
+	 * @model keys="mimeTypeId"
 	 * @generated
 	 */
-	String getMimeTypeId();
+	MimeType getMimeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getMimeTypeId <em>Mime Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getMimeTypeId <em>Mime Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mime Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Mime Type Id</em>' reference.
 	 * @see #getMimeTypeId()
 	 * @generated
 	 */
-	void setMimeTypeId(String value);
+	void setMimeTypeId(MimeType value);
 
 	/**
 	 * Returns the value of the '<em><b>Object Info</b></em>' attribute.
@@ -470,82 +474,82 @@ public interface DataResource extends BizEntityTyped<DataResourceType> {
 	void setRelatedDetailId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Survey Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Id</em>' attribute.
-	 * @see #setSurveyId(String)
+	 * @return the value of the '<em>Survey Id</em>' reference.
+	 * @see #setSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_SurveyId()
-	 * @model annotation="mimo-ent-domain frame='Survey'"
+	 * @model keys="surveyId"
 	 * @generated
 	 */
-	String getSurveyId();
+	Survey getSurveyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyId <em>Survey Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyId <em>Survey Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Survey Id</em>' attribute.
+	 * @param value the new value of the '<em>Survey Id</em>' reference.
 	 * @see #getSurveyId()
 	 * @generated
 	 */
-	void setSurveyId(String value);
+	void setSurveyId(Survey value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Response Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Survey Response Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Response Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Response Id</em>' attribute.
-	 * @see #setSurveyResponseId(String)
+	 * @return the value of the '<em>Survey Response Id</em>' reference.
+	 * @see #setSurveyResponseId(SurveyResponse)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResource_SurveyResponseId()
-	 * @model annotation="mimo-ent-domain frame='SurveyResponse'"
+	 * @model keys="surveyResponseId"
 	 * @generated
 	 */
-	String getSurveyResponseId();
+	SurveyResponse getSurveyResponseId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyResponseId <em>Survey Response Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResource#getSurveyResponseId <em>Survey Response Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Survey Response Id</em>' attribute.
+	 * @param value the new value of the '<em>Survey Response Id</em>' reference.
 	 * @see #getSurveyResponseId()
 	 * @generated
 	 */
-	void setSurveyResponseId(String value);
+	void setSurveyResponseId(SurveyResponse value);
 
 	/**
 	 * Returns the value of the '<em><b>Data Resource Attributes</b></em>' attribute list.

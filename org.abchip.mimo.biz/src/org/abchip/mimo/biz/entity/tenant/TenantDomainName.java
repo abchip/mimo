@@ -55,29 +55,29 @@ public interface TenantDomainName extends BizEntity {
 	void setDomainName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tenant Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tenant Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tenant Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant Id</em>' attribute.
-	 * @see #setTenantId(String)
+	 * @return the value of the '<em>Tenant Id</em>' reference.
+	 * @see #setTenantId(Tenant)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantDomainName_TenantId()
-	 * @model annotation="mimo-ent-domain frame='Tenant'"
+	 * @model keys="tenantId"
 	 * @generated
 	 */
-	String getTenantId();
+	Tenant getTenantId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.tenant.TenantDomainName#getTenantId <em>Tenant Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.tenant.TenantDomainName#getTenantId <em>Tenant Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tenant Id</em>' attribute.
+	 * @param value the new value of the '<em>Tenant Id</em>' reference.
 	 * @see #getTenantId()
 	 * @generated
 	 */
-	void setTenantId(String value);
+	void setTenantId(Tenant value);
 
 } // TenantDomainName

@@ -11,6 +11,12 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.promo.ProductPromoCode;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +30,6 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListId <em>Shopping List Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getCarrierRoleTypeId <em>Carrier Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getCurrencyUom <em>Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#isIsActive <em>Is Active</em>}</li>
@@ -32,15 +37,16 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getLastAdminModified <em>Last Admin Modified</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getLastOrderedDate <em>Last Ordered Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getListName <em>List Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getParentShoppingListId <em>Parent Shopping List Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getPaymentMethodId <em>Payment Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShipmentMethodTypeId <em>Shipment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListTypeId <em>Shopping List Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getVisitorId <em>Visitor Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getParentShoppingListId <em>Parent Shopping List Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListTypeId <em>Shopping List Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductStoreId <em>Product Store Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getPaymentMethodId <em>Payment Method Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListItems <em>Shopping List Items</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListWorkEfforts <em>Shopping List Work Efforts</em>}</li>
  * </ul>
@@ -103,30 +109,30 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	void setCarrierRoleTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(PostalAddress)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	PostalAddress getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(PostalAddress value);
 
 	/**
 	 * Returns the value of the '<em><b>Currency Uom</b></em>' attribute.
@@ -311,160 +317,160 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	void setListName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Shopping List Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Shopping List Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Shopping List Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Shopping List Id</em>' attribute.
-	 * @see #setParentShoppingListId(String)
+	 * @return the value of the '<em>Parent Shopping List Id</em>' reference.
+	 * @see #setParentShoppingListId(ShoppingList)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ParentShoppingListId()
-	 * @model annotation="mimo-ent-domain frame='ShoppingList'"
+	 * @model keys="shoppingListId"
 	 * @generated
 	 */
-	String getParentShoppingListId();
+	ShoppingList getParentShoppingListId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getParentShoppingListId <em>Parent Shopping List Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getParentShoppingListId <em>Parent Shopping List Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Shopping List Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Shopping List Id</em>' reference.
 	 * @see #getParentShoppingListId()
 	 * @generated
 	 */
-	void setParentShoppingListId(String value);
+	void setParentShoppingListId(ShoppingList value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Method Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Method Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Method Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Method Id</em>' attribute.
-	 * @see #setPaymentMethodId(String)
+	 * @return the value of the '<em>Payment Method Id</em>' reference.
+	 * @see #setPaymentMethodId(PaymentMethod)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_PaymentMethodId()
-	 * @model annotation="mimo-ent-domain frame='PaymentMethod'"
+	 * @model keys="paymentMethodId"
 	 * @generated
 	 */
-	String getPaymentMethodId();
+	PaymentMethod getPaymentMethodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getPaymentMethodId <em>Payment Method Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getPaymentMethodId <em>Payment Method Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Method Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Method Id</em>' reference.
 	 * @see #getPaymentMethodId()
 	 * @generated
 	 */
-	void setPaymentMethodId(String value);
+	void setPaymentMethodId(PaymentMethod value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Promo Code Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Promo Code Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Promo Code Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Promo Code Id</em>' attribute.
-	 * @see #setProductPromoCodeId(String)
+	 * @return the value of the '<em>Product Promo Code Id</em>' reference.
+	 * @see #setProductPromoCodeId(ProductPromoCode)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ProductPromoCodeId()
-	 * @model annotation="mimo-ent-domain frame='ProductPromoCode'"
+	 * @model keys="productPromoCodeId"
 	 * @generated
 	 */
-	String getProductPromoCodeId();
+	ProductPromoCode getProductPromoCodeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductPromoCodeId <em>Product Promo Code Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductPromoCodeId <em>Product Promo Code Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Promo Code Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Promo Code Id</em>' reference.
 	 * @see #getProductPromoCodeId()
 	 * @generated
 	 */
-	void setProductPromoCodeId(String value);
+	void setProductPromoCodeId(ProductPromoCode value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Store Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Store Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Id</em>' attribute.
-	 * @see #setProductStoreId(String)
+	 * @return the value of the '<em>Product Store Id</em>' reference.
+	 * @see #setProductStoreId(ProductStore)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ProductStoreId()
-	 * @model annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model keys="productStoreId"
 	 * @generated
 	 */
-	String getProductStoreId();
+	ProductStore getProductStoreId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductStoreId <em>Product Store Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getProductStoreId <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Store Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Store Id</em>' reference.
 	 * @see #getProductStoreId()
 	 * @generated
 	 */
-	void setProductStoreId(String value);
+	void setProductStoreId(ProductStore value);
 
 	/**
-	 * Returns the value of the '<em><b>Recurrence Info Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Recurrence Info Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Recurrence Info Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recurrence Info Id</em>' attribute.
-	 * @see #setRecurrenceInfoId(String)
+	 * @return the value of the '<em>Recurrence Info Id</em>' reference.
+	 * @see #setRecurrenceInfoId(RecurrenceInfo)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_RecurrenceInfoId()
-	 * @model annotation="mimo-ent-domain frame='RecurrenceInfo'"
+	 * @model keys="recurrenceInfoId"
 	 * @generated
 	 */
-	String getRecurrenceInfoId();
+	RecurrenceInfo getRecurrenceInfoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getRecurrenceInfoId <em>Recurrence Info Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getRecurrenceInfoId <em>Recurrence Info Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Recurrence Info Id</em>' attribute.
+	 * @param value the new value of the '<em>Recurrence Info Id</em>' reference.
 	 * @see #getRecurrenceInfoId()
 	 * @generated
 	 */
-	void setRecurrenceInfoId(String value);
+	void setRecurrenceInfoId(RecurrenceInfo value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Method Type Id</b></em>' attribute.
@@ -503,7 +509,7 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	 * @return the value of the '<em>Shopping List Id</em>' attribute.
 	 * @see #setShoppingListId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -520,30 +526,30 @@ public interface ShoppingList extends BizEntityTyped<ShoppingListType> {
 	void setShoppingListId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Shopping List Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shopping List Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shopping List Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shopping List Type Id</em>' attribute.
-	 * @see #setShoppingListTypeId(String)
+	 * @return the value of the '<em>Shopping List Type Id</em>' reference.
+	 * @see #setShoppingListTypeId(ShoppingListType)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingList_ShoppingListTypeId()
-	 * @model annotation="mimo-ent-domain frame='ShoppingListType'"
+	 * @model keys="shoppingListTypeId"
 	 * @generated
 	 */
-	String getShoppingListTypeId();
+	ShoppingListType getShoppingListTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListTypeId <em>Shopping List Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.shoppinglist.ShoppingList#getShoppingListTypeId <em>Shopping List Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shopping List Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Shopping List Type Id</em>' reference.
 	 * @see #getShoppingListTypeId()
 	 * @generated
 	 */
-	void setShoppingListTypeId(String value);
+	void setShoppingListTypeId(ShoppingListType value);
 
 	/**
 	 * Returns the value of the '<em><b>Visitor Id</b></em>' attribute.

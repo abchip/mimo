@@ -11,11 +11,16 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
 import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,14 +35,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getGlAccountId <em>Gl Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getGlReconciliationName <em>Gl Reconciliation Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getOpeningBalance <em>Opening Balance</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getReconciledBalance <em>Reconciled Balance</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getReconciledDate <em>Reconciled Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getGlAccountId <em>Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlReconciliationImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
@@ -121,24 +126,6 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getGlReconciliationName() <em>Gl Reconciliation Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,24 +198,6 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	protected BigDecimal openingBalance = OPENING_BALANCE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getReconciledBalance() <em>Reconciled Balance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -265,23 +234,32 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 */
 	protected Date reconciledDate = RECONCILED_DATE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected GlAccount glAccountId;
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrganizationPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party organizationPartyId;
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -469,7 +447,24 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -479,8 +474,8 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -538,7 +533,24 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_RECONCILIATION__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -548,8 +560,8 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__STATUS_ID, oldStatusId, statusId));
@@ -573,7 +585,24 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountId() {
+	public GlAccount getGlAccountId() {
+		if (glAccountId != null && ((EObject)glAccountId).eIsProxy()) {
+			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
+			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
+			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
+			}
+		}
+		return glAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetGlAccountId() {
 		return glAccountId;
 	}
 
@@ -583,8 +612,8 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountId(String newGlAccountId) {
-		String oldGlAccountId = glAccountId;
+	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
@@ -629,8 +658,6 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 				return getCreatedDate();
 			case LedgerPackage.GL_RECONCILIATION__DESCRIPTION:
 				return getDescription();
-			case LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID:
-				return getGlAccountId();
 			case LedgerPackage.GL_RECONCILIATION__GL_RECONCILIATION_NAME:
 				return getGlReconciliationName();
 			case LedgerPackage.GL_RECONCILIATION__LAST_MODIFIED_BY_USER_LOGIN:
@@ -639,14 +666,19 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 				return getLastModifiedDate();
 			case LedgerPackage.GL_RECONCILIATION__OPENING_BALANCE:
 				return getOpeningBalance();
-			case LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
 			case LedgerPackage.GL_RECONCILIATION__RECONCILED_BALANCE:
 				return getReconciledBalance();
 			case LedgerPackage.GL_RECONCILIATION__RECONCILED_DATE:
 				return getReconciledDate();
+			case LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID:
+				if (resolve) return getGlAccountId();
+				return basicGetGlAccountId();
+			case LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID:
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
 			case LedgerPackage.GL_RECONCILIATION__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -671,9 +703,6 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 			case LedgerPackage.GL_RECONCILIATION__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID:
-				setGlAccountId((String)newValue);
-				return;
 			case LedgerPackage.GL_RECONCILIATION__GL_RECONCILIATION_NAME:
 				setGlReconciliationName((String)newValue);
 				return;
@@ -686,17 +715,20 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 			case LedgerPackage.GL_RECONCILIATION__OPENING_BALANCE:
 				setOpeningBalance((BigDecimal)newValue);
 				return;
-			case LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
-				return;
 			case LedgerPackage.GL_RECONCILIATION__RECONCILED_BALANCE:
 				setReconciledBalance((BigDecimal)newValue);
 				return;
 			case LedgerPackage.GL_RECONCILIATION__RECONCILED_DATE:
 				setReconciledDate((Date)newValue);
 				return;
+			case LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID:
+				setGlAccountId((GlAccount)newValue);
+				return;
+			case LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)newValue);
+				return;
 			case LedgerPackage.GL_RECONCILIATION__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -722,9 +754,6 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 			case LedgerPackage.GL_RECONCILIATION__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID:
-				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
-				return;
 			case LedgerPackage.GL_RECONCILIATION__GL_RECONCILIATION_NAME:
 				setGlReconciliationName(GL_RECONCILIATION_NAME_EDEFAULT);
 				return;
@@ -737,17 +766,20 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 			case LedgerPackage.GL_RECONCILIATION__OPENING_BALANCE:
 				setOpeningBalance(OPENING_BALANCE_EDEFAULT);
 				return;
-			case LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
-				return;
 			case LedgerPackage.GL_RECONCILIATION__RECONCILED_BALANCE:
 				setReconciledBalance(RECONCILED_BALANCE_EDEFAULT);
 				return;
 			case LedgerPackage.GL_RECONCILIATION__RECONCILED_DATE:
 				setReconciledDate(RECONCILED_DATE_EDEFAULT);
 				return;
+			case LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID:
+				setGlAccountId((GlAccount)null);
+				return;
+			case LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)null);
+				return;
 			case LedgerPackage.GL_RECONCILIATION__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -769,8 +801,6 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
 			case LedgerPackage.GL_RECONCILIATION__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID:
-				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
 			case LedgerPackage.GL_RECONCILIATION__GL_RECONCILIATION_NAME:
 				return GL_RECONCILIATION_NAME_EDEFAULT == null ? glReconciliationName != null : !GL_RECONCILIATION_NAME_EDEFAULT.equals(glReconciliationName);
 			case LedgerPackage.GL_RECONCILIATION__LAST_MODIFIED_BY_USER_LOGIN:
@@ -779,14 +809,16 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
 			case LedgerPackage.GL_RECONCILIATION__OPENING_BALANCE:
 				return OPENING_BALANCE_EDEFAULT == null ? openingBalance != null : !OPENING_BALANCE_EDEFAULT.equals(openingBalance);
-			case LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
 			case LedgerPackage.GL_RECONCILIATION__RECONCILED_BALANCE:
 				return RECONCILED_BALANCE_EDEFAULT == null ? reconciledBalance != null : !RECONCILED_BALANCE_EDEFAULT.equals(reconciledBalance);
 			case LedgerPackage.GL_RECONCILIATION__RECONCILED_DATE:
 				return RECONCILED_DATE_EDEFAULT == null ? reconciledDate != null : !RECONCILED_DATE_EDEFAULT.equals(reconciledDate);
+			case LedgerPackage.GL_RECONCILIATION__GL_ACCOUNT_ID:
+				return glAccountId != null;
+			case LedgerPackage.GL_RECONCILIATION__ORGANIZATION_PARTY_ID:
+				return organizationPartyId != null;
 			case LedgerPackage.GL_RECONCILIATION__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -809,8 +841,6 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 		result.append(createdDate);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", glAccountId: ");
-		result.append(glAccountId);
 		result.append(", glReconciliationName: ");
 		result.append(glReconciliationName);
 		result.append(", lastModifiedByUserLogin: ");
@@ -819,14 +849,10 @@ public class GlReconciliationImpl extends BizEntityImpl implements GlReconciliat
 		result.append(lastModifiedDate);
 		result.append(", openingBalance: ");
 		result.append(openingBalance);
-		result.append(", organizationPartyId: ");
-		result.append(organizationPartyId);
 		result.append(", reconciledBalance: ");
 		result.append(reconciledBalance);
 		result.append(", reconciledDate: ");
 		result.append(reconciledDate);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(')');
 		return result.toString();
 	}

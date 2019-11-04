@@ -93,7 +93,7 @@ public interface BudgetScenario extends BizEntity {
 	 * @return the value of the '<em>Budget Scenario Id</em>' attribute.
 	 * @see #setBudgetScenarioId(String)
 	 * @see org.abchip.mimo.biz.accounting.budget.BudgetPackage#getBudgetScenario_BudgetScenarioId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

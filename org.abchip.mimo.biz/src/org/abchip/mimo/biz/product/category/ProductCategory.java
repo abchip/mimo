@@ -28,9 +28,9 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getLinkOneImageUrl <em>Link One Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getLinkTwoImageUrl <em>Link Two Image Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getLongDescription <em>Long Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getPrimaryParentCategoryId <em>Primary Parent Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#isShowInSelect <em>Show In Select</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryTypeId <em>Product Category Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getPrimaryParentCategoryId <em>Primary Parent Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryAttributes <em>Product Category Attributes</em>}</li>
  * </ul>
  *
@@ -293,30 +293,30 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	List<String> taxAuthorityRateProducts();
 
 	/**
-	 * Returns the value of the '<em><b>Product Category Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Category Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Type Id</em>' attribute.
-	 * @see #setProductCategoryTypeId(String)
+	 * @return the value of the '<em>Product Category Type Id</em>' reference.
+	 * @see #setProductCategoryTypeId(ProductCategoryType)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductCategoryType'"
+	 * @model keys="productCategoryTypeId"
 	 * @generated
 	 */
-	String getProductCategoryTypeId();
+	ProductCategoryType getProductCategoryTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryTypeId <em>Product Category Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategory#getProductCategoryTypeId <em>Product Category Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Category Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Category Type Id</em>' reference.
 	 * @see #getProductCategoryTypeId()
 	 * @generated
 	 */
-	void setProductCategoryTypeId(String value);
+	void setProductCategoryTypeId(ProductCategoryType value);
 
 	/**
 	 * Returns the value of the '<em><b>Show In Select</b></em>' attribute.
@@ -345,30 +345,30 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	void setShowInSelect(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Primary Parent Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Primary Parent Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Primary Parent Category Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Primary Parent Category Id</em>' attribute.
-	 * @see #setPrimaryParentCategoryId(String)
+	 * @return the value of the '<em>Primary Parent Category Id</em>' reference.
+	 * @see #setPrimaryParentCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_PrimaryParentCategoryId()
-	 * @model annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model keys="productCategoryId"
 	 * @generated
 	 */
-	String getPrimaryParentCategoryId();
+	ProductCategory getPrimaryParentCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategory#getPrimaryParentCategoryId <em>Primary Parent Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.category.ProductCategory#getPrimaryParentCategoryId <em>Primary Parent Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Primary Parent Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Primary Parent Category Id</em>' reference.
 	 * @see #getPrimaryParentCategoryId()
 	 * @generated
 	 */
-	void setPrimaryParentCategoryId(String value);
+	void setPrimaryParentCategoryId(ProductCategory value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Category Id</b></em>' attribute.
@@ -381,7 +381,7 @@ public interface ProductCategory extends BizEntityTyped<ProductCategoryType> {
 	 * @return the value of the '<em>Product Category Id</em>' attribute.
 	 * @see #setProductCategoryId(String)
 	 * @see org.abchip.mimo.biz.product.category.CategoryPackage#getProductCategory_ProductCategoryId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -13,6 +13,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.manufacturing.techdata.TechDataCalendar;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.facility.Facility;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,30 +32,30 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getAcquireOrderId <em>Acquire Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getAcquireOrderItemSeqId <em>Acquire Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getActualEndOfLife <em>Actual End Of Life</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getCalendarId <em>Calendar Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getClassEnumId <em>Class Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getDateAcquired <em>Date Acquired</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getDateLastServiced <em>Date Last Serviced</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getDateNextService <em>Date Next Service</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getDepreciation <em>Depreciation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getExpectedEndOfLife <em>Expected End Of Life</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetName <em>Fixed Asset Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getInstanceOfProductId <em>Instance Of Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getLocatedAtFacilityId <em>Located At Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getLocatedAtLocationSeqId <em>Located At Location Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getParentFixedAssetId <em>Parent Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getProductionCapacity <em>Production Capacity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getPurchaseCost <em>Purchase Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getPurchaseCostUomId <em>Purchase Cost Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getSalvageValue <em>Salvage Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getSerialNumber <em>Serial Number</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getParentFixedAssetId <em>Parent Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getInstanceOfProductId <em>Instance Of Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getClassEnumId <em>Class Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getAcquireOrderId <em>Acquire Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getCalendarId <em>Calendar Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getLocatedAtFacilityId <em>Located At Facility Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetAttributes <em>Fixed Asset Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetIdents <em>Fixed Asset Idents</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetMaints <em>Fixed Asset Maints</em>}</li>
@@ -60,30 +68,30 @@ import org.abchip.mimo.biz.BizEntityTyped;
  */
 public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	/**
-	 * Returns the value of the '<em><b>Acquire Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Acquire Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Acquire Order Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Acquire Order Id</em>' attribute.
-	 * @see #setAcquireOrderId(String)
+	 * @return the value of the '<em>Acquire Order Id</em>' reference.
+	 * @see #setAcquireOrderId(OrderHeader)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_AcquireOrderId()
-	 * @model annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model keys="orderId"
 	 * @generated
 	 */
-	String getAcquireOrderId();
+	OrderHeader getAcquireOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getAcquireOrderId <em>Acquire Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getAcquireOrderId <em>Acquire Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Acquire Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Acquire Order Id</em>' reference.
 	 * @see #getAcquireOrderId()
 	 * @generated
 	 */
-	void setAcquireOrderId(String value);
+	void setAcquireOrderId(OrderHeader value);
 
 	/**
 	 * Returns the value of the '<em><b>Acquire Order Item Seq Id</b></em>' attribute.
@@ -138,56 +146,56 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	void setActualEndOfLife(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Calendar Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Calendar Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Calendar Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Calendar Id</em>' attribute.
-	 * @see #setCalendarId(String)
+	 * @return the value of the '<em>Calendar Id</em>' reference.
+	 * @see #setCalendarId(TechDataCalendar)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_CalendarId()
-	 * @model annotation="mimo-ent-domain frame='TechDataCalendar'"
+	 * @model keys="calendarId"
 	 * @generated
 	 */
-	String getCalendarId();
+	TechDataCalendar getCalendarId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getCalendarId <em>Calendar Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getCalendarId <em>Calendar Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Calendar Id</em>' attribute.
+	 * @param value the new value of the '<em>Calendar Id</em>' reference.
 	 * @see #getCalendarId()
 	 * @generated
 	 */
-	void setCalendarId(String value);
+	void setCalendarId(TechDataCalendar value);
 
 	/**
-	 * Returns the value of the '<em><b>Class Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Class Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Class Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Class Enum Id</em>' attribute.
-	 * @see #setClassEnumId(String)
+	 * @return the value of the '<em>Class Enum Id</em>' reference.
+	 * @see #setClassEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_ClassEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getClassEnumId();
+	Enumeration getClassEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getClassEnumId <em>Class Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getClassEnumId <em>Class Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Class Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Class Enum Id</em>' reference.
 	 * @see #getClassEnumId()
 	 * @generated
 	 */
-	void setClassEnumId(String value);
+	void setClassEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Date Acquired</b></em>' attribute.
@@ -346,56 +354,56 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	void setFixedAssetName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Instance Of Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Instance Of Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Instance Of Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instance Of Product Id</em>' attribute.
-	 * @see #setInstanceOfProductId(String)
+	 * @return the value of the '<em>Instance Of Product Id</em>' reference.
+	 * @see #setInstanceOfProductId(Product)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_InstanceOfProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getInstanceOfProductId();
+	Product getInstanceOfProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getInstanceOfProductId <em>Instance Of Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getInstanceOfProductId <em>Instance Of Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Instance Of Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Instance Of Product Id</em>' reference.
 	 * @see #getInstanceOfProductId()
 	 * @generated
 	 */
-	void setInstanceOfProductId(String value);
+	void setInstanceOfProductId(Product value);
 
 	/**
-	 * Returns the value of the '<em><b>Located At Facility Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Located At Facility Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Located At Facility Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Located At Facility Id</em>' attribute.
-	 * @see #setLocatedAtFacilityId(String)
+	 * @return the value of the '<em>Located At Facility Id</em>' reference.
+	 * @see #setLocatedAtFacilityId(Facility)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_LocatedAtFacilityId()
-	 * @model annotation="mimo-ent-domain frame='Facility'"
+	 * @model keys="facilityId"
 	 * @generated
 	 */
-	String getLocatedAtFacilityId();
+	Facility getLocatedAtFacilityId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getLocatedAtFacilityId <em>Located At Facility Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getLocatedAtFacilityId <em>Located At Facility Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Located At Facility Id</em>' attribute.
+	 * @param value the new value of the '<em>Located At Facility Id</em>' reference.
 	 * @see #getLocatedAtFacilityId()
 	 * @generated
 	 */
-	void setLocatedAtFacilityId(String value);
+	void setLocatedAtFacilityId(Facility value);
 
 	/**
 	 * Returns the value of the '<em><b>Located At Location Seq Id</b></em>' attribute.
@@ -424,30 +432,30 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	void setLocatedAtLocationSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Production Capacity</b></em>' attribute.
@@ -528,30 +536,30 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	void setPurchaseCostUomId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id</em>' attribute.
-	 * @see #setRoleTypeId(String)
+	 * @return the value of the '<em>Role Type Id</em>' reference.
+	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_RoleTypeId()
-	 * @model annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeId();
+	RoleType getRoleTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getRoleTypeId <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
 	 */
-	void setRoleTypeId(String value);
+	void setRoleTypeId(RoleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Salvage Value</b></em>' attribute.
@@ -606,30 +614,30 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	void setSerialNumber(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uom Id</em>' attribute.
-	 * @see #setUomId(String)
+	 * @return the value of the '<em>Uom Id</em>' reference.
+	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_UomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getUomId();
+	Uom getUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getUomId <em>Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getUomId <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Uom Id</em>' reference.
 	 * @see #getUomId()
 	 * @generated
 	 */
-	void setUomId(String value);
+	void setUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Fixed Asset Attributes</b></em>' attribute list.
@@ -790,56 +798,56 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	List<String> workEfforts();
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Type Id</em>' attribute.
-	 * @see #setFixedAssetTypeId(String)
+	 * @return the value of the '<em>Fixed Asset Type Id</em>' reference.
+	 * @see #setFixedAssetTypeId(FixedAssetType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetTypeId()
-	 * @model annotation="mimo-ent-domain frame='FixedAssetType'"
+	 * @model keys="fixedAssetTypeId"
 	 * @generated
 	 */
-	String getFixedAssetTypeId();
+	FixedAssetType getFixedAssetTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getFixedAssetTypeId <em>Fixed Asset Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Type Id</em>' reference.
 	 * @see #getFixedAssetTypeId()
 	 * @generated
 	 */
-	void setFixedAssetTypeId(String value);
+	void setFixedAssetTypeId(FixedAssetType value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Fixed Asset Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Fixed Asset Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Fixed Asset Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Fixed Asset Id</em>' attribute.
-	 * @see #setParentFixedAssetId(String)
+	 * @return the value of the '<em>Parent Fixed Asset Id</em>' reference.
+	 * @see #setParentFixedAssetId(FixedAsset)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_ParentFixedAssetId()
-	 * @model annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model keys="fixedAssetId"
 	 * @generated
 	 */
-	String getParentFixedAssetId();
+	FixedAsset getParentFixedAssetId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getParentFixedAssetId <em>Parent Fixed Asset Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAsset#getParentFixedAssetId <em>Parent Fixed Asset Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Fixed Asset Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Fixed Asset Id</em>' reference.
 	 * @see #getParentFixedAssetId()
 	 * @generated
 	 */
-	void setParentFixedAssetId(String value);
+	void setParentFixedAssetId(FixedAsset value);
 
 	/**
 	 * Returns the value of the '<em><b>Fixed Asset Id</b></em>' attribute.
@@ -852,7 +860,7 @@ public interface FixedAsset extends BizEntityTyped<FixedAssetType> {
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAsset_FixedAssetId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

@@ -66,7 +66,6 @@ public interface PartyIcsAvsOverride extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyIcsAvsOverride_PartyId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();

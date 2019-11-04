@@ -129,7 +129,7 @@ public interface ShipmentMethodType extends BizEntity {
 	 * @return the value of the '<em>Shipment Method Type Id</em>' attribute.
 	 * @see #setShipmentMethodTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentMethodType_ShipmentMethodTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

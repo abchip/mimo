@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.party.party;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +22,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.WebSiteRole#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.WebSiteRole#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.WebSiteRole#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.WebSiteRole#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.WebSiteRole#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.WebSiteRole#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.WebSiteRole#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.WebSiteRole#getWebSiteId <em>Web Site Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.party.PartyPackage#getWebSiteRole()
@@ -113,60 +114,56 @@ public interface WebSiteRole extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Web Site Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Web Site Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Web Site Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Web Site Id</em>' attribute.
-	 * @see #setWebSiteId(String)
+	 * @return the value of the '<em>Web Site Id</em>' reference.
+	 * @see #setWebSiteId(WebSite)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getWebSiteRole_WebSiteId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WebSite'"
+	 * @model keys="webSiteId"
 	 * @generated
 	 */
-	String getWebSiteId();
+	WebSite getWebSiteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.WebSiteRole#getWebSiteId <em>Web Site Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.WebSiteRole#getWebSiteId <em>Web Site Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Web Site Id</em>' attribute.
+	 * @param value the new value of the '<em>Web Site Id</em>' reference.
 	 * @see #getWebSiteId()
 	 * @generated
 	 */
-	void setWebSiteId(String value);
+	void setWebSiteId(WebSite value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id</em>' attribute.
-	 * @see #setRoleTypeId(String)
+	 * @return the value of the '<em>Role Type Id</em>' reference.
+	 * @see #setRoleTypeId(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getWebSiteRole_RoleTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeId();
+	RoleType getRoleTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.WebSiteRole#getRoleTypeId <em>Role Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.WebSiteRole#getRoleTypeId <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id</em>' reference.
 	 * @see #getRoleTypeId()
 	 * @generated
 	 */
-	void setRoleTypeId(String value);
+	void setRoleTypeId(RoleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
@@ -181,7 +178,6 @@ public interface WebSiteRole extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getWebSiteRole_PartyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
 	 * @generated
 	 */
 	String getPartyId();

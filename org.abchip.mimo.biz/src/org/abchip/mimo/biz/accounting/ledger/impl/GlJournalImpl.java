@@ -13,8 +13,11 @@ import java.util.List;
 import org.abchip.mimo.biz.accounting.ledger.GlJournal;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,8 +31,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getGlJournalId <em>Gl Journal Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getGlJournalName <em>Gl Journal Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#isIsPosted <em>Is Posted</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getPostedDate <em>Posted Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.impl.GlJournalImpl#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,24 +97,6 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	 */
 	protected boolean isPosted = IS_POSTED_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORGANIZATION_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrganizationPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getPostedDate() <em>Posted Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,6 +114,15 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	 * @ordered
 	 */
 	protected Date postedDate = POSTED_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getOrganizationPartyId() <em>Organization Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrganizationPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party organizationPartyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +195,24 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	 * @generated
 	 */
 	@Override
-	public String getOrganizationPartyId() {
+	public Party getOrganizationPartyId() {
+		if (organizationPartyId != null && ((EObject)organizationPartyId).eIsProxy()) {
+			InternalEObject oldOrganizationPartyId = (InternalEObject)organizationPartyId;
+			organizationPartyId = (Party)eResolveProxy(oldOrganizationPartyId);
+			if (organizationPartyId != oldOrganizationPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
+			}
+		}
+		return organizationPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOrganizationPartyId() {
 		return organizationPartyId;
 	}
 
@@ -211,8 +222,8 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 	 * @generated
 	 */
 	@Override
-	public void setOrganizationPartyId(String newOrganizationPartyId) {
-		String oldOrganizationPartyId = organizationPartyId;
+	public void setOrganizationPartyId(Party newOrganizationPartyId) {
+		Party oldOrganizationPartyId = organizationPartyId;
 		organizationPartyId = newOrganizationPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID, oldOrganizationPartyId, organizationPartyId));
@@ -302,10 +313,11 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 				return getGlJournalName();
 			case LedgerPackage.GL_JOURNAL__IS_POSTED:
 				return isIsPosted();
-			case LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID:
-				return getOrganizationPartyId();
 			case LedgerPackage.GL_JOURNAL__POSTED_DATE:
 				return getPostedDate();
+			case LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID:
+				if (resolve) return getOrganizationPartyId();
+				return basicGetOrganizationPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -327,11 +339,11 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 			case LedgerPackage.GL_JOURNAL__IS_POSTED:
 				setIsPosted((Boolean)newValue);
 				return;
-			case LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId((String)newValue);
-				return;
 			case LedgerPackage.GL_JOURNAL__POSTED_DATE:
 				setPostedDate((Date)newValue);
+				return;
+			case LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -354,11 +366,11 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 			case LedgerPackage.GL_JOURNAL__IS_POSTED:
 				setIsPosted(IS_POSTED_EDEFAULT);
 				return;
-			case LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID:
-				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
-				return;
 			case LedgerPackage.GL_JOURNAL__POSTED_DATE:
 				setPostedDate(POSTED_DATE_EDEFAULT);
+				return;
+			case LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID:
+				setOrganizationPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -378,10 +390,10 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 				return GL_JOURNAL_NAME_EDEFAULT == null ? glJournalName != null : !GL_JOURNAL_NAME_EDEFAULT.equals(glJournalName);
 			case LedgerPackage.GL_JOURNAL__IS_POSTED:
 				return isPosted != IS_POSTED_EDEFAULT;
-			case LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID:
-				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
 			case LedgerPackage.GL_JOURNAL__POSTED_DATE:
 				return POSTED_DATE_EDEFAULT == null ? postedDate != null : !POSTED_DATE_EDEFAULT.equals(postedDate);
+			case LedgerPackage.GL_JOURNAL__ORGANIZATION_PARTY_ID:
+				return organizationPartyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -402,8 +414,6 @@ public class GlJournalImpl extends BizEntityImpl implements GlJournal {
 		result.append(glJournalName);
 		result.append(", isPosted: ");
 		result.append(isPosted);
-		result.append(", organizationPartyId: ");
-		result.append(organizationPartyId);
 		result.append(", postedDate: ");
 		result.append(postedDate);
 		result.append(')');

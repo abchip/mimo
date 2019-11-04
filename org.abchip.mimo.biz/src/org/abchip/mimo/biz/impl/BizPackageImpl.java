@@ -412,6 +412,22 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -428,22 +444,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -555,6 +555,14 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -563,14 +571,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -650,6 +650,14 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -658,14 +666,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -982,6 +982,16 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		createEAttribute(bizEntityNoteEClass, BIZ_ENTITY_NOTE__NOTE_ID);
 		createEReference(bizEntityNoteEClass, BIZ_ENTITY_NOTE__NOTE);
 
+		bizEntityNoteDataEClass = createEClass(BIZ_ENTITY_NOTE_DATA);
+		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_ID);
+		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID);
+		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME);
+		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL);
+		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME);
+		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_INFO);
+		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_NAME);
+		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_PARTY);
+
 		bizEntityTypedEClass = createEClass(BIZ_ENTITY_TYPED);
 
 		bizEntityTypeEClass = createEClass(BIZ_ENTITY_TYPE);
@@ -995,16 +1005,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		bizProviderUserEClass = createEClass(BIZ_PROVIDER_USER);
 		createEAttribute(bizProviderUserEClass, BIZ_PROVIDER_USER__USER);
 		createEAttribute(bizProviderUserEClass, BIZ_PROVIDER_USER__PASSWORD);
-
-		bizEntityNoteDataEClass = createEClass(BIZ_ENTITY_NOTE_DATA);
-		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_ID);
-		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_ID);
-		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__MORE_INFO_ITEM_NAME);
-		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__MORE_INFO_URL);
-		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_DATE_TIME);
-		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_INFO);
-		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_NAME);
-		createEAttribute(bizEntityNoteDataEClass, BIZ_ENTITY_NOTE_DATA__NOTE_PARTY);
 
 		// Create enums
 		bizLoginTypeEEnum = createEEnum(BIZ_LOGIN_TYPE);
@@ -1071,6 +1071,14 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		PositionPackage thePositionPackage = (PositionPackage)EPackage.Registry.INSTANCE.getEPackage(PositionPackage.eNS_URI);
 		RecruitmentPackage theRecruitmentPackage = (RecruitmentPackage)EPackage.Registry.INSTANCE.getEPackage(RecruitmentPackage.eNS_URI);
 		TrainingsPackage theTrainingsPackage = (TrainingsPackage)EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
+		BomPackage theBomPackage = (BomPackage)EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		MrpPackage theMrpPackage = (MrpPackage)EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		TechdataPackage theTechdataPackage = (TechdataPackage)EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		CampaignPackage theCampaignPackage = (CampaignPackage)EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		ContactPackage theContactPackage = (ContactPackage)EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		OpportunityPackage theOpportunityPackage = (OpportunityPackage)EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		SegmentPackage theSegmentPackage = (SegmentPackage)EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		TrackingPackage theTrackingPackage = (TrackingPackage)EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
 		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		QuotePackage theQuotePackage = (QuotePackage)EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
 		RequestPackage theRequestPackage = (RequestPackage)EPackage.Registry.INSTANCE.getEPackage(RequestPackage.eNS_URI);
@@ -1079,14 +1087,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		ReturnPackage theReturnPackage = (ReturnPackage)EPackage.Registry.INSTANCE.getEPackage(ReturnPackage.eNS_URI);
 		ShoppingcartPackage theShoppingcartPackage = (ShoppingcartPackage)EPackage.Registry.INSTANCE.getEPackage(ShoppingcartPackage.eNS_URI);
 		ShoppinglistPackage theShoppinglistPackage = (ShoppinglistPackage)EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
-		CampaignPackage theCampaignPackage = (CampaignPackage)EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		ContactPackage theContactPackage = (ContactPackage)EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		OpportunityPackage theOpportunityPackage = (OpportunityPackage)EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		SegmentPackage theSegmentPackage = (SegmentPackage)EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		TrackingPackage theTrackingPackage = (TrackingPackage)EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		BomPackage theBomPackage = (BomPackage)EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		MrpPackage theMrpPackage = (MrpPackage)EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		TechdataPackage theTechdataPackage = (TechdataPackage)EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
 		AgreementPackage theAgreementPackage = (AgreementPackage)EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		CommunicationPackage theCommunicationPackage = (CommunicationPackage)EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
 		org.abchip.mimo.biz.party.contact.ContactPackage theContactPackage_1 = (org.abchip.mimo.biz.party.contact.ContactPackage)EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.party.contact.ContactPackage.eNS_URI);
@@ -1159,6 +1159,14 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		getESubpackages().add(thePositionPackage);
 		getESubpackages().add(theRecruitmentPackage);
 		getESubpackages().add(theTrainingsPackage);
+		getESubpackages().add(theBomPackage);
+		getESubpackages().add(theMrpPackage);
+		getESubpackages().add(theTechdataPackage);
+		getESubpackages().add(theCampaignPackage);
+		getESubpackages().add(theContactPackage);
+		getESubpackages().add(theOpportunityPackage);
+		getESubpackages().add(theSegmentPackage);
+		getESubpackages().add(theTrackingPackage);
 		getESubpackages().add(theOrderPackage);
 		getESubpackages().add(theQuotePackage);
 		getESubpackages().add(theRequestPackage);
@@ -1167,14 +1175,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		getESubpackages().add(theReturnPackage);
 		getESubpackages().add(theShoppingcartPackage);
 		getESubpackages().add(theShoppinglistPackage);
-		getESubpackages().add(theCampaignPackage);
-		getESubpackages().add(theContactPackage);
-		getESubpackages().add(theOpportunityPackage);
-		getESubpackages().add(theSegmentPackage);
-		getESubpackages().add(theTrackingPackage);
-		getESubpackages().add(theBomPackage);
-		getESubpackages().add(theMrpPackage);
-		getESubpackages().add(theTechdataPackage);
 		getESubpackages().add(theAgreementPackage);
 		getESubpackages().add(theCommunicationPackage);
 		getESubpackages().add(theContactPackage_1);
@@ -1226,6 +1226,7 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		bizEntityEClass.getESuperTypes().add(theEntityPackage_1.getEntityNameable());
 		bizEntityEClass.getESuperTypes().add(theEntityPackage_1.getEntityInfo());
 		bizEntityNoteEClass.getESuperTypes().add(this.getBizEntity());
+		bizEntityNoteDataEClass.getESuperTypes().add(this.getBizEntity());
 		g1 = createEGenericType(theEntityPackage_1.getEntityTyped());
 		g2 = createEGenericType(bizEntityTypedEClass_T);
 		g1.getETypeArguments().add(g2);
@@ -1240,7 +1241,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		bizEntityTypeEClass.getEGenericSuperTypes().add(g1);
 		bizProviderConfigEClass.getESuperTypes().add(theEntityPackage_1.getEntity());
 		bizProviderUserEClass.getESuperTypes().add(this.getBizEntity());
-		bizEntityNoteDataEClass.getESuperTypes().add(this.getBizEntity());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(bizEntityEClass, BizEntity.class, "BizEntity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1248,6 +1248,16 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		initEClass(bizEntityNoteEClass, BizEntityNote.class, "BizEntityNote", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBizEntityNote_NoteId(), ecorePackage.getEString(), "noteId", null, 1, 1, BizEntityNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBizEntityNote_Note(), this.getBizEntityNoteData(), null, "note", null, 1, 1, BizEntityNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bizEntityNoteDataEClass, BizEntityNoteData.class, "BizEntityNoteData", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBizEntityNoteData_NoteId(), ecorePackage.getEString(), "noteId", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBizEntityNoteData_MoreInfoItemId(), ecorePackage.getEString(), "moreInfoItemId", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBizEntityNoteData_MoreInfoItemName(), ecorePackage.getEString(), "moreInfoItemName", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBizEntityNoteData_MoreInfoUrl(), ecorePackage.getEString(), "moreInfoUrl", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBizEntityNoteData_NoteDateTime(), ecorePackage.getEDate(), "noteDateTime", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBizEntityNoteData_NoteInfo(), ecorePackage.getEString(), "noteInfo", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBizEntityNoteData_NoteName(), ecorePackage.getEString(), "noteName", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBizEntityNoteData_NoteParty(), ecorePackage.getEString(), "noteParty", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bizEntityTypedEClass, BizEntityTyped.class, "BizEntityTyped", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1262,16 +1272,6 @@ public class BizPackageImpl extends EPackageImpl implements BizPackage {
 		initEClass(bizProviderUserEClass, BizProviderUser.class, "BizProviderUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBizProviderUser_User(), ecorePackage.getEString(), "user", null, 1, 1, BizProviderUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBizProviderUser_Password(), ecorePackage.getEString(), "password", null, 1, 1, BizProviderUser.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(bizEntityNoteDataEClass, BizEntityNoteData.class, "BizEntityNoteData", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBizEntityNoteData_NoteId(), ecorePackage.getEString(), "noteId", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBizEntityNoteData_MoreInfoItemId(), ecorePackage.getEString(), "moreInfoItemId", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBizEntityNoteData_MoreInfoItemName(), ecorePackage.getEString(), "moreInfoItemName", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBizEntityNoteData_MoreInfoUrl(), ecorePackage.getEString(), "moreInfoUrl", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBizEntityNoteData_NoteDateTime(), ecorePackage.getEDate(), "noteDateTime", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBizEntityNoteData_NoteInfo(), ecorePackage.getEString(), "noteInfo", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBizEntityNoteData_NoteName(), ecorePackage.getEString(), "noteName", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBizEntityNoteData_NoteParty(), ecorePackage.getEString(), "noteParty", null, 0, 1, BizEntityNoteData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(bizLoginTypeEEnum, BizLoginType.class, "BizLoginType");

@@ -11,10 +11,13 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.WorkReqFulfType;
 import org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -59,44 +62,24 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	protected String requirementId = REQUIREMENT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWorkEffortId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
+	protected WorkEffort workEffortId;
 
 	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWorkReqFulfTypeId() <em>Work Req Fulf Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getWorkReqFulfTypeId() <em>Work Req Fulf Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWorkReqFulfTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WORK_REQ_FULF_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkReqFulfTypeId() <em>Work Req Fulf Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkReqFulfTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workReqFulfTypeId = WORK_REQ_FULF_TYPE_ID_EDEFAULT;
+	protected WorkReqFulfType workReqFulfTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,7 +129,24 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -156,8 +156,8 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -169,7 +169,24 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	 * @generated
 	 */
 	@Override
-	public String getWorkReqFulfTypeId() {
+	public WorkReqFulfType getWorkReqFulfTypeId() {
+		if (workReqFulfTypeId != null && ((EObject)workReqFulfTypeId).eIsProxy()) {
+			InternalEObject oldWorkReqFulfTypeId = (InternalEObject)workReqFulfTypeId;
+			workReqFulfTypeId = (WorkReqFulfType)eResolveProxy(oldWorkReqFulfTypeId);
+			if (workReqFulfTypeId != oldWorkReqFulfTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID, oldWorkReqFulfTypeId, workReqFulfTypeId));
+			}
+		}
+		return workReqFulfTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkReqFulfType basicGetWorkReqFulfTypeId() {
 		return workReqFulfTypeId;
 	}
 
@@ -179,8 +196,8 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 	 * @generated
 	 */
 	@Override
-	public void setWorkReqFulfTypeId(String newWorkReqFulfTypeId) {
-		String oldWorkReqFulfTypeId = workReqFulfTypeId;
+	public void setWorkReqFulfTypeId(WorkReqFulfType newWorkReqFulfTypeId) {
+		WorkReqFulfType oldWorkReqFulfTypeId = workReqFulfTypeId;
 		workReqFulfTypeId = newWorkReqFulfTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID, oldWorkReqFulfTypeId, workReqFulfTypeId));
@@ -197,9 +214,11 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID:
 				return getRequirementId();
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID:
-				return getWorkEffortId();
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID:
-				return getWorkReqFulfTypeId();
+				if (resolve) return getWorkReqFulfTypeId();
+				return basicGetWorkReqFulfTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,10 +235,10 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 				setRequirementId((String)newValue);
 				return;
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID:
-				setWorkReqFulfTypeId((String)newValue);
+				setWorkReqFulfTypeId((WorkReqFulfType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -237,10 +256,10 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 				setRequirementId(REQUIREMENT_ID_EDEFAULT);
 				return;
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
+				setWorkEffortId((WorkEffort)null);
 				return;
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID:
-				setWorkReqFulfTypeId(WORK_REQ_FULF_TYPE_ID_EDEFAULT);
+				setWorkReqFulfTypeId((WorkReqFulfType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -257,9 +276,9 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__REQUIREMENT_ID:
 				return REQUIREMENT_ID_EDEFAULT == null ? requirementId != null : !REQUIREMENT_ID_EDEFAULT.equals(requirementId);
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
+				return workEffortId != null;
 			case RequirementPackage.WORK_REQUIREMENT_FULFILLMENT__WORK_REQ_FULF_TYPE_ID:
-				return WORK_REQ_FULF_TYPE_ID_EDEFAULT == null ? workReqFulfTypeId != null : !WORK_REQ_FULF_TYPE_ID_EDEFAULT.equals(workReqFulfTypeId);
+				return workReqFulfTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -276,10 +295,6 @@ public class WorkRequirementFulfillmentImpl extends BizEntityTypedImpl<WorkReqFu
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (requirementId: ");
 		result.append(requirementId);
-		result.append(", workEffortId: ");
-		result.append(workEffortId);
-		result.append(", workReqFulfTypeId: ");
-		result.append(workReqFulfTypeId);
 		result.append(')');
 		return result.toString();
 	}

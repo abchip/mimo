@@ -15,12 +15,16 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,11 +38,8 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getBillbackFactor <em>Billback Factor</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getLastModifiedDate <em>Last Modified Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getOverrideOrgPartyId <em>Override Org Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getPromoName <em>Promo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getPromoText <em>Promo Text</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#isRequireCode <em>Require Code</em>}</li>
@@ -47,6 +48,9 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getUseLimitPerOrder <em>Use Limit Per Order</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getUseLimitPerPromotion <em>Use Limit Per Promotion</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#isUserEntered <em>User Entered</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getOverrideOrgPartyId <em>Override Org Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getCreatedByUserLogin <em>Created By User Login</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoImpl#getProductPromoRules <em>Product Promo Rules</em>}</li>
  * </ul>
  *
@@ -99,26 +103,6 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	protected BigDecimal billbackFactor = BILLBACK_FACTOR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CREATED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCreatedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String createdByUserLogin = CREATED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCreatedDate() <em>Created Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,26 +123,6 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	protected Date createdDate = CREATED_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastModifiedByUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastModifiedByUserLogin = LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getLastModifiedDate() <em>Last Modified Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -177,26 +141,6 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @ordered
 	 */
 	protected Date lastModifiedDate = LAST_MODIFIED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOverrideOrgPartyId() <em>Override Org Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideOrgPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OVERRIDE_ORG_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOverrideOrgPartyId() <em>Override Org Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideOrgPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String overrideOrgPartyId = OVERRIDE_ORG_PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPromoName() <em>Promo Name</em>}' attribute.
@@ -359,6 +303,36 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	protected boolean userEntered = USER_ENTERED_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getOverrideOrgPartyId() <em>Override Org Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOverrideOrgPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party overrideOrgPartyId;
+
+	/**
+	 * The cached value of the '{@link #getCreatedByUserLogin() <em>Created By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreatedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin createdByUserLogin;
+
+	/**
+	 * The cached value of the '{@link #getLastModifiedByUserLogin() <em>Last Modified By User Login</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastModifiedByUserLogin()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin lastModifiedByUserLogin;
+
+	/**
 	 * The cached value of the '{@link #getProductPromoRules() <em>Product Promo Rules</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -416,7 +390,24 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public String getCreatedByUserLogin() {
+	public UserLogin getCreatedByUserLogin() {
+		if (createdByUserLogin != null && ((EObject)createdByUserLogin).eIsProxy()) {
+			InternalEObject oldCreatedByUserLogin = (InternalEObject)createdByUserLogin;
+			createdByUserLogin = (UserLogin)eResolveProxy(oldCreatedByUserLogin);
+			if (createdByUserLogin != oldCreatedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
+			}
+		}
+		return createdByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetCreatedByUserLogin() {
 		return createdByUserLogin;
 	}
 
@@ -426,8 +417,8 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public void setCreatedByUserLogin(String newCreatedByUserLogin) {
-		String oldCreatedByUserLogin = createdByUserLogin;
+	public void setCreatedByUserLogin(UserLogin newCreatedByUserLogin) {
+		UserLogin oldCreatedByUserLogin = createdByUserLogin;
 		createdByUserLogin = newCreatedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN, oldCreatedByUserLogin, createdByUserLogin));
@@ -462,7 +453,24 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public String getLastModifiedByUserLogin() {
+	public UserLogin getLastModifiedByUserLogin() {
+		if (lastModifiedByUserLogin != null && ((EObject)lastModifiedByUserLogin).eIsProxy()) {
+			InternalEObject oldLastModifiedByUserLogin = (InternalEObject)lastModifiedByUserLogin;
+			lastModifiedByUserLogin = (UserLogin)eResolveProxy(oldLastModifiedByUserLogin);
+			if (lastModifiedByUserLogin != oldLastModifiedByUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
+			}
+		}
+		return lastModifiedByUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetLastModifiedByUserLogin() {
 		return lastModifiedByUserLogin;
 	}
 
@@ -472,8 +480,8 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public void setLastModifiedByUserLogin(String newLastModifiedByUserLogin) {
-		String oldLastModifiedByUserLogin = lastModifiedByUserLogin;
+	public void setLastModifiedByUserLogin(UserLogin newLastModifiedByUserLogin) {
+		UserLogin oldLastModifiedByUserLogin = lastModifiedByUserLogin;
 		lastModifiedByUserLogin = newLastModifiedByUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN, oldLastModifiedByUserLogin, lastModifiedByUserLogin));
@@ -508,7 +516,24 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public String getOverrideOrgPartyId() {
+	public Party getOverrideOrgPartyId() {
+		if (overrideOrgPartyId != null && ((EObject)overrideOrgPartyId).eIsProxy()) {
+			InternalEObject oldOverrideOrgPartyId = (InternalEObject)overrideOrgPartyId;
+			overrideOrgPartyId = (Party)eResolveProxy(oldOverrideOrgPartyId);
+			if (overrideOrgPartyId != oldOverrideOrgPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID, oldOverrideOrgPartyId, overrideOrgPartyId));
+			}
+		}
+		return overrideOrgPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOverrideOrgPartyId() {
 		return overrideOrgPartyId;
 	}
 
@@ -518,8 +543,8 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 	 * @generated
 	 */
 	@Override
-	public void setOverrideOrgPartyId(String newOverrideOrgPartyId) {
-		String oldOverrideOrgPartyId = overrideOrgPartyId;
+	public void setOverrideOrgPartyId(Party newOverrideOrgPartyId) {
+		Party oldOverrideOrgPartyId = overrideOrgPartyId;
 		overrideOrgPartyId = newOverrideOrgPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID, oldOverrideOrgPartyId, overrideOrgPartyId));
@@ -817,16 +842,10 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 				return getProductPromoId();
 			case PromoPackage.PRODUCT_PROMO__BILLBACK_FACTOR:
 				return getBillbackFactor();
-			case PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN:
-				return getCreatedByUserLogin();
 			case PromoPackage.PRODUCT_PROMO__CREATED_DATE:
 				return getCreatedDate();
-			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN:
-				return getLastModifiedByUserLogin();
 			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_DATE:
 				return getLastModifiedDate();
-			case PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID:
-				return getOverrideOrgPartyId();
 			case PromoPackage.PRODUCT_PROMO__PROMO_NAME:
 				return getPromoName();
 			case PromoPackage.PRODUCT_PROMO__PROMO_TEXT:
@@ -843,6 +862,15 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 				return getUseLimitPerPromotion();
 			case PromoPackage.PRODUCT_PROMO__USER_ENTERED:
 				return isUserEntered();
+			case PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID:
+				if (resolve) return getOverrideOrgPartyId();
+				return basicGetOverrideOrgPartyId();
+			case PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN:
+				if (resolve) return getCreatedByUserLogin();
+				return basicGetCreatedByUserLogin();
+			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN:
+				if (resolve) return getLastModifiedByUserLogin();
+				return basicGetLastModifiedByUserLogin();
 			case PromoPackage.PRODUCT_PROMO__PRODUCT_PROMO_RULES:
 				return getProductPromoRules();
 		}
@@ -864,20 +892,11 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 			case PromoPackage.PRODUCT_PROMO__BILLBACK_FACTOR:
 				setBillbackFactor((BigDecimal)newValue);
 				return;
-			case PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO__CREATED_DATE:
 				setCreatedDate((Date)newValue);
 				return;
-			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_DATE:
 				setLastModifiedDate((Date)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID:
-				setOverrideOrgPartyId((String)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO__PROMO_NAME:
 				setPromoName((String)newValue);
@@ -903,6 +922,15 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 			case PromoPackage.PRODUCT_PROMO__USER_ENTERED:
 				setUserEntered((Boolean)newValue);
 				return;
+			case PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID:
+				setOverrideOrgPartyId((Party)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)newValue);
+				return;
 			case PromoPackage.PRODUCT_PROMO__PRODUCT_PROMO_RULES:
 				getProductPromoRules().clear();
 				getProductPromoRules().addAll((Collection<? extends String>)newValue);
@@ -925,20 +953,11 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 			case PromoPackage.PRODUCT_PROMO__BILLBACK_FACTOR:
 				setBillbackFactor(BILLBACK_FACTOR_EDEFAULT);
 				return;
-			case PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN:
-				setCreatedByUserLogin(CREATED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO__CREATED_DATE:
 				setCreatedDate(CREATED_DATE_EDEFAULT);
 				return;
-			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN:
-				setLastModifiedByUserLogin(LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_DATE:
 				setLastModifiedDate(LAST_MODIFIED_DATE_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID:
-				setOverrideOrgPartyId(OVERRIDE_ORG_PARTY_ID_EDEFAULT);
 				return;
 			case PromoPackage.PRODUCT_PROMO__PROMO_NAME:
 				setPromoName(PROMO_NAME_EDEFAULT);
@@ -964,6 +983,15 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 			case PromoPackage.PRODUCT_PROMO__USER_ENTERED:
 				setUserEntered(USER_ENTERED_EDEFAULT);
 				return;
+			case PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID:
+				setOverrideOrgPartyId((Party)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN:
+				setCreatedByUserLogin((UserLogin)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN:
+				setLastModifiedByUserLogin((UserLogin)null);
+				return;
 			case PromoPackage.PRODUCT_PROMO__PRODUCT_PROMO_RULES:
 				getProductPromoRules().clear();
 				return;
@@ -983,16 +1011,10 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
 			case PromoPackage.PRODUCT_PROMO__BILLBACK_FACTOR:
 				return BILLBACK_FACTOR_EDEFAULT == null ? billbackFactor != null : !BILLBACK_FACTOR_EDEFAULT.equals(billbackFactor);
-			case PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN:
-				return CREATED_BY_USER_LOGIN_EDEFAULT == null ? createdByUserLogin != null : !CREATED_BY_USER_LOGIN_EDEFAULT.equals(createdByUserLogin);
 			case PromoPackage.PRODUCT_PROMO__CREATED_DATE:
 				return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN:
-				return LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT == null ? lastModifiedByUserLogin != null : !LAST_MODIFIED_BY_USER_LOGIN_EDEFAULT.equals(lastModifiedByUserLogin);
 			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_DATE:
 				return LAST_MODIFIED_DATE_EDEFAULT == null ? lastModifiedDate != null : !LAST_MODIFIED_DATE_EDEFAULT.equals(lastModifiedDate);
-			case PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID:
-				return OVERRIDE_ORG_PARTY_ID_EDEFAULT == null ? overrideOrgPartyId != null : !OVERRIDE_ORG_PARTY_ID_EDEFAULT.equals(overrideOrgPartyId);
 			case PromoPackage.PRODUCT_PROMO__PROMO_NAME:
 				return PROMO_NAME_EDEFAULT == null ? promoName != null : !PROMO_NAME_EDEFAULT.equals(promoName);
 			case PromoPackage.PRODUCT_PROMO__PROMO_TEXT:
@@ -1009,6 +1031,12 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 				return useLimitPerPromotion != USE_LIMIT_PER_PROMOTION_EDEFAULT;
 			case PromoPackage.PRODUCT_PROMO__USER_ENTERED:
 				return userEntered != USER_ENTERED_EDEFAULT;
+			case PromoPackage.PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID:
+				return overrideOrgPartyId != null;
+			case PromoPackage.PRODUCT_PROMO__CREATED_BY_USER_LOGIN:
+				return createdByUserLogin != null;
+			case PromoPackage.PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN:
+				return lastModifiedByUserLogin != null;
 			case PromoPackage.PRODUCT_PROMO__PRODUCT_PROMO_RULES:
 				return productPromoRules != null && !productPromoRules.isEmpty();
 		}
@@ -1029,16 +1057,10 @@ public class ProductPromoImpl extends BizEntityImpl implements ProductPromo {
 		result.append(productPromoId);
 		result.append(", billbackFactor: ");
 		result.append(billbackFactor);
-		result.append(", createdByUserLogin: ");
-		result.append(createdByUserLogin);
 		result.append(", createdDate: ");
 		result.append(createdDate);
-		result.append(", lastModifiedByUserLogin: ");
-		result.append(lastModifiedByUserLogin);
 		result.append(", lastModifiedDate: ");
 		result.append(lastModifiedDate);
-		result.append(", overrideOrgPartyId: ");
-		result.append(overrideOrgPartyId);
 		result.append(", promoName: ");
 		result.append(promoName);
 		result.append(", promoText: ");

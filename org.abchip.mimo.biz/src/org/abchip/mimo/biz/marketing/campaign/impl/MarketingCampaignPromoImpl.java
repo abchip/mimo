@@ -12,10 +12,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.marketing.campaign.CampaignPackage;
 import org.abchip.mimo.biz.marketing.campaign.MarketingCampaignPromo;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,9 +30,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignPromoImpl#getMarketingCampaignId <em>Marketing Campaign Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignPromoImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignPromoImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignPromoImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.impl.MarketingCampaignPromoImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,25 +63,6 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 	 */
 	protected String marketingCampaignId = MARKETING_CAMPAIGN_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoId = PRODUCT_PROMO_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,6 +101,15 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromo productPromoId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,7 +182,24 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoId() {
+	public ProductPromo getProductPromoId() {
+		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
+			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
+			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
+			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
+			}
+		}
+		return productPromoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromo basicGetProductPromoId() {
 		return productPromoId;
 	}
 
@@ -199,8 +209,8 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoId(String newProductPromoId) {
-		String oldProductPromoId = productPromoId;
+	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
@@ -239,12 +249,13 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 		switch (featureID) {
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__MARKETING_CAMPAIGN_ID:
 				return getMarketingCampaignId();
-			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID:
-				return getProductPromoId();
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__FROM_DATE:
 				return getFromDate();
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__THRU_DATE:
 				return getThruDate();
+			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID:
+				if (resolve) return getProductPromoId();
+				return basicGetProductPromoId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,14 +271,14 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__MARKETING_CAMPAIGN_ID:
 				setMarketingCampaignId((String)newValue);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID:
-				setProductPromoId((String)newValue);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,14 +295,14 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__MARKETING_CAMPAIGN_ID:
 				setMarketingCampaignId(MARKETING_CAMPAIGN_ID_EDEFAULT);
 				return;
-			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID:
-				setProductPromoId(PRODUCT_PROMO_ID_EDEFAULT);
-				return;
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,12 +318,12 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 		switch (featureID) {
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__MARKETING_CAMPAIGN_ID:
 				return MARKETING_CAMPAIGN_ID_EDEFAULT == null ? marketingCampaignId != null : !MARKETING_CAMPAIGN_ID_EDEFAULT.equals(marketingCampaignId);
-			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID:
-				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CampaignPackage.MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID:
+				return productPromoId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -329,8 +340,6 @@ public class MarketingCampaignPromoImpl extends BizEntityImpl implements Marketi
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (marketingCampaignId: ");
 		result.append(marketingCampaignId);
-		result.append(", productPromoId: ");
-		result.append(productPromoId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

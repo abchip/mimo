@@ -14,6 +14,8 @@ import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -73,23 +75,14 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getParentClassId() <em>Parent Class Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentClassId() <em>Parent Class Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentClassId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_CLASS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getParentClassId() <em>Parent Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentClassId = PARENT_CLASS_ID_EDEFAULT;
+	protected AccommodationClass parentClassId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,7 +132,24 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	 * @generated
 	 */
 	@Override
-	public String getParentClassId() {
+	public AccommodationClass getParentClassId() {
+		if (parentClassId != null && ((EObject)parentClassId).eIsProxy()) {
+			InternalEObject oldParentClassId = (InternalEObject)parentClassId;
+			parentClassId = (AccommodationClass)eResolveProxy(oldParentClassId);
+			if (parentClassId != oldParentClassId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.ACCOMMODATION_CLASS__PARENT_CLASS_ID, oldParentClassId, parentClassId));
+			}
+		}
+		return parentClassId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccommodationClass basicGetParentClassId() {
 		return parentClassId;
 	}
 
@@ -149,8 +159,8 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 	 * @generated
 	 */
 	@Override
-	public void setParentClassId(String newParentClassId) {
-		String oldParentClassId = parentClassId;
+	public void setParentClassId(AccommodationClass newParentClassId) {
+		AccommodationClass oldParentClassId = parentClassId;
 		parentClassId = newParentClassId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.ACCOMMODATION_CLASS__PARENT_CLASS_ID, oldParentClassId, parentClassId));
@@ -228,7 +238,8 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 			case FixedassetPackage.ACCOMMODATION_CLASS__DESCRIPTION:
 				return getDescription();
 			case FixedassetPackage.ACCOMMODATION_CLASS__PARENT_CLASS_ID:
-				return getParentClassId();
+				if (resolve) return getParentClassId();
+				return basicGetParentClassId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,7 +259,7 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 				setDescription((String)newValue);
 				return;
 			case FixedassetPackage.ACCOMMODATION_CLASS__PARENT_CLASS_ID:
-				setParentClassId((String)newValue);
+				setParentClassId((AccommodationClass)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -269,7 +280,7 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case FixedassetPackage.ACCOMMODATION_CLASS__PARENT_CLASS_ID:
-				setParentClassId(PARENT_CLASS_ID_EDEFAULT);
+				setParentClassId((AccommodationClass)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -288,7 +299,7 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 			case FixedassetPackage.ACCOMMODATION_CLASS__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case FixedassetPackage.ACCOMMODATION_CLASS__PARENT_CLASS_ID:
-				return PARENT_CLASS_ID_EDEFAULT == null ? parentClassId != null : !PARENT_CLASS_ID_EDEFAULT.equals(parentClassId);
+				return parentClassId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -307,8 +318,6 @@ public class AccommodationClassImpl extends BizEntityImpl implements Accommodati
 		result.append(accommodationClassId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", parentClassId: ");
-		result.append(parentClassId);
 		result.append(')');
 		return result.toString();
 	}

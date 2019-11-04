@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.manufacturing.bom;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,15 +25,15 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getRuleId <em>Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductFeature <em>Product Feature</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdFor <em>Product Id For</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdIn <em>Product Id In</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdInSubst <em>Product Id In Subst</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getRuleOperator <em>Rule Operator</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getRuleSeqId <em>Rule Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdFor <em>Product Id For</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdIn <em>Product Id In</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdInSubst <em>Product Id In Subst</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductFeature <em>Product Feature</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule()
@@ -119,134 +121,134 @@ public interface ProductManufacturingRule extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature</em>' attribute.
-	 * @see #setProductFeature(String)
+	 * @return the value of the '<em>Product Feature</em>' reference.
+	 * @see #setProductFeature(ProductFeature)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductFeature()
-	 * @model annotation="mimo-ent-domain frame='ProductFeature'"
+	 * @model keys="productFeatureId"
 	 * @generated
 	 */
-	String getProductFeature();
+	ProductFeature getProductFeature();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductFeature <em>Product Feature</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductFeature <em>Product Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature</em>' reference.
 	 * @see #getProductFeature()
 	 * @generated
 	 */
-	void setProductFeature(String value);
+	void setProductFeature(ProductFeature value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id For</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id For</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id For</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id For</em>' attribute.
-	 * @see #setProductIdFor(String)
+	 * @return the value of the '<em>Product Id For</em>' reference.
+	 * @see #setProductIdFor(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductIdFor()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductIdFor();
+	Product getProductIdFor();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdFor <em>Product Id For</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdFor <em>Product Id For</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id For</em>' attribute.
+	 * @param value the new value of the '<em>Product Id For</em>' reference.
 	 * @see #getProductIdFor()
 	 * @generated
 	 */
-	void setProductIdFor(String value);
+	void setProductIdFor(Product value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id In</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id In</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id In</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id In</em>' attribute.
-	 * @see #setProductIdIn(String)
+	 * @return the value of the '<em>Product Id In</em>' reference.
+	 * @see #setProductIdIn(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductIdIn()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductIdIn();
+	Product getProductIdIn();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdIn <em>Product Id In</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdIn <em>Product Id In</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id In</em>' attribute.
+	 * @param value the new value of the '<em>Product Id In</em>' reference.
 	 * @see #getProductIdIn()
 	 * @generated
 	 */
-	void setProductIdIn(String value);
+	void setProductIdIn(Product value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id In Subst</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id In Subst</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id In Subst</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id In Subst</em>' attribute.
-	 * @see #setProductIdInSubst(String)
+	 * @return the value of the '<em>Product Id In Subst</em>' reference.
+	 * @see #setProductIdInSubst(Product)
 	 * @see org.abchip.mimo.biz.manufacturing.bom.BomPackage#getProductManufacturingRule_ProductIdInSubst()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductIdInSubst();
+	Product getProductIdInSubst();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdInSubst <em>Product Id In Subst</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule#getProductIdInSubst <em>Product Id In Subst</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id In Subst</em>' attribute.
+	 * @param value the new value of the '<em>Product Id In Subst</em>' reference.
 	 * @see #getProductIdInSubst()
 	 * @generated
 	 */
-	void setProductIdInSubst(String value);
+	void setProductIdInSubst(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Quantity</b></em>' attribute.

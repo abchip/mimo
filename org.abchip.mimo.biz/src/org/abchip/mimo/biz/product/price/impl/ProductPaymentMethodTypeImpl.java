@@ -9,12 +9,16 @@ package org.abchip.mimo.biz.product.price.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.price.PricePackage;
 import org.abchip.mimo.biz.product.price.ProductPaymentMethodType;
+import org.abchip.mimo.biz.product.price.ProductPricePurpose;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPaymentMethodTypeImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPaymentMethodTypeImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPaymentMethodTypeImpl#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPaymentMethodTypeImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPaymentMethodTypeImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPaymentMethodTypeImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPaymentMethodTypeImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.impl.ProductPaymentMethodTypeImpl#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,46 +64,6 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 * @ordered
 	 */
 	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_METHOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodTypeId = PAYMENT_METHOD_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductPricePurposeId() <em>Product Price Purpose Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPricePurposeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PRICE_PURPOSE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPricePurposeId() <em>Product Price Purpose Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPricePurposeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPricePurposeId = PRODUCT_PRICE_PURPOSE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -162,6 +126,26 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethodType paymentMethodTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductPricePurposeId() <em>Product Price Purpose Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPricePurposeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPricePurpose productPricePurposeId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -209,7 +193,24 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodTypeId() {
+	public PaymentMethodType getPaymentMethodTypeId() {
+		if (paymentMethodTypeId != null && ((EObject)paymentMethodTypeId).eIsProxy()) {
+			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
+			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
+			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
+			}
+		}
+		return paymentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethodType basicGetPaymentMethodTypeId() {
 		return paymentMethodTypeId;
 	}
 
@@ -219,8 +220,8 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodTypeId(String newPaymentMethodTypeId) {
-		String oldPaymentMethodTypeId = paymentMethodTypeId;
+	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
@@ -301,7 +302,24 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getProductPricePurposeId() {
+	public ProductPricePurpose getProductPricePurposeId() {
+		if (productPricePurposeId != null && ((EObject)productPricePurposeId).eIsProxy()) {
+			InternalEObject oldProductPricePurposeId = (InternalEObject)productPricePurposeId;
+			productPricePurposeId = (ProductPricePurpose)eResolveProxy(oldProductPricePurposeId);
+			if (productPricePurposeId != oldProductPricePurposeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
+			}
+		}
+		return productPricePurposeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPricePurpose basicGetProductPricePurposeId() {
 		return productPricePurposeId;
 	}
 
@@ -311,8 +329,8 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setProductPricePurposeId(String newProductPricePurposeId) {
-		String oldProductPricePurposeId = productPricePurposeId;
+	public void setProductPricePurposeId(ProductPricePurpose newProductPricePurposeId) {
+		ProductPricePurpose oldProductPricePurposeId = productPricePurposeId;
 		productPricePurposeId = newProductPricePurposeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID, oldProductPricePurposeId, productPricePurposeId));
@@ -328,16 +346,18 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 		switch (featureID) {
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_ID:
 				return getProductId();
-			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
-				return getPaymentMethodTypeId();
-			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID:
-				return getProductPricePurposeId();
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__FROM_DATE:
 				return getFromDate();
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__SEQUENCE_NUM:
 				return getSequenceNum();
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__THRU_DATE:
 				return getThruDate();
+			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
+				if (resolve) return getPaymentMethodTypeId();
+				return basicGetPaymentMethodTypeId();
+			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID:
+				if (resolve) return getProductPricePurposeId();
+				return basicGetProductPricePurposeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -353,12 +373,6 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_ID:
 				setProductId((String)newValue);
 				return;
-			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((String)newValue);
-				return;
-			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID:
-				setProductPricePurposeId((String)newValue);
-				return;
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -367,6 +381,12 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 				return;
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)newValue);
+				return;
+			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID:
+				setProductPricePurposeId((ProductPricePurpose)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -383,12 +403,6 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
-			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId(PAYMENT_METHOD_TYPE_ID_EDEFAULT);
-				return;
-			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID:
-				setProductPricePurposeId(PRODUCT_PRICE_PURPOSE_ID_EDEFAULT);
-				return;
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -397,6 +411,12 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 				return;
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)null);
+				return;
+			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID:
+				setProductPricePurposeId((ProductPricePurpose)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -412,16 +432,16 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 		switch (featureID) {
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
-				return PAYMENT_METHOD_TYPE_ID_EDEFAULT == null ? paymentMethodTypeId != null : !PAYMENT_METHOD_TYPE_ID_EDEFAULT.equals(paymentMethodTypeId);
-			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID:
-				return PRODUCT_PRICE_PURPOSE_ID_EDEFAULT == null ? productPricePurposeId != null : !PRODUCT_PRICE_PURPOSE_ID_EDEFAULT.equals(productPricePurposeId);
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID:
+				return paymentMethodTypeId != null;
+			case PricePackage.PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID:
+				return productPricePurposeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -438,10 +458,6 @@ public class ProductPaymentMethodTypeImpl extends BizEntityImpl implements Produ
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", paymentMethodTypeId: ");
-		result.append(paymentMethodTypeId);
-		result.append(", productPricePurposeId: ");
-		result.append(productPricePurposeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

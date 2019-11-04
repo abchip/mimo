@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.shipment.issuance;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,8 +20,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getItemIssuanceId <em>Item Issuance Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuanceRole()
@@ -39,8 +40,8 @@ public interface ItemIssuanceRole extends BizEntity {
 	 * @return the value of the '<em>Item Issuance Id</em>' attribute.
 	 * @see #setItemIssuanceId(String)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuanceRole_ItemIssuanceId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ItemIssuance'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getItemIssuanceId();
@@ -56,31 +57,30 @@ public interface ItemIssuanceRole extends BizEntity {
 	void setItemIssuanceId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuanceRole_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.issuance.ItemIssuanceRole#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id</b></em>' attribute.
@@ -93,7 +93,8 @@ public interface ItemIssuanceRole extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.issuance.IssuancePackage#getItemIssuanceRole_RoleTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeId();

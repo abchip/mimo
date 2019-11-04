@@ -9,13 +9,18 @@ package org.abchip.mimo.biz.order.request.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.request.CustRequest;
 import org.abchip.mimo.biz.order.request.CustRequestStatus;
 import org.abchip.mimo.biz.order.request.RequestPackage;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,11 +32,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestStatusImpl#getCustRequestStatusId <em>Cust Request Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestStatusImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestStatusImpl#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestStatusImpl#getStatusDate <em>Status Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestStatusImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestStatusImpl#getCustRequestId <em>Cust Request Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestStatusImpl#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,46 +66,6 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 * @ordered
 	 */
 	protected String custRequestStatusId = CUST_REQUEST_STATUS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHANGE_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChangeByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String changeByUserLoginId = CHANGE_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUST_REQUEST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCustRequestItemSeqId() <em>Cust Request Item Seq Id</em>}' attribute.
@@ -143,24 +108,34 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	protected Date statusDate = STATUS_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getCustRequestId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected CustRequest custRequestId;
+
+	/**
+	 * The cached value of the '{@link #getChangeByUserLoginId() <em>Change By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChangeByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin changeByUserLoginId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,7 +162,24 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 * @generated
 	 */
 	@Override
-	public String getChangeByUserLoginId() {
+	public UserLogin getChangeByUserLoginId() {
+		if (changeByUserLoginId != null && ((EObject)changeByUserLoginId).eIsProxy()) {
+			InternalEObject oldChangeByUserLoginId = (InternalEObject)changeByUserLoginId;
+			changeByUserLoginId = (UserLogin)eResolveProxy(oldChangeByUserLoginId);
+			if (changeByUserLoginId != oldChangeByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
+			}
+		}
+		return changeByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetChangeByUserLoginId() {
 		return changeByUserLoginId;
 	}
 
@@ -197,8 +189,8 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 * @generated
 	 */
 	@Override
-	public void setChangeByUserLoginId(String newChangeByUserLoginId) {
-		String oldChangeByUserLoginId = changeByUserLoginId;
+	public void setChangeByUserLoginId(UserLogin newChangeByUserLoginId) {
+		UserLogin oldChangeByUserLoginId = changeByUserLoginId;
 		changeByUserLoginId = newChangeByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID, oldChangeByUserLoginId, changeByUserLoginId));
@@ -210,7 +202,24 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 * @generated
 	 */
 	@Override
-	public String getCustRequestId() {
+	public CustRequest getCustRequestId() {
+		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
+			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
+			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
+			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+			}
+		}
+		return custRequestId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequest basicGetCustRequestId() {
 		return custRequestId;
 	}
 
@@ -220,8 +229,8 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 * @generated
 	 */
 	@Override
-	public void setCustRequestId(String newCustRequestId) {
-		String oldCustRequestId = custRequestId;
+	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
@@ -302,7 +311,24 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_STATUS__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -312,8 +338,8 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_STATUS__STATUS_ID, oldStatusId, statusId));
@@ -329,16 +355,19 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_STATUS_ID:
 				return getCustRequestStatusId();
-			case RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return getChangeByUserLoginId();
-			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID:
-				return getCustRequestId();
 			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ITEM_SEQ_ID:
 				return getCustRequestItemSeqId();
 			case RequestPackage.CUST_REQUEST_STATUS__STATUS_DATE:
 				return getStatusDate();
 			case RequestPackage.CUST_REQUEST_STATUS__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID:
+				if (resolve) return getCustRequestId();
+				return basicGetCustRequestId();
+			case RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				if (resolve) return getChangeByUserLoginId();
+				return basicGetChangeByUserLoginId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,12 +383,6 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_STATUS_ID:
 				setCustRequestStatusId((String)newValue);
 				return;
-			case RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId((String)newValue);
-				return;
-			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID:
-				setCustRequestId((String)newValue);
-				return;
 			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ITEM_SEQ_ID:
 				setCustRequestItemSeqId((String)newValue);
 				return;
@@ -367,7 +390,13 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 				setStatusDate((Date)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_STATUS__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
+				return;
+			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)newValue);
+				return;
+			case RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -384,12 +413,6 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_STATUS_ID:
 				setCustRequestStatusId(CUST_REQUEST_STATUS_ID_EDEFAULT);
 				return;
-			case RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				setChangeByUserLoginId(CHANGE_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
-			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID:
-				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
-				return;
 			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ITEM_SEQ_ID:
 				setCustRequestItemSeqId(CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT);
 				return;
@@ -397,7 +420,13 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 				setStatusDate(STATUS_DATE_EDEFAULT);
 				return;
 			case RequestPackage.CUST_REQUEST_STATUS__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
+				return;
+			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)null);
+				return;
+			case RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				setChangeByUserLoginId((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -413,16 +442,16 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_STATUS_ID:
 				return CUST_REQUEST_STATUS_ID_EDEFAULT == null ? custRequestStatusId != null : !CUST_REQUEST_STATUS_ID_EDEFAULT.equals(custRequestStatusId);
-			case RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID:
-				return CHANGE_BY_USER_LOGIN_ID_EDEFAULT == null ? changeByUserLoginId != null : !CHANGE_BY_USER_LOGIN_ID_EDEFAULT.equals(changeByUserLoginId);
-			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID:
-				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
 			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ITEM_SEQ_ID:
 				return CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT == null ? custRequestItemSeqId != null : !CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT.equals(custRequestItemSeqId);
 			case RequestPackage.CUST_REQUEST_STATUS__STATUS_DATE:
 				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
 			case RequestPackage.CUST_REQUEST_STATUS__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
+			case RequestPackage.CUST_REQUEST_STATUS__CUST_REQUEST_ID:
+				return custRequestId != null;
+			case RequestPackage.CUST_REQUEST_STATUS__CHANGE_BY_USER_LOGIN_ID:
+				return changeByUserLoginId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -439,16 +468,10 @@ public class CustRequestStatusImpl extends BizEntityImpl implements CustRequestS
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (custRequestStatusId: ");
 		result.append(custRequestStatusId);
-		result.append(", changeByUserLoginId: ");
-		result.append(changeByUserLoginId);
-		result.append(", custRequestId: ");
-		result.append(custRequestId);
 		result.append(", custRequestItemSeqId: ");
 		result.append(custRequestItemSeqId);
 		result.append(", statusDate: ");
 		result.append(statusDate);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(')');
 		return result.toString();
 	}

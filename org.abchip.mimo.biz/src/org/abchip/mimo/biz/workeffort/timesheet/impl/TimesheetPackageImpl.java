@@ -200,6 +200,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -371,6 +372,22 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -387,22 +404,6 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -513,6 +514,14 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -521,14 +530,6 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -608,6 +609,14 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -616,14 +625,6 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -720,8 +721,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimeEntry_InvoiceId() {
-		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(4);
+	public EReference getTimeEntry_InvoiceId() {
+		return (EReference)timeEntryEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -731,7 +732,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimeEntry_InvoiceItemSeqId() {
-		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -740,8 +741,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimeEntry_PartyId() {
-		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(6);
+	public EReference getTimeEntry_PartyId() {
+		return (EReference)timeEntryEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -750,8 +751,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimeEntry_RateTypeId() {
-		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(7);
+	public EReference getTimeEntry_RateTypeId() {
+		return (EReference)timeEntryEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -761,7 +762,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimeEntry_ThruDate() {
-		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -770,8 +771,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimeEntry_TimesheetId() {
-		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(9);
+	public EReference getTimeEntry_TimesheetId() {
+		return (EReference)timeEntryEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -780,8 +781,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimeEntry_WorkEffortId() {
-		return (EAttribute)timeEntryEClass.getEStructuralFeatures().get(10);
+	public EReference getTimeEntry_WorkEffortId() {
+		return (EReference)timeEntryEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -810,8 +811,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimesheet_ApprovedByUserLoginId() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(1);
+	public EReference getTimesheet_ApprovedByUserLoginId() {
+		return (EReference)timesheetEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -820,8 +821,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimesheet_ClientPartyId() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(2);
+	public EReference getTimesheet_ClientPartyId() {
+		return (EReference)timesheetEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -831,7 +832,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimesheet_Comments() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -841,7 +842,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimesheet_FromDate() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -850,8 +851,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimesheet_PartyId() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(5);
+	public EReference getTimesheet_PartyId() {
+		return (EReference)timesheetEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -860,8 +861,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimesheet_StatusId() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(6);
+	public EReference getTimesheet_StatusId() {
+		return (EReference)timesheetEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -871,7 +872,7 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 */
 	@Override
 	public EAttribute getTimesheet_ThruDate() {
-		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)timesheetEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -900,8 +901,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimesheetRole_PartyId() {
-		return (EAttribute)timesheetRoleEClass.getEStructuralFeatures().get(1);
+	public EReference getTimesheetRole_PartyId() {
+		return (EReference)timesheetRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -910,8 +911,8 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimesheetRole_RoleTypeId() {
-		return (EAttribute)timesheetRoleEClass.getEStructuralFeatures().get(2);
+	public EReference getTimesheetRole_RoleTypeId() {
+		return (EReference)timesheetRoleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -948,28 +949,28 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		createEAttribute(timeEntryEClass, TIME_ENTRY__COMMENTS);
 		createEAttribute(timeEntryEClass, TIME_ENTRY__FROM_DATE);
 		createEAttribute(timeEntryEClass, TIME_ENTRY__HOURS);
-		createEAttribute(timeEntryEClass, TIME_ENTRY__INVOICE_ID);
 		createEAttribute(timeEntryEClass, TIME_ENTRY__INVOICE_ITEM_SEQ_ID);
-		createEAttribute(timeEntryEClass, TIME_ENTRY__PARTY_ID);
-		createEAttribute(timeEntryEClass, TIME_ENTRY__RATE_TYPE_ID);
 		createEAttribute(timeEntryEClass, TIME_ENTRY__THRU_DATE);
-		createEAttribute(timeEntryEClass, TIME_ENTRY__TIMESHEET_ID);
-		createEAttribute(timeEntryEClass, TIME_ENTRY__WORK_EFFORT_ID);
+		createEReference(timeEntryEClass, TIME_ENTRY__PARTY_ID);
+		createEReference(timeEntryEClass, TIME_ENTRY__RATE_TYPE_ID);
+		createEReference(timeEntryEClass, TIME_ENTRY__WORK_EFFORT_ID);
+		createEReference(timeEntryEClass, TIME_ENTRY__TIMESHEET_ID);
+		createEReference(timeEntryEClass, TIME_ENTRY__INVOICE_ID);
 
 		timesheetEClass = createEClass(TIMESHEET);
 		createEAttribute(timesheetEClass, TIMESHEET__TIMESHEET_ID);
-		createEAttribute(timesheetEClass, TIMESHEET__APPROVED_BY_USER_LOGIN_ID);
-		createEAttribute(timesheetEClass, TIMESHEET__CLIENT_PARTY_ID);
 		createEAttribute(timesheetEClass, TIMESHEET__COMMENTS);
 		createEAttribute(timesheetEClass, TIMESHEET__FROM_DATE);
-		createEAttribute(timesheetEClass, TIMESHEET__PARTY_ID);
-		createEAttribute(timesheetEClass, TIMESHEET__STATUS_ID);
 		createEAttribute(timesheetEClass, TIMESHEET__THRU_DATE);
+		createEReference(timesheetEClass, TIMESHEET__PARTY_ID);
+		createEReference(timesheetEClass, TIMESHEET__CLIENT_PARTY_ID);
+		createEReference(timesheetEClass, TIMESHEET__STATUS_ID);
+		createEReference(timesheetEClass, TIMESHEET__APPROVED_BY_USER_LOGIN_ID);
 
 		timesheetRoleEClass = createEClass(TIMESHEET_ROLE);
 		createEAttribute(timesheetRoleEClass, TIMESHEET_ROLE__TIMESHEET_ID);
-		createEAttribute(timesheetRoleEClass, TIMESHEET_ROLE__PARTY_ID);
-		createEAttribute(timesheetRoleEClass, TIMESHEET_ROLE__ROLE_TYPE_ID);
+		createEReference(timesheetRoleEClass, TIMESHEET_ROLE__PARTY_ID);
+		createEReference(timesheetRoleEClass, TIMESHEET_ROLE__ROLE_TYPE_ID);
 	}
 
 	/**
@@ -997,6 +998,12 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		RatePackage theRatePackage = (RatePackage)EPackage.Registry.INSTANCE.getEPackage(RatePackage.eNS_URI);
+		WorkeffortPackage theWorkeffortPackage = (WorkeffortPackage)EPackage.Registry.INSTANCE.getEPackage(WorkeffortPackage.eNS_URI);
+		InvoicePackage theInvoicePackage = (InvoicePackage)EPackage.Registry.INSTANCE.getEPackage(InvoicePackage.eNS_URI);
+		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
+		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1013,30 +1020,41 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		initEAttribute(getTimeEntry_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeEntry_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeEntry_Hours(), ecorePackage.getEDouble(), "hours", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeEntry_InvoiceId(), ecorePackage.getEString(), "invoiceId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeEntry_InvoiceItemSeqId(), ecorePackage.getEString(), "invoiceItemSeqId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeEntry_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeEntry_RateTypeId(), ecorePackage.getEString(), "rateTypeId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeEntry_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeEntry_TimesheetId(), ecorePackage.getEString(), "timesheetId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeEntry_WorkEffortId(), ecorePackage.getEString(), "workEffortId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimeEntry_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimeEntry_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getTimeEntry_RateTypeId(), theRatePackage.getRateType(), null, "rateTypeId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimeEntry_RateTypeId().getEKeys().add(theRatePackage.getRateType_RateTypeId());
+		initEReference(getTimeEntry_WorkEffortId(), theWorkeffortPackage.getWorkEffort(), null, "workEffortId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimeEntry_WorkEffortId().getEKeys().add(theWorkeffortPackage.getWorkEffort_WorkEffortId());
+		initEReference(getTimeEntry_TimesheetId(), this.getTimesheet(), null, "timesheetId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimeEntry_TimesheetId().getEKeys().add(this.getTimesheet_TimesheetId());
+		initEReference(getTimeEntry_InvoiceId(), theInvoicePackage.getInvoice(), null, "invoiceId", null, 0, 1, TimeEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimeEntry_InvoiceId().getEKeys().add(theInvoicePackage.getInvoice_InvoiceId());
 
 		initEClass(timesheetEClass, Timesheet.class, "Timesheet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimesheet_TimesheetId(), ecorePackage.getEString(), "timesheetId", null, 1, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimesheet_ApprovedByUserLoginId(), ecorePackage.getEString(), "approvedByUserLoginId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimesheet_ClientPartyId(), ecorePackage.getEString(), "clientPartyId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimesheet_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimesheet_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimesheet_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimesheet_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimesheet_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimesheet_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheet_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getTimesheet_ClientPartyId(), thePartyPackage.getParty(), null, "clientPartyId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheet_ClientPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getTimesheet_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheet_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEReference(getTimesheet_ApprovedByUserLoginId(), theLoginPackage.getUserLogin(), null, "approvedByUserLoginId", null, 0, 1, Timesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheet_ApprovedByUserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
 		addEOperation(timesheetEClass, ecorePackage.getEString(), "timeEntries", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(timesheetRoleEClass, TimesheetRole.class, "TimesheetRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimesheetRole_TimesheetId(), ecorePackage.getEString(), "timesheetId", null, 1, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimesheetRole_PartyId(), ecorePackage.getEString(), "partyId", null, 1, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimesheetRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTimesheetRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheetRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getTimesheetRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, TimesheetRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTimesheetRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1077,18 +1095,6 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 		   new String[] {
 			   "key", "true"
 		   });
-		addAnnotation
-		  (getTimesheetRole_PartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTimesheetRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
 	}
 
 	/**
@@ -1100,119 +1106,11 @@ public class TimesheetPackageImpl extends EPackageImpl implements TimesheetPacka
 	protected void createMimoentdomainAnnotations() {
 		String source = "mimo-ent-domain";
 		addAnnotation
-		  (getTimeEntry_InvoiceId(),
-		   source,
-		   new String[] {
-			   "frame", "Invoice"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimeEntry_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimeEntry_RateTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "RateType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimeEntry_TimesheetId(),
-		   source,
-		   new String[] {
-			   "frame", "Timesheet"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimeEntry_WorkEffortId(),
-		   source,
-		   new String[] {
-			   "frame", "WorkEffort"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (timesheetEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "TimeEntry",
 			   "route", "timesheetId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimesheet_ApprovedByUserLoginId(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimesheet_ClientPartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimesheet_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimesheet_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimesheetRole_TimesheetId(),
-		   source,
-		   new String[] {
-			   "frame", "Timesheet"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimesheetRole_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTimesheetRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "RoleType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

@@ -21,11 +21,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommContentAssocTypeId <em>Comm Content Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommContentAssocTypeId <em>Comm Content Assoc Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc()
@@ -46,7 +46,6 @@ public interface CommEventContentAssoc extends BizEntity {
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_ContentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
 	 * @generated
 	 */
 	String getContentId();
@@ -141,57 +140,55 @@ public interface CommEventContentAssoc extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Communication Event Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Communication Event Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Communication Event Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Event Id</em>' attribute.
-	 * @see #setCommunicationEventId(String)
+	 * @return the value of the '<em>Communication Event Id</em>' reference.
+	 * @see #setCommunicationEventId(CommunicationEvent)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_CommunicationEventId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CommunicationEvent'"
+	 * @model keys="communicationEventId"
 	 * @generated
 	 */
-	String getCommunicationEventId();
+	CommunicationEvent getCommunicationEventId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommunicationEventId <em>Communication Event Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommunicationEventId <em>Communication Event Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Communication Event Id</em>' attribute.
+	 * @param value the new value of the '<em>Communication Event Id</em>' reference.
 	 * @see #getCommunicationEventId()
 	 * @generated
 	 */
-	void setCommunicationEventId(String value);
+	void setCommunicationEventId(CommunicationEvent value);
 
 	/**
-	 * Returns the value of the '<em><b>Comm Content Assoc Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Comm Content Assoc Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Comm Content Assoc Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Comm Content Assoc Type Id</em>' attribute.
-	 * @see #setCommContentAssocTypeId(String)
+	 * @return the value of the '<em>Comm Content Assoc Type Id</em>' reference.
+	 * @see #setCommContentAssocTypeId(CommContentAssocType)
 	 * @see org.abchip.mimo.biz.party.communication.CommunicationPackage#getCommEventContentAssoc_CommContentAssocTypeId()
-	 * @model annotation="mimo-ent-domain frame='CommContentAssocType'"
+	 * @model keys="commContentAssocTypeId"
 	 * @generated
 	 */
-	String getCommContentAssocTypeId();
+	CommContentAssocType getCommContentAssocTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommContentAssocTypeId <em>Comm Content Assoc Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.communication.CommEventContentAssoc#getCommContentAssocTypeId <em>Comm Content Assoc Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Comm Content Assoc Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Comm Content Assoc Type Id</em>' reference.
 	 * @see #getCommContentAssocTypeId()
 	 * @generated
 	 */
-	void setCommContentAssocTypeId(String value);
+	void setCommContentAssocTypeId(CommContentAssocType value);
 
 } // CommEventContentAssoc

@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -191,14 +192,12 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -337,8 +336,8 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -363,6 +362,20 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -379,20 +392,6 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -505,6 +504,13 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -513,13 +519,6 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -600,6 +599,13 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -608,13 +614,6 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -682,8 +681,8 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMrpEvent_ProductId() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(1);
+	public EReference getMrpEvent_ProductId() {
+		return (EReference)mrpEventEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -693,7 +692,7 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	 */
 	@Override
 	public EAttribute getMrpEvent_EventDate() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -702,8 +701,8 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMrpEvent_MrpEventTypeId() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(3);
+	public EReference getMrpEvent_MrpEventTypeId() {
+		return (EReference)mrpEventEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -713,7 +712,7 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	 */
 	@Override
 	public EAttribute getMrpEvent_EventName() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -722,8 +721,8 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMrpEvent_FacilityId() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(5);
+	public EReference getMrpEvent_FacilityId() {
+		return (EReference)mrpEventEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -733,7 +732,7 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	 */
 	@Override
 	public EAttribute getMrpEvent_IsLate() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -743,7 +742,7 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 	 */
 	@Override
 	public EAttribute getMrpEvent_Quantity() {
-		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)mrpEventEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -807,13 +806,13 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		// Create classes and their features
 		mrpEventEClass = createEClass(MRP_EVENT);
 		createEAttribute(mrpEventEClass, MRP_EVENT__MRP_ID);
-		createEAttribute(mrpEventEClass, MRP_EVENT__PRODUCT_ID);
 		createEAttribute(mrpEventEClass, MRP_EVENT__EVENT_DATE);
-		createEAttribute(mrpEventEClass, MRP_EVENT__MRP_EVENT_TYPE_ID);
 		createEAttribute(mrpEventEClass, MRP_EVENT__EVENT_NAME);
-		createEAttribute(mrpEventEClass, MRP_EVENT__FACILITY_ID);
 		createEAttribute(mrpEventEClass, MRP_EVENT__IS_LATE);
 		createEAttribute(mrpEventEClass, MRP_EVENT__QUANTITY);
+		createEReference(mrpEventEClass, MRP_EVENT__PRODUCT_ID);
+		createEReference(mrpEventEClass, MRP_EVENT__MRP_EVENT_TYPE_ID);
+		createEReference(mrpEventEClass, MRP_EVENT__FACILITY_ID);
 
 		mrpEventTypeEClass = createEClass(MRP_EVENT_TYPE);
 		createEAttribute(mrpEventTypeEClass, MRP_EVENT_TYPE__MRP_EVENT_TYPE_ID);
@@ -845,6 +844,8 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
+		FacilityPackage theFacilityPackage = (FacilityPackage)EPackage.Registry.INSTANCE.getEPackage(FacilityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -863,13 +864,16 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(mrpEventEClass, MrpEvent.class, "MrpEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMrpEvent_MrpId(), ecorePackage.getEString(), "mrpId", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMrpEvent_ProductId(), ecorePackage.getEString(), "productId", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMrpEvent_EventDate(), ecorePackage.getEDate(), "eventDate", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMrpEvent_MrpEventTypeId(), ecorePackage.getEString(), "mrpEventTypeId", null, 1, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMrpEvent_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMrpEvent_FacilityId(), ecorePackage.getEString(), "facilityId", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMrpEvent_IsLate(), ecorePackage.getEBoolean(), "isLate", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMrpEvent_Quantity(), ecorePackage.getEDouble(), "quantity", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMrpEvent_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMrpEvent_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEReference(getMrpEvent_MrpEventTypeId(), this.getMrpEventType(), null, "mrpEventTypeId", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMrpEvent_MrpEventTypeId().getEKeys().add(this.getMrpEventType_MrpEventTypeId());
+		initEReference(getMrpEvent_FacilityId(), theFacilityPackage.getFacility(), null, "facilityId", null, 0, 1, MrpEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMrpEvent_FacilityId().getEKeys().add(theFacilityPackage.getFacility_FacilityId());
 
 		initEClass(mrpEventTypeEClass, MrpEventType.class, "MrpEventType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMrpEventType_MrpEventTypeId(), ecorePackage.getEString(), "mrpEventTypeId", null, 1, 1, MrpEventType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -878,8 +882,6 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		// Create annotations
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 		// mimo-ent-frame
 		createMimoentframeAnnotations();
 	}
@@ -899,19 +901,7 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getMrpEvent_ProductId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getMrpEvent_EventDate(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getMrpEvent_MrpEventTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -921,43 +911,6 @@ public class MrpPackageImpl extends EPackageImpl implements MrpPackage {
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (getMrpEvent_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMrpEvent_MrpEventTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "MrpEventType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMrpEvent_FacilityId(),
-		   source,
-		   new String[] {
-			   "frame", "Facility"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

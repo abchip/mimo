@@ -65,7 +65,8 @@ public interface ProductTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface ProductTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Product Type Id</em>' attribute.
 	 * @see #setProductTypeId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductTypeAttr_ProductTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductTypeId();

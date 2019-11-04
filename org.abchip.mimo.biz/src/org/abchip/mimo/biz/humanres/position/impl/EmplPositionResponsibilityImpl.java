@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.humanres.position.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.humanres.ability.ResponsibilityType;
 import org.abchip.mimo.biz.humanres.position.EmplPositionResponsibility;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
@@ -16,6 +17,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionResponsibilityImpl#getEmplPositionId <em>Empl Position Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionResponsibilityImpl#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionResponsibilityImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionResponsibilityImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionResponsibilityImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionResponsibilityImpl#getResponsibilityTypeId <em>Responsibility Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,26 +63,6 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 	 * @ordered
 	 */
 	protected String emplPositionId = EMPL_POSITION_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getResponsibilityTypeId() <em>Responsibility Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResponsibilityTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RESPONSIBILITY_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getResponsibilityTypeId() <em>Responsibility Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResponsibilityTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String responsibilityTypeId = RESPONSIBILITY_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -140,6 +123,16 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getResponsibilityTypeId() <em>Responsibility Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponsibilityTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ResponsibilityType responsibilityTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,7 +228,24 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 	 * @generated
 	 */
 	@Override
-	public String getResponsibilityTypeId() {
+	public ResponsibilityType getResponsibilityTypeId() {
+		if (responsibilityTypeId != null && ((EObject)responsibilityTypeId).eIsProxy()) {
+			InternalEObject oldResponsibilityTypeId = (InternalEObject)responsibilityTypeId;
+			responsibilityTypeId = (ResponsibilityType)eResolveProxy(oldResponsibilityTypeId);
+			if (responsibilityTypeId != oldResponsibilityTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID, oldResponsibilityTypeId, responsibilityTypeId));
+			}
+		}
+		return responsibilityTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResponsibilityType basicGetResponsibilityTypeId() {
 		return responsibilityTypeId;
 	}
 
@@ -245,8 +255,8 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 	 * @generated
 	 */
 	@Override
-	public void setResponsibilityTypeId(String newResponsibilityTypeId) {
-		String oldResponsibilityTypeId = responsibilityTypeId;
+	public void setResponsibilityTypeId(ResponsibilityType newResponsibilityTypeId) {
+		ResponsibilityType oldResponsibilityTypeId = responsibilityTypeId;
 		responsibilityTypeId = newResponsibilityTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID, oldResponsibilityTypeId, responsibilityTypeId));
@@ -285,14 +295,15 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 		switch (featureID) {
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__EMPL_POSITION_ID:
 				return getEmplPositionId();
-			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
-				return getResponsibilityTypeId();
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__FROM_DATE:
 				return getFromDate();
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__COMMENTS:
 				return getComments();
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__THRU_DATE:
 				return getThruDate();
+			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
+				if (resolve) return getResponsibilityTypeId();
+				return basicGetResponsibilityTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,9 +319,6 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__EMPL_POSITION_ID:
 				setEmplPositionId((String)newValue);
 				return;
-			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
-				setResponsibilityTypeId((String)newValue);
-				return;
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -319,6 +327,9 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 				return;
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
+				setResponsibilityTypeId((ResponsibilityType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,9 +346,6 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__EMPL_POSITION_ID:
 				setEmplPositionId(EMPL_POSITION_ID_EDEFAULT);
 				return;
-			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
-				setResponsibilityTypeId(RESPONSIBILITY_TYPE_ID_EDEFAULT);
-				return;
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -346,6 +354,9 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 				return;
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
+				setResponsibilityTypeId((ResponsibilityType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,14 +372,14 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 		switch (featureID) {
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__EMPL_POSITION_ID:
 				return EMPL_POSITION_ID_EDEFAULT == null ? emplPositionId != null : !EMPL_POSITION_ID_EDEFAULT.equals(emplPositionId);
-			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
-				return RESPONSIBILITY_TYPE_ID_EDEFAULT == null ? responsibilityTypeId != null : !RESPONSIBILITY_TYPE_ID_EDEFAULT.equals(responsibilityTypeId);
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PositionPackage.EMPL_POSITION_RESPONSIBILITY__RESPONSIBILITY_TYPE_ID:
+				return responsibilityTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,8 +396,6 @@ public class EmplPositionResponsibilityImpl extends BizEntityImpl implements Emp
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (emplPositionId: ");
 		result.append(emplPositionId);
-		result.append(", responsibilityTypeId: ");
-		result.append(responsibilityTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");

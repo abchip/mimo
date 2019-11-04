@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.order;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,9 +24,9 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderShipment#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderShipment#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderShipment#getShipGroupSeqId <em>Ship Group Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.OrderShipment#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderShipment#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.OrderShipment#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.OrderShipment#getShipmentId <em>Shipment Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderShipment()
@@ -44,8 +45,8 @@ public interface OrderShipment extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderShipment_OrderId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -71,7 +72,8 @@ public interface OrderShipment extends BizEntity {
 	 * @return the value of the '<em>Order Item Seq Id</em>' attribute.
 	 * @see #setOrderItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderShipment_OrderItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemSeqId();
@@ -123,7 +125,8 @@ public interface OrderShipment extends BizEntity {
 	 * @return the value of the '<em>Ship Group Seq Id</em>' attribute.
 	 * @see #setShipGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderShipment_ShipGroupSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipGroupSeqId();
@@ -139,31 +142,30 @@ public interface OrderShipment extends BizEntity {
 	void setShipGroupSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Id</em>' attribute.
-	 * @see #setShipmentId(String)
+	 * @return the value of the '<em>Shipment Id</em>' reference.
+	 * @see #setShipmentId(Shipment)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderShipment_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model keys="shipmentId"
 	 * @generated
 	 */
-	String getShipmentId();
+	Shipment getShipmentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderShipment#getShipmentId <em>Shipment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderShipment#getShipmentId <em>Shipment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Id</em>' reference.
 	 * @see #getShipmentId()
 	 * @generated
 	 */
-	void setShipmentId(String value);
+	void setShipmentId(Shipment value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Item Seq Id</b></em>' attribute.
@@ -176,7 +178,8 @@ public interface OrderShipment extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderShipment_ShipmentItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();

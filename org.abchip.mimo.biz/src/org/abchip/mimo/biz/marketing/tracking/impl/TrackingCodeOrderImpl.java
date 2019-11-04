@@ -10,12 +10,16 @@ package org.abchip.mimo.biz.marketing.tracking.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.marketing.tracking.TrackingCode;
 import org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder;
+import org.abchip.mimo.biz.marketing.tracking.TrackingCodeType;
 import org.abchip.mimo.biz.marketing.tracking.TrackingPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,12 +31,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getAffiliateReferredTimeStamp <em>Affiliate Referred Time Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#isHasExported <em>Has Exported</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#isIsBillable <em>Is Billable</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getSiteId <em>Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getTrackingCodeId <em>Tracking Code Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.impl.TrackingCodeOrderImpl#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,26 +66,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 * @ordered
 	 */
 	protected String orderId = ORDER_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTrackingCodeTypeId() <em>Tracking Code Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrackingCodeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TRACKING_CODE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTrackingCodeTypeId() <em>Tracking Code Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrackingCodeTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String trackingCodeTypeId = TRACKING_CODE_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAffiliateReferredTimeStamp() <em>Affiliate Referred Time Stamp</em>}' attribute.
@@ -164,24 +148,24 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	protected String siteId = SITE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTrackingCodeId() <em>Tracking Code Id</em>}' attribute.
+	 * The cached value of the '{@link #getTrackingCodeId() <em>Tracking Code Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTrackingCodeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TRACKING_CODE_ID_EDEFAULT = null;
+	protected TrackingCode trackingCodeId;
 
 	/**
-	 * The cached value of the '{@link #getTrackingCodeId() <em>Tracking Code Id</em>}' attribute.
+	 * The cached value of the '{@link #getTrackingCodeTypeId() <em>Tracking Code Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTrackingCodeId()
+	 * @see #getTrackingCodeTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String trackingCodeId = TRACKING_CODE_ID_EDEFAULT;
+	protected TrackingCodeType trackingCodeTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -323,7 +307,24 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 * @generated
 	 */
 	@Override
-	public String getTrackingCodeId() {
+	public TrackingCode getTrackingCodeId() {
+		if (trackingCodeId != null && ((EObject)trackingCodeId).eIsProxy()) {
+			InternalEObject oldTrackingCodeId = (InternalEObject)trackingCodeId;
+			trackingCodeId = (TrackingCode)eResolveProxy(oldTrackingCodeId);
+			if (trackingCodeId != oldTrackingCodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
+			}
+		}
+		return trackingCodeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TrackingCode basicGetTrackingCodeId() {
 		return trackingCodeId;
 	}
 
@@ -333,8 +334,8 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 * @generated
 	 */
 	@Override
-	public void setTrackingCodeId(String newTrackingCodeId) {
-		String oldTrackingCodeId = trackingCodeId;
+	public void setTrackingCodeId(TrackingCode newTrackingCodeId) {
+		TrackingCode oldTrackingCodeId = trackingCodeId;
 		trackingCodeId = newTrackingCodeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID, oldTrackingCodeId, trackingCodeId));
@@ -346,7 +347,24 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 * @generated
 	 */
 	@Override
-	public String getTrackingCodeTypeId() {
+	public TrackingCodeType getTrackingCodeTypeId() {
+		if (trackingCodeTypeId != null && ((EObject)trackingCodeTypeId).eIsProxy()) {
+			InternalEObject oldTrackingCodeTypeId = (InternalEObject)trackingCodeTypeId;
+			trackingCodeTypeId = (TrackingCodeType)eResolveProxy(oldTrackingCodeTypeId);
+			if (trackingCodeTypeId != oldTrackingCodeTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
+			}
+		}
+		return trackingCodeTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TrackingCodeType basicGetTrackingCodeTypeId() {
 		return trackingCodeTypeId;
 	}
 
@@ -356,8 +374,8 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 	 * @generated
 	 */
 	@Override
-	public void setTrackingCodeTypeId(String newTrackingCodeTypeId) {
-		String oldTrackingCodeTypeId = trackingCodeTypeId;
+	public void setTrackingCodeTypeId(TrackingCodeType newTrackingCodeTypeId) {
+		TrackingCodeType oldTrackingCodeTypeId = trackingCodeTypeId;
 		trackingCodeTypeId = newTrackingCodeTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID, oldTrackingCodeTypeId, trackingCodeTypeId));
@@ -373,8 +391,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 		switch (featureID) {
 			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
 				return getOrderId();
-			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID:
-				return getTrackingCodeTypeId();
 			case TrackingPackage.TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP:
 				return getAffiliateReferredTimeStamp();
 			case TrackingPackage.TRACKING_CODE_ORDER__HAS_EXPORTED:
@@ -384,7 +400,11 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 			case TrackingPackage.TRACKING_CODE_ORDER__SITE_ID:
 				return getSiteId();
 			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID:
-				return getTrackingCodeId();
+				if (resolve) return getTrackingCodeId();
+				return basicGetTrackingCodeId();
+			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID:
+				if (resolve) return getTrackingCodeTypeId();
+				return basicGetTrackingCodeTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -400,9 +420,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
 				setOrderId((String)newValue);
 				return;
-			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID:
-				setTrackingCodeTypeId((String)newValue);
-				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP:
 				setAffiliateReferredTimeStamp((Date)newValue);
 				return;
@@ -416,7 +433,10 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 				setSiteId((String)newValue);
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID:
-				setTrackingCodeId((String)newValue);
+				setTrackingCodeId((TrackingCode)newValue);
+				return;
+			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID:
+				setTrackingCodeTypeId((TrackingCodeType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -433,9 +453,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
 				setOrderId(ORDER_ID_EDEFAULT);
 				return;
-			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID:
-				setTrackingCodeTypeId(TRACKING_CODE_TYPE_ID_EDEFAULT);
-				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP:
 				setAffiliateReferredTimeStamp(AFFILIATE_REFERRED_TIME_STAMP_EDEFAULT);
 				return;
@@ -449,7 +466,10 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 				setSiteId(SITE_ID_EDEFAULT);
 				return;
 			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID:
-				setTrackingCodeId(TRACKING_CODE_ID_EDEFAULT);
+				setTrackingCodeId((TrackingCode)null);
+				return;
+			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID:
+				setTrackingCodeTypeId((TrackingCodeType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -465,8 +485,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 		switch (featureID) {
 			case TrackingPackage.TRACKING_CODE_ORDER__ORDER_ID:
 				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
-			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID:
-				return TRACKING_CODE_TYPE_ID_EDEFAULT == null ? trackingCodeTypeId != null : !TRACKING_CODE_TYPE_ID_EDEFAULT.equals(trackingCodeTypeId);
 			case TrackingPackage.TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP:
 				return AFFILIATE_REFERRED_TIME_STAMP_EDEFAULT == null ? affiliateReferredTimeStamp != null : !AFFILIATE_REFERRED_TIME_STAMP_EDEFAULT.equals(affiliateReferredTimeStamp);
 			case TrackingPackage.TRACKING_CODE_ORDER__HAS_EXPORTED:
@@ -476,7 +494,9 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 			case TrackingPackage.TRACKING_CODE_ORDER__SITE_ID:
 				return SITE_ID_EDEFAULT == null ? siteId != null : !SITE_ID_EDEFAULT.equals(siteId);
 			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_ID:
-				return TRACKING_CODE_ID_EDEFAULT == null ? trackingCodeId != null : !TRACKING_CODE_ID_EDEFAULT.equals(trackingCodeId);
+				return trackingCodeId != null;
+			case TrackingPackage.TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID:
+				return trackingCodeTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -493,8 +513,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (orderId: ");
 		result.append(orderId);
-		result.append(", trackingCodeTypeId: ");
-		result.append(trackingCodeTypeId);
 		result.append(", affiliateReferredTimeStamp: ");
 		result.append(affiliateReferredTimeStamp);
 		result.append(", hasExported: ");
@@ -503,8 +521,6 @@ public class TrackingCodeOrderImpl extends BizEntityImpl implements TrackingCode
 		result.append(isBillable);
 		result.append(", siteId: ");
 		result.append(siteId);
-		result.append(", trackingCodeId: ");
-		result.append(trackingCodeId);
 		result.append(')');
 		return result.toString();
 	}

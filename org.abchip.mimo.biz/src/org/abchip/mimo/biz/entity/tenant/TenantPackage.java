@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface TenantPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-entity-tenant";
+	String eNS_PREFIX = "biz-tenant";
 
 	/**
 	 * The singleton instance of the package.
@@ -298,22 +299,22 @@ public interface TenantPackage extends EPackage {
 	int TENANT_COMPONENT__COMPONENT_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Tenant Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TENANT_COMPONENT__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TENANT_COMPONENT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TENANT_COMPONENT__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tenant Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENANT_COMPONENT__TENANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -480,7 +481,7 @@ public interface TenantPackage extends EPackage {
 	int TENANT_DOMAIN_NAME__DOMAIN_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Tenant Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Tenant Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -701,15 +702,15 @@ public interface TenantPackage extends EPackage {
 	EAttribute getTenantComponent_ComponentName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId <em>Tenant Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId <em>Tenant Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tenant Id</em>'.
+	 * @return the meta object for the reference '<em>Tenant Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId()
 	 * @see #getTenantComponent()
 	 * @generated
 	 */
-	EAttribute getTenantComponent_TenantId();
+	EReference getTenantComponent_TenantId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getSequenceNum <em>Sequence Num</em>}'.
@@ -809,15 +810,15 @@ public interface TenantPackage extends EPackage {
 	EAttribute getTenantDomainName_DomainName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.entity.tenant.TenantDomainName#getTenantId <em>Tenant Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.entity.tenant.TenantDomainName#getTenantId <em>Tenant Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tenant Id</em>'.
+	 * @return the meta object for the reference '<em>Tenant Id</em>'.
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantDomainName#getTenantId()
 	 * @see #getTenantDomainName()
 	 * @generated
 	 */
-	EAttribute getTenantDomainName_TenantId();
+	EReference getTenantDomainName_TenantId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.entity.tenant.TenantKeyEncryptingKey <em>Key Encrypting Key</em>}'.
@@ -976,12 +977,12 @@ public interface TenantPackage extends EPackage {
 		EAttribute TENANT_COMPONENT__COMPONENT_NAME = eINSTANCE.getTenantComponent_ComponentName();
 
 		/**
-		 * The meta object literal for the '<em><b>Tenant Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tenant Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TENANT_COMPONENT__TENANT_ID = eINSTANCE.getTenantComponent_TenantId();
+		EReference TENANT_COMPONENT__TENANT_ID = eINSTANCE.getTenantComponent_TenantId();
 
 		/**
 		 * The meta object literal for the '<em><b>Sequence Num</b></em>' attribute feature.
@@ -1060,12 +1061,12 @@ public interface TenantPackage extends EPackage {
 		EAttribute TENANT_DOMAIN_NAME__DOMAIN_NAME = eINSTANCE.getTenantDomainName_DomainName();
 
 		/**
-		 * The meta object literal for the '<em><b>Tenant Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tenant Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TENANT_DOMAIN_NAME__TENANT_ID = eINSTANCE.getTenantDomainName_TenantId();
+		EReference TENANT_DOMAIN_NAME__TENANT_ID = eINSTANCE.getTenantDomainName_TenantId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.entity.tenant.impl.TenantKeyEncryptingKeyImpl <em>Key Encrypting Key</em>}' class.

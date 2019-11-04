@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.common.portal;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.content.content.Content;
+import org.abchip.mimo.biz.security.securitygroup.SecurityGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,13 +24,13 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageId <em>Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getHelpContentId <em>Help Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getOriginalPortalPageId <em>Original Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getOwnerUserLoginId <em>Owner User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getParentPortalPageId <em>Parent Portal Page Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageName <em>Portal Page Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getSecurityGroupId <em>Security Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getParentPortalPageId <em>Parent Portal Page Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getSecurityGroupId <em>Security Group Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getHelpContentId <em>Help Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.portal.PortalPage#getPortalPageColumns <em>Portal Page Columns</em>}</li>
  * </ul>
  *
@@ -64,30 +66,30 @@ public interface PortalPage extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Help Content Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Help Content Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Help Content Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Help Content Id</em>' attribute.
-	 * @see #setHelpContentId(String)
+	 * @return the value of the '<em>Help Content Id</em>' reference.
+	 * @see #setHelpContentId(Content)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_HelpContentId()
-	 * @model annotation="mimo-ent-domain frame='Content'"
+	 * @model keys="contentId"
 	 * @generated
 	 */
-	String getHelpContentId();
+	Content getHelpContentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortalPage#getHelpContentId <em>Help Content Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortalPage#getHelpContentId <em>Help Content Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Help Content Id</em>' attribute.
+	 * @param value the new value of the '<em>Help Content Id</em>' reference.
 	 * @see #getHelpContentId()
 	 * @generated
 	 */
-	void setHelpContentId(String value);
+	void setHelpContentId(Content value);
 
 	/**
 	 * Returns the value of the '<em><b>Original Portal Page Id</b></em>' attribute.
@@ -168,30 +170,30 @@ public interface PortalPage extends BizEntity {
 	void setPortalPageName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Security Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Security Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Security Group Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Security Group Id</em>' attribute.
-	 * @see #setSecurityGroupId(String)
+	 * @return the value of the '<em>Security Group Id</em>' reference.
+	 * @see #setSecurityGroupId(SecurityGroup)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_SecurityGroupId()
-	 * @model annotation="mimo-ent-domain frame='SecurityGroup'"
+	 * @model keys="groupId"
 	 * @generated
 	 */
-	String getSecurityGroupId();
+	SecurityGroup getSecurityGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortalPage#getSecurityGroupId <em>Security Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortalPage#getSecurityGroupId <em>Security Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Security Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Security Group Id</em>' reference.
 	 * @see #getSecurityGroupId()
 	 * @generated
 	 */
-	void setSecurityGroupId(String value);
+	void setSecurityGroupId(SecurityGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.
@@ -246,30 +248,30 @@ public interface PortalPage extends BizEntity {
 	List<String> childPortalPages();
 
 	/**
-	 * Returns the value of the '<em><b>Parent Portal Page Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Portal Page Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Portal Page Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Portal Page Id</em>' attribute.
-	 * @see #setParentPortalPageId(String)
+	 * @return the value of the '<em>Parent Portal Page Id</em>' reference.
+	 * @see #setParentPortalPageId(PortalPage)
 	 * @see org.abchip.mimo.biz.common.portal.PortalPackage#getPortalPage_ParentPortalPageId()
-	 * @model annotation="mimo-ent-domain frame='PortalPage'"
+	 * @model keys="portalPageId"
 	 * @generated
 	 */
-	String getParentPortalPageId();
+	PortalPage getParentPortalPageId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortalPage#getParentPortalPageId <em>Parent Portal Page Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.portal.PortalPage#getParentPortalPageId <em>Parent Portal Page Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Portal Page Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Portal Page Id</em>' reference.
 	 * @see #getParentPortalPageId()
 	 * @generated
 	 */
-	void setParentPortalPageId(String value);
+	void setParentPortalPageId(PortalPage value);
 
 	/**
 	 * Returns the value of the '<em><b>Portal Page Id</b></em>' attribute.

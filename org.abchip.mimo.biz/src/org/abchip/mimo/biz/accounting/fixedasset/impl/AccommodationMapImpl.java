@@ -9,12 +9,16 @@ package org.abchip.mimo.biz.accounting.fixedasset.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMap;
 import org.abchip.mimo.biz.accounting.fixedasset.AccommodationMapType;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl#getAccommodationMapId <em>Accommodation Map Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl#getAccommodationClassId <em>Accommodation Class Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl#getAccommodationMapTypeId <em>Accommodation Map Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl#getNumberOfSpaces <em>Number Of Spaces</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl#getAccommodationClassId <em>Accommodation Class Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.AccommodationMapImpl#getAccommodationMapTypeId <em>Accommodation Map Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,62 +62,6 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 	 */
 	protected String accommodationMapId = ACCOMMODATION_MAP_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getAccommodationClassId() <em>Accommodation Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCOMMODATION_CLASS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAccommodationClassId() <em>Accommodation Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accommodationClassId = ACCOMMODATION_CLASS_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getAccommodationMapTypeId() <em>Accommodation Map Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationMapTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCOMMODATION_MAP_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAccommodationMapTypeId() <em>Accommodation Map Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationMapTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accommodationMapTypeId = ACCOMMODATION_MAP_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getNumberOfSpaces() <em>Number Of Spaces</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,6 +79,33 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 	 * @ordered
 	 */
 	protected long numberOfSpaces = NUMBER_OF_SPACES_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getAccommodationClassId() <em>Accommodation Class Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccommodationClassId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AccommodationClass accommodationClassId;
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
+	/**
+	 * The cached value of the '{@link #getAccommodationMapTypeId() <em>Accommodation Map Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccommodationMapTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AccommodationMapType accommodationMapTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +190,24 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 	 * @generated
 	 */
 	@Override
-	public String getAccommodationClassId() {
+	public AccommodationClass getAccommodationClassId() {
+		if (accommodationClassId != null && ((EObject)accommodationClassId).eIsProxy()) {
+			InternalEObject oldAccommodationClassId = (InternalEObject)accommodationClassId;
+			accommodationClassId = (AccommodationClass)eResolveProxy(oldAccommodationClassId);
+			if (accommodationClassId != oldAccommodationClassId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID, oldAccommodationClassId, accommodationClassId));
+			}
+		}
+		return accommodationClassId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccommodationClass basicGetAccommodationClassId() {
 		return accommodationClassId;
 	}
 
@@ -225,8 +217,8 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 	 * @generated
 	 */
 	@Override
-	public void setAccommodationClassId(String newAccommodationClassId) {
-		String oldAccommodationClassId = accommodationClassId;
+	public void setAccommodationClassId(AccommodationClass newAccommodationClassId) {
+		AccommodationClass oldAccommodationClassId = accommodationClassId;
 		accommodationClassId = newAccommodationClassId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID, oldAccommodationClassId, accommodationClassId));
@@ -238,7 +230,24 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -248,8 +257,8 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -261,7 +270,24 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 	 * @generated
 	 */
 	@Override
-	public String getAccommodationMapTypeId() {
+	public AccommodationMapType getAccommodationMapTypeId() {
+		if (accommodationMapTypeId != null && ((EObject)accommodationMapTypeId).eIsProxy()) {
+			InternalEObject oldAccommodationMapTypeId = (InternalEObject)accommodationMapTypeId;
+			accommodationMapTypeId = (AccommodationMapType)eResolveProxy(oldAccommodationMapTypeId);
+			if (accommodationMapTypeId != oldAccommodationMapTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID, oldAccommodationMapTypeId, accommodationMapTypeId));
+			}
+		}
+		return accommodationMapTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccommodationMapType basicGetAccommodationMapTypeId() {
 		return accommodationMapTypeId;
 	}
 
@@ -271,8 +297,8 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 	 * @generated
 	 */
 	@Override
-	public void setAccommodationMapTypeId(String newAccommodationMapTypeId) {
-		String oldAccommodationMapTypeId = accommodationMapTypeId;
+	public void setAccommodationMapTypeId(AccommodationMapType newAccommodationMapTypeId) {
+		AccommodationMapType oldAccommodationMapTypeId = accommodationMapTypeId;
 		accommodationMapTypeId = newAccommodationMapTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID, oldAccommodationMapTypeId, accommodationMapTypeId));
@@ -288,14 +314,17 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 		switch (featureID) {
 			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_ID:
 				return getAccommodationMapId();
-			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID:
-				return getAccommodationClassId();
-			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID:
-				return getAccommodationMapTypeId();
-			case FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case FixedassetPackage.ACCOMMODATION_MAP__NUMBER_OF_SPACES:
 				return getNumberOfSpaces();
+			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID:
+				if (resolve) return getAccommodationClassId();
+				return basicGetAccommodationClassId();
+			case FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
+			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID:
+				if (resolve) return getAccommodationMapTypeId();
+				return basicGetAccommodationMapTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -311,17 +340,17 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_ID:
 				setAccommodationMapId((String)newValue);
 				return;
-			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID:
-				setAccommodationClassId((String)newValue);
-				return;
-			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID:
-				setAccommodationMapTypeId((String)newValue);
-				return;
-			case FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
 			case FixedassetPackage.ACCOMMODATION_MAP__NUMBER_OF_SPACES:
 				setNumberOfSpaces((Long)newValue);
+				return;
+			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID:
+				setAccommodationClassId((AccommodationClass)newValue);
+				return;
+			case FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
+				return;
+			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID:
+				setAccommodationMapTypeId((AccommodationMapType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -338,17 +367,17 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_ID:
 				setAccommodationMapId(ACCOMMODATION_MAP_ID_EDEFAULT);
 				return;
-			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID:
-				setAccommodationClassId(ACCOMMODATION_CLASS_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID:
-				setAccommodationMapTypeId(ACCOMMODATION_MAP_TYPE_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.ACCOMMODATION_MAP__NUMBER_OF_SPACES:
 				setNumberOfSpaces(NUMBER_OF_SPACES_EDEFAULT);
+				return;
+			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID:
+				setAccommodationClassId((AccommodationClass)null);
+				return;
+			case FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
+				return;
+			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID:
+				setAccommodationMapTypeId((AccommodationMapType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -364,14 +393,14 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 		switch (featureID) {
 			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_ID:
 				return ACCOMMODATION_MAP_ID_EDEFAULT == null ? accommodationMapId != null : !ACCOMMODATION_MAP_ID_EDEFAULT.equals(accommodationMapId);
-			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID:
-				return ACCOMMODATION_CLASS_ID_EDEFAULT == null ? accommodationClassId != null : !ACCOMMODATION_CLASS_ID_EDEFAULT.equals(accommodationClassId);
-			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID:
-				return ACCOMMODATION_MAP_TYPE_ID_EDEFAULT == null ? accommodationMapTypeId != null : !ACCOMMODATION_MAP_TYPE_ID_EDEFAULT.equals(accommodationMapTypeId);
-			case FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case FixedassetPackage.ACCOMMODATION_MAP__NUMBER_OF_SPACES:
 				return numberOfSpaces != NUMBER_OF_SPACES_EDEFAULT;
+			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_CLASS_ID:
+				return accommodationClassId != null;
+			case FixedassetPackage.ACCOMMODATION_MAP__FIXED_ASSET_ID:
+				return fixedAssetId != null;
+			case FixedassetPackage.ACCOMMODATION_MAP__ACCOMMODATION_MAP_TYPE_ID:
+				return accommodationMapTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -388,12 +417,6 @@ public class AccommodationMapImpl extends BizEntityTypedImpl<AccommodationMapTyp
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (accommodationMapId: ");
 		result.append(accommodationMapId);
-		result.append(", accommodationClassId: ");
-		result.append(accommodationClassId);
-		result.append(", accommodationMapTypeId: ");
-		result.append(accommodationMapTypeId);
-		result.append(", fixedAssetId: ");
-		result.append(fixedAssetId);
 		result.append(", numberOfSpaces: ");
 		result.append(numberOfSpaces);
 		result.append(')');

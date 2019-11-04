@@ -21,12 +21,12 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getOrderId <em>Order Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getAffiliateReferredTimeStamp <em>Affiliate Referred Time Stamp</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#isHasExported <em>Has Exported</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#isIsBillable <em>Is Billable</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getSiteId <em>Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeId <em>Tracking Code Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder()
@@ -123,8 +123,8 @@ public interface TrackingCodeOrder extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_OrderId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -166,56 +166,55 @@ public interface TrackingCodeOrder extends BizEntity {
 	void setSiteId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tracking Code Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tracking Code Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tracking Code Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tracking Code Id</em>' attribute.
-	 * @see #setTrackingCodeId(String)
+	 * @return the value of the '<em>Tracking Code Id</em>' reference.
+	 * @see #setTrackingCodeId(TrackingCode)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_TrackingCodeId()
-	 * @model annotation="mimo-ent-domain frame='TrackingCode'"
+	 * @model keys="trackingCodeId"
 	 * @generated
 	 */
-	String getTrackingCodeId();
+	TrackingCode getTrackingCodeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeId <em>Tracking Code Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeId <em>Tracking Code Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tracking Code Id</em>' attribute.
+	 * @param value the new value of the '<em>Tracking Code Id</em>' reference.
 	 * @see #getTrackingCodeId()
 	 * @generated
 	 */
-	void setTrackingCodeId(String value);
+	void setTrackingCodeId(TrackingCode value);
 
 	/**
-	 * Returns the value of the '<em><b>Tracking Code Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tracking Code Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tracking Code Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tracking Code Type Id</em>' attribute.
-	 * @see #setTrackingCodeTypeId(String)
+	 * @return the value of the '<em>Tracking Code Type Id</em>' reference.
+	 * @see #setTrackingCodeTypeId(TrackingCodeType)
 	 * @see org.abchip.mimo.biz.marketing.tracking.TrackingPackage#getTrackingCodeOrder_TrackingCodeTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='TrackingCodeType'"
+	 * @model keys="trackingCodeTypeId"
 	 * @generated
 	 */
-	String getTrackingCodeTypeId();
+	TrackingCodeType getTrackingCodeTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.tracking.TrackingCodeOrder#getTrackingCodeTypeId <em>Tracking Code Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tracking Code Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Tracking Code Type Id</em>' reference.
 	 * @see #getTrackingCodeTypeId()
 	 * @generated
 	 */
-	void setTrackingCodeTypeId(String value);
+	void setTrackingCodeTypeId(TrackingCodeType value);
 
 } // TrackingCodeOrder

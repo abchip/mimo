@@ -13,9 +13,12 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.catalog.CatalogPackage;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategory;
 import org.abchip.mimo.biz.product.catalog.ProdCatalogCategoryType;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getProdCatalogCategoryTypeId <em>Prod Catalog Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getProductCategoryId <em>Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.impl.ProdCatalogCategoryImpl#getProdCatalogCategoryTypeId <em>Prod Catalog Category Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,46 +64,6 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 * @ordered
 	 */
 	protected String prodCatalogId = PROD_CATALOG_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProdCatalogCategoryTypeId() <em>Prod Catalog Category Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProdCatalogCategoryTypeId() <em>Prod Catalog Category Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String prodCatalogCategoryTypeId = PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -163,6 +126,26 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
+
+	/**
+	 * The cached value of the '{@link #getProdCatalogCategoryTypeId() <em>Prod Catalog Category Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProdCatalogCategoryTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProdCatalogCategoryType prodCatalogCategoryTypeId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -210,7 +193,24 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -220,8 +220,8 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -302,7 +302,24 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 * @generated
 	 */
 	@Override
-	public String getProdCatalogCategoryTypeId() {
+	public ProdCatalogCategoryType getProdCatalogCategoryTypeId() {
+		if (prodCatalogCategoryTypeId != null && ((EObject)prodCatalogCategoryTypeId).eIsProxy()) {
+			InternalEObject oldProdCatalogCategoryTypeId = (InternalEObject)prodCatalogCategoryTypeId;
+			prodCatalogCategoryTypeId = (ProdCatalogCategoryType)eResolveProxy(oldProdCatalogCategoryTypeId);
+			if (prodCatalogCategoryTypeId != oldProdCatalogCategoryTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID, oldProdCatalogCategoryTypeId, prodCatalogCategoryTypeId));
+			}
+		}
+		return prodCatalogCategoryTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProdCatalogCategoryType basicGetProdCatalogCategoryTypeId() {
 		return prodCatalogCategoryTypeId;
 	}
 
@@ -312,8 +329,8 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 	 * @generated
 	 */
 	@Override
-	public void setProdCatalogCategoryTypeId(String newProdCatalogCategoryTypeId) {
-		String oldProdCatalogCategoryTypeId = prodCatalogCategoryTypeId;
+	public void setProdCatalogCategoryTypeId(ProdCatalogCategoryType newProdCatalogCategoryTypeId) {
+		ProdCatalogCategoryType oldProdCatalogCategoryTypeId = prodCatalogCategoryTypeId;
 		prodCatalogCategoryTypeId = newProdCatalogCategoryTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID, oldProdCatalogCategoryTypeId, prodCatalogCategoryTypeId));
@@ -329,16 +346,18 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 		switch (featureID) {
 			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_ID:
 				return getProdCatalogId();
-			case CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
-			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID:
-				return getProdCatalogCategoryTypeId();
 			case CatalogPackage.PROD_CATALOG_CATEGORY__FROM_DATE:
 				return getFromDate();
 			case CatalogPackage.PROD_CATALOG_CATEGORY__SEQUENCE_NUM:
 				return getSequenceNum();
 			case CatalogPackage.PROD_CATALOG_CATEGORY__THRU_DATE:
 				return getThruDate();
+			case CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
+			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID:
+				if (resolve) return getProdCatalogCategoryTypeId();
+				return basicGetProdCatalogCategoryTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,12 +373,6 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_ID:
 				setProdCatalogId((String)newValue);
 				return;
-			case CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
-			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID:
-				setProdCatalogCategoryTypeId((String)newValue);
-				return;
 			case CatalogPackage.PROD_CATALOG_CATEGORY__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -368,6 +381,12 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 				return;
 			case CatalogPackage.PROD_CATALOG_CATEGORY__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
+				return;
+			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID:
+				setProdCatalogCategoryTypeId((ProdCatalogCategoryType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -384,12 +403,6 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_ID:
 				setProdCatalogId(PROD_CATALOG_ID_EDEFAULT);
 				return;
-			case CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
-			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID:
-				setProdCatalogCategoryTypeId(PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT);
-				return;
 			case CatalogPackage.PROD_CATALOG_CATEGORY__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -398,6 +411,12 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 				return;
 			case CatalogPackage.PROD_CATALOG_CATEGORY__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
+				return;
+			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID:
+				setProdCatalogCategoryTypeId((ProdCatalogCategoryType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -413,16 +432,16 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 		switch (featureID) {
 			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_ID:
 				return PROD_CATALOG_ID_EDEFAULT == null ? prodCatalogId != null : !PROD_CATALOG_ID_EDEFAULT.equals(prodCatalogId);
-			case CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
-			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID:
-				return PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT == null ? prodCatalogCategoryTypeId != null : !PROD_CATALOG_CATEGORY_TYPE_ID_EDEFAULT.equals(prodCatalogCategoryTypeId);
 			case CatalogPackage.PROD_CATALOG_CATEGORY__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case CatalogPackage.PROD_CATALOG_CATEGORY__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case CatalogPackage.PROD_CATALOG_CATEGORY__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case CatalogPackage.PROD_CATALOG_CATEGORY__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
+			case CatalogPackage.PROD_CATALOG_CATEGORY__PROD_CATALOG_CATEGORY_TYPE_ID:
+				return prodCatalogCategoryTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -439,10 +458,6 @@ public class ProdCatalogCategoryImpl extends BizEntityTypedImpl<ProdCatalogCateg
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (prodCatalogId: ");
 		result.append(prodCatalogId);
-		result.append(", productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", prodCatalogCategoryTypeId: ");
-		result.append(prodCatalogCategoryTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

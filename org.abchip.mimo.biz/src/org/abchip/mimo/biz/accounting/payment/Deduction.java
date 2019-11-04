@@ -68,7 +68,7 @@ public interface Deduction extends BizEntityTyped<DeductionType> {
 	 * @return the value of the '<em>Deduction Id</em>' attribute.
 	 * @see #setDeductionId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeduction_DeductionId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -85,55 +85,55 @@ public interface Deduction extends BizEntityTyped<DeductionType> {
 	void setDeductionId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Deduction Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Deduction Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Deduction Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deduction Type Id</em>' attribute.
-	 * @see #setDeductionTypeId(String)
+	 * @return the value of the '<em>Deduction Type Id</em>' reference.
+	 * @see #setDeductionTypeId(DeductionType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeduction_DeductionTypeId()
-	 * @model annotation="mimo-ent-domain frame='DeductionType'"
+	 * @model keys="deductionTypeId"
 	 * @generated
 	 */
-	String getDeductionTypeId();
+	DeductionType getDeductionTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.Deduction#getDeductionTypeId <em>Deduction Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.Deduction#getDeductionTypeId <em>Deduction Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deduction Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Deduction Type Id</em>' reference.
 	 * @see #getDeductionTypeId()
 	 * @generated
 	 */
-	void setDeductionTypeId(String value);
+	void setDeductionTypeId(DeductionType value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Id</em>' attribute.
-	 * @see #setPaymentId(String)
+	 * @return the value of the '<em>Payment Id</em>' reference.
+	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getDeduction_PaymentId()
-	 * @model annotation="mimo-ent-domain frame='Payment'"
+	 * @model keys="paymentId"
 	 * @generated
 	 */
-	String getPaymentId();
+	Payment getPaymentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.Deduction#getPaymentId <em>Payment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.Deduction#getPaymentId <em>Payment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Id</em>' reference.
 	 * @see #getPaymentId()
 	 * @generated
 	 */
-	void setPaymentId(String value);
+	void setPaymentId(Payment value);
 
 } // Deduction

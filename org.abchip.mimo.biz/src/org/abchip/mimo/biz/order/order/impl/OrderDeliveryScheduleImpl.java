@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderDeliverySchedule;
 import org.abchip.mimo.biz.order.order.OrderPackage;
@@ -18,6 +20,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -33,12 +37,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getCartons <em>Cartons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getEstimatedReadyDate <em>Estimated Ready Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getSkidsPallets <em>Skids Pallets</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalCubicSize <em>Total Cubic Size</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalCubicUomId <em>Total Cubic Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalWeight <em>Total Weight</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalWeightUomId <em>Total Weight Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getUnitsPieces <em>Units Pieces</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalCubicUomId <em>Total Cubic Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getTotalWeightUomId <em>Total Weight Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderDeliveryScheduleImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -150,26 +154,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	protected long skidsPallets = SKIDS_PALLETS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getTotalCubicSize() <em>Total Cubic Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -188,26 +172,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @ordered
 	 */
 	protected BigDecimal totalCubicSize = TOTAL_CUBIC_SIZE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTotalCubicUomId() <em>Total Cubic Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTotalCubicUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TOTAL_CUBIC_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTotalCubicUomId() <em>Total Cubic Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTotalCubicUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String totalCubicUomId = TOTAL_CUBIC_UOM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTotalWeight() <em>Total Weight</em>}' attribute.
@@ -230,26 +194,6 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	protected BigDecimal totalWeight = TOTAL_WEIGHT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTotalWeightUomId() <em>Total Weight Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTotalWeightUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TOTAL_WEIGHT_UOM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTotalWeightUomId() <em>Total Weight Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTotalWeightUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String totalWeightUomId = TOTAL_WEIGHT_UOM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getUnitsPieces() <em>Units Pieces</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -268,6 +212,36 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @ordered
 	 */
 	protected BigDecimal unitsPieces = UNITS_PIECES_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTotalCubicUomId() <em>Total Cubic Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalCubicUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom totalCubicUomId;
+
+	/**
+	 * The cached value of the '{@link #getTotalWeightUomId() <em>Total Weight Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalWeightUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom totalWeightUomId;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -409,7 +383,24 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -419,8 +410,8 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID, oldStatusId, statusId));
@@ -455,7 +446,24 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @generated
 	 */
 	@Override
-	public String getTotalCubicUomId() {
+	public Uom getTotalCubicUomId() {
+		if (totalCubicUomId != null && ((EObject)totalCubicUomId).eIsProxy()) {
+			InternalEObject oldTotalCubicUomId = (InternalEObject)totalCubicUomId;
+			totalCubicUomId = (Uom)eResolveProxy(oldTotalCubicUomId);
+			if (totalCubicUomId != oldTotalCubicUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID, oldTotalCubicUomId, totalCubicUomId));
+			}
+		}
+		return totalCubicUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetTotalCubicUomId() {
 		return totalCubicUomId;
 	}
 
@@ -465,8 +473,8 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @generated
 	 */
 	@Override
-	public void setTotalCubicUomId(String newTotalCubicUomId) {
-		String oldTotalCubicUomId = totalCubicUomId;
+	public void setTotalCubicUomId(Uom newTotalCubicUomId) {
+		Uom oldTotalCubicUomId = totalCubicUomId;
 		totalCubicUomId = newTotalCubicUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID, oldTotalCubicUomId, totalCubicUomId));
@@ -501,7 +509,24 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @generated
 	 */
 	@Override
-	public String getTotalWeightUomId() {
+	public Uom getTotalWeightUomId() {
+		if (totalWeightUomId != null && ((EObject)totalWeightUomId).eIsProxy()) {
+			InternalEObject oldTotalWeightUomId = (InternalEObject)totalWeightUomId;
+			totalWeightUomId = (Uom)eResolveProxy(oldTotalWeightUomId);
+			if (totalWeightUomId != oldTotalWeightUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID, oldTotalWeightUomId, totalWeightUomId));
+			}
+		}
+		return totalWeightUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetTotalWeightUomId() {
 		return totalWeightUomId;
 	}
 
@@ -511,8 +536,8 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 	 * @generated
 	 */
 	@Override
-	public void setTotalWeightUomId(String newTotalWeightUomId) {
-		String oldTotalWeightUomId = totalWeightUomId;
+	public void setTotalWeightUomId(Uom newTotalWeightUomId) {
+		Uom oldTotalWeightUomId = totalWeightUomId;
 		totalWeightUomId = newTotalWeightUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID, oldTotalWeightUomId, totalWeightUomId));
@@ -559,18 +584,21 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 				return getEstimatedReadyDate();
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS:
 				return getSkidsPallets();
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
-				return getStatusId();
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE:
 				return getTotalCubicSize();
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
-				return getTotalCubicUomId();
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT:
 				return getTotalWeight();
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
-				return getTotalWeightUomId();
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
 				return getUnitsPieces();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
+				if (resolve) return getTotalCubicUomId();
+				return basicGetTotalCubicUomId();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
+				if (resolve) return getTotalWeightUomId();
+				return basicGetTotalWeightUomId();
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -598,23 +626,23 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS:
 				setSkidsPallets((Long)newValue);
 				return;
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE:
 				setTotalCubicSize((BigDecimal)newValue);
-				return;
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
-				setTotalCubicUomId((String)newValue);
 				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT:
 				setTotalWeight((BigDecimal)newValue);
 				return;
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
-				setTotalWeightUomId((String)newValue);
-				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
 				setUnitsPieces((BigDecimal)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
+				setTotalCubicUomId((Uom)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
+				setTotalWeightUomId((Uom)newValue);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -643,23 +671,23 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS:
 				setSkidsPallets(SKIDS_PALLETS_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE:
 				setTotalCubicSize(TOTAL_CUBIC_SIZE_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
-				setTotalCubicUomId(TOTAL_CUBIC_UOM_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT:
 				setTotalWeight(TOTAL_WEIGHT_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
-				setTotalWeightUomId(TOTAL_WEIGHT_UOM_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
 				setUnitsPieces(UNITS_PIECES_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
+				setTotalCubicUomId((Uom)null);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
+				setTotalWeightUomId((Uom)null);
+				return;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -683,18 +711,18 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 				return ESTIMATED_READY_DATE_EDEFAULT == null ? estimatedReadyDate != null : !ESTIMATED_READY_DATE_EDEFAULT.equals(estimatedReadyDate);
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__SKIDS_PALLETS:
 				return skidsPallets != SKIDS_PALLETS_EDEFAULT;
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_SIZE:
 				return TOTAL_CUBIC_SIZE_EDEFAULT == null ? totalCubicSize != null : !TOTAL_CUBIC_SIZE_EDEFAULT.equals(totalCubicSize);
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
-				return TOTAL_CUBIC_UOM_ID_EDEFAULT == null ? totalCubicUomId != null : !TOTAL_CUBIC_UOM_ID_EDEFAULT.equals(totalCubicUomId);
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT:
 				return TOTAL_WEIGHT_EDEFAULT == null ? totalWeight != null : !TOTAL_WEIGHT_EDEFAULT.equals(totalWeight);
-			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
-				return TOTAL_WEIGHT_UOM_ID_EDEFAULT == null ? totalWeightUomId != null : !TOTAL_WEIGHT_UOM_ID_EDEFAULT.equals(totalWeightUomId);
 			case OrderPackage.ORDER_DELIVERY_SCHEDULE__UNITS_PIECES:
 				return UNITS_PIECES_EDEFAULT == null ? unitsPieces != null : !UNITS_PIECES_EDEFAULT.equals(unitsPieces);
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_CUBIC_UOM_ID:
+				return totalCubicUomId != null;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__TOTAL_WEIGHT_UOM_ID:
+				return totalWeightUomId != null;
+			case OrderPackage.ORDER_DELIVERY_SCHEDULE__STATUS_ID:
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -719,16 +747,10 @@ public class OrderDeliveryScheduleImpl extends BizEntityImpl implements OrderDel
 		result.append(estimatedReadyDate);
 		result.append(", skidsPallets: ");
 		result.append(skidsPallets);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", totalCubicSize: ");
 		result.append(totalCubicSize);
-		result.append(", totalCubicUomId: ");
-		result.append(totalCubicUomId);
 		result.append(", totalWeight: ");
 		result.append(totalWeight);
-		result.append(", totalWeightUomId: ");
-		result.append(totalWeightUomId);
 		result.append(", unitsPieces: ");
 		result.append(unitsPieces);
 		result.append(')');

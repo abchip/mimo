@@ -194,30 +194,30 @@ public interface Testing extends BizEntityTyped<TestingType> {
 	void setTestingSize(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Testing Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Testing Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Testing Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Testing Type Id</em>' attribute.
-	 * @see #setTestingTypeId(String)
+	 * @return the value of the '<em>Testing Type Id</em>' reference.
+	 * @see #setTestingTypeId(TestingType)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTesting_TestingTypeId()
-	 * @model annotation="mimo-ent-domain frame='TestingType'"
+	 * @model keys="testingTypeId"
 	 * @generated
 	 */
-	String getTestingTypeId();
+	TestingType getTestingTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.Testing#getTestingTypeId <em>Testing Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.Testing#getTestingTypeId <em>Testing Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Testing Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Testing Type Id</em>' reference.
 	 * @see #getTestingTypeId()
 	 * @generated
 	 */
-	void setTestingTypeId(String value);
+	void setTestingTypeId(TestingType value);
 
 	/**
 	 * Returns the value of the '<em><b>Testing Items</b></em>' attribute list.

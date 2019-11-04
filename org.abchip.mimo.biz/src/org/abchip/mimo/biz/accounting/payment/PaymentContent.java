@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentId <em>Payment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentContentTypeId <em>Payment Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentId <em>Payment Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentContentTypeId <em>Payment Content Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent()
@@ -43,8 +43,8 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	 * @return the value of the '<em>Content Id</em>' attribute.
 	 * @see #setContentId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_ContentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContentId();
@@ -70,7 +70,8 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -112,57 +113,55 @@ public interface PaymentContent extends BizEntityTyped<PaymentContentType> {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Id</em>' attribute.
-	 * @see #setPaymentId(String)
+	 * @return the value of the '<em>Payment Id</em>' reference.
+	 * @see #setPaymentId(Payment)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_PaymentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Payment'"
+	 * @model keys="paymentId"
 	 * @generated
 	 */
-	String getPaymentId();
+	Payment getPaymentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentId <em>Payment Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentId <em>Payment Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Id</em>' reference.
 	 * @see #getPaymentId()
 	 * @generated
 	 */
-	void setPaymentId(String value);
+	void setPaymentId(Payment value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Content Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Content Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Content Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Content Type Id</em>' attribute.
-	 * @see #setPaymentContentTypeId(String)
+	 * @return the value of the '<em>Payment Content Type Id</em>' reference.
+	 * @see #setPaymentContentTypeId(PaymentContentType)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentContent_PaymentContentTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentContentType'"
+	 * @model keys="paymentContentTypeId"
 	 * @generated
 	 */
-	String getPaymentContentTypeId();
+	PaymentContentType getPaymentContentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentContentTypeId <em>Payment Content Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentContentTypeId <em>Payment Content Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Content Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Content Type Id</em>' reference.
 	 * @see #getPaymentContentTypeId()
 	 * @generated
 	 */
-	void setPaymentContentTypeId(String value);
+	void setPaymentContentTypeId(PaymentContentType value);
 
 } // PaymentContent

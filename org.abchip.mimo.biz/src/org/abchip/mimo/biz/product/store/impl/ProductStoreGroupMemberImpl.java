@@ -10,11 +10,14 @@ package org.abchip.mimo.biz.product.store.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.store.ProductStoreGroup;
 import org.abchip.mimo.biz.product.store.ProductStoreGroupMember;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupMemberImpl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupMemberImpl#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupMemberImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupMemberImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupMemberImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreGroupMemberImpl#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +62,6 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 	 * @ordered
 	 */
 	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_STORE_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductStoreGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productStoreGroupId = PRODUCT_STORE_GROUP_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -139,6 +122,16 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductStoreGroupId() <em>Product Store Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductStoreGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductStoreGroup productStoreGroupId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +250,24 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreGroupId() {
+	public ProductStoreGroup getProductStoreGroupId() {
+		if (productStoreGroupId != null && ((EObject)productStoreGroupId).eIsProxy()) {
+			InternalEObject oldProductStoreGroupId = (InternalEObject)productStoreGroupId;
+			productStoreGroupId = (ProductStoreGroup)eResolveProxy(oldProductStoreGroupId);
+			if (productStoreGroupId != oldProductStoreGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
+			}
+		}
+		return productStoreGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStoreGroup basicGetProductStoreGroupId() {
 		return productStoreGroupId;
 	}
 
@@ -267,8 +277,8 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreGroupId(String newProductStoreGroupId) {
-		String oldProductStoreGroupId = productStoreGroupId;
+	public void setProductStoreGroupId(ProductStoreGroup newProductStoreGroupId) {
+		ProductStoreGroup oldProductStoreGroupId = productStoreGroupId;
 		productStoreGroupId = newProductStoreGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID, oldProductStoreGroupId, productStoreGroupId));
@@ -284,14 +294,15 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_ID:
 				return getProductStoreId();
-			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID:
-				return getProductStoreGroupId();
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__FROM_DATE:
 				return getFromDate();
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__SEQUENCE_NUM:
 				return getSequenceNum();
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__THRU_DATE:
 				return getThruDate();
+			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID:
+				if (resolve) return getProductStoreGroupId();
+				return basicGetProductStoreGroupId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,9 +318,6 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_ID:
 				setProductStoreId((String)newValue);
 				return;
-			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID:
-				setProductStoreGroupId((String)newValue);
-				return;
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -318,6 +326,9 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID:
+				setProductStoreGroupId((ProductStoreGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,9 +345,6 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_ID:
 				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
 				return;
-			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID:
-				setProductStoreGroupId(PRODUCT_STORE_GROUP_ID_EDEFAULT);
-				return;
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -345,6 +353,9 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 				return;
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID:
+				setProductStoreGroupId((ProductStoreGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -360,14 +371,14 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_ID:
 				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
-			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID:
-				return PRODUCT_STORE_GROUP_ID_EDEFAULT == null ? productStoreGroupId != null : !PRODUCT_STORE_GROUP_ID_EDEFAULT.equals(productStoreGroupId);
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case StorePackage.PRODUCT_STORE_GROUP_MEMBER__PRODUCT_STORE_GROUP_ID:
+				return productStoreGroupId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -384,8 +395,6 @@ public class ProductStoreGroupMemberImpl extends BizEntityImpl implements Produc
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productStoreId: ");
 		result.append(productStoreId);
-		result.append(", productStoreGroupId: ");
-		result.append(productStoreGroupId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

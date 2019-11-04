@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface LoginPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-security-login";
+	String eNS_PREFIX = "biz-login";
 
 	/**
 	 * The singleton instance of the package.
@@ -206,22 +207,13 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN__LAST_TIME_ZONE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
-
-	/**
 	 * The feature id for the '<em><b>Password Hint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN__PASSWORD_HINT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int USER_LOGIN__PASSWORD_HINT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Require Password Change</b></em>' attribute.
@@ -230,7 +222,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN__REQUIRE_PASSWORD_CHANGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int USER_LOGIN__REQUIRE_PASSWORD_CHANGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Successive Failed Logins</b></em>' attribute.
@@ -239,7 +231,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN__SUCCESSIVE_FAILED_LOGINS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int USER_LOGIN__SUCCESSIVE_FAILED_LOGINS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>User Ldap Dn</b></em>' attribute.
@@ -248,7 +240,16 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN__USER_LDAP_DN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int USER_LOGIN__USER_LDAP_DN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>User Login Histories</b></em>' attribute list.
@@ -351,31 +352,13 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN_HISTORY__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Origin User Login Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_HISTORY__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Password Used</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_HISTORY__PASSWORD_USED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int USER_LOGIN_HISTORY__PASSWORD_USED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Successful Login</b></em>' attribute.
@@ -384,7 +367,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_HISTORY__SUCCESSFUL_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int USER_LOGIN_HISTORY__SUCCESSFUL_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -393,7 +376,7 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_HISTORY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int USER_LOGIN_HISTORY__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Visit Id</b></em>' attribute.
@@ -402,7 +385,25 @@ public interface LoginPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_HISTORY__VISIT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int USER_LOGIN_HISTORY__VISIT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Origin User Login Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_HISTORY__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>User Login History</em>' class.
@@ -560,22 +561,22 @@ public interface LoginPackage extends EPackage {
 	int USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>User Login Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Security Answer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int USER_LOGIN_SECURITY_QUESTION__SECURITY_ANSWER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>User Login Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>User Login Security Question</em>' class.
@@ -801,15 +802,15 @@ public interface LoginPackage extends EPackage {
 	EAttribute getUserLogin_LastTimeZone();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLogin#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.login.UserLogin#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.security.login.UserLogin#getPartyId()
 	 * @see #getUserLogin()
 	 * @generated
 	 */
-	EAttribute getUserLogin_PartyId();
+	EReference getUserLogin_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLogin#getPasswordHint <em>Password Hint</em>}'.
@@ -921,26 +922,26 @@ public interface LoginPackage extends EPackage {
 	EAttribute getUserLoginHistory_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId <em>Origin User Login Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId <em>Origin User Login Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Origin User Login Id</em>'.
+	 * @return the meta object for the reference '<em>Origin User Login Id</em>'.
 	 * @see org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId()
 	 * @see #getUserLoginHistory()
 	 * @generated
 	 */
-	EAttribute getUserLoginHistory_OriginUserLoginId();
+	EReference getUserLoginHistory_OriginUserLoginId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId()
 	 * @see #getUserLoginHistory()
 	 * @generated
 	 */
-	EAttribute getUserLoginHistory_PartyId();
+	EReference getUserLoginHistory_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPasswordUsed <em>Password Used</em>}'.
@@ -1062,15 +1063,15 @@ public interface LoginPackage extends EPackage {
 	EAttribute getUserLoginSecurityQuestion_QuestionEnumId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getUserLoginId <em>User Login Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getUserLoginId <em>User Login Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User Login Id</em>'.
+	 * @return the meta object for the reference '<em>User Login Id</em>'.
 	 * @see org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getUserLoginId()
 	 * @see #getUserLoginSecurityQuestion()
 	 * @generated
 	 */
-	EAttribute getUserLoginSecurityQuestion_UserLoginId();
+	EReference getUserLoginSecurityQuestion_UserLoginId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.security.login.UserLoginSecurityQuestion#getSecurityAnswer <em>Security Answer</em>}'.
@@ -1247,12 +1248,12 @@ public interface LoginPackage extends EPackage {
 		EAttribute USER_LOGIN__LAST_TIME_ZONE = eINSTANCE.getUserLogin_LastTimeZone();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_LOGIN__PARTY_ID = eINSTANCE.getUserLogin_PartyId();
+		EReference USER_LOGIN__PARTY_ID = eINSTANCE.getUserLogin_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Password Hint</b></em>' attribute feature.
@@ -1337,20 +1338,20 @@ public interface LoginPackage extends EPackage {
 		EAttribute USER_LOGIN_HISTORY__FROM_DATE = eINSTANCE.getUserLoginHistory_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Origin User Login Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Origin User Login Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID = eINSTANCE.getUserLoginHistory_OriginUserLoginId();
+		EReference USER_LOGIN_HISTORY__ORIGIN_USER_LOGIN_ID = eINSTANCE.getUserLoginHistory_OriginUserLoginId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_LOGIN_HISTORY__PARTY_ID = eINSTANCE.getUserLoginHistory_PartyId();
+		EReference USER_LOGIN_HISTORY__PARTY_ID = eINSTANCE.getUserLoginHistory_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Password Used</b></em>' attribute feature.
@@ -1445,12 +1446,12 @@ public interface LoginPackage extends EPackage {
 		EAttribute USER_LOGIN_SECURITY_QUESTION__QUESTION_ENUM_ID = eINSTANCE.getUserLoginSecurityQuestion_QuestionEnumId();
 
 		/**
-		 * The meta object literal for the '<em><b>User Login Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>User Login Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID = eINSTANCE.getUserLoginSecurityQuestion_UserLoginId();
+		EReference USER_LOGIN_SECURITY_QUESTION__USER_LOGIN_ID = eINSTANCE.getUserLoginSecurityQuestion_UserLoginId();
 
 		/**
 		 * The meta object literal for the '<em><b>Security Answer</b></em>' attribute feature.

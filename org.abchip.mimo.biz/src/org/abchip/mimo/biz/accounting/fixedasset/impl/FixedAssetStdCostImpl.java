@@ -14,10 +14,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCostType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,11 +32,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getFixedAssetStdCostTypeId <em>Fixed Asset Std Cost Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getAmountUomId <em>Amount Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getFixedAssetStdCostTypeId <em>Fixed Asset Std Cost Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetStdCostImpl#getAmountUomId <em>Amount Uom Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,24 +65,6 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 */
 	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getFixedAssetStdCostTypeId() <em>Fixed Asset Std Cost Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetStdCostTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_STD_COST_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetStdCostTypeId() <em>Fixed Asset Std Cost Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetStdCostTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetStdCostTypeId = FIXED_ASSET_STD_COST_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,24 +102,6 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 */
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getAmountUomId() <em>Amount Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmountUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AMOUNT_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getAmountUomId() <em>Amount Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmountUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String amountUomId = AMOUNT_UOM_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getThruDate() <em>Thru Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,6 +119,24 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFixedAssetStdCostTypeId() <em>Fixed Asset Std Cost Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetStdCostTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAssetStdCostType fixedAssetStdCostTypeId;
+	/**
+	 * The cached value of the '{@link #getAmountUomId() <em>Amount Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmountUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom amountUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,7 +186,24 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 * @generated
 	 */
 	@Override
-	public String getAmountUomId() {
+	public Uom getAmountUomId() {
+		if (amountUomId != null && ((EObject)amountUomId).eIsProxy()) {
+			InternalEObject oldAmountUomId = (InternalEObject)amountUomId;
+			amountUomId = (Uom)eResolveProxy(oldAmountUomId);
+			if (amountUomId != oldAmountUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID, oldAmountUomId, amountUomId));
+			}
+		}
+		return amountUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetAmountUomId() {
 		return amountUomId;
 	}
 
@@ -211,8 +213,8 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 * @generated
 	 */
 	@Override
-	public void setAmountUomId(String newAmountUomId) {
-		String oldAmountUomId = amountUomId;
+	public void setAmountUomId(Uom newAmountUomId) {
+		Uom oldAmountUomId = amountUomId;
 		amountUomId = newAmountUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID, oldAmountUomId, amountUomId));
@@ -293,7 +295,24 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetStdCostTypeId() {
+	public FixedAssetStdCostType getFixedAssetStdCostTypeId() {
+		if (fixedAssetStdCostTypeId != null && ((EObject)fixedAssetStdCostTypeId).eIsProxy()) {
+			InternalEObject oldFixedAssetStdCostTypeId = (InternalEObject)fixedAssetStdCostTypeId;
+			fixedAssetStdCostTypeId = (FixedAssetStdCostType)eResolveProxy(oldFixedAssetStdCostTypeId);
+			if (fixedAssetStdCostTypeId != oldFixedAssetStdCostTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID, oldFixedAssetStdCostTypeId, fixedAssetStdCostTypeId));
+			}
+		}
+		return fixedAssetStdCostTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAssetStdCostType basicGetFixedAssetStdCostTypeId() {
 		return fixedAssetStdCostTypeId;
 	}
 
@@ -303,8 +322,8 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetStdCostTypeId(String newFixedAssetStdCostTypeId) {
-		String oldFixedAssetStdCostTypeId = fixedAssetStdCostTypeId;
+	public void setFixedAssetStdCostTypeId(FixedAssetStdCostType newFixedAssetStdCostTypeId) {
+		FixedAssetStdCostType oldFixedAssetStdCostTypeId = fixedAssetStdCostTypeId;
 		fixedAssetStdCostTypeId = newFixedAssetStdCostTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID, oldFixedAssetStdCostTypeId, fixedAssetStdCostTypeId));
@@ -320,16 +339,18 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
 				return getFixedAssetId();
-			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
-				return getFixedAssetStdCostTypeId();
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FROM_DATE:
 				return getFromDate();
 			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT:
 				return getAmount();
-			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID:
-				return getAmountUomId();
 			case FixedassetPackage.FIXED_ASSET_STD_COST__THRU_DATE:
 				return getThruDate();
+			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
+				if (resolve) return getFixedAssetStdCostTypeId();
+				return basicGetFixedAssetStdCostTypeId();
+			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID:
+				if (resolve) return getAmountUomId();
+				return basicGetAmountUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -345,20 +366,20 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
 				setFixedAssetId((String)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
-				setFixedAssetStdCostTypeId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT:
 				setAmount((BigDecimal)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID:
-				setAmountUomId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
+				setFixedAssetStdCostTypeId((FixedAssetStdCostType)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID:
+				setAmountUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -375,20 +396,20 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
 				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
-				setFixedAssetStdCostTypeId(FIXED_ASSET_STD_COST_TYPE_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID:
-				setAmountUomId(AMOUNT_UOM_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_STD_COST__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
+				setFixedAssetStdCostTypeId((FixedAssetStdCostType)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID:
+				setAmountUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -404,16 +425,16 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_ID:
 				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
-			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
-				return FIXED_ASSET_STD_COST_TYPE_ID_EDEFAULT == null ? fixedAssetStdCostTypeId != null : !FIXED_ASSET_STD_COST_TYPE_ID_EDEFAULT.equals(fixedAssetStdCostTypeId);
 			case FixedassetPackage.FIXED_ASSET_STD_COST__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID:
-				return AMOUNT_UOM_ID_EDEFAULT == null ? amountUomId != null : !AMOUNT_UOM_ID_EDEFAULT.equals(amountUomId);
 			case FixedassetPackage.FIXED_ASSET_STD_COST__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FixedassetPackage.FIXED_ASSET_STD_COST__FIXED_ASSET_STD_COST_TYPE_ID:
+				return fixedAssetStdCostTypeId != null;
+			case FixedassetPackage.FIXED_ASSET_STD_COST__AMOUNT_UOM_ID:
+				return amountUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -430,14 +451,10 @@ public class FixedAssetStdCostImpl extends BizEntityTypedImpl<FixedAssetStdCostT
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (fixedAssetId: ");
 		result.append(fixedAssetId);
-		result.append(", fixedAssetStdCostTypeId: ");
-		result.append(fixedAssetStdCostTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", amount: ");
 		result.append(amount);
-		result.append(", amountUomId: ");
-		result.append(amountUomId);
 		result.append(", thruDate: ");
 		result.append(thruDate);
 		result.append(')');

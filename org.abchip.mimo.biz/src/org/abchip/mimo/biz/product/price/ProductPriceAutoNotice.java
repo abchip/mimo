@@ -95,7 +95,7 @@ public interface ProductPriceAutoNotice extends BizEntity {
 	 * @return the value of the '<em>Product Price Notice Id</em>' attribute.
 	 * @see #setProductPriceNoticeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPriceAutoNotice_ProductPriceNoticeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

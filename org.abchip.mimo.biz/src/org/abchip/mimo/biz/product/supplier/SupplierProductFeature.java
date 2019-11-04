@@ -8,6 +8,8 @@
 package org.abchip.mimo.biz.product.supplier;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,9 +21,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getIdCode <em>Id Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getUomId <em>Uom Id</em>}</li>
  * </ul>
  *
@@ -93,8 +95,8 @@ public interface SupplierProductFeature extends BizEntity {
 	 * @return the value of the '<em>Party Id</em>' attribute.
 	 * @see #setPartyId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getPartyId();
@@ -110,56 +112,55 @@ public interface SupplierProductFeature extends BizEntity {
 	void setPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uom Id</em>' attribute.
-	 * @see #setUomId(String)
+	 * @return the value of the '<em>Uom Id</em>' reference.
+	 * @see #setUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_UomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getUomId();
+	Uom getUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getUomId <em>Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getUomId <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Uom Id</em>' reference.
 	 * @see #getUomId()
 	 * @generated
 	 */
-	void setUomId(String value);
+	void setUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Id</em>' attribute.
-	 * @see #setProductFeatureId(String)
+	 * @return the value of the '<em>Product Feature Id</em>' reference.
+	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProductFeature_ProductFeatureId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeature'"
+	 * @model keys="productFeatureId"
 	 * @generated
 	 */
-	String getProductFeatureId();
+	ProductFeature getProductFeatureId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getProductFeatureId <em>Product Feature Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProductFeature#getProductFeatureId <em>Product Feature Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Id</em>' reference.
 	 * @see #getProductFeatureId()
 	 * @generated
 	 */
-	void setProductFeatureId(String value);
+	void setProductFeatureId(ProductFeature value);
 
 } // SupplierProductFeature

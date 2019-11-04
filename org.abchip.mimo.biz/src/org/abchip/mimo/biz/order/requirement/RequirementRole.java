@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.order.requirement;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +22,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getRequirementId <em>Requirement Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole()
@@ -43,7 +44,8 @@ public interface RequirementRole extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -59,31 +61,30 @@ public interface RequirementRole extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementRole#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Requirement Id</b></em>' attribute.
@@ -96,8 +97,8 @@ public interface RequirementRole extends BizEntity {
 	 * @return the value of the '<em>Requirement Id</em>' attribute.
 	 * @see #setRequirementId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_RequirementId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Requirement'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRequirementId();
@@ -123,7 +124,8 @@ public interface RequirementRole extends BizEntity {
 	 * @return the value of the '<em>Role Type Id</em>' attribute.
 	 * @see #setRoleTypeId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementRole_RoleTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeId();

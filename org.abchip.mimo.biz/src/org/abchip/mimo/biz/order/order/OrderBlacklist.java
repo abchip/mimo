@@ -38,7 +38,8 @@ public interface OrderBlacklist extends BizEntityTyped<OrderBlacklistType> {
 	 * @return the value of the '<em>Blacklist String</em>' attribute.
 	 * @see #setBlacklistString(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklist_BlacklistString()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBlacklistString();
@@ -54,30 +55,29 @@ public interface OrderBlacklist extends BizEntityTyped<OrderBlacklistType> {
 	void setBlacklistString(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Order Blacklist Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Order Blacklist Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Order Blacklist Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order Blacklist Type Id</em>' attribute.
-	 * @see #setOrderBlacklistTypeId(String)
+	 * @return the value of the '<em>Order Blacklist Type Id</em>' reference.
+	 * @see #setOrderBlacklistTypeId(OrderBlacklistType)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderBlacklist_OrderBlacklistTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderBlacklistType'"
+	 * @model keys="orderBlacklistTypeId"
 	 * @generated
 	 */
-	String getOrderBlacklistTypeId();
+	OrderBlacklistType getOrderBlacklistTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderBlacklist#getOrderBlacklistTypeId <em>Order Blacklist Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.order.OrderBlacklist#getOrderBlacklistTypeId <em>Order Blacklist Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order Blacklist Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Order Blacklist Type Id</em>' reference.
 	 * @see #getOrderBlacklistTypeId()
 	 * @generated
 	 */
-	void setOrderBlacklistTypeId(String value);
+	void setOrderBlacklistTypeId(OrderBlacklistType value);
 
 } // OrderBlacklist

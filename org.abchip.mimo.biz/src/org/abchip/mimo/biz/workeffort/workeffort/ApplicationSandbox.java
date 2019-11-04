@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.workeffort.workeffort;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.service.schedule.RuntimeData;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +25,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getRuntimeDataId <em>Runtime Data Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getRuntimeDataId <em>Runtime Data Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox()
@@ -139,30 +140,30 @@ public interface ApplicationSandbox extends BizEntity {
 	void setRoleTypeId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Runtime Data Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Runtime Data Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Runtime Data Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Runtime Data Id</em>' attribute.
-	 * @see #setRuntimeDataId(String)
+	 * @return the value of the '<em>Runtime Data Id</em>' reference.
+	 * @see #setRuntimeDataId(RuntimeData)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getApplicationSandbox_RuntimeDataId()
-	 * @model annotation="mimo-ent-domain frame='RuntimeData'"
+	 * @model keys="runtimeDataId"
 	 * @generated
 	 */
-	String getRuntimeDataId();
+	RuntimeData getRuntimeDataId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getRuntimeDataId <em>Runtime Data Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.ApplicationSandbox#getRuntimeDataId <em>Runtime Data Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Runtime Data Id</em>' attribute.
+	 * @param value the new value of the '<em>Runtime Data Id</em>' reference.
 	 * @see #getRuntimeDataId()
 	 * @generated
 	 */
-	void setRuntimeDataId(String value);
+	void setRuntimeDataId(RuntimeData value);
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.

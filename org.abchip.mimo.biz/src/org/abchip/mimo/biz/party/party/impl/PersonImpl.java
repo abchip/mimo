@@ -9,11 +9,14 @@ package org.abchip.mimo.biz.party.party.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.abchip.mimo.biz.party.party.Person;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,7 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getCardId <em>Card Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getDeceasedDate <em>Deceased Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#isExistingCustomer <em>Existing Customer</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getFirstNameLocal <em>First Name Local</em>}</li>
@@ -48,13 +50,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getPassportExpireDate <em>Passport Expire Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getPassportNumber <em>Passport Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getPersonalTitle <em>Personal Title</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getSalutation <em>Salutation</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getSocialSecurityNumber <em>Social Security Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getSuffix <em>Suffix</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getTotalYearsWorkExperience <em>Total Years Work Experience</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getWeight <em>Weight</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getYearsWithEmployer <em>Years With Employer</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getEmploymentStatusEnumId <em>Employment Status Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PersonImpl#getResidenceStatusEnumId <em>Residence Status Enum Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -143,26 +146,6 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @ordered
 	 */
 	protected Date deceasedDate = DECEASED_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEmploymentStatusEnumId() <em>Employment Status Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmploymentStatusEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPLOYMENT_STATUS_ENUM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmploymentStatusEnumId() <em>Employment Status Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmploymentStatusEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String employmentStatusEnumId = EMPLOYMENT_STATUS_ENUM_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isExistingCustomer() <em>Existing Customer</em>}' attribute.
@@ -539,24 +522,6 @@ public class PersonImpl extends PartyImpl implements Person {
 	 */
 	protected String personalTitle = PERSONAL_TITLE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getResidenceStatusEnumId() <em>Residence Status Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResidenceStatusEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RESIDENCE_STATUS_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getResidenceStatusEnumId() <em>Residence Status Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResidenceStatusEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String residenceStatusEnumId = RESIDENCE_STATUS_ENUM_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getSalutation() <em>Salutation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -664,6 +629,24 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @ordered
 	 */
 	protected long yearsWithEmployer = YEARS_WITH_EMPLOYER_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getEmploymentStatusEnumId() <em>Employment Status Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmploymentStatusEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration employmentStatusEnumId;
+	/**
+	 * The cached value of the '{@link #getResidenceStatusEnumId() <em>Residence Status Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResidenceStatusEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration residenceStatusEnumId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -782,7 +765,24 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public String getEmploymentStatusEnumId() {
+	public Enumeration getEmploymentStatusEnumId() {
+		if (employmentStatusEnumId != null && ((EObject)employmentStatusEnumId).eIsProxy()) {
+			InternalEObject oldEmploymentStatusEnumId = (InternalEObject)employmentStatusEnumId;
+			employmentStatusEnumId = (Enumeration)eResolveProxy(oldEmploymentStatusEnumId);
+			if (employmentStatusEnumId != oldEmploymentStatusEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID, oldEmploymentStatusEnumId, employmentStatusEnumId));
+			}
+		}
+		return employmentStatusEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetEmploymentStatusEnumId() {
 		return employmentStatusEnumId;
 	}
 
@@ -792,8 +792,8 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public void setEmploymentStatusEnumId(String newEmploymentStatusEnumId) {
-		String oldEmploymentStatusEnumId = employmentStatusEnumId;
+	public void setEmploymentStatusEnumId(Enumeration newEmploymentStatusEnumId) {
+		Enumeration oldEmploymentStatusEnumId = employmentStatusEnumId;
 		employmentStatusEnumId = newEmploymentStatusEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID, oldEmploymentStatusEnumId, employmentStatusEnumId));
@@ -1242,7 +1242,24 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public String getResidenceStatusEnumId() {
+	public Enumeration getResidenceStatusEnumId() {
+		if (residenceStatusEnumId != null && ((EObject)residenceStatusEnumId).eIsProxy()) {
+			InternalEObject oldResidenceStatusEnumId = (InternalEObject)residenceStatusEnumId;
+			residenceStatusEnumId = (Enumeration)eResolveProxy(oldResidenceStatusEnumId);
+			if (residenceStatusEnumId != oldResidenceStatusEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID, oldResidenceStatusEnumId, residenceStatusEnumId));
+			}
+		}
+		return residenceStatusEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetResidenceStatusEnumId() {
 		return residenceStatusEnumId;
 	}
 
@@ -1252,8 +1269,8 @@ public class PersonImpl extends PartyImpl implements Person {
 	 * @generated
 	 */
 	@Override
-	public void setResidenceStatusEnumId(String newResidenceStatusEnumId) {
-		String oldResidenceStatusEnumId = residenceStatusEnumId;
+	public void setResidenceStatusEnumId(Enumeration newResidenceStatusEnumId) {
+		Enumeration oldResidenceStatusEnumId = residenceStatusEnumId;
 		residenceStatusEnumId = newResidenceStatusEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID, oldResidenceStatusEnumId, residenceStatusEnumId));
@@ -1413,8 +1430,6 @@ public class PersonImpl extends PartyImpl implements Person {
 				return getComments();
 			case PartyPackage.PERSON__DECEASED_DATE:
 				return getDeceasedDate();
-			case PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID:
-				return getEmploymentStatusEnumId();
 			case PartyPackage.PERSON__EXISTING_CUSTOMER:
 				return isExistingCustomer();
 			case PartyPackage.PERSON__FIRST_NAME:
@@ -1453,8 +1468,6 @@ public class PersonImpl extends PartyImpl implements Person {
 				return getPassportNumber();
 			case PartyPackage.PERSON__PERSONAL_TITLE:
 				return getPersonalTitle();
-			case PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID:
-				return getResidenceStatusEnumId();
 			case PartyPackage.PERSON__SALUTATION:
 				return getSalutation();
 			case PartyPackage.PERSON__SOCIAL_SECURITY_NUMBER:
@@ -1467,6 +1480,12 @@ public class PersonImpl extends PartyImpl implements Person {
 				return getWeight();
 			case PartyPackage.PERSON__YEARS_WITH_EMPLOYER:
 				return getYearsWithEmployer();
+			case PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID:
+				if (resolve) return getEmploymentStatusEnumId();
+				return basicGetEmploymentStatusEnumId();
+			case PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID:
+				if (resolve) return getResidenceStatusEnumId();
+				return basicGetResidenceStatusEnumId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1490,9 +1509,6 @@ public class PersonImpl extends PartyImpl implements Person {
 				return;
 			case PartyPackage.PERSON__DECEASED_DATE:
 				setDeceasedDate((Date)newValue);
-				return;
-			case PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID:
-				setEmploymentStatusEnumId((String)newValue);
 				return;
 			case PartyPackage.PERSON__EXISTING_CUSTOMER:
 				setExistingCustomer((Boolean)newValue);
@@ -1551,9 +1567,6 @@ public class PersonImpl extends PartyImpl implements Person {
 			case PartyPackage.PERSON__PERSONAL_TITLE:
 				setPersonalTitle((String)newValue);
 				return;
-			case PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID:
-				setResidenceStatusEnumId((String)newValue);
-				return;
 			case PartyPackage.PERSON__SALUTATION:
 				setSalutation((String)newValue);
 				return;
@@ -1571,6 +1584,12 @@ public class PersonImpl extends PartyImpl implements Person {
 				return;
 			case PartyPackage.PERSON__YEARS_WITH_EMPLOYER:
 				setYearsWithEmployer((Long)newValue);
+				return;
+			case PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID:
+				setEmploymentStatusEnumId((Enumeration)newValue);
+				return;
+			case PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID:
+				setResidenceStatusEnumId((Enumeration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1595,9 +1614,6 @@ public class PersonImpl extends PartyImpl implements Person {
 				return;
 			case PartyPackage.PERSON__DECEASED_DATE:
 				setDeceasedDate(DECEASED_DATE_EDEFAULT);
-				return;
-			case PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID:
-				setEmploymentStatusEnumId(EMPLOYMENT_STATUS_ENUM_ID_EDEFAULT);
 				return;
 			case PartyPackage.PERSON__EXISTING_CUSTOMER:
 				setExistingCustomer(EXISTING_CUSTOMER_EDEFAULT);
@@ -1656,9 +1672,6 @@ public class PersonImpl extends PartyImpl implements Person {
 			case PartyPackage.PERSON__PERSONAL_TITLE:
 				setPersonalTitle(PERSONAL_TITLE_EDEFAULT);
 				return;
-			case PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID:
-				setResidenceStatusEnumId(RESIDENCE_STATUS_ENUM_ID_EDEFAULT);
-				return;
 			case PartyPackage.PERSON__SALUTATION:
 				setSalutation(SALUTATION_EDEFAULT);
 				return;
@@ -1676,6 +1689,12 @@ public class PersonImpl extends PartyImpl implements Person {
 				return;
 			case PartyPackage.PERSON__YEARS_WITH_EMPLOYER:
 				setYearsWithEmployer(YEARS_WITH_EMPLOYER_EDEFAULT);
+				return;
+			case PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID:
+				setEmploymentStatusEnumId((Enumeration)null);
+				return;
+			case PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID:
+				setResidenceStatusEnumId((Enumeration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1697,8 +1716,6 @@ public class PersonImpl extends PartyImpl implements Person {
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case PartyPackage.PERSON__DECEASED_DATE:
 				return DECEASED_DATE_EDEFAULT == null ? deceasedDate != null : !DECEASED_DATE_EDEFAULT.equals(deceasedDate);
-			case PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID:
-				return EMPLOYMENT_STATUS_ENUM_ID_EDEFAULT == null ? employmentStatusEnumId != null : !EMPLOYMENT_STATUS_ENUM_ID_EDEFAULT.equals(employmentStatusEnumId);
 			case PartyPackage.PERSON__EXISTING_CUSTOMER:
 				return existingCustomer != EXISTING_CUSTOMER_EDEFAULT;
 			case PartyPackage.PERSON__FIRST_NAME:
@@ -1737,8 +1754,6 @@ public class PersonImpl extends PartyImpl implements Person {
 				return PASSPORT_NUMBER_EDEFAULT == null ? passportNumber != null : !PASSPORT_NUMBER_EDEFAULT.equals(passportNumber);
 			case PartyPackage.PERSON__PERSONAL_TITLE:
 				return PERSONAL_TITLE_EDEFAULT == null ? personalTitle != null : !PERSONAL_TITLE_EDEFAULT.equals(personalTitle);
-			case PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID:
-				return RESIDENCE_STATUS_ENUM_ID_EDEFAULT == null ? residenceStatusEnumId != null : !RESIDENCE_STATUS_ENUM_ID_EDEFAULT.equals(residenceStatusEnumId);
 			case PartyPackage.PERSON__SALUTATION:
 				return SALUTATION_EDEFAULT == null ? salutation != null : !SALUTATION_EDEFAULT.equals(salutation);
 			case PartyPackage.PERSON__SOCIAL_SECURITY_NUMBER:
@@ -1751,6 +1766,10 @@ public class PersonImpl extends PartyImpl implements Person {
 				return weight != WEIGHT_EDEFAULT;
 			case PartyPackage.PERSON__YEARS_WITH_EMPLOYER:
 				return yearsWithEmployer != YEARS_WITH_EMPLOYER_EDEFAULT;
+			case PartyPackage.PERSON__EMPLOYMENT_STATUS_ENUM_ID:
+				return employmentStatusEnumId != null;
+			case PartyPackage.PERSON__RESIDENCE_STATUS_ENUM_ID:
+				return residenceStatusEnumId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1773,8 +1792,6 @@ public class PersonImpl extends PartyImpl implements Person {
 		result.append(comments);
 		result.append(", deceasedDate: ");
 		result.append(deceasedDate);
-		result.append(", employmentStatusEnumId: ");
-		result.append(employmentStatusEnumId);
 		result.append(", existingCustomer: ");
 		result.append(existingCustomer);
 		result.append(", firstName: ");
@@ -1813,8 +1830,6 @@ public class PersonImpl extends PartyImpl implements Person {
 		result.append(passportNumber);
 		result.append(", personalTitle: ");
 		result.append(personalTitle);
-		result.append(", residenceStatusEnumId: ");
-		result.append(residenceStatusEnumId);
 		result.append(", salutation: ");
 		result.append(salutation);
 		result.append(", socialSecurityNumber: ");

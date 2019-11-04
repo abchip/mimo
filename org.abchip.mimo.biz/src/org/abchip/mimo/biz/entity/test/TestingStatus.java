@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.entity.test;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +23,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getTestingStatusId <em>Testing Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getStatusDate <em>Status Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getTestingId <em>Testing Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.test.TestingStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus()
@@ -33,30 +35,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface TestingStatus extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Change By User Login Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Change By User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Change By User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Change By User Login Id</em>' attribute.
-	 * @see #setChangeByUserLoginId(String)
+	 * @return the value of the '<em>Change By User Login Id</em>' reference.
+	 * @see #setChangeByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus_ChangeByUserLoginId()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getChangeByUserLoginId();
+	UserLogin getChangeByUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.TestingStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.TestingStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Change By User Login Id</em>' attribute.
+	 * @param value the new value of the '<em>Change By User Login Id</em>' reference.
 	 * @see #getChangeByUserLoginId()
 	 * @generated
 	 */
-	void setChangeByUserLoginId(String value);
+	void setChangeByUserLoginId(UserLogin value);
 
 	/**
 	 * Returns the value of the '<em><b>Status Date</b></em>' attribute.
@@ -85,30 +87,30 @@ public interface TestingStatus extends BizEntity {
 	void setStatusDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.entity.test.TestPackage#getTestingStatus_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.TestingStatus#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.test.TestingStatus#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Testing Id</b></em>' attribute.

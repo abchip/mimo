@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.content.content.impl;
 import org.abchip.mimo.biz.content.content.ContentPackage;
 import org.abchip.mimo.biz.content.content.ContentRevision;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -99,24 +102,14 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	protected String comments = COMMENTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCommittedByPartyId() <em>Committed By Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getCommittedByPartyId() <em>Committed By Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCommittedByPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMMITTED_BY_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCommittedByPartyId() <em>Committed By Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommittedByPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String committedByPartyId = COMMITTED_BY_PARTY_ID_EDEFAULT;
+	protected Party committedByPartyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,7 +159,24 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 * @generated
 	 */
 	@Override
-	public String getCommittedByPartyId() {
+	public Party getCommittedByPartyId() {
+		if (committedByPartyId != null && ((EObject)committedByPartyId).eIsProxy()) {
+			InternalEObject oldCommittedByPartyId = (InternalEObject)committedByPartyId;
+			committedByPartyId = (Party)eResolveProxy(oldCommittedByPartyId);
+			if (committedByPartyId != oldCommittedByPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID, oldCommittedByPartyId, committedByPartyId));
+			}
+		}
+		return committedByPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetCommittedByPartyId() {
 		return committedByPartyId;
 	}
 
@@ -176,8 +186,8 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 	 * @generated
 	 */
 	@Override
-	public void setCommittedByPartyId(String newCommittedByPartyId) {
-		String oldCommittedByPartyId = committedByPartyId;
+	public void setCommittedByPartyId(Party newCommittedByPartyId) {
+		Party oldCommittedByPartyId = committedByPartyId;
 		committedByPartyId = newCommittedByPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID, oldCommittedByPartyId, committedByPartyId));
@@ -244,7 +254,8 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 			case ContentPackage.CONTENT_REVISION__COMMENTS:
 				return getComments();
 			case ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID:
-				return getCommittedByPartyId();
+				if (resolve) return getCommittedByPartyId();
+				return basicGetCommittedByPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -267,7 +278,7 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 				setComments((String)newValue);
 				return;
 			case ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID:
-				setCommittedByPartyId((String)newValue);
+				setCommittedByPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -291,7 +302,7 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 				setComments(COMMENTS_EDEFAULT);
 				return;
 			case ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID:
-				setCommittedByPartyId(COMMITTED_BY_PARTY_ID_EDEFAULT);
+				setCommittedByPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -312,7 +323,7 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 			case ContentPackage.CONTENT_REVISION__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case ContentPackage.CONTENT_REVISION__COMMITTED_BY_PARTY_ID:
-				return COMMITTED_BY_PARTY_ID_EDEFAULT == null ? committedByPartyId != null : !COMMITTED_BY_PARTY_ID_EDEFAULT.equals(committedByPartyId);
+				return committedByPartyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -333,8 +344,6 @@ public class ContentRevisionImpl extends BizEntityImpl implements ContentRevisio
 		result.append(contentRevisionSeqId);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", committedByPartyId: ");
-		result.append(committedByPartyId);
 		result.append(')');
 		return result.toString();
 	}

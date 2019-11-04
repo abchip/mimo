@@ -14,9 +14,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceRole;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,10 +32,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getInvoiceId <em>Invoice Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getDatetimePerformed <em>Datetime Performed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getPercentage <em>Percentage</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,42 +63,6 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * @ordered
 	 */
 	protected String invoiceId = INVOICE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDatetimePerformed() <em>Datetime Performed</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -131,6 +99,24 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * @ordered
 	 */
 	protected BigDecimal percentage = PERCENTAGE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,7 +166,24 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ROLE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -190,8 +193,8 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ROLE__PARTY_ID, oldPartyId, partyId));
@@ -226,7 +229,24 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -236,8 +256,8 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -276,14 +296,16 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
 				return getInvoiceId();
-			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
-				return getPartyId();
-			case InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID:
-				return getRoleTypeId();
 			case InvoicePackage.INVOICE_ROLE__DATETIME_PERFORMED:
 				return getDatetimePerformed();
 			case InvoicePackage.INVOICE_ROLE__PERCENTAGE:
 				return getPercentage();
+			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -299,17 +321,17 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
 				setInvoiceId((String)newValue);
 				return;
-			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_ROLE__DATETIME_PERFORMED:
 				setDatetimePerformed((Date)newValue);
 				return;
 			case InvoicePackage.INVOICE_ROLE__PERCENTAGE:
 				setPercentage((BigDecimal)newValue);
+				return;
+			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -326,17 +348,17 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
 				setInvoiceId(INVOICE_ID_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_ROLE__DATETIME_PERFORMED:
 				setDatetimePerformed(DATETIME_PERFORMED_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_ROLE__PERCENTAGE:
 				setPercentage(PERCENTAGE_EDEFAULT);
+				return;
+			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -352,14 +374,14 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ROLE__INVOICE_ID:
 				return INVOICE_ID_EDEFAULT == null ? invoiceId != null : !INVOICE_ID_EDEFAULT.equals(invoiceId);
-			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case InvoicePackage.INVOICE_ROLE__DATETIME_PERFORMED:
 				return DATETIME_PERFORMED_EDEFAULT == null ? datetimePerformed != null : !DATETIME_PERFORMED_EDEFAULT.equals(datetimePerformed);
 			case InvoicePackage.INVOICE_ROLE__PERCENTAGE:
 				return PERCENTAGE_EDEFAULT == null ? percentage != null : !PERCENTAGE_EDEFAULT.equals(percentage);
+			case InvoicePackage.INVOICE_ROLE__PARTY_ID:
+				return partyId != null;
+			case InvoicePackage.INVOICE_ROLE__ROLE_TYPE_ID:
+				return roleTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -376,10 +398,6 @@ public class InvoiceRoleImpl extends BizEntityImpl implements InvoiceRole {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (invoiceId: ");
 		result.append(invoiceId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
 		result.append(", datetimePerformed: ");
 		result.append(datetimePerformed);
 		result.append(", percentage: ");

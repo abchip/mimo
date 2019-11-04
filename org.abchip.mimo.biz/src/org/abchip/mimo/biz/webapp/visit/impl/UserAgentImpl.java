@@ -10,13 +10,19 @@ package org.abchip.mimo.biz.webapp.visit.impl;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.webapp.visit.BrowserType;
+import org.abchip.mimo.biz.webapp.visit.PlatformType;
+import org.abchip.mimo.biz.webapp.visit.ProtocolType;
 import org.abchip.mimo.biz.webapp.visit.UserAgent;
+import org.abchip.mimo.biz.webapp.visit.UserAgentMethodType;
 import org.abchip.mimo.biz.webapp.visit.UserAgentType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,8 +37,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentImpl#getBrowserTypeId <em>Browser Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentImpl#getPlatformTypeId <em>Platform Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentImpl#getProtocolTypeId <em>Protocol Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentImpl#getUserAgentMethodTypeId <em>User Agent Method Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentImpl#getUserAgentTypeId <em>User Agent Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.UserAgentImpl#getUserAgentMethodTypeId <em>User Agent Method Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,104 +70,54 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	protected String userAgentId = USER_AGENT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getBrowserTypeId() <em>Browser Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getBrowserTypeId() <em>Browser Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBrowserTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String BROWSER_TYPE_ID_EDEFAULT = null;
+	protected BrowserType browserTypeId;
 
 	/**
-	 * The cached value of the '{@link #getBrowserTypeId() <em>Browser Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBrowserTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String browserTypeId = BROWSER_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPlatformTypeId() <em>Platform Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPlatformTypeId() <em>Platform Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPlatformTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PLATFORM_TYPE_ID_EDEFAULT = null;
+	protected PlatformType platformTypeId;
 
 	/**
-	 * The cached value of the '{@link #getPlatformTypeId() <em>Platform Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPlatformTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String platformTypeId = PLATFORM_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProtocolTypeId() <em>Protocol Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getProtocolTypeId() <em>Protocol Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProtocolTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROTOCOL_TYPE_ID_EDEFAULT = null;
+	protected ProtocolType protocolTypeId;
 
 	/**
-	 * The cached value of the '{@link #getProtocolTypeId() <em>Protocol Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProtocolTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String protocolTypeId = PROTOCOL_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUserAgentMethodTypeId() <em>User Agent Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserAgentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String USER_AGENT_METHOD_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUserAgentMethodTypeId() <em>User Agent Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserAgentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String userAgentMethodTypeId = USER_AGENT_METHOD_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUserAgentTypeId() <em>User Agent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getUserAgentTypeId() <em>User Agent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUserAgentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USER_AGENT_TYPE_ID_EDEFAULT = null;
+	protected UserAgentType userAgentTypeId;
 
 	/**
-	 * The cached value of the '{@link #getUserAgentTypeId() <em>User Agent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getUserAgentMethodTypeId() <em>User Agent Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUserAgentTypeId()
+	 * @see #getUserAgentMethodTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String userAgentTypeId = USER_AGENT_TYPE_ID_EDEFAULT;
+	protected UserAgentMethodType userAgentMethodTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,7 +167,24 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getBrowserTypeId() {
+	public BrowserType getBrowserTypeId() {
+		if (browserTypeId != null && ((EObject)browserTypeId).eIsProxy()) {
+			InternalEObject oldBrowserTypeId = (InternalEObject)browserTypeId;
+			browserTypeId = (BrowserType)eResolveProxy(oldBrowserTypeId);
+			if (browserTypeId != oldBrowserTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__BROWSER_TYPE_ID, oldBrowserTypeId, browserTypeId));
+			}
+		}
+		return browserTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BrowserType basicGetBrowserTypeId() {
 		return browserTypeId;
 	}
 
@@ -221,8 +194,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setBrowserTypeId(String newBrowserTypeId) {
-		String oldBrowserTypeId = browserTypeId;
+	public void setBrowserTypeId(BrowserType newBrowserTypeId) {
+		BrowserType oldBrowserTypeId = browserTypeId;
 		browserTypeId = newBrowserTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__BROWSER_TYPE_ID, oldBrowserTypeId, browserTypeId));
@@ -234,7 +207,24 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getPlatformTypeId() {
+	public PlatformType getPlatformTypeId() {
+		if (platformTypeId != null && ((EObject)platformTypeId).eIsProxy()) {
+			InternalEObject oldPlatformTypeId = (InternalEObject)platformTypeId;
+			platformTypeId = (PlatformType)eResolveProxy(oldPlatformTypeId);
+			if (platformTypeId != oldPlatformTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__PLATFORM_TYPE_ID, oldPlatformTypeId, platformTypeId));
+			}
+		}
+		return platformTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PlatformType basicGetPlatformTypeId() {
 		return platformTypeId;
 	}
 
@@ -244,8 +234,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setPlatformTypeId(String newPlatformTypeId) {
-		String oldPlatformTypeId = platformTypeId;
+	public void setPlatformTypeId(PlatformType newPlatformTypeId) {
+		PlatformType oldPlatformTypeId = platformTypeId;
 		platformTypeId = newPlatformTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__PLATFORM_TYPE_ID, oldPlatformTypeId, platformTypeId));
@@ -257,7 +247,24 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getProtocolTypeId() {
+	public ProtocolType getProtocolTypeId() {
+		if (protocolTypeId != null && ((EObject)protocolTypeId).eIsProxy()) {
+			InternalEObject oldProtocolTypeId = (InternalEObject)protocolTypeId;
+			protocolTypeId = (ProtocolType)eResolveProxy(oldProtocolTypeId);
+			if (protocolTypeId != oldProtocolTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__PROTOCOL_TYPE_ID, oldProtocolTypeId, protocolTypeId));
+			}
+		}
+		return protocolTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProtocolType basicGetProtocolTypeId() {
 		return protocolTypeId;
 	}
 
@@ -267,8 +274,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setProtocolTypeId(String newProtocolTypeId) {
-		String oldProtocolTypeId = protocolTypeId;
+	public void setProtocolTypeId(ProtocolType newProtocolTypeId) {
+		ProtocolType oldProtocolTypeId = protocolTypeId;
 		protocolTypeId = newProtocolTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__PROTOCOL_TYPE_ID, oldProtocolTypeId, protocolTypeId));
@@ -280,7 +287,24 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getUserAgentMethodTypeId() {
+	public UserAgentMethodType getUserAgentMethodTypeId() {
+		if (userAgentMethodTypeId != null && ((EObject)userAgentMethodTypeId).eIsProxy()) {
+			InternalEObject oldUserAgentMethodTypeId = (InternalEObject)userAgentMethodTypeId;
+			userAgentMethodTypeId = (UserAgentMethodType)eResolveProxy(oldUserAgentMethodTypeId);
+			if (userAgentMethodTypeId != oldUserAgentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID, oldUserAgentMethodTypeId, userAgentMethodTypeId));
+			}
+		}
+		return userAgentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserAgentMethodType basicGetUserAgentMethodTypeId() {
 		return userAgentMethodTypeId;
 	}
 
@@ -290,8 +314,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setUserAgentMethodTypeId(String newUserAgentMethodTypeId) {
-		String oldUserAgentMethodTypeId = userAgentMethodTypeId;
+	public void setUserAgentMethodTypeId(UserAgentMethodType newUserAgentMethodTypeId) {
+		UserAgentMethodType oldUserAgentMethodTypeId = userAgentMethodTypeId;
 		userAgentMethodTypeId = newUserAgentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID, oldUserAgentMethodTypeId, userAgentMethodTypeId));
@@ -303,7 +327,24 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getUserAgentTypeId() {
+	public UserAgentType getUserAgentTypeId() {
+		if (userAgentTypeId != null && ((EObject)userAgentTypeId).eIsProxy()) {
+			InternalEObject oldUserAgentTypeId = (InternalEObject)userAgentTypeId;
+			userAgentTypeId = (UserAgentType)eResolveProxy(oldUserAgentTypeId);
+			if (userAgentTypeId != oldUserAgentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.USER_AGENT__USER_AGENT_TYPE_ID, oldUserAgentTypeId, userAgentTypeId));
+			}
+		}
+		return userAgentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserAgentType basicGetUserAgentTypeId() {
 		return userAgentTypeId;
 	}
 
@@ -313,8 +354,8 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setUserAgentTypeId(String newUserAgentTypeId) {
-		String oldUserAgentTypeId = userAgentTypeId;
+	public void setUserAgentTypeId(UserAgentType newUserAgentTypeId) {
+		UserAgentType oldUserAgentTypeId = userAgentTypeId;
 		userAgentTypeId = newUserAgentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.USER_AGENT__USER_AGENT_TYPE_ID, oldUserAgentTypeId, userAgentTypeId));
@@ -343,15 +384,20 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 			case VisitPackage.USER_AGENT__USER_AGENT_ID:
 				return getUserAgentId();
 			case VisitPackage.USER_AGENT__BROWSER_TYPE_ID:
-				return getBrowserTypeId();
+				if (resolve) return getBrowserTypeId();
+				return basicGetBrowserTypeId();
 			case VisitPackage.USER_AGENT__PLATFORM_TYPE_ID:
-				return getPlatformTypeId();
+				if (resolve) return getPlatformTypeId();
+				return basicGetPlatformTypeId();
 			case VisitPackage.USER_AGENT__PROTOCOL_TYPE_ID:
-				return getProtocolTypeId();
-			case VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID:
-				return getUserAgentMethodTypeId();
+				if (resolve) return getProtocolTypeId();
+				return basicGetProtocolTypeId();
 			case VisitPackage.USER_AGENT__USER_AGENT_TYPE_ID:
-				return getUserAgentTypeId();
+				if (resolve) return getUserAgentTypeId();
+				return basicGetUserAgentTypeId();
+			case VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID:
+				if (resolve) return getUserAgentMethodTypeId();
+				return basicGetUserAgentMethodTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -368,19 +414,19 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 				setUserAgentId((String)newValue);
 				return;
 			case VisitPackage.USER_AGENT__BROWSER_TYPE_ID:
-				setBrowserTypeId((String)newValue);
+				setBrowserTypeId((BrowserType)newValue);
 				return;
 			case VisitPackage.USER_AGENT__PLATFORM_TYPE_ID:
-				setPlatformTypeId((String)newValue);
+				setPlatformTypeId((PlatformType)newValue);
 				return;
 			case VisitPackage.USER_AGENT__PROTOCOL_TYPE_ID:
-				setProtocolTypeId((String)newValue);
-				return;
-			case VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID:
-				setUserAgentMethodTypeId((String)newValue);
+				setProtocolTypeId((ProtocolType)newValue);
 				return;
 			case VisitPackage.USER_AGENT__USER_AGENT_TYPE_ID:
-				setUserAgentTypeId((String)newValue);
+				setUserAgentTypeId((UserAgentType)newValue);
+				return;
+			case VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID:
+				setUserAgentMethodTypeId((UserAgentMethodType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -398,19 +444,19 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 				setUserAgentId(USER_AGENT_ID_EDEFAULT);
 				return;
 			case VisitPackage.USER_AGENT__BROWSER_TYPE_ID:
-				setBrowserTypeId(BROWSER_TYPE_ID_EDEFAULT);
+				setBrowserTypeId((BrowserType)null);
 				return;
 			case VisitPackage.USER_AGENT__PLATFORM_TYPE_ID:
-				setPlatformTypeId(PLATFORM_TYPE_ID_EDEFAULT);
+				setPlatformTypeId((PlatformType)null);
 				return;
 			case VisitPackage.USER_AGENT__PROTOCOL_TYPE_ID:
-				setProtocolTypeId(PROTOCOL_TYPE_ID_EDEFAULT);
-				return;
-			case VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID:
-				setUserAgentMethodTypeId(USER_AGENT_METHOD_TYPE_ID_EDEFAULT);
+				setProtocolTypeId((ProtocolType)null);
 				return;
 			case VisitPackage.USER_AGENT__USER_AGENT_TYPE_ID:
-				setUserAgentTypeId(USER_AGENT_TYPE_ID_EDEFAULT);
+				setUserAgentTypeId((UserAgentType)null);
+				return;
+			case VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID:
+				setUserAgentMethodTypeId((UserAgentMethodType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -427,15 +473,15 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 			case VisitPackage.USER_AGENT__USER_AGENT_ID:
 				return USER_AGENT_ID_EDEFAULT == null ? userAgentId != null : !USER_AGENT_ID_EDEFAULT.equals(userAgentId);
 			case VisitPackage.USER_AGENT__BROWSER_TYPE_ID:
-				return BROWSER_TYPE_ID_EDEFAULT == null ? browserTypeId != null : !BROWSER_TYPE_ID_EDEFAULT.equals(browserTypeId);
+				return browserTypeId != null;
 			case VisitPackage.USER_AGENT__PLATFORM_TYPE_ID:
-				return PLATFORM_TYPE_ID_EDEFAULT == null ? platformTypeId != null : !PLATFORM_TYPE_ID_EDEFAULT.equals(platformTypeId);
+				return platformTypeId != null;
 			case VisitPackage.USER_AGENT__PROTOCOL_TYPE_ID:
-				return PROTOCOL_TYPE_ID_EDEFAULT == null ? protocolTypeId != null : !PROTOCOL_TYPE_ID_EDEFAULT.equals(protocolTypeId);
-			case VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID:
-				return USER_AGENT_METHOD_TYPE_ID_EDEFAULT == null ? userAgentMethodTypeId != null : !USER_AGENT_METHOD_TYPE_ID_EDEFAULT.equals(userAgentMethodTypeId);
+				return protocolTypeId != null;
 			case VisitPackage.USER_AGENT__USER_AGENT_TYPE_ID:
-				return USER_AGENT_TYPE_ID_EDEFAULT == null ? userAgentTypeId != null : !USER_AGENT_TYPE_ID_EDEFAULT.equals(userAgentTypeId);
+				return userAgentTypeId != null;
+			case VisitPackage.USER_AGENT__USER_AGENT_METHOD_TYPE_ID:
+				return userAgentMethodTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -452,16 +498,6 @@ public class UserAgentImpl extends BizEntityTypedImpl<UserAgentType> implements 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (userAgentId: ");
 		result.append(userAgentId);
-		result.append(", browserTypeId: ");
-		result.append(browserTypeId);
-		result.append(", platformTypeId: ");
-		result.append(platformTypeId);
-		result.append(", protocolTypeId: ");
-		result.append(protocolTypeId);
-		result.append(", userAgentMethodTypeId: ");
-		result.append(userAgentMethodTypeId);
-		result.append(", userAgentTypeId: ");
-		result.append(userAgentTypeId);
 		result.append(')');
 		return result.toString();
 	}

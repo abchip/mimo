@@ -8,6 +8,8 @@
 package org.abchip.mimo.biz.product.product;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.geo.Geo;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,8 +21,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductGeo#getProductGeoEnumId <em>Product Geo Enum Id</em>}</li>
  * </ul>
  *
@@ -56,57 +58,56 @@ public interface ProductGeo extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Id</em>' attribute.
-	 * @see #setGeoId(String)
+	 * @return the value of the '<em>Geo Id</em>' reference.
+	 * @see #setGeoId(Geo)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo_GeoId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Geo'"
+	 * @model keys="geoId"
 	 * @generated
 	 */
-	String getGeoId();
+	Geo getGeoId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGeo#getGeoId <em>Geo Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGeo#getGeoId <em>Geo Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Id</em>' attribute.
+	 * @param value the new value of the '<em>Geo Id</em>' reference.
 	 * @see #getGeoId()
 	 * @generated
 	 */
-	void setGeoId(String value);
+	void setGeoId(Geo value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Geo Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Geo Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Geo Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Geo Enum Id</em>' attribute.
-	 * @see #setProductGeoEnumId(String)
+	 * @return the value of the '<em>Product Geo Enum Id</em>' reference.
+	 * @see #setProductGeoEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo_ProductGeoEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getProductGeoEnumId();
+	Enumeration getProductGeoEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGeo#getProductGeoEnumId <em>Product Geo Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductGeo#getProductGeoEnumId <em>Product Geo Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Geo Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Geo Enum Id</em>' reference.
 	 * @see #getProductGeoEnumId()
 	 * @generated
 	 */
-	void setProductGeoEnumId(String value);
+	void setProductGeoEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
@@ -119,8 +120,8 @@ public interface ProductGeo extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductGeo_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();

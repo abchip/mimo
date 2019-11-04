@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.humanres.ability.impl;
 
 import org.abchip.mimo.biz.humanres.ability.AbilityPackage;
+import org.abchip.mimo.biz.humanres.ability.PerfRatingType;
 import org.abchip.mimo.biz.humanres.ability.PerfReviewItem;
 import org.abchip.mimo.biz.humanres.ability.PerfReviewItemType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
@@ -15,6 +16,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -143,44 +146,24 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	protected String comments = COMMENTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPerfRatingTypeId() <em>Perf Rating Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPerfRatingTypeId() <em>Perf Rating Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPerfRatingTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PERF_RATING_TYPE_ID_EDEFAULT = null;
+	protected PerfRatingType perfRatingTypeId;
 
 	/**
-	 * The cached value of the '{@link #getPerfRatingTypeId() <em>Perf Rating Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPerfRatingTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String perfRatingTypeId = PERF_RATING_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPerfReviewItemTypeId() <em>Perf Review Item Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getPerfReviewItemTypeId() <em>Perf Review Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPerfReviewItemTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PERF_REVIEW_ITEM_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPerfReviewItemTypeId() <em>Perf Review Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPerfReviewItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String perfReviewItemTypeId = PERF_REVIEW_ITEM_TYPE_ID_EDEFAULT;
+	protected PerfReviewItemType perfReviewItemTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,7 +259,24 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 * @generated
 	 */
 	@Override
-	public String getPerfRatingTypeId() {
+	public PerfRatingType getPerfRatingTypeId() {
+		if (perfRatingTypeId != null && ((EObject)perfRatingTypeId).eIsProxy()) {
+			InternalEObject oldPerfRatingTypeId = (InternalEObject)perfRatingTypeId;
+			perfRatingTypeId = (PerfRatingType)eResolveProxy(oldPerfRatingTypeId);
+			if (perfRatingTypeId != oldPerfRatingTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID, oldPerfRatingTypeId, perfRatingTypeId));
+			}
+		}
+		return perfRatingTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PerfRatingType basicGetPerfRatingTypeId() {
 		return perfRatingTypeId;
 	}
 
@@ -286,8 +286,8 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 * @generated
 	 */
 	@Override
-	public void setPerfRatingTypeId(String newPerfRatingTypeId) {
-		String oldPerfRatingTypeId = perfRatingTypeId;
+	public void setPerfRatingTypeId(PerfRatingType newPerfRatingTypeId) {
+		PerfRatingType oldPerfRatingTypeId = perfRatingTypeId;
 		perfRatingTypeId = newPerfRatingTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID, oldPerfRatingTypeId, perfRatingTypeId));
@@ -345,7 +345,24 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 * @generated
 	 */
 	@Override
-	public String getPerfReviewItemTypeId() {
+	public PerfReviewItemType getPerfReviewItemTypeId() {
+		if (perfReviewItemTypeId != null && ((EObject)perfReviewItemTypeId).eIsProxy()) {
+			InternalEObject oldPerfReviewItemTypeId = (InternalEObject)perfReviewItemTypeId;
+			perfReviewItemTypeId = (PerfReviewItemType)eResolveProxy(oldPerfReviewItemTypeId);
+			if (perfReviewItemTypeId != oldPerfReviewItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID, oldPerfReviewItemTypeId, perfReviewItemTypeId));
+			}
+		}
+		return perfReviewItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PerfReviewItemType basicGetPerfReviewItemTypeId() {
 		return perfReviewItemTypeId;
 	}
 
@@ -355,8 +372,8 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 	 * @generated
 	 */
 	@Override
-	public void setPerfReviewItemTypeId(String newPerfReviewItemTypeId) {
-		String oldPerfReviewItemTypeId = perfReviewItemTypeId;
+	public void setPerfReviewItemTypeId(PerfReviewItemType newPerfReviewItemTypeId) {
+		PerfReviewItemType oldPerfReviewItemTypeId = perfReviewItemTypeId;
 		perfReviewItemTypeId = newPerfReviewItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID, oldPerfReviewItemTypeId, perfReviewItemTypeId));
@@ -381,9 +398,11 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 			case AbilityPackage.PERF_REVIEW_ITEM__COMMENTS:
 				return getComments();
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID:
-				return getPerfRatingTypeId();
+				if (resolve) return getPerfRatingTypeId();
+				return basicGetPerfRatingTypeId();
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID:
-				return getPerfReviewItemTypeId();
+				if (resolve) return getPerfReviewItemTypeId();
+				return basicGetPerfReviewItemTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -412,10 +431,10 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 				setComments((String)newValue);
 				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID:
-				setPerfRatingTypeId((String)newValue);
+				setPerfRatingTypeId((PerfRatingType)newValue);
 				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID:
-				setPerfReviewItemTypeId((String)newValue);
+				setPerfReviewItemTypeId((PerfReviewItemType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -445,10 +464,10 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 				setComments(COMMENTS_EDEFAULT);
 				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID:
-				setPerfRatingTypeId(PERF_RATING_TYPE_ID_EDEFAULT);
+				setPerfRatingTypeId((PerfRatingType)null);
 				return;
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID:
-				setPerfReviewItemTypeId(PERF_REVIEW_ITEM_TYPE_ID_EDEFAULT);
+				setPerfReviewItemTypeId((PerfReviewItemType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -473,9 +492,9 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 			case AbilityPackage.PERF_REVIEW_ITEM__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_RATING_TYPE_ID:
-				return PERF_RATING_TYPE_ID_EDEFAULT == null ? perfRatingTypeId != null : !PERF_RATING_TYPE_ID_EDEFAULT.equals(perfRatingTypeId);
+				return perfRatingTypeId != null;
 			case AbilityPackage.PERF_REVIEW_ITEM__PERF_REVIEW_ITEM_TYPE_ID:
-				return PERF_REVIEW_ITEM_TYPE_ID_EDEFAULT == null ? perfReviewItemTypeId != null : !PERF_REVIEW_ITEM_TYPE_ID_EDEFAULT.equals(perfReviewItemTypeId);
+				return perfReviewItemTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -500,10 +519,6 @@ public class PerfReviewItemImpl extends BizEntityTypedImpl<PerfReviewItemType> i
 		result.append(perfReviewItemSeqId);
 		result.append(", comments: ");
 		result.append(comments);
-		result.append(", perfRatingTypeId: ");
-		result.append(perfRatingTypeId);
-		result.append(", perfReviewItemTypeId: ");
-		result.append(perfReviewItemTypeId);
 		result.append(')');
 		return result.toString();
 	}

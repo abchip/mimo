@@ -14,12 +14,20 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.shipment.receipt.ReceiptPackage;
+import org.abchip.mimo.biz.shipment.receipt.RejectionReason;
 import org.abchip.mimo.biz.shipment.receipt.ShipmentReceipt;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -32,20 +40,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getReceiptId <em>Receipt Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getDatetimeReceived <em>Datetime Received</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getItemDescription <em>Item Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getQuantityAccepted <em>Quantity Accepted</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getQuantityRejected <em>Quantity Rejected</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getReceivedByUserLoginId <em>Received By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getRejectionId <em>Rejection Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getRejectionId <em>Rejection Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getReceivedByUserLoginId <em>Received By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.receipt.impl.ShipmentReceiptImpl#getShipmentId <em>Shipment Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,26 +105,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	protected Date datetimeReceived = DATETIME_RECEIVED_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getItemDescription() <em>Item Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,26 +125,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	protected String itemDescription = ITEM_DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,26 +143,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @ordered
 	 */
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getQuantityAccepted() <em>Quantity Accepted</em>}' attribute.
@@ -237,46 +185,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	protected BigDecimal quantityRejected = QUANTITY_REJECTED_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getReceivedByUserLoginId() <em>Received By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceivedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RECEIVED_BY_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReceivedByUserLoginId() <em>Received By User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceivedByUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String receivedByUserLoginId = RECEIVED_BY_USER_LOGIN_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRejectionId() <em>Rejection Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRejectionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REJECTION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRejectionId() <em>Rejection Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRejectionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String rejectionId = REJECTION_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getReturnId() <em>Return Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -317,26 +225,6 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	protected String returnItemSeqId = RETURN_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getShipmentItemSeqId() <em>Shipment Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -375,6 +263,66 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @ordered
 	 */
 	protected String shipmentPackageSeqId = SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
+	 * The cached value of the '{@link #getRejectionId() <em>Rejection Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRejectionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RejectionReason rejectionId;
+
+	/**
+	 * The cached value of the '{@link #getReceivedByUserLoginId() <em>Received By User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceivedByUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin receivedByUserLoginId;
+
+	/**
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shipment shipmentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -424,7 +372,24 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -434,8 +399,8 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -470,7 +435,24 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -480,8 +462,8 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID, oldOrderId, orderId));
@@ -516,7 +498,24 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -526,8 +525,8 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID, oldProductId, productId));
@@ -608,7 +607,24 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public String getReceivedByUserLoginId() {
+	public UserLogin getReceivedByUserLoginId() {
+		if (receivedByUserLoginId != null && ((EObject)receivedByUserLoginId).eIsProxy()) {
+			InternalEObject oldReceivedByUserLoginId = (InternalEObject)receivedByUserLoginId;
+			receivedByUserLoginId = (UserLogin)eResolveProxy(oldReceivedByUserLoginId);
+			if (receivedByUserLoginId != oldReceivedByUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID, oldReceivedByUserLoginId, receivedByUserLoginId));
+			}
+		}
+		return receivedByUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetReceivedByUserLoginId() {
 		return receivedByUserLoginId;
 	}
 
@@ -618,8 +634,8 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public void setReceivedByUserLoginId(String newReceivedByUserLoginId) {
-		String oldReceivedByUserLoginId = receivedByUserLoginId;
+	public void setReceivedByUserLoginId(UserLogin newReceivedByUserLoginId) {
+		UserLogin oldReceivedByUserLoginId = receivedByUserLoginId;
 		receivedByUserLoginId = newReceivedByUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID, oldReceivedByUserLoginId, receivedByUserLoginId));
@@ -631,7 +647,24 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public String getRejectionId() {
+	public RejectionReason getRejectionId() {
+		if (rejectionId != null && ((EObject)rejectionId).eIsProxy()) {
+			InternalEObject oldRejectionId = (InternalEObject)rejectionId;
+			rejectionId = (RejectionReason)eResolveProxy(oldRejectionId);
+			if (rejectionId != oldRejectionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID, oldRejectionId, rejectionId));
+			}
+		}
+		return rejectionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RejectionReason basicGetRejectionId() {
 		return rejectionId;
 	}
 
@@ -641,8 +674,8 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public void setRejectionId(String newRejectionId) {
-		String oldRejectionId = rejectionId;
+	public void setRejectionId(RejectionReason newRejectionId) {
+		RejectionReason oldRejectionId = rejectionId;
 		rejectionId = newRejectionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID, oldRejectionId, rejectionId));
@@ -700,7 +733,24 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -710,8 +760,8 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -799,34 +849,40 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 				return getReceiptId();
 			case ReceiptPackage.SHIPMENT_RECEIPT__DATETIME_RECEIVED:
 				return getDatetimeReceived();
-			case ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
 			case ReceiptPackage.SHIPMENT_RECEIPT__ITEM_DESCRIPTION:
 				return getItemDescription();
-			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID:
-				return getOrderId();
 			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID:
-				return getProductId();
 			case ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_ACCEPTED:
 				return getQuantityAccepted();
 			case ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_REJECTED:
 				return getQuantityRejected();
-			case ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID:
-				return getReceivedByUserLoginId();
-			case ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID:
-				return getRejectionId();
 			case ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ID:
 				return getReturnId();
 			case ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ITEM_SEQ_ID:
 				return getReturnItemSeqId();
-			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID:
-				return getShipmentId();
 			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ITEM_SEQ_ID:
 				return getShipmentItemSeqId();
 			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_PACKAGE_SEQ_ID:
 				return getShipmentPackageSeqId();
+			case ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
+			case ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
+			case ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID:
+				if (resolve) return getRejectionId();
+				return basicGetRejectionId();
+			case ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID:
+				if (resolve) return getReceivedByUserLoginId();
+				return basicGetReceivedByUserLoginId();
+			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID:
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -845,20 +901,11 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			case ReceiptPackage.SHIPMENT_RECEIPT__DATETIME_RECEIVED:
 				setDatetimeReceived((Date)newValue);
 				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__ITEM_DESCRIPTION:
 				setItemDescription((String)newValue);
 				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
-				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID:
-				setProductId((String)newValue);
 				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_ACCEPTED:
 				setQuantityAccepted((BigDecimal)newValue);
@@ -866,26 +913,35 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			case ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_REJECTED:
 				setQuantityRejected((BigDecimal)newValue);
 				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID:
-				setReceivedByUserLoginId((String)newValue);
-				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID:
-				setRejectionId((String)newValue);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ID:
 				setReturnId((String)newValue);
 				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId((String)newValue);
 				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID:
-				setShipmentId((String)newValue);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId((String)newValue);
 				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_PACKAGE_SEQ_ID:
 				setShipmentPackageSeqId((String)newValue);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID:
+				setRejectionId((RejectionReason)newValue);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID:
+				setReceivedByUserLoginId((UserLogin)newValue);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID:
+				setShipmentId((Shipment)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -905,20 +961,11 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			case ReceiptPackage.SHIPMENT_RECEIPT__DATETIME_RECEIVED:
 				setDatetimeReceived(DATETIME_RECEIVED_EDEFAULT);
 				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__ITEM_DESCRIPTION:
 				setItemDescription(ITEM_DESCRIPTION_EDEFAULT);
 				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_ACCEPTED:
 				setQuantityAccepted(QUANTITY_ACCEPTED_EDEFAULT);
@@ -926,26 +973,35 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 			case ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_REJECTED:
 				setQuantityRejected(QUANTITY_REJECTED_EDEFAULT);
 				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID:
-				setReceivedByUserLoginId(RECEIVED_BY_USER_LOGIN_ID_EDEFAULT);
-				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID:
-				setRejectionId(REJECTION_ID_EDEFAULT);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ID:
 				setReturnId(RETURN_ID_EDEFAULT);
 				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId(RETURN_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
-				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId(SHIPMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_PACKAGE_SEQ_ID:
 				setShipmentPackageSeqId(SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID:
+				setRejectionId((RejectionReason)null);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID:
+				setReceivedByUserLoginId((UserLogin)null);
+				return;
+			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID:
+				setShipmentId((Shipment)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -963,34 +1019,34 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 				return RECEIPT_ID_EDEFAULT == null ? receiptId != null : !RECEIPT_ID_EDEFAULT.equals(receiptId);
 			case ReceiptPackage.SHIPMENT_RECEIPT__DATETIME_RECEIVED:
 				return DATETIME_RECEIVED_EDEFAULT == null ? datetimeReceived != null : !DATETIME_RECEIVED_EDEFAULT.equals(datetimeReceived);
-			case ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
 			case ReceiptPackage.SHIPMENT_RECEIPT__ITEM_DESCRIPTION:
 				return ITEM_DESCRIPTION_EDEFAULT == null ? itemDescription != null : !ITEM_DESCRIPTION_EDEFAULT.equals(itemDescription);
-			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_ACCEPTED:
 				return QUANTITY_ACCEPTED_EDEFAULT == null ? quantityAccepted != null : !QUANTITY_ACCEPTED_EDEFAULT.equals(quantityAccepted);
 			case ReceiptPackage.SHIPMENT_RECEIPT__QUANTITY_REJECTED:
 				return QUANTITY_REJECTED_EDEFAULT == null ? quantityRejected != null : !QUANTITY_REJECTED_EDEFAULT.equals(quantityRejected);
-			case ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID:
-				return RECEIVED_BY_USER_LOGIN_ID_EDEFAULT == null ? receivedByUserLoginId != null : !RECEIVED_BY_USER_LOGIN_ID_EDEFAULT.equals(receivedByUserLoginId);
-			case ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID:
-				return REJECTION_ID_EDEFAULT == null ? rejectionId != null : !REJECTION_ID_EDEFAULT.equals(rejectionId);
 			case ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ID:
 				return RETURN_ID_EDEFAULT == null ? returnId != null : !RETURN_ID_EDEFAULT.equals(returnId);
 			case ReceiptPackage.SHIPMENT_RECEIPT__RETURN_ITEM_SEQ_ID:
 				return RETURN_ITEM_SEQ_ID_EDEFAULT == null ? returnItemSeqId != null : !RETURN_ITEM_SEQ_ID_EDEFAULT.equals(returnItemSeqId);
-			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
 			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ITEM_SEQ_ID:
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
 			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_PACKAGE_SEQ_ID:
 				return SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT == null ? shipmentPackageSeqId != null : !SHIPMENT_PACKAGE_SEQ_ID_EDEFAULT.equals(shipmentPackageSeqId);
+			case ReceiptPackage.SHIPMENT_RECEIPT__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
+			case ReceiptPackage.SHIPMENT_RECEIPT__PRODUCT_ID:
+				return productId != null;
+			case ReceiptPackage.SHIPMENT_RECEIPT__ORDER_ID:
+				return orderId != null;
+			case ReceiptPackage.SHIPMENT_RECEIPT__REJECTION_ID:
+				return rejectionId != null;
+			case ReceiptPackage.SHIPMENT_RECEIPT__RECEIVED_BY_USER_LOGIN_ID:
+				return receivedByUserLoginId != null;
+			case ReceiptPackage.SHIPMENT_RECEIPT__SHIPMENT_ID:
+				return shipmentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1009,30 +1065,18 @@ public class ShipmentReceiptImpl extends BizEntityImpl implements ShipmentReceip
 		result.append(receiptId);
 		result.append(", datetimeReceived: ");
 		result.append(datetimeReceived);
-		result.append(", inventoryItemId: ");
-		result.append(inventoryItemId);
 		result.append(", itemDescription: ");
 		result.append(itemDescription);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", quantityAccepted: ");
 		result.append(quantityAccepted);
 		result.append(", quantityRejected: ");
 		result.append(quantityRejected);
-		result.append(", receivedByUserLoginId: ");
-		result.append(receivedByUserLoginId);
-		result.append(", rejectionId: ");
-		result.append(rejectionId);
 		result.append(", returnId: ");
 		result.append(returnId);
 		result.append(", returnItemSeqId: ");
 		result.append(returnItemSeqId);
-		result.append(", shipmentId: ");
-		result.append(shipmentId);
 		result.append(", shipmentItemSeqId: ");
 		result.append(shipmentItemSeqId);
 		result.append(", shipmentPackageSeqId: ");

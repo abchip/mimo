@@ -23,11 +23,11 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionDateTimes <em>Exception Date Times</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionRuleId <em>Exception Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceCount <em>Recurrence Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceDateTimes <em>Recurrence Date Times</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceRuleId <em>Recurrence Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getStartDateTime <em>Start Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceRuleId <em>Recurrence Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionRuleId <em>Exception Rule Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo()
@@ -89,30 +89,30 @@ public interface RecurrenceInfo extends BizEntity {
 	void setExceptionDateTimes(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Exception Rule Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Exception Rule Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Exception Rule Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exception Rule Id</em>' attribute.
-	 * @see #setExceptionRuleId(String)
+	 * @return the value of the '<em>Exception Rule Id</em>' reference.
+	 * @see #setExceptionRuleId(RecurrenceRule)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_ExceptionRuleId()
-	 * @model annotation="mimo-ent-domain frame='RecurrenceRule'"
+	 * @model keys="recurrenceRuleId"
 	 * @generated
 	 */
-	String getExceptionRuleId();
+	RecurrenceRule getExceptionRuleId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionRuleId <em>Exception Rule Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionRuleId <em>Exception Rule Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Exception Rule Id</em>' attribute.
+	 * @param value the new value of the '<em>Exception Rule Id</em>' reference.
 	 * @see #getExceptionRuleId()
 	 * @generated
 	 */
-	void setExceptionRuleId(String value);
+	void setExceptionRuleId(RecurrenceRule value);
 
 	/**
 	 * Returns the value of the '<em><b>Recurrence Count</b></em>' attribute.
@@ -167,30 +167,30 @@ public interface RecurrenceInfo extends BizEntity {
 	void setRecurrenceDateTimes(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Recurrence Rule Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Recurrence Rule Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Recurrence Rule Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recurrence Rule Id</em>' attribute.
-	 * @see #setRecurrenceRuleId(String)
+	 * @return the value of the '<em>Recurrence Rule Id</em>' reference.
+	 * @see #setRecurrenceRuleId(RecurrenceRule)
 	 * @see org.abchip.mimo.biz.service.schedule.SchedulePackage#getRecurrenceInfo_RecurrenceRuleId()
-	 * @model annotation="mimo-ent-domain frame='RecurrenceRule'"
+	 * @model keys="recurrenceRuleId"
 	 * @generated
 	 */
-	String getRecurrenceRuleId();
+	RecurrenceRule getRecurrenceRuleId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceRuleId <em>Recurrence Rule Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceRuleId <em>Recurrence Rule Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Recurrence Rule Id</em>' attribute.
+	 * @param value the new value of the '<em>Recurrence Rule Id</em>' reference.
 	 * @see #getRecurrenceRuleId()
 	 * @generated
 	 */
-	void setRecurrenceRuleId(String value);
+	void setRecurrenceRuleId(RecurrenceRule value);
 
 	/**
 	 * Returns the value of the '<em><b>Start Date Time</b></em>' attribute.

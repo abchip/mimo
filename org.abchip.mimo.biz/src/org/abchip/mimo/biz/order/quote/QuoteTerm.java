@@ -19,13 +19,13 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermTypeId <em>Term Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteId <em>Quote Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermDays <em>Term Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTermValue <em>Term Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getTextValue <em>Text Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteId <em>Quote Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm()
@@ -60,31 +60,30 @@ public interface QuoteTerm extends BizEntity {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Quote Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quote Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quote Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quote Id</em>' attribute.
-	 * @see #setQuoteId(String)
+	 * @return the value of the '<em>Quote Id</em>' reference.
+	 * @see #setQuoteId(Quote)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm_QuoteId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Quote'"
+	 * @model keys="quoteId"
 	 * @generated
 	 */
-	String getQuoteId();
+	Quote getQuoteId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteId <em>Quote Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.quote.QuoteTerm#getQuoteId <em>Quote Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quote Id</em>' attribute.
+	 * @param value the new value of the '<em>Quote Id</em>' reference.
 	 * @see #getQuoteId()
 	 * @generated
 	 */
-	void setQuoteId(String value);
+	void setQuoteId(Quote value);
 
 	/**
 	 * Returns the value of the '<em><b>Quote Item Seq Id</b></em>' attribute.
@@ -97,7 +96,8 @@ public interface QuoteTerm extends BizEntity {
 	 * @return the value of the '<em>Quote Item Seq Id</em>' attribute.
 	 * @see #setQuoteItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm_QuoteItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getQuoteItemSeqId();
@@ -149,8 +149,8 @@ public interface QuoteTerm extends BizEntity {
 	 * @return the value of the '<em>Term Type Id</em>' attribute.
 	 * @see #setTermTypeId(String)
 	 * @see org.abchip.mimo.biz.order.quote.QuotePackage#getQuoteTerm_TermTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='TermType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTermTypeId();

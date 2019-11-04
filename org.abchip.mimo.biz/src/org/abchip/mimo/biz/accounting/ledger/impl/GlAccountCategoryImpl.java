@@ -14,6 +14,8 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -74,23 +76,14 @@ public class GlAccountCategoryImpl extends BizEntityTypedImpl<GlAccountCategoryT
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getGlAccountCategoryTypeId() <em>Gl Account Category Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountCategoryTypeId() <em>Gl Account Category Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlAccountCategoryTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GL_ACCOUNT_CATEGORY_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountCategoryTypeId() <em>Gl Account Category Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountCategoryTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountCategoryTypeId = GL_ACCOUNT_CATEGORY_TYPE_ID_EDEFAULT;
+	protected GlAccountCategoryType glAccountCategoryTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,7 +133,24 @@ public class GlAccountCategoryImpl extends BizEntityTypedImpl<GlAccountCategoryT
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountCategoryTypeId() {
+	public GlAccountCategoryType getGlAccountCategoryTypeId() {
+		if (glAccountCategoryTypeId != null && ((EObject)glAccountCategoryTypeId).eIsProxy()) {
+			InternalEObject oldGlAccountCategoryTypeId = (InternalEObject)glAccountCategoryTypeId;
+			glAccountCategoryTypeId = (GlAccountCategoryType)eResolveProxy(oldGlAccountCategoryTypeId);
+			if (glAccountCategoryTypeId != oldGlAccountCategoryTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_TYPE_ID, oldGlAccountCategoryTypeId, glAccountCategoryTypeId));
+			}
+		}
+		return glAccountCategoryTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountCategoryType basicGetGlAccountCategoryTypeId() {
 		return glAccountCategoryTypeId;
 	}
 
@@ -150,8 +160,8 @@ public class GlAccountCategoryImpl extends BizEntityTypedImpl<GlAccountCategoryT
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountCategoryTypeId(String newGlAccountCategoryTypeId) {
-		String oldGlAccountCategoryTypeId = glAccountCategoryTypeId;
+	public void setGlAccountCategoryTypeId(GlAccountCategoryType newGlAccountCategoryTypeId) {
+		GlAccountCategoryType oldGlAccountCategoryTypeId = glAccountCategoryTypeId;
 		glAccountCategoryTypeId = newGlAccountCategoryTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_TYPE_ID, oldGlAccountCategoryTypeId, glAccountCategoryTypeId));
@@ -193,7 +203,8 @@ public class GlAccountCategoryImpl extends BizEntityTypedImpl<GlAccountCategoryT
 			case LedgerPackage.GL_ACCOUNT_CATEGORY__DESCRIPTION:
 				return getDescription();
 			case LedgerPackage.GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_TYPE_ID:
-				return getGlAccountCategoryTypeId();
+				if (resolve) return getGlAccountCategoryTypeId();
+				return basicGetGlAccountCategoryTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,7 +224,7 @@ public class GlAccountCategoryImpl extends BizEntityTypedImpl<GlAccountCategoryT
 				setDescription((String)newValue);
 				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_TYPE_ID:
-				setGlAccountCategoryTypeId((String)newValue);
+				setGlAccountCategoryTypeId((GlAccountCategoryType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -234,7 +245,7 @@ public class GlAccountCategoryImpl extends BizEntityTypedImpl<GlAccountCategoryT
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case LedgerPackage.GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_TYPE_ID:
-				setGlAccountCategoryTypeId(GL_ACCOUNT_CATEGORY_TYPE_ID_EDEFAULT);
+				setGlAccountCategoryTypeId((GlAccountCategoryType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -253,7 +264,7 @@ public class GlAccountCategoryImpl extends BizEntityTypedImpl<GlAccountCategoryT
 			case LedgerPackage.GL_ACCOUNT_CATEGORY__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case LedgerPackage.GL_ACCOUNT_CATEGORY__GL_ACCOUNT_CATEGORY_TYPE_ID:
-				return GL_ACCOUNT_CATEGORY_TYPE_ID_EDEFAULT == null ? glAccountCategoryTypeId != null : !GL_ACCOUNT_CATEGORY_TYPE_ID_EDEFAULT.equals(glAccountCategoryTypeId);
+				return glAccountCategoryTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -272,8 +283,6 @@ public class GlAccountCategoryImpl extends BizEntityTypedImpl<GlAccountCategoryT
 		result.append(glAccountCategoryId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", glAccountCategoryTypeId: ");
-		result.append(glAccountCategoryTypeId);
 		result.append(')');
 		return result.toString();
 	}

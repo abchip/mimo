@@ -8,6 +8,8 @@
 package org.abchip.mimo.biz.product.facility;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.geo.GeoPoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,11 +24,11 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getLocationSeqId <em>Location Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getAisleId <em>Aisle Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getAreaId <em>Area Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getGeoPointId <em>Geo Point Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getLevelId <em>Level Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getLocationTypeEnumId <em>Location Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getPositionId <em>Position Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getSectionId <em>Section Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getLocationTypeEnumId <em>Location Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getGeoPointId <em>Geo Point Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation()
@@ -87,30 +89,30 @@ public interface FacilityLocation extends BizEntity {
 	void setAreaId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Geo Point Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Point Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Point Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Point Id</em>' attribute.
-	 * @see #setGeoPointId(String)
+	 * @return the value of the '<em>Geo Point Id</em>' reference.
+	 * @see #setGeoPointId(GeoPoint)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_GeoPointId()
-	 * @model annotation="mimo-ent-domain frame='GeoPoint'"
+	 * @model keys="geoPointId"
 	 * @generated
 	 */
-	String getGeoPointId();
+	GeoPoint getGeoPointId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getGeoPointId <em>Geo Point Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getGeoPointId <em>Geo Point Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Point Id</em>' attribute.
+	 * @param value the new value of the '<em>Geo Point Id</em>' reference.
 	 * @see #getGeoPointId()
 	 * @generated
 	 */
-	void setGeoPointId(String value);
+	void setGeoPointId(GeoPoint value);
 
 	/**
 	 * Returns the value of the '<em><b>Level Id</b></em>' attribute.
@@ -149,7 +151,8 @@ public interface FacilityLocation extends BizEntity {
 	 * @return the value of the '<em>Location Seq Id</em>' attribute.
 	 * @see #setLocationSeqId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_LocationSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getLocationSeqId();
@@ -165,30 +168,30 @@ public interface FacilityLocation extends BizEntity {
 	void setLocationSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Location Type Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Location Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Location Type Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Location Type Enum Id</em>' attribute.
-	 * @see #setLocationTypeEnumId(String)
+	 * @return the value of the '<em>Location Type Enum Id</em>' reference.
+	 * @see #setLocationTypeEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_LocationTypeEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getLocationTypeEnumId();
+	Enumeration getLocationTypeEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getLocationTypeEnumId <em>Location Type Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityLocation#getLocationTypeEnumId <em>Location Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Location Type Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Location Type Enum Id</em>' reference.
 	 * @see #getLocationTypeEnumId()
 	 * @generated
 	 */
-	void setLocationTypeEnumId(String value);
+	void setLocationTypeEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Position Id</b></em>' attribute.
@@ -253,8 +256,8 @@ public interface FacilityLocation extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' attribute.
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityLocation_FacilityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Facility'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFacilityId();

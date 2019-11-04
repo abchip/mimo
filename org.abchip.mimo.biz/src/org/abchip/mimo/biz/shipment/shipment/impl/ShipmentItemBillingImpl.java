@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
+import org.abchip.mimo.biz.accounting.invoice.Invoice;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentItemBilling;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,8 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getInvoiceId <em>Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.impl.ShipmentItemBillingImpl#getInvoiceId <em>Invoice Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,26 +82,6 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	protected String shipmentItemSeqId = SHIPMENT_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceId = INVOICE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getInvoiceItemSeqId() <em>Invoice Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,6 +100,16 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	 * @ordered
 	 */
 	protected String invoiceItemSeqId = INVOICE_ITEM_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInvoiceId() <em>Invoice Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvoiceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Invoice invoiceId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,7 +136,24 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceId() {
+	public Invoice getInvoiceId() {
+		if (invoiceId != null && ((EObject)invoiceId).eIsProxy()) {
+			InternalEObject oldInvoiceId = (InternalEObject)invoiceId;
+			invoiceId = (Invoice)eResolveProxy(oldInvoiceId);
+			if (invoiceId != oldInvoiceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID, oldInvoiceId, invoiceId));
+			}
+		}
+		return invoiceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Invoice basicGetInvoiceId() {
 		return invoiceId;
 	}
 
@@ -153,8 +163,8 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceId(String newInvoiceId) {
-		String oldInvoiceId = invoiceId;
+	public void setInvoiceId(Invoice newInvoiceId) {
+		Invoice oldInvoiceId = invoiceId;
 		invoiceId = newInvoiceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID, oldInvoiceId, invoiceId));
@@ -241,10 +251,11 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 				return getShipmentId();
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID:
 				return getShipmentItemSeqId();
-			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
-				return getInvoiceId();
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
 				return getInvoiceItemSeqId();
+			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
+				if (resolve) return getInvoiceId();
+				return basicGetInvoiceId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -263,11 +274,11 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId((String)newValue);
 				return;
-			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
-				setInvoiceId((String)newValue);
-				return;
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId((String)newValue);
+				return;
+			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
+				setInvoiceId((Invoice)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -287,11 +298,11 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId(SHIPMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
-				setInvoiceId(INVOICE_ID_EDEFAULT);
-				return;
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
 				setInvoiceItemSeqId(INVOICE_ITEM_SEQ_ID_EDEFAULT);
+				return;
+			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
+				setInvoiceId((Invoice)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,10 +320,10 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__SHIPMENT_ITEM_SEQ_ID:
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
-			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
-				return INVOICE_ID_EDEFAULT == null ? invoiceId != null : !INVOICE_ID_EDEFAULT.equals(invoiceId);
 			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ITEM_SEQ_ID:
 				return INVOICE_ITEM_SEQ_ID_EDEFAULT == null ? invoiceItemSeqId != null : !INVOICE_ITEM_SEQ_ID_EDEFAULT.equals(invoiceItemSeqId);
+			case Shipment_Package.SHIPMENT_ITEM_BILLING__INVOICE_ID:
+				return invoiceId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -331,8 +342,6 @@ public class ShipmentItemBillingImpl extends BizEntityImpl implements ShipmentIt
 		result.append(shipmentId);
 		result.append(", shipmentItemSeqId: ");
 		result.append(shipmentItemSeqId);
-		result.append(", invoiceId: ");
-		result.append(invoiceId);
 		result.append(", invoiceItemSeqId: ");
 		result.append(invoiceItemSeqId);
 		result.append(')');

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.content.content;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,30 +57,30 @@ public interface ContentRevision extends BizEntity {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Committed By Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Committed By Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Committed By Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Committed By Party Id</em>' attribute.
-	 * @see #setCommittedByPartyId(String)
+	 * @return the value of the '<em>Committed By Party Id</em>' reference.
+	 * @see #setCommittedByPartyId(Party)
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevision_CommittedByPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getCommittedByPartyId();
+	Party getCommittedByPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentRevision#getCommittedByPartyId <em>Committed By Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.content.ContentRevision#getCommittedByPartyId <em>Committed By Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Committed By Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Committed By Party Id</em>' reference.
 	 * @see #getCommittedByPartyId()
 	 * @generated
 	 */
-	void setCommittedByPartyId(String value);
+	void setCommittedByPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Content Id</b></em>' attribute.
@@ -94,7 +95,6 @@ public interface ContentRevision extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.content.ContentPackage#getContentRevision_ContentId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
 	 * @generated
 	 */
 	String getContentId();

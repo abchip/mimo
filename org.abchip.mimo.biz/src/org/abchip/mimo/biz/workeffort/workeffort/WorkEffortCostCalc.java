@@ -10,6 +10,8 @@ package org.abchip.mimo.biz.workeffort.workeffort;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.cost.CostComponentCalc;
+import org.abchip.mimo.biz.product.cost.CostComponentType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,10 +23,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getWorkEffortId <em>Work Effort Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getCostComponentTypeId <em>Cost Component Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getCostComponentCalcId <em>Cost Component Calc Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortCostCalc()
@@ -33,58 +35,56 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface WorkEffortCostCalc extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Cost Component Calc Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cost Component Calc Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost Component Calc Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cost Component Calc Id</em>' attribute.
-	 * @see #setCostComponentCalcId(String)
+	 * @return the value of the '<em>Cost Component Calc Id</em>' reference.
+	 * @see #setCostComponentCalcId(CostComponentCalc)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortCostCalc_CostComponentCalcId()
-	 * @model annotation="mimo-ent-domain frame='CostComponentCalc'"
+	 * @model keys="costComponentCalcId"
 	 * @generated
 	 */
-	String getCostComponentCalcId();
+	CostComponentCalc getCostComponentCalcId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getCostComponentCalcId <em>Cost Component Calc Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getCostComponentCalcId <em>Cost Component Calc Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cost Component Calc Id</em>' attribute.
+	 * @param value the new value of the '<em>Cost Component Calc Id</em>' reference.
 	 * @see #getCostComponentCalcId()
 	 * @generated
 	 */
-	void setCostComponentCalcId(String value);
+	void setCostComponentCalcId(CostComponentCalc value);
 
 	/**
-	 * Returns the value of the '<em><b>Cost Component Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cost Component Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost Component Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cost Component Type Id</em>' attribute.
-	 * @see #setCostComponentTypeId(String)
+	 * @return the value of the '<em>Cost Component Type Id</em>' reference.
+	 * @see #setCostComponentTypeId(CostComponentType)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortCostCalc_CostComponentTypeId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CostComponentType'"
+	 * @model keys="costComponentTypeId"
 	 * @generated
 	 */
-	String getCostComponentTypeId();
+	CostComponentType getCostComponentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getCostComponentTypeId <em>Cost Component Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortCostCalc#getCostComponentTypeId <em>Cost Component Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cost Component Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Cost Component Type Id</em>' reference.
 	 * @see #getCostComponentTypeId()
 	 * @generated
 	 */
-	void setCostComponentTypeId(String value);
+	void setCostComponentTypeId(CostComponentType value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -152,7 +152,6 @@ public interface WorkEffortCostCalc extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortCostCalc_WorkEffortId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
 	 * @generated
 	 */
 	String getWorkEffortId();

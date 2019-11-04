@@ -9,7 +9,10 @@ package org.abchip.mimo.biz.webapp.visit.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.webapp.visit.ServerHit;
 import org.abchip.mimo.biz.webapp.visit.ServerHitType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
@@ -17,6 +20,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,12 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getContentId <em>Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getHitStartDateTime <em>Hit Start Date Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getHitTypeId <em>Hit Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getInternalContentId <em>Internal Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getNumOfBytes <em>Num Of Bytes</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getReferrerUrl <em>Referrer Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getRequestUrl <em>Request Url</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getRunningTimeMillis <em>Running Time Millis</em>}</li>
@@ -43,6 +43,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getUserLoginId <em>User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getHitTypeId <em>Hit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getIdByIpContactMechId <em>Id By Ip Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getRefByWebContactMechId <em>Ref By Web Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitImpl#getInternalContentId <em>Internal Content Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -114,66 +119,6 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	protected Date hitStartDateTime = HIT_START_DATE_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getHitTypeId() <em>Hit Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHitTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HIT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getHitTypeId() <em>Hit Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHitTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String hitTypeId = HIT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getIdByIpContactMechId() <em>Id By Ip Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdByIpContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_BY_IP_CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIdByIpContactMechId() <em>Id By Ip Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdByIpContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String idByIpContactMechId = ID_BY_IP_CONTACT_MECH_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInternalContentId() <em>Internal Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInternalContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INTERNAL_CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInternalContentId() <em>Internal Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInternalContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String internalContentId = INTERNAL_CONTENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getNumOfBytes() <em>Num Of Bytes</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,46 +137,6 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @ordered
 	 */
 	protected long numOfBytes = NUM_OF_BYTES_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRefByWebContactMechId() <em>Ref By Web Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRefByWebContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REF_BY_WEB_CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRefByWebContactMechId() <em>Ref By Web Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRefByWebContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String refByWebContactMechId = REF_BY_WEB_CONTACT_MECH_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReferrerUrl() <em>Referrer Url</em>}' attribute.
@@ -374,6 +279,56 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getHitTypeId() <em>Hit Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHitTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServerHitType hitTypeId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getIdByIpContactMechId() <em>Id By Ip Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdByIpContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech idByIpContactMechId;
+
+	/**
+	 * The cached value of the '{@link #getRefByWebContactMechId() <em>Ref By Web Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefByWebContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech refByWebContactMechId;
+
+	/**
+	 * The cached value of the '{@link #getInternalContentId() <em>Internal Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInternalContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content internalContentId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -467,7 +422,24 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getHitTypeId() {
+	public ServerHitType getHitTypeId() {
+		if (hitTypeId != null && ((EObject)hitTypeId).eIsProxy()) {
+			InternalEObject oldHitTypeId = (InternalEObject)hitTypeId;
+			hitTypeId = (ServerHitType)eResolveProxy(oldHitTypeId);
+			if (hitTypeId != oldHitTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
+			}
+		}
+		return hitTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServerHitType basicGetHitTypeId() {
 		return hitTypeId;
 	}
 
@@ -477,8 +449,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setHitTypeId(String newHitTypeId) {
-		String oldHitTypeId = hitTypeId;
+	public void setHitTypeId(ServerHitType newHitTypeId) {
+		ServerHitType oldHitTypeId = hitTypeId;
 		hitTypeId = newHitTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
@@ -490,7 +462,24 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getIdByIpContactMechId() {
+	public ContactMech getIdByIpContactMechId() {
+		if (idByIpContactMechId != null && ((EObject)idByIpContactMechId).eIsProxy()) {
+			InternalEObject oldIdByIpContactMechId = (InternalEObject)idByIpContactMechId;
+			idByIpContactMechId = (ContactMech)eResolveProxy(oldIdByIpContactMechId);
+			if (idByIpContactMechId != oldIdByIpContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID, oldIdByIpContactMechId, idByIpContactMechId));
+			}
+		}
+		return idByIpContactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetIdByIpContactMechId() {
 		return idByIpContactMechId;
 	}
 
@@ -500,8 +489,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setIdByIpContactMechId(String newIdByIpContactMechId) {
-		String oldIdByIpContactMechId = idByIpContactMechId;
+	public void setIdByIpContactMechId(ContactMech newIdByIpContactMechId) {
+		ContactMech oldIdByIpContactMechId = idByIpContactMechId;
 		idByIpContactMechId = newIdByIpContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID, oldIdByIpContactMechId, idByIpContactMechId));
@@ -513,7 +502,24 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getInternalContentId() {
+	public Content getInternalContentId() {
+		if (internalContentId != null && ((EObject)internalContentId).eIsProxy()) {
+			InternalEObject oldInternalContentId = (InternalEObject)internalContentId;
+			internalContentId = (Content)eResolveProxy(oldInternalContentId);
+			if (internalContentId != oldInternalContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID, oldInternalContentId, internalContentId));
+			}
+		}
+		return internalContentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetInternalContentId() {
 		return internalContentId;
 	}
 
@@ -523,8 +529,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setInternalContentId(String newInternalContentId) {
-		String oldInternalContentId = internalContentId;
+	public void setInternalContentId(Content newInternalContentId) {
+		Content oldInternalContentId = internalContentId;
 		internalContentId = newInternalContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID, oldInternalContentId, internalContentId));
@@ -559,7 +565,24 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -569,8 +592,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__PARTY_ID, oldPartyId, partyId));
@@ -582,7 +605,24 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public String getRefByWebContactMechId() {
+	public ContactMech getRefByWebContactMechId() {
+		if (refByWebContactMechId != null && ((EObject)refByWebContactMechId).eIsProxy()) {
+			InternalEObject oldRefByWebContactMechId = (InternalEObject)refByWebContactMechId;
+			refByWebContactMechId = (ContactMech)eResolveProxy(oldRefByWebContactMechId);
+			if (refByWebContactMechId != oldRefByWebContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID, oldRefByWebContactMechId, refByWebContactMechId));
+			}
+		}
+		return refByWebContactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetRefByWebContactMechId() {
 		return refByWebContactMechId;
 	}
 
@@ -592,8 +632,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 	 * @generated
 	 */
 	@Override
-	public void setRefByWebContactMechId(String newRefByWebContactMechId) {
-		String oldRefByWebContactMechId = refByWebContactMechId;
+	public void setRefByWebContactMechId(ContactMech newRefByWebContactMechId) {
+		ContactMech oldRefByWebContactMechId = refByWebContactMechId;
 		refByWebContactMechId = newRefByWebContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID, oldRefByWebContactMechId, refByWebContactMechId));
@@ -774,18 +814,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 				return getContentId();
 			case VisitPackage.SERVER_HIT__HIT_START_DATE_TIME:
 				return getHitStartDateTime();
-			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
-				return getHitTypeId();
-			case VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID:
-				return getIdByIpContactMechId();
-			case VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID:
-				return getInternalContentId();
 			case VisitPackage.SERVER_HIT__NUM_OF_BYTES:
 				return getNumOfBytes();
-			case VisitPackage.SERVER_HIT__PARTY_ID:
-				return getPartyId();
-			case VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID:
-				return getRefByWebContactMechId();
 			case VisitPackage.SERVER_HIT__REFERRER_URL:
 				return getReferrerUrl();
 			case VisitPackage.SERVER_HIT__REQUEST_URL:
@@ -800,6 +830,21 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 				return getStatusId();
 			case VisitPackage.SERVER_HIT__USER_LOGIN_ID:
 				return getUserLoginId();
+			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
+				if (resolve) return getHitTypeId();
+				return basicGetHitTypeId();
+			case VisitPackage.SERVER_HIT__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID:
+				if (resolve) return getIdByIpContactMechId();
+				return basicGetIdByIpContactMechId();
+			case VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID:
+				if (resolve) return getRefByWebContactMechId();
+				return basicGetRefByWebContactMechId();
+			case VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID:
+				if (resolve) return getInternalContentId();
+				return basicGetInternalContentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -821,23 +866,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			case VisitPackage.SERVER_HIT__HIT_START_DATE_TIME:
 				setHitStartDateTime((Date)newValue);
 				return;
-			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
-				setHitTypeId((String)newValue);
-				return;
-			case VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID:
-				setIdByIpContactMechId((String)newValue);
-				return;
-			case VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID:
-				setInternalContentId((String)newValue);
-				return;
 			case VisitPackage.SERVER_HIT__NUM_OF_BYTES:
 				setNumOfBytes((Long)newValue);
-				return;
-			case VisitPackage.SERVER_HIT__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID:
-				setRefByWebContactMechId((String)newValue);
 				return;
 			case VisitPackage.SERVER_HIT__REFERRER_URL:
 				setReferrerUrl((String)newValue);
@@ -860,6 +890,21 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			case VisitPackage.SERVER_HIT__USER_LOGIN_ID:
 				setUserLoginId((String)newValue);
 				return;
+			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
+				setHitTypeId((ServerHitType)newValue);
+				return;
+			case VisitPackage.SERVER_HIT__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID:
+				setIdByIpContactMechId((ContactMech)newValue);
+				return;
+			case VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID:
+				setRefByWebContactMechId((ContactMech)newValue);
+				return;
+			case VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID:
+				setInternalContentId((Content)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -881,23 +926,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			case VisitPackage.SERVER_HIT__HIT_START_DATE_TIME:
 				setHitStartDateTime(HIT_START_DATE_TIME_EDEFAULT);
 				return;
-			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
-				setHitTypeId(HIT_TYPE_ID_EDEFAULT);
-				return;
-			case VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID:
-				setIdByIpContactMechId(ID_BY_IP_CONTACT_MECH_ID_EDEFAULT);
-				return;
-			case VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID:
-				setInternalContentId(INTERNAL_CONTENT_ID_EDEFAULT);
-				return;
 			case VisitPackage.SERVER_HIT__NUM_OF_BYTES:
 				setNumOfBytes(NUM_OF_BYTES_EDEFAULT);
-				return;
-			case VisitPackage.SERVER_HIT__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID:
-				setRefByWebContactMechId(REF_BY_WEB_CONTACT_MECH_ID_EDEFAULT);
 				return;
 			case VisitPackage.SERVER_HIT__REFERRER_URL:
 				setReferrerUrl(REFERRER_URL_EDEFAULT);
@@ -920,6 +950,21 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 			case VisitPackage.SERVER_HIT__USER_LOGIN_ID:
 				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
 				return;
+			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
+				setHitTypeId((ServerHitType)null);
+				return;
+			case VisitPackage.SERVER_HIT__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID:
+				setIdByIpContactMechId((ContactMech)null);
+				return;
+			case VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID:
+				setRefByWebContactMechId((ContactMech)null);
+				return;
+			case VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID:
+				setInternalContentId((Content)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -938,18 +983,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
 			case VisitPackage.SERVER_HIT__HIT_START_DATE_TIME:
 				return HIT_START_DATE_TIME_EDEFAULT == null ? hitStartDateTime != null : !HIT_START_DATE_TIME_EDEFAULT.equals(hitStartDateTime);
-			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
-				return HIT_TYPE_ID_EDEFAULT == null ? hitTypeId != null : !HIT_TYPE_ID_EDEFAULT.equals(hitTypeId);
-			case VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID:
-				return ID_BY_IP_CONTACT_MECH_ID_EDEFAULT == null ? idByIpContactMechId != null : !ID_BY_IP_CONTACT_MECH_ID_EDEFAULT.equals(idByIpContactMechId);
-			case VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID:
-				return INTERNAL_CONTENT_ID_EDEFAULT == null ? internalContentId != null : !INTERNAL_CONTENT_ID_EDEFAULT.equals(internalContentId);
 			case VisitPackage.SERVER_HIT__NUM_OF_BYTES:
 				return numOfBytes != NUM_OF_BYTES_EDEFAULT;
-			case VisitPackage.SERVER_HIT__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID:
-				return REF_BY_WEB_CONTACT_MECH_ID_EDEFAULT == null ? refByWebContactMechId != null : !REF_BY_WEB_CONTACT_MECH_ID_EDEFAULT.equals(refByWebContactMechId);
 			case VisitPackage.SERVER_HIT__REFERRER_URL:
 				return REFERRER_URL_EDEFAULT == null ? referrerUrl != null : !REFERRER_URL_EDEFAULT.equals(referrerUrl);
 			case VisitPackage.SERVER_HIT__REQUEST_URL:
@@ -964,6 +999,16 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case VisitPackage.SERVER_HIT__USER_LOGIN_ID:
 				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
+			case VisitPackage.SERVER_HIT__HIT_TYPE_ID:
+				return hitTypeId != null;
+			case VisitPackage.SERVER_HIT__PARTY_ID:
+				return partyId != null;
+			case VisitPackage.SERVER_HIT__ID_BY_IP_CONTACT_MECH_ID:
+				return idByIpContactMechId != null;
+			case VisitPackage.SERVER_HIT__REF_BY_WEB_CONTACT_MECH_ID:
+				return refByWebContactMechId != null;
+			case VisitPackage.SERVER_HIT__INTERNAL_CONTENT_ID:
+				return internalContentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -984,18 +1029,8 @@ public class ServerHitImpl extends BizEntityTypedImpl<ServerHitType> implements 
 		result.append(contentId);
 		result.append(", hitStartDateTime: ");
 		result.append(hitStartDateTime);
-		result.append(", hitTypeId: ");
-		result.append(hitTypeId);
-		result.append(", idByIpContactMechId: ");
-		result.append(idByIpContactMechId);
-		result.append(", internalContentId: ");
-		result.append(internalContentId);
 		result.append(", numOfBytes: ");
 		result.append(numOfBytes);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", refByWebContactMechId: ");
-		result.append(refByWebContactMechId);
 		result.append(", referrerUrl: ");
 		result.append(referrerUrl);
 		result.append(", requestUrl: ");

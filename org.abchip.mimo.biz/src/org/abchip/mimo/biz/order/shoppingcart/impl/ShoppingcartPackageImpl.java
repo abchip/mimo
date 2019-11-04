@@ -71,6 +71,7 @@ import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.impl.SurveyPackageImpl;
 import org.abchip.mimo.biz.content.website.WebsitePackage;
 import org.abchip.mimo.biz.content.website.impl.WebsitePackageImpl;
+import org.abchip.mimo.biz.entity.EntityPackage;
 import org.abchip.mimo.biz.entity.audit.AuditPackage;
 import org.abchip.mimo.biz.entity.audit.impl.AuditPackageImpl;
 import org.abchip.mimo.biz.entity.crypto.CryptoPackage;
@@ -190,14 +191,11 @@ import org.abchip.mimo.biz.workeffort.timesheet.TimesheetPackage;
 import org.abchip.mimo.biz.workeffort.timesheet.impl.TimesheetPackageImpl;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.abchip.mimo.biz.workeffort.workeffort.impl.WorkeffortPackageImpl;
-import org.abchip.mimo.entity.EntityPackage;
-
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -329,8 +327,8 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		SurveyPackageImpl theSurveyPackage = (SurveyPackageImpl)(registeredPackage instanceof SurveyPackageImpl ? registeredPackage : SurveyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(WebsitePackage.eNS_URI);
 		WebsitePackageImpl theWebsitePackage = (WebsitePackageImpl)(registeredPackage instanceof WebsitePackageImpl ? registeredPackage : WebsitePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(org.abchip.mimo.biz.entity.EntityPackage.eNS_URI);
-		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : org.abchip.mimo.biz.entity.EntityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
+		EntityPackageImpl theEntityPackage = (EntityPackageImpl)(registeredPackage instanceof EntityPackageImpl ? registeredPackage : EntityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AuditPackage.eNS_URI);
 		AuditPackageImpl theAuditPackage = (AuditPackageImpl)(registeredPackage instanceof AuditPackageImpl ? registeredPackage : AuditPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CryptoPackage.eNS_URI);
@@ -355,6 +353,22 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -369,22 +383,6 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		ReturnPackageImpl theReturnPackage = (ReturnPackageImpl)(registeredPackage instanceof ReturnPackageImpl ? registeredPackage : ReturnPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -497,6 +495,14 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -504,14 +510,6 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		theReservationsPackage.createPackageContents();
 		theReturnPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -592,6 +590,14 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -599,14 +605,6 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		theReservationsPackage.initializePackageContents();
 		theReturnPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -694,8 +692,8 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCartAbandonedLine_ProdCatalogId() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(3);
+	public EReference getCartAbandonedLine_ProdCatalogId() {
+		return (EReference)cartAbandonedLineEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -704,8 +702,8 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCartAbandonedLine_ProductId() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(4);
+	public EReference getCartAbandonedLine_ProductId() {
+		return (EReference)cartAbandonedLineEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -715,7 +713,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_Quantity() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -725,7 +723,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_Reserv2ndPPPerc() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -735,7 +733,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_ReservLength() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -745,7 +743,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_ReservNthPPPerc() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -755,7 +753,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_ReservPersons() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -765,7 +763,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_ReservStart() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -775,7 +773,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_TotalWithAdjustments() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -785,7 +783,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_UnitPrice() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -795,7 +793,7 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 	 */
 	@Override
 	public EAttribute getCartAbandonedLine_WasReserved() {
-		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)cartAbandonedLineEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -831,8 +829,6 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__VISIT_ID);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__CART_ABANDONED_LINE_SEQ_ID);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__CONFIG_ID);
-		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__PROD_CATALOG_ID);
-		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__PRODUCT_ID);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__QUANTITY);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__RESERV2ND_PP_PERC);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__RESERV_LENGTH);
@@ -842,6 +838,8 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__TOTAL_WITH_ADJUSTMENTS);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__UNIT_PRICE);
 		createEAttribute(cartAbandonedLineEClass, CART_ABANDONED_LINE__WAS_RESERVED);
+		createEReference(cartAbandonedLineEClass, CART_ABANDONED_LINE__PRODUCT_ID);
+		createEReference(cartAbandonedLineEClass, CART_ABANDONED_LINE__PROD_CATALOG_ID);
 	}
 
 	/**
@@ -869,6 +867,8 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		ProductPackage theProductPackage = (ProductPackage)EPackage.Registry.INSTANCE.getEPackage(ProductPackage.eNS_URI);
+		CatalogPackage theCatalogPackage = (CatalogPackage)EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -879,11 +879,9 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(cartAbandonedLineEClass, CartAbandonedLine.class, "CartAbandonedLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCartAbandonedLine_VisitId(), ecorePackage.getEString(), "visitId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCartAbandonedLine_CartAbandonedLineSeqId(), ecorePackage.getEString(), "cartAbandonedLineSeqId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCartAbandonedLine_VisitId(), ecorePackage.getEString(), "visitId", null, 1, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCartAbandonedLine_CartAbandonedLineSeqId(), ecorePackage.getEString(), "cartAbandonedLineSeqId", null, 1, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_ConfigId(), ecorePackage.getEString(), "configId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCartAbandonedLine_ProdCatalogId(), ecorePackage.getEString(), "prodCatalogId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCartAbandonedLine_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_Quantity(), ecorePackage.getEBigDecimal(), "quantity", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_Reserv2ndPPPerc(), ecorePackage.getEBigDecimal(), "reserv2ndPPPerc", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_ReservLength(), ecorePackage.getEBigDecimal(), "reservLength", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -893,12 +891,14 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		initEAttribute(getCartAbandonedLine_TotalWithAdjustments(), ecorePackage.getEBigDecimal(), "totalWithAdjustments", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_UnitPrice(), ecorePackage.getEBigDecimal(), "unitPrice", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCartAbandonedLine_WasReserved(), ecorePackage.getEBoolean(), "wasReserved", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCartAbandonedLine_ProductId(), theProductPackage.getProduct(), null, "productId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCartAbandonedLine_ProductId().getEKeys().add(theProductPackage.getProduct_ProductId());
+		initEReference(getCartAbandonedLine_ProdCatalogId(), theCatalogPackage.getProdCatalog(), null, "prodCatalogId", null, 0, 1, CartAbandonedLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCartAbandonedLine_ProdCatalogId().getEKeys().add(theCatalogPackage.getProdCatalog_ProdCatalogId());
 
 		// Create annotations
 		// mimo-ent-slot
 		createMimoentslotAnnotations();
-		// mimo-ent-domain
-		createMimoentdomainAnnotations();
 	}
 
 	/**
@@ -920,34 +920,6 @@ public class ShoppingcartPackageImpl extends EPackageImpl implements Shoppingcar
 		   source,
 		   new String[] {
 			   "key", "true"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>mimo-ent-domain</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMimoentdomainAnnotations() {
-		String source = "mimo-ent-domain";
-		addAnnotation
-		  (getCartAbandonedLine_ProdCatalogId(),
-		   source,
-		   new String[] {
-			   "frame", "ProdCatalog"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getCartAbandonedLine_ProductId(),
-		   source,
-		   new String[] {
-			   "frame", "Product"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 	}
 

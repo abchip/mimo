@@ -67,7 +67,7 @@ public interface ReturnType extends BizEntity {
 	 * @return the value of the '<em>Return Type Id</em>' attribute.
 	 * @see #setReturnTypeId(String)
 	 * @see org.abchip.mimo.biz.order.return_.ReturnPackage#getReturnType_ReturnTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

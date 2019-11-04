@@ -9,13 +9,19 @@ package org.abchip.mimo.biz.order.order.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.abchip.mimo.biz.order.order.OrderStatus;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,11 +34,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getOrderStatusId <em>Order Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getChangeReason <em>Change Reason</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getStatusDatetime <em>Status Datetime</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderStatusImpl#getStatusUserLogin <em>Status User Login</em>}</li>
  * </ul>
  *
@@ -85,26 +91,6 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	protected String changeReason = CHANGE_REASON_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,26 +109,6 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 * @ordered
 	 */
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPaymentPreferenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPaymentPreferenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderPaymentPreferenceId = ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStatusDatetime() <em>Status Datetime</em>}' attribute.
@@ -165,44 +131,44 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	protected Date statusDatetime = STATUS_DATETIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getOrderId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected OrderHeader orderId;
 
 	/**
-	 * The default value of the '{@link #getStatusUserLogin() <em>Status User Login</em>}' attribute.
+	 * The cached value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderPaymentPreferenceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderPaymentPreference orderPaymentPreferenceId;
+
+	/**
+	 * The cached value of the '{@link #getStatusUserLogin() <em>Status User Login</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusUserLogin()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_USER_LOGIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusUserLogin() <em>Status User Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusUserLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusUserLogin = STATUS_USER_LOGIN_EDEFAULT;
+	protected UserLogin statusUserLogin;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,7 +218,24 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_STATUS__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -262,8 +245,8 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__ORDER_ID, oldOrderId, orderId));
@@ -298,7 +281,24 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 * @generated
 	 */
 	@Override
-	public String getOrderPaymentPreferenceId() {
+	public OrderPaymentPreference getOrderPaymentPreferenceId() {
+		if (orderPaymentPreferenceId != null && ((EObject)orderPaymentPreferenceId).eIsProxy()) {
+			InternalEObject oldOrderPaymentPreferenceId = (InternalEObject)orderPaymentPreferenceId;
+			orderPaymentPreferenceId = (OrderPaymentPreference)eResolveProxy(oldOrderPaymentPreferenceId);
+			if (orderPaymentPreferenceId != oldOrderPaymentPreferenceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
+			}
+		}
+		return orderPaymentPreferenceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderPaymentPreference basicGetOrderPaymentPreferenceId() {
 		return orderPaymentPreferenceId;
 	}
 
@@ -308,8 +308,8 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 * @generated
 	 */
 	@Override
-	public void setOrderPaymentPreferenceId(String newOrderPaymentPreferenceId) {
-		String oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
+	public void setOrderPaymentPreferenceId(OrderPaymentPreference newOrderPaymentPreferenceId) {
+		OrderPaymentPreference oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
 		orderPaymentPreferenceId = newOrderPaymentPreferenceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
@@ -367,7 +367,24 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_STATUS__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -377,8 +394,8 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__STATUS_ID, oldStatusId, statusId));
@@ -390,7 +407,24 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 * @generated
 	 */
 	@Override
-	public String getStatusUserLogin() {
+	public UserLogin getStatusUserLogin() {
+		if (statusUserLogin != null && ((EObject)statusUserLogin).eIsProxy()) {
+			InternalEObject oldStatusUserLogin = (InternalEObject)statusUserLogin;
+			statusUserLogin = (UserLogin)eResolveProxy(oldStatusUserLogin);
+			if (statusUserLogin != oldStatusUserLogin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_STATUS__STATUS_USER_LOGIN, oldStatusUserLogin, statusUserLogin));
+			}
+		}
+		return statusUserLogin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetStatusUserLogin() {
 		return statusUserLogin;
 	}
 
@@ -400,8 +434,8 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 	 * @generated
 	 */
 	@Override
-	public void setStatusUserLogin(String newStatusUserLogin) {
-		String oldStatusUserLogin = statusUserLogin;
+	public void setStatusUserLogin(UserLogin newStatusUserLogin) {
+		UserLogin oldStatusUserLogin = statusUserLogin;
 		statusUserLogin = newStatusUserLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_STATUS__STATUS_USER_LOGIN, oldStatusUserLogin, statusUserLogin));
@@ -419,18 +453,22 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 				return getOrderStatusId();
 			case OrderPackage.ORDER_STATUS__CHANGE_REASON:
 				return getChangeReason();
-			case OrderPackage.ORDER_STATUS__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_STATUS__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID:
-				return getOrderPaymentPreferenceId();
 			case OrderPackage.ORDER_STATUS__STATUS_DATETIME:
 				return getStatusDatetime();
 			case OrderPackage.ORDER_STATUS__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case OrderPackage.ORDER_STATUS__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
+			case OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID:
+				if (resolve) return getOrderPaymentPreferenceId();
+				return basicGetOrderPaymentPreferenceId();
 			case OrderPackage.ORDER_STATUS__STATUS_USER_LOGIN:
-				return getStatusUserLogin();
+				if (resolve) return getStatusUserLogin();
+				return basicGetStatusUserLogin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -449,23 +487,23 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 			case OrderPackage.ORDER_STATUS__CHANGE_REASON:
 				setChangeReason((String)newValue);
 				return;
-			case OrderPackage.ORDER_STATUS__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_STATUS__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
-				return;
-			case OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId((String)newValue);
 				return;
 			case OrderPackage.ORDER_STATUS__STATUS_DATETIME:
 				setStatusDatetime((Date)newValue);
 				return;
 			case OrderPackage.ORDER_STATUS__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
+				return;
+			case OrderPackage.ORDER_STATUS__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
+			case OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID:
+				setOrderPaymentPreferenceId((OrderPaymentPreference)newValue);
 				return;
 			case OrderPackage.ORDER_STATUS__STATUS_USER_LOGIN:
-				setStatusUserLogin((String)newValue);
+				setStatusUserLogin((UserLogin)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -485,23 +523,23 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 			case OrderPackage.ORDER_STATUS__CHANGE_REASON:
 				setChangeReason(CHANGE_REASON_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_STATUS__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_STATUS__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId(ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_STATUS__STATUS_DATETIME:
 				setStatusDatetime(STATUS_DATETIME_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_STATUS__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
+				return;
+			case OrderPackage.ORDER_STATUS__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
+			case OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID:
+				setOrderPaymentPreferenceId((OrderPaymentPreference)null);
 				return;
 			case OrderPackage.ORDER_STATUS__STATUS_USER_LOGIN:
-				setStatusUserLogin(STATUS_USER_LOGIN_EDEFAULT);
+				setStatusUserLogin((UserLogin)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -519,18 +557,18 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 				return ORDER_STATUS_ID_EDEFAULT == null ? orderStatusId != null : !ORDER_STATUS_ID_EDEFAULT.equals(orderStatusId);
 			case OrderPackage.ORDER_STATUS__CHANGE_REASON:
 				return CHANGE_REASON_EDEFAULT == null ? changeReason != null : !CHANGE_REASON_EDEFAULT.equals(changeReason);
-			case OrderPackage.ORDER_STATUS__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_STATUS__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID:
-				return ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT == null ? orderPaymentPreferenceId != null : !ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT.equals(orderPaymentPreferenceId);
 			case OrderPackage.ORDER_STATUS__STATUS_DATETIME:
 				return STATUS_DATETIME_EDEFAULT == null ? statusDatetime != null : !STATUS_DATETIME_EDEFAULT.equals(statusDatetime);
 			case OrderPackage.ORDER_STATUS__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
+			case OrderPackage.ORDER_STATUS__ORDER_ID:
+				return orderId != null;
+			case OrderPackage.ORDER_STATUS__ORDER_PAYMENT_PREFERENCE_ID:
+				return orderPaymentPreferenceId != null;
 			case OrderPackage.ORDER_STATUS__STATUS_USER_LOGIN:
-				return STATUS_USER_LOGIN_EDEFAULT == null ? statusUserLogin != null : !STATUS_USER_LOGIN_EDEFAULT.equals(statusUserLogin);
+				return statusUserLogin != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -549,18 +587,10 @@ public class OrderStatusImpl extends BizEntityImpl implements OrderStatus {
 		result.append(orderStatusId);
 		result.append(", changeReason: ");
 		result.append(changeReason);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", orderPaymentPreferenceId: ");
-		result.append(orderPaymentPreferenceId);
 		result.append(", statusDatetime: ");
 		result.append(statusDatetime);
-		result.append(", statusId: ");
-		result.append(statusId);
-		result.append(", statusUserLogin: ");
-		result.append(statusUserLogin);
 		result.append(')');
 		return result.toString();
 	}

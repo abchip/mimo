@@ -9,13 +9,17 @@ package org.abchip.mimo.biz.webapp.visit.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.webapp.visit.ServerHitBin;
+import org.abchip.mimo.biz.webapp.visit.ServerHitType;
 import org.abchip.mimo.biz.webapp.visit.VisitPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,14 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getBinEndDateTime <em>Bin End Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getBinStartDateTime <em>Bin Start Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getHitTypeId <em>Hit Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getInternalContentId <em>Internal Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getMaxTimeMillis <em>Max Time Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getMinTimeMillis <em>Min Time Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getNumberHits <em>Number Hits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getServerHostName <em>Server Host Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getTotalTimeMillis <em>Total Time Millis</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getHitTypeId <em>Hit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.impl.ServerHitBinImpl#getInternalContentId <em>Internal Content Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -127,46 +131,6 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 * @ordered
 	 */
 	protected String contentId = CONTENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getHitTypeId() <em>Hit Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHitTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String HIT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getHitTypeId() <em>Hit Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHitTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String hitTypeId = HIT_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInternalContentId() <em>Internal Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInternalContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INTERNAL_CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInternalContentId() <em>Internal Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInternalContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String internalContentId = INTERNAL_CONTENT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaxTimeMillis() <em>Max Time Millis</em>}' attribute.
@@ -289,6 +253,26 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	protected long totalTimeMillis = TOTAL_TIME_MILLIS_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getHitTypeId() <em>Hit Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHitTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServerHitType hitTypeId;
+
+	/**
+	 * The cached value of the '{@link #getInternalContentId() <em>Internal Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInternalContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content internalContentId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -405,7 +389,24 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 * @generated
 	 */
 	@Override
-	public String getHitTypeId() {
+	public ServerHitType getHitTypeId() {
+		if (hitTypeId != null && ((EObject)hitTypeId).eIsProxy()) {
+			InternalEObject oldHitTypeId = (InternalEObject)hitTypeId;
+			hitTypeId = (ServerHitType)eResolveProxy(oldHitTypeId);
+			if (hitTypeId != oldHitTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
+			}
+		}
+		return hitTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServerHitType basicGetHitTypeId() {
 		return hitTypeId;
 	}
 
@@ -415,8 +416,8 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 * @generated
 	 */
 	@Override
-	public void setHitTypeId(String newHitTypeId) {
-		String oldHitTypeId = hitTypeId;
+	public void setHitTypeId(ServerHitType newHitTypeId) {
+		ServerHitType oldHitTypeId = hitTypeId;
 		hitTypeId = newHitTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID, oldHitTypeId, hitTypeId));
@@ -428,7 +429,24 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 * @generated
 	 */
 	@Override
-	public String getInternalContentId() {
+	public Content getInternalContentId() {
+		if (internalContentId != null && ((EObject)internalContentId).eIsProxy()) {
+			InternalEObject oldInternalContentId = (InternalEObject)internalContentId;
+			internalContentId = (Content)eResolveProxy(oldInternalContentId);
+			if (internalContentId != oldInternalContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID, oldInternalContentId, internalContentId));
+			}
+		}
+		return internalContentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetInternalContentId() {
 		return internalContentId;
 	}
 
@@ -438,8 +456,8 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 	 * @generated
 	 */
 	@Override
-	public void setInternalContentId(String newInternalContentId) {
-		String oldInternalContentId = internalContentId;
+	public void setInternalContentId(Content newInternalContentId) {
+		Content oldInternalContentId = internalContentId;
 		internalContentId = newInternalContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID, oldInternalContentId, internalContentId));
@@ -599,10 +617,6 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 				return getBinStartDateTime();
 			case VisitPackage.SERVER_HIT_BIN__CONTENT_ID:
 				return getContentId();
-			case VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID:
-				return getHitTypeId();
-			case VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID:
-				return getInternalContentId();
 			case VisitPackage.SERVER_HIT_BIN__MAX_TIME_MILLIS:
 				return getMaxTimeMillis();
 			case VisitPackage.SERVER_HIT_BIN__MIN_TIME_MILLIS:
@@ -615,6 +629,12 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 				return getServerIpAddress();
 			case VisitPackage.SERVER_HIT_BIN__TOTAL_TIME_MILLIS:
 				return getTotalTimeMillis();
+			case VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID:
+				if (resolve) return getHitTypeId();
+				return basicGetHitTypeId();
+			case VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID:
+				if (resolve) return getInternalContentId();
+				return basicGetInternalContentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -639,12 +659,6 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 			case VisitPackage.SERVER_HIT_BIN__CONTENT_ID:
 				setContentId((String)newValue);
 				return;
-			case VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID:
-				setHitTypeId((String)newValue);
-				return;
-			case VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID:
-				setInternalContentId((String)newValue);
-				return;
 			case VisitPackage.SERVER_HIT_BIN__MAX_TIME_MILLIS:
 				setMaxTimeMillis((Long)newValue);
 				return;
@@ -662,6 +676,12 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 				return;
 			case VisitPackage.SERVER_HIT_BIN__TOTAL_TIME_MILLIS:
 				setTotalTimeMillis((Long)newValue);
+				return;
+			case VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID:
+				setHitTypeId((ServerHitType)newValue);
+				return;
+			case VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID:
+				setInternalContentId((Content)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -687,12 +707,6 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 			case VisitPackage.SERVER_HIT_BIN__CONTENT_ID:
 				setContentId(CONTENT_ID_EDEFAULT);
 				return;
-			case VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID:
-				setHitTypeId(HIT_TYPE_ID_EDEFAULT);
-				return;
-			case VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID:
-				setInternalContentId(INTERNAL_CONTENT_ID_EDEFAULT);
-				return;
 			case VisitPackage.SERVER_HIT_BIN__MAX_TIME_MILLIS:
 				setMaxTimeMillis(MAX_TIME_MILLIS_EDEFAULT);
 				return;
@@ -710,6 +724,12 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 				return;
 			case VisitPackage.SERVER_HIT_BIN__TOTAL_TIME_MILLIS:
 				setTotalTimeMillis(TOTAL_TIME_MILLIS_EDEFAULT);
+				return;
+			case VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID:
+				setHitTypeId((ServerHitType)null);
+				return;
+			case VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID:
+				setInternalContentId((Content)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -731,10 +751,6 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 				return BIN_START_DATE_TIME_EDEFAULT == null ? binStartDateTime != null : !BIN_START_DATE_TIME_EDEFAULT.equals(binStartDateTime);
 			case VisitPackage.SERVER_HIT_BIN__CONTENT_ID:
 				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID:
-				return HIT_TYPE_ID_EDEFAULT == null ? hitTypeId != null : !HIT_TYPE_ID_EDEFAULT.equals(hitTypeId);
-			case VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID:
-				return INTERNAL_CONTENT_ID_EDEFAULT == null ? internalContentId != null : !INTERNAL_CONTENT_ID_EDEFAULT.equals(internalContentId);
 			case VisitPackage.SERVER_HIT_BIN__MAX_TIME_MILLIS:
 				return maxTimeMillis != MAX_TIME_MILLIS_EDEFAULT;
 			case VisitPackage.SERVER_HIT_BIN__MIN_TIME_MILLIS:
@@ -747,6 +763,10 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 				return SERVER_IP_ADDRESS_EDEFAULT == null ? serverIpAddress != null : !SERVER_IP_ADDRESS_EDEFAULT.equals(serverIpAddress);
 			case VisitPackage.SERVER_HIT_BIN__TOTAL_TIME_MILLIS:
 				return totalTimeMillis != TOTAL_TIME_MILLIS_EDEFAULT;
+			case VisitPackage.SERVER_HIT_BIN__HIT_TYPE_ID:
+				return hitTypeId != null;
+			case VisitPackage.SERVER_HIT_BIN__INTERNAL_CONTENT_ID:
+				return internalContentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -769,10 +789,6 @@ public class ServerHitBinImpl extends BizEntityImpl implements ServerHitBin {
 		result.append(binStartDateTime);
 		result.append(", contentId: ");
 		result.append(contentId);
-		result.append(", hitTypeId: ");
-		result.append(hitTypeId);
-		result.append(", internalContentId: ");
-		result.append(internalContentId);
 		result.append(", maxTimeMillis: ");
 		result.append(maxTimeMillis);
 		result.append(", minTimeMillis: ");

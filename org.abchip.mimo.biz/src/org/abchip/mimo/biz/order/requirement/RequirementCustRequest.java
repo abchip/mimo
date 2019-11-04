@@ -39,8 +39,8 @@ public interface RequirementCustRequest extends BizEntity {
 	 * @return the value of the '<em>Cust Request Id</em>' attribute.
 	 * @see #setCustRequestId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementCustRequest_CustRequestId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CustRequest'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestId();
@@ -66,7 +66,8 @@ public interface RequirementCustRequest extends BizEntity {
 	 * @return the value of the '<em>Cust Request Item Seq Id</em>' attribute.
 	 * @see #setCustRequestItemSeqId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementCustRequest_CustRequestItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getCustRequestItemSeqId();
@@ -82,30 +83,29 @@ public interface RequirementCustRequest extends BizEntity {
 	void setCustRequestItemSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Id</em>' attribute.
-	 * @see #setRequirementId(String)
+	 * @return the value of the '<em>Requirement Id</em>' reference.
+	 * @see #setRequirementId(Requirement)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getRequirementCustRequest_RequirementId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Requirement'"
+	 * @model keys="requirementId"
 	 * @generated
 	 */
-	String getRequirementId();
+	Requirement getRequirementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementCustRequest#getRequirementId <em>Requirement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.RequirementCustRequest#getRequirementId <em>Requirement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Id</em>' reference.
 	 * @see #getRequirementId()
 	 * @generated
 	 */
-	void setRequirementId(String value);
+	void setRequirementId(Requirement value);
 
 } // RequirementCustRequest

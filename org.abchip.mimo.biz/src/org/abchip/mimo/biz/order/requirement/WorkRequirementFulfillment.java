@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.requirement;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,8 +40,8 @@ public interface WorkRequirementFulfillment extends BizEntityTyped<WorkReqFulfTy
 	 * @return the value of the '<em>Requirement Id</em>' attribute.
 	 * @see #setRequirementId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkRequirementFulfillment_RequirementId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Requirement'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRequirementId();
@@ -56,56 +57,55 @@ public interface WorkRequirementFulfillment extends BizEntityTyped<WorkReqFulfTy
 	void setRequirementId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Effort Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Effort Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Effort Id</em>' attribute.
-	 * @see #setWorkEffortId(String)
+	 * @return the value of the '<em>Work Effort Id</em>' reference.
+	 * @see #setWorkEffortId(WorkEffort)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkRequirementFulfillment_WorkEffortId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
+	 * @model keys="workEffortId"
 	 * @generated
 	 */
-	String getWorkEffortId();
+	WorkEffort getWorkEffortId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment#getWorkEffortId <em>Work Effort Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment#getWorkEffortId <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Effort Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Effort Id</em>' reference.
 	 * @see #getWorkEffortId()
 	 * @generated
 	 */
-	void setWorkEffortId(String value);
+	void setWorkEffortId(WorkEffort value);
 
 	/**
-	 * Returns the value of the '<em><b>Work Req Fulf Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Work Req Fulf Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Work Req Fulf Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work Req Fulf Type Id</em>' attribute.
-	 * @see #setWorkReqFulfTypeId(String)
+	 * @return the value of the '<em>Work Req Fulf Type Id</em>' reference.
+	 * @see #setWorkReqFulfTypeId(WorkReqFulfType)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getWorkRequirementFulfillment_WorkReqFulfTypeId()
-	 * @model annotation="mimo-ent-domain frame='WorkReqFulfType'"
+	 * @model keys="workReqFulfTypeId"
 	 * @generated
 	 */
-	String getWorkReqFulfTypeId();
+	WorkReqFulfType getWorkReqFulfTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment#getWorkReqFulfTypeId <em>Work Req Fulf Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.WorkRequirementFulfillment#getWorkReqFulfTypeId <em>Work Req Fulf Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Work Req Fulf Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Work Req Fulf Type Id</em>' reference.
 	 * @see #getWorkReqFulfTypeId()
 	 * @generated
 	 */
-	void setWorkReqFulfTypeId(String value);
+	void setWorkReqFulfTypeId(WorkReqFulfType value);
 
 } // WorkRequirementFulfillment

@@ -7,12 +7,18 @@
  */
 package org.abchip.mimo.biz.accounting.ledger.impl;
 
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.ledger.GlAccountType;
 import org.abchip.mimo.biz.accounting.ledger.LedgerPackage;
 import org.abchip.mimo.biz.accounting.ledger.PartyGlAccount;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -56,77 +62,41 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 */
 	protected String organizationPartyId = ORGANIZATION_PARTY_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
+	protected Party partyId;
 	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoleTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
+	protected RoleType roleTypeId;
 	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlAccountTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GL_ACCOUNT_TYPE_ID_EDEFAULT = null;
+	protected GlAccountType glAccountTypeId;
 	/**
-	 * The cached value of the '{@link #getGlAccountTypeId() <em>Gl Account Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountTypeId = GL_ACCOUNT_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
+	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGlAccountId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlAccountId() <em>Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glAccountId = GL_ACCOUNT_ID_EDEFAULT;
+	protected GlAccount glAccountId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,7 +146,24 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -186,8 +173,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID, oldPartyId, partyId));
@@ -199,7 +186,24 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -209,8 +213,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -222,7 +226,24 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountTypeId() {
+	public GlAccountType getGlAccountTypeId() {
+		if (glAccountTypeId != null && ((EObject)glAccountTypeId).eIsProxy()) {
+			InternalEObject oldGlAccountTypeId = (InternalEObject)glAccountTypeId;
+			glAccountTypeId = (GlAccountType)eResolveProxy(oldGlAccountTypeId);
+			if (glAccountTypeId != oldGlAccountTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
+			}
+		}
+		return glAccountTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccountType basicGetGlAccountTypeId() {
 		return glAccountTypeId;
 	}
 
@@ -232,8 +253,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountTypeId(String newGlAccountTypeId) {
-		String oldGlAccountTypeId = glAccountTypeId;
+	public void setGlAccountTypeId(GlAccountType newGlAccountTypeId) {
+		GlAccountType oldGlAccountTypeId = glAccountTypeId;
 		glAccountTypeId = newGlAccountTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID, oldGlAccountTypeId, glAccountTypeId));
@@ -245,7 +266,24 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public String getGlAccountId() {
+	public GlAccount getGlAccountId() {
+		if (glAccountId != null && ((EObject)glAccountId).eIsProxy()) {
+			InternalEObject oldGlAccountId = (InternalEObject)glAccountId;
+			glAccountId = (GlAccount)eResolveProxy(oldGlAccountId);
+			if (glAccountId != oldGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
+			}
+		}
+		return glAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetGlAccountId() {
 		return glAccountId;
 	}
 
@@ -255,8 +293,8 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 	 * @generated
 	 */
 	@Override
-	public void setGlAccountId(String newGlAccountId) {
-		String oldGlAccountId = glAccountId;
+	public void setGlAccountId(GlAccount newGlAccountId) {
+		GlAccount oldGlAccountId = glAccountId;
 		glAccountId = newGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_ID, oldGlAccountId, glAccountId));
@@ -273,13 +311,17 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 			case LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				return getOrganizationPartyId();
 			case LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID:
-				return getPartyId();
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 			case LedgerPackage.PARTY_GL_ACCOUNT__ROLE_TYPE_ID:
-				return getRoleTypeId();
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
 			case LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
-				return getGlAccountTypeId();
+				if (resolve) return getGlAccountTypeId();
+				return basicGetGlAccountTypeId();
 			case LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_ID:
-				return getGlAccountId();
+				if (resolve) return getGlAccountId();
+				return basicGetGlAccountId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -296,16 +338,16 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 				setOrganizationPartyId((String)newValue);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID:
-				setPartyId((String)newValue);
+				setPartyId((Party)newValue);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
+				setRoleTypeId((RoleType)newValue);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
-				setGlAccountTypeId((String)newValue);
+				setGlAccountTypeId((GlAccountType)newValue);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_ID:
-				setGlAccountId((String)newValue);
+				setGlAccountId((GlAccount)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -323,16 +365,16 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 				setOrganizationPartyId(ORGANIZATION_PARTY_ID_EDEFAULT);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
+				setPartyId((Party)null);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
+				setRoleTypeId((RoleType)null);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
-				setGlAccountTypeId(GL_ACCOUNT_TYPE_ID_EDEFAULT);
+				setGlAccountTypeId((GlAccountType)null);
 				return;
 			case LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_ID:
-				setGlAccountId(GL_ACCOUNT_ID_EDEFAULT);
+				setGlAccountId((GlAccount)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -349,13 +391,13 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 			case LedgerPackage.PARTY_GL_ACCOUNT__ORGANIZATION_PARTY_ID:
 				return ORGANIZATION_PARTY_ID_EDEFAULT == null ? organizationPartyId != null : !ORGANIZATION_PARTY_ID_EDEFAULT.equals(organizationPartyId);
 			case LedgerPackage.PARTY_GL_ACCOUNT__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
+				return partyId != null;
 			case LedgerPackage.PARTY_GL_ACCOUNT__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
+				return roleTypeId != null;
 			case LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_TYPE_ID:
-				return GL_ACCOUNT_TYPE_ID_EDEFAULT == null ? glAccountTypeId != null : !GL_ACCOUNT_TYPE_ID_EDEFAULT.equals(glAccountTypeId);
+				return glAccountTypeId != null;
 			case LedgerPackage.PARTY_GL_ACCOUNT__GL_ACCOUNT_ID:
-				return GL_ACCOUNT_ID_EDEFAULT == null ? glAccountId != null : !GL_ACCOUNT_ID_EDEFAULT.equals(glAccountId);
+				return glAccountId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -372,14 +414,6 @@ public class PartyGlAccountImpl extends BizEntityImpl implements PartyGlAccount 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (organizationPartyId: ");
 		result.append(organizationPartyId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", glAccountTypeId: ");
-		result.append(glAccountTypeId);
-		result.append(", glAccountId: ");
-		result.append(glAccountId);
 		result.append(')');
 		return result.toString();
 	}

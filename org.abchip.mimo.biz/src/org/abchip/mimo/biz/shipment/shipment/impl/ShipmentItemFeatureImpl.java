@@ -8,12 +8,15 @@
 package org.abchip.mimo.biz.shipment.shipment.impl;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.shipment.shipment.ShipmentItemFeature;
 import org.abchip.mimo.biz.shipment.shipment.Shipment_Package;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -78,24 +81,14 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 	protected String shipmentItemSeqId = SHIPMENT_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductFeatureId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_FEATURE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
+	protected ProductFeature productFeatureId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,7 +115,24 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureId() {
+	public ProductFeature getProductFeatureId() {
+		if (productFeatureId != null && ((EObject)productFeatureId).eIsProxy()) {
+			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
+			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
+			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Shipment_Package.SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
+			}
+		}
+		return productFeatureId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature basicGetProductFeatureId() {
 		return productFeatureId;
 	}
 
@@ -132,8 +142,8 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
+	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Shipment_Package.SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
@@ -198,7 +208,8 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 			case Shipment_Package.SHIPMENT_ITEM_FEATURE__SHIPMENT_ITEM_SEQ_ID:
 				return getShipmentItemSeqId();
 			case Shipment_Package.SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID:
-				return getProductFeatureId();
+				if (resolve) return getProductFeatureId();
+				return basicGetProductFeatureId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,7 +229,7 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 				setShipmentItemSeqId((String)newValue);
 				return;
 			case Shipment_Package.SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID:
-				setProductFeatureId((String)newValue);
+				setProductFeatureId((ProductFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,7 +250,7 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 				setShipmentItemSeqId(SHIPMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case Shipment_Package.SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID:
-				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
+				setProductFeatureId((ProductFeature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -258,7 +269,7 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 			case Shipment_Package.SHIPMENT_ITEM_FEATURE__SHIPMENT_ITEM_SEQ_ID:
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
 			case Shipment_Package.SHIPMENT_ITEM_FEATURE__PRODUCT_FEATURE_ID:
-				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
+				return productFeatureId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -277,8 +288,6 @@ public class ShipmentItemFeatureImpl extends BizEntityImpl implements ShipmentIt
 		result.append(shipmentId);
 		result.append(", shipmentItemSeqId: ");
 		result.append(shipmentItemSeqId);
-		result.append(", productFeatureId: ");
-		result.append(productFeatureId);
 		result.append(')');
 		return result.toString();
 	}

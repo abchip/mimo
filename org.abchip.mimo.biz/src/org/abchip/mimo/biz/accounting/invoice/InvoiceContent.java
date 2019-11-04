@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getInvoiceId <em>Invoice Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getInvoiceContentTypeId <em>Invoice Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getInvoiceId <em>Invoice Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getInvoiceContentTypeId <em>Invoice Content Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContent()
@@ -43,8 +43,8 @@ public interface InvoiceContent extends BizEntityTyped<InvoiceContentType> {
 	 * @return the value of the '<em>Content Id</em>' attribute.
 	 * @see #setContentId(String)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContent_ContentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getContentId();
@@ -70,7 +70,8 @@ public interface InvoiceContent extends BizEntityTyped<InvoiceContentType> {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContent_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -112,57 +113,55 @@ public interface InvoiceContent extends BizEntityTyped<InvoiceContentType> {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Id</em>' attribute.
-	 * @see #setInvoiceId(String)
+	 * @return the value of the '<em>Invoice Id</em>' reference.
+	 * @see #setInvoiceId(Invoice)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContent_InvoiceId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Invoice'"
+	 * @model keys="invoiceId"
 	 * @generated
 	 */
-	String getInvoiceId();
+	Invoice getInvoiceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getInvoiceId <em>Invoice Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getInvoiceId <em>Invoice Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Id</em>' reference.
 	 * @see #getInvoiceId()
 	 * @generated
 	 */
-	void setInvoiceId(String value);
+	void setInvoiceId(Invoice value);
 
 	/**
-	 * Returns the value of the '<em><b>Invoice Content Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Invoice Content Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Invoice Content Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Invoice Content Type Id</em>' attribute.
-	 * @see #setInvoiceContentTypeId(String)
+	 * @return the value of the '<em>Invoice Content Type Id</em>' reference.
+	 * @see #setInvoiceContentTypeId(InvoiceContentType)
 	 * @see org.abchip.mimo.biz.accounting.invoice.InvoicePackage#getInvoiceContent_InvoiceContentTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='InvoiceContentType'"
+	 * @model keys="invoiceContentTypeId"
 	 * @generated
 	 */
-	String getInvoiceContentTypeId();
+	InvoiceContentType getInvoiceContentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getInvoiceContentTypeId <em>Invoice Content Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.invoice.InvoiceContent#getInvoiceContentTypeId <em>Invoice Content Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Invoice Content Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Invoice Content Type Id</em>' reference.
 	 * @see #getInvoiceContentTypeId()
 	 * @generated
 	 */
-	void setInvoiceContentTypeId(String value);
+	void setInvoiceContentTypeId(InvoiceContentType value);
 
 } // InvoiceContent

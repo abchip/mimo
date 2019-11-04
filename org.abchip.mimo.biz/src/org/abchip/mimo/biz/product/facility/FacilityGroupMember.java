@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupMember#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupMember#getFacilityGroupId <em>Facility Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupMember#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupMember#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupMember#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.FacilityGroupMember#getFacilityGroupId <em>Facility Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupMember()
@@ -43,7 +43,8 @@ public interface FacilityGroupMember extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupMember_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -121,8 +122,8 @@ public interface FacilityGroupMember extends BizEntity {
 	 * @return the value of the '<em>Facility Id</em>' attribute.
 	 * @see #setFacilityId(String)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupMember_FacilityId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Facility'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFacilityId();
@@ -138,30 +139,29 @@ public interface FacilityGroupMember extends BizEntity {
 	void setFacilityId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Facility Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Facility Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facility Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facility Group Id</em>' attribute.
-	 * @see #setFacilityGroupId(String)
+	 * @return the value of the '<em>Facility Group Id</em>' reference.
+	 * @see #setFacilityGroupId(FacilityGroup)
 	 * @see org.abchip.mimo.biz.product.facility.FacilityPackage#getFacilityGroupMember_FacilityGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FacilityGroup'"
+	 * @model keys="facilityGroupId"
 	 * @generated
 	 */
-	String getFacilityGroupId();
+	FacilityGroup getFacilityGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroupMember#getFacilityGroupId <em>Facility Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.facility.FacilityGroupMember#getFacilityGroupId <em>Facility Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facility Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Facility Group Id</em>' reference.
 	 * @see #getFacilityGroupId()
 	 * @generated
 	 */
-	void setFacilityGroupId(String value);
+	void setFacilityGroupId(FacilityGroup value);
 
 } // FacilityGroupMember

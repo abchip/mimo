@@ -10,11 +10,14 @@ package org.abchip.mimo.biz.party.party.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.party.party.PartyCarrierAccount;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyCarrierAccountImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyCarrierAccountImpl#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyCarrierAccountImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyCarrierAccountImpl#getAccountNumber <em>Account Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyCarrierAccountImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyCarrierAccountImpl#getCarrierPartyId <em>Carrier Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,24 +60,6 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CARRIER_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCarrierPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String carrierPartyId = CARRIER_PARTY_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -129,6 +114,15 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getCarrierPartyId() <em>Carrier Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCarrierPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party carrierPartyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,7 +241,24 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 	 * @generated
 	 */
 	@Override
-	public String getCarrierPartyId() {
+	public Party getCarrierPartyId() {
+		if (carrierPartyId != null && ((EObject)carrierPartyId).eIsProxy()) {
+			InternalEObject oldCarrierPartyId = (InternalEObject)carrierPartyId;
+			carrierPartyId = (Party)eResolveProxy(oldCarrierPartyId);
+			if (carrierPartyId != oldCarrierPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
+			}
+		}
+		return carrierPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetCarrierPartyId() {
 		return carrierPartyId;
 	}
 
@@ -257,8 +268,8 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 	 * @generated
 	 */
 	@Override
-	public void setCarrierPartyId(String newCarrierPartyId) {
-		String oldCarrierPartyId = carrierPartyId;
+	public void setCarrierPartyId(Party newCarrierPartyId) {
+		Party oldCarrierPartyId = carrierPartyId;
 		carrierPartyId = newCarrierPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID, oldCarrierPartyId, carrierPartyId));
@@ -274,14 +285,15 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 		switch (featureID) {
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__PARTY_ID:
 				return getPartyId();
-			case PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID:
-				return getCarrierPartyId();
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__FROM_DATE:
 				return getFromDate();
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__ACCOUNT_NUMBER:
 				return getAccountNumber();
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__THRU_DATE:
 				return getThruDate();
+			case PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID:
+				if (resolve) return getCarrierPartyId();
+				return basicGetCarrierPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,9 +309,6 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID:
-				setCarrierPartyId((String)newValue);
-				return;
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -308,6 +317,9 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 				return;
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID:
+				setCarrierPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -324,9 +336,6 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID:
-				setCarrierPartyId(CARRIER_PARTY_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -335,6 +344,9 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 				return;
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID:
+				setCarrierPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -350,14 +362,14 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 		switch (featureID) {
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID:
-				return CARRIER_PARTY_ID_EDEFAULT == null ? carrierPartyId != null : !CARRIER_PARTY_ID_EDEFAULT.equals(carrierPartyId);
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__ACCOUNT_NUMBER:
 				return ACCOUNT_NUMBER_EDEFAULT == null ? accountNumber != null : !ACCOUNT_NUMBER_EDEFAULT.equals(accountNumber);
 			case PartyPackage.PARTY_CARRIER_ACCOUNT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PartyPackage.PARTY_CARRIER_ACCOUNT__CARRIER_PARTY_ID:
+				return carrierPartyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,8 +386,6 @@ public class PartyCarrierAccountImpl extends BizEntityImpl implements PartyCarri
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", carrierPartyId: ");
-		result.append(carrierPartyId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", accountNumber: ");

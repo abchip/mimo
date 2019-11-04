@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface UserPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-common-user";
+	String eNS_PREFIX = "biz-user";
 
 	/**
 	 * The singleton instance of the package.
@@ -207,22 +208,22 @@ public interface UserPackage extends EPackage {
 	int USER_PREFERENCE__USER_PREF_DATA_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>User Pref Group Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>User Pref Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER_PREFERENCE__USER_PREF_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int USER_PREFERENCE__USER_PREF_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>User Pref Group Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Preference</em>' class.
@@ -310,15 +311,15 @@ public interface UserPackage extends EPackage {
 	EAttribute getUserPreference_UserPrefDataType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.user.UserPreference#getUserPrefGroupTypeId <em>User Pref Group Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.user.UserPreference#getUserPrefGroupTypeId <em>User Pref Group Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User Pref Group Type Id</em>'.
+	 * @return the meta object for the reference '<em>User Pref Group Type Id</em>'.
 	 * @see org.abchip.mimo.biz.common.user.UserPreference#getUserPrefGroupTypeId()
 	 * @see #getUserPreference()
 	 * @generated
 	 */
-	EAttribute getUserPreference_UserPrefGroupTypeId();
+	EReference getUserPreference_UserPrefGroupTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.user.UserPreference#getUserPrefValue <em>User Pref Value</em>}'.
@@ -414,12 +415,12 @@ public interface UserPackage extends EPackage {
 		EAttribute USER_PREFERENCE__USER_PREF_DATA_TYPE = eINSTANCE.getUserPreference_UserPrefDataType();
 
 		/**
-		 * The meta object literal for the '<em><b>User Pref Group Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>User Pref Group Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID = eINSTANCE.getUserPreference_UserPrefGroupTypeId();
+		EReference USER_PREFERENCE__USER_PREF_GROUP_TYPE_ID = eINSTANCE.getUserPreference_UserPrefGroupTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>User Pref Value</b></em>' attribute feature.

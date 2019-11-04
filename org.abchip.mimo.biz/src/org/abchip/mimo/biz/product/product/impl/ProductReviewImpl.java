@@ -11,12 +11,18 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.abchip.mimo.biz.product.product.ProductPackage;
 import org.abchip.mimo.biz.product.product.ProductReview;
+import org.abchip.mimo.biz.product.store.ProductStore;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,12 +36,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductReviewId <em>Product Review Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#isPostedAnonymous <em>Posted Anonymous</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getPostedDateTime <em>Posted Date Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductRating <em>Product Rating</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductReview <em>Product Review</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getUserLoginId <em>User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.impl.ProductReviewImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -107,26 +113,6 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	protected Date postedDateTime = POSTED_DATE_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getProductRating() <em>Product Rating</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,64 +153,44 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	protected String productReview = PRODUCT_REVIEW_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductStoreId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_STORE_ID_EDEFAULT = null;
+	protected ProductStore productStoreId;
 
 	/**
-	 * The cached value of the '{@link #getProductStoreId() <em>Product Store Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProductStoreId()
+	 * @see #getProductId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
+	protected Product productId;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
+	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUserLoginId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USER_LOGIN_ID_EDEFAULT = null;
+	protected UserLogin userLoginId;
 
 	/**
-	 * The cached value of the '{@link #getUserLoginId() <em>User Login Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUserLoginId()
+	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String userLoginId = USER_LOGIN_ID_EDEFAULT;
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -366,7 +332,24 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 * @generated
 	 */
 	@Override
-	public String getProductStoreId() {
+	public ProductStore getProductStoreId() {
+		if (productStoreId != null && ((EObject)productStoreId).eIsProxy()) {
+			InternalEObject oldProductStoreId = (InternalEObject)productStoreId;
+			productStoreId = (ProductStore)eResolveProxy(oldProductStoreId);
+			if (productStoreId != oldProductStoreId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_REVIEW__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
+			}
+		}
+		return productStoreId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStore basicGetProductStoreId() {
 		return productStoreId;
 	}
 
@@ -376,8 +359,8 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 * @generated
 	 */
 	@Override
-	public void setProductStoreId(String newProductStoreId) {
-		String oldProductStoreId = productStoreId;
+	public void setProductStoreId(ProductStore newProductStoreId) {
+		ProductStore oldProductStoreId = productStoreId;
 		productStoreId = newProductStoreId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__PRODUCT_STORE_ID, oldProductStoreId, productStoreId));
@@ -389,7 +372,24 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_REVIEW__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -399,8 +399,8 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__STATUS_ID, oldStatusId, statusId));
@@ -412,7 +412,24 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 * @generated
 	 */
 	@Override
-	public String getUserLoginId() {
+	public UserLogin getUserLoginId() {
+		if (userLoginId != null && ((EObject)userLoginId).eIsProxy()) {
+			InternalEObject oldUserLoginId = (InternalEObject)userLoginId;
+			userLoginId = (UserLogin)eResolveProxy(oldUserLoginId);
+			if (userLoginId != oldUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_REVIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
+			}
+		}
+		return userLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetUserLoginId() {
 		return userLoginId;
 	}
 
@@ -422,8 +439,8 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 * @generated
 	 */
 	@Override
-	public void setUserLoginId(String newUserLoginId) {
-		String oldUserLoginId = userLoginId;
+	public void setUserLoginId(UserLogin newUserLoginId) {
+		UserLogin oldUserLoginId = userLoginId;
 		userLoginId = newUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__USER_LOGIN_ID, oldUserLoginId, userLoginId));
@@ -435,7 +452,24 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_REVIEW__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -445,8 +479,8 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_REVIEW__PRODUCT_ID, oldProductId, productId));
@@ -466,18 +500,22 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 				return isPostedAnonymous();
 			case ProductPackage.PRODUCT_REVIEW__POSTED_DATE_TIME:
 				return getPostedDateTime();
-			case ProductPackage.PRODUCT_REVIEW__PRODUCT_ID:
-				return getProductId();
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_RATING:
 				return getProductRating();
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_REVIEW:
 				return getProductReview();
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_STORE_ID:
-				return getProductStoreId();
-			case ProductPackage.PRODUCT_REVIEW__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getProductStoreId();
+				return basicGetProductStoreId();
+			case ProductPackage.PRODUCT_REVIEW__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
 			case ProductPackage.PRODUCT_REVIEW__USER_LOGIN_ID:
-				return getUserLoginId();
+				if (resolve) return getUserLoginId();
+				return basicGetUserLoginId();
+			case ProductPackage.PRODUCT_REVIEW__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -499,9 +537,6 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 			case ProductPackage.PRODUCT_REVIEW__POSTED_DATE_TIME:
 				setPostedDateTime((Date)newValue);
 				return;
-			case ProductPackage.PRODUCT_REVIEW__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_RATING:
 				setProductRating((BigDecimal)newValue);
 				return;
@@ -509,13 +544,16 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 				setProductReview((String)newValue);
 				return;
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_STORE_ID:
-				setProductStoreId((String)newValue);
+				setProductStoreId((ProductStore)newValue);
 				return;
-			case ProductPackage.PRODUCT_REVIEW__STATUS_ID:
-				setStatusId((String)newValue);
+			case ProductPackage.PRODUCT_REVIEW__PRODUCT_ID:
+				setProductId((Product)newValue);
 				return;
 			case ProductPackage.PRODUCT_REVIEW__USER_LOGIN_ID:
-				setUserLoginId((String)newValue);
+				setUserLoginId((UserLogin)newValue);
+				return;
+			case ProductPackage.PRODUCT_REVIEW__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -538,9 +576,6 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 			case ProductPackage.PRODUCT_REVIEW__POSTED_DATE_TIME:
 				setPostedDateTime(POSTED_DATE_TIME_EDEFAULT);
 				return;
-			case ProductPackage.PRODUCT_REVIEW__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_RATING:
 				setProductRating(PRODUCT_RATING_EDEFAULT);
 				return;
@@ -548,13 +583,16 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 				setProductReview(PRODUCT_REVIEW_EDEFAULT);
 				return;
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_STORE_ID:
-				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
+				setProductStoreId((ProductStore)null);
 				return;
-			case ProductPackage.PRODUCT_REVIEW__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+			case ProductPackage.PRODUCT_REVIEW__PRODUCT_ID:
+				setProductId((Product)null);
 				return;
 			case ProductPackage.PRODUCT_REVIEW__USER_LOGIN_ID:
-				setUserLoginId(USER_LOGIN_ID_EDEFAULT);
+				setUserLoginId((UserLogin)null);
+				return;
+			case ProductPackage.PRODUCT_REVIEW__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -574,18 +612,18 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 				return postedAnonymous != POSTED_ANONYMOUS_EDEFAULT;
 			case ProductPackage.PRODUCT_REVIEW__POSTED_DATE_TIME:
 				return POSTED_DATE_TIME_EDEFAULT == null ? postedDateTime != null : !POSTED_DATE_TIME_EDEFAULT.equals(postedDateTime);
-			case ProductPackage.PRODUCT_REVIEW__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_RATING:
 				return PRODUCT_RATING_EDEFAULT == null ? productRating != null : !PRODUCT_RATING_EDEFAULT.equals(productRating);
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_REVIEW:
 				return PRODUCT_REVIEW_EDEFAULT == null ? productReview != null : !PRODUCT_REVIEW_EDEFAULT.equals(productReview);
 			case ProductPackage.PRODUCT_REVIEW__PRODUCT_STORE_ID:
-				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
-			case ProductPackage.PRODUCT_REVIEW__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return productStoreId != null;
+			case ProductPackage.PRODUCT_REVIEW__PRODUCT_ID:
+				return productId != null;
 			case ProductPackage.PRODUCT_REVIEW__USER_LOGIN_ID:
-				return USER_LOGIN_ID_EDEFAULT == null ? userLoginId != null : !USER_LOGIN_ID_EDEFAULT.equals(userLoginId);
+				return userLoginId != null;
+			case ProductPackage.PRODUCT_REVIEW__STATUS_ID:
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -606,18 +644,10 @@ public class ProductReviewImpl extends BizEntityImpl implements ProductReview {
 		result.append(postedAnonymous);
 		result.append(", postedDateTime: ");
 		result.append(postedDateTime);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", productRating: ");
 		result.append(productRating);
 		result.append(", productReview: ");
 		result.append(productReview);
-		result.append(", productStoreId: ");
-		result.append(productStoreId);
-		result.append(", statusId: ");
-		result.append(statusId);
-		result.append(", userLoginId: ");
-		result.append(userLoginId);
 		result.append(')');
 		return result.toString();
 	}

@@ -75,7 +75,7 @@ public interface ShoppingListType extends BizEntityType<ShoppingList> {
 	 * @return the value of the '<em>Shopping List Type Id</em>' attribute.
 	 * @see #setShoppingListTypeId(String)
 	 * @see org.abchip.mimo.biz.order.shoppinglist.ShoppinglistPackage#getShoppingListType_ShoppingListTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

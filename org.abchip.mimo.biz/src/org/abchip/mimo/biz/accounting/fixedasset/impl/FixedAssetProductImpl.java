@@ -14,10 +14,14 @@ import java.util.Date;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProduct;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedAssetProductType;
 import org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,14 +33,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getFixedAssetProductTypeId <em>Fixed Asset Product Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getFixedAssetProductTypeId <em>Fixed Asset Product Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.impl.FixedAssetProductImpl#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,42 +69,6 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getFixedAssetProductTypeId() <em>Fixed Asset Product Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetProductTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_PRODUCT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFixedAssetProductTypeId() <em>Fixed Asset Product Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetProductTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetProductTypeId = FIXED_ASSET_PRODUCT_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -156,24 +124,6 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 */
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUANTITY_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuantityUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String quantityUomId = QUANTITY_UOM_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getSequenceNum() <em>Sequence Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -209,6 +159,33 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+	/**
+	 * The cached value of the '{@link #getFixedAssetProductTypeId() <em>Fixed Asset Product Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetProductTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAssetProductType fixedAssetProductTypeId;
+	/**
+	 * The cached value of the '{@link #getQuantityUomId() <em>Quantity Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantityUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom quantityUomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,7 +258,24 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -291,8 +285,8 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID, oldProductId, productId));
@@ -327,7 +321,24 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 * @generated
 	 */
 	@Override
-	public String getQuantityUomId() {
+	public Uom getQuantityUomId() {
+		if (quantityUomId != null && ((EObject)quantityUomId).eIsProxy()) {
+			InternalEObject oldQuantityUomId = (InternalEObject)quantityUomId;
+			quantityUomId = (Uom)eResolveProxy(oldQuantityUomId);
+			if (quantityUomId != oldQuantityUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
+			}
+		}
+		return quantityUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetQuantityUomId() {
 		return quantityUomId;
 	}
 
@@ -337,8 +348,8 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 * @generated
 	 */
 	@Override
-	public void setQuantityUomId(String newQuantityUomId) {
-		String oldQuantityUomId = quantityUomId;
+	public void setQuantityUomId(Uom newQuantityUomId) {
+		Uom oldQuantityUomId = quantityUomId;
 		quantityUomId = newQuantityUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID, oldQuantityUomId, quantityUomId));
@@ -419,7 +430,24 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetProductTypeId() {
+	public FixedAssetProductType getFixedAssetProductTypeId() {
+		if (fixedAssetProductTypeId != null && ((EObject)fixedAssetProductTypeId).eIsProxy()) {
+			InternalEObject oldFixedAssetProductTypeId = (InternalEObject)fixedAssetProductTypeId;
+			fixedAssetProductTypeId = (FixedAssetProductType)eResolveProxy(oldFixedAssetProductTypeId);
+			if (fixedAssetProductTypeId != oldFixedAssetProductTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID, oldFixedAssetProductTypeId, fixedAssetProductTypeId));
+			}
+		}
+		return fixedAssetProductTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAssetProductType basicGetFixedAssetProductTypeId() {
 		return fixedAssetProductTypeId;
 	}
 
@@ -429,8 +457,8 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetProductTypeId(String newFixedAssetProductTypeId) {
-		String oldFixedAssetProductTypeId = fixedAssetProductTypeId;
+	public void setFixedAssetProductTypeId(FixedAssetProductType newFixedAssetProductTypeId) {
+		FixedAssetProductType oldFixedAssetProductTypeId = fixedAssetProductTypeId;
 		fixedAssetProductTypeId = newFixedAssetProductTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID, oldFixedAssetProductTypeId, fixedAssetProductTypeId));
@@ -446,22 +474,25 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_ID:
 				return getFixedAssetId();
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID:
-				return getProductId();
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID:
-				return getFixedAssetProductTypeId();
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__FROM_DATE:
 				return getFromDate();
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__COMMENTS:
 				return getComments();
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY:
 				return getQuantity();
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID:
-				return getQuantityUomId();
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__SEQUENCE_NUM:
 				return getSequenceNum();
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__THRU_DATE:
 				return getThruDate();
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID:
+				if (resolve) return getFixedAssetProductTypeId();
+				return basicGetFixedAssetProductTypeId();
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID:
+				if (resolve) return getQuantityUomId();
+				return basicGetQuantityUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -477,12 +508,6 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_ID:
 				setFixedAssetId((String)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID:
-				setFixedAssetProductTypeId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -492,14 +517,20 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY:
 				setQuantity((BigDecimal)newValue);
 				return;
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID:
-				setQuantityUomId((String)newValue);
-				return;
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__SEQUENCE_NUM:
 				setSequenceNum((Long)newValue);
 				return;
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID:
+				setFixedAssetProductTypeId((FixedAssetProductType)newValue);
+				return;
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID:
+				setQuantityUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -516,12 +547,6 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_ID:
 				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID:
-				setFixedAssetProductTypeId(FIXED_ASSET_PRODUCT_TYPE_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -531,14 +556,20 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
 				return;
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID:
-				setQuantityUomId(QUANTITY_UOM_ID_EDEFAULT);
-				return;
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__SEQUENCE_NUM:
 				setSequenceNum(SEQUENCE_NUM_EDEFAULT);
 				return;
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID:
+				setFixedAssetProductTypeId((FixedAssetProductType)null);
+				return;
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID:
+				setQuantityUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -554,22 +585,22 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 		switch (featureID) {
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_ID:
 				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID:
-				return FIXED_ASSET_PRODUCT_TYPE_ID_EDEFAULT == null ? fixedAssetProductTypeId != null : !FIXED_ASSET_PRODUCT_TYPE_ID_EDEFAULT.equals(fixedAssetProductTypeId);
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__COMMENTS:
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
-			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID:
-				return QUANTITY_UOM_ID_EDEFAULT == null ? quantityUomId != null : !QUANTITY_UOM_ID_EDEFAULT.equals(quantityUomId);
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case FixedassetPackage.FIXED_ASSET_PRODUCT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__PRODUCT_ID:
+				return productId != null;
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__FIXED_ASSET_PRODUCT_TYPE_ID:
+				return fixedAssetProductTypeId != null;
+			case FixedassetPackage.FIXED_ASSET_PRODUCT__QUANTITY_UOM_ID:
+				return quantityUomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -586,18 +617,12 @@ public class FixedAssetProductImpl extends BizEntityTypedImpl<FixedAssetProductT
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (fixedAssetId: ");
 		result.append(fixedAssetId);
-		result.append(", productId: ");
-		result.append(productId);
-		result.append(", fixedAssetProductTypeId: ");
-		result.append(fixedAssetProductTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");
 		result.append(comments);
 		result.append(", quantity: ");
 		result.append(quantity);
-		result.append(", quantityUomId: ");
-		result.append(quantityUomId);
 		result.append(", sequenceNum: ");
 		result.append(sequenceNum);
 		result.append(", thruDate: ");

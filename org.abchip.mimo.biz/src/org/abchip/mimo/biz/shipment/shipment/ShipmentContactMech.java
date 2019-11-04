@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.shipment.shipment;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.party.contact.ContactMech;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,8 +20,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentId <em>Shipment Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentContactMechTypeId <em>Shipment Contact Mech Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentContactMechTypeId <em>Shipment Contact Mech Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech()
@@ -29,57 +30,56 @@ import org.abchip.mimo.biz.BizEntityTyped;
  */
 public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechType> {
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(ContactMech)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech_ContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	ContactMech getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(ContactMech value);
 
 	/**
-	 * Returns the value of the '<em><b>Shipment Contact Mech Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Shipment Contact Mech Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Shipment Contact Mech Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Shipment Contact Mech Type Id</em>' attribute.
-	 * @see #setShipmentContactMechTypeId(String)
+	 * @return the value of the '<em>Shipment Contact Mech Type Id</em>' reference.
+	 * @see #setShipmentContactMechTypeId(ShipmentContactMechType)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech_ShipmentContactMechTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ShipmentContactMechType'"
+	 * @model keys="shipmentContactMechTypeId"
 	 * @generated
 	 */
-	String getShipmentContactMechTypeId();
+	ShipmentContactMechType getShipmentContactMechTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentContactMechTypeId <em>Shipment Contact Mech Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentContactMech#getShipmentContactMechTypeId <em>Shipment Contact Mech Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Shipment Contact Mech Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Shipment Contact Mech Type Id</em>' reference.
 	 * @see #getShipmentContactMechTypeId()
 	 * @generated
 	 */
-	void setShipmentContactMechTypeId(String value);
+	void setShipmentContactMechTypeId(ShipmentContactMechType value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipment Id</b></em>' attribute.
@@ -92,8 +92,8 @@ public interface ShipmentContactMech extends BizEntityTyped<ShipmentContactMechT
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMech_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentId();

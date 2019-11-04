@@ -11,14 +11,18 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.humanres.position.EmplPosition;
 import org.abchip.mimo.biz.humanres.position.EmplPositionType;
 import org.abchip.mimo.biz.humanres.position.PositionPackage;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -34,15 +38,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getActualThruDate <em>Actual Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getBudgetId <em>Budget Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getBudgetItemSeqId <em>Budget Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getEstimatedFromDate <em>Estimated From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getEstimatedThruDate <em>Estimated Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#isExemptFlag <em>Exempt Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#isFulltimeFlag <em>Fulltime Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#isSalaryFlag <em>Salary Flag</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#isTemporaryFlag <em>Temporary Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.position.impl.EmplPositionImpl#getEmplPositionTypeId <em>Empl Position Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -154,26 +158,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	protected String budgetItemSeqId = BUDGET_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPL_POSITION_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emplPositionTypeId = EMPL_POSITION_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getEstimatedFromDate() <em>Estimated From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -254,26 +238,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	protected boolean fulltimeFlag = FULLTIME_FLAG_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isSalaryFlag() <em>Salary Flag</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -294,26 +258,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	protected boolean salaryFlag = SALARY_FLAG_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isTemporaryFlag() <em>Temporary Flag</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -332,6 +276,36 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @ordered
 	 */
 	protected boolean temporaryFlag = TEMPORARY_FLAG_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
+	 * The cached value of the '{@link #getEmplPositionTypeId() <em>Empl Position Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmplPositionTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EmplPositionType emplPositionTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -473,7 +447,24 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getEmplPositionTypeId() {
+	public EmplPositionType getEmplPositionTypeId() {
+		if (emplPositionTypeId != null && ((EObject)emplPositionTypeId).eIsProxy()) {
+			InternalEObject oldEmplPositionTypeId = (InternalEObject)emplPositionTypeId;
+			emplPositionTypeId = (EmplPositionType)eResolveProxy(oldEmplPositionTypeId);
+			if (emplPositionTypeId != oldEmplPositionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
+			}
+		}
+		return emplPositionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmplPositionType basicGetEmplPositionTypeId() {
 		return emplPositionTypeId;
 	}
 
@@ -483,8 +474,8 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setEmplPositionTypeId(String newEmplPositionTypeId) {
-		String oldEmplPositionTypeId = emplPositionTypeId;
+	public void setEmplPositionTypeId(EmplPositionType newEmplPositionTypeId) {
+		EmplPositionType oldEmplPositionTypeId = emplPositionTypeId;
 		emplPositionTypeId = newEmplPositionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID, oldEmplPositionTypeId, emplPositionTypeId));
@@ -588,7 +579,24 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -598,8 +606,8 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__PARTY_ID, oldPartyId, partyId));
@@ -634,7 +642,24 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PositionPackage.EMPL_POSITION__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -644,8 +669,8 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PositionPackage.EMPL_POSITION__STATUS_ID, oldStatusId, statusId));
@@ -704,8 +729,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 				return getBudgetId();
 			case PositionPackage.EMPL_POSITION__BUDGET_ITEM_SEQ_ID:
 				return getBudgetItemSeqId();
-			case PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID:
-				return getEmplPositionTypeId();
 			case PositionPackage.EMPL_POSITION__ESTIMATED_FROM_DATE:
 				return getEstimatedFromDate();
 			case PositionPackage.EMPL_POSITION__ESTIMATED_THRU_DATE:
@@ -714,14 +737,19 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 				return isExemptFlag();
 			case PositionPackage.EMPL_POSITION__FULLTIME_FLAG:
 				return isFulltimeFlag();
-			case PositionPackage.EMPL_POSITION__PARTY_ID:
-				return getPartyId();
 			case PositionPackage.EMPL_POSITION__SALARY_FLAG:
 				return isSalaryFlag();
-			case PositionPackage.EMPL_POSITION__STATUS_ID:
-				return getStatusId();
 			case PositionPackage.EMPL_POSITION__TEMPORARY_FLAG:
 				return isTemporaryFlag();
+			case PositionPackage.EMPL_POSITION__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case PositionPackage.EMPL_POSITION__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID:
+				if (resolve) return getEmplPositionTypeId();
+				return basicGetEmplPositionTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -749,9 +777,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 			case PositionPackage.EMPL_POSITION__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId((String)newValue);
 				return;
-			case PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId((String)newValue);
-				return;
 			case PositionPackage.EMPL_POSITION__ESTIMATED_FROM_DATE:
 				setEstimatedFromDate((Date)newValue);
 				return;
@@ -764,17 +789,20 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 			case PositionPackage.EMPL_POSITION__FULLTIME_FLAG:
 				setFulltimeFlag((Boolean)newValue);
 				return;
-			case PositionPackage.EMPL_POSITION__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case PositionPackage.EMPL_POSITION__SALARY_FLAG:
 				setSalaryFlag((Boolean)newValue);
 				return;
-			case PositionPackage.EMPL_POSITION__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case PositionPackage.EMPL_POSITION__TEMPORARY_FLAG:
 				setTemporaryFlag((Boolean)newValue);
+				return;
+			case PositionPackage.EMPL_POSITION__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case PositionPackage.EMPL_POSITION__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -803,9 +831,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 			case PositionPackage.EMPL_POSITION__BUDGET_ITEM_SEQ_ID:
 				setBudgetItemSeqId(BUDGET_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID:
-				setEmplPositionTypeId(EMPL_POSITION_TYPE_ID_EDEFAULT);
-				return;
 			case PositionPackage.EMPL_POSITION__ESTIMATED_FROM_DATE:
 				setEstimatedFromDate(ESTIMATED_FROM_DATE_EDEFAULT);
 				return;
@@ -818,17 +843,20 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 			case PositionPackage.EMPL_POSITION__FULLTIME_FLAG:
 				setFulltimeFlag(FULLTIME_FLAG_EDEFAULT);
 				return;
-			case PositionPackage.EMPL_POSITION__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case PositionPackage.EMPL_POSITION__SALARY_FLAG:
 				setSalaryFlag(SALARY_FLAG_EDEFAULT);
 				return;
-			case PositionPackage.EMPL_POSITION__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case PositionPackage.EMPL_POSITION__TEMPORARY_FLAG:
 				setTemporaryFlag(TEMPORARY_FLAG_EDEFAULT);
+				return;
+			case PositionPackage.EMPL_POSITION__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case PositionPackage.EMPL_POSITION__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID:
+				setEmplPositionTypeId((EmplPositionType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -852,8 +880,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 				return BUDGET_ID_EDEFAULT == null ? budgetId != null : !BUDGET_ID_EDEFAULT.equals(budgetId);
 			case PositionPackage.EMPL_POSITION__BUDGET_ITEM_SEQ_ID:
 				return BUDGET_ITEM_SEQ_ID_EDEFAULT == null ? budgetItemSeqId != null : !BUDGET_ITEM_SEQ_ID_EDEFAULT.equals(budgetItemSeqId);
-			case PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID:
-				return EMPL_POSITION_TYPE_ID_EDEFAULT == null ? emplPositionTypeId != null : !EMPL_POSITION_TYPE_ID_EDEFAULT.equals(emplPositionTypeId);
 			case PositionPackage.EMPL_POSITION__ESTIMATED_FROM_DATE:
 				return ESTIMATED_FROM_DATE_EDEFAULT == null ? estimatedFromDate != null : !ESTIMATED_FROM_DATE_EDEFAULT.equals(estimatedFromDate);
 			case PositionPackage.EMPL_POSITION__ESTIMATED_THRU_DATE:
@@ -862,14 +888,16 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 				return exemptFlag != EXEMPT_FLAG_EDEFAULT;
 			case PositionPackage.EMPL_POSITION__FULLTIME_FLAG:
 				return fulltimeFlag != FULLTIME_FLAG_EDEFAULT;
-			case PositionPackage.EMPL_POSITION__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case PositionPackage.EMPL_POSITION__SALARY_FLAG:
 				return salaryFlag != SALARY_FLAG_EDEFAULT;
-			case PositionPackage.EMPL_POSITION__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case PositionPackage.EMPL_POSITION__TEMPORARY_FLAG:
 				return temporaryFlag != TEMPORARY_FLAG_EDEFAULT;
+			case PositionPackage.EMPL_POSITION__STATUS_ID:
+				return statusId != null;
+			case PositionPackage.EMPL_POSITION__PARTY_ID:
+				return partyId != null;
+			case PositionPackage.EMPL_POSITION__EMPL_POSITION_TYPE_ID:
+				return emplPositionTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -894,8 +922,6 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 		result.append(budgetId);
 		result.append(", budgetItemSeqId: ");
 		result.append(budgetItemSeqId);
-		result.append(", emplPositionTypeId: ");
-		result.append(emplPositionTypeId);
 		result.append(", estimatedFromDate: ");
 		result.append(estimatedFromDate);
 		result.append(", estimatedThruDate: ");
@@ -904,12 +930,8 @@ public class EmplPositionImpl extends BizEntityTypedImpl<EmplPositionType> imple
 		result.append(exemptFlag);
 		result.append(", fulltimeFlag: ");
 		result.append(fulltimeFlag);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", salaryFlag: ");
 		result.append(salaryFlag);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", temporaryFlag: ");
 		result.append(temporaryFlag);
 		result.append(')');

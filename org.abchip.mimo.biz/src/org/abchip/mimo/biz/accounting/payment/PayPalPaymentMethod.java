@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.accounting.payment;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.contact.PostalAddress;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,12 +22,12 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPaymentMethodId <em>Payment Method Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#isAvsAddr <em>Avs Addr</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#isAvsZip <em>Avs Zip</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getCorrelationId <em>Correlation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getExpressCheckoutToken <em>Express Checkout Token</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPayerId <em>Payer Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getPayerStatus <em>Payer Status</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getTransactionId <em>Transaction Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getContactMechId <em>Contact Mech Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod()
@@ -35,30 +36,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface PayPalPaymentMethod extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contact Mech Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Mech Id</em>' attribute.
-	 * @see #setContactMechId(String)
+	 * @return the value of the '<em>Contact Mech Id</em>' reference.
+	 * @see #setContactMechId(PostalAddress)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_ContactMechId()
-	 * @model annotation="mimo-ent-domain frame='ContactMech'"
+	 * @model keys="contactMechId"
 	 * @generated
 	 */
-	String getContactMechId();
+	PostalAddress getContactMechId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getContactMechId <em>Contact Mech Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getContactMechId <em>Contact Mech Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Mech Id</em>' attribute.
+	 * @param value the new value of the '<em>Contact Mech Id</em>' reference.
 	 * @see #getContactMechId()
 	 * @generated
 	 */
-	void setContactMechId(String value);
+	void setContactMechId(PostalAddress value);
 
 	/**
 	 * Returns the value of the '<em><b>Correlation Id</b></em>' attribute.
@@ -175,9 +176,8 @@ public interface PayPalPaymentMethod extends BizEntity {
 	 * @return the value of the '<em>Payment Method Id</em>' attribute.
 	 * @see #setPaymentMethodId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPayPalPaymentMethod_PaymentMethodId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentMethod'"
 	 * @generated
 	 */
 	String getPaymentMethodId();

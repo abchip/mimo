@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface DocumentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-content-document";
+	String eNS_PREFIX = "biz-document";
 
 	/**
 	 * The singleton instance of the package.
@@ -152,22 +153,22 @@ public interface DocumentPackage extends EPackage {
 	int DOCUMENT__DOCUMENT_TEXT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Document Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOCUMENT__DOCUMENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Image Data</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT__IMAGE_DATA = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int DOCUMENT__IMAGE_DATA = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Document Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT__DOCUMENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Document Attributes</b></em>' attribute list.
@@ -361,7 +362,7 @@ public interface DocumentPackage extends EPackage {
 	int DOCUMENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -536,15 +537,15 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getDocument_DocumentText();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.document.Document#getDocumentTypeId <em>Document Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.document.Document#getDocumentTypeId <em>Document Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Document Type Id</em>'.
+	 * @return the meta object for the reference '<em>Document Type Id</em>'.
 	 * @see org.abchip.mimo.biz.content.document.Document#getDocumentTypeId()
 	 * @see #getDocument()
 	 * @generated
 	 */
-	EAttribute getDocument_DocumentTypeId();
+	EReference getDocument_DocumentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.document.Document#getImageData <em>Image Data</em>}'.
@@ -666,15 +667,15 @@ public interface DocumentPackage extends EPackage {
 	EAttribute getDocumentType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.content.document.DocumentType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.content.document.DocumentType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.content.document.DocumentType#getParentTypeId()
 	 * @see #getDocumentType()
 	 * @generated
 	 */
-	EAttribute getDocumentType_ParentTypeId();
+	EReference getDocumentType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.content.document.DocumentType#getDocumentTypeAttrs <em>Document Type Attrs</em>}'.
@@ -803,12 +804,12 @@ public interface DocumentPackage extends EPackage {
 		EAttribute DOCUMENT__DOCUMENT_TEXT = eINSTANCE.getDocument_DocumentText();
 
 		/**
-		 * The meta object literal for the '<em><b>Document Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Document Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOCUMENT__DOCUMENT_TYPE_ID = eINSTANCE.getDocument_DocumentTypeId();
+		EReference DOCUMENT__DOCUMENT_TYPE_ID = eINSTANCE.getDocument_DocumentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Image Data</b></em>' attribute feature.
@@ -903,12 +904,12 @@ public interface DocumentPackage extends EPackage {
 		EAttribute DOCUMENT_TYPE__HAS_TABLE = eINSTANCE.getDocumentType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOCUMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getDocumentType_ParentTypeId();
+		EReference DOCUMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getDocumentType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Document Type Attrs</b></em>' attribute list feature.

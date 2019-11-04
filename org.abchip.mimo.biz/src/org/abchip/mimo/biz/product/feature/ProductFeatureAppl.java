@@ -23,13 +23,13 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureApplTypeId <em>Product Feature Appl Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getRecurringAmount <em>Recurring Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureApplTypeId <em>Product Feature Appl Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl()
@@ -74,7 +74,8 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -100,8 +101,8 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();
@@ -195,56 +196,55 @@ public interface ProductFeatureAppl extends BizEntityTyped<ProductFeatureApplTyp
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Appl Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Appl Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Appl Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Appl Type Id</em>' attribute.
-	 * @see #setProductFeatureApplTypeId(String)
+	 * @return the value of the '<em>Product Feature Appl Type Id</em>' reference.
+	 * @see #setProductFeatureApplTypeId(ProductFeatureApplType)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ProductFeatureApplTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProductFeatureApplType'"
+	 * @model keys="productFeatureApplTypeId"
 	 * @generated
 	 */
-	String getProductFeatureApplTypeId();
+	ProductFeatureApplType getProductFeatureApplTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureApplTypeId <em>Product Feature Appl Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureApplTypeId <em>Product Feature Appl Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Appl Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Appl Type Id</em>' reference.
 	 * @see #getProductFeatureApplTypeId()
 	 * @generated
 	 */
-	void setProductFeatureApplTypeId(String value);
+	void setProductFeatureApplTypeId(ProductFeatureApplType value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Id</em>' attribute.
-	 * @see #setProductFeatureId(String)
+	 * @return the value of the '<em>Product Feature Id</em>' reference.
+	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.product.feature.FeaturePackage#getProductFeatureAppl_ProductFeatureId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductFeature'"
+	 * @model keys="productFeatureId"
 	 * @generated
 	 */
-	String getProductFeatureId();
+	ProductFeature getProductFeatureId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureId <em>Product Feature Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.feature.ProductFeatureAppl#getProductFeatureId <em>Product Feature Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Id</em>' reference.
 	 * @see #getProductFeatureId()
 	 * @generated
 	 */
-	void setProductFeatureId(String value);
+	void setProductFeatureId(ProductFeature value);
 
 } // ProductFeatureAppl

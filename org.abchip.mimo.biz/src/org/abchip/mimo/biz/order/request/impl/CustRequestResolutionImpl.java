@@ -11,11 +11,14 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.request.CustRequestResolution;
+import org.abchip.mimo.biz.order.request.CustRequestType;
 import org.abchip.mimo.biz.order.request.RequestPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,8 +30,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestResolutionImpl#getCustRequestResolutionId <em>Cust Request Resolution Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestResolutionImpl#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestResolutionImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.request.impl.CustRequestResolutionImpl#getCustRequestTypeId <em>Cust Request Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,26 +63,6 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 	protected String custRequestResolutionId = CUST_REQUEST_RESOLUTION_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCustRequestTypeId() <em>Cust Request Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUST_REQUEST_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestTypeId() <em>Cust Request Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestTypeId = CUST_REQUEST_TYPE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,6 +81,16 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCustRequestTypeId() <em>Cust Request Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustRequestTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CustRequestType custRequestTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,7 +140,24 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 	 * @generated
 	 */
 	@Override
-	public String getCustRequestTypeId() {
+	public CustRequestType getCustRequestTypeId() {
+		if (custRequestTypeId != null && ((EObject)custRequestTypeId).eIsProxy()) {
+			InternalEObject oldCustRequestTypeId = (InternalEObject)custRequestTypeId;
+			custRequestTypeId = (CustRequestType)eResolveProxy(oldCustRequestTypeId);
+			if (custRequestTypeId != oldCustRequestTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID, oldCustRequestTypeId, custRequestTypeId));
+			}
+		}
+		return custRequestTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequestType basicGetCustRequestTypeId() {
 		return custRequestTypeId;
 	}
 
@@ -157,8 +167,8 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 	 * @generated
 	 */
 	@Override
-	public void setCustRequestTypeId(String newCustRequestTypeId) {
-		String oldCustRequestTypeId = custRequestTypeId;
+	public void setCustRequestTypeId(CustRequestType newCustRequestTypeId) {
+		CustRequestType oldCustRequestTypeId = custRequestTypeId;
 		custRequestTypeId = newCustRequestTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID, oldCustRequestTypeId, custRequestTypeId));
@@ -209,10 +219,11 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_RESOLUTION_ID:
 				return getCustRequestResolutionId();
-			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID:
-				return getCustRequestTypeId();
 			case RequestPackage.CUST_REQUEST_RESOLUTION__DESCRIPTION:
 				return getDescription();
+			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID:
+				if (resolve) return getCustRequestTypeId();
+				return basicGetCustRequestTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,11 +239,11 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_RESOLUTION_ID:
 				setCustRequestResolutionId((String)newValue);
 				return;
-			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID:
-				setCustRequestTypeId((String)newValue);
-				return;
 			case RequestPackage.CUST_REQUEST_RESOLUTION__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID:
+				setCustRequestTypeId((CustRequestType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -249,11 +260,11 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_RESOLUTION_ID:
 				setCustRequestResolutionId(CUST_REQUEST_RESOLUTION_ID_EDEFAULT);
 				return;
-			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID:
-				setCustRequestTypeId(CUST_REQUEST_TYPE_ID_EDEFAULT);
-				return;
 			case RequestPackage.CUST_REQUEST_RESOLUTION__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID:
+				setCustRequestTypeId((CustRequestType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -269,10 +280,10 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 		switch (featureID) {
 			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_RESOLUTION_ID:
 				return CUST_REQUEST_RESOLUTION_ID_EDEFAULT == null ? custRequestResolutionId != null : !CUST_REQUEST_RESOLUTION_ID_EDEFAULT.equals(custRequestResolutionId);
-			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID:
-				return CUST_REQUEST_TYPE_ID_EDEFAULT == null ? custRequestTypeId != null : !CUST_REQUEST_TYPE_ID_EDEFAULT.equals(custRequestTypeId);
 			case RequestPackage.CUST_REQUEST_RESOLUTION__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case RequestPackage.CUST_REQUEST_RESOLUTION__CUST_REQUEST_TYPE_ID:
+				return custRequestTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -289,8 +300,6 @@ public class CustRequestResolutionImpl extends BizEntityImpl implements CustRequ
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (custRequestResolutionId: ");
 		result.append(custRequestResolutionId);
-		result.append(", custRequestTypeId: ");
-		result.append(custRequestTypeId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

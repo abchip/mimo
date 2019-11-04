@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.security.login;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,12 +23,12 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getUserLoginId <em>User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId <em>Origin User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPasswordUsed <em>Password Used</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#isSuccessfulLogin <em>Successful Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId <em>Origin User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory()
@@ -63,56 +64,56 @@ public interface UserLoginHistory extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Origin User Login Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Origin User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Origin User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Origin User Login Id</em>' attribute.
-	 * @see #setOriginUserLoginId(String)
+	 * @return the value of the '<em>Origin User Login Id</em>' reference.
+	 * @see #setOriginUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_OriginUserLoginId()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getOriginUserLoginId();
+	UserLogin getOriginUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId <em>Origin User Login Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getOriginUserLoginId <em>Origin User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Origin User Login Id</em>' attribute.
+	 * @param value the new value of the '<em>Origin User Login Id</em>' reference.
 	 * @see #getOriginUserLoginId()
 	 * @generated
 	 */
-	void setOriginUserLoginId(String value);
+	void setOriginUserLoginId(UserLogin value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLoginHistory#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Password Used</b></em>' attribute.
@@ -205,7 +206,6 @@ public interface UserLoginHistory extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLoginHistory_UserLoginId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='UserLogin'"
 	 * @generated
 	 */
 	String getUserLoginId();

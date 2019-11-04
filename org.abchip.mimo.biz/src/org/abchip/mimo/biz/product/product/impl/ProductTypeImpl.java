@@ -18,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -147,24 +149,14 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	protected boolean isPhysical = IS_PHYSICAL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected ProductType parentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getProductTypeAttrs() <em>Product Type Attrs</em>}' attribute list.
@@ -293,7 +285,24 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public ProductType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (ProductType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.PRODUCT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -303,8 +312,8 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(ProductType newParentTypeId) {
+		ProductType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PRODUCT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -389,7 +398,8 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 			case ProductPackage.PRODUCT_TYPE__IS_PHYSICAL:
 				return isIsPhysical();
 			case ProductPackage.PRODUCT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case ProductPackage.PRODUCT_TYPE__PRODUCT_TYPE_ATTRS:
 				return getProductTypeAttrs();
 		}
@@ -421,7 +431,7 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 				setIsPhysical((Boolean)newValue);
 				return;
 			case ProductPackage.PRODUCT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((ProductType)newValue);
 				return;
 			case ProductPackage.PRODUCT_TYPE__PRODUCT_TYPE_ATTRS:
 				getProductTypeAttrs().clear();
@@ -455,7 +465,7 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 				setIsPhysical(IS_PHYSICAL_EDEFAULT);
 				return;
 			case ProductPackage.PRODUCT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((ProductType)null);
 				return;
 			case ProductPackage.PRODUCT_TYPE__PRODUCT_TYPE_ATTRS:
 				getProductTypeAttrs().clear();
@@ -483,7 +493,7 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 			case ProductPackage.PRODUCT_TYPE__IS_PHYSICAL:
 				return isPhysical != IS_PHYSICAL_EDEFAULT;
 			case ProductPackage.PRODUCT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case ProductPackage.PRODUCT_TYPE__PRODUCT_TYPE_ATTRS:
 				return productTypeAttrs != null && !productTypeAttrs.isEmpty();
 		}
@@ -510,8 +520,6 @@ public class ProductTypeImpl extends BizEntityTypeImpl<Product> implements Produ
 		result.append(isDigital);
 		result.append(", isPhysical: ");
 		result.append(isPhysical);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", productTypeAttrs: ");
 		result.append(productTypeAttrs);
 		result.append(')');

@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.product.store;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +20,6 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getBccAddress <em>Bcc Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getBodyScreenLocation <em>Body Screen Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getCcAddress <em>Cc Address</em>}</li>
@@ -27,6 +27,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getFromAddress <em>From Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getXslfoAttachScreenLocation <em>Xslfo Attach Screen Location</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting()
@@ -139,31 +140,30 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	void setContentType(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Email Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Email Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Email Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Email Type</em>' attribute.
-	 * @see #setEmailType(String)
+	 * @return the value of the '<em>Email Type</em>' reference.
+	 * @see #setEmailType(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_EmailType()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getEmailType();
+	Enumeration getEmailType();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getEmailType <em>Email Type</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreEmailSetting#getEmailType <em>Email Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Email Type</em>' attribute.
+	 * @param value the new value of the '<em>Email Type</em>' reference.
 	 * @see #getEmailType()
 	 * @generated
 	 */
-	void setEmailType(String value);
+	void setEmailType(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>From Address</b></em>' attribute.
@@ -254,8 +254,8 @@ public interface ProductStoreEmailSetting extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreEmailSetting_ProductStoreId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreId();

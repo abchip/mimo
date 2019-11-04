@@ -25,8 +25,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoCode <em>Geo Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoName <em>Geo Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoSecCode <em>Geo Sec Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoTypeId <em>Geo Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getWellKnownText <em>Well Known Text</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getGeoTypeId <em>Geo Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getMainGeoAssocs <em>Main Geo Assocs</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.geo.Geo#getTaxAuthTaxAuthorities <em>Tax Auth Tax Authorities</em>}</li>
  * </ul>
@@ -435,30 +435,30 @@ public interface Geo extends BizEntityTyped<GeoType> {
 	List<String> toShipmentCostEstimates();
 
 	/**
-	 * Returns the value of the '<em><b>Geo Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Geo Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Geo Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Geo Type Id</em>' attribute.
-	 * @see #setGeoTypeId(String)
+	 * @return the value of the '<em>Geo Type Id</em>' reference.
+	 * @see #setGeoTypeId(GeoType)
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getGeo_GeoTypeId()
-	 * @model annotation="mimo-ent-domain frame='GeoType'"
+	 * @model keys="geoTypeId"
 	 * @generated
 	 */
-	String getGeoTypeId();
+	GeoType getGeoTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.Geo#getGeoTypeId <em>Geo Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.geo.Geo#getGeoTypeId <em>Geo Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Geo Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Geo Type Id</em>' reference.
 	 * @see #getGeoTypeId()
 	 * @generated
 	 */
-	void setGeoTypeId(String value);
+	void setGeoTypeId(GeoType value);
 
 	/**
 	 * Returns the value of the '<em><b>Geo Id</b></em>' attribute.

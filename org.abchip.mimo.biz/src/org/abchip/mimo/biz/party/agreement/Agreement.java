@@ -11,6 +11,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,16 +26,16 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementDate <em>Agreement Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementTypeId <em>Agreement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdTo <em>Party Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getTextData <em>Text Data</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdFrom <em>Party Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementTypeId <em>Agreement Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementAttributes <em>Agreement Attributes</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementItems <em>Agreement Items</em>}</li>
  * </ul>
@@ -121,134 +124,134 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id From</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id From</em>' attribute.
-	 * @see #setPartyIdFrom(String)
+	 * @return the value of the '<em>Party Id From</em>' reference.
+	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_PartyIdFrom()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdFrom();
+	Party getPartyIdFrom();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdFrom <em>Party Id From</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdFrom <em>Party Id From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id From</em>' attribute.
+	 * @param value the new value of the '<em>Party Id From</em>' reference.
 	 * @see #getPartyIdFrom()
 	 * @generated
 	 */
-	void setPartyIdFrom(String value);
+	void setPartyIdFrom(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id To</em>' attribute.
-	 * @see #setPartyIdTo(String)
+	 * @return the value of the '<em>Party Id To</em>' reference.
+	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_PartyIdTo()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdTo();
+	Party getPartyIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdTo <em>Party Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getPartyIdTo <em>Party Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id To</em>' attribute.
+	 * @param value the new value of the '<em>Party Id To</em>' reference.
 	 * @see #getPartyIdTo()
 	 * @generated
 	 */
-	void setPartyIdTo(String value);
+	void setPartyIdTo(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Id</em>' attribute.
-	 * @see #setProductId(String)
+	 * @return the value of the '<em>Product Id</em>' reference.
+	 * @see #setProductId(Product)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_ProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getProductId();
+	Product getProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getProductId <em>Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getProductId <em>Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Id</em>' reference.
 	 * @see #getProductId()
 	 * @generated
 	 */
-	void setProductId(String value);
+	void setProductId(Product value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id From</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id From</em>' attribute.
-	 * @see #setRoleTypeIdFrom(String)
+	 * @return the value of the '<em>Role Type Id From</em>' reference.
+	 * @see #setRoleTypeIdFrom(RoleType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_RoleTypeIdFrom()
-	 * @model annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeIdFrom();
+	RoleType getRoleTypeIdFrom();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdFrom <em>Role Type Id From</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdFrom <em>Role Type Id From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id From</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id From</em>' reference.
 	 * @see #getRoleTypeIdFrom()
 	 * @generated
 	 */
-	void setRoleTypeIdFrom(String value);
+	void setRoleTypeIdFrom(RoleType value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id To</em>' attribute.
-	 * @see #setRoleTypeIdTo(String)
+	 * @return the value of the '<em>Role Type Id To</em>' reference.
+	 * @see #setRoleTypeIdTo(RoleType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_RoleTypeIdTo()
-	 * @model annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeIdTo();
+	RoleType getRoleTypeIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdTo <em>Role Type Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getRoleTypeIdTo <em>Role Type Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id To</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id To</em>' reference.
 	 * @see #getRoleTypeIdTo()
 	 * @generated
 	 */
-	void setRoleTypeIdTo(String value);
+	void setRoleTypeIdTo(RoleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Text Data</b></em>' attribute.
@@ -364,30 +367,30 @@ public interface Agreement extends BizEntityTyped<AgreementType> {
 	List<String> supplierOrderItemShipGroups();
 
 	/**
-	 * Returns the value of the '<em><b>Agreement Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Agreement Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agreement Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agreement Type Id</em>' attribute.
-	 * @see #setAgreementTypeId(String)
+	 * @return the value of the '<em>Agreement Type Id</em>' reference.
+	 * @see #setAgreementTypeId(AgreementType)
 	 * @see org.abchip.mimo.biz.party.agreement.AgreementPackage#getAgreement_AgreementTypeId()
-	 * @model annotation="mimo-ent-domain frame='AgreementType'"
+	 * @model keys="agreementTypeId"
 	 * @generated
 	 */
-	String getAgreementTypeId();
+	AgreementType getAgreementTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementTypeId <em>Agreement Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.agreement.Agreement#getAgreementTypeId <em>Agreement Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agreement Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Agreement Type Id</em>' reference.
 	 * @see #getAgreementTypeId()
 	 * @generated
 	 */
-	void setAgreementTypeId(String value);
+	void setAgreementTypeId(AgreementType value);
 
 	/**
 	 * Returns the value of the '<em><b>Agreement Id</b></em>' attribute.

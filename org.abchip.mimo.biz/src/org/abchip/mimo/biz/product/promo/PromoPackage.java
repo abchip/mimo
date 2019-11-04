@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface PromoPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-product-promo";
+	String eNS_PREFIX = "biz-promo";
 
 	/**
 	 * The singleton instance of the package.
@@ -125,31 +126,13 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO__BILLBACK_FACTOR = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Created By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Created Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__CREATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PRODUCT_PROMO__CREATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified Date</b></em>' attribute.
@@ -158,16 +141,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Override Org Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_PROMO__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Promo Name</b></em>' attribute.
@@ -176,7 +150,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__PROMO_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PRODUCT_PROMO__PROMO_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Promo Text</b></em>' attribute.
@@ -185,7 +159,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__PROMO_TEXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PRODUCT_PROMO__PROMO_TEXT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Require Code</b></em>' attribute.
@@ -194,7 +168,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__REQUIRE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PRODUCT_PROMO__REQUIRE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Show To Customer</b></em>' attribute.
@@ -203,7 +177,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__SHOW_TO_CUSTOMER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PRODUCT_PROMO__SHOW_TO_CUSTOMER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Use Limit Per Customer</b></em>' attribute.
@@ -212,7 +186,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__USE_LIMIT_PER_CUSTOMER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PRODUCT_PROMO__USE_LIMIT_PER_CUSTOMER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Use Limit Per Order</b></em>' attribute.
@@ -221,7 +195,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__USE_LIMIT_PER_ORDER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int PRODUCT_PROMO__USE_LIMIT_PER_ORDER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Use Limit Per Promotion</b></em>' attribute.
@@ -230,7 +204,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__USE_LIMIT_PER_PROMOTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int PRODUCT_PROMO__USE_LIMIT_PER_PROMOTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>User Entered</b></em>' attribute.
@@ -239,7 +213,34 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO__USER_ENTERED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int PRODUCT_PROMO__USER_ENTERED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Override Org Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Created By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Product Promo Rules</b></em>' attribute list.
@@ -342,31 +343,13 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_ACTION__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Custom Method Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_ACTION__CUSTOM_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Order Adjustment Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_ACTION__ORDER_ADJUSTMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_ACTION__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_PROMO_ACTION__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -375,16 +358,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_ACTION__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Product Promo Action Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ACTION_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PRODUCT_PROMO_ACTION__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -393,7 +367,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_ACTION__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PRODUCT_PROMO_ACTION__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
@@ -402,7 +376,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_ACTION__SERVICE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PRODUCT_PROMO_ACTION__SERVICE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Use Cart Quantity</b></em>' attribute.
@@ -411,7 +385,34 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_ACTION__USE_CART_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PRODUCT_PROMO_ACTION__USE_CART_QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Product Promo Action Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ACTION_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Custom Method Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_ACTION__CUSTOM_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Order Adjustment Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_ACTION__ORDER_ADJUSTMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Product Promo Action</em>' class.
@@ -505,22 +506,13 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_COND_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Product Category Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>And Group Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CATEGORY__AND_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PRODUCT_PROMO_CATEGORY__AND_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Include Sub Categories</b></em>' attribute.
@@ -529,10 +521,19 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CATEGORY__INCLUDE_SUB_CATEGORIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_PROMO_CATEGORY__INCLUDE_SUB_CATEGORIES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Product Promo Appl Enum Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Product Category Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Product Promo Appl Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -605,22 +606,13 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Created By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Created Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CODE__CREATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PRODUCT_PROMO_CODE__CREATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -629,16 +621,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CODE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PRODUCT_PROMO_CODE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified Date</b></em>' attribute.
@@ -647,16 +630,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Product Promo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Require Email Or Party</b></em>' attribute.
@@ -665,7 +639,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PRODUCT_PROMO_CODE__REQUIRE_EMAIL_OR_PARTY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -674,7 +648,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CODE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PRODUCT_PROMO_CODE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Use Limit Per Code</b></em>' attribute.
@@ -683,7 +657,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CODE__USE_LIMIT_PER_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PRODUCT_PROMO_CODE__USE_LIMIT_PER_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Use Limit Per Customer</b></em>' attribute.
@@ -692,7 +666,7 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CODE__USE_LIMIT_PER_CUSTOMER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PRODUCT_PROMO_CODE__USE_LIMIT_PER_CUSTOMER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>User Entered</b></em>' attribute.
@@ -701,7 +675,34 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CODE__USER_ENTERED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PRODUCT_PROMO_CODE__USER_ENTERED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Product Promo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Created By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Product Promo Code Emails</b></em>' attribute list.
@@ -859,7 +860,7 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -959,40 +960,40 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_COND__COND_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Custom Method Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_COND__CUSTOM_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Input Param Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Operator Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_COND__OPERATOR_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Other Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_COND__OTHER_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PRODUCT_PROMO_COND__OTHER_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Custom Method Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_COND__CUSTOM_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Input Param Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Operator Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_COND__OPERATOR_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Product Promo Cond</em>' class.
@@ -1059,31 +1060,13 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Content Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_CONTENT__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Product Promo Content Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PRODUCT_PROMO_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1092,7 +1075,25 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PRODUCT_PROMO_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Content Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_CONTENT__CONTENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Product Promo Content Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Product Promo Content</em>' class.
@@ -1186,7 +1187,7 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_COND_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1195,7 +1196,7 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_PRODUCT__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Product Promo Appl Enum Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Product Promo Appl Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1359,40 +1360,13 @@ public interface PromoPackage extends EPackage {
 	int PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_USE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Product Promo Code Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Product Promo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PROMO_USE__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Quantity Left In Actions</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_USE__QUANTITY_LEFT_IN_ACTIONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PRODUCT_PROMO_USE__QUANTITY_LEFT_IN_ACTIONS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Total Discount Amount</b></em>' attribute.
@@ -1401,7 +1375,34 @@ public interface PromoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PROMO_USE__TOTAL_DISCOUNT_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_PROMO_USE__TOTAL_DISCOUNT_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Product Promo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_USE__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Product Promo Code Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PROMO_USE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Product Promo Use</em>' class.
@@ -1446,15 +1447,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromo_BillbackFactor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getCreatedByUserLogin <em>Created By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getCreatedByUserLogin <em>Created By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Created By User Login</em>'.
+	 * @return the meta object for the reference '<em>Created By User Login</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromo#getCreatedByUserLogin()
 	 * @see #getProductPromo()
 	 * @generated
 	 */
-	EAttribute getProductPromo_CreatedByUserLogin();
+	EReference getProductPromo_CreatedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getCreatedDate <em>Created Date</em>}'.
@@ -1468,15 +1469,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromo_CreatedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Last Modified By User Login</em>'.
+	 * @return the meta object for the reference '<em>Last Modified By User Login</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromo#getLastModifiedByUserLogin()
 	 * @see #getProductPromo()
 	 * @generated
 	 */
-	EAttribute getProductPromo_LastModifiedByUserLogin();
+	EReference getProductPromo_LastModifiedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getLastModifiedDate <em>Last Modified Date</em>}'.
@@ -1490,15 +1491,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromo_LastModifiedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getOverrideOrgPartyId <em>Override Org Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getOverrideOrgPartyId <em>Override Org Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Override Org Party Id</em>'.
+	 * @return the meta object for the reference '<em>Override Org Party Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromo#getOverrideOrgPartyId()
 	 * @see #getProductPromo()
 	 * @generated
 	 */
-	EAttribute getProductPromo_OverrideOrgPartyId();
+	EReference getProductPromo_OverrideOrgPartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromo#getPromoName <em>Promo Name</em>}'.
@@ -1654,26 +1655,26 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoAction_Amount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoAction#getCustomMethodId <em>Custom Method Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoAction#getCustomMethodId <em>Custom Method Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Custom Method Id</em>'.
+	 * @return the meta object for the reference '<em>Custom Method Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoAction#getCustomMethodId()
 	 * @see #getProductPromoAction()
 	 * @generated
 	 */
-	EAttribute getProductPromoAction_CustomMethodId();
+	EReference getProductPromoAction_CustomMethodId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoAction#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoAction#getOrderAdjustmentTypeId <em>Order Adjustment Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Adjustment Type Id</em>'.
+	 * @return the meta object for the reference '<em>Order Adjustment Type Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoAction#getOrderAdjustmentTypeId()
 	 * @see #getProductPromoAction()
 	 * @generated
 	 */
-	EAttribute getProductPromoAction_OrderAdjustmentTypeId();
+	EReference getProductPromoAction_OrderAdjustmentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoAction#getPartyId <em>Party Id</em>}'.
@@ -1698,15 +1699,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoAction_ProductId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoAction#getProductPromoActionEnumId <em>Product Promo Action Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoAction#getProductPromoActionEnumId <em>Product Promo Action Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Action Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Action Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoAction#getProductPromoActionEnumId()
 	 * @see #getProductPromoAction()
 	 * @generated
 	 */
-	EAttribute getProductPromoAction_ProductPromoActionEnumId();
+	EReference getProductPromoAction_ProductPromoActionEnumId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoAction#getQuantity <em>Quantity</em>}'.
@@ -1796,15 +1797,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoCategory_ProductPromoCondSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductCategoryId <em>Product Category Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductCategoryId <em>Product Category Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Category Id</em>'.
+	 * @return the meta object for the reference '<em>Product Category Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductCategoryId()
 	 * @see #getProductPromoCategory()
 	 * @generated
 	 */
-	EAttribute getProductPromoCategory_ProductCategoryId();
+	EReference getProductPromoCategory_ProductCategoryId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getAndGroupId <em>And Group Id</em>}'.
@@ -1829,15 +1830,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoCategory_IncludeSubCategories();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductPromoApplEnumId <em>Product Promo Appl Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductPromoApplEnumId <em>Product Promo Appl Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Appl Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Appl Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCategory#getProductPromoApplEnumId()
 	 * @see #getProductPromoCategory()
 	 * @generated
 	 */
-	EAttribute getProductPromoCategory_ProductPromoApplEnumId();
+	EReference getProductPromoCategory_ProductPromoApplEnumId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode <em>Product Promo Code</em>}'.
@@ -1861,15 +1862,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoCode_ProductPromoCodeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getCreatedByUserLogin <em>Created By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getCreatedByUserLogin <em>Created By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Created By User Login</em>'.
+	 * @return the meta object for the reference '<em>Created By User Login</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCode#getCreatedByUserLogin()
 	 * @see #getProductPromoCode()
 	 * @generated
 	 */
-	EAttribute getProductPromoCode_CreatedByUserLogin();
+	EReference getProductPromoCode_CreatedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getCreatedDate <em>Created Date</em>}'.
@@ -1894,15 +1895,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoCode_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Last Modified By User Login</em>'.
+	 * @return the meta object for the reference '<em>Last Modified By User Login</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedByUserLogin()
 	 * @see #getProductPromoCode()
 	 * @generated
 	 */
-	EAttribute getProductPromoCode_LastModifiedByUserLogin();
+	EReference getProductPromoCode_LastModifiedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getLastModifiedDate <em>Last Modified Date</em>}'.
@@ -1916,15 +1917,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoCode_LastModifiedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoId <em>Product Promo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoId <em>Product Promo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCode#getProductPromoId()
 	 * @see #getProductPromoCode()
 	 * @generated
 	 */
-	EAttribute getProductPromoCode_ProductPromoId();
+	EReference getProductPromoCode_ProductPromoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCode#isRequireEmailOrParty <em>Require Email Or Party</em>}'.
@@ -2057,15 +2058,15 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoCodeParty_ProductPromoCodeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeParty#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoCodeParty#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCodeParty#getPartyId()
 	 * @see #getProductPromoCodeParty()
 	 * @generated
 	 */
-	EAttribute getProductPromoCodeParty_PartyId();
+	EReference getProductPromoCodeParty_PartyId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.promo.ProductPromoCond <em>Product Promo Cond</em>}'.
@@ -2122,37 +2123,37 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoCond_CondValue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getCustomMethodId <em>Custom Method Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getCustomMethodId <em>Custom Method Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Custom Method Id</em>'.
+	 * @return the meta object for the reference '<em>Custom Method Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCond#getCustomMethodId()
 	 * @see #getProductPromoCond()
 	 * @generated
 	 */
-	EAttribute getProductPromoCond_CustomMethodId();
+	EReference getProductPromoCond_CustomMethodId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getInputParamEnumId <em>Input Param Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getInputParamEnumId <em>Input Param Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Input Param Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Input Param Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCond#getInputParamEnumId()
 	 * @see #getProductPromoCond()
 	 * @generated
 	 */
-	EAttribute getProductPromoCond_InputParamEnumId();
+	EReference getProductPromoCond_InputParamEnumId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getOperatorEnumId <em>Operator Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getOperatorEnumId <em>Operator Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Operator Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoCond#getOperatorEnumId()
 	 * @see #getProductPromoCond()
 	 * @generated
 	 */
-	EAttribute getProductPromoCond_OperatorEnumId();
+	EReference getProductPromoCond_OperatorEnumId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoCond#getOtherValue <em>Other Value</em>}'.
@@ -2187,26 +2188,26 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoContent_ProductPromoId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getContentId <em>Content Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getContentId <em>Content Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content Id</em>'.
+	 * @return the meta object for the reference '<em>Content Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoContent#getContentId()
 	 * @see #getProductPromoContent()
 	 * @generated
 	 */
-	EAttribute getProductPromoContent_ContentId();
+	EReference getProductPromoContent_ContentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getProductPromoContentTypeId <em>Product Promo Content Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getProductPromoContentTypeId <em>Product Promo Content Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Content Type Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Content Type Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoContent#getProductPromoContentTypeId()
 	 * @see #getProductPromoContent()
 	 * @generated
 	 */
-	EAttribute getProductPromoContent_ProductPromoContentTypeId();
+	EReference getProductPromoContent_ProductPromoContentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoContent#getFromDate <em>From Date</em>}'.
@@ -2285,26 +2286,26 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoProduct_ProductPromoCondSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductId <em>Product Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductId <em>Product Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id</em>'.
+	 * @return the meta object for the reference '<em>Product Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductId()
 	 * @see #getProductPromoProduct()
 	 * @generated
 	 */
-	EAttribute getProductPromoProduct_ProductId();
+	EReference getProductPromoProduct_ProductId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoApplEnumId <em>Product Promo Appl Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoApplEnumId <em>Product Promo Appl Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Appl Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Appl Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoProduct#getProductPromoApplEnumId()
 	 * @see #getProductPromoProduct()
 	 * @generated
 	 */
-	EAttribute getProductPromoProduct_ProductPromoApplEnumId();
+	EReference getProductPromoProduct_ProductPromoApplEnumId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.promo.ProductPromoRule <em>Product Promo Rule</em>}'.
@@ -2382,37 +2383,37 @@ public interface PromoPackage extends EPackage {
 	EAttribute getProductPromoUse_PromoSequenceId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoUse#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoUse#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoUse#getPartyId()
 	 * @see #getProductPromoUse()
 	 * @generated
 	 */
-	EAttribute getProductPromoUse_PartyId();
+	EReference getProductPromoUse_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoUse#getProductPromoCodeId <em>Product Promo Code Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoUse#getProductPromoCodeId <em>Product Promo Code Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Code Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Code Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoUse#getProductPromoCodeId()
 	 * @see #getProductPromoUse()
 	 * @generated
 	 */
-	EAttribute getProductPromoUse_ProductPromoCodeId();
+	EReference getProductPromoUse_ProductPromoCodeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoUse#getProductPromoId <em>Product Promo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.promo.ProductPromoUse#getProductPromoId <em>Product Promo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Id</em>'.
 	 * @see org.abchip.mimo.biz.product.promo.ProductPromoUse#getProductPromoId()
 	 * @see #getProductPromoUse()
 	 * @generated
 	 */
-	EAttribute getProductPromoUse_ProductPromoId();
+	EReference getProductPromoUse_ProductPromoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.promo.ProductPromoUse#getQuantityLeftInActions <em>Quantity Left In Actions</em>}'.
@@ -2485,12 +2486,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO__BILLBACK_FACTOR = eINSTANCE.getProductPromo_BillbackFactor();
 
 		/**
-		 * The meta object literal for the '<em><b>Created By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Created By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO__CREATED_BY_USER_LOGIN = eINSTANCE.getProductPromo_CreatedByUserLogin();
+		EReference PRODUCT_PROMO__CREATED_BY_USER_LOGIN = eINSTANCE.getProductPromo_CreatedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Created Date</b></em>' attribute feature.
@@ -2501,12 +2502,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO__CREATED_DATE = eINSTANCE.getProductPromo_CreatedDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Last Modified By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Last Modified By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN = eINSTANCE.getProductPromo_LastModifiedByUserLogin();
+		EReference PRODUCT_PROMO__LAST_MODIFIED_BY_USER_LOGIN = eINSTANCE.getProductPromo_LastModifiedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Last Modified Date</b></em>' attribute feature.
@@ -2517,12 +2518,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO__LAST_MODIFIED_DATE = eINSTANCE.getProductPromo_LastModifiedDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Override Org Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Override Org Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID = eINSTANCE.getProductPromo_OverrideOrgPartyId();
+		EReference PRODUCT_PROMO__OVERRIDE_ORG_PARTY_ID = eINSTANCE.getProductPromo_OverrideOrgPartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Promo Name</b></em>' attribute feature.
@@ -2639,20 +2640,20 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_ACTION__AMOUNT = eINSTANCE.getProductPromoAction_Amount();
 
 		/**
-		 * The meta object literal for the '<em><b>Custom Method Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Custom Method Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_ACTION__CUSTOM_METHOD_ID = eINSTANCE.getProductPromoAction_CustomMethodId();
+		EReference PRODUCT_PROMO_ACTION__CUSTOM_METHOD_ID = eINSTANCE.getProductPromoAction_CustomMethodId();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Adjustment Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Adjustment Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_ACTION__ORDER_ADJUSTMENT_TYPE_ID = eINSTANCE.getProductPromoAction_OrderAdjustmentTypeId();
+		EReference PRODUCT_PROMO_ACTION__ORDER_ADJUSTMENT_TYPE_ID = eINSTANCE.getProductPromoAction_OrderAdjustmentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
@@ -2671,12 +2672,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_ACTION__PRODUCT_ID = eINSTANCE.getProductPromoAction_ProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Action Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Action Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ACTION_ENUM_ID = eINSTANCE.getProductPromoAction_ProductPromoActionEnumId();
+		EReference PRODUCT_PROMO_ACTION__PRODUCT_PROMO_ACTION_ENUM_ID = eINSTANCE.getProductPromoAction_ProductPromoActionEnumId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
@@ -2745,12 +2746,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_COND_SEQ_ID = eINSTANCE.getProductPromoCategory_ProductPromoCondSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Category Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Category Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID = eINSTANCE.getProductPromoCategory_ProductCategoryId();
+		EReference PRODUCT_PROMO_CATEGORY__PRODUCT_CATEGORY_ID = eINSTANCE.getProductPromoCategory_ProductCategoryId();
 
 		/**
 		 * The meta object literal for the '<em><b>And Group Id</b></em>' attribute feature.
@@ -2769,12 +2770,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_CATEGORY__INCLUDE_SUB_CATEGORIES = eINSTANCE.getProductPromoCategory_IncludeSubCategories();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Appl Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Appl Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_APPL_ENUM_ID = eINSTANCE.getProductPromoCategory_ProductPromoApplEnumId();
+		EReference PRODUCT_PROMO_CATEGORY__PRODUCT_PROMO_APPL_ENUM_ID = eINSTANCE.getProductPromoCategory_ProductPromoApplEnumId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCodeImpl <em>Product Promo Code</em>}' class.
@@ -2795,12 +2796,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID = eINSTANCE.getProductPromoCode_ProductPromoCodeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Created By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Created By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN = eINSTANCE.getProductPromoCode_CreatedByUserLogin();
+		EReference PRODUCT_PROMO_CODE__CREATED_BY_USER_LOGIN = eINSTANCE.getProductPromoCode_CreatedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Created Date</b></em>' attribute feature.
@@ -2819,12 +2820,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_CODE__FROM_DATE = eINSTANCE.getProductPromoCode_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Last Modified By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Last Modified By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN = eINSTANCE.getProductPromoCode_LastModifiedByUserLogin();
+		EReference PRODUCT_PROMO_CODE__LAST_MODIFIED_BY_USER_LOGIN = eINSTANCE.getProductPromoCode_LastModifiedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Last Modified Date</b></em>' attribute feature.
@@ -2835,12 +2836,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_CODE__LAST_MODIFIED_DATE = eINSTANCE.getProductPromoCode_LastModifiedDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID = eINSTANCE.getProductPromoCode_ProductPromoId();
+		EReference PRODUCT_PROMO_CODE__PRODUCT_PROMO_ID = eINSTANCE.getProductPromoCode_ProductPromoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Require Email Or Party</b></em>' attribute feature.
@@ -2943,12 +2944,12 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_CODE_PARTY__PRODUCT_PROMO_CODE_ID = eINSTANCE.getProductPromoCodeParty_ProductPromoCodeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CODE_PARTY__PARTY_ID = eINSTANCE.getProductPromoCodeParty_PartyId();
+		EReference PRODUCT_PROMO_CODE_PARTY__PARTY_ID = eINSTANCE.getProductPromoCodeParty_PartyId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoCondImpl <em>Product Promo Cond</em>}' class.
@@ -2993,28 +2994,28 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_COND__COND_VALUE = eINSTANCE.getProductPromoCond_CondValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Custom Method Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Custom Method Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_COND__CUSTOM_METHOD_ID = eINSTANCE.getProductPromoCond_CustomMethodId();
+		EReference PRODUCT_PROMO_COND__CUSTOM_METHOD_ID = eINSTANCE.getProductPromoCond_CustomMethodId();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Param Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Input Param Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID = eINSTANCE.getProductPromoCond_InputParamEnumId();
+		EReference PRODUCT_PROMO_COND__INPUT_PARAM_ENUM_ID = eINSTANCE.getProductPromoCond_InputParamEnumId();
 
 		/**
-		 * The meta object literal for the '<em><b>Operator Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Operator Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_COND__OPERATOR_ENUM_ID = eINSTANCE.getProductPromoCond_OperatorEnumId();
+		EReference PRODUCT_PROMO_COND__OPERATOR_ENUM_ID = eINSTANCE.getProductPromoCond_OperatorEnumId();
 
 		/**
 		 * The meta object literal for the '<em><b>Other Value</b></em>' attribute feature.
@@ -3043,20 +3044,20 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_ID = eINSTANCE.getProductPromoContent_ProductPromoId();
 
 		/**
-		 * The meta object literal for the '<em><b>Content Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CONTENT__CONTENT_ID = eINSTANCE.getProductPromoContent_ContentId();
+		EReference PRODUCT_PROMO_CONTENT__CONTENT_ID = eINSTANCE.getProductPromoContent_ContentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Content Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Content Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID = eINSTANCE.getProductPromoContent_ProductPromoContentTypeId();
+		EReference PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID = eINSTANCE.getProductPromoContent_ProductPromoContentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -3117,20 +3118,20 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_COND_SEQ_ID = eINSTANCE.getProductPromoProduct_ProductPromoCondSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_PRODUCT__PRODUCT_ID = eINSTANCE.getProductPromoProduct_ProductId();
+		EReference PRODUCT_PROMO_PRODUCT__PRODUCT_ID = eINSTANCE.getProductPromoProduct_ProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Appl Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Appl Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID = eINSTANCE.getProductPromoProduct_ProductPromoApplEnumId();
+		EReference PRODUCT_PROMO_PRODUCT__PRODUCT_PROMO_APPL_ENUM_ID = eINSTANCE.getProductPromoProduct_ProductPromoApplEnumId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoRuleImpl <em>Product Promo Rule</em>}' class.
@@ -3193,28 +3194,28 @@ public interface PromoPackage extends EPackage {
 		EAttribute PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID = eINSTANCE.getProductPromoUse_PromoSequenceId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_USE__PARTY_ID = eINSTANCE.getProductPromoUse_PartyId();
+		EReference PRODUCT_PROMO_USE__PARTY_ID = eINSTANCE.getProductPromoUse_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Code Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Code Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID = eINSTANCE.getProductPromoUse_ProductPromoCodeId();
+		EReference PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID = eINSTANCE.getProductPromoUse_ProductPromoCodeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PROMO_USE__PRODUCT_PROMO_ID = eINSTANCE.getProductPromoUse_ProductPromoId();
+		EReference PRODUCT_PROMO_USE__PRODUCT_PROMO_ID = eINSTANCE.getProductPromoUse_ProductPromoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Quantity Left In Actions</b></em>' attribute feature.

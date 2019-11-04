@@ -21,10 +21,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupMember#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupMember#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupMember#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupMember#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupMember#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreGroupMember#getProductStoreGroupId <em>Product Store Group Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupMember()
@@ -43,7 +43,8 @@ public interface ProductStoreGroupMember extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupMember_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -121,8 +122,8 @@ public interface ProductStoreGroupMember extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupMember_ProductStoreId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreId();
@@ -138,30 +139,29 @@ public interface ProductStoreGroupMember extends BizEntity {
 	void setProductStoreId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Store Group Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Store Group Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Store Group Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Store Group Id</em>' attribute.
-	 * @see #setProductStoreGroupId(String)
+	 * @return the value of the '<em>Product Store Group Id</em>' reference.
+	 * @see #setProductStoreGroupId(ProductStoreGroup)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreGroupMember_ProductStoreGroupId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStoreGroup'"
+	 * @model keys="productStoreGroupId"
 	 * @generated
 	 */
-	String getProductStoreGroupId();
+	ProductStoreGroup getProductStoreGroupId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreGroupMember#getProductStoreGroupId <em>Product Store Group Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreGroupMember#getProductStoreGroupId <em>Product Store Group Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Store Group Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Store Group Id</em>' reference.
 	 * @see #getProductStoreGroupId()
 	 * @generated
 	 */
-	void setProductStoreGroupId(String value);
+	void setProductStoreGroupId(ProductStoreGroup value);
 
 } // ProductStoreGroupMember

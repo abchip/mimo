@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.price;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +22,11 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductPricePurposeId <em>Product Price Purpose Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPaymentMethodType()
@@ -44,7 +45,8 @@ public interface ProductPaymentMethodType extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPaymentMethodType_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -60,31 +62,30 @@ public interface ProductPaymentMethodType extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Method Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Method Type Id</em>' attribute.
-	 * @see #setPaymentMethodTypeId(String)
+	 * @return the value of the '<em>Payment Method Type Id</em>' reference.
+	 * @see #setPaymentMethodTypeId(PaymentMethodType)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPaymentMethodType_PaymentMethodTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='PaymentMethodType'"
+	 * @model keys="paymentMethodTypeId"
 	 * @generated
 	 */
-	String getPaymentMethodTypeId();
+	PaymentMethodType getPaymentMethodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getPaymentMethodTypeId <em>Payment Method Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getPaymentMethodTypeId <em>Payment Method Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Method Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Method Type Id</em>' reference.
 	 * @see #getPaymentMethodTypeId()
 	 * @generated
 	 */
-	void setPaymentMethodTypeId(String value);
+	void setPaymentMethodTypeId(PaymentMethodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Product Id</b></em>' attribute.
@@ -97,8 +98,8 @@ public interface ProductPaymentMethodType extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPaymentMethodType_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();
@@ -166,30 +167,29 @@ public interface ProductPaymentMethodType extends BizEntity {
 	void setThruDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Price Purpose Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Price Purpose Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Price Purpose Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Price Purpose Id</em>' attribute.
-	 * @see #setProductPricePurposeId(String)
+	 * @return the value of the '<em>Product Price Purpose Id</em>' reference.
+	 * @see #setProductPricePurposeId(ProductPricePurpose)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPaymentMethodType_ProductPricePurposeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductPricePurpose'"
+	 * @model keys="productPricePurposeId"
 	 * @generated
 	 */
-	String getProductPricePurposeId();
+	ProductPricePurpose getProductPricePurposeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductPricePurposeId <em>Product Price Purpose Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductPricePurposeId <em>Product Price Purpose Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Price Purpose Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Price Purpose Id</em>' reference.
 	 * @see #getProductPricePurposeId()
 	 * @generated
 	 */
-	void setProductPricePurposeId(String value);
+	void setProductPricePurposeId(ProductPricePurpose value);
 
 } // ProductPaymentMethodType

@@ -10,11 +10,20 @@ package org.abchip.mimo.biz.party.need.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.communication.CommunicationEvent;
 import org.abchip.mimo.biz.party.need.NeedPackage;
+import org.abchip.mimo.biz.party.need.NeedType;
 import org.abchip.mimo.biz.party.need.PartyNeed;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.party.party.PartyType;
+import org.abchip.mimo.biz.party.party.RoleType;
+import org.abchip.mimo.biz.product.category.ProductCategory;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,16 +35,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyNeedId <em>Party Need Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getDatetimeRecorded <em>Datetime Recorded</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getNeedTypeId <em>Need Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyTypeId <em>Party Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getNeedTypeId <em>Need Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getPartyTypeId <em>Party Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getCommunicationEventId <em>Communication Event Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.need.impl.PartyNeedImpl#getProductCategoryId <em>Product Category Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,60 +72,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @ordered
 	 */
 	protected String partyNeedId = PARTY_NEED_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMUNICATION_EVENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationEventId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String communicationEventId = COMMUNICATION_EVENT_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getDatetimeRecorded() <em>Datetime Recorded</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -154,78 +109,6 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getNeedTypeId() <em>Need Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNeedTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NEED_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getNeedTypeId() <em>Need Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNeedTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String needTypeId = NEED_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyTypeId = PARTY_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_CATEGORY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productCategoryId = PRODUCT_CATEGORY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getVisitId() <em>Visit Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -243,6 +126,69 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @ordered
 	 */
 	protected String visitId = VISIT_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getNeedTypeId() <em>Need Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNeedTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected NeedType needTypeId;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+	/**
+	 * The cached value of the '{@link #getPartyTypeId() <em>Party Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PartyType partyTypeId;
+	/**
+	 * The cached value of the '{@link #getCommunicationEventId() <em>Communication Event Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommunicationEventId()
+	 * @generated
+	 * @ordered
+	 */
+	protected CommunicationEvent communicationEventId;
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+	/**
+	 * The cached value of the '{@link #getProductCategoryId() <em>Product Category Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductCategoryId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductCategory productCategoryId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,7 +261,24 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -325,8 +288,8 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PARTY_ID, oldPartyId, partyId));
@@ -361,7 +324,24 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public String getPartyTypeId() {
+	public PartyType getPartyTypeId() {
+		if (partyTypeId != null && ((EObject)partyTypeId).eIsProxy()) {
+			InternalEObject oldPartyTypeId = (InternalEObject)partyTypeId;
+			partyTypeId = (PartyType)eResolveProxy(oldPartyTypeId);
+			if (partyTypeId != oldPartyTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
+			}
+		}
+		return partyTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyType basicGetPartyTypeId() {
 		return partyTypeId;
 	}
 
@@ -371,8 +351,8 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public void setPartyTypeId(String newPartyTypeId) {
-		String oldPartyTypeId = partyTypeId;
+	public void setPartyTypeId(PartyType newPartyTypeId) {
+		PartyType oldPartyTypeId = partyTypeId;
 		partyTypeId = newPartyTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PARTY_TYPE_ID, oldPartyTypeId, partyTypeId));
@@ -384,7 +364,24 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public String getProductCategoryId() {
+	public ProductCategory getProductCategoryId() {
+		if (productCategoryId != null && ((EObject)productCategoryId).eIsProxy()) {
+			InternalEObject oldProductCategoryId = (InternalEObject)productCategoryId;
+			productCategoryId = (ProductCategory)eResolveProxy(oldProductCategoryId);
+			if (productCategoryId != oldProductCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
+			}
+		}
+		return productCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductCategory basicGetProductCategoryId() {
 		return productCategoryId;
 	}
 
@@ -394,8 +391,8 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public void setProductCategoryId(String newProductCategoryId) {
-		String oldProductCategoryId = productCategoryId;
+	public void setProductCategoryId(ProductCategory newProductCategoryId) {
+		ProductCategory oldProductCategoryId = productCategoryId;
 		productCategoryId = newProductCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID, oldProductCategoryId, productCategoryId));
@@ -407,7 +404,24 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -417,8 +431,8 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__PRODUCT_ID, oldProductId, productId));
@@ -430,7 +444,24 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -440,8 +471,8 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -476,7 +507,24 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public String getNeedTypeId() {
+	public NeedType getNeedTypeId() {
+		if (needTypeId != null && ((EObject)needTypeId).eIsProxy()) {
+			InternalEObject oldNeedTypeId = (InternalEObject)needTypeId;
+			needTypeId = (NeedType)eResolveProxy(oldNeedTypeId);
+			if (needTypeId != oldNeedTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
+			}
+		}
+		return needTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NeedType basicGetNeedTypeId() {
 		return needTypeId;
 	}
 
@@ -486,8 +534,8 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public void setNeedTypeId(String newNeedTypeId) {
-		String oldNeedTypeId = needTypeId;
+	public void setNeedTypeId(NeedType newNeedTypeId) {
+		NeedType oldNeedTypeId = needTypeId;
 		needTypeId = newNeedTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__NEED_TYPE_ID, oldNeedTypeId, needTypeId));
@@ -499,7 +547,24 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public String getCommunicationEventId() {
+	public CommunicationEvent getCommunicationEventId() {
+		if (communicationEventId != null && ((EObject)communicationEventId).eIsProxy()) {
+			InternalEObject oldCommunicationEventId = (InternalEObject)communicationEventId;
+			communicationEventId = (CommunicationEvent)eResolveProxy(oldCommunicationEventId);
+			if (communicationEventId != oldCommunicationEventId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
+			}
+		}
+		return communicationEventId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommunicationEvent basicGetCommunicationEventId() {
 		return communicationEventId;
 	}
 
@@ -509,8 +574,8 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 	 * @generated
 	 */
 	@Override
-	public void setCommunicationEventId(String newCommunicationEventId) {
-		String oldCommunicationEventId = communicationEventId;
+	public void setCommunicationEventId(CommunicationEvent newCommunicationEventId) {
+		CommunicationEvent oldCommunicationEventId = communicationEventId;
 		communicationEventId = newCommunicationEventId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID, oldCommunicationEventId, communicationEventId));
@@ -526,26 +591,33 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 		switch (featureID) {
 			case NeedPackage.PARTY_NEED__PARTY_NEED_ID:
 				return getPartyNeedId();
-			case NeedPackage.PARTY_NEED__PARTY_ID:
-				return getPartyId();
-			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
-				return getRoleTypeId();
-			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
-				return getCommunicationEventId();
 			case NeedPackage.PARTY_NEED__DATETIME_RECORDED:
 				return getDatetimeRecorded();
 			case NeedPackage.PARTY_NEED__DESCRIPTION:
 				return getDescription();
-			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
-				return getNeedTypeId();
-			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
-				return getPartyTypeId();
-			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
-				return getProductCategoryId();
-			case NeedPackage.PARTY_NEED__PRODUCT_ID:
-				return getProductId();
 			case NeedPackage.PARTY_NEED__VISIT_ID:
 				return getVisitId();
+			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
+				if (resolve) return getNeedTypeId();
+				return basicGetNeedTypeId();
+			case NeedPackage.PARTY_NEED__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
+				if (resolve) return getPartyTypeId();
+				return basicGetPartyTypeId();
+			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
+				if (resolve) return getCommunicationEventId();
+				return basicGetCommunicationEventId();
+			case NeedPackage.PARTY_NEED__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
+				if (resolve) return getProductCategoryId();
+				return basicGetProductCategoryId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -561,35 +633,35 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 			case NeedPackage.PARTY_NEED__PARTY_NEED_ID:
 				setPartyNeedId((String)newValue);
 				return;
-			case NeedPackage.PARTY_NEED__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId((String)newValue);
-				return;
 			case NeedPackage.PARTY_NEED__DATETIME_RECORDED:
 				setDatetimeRecorded((Date)newValue);
 				return;
 			case NeedPackage.PARTY_NEED__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
-				setNeedTypeId((String)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
-				setPartyTypeId((String)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
-				setProductCategoryId((String)newValue);
-				return;
-			case NeedPackage.PARTY_NEED__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case NeedPackage.PARTY_NEED__VISIT_ID:
 				setVisitId((String)newValue);
+				return;
+			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
+				setNeedTypeId((NeedType)newValue);
+				return;
+			case NeedPackage.PARTY_NEED__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
+				setPartyTypeId((PartyType)newValue);
+				return;
+			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
+				setCommunicationEventId((CommunicationEvent)newValue);
+				return;
+			case NeedPackage.PARTY_NEED__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -606,35 +678,35 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 			case NeedPackage.PARTY_NEED__PARTY_NEED_ID:
 				setPartyNeedId(PARTY_NEED_ID_EDEFAULT);
 				return;
-			case NeedPackage.PARTY_NEED__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
-				setCommunicationEventId(COMMUNICATION_EVENT_ID_EDEFAULT);
-				return;
 			case NeedPackage.PARTY_NEED__DATETIME_RECORDED:
 				setDatetimeRecorded(DATETIME_RECORDED_EDEFAULT);
 				return;
 			case NeedPackage.PARTY_NEED__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
-				setNeedTypeId(NEED_TYPE_ID_EDEFAULT);
-				return;
-			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
-				setPartyTypeId(PARTY_TYPE_ID_EDEFAULT);
-				return;
-			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
-				setProductCategoryId(PRODUCT_CATEGORY_ID_EDEFAULT);
-				return;
-			case NeedPackage.PARTY_NEED__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case NeedPackage.PARTY_NEED__VISIT_ID:
 				setVisitId(VISIT_ID_EDEFAULT);
+				return;
+			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
+				setNeedTypeId((NeedType)null);
+				return;
+			case NeedPackage.PARTY_NEED__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
+				setPartyTypeId((PartyType)null);
+				return;
+			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
+				setCommunicationEventId((CommunicationEvent)null);
+				return;
+			case NeedPackage.PARTY_NEED__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
+				setProductCategoryId((ProductCategory)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -650,26 +722,26 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 		switch (featureID) {
 			case NeedPackage.PARTY_NEED__PARTY_NEED_ID:
 				return PARTY_NEED_ID_EDEFAULT == null ? partyNeedId != null : !PARTY_NEED_ID_EDEFAULT.equals(partyNeedId);
-			case NeedPackage.PARTY_NEED__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
-				return COMMUNICATION_EVENT_ID_EDEFAULT == null ? communicationEventId != null : !COMMUNICATION_EVENT_ID_EDEFAULT.equals(communicationEventId);
 			case NeedPackage.PARTY_NEED__DATETIME_RECORDED:
 				return DATETIME_RECORDED_EDEFAULT == null ? datetimeRecorded != null : !DATETIME_RECORDED_EDEFAULT.equals(datetimeRecorded);
 			case NeedPackage.PARTY_NEED__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
-				return NEED_TYPE_ID_EDEFAULT == null ? needTypeId != null : !NEED_TYPE_ID_EDEFAULT.equals(needTypeId);
-			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
-				return PARTY_TYPE_ID_EDEFAULT == null ? partyTypeId != null : !PARTY_TYPE_ID_EDEFAULT.equals(partyTypeId);
-			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
-				return PRODUCT_CATEGORY_ID_EDEFAULT == null ? productCategoryId != null : !PRODUCT_CATEGORY_ID_EDEFAULT.equals(productCategoryId);
-			case NeedPackage.PARTY_NEED__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case NeedPackage.PARTY_NEED__VISIT_ID:
 				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
+			case NeedPackage.PARTY_NEED__NEED_TYPE_ID:
+				return needTypeId != null;
+			case NeedPackage.PARTY_NEED__PARTY_ID:
+				return partyId != null;
+			case NeedPackage.PARTY_NEED__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case NeedPackage.PARTY_NEED__PARTY_TYPE_ID:
+				return partyTypeId != null;
+			case NeedPackage.PARTY_NEED__COMMUNICATION_EVENT_ID:
+				return communicationEventId != null;
+			case NeedPackage.PARTY_NEED__PRODUCT_ID:
+				return productId != null;
+			case NeedPackage.PARTY_NEED__PRODUCT_CATEGORY_ID:
+				return productCategoryId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -686,24 +758,10 @@ public class PartyNeedImpl extends BizEntityImpl implements PartyNeed {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyNeedId: ");
 		result.append(partyNeedId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", communicationEventId: ");
-		result.append(communicationEventId);
 		result.append(", datetimeRecorded: ");
 		result.append(datetimeRecorded);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", needTypeId: ");
-		result.append(needTypeId);
-		result.append(", partyTypeId: ");
-		result.append(partyTypeId);
-		result.append(", productCategoryId: ");
-		result.append(productCategoryId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", visitId: ");
 		result.append(visitId);
 		result.append(')');

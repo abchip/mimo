@@ -85,30 +85,30 @@ public interface FinAccountTransType extends BizEntityType<FinAccountTrans> {
 	void setHasTable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(FinAccountTransType)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='FinAccountTransType'"
+	 * @model keys="finAccountTransTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	FinAccountTransType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(FinAccountTransType value);
 
 	/**
 	 * Returns the value of the '<em><b>Fin Account Trans Type Attrs</b></em>' attribute list.
@@ -156,7 +156,7 @@ public interface FinAccountTransType extends BizEntityType<FinAccountTrans> {
 	 * @return the value of the '<em>Fin Account Trans Type Id</em>' attribute.
 	 * @see #setFinAccountTransTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage#getFinAccountTransType_FinAccountTransTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

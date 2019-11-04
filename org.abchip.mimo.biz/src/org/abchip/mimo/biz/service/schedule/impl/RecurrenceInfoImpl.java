@@ -12,11 +12,14 @@ import java.util.List;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
+import org.abchip.mimo.biz.service.schedule.RecurrenceRule;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,11 +32,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl#getExceptionDateTimes <em>Exception Date Times</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl#getExceptionRuleId <em>Exception Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl#getRecurrenceCount <em>Recurrence Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl#getRecurrenceDateTimes <em>Recurrence Date Times</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl#getRecurrenceRuleId <em>Recurrence Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl#getStartDateTime <em>Start Date Time</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl#getRecurrenceRuleId <em>Recurrence Rule Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl#getExceptionRuleId <em>Exception Rule Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -85,26 +88,6 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	protected String exceptionDateTimes = EXCEPTION_DATE_TIMES_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getExceptionRuleId() <em>Exception Rule Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExceptionRuleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EXCEPTION_RULE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getExceptionRuleId() <em>Exception Rule Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExceptionRuleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String exceptionRuleId = EXCEPTION_RULE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getRecurrenceCount() <em>Recurrence Count</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -145,26 +128,6 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	protected String recurrenceDateTimes = RECURRENCE_DATE_TIMES_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRecurrenceRuleId() <em>Recurrence Rule Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceRuleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RECURRENCE_RULE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRecurrenceRuleId() <em>Recurrence Rule Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceRuleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String recurrenceRuleId = RECURRENCE_RULE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getStartDateTime() <em>Start Date Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -183,6 +146,26 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 * @ordered
 	 */
 	protected Date startDateTime = START_DATE_TIME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRecurrenceRuleId() <em>Recurrence Rule Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecurrenceRuleId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RecurrenceRule recurrenceRuleId;
+
+	/**
+	 * The cached value of the '{@link #getExceptionRuleId() <em>Exception Rule Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExceptionRuleId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RecurrenceRule exceptionRuleId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,7 +238,24 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 * @generated
 	 */
 	@Override
-	public String getExceptionRuleId() {
+	public RecurrenceRule getExceptionRuleId() {
+		if (exceptionRuleId != null && ((EObject)exceptionRuleId).eIsProxy()) {
+			InternalEObject oldExceptionRuleId = (InternalEObject)exceptionRuleId;
+			exceptionRuleId = (RecurrenceRule)eResolveProxy(oldExceptionRuleId);
+			if (exceptionRuleId != oldExceptionRuleId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID, oldExceptionRuleId, exceptionRuleId));
+			}
+		}
+		return exceptionRuleId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RecurrenceRule basicGetExceptionRuleId() {
 		return exceptionRuleId;
 	}
 
@@ -265,8 +265,8 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 * @generated
 	 */
 	@Override
-	public void setExceptionRuleId(String newExceptionRuleId) {
-		String oldExceptionRuleId = exceptionRuleId;
+	public void setExceptionRuleId(RecurrenceRule newExceptionRuleId) {
+		RecurrenceRule oldExceptionRuleId = exceptionRuleId;
 		exceptionRuleId = newExceptionRuleId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID, oldExceptionRuleId, exceptionRuleId));
@@ -324,7 +324,24 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 * @generated
 	 */
 	@Override
-	public String getRecurrenceRuleId() {
+	public RecurrenceRule getRecurrenceRuleId() {
+		if (recurrenceRuleId != null && ((EObject)recurrenceRuleId).eIsProxy()) {
+			InternalEObject oldRecurrenceRuleId = (InternalEObject)recurrenceRuleId;
+			recurrenceRuleId = (RecurrenceRule)eResolveProxy(oldRecurrenceRuleId);
+			if (recurrenceRuleId != oldRecurrenceRuleId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID, oldRecurrenceRuleId, recurrenceRuleId));
+			}
+		}
+		return recurrenceRuleId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RecurrenceRule basicGetRecurrenceRuleId() {
 		return recurrenceRuleId;
 	}
 
@@ -334,8 +351,8 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 	 * @generated
 	 */
 	@Override
-	public void setRecurrenceRuleId(String newRecurrenceRuleId) {
-		String oldRecurrenceRuleId = recurrenceRuleId;
+	public void setRecurrenceRuleId(RecurrenceRule newRecurrenceRuleId) {
+		RecurrenceRule oldRecurrenceRuleId = recurrenceRuleId;
 		recurrenceRuleId = newRecurrenceRuleId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID, oldRecurrenceRuleId, recurrenceRuleId));
@@ -424,16 +441,18 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 				return getRecurrenceInfoId();
 			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_DATE_TIMES:
 				return getExceptionDateTimes();
-			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID:
-				return getExceptionRuleId();
 			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_COUNT:
 				return getRecurrenceCount();
 			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_DATE_TIMES:
 				return getRecurrenceDateTimes();
-			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID:
-				return getRecurrenceRuleId();
 			case SchedulePackage.RECURRENCE_INFO__START_DATE_TIME:
 				return getStartDateTime();
+			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID:
+				if (resolve) return getRecurrenceRuleId();
+				return basicGetRecurrenceRuleId();
+			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID:
+				if (resolve) return getExceptionRuleId();
+				return basicGetExceptionRuleId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -452,20 +471,20 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_DATE_TIMES:
 				setExceptionDateTimes((String)newValue);
 				return;
-			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID:
-				setExceptionRuleId((String)newValue);
-				return;
 			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_COUNT:
 				setRecurrenceCount((Long)newValue);
 				return;
 			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_DATE_TIMES:
 				setRecurrenceDateTimes((String)newValue);
 				return;
-			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID:
-				setRecurrenceRuleId((String)newValue);
-				return;
 			case SchedulePackage.RECURRENCE_INFO__START_DATE_TIME:
 				setStartDateTime((Date)newValue);
+				return;
+			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID:
+				setRecurrenceRuleId((RecurrenceRule)newValue);
+				return;
+			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID:
+				setExceptionRuleId((RecurrenceRule)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -485,20 +504,20 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_DATE_TIMES:
 				setExceptionDateTimes(EXCEPTION_DATE_TIMES_EDEFAULT);
 				return;
-			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID:
-				setExceptionRuleId(EXCEPTION_RULE_ID_EDEFAULT);
-				return;
 			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_COUNT:
 				setRecurrenceCount(RECURRENCE_COUNT_EDEFAULT);
 				return;
 			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_DATE_TIMES:
 				setRecurrenceDateTimes(RECURRENCE_DATE_TIMES_EDEFAULT);
 				return;
-			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID:
-				setRecurrenceRuleId(RECURRENCE_RULE_ID_EDEFAULT);
-				return;
 			case SchedulePackage.RECURRENCE_INFO__START_DATE_TIME:
 				setStartDateTime(START_DATE_TIME_EDEFAULT);
+				return;
+			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID:
+				setRecurrenceRuleId((RecurrenceRule)null);
+				return;
+			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID:
+				setExceptionRuleId((RecurrenceRule)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -516,16 +535,16 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 				return RECURRENCE_INFO_ID_EDEFAULT == null ? recurrenceInfoId != null : !RECURRENCE_INFO_ID_EDEFAULT.equals(recurrenceInfoId);
 			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_DATE_TIMES:
 				return EXCEPTION_DATE_TIMES_EDEFAULT == null ? exceptionDateTimes != null : !EXCEPTION_DATE_TIMES_EDEFAULT.equals(exceptionDateTimes);
-			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID:
-				return EXCEPTION_RULE_ID_EDEFAULT == null ? exceptionRuleId != null : !EXCEPTION_RULE_ID_EDEFAULT.equals(exceptionRuleId);
 			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_COUNT:
 				return recurrenceCount != RECURRENCE_COUNT_EDEFAULT;
 			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_DATE_TIMES:
 				return RECURRENCE_DATE_TIMES_EDEFAULT == null ? recurrenceDateTimes != null : !RECURRENCE_DATE_TIMES_EDEFAULT.equals(recurrenceDateTimes);
-			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID:
-				return RECURRENCE_RULE_ID_EDEFAULT == null ? recurrenceRuleId != null : !RECURRENCE_RULE_ID_EDEFAULT.equals(recurrenceRuleId);
 			case SchedulePackage.RECURRENCE_INFO__START_DATE_TIME:
 				return START_DATE_TIME_EDEFAULT == null ? startDateTime != null : !START_DATE_TIME_EDEFAULT.equals(startDateTime);
+			case SchedulePackage.RECURRENCE_INFO__RECURRENCE_RULE_ID:
+				return recurrenceRuleId != null;
+			case SchedulePackage.RECURRENCE_INFO__EXCEPTION_RULE_ID:
+				return exceptionRuleId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -544,14 +563,10 @@ public class RecurrenceInfoImpl extends BizEntityImpl implements RecurrenceInfo 
 		result.append(recurrenceInfoId);
 		result.append(", exceptionDateTimes: ");
 		result.append(exceptionDateTimes);
-		result.append(", exceptionRuleId: ");
-		result.append(exceptionRuleId);
 		result.append(", recurrenceCount: ");
 		result.append(recurrenceCount);
 		result.append(", recurrenceDateTimes: ");
 		result.append(recurrenceDateTimes);
-		result.append(", recurrenceRuleId: ");
-		result.append(recurrenceRuleId);
 		result.append(", startDateTime: ");
 		result.append(startDateTime);
 		result.append(')');

@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.order.request.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.request.CustRequestWorkEffort;
 import org.abchip.mimo.biz.order.request.RequestPackage;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -57,24 +60,14 @@ public class CustRequestWorkEffortImpl extends BizEntityImpl implements CustRequ
 	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWorkEffortId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
+	protected WorkEffort workEffortId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +117,24 @@ public class CustRequestWorkEffortImpl extends BizEntityImpl implements CustRequ
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequestPackage.CUST_REQUEST_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -134,8 +144,8 @@ public class CustRequestWorkEffortImpl extends BizEntityImpl implements CustRequ
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequestPackage.CUST_REQUEST_WORK_EFFORT__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -152,7 +162,8 @@ public class CustRequestWorkEffortImpl extends BizEntityImpl implements CustRequ
 			case RequestPackage.CUST_REQUEST_WORK_EFFORT__CUST_REQUEST_ID:
 				return getCustRequestId();
 			case RequestPackage.CUST_REQUEST_WORK_EFFORT__WORK_EFFORT_ID:
-				return getWorkEffortId();
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,7 +180,7 @@ public class CustRequestWorkEffortImpl extends BizEntityImpl implements CustRequ
 				setCustRequestId((String)newValue);
 				return;
 			case RequestPackage.CUST_REQUEST_WORK_EFFORT__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
+				setWorkEffortId((WorkEffort)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +198,7 @@ public class CustRequestWorkEffortImpl extends BizEntityImpl implements CustRequ
 				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
 				return;
 			case RequestPackage.CUST_REQUEST_WORK_EFFORT__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
+				setWorkEffortId((WorkEffort)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,7 +215,7 @@ public class CustRequestWorkEffortImpl extends BizEntityImpl implements CustRequ
 			case RequestPackage.CUST_REQUEST_WORK_EFFORT__CUST_REQUEST_ID:
 				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
 			case RequestPackage.CUST_REQUEST_WORK_EFFORT__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
+				return workEffortId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,8 +232,6 @@ public class CustRequestWorkEffortImpl extends BizEntityImpl implements CustRequ
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (custRequestId: ");
 		result.append(custRequestId);
-		result.append(", workEffortId: ");
-		result.append(workEffortId);
 		result.append(')');
 		return result.toString();
 	}

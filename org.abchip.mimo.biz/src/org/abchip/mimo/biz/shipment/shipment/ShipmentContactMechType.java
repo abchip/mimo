@@ -75,7 +75,7 @@ public interface ShipmentContactMechType extends BizEntityType<ShipmentContactMe
 	 * @return the value of the '<em>Shipment Contact Mech Type Id</em>' attribute.
 	 * @see #setShipmentContactMechTypeId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentContactMechType_ShipmentContactMechTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

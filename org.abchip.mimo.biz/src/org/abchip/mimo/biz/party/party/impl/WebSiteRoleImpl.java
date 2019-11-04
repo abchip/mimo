@@ -11,10 +11,14 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyPackage;
+import org.abchip.mimo.biz.party.party.RoleType;
 import org.abchip.mimo.biz.party.party.WebSiteRole;
+import org.abchip.mimo.biz.webapp.website.WebSite;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.WebSiteRoleImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.WebSiteRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.WebSiteRoleImpl#getWebSiteId <em>Web Site Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.WebSiteRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.WebSiteRoleImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.WebSiteRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.WebSiteRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.WebSiteRoleImpl#getWebSiteId <em>Web Site Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,42 +63,6 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
 
-	/**
-	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ROLE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String roleTypeId = ROLE_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WEB_SITE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebSiteId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String webSiteId = WEB_SITE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -149,6 +117,24 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoleType roleTypeId;
+	/**
+	 * The cached value of the '{@link #getWebSiteId() <em>Web Site Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWebSiteId()
+	 * @generated
+	 * @ordered
+	 */
+	protected WebSite webSiteId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,7 +230,24 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 * @generated
 	 */
 	@Override
-	public String getWebSiteId() {
+	public WebSite getWebSiteId() {
+		if (webSiteId != null && ((EObject)webSiteId).eIsProxy()) {
+			InternalEObject oldWebSiteId = (InternalEObject)webSiteId;
+			webSiteId = (WebSite)eResolveProxy(oldWebSiteId);
+			if (webSiteId != oldWebSiteId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID, oldWebSiteId, webSiteId));
+			}
+		}
+		return webSiteId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebSite basicGetWebSiteId() {
 		return webSiteId;
 	}
 
@@ -254,8 +257,8 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 * @generated
 	 */
 	@Override
-	public void setWebSiteId(String newWebSiteId) {
-		String oldWebSiteId = webSiteId;
+	public void setWebSiteId(WebSite newWebSiteId) {
+		WebSite oldWebSiteId = webSiteId;
 		webSiteId = newWebSiteId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID, oldWebSiteId, webSiteId));
@@ -267,7 +270,24 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 * @generated
 	 */
 	@Override
-	public String getRoleTypeId() {
+	public RoleType getRoleTypeId() {
+		if (roleTypeId != null && ((EObject)roleTypeId).eIsProxy()) {
+			InternalEObject oldRoleTypeId = (InternalEObject)roleTypeId;
+			roleTypeId = (RoleType)eResolveProxy(oldRoleTypeId);
+			if (roleTypeId != oldRoleTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
+			}
+		}
+		return roleTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleType basicGetRoleTypeId() {
 		return roleTypeId;
 	}
 
@@ -277,8 +297,8 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 	 * @generated
 	 */
 	@Override
-	public void setRoleTypeId(String newRoleTypeId) {
-		String oldRoleTypeId = roleTypeId;
+	public void setRoleTypeId(RoleType newRoleTypeId) {
+		RoleType oldRoleTypeId = roleTypeId;
 		roleTypeId = newRoleTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID, oldRoleTypeId, roleTypeId));
@@ -317,16 +337,18 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 		switch (featureID) {
 			case PartyPackage.WEB_SITE_ROLE__PARTY_ID:
 				return getPartyId();
-			case PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID:
-				return getRoleTypeId();
-			case PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID:
-				return getWebSiteId();
 			case PartyPackage.WEB_SITE_ROLE__FROM_DATE:
 				return getFromDate();
 			case PartyPackage.WEB_SITE_ROLE__SEQUENCE_NUM:
 				return getSequenceNum();
 			case PartyPackage.WEB_SITE_ROLE__THRU_DATE:
 				return getThruDate();
+			case PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID:
+				if (resolve) return getRoleTypeId();
+				return basicGetRoleTypeId();
+			case PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID:
+				if (resolve) return getWebSiteId();
+				return basicGetWebSiteId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -342,12 +364,6 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 			case PartyPackage.WEB_SITE_ROLE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId((String)newValue);
-				return;
-			case PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID:
-				setWebSiteId((String)newValue);
-				return;
 			case PartyPackage.WEB_SITE_ROLE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -356,6 +372,12 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 				return;
 			case PartyPackage.WEB_SITE_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)newValue);
+				return;
+			case PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID:
+				setWebSiteId((WebSite)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -372,12 +394,6 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 			case PartyPackage.WEB_SITE_ROLE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID:
-				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
-				return;
-			case PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID:
-				setWebSiteId(WEB_SITE_ID_EDEFAULT);
-				return;
 			case PartyPackage.WEB_SITE_ROLE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -386,6 +402,12 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 				return;
 			case PartyPackage.WEB_SITE_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID:
+				setRoleTypeId((RoleType)null);
+				return;
+			case PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID:
+				setWebSiteId((WebSite)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -401,16 +423,16 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 		switch (featureID) {
 			case PartyPackage.WEB_SITE_ROLE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID:
-				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
-			case PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID:
-				return WEB_SITE_ID_EDEFAULT == null ? webSiteId != null : !WEB_SITE_ID_EDEFAULT.equals(webSiteId);
 			case PartyPackage.WEB_SITE_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PartyPackage.WEB_SITE_ROLE__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case PartyPackage.WEB_SITE_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PartyPackage.WEB_SITE_ROLE__ROLE_TYPE_ID:
+				return roleTypeId != null;
+			case PartyPackage.WEB_SITE_ROLE__WEB_SITE_ID:
+				return webSiteId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -427,10 +449,6 @@ public class WebSiteRoleImpl extends BizEntityImpl implements WebSiteRole {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", roleTypeId: ");
-		result.append(roleTypeId);
-		result.append(", webSiteId: ");
-		result.append(webSiteId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

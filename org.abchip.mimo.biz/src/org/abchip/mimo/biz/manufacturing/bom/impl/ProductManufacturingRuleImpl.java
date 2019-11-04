@@ -12,10 +12,14 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.manufacturing.bom.BomPackage;
 import org.abchip.mimo.biz.manufacturing.bom.ProductManufacturingRule;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,15 +33,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getRuleId <em>Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductFeature <em>Product Feature</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductIdFor <em>Product Id For</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductIdIn <em>Product Id In</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductIdInSubst <em>Product Id In Subst</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getRuleOperator <em>Rule Operator</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getRuleSeqId <em>Rule Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductIdFor <em>Product Id For</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductIdIn <em>Product Id In</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductIdInSubst <em>Product Id In Subst</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.manufacturing.bom.impl.ProductManufacturingRuleImpl#getProductFeature <em>Product Feature</em>}</li>
  * </ul>
  *
  * @generated
@@ -107,106 +111,6 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @ordered
 	 */
 	protected Date fromDate = FROM_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductFeature() <em>Product Feature</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeature()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeature() <em>Product Feature</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeature()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeature = PRODUCT_FEATURE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductIdFor() <em>Product Id For</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductIdFor()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_FOR_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductIdFor() <em>Product Id For</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductIdFor()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productIdFor = PRODUCT_ID_FOR_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductIdIn() <em>Product Id In</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductIdIn()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_IN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductIdIn() <em>Product Id In</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductIdIn()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productIdIn = PRODUCT_ID_IN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductIdInSubst() <em>Product Id In Subst</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductIdInSubst()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_IN_SUBST_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductIdInSubst() <em>Product Id In Subst</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductIdInSubst()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productIdInSubst = PRODUCT_ID_IN_SUBST_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
@@ -287,6 +191,56 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getProductIdFor() <em>Product Id For</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductIdFor()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productIdFor;
+
+	/**
+	 * The cached value of the '{@link #getProductIdIn() <em>Product Id In</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductIdIn()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productIdIn;
+
+	/**
+	 * The cached value of the '{@link #getProductIdInSubst() <em>Product Id In Subst</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductIdInSubst()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productIdInSubst;
+
+	/**
+	 * The cached value of the '{@link #getProductFeature() <em>Product Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductFeature productFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -382,7 +336,24 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getProductFeature() {
+	public ProductFeature getProductFeature() {
+		if (productFeature != null && ((EObject)productFeature).eIsProxy()) {
+			InternalEObject oldProductFeature = (InternalEObject)productFeature;
+			productFeature = (ProductFeature)eResolveProxy(oldProductFeature);
+			if (productFeature != oldProductFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE, oldProductFeature, productFeature));
+			}
+		}
+		return productFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature basicGetProductFeature() {
 		return productFeature;
 	}
 
@@ -392,8 +363,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setProductFeature(String newProductFeature) {
-		String oldProductFeature = productFeature;
+	public void setProductFeature(ProductFeature newProductFeature) {
+		ProductFeature oldProductFeature = productFeature;
 		productFeature = newProductFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE, oldProductFeature, productFeature));
@@ -405,7 +376,24 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -415,8 +403,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID, oldProductId, productId));
@@ -428,7 +416,24 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getProductIdFor() {
+	public Product getProductIdFor() {
+		if (productIdFor != null && ((EObject)productIdFor).eIsProxy()) {
+			InternalEObject oldProductIdFor = (InternalEObject)productIdFor;
+			productIdFor = (Product)eResolveProxy(oldProductIdFor);
+			if (productIdFor != oldProductIdFor) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR, oldProductIdFor, productIdFor));
+			}
+		}
+		return productIdFor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductIdFor() {
 		return productIdFor;
 	}
 
@@ -438,8 +443,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setProductIdFor(String newProductIdFor) {
-		String oldProductIdFor = productIdFor;
+	public void setProductIdFor(Product newProductIdFor) {
+		Product oldProductIdFor = productIdFor;
 		productIdFor = newProductIdFor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR, oldProductIdFor, productIdFor));
@@ -451,7 +456,24 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getProductIdIn() {
+	public Product getProductIdIn() {
+		if (productIdIn != null && ((EObject)productIdIn).eIsProxy()) {
+			InternalEObject oldProductIdIn = (InternalEObject)productIdIn;
+			productIdIn = (Product)eResolveProxy(oldProductIdIn);
+			if (productIdIn != oldProductIdIn) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN, oldProductIdIn, productIdIn));
+			}
+		}
+		return productIdIn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductIdIn() {
 		return productIdIn;
 	}
 
@@ -461,8 +483,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setProductIdIn(String newProductIdIn) {
-		String oldProductIdIn = productIdIn;
+	public void setProductIdIn(Product newProductIdIn) {
+		Product oldProductIdIn = productIdIn;
 		productIdIn = newProductIdIn;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN, oldProductIdIn, productIdIn));
@@ -474,7 +496,24 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getProductIdInSubst() {
+	public Product getProductIdInSubst() {
+		if (productIdInSubst != null && ((EObject)productIdInSubst).eIsProxy()) {
+			InternalEObject oldProductIdInSubst = (InternalEObject)productIdInSubst;
+			productIdInSubst = (Product)eResolveProxy(oldProductIdInSubst);
+			if (productIdInSubst != oldProductIdInSubst) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST, oldProductIdInSubst, productIdInSubst));
+			}
+		}
+		return productIdInSubst;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductIdInSubst() {
 		return productIdInSubst;
 	}
 
@@ -484,8 +523,8 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setProductIdInSubst(String newProductIdInSubst) {
-		String oldProductIdInSubst = productIdInSubst;
+	public void setProductIdInSubst(Product newProductIdInSubst) {
+		Product oldProductIdInSubst = productIdInSubst;
 		productIdInSubst = newProductIdInSubst;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST, oldProductIdInSubst, productIdInSubst));
@@ -597,16 +636,6 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 				return getDescription();
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__FROM_DATE:
 				return getFromDate();
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE:
-				return getProductFeature();
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID:
-				return getProductId();
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR:
-				return getProductIdFor();
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN:
-				return getProductIdIn();
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST:
-				return getProductIdInSubst();
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__QUANTITY:
 				return getQuantity();
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__RULE_OPERATOR:
@@ -615,6 +644,21 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 				return getRuleSeqId();
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__THRU_DATE:
 				return getThruDate();
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR:
+				if (resolve) return getProductIdFor();
+				return basicGetProductIdFor();
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN:
+				if (resolve) return getProductIdIn();
+				return basicGetProductIdIn();
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST:
+				if (resolve) return getProductIdInSubst();
+				return basicGetProductIdInSubst();
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE:
+				if (resolve) return getProductFeature();
+				return basicGetProductFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -636,21 +680,6 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE:
-				setProductFeature((String)newValue);
-				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR:
-				setProductIdFor((String)newValue);
-				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN:
-				setProductIdIn((String)newValue);
-				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST:
-				setProductIdInSubst((String)newValue);
-				return;
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__QUANTITY:
 				setQuantity((Double)newValue);
 				return;
@@ -662,6 +691,21 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 				return;
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR:
+				setProductIdFor((Product)newValue);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN:
+				setProductIdIn((Product)newValue);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST:
+				setProductIdInSubst((Product)newValue);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE:
+				setProductFeature((ProductFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -684,21 +728,6 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE:
-				setProductFeature(PRODUCT_FEATURE_EDEFAULT);
-				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR:
-				setProductIdFor(PRODUCT_ID_FOR_EDEFAULT);
-				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN:
-				setProductIdIn(PRODUCT_ID_IN_EDEFAULT);
-				return;
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST:
-				setProductIdInSubst(PRODUCT_ID_IN_SUBST_EDEFAULT);
-				return;
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
 				return;
@@ -710,6 +739,21 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 				return;
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR:
+				setProductIdFor((Product)null);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN:
+				setProductIdIn((Product)null);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST:
+				setProductIdInSubst((Product)null);
+				return;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE:
+				setProductFeature((ProductFeature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -729,16 +773,6 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE:
-				return PRODUCT_FEATURE_EDEFAULT == null ? productFeature != null : !PRODUCT_FEATURE_EDEFAULT.equals(productFeature);
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR:
-				return PRODUCT_ID_FOR_EDEFAULT == null ? productIdFor != null : !PRODUCT_ID_FOR_EDEFAULT.equals(productIdFor);
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN:
-				return PRODUCT_ID_IN_EDEFAULT == null ? productIdIn != null : !PRODUCT_ID_IN_EDEFAULT.equals(productIdIn);
-			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST:
-				return PRODUCT_ID_IN_SUBST_EDEFAULT == null ? productIdInSubst != null : !PRODUCT_ID_IN_SUBST_EDEFAULT.equals(productIdInSubst);
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__QUANTITY:
 				return quantity != QUANTITY_EDEFAULT;
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__RULE_OPERATOR:
@@ -747,6 +781,16 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 				return RULE_SEQ_ID_EDEFAULT == null ? ruleSeqId != null : !RULE_SEQ_ID_EDEFAULT.equals(ruleSeqId);
 			case BomPackage.PRODUCT_MANUFACTURING_RULE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID:
+				return productId != null;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_FOR:
+				return productIdFor != null;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN:
+				return productIdIn != null;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_ID_IN_SUBST:
+				return productIdInSubst != null;
+			case BomPackage.PRODUCT_MANUFACTURING_RULE__PRODUCT_FEATURE:
+				return productFeature != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -767,16 +811,6 @@ public class ProductManufacturingRuleImpl extends BizEntityImpl implements Produ
 		result.append(description);
 		result.append(", fromDate: ");
 		result.append(fromDate);
-		result.append(", productFeature: ");
-		result.append(productFeature);
-		result.append(", productId: ");
-		result.append(productId);
-		result.append(", productIdFor: ");
-		result.append(productIdFor);
-		result.append(", productIdIn: ");
-		result.append(productIdIn);
-		result.append(", productIdInSubst: ");
-		result.append(productIdInSubst);
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", ruleOperator: ");

@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.common.uom.impl;
 
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.common.uom.UomGroup;
 import org.abchip.mimo.biz.common.uom.UomPackage;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -55,23 +58,14 @@ public class UomGroupImpl extends BizEntityImpl implements UomGroup {
 	protected String uomGroupId = UOM_GROUP_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uomId = UOM_ID_EDEFAULT;
+	protected Uom uomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,7 +115,24 @@ public class UomGroupImpl extends BizEntityImpl implements UomGroup {
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UomPackage.UOM_GROUP__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -131,8 +142,8 @@ public class UomGroupImpl extends BizEntityImpl implements UomGroup {
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UomPackage.UOM_GROUP__UOM_ID, oldUomId, uomId));
@@ -149,7 +160,8 @@ public class UomGroupImpl extends BizEntityImpl implements UomGroup {
 			case UomPackage.UOM_GROUP__UOM_GROUP_ID:
 				return getUomGroupId();
 			case UomPackage.UOM_GROUP__UOM_ID:
-				return getUomId();
+				if (resolve) return getUomId();
+				return basicGetUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,7 +178,7 @@ public class UomGroupImpl extends BizEntityImpl implements UomGroup {
 				setUomGroupId((String)newValue);
 				return;
 			case UomPackage.UOM_GROUP__UOM_ID:
-				setUomId((String)newValue);
+				setUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -184,7 +196,7 @@ public class UomGroupImpl extends BizEntityImpl implements UomGroup {
 				setUomGroupId(UOM_GROUP_ID_EDEFAULT);
 				return;
 			case UomPackage.UOM_GROUP__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
+				setUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -201,7 +213,7 @@ public class UomGroupImpl extends BizEntityImpl implements UomGroup {
 			case UomPackage.UOM_GROUP__UOM_GROUP_ID:
 				return UOM_GROUP_ID_EDEFAULT == null ? uomGroupId != null : !UOM_GROUP_ID_EDEFAULT.equals(uomGroupId);
 			case UomPackage.UOM_GROUP__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+				return uomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,8 +230,6 @@ public class UomGroupImpl extends BizEntityImpl implements UomGroup {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (uomGroupId: ");
 		result.append(uomGroupId);
-		result.append(", uomId: ");
-		result.append(uomId);
 		result.append(')');
 		return result.toString();
 	}

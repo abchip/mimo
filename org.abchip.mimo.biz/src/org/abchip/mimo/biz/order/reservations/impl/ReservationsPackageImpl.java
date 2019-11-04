@@ -198,6 +198,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -355,6 +356,22 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -369,22 +386,6 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -497,6 +498,14 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -504,14 +513,6 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -592,6 +593,14 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -599,14 +608,6 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -674,8 +675,8 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAccommodationSpot_AccommodationClassId() {
-		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(1);
+	public EReference getAccommodationSpot_AccommodationClassId() {
+		return (EReference)accommodationSpotEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -685,7 +686,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 */
 	@Override
 	public EAttribute getAccommodationSpot_Description() {
-		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -694,8 +695,8 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAccommodationSpot_FixedAssetId() {
-		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(3);
+	public EReference getAccommodationSpot_FixedAssetId() {
+		return (EReference)accommodationSpotEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -705,7 +706,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 	 */
 	@Override
 	public EAttribute getAccommodationSpot_NumberOfSpaces() {
-		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)accommodationSpotEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -739,10 +740,10 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		// Create classes and their features
 		accommodationSpotEClass = createEClass(ACCOMMODATION_SPOT);
 		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__ACCOMMODATION_SPOT_ID);
-		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID);
 		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__DESCRIPTION);
-		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__FIXED_ASSET_ID);
 		createEAttribute(accommodationSpotEClass, ACCOMMODATION_SPOT__NUMBER_OF_SPACES);
+		createEReference(accommodationSpotEClass, ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID);
+		createEReference(accommodationSpotEClass, ACCOMMODATION_SPOT__FIXED_ASSET_ID);
 	}
 
 	/**
@@ -770,6 +771,7 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		FixedassetPackage theFixedassetPackage = (FixedassetPackage)EPackage.Registry.INSTANCE.getEPackage(FixedassetPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -780,11 +782,13 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(accommodationSpotEClass, AccommodationSpot.class, "AccommodationSpot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAccommodationSpot_AccommodationSpotId(), ecorePackage.getEString(), "accommodationSpotId", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAccommodationSpot_AccommodationClassId(), ecorePackage.getEString(), "accommodationClassId", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAccommodationSpot_AccommodationSpotId(), ecorePackage.getEString(), "accommodationSpotId", null, 1, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAccommodationSpot_Description(), ecorePackage.getEString(), "description", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAccommodationSpot_FixedAssetId(), ecorePackage.getEString(), "fixedAssetId", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAccommodationSpot_NumberOfSpaces(), ecorePackage.getELong(), "numberOfSpaces", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAccommodationSpot_AccommodationClassId(), theFixedassetPackage.getAccommodationClass(), null, "accommodationClassId", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAccommodationSpot_AccommodationClassId().getEKeys().add(theFixedassetPackage.getAccommodationClass_AccommodationClassId());
+		initEReference(getAccommodationSpot_FixedAssetId(), theFixedassetPackage.getFixedAsset(), null, "fixedAssetId", null, 0, 1, AccommodationSpot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getAccommodationSpot_FixedAssetId().getEKeys().add(theFixedassetPackage.getFixedAsset_FixedAssetId());
 
 		addEOperation(accommodationSpotEClass, ecorePackage.getEString(), "workEfforts", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -849,24 +853,6 @@ public class ReservationsPackageImpl extends EPackageImpl implements Reservation
 		   new String[] {
 			   "frame", "WorkEffort",
 			   "route", "accommodationSpotId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAccommodationSpot_AccommodationClassId(),
-		   source,
-		   new String[] {
-			   "frame", "AccommodationClass"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getAccommodationSpot_FixedAssetId(),
-		   source,
-		   new String[] {
-			   "frame", "FixedAsset"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

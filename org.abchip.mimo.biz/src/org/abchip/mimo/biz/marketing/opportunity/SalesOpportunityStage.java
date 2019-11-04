@@ -96,7 +96,7 @@ public interface SalesOpportunityStage extends BizEntity {
 	 * @return the value of the '<em>Opportunity Stage Id</em>' attribute.
 	 * @see #setOpportunityStageId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesOpportunityStage_OpportunityStageId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

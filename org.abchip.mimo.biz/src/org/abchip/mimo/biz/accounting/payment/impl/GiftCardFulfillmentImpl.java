@@ -13,11 +13,17 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.content.survey.SurveyResponse;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -34,14 +40,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getCardNumber <em>Card Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getFulfillmentDate <em>Fulfillment Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getMerchantId <em>Merchant Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getPinNumber <em>Pin Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getReferenceNum <em>Reference Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getResponseCode <em>Response Code</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getSurveyResponseId <em>Survey Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getTypeEnumId <em>Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.GiftCardFulfillmentImpl#getSurveyResponseId <em>Survey Response Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -164,26 +170,6 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	protected String merchantId = MERCHANT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,26 +188,6 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 * @ordered
 	 */
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPinNumber() <em>Pin Number</em>}' attribute.
@@ -284,44 +250,41 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	protected String responseCode = RESPONSE_CODE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_RESPONSE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyResponseId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyResponseId = SURVEY_RESPONSE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTypeEnumId() <em>Type Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getTypeEnumId() <em>Type Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypeEnumId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TYPE_ENUM_ID_EDEFAULT = null;
-
+	protected Enumeration typeEnumId;
 	/**
-	 * The cached value of the '{@link #getTypeEnumId() <em>Type Enum Id</em>}' attribute.
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTypeEnumId()
+	 * @see #getPartyId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String typeEnumId = TYPE_ENUM_ID_EDEFAULT;
+	protected Party partyId;
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+	/**
+	 * The cached value of the '{@link #getSurveyResponseId() <em>Survey Response Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSurveyResponseId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SurveyResponse surveyResponseId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -486,7 +449,24 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -496,8 +476,8 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID, oldOrderId, orderId));
@@ -532,7 +512,24 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -542,8 +539,8 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID, oldPartyId, partyId));
@@ -624,7 +621,24 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 * @generated
 	 */
 	@Override
-	public String getSurveyResponseId() {
+	public SurveyResponse getSurveyResponseId() {
+		if (surveyResponseId != null && ((EObject)surveyResponseId).eIsProxy()) {
+			InternalEObject oldSurveyResponseId = (InternalEObject)surveyResponseId;
+			surveyResponseId = (SurveyResponse)eResolveProxy(oldSurveyResponseId);
+			if (surveyResponseId != oldSurveyResponseId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
+			}
+		}
+		return surveyResponseId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurveyResponse basicGetSurveyResponseId() {
 		return surveyResponseId;
 	}
 
@@ -634,8 +648,8 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 * @generated
 	 */
 	@Override
-	public void setSurveyResponseId(String newSurveyResponseId) {
-		String oldSurveyResponseId = surveyResponseId;
+	public void setSurveyResponseId(SurveyResponse newSurveyResponseId) {
+		SurveyResponse oldSurveyResponseId = surveyResponseId;
 		surveyResponseId = newSurveyResponseId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID, oldSurveyResponseId, surveyResponseId));
@@ -647,7 +661,24 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 * @generated
 	 */
 	@Override
-	public String getTypeEnumId() {
+	public Enumeration getTypeEnumId() {
+		if (typeEnumId != null && ((EObject)typeEnumId).eIsProxy()) {
+			InternalEObject oldTypeEnumId = (InternalEObject)typeEnumId;
+			typeEnumId = (Enumeration)eResolveProxy(oldTypeEnumId);
+			if (typeEnumId != oldTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID, oldTypeEnumId, typeEnumId));
+			}
+		}
+		return typeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetTypeEnumId() {
 		return typeEnumId;
 	}
 
@@ -657,8 +688,8 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 	 * @generated
 	 */
 	@Override
-	public void setTypeEnumId(String newTypeEnumId) {
-		String oldTypeEnumId = typeEnumId;
+	public void setTypeEnumId(Enumeration newTypeEnumId) {
+		Enumeration oldTypeEnumId = typeEnumId;
 		typeEnumId = newTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID, oldTypeEnumId, typeEnumId));
@@ -684,22 +715,26 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 				return getFulfillmentDate();
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__MERCHANT_ID:
 				return getMerchantId();
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID:
-				return getOrderId();
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID:
-				return getPartyId();
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__PIN_NUMBER:
 				return getPinNumber();
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__REFERENCE_NUM:
 				return getReferenceNum();
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__RESPONSE_CODE:
 				return getResponseCode();
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID:
-				return getSurveyResponseId();
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID:
-				return getTypeEnumId();
+				if (resolve) return getTypeEnumId();
+				return basicGetTypeEnumId();
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID:
+				if (resolve) return getSurveyResponseId();
+				return basicGetSurveyResponseId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -730,14 +765,8 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__MERCHANT_ID:
 				setMerchantId((String)newValue);
 				return;
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
-				return;
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID:
-				setPartyId((String)newValue);
 				return;
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__PIN_NUMBER:
 				setPinNumber((String)newValue);
@@ -748,11 +777,17 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__RESPONSE_CODE:
 				setResponseCode((String)newValue);
 				return;
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID:
-				setSurveyResponseId((String)newValue);
-				return;
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID:
-				setTypeEnumId((String)newValue);
+				setTypeEnumId((Enumeration)newValue);
+				return;
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID:
+				setSurveyResponseId((SurveyResponse)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -784,14 +819,8 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__MERCHANT_ID:
 				setMerchantId(MERCHANT_ID_EDEFAULT);
 				return;
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
 				return;
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__PIN_NUMBER:
 				setPinNumber(PIN_NUMBER_EDEFAULT);
@@ -802,11 +831,17 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__RESPONSE_CODE:
 				setResponseCode(RESPONSE_CODE_EDEFAULT);
 				return;
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID:
-				setSurveyResponseId(SURVEY_RESPONSE_ID_EDEFAULT);
-				return;
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID:
-				setTypeEnumId(TYPE_ENUM_ID_EDEFAULT);
+				setTypeEnumId((Enumeration)null);
+				return;
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID:
+				setSurveyResponseId((SurveyResponse)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -832,22 +867,22 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 				return FULFILLMENT_DATE_EDEFAULT == null ? fulfillmentDate != null : !FULFILLMENT_DATE_EDEFAULT.equals(fulfillmentDate);
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__MERCHANT_ID:
 				return MERCHANT_ID_EDEFAULT == null ? merchantId != null : !MERCHANT_ID_EDEFAULT.equals(merchantId);
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__PIN_NUMBER:
 				return PIN_NUMBER_EDEFAULT == null ? pinNumber != null : !PIN_NUMBER_EDEFAULT.equals(pinNumber);
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__REFERENCE_NUM:
 				return REFERENCE_NUM_EDEFAULT == null ? referenceNum != null : !REFERENCE_NUM_EDEFAULT.equals(referenceNum);
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__RESPONSE_CODE:
 				return RESPONSE_CODE_EDEFAULT == null ? responseCode != null : !RESPONSE_CODE_EDEFAULT.equals(responseCode);
-			case PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID:
-				return SURVEY_RESPONSE_ID_EDEFAULT == null ? surveyResponseId != null : !SURVEY_RESPONSE_ID_EDEFAULT.equals(surveyResponseId);
 			case PaymentPackage.GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID:
-				return TYPE_ENUM_ID_EDEFAULT == null ? typeEnumId != null : !TYPE_ENUM_ID_EDEFAULT.equals(typeEnumId);
+				return typeEnumId != null;
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__PARTY_ID:
+				return partyId != null;
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__ORDER_ID:
+				return orderId != null;
+			case PaymentPackage.GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID:
+				return surveyResponseId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -874,22 +909,14 @@ public class GiftCardFulfillmentImpl extends BizEntityImpl implements GiftCardFu
 		result.append(fulfillmentDate);
 		result.append(", merchantId: ");
 		result.append(merchantId);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", pinNumber: ");
 		result.append(pinNumber);
 		result.append(", referenceNum: ");
 		result.append(referenceNum);
 		result.append(", responseCode: ");
 		result.append(responseCode);
-		result.append(", surveyResponseId: ");
-		result.append(surveyResponseId);
-		result.append(", typeEnumId: ");
-		result.append(typeEnumId);
 		result.append(')');
 		return result.toString();
 	}

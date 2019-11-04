@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface PaymentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-accounting-payment";
+	String eNS_PREFIX = "biz-payment";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,31 +117,13 @@ public interface PaymentPackage extends EPackage {
 	int BILLING_ACCOUNT__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Account Currency Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Account Limit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT__ACCOUNT_LIMIT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_ACCOUNT__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int BILLING_ACCOUNT__ACCOUNT_LIMIT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -149,7 +132,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int BILLING_ACCOUNT__DESCRIPTION = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>External Account Id</b></em>' attribute.
@@ -158,7 +141,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT__EXTERNAL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int BILLING_ACCOUNT__EXTERNAL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -167,7 +150,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int BILLING_ACCOUNT__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -176,7 +159,25 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int BILLING_ACCOUNT__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Account Currency Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Billing Account</em>' class.
@@ -243,31 +244,13 @@ public interface PaymentPackage extends EPackage {
 	int BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_ACCOUNT_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Role Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_ACCOUNT_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int BILLING_ACCOUNT_ROLE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -276,7 +259,25 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int BILLING_ACCOUNT_ROLE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_ROLE__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Role Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_ROLE__ROLE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Billing Account Role</em>' class.
@@ -343,31 +344,13 @@ public interface PaymentPackage extends EPackage {
 	int BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_TERM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Billing Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Term Days</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Term Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_ACCOUNT_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int BILLING_ACCOUNT_TERM__TERM_DAYS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Term Value</b></em>' attribute.
@@ -376,16 +359,34 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int BILLING_ACCOUNT_TERM__TERM_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Uom Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_ACCOUNT_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int BILLING_ACCOUNT_TERM__UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Term Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM__TERM_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Billing Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Billing Account Term Attrs</b></em>' attribute list.
@@ -588,22 +589,13 @@ public interface PaymentPackage extends EPackage {
 	int CHECK_ACCOUNT__COMPANY_NAME_ON_ACCOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHECK_ACCOUNT__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Name On Account</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_ACCOUNT__NAME_ON_ACCOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int CHECK_ACCOUNT__NAME_ON_ACCOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Routing Number</b></em>' attribute.
@@ -612,7 +604,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_ACCOUNT__ROUTING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int CHECK_ACCOUNT__ROUTING_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_ACCOUNT__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Check Account</em>' class.
@@ -688,49 +689,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_METHOD__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Fin Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_METHOD__FIN_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_METHOD__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Gl Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_METHOD__GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_METHOD__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int PAYMENT_METHOD__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -739,7 +704,43 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_METHOD__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int PAYMENT_METHOD__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD__PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Gl Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD__GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Fin Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD__FIN_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Method</em>' class.
@@ -815,15 +816,6 @@ public interface PaymentPackage extends EPackage {
 	int CREDIT_CARD__DESCRIPTION = PAYMENT_METHOD__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Fin Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD__FIN_ACCOUNT_ID = PAYMENT_METHOD__FIN_ACCOUNT_ID;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -833,25 +825,16 @@ public interface PaymentPackage extends EPackage {
 	int CREDIT_CARD__FROM_DATE = PAYMENT_METHOD__FROM_DATE;
 
 	/**
-	 * The feature id for the '<em><b>Gl Account Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__GL_ACCOUNT_ID = PAYMENT_METHOD__GL_ACCOUNT_ID;
+	int CREDIT_CARD__THRU_DATE = PAYMENT_METHOD__THRU_DATE;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD__PARTY_ID = PAYMENT_METHOD__PARTY_ID;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -860,13 +843,31 @@ public interface PaymentPackage extends EPackage {
 	int CREDIT_CARD__PAYMENT_METHOD_TYPE_ID = PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID;
 
 	/**
-	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__THRU_DATE = PAYMENT_METHOD__THRU_DATE;
+	int CREDIT_CARD__PARTY_ID = PAYMENT_METHOD__PARTY_ID;
+
+	/**
+	 * The feature id for the '<em><b>Gl Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD__GL_ACCOUNT_ID = PAYMENT_METHOD__GL_ACCOUNT_ID;
+
+	/**
+	 * The feature id for the '<em><b>Fin Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD__FIN_ACCOUNT_ID = PAYMENT_METHOD__FIN_ACCOUNT_ID;
 
 	/**
 	 * The feature id for the '<em><b>Card Number</b></em>' attribute.
@@ -914,22 +915,13 @@ public interface PaymentPackage extends EPackage {
 	int CREDIT_CARD__CONSECUTIVE_FAILED_NSF = PAYMENT_METHOD_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREDIT_CARD__CONTACT_MECH_ID = PAYMENT_METHOD_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Expire Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__EXPIRE_DATE = PAYMENT_METHOD_FEATURE_COUNT + 6;
+	int CREDIT_CARD__EXPIRE_DATE = PAYMENT_METHOD_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>First Name On Card</b></em>' attribute.
@@ -938,7 +930,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__FIRST_NAME_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 7;
+	int CREDIT_CARD__FIRST_NAME_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Issue Number</b></em>' attribute.
@@ -947,7 +939,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__ISSUE_NUMBER = PAYMENT_METHOD_FEATURE_COUNT + 8;
+	int CREDIT_CARD__ISSUE_NUMBER = PAYMENT_METHOD_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Last Failed Auth Date</b></em>' attribute.
@@ -956,7 +948,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__LAST_FAILED_AUTH_DATE = PAYMENT_METHOD_FEATURE_COUNT + 9;
+	int CREDIT_CARD__LAST_FAILED_AUTH_DATE = PAYMENT_METHOD_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Last Failed Nsf Date</b></em>' attribute.
@@ -965,7 +957,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__LAST_FAILED_NSF_DATE = PAYMENT_METHOD_FEATURE_COUNT + 10;
+	int CREDIT_CARD__LAST_FAILED_NSF_DATE = PAYMENT_METHOD_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Last Name On Card</b></em>' attribute.
@@ -974,7 +966,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__LAST_NAME_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 11;
+	int CREDIT_CARD__LAST_NAME_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Middle Name On Card</b></em>' attribute.
@@ -983,7 +975,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__MIDDLE_NAME_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 12;
+	int CREDIT_CARD__MIDDLE_NAME_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Suffix On Card</b></em>' attribute.
@@ -992,7 +984,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__SUFFIX_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 13;
+	int CREDIT_CARD__SUFFIX_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Title On Card</b></em>' attribute.
@@ -1001,7 +993,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__TITLE_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 14;
+	int CREDIT_CARD__TITLE_ON_CARD = PAYMENT_METHOD_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Valid From Date</b></em>' attribute.
@@ -1010,7 +1002,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREDIT_CARD__VALID_FROM_DATE = PAYMENT_METHOD_FEATURE_COUNT + 15;
+	int CREDIT_CARD__VALID_FROM_DATE = PAYMENT_METHOD_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREDIT_CARD__CONTACT_MECH_ID = PAYMENT_METHOD_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Credit Card</em>' class.
@@ -1168,7 +1169,7 @@ public interface PaymentPackage extends EPackage {
 	int DEDUCTION__AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Deduction Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Deduction Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1177,7 +1178,7 @@ public interface PaymentPackage extends EPackage {
 	int DEDUCTION__DEDUCTION_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Payment Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1277,7 +1278,7 @@ public interface PaymentPackage extends EPackage {
 	int DEDUCTION_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1359,15 +1360,6 @@ public interface PaymentPackage extends EPackage {
 	int EFT_ACCOUNT__DESCRIPTION = PAYMENT_METHOD__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Fin Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EFT_ACCOUNT__FIN_ACCOUNT_ID = PAYMENT_METHOD__FIN_ACCOUNT_ID;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1377,25 +1369,16 @@ public interface PaymentPackage extends EPackage {
 	int EFT_ACCOUNT__FROM_DATE = PAYMENT_METHOD__FROM_DATE;
 
 	/**
-	 * The feature id for the '<em><b>Gl Account Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EFT_ACCOUNT__GL_ACCOUNT_ID = PAYMENT_METHOD__GL_ACCOUNT_ID;
+	int EFT_ACCOUNT__THRU_DATE = PAYMENT_METHOD__THRU_DATE;
 
 	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EFT_ACCOUNT__PARTY_ID = PAYMENT_METHOD__PARTY_ID;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1404,13 +1387,31 @@ public interface PaymentPackage extends EPackage {
 	int EFT_ACCOUNT__PAYMENT_METHOD_TYPE_ID = PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID;
 
 	/**
-	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EFT_ACCOUNT__THRU_DATE = PAYMENT_METHOD__THRU_DATE;
+	int EFT_ACCOUNT__PARTY_ID = PAYMENT_METHOD__PARTY_ID;
+
+	/**
+	 * The feature id for the '<em><b>Gl Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT__GL_ACCOUNT_ID = PAYMENT_METHOD__GL_ACCOUNT_ID;
+
+	/**
+	 * The feature id for the '<em><b>Fin Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT__FIN_ACCOUNT_ID = PAYMENT_METHOD__FIN_ACCOUNT_ID;
 
 	/**
 	 * The feature id for the '<em><b>Account Number</b></em>' attribute.
@@ -1449,22 +1450,13 @@ public interface PaymentPackage extends EPackage {
 	int EFT_ACCOUNT__COMPANY_NAME_ON_ACCOUNT = PAYMENT_METHOD_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EFT_ACCOUNT__CONTACT_MECH_ID = PAYMENT_METHOD_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Name On Account</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EFT_ACCOUNT__NAME_ON_ACCOUNT = PAYMENT_METHOD_FEATURE_COUNT + 5;
+	int EFT_ACCOUNT__NAME_ON_ACCOUNT = PAYMENT_METHOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Routing Number</b></em>' attribute.
@@ -1473,7 +1465,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EFT_ACCOUNT__ROUTING_NUMBER = PAYMENT_METHOD_FEATURE_COUNT + 6;
+	int EFT_ACCOUNT__ROUTING_NUMBER = PAYMENT_METHOD_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Years At Bank</b></em>' attribute.
@@ -1482,7 +1474,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EFT_ACCOUNT__YEARS_AT_BANK = PAYMENT_METHOD_FEATURE_COUNT + 7;
+	int EFT_ACCOUNT__YEARS_AT_BANK = PAYMENT_METHOD_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EFT_ACCOUNT__CONTACT_MECH_ID = PAYMENT_METHOD_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Eft Account</em>' class.
@@ -1558,15 +1559,6 @@ public interface PaymentPackage extends EPackage {
 	int GIFT_CARD__DESCRIPTION = PAYMENT_METHOD__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Fin Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GIFT_CARD__FIN_ACCOUNT_ID = PAYMENT_METHOD__FIN_ACCOUNT_ID;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1574,33 +1566,6 @@ public interface PaymentPackage extends EPackage {
 	 * @ordered
 	 */
 	int GIFT_CARD__FROM_DATE = PAYMENT_METHOD__FROM_DATE;
-
-	/**
-	 * The feature id for the '<em><b>Gl Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GIFT_CARD__GL_ACCOUNT_ID = PAYMENT_METHOD__GL_ACCOUNT_ID;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GIFT_CARD__PARTY_ID = PAYMENT_METHOD__PARTY_ID;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GIFT_CARD__PAYMENT_METHOD_TYPE_ID = PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -1612,6 +1577,42 @@ public interface PaymentPackage extends EPackage {
 	int GIFT_CARD__THRU_DATE = PAYMENT_METHOD__THRU_DATE;
 
 	/**
+	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD__PAYMENT_METHOD_TYPE_ID = PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID;
+
+	/**
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD__PARTY_ID = PAYMENT_METHOD__PARTY_ID;
+
+	/**
+	 * The feature id for the '<em><b>Gl Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD__GL_ACCOUNT_ID = PAYMENT_METHOD__GL_ACCOUNT_ID;
+
+	/**
+	 * The feature id for the '<em><b>Fin Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD__FIN_ACCOUNT_ID = PAYMENT_METHOD__FIN_ACCOUNT_ID;
+
+	/**
 	 * The feature id for the '<em><b>Card Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1621,22 +1622,13 @@ public interface PaymentPackage extends EPackage {
 	int GIFT_CARD__CARD_NUMBER = PAYMENT_METHOD_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GIFT_CARD__CONTACT_MECH_ID = PAYMENT_METHOD_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Expire Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GIFT_CARD__EXPIRE_DATE = PAYMENT_METHOD_FEATURE_COUNT + 2;
+	int GIFT_CARD__EXPIRE_DATE = PAYMENT_METHOD_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Pin Number</b></em>' attribute.
@@ -1645,7 +1637,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GIFT_CARD__PIN_NUMBER = PAYMENT_METHOD_FEATURE_COUNT + 3;
+	int GIFT_CARD__PIN_NUMBER = PAYMENT_METHOD_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD__CONTACT_MECH_ID = PAYMENT_METHOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Gift Card</em>' class.
@@ -1757,31 +1758,13 @@ public interface PaymentPackage extends EPackage {
 	int GIFT_CARD_FULFILLMENT__MERCHANT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GIFT_CARD_FULFILLMENT__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GIFT_CARD_FULFILLMENT__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GIFT_CARD_FULFILLMENT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int GIFT_CARD_FULFILLMENT__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Pin Number</b></em>' attribute.
@@ -1790,7 +1773,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GIFT_CARD_FULFILLMENT__PIN_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int GIFT_CARD_FULFILLMENT__PIN_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Reference Num</b></em>' attribute.
@@ -1799,7 +1782,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GIFT_CARD_FULFILLMENT__REFERENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int GIFT_CARD_FULFILLMENT__REFERENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Response Code</b></em>' attribute.
@@ -1808,25 +1791,43 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GIFT_CARD_FULFILLMENT__RESPONSE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int GIFT_CARD_FULFILLMENT__RESPONSE_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Survey Response Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Type Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Type Enum Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int GIFT_CARD_FULFILLMENT__PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD_FULFILLMENT__ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Survey Response Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Gift Card Fulfillment</em>' class.
@@ -1911,22 +1912,13 @@ public interface PaymentPackage extends EPackage {
 	int PAY_PAL_PAYMENT_METHOD__AVS_ZIP = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Correlation Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__CORRELATION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAY_PAL_PAYMENT_METHOD__CORRELATION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Express Checkout Token</b></em>' attribute.
@@ -1935,7 +1927,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__EXPRESS_CHECKOUT_TOKEN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAY_PAL_PAYMENT_METHOD__EXPRESS_CHECKOUT_TOKEN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Payer Id</b></em>' attribute.
@@ -1944,7 +1936,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__PAYER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAY_PAL_PAYMENT_METHOD__PAYER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Payer Status</b></em>' attribute.
@@ -1953,7 +1945,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__PAYER_STATUS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAY_PAL_PAYMENT_METHOD__PAYER_STATUS = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Transaction Id</b></em>' attribute.
@@ -1962,7 +1954,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAY_PAL_PAYMENT_METHOD__TRANSACTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAY_PAL_PAYMENT_METHOD__TRANSACTION_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Pay Pal Payment Method</em>' class.
@@ -2038,22 +2039,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT__ACTUAL_CURRENCY_AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Actual Currency Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__ACTUAL_CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Amount</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT__AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int PAYMENT__AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -2062,16 +2054,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT__COMMENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Currency Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int PAYMENT__COMMENTS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Effective Date</b></em>' attribute.
@@ -2080,79 +2063,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT__EFFECTIVE_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Fin Account Trans Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__FIN_ACCOUNT_TRANS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Override Gl Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__OVERRIDE_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Party Id From</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Party Id To</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Payment Gateway Response Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__PAYMENT_GATEWAY_RESPONSE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
-
-	/**
-	 * The feature id for the '<em><b>Payment Preference Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__PAYMENT_PREFERENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int PAYMENT__EFFECTIVE_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Payment Ref Num</b></em>' attribute.
@@ -2161,34 +2072,124 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT__PAYMENT_REF_NUM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int PAYMENT__PAYMENT_REF_NUM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Payment Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT__PAYMENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int PAYMENT__PAYMENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Role Type Id To</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+	int PAYMENT__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
+	int PAYMENT__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Actual Currency Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__ACTUAL_CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Payment Preference Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__PAYMENT_PREFERENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Response Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__PAYMENT_GATEWAY_RESPONSE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Party Id From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__PARTY_ID_FROM = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Party Id To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__PARTY_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Role Type Id To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__ROLE_TYPE_ID_TO = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Fin Account Trans Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__FIN_ACCOUNT_TRANS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Override Gl Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__OVERRIDE_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Payment Attributes</b></em>' attribute list.
@@ -2273,52 +2274,52 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_APPLICATION__AMOUNT_APPLIED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Billing Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_APPLICATION__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Invoice Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_APPLICATION__INVOICE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Invoice Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_APPLICATION__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_APPLICATION__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Override Gl Account Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_APPLICATION__OVERRIDE_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_APPLICATION__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Payment Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Invoice Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_APPLICATION__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_APPLICATION__INVOICE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Tax Auth Geo Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Billing Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_APPLICATION__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>To Payment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_APPLICATION__TO_PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Tax Auth Geo Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2327,13 +2328,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_APPLICATION__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>To Payment Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Override Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_APPLICATION__TO_PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_APPLICATION__OVERRIDE_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Application</em>' class.
@@ -2500,22 +2501,22 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Payment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Amount</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_BUDGET_ALLOCATION__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_BUDGET_ALLOCATION__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Budget Allocation</em>' class.
@@ -2582,31 +2583,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_CONTENT__CONTENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Payment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_CONTENT__PAYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Payment Content Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int PAYMENT_CONTENT__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -2615,7 +2598,25 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int PAYMENT_CONTENT__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT__PAYMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Payment Content Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Content</em>' class.
@@ -2709,7 +2710,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_CONTENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3171,7 +3172,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_CONFIG__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Config Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Gateway Config Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3271,7 +3272,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_CONFIG_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4321,22 +4322,22 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESP_MSG_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Payment Gateway Response Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Pgr Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESP_MSG__PGR_MESSAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GATEWAY_RESP_MSG__PGR_MESSAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Payment Gateway Response Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Resp Msg</em>' class.
@@ -4421,22 +4422,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GATEWAY_RESPONSE__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Currency Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Gateway Avs Result</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Gateway Code</b></em>' attribute.
@@ -4445,7 +4437,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Gateway Cv Result</b></em>' attribute.
@@ -4454,7 +4446,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_CV_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Gateway Flag</b></em>' attribute.
@@ -4463,7 +4455,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_FLAG = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Gateway Message</b></em>' attribute.
@@ -4472,7 +4464,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_MESSAGE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Gateway Score Result</b></em>' attribute.
@@ -4481,43 +4473,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Order Payment Preference Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Payment Service Type Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
+	int PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Reference Num</b></em>' attribute.
@@ -4526,7 +4482,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
+	int PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Result Bad Card Number</b></em>' attribute.
@@ -4535,7 +4491,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Result Bad Expire</b></em>' attribute.
@@ -4544,7 +4500,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_EXPIRE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Result Declined</b></em>' attribute.
@@ -4553,7 +4509,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+	int PAYMENT_GATEWAY_RESPONSE__RESULT_DECLINED = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Result Nsf</b></em>' attribute.
@@ -4562,7 +4518,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__RESULT_NSF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int PAYMENT_GATEWAY_RESPONSE__RESULT_NSF = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Sub Reference</b></em>' attribute.
@@ -4571,16 +4527,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
-
-	/**
-	 * The feature id for the '<em><b>Trans Code Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Transaction Date</b></em>' attribute.
@@ -4589,7 +4536,61 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+	int PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Payment Service Type Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Trans Code Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Order Payment Preference Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
 
 	/**
 	 * The number of structural features of the '<em>Gateway Response</em>' class.
@@ -5100,7 +5101,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Organization Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5109,7 +5110,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Gl Account Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Gl Account Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5191,7 +5192,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GROUP__PAYMENT_GROUP_NAME = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Payment Group Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Payment Group Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5264,22 +5265,13 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Payment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_GROUP_MEMBER__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GROUP_MEMBER__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PAYMENT_GROUP_MEMBER__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -5288,7 +5280,7 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GROUP_MEMBER__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PAYMENT_GROUP_MEMBER__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -5297,7 +5289,16 @@ public interface PaymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_GROUP_MEMBER__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PAYMENT_GROUP_MEMBER__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_GROUP_MEMBER__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Group Member</em>' class.
@@ -5391,7 +5392,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_GROUP_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5473,22 +5474,22 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Default Gl Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT_METHOD_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
+	int PAYMENT_METHOD_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Default Gl Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Payment Method Type Gl Accounts</b></em>' attribute list.
@@ -5564,7 +5565,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Organization Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5573,7 +5574,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_METHOD_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Gl Account Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Gl Account Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5673,7 +5674,7 @@ public interface PaymentPackage extends EPackage {
 	int PAYMENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5985,15 +5986,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getBillingAccount_BillingAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId <em>Account Currency Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Account Currency Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Account Currency Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountCurrencyUomId()
 	 * @see #getBillingAccount()
 	 * @generated
 	 */
-	EAttribute getBillingAccount_AccountCurrencyUomId();
+	EReference getBillingAccount_AccountCurrencyUomId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getAccountLimit <em>Account Limit</em>}'.
@@ -6007,15 +6008,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getBillingAccount_AccountLimit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccount#getContactMechId()
 	 * @see #getBillingAccount()
 	 * @generated
 	 */
-	EAttribute getBillingAccount_ContactMechId();
+	EReference getBillingAccount_ContactMechId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccount#getDescription <em>Description</em>}'.
@@ -6083,26 +6084,26 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getBillingAccountRole_BillingAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getPartyId()
 	 * @see #getBillingAccountRole()
 	 * @generated
 	 */
-	EAttribute getBillingAccountRole_PartyId();
+	EReference getBillingAccountRole_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getRoleTypeId <em>Role Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getRoleTypeId <em>Role Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getRoleTypeId()
 	 * @see #getBillingAccountRole()
 	 * @generated
 	 */
-	EAttribute getBillingAccountRole_RoleTypeId();
+	EReference getBillingAccountRole_RoleTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountRole#getFromDate <em>From Date</em>}'.
@@ -6148,15 +6149,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getBillingAccountTerm_BillingAccountTermId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getBillingAccountId <em>Billing Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getBillingAccountId <em>Billing Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Billing Account Id</em>'.
+	 * @return the meta object for the reference '<em>Billing Account Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getBillingAccountId()
 	 * @see #getBillingAccountTerm()
 	 * @generated
 	 */
-	EAttribute getBillingAccountTerm_BillingAccountId();
+	EReference getBillingAccountTerm_BillingAccountId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getTermDays <em>Term Days</em>}'.
@@ -6170,15 +6171,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getBillingAccountTerm_TermDays();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getTermTypeId <em>Term Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getTermTypeId <em>Term Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Term Type Id</em>'.
+	 * @return the meta object for the reference '<em>Term Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getTermTypeId()
 	 * @see #getBillingAccountTerm()
 	 * @generated
 	 */
-	EAttribute getBillingAccountTerm_TermTypeId();
+	EReference getBillingAccountTerm_TermTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getTermValue <em>Term Value</em>}'.
@@ -6192,15 +6193,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getBillingAccountTerm_TermValue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getUomId <em>Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getUomId <em>Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getUomId()
 	 * @see #getBillingAccountTerm()
 	 * @generated
 	 */
-	EAttribute getBillingAccountTerm_UomId();
+	EReference getBillingAccountTerm_UomId();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.payment.BillingAccountTerm#getBillingAccountTermAttrs <em>Billing Account Term Attrs</em>}'.
@@ -6333,15 +6334,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getCheckAccount_CompanyNameOnAccount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.CheckAccount#getContactMechId()
 	 * @see #getCheckAccount()
 	 * @generated
 	 */
-	EAttribute getCheckAccount_ContactMechId();
+	EReference getCheckAccount_ContactMechId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.CheckAccount#getNameOnAccount <em>Name On Account</em>}'.
@@ -6431,15 +6432,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getCreditCard_ConsecutiveFailedNsf();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.CreditCard#getContactMechId()
 	 * @see #getCreditCard()
 	 * @generated
 	 */
-	EAttribute getCreditCard_ContactMechId();
+	EReference getCreditCard_ContactMechId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.CreditCard#getExpireDate <em>Expire Date</em>}'.
@@ -6627,26 +6628,26 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getDeduction_Amount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Deduction#getDeductionTypeId <em>Deduction Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Deduction#getDeductionTypeId <em>Deduction Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Deduction Type Id</em>'.
+	 * @return the meta object for the reference '<em>Deduction Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Deduction#getDeductionTypeId()
 	 * @see #getDeduction()
 	 * @generated
 	 */
-	EAttribute getDeduction_DeductionTypeId();
+	EReference getDeduction_DeductionTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Deduction#getPaymentId <em>Payment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Deduction#getPaymentId <em>Payment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Deduction#getPaymentId()
 	 * @see #getDeduction()
 	 * @generated
 	 */
-	EAttribute getDeduction_PaymentId();
+	EReference getDeduction_PaymentId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.DeductionType <em>Deduction Type</em>}'.
@@ -6692,15 +6693,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getDeductionType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.DeductionType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.DeductionType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.DeductionType#getParentTypeId()
 	 * @see #getDeductionType()
 	 * @generated
 	 */
-	EAttribute getDeductionType_ParentTypeId();
+	EReference getDeductionType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.EftAccount <em>Eft Account</em>}'.
@@ -6757,15 +6758,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getEftAccount_CompanyNameOnAccount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.EftAccount#getContactMechId()
 	 * @see #getEftAccount()
 	 * @generated
 	 */
-	EAttribute getEftAccount_ContactMechId();
+	EReference getEftAccount_ContactMechId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.EftAccount#getNameOnAccount <em>Name On Account</em>}'.
@@ -6822,15 +6823,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getGiftCard_CardNumber();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.GiftCard#getContactMechId()
 	 * @see #getGiftCard()
 	 * @generated
 	 */
-	EAttribute getGiftCard_ContactMechId();
+	EReference getGiftCard_ContactMechId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.GiftCard#getExpireDate <em>Expire Date</em>}'.
@@ -6931,15 +6932,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getGiftCardFulfillment_MerchantId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getOrderId()
 	 * @see #getGiftCardFulfillment()
 	 * @generated
 	 */
-	EAttribute getGiftCardFulfillment_OrderId();
+	EReference getGiftCardFulfillment_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -6953,15 +6954,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getGiftCardFulfillment_OrderItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getPartyId()
 	 * @see #getGiftCardFulfillment()
 	 * @generated
 	 */
-	EAttribute getGiftCardFulfillment_PartyId();
+	EReference getGiftCardFulfillment_PartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getPinNumber <em>Pin Number</em>}'.
@@ -6997,26 +6998,26 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getGiftCardFulfillment_ResponseCode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getSurveyResponseId <em>Survey Response Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getSurveyResponseId <em>Survey Response Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Survey Response Id</em>'.
+	 * @return the meta object for the reference '<em>Survey Response Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getSurveyResponseId()
 	 * @see #getGiftCardFulfillment()
 	 * @generated
 	 */
-	EAttribute getGiftCardFulfillment_SurveyResponseId();
+	EReference getGiftCardFulfillment_SurveyResponseId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getTypeEnumId <em>Type Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getTypeEnumId <em>Type Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Type Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.GiftCardFulfillment#getTypeEnumId()
 	 * @see #getGiftCardFulfillment()
 	 * @generated
 	 */
-	EAttribute getGiftCardFulfillment_TypeEnumId();
+	EReference getGiftCardFulfillment_TypeEnumId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod <em>Pay Pal Payment Method</em>}'.
@@ -7062,15 +7063,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPayPalPaymentMethod_AvsZip();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getContactMechId()
 	 * @see #getPayPalPaymentMethod()
 	 * @generated
 	 */
-	EAttribute getPayPalPaymentMethod_ContactMechId();
+	EReference getPayPalPaymentMethod_ContactMechId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PayPalPaymentMethod#getCorrelationId <em>Correlation Id</em>}'.
@@ -7160,15 +7161,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPayment_ActualCurrencyAmount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getActualCurrencyUomId <em>Actual Currency Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getActualCurrencyUomId <em>Actual Currency Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Actual Currency Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Actual Currency Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getActualCurrencyUomId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_ActualCurrencyUomId();
+	EReference getPayment_ActualCurrencyUomId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getAmount <em>Amount</em>}'.
@@ -7193,15 +7194,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPayment_Comments();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getCurrencyUomId <em>Currency Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getCurrencyUomId <em>Currency Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Currency Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Currency Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getCurrencyUomId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_CurrencyUomId();
+	EReference getPayment_CurrencyUomId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getEffectiveDate <em>Effective Date</em>}'.
@@ -7215,92 +7216,92 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPayment_EffectiveDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getFinAccountTransId <em>Fin Account Trans Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getFinAccountTransId <em>Fin Account Trans Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fin Account Trans Id</em>'.
+	 * @return the meta object for the reference '<em>Fin Account Trans Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getFinAccountTransId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_FinAccountTransId();
+	EReference getPayment_FinAccountTransId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getOverrideGlAccountId <em>Override Gl Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getOverrideGlAccountId <em>Override Gl Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Override Gl Account Id</em>'.
+	 * @return the meta object for the reference '<em>Override Gl Account Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getOverrideGlAccountId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_OverrideGlAccountId();
+	EReference getPayment_OverrideGlAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdFrom <em>Party Id From</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdFrom <em>Party Id From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id From</em>'.
+	 * @return the meta object for the reference '<em>Party Id From</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdFrom()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_PartyIdFrom();
+	EReference getPayment_PartyIdFrom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdTo <em>Party Id To</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdTo <em>Party Id To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id To</em>'.
+	 * @return the meta object for the reference '<em>Party Id To</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getPartyIdTo()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_PartyIdTo();
+	EReference getPayment_PartyIdTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Response Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Response Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getPaymentGatewayResponseId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_PaymentGatewayResponseId();
+	EReference getPayment_PaymentGatewayResponseId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId <em>Payment Method Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId <em>Payment Method Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_PaymentMethodId();
+	EReference getPayment_PaymentMethodId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getPaymentMethodTypeId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_PaymentMethodTypeId();
+	EReference getPayment_PaymentMethodTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentPreferenceId <em>Payment Preference Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentPreferenceId <em>Payment Preference Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Preference Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Preference Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getPaymentPreferenceId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_PaymentPreferenceId();
+	EReference getPayment_PaymentPreferenceId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentRefNum <em>Payment Ref Num</em>}'.
@@ -7314,37 +7315,37 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPayment_PaymentRefNum();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentTypeId <em>Payment Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentTypeId <em>Payment Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getPaymentTypeId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_PaymentTypeId();
+	EReference getPayment_PaymentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getRoleTypeIdTo <em>Role Type Id To</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getRoleTypeIdTo <em>Role Type Id To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Role Type Id To</em>'.
+	 * @return the meta object for the reference '<em>Role Type Id To</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getRoleTypeIdTo()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_RoleTypeIdTo();
+	EReference getPayment_RoleTypeIdTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.Payment#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.Payment#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.Payment#getStatusId()
 	 * @see #getPayment()
 	 * @generated
 	 */
-	EAttribute getPayment_StatusId();
+	EReference getPayment_StatusId();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.payment.Payment#getPaymentAttributes <em>Payment Attributes</em>}'.
@@ -7390,26 +7391,26 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentApplication_AmountApplied();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getBillingAccountId <em>Billing Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getBillingAccountId <em>Billing Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Billing Account Id</em>'.
+	 * @return the meta object for the reference '<em>Billing Account Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentApplication#getBillingAccountId()
 	 * @see #getPaymentApplication()
 	 * @generated
 	 */
-	EAttribute getPaymentApplication_BillingAccountId();
+	EReference getPaymentApplication_BillingAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getInvoiceId <em>Invoice Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getInvoiceId <em>Invoice Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Invoice Id</em>'.
+	 * @return the meta object for the reference '<em>Invoice Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentApplication#getInvoiceId()
 	 * @see #getPaymentApplication()
 	 * @generated
 	 */
-	EAttribute getPaymentApplication_InvoiceId();
+	EReference getPaymentApplication_InvoiceId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}'.
@@ -7423,48 +7424,48 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentApplication_InvoiceItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getOverrideGlAccountId <em>Override Gl Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getOverrideGlAccountId <em>Override Gl Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Override Gl Account Id</em>'.
+	 * @return the meta object for the reference '<em>Override Gl Account Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentApplication#getOverrideGlAccountId()
 	 * @see #getPaymentApplication()
 	 * @generated
 	 */
-	EAttribute getPaymentApplication_OverrideGlAccountId();
+	EReference getPaymentApplication_OverrideGlAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getPaymentId <em>Payment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getPaymentId <em>Payment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentApplication#getPaymentId()
 	 * @see #getPaymentApplication()
 	 * @generated
 	 */
-	EAttribute getPaymentApplication_PaymentId();
+	EReference getPaymentApplication_PaymentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tax Auth Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Tax Auth Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentApplication#getTaxAuthGeoId()
 	 * @see #getPaymentApplication()
 	 * @generated
 	 */
-	EAttribute getPaymentApplication_TaxAuthGeoId();
+	EReference getPaymentApplication_TaxAuthGeoId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getToPaymentId <em>To Payment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentApplication#getToPaymentId <em>To Payment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>To Payment Id</em>'.
+	 * @return the meta object for the reference '<em>To Payment Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentApplication#getToPaymentId()
 	 * @see #getPaymentApplication()
 	 * @generated
 	 */
-	EAttribute getPaymentApplication_ToPaymentId();
+	EReference getPaymentApplication_ToPaymentId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentAttribute <em>Attribute</em>}'.
@@ -7553,15 +7554,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentBudgetAllocation_BudgetItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation#getPaymentId <em>Payment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation#getPaymentId <em>Payment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation#getPaymentId()
 	 * @see #getPaymentBudgetAllocation()
 	 * @generated
 	 */
-	EAttribute getPaymentBudgetAllocation_PaymentId();
+	EReference getPaymentBudgetAllocation_PaymentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentBudgetAllocation#getAmount <em>Amount</em>}'.
@@ -7596,26 +7597,26 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentContent_ContentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentId <em>Payment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentId <em>Payment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentId()
 	 * @see #getPaymentContent()
 	 * @generated
 	 */
-	EAttribute getPaymentContent_PaymentId();
+	EReference getPaymentContent_PaymentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentContentTypeId <em>Payment Content Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentContentTypeId <em>Payment Content Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Content Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Content Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentContent#getPaymentContentTypeId()
 	 * @see #getPaymentContent()
 	 * @generated
 	 */
-	EAttribute getPaymentContent_PaymentContentTypeId();
+	EReference getPaymentContent_PaymentContentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentContent#getFromDate <em>From Date</em>}'.
@@ -7683,15 +7684,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentContentType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentContentType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentContentType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentContentType#getParentTypeId()
 	 * @see #getPaymentContentType()
 	 * @generated
 	 */
-	EAttribute getPaymentContentType_ParentTypeId();
+	EReference getPaymentContentType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayAuthorizeNet <em>Gateway Authorize Net</em>}'.
@@ -8076,15 +8077,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGatewayConfig_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig#getPaymentGatewayConfigTypeId <em>Payment Gateway Config Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig#getPaymentGatewayConfigTypeId <em>Payment Gateway Config Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Config Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Config Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfig#getPaymentGatewayConfigTypeId()
 	 * @see #getPaymentGatewayConfig()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayConfig_PaymentGatewayConfigTypeId();
+	EReference getPaymentGatewayConfig_PaymentGatewayConfigTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType <em>Gateway Config Type</em>}'.
@@ -8130,15 +8131,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGatewayConfigType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayConfigType#getParentTypeId()
 	 * @see #getPaymentGatewayConfigType()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayConfigType_ParentTypeId();
+	EReference getPaymentGatewayConfigType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayCyberSource <em>Gateway Cyber Source</em>}'.
@@ -9070,15 +9071,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGatewayRespMsg_PaymentGatewayRespMsgId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Gateway Response Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Gateway Response Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayResponseId()
 	 * @see #getPaymentGatewayRespMsg()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayRespMsg_PaymentGatewayResponseId();
+	EReference getPaymentGatewayRespMsg_PaymentGatewayResponseId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPgrMessage <em>Pgr Message</em>}'.
@@ -9135,15 +9136,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGatewayResponse_Amount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getCurrencyUomId <em>Currency Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getCurrencyUomId <em>Currency Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Currency Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Currency Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getCurrencyUomId()
 	 * @see #getPaymentGatewayResponse()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayResponse_CurrencyUomId();
+	EReference getPaymentGatewayResponse_CurrencyUomId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getGatewayAvsResult <em>Gateway Avs Result</em>}'.
@@ -9212,48 +9213,48 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGatewayResponse_GatewayScoreResult();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Payment Preference Id</em>'.
+	 * @return the meta object for the reference '<em>Order Payment Preference Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getOrderPaymentPreferenceId()
 	 * @see #getPaymentGatewayResponse()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayResponse_OrderPaymentPreferenceId();
+	EReference getPaymentGatewayResponse_OrderPaymentPreferenceId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentMethodId <em>Payment Method Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentMethodId <em>Payment Method Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentMethodId()
 	 * @see #getPaymentGatewayResponse()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayResponse_PaymentMethodId();
+	EReference getPaymentGatewayResponse_PaymentMethodId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentMethodTypeId()
 	 * @see #getPaymentGatewayResponse()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayResponse_PaymentMethodTypeId();
+	EReference getPaymentGatewayResponse_PaymentMethodTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Service Type Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Service Type Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getPaymentServiceTypeEnumId()
 	 * @see #getPaymentGatewayResponse()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayResponse_PaymentServiceTypeEnumId();
+	EReference getPaymentGatewayResponse_PaymentServiceTypeEnumId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getReferenceNum <em>Reference Num</em>}'.
@@ -9322,15 +9323,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGatewayResponse_SubReference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getTransCodeEnumId <em>Trans Code Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getTransCodeEnumId <em>Trans Code Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Trans Code Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Trans Code Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getTransCodeEnumId()
 	 * @see #getPaymentGatewayResponse()
 	 * @generated
 	 */
-	EAttribute getPaymentGatewayResponse_TransCodeEnumId();
+	EReference getPaymentGatewayResponse_TransCodeEnumId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse#getTransactionDate <em>Transaction Date</em>}'.
@@ -9736,26 +9737,26 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGlAccountTypeMap_PaymentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getOrganizationPartyId <em>Organization Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getOrganizationPartyId <em>Organization Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Organization Party Id</em>'.
+	 * @return the meta object for the reference '<em>Organization Party Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getOrganizationPartyId()
 	 * @see #getPaymentGlAccountTypeMap()
 	 * @generated
 	 */
-	EAttribute getPaymentGlAccountTypeMap_OrganizationPartyId();
+	EReference getPaymentGlAccountTypeMap_OrganizationPartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getGlAccountTypeId <em>Gl Account Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getGlAccountTypeId <em>Gl Account Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Gl Account Type Id</em>'.
+	 * @return the meta object for the reference '<em>Gl Account Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGlAccountTypeMap#getGlAccountTypeId()
 	 * @see #getPaymentGlAccountTypeMap()
 	 * @generated
 	 */
-	EAttribute getPaymentGlAccountTypeMap_GlAccountTypeId();
+	EReference getPaymentGlAccountTypeMap_GlAccountTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroup <em>Group</em>}'.
@@ -9790,15 +9791,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGroup_PaymentGroupName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroup#getPaymentGroupTypeId <em>Payment Group Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroup#getPaymentGroupTypeId <em>Payment Group Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Group Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Group Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGroup#getPaymentGroupTypeId()
 	 * @see #getPaymentGroup()
 	 * @generated
 	 */
-	EAttribute getPaymentGroup_PaymentGroupTypeId();
+	EReference getPaymentGroup_PaymentGroupTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember <em>Group Member</em>}'.
@@ -9822,15 +9823,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGroupMember_PaymentGroupId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentId <em>Payment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentId <em>Payment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getPaymentId()
 	 * @see #getPaymentGroupMember()
 	 * @generated
 	 */
-	EAttribute getPaymentGroupMember_PaymentId();
+	EReference getPaymentGroupMember_PaymentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupMember#getFromDate <em>From Date</em>}'.
@@ -9909,15 +9910,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentGroupType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentGroupType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentGroupType#getParentTypeId()
 	 * @see #getPaymentGroupType()
 	 * @generated
 	 */
-	EAttribute getPaymentGroupType_ParentTypeId();
+	EReference getPaymentGroupType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod <em>Method</em>}'.
@@ -9952,15 +9953,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentMethod_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getFinAccountId <em>Fin Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getFinAccountId <em>Fin Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fin Account Id</em>'.
+	 * @return the meta object for the reference '<em>Fin Account Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#getFinAccountId()
 	 * @see #getPaymentMethod()
 	 * @generated
 	 */
-	EAttribute getPaymentMethod_FinAccountId();
+	EReference getPaymentMethod_FinAccountId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getFromDate <em>From Date</em>}'.
@@ -9974,37 +9975,37 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentMethod_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getGlAccountId <em>Gl Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getGlAccountId <em>Gl Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Gl Account Id</em>'.
+	 * @return the meta object for the reference '<em>Gl Account Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#getGlAccountId()
 	 * @see #getPaymentMethod()
 	 * @generated
 	 */
-	EAttribute getPaymentMethod_GlAccountId();
+	EReference getPaymentMethod_GlAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getPartyId <em>Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getPartyId <em>Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Party Id</em>'.
+	 * @return the meta object for the reference '<em>Party Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#getPartyId()
 	 * @see #getPaymentMethod()
 	 * @generated
 	 */
-	EAttribute getPaymentMethod_PartyId();
+	EReference getPaymentMethod_PartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethod#getPaymentMethodTypeId()
 	 * @see #getPaymentMethod()
 	 * @generated
 	 */
-	EAttribute getPaymentMethod_PaymentMethodTypeId();
+	EReference getPaymentMethod_PaymentMethodTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethod#getThruDate <em>Thru Date</em>}'.
@@ -10039,15 +10040,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentMethodType_PaymentMethodTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getDefaultGlAccountId <em>Default Gl Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getDefaultGlAccountId <em>Default Gl Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Default Gl Account Id</em>'.
+	 * @return the meta object for the reference '<em>Default Gl Account Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getDefaultGlAccountId()
 	 * @see #getPaymentMethodType()
 	 * @generated
 	 */
-	EAttribute getPaymentMethodType_DefaultGlAccountId();
+	EReference getPaymentMethodType_DefaultGlAccountId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodType#getDescription <em>Description</em>}'.
@@ -10093,26 +10094,26 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentMethodTypeGlAccount_PaymentMethodTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getOrganizationPartyId <em>Organization Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Organization Party Id</em>'.
+	 * @return the meta object for the reference '<em>Organization Party Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getOrganizationPartyId()
 	 * @see #getPaymentMethodTypeGlAccount()
 	 * @generated
 	 */
-	EAttribute getPaymentMethodTypeGlAccount_OrganizationPartyId();
+	EReference getPaymentMethodTypeGlAccount_OrganizationPartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getGlAccountId <em>Gl Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getGlAccountId <em>Gl Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Gl Account Id</em>'.
+	 * @return the meta object for the reference '<em>Gl Account Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentMethodTypeGlAccount#getGlAccountId()
 	 * @see #getPaymentMethodTypeGlAccount()
 	 * @generated
 	 */
-	EAttribute getPaymentMethodTypeGlAccount_GlAccountId();
+	EReference getPaymentMethodTypeGlAccount_GlAccountId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.accounting.payment.PaymentType <em>Type</em>}'.
@@ -10158,15 +10159,15 @@ public interface PaymentPackage extends EPackage {
 	EAttribute getPaymentType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentType#getParentTypeId()
 	 * @see #getPaymentType()
 	 * @generated
 	 */
-	EAttribute getPaymentType_ParentTypeId();
+	EReference getPaymentType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.accounting.payment.PaymentType#getPaymentGlAccountTypeMaps <em>Payment Gl Account Type Maps</em>}'.
@@ -10427,12 +10428,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute BILLING_ACCOUNT__BILLING_ACCOUNT_ID = eINSTANCE.getBillingAccount_BillingAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Account Currency Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Account Currency Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID = eINSTANCE.getBillingAccount_AccountCurrencyUomId();
+		EReference BILLING_ACCOUNT__ACCOUNT_CURRENCY_UOM_ID = eINSTANCE.getBillingAccount_AccountCurrencyUomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Account Limit</b></em>' attribute feature.
@@ -10443,12 +10444,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute BILLING_ACCOUNT__ACCOUNT_LIMIT = eINSTANCE.getBillingAccount_AccountLimit();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BILLING_ACCOUNT__CONTACT_MECH_ID = eINSTANCE.getBillingAccount_ContactMechId();
+		EReference BILLING_ACCOUNT__CONTACT_MECH_ID = eINSTANCE.getBillingAccount_ContactMechId();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -10501,20 +10502,20 @@ public interface PaymentPackage extends EPackage {
 		EAttribute BILLING_ACCOUNT_ROLE__BILLING_ACCOUNT_ID = eINSTANCE.getBillingAccountRole_BillingAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BILLING_ACCOUNT_ROLE__PARTY_ID = eINSTANCE.getBillingAccountRole_PartyId();
+		EReference BILLING_ACCOUNT_ROLE__PARTY_ID = eINSTANCE.getBillingAccountRole_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BILLING_ACCOUNT_ROLE__ROLE_TYPE_ID = eINSTANCE.getBillingAccountRole_RoleTypeId();
+		EReference BILLING_ACCOUNT_ROLE__ROLE_TYPE_ID = eINSTANCE.getBillingAccountRole_RoleTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -10551,12 +10552,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_TERM_ID = eINSTANCE.getBillingAccountTerm_BillingAccountTermId();
 
 		/**
-		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_ID = eINSTANCE.getBillingAccountTerm_BillingAccountId();
+		EReference BILLING_ACCOUNT_TERM__BILLING_ACCOUNT_ID = eINSTANCE.getBillingAccountTerm_BillingAccountId();
 
 		/**
 		 * The meta object literal for the '<em><b>Term Days</b></em>' attribute feature.
@@ -10567,12 +10568,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute BILLING_ACCOUNT_TERM__TERM_DAYS = eINSTANCE.getBillingAccountTerm_TermDays();
 
 		/**
-		 * The meta object literal for the '<em><b>Term Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Term Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BILLING_ACCOUNT_TERM__TERM_TYPE_ID = eINSTANCE.getBillingAccountTerm_TermTypeId();
+		EReference BILLING_ACCOUNT_TERM__TERM_TYPE_ID = eINSTANCE.getBillingAccountTerm_TermTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Term Value</b></em>' attribute feature.
@@ -10583,12 +10584,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute BILLING_ACCOUNT_TERM__TERM_VALUE = eINSTANCE.getBillingAccountTerm_TermValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BILLING_ACCOUNT_TERM__UOM_ID = eINSTANCE.getBillingAccountTerm_UomId();
+		EReference BILLING_ACCOUNT_TERM__UOM_ID = eINSTANCE.getBillingAccountTerm_UomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Billing Account Term Attrs</b></em>' attribute list feature.
@@ -10691,12 +10692,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute CHECK_ACCOUNT__COMPANY_NAME_ON_ACCOUNT = eINSTANCE.getCheckAccount_CompanyNameOnAccount();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CHECK_ACCOUNT__CONTACT_MECH_ID = eINSTANCE.getCheckAccount_ContactMechId();
+		EReference CHECK_ACCOUNT__CONTACT_MECH_ID = eINSTANCE.getCheckAccount_ContactMechId();
 
 		/**
 		 * The meta object literal for the '<em><b>Name On Account</b></em>' attribute feature.
@@ -10765,12 +10766,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute CREDIT_CARD__CONSECUTIVE_FAILED_NSF = eINSTANCE.getCreditCard_ConsecutiveFailedNsf();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CREDIT_CARD__CONTACT_MECH_ID = eINSTANCE.getCreditCard_ContactMechId();
+		EReference CREDIT_CARD__CONTACT_MECH_ID = eINSTANCE.getCreditCard_ContactMechId();
 
 		/**
 		 * The meta object literal for the '<em><b>Expire Date</b></em>' attribute feature.
@@ -10913,20 +10914,20 @@ public interface PaymentPackage extends EPackage {
 		EAttribute DEDUCTION__AMOUNT = eINSTANCE.getDeduction_Amount();
 
 		/**
-		 * The meta object literal for the '<em><b>Deduction Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Deduction Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DEDUCTION__DEDUCTION_TYPE_ID = eINSTANCE.getDeduction_DeductionTypeId();
+		EReference DEDUCTION__DEDUCTION_TYPE_ID = eINSTANCE.getDeduction_DeductionTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DEDUCTION__PAYMENT_ID = eINSTANCE.getDeduction_PaymentId();
+		EReference DEDUCTION__PAYMENT_ID = eINSTANCE.getDeduction_PaymentId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.DeductionTypeImpl <em>Deduction Type</em>}' class.
@@ -10963,12 +10964,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute DEDUCTION_TYPE__HAS_TABLE = eINSTANCE.getDeductionType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DEDUCTION_TYPE__PARENT_TYPE_ID = eINSTANCE.getDeductionType_ParentTypeId();
+		EReference DEDUCTION_TYPE__PARENT_TYPE_ID = eINSTANCE.getDeductionType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.EftAccountImpl <em>Eft Account</em>}' class.
@@ -11013,12 +11014,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute EFT_ACCOUNT__COMPANY_NAME_ON_ACCOUNT = eINSTANCE.getEftAccount_CompanyNameOnAccount();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EFT_ACCOUNT__CONTACT_MECH_ID = eINSTANCE.getEftAccount_ContactMechId();
+		EReference EFT_ACCOUNT__CONTACT_MECH_ID = eINSTANCE.getEftAccount_ContactMechId();
 
 		/**
 		 * The meta object literal for the '<em><b>Name On Account</b></em>' attribute feature.
@@ -11063,12 +11064,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute GIFT_CARD__CARD_NUMBER = eINSTANCE.getGiftCard_CardNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GIFT_CARD__CONTACT_MECH_ID = eINSTANCE.getGiftCard_ContactMechId();
+		EReference GIFT_CARD__CONTACT_MECH_ID = eINSTANCE.getGiftCard_ContactMechId();
 
 		/**
 		 * The meta object literal for the '<em><b>Expire Date</b></em>' attribute feature.
@@ -11145,12 +11146,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute GIFT_CARD_FULFILLMENT__MERCHANT_ID = eINSTANCE.getGiftCardFulfillment_MerchantId();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GIFT_CARD_FULFILLMENT__ORDER_ID = eINSTANCE.getGiftCardFulfillment_OrderId();
+		EReference GIFT_CARD_FULFILLMENT__ORDER_ID = eINSTANCE.getGiftCardFulfillment_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -11161,12 +11162,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute GIFT_CARD_FULFILLMENT__ORDER_ITEM_SEQ_ID = eINSTANCE.getGiftCardFulfillment_OrderItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GIFT_CARD_FULFILLMENT__PARTY_ID = eINSTANCE.getGiftCardFulfillment_PartyId();
+		EReference GIFT_CARD_FULFILLMENT__PARTY_ID = eINSTANCE.getGiftCardFulfillment_PartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Pin Number</b></em>' attribute feature.
@@ -11193,20 +11194,20 @@ public interface PaymentPackage extends EPackage {
 		EAttribute GIFT_CARD_FULFILLMENT__RESPONSE_CODE = eINSTANCE.getGiftCardFulfillment_ResponseCode();
 
 		/**
-		 * The meta object literal for the '<em><b>Survey Response Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Survey Response Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID = eINSTANCE.getGiftCardFulfillment_SurveyResponseId();
+		EReference GIFT_CARD_FULFILLMENT__SURVEY_RESPONSE_ID = eINSTANCE.getGiftCardFulfillment_SurveyResponseId();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID = eINSTANCE.getGiftCardFulfillment_TypeEnumId();
+		EReference GIFT_CARD_FULFILLMENT__TYPE_ENUM_ID = eINSTANCE.getGiftCardFulfillment_TypeEnumId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PayPalPaymentMethodImpl <em>Pay Pal Payment Method</em>}' class.
@@ -11243,12 +11244,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAY_PAL_PAYMENT_METHOD__AVS_ZIP = eINSTANCE.getPayPalPaymentMethod_AvsZip();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID = eINSTANCE.getPayPalPaymentMethod_ContactMechId();
+		EReference PAY_PAL_PAYMENT_METHOD__CONTACT_MECH_ID = eINSTANCE.getPayPalPaymentMethod_ContactMechId();
 
 		/**
 		 * The meta object literal for the '<em><b>Correlation Id</b></em>' attribute feature.
@@ -11317,12 +11318,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT__ACTUAL_CURRENCY_AMOUNT = eINSTANCE.getPayment_ActualCurrencyAmount();
 
 		/**
-		 * The meta object literal for the '<em><b>Actual Currency Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Actual Currency Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__ACTUAL_CURRENCY_UOM_ID = eINSTANCE.getPayment_ActualCurrencyUomId();
+		EReference PAYMENT__ACTUAL_CURRENCY_UOM_ID = eINSTANCE.getPayment_ActualCurrencyUomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.
@@ -11341,12 +11342,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT__COMMENTS = eINSTANCE.getPayment_Comments();
 
 		/**
-		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__CURRENCY_UOM_ID = eINSTANCE.getPayment_CurrencyUomId();
+		EReference PAYMENT__CURRENCY_UOM_ID = eINSTANCE.getPayment_CurrencyUomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Effective Date</b></em>' attribute feature.
@@ -11357,68 +11358,68 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT__EFFECTIVE_DATE = eINSTANCE.getPayment_EffectiveDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Fin Account Trans Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Fin Account Trans Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__FIN_ACCOUNT_TRANS_ID = eINSTANCE.getPayment_FinAccountTransId();
+		EReference PAYMENT__FIN_ACCOUNT_TRANS_ID = eINSTANCE.getPayment_FinAccountTransId();
 
 		/**
-		 * The meta object literal for the '<em><b>Override Gl Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Override Gl Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__OVERRIDE_GL_ACCOUNT_ID = eINSTANCE.getPayment_OverrideGlAccountId();
+		EReference PAYMENT__OVERRIDE_GL_ACCOUNT_ID = eINSTANCE.getPayment_OverrideGlAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id From</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__PARTY_ID_FROM = eINSTANCE.getPayment_PartyIdFrom();
+		EReference PAYMENT__PARTY_ID_FROM = eINSTANCE.getPayment_PartyIdFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id To</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__PARTY_ID_TO = eINSTANCE.getPayment_PartyIdTo();
+		EReference PAYMENT__PARTY_ID_TO = eINSTANCE.getPayment_PartyIdTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Response Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Response Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__PAYMENT_GATEWAY_RESPONSE_ID = eINSTANCE.getPayment_PaymentGatewayResponseId();
+		EReference PAYMENT__PAYMENT_GATEWAY_RESPONSE_ID = eINSTANCE.getPayment_PaymentGatewayResponseId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__PAYMENT_METHOD_ID = eINSTANCE.getPayment_PaymentMethodId();
+		EReference PAYMENT__PAYMENT_METHOD_ID = eINSTANCE.getPayment_PaymentMethodId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPayment_PaymentMethodTypeId();
+		EReference PAYMENT__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPayment_PaymentMethodTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Preference Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Preference Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__PAYMENT_PREFERENCE_ID = eINSTANCE.getPayment_PaymentPreferenceId();
+		EReference PAYMENT__PAYMENT_PREFERENCE_ID = eINSTANCE.getPayment_PaymentPreferenceId();
 
 		/**
 		 * The meta object literal for the '<em><b>Payment Ref Num</b></em>' attribute feature.
@@ -11429,28 +11430,28 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT__PAYMENT_REF_NUM = eINSTANCE.getPayment_PaymentRefNum();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__PAYMENT_TYPE_ID = eINSTANCE.getPayment_PaymentTypeId();
+		EReference PAYMENT__PAYMENT_TYPE_ID = eINSTANCE.getPayment_PaymentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Role Type Id To</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Role Type Id To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__ROLE_TYPE_ID_TO = eINSTANCE.getPayment_RoleTypeIdTo();
+		EReference PAYMENT__ROLE_TYPE_ID_TO = eINSTANCE.getPayment_RoleTypeIdTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT__STATUS_ID = eINSTANCE.getPayment_StatusId();
+		EReference PAYMENT__STATUS_ID = eINSTANCE.getPayment_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Payment Attributes</b></em>' attribute list feature.
@@ -11487,20 +11488,20 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_APPLICATION__AMOUNT_APPLIED = eINSTANCE.getPaymentApplication_AmountApplied();
 
 		/**
-		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_APPLICATION__BILLING_ACCOUNT_ID = eINSTANCE.getPaymentApplication_BillingAccountId();
+		EReference PAYMENT_APPLICATION__BILLING_ACCOUNT_ID = eINSTANCE.getPaymentApplication_BillingAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Invoice Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Invoice Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_APPLICATION__INVOICE_ID = eINSTANCE.getPaymentApplication_InvoiceId();
+		EReference PAYMENT_APPLICATION__INVOICE_ID = eINSTANCE.getPaymentApplication_InvoiceId();
 
 		/**
 		 * The meta object literal for the '<em><b>Invoice Item Seq Id</b></em>' attribute feature.
@@ -11511,36 +11512,36 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_APPLICATION__INVOICE_ITEM_SEQ_ID = eINSTANCE.getPaymentApplication_InvoiceItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Override Gl Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Override Gl Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_APPLICATION__OVERRIDE_GL_ACCOUNT_ID = eINSTANCE.getPaymentApplication_OverrideGlAccountId();
+		EReference PAYMENT_APPLICATION__OVERRIDE_GL_ACCOUNT_ID = eINSTANCE.getPaymentApplication_OverrideGlAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_APPLICATION__PAYMENT_ID = eINSTANCE.getPaymentApplication_PaymentId();
+		EReference PAYMENT_APPLICATION__PAYMENT_ID = eINSTANCE.getPaymentApplication_PaymentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Tax Auth Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tax Auth Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_APPLICATION__TAX_AUTH_GEO_ID = eINSTANCE.getPaymentApplication_TaxAuthGeoId();
+		EReference PAYMENT_APPLICATION__TAX_AUTH_GEO_ID = eINSTANCE.getPaymentApplication_TaxAuthGeoId();
 
 		/**
-		 * The meta object literal for the '<em><b>To Payment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>To Payment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_APPLICATION__TO_PAYMENT_ID = eINSTANCE.getPaymentApplication_ToPaymentId();
+		EReference PAYMENT_APPLICATION__TO_PAYMENT_ID = eINSTANCE.getPaymentApplication_ToPaymentId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentAttributeImpl <em>Attribute</em>}' class.
@@ -11611,12 +11612,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_BUDGET_ALLOCATION__BUDGET_ITEM_SEQ_ID = eINSTANCE.getPaymentBudgetAllocation_BudgetItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID = eINSTANCE.getPaymentBudgetAllocation_PaymentId();
+		EReference PAYMENT_BUDGET_ALLOCATION__PAYMENT_ID = eINSTANCE.getPaymentBudgetAllocation_PaymentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.
@@ -11645,20 +11646,20 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_CONTENT__CONTENT_ID = eINSTANCE.getPaymentContent_ContentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_CONTENT__PAYMENT_ID = eINSTANCE.getPaymentContent_PaymentId();
+		EReference PAYMENT_CONTENT__PAYMENT_ID = eINSTANCE.getPaymentContent_PaymentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Content Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Content Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID = eINSTANCE.getPaymentContent_PaymentContentTypeId();
+		EReference PAYMENT_CONTENT__PAYMENT_CONTENT_TYPE_ID = eINSTANCE.getPaymentContent_PaymentContentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -11711,12 +11712,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_CONTENT_TYPE__HAS_TABLE = eINSTANCE.getPaymentContentType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentContentType_ParentTypeId();
+		EReference PAYMENT_CONTENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentContentType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayAuthorizeNetImpl <em>Gateway Authorize Net</em>}' class.
@@ -12005,12 +12006,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GATEWAY_CONFIG__DESCRIPTION = eINSTANCE.getPaymentGatewayConfig_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Config Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Config Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID = eINSTANCE.getPaymentGatewayConfig_PaymentGatewayConfigTypeId();
+		EReference PAYMENT_GATEWAY_CONFIG__PAYMENT_GATEWAY_CONFIG_TYPE_ID = eINSTANCE.getPaymentGatewayConfig_PaymentGatewayConfigTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayConfigTypeImpl <em>Gateway Config Type</em>}' class.
@@ -12047,12 +12048,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GATEWAY_CONFIG_TYPE__HAS_TABLE = eINSTANCE.getPaymentGatewayConfigType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_CONFIG_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentGatewayConfigType_ParentTypeId();
+		EReference PAYMENT_GATEWAY_CONFIG_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentGatewayConfigType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayCyberSourceImpl <em>Gateway Cyber Source</em>}' class.
@@ -12747,12 +12748,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESP_MSG_ID = eINSTANCE.getPaymentGatewayRespMsg_PaymentGatewayRespMsgId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Gateway Response Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Gateway Response Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID = eINSTANCE.getPaymentGatewayRespMsg_PaymentGatewayResponseId();
+		EReference PAYMENT_GATEWAY_RESP_MSG__PAYMENT_GATEWAY_RESPONSE_ID = eINSTANCE.getPaymentGatewayRespMsg_PaymentGatewayResponseId();
 
 		/**
 		 * The meta object literal for the '<em><b>Pgr Message</b></em>' attribute feature.
@@ -12797,12 +12798,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GATEWAY_RESPONSE__AMOUNT = eINSTANCE.getPaymentGatewayResponse_Amount();
 
 		/**
-		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID = eINSTANCE.getPaymentGatewayResponse_CurrencyUomId();
+		EReference PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID = eINSTANCE.getPaymentGatewayResponse_CurrencyUomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Gateway Avs Result</b></em>' attribute feature.
@@ -12853,36 +12854,36 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT = eINSTANCE.getPaymentGatewayResponse_GatewayScoreResult();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Payment Preference Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Payment Preference Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID = eINSTANCE.getPaymentGatewayResponse_OrderPaymentPreferenceId();
+		EReference PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID = eINSTANCE.getPaymentGatewayResponse_OrderPaymentPreferenceId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID = eINSTANCE.getPaymentGatewayResponse_PaymentMethodId();
+		EReference PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID = eINSTANCE.getPaymentGatewayResponse_PaymentMethodId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPaymentGatewayResponse_PaymentMethodTypeId();
+		EReference PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPaymentGatewayResponse_PaymentMethodTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Service Type Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Service Type Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID = eINSTANCE.getPaymentGatewayResponse_PaymentServiceTypeEnumId();
+		EReference PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID = eINSTANCE.getPaymentGatewayResponse_PaymentServiceTypeEnumId();
 
 		/**
 		 * The meta object literal for the '<em><b>Reference Num</b></em>' attribute feature.
@@ -12933,12 +12934,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE = eINSTANCE.getPaymentGatewayResponse_SubReference();
 
 		/**
-		 * The meta object literal for the '<em><b>Trans Code Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Trans Code Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID = eINSTANCE.getPaymentGatewayResponse_TransCodeEnumId();
+		EReference PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID = eINSTANCE.getPaymentGatewayResponse_TransCodeEnumId();
 
 		/**
 		 * The meta object literal for the '<em><b>Transaction Date</b></em>' attribute feature.
@@ -13245,20 +13246,20 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GL_ACCOUNT_TYPE_MAP__PAYMENT_TYPE_ID = eINSTANCE.getPaymentGlAccountTypeMap_PaymentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Organization Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Organization Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID = eINSTANCE.getPaymentGlAccountTypeMap_OrganizationPartyId();
+		EReference PAYMENT_GL_ACCOUNT_TYPE_MAP__ORGANIZATION_PARTY_ID = eINSTANCE.getPaymentGlAccountTypeMap_OrganizationPartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Gl Account Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Gl Account Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID = eINSTANCE.getPaymentGlAccountTypeMap_GlAccountTypeId();
+		EReference PAYMENT_GL_ACCOUNT_TYPE_MAP__GL_ACCOUNT_TYPE_ID = eINSTANCE.getPaymentGlAccountTypeMap_GlAccountTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupImpl <em>Group</em>}' class.
@@ -13287,12 +13288,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GROUP__PAYMENT_GROUP_NAME = eINSTANCE.getPaymentGroup_PaymentGroupName();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Group Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Group Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID = eINSTANCE.getPaymentGroup_PaymentGroupTypeId();
+		EReference PAYMENT_GROUP__PAYMENT_GROUP_TYPE_ID = eINSTANCE.getPaymentGroup_PaymentGroupTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGroupMemberImpl <em>Group Member</em>}' class.
@@ -13313,12 +13314,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GROUP_MEMBER__PAYMENT_GROUP_ID = eINSTANCE.getPaymentGroupMember_PaymentGroupId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GROUP_MEMBER__PAYMENT_ID = eINSTANCE.getPaymentGroupMember_PaymentId();
+		EReference PAYMENT_GROUP_MEMBER__PAYMENT_ID = eINSTANCE.getPaymentGroupMember_PaymentId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -13379,12 +13380,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_GROUP_TYPE__HAS_TABLE = eINSTANCE.getPaymentGroupType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_GROUP_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentGroupType_ParentTypeId();
+		EReference PAYMENT_GROUP_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentGroupType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentMethodImpl <em>Method</em>}' class.
@@ -13413,12 +13414,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_METHOD__DESCRIPTION = eINSTANCE.getPaymentMethod_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Fin Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Fin Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_METHOD__FIN_ACCOUNT_ID = eINSTANCE.getPaymentMethod_FinAccountId();
+		EReference PAYMENT_METHOD__FIN_ACCOUNT_ID = eINSTANCE.getPaymentMethod_FinAccountId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -13429,28 +13430,28 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_METHOD__FROM_DATE = eINSTANCE.getPaymentMethod_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Gl Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Gl Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_METHOD__GL_ACCOUNT_ID = eINSTANCE.getPaymentMethod_GlAccountId();
+		EReference PAYMENT_METHOD__GL_ACCOUNT_ID = eINSTANCE.getPaymentMethod_GlAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_METHOD__PARTY_ID = eINSTANCE.getPaymentMethod_PartyId();
+		EReference PAYMENT_METHOD__PARTY_ID = eINSTANCE.getPaymentMethod_PartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPaymentMethod_PaymentMethodTypeId();
+		EReference PAYMENT_METHOD__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPaymentMethod_PaymentMethodTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -13479,12 +13480,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPaymentMethodType_PaymentMethodTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Default Gl Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Default Gl Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID = eINSTANCE.getPaymentMethodType_DefaultGlAccountId();
+		EReference PAYMENT_METHOD_TYPE__DEFAULT_GL_ACCOUNT_ID = eINSTANCE.getPaymentMethodType_DefaultGlAccountId();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -13521,20 +13522,20 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_METHOD_TYPE_GL_ACCOUNT__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getPaymentMethodTypeGlAccount_PaymentMethodTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Organization Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Organization Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_METHOD_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID = eINSTANCE.getPaymentMethodTypeGlAccount_OrganizationPartyId();
+		EReference PAYMENT_METHOD_TYPE_GL_ACCOUNT__ORGANIZATION_PARTY_ID = eINSTANCE.getPaymentMethodTypeGlAccount_OrganizationPartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Gl Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Gl Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_METHOD_TYPE_GL_ACCOUNT__GL_ACCOUNT_ID = eINSTANCE.getPaymentMethodTypeGlAccount_GlAccountId();
+		EReference PAYMENT_METHOD_TYPE_GL_ACCOUNT__GL_ACCOUNT_ID = eINSTANCE.getPaymentMethodTypeGlAccount_GlAccountId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentTypeImpl <em>Type</em>}' class.
@@ -13571,12 +13572,12 @@ public interface PaymentPackage extends EPackage {
 		EAttribute PAYMENT_TYPE__HAS_TABLE = eINSTANCE.getPaymentType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAYMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentType_ParentTypeId();
+		EReference PAYMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getPaymentType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Payment Gl Account Type Maps</b></em>' attribute list feature.

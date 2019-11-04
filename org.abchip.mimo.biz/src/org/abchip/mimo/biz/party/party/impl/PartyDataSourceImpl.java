@@ -9,12 +9,15 @@ package org.abchip.mimo.biz.party.party.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.datasource.DataSource;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.party.PartyDataSource;
 import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,11 +29,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#isIsCreate <em>Is Create</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getVisitId <em>Visit Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyDataSourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,24 +61,6 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -148,6 +133,15 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 * @ordered
 	 */
 	protected String visitId = VISIT_ID_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getDataSourceId() <em>Data Source Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSourceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataSource dataSourceId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +214,24 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 * @generated
 	 */
 	@Override
-	public String getDataSourceId() {
+	public DataSource getDataSourceId() {
+		if (dataSourceId != null && ((EObject)dataSourceId).eIsProxy()) {
+			InternalEObject oldDataSourceId = (InternalEObject)dataSourceId;
+			dataSourceId = (DataSource)eResolveProxy(oldDataSourceId);
+			if (dataSourceId != oldDataSourceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
+			}
+		}
+		return dataSourceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSource basicGetDataSourceId() {
 		return dataSourceId;
 	}
 
@@ -230,8 +241,8 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 	 * @generated
 	 */
 	@Override
-	public void setDataSourceId(String newDataSourceId) {
-		String oldDataSourceId = dataSourceId;
+	public void setDataSourceId(DataSource newDataSourceId) {
+		DataSource oldDataSourceId = dataSourceId;
 		dataSourceId = newDataSourceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID, oldDataSourceId, dataSourceId));
@@ -316,8 +327,6 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 		switch (featureID) {
 			case PartyPackage.PARTY_DATA_SOURCE__PARTY_ID:
 				return getPartyId();
-			case PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID:
-				return getDataSourceId();
 			case PartyPackage.PARTY_DATA_SOURCE__FROM_DATE:
 				return getFromDate();
 			case PartyPackage.PARTY_DATA_SOURCE__COMMENTS:
@@ -326,6 +335,9 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 				return isIsCreate();
 			case PartyPackage.PARTY_DATA_SOURCE__VISIT_ID:
 				return getVisitId();
+			case PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID:
+				if (resolve) return getDataSourceId();
+				return basicGetDataSourceId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -341,9 +353,6 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 			case PartyPackage.PARTY_DATA_SOURCE__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID:
-				setDataSourceId((String)newValue);
-				return;
 			case PartyPackage.PARTY_DATA_SOURCE__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -355,6 +364,9 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 				return;
 			case PartyPackage.PARTY_DATA_SOURCE__VISIT_ID:
 				setVisitId((String)newValue);
+				return;
+			case PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -371,9 +383,6 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 			case PartyPackage.PARTY_DATA_SOURCE__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID:
-				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_DATA_SOURCE__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -385,6 +394,9 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 				return;
 			case PartyPackage.PARTY_DATA_SOURCE__VISIT_ID:
 				setVisitId(VISIT_ID_EDEFAULT);
+				return;
+			case PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID:
+				setDataSourceId((DataSource)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -400,8 +412,6 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 		switch (featureID) {
 			case PartyPackage.PARTY_DATA_SOURCE__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID:
-				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
 			case PartyPackage.PARTY_DATA_SOURCE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PartyPackage.PARTY_DATA_SOURCE__COMMENTS:
@@ -410,6 +420,8 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 				return isCreate != IS_CREATE_EDEFAULT;
 			case PartyPackage.PARTY_DATA_SOURCE__VISIT_ID:
 				return VISIT_ID_EDEFAULT == null ? visitId != null : !VISIT_ID_EDEFAULT.equals(visitId);
+			case PartyPackage.PARTY_DATA_SOURCE__DATA_SOURCE_ID:
+				return dataSourceId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -426,8 +438,6 @@ public class PartyDataSourceImpl extends BizEntityImpl implements PartyDataSourc
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", dataSourceId: ");
-		result.append(dataSourceId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", comments: ");

@@ -9,6 +9,7 @@ package org.abchip.mimo.biz.party.party.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.party.party.PartyContent;
 import org.abchip.mimo.biz.party.party.PartyContentType;
@@ -16,6 +17,8 @@ import org.abchip.mimo.biz.party.party.PartyPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getPartyContentTypeId <em>Party Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.impl.PartyContentImpl#getPartyContentTypeId <em>Party Content Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,42 +61,6 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 * @ordered
 	 */
 	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPartyContentTypeId() <em>Party Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_CONTENT_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyContentTypeId() <em>Party Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyContentTypeId = PARTY_CONTENT_TYPE_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -130,6 +97,24 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+	/**
+	 * The cached value of the '{@link #getPartyContentTypeId() <em>Party Content Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyContentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PartyContentType partyContentTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,7 +141,24 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -166,8 +168,8 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -248,7 +250,24 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 * @generated
 	 */
 	@Override
-	public String getPartyContentTypeId() {
+	public PartyContentType getPartyContentTypeId() {
+		if (partyContentTypeId != null && ((EObject)partyContentTypeId).eIsProxy()) {
+			InternalEObject oldPartyContentTypeId = (InternalEObject)partyContentTypeId;
+			partyContentTypeId = (PartyContentType)eResolveProxy(oldPartyContentTypeId);
+			if (partyContentTypeId != oldPartyContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID, oldPartyContentTypeId, partyContentTypeId));
+			}
+		}
+		return partyContentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PartyContentType basicGetPartyContentTypeId() {
 		return partyContentTypeId;
 	}
 
@@ -258,8 +277,8 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 	 * @generated
 	 */
 	@Override
-	public void setPartyContentTypeId(String newPartyContentTypeId) {
-		String oldPartyContentTypeId = partyContentTypeId;
+	public void setPartyContentTypeId(PartyContentType newPartyContentTypeId) {
+		PartyContentType oldPartyContentTypeId = partyContentTypeId;
 		partyContentTypeId = newPartyContentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID, oldPartyContentTypeId, partyContentTypeId));
@@ -275,14 +294,16 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 		switch (featureID) {
 			case PartyPackage.PARTY_CONTENT__PARTY_ID:
 				return getPartyId();
-			case PartyPackage.PARTY_CONTENT__CONTENT_ID:
-				return getContentId();
-			case PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID:
-				return getPartyContentTypeId();
 			case PartyPackage.PARTY_CONTENT__FROM_DATE:
 				return getFromDate();
 			case PartyPackage.PARTY_CONTENT__THRU_DATE:
 				return getThruDate();
+			case PartyPackage.PARTY_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
+			case PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID:
+				if (resolve) return getPartyContentTypeId();
+				return basicGetPartyContentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,17 +319,17 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 			case PartyPackage.PARTY_CONTENT__PARTY_ID:
 				setPartyId((String)newValue);
 				return;
-			case PartyPackage.PARTY_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
-			case PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID:
-				setPartyContentTypeId((String)newValue);
-				return;
 			case PartyPackage.PARTY_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case PartyPackage.PARTY_CONTENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PartyPackage.PARTY_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
+				return;
+			case PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID:
+				setPartyContentTypeId((PartyContentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,17 +346,17 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 			case PartyPackage.PARTY_CONTENT__PARTY_ID:
 				setPartyId(PARTY_ID_EDEFAULT);
 				return;
-			case PartyPackage.PARTY_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
-			case PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID:
-				setPartyContentTypeId(PARTY_CONTENT_TYPE_ID_EDEFAULT);
-				return;
 			case PartyPackage.PARTY_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case PartyPackage.PARTY_CONTENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PartyPackage.PARTY_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
+				return;
+			case PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID:
+				setPartyContentTypeId((PartyContentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -351,14 +372,14 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 		switch (featureID) {
 			case PartyPackage.PARTY_CONTENT__PARTY_ID:
 				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PartyPackage.PARTY_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID:
-				return PARTY_CONTENT_TYPE_ID_EDEFAULT == null ? partyContentTypeId != null : !PARTY_CONTENT_TYPE_ID_EDEFAULT.equals(partyContentTypeId);
 			case PartyPackage.PARTY_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PartyPackage.PARTY_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PartyPackage.PARTY_CONTENT__CONTENT_ID:
+				return contentId != null;
+			case PartyPackage.PARTY_CONTENT__PARTY_CONTENT_TYPE_ID:
+				return partyContentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -375,10 +396,6 @@ public class PartyContentImpl extends BizEntityTypedImpl<PartyContentType> imple
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (partyId: ");
 		result.append(partyId);
-		result.append(", contentId: ");
-		result.append(contentId);
-		result.append(", partyContentTypeId: ");
-		result.append(partyContentTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

@@ -7,6 +7,7 @@
  */
 package org.abchip.mimo.biz.common.geo.impl;
 
+import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.common.geo.GeoAssoc;
 import org.abchip.mimo.biz.common.geo.GeoAssocType;
 import org.abchip.mimo.biz.common.geo.GeoPackage;
@@ -14,6 +15,8 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -55,41 +58,23 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 */
 	protected String geoId = GEO_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getGeoIdTo() <em>Geo Id To</em>}' attribute.
+	 * The cached value of the '{@link #getGeoIdTo() <em>Geo Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGeoIdTo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GEO_ID_TO_EDEFAULT = null;
+	protected Geo geoIdTo;
 	/**
-	 * The cached value of the '{@link #getGeoIdTo() <em>Geo Id To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoIdTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoIdTo = GEO_ID_TO_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGeoAssocTypeId() <em>Geo Assoc Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getGeoAssocTypeId() <em>Geo Assoc Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGeoAssocTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GEO_ASSOC_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGeoAssocTypeId() <em>Geo Assoc Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoAssocTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoAssocTypeId = GEO_ASSOC_TYPE_ID_EDEFAULT;
+	protected GeoAssocType geoAssocTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,7 +124,24 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 * @generated
 	 */
 	@Override
-	public String getGeoIdTo() {
+	public Geo getGeoIdTo() {
+		if (geoIdTo != null && ((EObject)geoIdTo).eIsProxy()) {
+			InternalEObject oldGeoIdTo = (InternalEObject)geoIdTo;
+			geoIdTo = (Geo)eResolveProxy(oldGeoIdTo);
+			if (geoIdTo != oldGeoIdTo) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_ASSOC__GEO_ID_TO, oldGeoIdTo, geoIdTo));
+			}
+		}
+		return geoIdTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetGeoIdTo() {
 		return geoIdTo;
 	}
 
@@ -149,8 +151,8 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 * @generated
 	 */
 	@Override
-	public void setGeoIdTo(String newGeoIdTo) {
-		String oldGeoIdTo = geoIdTo;
+	public void setGeoIdTo(Geo newGeoIdTo) {
+		Geo oldGeoIdTo = geoIdTo;
 		geoIdTo = newGeoIdTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC__GEO_ID_TO, oldGeoIdTo, geoIdTo));
@@ -162,7 +164,24 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 * @generated
 	 */
 	@Override
-	public String getGeoAssocTypeId() {
+	public GeoAssocType getGeoAssocTypeId() {
+		if (geoAssocTypeId != null && ((EObject)geoAssocTypeId).eIsProxy()) {
+			InternalEObject oldGeoAssocTypeId = (InternalEObject)geoAssocTypeId;
+			geoAssocTypeId = (GeoAssocType)eResolveProxy(oldGeoAssocTypeId);
+			if (geoAssocTypeId != oldGeoAssocTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeoPackage.GEO_ASSOC__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
+			}
+		}
+		return geoAssocTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeoAssocType basicGetGeoAssocTypeId() {
 		return geoAssocTypeId;
 	}
 
@@ -172,8 +191,8 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 	 * @generated
 	 */
 	@Override
-	public void setGeoAssocTypeId(String newGeoAssocTypeId) {
-		String oldGeoAssocTypeId = geoAssocTypeId;
+	public void setGeoAssocTypeId(GeoAssocType newGeoAssocTypeId) {
+		GeoAssocType oldGeoAssocTypeId = geoAssocTypeId;
 		geoAssocTypeId = newGeoAssocTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeoPackage.GEO_ASSOC__GEO_ASSOC_TYPE_ID, oldGeoAssocTypeId, geoAssocTypeId));
@@ -190,9 +209,11 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 			case GeoPackage.GEO_ASSOC__GEO_ID:
 				return getGeoId();
 			case GeoPackage.GEO_ASSOC__GEO_ID_TO:
-				return getGeoIdTo();
+				if (resolve) return getGeoIdTo();
+				return basicGetGeoIdTo();
 			case GeoPackage.GEO_ASSOC__GEO_ASSOC_TYPE_ID:
-				return getGeoAssocTypeId();
+				if (resolve) return getGeoAssocTypeId();
+				return basicGetGeoAssocTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,10 +230,10 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 				setGeoId((String)newValue);
 				return;
 			case GeoPackage.GEO_ASSOC__GEO_ID_TO:
-				setGeoIdTo((String)newValue);
+				setGeoIdTo((Geo)newValue);
 				return;
 			case GeoPackage.GEO_ASSOC__GEO_ASSOC_TYPE_ID:
-				setGeoAssocTypeId((String)newValue);
+				setGeoAssocTypeId((GeoAssocType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,10 +251,10 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 				setGeoId(GEO_ID_EDEFAULT);
 				return;
 			case GeoPackage.GEO_ASSOC__GEO_ID_TO:
-				setGeoIdTo(GEO_ID_TO_EDEFAULT);
+				setGeoIdTo((Geo)null);
 				return;
 			case GeoPackage.GEO_ASSOC__GEO_ASSOC_TYPE_ID:
-				setGeoAssocTypeId(GEO_ASSOC_TYPE_ID_EDEFAULT);
+				setGeoAssocTypeId((GeoAssocType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -250,9 +271,9 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 			case GeoPackage.GEO_ASSOC__GEO_ID:
 				return GEO_ID_EDEFAULT == null ? geoId != null : !GEO_ID_EDEFAULT.equals(geoId);
 			case GeoPackage.GEO_ASSOC__GEO_ID_TO:
-				return GEO_ID_TO_EDEFAULT == null ? geoIdTo != null : !GEO_ID_TO_EDEFAULT.equals(geoIdTo);
+				return geoIdTo != null;
 			case GeoPackage.GEO_ASSOC__GEO_ASSOC_TYPE_ID:
-				return GEO_ASSOC_TYPE_ID_EDEFAULT == null ? geoAssocTypeId != null : !GEO_ASSOC_TYPE_ID_EDEFAULT.equals(geoAssocTypeId);
+				return geoAssocTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -269,10 +290,6 @@ public class GeoAssocImpl extends BizEntityTypedImpl<GeoAssocType> implements Ge
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (geoId: ");
 		result.append(geoId);
-		result.append(", geoIdTo: ");
-		result.append(geoIdTo);
-		result.append(", geoAssocTypeId: ");
-		result.append(geoAssocTypeId);
 		result.append(')');
 		return result.toString();
 	}

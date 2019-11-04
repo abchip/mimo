@@ -11,10 +11,13 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureApplAttr;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplAttrImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplAttrImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplAttrImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplAttrImpl#getAttrName <em>Attr Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplAttrImpl#getAttrValue <em>Attr Value</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplAttrImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +62,6 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 	 * @ordered
 	 */
 	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -139,6 +122,16 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 	 * @ordered
 	 */
 	protected String attrValue = ATTR_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductFeatureId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductFeature productFeatureId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +250,24 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureId() {
+	public ProductFeature getProductFeatureId() {
+		if (productFeatureId != null && ((EObject)productFeatureId).eIsProxy()) {
+			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
+			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
+			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
+			}
+		}
+		return productFeatureId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature basicGetProductFeatureId() {
 		return productFeatureId;
 	}
 
@@ -267,8 +277,8 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
+	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
@@ -284,14 +294,15 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 		switch (featureID) {
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_ID:
 				return getProductId();
-			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID:
-				return getProductFeatureId();
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__FROM_DATE:
 				return getFromDate();
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__ATTR_NAME:
 				return getAttrName();
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__ATTR_VALUE:
 				return getAttrValue();
+			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID:
+				if (resolve) return getProductFeatureId();
+				return basicGetProductFeatureId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,9 +318,6 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_ID:
 				setProductId((String)newValue);
 				return;
-			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID:
-				setProductFeatureId((String)newValue);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -318,6 +326,9 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__ATTR_VALUE:
 				setAttrValue((String)newValue);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,9 +345,6 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
-			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID:
-				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -345,6 +353,9 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__ATTR_VALUE:
 				setAttrValue(ATTR_VALUE_EDEFAULT);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -360,14 +371,14 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 		switch (featureID) {
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID:
-				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__ATTR_NAME:
 				return ATTR_NAME_EDEFAULT == null ? attrName != null : !ATTR_NAME_EDEFAULT.equals(attrName);
 			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__ATTR_VALUE:
 				return ATTR_VALUE_EDEFAULT == null ? attrValue != null : !ATTR_VALUE_EDEFAULT.equals(attrValue);
+			case FeaturePackage.PRODUCT_FEATURE_APPL_ATTR__PRODUCT_FEATURE_ID:
+				return productFeatureId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -384,8 +395,6 @@ public class ProductFeatureApplAttrImpl extends BizEntityImpl implements Product
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", productFeatureId: ");
-		result.append(productFeatureId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", attrName: ");

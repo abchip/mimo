@@ -66,8 +66,8 @@ public interface OrderItemGroup extends BizEntity {
 	 * @return the value of the '<em>Order Id</em>' attribute.
 	 * @see #setOrderId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemGroup_OrderId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderHeader'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderId();
@@ -93,7 +93,8 @@ public interface OrderItemGroup extends BizEntity {
 	 * @return the value of the '<em>Order Item Group Seq Id</em>' attribute.
 	 * @see #setOrderItemGroupSeqId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderItemGroup_OrderItemGroupSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderItemGroupSeqId();

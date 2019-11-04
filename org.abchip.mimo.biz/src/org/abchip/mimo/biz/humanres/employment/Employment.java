@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.humanres.employment;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,12 +23,12 @@ import org.abchip.mimo.biz.BizEntity;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getRoleTypeIdFrom <em>Role Type Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getRoleTypeIdTo <em>Role Type Id To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdFrom <em>Party Id From</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdTo <em>Party Id To</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getFromDate <em>From Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdTo <em>Party Id To</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdFrom <em>Party Id From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationReasonId <em>Termination Reason Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationTypeId <em>Termination Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.Employment#getThruDate <em>Thru Date</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment()
@@ -46,7 +47,8 @@ public interface Employment extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -62,58 +64,56 @@ public interface Employment extends BizEntity {
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id From</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id From</em>' attribute.
-	 * @see #setPartyIdFrom(String)
+	 * @return the value of the '<em>Party Id From</em>' reference.
+	 * @see #setPartyIdFrom(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_PartyIdFrom()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdFrom();
+	Party getPartyIdFrom();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdFrom <em>Party Id From</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdFrom <em>Party Id From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id From</em>' attribute.
+	 * @param value the new value of the '<em>Party Id From</em>' reference.
 	 * @see #getPartyIdFrom()
 	 * @generated
 	 */
-	void setPartyIdFrom(String value);
+	void setPartyIdFrom(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id To</em>' attribute.
-	 * @see #setPartyIdTo(String)
+	 * @return the value of the '<em>Party Id To</em>' reference.
+	 * @see #setPartyIdTo(Party)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_PartyIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyIdTo();
+	Party getPartyIdTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdTo <em>Party Id To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.Employment#getPartyIdTo <em>Party Id To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id To</em>' attribute.
+	 * @param value the new value of the '<em>Party Id To</em>' reference.
 	 * @see #getPartyIdTo()
 	 * @generated
 	 */
-	void setPartyIdTo(String value);
+	void setPartyIdTo(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Type Id From</b></em>' attribute.
@@ -126,7 +126,8 @@ public interface Employment extends BizEntity {
 	 * @return the value of the '<em>Role Type Id From</em>' attribute.
 	 * @see #setRoleTypeIdFrom(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_RoleTypeIdFrom()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeIdFrom();
@@ -152,7 +153,8 @@ public interface Employment extends BizEntity {
 	 * @return the value of the '<em>Role Type Id To</em>' attribute.
 	 * @see #setRoleTypeIdTo(String)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_RoleTypeIdTo()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getRoleTypeIdTo();
@@ -168,56 +170,56 @@ public interface Employment extends BizEntity {
 	void setRoleTypeIdTo(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Termination Reason Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Termination Reason Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Termination Reason Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Termination Reason Id</em>' attribute.
-	 * @see #setTerminationReasonId(String)
+	 * @return the value of the '<em>Termination Reason Id</em>' reference.
+	 * @see #setTerminationReasonId(TerminationReason)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_TerminationReasonId()
-	 * @model annotation="mimo-ent-domain frame='TerminationReason'"
+	 * @model keys="terminationReasonId"
 	 * @generated
 	 */
-	String getTerminationReasonId();
+	TerminationReason getTerminationReasonId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationReasonId <em>Termination Reason Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationReasonId <em>Termination Reason Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Termination Reason Id</em>' attribute.
+	 * @param value the new value of the '<em>Termination Reason Id</em>' reference.
 	 * @see #getTerminationReasonId()
 	 * @generated
 	 */
-	void setTerminationReasonId(String value);
+	void setTerminationReasonId(TerminationReason value);
 
 	/**
-	 * Returns the value of the '<em><b>Termination Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Termination Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Termination Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Termination Type Id</em>' attribute.
-	 * @see #setTerminationTypeId(String)
+	 * @return the value of the '<em>Termination Type Id</em>' reference.
+	 * @see #setTerminationTypeId(TerminationType)
 	 * @see org.abchip.mimo.biz.humanres.employment.EmploymentPackage#getEmployment_TerminationTypeId()
-	 * @model annotation="mimo-ent-domain frame='TerminationType'"
+	 * @model keys="terminationTypeId"
 	 * @generated
 	 */
-	String getTerminationTypeId();
+	TerminationType getTerminationTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationTypeId <em>Termination Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.humanres.employment.Employment#getTerminationTypeId <em>Termination Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Termination Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Termination Type Id</em>' reference.
 	 * @see #getTerminationTypeId()
 	 * @generated
 	 */
-	void setTerminationTypeId(String value);
+	void setTerminationTypeId(TerminationType value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

@@ -40,7 +40,7 @@ public interface ContactListType extends BizEntityType<ContactList> {
 	 * @return the value of the '<em>Contact List Type Id</em>' attribute.
 	 * @see #setContactListTypeId(String)
 	 * @see org.abchip.mimo.biz.marketing.contact.ContactPackage#getContactListType_ContactListTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

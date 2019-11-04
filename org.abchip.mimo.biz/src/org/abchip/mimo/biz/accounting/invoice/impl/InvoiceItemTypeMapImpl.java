@@ -7,12 +7,16 @@
  */
 package org.abchip.mimo.biz.accounting.invoice.impl;
 
+import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemTypeMap;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
+import org.abchip.mimo.biz.accounting.invoice.InvoiceType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,8 +28,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeMapImpl#getInvoiceItemMapKey <em>Invoice Item Map Key</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeMapImpl#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeMapImpl#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemTypeMapImpl#getInvoiceTypeId <em>Invoice Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,41 +60,23 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 	protected String invoiceItemMapKey = INVOICE_ITEM_MAP_KEY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceTypeId = INVOICE_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInvoiceItemTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INVOICE_ITEM_TYPE_ID_EDEFAULT = null;
+	protected InvoiceItemType invoiceItemTypeId;
 	/**
-	 * The cached value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getInvoiceTypeId() <em>Invoice Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeId()
+	 * @see #getInvoiceTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String invoiceItemTypeId = INVOICE_ITEM_TYPE_ID_EDEFAULT;
+	protected InvoiceType invoiceTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,7 +126,24 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceTypeId() {
+	public InvoiceType getInvoiceTypeId() {
+		if (invoiceTypeId != null && ((EObject)invoiceTypeId).eIsProxy()) {
+			InternalEObject oldInvoiceTypeId = (InternalEObject)invoiceTypeId;
+			invoiceTypeId = (InvoiceType)eResolveProxy(oldInvoiceTypeId);
+			if (invoiceTypeId != oldInvoiceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
+			}
+		}
+		return invoiceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvoiceType basicGetInvoiceTypeId() {
 		return invoiceTypeId;
 	}
 
@@ -150,8 +153,8 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceTypeId(String newInvoiceTypeId) {
-		String oldInvoiceTypeId = invoiceTypeId;
+	public void setInvoiceTypeId(InvoiceType newInvoiceTypeId) {
+		InvoiceType oldInvoiceTypeId = invoiceTypeId;
 		invoiceTypeId = newInvoiceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID, oldInvoiceTypeId, invoiceTypeId));
@@ -163,7 +166,24 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceItemTypeId() {
+	public InvoiceItemType getInvoiceItemTypeId() {
+		if (invoiceItemTypeId != null && ((EObject)invoiceItemTypeId).eIsProxy()) {
+			InternalEObject oldInvoiceItemTypeId = (InternalEObject)invoiceItemTypeId;
+			invoiceItemTypeId = (InvoiceItemType)eResolveProxy(oldInvoiceItemTypeId);
+			if (invoiceItemTypeId != oldInvoiceItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
+			}
+		}
+		return invoiceItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvoiceItemType basicGetInvoiceItemTypeId() {
 		return invoiceItemTypeId;
 	}
 
@@ -173,8 +193,8 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceItemTypeId(String newInvoiceItemTypeId) {
-		String oldInvoiceItemTypeId = invoiceItemTypeId;
+	public void setInvoiceItemTypeId(InvoiceItemType newInvoiceItemTypeId) {
+		InvoiceItemType oldInvoiceItemTypeId = invoiceItemTypeId;
 		invoiceItemTypeId = newInvoiceItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
@@ -190,10 +210,12 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_MAP_KEY:
 				return getInvoiceItemMapKey();
-			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID:
-				return getInvoiceTypeId();
 			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_TYPE_ID:
-				return getInvoiceItemTypeId();
+				if (resolve) return getInvoiceItemTypeId();
+				return basicGetInvoiceItemTypeId();
+			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID:
+				if (resolve) return getInvoiceTypeId();
+				return basicGetInvoiceTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,11 +231,11 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_MAP_KEY:
 				setInvoiceItemMapKey((String)newValue);
 				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID:
-				setInvoiceTypeId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId((String)newValue);
+				setInvoiceItemTypeId((InvoiceItemType)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID:
+				setInvoiceTypeId((InvoiceType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,11 +252,11 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_MAP_KEY:
 				setInvoiceItemMapKey(INVOICE_ITEM_MAP_KEY_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID:
-				setInvoiceTypeId(INVOICE_TYPE_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId(INVOICE_ITEM_TYPE_ID_EDEFAULT);
+				setInvoiceItemTypeId((InvoiceItemType)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID:
+				setInvoiceTypeId((InvoiceType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -250,10 +272,10 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 		switch (featureID) {
 			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_MAP_KEY:
 				return INVOICE_ITEM_MAP_KEY_EDEFAULT == null ? invoiceItemMapKey != null : !INVOICE_ITEM_MAP_KEY_EDEFAULT.equals(invoiceItemMapKey);
-			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID:
-				return INVOICE_TYPE_ID_EDEFAULT == null ? invoiceTypeId != null : !INVOICE_TYPE_ID_EDEFAULT.equals(invoiceTypeId);
 			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_ITEM_TYPE_ID:
-				return INVOICE_ITEM_TYPE_ID_EDEFAULT == null ? invoiceItemTypeId != null : !INVOICE_ITEM_TYPE_ID_EDEFAULT.equals(invoiceItemTypeId);
+				return invoiceItemTypeId != null;
+			case InvoicePackage.INVOICE_ITEM_TYPE_MAP__INVOICE_TYPE_ID:
+				return invoiceTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,10 +292,6 @@ public class InvoiceItemTypeMapImpl extends BizEntityImpl implements InvoiceItem
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (invoiceItemMapKey: ");
 		result.append(invoiceItemMapKey);
-		result.append(", invoiceTypeId: ");
-		result.append(invoiceTypeId);
-		result.append(", invoiceItemTypeId: ");
-		result.append(invoiceItemTypeId);
 		result.append(')');
 		return result.toString();
 	}

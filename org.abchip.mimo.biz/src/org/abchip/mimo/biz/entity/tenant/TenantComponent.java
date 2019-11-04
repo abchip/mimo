@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getComponentName <em>Component Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId <em>Tenant Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getSequenceNum <em>Sequence Num</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId <em>Tenant Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent()
@@ -41,7 +41,6 @@ public interface TenantComponent extends BizEntity {
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent_ComponentName()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Component'"
 	 * @generated
 	 */
 	String getComponentName();
@@ -83,31 +82,29 @@ public interface TenantComponent extends BizEntity {
 	void setSequenceNum(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Tenant Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tenant Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tenant Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tenant Id</em>' attribute.
-	 * @see #setTenantId(String)
+	 * @return the value of the '<em>Tenant Id</em>' reference.
+	 * @see #setTenantId(Tenant)
 	 * @see org.abchip.mimo.biz.entity.tenant.TenantPackage#getTenantComponent_TenantId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Tenant'"
+	 * @model keys="tenantId"
 	 * @generated
 	 */
-	String getTenantId();
+	Tenant getTenantId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId <em>Tenant Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.entity.tenant.TenantComponent#getTenantId <em>Tenant Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tenant Id</em>' attribute.
+	 * @param value the new value of the '<em>Tenant Id</em>' reference.
 	 * @see #getTenantId()
 	 * @generated
 	 */
-	void setTenantId(String value);
+	void setTenantId(Tenant value);
 
 } // TenantComponent

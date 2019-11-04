@@ -9,12 +9,16 @@ package org.abchip.mimo.biz.product.promo.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.content.content.Content;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.product.ProductContentType;
 import org.abchip.mimo.biz.product.promo.ProductPromoContent;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoContentImpl#getProductPromoId <em>Product Promo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoContentImpl#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoContentImpl#getProductPromoContentTypeId <em>Product Promo Content Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoContentImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoContentImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoContentImpl#getContentId <em>Content Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoContentImpl#getProductPromoContentTypeId <em>Product Promo Content Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,46 +63,6 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 * @ordered
 	 */
 	protected String productPromoId = PRODUCT_PROMO_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contentId = CONTENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductPromoContentTypeId() <em>Product Promo Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_CONTENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoContentTypeId() <em>Product Promo Content Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoContentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoContentTypeId = PRODUCT_PROMO_CONTENT_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -141,6 +105,26 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContentId() <em>Content Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Content contentId;
+
+	/**
+	 * The cached value of the '{@link #getProductPromoContentTypeId() <em>Product Promo Content Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoContentTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductContentType productPromoContentTypeId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -165,7 +149,24 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 * @generated
 	 */
 	@Override
-	public String getContentId() {
+	public Content getContentId() {
+		if (contentId != null && ((EObject)contentId).eIsProxy()) {
+			InternalEObject oldContentId = (InternalEObject)contentId;
+			contentId = (Content)eResolveProxy(oldContentId);
+			if (contentId != oldContentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID, oldContentId, contentId));
+			}
+		}
+		return contentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Content basicGetContentId() {
 		return contentId;
 	}
 
@@ -175,8 +176,8 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 * @generated
 	 */
 	@Override
-	public void setContentId(String newContentId) {
-		String oldContentId = contentId;
+	public void setContentId(Content newContentId) {
+		Content oldContentId = contentId;
 		contentId = newContentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID, oldContentId, contentId));
@@ -257,7 +258,24 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoContentTypeId() {
+	public ProductContentType getProductPromoContentTypeId() {
+		if (productPromoContentTypeId != null && ((EObject)productPromoContentTypeId).eIsProxy()) {
+			InternalEObject oldProductPromoContentTypeId = (InternalEObject)productPromoContentTypeId;
+			productPromoContentTypeId = (ProductContentType)eResolveProxy(oldProductPromoContentTypeId);
+			if (productPromoContentTypeId != oldProductPromoContentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID, oldProductPromoContentTypeId, productPromoContentTypeId));
+			}
+		}
+		return productPromoContentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductContentType basicGetProductPromoContentTypeId() {
 		return productPromoContentTypeId;
 	}
 
@@ -267,8 +285,8 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoContentTypeId(String newProductPromoContentTypeId) {
-		String oldProductPromoContentTypeId = productPromoContentTypeId;
+	public void setProductPromoContentTypeId(ProductContentType newProductPromoContentTypeId) {
+		ProductContentType oldProductPromoContentTypeId = productPromoContentTypeId;
 		productPromoContentTypeId = newProductPromoContentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID, oldProductPromoContentTypeId, productPromoContentTypeId));
@@ -284,14 +302,16 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 		switch (featureID) {
 			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_ID:
 				return getProductPromoId();
-			case PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID:
-				return getContentId();
-			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID:
-				return getProductPromoContentTypeId();
 			case PromoPackage.PRODUCT_PROMO_CONTENT__FROM_DATE:
 				return getFromDate();
 			case PromoPackage.PRODUCT_PROMO_CONTENT__THRU_DATE:
 				return getThruDate();
+			case PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID:
+				if (resolve) return getContentId();
+				return basicGetContentId();
+			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID:
+				if (resolve) return getProductPromoContentTypeId();
+				return basicGetProductPromoContentTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,17 +327,17 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_ID:
 				setProductPromoId((String)newValue);
 				return;
-			case PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID:
-				setContentId((String)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID:
-				setProductPromoContentTypeId((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CONTENT__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CONTENT__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID:
+				setContentId((Content)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID:
+				setProductPromoContentTypeId((ProductContentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,17 +354,17 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_ID:
 				setProductPromoId(PRODUCT_PROMO_ID_EDEFAULT);
 				return;
-			case PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID:
-				setContentId(CONTENT_ID_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID:
-				setProductPromoContentTypeId(PRODUCT_PROMO_CONTENT_TYPE_ID_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO_CONTENT__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case PromoPackage.PRODUCT_PROMO_CONTENT__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID:
+				setContentId((Content)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID:
+				setProductPromoContentTypeId((ProductContentType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -360,14 +380,14 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 		switch (featureID) {
 			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_ID:
 				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
-			case PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID:
-				return CONTENT_ID_EDEFAULT == null ? contentId != null : !CONTENT_ID_EDEFAULT.equals(contentId);
-			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID:
-				return PRODUCT_PROMO_CONTENT_TYPE_ID_EDEFAULT == null ? productPromoContentTypeId != null : !PRODUCT_PROMO_CONTENT_TYPE_ID_EDEFAULT.equals(productPromoContentTypeId);
 			case PromoPackage.PRODUCT_PROMO_CONTENT__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case PromoPackage.PRODUCT_PROMO_CONTENT__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case PromoPackage.PRODUCT_PROMO_CONTENT__CONTENT_ID:
+				return contentId != null;
+			case PromoPackage.PRODUCT_PROMO_CONTENT__PRODUCT_PROMO_CONTENT_TYPE_ID:
+				return productPromoContentTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -384,10 +404,6 @@ public class ProductPromoContentImpl extends BizEntityImpl implements ProductPro
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productPromoId: ");
 		result.append(productPromoId);
-		result.append(", contentId: ");
-		result.append(contentId);
-		result.append(", productPromoContentTypeId: ");
-		result.append(productPromoContentTypeId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", thruDate: ");

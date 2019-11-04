@@ -199,6 +199,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -363,6 +364,22 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -379,22 +396,6 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -505,6 +506,14 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -513,14 +522,6 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -600,6 +601,14 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -608,14 +617,6 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -702,8 +703,8 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getItemIssuance_InventoryItemId() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(3);
+	public EReference getItemIssuance_InventoryItemId() {
+		return (EReference)itemIssuanceEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -712,8 +713,8 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getItemIssuance_IssuedByUserLoginId() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(4);
+	public EReference getItemIssuance_IssuedByUserLoginId() {
+		return (EReference)itemIssuanceEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -723,7 +724,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 */
 	@Override
 	public EAttribute getItemIssuance_IssuedDateTime() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -733,7 +734,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 */
 	@Override
 	public EAttribute getItemIssuance_MaintHistSeqId() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -742,8 +743,8 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getItemIssuance_OrderId() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(7);
+	public EReference getItemIssuance_OrderId() {
+		return (EReference)itemIssuanceEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -753,7 +754,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 */
 	@Override
 	public EAttribute getItemIssuance_OrderItemSeqId() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -763,7 +764,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 */
 	@Override
 	public EAttribute getItemIssuance_Quantity() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -773,7 +774,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 */
 	@Override
 	public EAttribute getItemIssuance_ShipGroupSeqId() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -782,8 +783,8 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getItemIssuance_ShipmentId() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(11);
+	public EReference getItemIssuance_ShipmentId() {
+		return (EReference)itemIssuanceEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -793,7 +794,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 */
 	@Override
 	public EAttribute getItemIssuance_ShipmentItemSeqId() {
-		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)itemIssuanceEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -822,8 +823,8 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getItemIssuanceRole_PartyId() {
-		return (EAttribute)itemIssuanceRoleEClass.getEStructuralFeatures().get(1);
+	public EReference getItemIssuanceRole_PartyId() {
+		return (EReference)itemIssuanceRoleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -833,7 +834,7 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 	 */
 	@Override
 	public EAttribute getItemIssuanceRole_RoleTypeId() {
-		return (EAttribute)itemIssuanceRoleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)itemIssuanceRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -869,21 +870,21 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__ITEM_ISSUANCE_ID);
 		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__CANCEL_QUANTITY);
 		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__FIXED_ASSET_ID);
-		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__INVENTORY_ITEM_ID);
-		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID);
 		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__ISSUED_DATE_TIME);
 		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__MAINT_HIST_SEQ_ID);
-		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__ORDER_ID);
 		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__ORDER_ITEM_SEQ_ID);
 		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__QUANTITY);
 		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__SHIP_GROUP_SEQ_ID);
-		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__SHIPMENT_ID);
 		createEAttribute(itemIssuanceEClass, ITEM_ISSUANCE__SHIPMENT_ITEM_SEQ_ID);
+		createEReference(itemIssuanceEClass, ITEM_ISSUANCE__INVENTORY_ITEM_ID);
+		createEReference(itemIssuanceEClass, ITEM_ISSUANCE__SHIPMENT_ID);
+		createEReference(itemIssuanceEClass, ITEM_ISSUANCE__ORDER_ID);
+		createEReference(itemIssuanceEClass, ITEM_ISSUANCE__ISSUED_BY_USER_LOGIN_ID);
 
 		itemIssuanceRoleEClass = createEClass(ITEM_ISSUANCE_ROLE);
 		createEAttribute(itemIssuanceRoleEClass, ITEM_ISSUANCE_ROLE__ITEM_ISSUANCE_ID);
-		createEAttribute(itemIssuanceRoleEClass, ITEM_ISSUANCE_ROLE__PARTY_ID);
 		createEAttribute(itemIssuanceRoleEClass, ITEM_ISSUANCE_ROLE__ROLE_TYPE_ID);
+		createEReference(itemIssuanceRoleEClass, ITEM_ISSUANCE_ROLE__PARTY_ID);
 	}
 
 	/**
@@ -911,6 +912,11 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		InventoryPackage theInventoryPackage = (InventoryPackage)EPackage.Registry.INSTANCE.getEPackage(InventoryPackage.eNS_URI);
+		Shipment_Package theShipment_Package = (Shipment_Package)EPackage.Registry.INSTANCE.getEPackage(Shipment_Package.eNS_URI);
+		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		LoginPackage theLoginPackage = (LoginPackage)EPackage.Registry.INSTANCE.getEPackage(LoginPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -922,28 +928,33 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(itemIssuanceEClass, ItemIssuance.class, "ItemIssuance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getItemIssuance_ItemIssuanceId(), ecorePackage.getEString(), "itemIssuanceId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getItemIssuance_ItemIssuanceId(), ecorePackage.getEString(), "itemIssuanceId", null, 1, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuance_CancelQuantity(), ecorePackage.getEBigDecimal(), "cancelQuantity", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuance_FixedAssetId(), ecorePackage.getEString(), "fixedAssetId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getItemIssuance_InventoryItemId(), ecorePackage.getEString(), "inventoryItemId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getItemIssuance_IssuedByUserLoginId(), ecorePackage.getEString(), "issuedByUserLoginId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuance_IssuedDateTime(), ecorePackage.getEDate(), "issuedDateTime", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuance_MaintHistSeqId(), ecorePackage.getEString(), "maintHistSeqId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getItemIssuance_OrderId(), ecorePackage.getEString(), "orderId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuance_OrderItemSeqId(), ecorePackage.getEString(), "orderItemSeqId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuance_Quantity(), ecorePackage.getEBigDecimal(), "quantity", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuance_ShipGroupSeqId(), ecorePackage.getEString(), "shipGroupSeqId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getItemIssuance_ShipmentId(), ecorePackage.getEString(), "shipmentId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemIssuance_ShipmentItemSeqId(), ecorePackage.getEString(), "shipmentItemSeqId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getItemIssuance_InventoryItemId(), theInventoryPackage.getInventoryItem(), null, "inventoryItemId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getItemIssuance_InventoryItemId().getEKeys().add(theInventoryPackage.getInventoryItem_InventoryItemId());
+		initEReference(getItemIssuance_ShipmentId(), theShipment_Package.getShipment(), null, "shipmentId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getItemIssuance_ShipmentId().getEKeys().add(theShipment_Package.getShipment_ShipmentId());
+		initEReference(getItemIssuance_OrderId(), theOrderPackage.getOrderHeader(), null, "orderId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getItemIssuance_OrderId().getEKeys().add(theOrderPackage.getOrderHeader_OrderId());
+		initEReference(getItemIssuance_IssuedByUserLoginId(), theLoginPackage.getUserLogin(), null, "issuedByUserLoginId", null, 0, 1, ItemIssuance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getItemIssuance_IssuedByUserLoginId().getEKeys().add(theLoginPackage.getUserLogin_UserLoginId());
 
 		addEOperation(itemIssuanceEClass, ecorePackage.getEString(), "inventoryItemDetails", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(itemIssuanceEClass, ecorePackage.getEString(), "inventoryTransfers", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(itemIssuanceRoleEClass, ItemIssuanceRole.class, "ItemIssuanceRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getItemIssuanceRole_ItemIssuanceId(), ecorePackage.getEString(), "itemIssuanceId", null, 0, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getItemIssuanceRole_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getItemIssuanceRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 0, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getItemIssuanceRole_ItemIssuanceId(), ecorePackage.getEString(), "itemIssuanceId", null, 1, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getItemIssuanceRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 1, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getItemIssuanceRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, ItemIssuanceRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getItemIssuanceRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		// Create annotations
 		// mimo-ent-slot
@@ -985,12 +996,6 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getItemIssuanceRole_PartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getItemIssuanceRole_RoleTypeId(),
 		   source,
 		   new String[] {
@@ -1022,60 +1027,6 @@ public class IssuancePackageImpl extends EPackageImpl implements IssuancePackage
 		   new String[] {
 			   "frame", "InventoryTransfer",
 			   "route", "itemIssuanceId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getItemIssuance_InventoryItemId(),
-		   source,
-		   new String[] {
-			   "frame", "InventoryItem"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getItemIssuance_IssuedByUserLoginId(),
-		   source,
-		   new String[] {
-			   "frame", "UserLogin"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getItemIssuance_OrderId(),
-		   source,
-		   new String[] {
-			   "frame", "OrderHeader"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getItemIssuance_ShipmentId(),
-		   source,
-		   new String[] {
-			   "frame", "Shipment"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getItemIssuanceRole_ItemIssuanceId(),
-		   source,
-		   new String[] {
-			   "frame", "ItemIssuance"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getItemIssuanceRole_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.shipment.shipment;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.product.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +25,8 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getShipmentPackageSeqId <em>Shipment Package Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getSubProductId <em>Sub Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getSubProductQuantity <em>Sub Product Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getSubProductId <em>Sub Product Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageContent()
@@ -70,8 +71,8 @@ public interface ShipmentPackageContent extends BizEntity {
 	 * @return the value of the '<em>Shipment Id</em>' attribute.
 	 * @see #setShipmentId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageContent_ShipmentId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Shipment'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentId();
@@ -97,7 +98,8 @@ public interface ShipmentPackageContent extends BizEntity {
 	 * @return the value of the '<em>Shipment Item Seq Id</em>' attribute.
 	 * @see #setShipmentItemSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageContent_ShipmentItemSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentItemSeqId();
@@ -123,7 +125,8 @@ public interface ShipmentPackageContent extends BizEntity {
 	 * @return the value of the '<em>Shipment Package Seq Id</em>' attribute.
 	 * @see #setShipmentPackageSeqId(String)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageContent_ShipmentPackageSeqId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getShipmentPackageSeqId();
@@ -139,30 +142,30 @@ public interface ShipmentPackageContent extends BizEntity {
 	void setShipmentPackageSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Sub Product Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Sub Product Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sub Product Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sub Product Id</em>' attribute.
-	 * @see #setSubProductId(String)
+	 * @return the value of the '<em>Sub Product Id</em>' reference.
+	 * @see #setSubProductId(Product)
 	 * @see org.abchip.mimo.biz.shipment.shipment.Shipment_Package#getShipmentPackageContent_SubProductId()
-	 * @model annotation="mimo-ent-domain frame='Product'"
+	 * @model keys="productId"
 	 * @generated
 	 */
-	String getSubProductId();
+	Product getSubProductId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getSubProductId <em>Sub Product Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.shipment.shipment.ShipmentPackageContent#getSubProductId <em>Sub Product Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sub Product Id</em>' attribute.
+	 * @param value the new value of the '<em>Sub Product Id</em>' reference.
 	 * @see #getSubProductId()
 	 * @generated
 	 */
-	void setSubProductId(String value);
+	void setSubProductId(Product value);
 
 	/**
 	 * Returns the value of the '<em><b>Sub Product Quantity</b></em>' attribute.

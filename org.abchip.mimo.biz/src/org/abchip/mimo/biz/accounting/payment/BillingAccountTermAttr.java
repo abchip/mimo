@@ -39,7 +39,8 @@ public interface BillingAccountTermAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTermAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface BillingAccountTermAttr extends BizEntity {
 	 * @return the value of the '<em>Billing Account Term Id</em>' attribute.
 	 * @see #setBillingAccountTermId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getBillingAccountTermAttr_BillingAccountTermId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='BillingAccountTerm'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getBillingAccountTermId();

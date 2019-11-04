@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface SchedulePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-service-schedule";
+	String eNS_PREFIX = "biz-schedule";
 
 	/**
 	 * The singleton instance of the package.
@@ -170,22 +171,22 @@ public interface SchedulePackage extends EPackage {
 	int JOB_MANAGER_LOCK__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Reason Enum Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_MANAGER_LOCK__REASON_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_MANAGER_LOCK__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int JOB_MANAGER_LOCK__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Reason Enum Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_MANAGER_LOCK__REASON_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Job Manager Lock</em>' class.
@@ -252,22 +253,13 @@ public interface SchedulePackage extends EPackage {
 	int JOB_SANDBOX__JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Auth User Login Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__AUTH_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Cancel Date Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__CANCEL_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int JOB_SANDBOX__CANCEL_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Current Recurrence Count</b></em>' attribute.
@@ -276,7 +268,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__CURRENT_RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int JOB_SANDBOX__CURRENT_RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Current Retry Count</b></em>' attribute.
@@ -285,7 +277,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__CURRENT_RETRY_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int JOB_SANDBOX__CURRENT_RETRY_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Finish Date Time</b></em>' attribute.
@@ -294,7 +286,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__FINISH_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int JOB_SANDBOX__FINISH_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Job Name</b></em>' attribute.
@@ -303,7 +295,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__JOB_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int JOB_SANDBOX__JOB_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Job Result</b></em>' attribute.
@@ -312,7 +304,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__JOB_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int JOB_SANDBOX__JOB_RESULT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Loader Name</b></em>' attribute.
@@ -321,7 +313,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__LOADER_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int JOB_SANDBOX__LOADER_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Max Recurrence Count</b></em>' attribute.
@@ -330,7 +322,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__MAX_RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int JOB_SANDBOX__MAX_RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Max Retry</b></em>' attribute.
@@ -339,7 +331,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__MAX_RETRY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int JOB_SANDBOX__MAX_RETRY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Parent Job Id</b></em>' attribute.
@@ -348,7 +340,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__PARENT_JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int JOB_SANDBOX__PARENT_JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Pool Id</b></em>' attribute.
@@ -357,7 +349,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__POOL_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
+	int JOB_SANDBOX__POOL_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Previous Job Id</b></em>' attribute.
@@ -366,25 +358,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__PREVIOUS_JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
-
-	/**
-	 * The feature id for the '<em><b>Recurrence Info Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__RECURRENCE_INFO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>Run As User</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__RUN_AS_USER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
+	int JOB_SANDBOX__PREVIOUS_JOB_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Run By Instance Id</b></em>' attribute.
@@ -393,7 +367,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__RUN_BY_INSTANCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
+	int JOB_SANDBOX__RUN_BY_INSTANCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Run Time</b></em>' attribute.
@@ -402,16 +376,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__RUN_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
-
-	/**
-	 * The feature id for the '<em><b>Runtime Data Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB_SANDBOX__RUNTIME_DATA_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+	int JOB_SANDBOX__RUN_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
@@ -420,7 +385,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__SERVICE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+	int JOB_SANDBOX__SERVICE_NAME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Start Date Time</b></em>' attribute.
@@ -429,25 +394,61 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__START_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+	int JOB_SANDBOX__START_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 16;
 
 	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Recurrence Info Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+	int JOB_SANDBOX__RECURRENCE_INFO_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 17;
 
 	/**
-	 * The feature id for the '<em><b>Temp Expr Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Temp Expr Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_SANDBOX__TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
+	int JOB_SANDBOX__TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Data Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__RUNTIME_DATA_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Auth User Login Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__AUTH_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 20;
+
+	/**
+	 * The feature id for the '<em><b>Run As User</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__RUN_AS_USER = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB_SANDBOX__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 22;
 
 	/**
 	 * The number of structural features of the '<em>Job Sandbox</em>' class.
@@ -523,22 +524,13 @@ public interface SchedulePackage extends EPackage {
 	int RECURRENCE_INFO__EXCEPTION_DATE_TIMES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Exception Rule Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO__EXCEPTION_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Recurrence Count</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRENCE_INFO__RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int RECURRENCE_INFO__RECURRENCE_COUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Recurrence Date Times</b></em>' attribute.
@@ -547,16 +539,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRENCE_INFO__RECURRENCE_DATE_TIMES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Recurrence Rule Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRENCE_INFO__RECURRENCE_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int RECURRENCE_INFO__RECURRENCE_DATE_TIMES = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Start Date Time</b></em>' attribute.
@@ -565,7 +548,25 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRENCE_INFO__START_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int RECURRENCE_INFO__START_DATE_TIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Recurrence Rule Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRENCE_INFO__RECURRENCE_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Exception Rule Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRENCE_INFO__EXCEPTION_RULE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Recurrence Info</em>' class.
@@ -1049,22 +1050,22 @@ public interface SchedulePackage extends EPackage {
 	int TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>To Temp Expr Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Expr Assoc Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int TEMPORAL_EXPRESSION_ASSOC__EXPR_ASSOC_TYPE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>To Temp Expr Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Temporal Expression Assoc</em>' class.
@@ -1164,15 +1165,15 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getJobManagerLock_LastModifiedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getReasonEnumId <em>Reason Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getReasonEnumId <em>Reason Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reason Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Reason Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.JobManagerLock#getReasonEnumId()
 	 * @see #getJobManagerLock()
 	 * @generated
 	 */
-	EAttribute getJobManagerLock_ReasonEnumId();
+	EReference getJobManagerLock_ReasonEnumId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobManagerLock#getThruDate <em>Thru Date</em>}'.
@@ -1207,15 +1208,15 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getJobSandbox_JobId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getAuthUserLoginId <em>Auth User Login Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getAuthUserLoginId <em>Auth User Login Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Auth User Login Id</em>'.
+	 * @return the meta object for the reference '<em>Auth User Login Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.JobSandbox#getAuthUserLoginId()
 	 * @see #getJobSandbox()
 	 * @generated
 	 */
-	EAttribute getJobSandbox_AuthUserLoginId();
+	EReference getJobSandbox_AuthUserLoginId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getCancelDateTime <em>Cancel Date Time</em>}'.
@@ -1350,26 +1351,26 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getJobSandbox_PreviousJobId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRecurrenceInfoId <em>Recurrence Info Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRecurrenceInfoId <em>Recurrence Info Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Recurrence Info Id</em>'.
+	 * @return the meta object for the reference '<em>Recurrence Info Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.JobSandbox#getRecurrenceInfoId()
 	 * @see #getJobSandbox()
 	 * @generated
 	 */
-	EAttribute getJobSandbox_RecurrenceInfoId();
+	EReference getJobSandbox_RecurrenceInfoId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunAsUser <em>Run As User</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunAsUser <em>Run As User</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Run As User</em>'.
+	 * @return the meta object for the reference '<em>Run As User</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.JobSandbox#getRunAsUser()
 	 * @see #getJobSandbox()
 	 * @generated
 	 */
-	EAttribute getJobSandbox_RunAsUser();
+	EReference getJobSandbox_RunAsUser();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRunByInstanceId <em>Run By Instance Id</em>}'.
@@ -1394,15 +1395,15 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getJobSandbox_RunTime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRuntimeDataId <em>Runtime Data Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getRuntimeDataId <em>Runtime Data Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Runtime Data Id</em>'.
+	 * @return the meta object for the reference '<em>Runtime Data Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.JobSandbox#getRuntimeDataId()
 	 * @see #getJobSandbox()
 	 * @generated
 	 */
-	EAttribute getJobSandbox_RuntimeDataId();
+	EReference getJobSandbox_RuntimeDataId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getServiceName <em>Service Name</em>}'.
@@ -1427,26 +1428,26 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getJobSandbox_StartDateTime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.JobSandbox#getStatusId()
 	 * @see #getJobSandbox()
 	 * @generated
 	 */
-	EAttribute getJobSandbox_StatusId();
+	EReference getJobSandbox_StatusId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getTempExprId <em>Temp Expr Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.JobSandbox#getTempExprId <em>Temp Expr Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Temp Expr Id</em>'.
+	 * @return the meta object for the reference '<em>Temp Expr Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.JobSandbox#getTempExprId()
 	 * @see #getJobSandbox()
 	 * @generated
 	 */
-	EAttribute getJobSandbox_TempExprId();
+	EReference getJobSandbox_TempExprId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo <em>Recurrence Info</em>}'.
@@ -1481,15 +1482,15 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getRecurrenceInfo_ExceptionDateTimes();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionRuleId <em>Exception Rule Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionRuleId <em>Exception Rule Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Exception Rule Id</em>'.
+	 * @return the meta object for the reference '<em>Exception Rule Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getExceptionRuleId()
 	 * @see #getRecurrenceInfo()
 	 * @generated
 	 */
-	EAttribute getRecurrenceInfo_ExceptionRuleId();
+	EReference getRecurrenceInfo_ExceptionRuleId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceCount <em>Recurrence Count</em>}'.
@@ -1514,15 +1515,15 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getRecurrenceInfo_RecurrenceDateTimes();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceRuleId <em>Recurrence Rule Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceRuleId <em>Recurrence Rule Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Recurrence Rule Id</em>'.
+	 * @return the meta object for the reference '<em>Recurrence Rule Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getRecurrenceRuleId()
 	 * @see #getRecurrenceInfo()
 	 * @generated
 	 */
-	EAttribute getRecurrenceInfo_RecurrenceRuleId();
+	EReference getRecurrenceInfo_RecurrenceRuleId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.RecurrenceInfo#getStartDateTime <em>Start Date Time</em>}'.
@@ -1895,15 +1896,15 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getTemporalExpressionAssoc_FromTempExprId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getToTempExprId <em>To Temp Expr Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getToTempExprId <em>To Temp Expr Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>To Temp Expr Id</em>'.
+	 * @return the meta object for the reference '<em>To Temp Expr Id</em>'.
 	 * @see org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getToTempExprId()
 	 * @see #getTemporalExpressionAssoc()
 	 * @generated
 	 */
-	EAttribute getTemporalExpressionAssoc_ToTempExprId();
+	EReference getTemporalExpressionAssoc_ToTempExprId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.service.schedule.TemporalExpressionAssoc#getExprAssocType <em>Expr Assoc Type</em>}'.
@@ -2005,12 +2006,12 @@ public interface SchedulePackage extends EPackage {
 		EAttribute JOB_MANAGER_LOCK__LAST_MODIFIED_DATE = eINSTANCE.getJobManagerLock_LastModifiedDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Reason Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Reason Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_MANAGER_LOCK__REASON_ENUM_ID = eINSTANCE.getJobManagerLock_ReasonEnumId();
+		EReference JOB_MANAGER_LOCK__REASON_ENUM_ID = eINSTANCE.getJobManagerLock_ReasonEnumId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -2039,12 +2040,12 @@ public interface SchedulePackage extends EPackage {
 		EAttribute JOB_SANDBOX__JOB_ID = eINSTANCE.getJobSandbox_JobId();
 
 		/**
-		 * The meta object literal for the '<em><b>Auth User Login Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Auth User Login Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_SANDBOX__AUTH_USER_LOGIN_ID = eINSTANCE.getJobSandbox_AuthUserLoginId();
+		EReference JOB_SANDBOX__AUTH_USER_LOGIN_ID = eINSTANCE.getJobSandbox_AuthUserLoginId();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel Date Time</b></em>' attribute feature.
@@ -2143,20 +2144,20 @@ public interface SchedulePackage extends EPackage {
 		EAttribute JOB_SANDBOX__PREVIOUS_JOB_ID = eINSTANCE.getJobSandbox_PreviousJobId();
 
 		/**
-		 * The meta object literal for the '<em><b>Recurrence Info Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Recurrence Info Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_SANDBOX__RECURRENCE_INFO_ID = eINSTANCE.getJobSandbox_RecurrenceInfoId();
+		EReference JOB_SANDBOX__RECURRENCE_INFO_ID = eINSTANCE.getJobSandbox_RecurrenceInfoId();
 
 		/**
-		 * The meta object literal for the '<em><b>Run As User</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Run As User</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_SANDBOX__RUN_AS_USER = eINSTANCE.getJobSandbox_RunAsUser();
+		EReference JOB_SANDBOX__RUN_AS_USER = eINSTANCE.getJobSandbox_RunAsUser();
 
 		/**
 		 * The meta object literal for the '<em><b>Run By Instance Id</b></em>' attribute feature.
@@ -2175,12 +2176,12 @@ public interface SchedulePackage extends EPackage {
 		EAttribute JOB_SANDBOX__RUN_TIME = eINSTANCE.getJobSandbox_RunTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Runtime Data Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Runtime Data Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_SANDBOX__RUNTIME_DATA_ID = eINSTANCE.getJobSandbox_RuntimeDataId();
+		EReference JOB_SANDBOX__RUNTIME_DATA_ID = eINSTANCE.getJobSandbox_RuntimeDataId();
 
 		/**
 		 * The meta object literal for the '<em><b>Service Name</b></em>' attribute feature.
@@ -2199,20 +2200,20 @@ public interface SchedulePackage extends EPackage {
 		EAttribute JOB_SANDBOX__START_DATE_TIME = eINSTANCE.getJobSandbox_StartDateTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_SANDBOX__STATUS_ID = eINSTANCE.getJobSandbox_StatusId();
+		EReference JOB_SANDBOX__STATUS_ID = eINSTANCE.getJobSandbox_StatusId();
 
 		/**
-		 * The meta object literal for the '<em><b>Temp Expr Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Temp Expr Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB_SANDBOX__TEMP_EXPR_ID = eINSTANCE.getJobSandbox_TempExprId();
+		EReference JOB_SANDBOX__TEMP_EXPR_ID = eINSTANCE.getJobSandbox_TempExprId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.service.schedule.impl.RecurrenceInfoImpl <em>Recurrence Info</em>}' class.
@@ -2241,12 +2242,12 @@ public interface SchedulePackage extends EPackage {
 		EAttribute RECURRENCE_INFO__EXCEPTION_DATE_TIMES = eINSTANCE.getRecurrenceInfo_ExceptionDateTimes();
 
 		/**
-		 * The meta object literal for the '<em><b>Exception Rule Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Exception Rule Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RECURRENCE_INFO__EXCEPTION_RULE_ID = eINSTANCE.getRecurrenceInfo_ExceptionRuleId();
+		EReference RECURRENCE_INFO__EXCEPTION_RULE_ID = eINSTANCE.getRecurrenceInfo_ExceptionRuleId();
 
 		/**
 		 * The meta object literal for the '<em><b>Recurrence Count</b></em>' attribute feature.
@@ -2265,12 +2266,12 @@ public interface SchedulePackage extends EPackage {
 		EAttribute RECURRENCE_INFO__RECURRENCE_DATE_TIMES = eINSTANCE.getRecurrenceInfo_RecurrenceDateTimes();
 
 		/**
-		 * The meta object literal for the '<em><b>Recurrence Rule Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Recurrence Rule Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RECURRENCE_INFO__RECURRENCE_RULE_ID = eINSTANCE.getRecurrenceInfo_RecurrenceRuleId();
+		EReference RECURRENCE_INFO__RECURRENCE_RULE_ID = eINSTANCE.getRecurrenceInfo_RecurrenceRuleId();
 
 		/**
 		 * The meta object literal for the '<em><b>Start Date Time</b></em>' attribute feature.
@@ -2553,12 +2554,12 @@ public interface SchedulePackage extends EPackage {
 		EAttribute TEMPORAL_EXPRESSION_ASSOC__FROM_TEMP_EXPR_ID = eINSTANCE.getTemporalExpressionAssoc_FromTempExprId();
 
 		/**
-		 * The meta object literal for the '<em><b>To Temp Expr Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>To Temp Expr Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID = eINSTANCE.getTemporalExpressionAssoc_ToTempExprId();
+		EReference TEMPORAL_EXPRESSION_ASSOC__TO_TEMP_EXPR_ID = eINSTANCE.getTemporalExpressionAssoc_ToTempExprId();
 
 		/**
 		 * The meta object literal for the '<em><b>Expr Assoc Type</b></em>' attribute feature.

@@ -11,10 +11,13 @@ import java.util.List;
 
 import org.abchip.mimo.biz.common.period.PeriodPackage;
 import org.abchip.mimo.biz.common.period.PeriodType;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -93,23 +96,14 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 	 */
 	protected long periodLength = PERIOD_LENGTH_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uomId = UOM_ID_EDEFAULT;
+	protected Uom uomId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +176,24 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PeriodPackage.PERIOD_TYPE__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -192,8 +203,8 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PeriodPackage.PERIOD_TYPE__UOM_ID, oldUomId, uomId));
@@ -249,7 +260,8 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 			case PeriodPackage.PERIOD_TYPE__PERIOD_LENGTH:
 				return getPeriodLength();
 			case PeriodPackage.PERIOD_TYPE__UOM_ID:
-				return getUomId();
+				if (resolve) return getUomId();
+				return basicGetUomId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -272,7 +284,7 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 				setPeriodLength((Long)newValue);
 				return;
 			case PeriodPackage.PERIOD_TYPE__UOM_ID:
-				setUomId((String)newValue);
+				setUomId((Uom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -296,7 +308,7 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 				setPeriodLength(PERIOD_LENGTH_EDEFAULT);
 				return;
 			case PeriodPackage.PERIOD_TYPE__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
+				setUomId((Uom)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -317,7 +329,7 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 			case PeriodPackage.PERIOD_TYPE__PERIOD_LENGTH:
 				return periodLength != PERIOD_LENGTH_EDEFAULT;
 			case PeriodPackage.PERIOD_TYPE__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+				return uomId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -338,8 +350,6 @@ public class PeriodTypeImpl extends BizEntityImpl implements PeriodType {
 		result.append(description);
 		result.append(", periodLength: ");
 		result.append(periodLength);
-		result.append(", uomId: ");
-		result.append(uomId);
 		result.append(')');
 		return result.toString();
 	}

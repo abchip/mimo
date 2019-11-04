@@ -198,6 +198,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -360,6 +361,22 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -376,22 +393,6 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -503,6 +504,14 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -511,14 +520,6 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -598,6 +599,14 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -606,14 +615,6 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -701,8 +702,8 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustomTimePeriod_OrganizationPartyId() {
-		return (EAttribute)customTimePeriodEClass.getEStructuralFeatures().get(3);
+	public EReference getCustomTimePeriod_OrganizationPartyId() {
+		return (EReference)customTimePeriodEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -711,8 +712,8 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustomTimePeriod_ParentPeriodId() {
-		return (EAttribute)customTimePeriodEClass.getEStructuralFeatures().get(4);
+	public EReference getCustomTimePeriod_ParentPeriodId() {
+		return (EReference)customTimePeriodEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -722,7 +723,7 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 	 */
 	@Override
 	public EAttribute getCustomTimePeriod_PeriodName() {
-		return (EAttribute)customTimePeriodEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)customTimePeriodEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -732,7 +733,7 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 	 */
 	@Override
 	public EAttribute getCustomTimePeriod_PeriodNum() {
-		return (EAttribute)customTimePeriodEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)customTimePeriodEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -741,8 +742,8 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustomTimePeriod_PeriodTypeId() {
-		return (EAttribute)customTimePeriodEClass.getEStructuralFeatures().get(7);
+	public EReference getCustomTimePeriod_PeriodTypeId() {
+		return (EReference)customTimePeriodEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -752,7 +753,7 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 	 */
 	@Override
 	public EAttribute getCustomTimePeriod_ThruDate() {
-		return (EAttribute)customTimePeriodEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)customTimePeriodEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -801,8 +802,8 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPeriodType_UomId() {
-		return (EAttribute)periodTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getPeriodType_UomId() {
+		return (EReference)periodTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -838,18 +839,18 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		createEAttribute(customTimePeriodEClass, CUSTOM_TIME_PERIOD__CUSTOM_TIME_PERIOD_ID);
 		createEAttribute(customTimePeriodEClass, CUSTOM_TIME_PERIOD__FROM_DATE);
 		createEAttribute(customTimePeriodEClass, CUSTOM_TIME_PERIOD__IS_CLOSED);
-		createEAttribute(customTimePeriodEClass, CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID);
-		createEAttribute(customTimePeriodEClass, CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID);
 		createEAttribute(customTimePeriodEClass, CUSTOM_TIME_PERIOD__PERIOD_NAME);
 		createEAttribute(customTimePeriodEClass, CUSTOM_TIME_PERIOD__PERIOD_NUM);
-		createEAttribute(customTimePeriodEClass, CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID);
 		createEAttribute(customTimePeriodEClass, CUSTOM_TIME_PERIOD__THRU_DATE);
+		createEReference(customTimePeriodEClass, CUSTOM_TIME_PERIOD__PARENT_PERIOD_ID);
+		createEReference(customTimePeriodEClass, CUSTOM_TIME_PERIOD__PERIOD_TYPE_ID);
+		createEReference(customTimePeriodEClass, CUSTOM_TIME_PERIOD__ORGANIZATION_PARTY_ID);
 
 		periodTypeEClass = createEClass(PERIOD_TYPE);
 		createEAttribute(periodTypeEClass, PERIOD_TYPE__PERIOD_TYPE_ID);
 		createEAttribute(periodTypeEClass, PERIOD_TYPE__DESCRIPTION);
 		createEAttribute(periodTypeEClass, PERIOD_TYPE__PERIOD_LENGTH);
-		createEAttribute(periodTypeEClass, PERIOD_TYPE__UOM_ID);
+		createEReference(periodTypeEClass, PERIOD_TYPE__UOM_ID);
 	}
 
 	/**
@@ -877,6 +878,8 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
+		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -891,12 +894,15 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		initEAttribute(getCustomTimePeriod_CustomTimePeriodId(), ecorePackage.getEString(), "customTimePeriodId", null, 1, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomTimePeriod_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomTimePeriod_IsClosed(), ecorePackage.getEBoolean(), "isClosed", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomTimePeriod_OrganizationPartyId(), ecorePackage.getEString(), "organizationPartyId", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomTimePeriod_ParentPeriodId(), ecorePackage.getEString(), "parentPeriodId", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomTimePeriod_PeriodName(), ecorePackage.getEString(), "periodName", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomTimePeriod_PeriodNum(), ecorePackage.getELong(), "periodNum", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomTimePeriod_PeriodTypeId(), ecorePackage.getEString(), "periodTypeId", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomTimePeriod_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomTimePeriod_ParentPeriodId(), this.getCustomTimePeriod(), null, "parentPeriodId", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustomTimePeriod_ParentPeriodId().getEKeys().add(this.getCustomTimePeriod_CustomTimePeriodId());
+		initEReference(getCustomTimePeriod_PeriodTypeId(), this.getPeriodType(), null, "periodTypeId", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustomTimePeriod_PeriodTypeId().getEKeys().add(this.getPeriodType_PeriodTypeId());
+		initEReference(getCustomTimePeriod_OrganizationPartyId(), thePartyPackage.getParty(), null, "organizationPartyId", null, 0, 1, CustomTimePeriod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustomTimePeriod_OrganizationPartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
 
 		addEOperation(customTimePeriodEClass, ecorePackage.getEString(), "budgets", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -910,7 +916,8 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 		initEAttribute(getPeriodType_PeriodTypeId(), ecorePackage.getEString(), "periodTypeId", null, 1, 1, PeriodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPeriodType_Description(), ecorePackage.getEString(), "description", null, 0, 1, PeriodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPeriodType_PeriodLength(), ecorePackage.getELong(), "periodLength", null, 0, 1, PeriodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPeriodType_UomId(), ecorePackage.getEString(), "uomId", null, 0, 1, PeriodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPeriodType_UomId(), theUomPackage.getUom(), null, "uomId", null, 0, 1, PeriodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getPeriodType_UomId().getEKeys().add(theUomPackage.getUom_UomId());
 
 		addEOperation(periodTypeEClass, ecorePackage.getEString(), "customTimePeriods", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1024,47 +1031,11 @@ public class PeriodPackageImpl extends EPackageImpl implements PeriodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCustomTimePeriod_OrganizationPartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getCustomTimePeriod_ParentPeriodId(),
-		   source,
-		   new String[] {
-			   "frame", "CustomTimePeriod"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getCustomTimePeriod_PeriodTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "PeriodType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (periodTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
 			   "frame", "CustomTimePeriod",
 			   "route", "periodTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getPeriodType_UomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

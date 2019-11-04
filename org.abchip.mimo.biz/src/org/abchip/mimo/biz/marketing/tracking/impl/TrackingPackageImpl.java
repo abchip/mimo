@@ -203,6 +203,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -388,6 +389,20 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -404,20 +419,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -530,6 +531,13 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -538,13 +546,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -625,6 +626,13 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -633,13 +641,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -797,8 +798,8 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrackingCode_MarketingCampaignId() {
-		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(10);
+	public EReference getTrackingCode_MarketingCampaignId() {
+		return (EReference)trackingCodeEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -808,7 +809,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCode_OverrideCss() {
-		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -818,7 +819,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCode_OverrideLogo() {
-		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -828,7 +829,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCode_ProdCatalogId() {
-		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -838,7 +839,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCode_RedirectUrl() {
-		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -848,7 +849,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCode_SubgroupId() {
-		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -858,7 +859,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCode_ThruDate() {
-		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -868,7 +869,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCode_TrackableLifetime() {
-		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -877,8 +878,8 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrackingCode_TrackingCodeTypeId() {
-		return (EAttribute)trackingCodeEClass.getEStructuralFeatures().get(18);
+	public EReference getTrackingCode_TrackingCodeTypeId() {
+		return (EReference)trackingCodeEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -907,8 +908,8 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrackingCodeOrder_TrackingCodeTypeId() {
-		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(1);
+	public EReference getTrackingCodeOrder_TrackingCodeTypeId() {
+		return (EReference)trackingCodeOrderEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -918,7 +919,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCodeOrder_AffiliateReferredTimeStamp() {
-		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -928,7 +929,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCodeOrder_HasExported() {
-		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -938,7 +939,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCodeOrder_IsBillable() {
-		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -948,7 +949,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCodeOrder_SiteId() {
-		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -957,8 +958,8 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrackingCodeOrder_TrackingCodeId() {
-		return (EAttribute)trackingCodeOrderEClass.getEStructuralFeatures().get(6);
+	public EReference getTrackingCodeOrder_TrackingCodeId() {
+		return (EReference)trackingCodeOrderEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -987,8 +988,8 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrackingCodeOrderReturn_OrderId() {
-		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(1);
+	public EReference getTrackingCodeOrderReturn_OrderId() {
+		return (EReference)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -997,8 +998,8 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrackingCodeOrderReturn_TrackingCodeTypeId() {
-		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(2);
+	public EReference getTrackingCodeOrderReturn_TrackingCodeTypeId() {
+		return (EReference)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1008,7 +1009,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCodeOrderReturn_AffiliateReferredTimeStamp() {
-		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1018,7 +1019,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCodeOrderReturn_HasExported() {
-		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1028,7 +1029,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCodeOrderReturn_IsBillable() {
-		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1038,7 +1039,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCodeOrderReturn_OrderItemSeqId() {
-		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1048,7 +1049,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 */
 	@Override
 	public EAttribute getTrackingCodeOrderReturn_SiteId() {
-		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1057,8 +1058,8 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrackingCodeOrderReturn_TrackingCodeId() {
-		return (EAttribute)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(8);
+	public EReference getTrackingCodeOrderReturn_TrackingCodeId() {
+		return (EReference)trackingCodeOrderReturnEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1137,8 +1138,8 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrackingCodeVisit_SourceEnumId() {
-		return (EAttribute)trackingCodeVisitEClass.getEStructuralFeatures().get(3);
+	public EReference getTrackingCodeVisit_SourceEnumId() {
+		return (EReference)trackingCodeVisitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1181,7 +1182,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		createEAttribute(trackingCodeEClass, TRACKING_CODE__GROUP_ID);
 		createEAttribute(trackingCodeEClass, TRACKING_CODE__LAST_MODIFIED_BY_USER_LOGIN);
 		createEAttribute(trackingCodeEClass, TRACKING_CODE__LAST_MODIFIED_DATE);
-		createEAttribute(trackingCodeEClass, TRACKING_CODE__MARKETING_CAMPAIGN_ID);
 		createEAttribute(trackingCodeEClass, TRACKING_CODE__OVERRIDE_CSS);
 		createEAttribute(trackingCodeEClass, TRACKING_CODE__OVERRIDE_LOGO);
 		createEAttribute(trackingCodeEClass, TRACKING_CODE__PROD_CATALOG_ID);
@@ -1189,27 +1189,28 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		createEAttribute(trackingCodeEClass, TRACKING_CODE__SUBGROUP_ID);
 		createEAttribute(trackingCodeEClass, TRACKING_CODE__THRU_DATE);
 		createEAttribute(trackingCodeEClass, TRACKING_CODE__TRACKABLE_LIFETIME);
-		createEAttribute(trackingCodeEClass, TRACKING_CODE__TRACKING_CODE_TYPE_ID);
+		createEReference(trackingCodeEClass, TRACKING_CODE__MARKETING_CAMPAIGN_ID);
+		createEReference(trackingCodeEClass, TRACKING_CODE__TRACKING_CODE_TYPE_ID);
 
 		trackingCodeOrderEClass = createEClass(TRACKING_CODE_ORDER);
 		createEAttribute(trackingCodeOrderEClass, TRACKING_CODE_ORDER__ORDER_ID);
-		createEAttribute(trackingCodeOrderEClass, TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID);
 		createEAttribute(trackingCodeOrderEClass, TRACKING_CODE_ORDER__AFFILIATE_REFERRED_TIME_STAMP);
 		createEAttribute(trackingCodeOrderEClass, TRACKING_CODE_ORDER__HAS_EXPORTED);
 		createEAttribute(trackingCodeOrderEClass, TRACKING_CODE_ORDER__IS_BILLABLE);
 		createEAttribute(trackingCodeOrderEClass, TRACKING_CODE_ORDER__SITE_ID);
-		createEAttribute(trackingCodeOrderEClass, TRACKING_CODE_ORDER__TRACKING_CODE_ID);
+		createEReference(trackingCodeOrderEClass, TRACKING_CODE_ORDER__TRACKING_CODE_ID);
+		createEReference(trackingCodeOrderEClass, TRACKING_CODE_ORDER__TRACKING_CODE_TYPE_ID);
 
 		trackingCodeOrderReturnEClass = createEClass(TRACKING_CODE_ORDER_RETURN);
 		createEAttribute(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__RETURN_ID);
-		createEAttribute(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__ORDER_ID);
-		createEAttribute(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_TYPE_ID);
 		createEAttribute(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__AFFILIATE_REFERRED_TIME_STAMP);
 		createEAttribute(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__HAS_EXPORTED);
 		createEAttribute(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__IS_BILLABLE);
 		createEAttribute(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__ORDER_ITEM_SEQ_ID);
 		createEAttribute(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__SITE_ID);
-		createEAttribute(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_ID);
+		createEReference(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__ORDER_ID);
+		createEReference(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_ID);
+		createEReference(trackingCodeOrderReturnEClass, TRACKING_CODE_ORDER_RETURN__TRACKING_CODE_TYPE_ID);
 
 		trackingCodeTypeEClass = createEClass(TRACKING_CODE_TYPE);
 		createEAttribute(trackingCodeTypeEClass, TRACKING_CODE_TYPE__TRACKING_CODE_TYPE_ID);
@@ -1219,7 +1220,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		createEAttribute(trackingCodeVisitEClass, TRACKING_CODE_VISIT__TRACKING_CODE_ID);
 		createEAttribute(trackingCodeVisitEClass, TRACKING_CODE_VISIT__VISIT_ID);
 		createEAttribute(trackingCodeVisitEClass, TRACKING_CODE_VISIT__FROM_DATE);
-		createEAttribute(trackingCodeVisitEClass, TRACKING_CODE_VISIT__SOURCE_ENUM_ID);
+		createEReference(trackingCodeVisitEClass, TRACKING_CODE_VISIT__SOURCE_ENUM_ID);
 	}
 
 	/**
@@ -1247,6 +1248,9 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		CampaignPackage theCampaignPackage = (CampaignPackage)EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		OrderPackage theOrderPackage = (OrderPackage)EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
+		EnumPackage theEnumPackage = (EnumPackage)EPackage.Registry.INSTANCE.getEPackage(EnumPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1267,7 +1271,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(trackingCodeEClass, TrackingCode.class, "TrackingCode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrackingCode_TrackingCodeId(), ecorePackage.getEString(), "trackingCodeId", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackingCode_TrackingCodeId(), ecorePackage.getEString(), "trackingCodeId", null, 1, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_BillableLifetime(), ecorePackage.getELong(), "billableLifetime", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_CreatedByUserLogin(), ecorePackage.getEString(), "createdByUserLogin", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1277,7 +1281,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		initEAttribute(getTrackingCode_GroupId(), ecorePackage.getEString(), "groupId", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_LastModifiedByUserLogin(), ecorePackage.getEString(), "lastModifiedByUserLogin", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_LastModifiedDate(), ecorePackage.getEDate(), "lastModifiedDate", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCode_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_OverrideCss(), ecorePackage.getEString(), "overrideCss", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_OverrideLogo(), ecorePackage.getEString(), "overrideLogo", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_ProdCatalogId(), ecorePackage.getEString(), "prodCatalogId", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1285,32 +1288,40 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		initEAttribute(getTrackingCode_SubgroupId(), ecorePackage.getEString(), "subgroupId", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCode_TrackableLifetime(), ecorePackage.getELong(), "trackableLifetime", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCode_TrackingCodeTypeId(), ecorePackage.getEString(), "trackingCodeTypeId", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrackingCode_MarketingCampaignId(), theCampaignPackage.getMarketingCampaign(), null, "marketingCampaignId", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTrackingCode_MarketingCampaignId().getEKeys().add(theCampaignPackage.getMarketingCampaign_MarketingCampaignId());
+		initEReference(getTrackingCode_TrackingCodeTypeId(), this.getTrackingCodeType(), null, "trackingCodeTypeId", null, 0, 1, TrackingCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTrackingCode_TrackingCodeTypeId().getEKeys().add(this.getTrackingCodeType_TrackingCodeTypeId());
 
 		addEOperation(trackingCodeEClass, ecorePackage.getEString(), "trackingCodeOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(trackingCodeOrderEClass, TrackingCodeOrder.class, "TrackingCodeOrder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrackingCodeOrder_OrderId(), ecorePackage.getEString(), "orderId", null, 0, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCodeOrder_TrackingCodeTypeId(), ecorePackage.getEString(), "trackingCodeTypeId", null, 0, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackingCodeOrder_OrderId(), ecorePackage.getEString(), "orderId", null, 1, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeOrder_AffiliateReferredTimeStamp(), ecorePackage.getEDate(), "affiliateReferredTimeStamp", null, 0, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeOrder_HasExported(), ecorePackage.getEBoolean(), "hasExported", null, 0, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeOrder_IsBillable(), ecorePackage.getEBoolean(), "isBillable", null, 0, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeOrder_SiteId(), ecorePackage.getEString(), "siteId", null, 0, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCodeOrder_TrackingCodeId(), ecorePackage.getEString(), "trackingCodeId", null, 0, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrackingCodeOrder_TrackingCodeId(), this.getTrackingCode(), null, "trackingCodeId", null, 0, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTrackingCodeOrder_TrackingCodeId().getEKeys().add(this.getTrackingCode_TrackingCodeId());
+		initEReference(getTrackingCodeOrder_TrackingCodeTypeId(), this.getTrackingCodeType(), null, "trackingCodeTypeId", null, 0, 1, TrackingCodeOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTrackingCodeOrder_TrackingCodeTypeId().getEKeys().add(this.getTrackingCodeType_TrackingCodeTypeId());
 
 		initEClass(trackingCodeOrderReturnEClass, TrackingCodeOrderReturn.class, "TrackingCodeOrderReturn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrackingCodeOrderReturn_ReturnId(), ecorePackage.getEString(), "returnId", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCodeOrderReturn_OrderId(), ecorePackage.getEString(), "orderId", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCodeOrderReturn_TrackingCodeTypeId(), ecorePackage.getEString(), "trackingCodeTypeId", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackingCodeOrderReturn_ReturnId(), ecorePackage.getEString(), "returnId", null, 1, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeOrderReturn_AffiliateReferredTimeStamp(), ecorePackage.getEDate(), "affiliateReferredTimeStamp", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeOrderReturn_HasExported(), ecorePackage.getEBoolean(), "hasExported", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeOrderReturn_IsBillable(), ecorePackage.getEBoolean(), "isBillable", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeOrderReturn_OrderItemSeqId(), ecorePackage.getEString(), "orderItemSeqId", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeOrderReturn_SiteId(), ecorePackage.getEString(), "siteId", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCodeOrderReturn_TrackingCodeId(), ecorePackage.getEString(), "trackingCodeId", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrackingCodeOrderReturn_OrderId(), theOrderPackage.getOrderHeader(), null, "orderId", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTrackingCodeOrderReturn_OrderId().getEKeys().add(theOrderPackage.getOrderHeader_OrderId());
+		initEReference(getTrackingCodeOrderReturn_TrackingCodeId(), this.getTrackingCode(), null, "trackingCodeId", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTrackingCodeOrderReturn_TrackingCodeId().getEKeys().add(this.getTrackingCode_TrackingCodeId());
+		initEReference(getTrackingCodeOrderReturn_TrackingCodeTypeId(), this.getTrackingCodeType(), null, "trackingCodeTypeId", null, 0, 1, TrackingCodeOrderReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTrackingCodeOrderReturn_TrackingCodeTypeId().getEKeys().add(this.getTrackingCodeType_TrackingCodeTypeId());
 
 		initEClass(trackingCodeTypeEClass, TrackingCodeType.class, "TrackingCodeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrackingCodeType_TrackingCodeTypeId(), ecorePackage.getEString(), "trackingCodeTypeId", null, 0, 1, TrackingCodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackingCodeType_TrackingCodeTypeId(), ecorePackage.getEString(), "trackingCodeTypeId", null, 1, 1, TrackingCodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrackingCodeType_Description(), ecorePackage.getEString(), "description", null, 0, 1, TrackingCodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(trackingCodeTypeEClass, ecorePackage.getEString(), "trackingCodeOrders", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -1318,10 +1329,11 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		addEOperation(trackingCodeTypeEClass, ecorePackage.getEString(), "trackingCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(trackingCodeVisitEClass, TrackingCodeVisit.class, "TrackingCodeVisit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTrackingCodeVisit_TrackingCodeId(), ecorePackage.getEString(), "trackingCodeId", null, 0, 1, TrackingCodeVisit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCodeVisit_VisitId(), ecorePackage.getEString(), "visitId", null, 0, 1, TrackingCodeVisit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCodeVisit_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, TrackingCodeVisit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrackingCodeVisit_SourceEnumId(), ecorePackage.getEString(), "sourceEnumId", null, 0, 1, TrackingCodeVisit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackingCodeVisit_TrackingCodeId(), ecorePackage.getEString(), "trackingCodeId", null, 1, 1, TrackingCodeVisit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackingCodeVisit_VisitId(), ecorePackage.getEString(), "visitId", null, 1, 1, TrackingCodeVisit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrackingCodeVisit_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, TrackingCodeVisit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrackingCodeVisit_SourceEnumId(), theEnumPackage.getEnumeration(), null, "sourceEnumId", null, 0, 1, TrackingCodeVisit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTrackingCodeVisit_SourceEnumId().getEKeys().add(theEnumPackage.getEnumeration_EnumId());
 
 		// Create annotations
 		// mimo-ent-frame
@@ -1381,25 +1393,7 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getTrackingCodeOrder_TrackingCodeTypeId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getTrackingCodeOrderReturn_ReturnId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTrackingCodeOrderReturn_OrderId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getTrackingCodeOrderReturn_TrackingCodeTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1461,87 +1455,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getTrackingCode_MarketingCampaignId(),
-		   source,
-		   new String[] {
-			   "frame", "MarketingCampaign"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCode_TrackingCodeTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "TrackingCodeType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCodeOrder_OrderId(),
-		   source,
-		   new String[] {
-			   "frame", "OrderHeader"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCodeOrder_TrackingCodeTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "TrackingCodeType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCodeOrder_TrackingCodeId(),
-		   source,
-		   new String[] {
-			   "frame", "TrackingCode"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCodeOrderReturn_ReturnId(),
-		   source,
-		   new String[] {
-			   "frame", "ReturnHeader"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCodeOrderReturn_OrderId(),
-		   source,
-		   new String[] {
-			   "frame", "OrderHeader"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCodeOrderReturn_TrackingCodeTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "TrackingCodeType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCodeOrderReturn_TrackingCodeId(),
-		   source,
-		   new String[] {
-			   "frame", "TrackingCode"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (trackingCodeTypeEClass.getEOperations().get(0),
 		   source,
 		   new String[] {
@@ -1557,24 +1470,6 @@ public class TrackingPackageImpl extends EPackageImpl implements TrackingPackage
 		   new String[] {
 			   "frame", "TrackingCode",
 			   "route", "trackingCodeTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCodeVisit_TrackingCodeId(),
-		   source,
-		   new String[] {
-			   "frame", "TrackingCode"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getTrackingCodeVisit_SourceEnumId(),
-		   source,
-		   new String[] {
-			   "frame", "Enumeration"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

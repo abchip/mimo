@@ -10,11 +10,16 @@ package org.abchip.mimo.biz.product.promo.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.promo.ProductPromo;
+import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.abchip.mimo.biz.product.promo.ProductPromoUse;
 import org.abchip.mimo.biz.product.promo.PromoPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,11 +32,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getPromoSequenceId <em>Promo Sequence Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getProductPromoId <em>Product Promo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getQuantityLeftInActions <em>Quantity Left In Actions</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getTotalDiscountAmount <em>Total Discount Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getProductPromoId <em>Product Promo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getProductPromoCodeId <em>Product Promo Code Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.promo.impl.ProductPromoUseImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,66 +88,6 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	protected String promoSequenceId = PROMO_SEQUENCE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_CODE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoCodeId = PRODUCT_PROMO_CODE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PROMO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoId = PRODUCT_PROMO_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getQuantityLeftInActions() <em>Quantity Left In Actions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -181,6 +126,36 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * @ordered
 	 */
 	protected BigDecimal totalDiscountAmount = TOTAL_DISCOUNT_AMOUNT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductPromoId() <em>Product Promo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromo productPromoId;
+
+	/**
+	 * The cached value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPromoCodeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPromoCode productPromoCodeId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +205,24 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_USE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -240,8 +232,8 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_USE__PARTY_ID, oldPartyId, partyId));
@@ -322,7 +314,24 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoId() {
+	public ProductPromo getProductPromoId() {
+		if (productPromoId != null && ((EObject)productPromoId).eIsProxy()) {
+			InternalEObject oldProductPromoId = (InternalEObject)productPromoId;
+			productPromoId = (ProductPromo)eResolveProxy(oldProductPromoId);
+			if (productPromoId != oldProductPromoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
+			}
+		}
+		return productPromoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromo basicGetProductPromoId() {
 		return productPromoId;
 	}
 
@@ -332,8 +341,8 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoId(String newProductPromoId) {
-		String oldProductPromoId = productPromoId;
+	public void setProductPromoId(ProductPromo newProductPromoId) {
+		ProductPromo oldProductPromoId = productPromoId;
 		productPromoId = newProductPromoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID, oldProductPromoId, productPromoId));
@@ -345,7 +354,24 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoCodeId() {
+	public ProductPromoCode getProductPromoCodeId() {
+		if (productPromoCodeId != null && ((EObject)productPromoCodeId).eIsProxy()) {
+			InternalEObject oldProductPromoCodeId = (InternalEObject)productPromoCodeId;
+			productPromoCodeId = (ProductPromoCode)eResolveProxy(oldProductPromoCodeId);
+			if (productPromoCodeId != oldProductPromoCodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
+			}
+		}
+		return productPromoCodeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromoCode basicGetProductPromoCodeId() {
 		return productPromoCodeId;
 	}
 
@@ -355,8 +381,8 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoCodeId(String newProductPromoCodeId) {
-		String oldProductPromoCodeId = productPromoCodeId;
+	public void setProductPromoCodeId(ProductPromoCode newProductPromoCodeId) {
+		ProductPromoCode oldProductPromoCodeId = productPromoCodeId;
 		productPromoCodeId = newProductPromoCodeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
@@ -374,16 +400,19 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 				return getOrderId();
 			case PromoPackage.PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID:
 				return getPromoSequenceId();
-			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
-				return getPartyId();
-			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
-				return getProductPromoCodeId();
-			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID:
-				return getProductPromoId();
 			case PromoPackage.PRODUCT_PROMO_USE__QUANTITY_LEFT_IN_ACTIONS:
 				return getQuantityLeftInActions();
 			case PromoPackage.PRODUCT_PROMO_USE__TOTAL_DISCOUNT_AMOUNT:
 				return getTotalDiscountAmount();
+			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID:
+				if (resolve) return getProductPromoId();
+				return basicGetProductPromoId();
+			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
+				if (resolve) return getProductPromoCodeId();
+				return basicGetProductPromoCodeId();
+			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -402,20 +431,20 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 			case PromoPackage.PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID:
 				setPromoSequenceId((String)newValue);
 				return;
-			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId((String)newValue);
-				return;
-			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID:
-				setProductPromoId((String)newValue);
-				return;
 			case PromoPackage.PRODUCT_PROMO_USE__QUANTITY_LEFT_IN_ACTIONS:
 				setQuantityLeftInActions((BigDecimal)newValue);
 				return;
 			case PromoPackage.PRODUCT_PROMO_USE__TOTAL_DISCOUNT_AMOUNT:
 				setTotalDiscountAmount((BigDecimal)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
+				setProductPromoCodeId((ProductPromoCode)newValue);
+				return;
+			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -435,20 +464,20 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 			case PromoPackage.PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID:
 				setPromoSequenceId(PROMO_SEQUENCE_ID_EDEFAULT);
 				return;
-			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId(PRODUCT_PROMO_CODE_ID_EDEFAULT);
-				return;
-			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID:
-				setProductPromoId(PRODUCT_PROMO_ID_EDEFAULT);
-				return;
 			case PromoPackage.PRODUCT_PROMO_USE__QUANTITY_LEFT_IN_ACTIONS:
 				setQuantityLeftInActions(QUANTITY_LEFT_IN_ACTIONS_EDEFAULT);
 				return;
 			case PromoPackage.PRODUCT_PROMO_USE__TOTAL_DISCOUNT_AMOUNT:
 				setTotalDiscountAmount(TOTAL_DISCOUNT_AMOUNT_EDEFAULT);
+				return;
+			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID:
+				setProductPromoId((ProductPromo)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
+				setProductPromoCodeId((ProductPromoCode)null);
+				return;
+			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -466,16 +495,16 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case PromoPackage.PRODUCT_PROMO_USE__PROMO_SEQUENCE_ID:
 				return PROMO_SEQUENCE_ID_EDEFAULT == null ? promoSequenceId != null : !PROMO_SEQUENCE_ID_EDEFAULT.equals(promoSequenceId);
-			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
-				return PRODUCT_PROMO_CODE_ID_EDEFAULT == null ? productPromoCodeId != null : !PRODUCT_PROMO_CODE_ID_EDEFAULT.equals(productPromoCodeId);
-			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID:
-				return PRODUCT_PROMO_ID_EDEFAULT == null ? productPromoId != null : !PRODUCT_PROMO_ID_EDEFAULT.equals(productPromoId);
 			case PromoPackage.PRODUCT_PROMO_USE__QUANTITY_LEFT_IN_ACTIONS:
 				return QUANTITY_LEFT_IN_ACTIONS_EDEFAULT == null ? quantityLeftInActions != null : !QUANTITY_LEFT_IN_ACTIONS_EDEFAULT.equals(quantityLeftInActions);
 			case PromoPackage.PRODUCT_PROMO_USE__TOTAL_DISCOUNT_AMOUNT:
 				return TOTAL_DISCOUNT_AMOUNT_EDEFAULT == null ? totalDiscountAmount != null : !TOTAL_DISCOUNT_AMOUNT_EDEFAULT.equals(totalDiscountAmount);
+			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_ID:
+				return productPromoId != null;
+			case PromoPackage.PRODUCT_PROMO_USE__PRODUCT_PROMO_CODE_ID:
+				return productPromoCodeId != null;
+			case PromoPackage.PRODUCT_PROMO_USE__PARTY_ID:
+				return partyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -494,12 +523,6 @@ public class ProductPromoUseImpl extends BizEntityImpl implements ProductPromoUs
 		result.append(orderId);
 		result.append(", promoSequenceId: ");
 		result.append(promoSequenceId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", productPromoCodeId: ");
-		result.append(productPromoCodeId);
-		result.append(", productPromoId: ");
-		result.append(productPromoId);
 		result.append(", quantityLeftInActions: ");
 		result.append(quantityLeftInActions);
 		result.append(", totalDiscountAmount: ");

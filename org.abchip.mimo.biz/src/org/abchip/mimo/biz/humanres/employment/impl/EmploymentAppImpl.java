@@ -9,13 +9,20 @@ package org.abchip.mimo.biz.humanres.employment.impl;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.humanres.employment.EmploymentApp;
+import org.abchip.mimo.biz.humanres.employment.EmploymentAppSourceType;
 import org.abchip.mimo.biz.humanres.employment.EmploymentPackage;
+import org.abchip.mimo.biz.humanres.position.EmplPosition;
+import org.abchip.mimo.biz.humanres.recruitment.JobRequisition;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,13 +35,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApplicationId <em>Application Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApplicationDate <em>Application Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApplyingPartyId <em>Applying Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApproverPartyId <em>Approver Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getEmplPositionId <em>Empl Position Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getJobRequisitionId <em>Job Requisition Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getReferredByPartyId <em>Referred By Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getEmploymentAppSourceTypeId <em>Employment App Source Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApplyingPartyId <em>Applying Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getReferredByPartyId <em>Referred By Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getApproverPartyId <em>Approver Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.humanres.employment.impl.EmploymentAppImpl#getJobRequisitionId <em>Job Requisition Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,144 +93,74 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	protected Date applicationDate = APPLICATION_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getApplyingPartyId() <em>Applying Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApplyingPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String APPLYING_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getApplyingPartyId() <em>Applying Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApplyingPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String applyingPartyId = APPLYING_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getApproverPartyId() <em>Approver Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApproverPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String APPROVER_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getApproverPartyId() <em>Approver Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApproverPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String approverPartyId = APPROVER_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEmplPositionId() <em>Empl Position Id</em>}' attribute.
+	 * The cached value of the '{@link #getEmplPositionId() <em>Empl Position Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEmplPositionId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String EMPL_POSITION_ID_EDEFAULT = null;
+	protected EmplPosition emplPositionId;
 
 	/**
-	 * The cached value of the '{@link #getEmplPositionId() <em>Empl Position Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmplPositionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emplPositionId = EMPL_POSITION_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEmploymentAppSourceTypeId() <em>Employment App Source Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmploymentAppSourceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPLOYMENT_APP_SOURCE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmploymentAppSourceTypeId() <em>Employment App Source Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmploymentAppSourceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String employmentAppSourceTypeId = EMPLOYMENT_APP_SOURCE_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getJobRequisitionId() <em>Job Requisition Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobRequisitionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String JOB_REQUISITION_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getJobRequisitionId() <em>Job Requisition Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobRequisitionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String jobRequisitionId = JOB_REQUISITION_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getReferredByPartyId() <em>Referred By Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferredByPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REFERRED_BY_PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReferredByPartyId() <em>Referred By Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferredByPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String referredByPartyId = REFERRED_BY_PARTY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatusId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected StatusItem statusId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getEmploymentAppSourceTypeId() <em>Employment App Source Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getEmploymentAppSourceTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
+	protected EmploymentAppSourceType employmentAppSourceTypeId;
+
+	/**
+	 * The cached value of the '{@link #getApplyingPartyId() <em>Applying Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApplyingPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party applyingPartyId;
+
+	/**
+	 * The cached value of the '{@link #getReferredByPartyId() <em>Referred By Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReferredByPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party referredByPartyId;
+
+	/**
+	 * The cached value of the '{@link #getApproverPartyId() <em>Approver Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApproverPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party approverPartyId;
+
+	/**
+	 * The cached value of the '{@link #getJobRequisitionId() <em>Job Requisition Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobRequisitionId()
+	 * @generated
+	 * @ordered
+	 */
+	protected JobRequisition jobRequisitionId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,7 +233,24 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public String getApplyingPartyId() {
+	public Party getApplyingPartyId() {
+		if (applyingPartyId != null && ((EObject)applyingPartyId).eIsProxy()) {
+			InternalEObject oldApplyingPartyId = (InternalEObject)applyingPartyId;
+			applyingPartyId = (Party)eResolveProxy(oldApplyingPartyId);
+			if (applyingPartyId != oldApplyingPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID, oldApplyingPartyId, applyingPartyId));
+			}
+		}
+		return applyingPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetApplyingPartyId() {
 		return applyingPartyId;
 	}
 
@@ -306,8 +260,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public void setApplyingPartyId(String newApplyingPartyId) {
-		String oldApplyingPartyId = applyingPartyId;
+	public void setApplyingPartyId(Party newApplyingPartyId) {
+		Party oldApplyingPartyId = applyingPartyId;
 		applyingPartyId = newApplyingPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID, oldApplyingPartyId, applyingPartyId));
@@ -319,7 +273,24 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public String getApproverPartyId() {
+	public Party getApproverPartyId() {
+		if (approverPartyId != null && ((EObject)approverPartyId).eIsProxy()) {
+			InternalEObject oldApproverPartyId = (InternalEObject)approverPartyId;
+			approverPartyId = (Party)eResolveProxy(oldApproverPartyId);
+			if (approverPartyId != oldApproverPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID, oldApproverPartyId, approverPartyId));
+			}
+		}
+		return approverPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetApproverPartyId() {
 		return approverPartyId;
 	}
 
@@ -329,8 +300,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public void setApproverPartyId(String newApproverPartyId) {
-		String oldApproverPartyId = approverPartyId;
+	public void setApproverPartyId(Party newApproverPartyId) {
+		Party oldApproverPartyId = approverPartyId;
 		approverPartyId = newApproverPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID, oldApproverPartyId, approverPartyId));
@@ -342,7 +313,24 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public String getEmplPositionId() {
+	public EmplPosition getEmplPositionId() {
+		if (emplPositionId != null && ((EObject)emplPositionId).eIsProxy()) {
+			InternalEObject oldEmplPositionId = (InternalEObject)emplPositionId;
+			emplPositionId = (EmplPosition)eResolveProxy(oldEmplPositionId);
+			if (emplPositionId != oldEmplPositionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
+			}
+		}
+		return emplPositionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmplPosition basicGetEmplPositionId() {
 		return emplPositionId;
 	}
 
@@ -352,8 +340,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public void setEmplPositionId(String newEmplPositionId) {
-		String oldEmplPositionId = emplPositionId;
+	public void setEmplPositionId(EmplPosition newEmplPositionId) {
+		EmplPosition oldEmplPositionId = emplPositionId;
 		emplPositionId = newEmplPositionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__EMPL_POSITION_ID, oldEmplPositionId, emplPositionId));
@@ -365,7 +353,24 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public String getEmploymentAppSourceTypeId() {
+	public EmploymentAppSourceType getEmploymentAppSourceTypeId() {
+		if (employmentAppSourceTypeId != null && ((EObject)employmentAppSourceTypeId).eIsProxy()) {
+			InternalEObject oldEmploymentAppSourceTypeId = (InternalEObject)employmentAppSourceTypeId;
+			employmentAppSourceTypeId = (EmploymentAppSourceType)eResolveProxy(oldEmploymentAppSourceTypeId);
+			if (employmentAppSourceTypeId != oldEmploymentAppSourceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID, oldEmploymentAppSourceTypeId, employmentAppSourceTypeId));
+			}
+		}
+		return employmentAppSourceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmploymentAppSourceType basicGetEmploymentAppSourceTypeId() {
 		return employmentAppSourceTypeId;
 	}
 
@@ -375,8 +380,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public void setEmploymentAppSourceTypeId(String newEmploymentAppSourceTypeId) {
-		String oldEmploymentAppSourceTypeId = employmentAppSourceTypeId;
+	public void setEmploymentAppSourceTypeId(EmploymentAppSourceType newEmploymentAppSourceTypeId) {
+		EmploymentAppSourceType oldEmploymentAppSourceTypeId = employmentAppSourceTypeId;
 		employmentAppSourceTypeId = newEmploymentAppSourceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID, oldEmploymentAppSourceTypeId, employmentAppSourceTypeId));
@@ -388,7 +393,24 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public String getJobRequisitionId() {
+	public JobRequisition getJobRequisitionId() {
+		if (jobRequisitionId != null && ((EObject)jobRequisitionId).eIsProxy()) {
+			InternalEObject oldJobRequisitionId = (InternalEObject)jobRequisitionId;
+			jobRequisitionId = (JobRequisition)eResolveProxy(oldJobRequisitionId);
+			if (jobRequisitionId != oldJobRequisitionId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
+			}
+		}
+		return jobRequisitionId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JobRequisition basicGetJobRequisitionId() {
 		return jobRequisitionId;
 	}
 
@@ -398,8 +420,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public void setJobRequisitionId(String newJobRequisitionId) {
-		String oldJobRequisitionId = jobRequisitionId;
+	public void setJobRequisitionId(JobRequisition newJobRequisitionId) {
+		JobRequisition oldJobRequisitionId = jobRequisitionId;
 		jobRequisitionId = newJobRequisitionId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID, oldJobRequisitionId, jobRequisitionId));
@@ -411,7 +433,24 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public String getReferredByPartyId() {
+	public Party getReferredByPartyId() {
+		if (referredByPartyId != null && ((EObject)referredByPartyId).eIsProxy()) {
+			InternalEObject oldReferredByPartyId = (InternalEObject)referredByPartyId;
+			referredByPartyId = (Party)eResolveProxy(oldReferredByPartyId);
+			if (referredByPartyId != oldReferredByPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID, oldReferredByPartyId, referredByPartyId));
+			}
+		}
+		return referredByPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetReferredByPartyId() {
 		return referredByPartyId;
 	}
 
@@ -421,8 +460,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public void setReferredByPartyId(String newReferredByPartyId) {
-		String oldReferredByPartyId = referredByPartyId;
+	public void setReferredByPartyId(Party newReferredByPartyId) {
+		Party oldReferredByPartyId = referredByPartyId;
 		referredByPartyId = newReferredByPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID, oldReferredByPartyId, referredByPartyId));
@@ -434,7 +473,24 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EmploymentPackage.EMPLOYMENT_APP__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -444,8 +500,8 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EmploymentPackage.EMPLOYMENT_APP__STATUS_ID, oldStatusId, statusId));
@@ -463,20 +519,27 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 				return getApplicationId();
 			case EmploymentPackage.EMPLOYMENT_APP__APPLICATION_DATE:
 				return getApplicationDate();
-			case EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID:
-				return getApplyingPartyId();
-			case EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID:
-				return getApproverPartyId();
 			case EmploymentPackage.EMPLOYMENT_APP__EMPL_POSITION_ID:
-				return getEmplPositionId();
-			case EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID:
-				return getEmploymentAppSourceTypeId();
-			case EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID:
-				return getJobRequisitionId();
-			case EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID:
-				return getReferredByPartyId();
+				if (resolve) return getEmplPositionId();
+				return basicGetEmplPositionId();
 			case EmploymentPackage.EMPLOYMENT_APP__STATUS_ID:
-				return getStatusId();
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID:
+				if (resolve) return getEmploymentAppSourceTypeId();
+				return basicGetEmploymentAppSourceTypeId();
+			case EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID:
+				if (resolve) return getApplyingPartyId();
+				return basicGetApplyingPartyId();
+			case EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID:
+				if (resolve) return getReferredByPartyId();
+				return basicGetReferredByPartyId();
+			case EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID:
+				if (resolve) return getApproverPartyId();
+				return basicGetApproverPartyId();
+			case EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID:
+				if (resolve) return getJobRequisitionId();
+				return basicGetJobRequisitionId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -495,26 +558,26 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 			case EmploymentPackage.EMPLOYMENT_APP__APPLICATION_DATE:
 				setApplicationDate((Date)newValue);
 				return;
-			case EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID:
-				setApplyingPartyId((String)newValue);
-				return;
-			case EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID:
-				setApproverPartyId((String)newValue);
-				return;
 			case EmploymentPackage.EMPLOYMENT_APP__EMPL_POSITION_ID:
-				setEmplPositionId((String)newValue);
-				return;
-			case EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID:
-				setEmploymentAppSourceTypeId((String)newValue);
-				return;
-			case EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID:
-				setJobRequisitionId((String)newValue);
-				return;
-			case EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID:
-				setReferredByPartyId((String)newValue);
+				setEmplPositionId((EmplPosition)newValue);
 				return;
 			case EmploymentPackage.EMPLOYMENT_APP__STATUS_ID:
-				setStatusId((String)newValue);
+				setStatusId((StatusItem)newValue);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID:
+				setEmploymentAppSourceTypeId((EmploymentAppSourceType)newValue);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID:
+				setApplyingPartyId((Party)newValue);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID:
+				setReferredByPartyId((Party)newValue);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID:
+				setApproverPartyId((Party)newValue);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID:
+				setJobRequisitionId((JobRequisition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -534,26 +597,26 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 			case EmploymentPackage.EMPLOYMENT_APP__APPLICATION_DATE:
 				setApplicationDate(APPLICATION_DATE_EDEFAULT);
 				return;
-			case EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID:
-				setApplyingPartyId(APPLYING_PARTY_ID_EDEFAULT);
-				return;
-			case EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID:
-				setApproverPartyId(APPROVER_PARTY_ID_EDEFAULT);
-				return;
 			case EmploymentPackage.EMPLOYMENT_APP__EMPL_POSITION_ID:
-				setEmplPositionId(EMPL_POSITION_ID_EDEFAULT);
-				return;
-			case EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID:
-				setEmploymentAppSourceTypeId(EMPLOYMENT_APP_SOURCE_TYPE_ID_EDEFAULT);
-				return;
-			case EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID:
-				setJobRequisitionId(JOB_REQUISITION_ID_EDEFAULT);
-				return;
-			case EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID:
-				setReferredByPartyId(REFERRED_BY_PARTY_ID_EDEFAULT);
+				setEmplPositionId((EmplPosition)null);
 				return;
 			case EmploymentPackage.EMPLOYMENT_APP__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+				setStatusId((StatusItem)null);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID:
+				setEmploymentAppSourceTypeId((EmploymentAppSourceType)null);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID:
+				setApplyingPartyId((Party)null);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID:
+				setReferredByPartyId((Party)null);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID:
+				setApproverPartyId((Party)null);
+				return;
+			case EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID:
+				setJobRequisitionId((JobRequisition)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -571,20 +634,20 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 				return APPLICATION_ID_EDEFAULT == null ? applicationId != null : !APPLICATION_ID_EDEFAULT.equals(applicationId);
 			case EmploymentPackage.EMPLOYMENT_APP__APPLICATION_DATE:
 				return APPLICATION_DATE_EDEFAULT == null ? applicationDate != null : !APPLICATION_DATE_EDEFAULT.equals(applicationDate);
-			case EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID:
-				return APPLYING_PARTY_ID_EDEFAULT == null ? applyingPartyId != null : !APPLYING_PARTY_ID_EDEFAULT.equals(applyingPartyId);
-			case EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID:
-				return APPROVER_PARTY_ID_EDEFAULT == null ? approverPartyId != null : !APPROVER_PARTY_ID_EDEFAULT.equals(approverPartyId);
 			case EmploymentPackage.EMPLOYMENT_APP__EMPL_POSITION_ID:
-				return EMPL_POSITION_ID_EDEFAULT == null ? emplPositionId != null : !EMPL_POSITION_ID_EDEFAULT.equals(emplPositionId);
-			case EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID:
-				return EMPLOYMENT_APP_SOURCE_TYPE_ID_EDEFAULT == null ? employmentAppSourceTypeId != null : !EMPLOYMENT_APP_SOURCE_TYPE_ID_EDEFAULT.equals(employmentAppSourceTypeId);
-			case EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID:
-				return JOB_REQUISITION_ID_EDEFAULT == null ? jobRequisitionId != null : !JOB_REQUISITION_ID_EDEFAULT.equals(jobRequisitionId);
-			case EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID:
-				return REFERRED_BY_PARTY_ID_EDEFAULT == null ? referredByPartyId != null : !REFERRED_BY_PARTY_ID_EDEFAULT.equals(referredByPartyId);
+				return emplPositionId != null;
 			case EmploymentPackage.EMPLOYMENT_APP__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+				return statusId != null;
+			case EmploymentPackage.EMPLOYMENT_APP__EMPLOYMENT_APP_SOURCE_TYPE_ID:
+				return employmentAppSourceTypeId != null;
+			case EmploymentPackage.EMPLOYMENT_APP__APPLYING_PARTY_ID:
+				return applyingPartyId != null;
+			case EmploymentPackage.EMPLOYMENT_APP__REFERRED_BY_PARTY_ID:
+				return referredByPartyId != null;
+			case EmploymentPackage.EMPLOYMENT_APP__APPROVER_PARTY_ID:
+				return approverPartyId != null;
+			case EmploymentPackage.EMPLOYMENT_APP__JOB_REQUISITION_ID:
+				return jobRequisitionId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -603,20 +666,6 @@ public class EmploymentAppImpl extends BizEntityImpl implements EmploymentApp {
 		result.append(applicationId);
 		result.append(", applicationDate: ");
 		result.append(applicationDate);
-		result.append(", applyingPartyId: ");
-		result.append(applyingPartyId);
-		result.append(", approverPartyId: ");
-		result.append(approverPartyId);
-		result.append(", emplPositionId: ");
-		result.append(emplPositionId);
-		result.append(", employmentAppSourceTypeId: ");
-		result.append(employmentAppSourceTypeId);
-		result.append(", jobRequisitionId: ");
-		result.append(jobRequisitionId);
-		result.append(", referredByPartyId: ");
-		result.append(referredByPartyId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(')');
 		return result.toString();
 	}

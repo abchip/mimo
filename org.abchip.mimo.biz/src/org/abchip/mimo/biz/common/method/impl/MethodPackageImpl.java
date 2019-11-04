@@ -199,6 +199,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -361,6 +362,22 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
+		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -377,22 +394,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CampaignPackage.eNS_URI);
-		CampaignPackageImpl theCampaignPackage = (CampaignPackageImpl)(registeredPackage instanceof CampaignPackageImpl ? registeredPackage : CampaignPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -504,6 +505,14 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theCampaignPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -512,14 +521,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theCampaignPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -599,6 +600,14 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theCampaignPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -607,14 +616,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theCampaignPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -692,8 +693,8 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustomMethod_CustomMethodTypeId() {
-		return (EAttribute)customMethodEClass.getEStructuralFeatures().get(2);
+	public EReference getCustomMethod_CustomMethodTypeId() {
+		return (EReference)customMethodEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -703,7 +704,7 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 */
 	@Override
 	public EAttribute getCustomMethod_Description() {
-		return (EAttribute)customMethodEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)customMethodEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -762,8 +763,8 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCustomMethodType_ParentTypeId() {
-		return (EAttribute)customMethodTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getCustomMethodType_ParentTypeId() {
+		return (EReference)customMethodTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -798,15 +799,15 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		customMethodEClass = createEClass(CUSTOM_METHOD);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_ID);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_NAME);
-		createEAttribute(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__DESCRIPTION);
+		createEReference(customMethodEClass, CUSTOM_METHOD__CUSTOM_METHOD_TYPE_ID);
 		createEAttribute(customMethodEClass, CUSTOM_METHOD__FIXED_ASSET_DEP_METHODS);
 
 		customMethodTypeEClass = createEClass(CUSTOM_METHOD_TYPE);
 		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__CUSTOM_METHOD_TYPE_ID);
 		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__DESCRIPTION);
 		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__HAS_TABLE);
-		createEAttribute(customMethodTypeEClass, CUSTOM_METHOD_TYPE__PARENT_TYPE_ID);
+		createEReference(customMethodTypeEClass, CUSTOM_METHOD_TYPE__PARENT_TYPE_ID);
 	}
 
 	/**
@@ -853,8 +854,9 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		initEClass(customMethodEClass, CustomMethod.class, "CustomMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomMethod_CustomMethodId(), ecorePackage.getEString(), "customMethodId", null, 1, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomMethod_CustomMethodName(), ecorePackage.getEString(), "customMethodName", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomMethod_CustomMethodTypeId(), ecorePackage.getEString(), "customMethodTypeId", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomMethod_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomMethod_CustomMethodTypeId(), this.getCustomMethodType(), null, "customMethodTypeId", null, 0, 1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustomMethod_CustomMethodTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
 		initEAttribute(getCustomMethod_FixedAssetDepMethods(), ecorePackage.getEString(), "fixedAssetDepMethods", null, 0, -1, CustomMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(customMethodEClass, ecorePackage.getEString(), "contents", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -877,7 +879,8 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		initEAttribute(getCustomMethodType_CustomMethodTypeId(), ecorePackage.getEString(), "customMethodTypeId", null, 1, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomMethodType_Description(), ecorePackage.getEString(), "description", null, 0, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomMethodType_HasTable(), ecorePackage.getEBoolean(), "hasTable", null, 0, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomMethodType_ParentTypeId(), ecorePackage.getEString(), "parentTypeId", null, 0, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomMethodType_ParentTypeId(), this.getCustomMethodType(), null, "parentTypeId", null, 0, 1, CustomMethodType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getCustomMethodType_ParentTypeId().getEKeys().add(this.getCustomMethodType_CustomMethodTypeId());
 
 		addEOperation(customMethodTypeEClass, ecorePackage.getEString(), "childCustomMethodTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -1091,15 +1094,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getCustomMethod_CustomMethodTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "CustomMethodType"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getCustomMethod_FixedAssetDepMethods(),
 		   source,
 		   new String[] {
@@ -1124,15 +1118,6 @@ public class MethodPackageImpl extends EPackageImpl implements MethodPackage {
 		   new String[] {
 			   "frame", "CustomMethod",
 			   "route", "customMethodTypeId"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getCustomMethodType_ParentTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "CustomMethodType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

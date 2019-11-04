@@ -12,10 +12,13 @@ import java.math.BigDecimal;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.return_.ReturnItemShipment;
 import org.abchip.mimo.biz.order.return_.ReturnPackage;
+import org.abchip.mimo.biz.shipment.shipment.Shipment;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,9 +31,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemShipmentImpl#getReturnId <em>Return Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemShipmentImpl#getReturnItemSeqId <em>Return Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemShipmentImpl#getShipmentId <em>Shipment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemShipmentImpl#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemShipmentImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemShipmentImpl#getShipmentId <em>Shipment Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,26 +85,6 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	protected String returnItemSeqId = RETURN_ITEM_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SHIPMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipmentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipmentId = SHIPMENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getShipmentItemSeqId() <em>Shipment Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,6 +123,16 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 * @ordered
 	 */
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getShipmentId() <em>Shipment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipmentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shipment shipmentId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,7 +228,24 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 * @generated
 	 */
 	@Override
-	public String getShipmentId() {
+	public Shipment getShipmentId() {
+		if (shipmentId != null && ((EObject)shipmentId).eIsProxy()) {
+			InternalEObject oldShipmentId = (InternalEObject)shipmentId;
+			shipmentId = (Shipment)eResolveProxy(oldShipmentId);
+			if (shipmentId != oldShipmentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
+			}
+		}
+		return shipmentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shipment basicGetShipmentId() {
 		return shipmentId;
 	}
 
@@ -245,8 +255,8 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 	 * @generated
 	 */
 	@Override
-	public void setShipmentId(String newShipmentId) {
-		String oldShipmentId = shipmentId;
+	public void setShipmentId(Shipment newShipmentId) {
+		Shipment oldShipmentId = shipmentId;
 		shipmentId = newShipmentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID, oldShipmentId, shipmentId));
@@ -287,12 +297,13 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 				return getReturnId();
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID:
 				return getReturnItemSeqId();
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
-				return getShipmentId();
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID:
 				return getShipmentItemSeqId();
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY:
 				return getQuantity();
+			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
+				if (resolve) return getShipmentId();
+				return basicGetShipmentId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -311,14 +322,14 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId((String)newValue);
 				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
-				setShipmentId((String)newValue);
-				return;
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId((String)newValue);
 				return;
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY:
 				setQuantity((BigDecimal)newValue);
+				return;
+			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
+				setShipmentId((Shipment)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -338,14 +349,14 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID:
 				setReturnItemSeqId(RETURN_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
-				setShipmentId(SHIPMENT_ID_EDEFAULT);
-				return;
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID:
 				setShipmentItemSeqId(SHIPMENT_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
+				return;
+			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
+				setShipmentId((Shipment)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -363,12 +374,12 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 				return RETURN_ID_EDEFAULT == null ? returnId != null : !RETURN_ID_EDEFAULT.equals(returnId);
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID:
 				return RETURN_ITEM_SEQ_ID_EDEFAULT == null ? returnItemSeqId != null : !RETURN_ITEM_SEQ_ID_EDEFAULT.equals(returnItemSeqId);
-			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
-				return SHIPMENT_ID_EDEFAULT == null ? shipmentId != null : !SHIPMENT_ID_EDEFAULT.equals(shipmentId);
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID:
 				return SHIPMENT_ITEM_SEQ_ID_EDEFAULT == null ? shipmentItemSeqId != null : !SHIPMENT_ITEM_SEQ_ID_EDEFAULT.equals(shipmentItemSeqId);
 			case ReturnPackage.RETURN_ITEM_SHIPMENT__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+			case ReturnPackage.RETURN_ITEM_SHIPMENT__SHIPMENT_ID:
+				return shipmentId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -387,8 +398,6 @@ public class ReturnItemShipmentImpl extends BizEntityImpl implements ReturnItemS
 		result.append(returnId);
 		result.append(", returnItemSeqId: ");
 		result.append(returnItemSeqId);
-		result.append(", shipmentId: ");
-		result.append(shipmentId);
 		result.append(", shipmentItemSeqId: ");
 		result.append(shipmentItemSeqId);
 		result.append(", quantity: ");

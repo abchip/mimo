@@ -23,8 +23,8 @@ import org.abchip.mimo.biz.BizEntityType;
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getPartyRelationshipTypeId <em>Party Relationship Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#isHasTable <em>Has Table</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getParentTypeId <em>Parent Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getPartyRelationshipName <em>Party Relationship Name</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getParentTypeId <em>Parent Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getRoleTypeIdValidFrom <em>Role Type Id Valid From</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getRoleTypeIdValidTo <em>Role Type Id Valid To</em>}</li>
  * </ul>
@@ -113,82 +113,82 @@ public interface PartyRelationshipType extends BizEntityType<PartyRelationship> 
 	void setPartyRelationshipName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(PartyRelationshipType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='PartyRelationshipType'"
+	 * @model keys="partyRelationshipTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	PartyRelationshipType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(PartyRelationshipType value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id Valid From</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id Valid From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id Valid From</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id Valid From</em>' attribute.
-	 * @see #setRoleTypeIdValidFrom(String)
+	 * @return the value of the '<em>Role Type Id Valid From</em>' reference.
+	 * @see #setRoleTypeIdValidFrom(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType_RoleTypeIdValidFrom()
-	 * @model annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeIdValidFrom();
+	RoleType getRoleTypeIdValidFrom();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getRoleTypeIdValidFrom <em>Role Type Id Valid From</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getRoleTypeIdValidFrom <em>Role Type Id Valid From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id Valid From</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id Valid From</em>' reference.
 	 * @see #getRoleTypeIdValidFrom()
 	 * @generated
 	 */
-	void setRoleTypeIdValidFrom(String value);
+	void setRoleTypeIdValidFrom(RoleType value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Type Id Valid To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Role Type Id Valid To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Type Id Valid To</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Type Id Valid To</em>' attribute.
-	 * @see #setRoleTypeIdValidTo(String)
+	 * @return the value of the '<em>Role Type Id Valid To</em>' reference.
+	 * @see #setRoleTypeIdValidTo(RoleType)
 	 * @see org.abchip.mimo.biz.party.party.PartyPackage#getPartyRelationshipType_RoleTypeIdValidTo()
-	 * @model annotation="mimo-ent-domain frame='RoleType'"
+	 * @model keys="roleTypeId"
 	 * @generated
 	 */
-	String getRoleTypeIdValidTo();
+	RoleType getRoleTypeIdValidTo();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getRoleTypeIdValidTo <em>Role Type Id Valid To</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.party.party.PartyRelationshipType#getRoleTypeIdValidTo <em>Role Type Id Valid To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Type Id Valid To</em>' attribute.
+	 * @param value the new value of the '<em>Role Type Id Valid To</em>' reference.
 	 * @see #getRoleTypeIdValidTo()
 	 * @generated
 	 */
-	void setRoleTypeIdValidTo(String value);
+	void setRoleTypeIdValidTo(RoleType value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -10,13 +10,20 @@ package org.abchip.mimo.biz.service.schedule.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.security.login.UserLogin;
 import org.abchip.mimo.biz.service.schedule.JobSandbox;
+import org.abchip.mimo.biz.service.schedule.RecurrenceInfo;
+import org.abchip.mimo.biz.service.schedule.RuntimeData;
 import org.abchip.mimo.biz.service.schedule.SchedulePackage;
+import org.abchip.mimo.biz.service.schedule.TemporalExpression;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,7 +35,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getJobId <em>Job Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getAuthUserLoginId <em>Auth User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getCancelDateTime <em>Cancel Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getCurrentRecurrenceCount <em>Current Recurrence Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getCurrentRetryCount <em>Current Retry Count</em>}</li>
@@ -41,15 +47,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getParentJobId <em>Parent Job Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getPoolId <em>Pool Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getPreviousJobId <em>Previous Job Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRunAsUser <em>Run As User</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRunByInstanceId <em>Run By Instance Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRunTime <em>Run Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRuntimeDataId <em>Runtime Data Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getServiceName <em>Service Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getStartDateTime <em>Start Date Time</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRecurrenceInfoId <em>Recurrence Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getTempExprId <em>Temp Expr Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRuntimeDataId <em>Runtime Data Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getAuthUserLoginId <em>Auth User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getRunAsUser <em>Run As User</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.service.schedule.impl.JobSandboxImpl#getStatusId <em>Status Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,26 +86,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @ordered
 	 */
 	protected String jobId = JOB_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAuthUserLoginId() <em>Auth User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AUTH_USER_LOGIN_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAuthUserLoginId() <em>Auth User Login Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthUserLoginId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String authUserLoginId = AUTH_USER_LOGIN_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCancelDateTime() <em>Cancel Date Time</em>}' attribute.
@@ -341,46 +328,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	protected String previousJobId = PREVIOUS_JOB_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceInfoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RECURRENCE_INFO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrenceInfoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String recurrenceInfoId = RECURRENCE_INFO_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRunAsUser() <em>Run As User</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRunAsUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RUN_AS_USER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRunAsUser() <em>Run As User</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRunAsUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected String runAsUser = RUN_AS_USER_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getRunByInstanceId() <em>Run By Instance Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -419,26 +366,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @ordered
 	 */
 	protected Date runTime = RUN_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRuntimeDataId() <em>Runtime Data Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuntimeDataId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RUNTIME_DATA_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRuntimeDataId() <em>Runtime Data Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuntimeDataId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String runtimeDataId = RUNTIME_DATA_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
@@ -481,44 +408,64 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	protected Date startDateTime = START_DATE_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
+	 * The cached value of the '{@link #getRecurrenceInfoId() <em>Recurrence Info Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
+	 * @see #getRecurrenceInfoId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
+	protected RecurrenceInfo recurrenceInfoId;
 
 	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTempExprId() <em>Temp Expr Id</em>}' attribute.
+	 * The cached value of the '{@link #getTempExprId() <em>Temp Expr Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTempExprId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TEMP_EXPR_ID_EDEFAULT = null;
+	protected TemporalExpression tempExprId;
 
 	/**
-	 * The cached value of the '{@link #getTempExprId() <em>Temp Expr Id</em>}' attribute.
+	 * The cached value of the '{@link #getRuntimeDataId() <em>Runtime Data Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTempExprId()
+	 * @see #getRuntimeDataId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String tempExprId = TEMP_EXPR_ID_EDEFAULT;
+	protected RuntimeData runtimeDataId;
+
+	/**
+	 * The cached value of the '{@link #getAuthUserLoginId() <em>Auth User Login Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAuthUserLoginId()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin authUserLoginId;
+
+	/**
+	 * The cached value of the '{@link #getRunAsUser() <em>Run As User</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRunAsUser()
+	 * @generated
+	 * @ordered
+	 */
+	protected UserLogin runAsUser;
+
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -568,7 +515,24 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public String getAuthUserLoginId() {
+	public UserLogin getAuthUserLoginId() {
+		if (authUserLoginId != null && ((EObject)authUserLoginId).eIsProxy()) {
+			InternalEObject oldAuthUserLoginId = (InternalEObject)authUserLoginId;
+			authUserLoginId = (UserLogin)eResolveProxy(oldAuthUserLoginId);
+			if (authUserLoginId != oldAuthUserLoginId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID, oldAuthUserLoginId, authUserLoginId));
+			}
+		}
+		return authUserLoginId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetAuthUserLoginId() {
 		return authUserLoginId;
 	}
 
@@ -578,8 +542,8 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public void setAuthUserLoginId(String newAuthUserLoginId) {
-		String oldAuthUserLoginId = authUserLoginId;
+	public void setAuthUserLoginId(UserLogin newAuthUserLoginId) {
+		UserLogin oldAuthUserLoginId = authUserLoginId;
 		authUserLoginId = newAuthUserLoginId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID, oldAuthUserLoginId, authUserLoginId));
@@ -867,7 +831,24 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public String getRecurrenceInfoId() {
+	public RecurrenceInfo getRecurrenceInfoId() {
+		if (recurrenceInfoId != null && ((EObject)recurrenceInfoId).eIsProxy()) {
+			InternalEObject oldRecurrenceInfoId = (InternalEObject)recurrenceInfoId;
+			recurrenceInfoId = (RecurrenceInfo)eResolveProxy(oldRecurrenceInfoId);
+			if (recurrenceInfoId != oldRecurrenceInfoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
+			}
+		}
+		return recurrenceInfoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RecurrenceInfo basicGetRecurrenceInfoId() {
 		return recurrenceInfoId;
 	}
 
@@ -877,8 +858,8 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public void setRecurrenceInfoId(String newRecurrenceInfoId) {
-		String oldRecurrenceInfoId = recurrenceInfoId;
+	public void setRecurrenceInfoId(RecurrenceInfo newRecurrenceInfoId) {
+		RecurrenceInfo oldRecurrenceInfoId = recurrenceInfoId;
 		recurrenceInfoId = newRecurrenceInfoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID, oldRecurrenceInfoId, recurrenceInfoId));
@@ -890,7 +871,24 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public String getRunAsUser() {
+	public UserLogin getRunAsUser() {
+		if (runAsUser != null && ((EObject)runAsUser).eIsProxy()) {
+			InternalEObject oldRunAsUser = (InternalEObject)runAsUser;
+			runAsUser = (UserLogin)eResolveProxy(oldRunAsUser);
+			if (runAsUser != oldRunAsUser) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__RUN_AS_USER, oldRunAsUser, runAsUser));
+			}
+		}
+		return runAsUser;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UserLogin basicGetRunAsUser() {
 		return runAsUser;
 	}
 
@@ -900,8 +898,8 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public void setRunAsUser(String newRunAsUser) {
-		String oldRunAsUser = runAsUser;
+	public void setRunAsUser(UserLogin newRunAsUser) {
+		UserLogin oldRunAsUser = runAsUser;
 		runAsUser = newRunAsUser;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__RUN_AS_USER, oldRunAsUser, runAsUser));
@@ -959,7 +957,24 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public String getRuntimeDataId() {
+	public RuntimeData getRuntimeDataId() {
+		if (runtimeDataId != null && ((EObject)runtimeDataId).eIsProxy()) {
+			InternalEObject oldRuntimeDataId = (InternalEObject)runtimeDataId;
+			runtimeDataId = (RuntimeData)eResolveProxy(oldRuntimeDataId);
+			if (runtimeDataId != oldRuntimeDataId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
+			}
+		}
+		return runtimeDataId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeData basicGetRuntimeDataId() {
 		return runtimeDataId;
 	}
 
@@ -969,8 +984,8 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public void setRuntimeDataId(String newRuntimeDataId) {
-		String oldRuntimeDataId = runtimeDataId;
+	public void setRuntimeDataId(RuntimeData newRuntimeDataId) {
+		RuntimeData oldRuntimeDataId = runtimeDataId;
 		runtimeDataId = newRuntimeDataId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID, oldRuntimeDataId, runtimeDataId));
@@ -1028,7 +1043,24 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -1038,8 +1070,8 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__STATUS_ID, oldStatusId, statusId));
@@ -1051,7 +1083,24 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public String getTempExprId() {
+	public TemporalExpression getTempExprId() {
+		if (tempExprId != null && ((EObject)tempExprId).eIsProxy()) {
+			InternalEObject oldTempExprId = (InternalEObject)tempExprId;
+			tempExprId = (TemporalExpression)eResolveProxy(oldTempExprId);
+			if (tempExprId != oldTempExprId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.JOB_SANDBOX__TEMP_EXPR_ID, oldTempExprId, tempExprId));
+			}
+		}
+		return tempExprId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TemporalExpression basicGetTempExprId() {
 		return tempExprId;
 	}
 
@@ -1061,8 +1110,8 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 	 * @generated
 	 */
 	@Override
-	public void setTempExprId(String newTempExprId) {
-		String oldTempExprId = tempExprId;
+	public void setTempExprId(TemporalExpression newTempExprId) {
+		TemporalExpression oldTempExprId = tempExprId;
 		tempExprId = newTempExprId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.JOB_SANDBOX__TEMP_EXPR_ID, oldTempExprId, tempExprId));
@@ -1090,8 +1139,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 		switch (featureID) {
 			case SchedulePackage.JOB_SANDBOX__JOB_ID:
 				return getJobId();
-			case SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID:
-				return getAuthUserLoginId();
 			case SchedulePackage.JOB_SANDBOX__CANCEL_DATE_TIME:
 				return getCancelDateTime();
 			case SchedulePackage.JOB_SANDBOX__CURRENT_RECURRENCE_COUNT:
@@ -1116,24 +1163,32 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 				return getPoolId();
 			case SchedulePackage.JOB_SANDBOX__PREVIOUS_JOB_ID:
 				return getPreviousJobId();
-			case SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID:
-				return getRecurrenceInfoId();
-			case SchedulePackage.JOB_SANDBOX__RUN_AS_USER:
-				return getRunAsUser();
 			case SchedulePackage.JOB_SANDBOX__RUN_BY_INSTANCE_ID:
 				return getRunByInstanceId();
 			case SchedulePackage.JOB_SANDBOX__RUN_TIME:
 				return getRunTime();
-			case SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID:
-				return getRuntimeDataId();
 			case SchedulePackage.JOB_SANDBOX__SERVICE_NAME:
 				return getServiceName();
 			case SchedulePackage.JOB_SANDBOX__START_DATE_TIME:
 				return getStartDateTime();
-			case SchedulePackage.JOB_SANDBOX__STATUS_ID:
-				return getStatusId();
+			case SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID:
+				if (resolve) return getRecurrenceInfoId();
+				return basicGetRecurrenceInfoId();
 			case SchedulePackage.JOB_SANDBOX__TEMP_EXPR_ID:
-				return getTempExprId();
+				if (resolve) return getTempExprId();
+				return basicGetTempExprId();
+			case SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID:
+				if (resolve) return getRuntimeDataId();
+				return basicGetRuntimeDataId();
+			case SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID:
+				if (resolve) return getAuthUserLoginId();
+				return basicGetAuthUserLoginId();
+			case SchedulePackage.JOB_SANDBOX__RUN_AS_USER:
+				if (resolve) return getRunAsUser();
+				return basicGetRunAsUser();
+			case SchedulePackage.JOB_SANDBOX__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1148,9 +1203,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 		switch (featureID) {
 			case SchedulePackage.JOB_SANDBOX__JOB_ID:
 				setJobId((String)newValue);
-				return;
-			case SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID:
-				setAuthUserLoginId((String)newValue);
 				return;
 			case SchedulePackage.JOB_SANDBOX__CANCEL_DATE_TIME:
 				setCancelDateTime((Date)newValue);
@@ -1188,20 +1240,11 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			case SchedulePackage.JOB_SANDBOX__PREVIOUS_JOB_ID:
 				setPreviousJobId((String)newValue);
 				return;
-			case SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID:
-				setRecurrenceInfoId((String)newValue);
-				return;
-			case SchedulePackage.JOB_SANDBOX__RUN_AS_USER:
-				setRunAsUser((String)newValue);
-				return;
 			case SchedulePackage.JOB_SANDBOX__RUN_BY_INSTANCE_ID:
 				setRunByInstanceId((String)newValue);
 				return;
 			case SchedulePackage.JOB_SANDBOX__RUN_TIME:
 				setRunTime((Date)newValue);
-				return;
-			case SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID:
-				setRuntimeDataId((String)newValue);
 				return;
 			case SchedulePackage.JOB_SANDBOX__SERVICE_NAME:
 				setServiceName((String)newValue);
@@ -1209,11 +1252,23 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			case SchedulePackage.JOB_SANDBOX__START_DATE_TIME:
 				setStartDateTime((Date)newValue);
 				return;
-			case SchedulePackage.JOB_SANDBOX__STATUS_ID:
-				setStatusId((String)newValue);
+			case SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID:
+				setRecurrenceInfoId((RecurrenceInfo)newValue);
 				return;
 			case SchedulePackage.JOB_SANDBOX__TEMP_EXPR_ID:
-				setTempExprId((String)newValue);
+				setTempExprId((TemporalExpression)newValue);
+				return;
+			case SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID:
+				setRuntimeDataId((RuntimeData)newValue);
+				return;
+			case SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID:
+				setAuthUserLoginId((UserLogin)newValue);
+				return;
+			case SchedulePackage.JOB_SANDBOX__RUN_AS_USER:
+				setRunAsUser((UserLogin)newValue);
+				return;
+			case SchedulePackage.JOB_SANDBOX__STATUS_ID:
+				setStatusId((StatusItem)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1229,9 +1284,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 		switch (featureID) {
 			case SchedulePackage.JOB_SANDBOX__JOB_ID:
 				setJobId(JOB_ID_EDEFAULT);
-				return;
-			case SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID:
-				setAuthUserLoginId(AUTH_USER_LOGIN_ID_EDEFAULT);
 				return;
 			case SchedulePackage.JOB_SANDBOX__CANCEL_DATE_TIME:
 				setCancelDateTime(CANCEL_DATE_TIME_EDEFAULT);
@@ -1269,20 +1321,11 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			case SchedulePackage.JOB_SANDBOX__PREVIOUS_JOB_ID:
 				setPreviousJobId(PREVIOUS_JOB_ID_EDEFAULT);
 				return;
-			case SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID:
-				setRecurrenceInfoId(RECURRENCE_INFO_ID_EDEFAULT);
-				return;
-			case SchedulePackage.JOB_SANDBOX__RUN_AS_USER:
-				setRunAsUser(RUN_AS_USER_EDEFAULT);
-				return;
 			case SchedulePackage.JOB_SANDBOX__RUN_BY_INSTANCE_ID:
 				setRunByInstanceId(RUN_BY_INSTANCE_ID_EDEFAULT);
 				return;
 			case SchedulePackage.JOB_SANDBOX__RUN_TIME:
 				setRunTime(RUN_TIME_EDEFAULT);
-				return;
-			case SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID:
-				setRuntimeDataId(RUNTIME_DATA_ID_EDEFAULT);
 				return;
 			case SchedulePackage.JOB_SANDBOX__SERVICE_NAME:
 				setServiceName(SERVICE_NAME_EDEFAULT);
@@ -1290,11 +1333,23 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 			case SchedulePackage.JOB_SANDBOX__START_DATE_TIME:
 				setStartDateTime(START_DATE_TIME_EDEFAULT);
 				return;
-			case SchedulePackage.JOB_SANDBOX__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
+			case SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID:
+				setRecurrenceInfoId((RecurrenceInfo)null);
 				return;
 			case SchedulePackage.JOB_SANDBOX__TEMP_EXPR_ID:
-				setTempExprId(TEMP_EXPR_ID_EDEFAULT);
+				setTempExprId((TemporalExpression)null);
+				return;
+			case SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID:
+				setRuntimeDataId((RuntimeData)null);
+				return;
+			case SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID:
+				setAuthUserLoginId((UserLogin)null);
+				return;
+			case SchedulePackage.JOB_SANDBOX__RUN_AS_USER:
+				setRunAsUser((UserLogin)null);
+				return;
+			case SchedulePackage.JOB_SANDBOX__STATUS_ID:
+				setStatusId((StatusItem)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1310,8 +1365,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 		switch (featureID) {
 			case SchedulePackage.JOB_SANDBOX__JOB_ID:
 				return JOB_ID_EDEFAULT == null ? jobId != null : !JOB_ID_EDEFAULT.equals(jobId);
-			case SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID:
-				return AUTH_USER_LOGIN_ID_EDEFAULT == null ? authUserLoginId != null : !AUTH_USER_LOGIN_ID_EDEFAULT.equals(authUserLoginId);
 			case SchedulePackage.JOB_SANDBOX__CANCEL_DATE_TIME:
 				return CANCEL_DATE_TIME_EDEFAULT == null ? cancelDateTime != null : !CANCEL_DATE_TIME_EDEFAULT.equals(cancelDateTime);
 			case SchedulePackage.JOB_SANDBOX__CURRENT_RECURRENCE_COUNT:
@@ -1336,24 +1389,26 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 				return POOL_ID_EDEFAULT == null ? poolId != null : !POOL_ID_EDEFAULT.equals(poolId);
 			case SchedulePackage.JOB_SANDBOX__PREVIOUS_JOB_ID:
 				return PREVIOUS_JOB_ID_EDEFAULT == null ? previousJobId != null : !PREVIOUS_JOB_ID_EDEFAULT.equals(previousJobId);
-			case SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID:
-				return RECURRENCE_INFO_ID_EDEFAULT == null ? recurrenceInfoId != null : !RECURRENCE_INFO_ID_EDEFAULT.equals(recurrenceInfoId);
-			case SchedulePackage.JOB_SANDBOX__RUN_AS_USER:
-				return RUN_AS_USER_EDEFAULT == null ? runAsUser != null : !RUN_AS_USER_EDEFAULT.equals(runAsUser);
 			case SchedulePackage.JOB_SANDBOX__RUN_BY_INSTANCE_ID:
 				return RUN_BY_INSTANCE_ID_EDEFAULT == null ? runByInstanceId != null : !RUN_BY_INSTANCE_ID_EDEFAULT.equals(runByInstanceId);
 			case SchedulePackage.JOB_SANDBOX__RUN_TIME:
 				return RUN_TIME_EDEFAULT == null ? runTime != null : !RUN_TIME_EDEFAULT.equals(runTime);
-			case SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID:
-				return RUNTIME_DATA_ID_EDEFAULT == null ? runtimeDataId != null : !RUNTIME_DATA_ID_EDEFAULT.equals(runtimeDataId);
 			case SchedulePackage.JOB_SANDBOX__SERVICE_NAME:
 				return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
 			case SchedulePackage.JOB_SANDBOX__START_DATE_TIME:
 				return START_DATE_TIME_EDEFAULT == null ? startDateTime != null : !START_DATE_TIME_EDEFAULT.equals(startDateTime);
-			case SchedulePackage.JOB_SANDBOX__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
+			case SchedulePackage.JOB_SANDBOX__RECURRENCE_INFO_ID:
+				return recurrenceInfoId != null;
 			case SchedulePackage.JOB_SANDBOX__TEMP_EXPR_ID:
-				return TEMP_EXPR_ID_EDEFAULT == null ? tempExprId != null : !TEMP_EXPR_ID_EDEFAULT.equals(tempExprId);
+				return tempExprId != null;
+			case SchedulePackage.JOB_SANDBOX__RUNTIME_DATA_ID:
+				return runtimeDataId != null;
+			case SchedulePackage.JOB_SANDBOX__AUTH_USER_LOGIN_ID:
+				return authUserLoginId != null;
+			case SchedulePackage.JOB_SANDBOX__RUN_AS_USER:
+				return runAsUser != null;
+			case SchedulePackage.JOB_SANDBOX__STATUS_ID:
+				return statusId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1370,8 +1425,6 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (jobId: ");
 		result.append(jobId);
-		result.append(", authUserLoginId: ");
-		result.append(authUserLoginId);
 		result.append(", cancelDateTime: ");
 		result.append(cancelDateTime);
 		result.append(", currentRecurrenceCount: ");
@@ -1396,24 +1449,14 @@ public class JobSandboxImpl extends BizEntityImpl implements JobSandbox {
 		result.append(poolId);
 		result.append(", previousJobId: ");
 		result.append(previousJobId);
-		result.append(", recurrenceInfoId: ");
-		result.append(recurrenceInfoId);
-		result.append(", runAsUser: ");
-		result.append(runAsUser);
 		result.append(", runByInstanceId: ");
 		result.append(runByInstanceId);
 		result.append(", runTime: ");
 		result.append(runTime);
-		result.append(", runtimeDataId: ");
-		result.append(runtimeDataId);
 		result.append(", serviceName: ");
 		result.append(serviceName);
 		result.append(", startDateTime: ");
 		result.append(startDateTime);
-		result.append(", statusId: ");
-		result.append(statusId);
-		result.append(", tempExprId: ");
-		result.append(tempExprId);
 		result.append(')');
 		return result.toString();
 	}

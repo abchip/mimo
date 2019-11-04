@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,11 +24,11 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFixedAssetId <em>Fixed Asset Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFixedAssetStdCostTypeId <em>Fixed Asset Std Cost Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getAmountUomId <em>Amount Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFixedAssetStdCostTypeId <em>Fixed Asset Std Cost Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getAmountUomId <em>Amount Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost()
@@ -62,30 +63,30 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	void setAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Amount Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Amount Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Amount Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Amount Uom Id</em>' attribute.
-	 * @see #setAmountUomId(String)
+	 * @return the value of the '<em>Amount Uom Id</em>' reference.
+	 * @see #setAmountUomId(Uom)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_AmountUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getAmountUomId();
+	Uom getAmountUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getAmountUomId <em>Amount Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getAmountUomId <em>Amount Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Amount Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Amount Uom Id</em>' reference.
 	 * @see #getAmountUomId()
 	 * @generated
 	 */
-	void setAmountUomId(String value);
+	void setAmountUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>From Date</b></em>' attribute.
@@ -98,7 +99,8 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -150,8 +152,8 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	 * @return the value of the '<em>Fixed Asset Id</em>' attribute.
 	 * @see #setFixedAssetId(String)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_FixedAssetId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAsset'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getFixedAssetId();
@@ -167,30 +169,29 @@ public interface FixedAssetStdCost extends BizEntityTyped<FixedAssetStdCostType>
 	void setFixedAssetId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Fixed Asset Std Cost Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fixed Asset Std Cost Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fixed Asset Std Cost Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fixed Asset Std Cost Type Id</em>' attribute.
-	 * @see #setFixedAssetStdCostTypeId(String)
+	 * @return the value of the '<em>Fixed Asset Std Cost Type Id</em>' reference.
+	 * @see #setFixedAssetStdCostTypeId(FixedAssetStdCostType)
 	 * @see org.abchip.mimo.biz.accounting.fixedasset.FixedassetPackage#getFixedAssetStdCost_FixedAssetStdCostTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FixedAssetStdCostType'"
+	 * @model keys="fixedAssetStdCostTypeId"
 	 * @generated
 	 */
-	String getFixedAssetStdCostTypeId();
+	FixedAssetStdCostType getFixedAssetStdCostTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFixedAssetStdCostTypeId <em>Fixed Asset Std Cost Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.fixedasset.FixedAssetStdCost#getFixedAssetStdCostTypeId <em>Fixed Asset Std Cost Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fixed Asset Std Cost Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Fixed Asset Std Cost Type Id</em>' reference.
 	 * @see #getFixedAssetStdCostTypeId()
 	 * @generated
 	 */
-	void setFixedAssetStdCostTypeId(String value);
+	void setFixedAssetStdCostTypeId(FixedAssetStdCostType value);
 
 } // FixedAssetStdCost

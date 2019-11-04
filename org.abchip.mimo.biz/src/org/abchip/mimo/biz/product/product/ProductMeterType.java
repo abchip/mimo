@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.product;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntityType;
+import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,8 +22,8 @@ import org.abchip.mimo.biz.BizEntityType;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeterType#getProductMeterTypeId <em>Product Meter Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeterType#getDefaultUomId <em>Default Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeterType#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.product.ProductMeterType#getDefaultUomId <em>Default Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeterType()
@@ -31,30 +32,30 @@ import org.abchip.mimo.biz.BizEntityType;
  */
 public interface ProductMeterType extends BizEntityType<ProductMeter> {
 	/**
-	 * Returns the value of the '<em><b>Default Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Default Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Default Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Uom Id</em>' attribute.
-	 * @see #setDefaultUomId(String)
+	 * @return the value of the '<em>Default Uom Id</em>' reference.
+	 * @see #setDefaultUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeterType_DefaultUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getDefaultUomId();
+	Uom getDefaultUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMeterType#getDefaultUomId <em>Default Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.product.ProductMeterType#getDefaultUomId <em>Default Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Default Uom Id</em>' reference.
 	 * @see #getDefaultUomId()
 	 * @generated
 	 */
-	void setDefaultUomId(String value);
+	void setDefaultUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -120,7 +121,7 @@ public interface ProductMeterType extends BizEntityType<ProductMeter> {
 	 * @return the value of the '<em>Product Meter Type Id</em>' attribute.
 	 * @see #setProductMeterTypeId(String)
 	 * @see org.abchip.mimo.biz.product.product.ProductPackage#getProductMeterType_ProductMeterTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

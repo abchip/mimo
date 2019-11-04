@@ -28,32 +28,30 @@ import org.abchip.mimo.biz.BizEntity;
  */
 public interface WorkEffortDeliverableProd extends BizEntity {
 	/**
-	 * Returns the value of the '<em><b>Deliverable Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Deliverable Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Deliverable Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deliverable Id</em>' attribute.
-	 * @see #setDeliverableId(String)
+	 * @return the value of the '<em>Deliverable Id</em>' reference.
+	 * @see #setDeliverableId(Deliverable)
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortDeliverableProd_DeliverableId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Deliverable'"
+	 * @model keys="deliverableId"
 	 * @generated
 	 */
-	String getDeliverableId();
+	Deliverable getDeliverableId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortDeliverableProd#getDeliverableId <em>Deliverable Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.workeffort.workeffort.WorkEffortDeliverableProd#getDeliverableId <em>Deliverable Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deliverable Id</em>' attribute.
+	 * @param value the new value of the '<em>Deliverable Id</em>' reference.
 	 * @see #getDeliverableId()
 	 * @generated
 	 */
-	void setDeliverableId(String value);
+	void setDeliverableId(Deliverable value);
 
 	/**
 	 * Returns the value of the '<em><b>Work Effort Id</b></em>' attribute.
@@ -68,7 +66,6 @@ public interface WorkEffortDeliverableProd extends BizEntity {
 	 * @see org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage#getWorkEffortDeliverableProd_WorkEffortId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='WorkEffort'"
 	 * @generated
 	 */
 	String getWorkEffortId();

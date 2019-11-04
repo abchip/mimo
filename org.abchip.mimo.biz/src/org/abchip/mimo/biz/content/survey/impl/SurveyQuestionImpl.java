@@ -10,8 +10,10 @@ package org.abchip.mimo.biz.content.survey.impl;
 import java.util.Collection;
 import java.util.List;
 
+import org.abchip.mimo.biz.common.geo.Geo;
 import org.abchip.mimo.biz.content.survey.SurveyPackage;
 import org.abchip.mimo.biz.content.survey.SurveyQuestion;
+import org.abchip.mimo.biz.content.survey.SurveyQuestionCategory;
 import org.abchip.mimo.biz.content.survey.SurveyQuestionType;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
@@ -19,6 +21,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -34,11 +38,11 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getEnumTypeId <em>Enum Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getFormatString <em>Format String</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getHint <em>Hint</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getQuestion <em>Question</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getSurveyQuestionCategoryId <em>Survey Question Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getSurveyQuestionTypeId <em>Survey Question Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getSurveyQuestionCategoryId <em>Survey Question Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getGeoId <em>Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.impl.SurveyQuestionImpl#getSurveyQuestionOptions <em>Survey Question Options</em>}</li>
  * </ul>
  *
@@ -131,26 +135,6 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	protected String formatString = FORMAT_STRING_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GEO_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String geoId = GEO_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getHint() <em>Hint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,44 +175,34 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	protected String question = QUESTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSurveyQuestionCategoryId() <em>Survey Question Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SURVEY_QUESTION_CATEGORY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSurveyQuestionCategoryId() <em>Survey Question Category Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionCategoryId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String surveyQuestionCategoryId = SURVEY_QUESTION_CATEGORY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSurveyQuestionTypeId() <em>Survey Question Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getSurveyQuestionTypeId() <em>Survey Question Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSurveyQuestionTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SURVEY_QUESTION_TYPE_ID_EDEFAULT = null;
+	protected SurveyQuestionType surveyQuestionTypeId;
 
 	/**
-	 * The cached value of the '{@link #getSurveyQuestionTypeId() <em>Survey Question Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getSurveyQuestionCategoryId() <em>Survey Question Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSurveyQuestionTypeId()
+	 * @see #getSurveyQuestionCategoryId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String surveyQuestionTypeId = SURVEY_QUESTION_TYPE_ID_EDEFAULT;
+	protected SurveyQuestionCategory surveyQuestionCategoryId;
+
+	/**
+	 * The cached value of the '{@link #getGeoId() <em>Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo geoId;
 
 	/**
 	 * The cached value of the '{@link #getSurveyQuestionOptions() <em>Survey Question Options</em>}' attribute list.
@@ -334,7 +308,24 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 * @generated
 	 */
 	@Override
-	public String getGeoId() {
+	public Geo getGeoId() {
+		if (geoId != null && ((EObject)geoId).eIsProxy()) {
+			InternalEObject oldGeoId = (InternalEObject)geoId;
+			geoId = (Geo)eResolveProxy(oldGeoId);
+			if (geoId != oldGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION__GEO_ID, oldGeoId, geoId));
+			}
+		}
+		return geoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetGeoId() {
 		return geoId;
 	}
 
@@ -344,8 +335,8 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 * @generated
 	 */
 	@Override
-	public void setGeoId(String newGeoId) {
-		String oldGeoId = geoId;
+	public void setGeoId(Geo newGeoId) {
+		Geo oldGeoId = geoId;
 		geoId = newGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__GEO_ID, oldGeoId, geoId));
@@ -403,7 +394,24 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 * @generated
 	 */
 	@Override
-	public String getSurveyQuestionCategoryId() {
+	public SurveyQuestionCategory getSurveyQuestionCategoryId() {
+		if (surveyQuestionCategoryId != null && ((EObject)surveyQuestionCategoryId).eIsProxy()) {
+			InternalEObject oldSurveyQuestionCategoryId = (InternalEObject)surveyQuestionCategoryId;
+			surveyQuestionCategoryId = (SurveyQuestionCategory)eResolveProxy(oldSurveyQuestionCategoryId);
+			if (surveyQuestionCategoryId != oldSurveyQuestionCategoryId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID, oldSurveyQuestionCategoryId, surveyQuestionCategoryId));
+			}
+		}
+		return surveyQuestionCategoryId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurveyQuestionCategory basicGetSurveyQuestionCategoryId() {
 		return surveyQuestionCategoryId;
 	}
 
@@ -413,8 +421,8 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 * @generated
 	 */
 	@Override
-	public void setSurveyQuestionCategoryId(String newSurveyQuestionCategoryId) {
-		String oldSurveyQuestionCategoryId = surveyQuestionCategoryId;
+	public void setSurveyQuestionCategoryId(SurveyQuestionCategory newSurveyQuestionCategoryId) {
+		SurveyQuestionCategory oldSurveyQuestionCategoryId = surveyQuestionCategoryId;
 		surveyQuestionCategoryId = newSurveyQuestionCategoryId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID, oldSurveyQuestionCategoryId, surveyQuestionCategoryId));
@@ -449,7 +457,24 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 * @generated
 	 */
 	@Override
-	public String getSurveyQuestionTypeId() {
+	public SurveyQuestionType getSurveyQuestionTypeId() {
+		if (surveyQuestionTypeId != null && ((EObject)surveyQuestionTypeId).eIsProxy()) {
+			InternalEObject oldSurveyQuestionTypeId = (InternalEObject)surveyQuestionTypeId;
+			surveyQuestionTypeId = (SurveyQuestionType)eResolveProxy(oldSurveyQuestionTypeId);
+			if (surveyQuestionTypeId != oldSurveyQuestionTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID, oldSurveyQuestionTypeId, surveyQuestionTypeId));
+			}
+		}
+		return surveyQuestionTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SurveyQuestionType basicGetSurveyQuestionTypeId() {
 		return surveyQuestionTypeId;
 	}
 
@@ -459,8 +484,8 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 	 * @generated
 	 */
 	@Override
-	public void setSurveyQuestionTypeId(String newSurveyQuestionTypeId) {
-		String oldSurveyQuestionTypeId = surveyQuestionTypeId;
+	public void setSurveyQuestionTypeId(SurveyQuestionType newSurveyQuestionTypeId) {
+		SurveyQuestionType oldSurveyQuestionTypeId = surveyQuestionTypeId;
 		surveyQuestionTypeId = newSurveyQuestionTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID, oldSurveyQuestionTypeId, surveyQuestionTypeId));
@@ -495,16 +520,19 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 				return getEnumTypeId();
 			case SurveyPackage.SURVEY_QUESTION__FORMAT_STRING:
 				return getFormatString();
-			case SurveyPackage.SURVEY_QUESTION__GEO_ID:
-				return getGeoId();
 			case SurveyPackage.SURVEY_QUESTION__HINT:
 				return getHint();
 			case SurveyPackage.SURVEY_QUESTION__QUESTION:
 				return getQuestion();
-			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID:
-				return getSurveyQuestionCategoryId();
 			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID:
-				return getSurveyQuestionTypeId();
+				if (resolve) return getSurveyQuestionTypeId();
+				return basicGetSurveyQuestionTypeId();
+			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID:
+				if (resolve) return getSurveyQuestionCategoryId();
+				return basicGetSurveyQuestionCategoryId();
+			case SurveyPackage.SURVEY_QUESTION__GEO_ID:
+				if (resolve) return getGeoId();
+				return basicGetGeoId();
 			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_OPTIONS:
 				return getSurveyQuestionOptions();
 		}
@@ -532,20 +560,20 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 			case SurveyPackage.SURVEY_QUESTION__FORMAT_STRING:
 				setFormatString((String)newValue);
 				return;
-			case SurveyPackage.SURVEY_QUESTION__GEO_ID:
-				setGeoId((String)newValue);
-				return;
 			case SurveyPackage.SURVEY_QUESTION__HINT:
 				setHint((String)newValue);
 				return;
 			case SurveyPackage.SURVEY_QUESTION__QUESTION:
 				setQuestion((String)newValue);
 				return;
-			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID:
-				setSurveyQuestionCategoryId((String)newValue);
-				return;
 			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID:
-				setSurveyQuestionTypeId((String)newValue);
+				setSurveyQuestionTypeId((SurveyQuestionType)newValue);
+				return;
+			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID:
+				setSurveyQuestionCategoryId((SurveyQuestionCategory)newValue);
+				return;
+			case SurveyPackage.SURVEY_QUESTION__GEO_ID:
+				setGeoId((Geo)newValue);
 				return;
 			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_OPTIONS:
 				getSurveyQuestionOptions().clear();
@@ -575,20 +603,20 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 			case SurveyPackage.SURVEY_QUESTION__FORMAT_STRING:
 				setFormatString(FORMAT_STRING_EDEFAULT);
 				return;
-			case SurveyPackage.SURVEY_QUESTION__GEO_ID:
-				setGeoId(GEO_ID_EDEFAULT);
-				return;
 			case SurveyPackage.SURVEY_QUESTION__HINT:
 				setHint(HINT_EDEFAULT);
 				return;
 			case SurveyPackage.SURVEY_QUESTION__QUESTION:
 				setQuestion(QUESTION_EDEFAULT);
 				return;
-			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID:
-				setSurveyQuestionCategoryId(SURVEY_QUESTION_CATEGORY_ID_EDEFAULT);
-				return;
 			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID:
-				setSurveyQuestionTypeId(SURVEY_QUESTION_TYPE_ID_EDEFAULT);
+				setSurveyQuestionTypeId((SurveyQuestionType)null);
+				return;
+			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID:
+				setSurveyQuestionCategoryId((SurveyQuestionCategory)null);
+				return;
+			case SurveyPackage.SURVEY_QUESTION__GEO_ID:
+				setGeoId((Geo)null);
 				return;
 			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_OPTIONS:
 				getSurveyQuestionOptions().clear();
@@ -613,16 +641,16 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 				return ENUM_TYPE_ID_EDEFAULT == null ? enumTypeId != null : !ENUM_TYPE_ID_EDEFAULT.equals(enumTypeId);
 			case SurveyPackage.SURVEY_QUESTION__FORMAT_STRING:
 				return FORMAT_STRING_EDEFAULT == null ? formatString != null : !FORMAT_STRING_EDEFAULT.equals(formatString);
-			case SurveyPackage.SURVEY_QUESTION__GEO_ID:
-				return GEO_ID_EDEFAULT == null ? geoId != null : !GEO_ID_EDEFAULT.equals(geoId);
 			case SurveyPackage.SURVEY_QUESTION__HINT:
 				return HINT_EDEFAULT == null ? hint != null : !HINT_EDEFAULT.equals(hint);
 			case SurveyPackage.SURVEY_QUESTION__QUESTION:
 				return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
-			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID:
-				return SURVEY_QUESTION_CATEGORY_ID_EDEFAULT == null ? surveyQuestionCategoryId != null : !SURVEY_QUESTION_CATEGORY_ID_EDEFAULT.equals(surveyQuestionCategoryId);
 			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_TYPE_ID:
-				return SURVEY_QUESTION_TYPE_ID_EDEFAULT == null ? surveyQuestionTypeId != null : !SURVEY_QUESTION_TYPE_ID_EDEFAULT.equals(surveyQuestionTypeId);
+				return surveyQuestionTypeId != null;
+			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_CATEGORY_ID:
+				return surveyQuestionCategoryId != null;
+			case SurveyPackage.SURVEY_QUESTION__GEO_ID:
+				return geoId != null;
 			case SurveyPackage.SURVEY_QUESTION__SURVEY_QUESTION_OPTIONS:
 				return surveyQuestionOptions != null && !surveyQuestionOptions.isEmpty();
 		}
@@ -647,16 +675,10 @@ public class SurveyQuestionImpl extends BizEntityTypedImpl<SurveyQuestionType> i
 		result.append(enumTypeId);
 		result.append(", formatString: ");
 		result.append(formatString);
-		result.append(", geoId: ");
-		result.append(geoId);
 		result.append(", hint: ");
 		result.append(hint);
 		result.append(", question: ");
 		result.append(question);
-		result.append(", surveyQuestionCategoryId: ");
-		result.append(surveyQuestionCategoryId);
-		result.append(", surveyQuestionTypeId: ");
-		result.append(surveyQuestionTypeId);
 		result.append(", surveyQuestionOptions: ");
 		result.append(surveyQuestionOptions);
 		result.append(')');

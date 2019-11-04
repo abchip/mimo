@@ -12,10 +12,17 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.accounting.payment.PaymentGatewayResponse;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethod;
+import org.abchip.mimo.biz.accounting.payment.PaymentMethodType;
 import org.abchip.mimo.biz.accounting.payment.PaymentPackage;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderPaymentPreference;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,25 +36,25 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getAltReference <em>Alt Reference</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getGatewayAvsResult <em>Gateway Avs Result</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getGatewayCode <em>Gateway Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getGatewayCvResult <em>Gateway Cv Result</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getGatewayFlag <em>Gateway Flag</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getGatewayMessage <em>Gateway Message</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getGatewayScoreResult <em>Gateway Score Result</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getReferenceNum <em>Reference Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#isResultBadCardNumber <em>Result Bad Card Number</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#isResultBadExpire <em>Result Bad Expire</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#isResultDeclined <em>Result Declined</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#isResultNsf <em>Result Nsf</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getSubReference <em>Sub Reference</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getTransCodeEnumId <em>Trans Code Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getTransactionDate <em>Transaction Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getPaymentServiceTypeEnumId <em>Payment Service Type Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getTransCodeEnumId <em>Trans Code Enum Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getPaymentMethodTypeId <em>Payment Method Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.impl.PaymentGatewayResponseImpl#getPaymentMethodId <em>Payment Method Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,24 +118,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @ordered
 	 */
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CURRENCY_UOM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCurrencyUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String currencyUomId = CURRENCY_UOM_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getGatewayAvsResult() <em>Gateway Avs Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -238,79 +227,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	protected String gatewayScoreResult = GATEWAY_SCORE_RESULT_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPaymentPreferenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderPaymentPreferenceId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderPaymentPreferenceId = ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_METHOD_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodId = PAYMENT_METHOD_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_METHOD_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentMethodTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentMethodTypeId = PAYMENT_METHOD_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPaymentServiceTypeEnumId() <em>Payment Service Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentServiceTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentServiceTypeEnumId() <em>Payment Service Type Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentServiceTypeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentServiceTypeEnumId = PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getReferenceNum() <em>Reference Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -419,24 +335,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 */
 	protected String subReference = SUB_REFERENCE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getTransCodeEnumId() <em>Trans Code Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransCodeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TRANS_CODE_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTransCodeEnumId() <em>Trans Code Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransCodeEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String transCodeEnumId = TRANS_CODE_ENUM_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getTransactionDate() <em>Transaction Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -454,6 +352,60 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @ordered
 	 */
 	protected Date transactionDate = TRANSACTION_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getPaymentServiceTypeEnumId() <em>Payment Service Type Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentServiceTypeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration paymentServiceTypeEnumId;
+	/**
+	 * The cached value of the '{@link #getTransCodeEnumId() <em>Trans Code Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTransCodeEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration transCodeEnumId;
+	/**
+	 * The cached value of the '{@link #getCurrencyUomId() <em>Currency Uom Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrencyUomId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Uom currencyUomId;
+	/**
+	 * The cached value of the '{@link #getOrderPaymentPreferenceId() <em>Order Payment Preference Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderPaymentPreferenceId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderPaymentPreference orderPaymentPreferenceId;
+	/**
+	 * The cached value of the '{@link #getPaymentMethodTypeId() <em>Payment Method Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethodType paymentMethodTypeId;
+	/**
+	 * The cached value of the '{@link #getPaymentMethodId() <em>Payment Method Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethodId()
+	 * @generated
+	 * @ordered
+	 */
+	protected PaymentMethod paymentMethodId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -526,7 +478,24 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public String getCurrencyUomId() {
+	public Uom getCurrencyUomId() {
+		if (currencyUomId != null && ((EObject)currencyUomId).eIsProxy()) {
+			InternalEObject oldCurrencyUomId = (InternalEObject)currencyUomId;
+			currencyUomId = (Uom)eResolveProxy(oldCurrencyUomId);
+			if (currencyUomId != oldCurrencyUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
+			}
+		}
+		return currencyUomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetCurrencyUomId() {
 		return currencyUomId;
 	}
 
@@ -536,8 +505,8 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public void setCurrencyUomId(String newCurrencyUomId) {
-		String oldCurrencyUomId = currencyUomId;
+	public void setCurrencyUomId(Uom newCurrencyUomId) {
+		Uom oldCurrencyUomId = currencyUomId;
 		currencyUomId = newCurrencyUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID, oldCurrencyUomId, currencyUomId));
@@ -687,7 +656,24 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public String getOrderPaymentPreferenceId() {
+	public OrderPaymentPreference getOrderPaymentPreferenceId() {
+		if (orderPaymentPreferenceId != null && ((EObject)orderPaymentPreferenceId).eIsProxy()) {
+			InternalEObject oldOrderPaymentPreferenceId = (InternalEObject)orderPaymentPreferenceId;
+			orderPaymentPreferenceId = (OrderPaymentPreference)eResolveProxy(oldOrderPaymentPreferenceId);
+			if (orderPaymentPreferenceId != oldOrderPaymentPreferenceId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
+			}
+		}
+		return orderPaymentPreferenceId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderPaymentPreference basicGetOrderPaymentPreferenceId() {
 		return orderPaymentPreferenceId;
 	}
 
@@ -697,8 +683,8 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public void setOrderPaymentPreferenceId(String newOrderPaymentPreferenceId) {
-		String oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
+	public void setOrderPaymentPreferenceId(OrderPaymentPreference newOrderPaymentPreferenceId) {
+		OrderPaymentPreference oldOrderPaymentPreferenceId = orderPaymentPreferenceId;
 		orderPaymentPreferenceId = newOrderPaymentPreferenceId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID, oldOrderPaymentPreferenceId, orderPaymentPreferenceId));
@@ -710,7 +696,24 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public String getPaymentServiceTypeEnumId() {
+	public Enumeration getPaymentServiceTypeEnumId() {
+		if (paymentServiceTypeEnumId != null && ((EObject)paymentServiceTypeEnumId).eIsProxy()) {
+			InternalEObject oldPaymentServiceTypeEnumId = (InternalEObject)paymentServiceTypeEnumId;
+			paymentServiceTypeEnumId = (Enumeration)eResolveProxy(oldPaymentServiceTypeEnumId);
+			if (paymentServiceTypeEnumId != oldPaymentServiceTypeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
+			}
+		}
+		return paymentServiceTypeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetPaymentServiceTypeEnumId() {
 		return paymentServiceTypeEnumId;
 	}
 
@@ -720,8 +723,8 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public void setPaymentServiceTypeEnumId(String newPaymentServiceTypeEnumId) {
-		String oldPaymentServiceTypeEnumId = paymentServiceTypeEnumId;
+	public void setPaymentServiceTypeEnumId(Enumeration newPaymentServiceTypeEnumId) {
+		Enumeration oldPaymentServiceTypeEnumId = paymentServiceTypeEnumId;
 		paymentServiceTypeEnumId = newPaymentServiceTypeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID, oldPaymentServiceTypeEnumId, paymentServiceTypeEnumId));
@@ -871,7 +874,24 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public String getTransCodeEnumId() {
+	public Enumeration getTransCodeEnumId() {
+		if (transCodeEnumId != null && ((EObject)transCodeEnumId).eIsProxy()) {
+			InternalEObject oldTransCodeEnumId = (InternalEObject)transCodeEnumId;
+			transCodeEnumId = (Enumeration)eResolveProxy(oldTransCodeEnumId);
+			if (transCodeEnumId != oldTransCodeEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID, oldTransCodeEnumId, transCodeEnumId));
+			}
+		}
+		return transCodeEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetTransCodeEnumId() {
 		return transCodeEnumId;
 	}
 
@@ -881,8 +901,8 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public void setTransCodeEnumId(String newTransCodeEnumId) {
-		String oldTransCodeEnumId = transCodeEnumId;
+	public void setTransCodeEnumId(Enumeration newTransCodeEnumId) {
+		Enumeration oldTransCodeEnumId = transCodeEnumId;
 		transCodeEnumId = newTransCodeEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID, oldTransCodeEnumId, transCodeEnumId));
@@ -941,7 +961,24 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodTypeId() {
+	public PaymentMethodType getPaymentMethodTypeId() {
+		if (paymentMethodTypeId != null && ((EObject)paymentMethodTypeId).eIsProxy()) {
+			InternalEObject oldPaymentMethodTypeId = (InternalEObject)paymentMethodTypeId;
+			paymentMethodTypeId = (PaymentMethodType)eResolveProxy(oldPaymentMethodTypeId);
+			if (paymentMethodTypeId != oldPaymentMethodTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
+			}
+		}
+		return paymentMethodTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethodType basicGetPaymentMethodTypeId() {
 		return paymentMethodTypeId;
 	}
 
@@ -951,8 +988,8 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodTypeId(String newPaymentMethodTypeId) {
-		String oldPaymentMethodTypeId = paymentMethodTypeId;
+	public void setPaymentMethodTypeId(PaymentMethodType newPaymentMethodTypeId) {
+		PaymentMethodType oldPaymentMethodTypeId = paymentMethodTypeId;
 		paymentMethodTypeId = newPaymentMethodTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID, oldPaymentMethodTypeId, paymentMethodTypeId));
@@ -964,7 +1001,24 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public String getPaymentMethodId() {
+	public PaymentMethod getPaymentMethodId() {
+		if (paymentMethodId != null && ((EObject)paymentMethodId).eIsProxy()) {
+			InternalEObject oldPaymentMethodId = (InternalEObject)paymentMethodId;
+			paymentMethodId = (PaymentMethod)eResolveProxy(oldPaymentMethodId);
+			if (paymentMethodId != oldPaymentMethodId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
+			}
+		}
+		return paymentMethodId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PaymentMethod basicGetPaymentMethodId() {
 		return paymentMethodId;
 	}
 
@@ -974,8 +1028,8 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 	 * @generated
 	 */
 	@Override
-	public void setPaymentMethodId(String newPaymentMethodId) {
-		String oldPaymentMethodId = paymentMethodId;
+	public void setPaymentMethodId(PaymentMethod newPaymentMethodId) {
+		PaymentMethod oldPaymentMethodId = paymentMethodId;
 		paymentMethodId = newPaymentMethodId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID, oldPaymentMethodId, paymentMethodId));
@@ -1018,8 +1072,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 				return getAltReference();
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT:
 				return getAmount();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
-				return getCurrencyUomId();
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT:
 				return getGatewayAvsResult();
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE:
@@ -1032,14 +1084,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 				return getGatewayMessage();
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT:
 				return getGatewayScoreResult();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				return getOrderPaymentPreferenceId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
-				return getPaymentMethodId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
-				return getPaymentMethodTypeId();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				return getPaymentServiceTypeEnumId();
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM:
 				return getReferenceNum();
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER:
@@ -1052,10 +1096,26 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 				return isResultNsf();
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE:
 				return getSubReference();
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
-				return getTransCodeEnumId();
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE:
 				return getTransactionDate();
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
+				if (resolve) return getPaymentServiceTypeEnumId();
+				return basicGetPaymentServiceTypeEnumId();
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
+				if (resolve) return getTransCodeEnumId();
+				return basicGetTransCodeEnumId();
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
+				if (resolve) return getCurrencyUomId();
+				return basicGetCurrencyUomId();
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
+				if (resolve) return getOrderPaymentPreferenceId();
+				return basicGetOrderPaymentPreferenceId();
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
+				if (resolve) return getPaymentMethodTypeId();
+				return basicGetPaymentMethodTypeId();
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
+				if (resolve) return getPaymentMethodId();
+				return basicGetPaymentMethodId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1077,9 +1137,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT:
 				setAmount((BigDecimal)newValue);
 				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
-				setCurrencyUomId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT:
 				setGatewayAvsResult((String)newValue);
 				return;
@@ -1097,18 +1154,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT:
 				setGatewayScoreResult((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
-				setPaymentMethodId((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId((String)newValue);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				setPaymentServiceTypeEnumId((String)newValue);
 				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM:
 				setReferenceNum((String)newValue);
@@ -1128,11 +1173,26 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE:
 				setSubReference((String)newValue);
 				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
-				setTransCodeEnumId((String)newValue);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE:
 				setTransactionDate((Date)newValue);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
+				setPaymentServiceTypeEnumId((Enumeration)newValue);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
+				setTransCodeEnumId((Enumeration)newValue);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)newValue);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
+				setOrderPaymentPreferenceId((OrderPaymentPreference)newValue);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)newValue);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1155,9 +1215,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
 				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
-				setCurrencyUomId(CURRENCY_UOM_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT:
 				setGatewayAvsResult(GATEWAY_AVS_RESULT_EDEFAULT);
 				return;
@@ -1175,18 +1232,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT:
 				setGatewayScoreResult(GATEWAY_SCORE_RESULT_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				setOrderPaymentPreferenceId(ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
-				setPaymentMethodId(PAYMENT_METHOD_ID_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
-				setPaymentMethodTypeId(PAYMENT_METHOD_TYPE_ID_EDEFAULT);
-				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				setPaymentServiceTypeEnumId(PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT);
 				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM:
 				setReferenceNum(REFERENCE_NUM_EDEFAULT);
@@ -1206,11 +1251,26 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE:
 				setSubReference(SUB_REFERENCE_EDEFAULT);
 				return;
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
-				setTransCodeEnumId(TRANS_CODE_ENUM_ID_EDEFAULT);
-				return;
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE:
 				setTransactionDate(TRANSACTION_DATE_EDEFAULT);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
+				setPaymentServiceTypeEnumId((Enumeration)null);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
+				setTransCodeEnumId((Enumeration)null);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
+				setCurrencyUomId((Uom)null);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
+				setOrderPaymentPreferenceId((OrderPaymentPreference)null);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
+				setPaymentMethodTypeId((PaymentMethodType)null);
+				return;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
+				setPaymentMethodId((PaymentMethod)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1230,8 +1290,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 				return ALT_REFERENCE_EDEFAULT == null ? altReference != null : !ALT_REFERENCE_EDEFAULT.equals(altReference);
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
-				return CURRENCY_UOM_ID_EDEFAULT == null ? currencyUomId != null : !CURRENCY_UOM_ID_EDEFAULT.equals(currencyUomId);
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_AVS_RESULT:
 				return GATEWAY_AVS_RESULT_EDEFAULT == null ? gatewayAvsResult != null : !GATEWAY_AVS_RESULT_EDEFAULT.equals(gatewayAvsResult);
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_CODE:
@@ -1244,14 +1302,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 				return GATEWAY_MESSAGE_EDEFAULT == null ? gatewayMessage != null : !GATEWAY_MESSAGE_EDEFAULT.equals(gatewayMessage);
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__GATEWAY_SCORE_RESULT:
 				return GATEWAY_SCORE_RESULT_EDEFAULT == null ? gatewayScoreResult != null : !GATEWAY_SCORE_RESULT_EDEFAULT.equals(gatewayScoreResult);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
-				return ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT == null ? orderPaymentPreferenceId != null : !ORDER_PAYMENT_PREFERENCE_ID_EDEFAULT.equals(orderPaymentPreferenceId);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
-				return PAYMENT_METHOD_ID_EDEFAULT == null ? paymentMethodId != null : !PAYMENT_METHOD_ID_EDEFAULT.equals(paymentMethodId);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
-				return PAYMENT_METHOD_TYPE_ID_EDEFAULT == null ? paymentMethodTypeId != null : !PAYMENT_METHOD_TYPE_ID_EDEFAULT.equals(paymentMethodTypeId);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
-				return PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT == null ? paymentServiceTypeEnumId != null : !PAYMENT_SERVICE_TYPE_ENUM_ID_EDEFAULT.equals(paymentServiceTypeEnumId);
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__REFERENCE_NUM:
 				return REFERENCE_NUM_EDEFAULT == null ? referenceNum != null : !REFERENCE_NUM_EDEFAULT.equals(referenceNum);
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__RESULT_BAD_CARD_NUMBER:
@@ -1264,10 +1314,20 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 				return resultNsf != RESULT_NSF_EDEFAULT;
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__SUB_REFERENCE:
 				return SUB_REFERENCE_EDEFAULT == null ? subReference != null : !SUB_REFERENCE_EDEFAULT.equals(subReference);
-			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
-				return TRANS_CODE_ENUM_ID_EDEFAULT == null ? transCodeEnumId != null : !TRANS_CODE_ENUM_ID_EDEFAULT.equals(transCodeEnumId);
 			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANSACTION_DATE:
 				return TRANSACTION_DATE_EDEFAULT == null ? transactionDate != null : !TRANSACTION_DATE_EDEFAULT.equals(transactionDate);
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_SERVICE_TYPE_ENUM_ID:
+				return paymentServiceTypeEnumId != null;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__TRANS_CODE_ENUM_ID:
+				return transCodeEnumId != null;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__CURRENCY_UOM_ID:
+				return currencyUomId != null;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID:
+				return orderPaymentPreferenceId != null;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_TYPE_ID:
+				return paymentMethodTypeId != null;
+			case PaymentPackage.PAYMENT_GATEWAY_RESPONSE__PAYMENT_METHOD_ID:
+				return paymentMethodId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1288,8 +1348,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 		result.append(altReference);
 		result.append(", amount: ");
 		result.append(amount);
-		result.append(", currencyUomId: ");
-		result.append(currencyUomId);
 		result.append(", gatewayAvsResult: ");
 		result.append(gatewayAvsResult);
 		result.append(", gatewayCode: ");
@@ -1302,14 +1360,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 		result.append(gatewayMessage);
 		result.append(", gatewayScoreResult: ");
 		result.append(gatewayScoreResult);
-		result.append(", orderPaymentPreferenceId: ");
-		result.append(orderPaymentPreferenceId);
-		result.append(", paymentMethodId: ");
-		result.append(paymentMethodId);
-		result.append(", paymentMethodTypeId: ");
-		result.append(paymentMethodTypeId);
-		result.append(", paymentServiceTypeEnumId: ");
-		result.append(paymentServiceTypeEnumId);
 		result.append(", referenceNum: ");
 		result.append(referenceNum);
 		result.append(", resultBadCardNumber: ");
@@ -1322,8 +1372,6 @@ public class PaymentGatewayResponseImpl extends BizEntityImpl implements Payment
 		result.append(resultNsf);
 		result.append(", subReference: ");
 		result.append(subReference);
-		result.append(", transCodeEnumId: ");
-		result.append(transCodeEnumId);
 		result.append(", transactionDate: ");
 		result.append(transactionDate);
 		result.append(')');

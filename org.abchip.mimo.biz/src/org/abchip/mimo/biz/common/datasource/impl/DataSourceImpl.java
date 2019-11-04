@@ -16,6 +16,8 @@ import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,8 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.common.datasource.impl.DataSourceImpl#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.datasource.impl.DataSourceImpl#getDataSourceTypeId <em>Data Source Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.datasource.impl.DataSourceImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.datasource.impl.DataSourceImpl#getDataSourceTypeId <em>Data Source Type Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,24 +61,6 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	protected String dataSourceId = DATA_SOURCE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDataSourceTypeId() <em>Data Source Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATA_SOURCE_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDataSourceTypeId() <em>Data Source Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataSourceTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dataSourceTypeId = DATA_SOURCE_TYPE_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,6 +78,15 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getDataSourceTypeId() <em>Data Source Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSourceTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataSourceType dataSourceTypeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -238,7 +231,24 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * @generated
 	 */
 	@Override
-	public String getDataSourceTypeId() {
+	public DataSourceType getDataSourceTypeId() {
+		if (dataSourceTypeId != null && ((EObject)dataSourceTypeId).eIsProxy()) {
+			InternalEObject oldDataSourceTypeId = (InternalEObject)dataSourceTypeId;
+			dataSourceTypeId = (DataSourceType)eResolveProxy(oldDataSourceTypeId);
+			if (dataSourceTypeId != oldDataSourceTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID, oldDataSourceTypeId, dataSourceTypeId));
+			}
+		}
+		return dataSourceTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSourceType basicGetDataSourceTypeId() {
 		return dataSourceTypeId;
 	}
 
@@ -248,8 +258,8 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 	 * @generated
 	 */
 	@Override
-	public void setDataSourceTypeId(String newDataSourceTypeId) {
-		String oldDataSourceTypeId = dataSourceTypeId;
+	public void setDataSourceTypeId(DataSourceType newDataSourceTypeId) {
+		DataSourceType oldDataSourceTypeId = dataSourceTypeId;
 		dataSourceTypeId = newDataSourceTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID, oldDataSourceTypeId, dataSourceTypeId));
@@ -265,10 +275,11 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 		switch (featureID) {
 			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID:
 				return getDataSourceId();
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
-				return getDataSourceTypeId();
 			case DatasourcePackage.DATA_SOURCE__DESCRIPTION:
 				return getDescription();
+			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
+				if (resolve) return getDataSourceTypeId();
+				return basicGetDataSourceTypeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -284,11 +295,11 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID:
 				setDataSourceId((String)newValue);
 				return;
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
-				setDataSourceTypeId((String)newValue);
-				return;
 			case DatasourcePackage.DATA_SOURCE__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
+				setDataSourceTypeId((DataSourceType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -305,11 +316,11 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID:
 				setDataSourceId(DATA_SOURCE_ID_EDEFAULT);
 				return;
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
-				setDataSourceTypeId(DATA_SOURCE_TYPE_ID_EDEFAULT);
-				return;
 			case DatasourcePackage.DATA_SOURCE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
+				setDataSourceTypeId((DataSourceType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -325,10 +336,10 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 		switch (featureID) {
 			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_ID:
 				return DATA_SOURCE_ID_EDEFAULT == null ? dataSourceId != null : !DATA_SOURCE_ID_EDEFAULT.equals(dataSourceId);
-			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
-				return DATA_SOURCE_TYPE_ID_EDEFAULT == null ? dataSourceTypeId != null : !DATA_SOURCE_TYPE_ID_EDEFAULT.equals(dataSourceTypeId);
 			case DatasourcePackage.DATA_SOURCE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case DatasourcePackage.DATA_SOURCE__DATA_SOURCE_TYPE_ID:
+				return dataSourceTypeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -345,8 +356,6 @@ public class DataSourceImpl extends BizEntityTypedImpl<DataSourceType> implement
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (dataSourceId: ");
 		result.append(dataSourceId);
-		result.append(", dataSourceTypeId: ");
-		result.append(dataSourceTypeId);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

@@ -120,7 +120,6 @@ public interface CountryCode extends BizEntity {
 	 * @see org.abchip.mimo.biz.common.geo.GeoPackage#getCountryCode_CountryCode()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='CountryCode'"
 	 * @generated
 	 */
 	String getCountryCode();

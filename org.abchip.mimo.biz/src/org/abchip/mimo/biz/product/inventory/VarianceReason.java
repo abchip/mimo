@@ -67,7 +67,7 @@ public interface VarianceReason extends BizEntity {
 	 * @return the value of the '<em>Variance Reason Id</em>' attribute.
 	 * @see #setVarianceReasonId(String)
 	 * @see org.abchip.mimo.biz.product.inventory.InventoryPackage#getVarianceReason_VarianceReasonId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

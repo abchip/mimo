@@ -25,8 +25,8 @@ import org.abchip.mimo.biz.BizEntityTyped;
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc#getToTaxAuthGeoId <em>To Tax Auth Geo Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc#getToTaxAuthPartyId <em>To Tax Auth Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc#getFromDate <em>From Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc#getTaxAuthorityAssocTypeId <em>Tax Authority Assoc Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc#getTaxAuthorityAssocTypeId <em>Tax Authority Assoc Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc()
@@ -45,7 +45,8 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -71,7 +72,8 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @return the value of the '<em>Tax Auth Geo Id</em>' attribute.
 	 * @see #setTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_TaxAuthGeoId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTaxAuthGeoId();
@@ -97,7 +99,8 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @return the value of the '<em>Tax Auth Party Id</em>' attribute.
 	 * @see #setTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_TaxAuthPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getTaxAuthPartyId();
@@ -149,7 +152,8 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @return the value of the '<em>To Tax Auth Geo Id</em>' attribute.
 	 * @see #setToTaxAuthGeoId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_ToTaxAuthGeoId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getToTaxAuthGeoId();
@@ -175,7 +179,8 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	 * @return the value of the '<em>To Tax Auth Party Id</em>' attribute.
 	 * @see #setToTaxAuthPartyId(String)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_ToTaxAuthPartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getToTaxAuthPartyId();
@@ -191,29 +196,29 @@ public interface TaxAuthorityAssoc extends BizEntityTyped<TaxAuthorityAssocType>
 	void setToTaxAuthPartyId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tax Authority Assoc Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Tax Authority Assoc Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tax Authority Assoc Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tax Authority Assoc Type Id</em>' attribute.
-	 * @see #setTaxAuthorityAssocTypeId(String)
+	 * @return the value of the '<em>Tax Authority Assoc Type Id</em>' reference.
+	 * @see #setTaxAuthorityAssocTypeId(TaxAuthorityAssocType)
 	 * @see org.abchip.mimo.biz.accounting.tax.TaxPackage#getTaxAuthorityAssoc_TaxAuthorityAssocTypeId()
-	 * @model annotation="mimo-ent-domain frame='TaxAuthorityAssocType'"
+	 * @model keys="taxAuthorityAssocTypeId"
 	 * @generated
 	 */
-	String getTaxAuthorityAssocTypeId();
+	TaxAuthorityAssocType getTaxAuthorityAssocTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc#getTaxAuthorityAssocTypeId <em>Tax Authority Assoc Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.tax.TaxAuthorityAssoc#getTaxAuthorityAssocTypeId <em>Tax Authority Assoc Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tax Authority Assoc Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Tax Authority Assoc Type Id</em>' reference.
 	 * @see #getTaxAuthorityAssocTypeId()
 	 * @generated
 	 */
-	void setTaxAuthorityAssocTypeId(String value);
+	void setTaxAuthorityAssocTypeId(TaxAuthorityAssocType value);
 
 } // TaxAuthorityAssoc

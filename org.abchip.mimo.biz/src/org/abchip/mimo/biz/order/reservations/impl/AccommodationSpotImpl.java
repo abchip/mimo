@@ -9,6 +9,8 @@ package org.abchip.mimo.biz.order.reservations.impl;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.fixedasset.AccommodationClass;
+import org.abchip.mimo.biz.accounting.fixedasset.FixedAsset;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.reservations.AccommodationSpot;
 import org.abchip.mimo.biz.order.reservations.ReservationsPackage;
@@ -16,6 +18,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,10 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.reservations.impl.AccommodationSpotImpl#getAccommodationSpotId <em>Accommodation Spot Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.reservations.impl.AccommodationSpotImpl#getAccommodationClassId <em>Accommodation Class Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.reservations.impl.AccommodationSpotImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.reservations.impl.AccommodationSpotImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.reservations.impl.AccommodationSpotImpl#getNumberOfSpaces <em>Number Of Spaces</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.reservations.impl.AccommodationSpotImpl#getAccommodationClassId <em>Accommodation Class Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.reservations.impl.AccommodationSpotImpl#getFixedAssetId <em>Fixed Asset Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,26 +66,6 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	protected String accommodationSpotId = ACCOMMODATION_SPOT_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAccommodationClassId() <em>Accommodation Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACCOMMODATION_CLASS_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAccommodationClassId() <em>Accommodation Class Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccommodationClassId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String accommodationClassId = ACCOMMODATION_CLASS_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,26 +86,6 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIXED_ASSET_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFixedAssetId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fixedAssetId = FIXED_ASSET_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getNumberOfSpaces() <em>Number Of Spaces</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,6 +104,26 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 * @ordered
 	 */
 	protected long numberOfSpaces = NUMBER_OF_SPACES_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAccommodationClassId() <em>Accommodation Class Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAccommodationClassId()
+	 * @generated
+	 * @ordered
+	 */
+	protected AccommodationClass accommodationClassId;
+
+	/**
+	 * The cached value of the '{@link #getFixedAssetId() <em>Fixed Asset Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFixedAssetId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FixedAsset fixedAssetId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,7 +150,24 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 * @generated
 	 */
 	@Override
-	public String getAccommodationClassId() {
+	public AccommodationClass getAccommodationClassId() {
+		if (accommodationClassId != null && ((EObject)accommodationClassId).eIsProxy()) {
+			InternalEObject oldAccommodationClassId = (InternalEObject)accommodationClassId;
+			accommodationClassId = (AccommodationClass)eResolveProxy(oldAccommodationClassId);
+			if (accommodationClassId != oldAccommodationClassId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID, oldAccommodationClassId, accommodationClassId));
+			}
+		}
+		return accommodationClassId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccommodationClass basicGetAccommodationClassId() {
 		return accommodationClassId;
 	}
 
@@ -176,8 +177,8 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 * @generated
 	 */
 	@Override
-	public void setAccommodationClassId(String newAccommodationClassId) {
-		String oldAccommodationClassId = accommodationClassId;
+	public void setAccommodationClassId(AccommodationClass newAccommodationClassId) {
+		AccommodationClass oldAccommodationClassId = accommodationClassId;
 		accommodationClassId = newAccommodationClassId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID, oldAccommodationClassId, accommodationClassId));
@@ -235,7 +236,24 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 * @generated
 	 */
 	@Override
-	public String getFixedAssetId() {
+	public FixedAsset getFixedAssetId() {
+		if (fixedAssetId != null && ((EObject)fixedAssetId).eIsProxy()) {
+			InternalEObject oldFixedAssetId = (InternalEObject)fixedAssetId;
+			fixedAssetId = (FixedAsset)eResolveProxy(oldFixedAssetId);
+			if (fixedAssetId != oldFixedAssetId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
+			}
+		}
+		return fixedAssetId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedAsset basicGetFixedAssetId() {
 		return fixedAssetId;
 	}
 
@@ -245,8 +263,8 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 	 * @generated
 	 */
 	@Override
-	public void setFixedAssetId(String newFixedAssetId) {
-		String oldFixedAssetId = fixedAssetId;
+	public void setFixedAssetId(FixedAsset newFixedAssetId) {
+		FixedAsset oldFixedAssetId = fixedAssetId;
 		fixedAssetId = newFixedAssetId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID, oldFixedAssetId, fixedAssetId));
@@ -297,14 +315,16 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 		switch (featureID) {
 			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_SPOT_ID:
 				return getAccommodationSpotId();
-			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID:
-				return getAccommodationClassId();
 			case ReservationsPackage.ACCOMMODATION_SPOT__DESCRIPTION:
 				return getDescription();
-			case ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID:
-				return getFixedAssetId();
 			case ReservationsPackage.ACCOMMODATION_SPOT__NUMBER_OF_SPACES:
 				return getNumberOfSpaces();
+			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID:
+				if (resolve) return getAccommodationClassId();
+				return basicGetAccommodationClassId();
+			case ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID:
+				if (resolve) return getFixedAssetId();
+				return basicGetFixedAssetId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -320,17 +340,17 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_SPOT_ID:
 				setAccommodationSpotId((String)newValue);
 				return;
-			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID:
-				setAccommodationClassId((String)newValue);
-				return;
 			case ReservationsPackage.ACCOMMODATION_SPOT__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID:
-				setFixedAssetId((String)newValue);
-				return;
 			case ReservationsPackage.ACCOMMODATION_SPOT__NUMBER_OF_SPACES:
 				setNumberOfSpaces((Long)newValue);
+				return;
+			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID:
+				setAccommodationClassId((AccommodationClass)newValue);
+				return;
+			case ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -347,17 +367,17 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_SPOT_ID:
 				setAccommodationSpotId(ACCOMMODATION_SPOT_ID_EDEFAULT);
 				return;
-			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID:
-				setAccommodationClassId(ACCOMMODATION_CLASS_ID_EDEFAULT);
-				return;
 			case ReservationsPackage.ACCOMMODATION_SPOT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID:
-				setFixedAssetId(FIXED_ASSET_ID_EDEFAULT);
-				return;
 			case ReservationsPackage.ACCOMMODATION_SPOT__NUMBER_OF_SPACES:
 				setNumberOfSpaces(NUMBER_OF_SPACES_EDEFAULT);
+				return;
+			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID:
+				setAccommodationClassId((AccommodationClass)null);
+				return;
+			case ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID:
+				setFixedAssetId((FixedAsset)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -373,14 +393,14 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 		switch (featureID) {
 			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_SPOT_ID:
 				return ACCOMMODATION_SPOT_ID_EDEFAULT == null ? accommodationSpotId != null : !ACCOMMODATION_SPOT_ID_EDEFAULT.equals(accommodationSpotId);
-			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID:
-				return ACCOMMODATION_CLASS_ID_EDEFAULT == null ? accommodationClassId != null : !ACCOMMODATION_CLASS_ID_EDEFAULT.equals(accommodationClassId);
 			case ReservationsPackage.ACCOMMODATION_SPOT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID:
-				return FIXED_ASSET_ID_EDEFAULT == null ? fixedAssetId != null : !FIXED_ASSET_ID_EDEFAULT.equals(fixedAssetId);
 			case ReservationsPackage.ACCOMMODATION_SPOT__NUMBER_OF_SPACES:
 				return numberOfSpaces != NUMBER_OF_SPACES_EDEFAULT;
+			case ReservationsPackage.ACCOMMODATION_SPOT__ACCOMMODATION_CLASS_ID:
+				return accommodationClassId != null;
+			case ReservationsPackage.ACCOMMODATION_SPOT__FIXED_ASSET_ID:
+				return fixedAssetId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -397,12 +417,8 @@ public class AccommodationSpotImpl extends BizEntityImpl implements Accommodatio
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (accommodationSpotId: ");
 		result.append(accommodationSpotId);
-		result.append(", accommodationClassId: ");
-		result.append(accommodationClassId);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", fixedAssetId: ");
-		result.append(fixedAssetId);
 		result.append(", numberOfSpaces: ");
 		result.append(numberOfSpaces);
 		result.append(')');

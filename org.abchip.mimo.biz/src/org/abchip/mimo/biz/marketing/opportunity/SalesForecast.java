@@ -12,6 +12,10 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.period.CustomTimePeriod;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.security.login.UserLogin;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,18 +29,18 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getSalesForecastId <em>Sales Forecast Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getBestCaseAmount <em>Best Case Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getClosedAmount <em>Closed Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCreatedByUserLoginId <em>Created By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCurrencyUomId <em>Currency Uom Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getForecastAmount <em>Forecast Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getInternalPartyId <em>Internal Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getModifiedByUserLoginId <em>Modified By User Login Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getOrganizationPartyId <em>Organization Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getParentSalesForecastId <em>Parent Sales Forecast Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getPercentOfQuotaClosed <em>Percent Of Quota Closed</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getPercentOfQuotaForecast <em>Percent Of Quota Forecast</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getPipelineAmount <em>Pipeline Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getQuotaAmount <em>Quota Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getParentSalesForecastId <em>Parent Sales Forecast Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getOrganizationPartyId <em>Organization Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getInternalPartyId <em>Internal Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCreatedByUserLoginId <em>Created By User Login Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getModifiedByUserLoginId <em>Modified By User Login Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getSalesForecastDetails <em>Sales Forecast Details</em>}</li>
  * </ul>
  *
@@ -98,82 +102,82 @@ public interface SalesForecast extends BizEntity {
 	void setClosedAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Created By User Login Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Created By User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Created By User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Created By User Login Id</em>' attribute.
-	 * @see #setCreatedByUserLoginId(String)
+	 * @return the value of the '<em>Created By User Login Id</em>' reference.
+	 * @see #setCreatedByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_CreatedByUserLoginId()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getCreatedByUserLoginId();
+	UserLogin getCreatedByUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCreatedByUserLoginId <em>Created By User Login Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCreatedByUserLoginId <em>Created By User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Created By User Login Id</em>' attribute.
+	 * @param value the new value of the '<em>Created By User Login Id</em>' reference.
 	 * @see #getCreatedByUserLoginId()
 	 * @generated
 	 */
-	void setCreatedByUserLoginId(String value);
+	void setCreatedByUserLoginId(UserLogin value);
 
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_CurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
-	 * Returns the value of the '<em><b>Custom Time Period Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Custom Time Period Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Custom Time Period Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Custom Time Period Id</em>' attribute.
-	 * @see #setCustomTimePeriodId(String)
+	 * @return the value of the '<em>Custom Time Period Id</em>' reference.
+	 * @see #setCustomTimePeriodId(CustomTimePeriod)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_CustomTimePeriodId()
-	 * @model annotation="mimo-ent-domain frame='CustomTimePeriod'"
+	 * @model keys="customTimePeriodId"
 	 * @generated
 	 */
-	String getCustomTimePeriodId();
+	CustomTimePeriod getCustomTimePeriodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCustomTimePeriodId <em>Custom Time Period Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getCustomTimePeriodId <em>Custom Time Period Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Custom Time Period Id</em>' attribute.
+	 * @param value the new value of the '<em>Custom Time Period Id</em>' reference.
 	 * @see #getCustomTimePeriodId()
 	 * @generated
 	 */
-	void setCustomTimePeriodId(String value);
+	void setCustomTimePeriodId(CustomTimePeriod value);
 
 	/**
 	 * Returns the value of the '<em><b>Forecast Amount</b></em>' attribute.
@@ -202,108 +206,108 @@ public interface SalesForecast extends BizEntity {
 	void setForecastAmount(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Internal Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Internal Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Internal Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Internal Party Id</em>' attribute.
-	 * @see #setInternalPartyId(String)
+	 * @return the value of the '<em>Internal Party Id</em>' reference.
+	 * @see #setInternalPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_InternalPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getInternalPartyId();
+	Party getInternalPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getInternalPartyId <em>Internal Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getInternalPartyId <em>Internal Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Internal Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Internal Party Id</em>' reference.
 	 * @see #getInternalPartyId()
 	 * @generated
 	 */
-	void setInternalPartyId(String value);
+	void setInternalPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Modified By User Login Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Modified By User Login Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Modified By User Login Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Modified By User Login Id</em>' attribute.
-	 * @see #setModifiedByUserLoginId(String)
+	 * @return the value of the '<em>Modified By User Login Id</em>' reference.
+	 * @see #setModifiedByUserLoginId(UserLogin)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_ModifiedByUserLoginId()
-	 * @model annotation="mimo-ent-domain frame='UserLogin'"
+	 * @model keys="userLoginId"
 	 * @generated
 	 */
-	String getModifiedByUserLoginId();
+	UserLogin getModifiedByUserLoginId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getModifiedByUserLoginId <em>Modified By User Login Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getModifiedByUserLoginId <em>Modified By User Login Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Modified By User Login Id</em>' attribute.
+	 * @param value the new value of the '<em>Modified By User Login Id</em>' reference.
 	 * @see #getModifiedByUserLoginId()
 	 * @generated
 	 */
-	void setModifiedByUserLoginId(String value);
+	void setModifiedByUserLoginId(UserLogin value);
 
 	/**
-	 * Returns the value of the '<em><b>Organization Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Organization Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Organization Party Id</em>' attribute.
-	 * @see #setOrganizationPartyId(String)
+	 * @return the value of the '<em>Organization Party Id</em>' reference.
+	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_OrganizationPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getOrganizationPartyId();
+	Party getOrganizationPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getOrganizationPartyId <em>Organization Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getOrganizationPartyId <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Organization Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Organization Party Id</em>' reference.
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 */
-	void setOrganizationPartyId(String value);
+	void setOrganizationPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Sales Forecast Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Sales Forecast Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Sales Forecast Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Sales Forecast Id</em>' attribute.
-	 * @see #setParentSalesForecastId(String)
+	 * @return the value of the '<em>Parent Sales Forecast Id</em>' reference.
+	 * @see #setParentSalesForecastId(SalesForecast)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_ParentSalesForecastId()
-	 * @model annotation="mimo-ent-domain frame='SalesForecast'"
+	 * @model keys="salesForecastId"
 	 * @generated
 	 */
-	String getParentSalesForecastId();
+	SalesForecast getParentSalesForecastId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getParentSalesForecastId <em>Parent Sales Forecast Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.opportunity.SalesForecast#getParentSalesForecastId <em>Parent Sales Forecast Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Sales Forecast Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Sales Forecast Id</em>' reference.
 	 * @see #getParentSalesForecastId()
 	 * @generated
 	 */
-	void setParentSalesForecastId(String value);
+	void setParentSalesForecastId(SalesForecast value);
 
 	/**
 	 * Returns the value of the '<em><b>Percent Of Quota Closed</b></em>' attribute.
@@ -420,7 +424,7 @@ public interface SalesForecast extends BizEntity {
 	 * @return the value of the '<em>Sales Forecast Id</em>' attribute.
 	 * @see #setSalesForecastId(String)
 	 * @see org.abchip.mimo.biz.marketing.opportunity.OpportunityPackage#getSalesForecast_SalesForecastId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

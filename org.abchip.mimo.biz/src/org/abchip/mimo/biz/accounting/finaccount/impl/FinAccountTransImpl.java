@@ -14,14 +14,22 @@ import java.util.Date;
 
 import java.util.List;
 
+import org.abchip.mimo.biz.accounting.finaccount.FinAccount;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTrans;
 import org.abchip.mimo.biz.accounting.finaccount.FinAccountTransType;
 import org.abchip.mimo.biz.accounting.finaccount.FinaccountPackage;
+import org.abchip.mimo.biz.accounting.ledger.GlReconciliation;
+import org.abchip.mimo.biz.accounting.payment.Payment;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.common.status.StatusItem;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -37,17 +45,17 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getEntryDate <em>Entry Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getFinAccountId <em>Fin Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getFinAccountTransTypeId <em>Fin Account Trans Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getGlReconciliationId <em>Gl Reconciliation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getTransactionDate <em>Transaction Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getFinAccountTransTypeId <em>Fin Account Trans Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getFinAccountId <em>Fin Account Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getPaymentId <em>Payment Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getPerformedByPartyId <em>Performed By Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getReasonEnumId <em>Reason Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getStatusId <em>Status Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getTransactionDate <em>Transaction Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getGlReconciliationId <em>Gl Reconciliation Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.finaccount.impl.FinAccountTransImpl#getFinAccountTransAttributes <em>Fin Account Trans Attributes</em>}</li>
  * </ul>
  *
@@ -131,61 +139,6 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 */
 	protected Date entryDate = ENTRY_DATE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountId = FIN_ACCOUNT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFinAccountTransTypeId() <em>Fin Account Trans Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTransTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FIN_ACCOUNT_TRANS_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getFinAccountTransTypeId() <em>Fin Account Trans Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinAccountTransTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String finAccountTransTypeId = FIN_ACCOUNT_TRANS_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getGlReconciliationId() <em>Gl Reconciliation Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlReconciliationId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GL_RECONCILIATION_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getGlReconciliationId() <em>Gl Reconciliation Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlReconciliationId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String glReconciliationId = GL_RECONCILIATION_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,96 +175,6 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 */
 	protected String orderItemSeqId = ORDER_ITEM_SEQ_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPaymentId() <em>Payment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PAYMENT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPaymentId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String paymentId = PAYMENT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getPerformedByPartyId() <em>Performed By Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPerformedByPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PERFORMED_BY_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getPerformedByPartyId() <em>Performed By Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPerformedByPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String performedByPartyId = PERFORMED_BY_PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getReasonEnumId() <em>Reason Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReasonEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REASON_ENUM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getReasonEnumId() <em>Reason Enum Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReasonEnumId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String reasonEnumId = REASON_ENUM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUS_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatusId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statusId = STATUS_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getTransactionDate() <em>Transaction Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -329,6 +192,78 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @ordered
 	 */
 	protected Date transactionDate = TRANSACTION_DATE_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getFinAccountTransTypeId() <em>Fin Account Trans Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinAccountTransTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FinAccountTransType finAccountTransTypeId;
+	/**
+	 * The cached value of the '{@link #getFinAccountId() <em>Fin Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FinAccount finAccountId;
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+	/**
+	 * The cached value of the '{@link #getPaymentId() <em>Payment Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Payment paymentId;
+	/**
+	 * The cached value of the '{@link #getPerformedByPartyId() <em>Performed By Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPerformedByPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party performedByPartyId;
+	/**
+	 * The cached value of the '{@link #getReasonEnumId() <em>Reason Enum Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReasonEnumId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration reasonEnumId;
+	/**
+	 * The cached value of the '{@link #getStatusId() <em>Status Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatusId()
+	 * @generated
+	 * @ordered
+	 */
+	protected StatusItem statusId;
+	/**
+	 * The cached value of the '{@link #getGlReconciliationId() <em>Gl Reconciliation Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlReconciliationId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlReconciliation glReconciliationId;
 
 	/**
 	 * The cached value of the '{@link #getFinAccountTransAttributes() <em>Fin Account Trans Attributes</em>}' attribute list.
@@ -434,7 +369,24 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public String getGlReconciliationId() {
+	public GlReconciliation getGlReconciliationId() {
+		if (glReconciliationId != null && ((EObject)glReconciliationId).eIsProxy()) {
+			InternalEObject oldGlReconciliationId = (InternalEObject)glReconciliationId;
+			glReconciliationId = (GlReconciliation)eResolveProxy(oldGlReconciliationId);
+			if (glReconciliationId != oldGlReconciliationId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID, oldGlReconciliationId, glReconciliationId));
+			}
+		}
+		return glReconciliationId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlReconciliation basicGetGlReconciliationId() {
 		return glReconciliationId;
 	}
 
@@ -444,8 +396,8 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public void setGlReconciliationId(String newGlReconciliationId) {
-		String oldGlReconciliationId = glReconciliationId;
+	public void setGlReconciliationId(GlReconciliation newGlReconciliationId) {
+		GlReconciliation oldGlReconciliationId = glReconciliationId;
 		glReconciliationId = newGlReconciliationId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID, oldGlReconciliationId, glReconciliationId));
@@ -503,7 +455,24 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -513,8 +482,8 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID, oldPartyId, partyId));
@@ -526,7 +495,24 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public String getPaymentId() {
+	public Payment getPaymentId() {
+		if (paymentId != null && ((EObject)paymentId).eIsProxy()) {
+			InternalEObject oldPaymentId = (InternalEObject)paymentId;
+			paymentId = (Payment)eResolveProxy(oldPaymentId);
+			if (paymentId != oldPaymentId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID, oldPaymentId, paymentId));
+			}
+		}
+		return paymentId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Payment basicGetPaymentId() {
 		return paymentId;
 	}
 
@@ -536,8 +522,8 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public void setPaymentId(String newPaymentId) {
-		String oldPaymentId = paymentId;
+	public void setPaymentId(Payment newPaymentId) {
+		Payment oldPaymentId = paymentId;
 		paymentId = newPaymentId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID, oldPaymentId, paymentId));
@@ -549,7 +535,24 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public String getPerformedByPartyId() {
+	public Party getPerformedByPartyId() {
+		if (performedByPartyId != null && ((EObject)performedByPartyId).eIsProxy()) {
+			InternalEObject oldPerformedByPartyId = (InternalEObject)performedByPartyId;
+			performedByPartyId = (Party)eResolveProxy(oldPerformedByPartyId);
+			if (performedByPartyId != oldPerformedByPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID, oldPerformedByPartyId, performedByPartyId));
+			}
+		}
+		return performedByPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPerformedByPartyId() {
 		return performedByPartyId;
 	}
 
@@ -559,8 +562,8 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public void setPerformedByPartyId(String newPerformedByPartyId) {
-		String oldPerformedByPartyId = performedByPartyId;
+	public void setPerformedByPartyId(Party newPerformedByPartyId) {
+		Party oldPerformedByPartyId = performedByPartyId;
 		performedByPartyId = newPerformedByPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID, oldPerformedByPartyId, performedByPartyId));
@@ -572,7 +575,24 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public String getReasonEnumId() {
+	public Enumeration getReasonEnumId() {
+		if (reasonEnumId != null && ((EObject)reasonEnumId).eIsProxy()) {
+			InternalEObject oldReasonEnumId = (InternalEObject)reasonEnumId;
+			reasonEnumId = (Enumeration)eResolveProxy(oldReasonEnumId);
+			if (reasonEnumId != oldReasonEnumId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
+			}
+		}
+		return reasonEnumId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetReasonEnumId() {
 		return reasonEnumId;
 	}
 
@@ -582,8 +602,8 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public void setReasonEnumId(String newReasonEnumId) {
-		String oldReasonEnumId = reasonEnumId;
+	public void setReasonEnumId(Enumeration newReasonEnumId) {
+		Enumeration oldReasonEnumId = reasonEnumId;
 		reasonEnumId = newReasonEnumId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID, oldReasonEnumId, reasonEnumId));
@@ -595,7 +615,24 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public String getStatusId() {
+	public StatusItem getStatusId() {
+		if (statusId != null && ((EObject)statusId).eIsProxy()) {
+			InternalEObject oldStatusId = (InternalEObject)statusId;
+			statusId = (StatusItem)eResolveProxy(oldStatusId);
+			if (statusId != oldStatusId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID, oldStatusId, statusId));
+			}
+		}
+		return statusId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatusItem basicGetStatusId() {
 		return statusId;
 	}
 
@@ -605,8 +642,8 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public void setStatusId(String newStatusId) {
-		String oldStatusId = statusId;
+	public void setStatusId(StatusItem newStatusId) {
+		StatusItem oldStatusId = statusId;
 		statusId = newStatusId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID, oldStatusId, statusId));
@@ -678,7 +715,24 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountTransTypeId() {
+	public FinAccountTransType getFinAccountTransTypeId() {
+		if (finAccountTransTypeId != null && ((EObject)finAccountTransTypeId).eIsProxy()) {
+			InternalEObject oldFinAccountTransTypeId = (InternalEObject)finAccountTransTypeId;
+			finAccountTransTypeId = (FinAccountTransType)eResolveProxy(oldFinAccountTransTypeId);
+			if (finAccountTransTypeId != oldFinAccountTransTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID, oldFinAccountTransTypeId, finAccountTransTypeId));
+			}
+		}
+		return finAccountTransTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccountTransType basicGetFinAccountTransTypeId() {
 		return finAccountTransTypeId;
 	}
 
@@ -688,8 +742,8 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountTransTypeId(String newFinAccountTransTypeId) {
-		String oldFinAccountTransTypeId = finAccountTransTypeId;
+	public void setFinAccountTransTypeId(FinAccountTransType newFinAccountTransTypeId) {
+		FinAccountTransType oldFinAccountTransTypeId = finAccountTransTypeId;
 		finAccountTransTypeId = newFinAccountTransTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID, oldFinAccountTransTypeId, finAccountTransTypeId));
@@ -701,7 +755,24 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public String getFinAccountId() {
+	public FinAccount getFinAccountId() {
+		if (finAccountId != null && ((EObject)finAccountId).eIsProxy()) {
+			InternalEObject oldFinAccountId = (InternalEObject)finAccountId;
+			finAccountId = (FinAccount)eResolveProxy(oldFinAccountId);
+			if (finAccountId != oldFinAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
+			}
+		}
+		return finAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinAccount basicGetFinAccountId() {
 		return finAccountId;
 	}
 
@@ -711,8 +782,8 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 	 * @generated
 	 */
 	@Override
-	public void setFinAccountId(String newFinAccountId) {
-		String oldFinAccountId = finAccountId;
+	public void setFinAccountId(FinAccount newFinAccountId) {
+		FinAccount oldFinAccountId = finAccountId;
 		finAccountId = newFinAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID, oldFinAccountId, finAccountId));
@@ -757,28 +828,36 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 				return getComments();
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ENTRY_DATE:
 				return getEntryDate();
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID:
-				return getFinAccountId();
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID:
-				return getFinAccountTransTypeId();
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID:
-				return getGlReconciliationId();
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ORDER_ID:
 				return getOrderId();
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID:
-				return getPartyId();
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID:
-				return getPaymentId();
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID:
-				return getPerformedByPartyId();
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID:
-				return getReasonEnumId();
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID:
-				return getStatusId();
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__TRANSACTION_DATE:
 				return getTransactionDate();
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID:
+				if (resolve) return getFinAccountTransTypeId();
+				return basicGetFinAccountTransTypeId();
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID:
+				if (resolve) return getFinAccountId();
+				return basicGetFinAccountId();
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID:
+				if (resolve) return getPaymentId();
+				return basicGetPaymentId();
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID:
+				if (resolve) return getPerformedByPartyId();
+				return basicGetPerformedByPartyId();
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID:
+				if (resolve) return getReasonEnumId();
+				return basicGetReasonEnumId();
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID:
+				if (resolve) return getStatusId();
+				return basicGetStatusId();
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID:
+				if (resolve) return getGlReconciliationId();
+				return basicGetGlReconciliationId();
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES:
 				return getFinAccountTransAttributes();
 		}
@@ -806,38 +885,38 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ENTRY_DATE:
 				setEntryDate((Date)newValue);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID:
-				setFinAccountId((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID:
-				setFinAccountTransTypeId((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID:
-				setGlReconciliationId((String)newValue);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ORDER_ID:
 				setOrderId((String)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID:
-				setPaymentId((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID:
-				setPerformedByPartyId((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID:
-				setReasonEnumId((String)newValue);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID:
-				setStatusId((String)newValue);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__TRANSACTION_DATE:
 				setTransactionDate((Date)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID:
+				setFinAccountTransTypeId((FinAccountTransType)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID:
+				setPartyId((Party)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID:
+				setPaymentId((Payment)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID:
+				setPerformedByPartyId((Party)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID:
+				setReasonEnumId((Enumeration)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID:
+				setStatusId((StatusItem)newValue);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID:
+				setGlReconciliationId((GlReconciliation)newValue);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES:
 				getFinAccountTransAttributes().clear();
@@ -867,38 +946,38 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ENTRY_DATE:
 				setEntryDate(ENTRY_DATE_EDEFAULT);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID:
-				setFinAccountId(FIN_ACCOUNT_ID_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID:
-				setFinAccountTransTypeId(FIN_ACCOUNT_TRANS_TYPE_ID_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID:
-				setGlReconciliationId(GL_RECONCILIATION_ID_EDEFAULT);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ORDER_ID:
 				setOrderId(ORDER_ID_EDEFAULT);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID:
-				setPaymentId(PAYMENT_ID_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID:
-				setPerformedByPartyId(PERFORMED_BY_PARTY_ID_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID:
-				setReasonEnumId(REASON_ENUM_ID_EDEFAULT);
-				return;
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID:
-				setStatusId(STATUS_ID_EDEFAULT);
-				return;
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__TRANSACTION_DATE:
 				setTransactionDate(TRANSACTION_DATE_EDEFAULT);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID:
+				setFinAccountTransTypeId((FinAccountTransType)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID:
+				setFinAccountId((FinAccount)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID:
+				setPartyId((Party)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID:
+				setPaymentId((Payment)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID:
+				setPerformedByPartyId((Party)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID:
+				setReasonEnumId((Enumeration)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID:
+				setStatusId((StatusItem)null);
+				return;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID:
+				setGlReconciliationId((GlReconciliation)null);
 				return;
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES:
 				getFinAccountTransAttributes().clear();
@@ -923,28 +1002,28 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ENTRY_DATE:
 				return ENTRY_DATE_EDEFAULT == null ? entryDate != null : !ENTRY_DATE_EDEFAULT.equals(entryDate);
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID:
-				return FIN_ACCOUNT_ID_EDEFAULT == null ? finAccountId != null : !FIN_ACCOUNT_ID_EDEFAULT.equals(finAccountId);
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID:
-				return FIN_ACCOUNT_TRANS_TYPE_ID_EDEFAULT == null ? finAccountTransTypeId != null : !FIN_ACCOUNT_TRANS_TYPE_ID_EDEFAULT.equals(finAccountTransTypeId);
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID:
-				return GL_RECONCILIATION_ID_EDEFAULT == null ? glReconciliationId != null : !GL_RECONCILIATION_ID_EDEFAULT.equals(glReconciliationId);
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ORDER_ID:
 				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID:
-				return PAYMENT_ID_EDEFAULT == null ? paymentId != null : !PAYMENT_ID_EDEFAULT.equals(paymentId);
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID:
-				return PERFORMED_BY_PARTY_ID_EDEFAULT == null ? performedByPartyId != null : !PERFORMED_BY_PARTY_ID_EDEFAULT.equals(performedByPartyId);
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID:
-				return REASON_ENUM_ID_EDEFAULT == null ? reasonEnumId != null : !REASON_ENUM_ID_EDEFAULT.equals(reasonEnumId);
-			case FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID:
-				return STATUS_ID_EDEFAULT == null ? statusId != null : !STATUS_ID_EDEFAULT.equals(statusId);
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__TRANSACTION_DATE:
 				return TRANSACTION_DATE_EDEFAULT == null ? transactionDate != null : !TRANSACTION_DATE_EDEFAULT.equals(transactionDate);
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_TYPE_ID:
+				return finAccountTransTypeId != null;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_ID:
+				return finAccountId != null;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PARTY_ID:
+				return partyId != null;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PAYMENT_ID:
+				return paymentId != null;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__PERFORMED_BY_PARTY_ID:
+				return performedByPartyId != null;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__REASON_ENUM_ID:
+				return reasonEnumId != null;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__STATUS_ID:
+				return statusId != null;
+			case FinaccountPackage.FIN_ACCOUNT_TRANS__GL_RECONCILIATION_ID:
+				return glReconciliationId != null;
 			case FinaccountPackage.FIN_ACCOUNT_TRANS__FIN_ACCOUNT_TRANS_ATTRIBUTES:
 				return finAccountTransAttributes != null && !finAccountTransAttributes.isEmpty();
 		}
@@ -969,26 +1048,10 @@ public class FinAccountTransImpl extends BizEntityTypedImpl<FinAccountTransType>
 		result.append(comments);
 		result.append(", entryDate: ");
 		result.append(entryDate);
-		result.append(", finAccountId: ");
-		result.append(finAccountId);
-		result.append(", finAccountTransTypeId: ");
-		result.append(finAccountTransTypeId);
-		result.append(", glReconciliationId: ");
-		result.append(glReconciliationId);
 		result.append(", orderId: ");
 		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
-		result.append(", partyId: ");
-		result.append(partyId);
-		result.append(", paymentId: ");
-		result.append(paymentId);
-		result.append(", performedByPartyId: ");
-		result.append(performedByPartyId);
-		result.append(", reasonEnumId: ");
-		result.append(reasonEnumId);
-		result.append(", statusId: ");
-		result.append(statusId);
 		result.append(", transactionDate: ");
 		result.append(transactionDate);
 		result.append(", finAccountTransAttributes: ");

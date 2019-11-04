@@ -10,10 +10,13 @@ package org.abchip.mimo.biz.order.order.impl;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.order.OrderPackage;
 import org.abchip.mimo.biz.order.order.OrderProductPromoCode;
+import org.abchip.mimo.biz.product.promo.ProductPromoCode;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -57,24 +60,14 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 	protected String orderId = ORDER_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProductPromoCodeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PRODUCT_PROMO_CODE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPromoCodeId() <em>Product Promo Code Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPromoCodeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPromoCodeId = PRODUCT_PROMO_CODE_ID_EDEFAULT;
+	protected ProductPromoCode productPromoCodeId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +117,24 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 	 * @generated
 	 */
 	@Override
-	public String getProductPromoCodeId() {
+	public ProductPromoCode getProductPromoCodeId() {
+		if (productPromoCodeId != null && ((EObject)productPromoCodeId).eIsProxy()) {
+			InternalEObject oldProductPromoCodeId = (InternalEObject)productPromoCodeId;
+			productPromoCodeId = (ProductPromoCode)eResolveProxy(oldProductPromoCodeId);
+			if (productPromoCodeId != oldProductPromoCodeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
+			}
+		}
+		return productPromoCodeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPromoCode basicGetProductPromoCodeId() {
 		return productPromoCodeId;
 	}
 
@@ -134,8 +144,8 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 	 * @generated
 	 */
 	@Override
-	public void setProductPromoCodeId(String newProductPromoCodeId) {
-		String oldProductPromoCodeId = productPromoCodeId;
+	public void setProductPromoCodeId(ProductPromoCode newProductPromoCodeId) {
+		ProductPromoCode oldProductPromoCodeId = productPromoCodeId;
 		productPromoCodeId = newProductPromoCodeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID, oldProductPromoCodeId, productPromoCodeId));
@@ -152,7 +162,8 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 			case OrderPackage.ORDER_PRODUCT_PROMO_CODE__ORDER_ID:
 				return getOrderId();
 			case OrderPackage.ORDER_PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
-				return getProductPromoCodeId();
+				if (resolve) return getProductPromoCodeId();
+				return basicGetProductPromoCodeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,7 +180,7 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 				setOrderId((String)newValue);
 				return;
 			case OrderPackage.ORDER_PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId((String)newValue);
+				setProductPromoCodeId((ProductPromoCode)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +198,7 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 				setOrderId(ORDER_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
-				setProductPromoCodeId(PRODUCT_PROMO_CODE_ID_EDEFAULT);
+				setProductPromoCodeId((ProductPromoCode)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,7 +215,7 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 			case OrderPackage.ORDER_PRODUCT_PROMO_CODE__ORDER_ID:
 				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_PRODUCT_PROMO_CODE__PRODUCT_PROMO_CODE_ID:
-				return PRODUCT_PROMO_CODE_ID_EDEFAULT == null ? productPromoCodeId != null : !PRODUCT_PROMO_CODE_ID_EDEFAULT.equals(productPromoCodeId);
+				return productPromoCodeId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,8 +232,6 @@ public class OrderProductPromoCodeImpl extends BizEntityImpl implements OrderPro
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (orderId: ");
 		result.append(orderId);
-		result.append(", productPromoCodeId: ");
-		result.append(productPromoCodeId);
 		result.append(')');
 		return result.toString();
 	}

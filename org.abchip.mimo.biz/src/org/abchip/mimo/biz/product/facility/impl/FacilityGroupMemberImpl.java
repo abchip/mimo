@@ -10,11 +10,14 @@ package org.abchip.mimo.biz.product.facility.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.product.facility.FacilityGroup;
 import org.abchip.mimo.biz.product.facility.FacilityGroupMember;
 import org.abchip.mimo.biz.product.facility.FacilityPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,10 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupMemberImpl#getFacilityId <em>Facility Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupMemberImpl#getFacilityGroupId <em>Facility Group Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupMemberImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupMemberImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupMemberImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.facility.impl.FacilityGroupMemberImpl#getFacilityGroupId <em>Facility Group Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,26 +62,6 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 	 * @ordered
 	 */
 	protected String facilityId = FACILITY_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getFacilityGroupId() <em>Facility Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String FACILITY_GROUP_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFacilityGroupId() <em>Facility Group Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFacilityGroupId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String facilityGroupId = FACILITY_GROUP_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -139,6 +122,16 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFacilityGroupId() <em>Facility Group Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFacilityGroupId()
+	 * @generated
+	 * @ordered
+	 */
+	protected FacilityGroup facilityGroupId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,7 +250,24 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 	 * @generated
 	 */
 	@Override
-	public String getFacilityGroupId() {
+	public FacilityGroup getFacilityGroupId() {
+		if (facilityGroupId != null && ((EObject)facilityGroupId).eIsProxy()) {
+			InternalEObject oldFacilityGroupId = (InternalEObject)facilityGroupId;
+			facilityGroupId = (FacilityGroup)eResolveProxy(oldFacilityGroupId);
+			if (facilityGroupId != oldFacilityGroupId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID, oldFacilityGroupId, facilityGroupId));
+			}
+		}
+		return facilityGroupId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FacilityGroup basicGetFacilityGroupId() {
 		return facilityGroupId;
 	}
 
@@ -267,8 +277,8 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 	 * @generated
 	 */
 	@Override
-	public void setFacilityGroupId(String newFacilityGroupId) {
-		String oldFacilityGroupId = facilityGroupId;
+	public void setFacilityGroupId(FacilityGroup newFacilityGroupId) {
+		FacilityGroup oldFacilityGroupId = facilityGroupId;
 		facilityGroupId = newFacilityGroupId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID, oldFacilityGroupId, facilityGroupId));
@@ -284,14 +294,15 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 		switch (featureID) {
 			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_ID:
 				return getFacilityId();
-			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID:
-				return getFacilityGroupId();
 			case FacilityPackage.FACILITY_GROUP_MEMBER__FROM_DATE:
 				return getFromDate();
 			case FacilityPackage.FACILITY_GROUP_MEMBER__SEQUENCE_NUM:
 				return getSequenceNum();
 			case FacilityPackage.FACILITY_GROUP_MEMBER__THRU_DATE:
 				return getThruDate();
+			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID:
+				if (resolve) return getFacilityGroupId();
+				return basicGetFacilityGroupId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,9 +318,6 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_ID:
 				setFacilityId((String)newValue);
 				return;
-			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID:
-				setFacilityGroupId((String)newValue);
-				return;
 			case FacilityPackage.FACILITY_GROUP_MEMBER__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
@@ -318,6 +326,9 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 				return;
 			case FacilityPackage.FACILITY_GROUP_MEMBER__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID:
+				setFacilityGroupId((FacilityGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,9 +345,6 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_ID:
 				setFacilityId(FACILITY_ID_EDEFAULT);
 				return;
-			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID:
-				setFacilityGroupId(FACILITY_GROUP_ID_EDEFAULT);
-				return;
 			case FacilityPackage.FACILITY_GROUP_MEMBER__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
@@ -345,6 +353,9 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 				return;
 			case FacilityPackage.FACILITY_GROUP_MEMBER__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID:
+				setFacilityGroupId((FacilityGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -360,14 +371,14 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 		switch (featureID) {
 			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_ID:
 				return FACILITY_ID_EDEFAULT == null ? facilityId != null : !FACILITY_ID_EDEFAULT.equals(facilityId);
-			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID:
-				return FACILITY_GROUP_ID_EDEFAULT == null ? facilityGroupId != null : !FACILITY_GROUP_ID_EDEFAULT.equals(facilityGroupId);
 			case FacilityPackage.FACILITY_GROUP_MEMBER__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FacilityPackage.FACILITY_GROUP_MEMBER__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case FacilityPackage.FACILITY_GROUP_MEMBER__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FacilityPackage.FACILITY_GROUP_MEMBER__FACILITY_GROUP_ID:
+				return facilityGroupId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -384,8 +395,6 @@ public class FacilityGroupMemberImpl extends BizEntityImpl implements FacilityGr
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (facilityId: ");
 		result.append(facilityId);
-		result.append(", facilityGroupId: ");
-		result.append(facilityGroupId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", sequenceNum: ");

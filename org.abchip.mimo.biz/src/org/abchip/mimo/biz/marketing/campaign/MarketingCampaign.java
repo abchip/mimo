@@ -14,6 +14,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.status.StatusItem;
+import org.abchip.mimo.biz.common.uom.Uom;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +33,6 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getCampaignSummary <em>Campaign Summary</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getConvertedLeads <em>Converted Leads</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getCreatedByUserLogin <em>Created By User Login</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getEstimatedCost <em>Estimated Cost</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getExpectedResponsePercent <em>Expected Response Percent</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getExpectedRevenue <em>Expected Revenue</em>}</li>
@@ -39,10 +40,11 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#isIsActive <em>Is Active</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getNumSent <em>Num Sent</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getParentCampaignId <em>Parent Campaign Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStartDate <em>Start Date</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStatusId <em>Status Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getParentCampaignId <em>Parent Campaign Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStatusId <em>Status Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getMarketingCampaignNotes <em>Marketing Campaign Notes</em>}</li>
  * </ul>
  *
@@ -208,30 +210,30 @@ public interface MarketingCampaign extends BizEntity {
 	void setCreatedByUserLogin(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_CurrencyUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Estimated Cost</b></em>' attribute.
@@ -400,7 +402,7 @@ public interface MarketingCampaign extends BizEntity {
 	 * @return the value of the '<em>Marketing Campaign Id</em>' attribute.
 	 * @see #setMarketingCampaignId(String)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_MarketingCampaignId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -443,30 +445,30 @@ public interface MarketingCampaign extends BizEntity {
 	void setNumSent(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Campaign Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Campaign Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Campaign Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Campaign Id</em>' attribute.
-	 * @see #setParentCampaignId(String)
+	 * @return the value of the '<em>Parent Campaign Id</em>' reference.
+	 * @see #setParentCampaignId(MarketingCampaign)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_ParentCampaignId()
-	 * @model annotation="mimo-ent-domain frame='MarketingCampaign'"
+	 * @model keys="marketingCampaignId"
 	 * @generated
 	 */
-	String getParentCampaignId();
+	MarketingCampaign getParentCampaignId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getParentCampaignId <em>Parent Campaign Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getParentCampaignId <em>Parent Campaign Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Campaign Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Campaign Id</em>' reference.
 	 * @see #getParentCampaignId()
 	 * @generated
 	 */
-	void setParentCampaignId(String value);
+	void setParentCampaignId(MarketingCampaign value);
 
 	/**
 	 * Returns the value of the '<em><b>Start Date</b></em>' attribute.
@@ -495,30 +497,30 @@ public interface MarketingCampaign extends BizEntity {
 	void setStartDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Status Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status Id</em>' attribute.
-	 * @see #setStatusId(String)
+	 * @return the value of the '<em>Status Id</em>' reference.
+	 * @see #setStatusId(StatusItem)
 	 * @see org.abchip.mimo.biz.marketing.campaign.CampaignPackage#getMarketingCampaign_StatusId()
-	 * @model annotation="mimo-ent-domain frame='StatusItem'"
+	 * @model keys="statusId"
 	 * @generated
 	 */
-	String getStatusId();
+	StatusItem getStatusId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStatusId <em>Status Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.marketing.campaign.MarketingCampaign#getStatusId <em>Status Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status Id</em>' attribute.
+	 * @param value the new value of the '<em>Status Id</em>' reference.
 	 * @see #getStatusId()
 	 * @generated
 	 */
-	void setStatusId(String value);
+	void setStatusId(StatusItem value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

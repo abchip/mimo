@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.order.requirement;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,8 +20,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getDesiredFeatureId <em>Desired Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#isOptionalInd <em>Optional Ind</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getRequirementId <em>Requirement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
@@ -40,7 +41,8 @@ public interface DesiredFeature extends BizEntity {
 	 * @return the value of the '<em>Desired Feature Id</em>' attribute.
 	 * @see #setDesiredFeatureId(String)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_DesiredFeatureId()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getDesiredFeatureId();
@@ -56,57 +58,56 @@ public interface DesiredFeature extends BizEntity {
 	void setDesiredFeatureId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Feature Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Feature Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Feature Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Feature Id</em>' attribute.
-	 * @see #setProductFeatureId(String)
+	 * @return the value of the '<em>Product Feature Id</em>' reference.
+	 * @see #setProductFeatureId(ProductFeature)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_ProductFeatureId()
-	 * @model annotation="mimo-ent-domain frame='ProductFeature'"
+	 * @model keys="productFeatureId"
 	 * @generated
 	 */
-	String getProductFeatureId();
+	ProductFeature getProductFeatureId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getProductFeatureId <em>Product Feature Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getProductFeatureId <em>Product Feature Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Feature Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Feature Id</em>' reference.
 	 * @see #getProductFeatureId()
 	 * @generated
 	 */
-	void setProductFeatureId(String value);
+	void setProductFeatureId(ProductFeature value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Requirement Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requirement Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement Id</em>' attribute.
-	 * @see #setRequirementId(String)
+	 * @return the value of the '<em>Requirement Id</em>' reference.
+	 * @see #setRequirementId(Requirement)
 	 * @see org.abchip.mimo.biz.order.requirement.RequirementPackage#getDesiredFeature_RequirementId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Requirement'"
+	 * @model keys="requirementId"
 	 * @generated
 	 */
-	String getRequirementId();
+	Requirement getRequirementId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getRequirementId <em>Requirement Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.order.requirement.DesiredFeature#getRequirementId <em>Requirement Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement Id</em>' attribute.
+	 * @param value the new value of the '<em>Requirement Id</em>' reference.
 	 * @see #getRequirementId()
 	 * @generated
 	 */
-	void setRequirementId(String value);
+	void setRequirementId(Requirement value);
 
 	/**
 	 * Returns the value of the '<em><b>Optional Ind</b></em>' attribute.

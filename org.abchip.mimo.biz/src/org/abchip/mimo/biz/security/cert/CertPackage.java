@@ -50,7 +50,7 @@ public interface CertPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-security-cert";
+	String eNS_PREFIX = "biz-cert";
 
 	/**
 	 * The singleton instance of the package.

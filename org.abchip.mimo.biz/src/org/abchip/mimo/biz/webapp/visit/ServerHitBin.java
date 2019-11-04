@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.webapp.visit;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.content.content.Content;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,14 +25,14 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getBinEndDateTime <em>Bin End Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getBinStartDateTime <em>Bin Start Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getContentId <em>Content Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getHitTypeId <em>Hit Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getInternalContentId <em>Internal Content Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getMaxTimeMillis <em>Max Time Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getMinTimeMillis <em>Min Time Millis</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getNumberHits <em>Number Hits</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getServerHostName <em>Server Host Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getServerIpAddress <em>Server Ip Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getTotalTimeMillis <em>Total Time Millis</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getHitTypeId <em>Hit Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getInternalContentId <em>Internal Content Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin()
@@ -145,56 +146,56 @@ public interface ServerHitBin extends BizEntity {
 	void setContentId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Hit Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Hit Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Hit Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hit Type Id</em>' attribute.
-	 * @see #setHitTypeId(String)
+	 * @return the value of the '<em>Hit Type Id</em>' reference.
+	 * @see #setHitTypeId(ServerHitType)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_HitTypeId()
-	 * @model annotation="mimo-ent-domain frame='ServerHitType'"
+	 * @model keys="hitTypeId"
 	 * @generated
 	 */
-	String getHitTypeId();
+	ServerHitType getHitTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getHitTypeId <em>Hit Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getHitTypeId <em>Hit Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hit Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Hit Type Id</em>' reference.
 	 * @see #getHitTypeId()
 	 * @generated
 	 */
-	void setHitTypeId(String value);
+	void setHitTypeId(ServerHitType value);
 
 	/**
-	 * Returns the value of the '<em><b>Internal Content Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Internal Content Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Internal Content Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Internal Content Id</em>' attribute.
-	 * @see #setInternalContentId(String)
+	 * @return the value of the '<em>Internal Content Id</em>' reference.
+	 * @see #setInternalContentId(Content)
 	 * @see org.abchip.mimo.biz.webapp.visit.VisitPackage#getServerHitBin_InternalContentId()
-	 * @model annotation="mimo-ent-domain frame='Content'"
+	 * @model keys="contentId"
 	 * @generated
 	 */
-	String getInternalContentId();
+	Content getInternalContentId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getInternalContentId <em>Internal Content Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.webapp.visit.ServerHitBin#getInternalContentId <em>Internal Content Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Internal Content Id</em>' attribute.
+	 * @param value the new value of the '<em>Internal Content Id</em>' reference.
 	 * @see #getInternalContentId()
 	 * @generated
 	 */
-	void setInternalContentId(String value);
+	void setInternalContentId(Content value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Time Millis</b></em>' attribute.

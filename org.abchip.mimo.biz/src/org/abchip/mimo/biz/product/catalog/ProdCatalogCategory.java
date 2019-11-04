@@ -10,6 +10,7 @@ package org.abchip.mimo.biz.product.catalog;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntityTyped;
+import org.abchip.mimo.biz.product.category.ProductCategory;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,11 +22,11 @@ import org.abchip.mimo.biz.BizEntityTyped;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProdCatalogId <em>Prod Catalog Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProductCategoryId <em>Product Category Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProdCatalogCategoryTypeId <em>Prod Catalog Category Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProductCategoryId <em>Product Category Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProdCatalogCategoryTypeId <em>Prod Catalog Category Type Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory()
@@ -44,7 +45,8 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -60,31 +62,30 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	void setFromDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Product Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Product Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Product Category Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Category Id</em>' attribute.
-	 * @see #setProductCategoryId(String)
+	 * @return the value of the '<em>Product Category Id</em>' reference.
+	 * @see #setProductCategoryId(ProductCategory)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_ProductCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductCategory'"
+	 * @model keys="productCategoryId"
 	 * @generated
 	 */
-	String getProductCategoryId();
+	ProductCategory getProductCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProductCategoryId <em>Product Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProductCategoryId <em>Product Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Product Category Id</em>' reference.
 	 * @see #getProductCategoryId()
 	 * @generated
 	 */
-	void setProductCategoryId(String value);
+	void setProductCategoryId(ProductCategory value);
 
 	/**
 	 * Returns the value of the '<em><b>Sequence Num</b></em>' attribute.
@@ -149,8 +150,8 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	 * @return the value of the '<em>Prod Catalog Id</em>' attribute.
 	 * @see #setProdCatalogId(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_ProdCatalogId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProdCatalog'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProdCatalogId();
@@ -166,30 +167,29 @@ public interface ProdCatalogCategory extends BizEntityTyped<ProdCatalogCategoryT
 	void setProdCatalogId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Prod Catalog Category Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Prod Catalog Category Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Prod Catalog Category Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Prod Catalog Category Type Id</em>' attribute.
-	 * @see #setProdCatalogCategoryTypeId(String)
+	 * @return the value of the '<em>Prod Catalog Category Type Id</em>' reference.
+	 * @see #setProdCatalogCategoryTypeId(ProdCatalogCategoryType)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategory_ProdCatalogCategoryTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProdCatalogCategoryType'"
+	 * @model keys="prodCatalogCategoryTypeId"
 	 * @generated
 	 */
-	String getProdCatalogCategoryTypeId();
+	ProdCatalogCategoryType getProdCatalogCategoryTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProdCatalogCategoryTypeId <em>Prod Catalog Category Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategory#getProdCatalogCategoryTypeId <em>Prod Catalog Category Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prod Catalog Category Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Prod Catalog Category Type Id</em>' reference.
 	 * @see #getProdCatalogCategoryTypeId()
 	 * @generated
 	 */
-	void setProdCatalogCategoryTypeId(String value);
+	void setProdCatalogCategoryTypeId(ProdCatalogCategoryType value);
 
 } // ProdCatalogCategory

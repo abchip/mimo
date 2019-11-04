@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,8 +25,6 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getPartyId <em>Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getCurrencyUomId <em>Currency Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getMinimumOrderQuantity <em>Minimum Order Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getAvailableFromDate <em>Available From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getAgreementId <em>Agreement Id</em>}</li>
@@ -34,14 +34,16 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getLastPrice <em>Last Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getOrderQtyIncrements <em>Order Qty Increments</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getShippingPrice <em>Shipping Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getStandardLeadTimeDays <em>Standard Lead Time Days</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierProductId <em>Supplier Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierProductName <em>Supplier Product Name</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierRatingTypeId <em>Supplier Rating Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getUnitsIncluded <em>Units Included</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getPartyId <em>Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierRatingTypeId <em>Supplier Rating Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getCurrencyUomId <em>Currency Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getQuantityUomId <em>Quantity Uom Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct()
@@ -112,7 +114,8 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Available From Date</em>' attribute.
 	 * @see #setAvailableFromDate(Date)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_AvailableFromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getAvailableFromDate();
@@ -206,31 +209,30 @@ public interface SupplierProduct extends BizEntity {
 	void setComments(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Currency Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Currency Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Currency Uom Id</em>' attribute.
-	 * @see #setCurrencyUomId(String)
+	 * @return the value of the '<em>Currency Uom Id</em>' reference.
+	 * @see #setCurrencyUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_CurrencyUomId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getCurrencyUomId();
+	Uom getCurrencyUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getCurrencyUomId <em>Currency Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getCurrencyUomId <em>Currency Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Currency Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Currency Uom Id</em>' reference.
 	 * @see #getCurrencyUomId()
 	 * @generated
 	 */
-	void setCurrencyUomId(String value);
+	void setCurrencyUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Last Price</b></em>' attribute.
@@ -269,7 +271,8 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Minimum Order Quantity</em>' attribute.
 	 * @see #setMinimumOrderQuantity(BigDecimal)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_MinimumOrderQuantity()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	BigDecimal getMinimumOrderQuantity();
@@ -311,57 +314,56 @@ public interface SupplierProduct extends BizEntity {
 	void setOrderQtyIncrements(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(Party)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_PartyId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	Party getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Quantity Uom Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Quantity Uom Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quantity Uom Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Quantity Uom Id</em>' attribute.
-	 * @see #setQuantityUomId(String)
+	 * @return the value of the '<em>Quantity Uom Id</em>' reference.
+	 * @see #setQuantityUomId(Uom)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_QuantityUomId()
-	 * @model annotation="mimo-ent-domain frame='Uom'"
+	 * @model keys="uomId"
 	 * @generated
 	 */
-	String getQuantityUomId();
+	Uom getQuantityUomId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getQuantityUomId <em>Quantity Uom Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getQuantityUomId <em>Quantity Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity Uom Id</em>' attribute.
+	 * @param value the new value of the '<em>Quantity Uom Id</em>' reference.
 	 * @see #getQuantityUomId()
 	 * @generated
 	 */
-	void setQuantityUomId(String value);
+	void setQuantityUomId(Uom value);
 
 	/**
 	 * Returns the value of the '<em><b>Shipping Price</b></em>' attribute.
@@ -504,8 +506,8 @@ public interface SupplierProduct extends BizEntity {
 	 * @return the value of the '<em>Product Id</em>' attribute.
 	 * @see #setProductId(String)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_ProductId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Product'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductId();
@@ -521,55 +523,55 @@ public interface SupplierProduct extends BizEntity {
 	void setProductId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Supplier Pref Order Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Supplier Pref Order Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Supplier Pref Order Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Supplier Pref Order Id</em>' attribute.
-	 * @see #setSupplierPrefOrderId(String)
+	 * @return the value of the '<em>Supplier Pref Order Id</em>' reference.
+	 * @see #setSupplierPrefOrderId(SupplierPrefOrder)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_SupplierPrefOrderId()
-	 * @model annotation="mimo-ent-domain frame='SupplierPrefOrder'"
+	 * @model keys="supplierPrefOrderId"
 	 * @generated
 	 */
-	String getSupplierPrefOrderId();
+	SupplierPrefOrder getSupplierPrefOrderId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierPrefOrderId <em>Supplier Pref Order Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Supplier Pref Order Id</em>' attribute.
+	 * @param value the new value of the '<em>Supplier Pref Order Id</em>' reference.
 	 * @see #getSupplierPrefOrderId()
 	 * @generated
 	 */
-	void setSupplierPrefOrderId(String value);
+	void setSupplierPrefOrderId(SupplierPrefOrder value);
 
 	/**
-	 * Returns the value of the '<em><b>Supplier Rating Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Supplier Rating Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Supplier Rating Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Supplier Rating Type Id</em>' attribute.
-	 * @see #setSupplierRatingTypeId(String)
+	 * @return the value of the '<em>Supplier Rating Type Id</em>' reference.
+	 * @see #setSupplierRatingTypeId(SupplierRatingType)
 	 * @see org.abchip.mimo.biz.product.supplier.SupplierPackage#getSupplierProduct_SupplierRatingTypeId()
-	 * @model annotation="mimo-ent-domain frame='SupplierRatingType'"
+	 * @model keys="supplierRatingTypeId"
 	 * @generated
 	 */
-	String getSupplierRatingTypeId();
+	SupplierRatingType getSupplierRatingTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierRatingTypeId <em>Supplier Rating Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.supplier.SupplierProduct#getSupplierRatingTypeId <em>Supplier Rating Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Supplier Rating Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Supplier Rating Type Id</em>' reference.
 	 * @see #getSupplierRatingTypeId()
 	 * @generated
 	 */
-	void setSupplierRatingTypeId(String value);
+	void setSupplierRatingTypeId(SupplierRatingType value);
 
 } // SupplierProduct

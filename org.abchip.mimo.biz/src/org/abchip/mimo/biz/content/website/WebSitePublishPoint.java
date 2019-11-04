@@ -100,7 +100,6 @@ public interface WebSitePublishPoint extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.website.WebsitePackage#getWebSitePublishPoint_ContentId()
 	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Content'"
 	 * @generated
 	 */
 	String getContentId();

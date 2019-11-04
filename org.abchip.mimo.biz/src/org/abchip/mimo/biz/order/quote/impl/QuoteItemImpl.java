@@ -11,13 +11,22 @@ import java.math.BigDecimal;
 
 import java.util.Date;
 
+import org.abchip.mimo.biz.common.uom.Uom;
+import org.abchip.mimo.biz.humanres.ability.SkillType;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.quote.QuoteItem;
 import org.abchip.mimo.biz.order.quote.QuotePackage;
+import org.abchip.mimo.biz.order.request.CustRequest;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.abchip.mimo.biz.product.product.Product;
+import org.abchip.mimo.biz.workeffort.workeffort.DeliverableType;
+import org.abchip.mimo.biz.workeffort.workeffort.WorkEffort;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -32,23 +41,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getQuoteItemSeqId <em>Quote Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getConfigId <em>Config Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getCustRequestItemSeqId <em>Cust Request Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getDeliverableTypeId <em>Deliverable Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getEstimatedDeliveryDate <em>Estimated Delivery Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#isIsPromo <em>Is Promo</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getLeadTimeDays <em>Lead Time Days</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getQuoteUnitPrice <em>Quote Unit Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getReservLength <em>Reserv Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getReservPersons <em>Reserv Persons</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getReservStart <em>Reserv Start</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getSelectedAmount <em>Selected Amount</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getDeliverableTypeId <em>Deliverable Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getSkillTypeId <em>Skill Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getUomId <em>Uom Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.quote.impl.QuoteItemImpl#getCustRequestId <em>Cust Request Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -140,26 +149,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	protected String configId = CONFIG_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CUST_REQUEST_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCustRequestId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String custRequestId = CUST_REQUEST_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCustRequestItemSeqId() <em>Cust Request Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -178,26 +167,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @ordered
 	 */
 	protected String custRequestItemSeqId = CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDeliverableTypeId() <em>Deliverable Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DELIVERABLE_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDeliverableTypeId() <em>Deliverable Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeliverableTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deliverableTypeId = DELIVERABLE_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEstimatedDeliveryDate() <em>Estimated Delivery Date</em>}' attribute.
@@ -258,46 +227,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @ordered
 	 */
 	protected long leadTimeDays = LEAD_TIME_DAYS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
@@ -420,64 +349,74 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	protected BigDecimal selectedAmount = SELECTED_AMOUNT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductFeatureId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductFeature productFeatureId;
+
+	/**
+	 * The cached value of the '{@link #getDeliverableTypeId() <em>Deliverable Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeliverableTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeliverableType deliverableTypeId;
+
+	/**
+	 * The cached value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSkillTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SKILL_TYPE_ID_EDEFAULT = null;
+	protected SkillType skillTypeId;
 
 	/**
-	 * The cached value of the '{@link #getSkillTypeId() <em>Skill Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSkillTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String skillTypeId = SKILL_TYPE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_ID_EDEFAULT = null;
+	protected Uom uomId;
 
 	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUomId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uomId = UOM_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
+	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWorkEffortId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WORK_EFFORT_ID_EDEFAULT = null;
+	protected WorkEffort workEffortId;
 
 	/**
-	 * The cached value of the '{@link #getWorkEffortId() <em>Work Effort Id</em>}' attribute.
+	 * The cached value of the '{@link #getCustRequestId() <em>Cust Request Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWorkEffortId()
+	 * @see #getCustRequestId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String workEffortId = WORK_EFFORT_ID_EDEFAULT;
+	protected CustRequest custRequestId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -550,7 +489,24 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public String getCustRequestId() {
+	public CustRequest getCustRequestId() {
+		if (custRequestId != null && ((EObject)custRequestId).eIsProxy()) {
+			InternalEObject oldCustRequestId = (InternalEObject)custRequestId;
+			custRequestId = (CustRequest)eResolveProxy(oldCustRequestId);
+			if (custRequestId != oldCustRequestId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
+			}
+		}
+		return custRequestId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustRequest basicGetCustRequestId() {
 		return custRequestId;
 	}
 
@@ -560,8 +516,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public void setCustRequestId(String newCustRequestId) {
-		String oldCustRequestId = custRequestId;
+	public void setCustRequestId(CustRequest newCustRequestId) {
+		CustRequest oldCustRequestId = custRequestId;
 		custRequestId = newCustRequestId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID, oldCustRequestId, custRequestId));
@@ -596,7 +552,24 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public String getDeliverableTypeId() {
+	public DeliverableType getDeliverableTypeId() {
+		if (deliverableTypeId != null && ((EObject)deliverableTypeId).eIsProxy()) {
+			InternalEObject oldDeliverableTypeId = (InternalEObject)deliverableTypeId;
+			deliverableTypeId = (DeliverableType)eResolveProxy(oldDeliverableTypeId);
+			if (deliverableTypeId != oldDeliverableTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
+			}
+		}
+		return deliverableTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeliverableType basicGetDeliverableTypeId() {
 		return deliverableTypeId;
 	}
 
@@ -606,8 +579,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public void setDeliverableTypeId(String newDeliverableTypeId) {
-		String oldDeliverableTypeId = deliverableTypeId;
+	public void setDeliverableTypeId(DeliverableType newDeliverableTypeId) {
+		DeliverableType oldDeliverableTypeId = deliverableTypeId;
 		deliverableTypeId = newDeliverableTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID, oldDeliverableTypeId, deliverableTypeId));
@@ -688,7 +661,24 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureId() {
+	public ProductFeature getProductFeatureId() {
+		if (productFeatureId != null && ((EObject)productFeatureId).eIsProxy()) {
+			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
+			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
+			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
+			}
+		}
+		return productFeatureId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature basicGetProductFeatureId() {
 		return productFeatureId;
 	}
 
@@ -698,8 +688,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
+	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
@@ -711,7 +701,24 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -721,8 +728,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__PRODUCT_ID, oldProductId, productId));
@@ -918,7 +925,24 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public String getSkillTypeId() {
+	public SkillType getSkillTypeId() {
+		if (skillTypeId != null && ((EObject)skillTypeId).eIsProxy()) {
+			InternalEObject oldSkillTypeId = (InternalEObject)skillTypeId;
+			skillTypeId = (SkillType)eResolveProxy(oldSkillTypeId);
+			if (skillTypeId != oldSkillTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
+			}
+		}
+		return skillTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SkillType basicGetSkillTypeId() {
 		return skillTypeId;
 	}
 
@@ -928,8 +952,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public void setSkillTypeId(String newSkillTypeId) {
-		String oldSkillTypeId = skillTypeId;
+	public void setSkillTypeId(SkillType newSkillTypeId) {
+		SkillType oldSkillTypeId = skillTypeId;
 		skillTypeId = newSkillTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__SKILL_TYPE_ID, oldSkillTypeId, skillTypeId));
@@ -941,7 +965,24 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -951,8 +992,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__UOM_ID, oldUomId, uomId));
@@ -964,7 +1005,24 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public String getWorkEffortId() {
+	public WorkEffort getWorkEffortId() {
+		if (workEffortId != null && ((EObject)workEffortId).eIsProxy()) {
+			InternalEObject oldWorkEffortId = (InternalEObject)workEffortId;
+			workEffortId = (WorkEffort)eResolveProxy(oldWorkEffortId);
+			if (workEffortId != oldWorkEffortId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuotePackage.QUOTE_ITEM__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
+			}
+		}
+		return workEffortId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkEffort basicGetWorkEffortId() {
 		return workEffortId;
 	}
 
@@ -974,8 +1032,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 	 * @generated
 	 */
 	@Override
-	public void setWorkEffortId(String newWorkEffortId) {
-		String oldWorkEffortId = workEffortId;
+	public void setWorkEffortId(WorkEffort newWorkEffortId) {
+		WorkEffort oldWorkEffortId = workEffortId;
 		workEffortId = newWorkEffortId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QuotePackage.QUOTE_ITEM__WORK_EFFORT_ID, oldWorkEffortId, workEffortId));
@@ -997,22 +1055,14 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 				return getComments();
 			case QuotePackage.QUOTE_ITEM__CONFIG_ID:
 				return getConfigId();
-			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID:
-				return getCustRequestId();
 			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
 				return getCustRequestItemSeqId();
-			case QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID:
-				return getDeliverableTypeId();
 			case QuotePackage.QUOTE_ITEM__ESTIMATED_DELIVERY_DATE:
 				return getEstimatedDeliveryDate();
 			case QuotePackage.QUOTE_ITEM__IS_PROMO:
 				return isIsPromo();
 			case QuotePackage.QUOTE_ITEM__LEAD_TIME_DAYS:
 				return getLeadTimeDays();
-			case QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID:
-				return getProductFeatureId();
-			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
-				return getProductId();
 			case QuotePackage.QUOTE_ITEM__QUANTITY:
 				return getQuantity();
 			case QuotePackage.QUOTE_ITEM__QUOTE_UNIT_PRICE:
@@ -1025,12 +1075,27 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 				return getReservStart();
 			case QuotePackage.QUOTE_ITEM__SELECTED_AMOUNT:
 				return getSelectedAmount();
+			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID:
+				if (resolve) return getProductFeatureId();
+				return basicGetProductFeatureId();
+			case QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID:
+				if (resolve) return getDeliverableTypeId();
+				return basicGetDeliverableTypeId();
 			case QuotePackage.QUOTE_ITEM__SKILL_TYPE_ID:
-				return getSkillTypeId();
+				if (resolve) return getSkillTypeId();
+				return basicGetSkillTypeId();
 			case QuotePackage.QUOTE_ITEM__UOM_ID:
-				return getUomId();
+				if (resolve) return getUomId();
+				return basicGetUomId();
 			case QuotePackage.QUOTE_ITEM__WORK_EFFORT_ID:
-				return getWorkEffortId();
+				if (resolve) return getWorkEffortId();
+				return basicGetWorkEffortId();
+			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID:
+				if (resolve) return getCustRequestId();
+				return basicGetCustRequestId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1055,14 +1120,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			case QuotePackage.QUOTE_ITEM__CONFIG_ID:
 				setConfigId((String)newValue);
 				return;
-			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID:
-				setCustRequestId((String)newValue);
-				return;
 			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
 				setCustRequestItemSeqId((String)newValue);
-				return;
-			case QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID:
-				setDeliverableTypeId((String)newValue);
 				return;
 			case QuotePackage.QUOTE_ITEM__ESTIMATED_DELIVERY_DATE:
 				setEstimatedDeliveryDate((Date)newValue);
@@ -1072,12 +1131,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 				return;
 			case QuotePackage.QUOTE_ITEM__LEAD_TIME_DAYS:
 				setLeadTimeDays((Long)newValue);
-				return;
-			case QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID:
-				setProductFeatureId((String)newValue);
-				return;
-			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
-				setProductId((String)newValue);
 				return;
 			case QuotePackage.QUOTE_ITEM__QUANTITY:
 				setQuantity((BigDecimal)newValue);
@@ -1097,14 +1150,26 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			case QuotePackage.QUOTE_ITEM__SELECTED_AMOUNT:
 				setSelectedAmount((BigDecimal)newValue);
 				return;
+			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)newValue);
+				return;
+			case QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID:
+				setDeliverableTypeId((DeliverableType)newValue);
+				return;
 			case QuotePackage.QUOTE_ITEM__SKILL_TYPE_ID:
-				setSkillTypeId((String)newValue);
+				setSkillTypeId((SkillType)newValue);
 				return;
 			case QuotePackage.QUOTE_ITEM__UOM_ID:
-				setUomId((String)newValue);
+				setUomId((Uom)newValue);
 				return;
 			case QuotePackage.QUOTE_ITEM__WORK_EFFORT_ID:
-				setWorkEffortId((String)newValue);
+				setWorkEffortId((WorkEffort)newValue);
+				return;
+			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1130,14 +1195,8 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			case QuotePackage.QUOTE_ITEM__CONFIG_ID:
 				setConfigId(CONFIG_ID_EDEFAULT);
 				return;
-			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID:
-				setCustRequestId(CUST_REQUEST_ID_EDEFAULT);
-				return;
 			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
 				setCustRequestItemSeqId(CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT);
-				return;
-			case QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID:
-				setDeliverableTypeId(DELIVERABLE_TYPE_ID_EDEFAULT);
 				return;
 			case QuotePackage.QUOTE_ITEM__ESTIMATED_DELIVERY_DATE:
 				setEstimatedDeliveryDate(ESTIMATED_DELIVERY_DATE_EDEFAULT);
@@ -1147,12 +1206,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 				return;
 			case QuotePackage.QUOTE_ITEM__LEAD_TIME_DAYS:
 				setLeadTimeDays(LEAD_TIME_DAYS_EDEFAULT);
-				return;
-			case QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID:
-				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
-				return;
-			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case QuotePackage.QUOTE_ITEM__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
@@ -1172,14 +1225,26 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 			case QuotePackage.QUOTE_ITEM__SELECTED_AMOUNT:
 				setSelectedAmount(SELECTED_AMOUNT_EDEFAULT);
 				return;
+			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)null);
+				return;
+			case QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID:
+				setDeliverableTypeId((DeliverableType)null);
+				return;
 			case QuotePackage.QUOTE_ITEM__SKILL_TYPE_ID:
-				setSkillTypeId(SKILL_TYPE_ID_EDEFAULT);
+				setSkillTypeId((SkillType)null);
 				return;
 			case QuotePackage.QUOTE_ITEM__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
+				setUomId((Uom)null);
 				return;
 			case QuotePackage.QUOTE_ITEM__WORK_EFFORT_ID:
-				setWorkEffortId(WORK_EFFORT_ID_EDEFAULT);
+				setWorkEffortId((WorkEffort)null);
+				return;
+			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID:
+				setCustRequestId((CustRequest)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1201,22 +1266,14 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 				return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 			case QuotePackage.QUOTE_ITEM__CONFIG_ID:
 				return CONFIG_ID_EDEFAULT == null ? configId != null : !CONFIG_ID_EDEFAULT.equals(configId);
-			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID:
-				return CUST_REQUEST_ID_EDEFAULT == null ? custRequestId != null : !CUST_REQUEST_ID_EDEFAULT.equals(custRequestId);
 			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ITEM_SEQ_ID:
 				return CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT == null ? custRequestItemSeqId != null : !CUST_REQUEST_ITEM_SEQ_ID_EDEFAULT.equals(custRequestItemSeqId);
-			case QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID:
-				return DELIVERABLE_TYPE_ID_EDEFAULT == null ? deliverableTypeId != null : !DELIVERABLE_TYPE_ID_EDEFAULT.equals(deliverableTypeId);
 			case QuotePackage.QUOTE_ITEM__ESTIMATED_DELIVERY_DATE:
 				return ESTIMATED_DELIVERY_DATE_EDEFAULT == null ? estimatedDeliveryDate != null : !ESTIMATED_DELIVERY_DATE_EDEFAULT.equals(estimatedDeliveryDate);
 			case QuotePackage.QUOTE_ITEM__IS_PROMO:
 				return isPromo != IS_PROMO_EDEFAULT;
 			case QuotePackage.QUOTE_ITEM__LEAD_TIME_DAYS:
 				return leadTimeDays != LEAD_TIME_DAYS_EDEFAULT;
-			case QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID:
-				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
-			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case QuotePackage.QUOTE_ITEM__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case QuotePackage.QUOTE_ITEM__QUOTE_UNIT_PRICE:
@@ -1229,12 +1286,20 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 				return RESERV_START_EDEFAULT == null ? reservStart != null : !RESERV_START_EDEFAULT.equals(reservStart);
 			case QuotePackage.QUOTE_ITEM__SELECTED_AMOUNT:
 				return SELECTED_AMOUNT_EDEFAULT == null ? selectedAmount != null : !SELECTED_AMOUNT_EDEFAULT.equals(selectedAmount);
+			case QuotePackage.QUOTE_ITEM__PRODUCT_ID:
+				return productId != null;
+			case QuotePackage.QUOTE_ITEM__PRODUCT_FEATURE_ID:
+				return productFeatureId != null;
+			case QuotePackage.QUOTE_ITEM__DELIVERABLE_TYPE_ID:
+				return deliverableTypeId != null;
 			case QuotePackage.QUOTE_ITEM__SKILL_TYPE_ID:
-				return SKILL_TYPE_ID_EDEFAULT == null ? skillTypeId != null : !SKILL_TYPE_ID_EDEFAULT.equals(skillTypeId);
+				return skillTypeId != null;
 			case QuotePackage.QUOTE_ITEM__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+				return uomId != null;
 			case QuotePackage.QUOTE_ITEM__WORK_EFFORT_ID:
-				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
+				return workEffortId != null;
+			case QuotePackage.QUOTE_ITEM__CUST_REQUEST_ID:
+				return custRequestId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1257,22 +1322,14 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 		result.append(comments);
 		result.append(", configId: ");
 		result.append(configId);
-		result.append(", custRequestId: ");
-		result.append(custRequestId);
 		result.append(", custRequestItemSeqId: ");
 		result.append(custRequestItemSeqId);
-		result.append(", deliverableTypeId: ");
-		result.append(deliverableTypeId);
 		result.append(", estimatedDeliveryDate: ");
 		result.append(estimatedDeliveryDate);
 		result.append(", isPromo: ");
 		result.append(isPromo);
 		result.append(", leadTimeDays: ");
 		result.append(leadTimeDays);
-		result.append(", productFeatureId: ");
-		result.append(productFeatureId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", quoteUnitPrice: ");
@@ -1285,12 +1342,6 @@ public class QuoteItemImpl extends BizEntityImpl implements QuoteItem {
 		result.append(reservStart);
 		result.append(", selectedAmount: ");
 		result.append(selectedAmount);
-		result.append(", skillTypeId: ");
-		result.append(skillTypeId);
-		result.append(", uomId: ");
-		result.append(uomId);
-		result.append(", workEffortId: ");
-		result.append(workEffortId);
 		result.append(')');
 		return result.toString();
 	}

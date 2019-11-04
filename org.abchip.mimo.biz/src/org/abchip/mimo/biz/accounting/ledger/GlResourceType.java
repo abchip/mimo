@@ -75,7 +75,7 @@ public interface GlResourceType extends BizEntity {
 	 * @return the value of the '<em>Gl Resource Type Id</em>' attribute.
 	 * @see #setGlResourceTypeId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlResourceType_GlResourceTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

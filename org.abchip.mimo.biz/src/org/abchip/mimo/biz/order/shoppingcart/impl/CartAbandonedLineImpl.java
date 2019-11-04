@@ -14,10 +14,14 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.shoppingcart.CartAbandonedLine;
 import org.abchip.mimo.biz.order.shoppingcart.ShoppingcartPackage;
+import org.abchip.mimo.biz.product.catalog.ProdCatalog;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,8 +35,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getVisitId <em>Visit Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getCartAbandonedLineSeqId <em>Cart Abandoned Line Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getConfigId <em>Config Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getReserv2ndPPPerc <em>Reserv2nd PP Perc</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getReservLength <em>Reserv Length</em>}</li>
@@ -42,6 +44,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getTotalWithAdjustments <em>Total With Adjustments</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getUnitPrice <em>Unit Price</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#isWasReserved <em>Was Reserved</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.shoppingcart.impl.CartAbandonedLineImpl#getProdCatalogId <em>Prod Catalog Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,46 +115,6 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 * @ordered
 	 */
 	protected String configId = CONFIG_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PROD_CATALOG_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProdCatalogId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String prodCatalogId = PROD_CATALOG_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
@@ -333,6 +297,26 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	protected boolean wasReserved = WAS_RESERVED_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+
+	/**
+	 * The cached value of the '{@link #getProdCatalogId() <em>Prod Catalog Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProdCatalogId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProdCatalog prodCatalogId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -403,7 +387,24 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 * @generated
 	 */
 	@Override
-	public String getProdCatalogId() {
+	public ProdCatalog getProdCatalogId() {
+		if (prodCatalogId != null && ((EObject)prodCatalogId).eIsProxy()) {
+			InternalEObject oldProdCatalogId = (InternalEObject)prodCatalogId;
+			prodCatalogId = (ProdCatalog)eResolveProxy(oldProdCatalogId);
+			if (prodCatalogId != oldProdCatalogId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
+			}
+		}
+		return prodCatalogId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProdCatalog basicGetProdCatalogId() {
 		return prodCatalogId;
 	}
 
@@ -413,8 +414,8 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 * @generated
 	 */
 	@Override
-	public void setProdCatalogId(String newProdCatalogId) {
-		String oldProdCatalogId = prodCatalogId;
+	public void setProdCatalogId(ProdCatalog newProdCatalogId) {
+		ProdCatalog oldProdCatalogId = prodCatalogId;
 		prodCatalogId = newProdCatalogId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID, oldProdCatalogId, prodCatalogId));
@@ -426,7 +427,24 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -436,8 +454,8 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID, oldProductId, productId));
@@ -687,10 +705,6 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 				return getCartAbandonedLineSeqId();
 			case ShoppingcartPackage.CART_ABANDONED_LINE__CONFIG_ID:
 				return getConfigId();
-			case ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID:
-				return getProdCatalogId();
-			case ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID:
-				return getProductId();
 			case ShoppingcartPackage.CART_ABANDONED_LINE__QUANTITY:
 				return getQuantity();
 			case ShoppingcartPackage.CART_ABANDONED_LINE__RESERV2ND_PP_PERC:
@@ -709,6 +723,12 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 				return getUnitPrice();
 			case ShoppingcartPackage.CART_ABANDONED_LINE__WAS_RESERVED:
 				return isWasReserved();
+			case ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID:
+				if (resolve) return getProdCatalogId();
+				return basicGetProdCatalogId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -729,12 +749,6 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 				return;
 			case ShoppingcartPackage.CART_ABANDONED_LINE__CONFIG_ID:
 				setConfigId((String)newValue);
-				return;
-			case ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID:
-				setProdCatalogId((String)newValue);
-				return;
-			case ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID:
-				setProductId((String)newValue);
 				return;
 			case ShoppingcartPackage.CART_ABANDONED_LINE__QUANTITY:
 				setQuantity((BigDecimal)newValue);
@@ -763,6 +777,12 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 			case ShoppingcartPackage.CART_ABANDONED_LINE__WAS_RESERVED:
 				setWasReserved((Boolean)newValue);
 				return;
+			case ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID:
+				setProdCatalogId((ProdCatalog)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -783,12 +803,6 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 				return;
 			case ShoppingcartPackage.CART_ABANDONED_LINE__CONFIG_ID:
 				setConfigId(CONFIG_ID_EDEFAULT);
-				return;
-			case ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID:
-				setProdCatalogId(PROD_CATALOG_ID_EDEFAULT);
-				return;
-			case ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
 			case ShoppingcartPackage.CART_ABANDONED_LINE__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
@@ -817,6 +831,12 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 			case ShoppingcartPackage.CART_ABANDONED_LINE__WAS_RESERVED:
 				setWasReserved(WAS_RESERVED_EDEFAULT);
 				return;
+			case ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID:
+				setProdCatalogId((ProdCatalog)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -835,10 +855,6 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 				return CART_ABANDONED_LINE_SEQ_ID_EDEFAULT == null ? cartAbandonedLineSeqId != null : !CART_ABANDONED_LINE_SEQ_ID_EDEFAULT.equals(cartAbandonedLineSeqId);
 			case ShoppingcartPackage.CART_ABANDONED_LINE__CONFIG_ID:
 				return CONFIG_ID_EDEFAULT == null ? configId != null : !CONFIG_ID_EDEFAULT.equals(configId);
-			case ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID:
-				return PROD_CATALOG_ID_EDEFAULT == null ? prodCatalogId != null : !PROD_CATALOG_ID_EDEFAULT.equals(prodCatalogId);
-			case ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case ShoppingcartPackage.CART_ABANDONED_LINE__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 			case ShoppingcartPackage.CART_ABANDONED_LINE__RESERV2ND_PP_PERC:
@@ -857,6 +873,10 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 				return UNIT_PRICE_EDEFAULT == null ? unitPrice != null : !UNIT_PRICE_EDEFAULT.equals(unitPrice);
 			case ShoppingcartPackage.CART_ABANDONED_LINE__WAS_RESERVED:
 				return wasReserved != WAS_RESERVED_EDEFAULT;
+			case ShoppingcartPackage.CART_ABANDONED_LINE__PRODUCT_ID:
+				return productId != null;
+			case ShoppingcartPackage.CART_ABANDONED_LINE__PROD_CATALOG_ID:
+				return prodCatalogId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -877,10 +897,6 @@ public class CartAbandonedLineImpl extends BizEntityImpl implements CartAbandone
 		result.append(cartAbandonedLineSeqId);
 		result.append(", configId: ");
 		result.append(configId);
-		result.append(", prodCatalogId: ");
-		result.append(prodCatalogId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", reserv2ndPPPerc: ");

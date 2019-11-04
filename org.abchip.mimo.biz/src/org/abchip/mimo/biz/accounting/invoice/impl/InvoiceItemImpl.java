@@ -12,10 +12,21 @@ import java.math.BigDecimal;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItem;
 import org.abchip.mimo.biz.accounting.invoice.InvoiceItemType;
 import org.abchip.mimo.biz.accounting.invoice.InvoicePackage;
+import org.abchip.mimo.biz.accounting.ledger.GlAccount;
+import org.abchip.mimo.biz.accounting.tax.TaxAuthorityRateProduct;
+import org.abchip.mimo.biz.common.geo.Geo;
+import org.abchip.mimo.biz.common.uom.Uom;
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
+import org.abchip.mimo.biz.marketing.opportunity.SalesOpportunity;
+import org.abchip.mimo.biz.party.party.Party;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
+import org.abchip.mimo.biz.product.inventory.InventoryItem;
+import org.abchip.mimo.biz.product.product.Product;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -30,21 +41,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getOverrideOrgPartyId <em>Override Org Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getParentInvoiceId <em>Parent Invoice Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getParentInvoiceItemSeqId <em>Parent Invoice Item Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getProductId <em>Product Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#isTaxableFlag <em>Taxable Flag</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getInvoiceItemTypeId <em>Invoice Item Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getInventoryItemId <em>Inventory Item Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getUomId <em>Uom Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getOverrideGlAccountId <em>Override Gl Account Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getTaxAuthPartyId <em>Tax Auth Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getOverrideOrgPartyId <em>Override Org Party Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.invoice.impl.InvoiceItemImpl#getSalesOpportunityId <em>Sales Opportunity Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -127,78 +138,6 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVENTORY_ITEM_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInventoryItemId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inventoryItemId = INVENTORY_ITEM_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INVOICE_ITEM_TYPE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInvoiceItemTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String invoiceItemTypeId = INVOICE_ITEM_TYPE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getOverrideGlAccountId() <em>Override Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OVERRIDE_GL_ACCOUNT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOverrideGlAccountId() <em>Override Gl Account Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideGlAccountId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String overrideGlAccountId = OVERRIDE_GL_ACCOUNT_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getOverrideOrgPartyId() <em>Override Org Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideOrgPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OVERRIDE_ORG_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getOverrideOrgPartyId() <em>Override Org Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOverrideOrgPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String overrideOrgPartyId = OVERRIDE_ORG_PARTY_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getParentInvoiceId() <em>Parent Invoice Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -235,42 +174,6 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	protected String parentInvoiceItemSeqId = PARENT_INVOICE_ITEM_SEQ_ID_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productId = PRODUCT_ID_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -288,78 +191,6 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @ordered
 	 */
 	protected BigDecimal quantity = QUANTITY_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesOpportunityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SALES_OPPORTUNITY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSalesOpportunityId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String salesOpportunityId = SALES_OPPORTUNITY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getTaxAuthGeoId() <em>Tax Auth Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TAX_AUTH_GEO_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTaxAuthGeoId() <em>Tax Auth Geo Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthGeoId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String taxAuthGeoId = TAX_AUTH_GEO_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getTaxAuthPartyId() <em>Tax Auth Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TAX_AUTH_PARTY_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTaxAuthPartyId() <em>Tax Auth Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String taxAuthPartyId = TAX_AUTH_PARTY_ID_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getTaxAuthorityRateSeqId() <em>Tax Authority Rate Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthorityRateSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getTaxAuthorityRateSeqId() <em>Tax Authority Rate Seq Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTaxAuthorityRateSeqId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String taxAuthorityRateSeqId = TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isTaxableFlag() <em>Taxable Flag</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -379,23 +210,104 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 */
 	protected boolean taxableFlag = TAXABLE_FLAG_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getInvoiceItemTypeId() <em>Invoice Item Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUomId()
+	 * @see #getInvoiceItemTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UOM_ID_EDEFAULT = null;
+	protected InvoiceItemType invoiceItemTypeId;
 	/**
-	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' attribute.
+	 * The cached value of the '{@link #getInventoryItemId() <em>Inventory Item Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInventoryItemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected InventoryItem inventoryItemId;
+	/**
+	 * The cached value of the '{@link #getProductId() <em>Product Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product productId;
+	/**
+	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductFeatureId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductFeature productFeatureId;
+	/**
+	 * The cached value of the '{@link #getUomId() <em>Uom Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUomId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String uomId = UOM_ID_EDEFAULT;
+	protected Uom uomId;
+	/**
+	 * The cached value of the '{@link #getOverrideGlAccountId() <em>Override Gl Account Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOverrideGlAccountId()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlAccount overrideGlAccountId;
+	/**
+	 * The cached value of the '{@link #getTaxAuthPartyId() <em>Tax Auth Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaxAuthPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party taxAuthPartyId;
+	/**
+	 * The cached value of the '{@link #getTaxAuthGeoId() <em>Tax Auth Geo Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaxAuthGeoId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Geo taxAuthGeoId;
+	/**
+	 * The cached value of the '{@link #getTaxAuthorityRateSeqId() <em>Tax Authority Rate Seq Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaxAuthorityRateSeqId()
+	 * @generated
+	 * @ordered
+	 */
+	protected TaxAuthorityRateProduct taxAuthorityRateSeqId;
+	/**
+	 * The cached value of the '{@link #getOverrideOrgPartyId() <em>Override Org Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOverrideOrgPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party overrideOrgPartyId;
+	/**
+	 * The cached value of the '{@link #getSalesOpportunityId() <em>Sales Opportunity Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSalesOpportunityId()
+	 * @generated
+	 * @ordered
+	 */
+	protected SalesOpportunity salesOpportunityId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -468,7 +380,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getInventoryItemId() {
+	public InventoryItem getInventoryItemId() {
+		if (inventoryItemId != null && ((EObject)inventoryItemId).eIsProxy()) {
+			InternalEObject oldInventoryItemId = (InternalEObject)inventoryItemId;
+			inventoryItemId = (InventoryItem)eResolveProxy(oldInventoryItemId);
+			if (inventoryItemId != oldInventoryItemId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
+			}
+		}
+		return inventoryItemId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InventoryItem basicGetInventoryItemId() {
 		return inventoryItemId;
 	}
 
@@ -478,8 +407,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setInventoryItemId(String newInventoryItemId) {
-		String oldInventoryItemId = inventoryItemId;
+	public void setInventoryItemId(InventoryItem newInventoryItemId) {
+		InventoryItem oldInventoryItemId = inventoryItemId;
 		inventoryItemId = newInventoryItemId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID, oldInventoryItemId, inventoryItemId));
@@ -514,7 +443,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getOverrideGlAccountId() {
+	public GlAccount getOverrideGlAccountId() {
+		if (overrideGlAccountId != null && ((EObject)overrideGlAccountId).eIsProxy()) {
+			InternalEObject oldOverrideGlAccountId = (InternalEObject)overrideGlAccountId;
+			overrideGlAccountId = (GlAccount)eResolveProxy(oldOverrideGlAccountId);
+			if (overrideGlAccountId != oldOverrideGlAccountId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
+			}
+		}
+		return overrideGlAccountId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlAccount basicGetOverrideGlAccountId() {
 		return overrideGlAccountId;
 	}
 
@@ -524,8 +470,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setOverrideGlAccountId(String newOverrideGlAccountId) {
-		String oldOverrideGlAccountId = overrideGlAccountId;
+	public void setOverrideGlAccountId(GlAccount newOverrideGlAccountId) {
+		GlAccount oldOverrideGlAccountId = overrideGlAccountId;
 		overrideGlAccountId = newOverrideGlAccountId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID, oldOverrideGlAccountId, overrideGlAccountId));
@@ -537,7 +483,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getOverrideOrgPartyId() {
+	public Party getOverrideOrgPartyId() {
+		if (overrideOrgPartyId != null && ((EObject)overrideOrgPartyId).eIsProxy()) {
+			InternalEObject oldOverrideOrgPartyId = (InternalEObject)overrideOrgPartyId;
+			overrideOrgPartyId = (Party)eResolveProxy(oldOverrideOrgPartyId);
+			if (overrideOrgPartyId != oldOverrideOrgPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID, oldOverrideOrgPartyId, overrideOrgPartyId));
+			}
+		}
+		return overrideOrgPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetOverrideOrgPartyId() {
 		return overrideOrgPartyId;
 	}
 
@@ -547,8 +510,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setOverrideOrgPartyId(String newOverrideOrgPartyId) {
-		String oldOverrideOrgPartyId = overrideOrgPartyId;
+	public void setOverrideOrgPartyId(Party newOverrideOrgPartyId) {
+		Party oldOverrideOrgPartyId = overrideOrgPartyId;
 		overrideOrgPartyId = newOverrideOrgPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID, oldOverrideOrgPartyId, overrideOrgPartyId));
@@ -606,7 +569,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureId() {
+	public ProductFeature getProductFeatureId() {
+		if (productFeatureId != null && ((EObject)productFeatureId).eIsProxy()) {
+			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
+			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
+			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
+			}
+		}
+		return productFeatureId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature basicGetProductFeatureId() {
 		return productFeatureId;
 	}
 
@@ -616,8 +596,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
+	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
@@ -629,7 +609,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getProductId() {
+	public Product getProductId() {
+		if (productId != null && ((EObject)productId).eIsProxy()) {
+			InternalEObject oldProductId = (InternalEObject)productId;
+			productId = (Product)eResolveProxy(oldProductId);
+			if (productId != oldProductId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__PRODUCT_ID, oldProductId, productId));
+			}
+		}
+		return productId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product basicGetProductId() {
 		return productId;
 	}
 
@@ -639,8 +636,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setProductId(String newProductId) {
-		String oldProductId = productId;
+	public void setProductId(Product newProductId) {
+		Product oldProductId = productId;
 		productId = newProductId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__PRODUCT_ID, oldProductId, productId));
@@ -675,7 +672,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getSalesOpportunityId() {
+	public SalesOpportunity getSalesOpportunityId() {
+		if (salesOpportunityId != null && ((EObject)salesOpportunityId).eIsProxy()) {
+			InternalEObject oldSalesOpportunityId = (InternalEObject)salesOpportunityId;
+			salesOpportunityId = (SalesOpportunity)eResolveProxy(oldSalesOpportunityId);
+			if (salesOpportunityId != oldSalesOpportunityId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
+			}
+		}
+		return salesOpportunityId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SalesOpportunity basicGetSalesOpportunityId() {
 		return salesOpportunityId;
 	}
 
@@ -685,8 +699,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setSalesOpportunityId(String newSalesOpportunityId) {
-		String oldSalesOpportunityId = salesOpportunityId;
+	public void setSalesOpportunityId(SalesOpportunity newSalesOpportunityId) {
+		SalesOpportunity oldSalesOpportunityId = salesOpportunityId;
 		salesOpportunityId = newSalesOpportunityId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID, oldSalesOpportunityId, salesOpportunityId));
@@ -698,7 +712,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getTaxAuthGeoId() {
+	public Geo getTaxAuthGeoId() {
+		if (taxAuthGeoId != null && ((EObject)taxAuthGeoId).eIsProxy()) {
+			InternalEObject oldTaxAuthGeoId = (InternalEObject)taxAuthGeoId;
+			taxAuthGeoId = (Geo)eResolveProxy(oldTaxAuthGeoId);
+			if (taxAuthGeoId != oldTaxAuthGeoId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
+			}
+		}
+		return taxAuthGeoId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Geo basicGetTaxAuthGeoId() {
 		return taxAuthGeoId;
 	}
 
@@ -708,8 +739,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setTaxAuthGeoId(String newTaxAuthGeoId) {
-		String oldTaxAuthGeoId = taxAuthGeoId;
+	public void setTaxAuthGeoId(Geo newTaxAuthGeoId) {
+		Geo oldTaxAuthGeoId = taxAuthGeoId;
 		taxAuthGeoId = newTaxAuthGeoId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID, oldTaxAuthGeoId, taxAuthGeoId));
@@ -721,7 +752,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getTaxAuthPartyId() {
+	public Party getTaxAuthPartyId() {
+		if (taxAuthPartyId != null && ((EObject)taxAuthPartyId).eIsProxy()) {
+			InternalEObject oldTaxAuthPartyId = (InternalEObject)taxAuthPartyId;
+			taxAuthPartyId = (Party)eResolveProxy(oldTaxAuthPartyId);
+			if (taxAuthPartyId != oldTaxAuthPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
+			}
+		}
+		return taxAuthPartyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetTaxAuthPartyId() {
 		return taxAuthPartyId;
 	}
 
@@ -731,8 +779,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setTaxAuthPartyId(String newTaxAuthPartyId) {
-		String oldTaxAuthPartyId = taxAuthPartyId;
+	public void setTaxAuthPartyId(Party newTaxAuthPartyId) {
+		Party oldTaxAuthPartyId = taxAuthPartyId;
 		taxAuthPartyId = newTaxAuthPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID, oldTaxAuthPartyId, taxAuthPartyId));
@@ -744,7 +792,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getTaxAuthorityRateSeqId() {
+	public TaxAuthorityRateProduct getTaxAuthorityRateSeqId() {
+		if (taxAuthorityRateSeqId != null && ((EObject)taxAuthorityRateSeqId).eIsProxy()) {
+			InternalEObject oldTaxAuthorityRateSeqId = (InternalEObject)taxAuthorityRateSeqId;
+			taxAuthorityRateSeqId = (TaxAuthorityRateProduct)eResolveProxy(oldTaxAuthorityRateSeqId);
+			if (taxAuthorityRateSeqId != oldTaxAuthorityRateSeqId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID, oldTaxAuthorityRateSeqId, taxAuthorityRateSeqId));
+			}
+		}
+		return taxAuthorityRateSeqId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TaxAuthorityRateProduct basicGetTaxAuthorityRateSeqId() {
 		return taxAuthorityRateSeqId;
 	}
 
@@ -754,8 +819,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setTaxAuthorityRateSeqId(String newTaxAuthorityRateSeqId) {
-		String oldTaxAuthorityRateSeqId = taxAuthorityRateSeqId;
+	public void setTaxAuthorityRateSeqId(TaxAuthorityRateProduct newTaxAuthorityRateSeqId) {
+		TaxAuthorityRateProduct oldTaxAuthorityRateSeqId = taxAuthorityRateSeqId;
 		taxAuthorityRateSeqId = newTaxAuthorityRateSeqId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID, oldTaxAuthorityRateSeqId, taxAuthorityRateSeqId));
@@ -790,7 +855,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getUomId() {
+	public Uom getUomId() {
+		if (uomId != null && ((EObject)uomId).eIsProxy()) {
+			InternalEObject oldUomId = (InternalEObject)uomId;
+			uomId = (Uom)eResolveProxy(oldUomId);
+			if (uomId != oldUomId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__UOM_ID, oldUomId, uomId));
+			}
+		}
+		return uomId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uom basicGetUomId() {
 		return uomId;
 	}
 
@@ -800,8 +882,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setUomId(String newUomId) {
-		String oldUomId = uomId;
+	public void setUomId(Uom newUomId) {
+		Uom oldUomId = uomId;
 		uomId = newUomId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__UOM_ID, oldUomId, uomId));
@@ -813,7 +895,24 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public String getInvoiceItemTypeId() {
+	public InvoiceItemType getInvoiceItemTypeId() {
+		if (invoiceItemTypeId != null && ((EObject)invoiceItemTypeId).eIsProxy()) {
+			InternalEObject oldInvoiceItemTypeId = (InternalEObject)invoiceItemTypeId;
+			invoiceItemTypeId = (InvoiceItemType)eResolveProxy(oldInvoiceItemTypeId);
+			if (invoiceItemTypeId != oldInvoiceItemTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
+			}
+		}
+		return invoiceItemTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvoiceItemType basicGetInvoiceItemTypeId() {
 		return invoiceItemTypeId;
 	}
 
@@ -823,8 +922,8 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 	 * @generated
 	 */
 	@Override
-	public void setInvoiceItemTypeId(String newInvoiceItemTypeId) {
-		String oldInvoiceItemTypeId = invoiceItemTypeId;
+	public void setInvoiceItemTypeId(InvoiceItemType newInvoiceItemTypeId) {
+		InvoiceItemType oldInvoiceItemTypeId = invoiceItemTypeId;
 		invoiceItemTypeId = newInvoiceItemTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID, oldInvoiceItemTypeId, invoiceItemTypeId));
@@ -869,36 +968,47 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 				return getAmount();
 			case InvoicePackage.INVOICE_ITEM__DESCRIPTION:
 				return getDescription();
-			case InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID:
-				return getInventoryItemId();
-			case InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID:
-				return getInvoiceItemTypeId();
-			case InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID:
-				return getOverrideGlAccountId();
-			case InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID:
-				return getOverrideOrgPartyId();
 			case InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ID:
 				return getParentInvoiceId();
 			case InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ITEM_SEQ_ID:
 				return getParentInvoiceItemSeqId();
-			case InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID:
-				return getProductFeatureId();
-			case InvoicePackage.INVOICE_ITEM__PRODUCT_ID:
-				return getProductId();
 			case InvoicePackage.INVOICE_ITEM__QUANTITY:
 				return getQuantity();
-			case InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID:
-				return getSalesOpportunityId();
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID:
-				return getTaxAuthGeoId();
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID:
-				return getTaxAuthPartyId();
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID:
-				return getTaxAuthorityRateSeqId();
 			case InvoicePackage.INVOICE_ITEM__TAXABLE_FLAG:
 				return isTaxableFlag();
+			case InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID:
+				if (resolve) return getInvoiceItemTypeId();
+				return basicGetInvoiceItemTypeId();
+			case InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID:
+				if (resolve) return getInventoryItemId();
+				return basicGetInventoryItemId();
+			case InvoicePackage.INVOICE_ITEM__PRODUCT_ID:
+				if (resolve) return getProductId();
+				return basicGetProductId();
+			case InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID:
+				if (resolve) return getProductFeatureId();
+				return basicGetProductFeatureId();
 			case InvoicePackage.INVOICE_ITEM__UOM_ID:
-				return getUomId();
+				if (resolve) return getUomId();
+				return basicGetUomId();
+			case InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID:
+				if (resolve) return getOverrideGlAccountId();
+				return basicGetOverrideGlAccountId();
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID:
+				if (resolve) return getTaxAuthPartyId();
+				return basicGetTaxAuthPartyId();
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID:
+				if (resolve) return getTaxAuthGeoId();
+				return basicGetTaxAuthGeoId();
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID:
+				if (resolve) return getTaxAuthorityRateSeqId();
+				return basicGetTaxAuthorityRateSeqId();
+			case InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID:
+				if (resolve) return getOverrideOrgPartyId();
+				return basicGetOverrideOrgPartyId();
+			case InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID:
+				if (resolve) return getSalesOpportunityId();
+				return basicGetSalesOpportunityId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -923,50 +1033,50 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			case InvoicePackage.INVOICE_ITEM__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID:
-				setInventoryItemId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID:
-				setOverrideGlAccountId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID:
-				setOverrideOrgPartyId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ID:
 				setParentInvoiceId((String)newValue);
 				return;
 			case InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ITEM_SEQ_ID:
 				setParentInvoiceItemSeqId((String)newValue);
 				return;
-			case InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID:
-				setProductFeatureId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM__PRODUCT_ID:
-				setProductId((String)newValue);
-				return;
 			case InvoicePackage.INVOICE_ITEM__QUANTITY:
 				setQuantity((BigDecimal)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID:
-				setTaxAuthGeoId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID:
-				setTaxAuthPartyId((String)newValue);
-				return;
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID:
-				setTaxAuthorityRateSeqId((String)newValue);
 				return;
 			case InvoicePackage.INVOICE_ITEM__TAXABLE_FLAG:
 				setTaxableFlag((Boolean)newValue);
 				return;
+			case InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID:
+				setInvoiceItemTypeId((InvoiceItemType)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM__PRODUCT_ID:
+				setProductId((Product)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)newValue);
+				return;
 			case InvoicePackage.INVOICE_ITEM__UOM_ID:
-				setUomId((String)newValue);
+				setUomId((Uom)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID:
+				setOverrideGlAccountId((GlAccount)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID:
+				setTaxAuthPartyId((Party)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID:
+				setTaxAuthGeoId((Geo)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID:
+				setTaxAuthorityRateSeqId((TaxAuthorityRateProduct)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID:
+				setOverrideOrgPartyId((Party)newValue);
+				return;
+			case InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID:
+				setSalesOpportunityId((SalesOpportunity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -992,50 +1102,50 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 			case InvoicePackage.INVOICE_ITEM__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID:
-				setInventoryItemId(INVENTORY_ITEM_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID:
-				setInvoiceItemTypeId(INVOICE_ITEM_TYPE_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID:
-				setOverrideGlAccountId(OVERRIDE_GL_ACCOUNT_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID:
-				setOverrideOrgPartyId(OVERRIDE_ORG_PARTY_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ID:
 				setParentInvoiceId(PARENT_INVOICE_ID_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ITEM_SEQ_ID:
 				setParentInvoiceItemSeqId(PARENT_INVOICE_ITEM_SEQ_ID_EDEFAULT);
 				return;
-			case InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID:
-				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM__PRODUCT_ID:
-				setProductId(PRODUCT_ID_EDEFAULT);
-				return;
 			case InvoicePackage.INVOICE_ITEM__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID:
-				setSalesOpportunityId(SALES_OPPORTUNITY_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID:
-				setTaxAuthGeoId(TAX_AUTH_GEO_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID:
-				setTaxAuthPartyId(TAX_AUTH_PARTY_ID_EDEFAULT);
-				return;
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID:
-				setTaxAuthorityRateSeqId(TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT);
 				return;
 			case InvoicePackage.INVOICE_ITEM__TAXABLE_FLAG:
 				setTaxableFlag(TAXABLE_FLAG_EDEFAULT);
 				return;
+			case InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID:
+				setInvoiceItemTypeId((InvoiceItemType)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID:
+				setInventoryItemId((InventoryItem)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM__PRODUCT_ID:
+				setProductId((Product)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)null);
+				return;
 			case InvoicePackage.INVOICE_ITEM__UOM_ID:
-				setUomId(UOM_ID_EDEFAULT);
+				setUomId((Uom)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID:
+				setOverrideGlAccountId((GlAccount)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID:
+				setTaxAuthPartyId((Party)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID:
+				setTaxAuthGeoId((Geo)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID:
+				setTaxAuthorityRateSeqId((TaxAuthorityRateProduct)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID:
+				setOverrideOrgPartyId((Party)null);
+				return;
+			case InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID:
+				setSalesOpportunityId((SalesOpportunity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1057,36 +1167,36 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
 			case InvoicePackage.INVOICE_ITEM__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID:
-				return INVENTORY_ITEM_ID_EDEFAULT == null ? inventoryItemId != null : !INVENTORY_ITEM_ID_EDEFAULT.equals(inventoryItemId);
-			case InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID:
-				return INVOICE_ITEM_TYPE_ID_EDEFAULT == null ? invoiceItemTypeId != null : !INVOICE_ITEM_TYPE_ID_EDEFAULT.equals(invoiceItemTypeId);
-			case InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID:
-				return OVERRIDE_GL_ACCOUNT_ID_EDEFAULT == null ? overrideGlAccountId != null : !OVERRIDE_GL_ACCOUNT_ID_EDEFAULT.equals(overrideGlAccountId);
-			case InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID:
-				return OVERRIDE_ORG_PARTY_ID_EDEFAULT == null ? overrideOrgPartyId != null : !OVERRIDE_ORG_PARTY_ID_EDEFAULT.equals(overrideOrgPartyId);
 			case InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ID:
 				return PARENT_INVOICE_ID_EDEFAULT == null ? parentInvoiceId != null : !PARENT_INVOICE_ID_EDEFAULT.equals(parentInvoiceId);
 			case InvoicePackage.INVOICE_ITEM__PARENT_INVOICE_ITEM_SEQ_ID:
 				return PARENT_INVOICE_ITEM_SEQ_ID_EDEFAULT == null ? parentInvoiceItemSeqId != null : !PARENT_INVOICE_ITEM_SEQ_ID_EDEFAULT.equals(parentInvoiceItemSeqId);
-			case InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID:
-				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
-			case InvoicePackage.INVOICE_ITEM__PRODUCT_ID:
-				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
 			case InvoicePackage.INVOICE_ITEM__QUANTITY:
 				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
-			case InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID:
-				return SALES_OPPORTUNITY_ID_EDEFAULT == null ? salesOpportunityId != null : !SALES_OPPORTUNITY_ID_EDEFAULT.equals(salesOpportunityId);
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID:
-				return TAX_AUTH_GEO_ID_EDEFAULT == null ? taxAuthGeoId != null : !TAX_AUTH_GEO_ID_EDEFAULT.equals(taxAuthGeoId);
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID:
-				return TAX_AUTH_PARTY_ID_EDEFAULT == null ? taxAuthPartyId != null : !TAX_AUTH_PARTY_ID_EDEFAULT.equals(taxAuthPartyId);
-			case InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID:
-				return TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT == null ? taxAuthorityRateSeqId != null : !TAX_AUTHORITY_RATE_SEQ_ID_EDEFAULT.equals(taxAuthorityRateSeqId);
 			case InvoicePackage.INVOICE_ITEM__TAXABLE_FLAG:
 				return taxableFlag != TAXABLE_FLAG_EDEFAULT;
+			case InvoicePackage.INVOICE_ITEM__INVOICE_ITEM_TYPE_ID:
+				return invoiceItemTypeId != null;
+			case InvoicePackage.INVOICE_ITEM__INVENTORY_ITEM_ID:
+				return inventoryItemId != null;
+			case InvoicePackage.INVOICE_ITEM__PRODUCT_ID:
+				return productId != null;
+			case InvoicePackage.INVOICE_ITEM__PRODUCT_FEATURE_ID:
+				return productFeatureId != null;
 			case InvoicePackage.INVOICE_ITEM__UOM_ID:
-				return UOM_ID_EDEFAULT == null ? uomId != null : !UOM_ID_EDEFAULT.equals(uomId);
+				return uomId != null;
+			case InvoicePackage.INVOICE_ITEM__OVERRIDE_GL_ACCOUNT_ID:
+				return overrideGlAccountId != null;
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_PARTY_ID:
+				return taxAuthPartyId != null;
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTH_GEO_ID:
+				return taxAuthGeoId != null;
+			case InvoicePackage.INVOICE_ITEM__TAX_AUTHORITY_RATE_SEQ_ID:
+				return taxAuthorityRateSeqId != null;
+			case InvoicePackage.INVOICE_ITEM__OVERRIDE_ORG_PARTY_ID:
+				return overrideOrgPartyId != null;
+			case InvoicePackage.INVOICE_ITEM__SALES_OPPORTUNITY_ID:
+				return salesOpportunityId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1109,36 +1219,14 @@ public class InvoiceItemImpl extends BizEntityTypedImpl<InvoiceItemType> impleme
 		result.append(amount);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", inventoryItemId: ");
-		result.append(inventoryItemId);
-		result.append(", invoiceItemTypeId: ");
-		result.append(invoiceItemTypeId);
-		result.append(", overrideGlAccountId: ");
-		result.append(overrideGlAccountId);
-		result.append(", overrideOrgPartyId: ");
-		result.append(overrideOrgPartyId);
 		result.append(", parentInvoiceId: ");
 		result.append(parentInvoiceId);
 		result.append(", parentInvoiceItemSeqId: ");
 		result.append(parentInvoiceItemSeqId);
-		result.append(", productFeatureId: ");
-		result.append(productFeatureId);
-		result.append(", productId: ");
-		result.append(productId);
 		result.append(", quantity: ");
 		result.append(quantity);
-		result.append(", salesOpportunityId: ");
-		result.append(salesOpportunityId);
-		result.append(", taxAuthGeoId: ");
-		result.append(taxAuthGeoId);
-		result.append(", taxAuthPartyId: ");
-		result.append(taxAuthPartyId);
-		result.append(", taxAuthorityRateSeqId: ");
-		result.append(taxAuthorityRateSeqId);
 		result.append(", taxableFlag: ");
 		result.append(taxableFlag);
-		result.append(", uomId: ");
-		result.append(uomId);
 		result.append(')');
 		return result.toString();
 	}

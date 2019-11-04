@@ -39,7 +39,8 @@ public interface OrderAdjustmentTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Attr Name</em>' attribute.
 	 * @see #setAttrName(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentTypeAttr_AttrName()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getAttrName();
@@ -91,8 +92,8 @@ public interface OrderAdjustmentTypeAttr extends BizEntity {
 	 * @return the value of the '<em>Order Adjustment Type Id</em>' attribute.
 	 * @see #setOrderAdjustmentTypeId(String)
 	 * @see org.abchip.mimo.biz.order.order.OrderPackage#getOrderAdjustmentTypeAttr_OrderAdjustmentTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='OrderAdjustmentType'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getOrderAdjustmentTypeId();

@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface EnumPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-common-enum";
+	String eNS_PREFIX = "biz-enum";
 
 	/**
 	 * The singleton instance of the package.
@@ -134,22 +135,22 @@ public interface EnumPackage extends EPackage {
 	int ENUMERATION__ENUM_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Enum Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENUMERATION__ENUM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Sequence Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION__SEQUENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int ENUMERATION__SEQUENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Enum Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION__ENUM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>User Login Security Questions</b></em>' attribute list.
@@ -252,7 +253,7 @@ public interface EnumPackage extends EPackage {
 	int ENUMERATION_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -314,15 +315,15 @@ public interface EnumPackage extends EPackage {
 	EAttribute getEnumeration_EnumCode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumTypeId <em>Enum Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.enum_.Enumeration#getEnumTypeId <em>Enum Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Enum Type Id</em>'.
+	 * @return the meta object for the reference '<em>Enum Type Id</em>'.
 	 * @see org.abchip.mimo.biz.common.enum_.Enumeration#getEnumTypeId()
 	 * @see #getEnumeration()
 	 * @generated
 	 */
-	EAttribute getEnumeration_EnumTypeId();
+	EReference getEnumeration_EnumTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.enum_.Enumeration#getSequenceId <em>Sequence Id</em>}'.
@@ -390,15 +391,15 @@ public interface EnumPackage extends EPackage {
 	EAttribute getEnumerationType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.common.enum_.EnumerationType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.common.enum_.EnumerationType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.common.enum_.EnumerationType#getParentTypeId()
 	 * @see #getEnumerationType()
 	 * @generated
 	 */
-	EAttribute getEnumerationType_ParentTypeId();
+	EReference getEnumerationType_ParentTypeId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -457,12 +458,12 @@ public interface EnumPackage extends EPackage {
 		EAttribute ENUMERATION__ENUM_CODE = eINSTANCE.getEnumeration_EnumCode();
 
 		/**
-		 * The meta object literal for the '<em><b>Enum Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Enum Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENUMERATION__ENUM_TYPE_ID = eINSTANCE.getEnumeration_EnumTypeId();
+		EReference ENUMERATION__ENUM_TYPE_ID = eINSTANCE.getEnumeration_EnumTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Sequence Id</b></em>' attribute feature.
@@ -515,12 +516,12 @@ public interface EnumPackage extends EPackage {
 		EAttribute ENUMERATION_TYPE__HAS_TABLE = eINSTANCE.getEnumerationType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENUMERATION_TYPE__PARENT_TYPE_ID = eINSTANCE.getEnumerationType_ParentTypeId();
+		EReference ENUMERATION_TYPE__PARENT_TYPE_ID = eINSTANCE.getEnumerationType_ParentTypeId();
 
 	}
 

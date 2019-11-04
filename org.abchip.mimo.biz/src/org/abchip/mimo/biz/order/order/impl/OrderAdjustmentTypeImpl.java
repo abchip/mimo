@@ -19,6 +19,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -106,24 +108,14 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	protected boolean hasTable = HAS_TABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARENT_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParentTypeId() <em>Parent Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parentTypeId = PARENT_TYPE_ID_EDEFAULT;
+	protected OrderAdjustmentType parentTypeId;
 
 	/**
 	 * The cached value of the '{@link #getOrderAdjustmentTypeAttrs() <em>Order Adjustment Type Attrs</em>}' attribute list.
@@ -229,7 +221,24 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 * @generated
 	 */
 	@Override
-	public String getParentTypeId() {
+	public OrderAdjustmentType getParentTypeId() {
+		if (parentTypeId != null && ((EObject)parentTypeId).eIsProxy()) {
+			InternalEObject oldParentTypeId = (InternalEObject)parentTypeId;
+			parentTypeId = (OrderAdjustmentType)eResolveProxy(oldParentTypeId);
+			if (parentTypeId != oldParentTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ADJUSTMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
+			}
+		}
+		return parentTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderAdjustmentType basicGetParentTypeId() {
 		return parentTypeId;
 	}
 
@@ -239,8 +248,8 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 	 * @generated
 	 */
 	@Override
-	public void setParentTypeId(String newParentTypeId) {
-		String oldParentTypeId = parentTypeId;
+	public void setParentTypeId(OrderAdjustmentType newParentTypeId) {
+		OrderAdjustmentType oldParentTypeId = parentTypeId;
 		parentTypeId = newParentTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ADJUSTMENT_TYPE__PARENT_TYPE_ID, oldParentTypeId, parentTypeId));
@@ -310,7 +319,8 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__HAS_TABLE:
 				return isHasTable();
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__PARENT_TYPE_ID:
-				return getParentTypeId();
+				if (resolve) return getParentTypeId();
+				return basicGetParentTypeId();
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS:
 				return getOrderAdjustmentTypeAttrs();
 		}
@@ -336,7 +346,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 				setHasTable((Boolean)newValue);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId((String)newValue);
+				setParentTypeId((OrderAdjustmentType)newValue);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS:
 				getOrderAdjustmentTypeAttrs().clear();
@@ -364,7 +374,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 				setHasTable(HAS_TABLE_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__PARENT_TYPE_ID:
-				setParentTypeId(PARENT_TYPE_ID_EDEFAULT);
+				setParentTypeId((OrderAdjustmentType)null);
 				return;
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS:
 				getOrderAdjustmentTypeAttrs().clear();
@@ -388,7 +398,7 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__HAS_TABLE:
 				return hasTable != HAS_TABLE_EDEFAULT;
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__PARENT_TYPE_ID:
-				return PARENT_TYPE_ID_EDEFAULT == null ? parentTypeId != null : !PARENT_TYPE_ID_EDEFAULT.equals(parentTypeId);
+				return parentTypeId != null;
 			case OrderPackage.ORDER_ADJUSTMENT_TYPE__ORDER_ADJUSTMENT_TYPE_ATTRS:
 				return orderAdjustmentTypeAttrs != null && !orderAdjustmentTypeAttrs.isEmpty();
 		}
@@ -411,8 +421,6 @@ public class OrderAdjustmentTypeImpl extends BizEntityTypeImpl<OrderAdjustment> 
 		result.append(description);
 		result.append(", hasTable: ");
 		result.append(hasTable);
-		result.append(", parentTypeId: ");
-		result.append(parentTypeId);
 		result.append(", orderAdjustmentTypeAttrs: ");
 		result.append(orderAdjustmentTypeAttrs);
 		result.append(')');

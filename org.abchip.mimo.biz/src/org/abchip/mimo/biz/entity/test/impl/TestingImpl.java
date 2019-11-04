@@ -20,6 +20,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
@@ -163,24 +165,14 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	protected long testingSize = TESTING_SIZE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTestingTypeId() <em>Testing Type Id</em>}' attribute.
+	 * The cached value of the '{@link #getTestingTypeId() <em>Testing Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTestingTypeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TESTING_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTestingTypeId() <em>Testing Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTestingTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String testingTypeId = TESTING_TYPE_ID_EDEFAULT;
+	protected TestingType testingTypeId;
 
 	/**
 	 * The cached value of the '{@link #getTestingItems() <em>Testing Items</em>}' attribute list.
@@ -355,7 +347,24 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 * @generated
 	 */
 	@Override
-	public String getTestingTypeId() {
+	public TestingType getTestingTypeId() {
+		if (testingTypeId != null && ((EObject)testingTypeId).eIsProxy()) {
+			InternalEObject oldTestingTypeId = (InternalEObject)testingTypeId;
+			testingTypeId = (TestingType)eResolveProxy(oldTestingTypeId);
+			if (testingTypeId != oldTestingTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestPackage.TESTING__TESTING_TYPE_ID, oldTestingTypeId, testingTypeId));
+			}
+		}
+		return testingTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TestingType basicGetTestingTypeId() {
 		return testingTypeId;
 	}
 
@@ -365,8 +374,8 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 	 * @generated
 	 */
 	@Override
-	public void setTestingTypeId(String newTestingTypeId) {
-		String oldTestingTypeId = testingTypeId;
+	public void setTestingTypeId(TestingType newTestingTypeId) {
+		TestingType oldTestingTypeId = testingTypeId;
 		testingTypeId = newTestingTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TestPackage.TESTING__TESTING_TYPE_ID, oldTestingTypeId, testingTypeId));
@@ -406,7 +415,8 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 			case TestPackage.TESTING__TESTING_SIZE:
 				return getTestingSize();
 			case TestPackage.TESTING__TESTING_TYPE_ID:
-				return getTestingTypeId();
+				if (resolve) return getTestingTypeId();
+				return basicGetTestingTypeId();
 			case TestPackage.TESTING__TESTING_ITEMS:
 				return getTestingItems();
 		}
@@ -441,7 +451,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 				setTestingSize((Long)newValue);
 				return;
 			case TestPackage.TESTING__TESTING_TYPE_ID:
-				setTestingTypeId((String)newValue);
+				setTestingTypeId((TestingType)newValue);
 				return;
 			case TestPackage.TESTING__TESTING_ITEMS:
 				getTestingItems().clear();
@@ -478,7 +488,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 				setTestingSize(TESTING_SIZE_EDEFAULT);
 				return;
 			case TestPackage.TESTING__TESTING_TYPE_ID:
-				setTestingTypeId(TESTING_TYPE_ID_EDEFAULT);
+				setTestingTypeId((TestingType)null);
 				return;
 			case TestPackage.TESTING__TESTING_ITEMS:
 				getTestingItems().clear();
@@ -508,7 +518,7 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 			case TestPackage.TESTING__TESTING_SIZE:
 				return testingSize != TESTING_SIZE_EDEFAULT;
 			case TestPackage.TESTING__TESTING_TYPE_ID:
-				return TESTING_TYPE_ID_EDEFAULT == null ? testingTypeId != null : !TESTING_TYPE_ID_EDEFAULT.equals(testingTypeId);
+				return testingTypeId != null;
 			case TestPackage.TESTING__TESTING_ITEMS:
 				return testingItems != null && !testingItems.isEmpty();
 		}
@@ -537,8 +547,6 @@ public class TestingImpl extends BizEntityTypedImpl<TestingType> implements Test
 		result.append(testingName);
 		result.append(", testingSize: ");
 		result.append(testingSize);
-		result.append(", testingTypeId: ");
-		result.append(testingTypeId);
 		result.append(", testingItems: ");
 		result.append(testingItems);
 		result.append(')');

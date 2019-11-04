@@ -202,6 +202,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -387,6 +388,20 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		RecruitmentPackageImpl theRecruitmentPackage = (RecruitmentPackageImpl)(registeredPackage instanceof RecruitmentPackageImpl ? registeredPackage : RecruitmentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrainingsPackage.eNS_URI);
 		TrainingsPackageImpl theTrainingsPackage = (TrainingsPackageImpl)(registeredPackage instanceof TrainingsPackageImpl ? registeredPackage : TrainingsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
+		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
+		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
+		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
+		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
+		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
+		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
+		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OrderPackage.eNS_URI);
 		OrderPackageImpl theOrderPackage = (OrderPackageImpl)(registeredPackage instanceof OrderPackageImpl ? registeredPackage : OrderPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QuotePackage.eNS_URI);
@@ -403,20 +418,6 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		ShoppingcartPackageImpl theShoppingcartPackage = (ShoppingcartPackageImpl)(registeredPackage instanceof ShoppingcartPackageImpl ? registeredPackage : ShoppingcartPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ShoppinglistPackage.eNS_URI);
 		ShoppinglistPackageImpl theShoppinglistPackage = (ShoppinglistPackageImpl)(registeredPackage instanceof ShoppinglistPackageImpl ? registeredPackage : ShoppinglistPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContactPackage.eNS_URI);
-		ContactPackageImpl theContactPackage = (ContactPackageImpl)(registeredPackage instanceof ContactPackageImpl ? registeredPackage : ContactPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OpportunityPackage.eNS_URI);
-		OpportunityPackageImpl theOpportunityPackage = (OpportunityPackageImpl)(registeredPackage instanceof OpportunityPackageImpl ? registeredPackage : OpportunityPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SegmentPackage.eNS_URI);
-		SegmentPackageImpl theSegmentPackage = (SegmentPackageImpl)(registeredPackage instanceof SegmentPackageImpl ? registeredPackage : SegmentPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TrackingPackage.eNS_URI);
-		TrackingPackageImpl theTrackingPackage = (TrackingPackageImpl)(registeredPackage instanceof TrackingPackageImpl ? registeredPackage : TrackingPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BomPackage.eNS_URI);
-		BomPackageImpl theBomPackage = (BomPackageImpl)(registeredPackage instanceof BomPackageImpl ? registeredPackage : BomPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MrpPackage.eNS_URI);
-		MrpPackageImpl theMrpPackage = (MrpPackageImpl)(registeredPackage instanceof MrpPackageImpl ? registeredPackage : MrpPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechdataPackage.eNS_URI);
-		TechdataPackageImpl theTechdataPackage = (TechdataPackageImpl)(registeredPackage instanceof TechdataPackageImpl ? registeredPackage : TechdataPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AgreementPackage.eNS_URI);
 		AgreementPackageImpl theAgreementPackage = (AgreementPackageImpl)(registeredPackage instanceof AgreementPackageImpl ? registeredPackage : AgreementPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI);
@@ -529,6 +530,13 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		thePositionPackage.createPackageContents();
 		theRecruitmentPackage.createPackageContents();
 		theTrainingsPackage.createPackageContents();
+		theBomPackage.createPackageContents();
+		theMrpPackage.createPackageContents();
+		theTechdataPackage.createPackageContents();
+		theContactPackage.createPackageContents();
+		theOpportunityPackage.createPackageContents();
+		theSegmentPackage.createPackageContents();
+		theTrackingPackage.createPackageContents();
 		theOrderPackage.createPackageContents();
 		theQuotePackage.createPackageContents();
 		theRequestPackage.createPackageContents();
@@ -537,13 +545,6 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		theReturnPackage.createPackageContents();
 		theShoppingcartPackage.createPackageContents();
 		theShoppinglistPackage.createPackageContents();
-		theContactPackage.createPackageContents();
-		theOpportunityPackage.createPackageContents();
-		theSegmentPackage.createPackageContents();
-		theTrackingPackage.createPackageContents();
-		theBomPackage.createPackageContents();
-		theMrpPackage.createPackageContents();
-		theTechdataPackage.createPackageContents();
 		theAgreementPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theContactPackage_1.createPackageContents();
@@ -624,6 +625,13 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		thePositionPackage.initializePackageContents();
 		theRecruitmentPackage.initializePackageContents();
 		theTrainingsPackage.initializePackageContents();
+		theBomPackage.initializePackageContents();
+		theMrpPackage.initializePackageContents();
+		theTechdataPackage.initializePackageContents();
+		theContactPackage.initializePackageContents();
+		theOpportunityPackage.initializePackageContents();
+		theSegmentPackage.initializePackageContents();
+		theTrackingPackage.initializePackageContents();
 		theOrderPackage.initializePackageContents();
 		theQuotePackage.initializePackageContents();
 		theRequestPackage.initializePackageContents();
@@ -632,13 +640,6 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		theReturnPackage.initializePackageContents();
 		theShoppingcartPackage.initializePackageContents();
 		theShoppinglistPackage.initializePackageContents();
-		theContactPackage.initializePackageContents();
-		theOpportunityPackage.initializePackageContents();
-		theSegmentPackage.initializePackageContents();
-		theTrackingPackage.initializePackageContents();
-		theBomPackage.initializePackageContents();
-		theMrpPackage.initializePackageContents();
-		theTechdataPackage.initializePackageContents();
 		theAgreementPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theContactPackage_1.initializePackageContents();
@@ -766,8 +767,8 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMarketingCampaign_CurrencyUomId() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(7);
+	public EReference getMarketingCampaign_CurrencyUomId() {
+		return (EReference)marketingCampaignEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -777,7 +778,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_EstimatedCost() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -787,7 +788,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_ExpectedResponsePercent() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -797,7 +798,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_ExpectedRevenue() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -807,7 +808,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_FromDate() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -817,7 +818,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_IsActive() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -827,7 +828,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_LastModifiedByUserLogin() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -837,7 +838,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_NumSent() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -846,8 +847,8 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMarketingCampaign_ParentCampaignId() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(15);
+	public EReference getMarketingCampaign_ParentCampaignId() {
+		return (EReference)marketingCampaignEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -857,7 +858,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_StartDate() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -866,8 +867,8 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMarketingCampaign_StatusId() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(17);
+	public EReference getMarketingCampaign_StatusId() {
+		return (EReference)marketingCampaignEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -877,7 +878,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaign_ThruDate() {
-		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)marketingCampaignEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -936,8 +937,8 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMarketingCampaignPrice_ProductPriceRuleId() {
-		return (EAttribute)marketingCampaignPriceEClass.getEStructuralFeatures().get(1);
+	public EReference getMarketingCampaignPrice_ProductPriceRuleId() {
+		return (EReference)marketingCampaignPriceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -947,7 +948,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaignPrice_FromDate() {
-		return (EAttribute)marketingCampaignPriceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)marketingCampaignPriceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -957,7 +958,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaignPrice_ThruDate() {
-		return (EAttribute)marketingCampaignPriceEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)marketingCampaignPriceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -986,8 +987,8 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMarketingCampaignPromo_ProductPromoId() {
-		return (EAttribute)marketingCampaignPromoEClass.getEStructuralFeatures().get(1);
+	public EReference getMarketingCampaignPromo_ProductPromoId() {
+		return (EReference)marketingCampaignPromoEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -997,7 +998,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaignPromo_FromDate() {
-		return (EAttribute)marketingCampaignPromoEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)marketingCampaignPromoEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1007,7 +1008,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaignPromo_ThruDate() {
-		return (EAttribute)marketingCampaignPromoEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)marketingCampaignPromoEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1036,8 +1037,8 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMarketingCampaignRole_PartyId() {
-		return (EAttribute)marketingCampaignRoleEClass.getEStructuralFeatures().get(1);
+	public EReference getMarketingCampaignRole_PartyId() {
+		return (EReference)marketingCampaignRoleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1046,8 +1047,8 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMarketingCampaignRole_RoleTypeId() {
-		return (EAttribute)marketingCampaignRoleEClass.getEStructuralFeatures().get(2);
+	public EReference getMarketingCampaignRole_RoleTypeId() {
+		return (EReference)marketingCampaignRoleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1057,7 +1058,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaignRole_FromDate() {
-		return (EAttribute)marketingCampaignRoleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)marketingCampaignRoleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1067,7 +1068,7 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 	 */
 	@Override
 	public EAttribute getMarketingCampaignRole_ThruDate() {
-		return (EAttribute)marketingCampaignRoleEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)marketingCampaignRoleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1107,7 +1108,6 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__CAMPAIGN_SUMMARY);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__CONVERTED_LEADS);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__CREATED_BY_USER_LOGIN);
-		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__CURRENCY_UOM_ID);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__ESTIMATED_COST);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__EXPECTED_RESPONSE_PERCENT);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__EXPECTED_REVENUE);
@@ -1115,10 +1115,11 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__IS_ACTIVE);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__LAST_MODIFIED_BY_USER_LOGIN);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__NUM_SENT);
-		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__START_DATE);
-		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__STATUS_ID);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__THRU_DATE);
+		createEReference(marketingCampaignEClass, MARKETING_CAMPAIGN__PARENT_CAMPAIGN_ID);
+		createEReference(marketingCampaignEClass, MARKETING_CAMPAIGN__STATUS_ID);
+		createEReference(marketingCampaignEClass, MARKETING_CAMPAIGN__CURRENCY_UOM_ID);
 		createEAttribute(marketingCampaignEClass, MARKETING_CAMPAIGN__MARKETING_CAMPAIGN_NOTES);
 
 		marketingCampaignNoteEClass = createEClass(MARKETING_CAMPAIGN_NOTE);
@@ -1126,22 +1127,22 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 
 		marketingCampaignPriceEClass = createEClass(MARKETING_CAMPAIGN_PRICE);
 		createEAttribute(marketingCampaignPriceEClass, MARKETING_CAMPAIGN_PRICE__MARKETING_CAMPAIGN_ID);
-		createEAttribute(marketingCampaignPriceEClass, MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID);
 		createEAttribute(marketingCampaignPriceEClass, MARKETING_CAMPAIGN_PRICE__FROM_DATE);
 		createEAttribute(marketingCampaignPriceEClass, MARKETING_CAMPAIGN_PRICE__THRU_DATE);
+		createEReference(marketingCampaignPriceEClass, MARKETING_CAMPAIGN_PRICE__PRODUCT_PRICE_RULE_ID);
 
 		marketingCampaignPromoEClass = createEClass(MARKETING_CAMPAIGN_PROMO);
 		createEAttribute(marketingCampaignPromoEClass, MARKETING_CAMPAIGN_PROMO__MARKETING_CAMPAIGN_ID);
-		createEAttribute(marketingCampaignPromoEClass, MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID);
 		createEAttribute(marketingCampaignPromoEClass, MARKETING_CAMPAIGN_PROMO__FROM_DATE);
 		createEAttribute(marketingCampaignPromoEClass, MARKETING_CAMPAIGN_PROMO__THRU_DATE);
+		createEReference(marketingCampaignPromoEClass, MARKETING_CAMPAIGN_PROMO__PRODUCT_PROMO_ID);
 
 		marketingCampaignRoleEClass = createEClass(MARKETING_CAMPAIGN_ROLE);
 		createEAttribute(marketingCampaignRoleEClass, MARKETING_CAMPAIGN_ROLE__MARKETING_CAMPAIGN_ID);
-		createEAttribute(marketingCampaignRoleEClass, MARKETING_CAMPAIGN_ROLE__PARTY_ID);
-		createEAttribute(marketingCampaignRoleEClass, MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID);
 		createEAttribute(marketingCampaignRoleEClass, MARKETING_CAMPAIGN_ROLE__FROM_DATE);
 		createEAttribute(marketingCampaignRoleEClass, MARKETING_CAMPAIGN_ROLE__THRU_DATE);
+		createEReference(marketingCampaignRoleEClass, MARKETING_CAMPAIGN_ROLE__PARTY_ID);
+		createEReference(marketingCampaignRoleEClass, MARKETING_CAMPAIGN_ROLE__ROLE_TYPE_ID);
 	}
 
 	/**
@@ -1169,6 +1170,11 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 
 		// Obtain other dependent packages
 		BizPackage theBizPackage = (BizPackage)EPackage.Registry.INSTANCE.getEPackage(BizPackage.eNS_URI);
+		StatusPackage theStatusPackage = (StatusPackage)EPackage.Registry.INSTANCE.getEPackage(StatusPackage.eNS_URI);
+		UomPackage theUomPackage = (UomPackage)EPackage.Registry.INSTANCE.getEPackage(UomPackage.eNS_URI);
+		PricePackage thePricePackage = (PricePackage)EPackage.Registry.INSTANCE.getEPackage(PricePackage.eNS_URI);
+		PromoPackage thePromoPackage = (PromoPackage)EPackage.Registry.INSTANCE.getEPackage(PromoPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1183,14 +1189,13 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(marketingCampaignEClass, MarketingCampaign.class, "MarketingCampaign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMarketingCampaign_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMarketingCampaign_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 1, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_ActualCost(), ecorePackage.getEBigDecimal(), "actualCost", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_BudgetedCost(), ecorePackage.getEBigDecimal(), "budgetedCost", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_CampaignName(), ecorePackage.getEString(), "campaignName", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_CampaignSummary(), ecorePackage.getEString(), "campaignSummary", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_ConvertedLeads(), ecorePackage.getEString(), "convertedLeads", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_CreatedByUserLogin(), ecorePackage.getEString(), "createdByUserLogin", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaign_CurrencyUomId(), ecorePackage.getEString(), "currencyUomId", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_EstimatedCost(), ecorePackage.getEBigDecimal(), "estimatedCost", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_ExpectedResponsePercent(), ecorePackage.getEDouble(), "expectedResponsePercent", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_ExpectedRevenue(), ecorePackage.getEBigDecimal(), "expectedRevenue", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1198,10 +1203,14 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		initEAttribute(getMarketingCampaign_IsActive(), ecorePackage.getEBoolean(), "isActive", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_LastModifiedByUserLogin(), ecorePackage.getEString(), "lastModifiedByUserLogin", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_NumSent(), ecorePackage.getELong(), "numSent", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaign_ParentCampaignId(), ecorePackage.getEString(), "parentCampaignId", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_StartDate(), ecorePackage.getEDate(), "startDate", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaign_StatusId(), ecorePackage.getEString(), "statusId", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaign_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMarketingCampaign_ParentCampaignId(), this.getMarketingCampaign(), null, "parentCampaignId", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMarketingCampaign_ParentCampaignId().getEKeys().add(this.getMarketingCampaign_MarketingCampaignId());
+		initEReference(getMarketingCampaign_StatusId(), theStatusPackage.getStatusItem(), null, "statusId", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMarketingCampaign_StatusId().getEKeys().add(theStatusPackage.getStatusItem_StatusId());
+		initEReference(getMarketingCampaign_CurrencyUomId(), theUomPackage.getUom(), null, "currencyUomId", null, 0, 1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMarketingCampaign_CurrencyUomId().getEKeys().add(theUomPackage.getUom_UomId());
 		initEAttribute(getMarketingCampaign_MarketingCampaignNotes(), ecorePackage.getEString(), "marketingCampaignNotes", null, 0, -1, MarketingCampaign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(marketingCampaignEClass, ecorePackage.getEString(), "childMarketingCampaigns", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -1213,26 +1222,30 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		addEOperation(marketingCampaignEClass, ecorePackage.getEString(), "trackingCodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(marketingCampaignNoteEClass, MarketingCampaignNote.class, "MarketingCampaignNote", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMarketingCampaignNote_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 0, 1, MarketingCampaignNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMarketingCampaignNote_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 1, 1, MarketingCampaignNote.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(marketingCampaignPriceEClass, MarketingCampaignPrice.class, "MarketingCampaignPrice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMarketingCampaignPrice_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 0, 1, MarketingCampaignPrice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaignPrice_ProductPriceRuleId(), ecorePackage.getEString(), "productPriceRuleId", null, 0, 1, MarketingCampaignPrice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaignPrice_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, MarketingCampaignPrice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMarketingCampaignPrice_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 1, 1, MarketingCampaignPrice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMarketingCampaignPrice_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, MarketingCampaignPrice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaignPrice_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, MarketingCampaignPrice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMarketingCampaignPrice_ProductPriceRuleId(), thePricePackage.getProductPriceRule(), null, "productPriceRuleId", null, 0, 1, MarketingCampaignPrice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMarketingCampaignPrice_ProductPriceRuleId().getEKeys().add(thePricePackage.getProductPriceRule_ProductPriceRuleId());
 
 		initEClass(marketingCampaignPromoEClass, MarketingCampaignPromo.class, "MarketingCampaignPromo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMarketingCampaignPromo_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 0, 1, MarketingCampaignPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaignPromo_ProductPromoId(), ecorePackage.getEString(), "productPromoId", null, 0, 1, MarketingCampaignPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaignPromo_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, MarketingCampaignPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMarketingCampaignPromo_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 1, 1, MarketingCampaignPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMarketingCampaignPromo_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, MarketingCampaignPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaignPromo_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, MarketingCampaignPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMarketingCampaignPromo_ProductPromoId(), thePromoPackage.getProductPromo(), null, "productPromoId", null, 0, 1, MarketingCampaignPromo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMarketingCampaignPromo_ProductPromoId().getEKeys().add(thePromoPackage.getProductPromo_ProductPromoId());
 
 		initEClass(marketingCampaignRoleEClass, MarketingCampaignRole.class, "MarketingCampaignRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMarketingCampaignRole_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 0, 1, MarketingCampaignRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaignRole_PartyId(), ecorePackage.getEString(), "partyId", null, 0, 1, MarketingCampaignRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaignRole_RoleTypeId(), ecorePackage.getEString(), "roleTypeId", null, 0, 1, MarketingCampaignRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMarketingCampaignRole_FromDate(), ecorePackage.getEDate(), "fromDate", null, 0, 1, MarketingCampaignRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMarketingCampaignRole_MarketingCampaignId(), ecorePackage.getEString(), "marketingCampaignId", null, 1, 1, MarketingCampaignRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMarketingCampaignRole_FromDate(), ecorePackage.getEDate(), "fromDate", null, 1, 1, MarketingCampaignRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMarketingCampaignRole_ThruDate(), ecorePackage.getEDate(), "thruDate", null, 0, 1, MarketingCampaignRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMarketingCampaignRole_PartyId(), thePartyPackage.getParty(), null, "partyId", null, 0, 1, MarketingCampaignRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMarketingCampaignRole_PartyId().getEKeys().add(thePartyPackage.getParty_PartyId());
+		initEReference(getMarketingCampaignRole_RoleTypeId(), thePartyPackage.getRoleType(), null, "roleTypeId", null, 0, 1, MarketingCampaignRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getMarketingCampaignRole_RoleTypeId().getEKeys().add(thePartyPackage.getRoleType_RoleTypeId());
 
 		// Create annotations
 		// mimo-ent-slot
@@ -1298,12 +1311,6 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getMarketingCampaignPrice_ProductPriceRuleId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getMarketingCampaignPrice_FromDate(),
 		   source,
 		   new String[] {
@@ -1316,12 +1323,6 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 			   "key", "true"
 		   });
 		addAnnotation
-		  (getMarketingCampaignPromo_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
 		  (getMarketingCampaignPromo_FromDate(),
 		   source,
 		   new String[] {
@@ -1329,18 +1330,6 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 		   });
 		addAnnotation
 		  (getMarketingCampaignRole_MarketingCampaignId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getMarketingCampaignRole_PartyId(),
-		   source,
-		   new String[] {
-			   "key", "true"
-		   });
-		addAnnotation
-		  (getMarketingCampaignRole_RoleTypeId(),
 		   source,
 		   new String[] {
 			   "key", "true"
@@ -1402,109 +1391,10 @@ public class CampaignPackageImpl extends EPackageImpl implements CampaignPackage
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
 		   });
 		addAnnotation
-		  (getMarketingCampaign_CurrencyUomId(),
-		   source,
-		   new String[] {
-			   "frame", "Uom"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaign_ParentCampaignId(),
-		   source,
-		   new String[] {
-			   "frame", "MarketingCampaign"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaign_StatusId(),
-		   source,
-		   new String[] {
-			   "frame", "StatusItem"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
 		  (getMarketingCampaign_MarketingCampaignNotes(),
 		   source,
 		   new String[] {
 			   "frame", "MarketingCampaignNote"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaignNote_MarketingCampaignId(),
-		   source,
-		   new String[] {
-			   "frame", "MarketingCampaign"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaignPrice_MarketingCampaignId(),
-		   source,
-		   new String[] {
-			   "frame", "MarketingCampaign"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaignPrice_ProductPriceRuleId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductPriceRule"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaignPromo_MarketingCampaignId(),
-		   source,
-		   new String[] {
-			   "frame", "MarketingCampaign"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaignPromo_ProductPromoId(),
-		   source,
-		   new String[] {
-			   "frame", "ProductPromo"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaignRole_MarketingCampaignId(),
-		   source,
-		   new String[] {
-			   "frame", "MarketingCampaign"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaignRole_PartyId(),
-		   source,
-		   new String[] {
-			   "frame", "Party"
-		   },
-		   new URI[] {
-			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")
-		   });
-		addAnnotation
-		  (getMarketingCampaignRole_RoleTypeId(),
-		   source,
-		   new String[] {
-			   "frame", "RoleType"
 		   },
 		   new URI[] {
 			 URI.createURI(EntityPackage.eNS_URI).appendFragment("//entity/Domain")

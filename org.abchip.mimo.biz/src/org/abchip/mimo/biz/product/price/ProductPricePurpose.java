@@ -75,7 +75,7 @@ public interface ProductPricePurpose extends BizEntity {
 	 * @return the value of the '<em>Product Price Purpose Id</em>' attribute.
 	 * @see #setProductPricePurposeId(String)
 	 * @see org.abchip.mimo.biz.product.price.PricePackage#getProductPricePurpose_ProductPricePurposeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

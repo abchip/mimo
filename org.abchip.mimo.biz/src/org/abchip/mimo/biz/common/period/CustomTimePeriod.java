@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,12 +26,12 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getCustomTimePeriodId <em>Custom Time Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#isIsClosed <em>Is Closed</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getOrganizationPartyId <em>Organization Party Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getParentPeriodId <em>Parent Period Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getPeriodName <em>Period Name</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getPeriodNum <em>Period Num</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getPeriodTypeId <em>Period Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getParentPeriodId <em>Parent Period Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getPeriodTypeId <em>Period Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getOrganizationPartyId <em>Organization Party Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod()
@@ -91,30 +92,30 @@ public interface CustomTimePeriod extends BizEntity {
 	void setIsClosed(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Organization Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Organization Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Organization Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Organization Party Id</em>' attribute.
-	 * @see #setOrganizationPartyId(String)
+	 * @return the value of the '<em>Organization Party Id</em>' reference.
+	 * @see #setOrganizationPartyId(Party)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_OrganizationPartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getOrganizationPartyId();
+	Party getOrganizationPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getOrganizationPartyId <em>Organization Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getOrganizationPartyId <em>Organization Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Organization Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Organization Party Id</em>' reference.
 	 * @see #getOrganizationPartyId()
 	 * @generated
 	 */
-	void setOrganizationPartyId(String value);
+	void setOrganizationPartyId(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>Period Name</b></em>' attribute.
@@ -231,56 +232,56 @@ public interface CustomTimePeriod extends BizEntity {
 	List<String> salesForecasts();
 
 	/**
-	 * Returns the value of the '<em><b>Parent Period Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Period Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Period Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Period Id</em>' attribute.
-	 * @see #setParentPeriodId(String)
+	 * @return the value of the '<em>Parent Period Id</em>' reference.
+	 * @see #setParentPeriodId(CustomTimePeriod)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_ParentPeriodId()
-	 * @model annotation="mimo-ent-domain frame='CustomTimePeriod'"
+	 * @model keys="customTimePeriodId"
 	 * @generated
 	 */
-	String getParentPeriodId();
+	CustomTimePeriod getParentPeriodId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getParentPeriodId <em>Parent Period Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getParentPeriodId <em>Parent Period Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Period Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Period Id</em>' reference.
 	 * @see #getParentPeriodId()
 	 * @generated
 	 */
-	void setParentPeriodId(String value);
+	void setParentPeriodId(CustomTimePeriod value);
 
 	/**
-	 * Returns the value of the '<em><b>Period Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Period Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Period Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Period Type Id</em>' attribute.
-	 * @see #setPeriodTypeId(String)
+	 * @return the value of the '<em>Period Type Id</em>' reference.
+	 * @see #setPeriodTypeId(PeriodType)
 	 * @see org.abchip.mimo.biz.common.period.PeriodPackage#getCustomTimePeriod_PeriodTypeId()
-	 * @model annotation="mimo-ent-domain frame='PeriodType'"
+	 * @model keys="periodTypeId"
 	 * @generated
 	 */
-	String getPeriodTypeId();
+	PeriodType getPeriodTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getPeriodTypeId <em>Period Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.common.period.CustomTimePeriod#getPeriodTypeId <em>Period Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Period Type Id</em>' reference.
 	 * @see #getPeriodTypeId()
 	 * @generated
 	 */
-	void setPeriodTypeId(String value);
+	void setPeriodTypeId(PeriodType value);
 
 	/**
 	 * Returns the value of the '<em><b>Custom Time Period Id</b></em>' attribute.

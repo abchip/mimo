@@ -57,30 +57,30 @@ public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCatego
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent Type Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Type Id</em>' attribute.
-	 * @see #setParentTypeId(String)
+	 * @return the value of the '<em>Parent Type Id</em>' reference.
+	 * @see #setParentTypeId(ProdCatalogCategoryType)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategoryType_ParentTypeId()
-	 * @model annotation="mimo-ent-domain frame='ProdCatalogCategoryType'"
+	 * @model keys="prodCatalogCategoryTypeId"
 	 * @generated
 	 */
-	String getParentTypeId();
+	ProdCatalogCategoryType getParentTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategoryType#getParentTypeId <em>Parent Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.catalog.ProdCatalogCategoryType#getParentTypeId <em>Parent Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Parent Type Id</em>' reference.
 	 * @see #getParentTypeId()
 	 * @generated
 	 */
-	void setParentTypeId(String value);
+	void setParentTypeId(ProdCatalogCategoryType value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,7 +102,7 @@ public interface ProdCatalogCategoryType extends BizEntityType<ProdCatalogCatego
 	 * @return the value of the '<em>Prod Catalog Category Type Id</em>' attribute.
 	 * @see #setProdCatalogCategoryTypeId(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalogCategoryType_ProdCatalogCategoryTypeId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

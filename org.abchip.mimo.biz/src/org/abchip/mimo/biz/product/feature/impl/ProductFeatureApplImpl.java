@@ -13,11 +13,14 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityTypedImpl;
 import org.abchip.mimo.biz.product.feature.FeaturePackage;
+import org.abchip.mimo.biz.product.feature.ProductFeature;
 import org.abchip.mimo.biz.product.feature.ProductFeatureAppl;
 import org.abchip.mimo.biz.product.feature.ProductFeatureApplType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,13 +32,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getAmount <em>Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getProductFeatureApplTypeId <em>Product Feature Appl Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getRecurringAmount <em>Recurring Amount</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getSequenceNum <em>Sequence Num</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getProductFeatureApplTypeId <em>Product Feature Appl Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.feature.impl.ProductFeatureApplImpl#getProductFeatureId <em>Product Feature Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,26 +68,6 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 	 * @ordered
 	 */
 	protected String productId = PRODUCT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureId = PRODUCT_FEATURE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFromDate() <em>From Date</em>}' attribute.
@@ -125,26 +108,6 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 	 * @ordered
 	 */
 	protected BigDecimal amount = AMOUNT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProductFeatureApplTypeId() <em>Product Feature Appl Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureApplTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_FEATURE_APPL_TYPE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductFeatureApplTypeId() <em>Product Feature Appl Type Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductFeatureApplTypeId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productFeatureApplTypeId = PRODUCT_FEATURE_APPL_TYPE_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRecurringAmount() <em>Recurring Amount</em>}' attribute.
@@ -205,6 +168,26 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 	 * @ordered
 	 */
 	protected Date thruDate = THRU_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProductFeatureApplTypeId() <em>Product Feature Appl Type Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductFeatureApplTypeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductFeatureApplType productFeatureApplTypeId;
+
+	/**
+	 * The cached value of the '{@link #getProductFeatureId() <em>Product Feature Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductFeatureId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductFeature productFeatureId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -369,7 +352,24 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureApplTypeId() {
+	public ProductFeatureApplType getProductFeatureApplTypeId() {
+		if (productFeatureApplTypeId != null && ((EObject)productFeatureApplTypeId).eIsProxy()) {
+			InternalEObject oldProductFeatureApplTypeId = (InternalEObject)productFeatureApplTypeId;
+			productFeatureApplTypeId = (ProductFeatureApplType)eResolveProxy(oldProductFeatureApplTypeId);
+			if (productFeatureApplTypeId != oldProductFeatureApplTypeId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID, oldProductFeatureApplTypeId, productFeatureApplTypeId));
+			}
+		}
+		return productFeatureApplTypeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeatureApplType basicGetProductFeatureApplTypeId() {
 		return productFeatureApplTypeId;
 	}
 
@@ -379,8 +379,8 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureApplTypeId(String newProductFeatureApplTypeId) {
-		String oldProductFeatureApplTypeId = productFeatureApplTypeId;
+	public void setProductFeatureApplTypeId(ProductFeatureApplType newProductFeatureApplTypeId) {
+		ProductFeatureApplType oldProductFeatureApplTypeId = productFeatureApplTypeId;
 		productFeatureApplTypeId = newProductFeatureApplTypeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID, oldProductFeatureApplTypeId, productFeatureApplTypeId));
@@ -392,7 +392,24 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 	 * @generated
 	 */
 	@Override
-	public String getProductFeatureId() {
+	public ProductFeature getProductFeatureId() {
+		if (productFeatureId != null && ((EObject)productFeatureId).eIsProxy()) {
+			InternalEObject oldProductFeatureId = (InternalEObject)productFeatureId;
+			productFeatureId = (ProductFeature)eResolveProxy(oldProductFeatureId);
+			if (productFeatureId != oldProductFeatureId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
+			}
+		}
+		return productFeatureId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature basicGetProductFeatureId() {
 		return productFeatureId;
 	}
 
@@ -402,8 +419,8 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 	 * @generated
 	 */
 	@Override
-	public void setProductFeatureId(String newProductFeatureId) {
-		String oldProductFeatureId = productFeatureId;
+	public void setProductFeatureId(ProductFeature newProductFeatureId) {
+		ProductFeature oldProductFeatureId = productFeatureId;
 		productFeatureId = newProductFeatureId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID, oldProductFeatureId, productFeatureId));
@@ -419,20 +436,22 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 		switch (featureID) {
 			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_ID:
 				return getProductId();
-			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID:
-				return getProductFeatureId();
 			case FeaturePackage.PRODUCT_FEATURE_APPL__FROM_DATE:
 				return getFromDate();
 			case FeaturePackage.PRODUCT_FEATURE_APPL__AMOUNT:
 				return getAmount();
-			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID:
-				return getProductFeatureApplTypeId();
 			case FeaturePackage.PRODUCT_FEATURE_APPL__RECURRING_AMOUNT:
 				return getRecurringAmount();
 			case FeaturePackage.PRODUCT_FEATURE_APPL__SEQUENCE_NUM:
 				return getSequenceNum();
 			case FeaturePackage.PRODUCT_FEATURE_APPL__THRU_DATE:
 				return getThruDate();
+			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID:
+				if (resolve) return getProductFeatureApplTypeId();
+				return basicGetProductFeatureApplTypeId();
+			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID:
+				if (resolve) return getProductFeatureId();
+				return basicGetProductFeatureId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -448,17 +467,11 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_ID:
 				setProductId((String)newValue);
 				return;
-			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID:
-				setProductFeatureId((String)newValue);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL__FROM_DATE:
 				setFromDate((Date)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL__AMOUNT:
 				setAmount((BigDecimal)newValue);
-				return;
-			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID:
-				setProductFeatureApplTypeId((String)newValue);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL__RECURRING_AMOUNT:
 				setRecurringAmount((BigDecimal)newValue);
@@ -468,6 +481,12 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID:
+				setProductFeatureApplTypeId((ProductFeatureApplType)newValue);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -484,17 +503,11 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_ID:
 				setProductId(PRODUCT_ID_EDEFAULT);
 				return;
-			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID:
-				setProductFeatureId(PRODUCT_FEATURE_ID_EDEFAULT);
-				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL__FROM_DATE:
 				setFromDate(FROM_DATE_EDEFAULT);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL__AMOUNT:
 				setAmount(AMOUNT_EDEFAULT);
-				return;
-			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID:
-				setProductFeatureApplTypeId(PRODUCT_FEATURE_APPL_TYPE_ID_EDEFAULT);
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL__RECURRING_AMOUNT:
 				setRecurringAmount(RECURRING_AMOUNT_EDEFAULT);
@@ -504,6 +517,12 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 				return;
 			case FeaturePackage.PRODUCT_FEATURE_APPL__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID:
+				setProductFeatureApplTypeId((ProductFeatureApplType)null);
+				return;
+			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID:
+				setProductFeatureId((ProductFeature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -519,20 +538,20 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 		switch (featureID) {
 			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID:
-				return PRODUCT_FEATURE_ID_EDEFAULT == null ? productFeatureId != null : !PRODUCT_FEATURE_ID_EDEFAULT.equals(productFeatureId);
 			case FeaturePackage.PRODUCT_FEATURE_APPL__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case FeaturePackage.PRODUCT_FEATURE_APPL__AMOUNT:
 				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
-			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID:
-				return PRODUCT_FEATURE_APPL_TYPE_ID_EDEFAULT == null ? productFeatureApplTypeId != null : !PRODUCT_FEATURE_APPL_TYPE_ID_EDEFAULT.equals(productFeatureApplTypeId);
 			case FeaturePackage.PRODUCT_FEATURE_APPL__RECURRING_AMOUNT:
 				return RECURRING_AMOUNT_EDEFAULT == null ? recurringAmount != null : !RECURRING_AMOUNT_EDEFAULT.equals(recurringAmount);
 			case FeaturePackage.PRODUCT_FEATURE_APPL__SEQUENCE_NUM:
 				return sequenceNum != SEQUENCE_NUM_EDEFAULT;
 			case FeaturePackage.PRODUCT_FEATURE_APPL__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_APPL_TYPE_ID:
+				return productFeatureApplTypeId != null;
+			case FeaturePackage.PRODUCT_FEATURE_APPL__PRODUCT_FEATURE_ID:
+				return productFeatureId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -549,14 +568,10 @@ public class ProductFeatureApplImpl extends BizEntityTypedImpl<ProductFeatureApp
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
-		result.append(", productFeatureId: ");
-		result.append(productFeatureId);
 		result.append(", fromDate: ");
 		result.append(fromDate);
 		result.append(", amount: ");
 		result.append(amount);
-		result.append(", productFeatureApplTypeId: ");
-		result.append(productFeatureApplTypeId);
 		result.append(", recurringAmount: ");
 		result.append(recurringAmount);
 		result.append(", sequenceNum: ");

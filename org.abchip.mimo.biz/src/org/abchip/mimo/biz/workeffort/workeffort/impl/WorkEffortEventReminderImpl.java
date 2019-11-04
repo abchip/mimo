@@ -10,12 +10,16 @@ package org.abchip.mimo.biz.workeffort.workeffort.impl;
 import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.party.contact.ContactMech;
+import org.abchip.mimo.biz.party.party.Party;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkEffortEventReminder;
 import org.abchip.mimo.biz.workeffort.workeffort.WorkeffortPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,15 +32,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getWorkEffortId <em>Work Effort Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getSequenceId <em>Sequence Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getContactMechId <em>Contact Mech Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getCurrentCount <em>Current Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getLocaleId <em>Locale Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getReminderDateTime <em>Reminder Date Time</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getReminderOffset <em>Reminder Offset</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getRepeatCount <em>Repeat Count</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getRepeatInterval <em>Repeat Interval</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getTimeZoneId <em>Time Zone Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getContactMechId <em>Contact Mech Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.workeffort.workeffort.impl.WorkEffortEventReminderImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,26 +92,6 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	protected String sequenceId = SEQUENCE_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONTACT_MECH_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContactMechId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String contactMechId = CONTACT_MECH_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCurrentCount() <em>Current Count</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,26 +130,6 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 * @ordered
 	 */
 	protected String localeId = LOCALE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReminderDateTime() <em>Reminder Date Time</em>}' attribute.
@@ -268,6 +232,26 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	protected String timeZoneId = TIME_ZONE_ID_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContactMechId() <em>Contact Mech Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContactMechId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContactMech contactMechId;
+
+	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -292,7 +276,24 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public String getContactMechId() {
+	public ContactMech getContactMechId() {
+		if (contactMechId != null && ((EObject)contactMechId).eIsProxy()) {
+			InternalEObject oldContactMechId = (InternalEObject)contactMechId;
+			contactMechId = (ContactMech)eResolveProxy(oldContactMechId);
+			if (contactMechId != oldContactMechId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID, oldContactMechId, contactMechId));
+			}
+		}
+		return contactMechId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContactMech basicGetContactMechId() {
 		return contactMechId;
 	}
 
@@ -302,8 +303,8 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public void setContactMechId(String newContactMechId) {
-		String oldContactMechId = contactMechId;
+	public void setContactMechId(ContactMech newContactMechId) {
+		ContactMech oldContactMechId = contactMechId;
 		contactMechId = newContactMechId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID, oldContactMechId, contactMechId));
@@ -361,7 +362,24 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -371,8 +389,8 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID, oldPartyId, partyId));
@@ -551,14 +569,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 				return getWorkEffortId();
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__SEQUENCE_ID:
 				return getSequenceId();
-			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID:
-				return getContactMechId();
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CURRENT_COUNT:
 				return getCurrentCount();
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__LOCALE_ID:
 				return getLocaleId();
-			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID:
-				return getPartyId();
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REMINDER_DATE_TIME:
 				return getReminderDateTime();
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REMINDER_OFFSET:
@@ -569,6 +583,12 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 				return getRepeatInterval();
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__TIME_ZONE_ID:
 				return getTimeZoneId();
+			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID:
+				if (resolve) return getContactMechId();
+				return basicGetContactMechId();
+			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -587,17 +607,11 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__SEQUENCE_ID:
 				setSequenceId((String)newValue);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID:
-				setContactMechId((String)newValue);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CURRENT_COUNT:
 				setCurrentCount((Long)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__LOCALE_ID:
 				setLocaleId((String)newValue);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID:
-				setPartyId((String)newValue);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REMINDER_DATE_TIME:
 				setReminderDateTime((Date)newValue);
@@ -613,6 +627,12 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 				return;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__TIME_ZONE_ID:
 				setTimeZoneId((String)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)newValue);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -632,17 +652,11 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__SEQUENCE_ID:
 				setSequenceId(SEQUENCE_ID_EDEFAULT);
 				return;
-			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID:
-				setContactMechId(CONTACT_MECH_ID_EDEFAULT);
-				return;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CURRENT_COUNT:
 				setCurrentCount(CURRENT_COUNT_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__LOCALE_ID:
 				setLocaleId(LOCALE_ID_EDEFAULT);
-				return;
-			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
 				return;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REMINDER_DATE_TIME:
 				setReminderDateTime(REMINDER_DATE_TIME_EDEFAULT);
@@ -658,6 +672,12 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 				return;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__TIME_ZONE_ID:
 				setTimeZoneId(TIME_ZONE_ID_EDEFAULT);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID:
+				setContactMechId((ContactMech)null);
+				return;
+			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -675,14 +695,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 				return WORK_EFFORT_ID_EDEFAULT == null ? workEffortId != null : !WORK_EFFORT_ID_EDEFAULT.equals(workEffortId);
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__SEQUENCE_ID:
 				return SEQUENCE_ID_EDEFAULT == null ? sequenceId != null : !SEQUENCE_ID_EDEFAULT.equals(sequenceId);
-			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID:
-				return CONTACT_MECH_ID_EDEFAULT == null ? contactMechId != null : !CONTACT_MECH_ID_EDEFAULT.equals(contactMechId);
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CURRENT_COUNT:
 				return currentCount != CURRENT_COUNT_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__LOCALE_ID:
 				return LOCALE_ID_EDEFAULT == null ? localeId != null : !LOCALE_ID_EDEFAULT.equals(localeId);
-			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REMINDER_DATE_TIME:
 				return REMINDER_DATE_TIME_EDEFAULT == null ? reminderDateTime != null : !REMINDER_DATE_TIME_EDEFAULT.equals(reminderDateTime);
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__REMINDER_OFFSET:
@@ -693,6 +709,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 				return repeatInterval != REPEAT_INTERVAL_EDEFAULT;
 			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__TIME_ZONE_ID:
 				return TIME_ZONE_ID_EDEFAULT == null ? timeZoneId != null : !TIME_ZONE_ID_EDEFAULT.equals(timeZoneId);
+			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__CONTACT_MECH_ID:
+				return contactMechId != null;
+			case WorkeffortPackage.WORK_EFFORT_EVENT_REMINDER__PARTY_ID:
+				return partyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -711,14 +731,10 @@ public class WorkEffortEventReminderImpl extends BizEntityImpl implements WorkEf
 		result.append(workEffortId);
 		result.append(", sequenceId: ");
 		result.append(sequenceId);
-		result.append(", contactMechId: ");
-		result.append(contactMechId);
 		result.append(", currentCount: ");
 		result.append(currentCount);
 		result.append(", localeId: ");
 		result.append(localeId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", reminderDateTime: ");
 		result.append(reminderDateTime);
 		result.append(", reminderOffset: ");

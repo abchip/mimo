@@ -21,7 +21,6 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getSurveyId <em>Survey Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getExternalFieldRef <em>External Field Ref</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#isRequiredField <em>Required Field</em>}</li>
@@ -32,6 +31,7 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getThruDate <em>Thru Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getWithSurveyOptionSeqId <em>With Survey Option Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getWithSurveyQuestionId <em>With Survey Question Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getSurveyQuestionId <em>Survey Question Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl()
@@ -157,7 +157,6 @@ public interface SurveyQuestionAppl extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SurveyId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='Survey'"
 	 * @generated
 	 */
 	String getSurveyId();
@@ -251,32 +250,30 @@ public interface SurveyQuestionAppl extends BizEntity {
 	void setSurveyPageSeqId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Survey Question Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Survey Question Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Survey Question Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Survey Question Id</em>' attribute.
-	 * @see #setSurveyQuestionId(String)
+	 * @return the value of the '<em>Survey Question Id</em>' reference.
+	 * @see #setSurveyQuestionId(SurveyQuestion)
 	 * @see org.abchip.mimo.biz.content.survey.SurveyPackage#getSurveyQuestionAppl_SurveyQuestionId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SurveyQuestion'"
+	 * @model keys="surveyQuestionId"
 	 * @generated
 	 */
-	String getSurveyQuestionId();
+	SurveyQuestion getSurveyQuestionId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getSurveyQuestionId <em>Survey Question Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.survey.SurveyQuestionAppl#getSurveyQuestionId <em>Survey Question Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Survey Question Id</em>' attribute.
+	 * @param value the new value of the '<em>Survey Question Id</em>' reference.
 	 * @see #getSurveyQuestionId()
 	 * @generated
 	 */
-	void setSurveyQuestionId(String value);
+	void setSurveyQuestionId(SurveyQuestion value);
 
 	/**
 	 * Returns the value of the '<em><b>Thru Date</b></em>' attribute.

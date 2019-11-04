@@ -199,52 +199,7 @@ public interface BizPackage extends EPackage {
 	 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizEntityTyped()
 	 * @generated
 	 */
-	int BIZ_ENTITY_TYPED = 2;
-
-	/**
-	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED__CREATED_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED__CREATED_TX_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Entity Typed</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPED_FEATURE_COUNT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 4;
+	int BIZ_ENTITY_TYPED = 3;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizEntityTypeImpl <em>Entity Type</em>}' class.
@@ -254,61 +209,7 @@ public interface BizPackage extends EPackage {
 	 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizEntityType()
 	 * @generated
 	 */
-	int BIZ_ENTITY_TYPE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE__SLOTS = EntityPackage.ENTITY_TYPE__SLOTS;
-
-	/**
-	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE__CREATED_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE__CREATED_TX_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Entity Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_ENTITY_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 4;
+	int BIZ_ENTITY_TYPE = 4;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizProviderConfigImpl <em>Provider Config</em>}' class.
@@ -318,52 +219,7 @@ public interface BizPackage extends EPackage {
 	 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizProviderConfig()
 	 * @generated
 	 */
-	int BIZ_PROVIDER_CONFIG = 4;
-
-	/**
-	 * The feature id for the '<em><b>Login Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG__LOGIN_TYPE = EntityPackage.ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG__URL = EntityPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Public User</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG__PUBLIC_USER = EntityPackage.ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>System User</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG__SYSTEM_USER = EntityPackage.ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Provider Config</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+	int BIZ_PROVIDER_CONFIG = 5;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizProviderUserImpl <em>Provider User</em>}' class.
@@ -373,70 +229,7 @@ public interface BizPackage extends EPackage {
 	 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizProviderUser()
 	 * @generated
 	 */
-	int BIZ_PROVIDER_USER = 5;
-
-	/**
-	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__CREATED_STAMP = BIZ_ENTITY__CREATED_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__CREATED_TX_STAMP = BIZ_ENTITY__CREATED_TX_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__LAST_UPDATED_STAMP = BIZ_ENTITY__LAST_UPDATED_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__LAST_UPDATED_TX_STAMP = BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>User</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__USER = BIZ_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER__PASSWORD = BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Provider User</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIZ_PROVIDER_USER_FEATURE_COUNT = BIZ_ENTITY_FEATURE_COUNT + 2;
+	int BIZ_PROVIDER_USER = 6;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.impl.BizEntityNoteDataImpl <em>Entity Note Data</em>}' class.
@@ -446,7 +239,7 @@ public interface BizPackage extends EPackage {
 	 * @see org.abchip.mimo.biz.impl.BizPackageImpl#getBizEntityNoteData()
 	 * @generated
 	 */
-	int BIZ_ENTITY_NOTE_DATA = 6;
+	int BIZ_ENTITY_NOTE_DATA = 2;
 
 	/**
 	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
@@ -564,6 +357,213 @@ public interface BizPackage extends EPackage {
 	 * @ordered
 	 */
 	int BIZ_ENTITY_NOTE_DATA_FEATURE_COUNT = BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPED__CREATED_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPED__CREATED_TX_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPED__LAST_UPDATED_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPED__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Entity Typed</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPED_FEATURE_COUNT = EntityPackage.ENTITY_TYPED_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPE__SLOTS = EntityPackage.ENTITY_TYPE__SLOTS;
+
+	/**
+	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPE__CREATED_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPE__CREATED_TX_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPE__LAST_UPDATED_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPE__LAST_UPDATED_TX_STAMP = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Entity Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_ENTITY_TYPE_FEATURE_COUNT = EntityPackage.ENTITY_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Login Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_CONFIG__LOGIN_TYPE = EntityPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_CONFIG__URL = EntityPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Public User</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_CONFIG__PUBLIC_USER = EntityPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>System User</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_CONFIG__SYSTEM_USER = EntityPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Provider Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_CONFIG_FEATURE_COUNT = EntityPackage.ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Created Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_USER__CREATED_STAMP = BIZ_ENTITY__CREATED_STAMP;
+
+	/**
+	 * The feature id for the '<em><b>Created Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_USER__CREATED_TX_STAMP = BIZ_ENTITY__CREATED_TX_STAMP;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_USER__LAST_UPDATED_STAMP = BIZ_ENTITY__LAST_UPDATED_STAMP;
+
+	/**
+	 * The feature id for the '<em><b>Last Updated Tx Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_USER__LAST_UPDATED_TX_STAMP = BIZ_ENTITY__LAST_UPDATED_TX_STAMP;
+
+	/**
+	 * The feature id for the '<em><b>User</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_USER__USER = BIZ_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_USER__PASSWORD = BIZ_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Provider User</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIZ_PROVIDER_USER_FEATURE_COUNT = BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.abchip.mimo.biz.BizLoginType <em>Login Type</em>}' enum.

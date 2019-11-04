@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface PricePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-product-price";
+	String eNS_PREFIX = "biz-price";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,40 +117,13 @@ public interface PricePackage extends EPackage {
 	int PRODUCT_FEATURE_PRICE__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Product Price Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Currency Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_PRICE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Created By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PRODUCT_FEATURE_PRICE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Created Date</b></em>' attribute.
@@ -158,16 +132,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_PRICE__CREATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_FEATURE_PRICE__CREATED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified Date</b></em>' attribute.
@@ -176,7 +141,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_PRICE__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PRODUCT_FEATURE_PRICE__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -185,7 +150,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_PRICE__PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PRODUCT_FEATURE_PRICE__PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -194,7 +159,43 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_PRICE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PRODUCT_FEATURE_PRICE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Product Price Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Created By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Product Feature Price</em>' class.
@@ -261,31 +262,13 @@ public interface PricePackage extends EPackage {
 	int PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Product Price Purpose Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PAYMENT_METHOD_TYPE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PRODUCT_PAYMENT_METHOD_TYPE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sequence Num</b></em>' attribute.
@@ -294,7 +277,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PAYMENT_METHOD_TYPE__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PRODUCT_PAYMENT_METHOD_TYPE__SEQUENCE_NUM = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -303,7 +286,25 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PAYMENT_METHOD_TYPE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PRODUCT_PAYMENT_METHOD_TYPE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Product Price Purpose Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Product Payment Method Type</em>' class.
@@ -370,58 +371,13 @@ public interface PricePackage extends EPackage {
 	int PRODUCT_PRICE__PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Product Price Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Product Price Purpose Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Currency Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Product Store Group Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Created By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int PRODUCT_PRICE__FROM_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Created Date</b></em>' attribute.
@@ -430,25 +386,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__CREATED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Custom Price Calc Service</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int PRODUCT_PRICE__CREATED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified Date</b></em>' attribute.
@@ -457,7 +395,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int PRODUCT_PRICE__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -466,7 +404,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int PRODUCT_PRICE__PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Price With Tax</b></em>' attribute.
@@ -475,7 +413,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__PRICE_WITH_TAX = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int PRODUCT_PRICE__PRICE_WITH_TAX = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Price Without Tax</b></em>' attribute.
@@ -484,7 +422,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__PRICE_WITHOUT_TAX = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int PRODUCT_PRICE__PRICE_WITHOUT_TAX = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Tax Amount</b></em>' attribute.
@@ -493,25 +431,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__TAX_AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>Tax Auth Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
-
-	/**
-	 * The feature id for the '<em><b>Tax Auth Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int PRODUCT_PRICE__TAX_AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Tax In Price</b></em>' attribute.
@@ -520,7 +440,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__TAX_IN_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+	int PRODUCT_PRICE__TAX_IN_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Tax Percentage</b></em>' attribute.
@@ -529,16 +449,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__TAX_PERCENTAGE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
-
-	/**
-	 * The feature id for the '<em><b>Term Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE__TERM_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
+	int PRODUCT_PRICE__TAX_PERCENTAGE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -547,7 +458,97 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
+	int PRODUCT_PRICE__THRU_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Product Price Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Product Price Purpose Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Term Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__TERM_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Product Store Group Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Custom Price Calc Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Tax Auth Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Tax Auth Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
+
+	/**
+	 * The feature id for the '<em><b>Created By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
+
+	/**
+	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of structural features of the '<em>Product Price</em>' class.
@@ -632,22 +633,22 @@ public interface PricePackage extends EPackage {
 	int PRODUCT_PRICE_ACTION__AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Product Price Action Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Rate Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_ACTION__RATE_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+	int PRODUCT_PRICE_ACTION__RATE_CODE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Product Price Action Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Product Price Action</em>' class.
@@ -896,22 +897,13 @@ public interface PricePackage extends EPackage {
 	int PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_CHANGE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Changed By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Changed Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__CHANGED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int PRODUCT_PRICE_CHANGE__CHANGED_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Currency Uom Id</b></em>' attribute.
@@ -920,7 +912,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int PRODUCT_PRICE_CHANGE__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>From Date</b></em>' attribute.
@@ -929,7 +921,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int PRODUCT_PRICE_CHANGE__FROM_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Old Price</b></em>' attribute.
@@ -938,7 +930,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__OLD_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int PRODUCT_PRICE_CHANGE__OLD_PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -947,7 +939,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int PRODUCT_PRICE_CHANGE__PRICE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -956,7 +948,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int PRODUCT_PRICE_CHANGE__PRODUCT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Product Price Purpose Id</b></em>' attribute.
@@ -965,7 +957,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_PURPOSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
+	int PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_PURPOSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Product Price Type Id</b></em>' attribute.
@@ -974,7 +966,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
+	int PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Product Store Group Id</b></em>' attribute.
@@ -983,7 +975,7 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__PRODUCT_STORE_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+	int PRODUCT_PRICE_CHANGE__PRODUCT_STORE_GROUP_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Thru Date</b></em>' attribute.
@@ -992,7 +984,16 @@ public interface PricePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_PRICE_CHANGE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
+	int PRODUCT_PRICE_CHANGE__THRU_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Changed By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Product Price Change</em>' class.
@@ -1077,7 +1078,7 @@ public interface PricePackage extends EPackage {
 	int PRODUCT_PRICE_COND__COND_VALUE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Input Param Enum Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Input Param Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1086,7 +1087,7 @@ public interface PricePackage extends EPackage {
 	int PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Operator Enum Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Operator Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1450,22 +1451,22 @@ public interface PricePackage extends EPackage {
 	int QUANTITY_BREAK__FROM_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Quantity Break Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Thru Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUANTITY_BREAK__THRU_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
+	int QUANTITY_BREAK__THRU_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Quantity Break Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Quantity Break</em>' class.
@@ -1654,26 +1655,26 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductFeaturePrice_ProductFeatureId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getProductPriceTypeId <em>Product Price Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getProductPriceTypeId <em>Product Price Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Price Type Id</em>'.
+	 * @return the meta object for the reference '<em>Product Price Type Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductFeaturePrice#getProductPriceTypeId()
 	 * @see #getProductFeaturePrice()
 	 * @generated
 	 */
-	EAttribute getProductFeaturePrice_ProductPriceTypeId();
+	EReference getProductFeaturePrice_ProductPriceTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCurrencyUomId <em>Currency Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCurrencyUomId <em>Currency Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Currency Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Currency Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCurrencyUomId()
 	 * @see #getProductFeaturePrice()
 	 * @generated
 	 */
-	EAttribute getProductFeaturePrice_CurrencyUomId();
+	EReference getProductFeaturePrice_CurrencyUomId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getFromDate <em>From Date</em>}'.
@@ -1687,15 +1688,15 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductFeaturePrice_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCreatedByUserLogin <em>Created By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCreatedByUserLogin <em>Created By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Created By User Login</em>'.
+	 * @return the meta object for the reference '<em>Created By User Login</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCreatedByUserLogin()
 	 * @see #getProductFeaturePrice()
 	 * @generated
 	 */
-	EAttribute getProductFeaturePrice_CreatedByUserLogin();
+	EReference getProductFeaturePrice_CreatedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getCreatedDate <em>Created Date</em>}'.
@@ -1709,15 +1710,15 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductFeaturePrice_CreatedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Last Modified By User Login</em>'.
+	 * @return the meta object for the reference '<em>Last Modified By User Login</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductFeaturePrice#getLastModifiedByUserLogin()
 	 * @see #getProductFeaturePrice()
 	 * @generated
 	 */
-	EAttribute getProductFeaturePrice_LastModifiedByUserLogin();
+	EReference getProductFeaturePrice_LastModifiedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductFeaturePrice#getLastModifiedDate <em>Last Modified Date</em>}'.
@@ -1774,26 +1775,26 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPaymentMethodType_ProductId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getPaymentMethodTypeId <em>Payment Method Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Type Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Type Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getPaymentMethodTypeId()
 	 * @see #getProductPaymentMethodType()
 	 * @generated
 	 */
-	EAttribute getProductPaymentMethodType_PaymentMethodTypeId();
+	EReference getProductPaymentMethodType_PaymentMethodTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductPricePurposeId <em>Product Price Purpose Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductPricePurposeId <em>Product Price Purpose Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Price Purpose Id</em>'.
+	 * @return the meta object for the reference '<em>Product Price Purpose Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getProductPricePurposeId()
 	 * @see #getProductPaymentMethodType()
 	 * @generated
 	 */
-	EAttribute getProductPaymentMethodType_ProductPricePurposeId();
+	EReference getProductPaymentMethodType_ProductPricePurposeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPaymentMethodType#getFromDate <em>From Date</em>}'.
@@ -1850,48 +1851,48 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPrice_ProductId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductPriceTypeId <em>Product Price Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductPriceTypeId <em>Product Price Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Price Type Id</em>'.
+	 * @return the meta object for the reference '<em>Product Price Type Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getProductPriceTypeId()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_ProductPriceTypeId();
+	EReference getProductPrice_ProductPriceTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductPricePurposeId <em>Product Price Purpose Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductPricePurposeId <em>Product Price Purpose Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Price Purpose Id</em>'.
+	 * @return the meta object for the reference '<em>Product Price Purpose Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getProductPricePurposeId()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_ProductPricePurposeId();
+	EReference getProductPrice_ProductPricePurposeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getCurrencyUomId <em>Currency Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getCurrencyUomId <em>Currency Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Currency Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Currency Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getCurrencyUomId()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_CurrencyUomId();
+	EReference getProductPrice_CurrencyUomId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductStoreGroupId <em>Product Store Group Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getProductStoreGroupId <em>Product Store Group Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Store Group Id</em>'.
+	 * @return the meta object for the reference '<em>Product Store Group Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getProductStoreGroupId()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_ProductStoreGroupId();
+	EReference getProductPrice_ProductStoreGroupId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getFromDate <em>From Date</em>}'.
@@ -1905,15 +1906,15 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPrice_FromDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getCreatedByUserLogin <em>Created By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getCreatedByUserLogin <em>Created By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Created By User Login</em>'.
+	 * @return the meta object for the reference '<em>Created By User Login</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getCreatedByUserLogin()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_CreatedByUserLogin();
+	EReference getProductPrice_CreatedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getCreatedDate <em>Created Date</em>}'.
@@ -1927,26 +1928,26 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPrice_CreatedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getCustomPriceCalcService <em>Custom Price Calc Service</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getCustomPriceCalcService <em>Custom Price Calc Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Custom Price Calc Service</em>'.
+	 * @return the meta object for the reference '<em>Custom Price Calc Service</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getCustomPriceCalcService()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_CustomPriceCalcService();
+	EReference getProductPrice_CustomPriceCalcService();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getLastModifiedByUserLogin <em>Last Modified By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Last Modified By User Login</em>'.
+	 * @return the meta object for the reference '<em>Last Modified By User Login</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getLastModifiedByUserLogin()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_LastModifiedByUserLogin();
+	EReference getProductPrice_LastModifiedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getLastModifiedDate <em>Last Modified Date</em>}'.
@@ -2004,26 +2005,26 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPrice_TaxAmount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getTaxAuthGeoId <em>Tax Auth Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tax Auth Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Tax Auth Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getTaxAuthGeoId()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_TaxAuthGeoId();
+	EReference getProductPrice_TaxAuthGeoId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getTaxAuthPartyId <em>Tax Auth Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getTaxAuthPartyId <em>Tax Auth Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tax Auth Party Id</em>'.
+	 * @return the meta object for the reference '<em>Tax Auth Party Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getTaxAuthPartyId()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_TaxAuthPartyId();
+	EReference getProductPrice_TaxAuthPartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#isTaxInPrice <em>Tax In Price</em>}'.
@@ -2048,15 +2049,15 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPrice_TaxPercentage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getTermUomId <em>Term Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPrice#getTermUomId <em>Term Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Term Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Term Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPrice#getTermUomId()
 	 * @see #getProductPrice()
 	 * @generated
 	 */
-	EAttribute getProductPrice_TermUomId();
+	EReference getProductPrice_TermUomId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPrice#getThruDate <em>Thru Date</em>}'.
@@ -2113,15 +2114,15 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPriceAction_Amount();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getProductPriceActionTypeId <em>Product Price Action Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getProductPriceActionTypeId <em>Product Price Action Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Price Action Type Id</em>'.
+	 * @return the meta object for the reference '<em>Product Price Action Type Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPriceAction#getProductPriceActionTypeId()
 	 * @see #getProductPriceAction()
 	 * @generated
 	 */
-	EAttribute getProductPriceAction_ProductPriceActionTypeId();
+	EReference getProductPriceAction_ProductPriceActionTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPriceAction#getRateCode <em>Rate Code</em>}'.
@@ -2253,15 +2254,15 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPriceChange_ProductPriceChangeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedByUserLogin <em>Changed By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedByUserLogin <em>Changed By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Changed By User Login</em>'.
+	 * @return the meta object for the reference '<em>Changed By User Login</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedByUserLogin()
 	 * @see #getProductPriceChange()
 	 * @generated
 	 */
-	EAttribute getProductPriceChange_ChangedByUserLogin();
+	EReference getProductPriceChange_ChangedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPriceChange#getChangedDate <em>Changed Date</em>}'.
@@ -2417,26 +2418,26 @@ public interface PricePackage extends EPackage {
 	EAttribute getProductPriceCond_CondValue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getInputParamEnumId <em>Input Param Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getInputParamEnumId <em>Input Param Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Input Param Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Input Param Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPriceCond#getInputParamEnumId()
 	 * @see #getProductPriceCond()
 	 * @generated
 	 */
-	EAttribute getProductPriceCond_InputParamEnumId();
+	EReference getProductPriceCond_InputParamEnumId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getOperatorEnumId <em>Operator Enum Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.ProductPriceCond#getOperatorEnumId <em>Operator Enum Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator Enum Id</em>'.
+	 * @return the meta object for the reference '<em>Operator Enum Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.ProductPriceCond#getOperatorEnumId()
 	 * @see #getProductPriceCond()
 	 * @generated
 	 */
-	EAttribute getProductPriceCond_OperatorEnumId();
+	EReference getProductPriceCond_OperatorEnumId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.product.price.ProductPricePurpose <em>Product Price Purpose</em>}'.
@@ -2633,15 +2634,15 @@ public interface PricePackage extends EPackage {
 	EAttribute getQuantityBreak_FromQuantity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakTypeId <em>Quantity Break Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakTypeId <em>Quantity Break Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Quantity Break Type Id</em>'.
+	 * @return the meta object for the reference '<em>Quantity Break Type Id</em>'.
 	 * @see org.abchip.mimo.biz.product.price.QuantityBreak#getQuantityBreakTypeId()
 	 * @see #getQuantityBreak()
 	 * @generated
 	 */
-	EAttribute getQuantityBreak_QuantityBreakTypeId();
+	EReference getQuantityBreak_QuantityBreakTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.product.price.QuantityBreak#getThruQuantity <em>Thru Quantity</em>}'.
@@ -2759,20 +2760,20 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_FEATURE_PRICE__PRODUCT_FEATURE_ID = eINSTANCE.getProductFeaturePrice_ProductFeatureId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Price Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Price Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID = eINSTANCE.getProductFeaturePrice_ProductPriceTypeId();
+		EReference PRODUCT_FEATURE_PRICE__PRODUCT_PRICE_TYPE_ID = eINSTANCE.getProductFeaturePrice_ProductPriceTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID = eINSTANCE.getProductFeaturePrice_CurrencyUomId();
+		EReference PRODUCT_FEATURE_PRICE__CURRENCY_UOM_ID = eINSTANCE.getProductFeaturePrice_CurrencyUomId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -2783,12 +2784,12 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_FEATURE_PRICE__FROM_DATE = eINSTANCE.getProductFeaturePrice_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Created By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Created By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN = eINSTANCE.getProductFeaturePrice_CreatedByUserLogin();
+		EReference PRODUCT_FEATURE_PRICE__CREATED_BY_USER_LOGIN = eINSTANCE.getProductFeaturePrice_CreatedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Created Date</b></em>' attribute feature.
@@ -2799,12 +2800,12 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_FEATURE_PRICE__CREATED_DATE = eINSTANCE.getProductFeaturePrice_CreatedDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Last Modified By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Last Modified By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN = eINSTANCE.getProductFeaturePrice_LastModifiedByUserLogin();
+		EReference PRODUCT_FEATURE_PRICE__LAST_MODIFIED_BY_USER_LOGIN = eINSTANCE.getProductFeaturePrice_LastModifiedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Last Modified Date</b></em>' attribute feature.
@@ -2849,20 +2850,20 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_ID = eINSTANCE.getProductPaymentMethodType_ProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getProductPaymentMethodType_PaymentMethodTypeId();
+		EReference PRODUCT_PAYMENT_METHOD_TYPE__PAYMENT_METHOD_TYPE_ID = eINSTANCE.getProductPaymentMethodType_PaymentMethodTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Price Purpose Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Price Purpose Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID = eINSTANCE.getProductPaymentMethodType_ProductPricePurposeId();
+		EReference PRODUCT_PAYMENT_METHOD_TYPE__PRODUCT_PRICE_PURPOSE_ID = eINSTANCE.getProductPaymentMethodType_ProductPricePurposeId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -2907,36 +2908,36 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_PRICE__PRODUCT_ID = eINSTANCE.getProductPrice_ProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Price Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Price Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID = eINSTANCE.getProductPrice_ProductPriceTypeId();
+		EReference PRODUCT_PRICE__PRODUCT_PRICE_TYPE_ID = eINSTANCE.getProductPrice_ProductPriceTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Price Purpose Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Price Purpose Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID = eINSTANCE.getProductPrice_ProductPricePurposeId();
+		EReference PRODUCT_PRICE__PRODUCT_PRICE_PURPOSE_ID = eINSTANCE.getProductPrice_ProductPricePurposeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__CURRENCY_UOM_ID = eINSTANCE.getProductPrice_CurrencyUomId();
+		EReference PRODUCT_PRICE__CURRENCY_UOM_ID = eINSTANCE.getProductPrice_CurrencyUomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Store Group Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Store Group Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID = eINSTANCE.getProductPrice_ProductStoreGroupId();
+		EReference PRODUCT_PRICE__PRODUCT_STORE_GROUP_ID = eINSTANCE.getProductPrice_ProductStoreGroupId();
 
 		/**
 		 * The meta object literal for the '<em><b>From Date</b></em>' attribute feature.
@@ -2947,12 +2948,12 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_PRICE__FROM_DATE = eINSTANCE.getProductPrice_FromDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Created By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Created By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__CREATED_BY_USER_LOGIN = eINSTANCE.getProductPrice_CreatedByUserLogin();
+		EReference PRODUCT_PRICE__CREATED_BY_USER_LOGIN = eINSTANCE.getProductPrice_CreatedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Created Date</b></em>' attribute feature.
@@ -2963,20 +2964,20 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_PRICE__CREATED_DATE = eINSTANCE.getProductPrice_CreatedDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Custom Price Calc Service</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Custom Price Calc Service</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE = eINSTANCE.getProductPrice_CustomPriceCalcService();
+		EReference PRODUCT_PRICE__CUSTOM_PRICE_CALC_SERVICE = eINSTANCE.getProductPrice_CustomPriceCalcService();
 
 		/**
-		 * The meta object literal for the '<em><b>Last Modified By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Last Modified By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN = eINSTANCE.getProductPrice_LastModifiedByUserLogin();
+		EReference PRODUCT_PRICE__LAST_MODIFIED_BY_USER_LOGIN = eINSTANCE.getProductPrice_LastModifiedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Last Modified Date</b></em>' attribute feature.
@@ -3019,20 +3020,20 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_PRICE__TAX_AMOUNT = eINSTANCE.getProductPrice_TaxAmount();
 
 		/**
-		 * The meta object literal for the '<em><b>Tax Auth Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tax Auth Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__TAX_AUTH_GEO_ID = eINSTANCE.getProductPrice_TaxAuthGeoId();
+		EReference PRODUCT_PRICE__TAX_AUTH_GEO_ID = eINSTANCE.getProductPrice_TaxAuthGeoId();
 
 		/**
-		 * The meta object literal for the '<em><b>Tax Auth Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tax Auth Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__TAX_AUTH_PARTY_ID = eINSTANCE.getProductPrice_TaxAuthPartyId();
+		EReference PRODUCT_PRICE__TAX_AUTH_PARTY_ID = eINSTANCE.getProductPrice_TaxAuthPartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Tax In Price</b></em>' attribute feature.
@@ -3051,12 +3052,12 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_PRICE__TAX_PERCENTAGE = eINSTANCE.getProductPrice_TaxPercentage();
 
 		/**
-		 * The meta object literal for the '<em><b>Term Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Term Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE__TERM_UOM_ID = eINSTANCE.getProductPrice_TermUomId();
+		EReference PRODUCT_PRICE__TERM_UOM_ID = eINSTANCE.getProductPrice_TermUomId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Date</b></em>' attribute feature.
@@ -3101,12 +3102,12 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_PRICE_ACTION__AMOUNT = eINSTANCE.getProductPriceAction_Amount();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Price Action Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Price Action Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID = eINSTANCE.getProductPriceAction_ProductPriceActionTypeId();
+		EReference PRODUCT_PRICE_ACTION__PRODUCT_PRICE_ACTION_TYPE_ID = eINSTANCE.getProductPriceAction_ProductPriceActionTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Rate Code</b></em>' attribute feature.
@@ -3211,12 +3212,12 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_PRICE_CHANGE__PRODUCT_PRICE_CHANGE_ID = eINSTANCE.getProductPriceChange_ProductPriceChangeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Changed By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Changed By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN = eINSTANCE.getProductPriceChange_ChangedByUserLogin();
+		EReference PRODUCT_PRICE_CHANGE__CHANGED_BY_USER_LOGIN = eINSTANCE.getProductPriceChange_ChangedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Changed Date</b></em>' attribute feature.
@@ -3333,20 +3334,20 @@ public interface PricePackage extends EPackage {
 		EAttribute PRODUCT_PRICE_COND__COND_VALUE = eINSTANCE.getProductPriceCond_CondValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Param Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Input Param Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID = eINSTANCE.getProductPriceCond_InputParamEnumId();
+		EReference PRODUCT_PRICE_COND__INPUT_PARAM_ENUM_ID = eINSTANCE.getProductPriceCond_InputParamEnumId();
 
 		/**
-		 * The meta object literal for the '<em><b>Operator Enum Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Operator Enum Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRODUCT_PRICE_COND__OPERATOR_ENUM_ID = eINSTANCE.getProductPriceCond_OperatorEnumId();
+		EReference PRODUCT_PRICE_COND__OPERATOR_ENUM_ID = eINSTANCE.getProductPriceCond_OperatorEnumId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.product.price.impl.ProductPricePurposeImpl <em>Product Price Purpose</em>}' class.
@@ -3501,12 +3502,12 @@ public interface PricePackage extends EPackage {
 		EAttribute QUANTITY_BREAK__FROM_QUANTITY = eINSTANCE.getQuantityBreak_FromQuantity();
 
 		/**
-		 * The meta object literal for the '<em><b>Quantity Break Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Quantity Break Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID = eINSTANCE.getQuantityBreak_QuantityBreakTypeId();
+		EReference QUANTITY_BREAK__QUANTITY_BREAK_TYPE_ID = eINSTANCE.getQuantityBreak_QuantityBreakTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Thru Quantity</b></em>' attribute feature.

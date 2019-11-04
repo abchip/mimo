@@ -264,7 +264,7 @@ public interface ProdCatalog extends BizEntity {
 	 * @return the value of the '<em>Prod Catalog Id</em>' attribute.
 	 * @see #setProdCatalogId(String)
 	 * @see org.abchip.mimo.biz.product.catalog.CatalogPackage#getProdCatalog_ProdCatalogId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */

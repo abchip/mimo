@@ -11,10 +11,13 @@ import java.util.Date;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.party.agreement.Addendum;
+import org.abchip.mimo.biz.party.agreement.Agreement;
 import org.abchip.mimo.biz.party.agreement.AgreementPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,8 +32,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AddendumImpl#getAddendumCreationDate <em>Addendum Creation Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AddendumImpl#getAddendumEffectiveDate <em>Addendum Effective Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AddendumImpl#getAddendumText <em>Addendum Text</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AddendumImpl#getAgreementId <em>Agreement Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AddendumImpl#getAgreementItemSeqId <em>Agreement Item Seq Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.party.agreement.impl.AddendumImpl#getAgreementId <em>Agreement Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,26 +125,6 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	protected String addendumText = ADDENDUM_TEXT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AGREEMENT_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAgreementId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String agreementId = AGREEMENT_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getAgreementItemSeqId() <em>Agreement Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,6 +143,16 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	 * @ordered
 	 */
 	protected String agreementItemSeqId = AGREEMENT_ITEM_SEQ_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAgreementId() <em>Agreement Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgreementId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Agreement agreementId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,7 +294,24 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	 * @generated
 	 */
 	@Override
-	public String getAgreementId() {
+	public Agreement getAgreementId() {
+		if (agreementId != null && ((EObject)agreementId).eIsProxy()) {
+			InternalEObject oldAgreementId = (InternalEObject)agreementId;
+			agreementId = (Agreement)eResolveProxy(oldAgreementId);
+			if (agreementId != oldAgreementId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgreementPackage.ADDENDUM__AGREEMENT_ID, oldAgreementId, agreementId));
+			}
+		}
+		return agreementId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Agreement basicGetAgreementId() {
 		return agreementId;
 	}
 
@@ -311,8 +321,8 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 	 * @generated
 	 */
 	@Override
-	public void setAgreementId(String newAgreementId) {
-		String oldAgreementId = agreementId;
+	public void setAgreementId(Agreement newAgreementId) {
+		Agreement oldAgreementId = agreementId;
 		agreementId = newAgreementId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AgreementPackage.ADDENDUM__AGREEMENT_ID, oldAgreementId, agreementId));
@@ -334,10 +344,11 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 				return getAddendumEffectiveDate();
 			case AgreementPackage.ADDENDUM__ADDENDUM_TEXT:
 				return getAddendumText();
-			case AgreementPackage.ADDENDUM__AGREEMENT_ID:
-				return getAgreementId();
 			case AgreementPackage.ADDENDUM__AGREEMENT_ITEM_SEQ_ID:
 				return getAgreementItemSeqId();
+			case AgreementPackage.ADDENDUM__AGREEMENT_ID:
+				if (resolve) return getAgreementId();
+				return basicGetAgreementId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -362,11 +373,11 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 			case AgreementPackage.ADDENDUM__ADDENDUM_TEXT:
 				setAddendumText((String)newValue);
 				return;
-			case AgreementPackage.ADDENDUM__AGREEMENT_ID:
-				setAgreementId((String)newValue);
-				return;
 			case AgreementPackage.ADDENDUM__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId((String)newValue);
+				return;
+			case AgreementPackage.ADDENDUM__AGREEMENT_ID:
+				setAgreementId((Agreement)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -392,11 +403,11 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 			case AgreementPackage.ADDENDUM__ADDENDUM_TEXT:
 				setAddendumText(ADDENDUM_TEXT_EDEFAULT);
 				return;
-			case AgreementPackage.ADDENDUM__AGREEMENT_ID:
-				setAgreementId(AGREEMENT_ID_EDEFAULT);
-				return;
 			case AgreementPackage.ADDENDUM__AGREEMENT_ITEM_SEQ_ID:
 				setAgreementItemSeqId(AGREEMENT_ITEM_SEQ_ID_EDEFAULT);
+				return;
+			case AgreementPackage.ADDENDUM__AGREEMENT_ID:
+				setAgreementId((Agreement)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -418,10 +429,10 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 				return ADDENDUM_EFFECTIVE_DATE_EDEFAULT == null ? addendumEffectiveDate != null : !ADDENDUM_EFFECTIVE_DATE_EDEFAULT.equals(addendumEffectiveDate);
 			case AgreementPackage.ADDENDUM__ADDENDUM_TEXT:
 				return ADDENDUM_TEXT_EDEFAULT == null ? addendumText != null : !ADDENDUM_TEXT_EDEFAULT.equals(addendumText);
-			case AgreementPackage.ADDENDUM__AGREEMENT_ID:
-				return AGREEMENT_ID_EDEFAULT == null ? agreementId != null : !AGREEMENT_ID_EDEFAULT.equals(agreementId);
 			case AgreementPackage.ADDENDUM__AGREEMENT_ITEM_SEQ_ID:
 				return AGREEMENT_ITEM_SEQ_ID_EDEFAULT == null ? agreementItemSeqId != null : !AGREEMENT_ITEM_SEQ_ID_EDEFAULT.equals(agreementItemSeqId);
+			case AgreementPackage.ADDENDUM__AGREEMENT_ID:
+				return agreementId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -444,8 +455,6 @@ public class AddendumImpl extends BizEntityImpl implements Addendum {
 		result.append(addendumEffectiveDate);
 		result.append(", addendumText: ");
 		result.append(addendumText);
-		result.append(", agreementId: ");
-		result.append(agreementId);
 		result.append(", agreementItemSeqId: ");
 		result.append(agreementItemSeqId);
 		result.append(')');

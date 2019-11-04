@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.party.party.PartyGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,11 +34,11 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getLastCurrencyUom <em>Last Currency Uom</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getLastLocale <em>Last Locale</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getLastTimeZone <em>Last Time Zone</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getPasswordHint <em>Password Hint</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#isRequirePasswordChange <em>Require Password Change</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getSuccessiveFailedLogins <em>Successive Failed Logins</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLdapDn <em>User Ldap Dn</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginHistories <em>User Login Histories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserLoginPasswordHistories <em>User Login Password Histories</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.security.login.UserLogin#getUserPreferences <em>User Preferences</em>}</li>
@@ -309,30 +310,30 @@ public interface UserLogin extends BizEntity {
 	void setLastTimeZone(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Party Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Party Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Party Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Party Id</em>' attribute.
-	 * @see #setPartyId(String)
+	 * @return the value of the '<em>Party Id</em>' reference.
+	 * @see #setPartyId(PartyGroup)
 	 * @see org.abchip.mimo.biz.security.login.LoginPackage#getUserLogin_PartyId()
-	 * @model annotation="mimo-ent-domain frame='Party'"
+	 * @model keys="partyId"
 	 * @generated
 	 */
-	String getPartyId();
+	PartyGroup getPartyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLogin#getPartyId <em>Party Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.security.login.UserLogin#getPartyId <em>Party Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Party Id</em>' attribute.
+	 * @param value the new value of the '<em>Party Id</em>' reference.
 	 * @see #getPartyId()
 	 * @generated
 	 */
-	void setPartyId(String value);
+	void setPartyId(PartyGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Password Hint</b></em>' attribute.

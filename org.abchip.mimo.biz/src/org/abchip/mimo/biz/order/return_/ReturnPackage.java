@@ -11,6 +11,7 @@ import org.abchip.mimo.biz.BizPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +51,7 @@ public interface ReturnPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "biz-order-return";
+	String eNS_PREFIX = "biz-return";
 
 	/**
 	 * The singleton instance of the package.
@@ -116,7 +117,7 @@ public interface ReturnPackage extends EPackage {
 	int COMMUNICATION_EVENT_RETURN__RETURN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Communication Event Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Communication Event Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -216,22 +217,13 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ADJUSTMENT__CORRESPONDING_PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Created By User Login</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Created Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__CREATED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+	int RETURN_ADJUSTMENT__CREATED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Customer Reference Id</b></em>' attribute.
@@ -240,7 +232,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__CUSTOMER_REFERENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int RETURN_ADJUSTMENT__CUSTOMER_REFERENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -249,7 +241,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int RETURN_ADJUSTMENT__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Exempt Amount</b></em>' attribute.
@@ -258,7 +250,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__EXEMPT_AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+	int RETURN_ADJUSTMENT__EXEMPT_AMOUNT = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Include In Shipping</b></em>' attribute.
@@ -267,7 +259,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__INCLUDE_IN_SHIPPING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int RETURN_ADJUSTMENT__INCLUDE_IN_SHIPPING = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Include In Tax</b></em>' attribute.
@@ -276,7 +268,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__INCLUDE_IN_TAX = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int RETURN_ADJUSTMENT__INCLUDE_IN_TAX = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified By User Login</b></em>' attribute.
@@ -285,7 +277,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int RETURN_ADJUSTMENT__LAST_MODIFIED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Last Modified Date</b></em>' attribute.
@@ -294,34 +286,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Order Adjustment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT__ORDER_ADJUSTMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
-
-	/**
-	 * The feature id for the '<em><b>Override Gl Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
-
-	/**
-	 * The feature id for the '<em><b>Primary Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT__PRIMARY_GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
+	int RETURN_ADJUSTMENT__LAST_MODIFIED_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Product Feature Id</b></em>' attribute.
@@ -330,7 +295,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
+	int RETURN_ADJUSTMENT__PRODUCT_FEATURE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Product Promo Action Seq Id</b></em>' attribute.
@@ -339,16 +304,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
-
-	/**
-	 * The feature id for the '<em><b>Product Promo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
+	int RETURN_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Product Promo Rule Id</b></em>' attribute.
@@ -357,25 +313,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__PRODUCT_PROMO_RULE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
-
-	/**
-	 * The feature id for the '<em><b>Return Adjustment Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT__RETURN_ADJUSTMENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
-
-	/**
-	 * The feature id for the '<em><b>Return Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT__RETURN_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
+	int RETURN_ADJUSTMENT__PRODUCT_PROMO_RULE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Return Item Seq Id</b></em>' attribute.
@@ -384,25 +322,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__RETURN_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
-
-	/**
-	 * The feature id for the '<em><b>Return Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT__RETURN_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
-
-	/**
-	 * The feature id for the '<em><b>Secondary Geo Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ADJUSTMENT__SECONDARY_GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 24;
+	int RETURN_ADJUSTMENT__RETURN_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Ship Group Seq Id</b></em>' attribute.
@@ -411,7 +331,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 25;
+	int RETURN_ADJUSTMENT__SHIP_GROUP_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Source Percentage</b></em>' attribute.
@@ -420,7 +340,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__SOURCE_PERCENTAGE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 26;
+	int RETURN_ADJUSTMENT__SOURCE_PERCENTAGE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Source Reference Id</b></em>' attribute.
@@ -429,7 +349,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__SOURCE_REFERENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 27;
+	int RETURN_ADJUSTMENT__SOURCE_REFERENCE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Tax Auth Geo Id</b></em>' attribute.
@@ -438,7 +358,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 28;
+	int RETURN_ADJUSTMENT__TAX_AUTH_GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Tax Auth Party Id</b></em>' attribute.
@@ -447,10 +367,91 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ADJUSTMENT__TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 29;
+	int RETURN_ADJUSTMENT__TAX_AUTH_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 20;
 
 	/**
-	 * The feature id for the '<em><b>Tax Authority Rate Seq Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Return Adjustment Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ADJUSTMENT__RETURN_ADJUSTMENT_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>Return Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ADJUSTMENT__RETURN_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 22;
+
+	/**
+	 * The feature id for the '<em><b>Created By User Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ADJUSTMENT__CREATED_BY_USER_LOGIN = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 23;
+
+	/**
+	 * The feature id for the '<em><b>Product Promo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ADJUSTMENT__PRODUCT_PROMO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 24;
+
+	/**
+	 * The feature id for the '<em><b>Primary Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ADJUSTMENT__PRIMARY_GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 25;
+
+	/**
+	 * The feature id for the '<em><b>Secondary Geo Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ADJUSTMENT__SECONDARY_GEO_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 26;
+
+	/**
+	 * The feature id for the '<em><b>Override Gl Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 27;
+
+	/**
+	 * The feature id for the '<em><b>Return Type Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ADJUSTMENT__RETURN_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 28;
+
+	/**
+	 * The feature id for the '<em><b>Order Adjustment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ADJUSTMENT__ORDER_ADJUSTMENT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 29;
+
+	/**
+	 * The feature id for the '<em><b>Tax Authority Rate Seq Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -550,7 +551,7 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ADJUSTMENT_TYPE__HAS_TABLE = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -623,22 +624,22 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_CONTACT_MECH__RETURN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Contact Mech Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
+	int RETURN_CONTACT_MECH__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Contact Mech Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Contact Mech Purpose Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_CONTACT_MECH__CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+	int RETURN_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Contact Mech</em>' class.
@@ -705,67 +706,13 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_HEADER__RETURN_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Billing Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Created By</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__CREATED_BY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Currency Uom Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Destination Facility Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__DESTINATION_FACILITY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Entry Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__ENTRY_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Fin Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__FIN_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>From Party Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__FROM_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+	int RETURN_HEADER__ENTRY_DATE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Needs Inventory Receive</b></em>' attribute.
@@ -774,43 +721,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__NEEDS_INVENTORY_RECEIVE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Origin Contact Mech Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__ORIGIN_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Payment Method Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Return Header Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__RETURN_HEADER_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_HEADER__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int RETURN_HEADER__NEEDS_INVENTORY_RECEIVE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Supplier Rma Id</b></em>' attribute.
@@ -819,16 +730,106 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__SUPPLIER_RMA_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int RETURN_HEADER__SUPPLIER_RMA_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>To Party Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Return Header Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_HEADER__TO_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int RETURN_HEADER__RETURN_HEADER_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>From Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__FROM_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>To Party Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__TO_PARTY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Billing Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Fin Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__FIN_ACCOUNT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Payment Method Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__PAYMENT_METHOD_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Destination Facility Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__DESTINATION_FACILITY_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Origin Contact Mech Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__ORIGIN_CONTACT_MECH_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Currency Uom Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__CURRENCY_UOM_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Created By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_HEADER__CREATED_BY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Communication Event Returns</b></em>' attribute list.
@@ -931,7 +932,7 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_HEADER_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1022,40 +1023,13 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Expected Item Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM__EXPECTED_ITEM_STATUS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Order Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM__PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
+	int RETURN_ITEM__ORDER_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Received Quantity</b></em>' attribute.
@@ -1064,25 +1038,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM__RECEIVED_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Return Item Response Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM__RETURN_ITEM_RESPONSE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Return Item Type Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM__RETURN_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+	int RETURN_ITEM__RECEIVED_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Return Price</b></em>' attribute.
@@ -1091,7 +1047,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM__RETURN_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+	int RETURN_ITEM__RETURN_PRICE = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Return Quantity</b></em>' attribute.
@@ -1100,34 +1056,79 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM__RETURN_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+	int RETURN_ITEM__RETURN_QUANTITY = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Return Reason Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Return Reason Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM__RETURN_REASON_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+	int RETURN_ITEM__RETURN_REASON_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Return Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Return Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM__RETURN_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+	int RETURN_ITEM__RETURN_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Return Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
+	int RETURN_ITEM__RETURN_ITEM_TYPE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Return Item Response Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM__RETURN_ITEM_RESPONSE_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM__ORDER_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM__STATUS_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Expected Item Status</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM__EXPECTED_ITEM_STATUS = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Product Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM__PRODUCT_ID = BizPackage.BIZ_ENTITY_TYPED_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Item</em>' class.
@@ -1203,22 +1204,13 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_BILLING__RETURN_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Invoice Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_BILLING__INVOICE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Invoice Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM_BILLING__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int RETURN_ITEM_BILLING__INVOICE_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -1227,7 +1219,7 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM_BILLING__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int RETURN_ITEM_BILLING__AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -1236,10 +1228,19 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM_BILLING__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int RETURN_ITEM_BILLING__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Receipt Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Invoice Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM_BILLING__INVOICE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Receipt Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1312,58 +1313,13 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Billing Account Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Fin Account Trans Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Order Payment Preference Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Payment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Replacement Order Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Response Amount</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+	int RETURN_ITEM_RESPONSE__RESPONSE_AMOUNT = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Response Date</b></em>' attribute.
@@ -1372,7 +1328,52 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM_RESPONSE__RESPONSE_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
+	int RETURN_ITEM_RESPONSE__RESPONSE_DATE = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Order Payment Preference Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Replacement Order Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Payment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM_RESPONSE__PAYMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Billing Account Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Fin Account Trans Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Item Response</em>' class.
@@ -1448,22 +1449,13 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Shipment Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_ITEM_SHIPMENT__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Shipment Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int RETURN_ITEM_SHIPMENT__SHIPMENT_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -1472,7 +1464,16 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_ITEM_SHIPMENT__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int RETURN_ITEM_SHIPMENT__QUANTITY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Shipment Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_ITEM_SHIPMENT__SHIPMENT_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Item Shipment</em>' class.
@@ -1557,7 +1558,7 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_TYPE__DESCRIPTION = BizPackage.BIZ_ENTITY_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Parent Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Parent Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1630,7 +1631,7 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_TYPE_MAP__RETURN_ITEM_MAP_KEY = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Return Header Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Return Header Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1639,7 +1640,7 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Return Item Type Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Return Item Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1794,31 +1795,13 @@ public interface ReturnPackage extends EPackage {
 	int RETURN_STATUS__RETURN_STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Change By User Login Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Return Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RETURN_STATUS__RETURN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Return Item Seq Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_STATUS__RETURN_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+	int RETURN_STATUS__RETURN_ITEM_SEQ_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Status Datetime</b></em>' attribute.
@@ -1827,16 +1810,34 @@ public interface ReturnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_STATUS__STATUS_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+	int RETURN_STATUS__STATUS_DATETIME = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Status Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Status Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_STATUS__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
+	int RETURN_STATUS__STATUS_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Return Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_STATUS__RETURN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Change By User Login Id</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID = BizPackage.BIZ_ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Status</em>' class.
@@ -1952,15 +1953,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getCommunicationEventReturn_ReturnId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.CommunicationEventReturn#getCommunicationEventId <em>Communication Event Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.CommunicationEventReturn#getCommunicationEventId <em>Communication Event Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Communication Event Id</em>'.
+	 * @return the meta object for the reference '<em>Communication Event Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.CommunicationEventReturn#getCommunicationEventId()
 	 * @see #getCommunicationEventReturn()
 	 * @generated
 	 */
-	EAttribute getCommunicationEventReturn_CommunicationEventId();
+	EReference getCommunicationEventReturn_CommunicationEventId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment <em>Adjustment</em>}'.
@@ -2017,15 +2018,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnAdjustment_CorrespondingProductId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getCreatedByUserLogin <em>Created By User Login</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Created By User Login</em>'.
+	 * @return the meta object for the reference '<em>Created By User Login</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getCreatedByUserLogin()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_CreatedByUserLogin();
+	EReference getReturnAdjustment_CreatedByUserLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getCreatedDate <em>Created Date</em>}'.
@@ -2116,37 +2117,37 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnAdjustment_LastModifiedDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOrderAdjustmentId <em>Order Adjustment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOrderAdjustmentId <em>Order Adjustment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Adjustment Id</em>'.
+	 * @return the meta object for the reference '<em>Order Adjustment Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOrderAdjustmentId()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_OrderAdjustmentId();
+	EReference getReturnAdjustment_OrderAdjustmentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOverrideGlAccountId <em>Override Gl Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Override Gl Account Id</em>'.
+	 * @return the meta object for the reference '<em>Override Gl Account Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getOverrideGlAccountId()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_OverrideGlAccountId();
+	EReference getReturnAdjustment_OverrideGlAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getPrimaryGeoId <em>Primary Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Primary Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Primary Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getPrimaryGeoId()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_PrimaryGeoId();
+	EReference getReturnAdjustment_PrimaryGeoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductFeatureId <em>Product Feature Id</em>}'.
@@ -2171,15 +2172,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnAdjustment_ProductPromoActionSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductPromoId <em>Product Promo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductPromoId <em>Product Promo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Promo Id</em>'.
+	 * @return the meta object for the reference '<em>Product Promo Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductPromoId()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_ProductPromoId();
+	EReference getReturnAdjustment_ProductPromoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getProductPromoRuleId <em>Product Promo Rule Id</em>}'.
@@ -2193,26 +2194,26 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnAdjustment_ProductPromoRuleId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnAdjustmentTypeId <em>Return Adjustment Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnAdjustmentTypeId <em>Return Adjustment Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Adjustment Type Id</em>'.
+	 * @return the meta object for the reference '<em>Return Adjustment Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnAdjustmentTypeId()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_ReturnAdjustmentTypeId();
+	EReference getReturnAdjustment_ReturnAdjustmentTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnId <em>Return Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnId <em>Return Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Id</em>'.
+	 * @return the meta object for the reference '<em>Return Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnId()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_ReturnId();
+	EReference getReturnAdjustment_ReturnId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnItemSeqId <em>Return Item Seq Id</em>}'.
@@ -2226,26 +2227,26 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnAdjustment_ReturnItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnTypeId <em>Return Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnTypeId <em>Return Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Type Id</em>'.
+	 * @return the meta object for the reference '<em>Return Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getReturnTypeId()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_ReturnTypeId();
+	EReference getReturnAdjustment_ReturnTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getSecondaryGeoId <em>Secondary Geo Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Secondary Geo Id</em>'.
+	 * @return the meta object for the reference '<em>Secondary Geo Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getSecondaryGeoId()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_SecondaryGeoId();
+	EReference getReturnAdjustment_SecondaryGeoId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getShipGroupSeqId <em>Ship Group Seq Id</em>}'.
@@ -2303,15 +2304,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnAdjustment_TaxAuthPartyId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustment#getTaxAuthorityRateSeqId <em>Tax Authority Rate Seq Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tax Authority Rate Seq Id</em>'.
+	 * @return the meta object for the reference '<em>Tax Authority Rate Seq Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustment#getTaxAuthorityRateSeqId()
 	 * @see #getReturnAdjustment()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustment_TaxAuthorityRateSeqId();
+	EReference getReturnAdjustment_TaxAuthorityRateSeqId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustmentType <em>Adjustment Type</em>}'.
@@ -2357,15 +2358,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnAdjustmentType_HasTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustmentType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnAdjustmentType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnAdjustmentType#getParentTypeId()
 	 * @see #getReturnAdjustmentType()
 	 * @generated
 	 */
-	EAttribute getReturnAdjustmentType_ParentTypeId();
+	EReference getReturnAdjustmentType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnContactMech <em>Contact Mech</em>}'.
@@ -2389,26 +2390,26 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnContactMech_ReturnId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnContactMech#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnContactMech#getContactMechPurposeTypeId <em>Contact Mech Purpose Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Purpose Type Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Purpose Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnContactMech#getContactMechPurposeTypeId()
 	 * @see #getReturnContactMech()
 	 * @generated
 	 */
-	EAttribute getReturnContactMech_ContactMechPurposeTypeId();
+	EReference getReturnContactMech_ContactMechPurposeTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnContactMech#getContactMechId <em>Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnContactMech#getContactMechId <em>Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnContactMech#getContactMechId()
 	 * @see #getReturnContactMech()
 	 * @generated
 	 */
-	EAttribute getReturnContactMech_ContactMechId();
+	EReference getReturnContactMech_ContactMechId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnHeader <em>Header</em>}'.
@@ -2432,48 +2433,48 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnHeader_ReturnId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getBillingAccountId <em>Billing Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getBillingAccountId <em>Billing Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Billing Account Id</em>'.
+	 * @return the meta object for the reference '<em>Billing Account Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getBillingAccountId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_BillingAccountId();
+	EReference getReturnHeader_BillingAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCreatedBy <em>Created By</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCreatedBy <em>Created By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Created By</em>'.
+	 * @return the meta object for the reference '<em>Created By</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getCreatedBy()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_CreatedBy();
+	EReference getReturnHeader_CreatedBy();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCurrencyUomId <em>Currency Uom Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCurrencyUomId <em>Currency Uom Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Currency Uom Id</em>'.
+	 * @return the meta object for the reference '<em>Currency Uom Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getCurrencyUomId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_CurrencyUomId();
+	EReference getReturnHeader_CurrencyUomId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getDestinationFacilityId <em>Destination Facility Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getDestinationFacilityId <em>Destination Facility Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Destination Facility Id</em>'.
+	 * @return the meta object for the reference '<em>Destination Facility Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getDestinationFacilityId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_DestinationFacilityId();
+	EReference getReturnHeader_DestinationFacilityId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getEntryDate <em>Entry Date</em>}'.
@@ -2487,26 +2488,26 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnHeader_EntryDate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getFinAccountId <em>Fin Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getFinAccountId <em>Fin Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fin Account Id</em>'.
+	 * @return the meta object for the reference '<em>Fin Account Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getFinAccountId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_FinAccountId();
+	EReference getReturnHeader_FinAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getFromPartyId <em>From Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getFromPartyId <em>From Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>From Party Id</em>'.
+	 * @return the meta object for the reference '<em>From Party Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getFromPartyId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_FromPartyId();
+	EReference getReturnHeader_FromPartyId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#isNeedsInventoryReceive <em>Needs Inventory Receive</em>}'.
@@ -2520,48 +2521,48 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnHeader_NeedsInventoryReceive();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getOriginContactMechId <em>Origin Contact Mech Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getOriginContactMechId <em>Origin Contact Mech Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Origin Contact Mech Id</em>'.
+	 * @return the meta object for the reference '<em>Origin Contact Mech Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getOriginContactMechId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_OriginContactMechId();
+	EReference getReturnHeader_OriginContactMechId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getPaymentMethodId <em>Payment Method Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getPaymentMethodId <em>Payment Method Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Method Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Method Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getPaymentMethodId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_PaymentMethodId();
+	EReference getReturnHeader_PaymentMethodId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnHeaderTypeId <em>Return Header Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnHeaderTypeId <em>Return Header Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Header Type Id</em>'.
+	 * @return the meta object for the reference '<em>Return Header Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getReturnHeaderTypeId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_ReturnHeaderTypeId();
+	EReference getReturnHeader_ReturnHeaderTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getStatusId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_StatusId();
+	EReference getReturnHeader_StatusId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getSupplierRmaId <em>Supplier Rma Id</em>}'.
@@ -2575,15 +2576,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnHeader_SupplierRmaId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getToPartyId <em>To Party Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getToPartyId <em>To Party Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>To Party Id</em>'.
+	 * @return the meta object for the reference '<em>To Party Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeader#getToPartyId()
 	 * @see #getReturnHeader()
 	 * @generated
 	 */
-	EAttribute getReturnHeader_ToPartyId();
+	EReference getReturnHeader_ToPartyId();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link org.abchip.mimo.biz.order.return_.ReturnHeader#getCommunicationEventReturns <em>Communication Event Returns</em>}'.
@@ -2640,15 +2641,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnHeaderType_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnHeaderType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnHeaderType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnHeaderType#getParentTypeId()
 	 * @see #getReturnHeaderType()
 	 * @generated
 	 */
-	EAttribute getReturnHeaderType_ParentTypeId();
+	EReference getReturnHeaderType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnItem <em>Item</em>}'.
@@ -2694,26 +2695,26 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItem_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getExpectedItemStatus <em>Expected Item Status</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getExpectedItemStatus <em>Expected Item Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expected Item Status</em>'.
+	 * @return the meta object for the reference '<em>Expected Item Status</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItem#getExpectedItemStatus()
 	 * @see #getReturnItem()
 	 * @generated
 	 */
-	EAttribute getReturnItem_ExpectedItemStatus();
+	EReference getReturnItem_ExpectedItemStatus();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getOrderId <em>Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getOrderId <em>Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Id</em>'.
+	 * @return the meta object for the reference '<em>Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItem#getOrderId()
 	 * @see #getReturnItem()
 	 * @generated
 	 */
-	EAttribute getReturnItem_OrderId();
+	EReference getReturnItem_OrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getOrderItemSeqId <em>Order Item Seq Id</em>}'.
@@ -2727,15 +2728,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItem_OrderItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getProductId <em>Product Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getProductId <em>Product Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Id</em>'.
+	 * @return the meta object for the reference '<em>Product Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItem#getProductId()
 	 * @see #getReturnItem()
 	 * @generated
 	 */
-	EAttribute getReturnItem_ProductId();
+	EReference getReturnItem_ProductId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReceivedQuantity <em>Received Quantity</em>}'.
@@ -2749,26 +2750,26 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItem_ReceivedQuantity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemResponseId <em>Return Item Response Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemResponseId <em>Return Item Response Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Item Response Id</em>'.
+	 * @return the meta object for the reference '<em>Return Item Response Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemResponseId()
 	 * @see #getReturnItem()
 	 * @generated
 	 */
-	EAttribute getReturnItem_ReturnItemResponseId();
+	EReference getReturnItem_ReturnItemResponseId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemTypeId <em>Return Item Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemTypeId <em>Return Item Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Item Type Id</em>'.
+	 * @return the meta object for the reference '<em>Return Item Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItem#getReturnItemTypeId()
 	 * @see #getReturnItem()
 	 * @generated
 	 */
-	EAttribute getReturnItem_ReturnItemTypeId();
+	EReference getReturnItem_ReturnItemTypeId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnPrice <em>Return Price</em>}'.
@@ -2793,37 +2794,37 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItem_ReturnQuantity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnReasonId <em>Return Reason Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnReasonId <em>Return Reason Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Reason Id</em>'.
+	 * @return the meta object for the reference '<em>Return Reason Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItem#getReturnReasonId()
 	 * @see #getReturnItem()
 	 * @generated
 	 */
-	EAttribute getReturnItem_ReturnReasonId();
+	EReference getReturnItem_ReturnReasonId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnTypeId <em>Return Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getReturnTypeId <em>Return Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Type Id</em>'.
+	 * @return the meta object for the reference '<em>Return Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItem#getReturnTypeId()
 	 * @see #getReturnItem()
 	 * @generated
 	 */
-	EAttribute getReturnItem_ReturnTypeId();
+	EReference getReturnItem_ReturnTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItem#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItem#getStatusId()
 	 * @see #getReturnItem()
 	 * @generated
 	 */
-	EAttribute getReturnItem_StatusId();
+	EReference getReturnItem_StatusId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling <em>Item Billing</em>}'.
@@ -2858,15 +2859,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItemBilling_ReturnItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceId <em>Invoice Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceId <em>Invoice Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Invoice Id</em>'.
+	 * @return the meta object for the reference '<em>Invoice Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceId()
 	 * @see #getReturnItemBilling()
 	 * @generated
 	 */
-	EAttribute getReturnItemBilling_InvoiceId();
+	EReference getReturnItemBilling_InvoiceId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getInvoiceItemSeqId <em>Invoice Item Seq Id</em>}'.
@@ -2902,15 +2903,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItemBilling_Quantity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getShipmentReceiptId <em>Shipment Receipt Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemBilling#getShipmentReceiptId <em>Shipment Receipt Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Receipt Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Receipt Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemBilling#getShipmentReceiptId()
 	 * @see #getReturnItemBilling()
 	 * @generated
 	 */
-	EAttribute getReturnItemBilling_ShipmentReceiptId();
+	EReference getReturnItemBilling_ShipmentReceiptId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse <em>Item Response</em>}'.
@@ -2934,59 +2935,59 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItemResponse_ReturnItemResponseId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getBillingAccountId <em>Billing Account Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getBillingAccountId <em>Billing Account Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Billing Account Id</em>'.
+	 * @return the meta object for the reference '<em>Billing Account Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemResponse#getBillingAccountId()
 	 * @see #getReturnItemResponse()
 	 * @generated
 	 */
-	EAttribute getReturnItemResponse_BillingAccountId();
+	EReference getReturnItemResponse_BillingAccountId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getFinAccountTransId <em>Fin Account Trans Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getFinAccountTransId <em>Fin Account Trans Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fin Account Trans Id</em>'.
+	 * @return the meta object for the reference '<em>Fin Account Trans Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemResponse#getFinAccountTransId()
 	 * @see #getReturnItemResponse()
 	 * @generated
 	 */
-	EAttribute getReturnItemResponse_FinAccountTransId();
+	EReference getReturnItemResponse_FinAccountTransId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getOrderPaymentPreferenceId <em>Order Payment Preference Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order Payment Preference Id</em>'.
+	 * @return the meta object for the reference '<em>Order Payment Preference Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemResponse#getOrderPaymentPreferenceId()
 	 * @see #getReturnItemResponse()
 	 * @generated
 	 */
-	EAttribute getReturnItemResponse_OrderPaymentPreferenceId();
+	EReference getReturnItemResponse_OrderPaymentPreferenceId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getPaymentId <em>Payment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getPaymentId <em>Payment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payment Id</em>'.
+	 * @return the meta object for the reference '<em>Payment Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemResponse#getPaymentId()
 	 * @see #getReturnItemResponse()
 	 * @generated
 	 */
-	EAttribute getReturnItemResponse_PaymentId();
+	EReference getReturnItemResponse_PaymentId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getReplacementOrderId <em>Replacement Order Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getReplacementOrderId <em>Replacement Order Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Replacement Order Id</em>'.
+	 * @return the meta object for the reference '<em>Replacement Order Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemResponse#getReplacementOrderId()
 	 * @see #getReturnItemResponse()
 	 * @generated
 	 */
-	EAttribute getReturnItemResponse_ReplacementOrderId();
+	EReference getReturnItemResponse_ReplacementOrderId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemResponse#getResponseAmount <em>Response Amount</em>}'.
@@ -3043,15 +3044,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItemShipment_ReturnItemSeqId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId <em>Shipment Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId <em>Shipment Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Shipment Id</em>'.
+	 * @return the meta object for the reference '<em>Shipment Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentId()
 	 * @see #getReturnItemShipment()
 	 * @generated
 	 */
-	EAttribute getReturnItemShipment_ShipmentId();
+	EReference getReturnItemShipment_ShipmentId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemShipment#getShipmentItemSeqId <em>Shipment Item Seq Id</em>}'.
@@ -3108,15 +3109,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItemType_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemType#getParentTypeId <em>Parent Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemType#getParentTypeId <em>Parent Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parent Type Id</em>'.
+	 * @return the meta object for the reference '<em>Parent Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemType#getParentTypeId()
 	 * @see #getReturnItemType()
 	 * @generated
 	 */
-	EAttribute getReturnItemType_ParentTypeId();
+	EReference getReturnItemType_ParentTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap <em>Item Type Map</em>}'.
@@ -3140,26 +3141,26 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnItemTypeMap_ReturnItemMapKey();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnHeaderTypeId <em>Return Header Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnHeaderTypeId <em>Return Header Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Header Type Id</em>'.
+	 * @return the meta object for the reference '<em>Return Header Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnHeaderTypeId()
 	 * @see #getReturnItemTypeMap()
 	 * @generated
 	 */
-	EAttribute getReturnItemTypeMap_ReturnHeaderTypeId();
+	EReference getReturnItemTypeMap_ReturnHeaderTypeId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemTypeId <em>Return Item Type Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemTypeId <em>Return Item Type Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Item Type Id</em>'.
+	 * @return the meta object for the reference '<em>Return Item Type Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnItemTypeMap#getReturnItemTypeId()
 	 * @see #getReturnItemTypeMap()
 	 * @generated
 	 */
-	EAttribute getReturnItemTypeMap_ReturnItemTypeId();
+	EReference getReturnItemTypeMap_ReturnItemTypeId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnReason <em>Reason</em>}'.
@@ -3226,26 +3227,26 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnStatus_ReturnStatusId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getChangeByUserLoginId <em>Change By User Login Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Change By User Login Id</em>'.
+	 * @return the meta object for the reference '<em>Change By User Login Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnStatus#getChangeByUserLoginId()
 	 * @see #getReturnStatus()
 	 * @generated
 	 */
-	EAttribute getReturnStatus_ChangeByUserLoginId();
+	EReference getReturnStatus_ChangeByUserLoginId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnId <em>Return Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnId <em>Return Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Id</em>'.
+	 * @return the meta object for the reference '<em>Return Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnId()
 	 * @see #getReturnStatus()
 	 * @generated
 	 */
-	EAttribute getReturnStatus_ReturnId();
+	EReference getReturnStatus_ReturnId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getReturnItemSeqId <em>Return Item Seq Id</em>}'.
@@ -3270,15 +3271,15 @@ public interface ReturnPackage extends EPackage {
 	EAttribute getReturnStatus_StatusDatetime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getStatusId <em>Status Id</em>}'.
+	 * Returns the meta object for the reference '{@link org.abchip.mimo.biz.order.return_.ReturnStatus#getStatusId <em>Status Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status Id</em>'.
+	 * @return the meta object for the reference '<em>Status Id</em>'.
 	 * @see org.abchip.mimo.biz.order.return_.ReturnStatus#getStatusId()
 	 * @see #getReturnStatus()
 	 * @generated
 	 */
-	EAttribute getReturnStatus_StatusId();
+	EReference getReturnStatus_StatusId();
 
 	/**
 	 * Returns the meta object for class '{@link org.abchip.mimo.biz.order.return_.ReturnType <em>Type</em>}'.
@@ -3364,12 +3365,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute COMMUNICATION_EVENT_RETURN__RETURN_ID = eINSTANCE.getCommunicationEventReturn_ReturnId();
 
 		/**
-		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Communication Event Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID = eINSTANCE.getCommunicationEventReturn_CommunicationEventId();
+		EReference COMMUNICATION_EVENT_RETURN__COMMUNICATION_EVENT_ID = eINSTANCE.getCommunicationEventReturn_CommunicationEventId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnAdjustmentImpl <em>Adjustment</em>}' class.
@@ -3414,12 +3415,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ADJUSTMENT__CORRESPONDING_PRODUCT_ID = eINSTANCE.getReturnAdjustment_CorrespondingProductId();
 
 		/**
-		 * The meta object literal for the '<em><b>Created By User Login</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Created By User Login</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__CREATED_BY_USER_LOGIN = eINSTANCE.getReturnAdjustment_CreatedByUserLogin();
+		EReference RETURN_ADJUSTMENT__CREATED_BY_USER_LOGIN = eINSTANCE.getReturnAdjustment_CreatedByUserLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Created Date</b></em>' attribute feature.
@@ -3486,28 +3487,28 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ADJUSTMENT__LAST_MODIFIED_DATE = eINSTANCE.getReturnAdjustment_LastModifiedDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Adjustment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Adjustment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__ORDER_ADJUSTMENT_ID = eINSTANCE.getReturnAdjustment_OrderAdjustmentId();
+		EReference RETURN_ADJUSTMENT__ORDER_ADJUSTMENT_ID = eINSTANCE.getReturnAdjustment_OrderAdjustmentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Override Gl Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Override Gl Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID = eINSTANCE.getReturnAdjustment_OverrideGlAccountId();
+		EReference RETURN_ADJUSTMENT__OVERRIDE_GL_ACCOUNT_ID = eINSTANCE.getReturnAdjustment_OverrideGlAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Primary Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Primary Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__PRIMARY_GEO_ID = eINSTANCE.getReturnAdjustment_PrimaryGeoId();
+		EReference RETURN_ADJUSTMENT__PRIMARY_GEO_ID = eINSTANCE.getReturnAdjustment_PrimaryGeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Product Feature Id</b></em>' attribute feature.
@@ -3526,12 +3527,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ADJUSTMENT__PRODUCT_PROMO_ACTION_SEQ_ID = eINSTANCE.getReturnAdjustment_ProductPromoActionSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Promo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__PRODUCT_PROMO_ID = eINSTANCE.getReturnAdjustment_ProductPromoId();
+		EReference RETURN_ADJUSTMENT__PRODUCT_PROMO_ID = eINSTANCE.getReturnAdjustment_ProductPromoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Product Promo Rule Id</b></em>' attribute feature.
@@ -3542,20 +3543,20 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ADJUSTMENT__PRODUCT_PROMO_RULE_ID = eINSTANCE.getReturnAdjustment_ProductPromoRuleId();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Adjustment Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Adjustment Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__RETURN_ADJUSTMENT_TYPE_ID = eINSTANCE.getReturnAdjustment_ReturnAdjustmentTypeId();
+		EReference RETURN_ADJUSTMENT__RETURN_ADJUSTMENT_TYPE_ID = eINSTANCE.getReturnAdjustment_ReturnAdjustmentTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__RETURN_ID = eINSTANCE.getReturnAdjustment_ReturnId();
+		EReference RETURN_ADJUSTMENT__RETURN_ID = eINSTANCE.getReturnAdjustment_ReturnId();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Item Seq Id</b></em>' attribute feature.
@@ -3566,20 +3567,20 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ADJUSTMENT__RETURN_ITEM_SEQ_ID = eINSTANCE.getReturnAdjustment_ReturnItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__RETURN_TYPE_ID = eINSTANCE.getReturnAdjustment_ReturnTypeId();
+		EReference RETURN_ADJUSTMENT__RETURN_TYPE_ID = eINSTANCE.getReturnAdjustment_ReturnTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Secondary Geo Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Secondary Geo Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__SECONDARY_GEO_ID = eINSTANCE.getReturnAdjustment_SecondaryGeoId();
+		EReference RETURN_ADJUSTMENT__SECONDARY_GEO_ID = eINSTANCE.getReturnAdjustment_SecondaryGeoId();
 
 		/**
 		 * The meta object literal for the '<em><b>Ship Group Seq Id</b></em>' attribute feature.
@@ -3622,12 +3623,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ADJUSTMENT__TAX_AUTH_PARTY_ID = eINSTANCE.getReturnAdjustment_TaxAuthPartyId();
 
 		/**
-		 * The meta object literal for the '<em><b>Tax Authority Rate Seq Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Tax Authority Rate Seq Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID = eINSTANCE.getReturnAdjustment_TaxAuthorityRateSeqId();
+		EReference RETURN_ADJUSTMENT__TAX_AUTHORITY_RATE_SEQ_ID = eINSTANCE.getReturnAdjustment_TaxAuthorityRateSeqId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnAdjustmentTypeImpl <em>Adjustment Type</em>}' class.
@@ -3664,12 +3665,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ADJUSTMENT_TYPE__HAS_TABLE = eINSTANCE.getReturnAdjustmentType_HasTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getReturnAdjustmentType_ParentTypeId();
+		EReference RETURN_ADJUSTMENT_TYPE__PARENT_TYPE_ID = eINSTANCE.getReturnAdjustmentType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnContactMechImpl <em>Contact Mech</em>}' class.
@@ -3690,20 +3691,20 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_CONTACT_MECH__RETURN_ID = eINSTANCE.getReturnContactMech_ReturnId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Purpose Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Purpose Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID = eINSTANCE.getReturnContactMech_ContactMechPurposeTypeId();
+		EReference RETURN_CONTACT_MECH__CONTACT_MECH_PURPOSE_TYPE_ID = eINSTANCE.getReturnContactMech_ContactMechPurposeTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_CONTACT_MECH__CONTACT_MECH_ID = eINSTANCE.getReturnContactMech_ContactMechId();
+		EReference RETURN_CONTACT_MECH__CONTACT_MECH_ID = eINSTANCE.getReturnContactMech_ContactMechId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnHeaderImpl <em>Header</em>}' class.
@@ -3724,36 +3725,36 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_HEADER__RETURN_ID = eINSTANCE.getReturnHeader_ReturnId();
 
 		/**
-		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__BILLING_ACCOUNT_ID = eINSTANCE.getReturnHeader_BillingAccountId();
+		EReference RETURN_HEADER__BILLING_ACCOUNT_ID = eINSTANCE.getReturnHeader_BillingAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Created By</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Created By</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__CREATED_BY = eINSTANCE.getReturnHeader_CreatedBy();
+		EReference RETURN_HEADER__CREATED_BY = eINSTANCE.getReturnHeader_CreatedBy();
 
 		/**
-		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Currency Uom Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__CURRENCY_UOM_ID = eINSTANCE.getReturnHeader_CurrencyUomId();
+		EReference RETURN_HEADER__CURRENCY_UOM_ID = eINSTANCE.getReturnHeader_CurrencyUomId();
 
 		/**
-		 * The meta object literal for the '<em><b>Destination Facility Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Destination Facility Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__DESTINATION_FACILITY_ID = eINSTANCE.getReturnHeader_DestinationFacilityId();
+		EReference RETURN_HEADER__DESTINATION_FACILITY_ID = eINSTANCE.getReturnHeader_DestinationFacilityId();
 
 		/**
 		 * The meta object literal for the '<em><b>Entry Date</b></em>' attribute feature.
@@ -3764,20 +3765,20 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_HEADER__ENTRY_DATE = eINSTANCE.getReturnHeader_EntryDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Fin Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Fin Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__FIN_ACCOUNT_ID = eINSTANCE.getReturnHeader_FinAccountId();
+		EReference RETURN_HEADER__FIN_ACCOUNT_ID = eINSTANCE.getReturnHeader_FinAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>From Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>From Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__FROM_PARTY_ID = eINSTANCE.getReturnHeader_FromPartyId();
+		EReference RETURN_HEADER__FROM_PARTY_ID = eINSTANCE.getReturnHeader_FromPartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Needs Inventory Receive</b></em>' attribute feature.
@@ -3788,36 +3789,36 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_HEADER__NEEDS_INVENTORY_RECEIVE = eINSTANCE.getReturnHeader_NeedsInventoryReceive();
 
 		/**
-		 * The meta object literal for the '<em><b>Origin Contact Mech Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Origin Contact Mech Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__ORIGIN_CONTACT_MECH_ID = eINSTANCE.getReturnHeader_OriginContactMechId();
+		EReference RETURN_HEADER__ORIGIN_CONTACT_MECH_ID = eINSTANCE.getReturnHeader_OriginContactMechId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Method Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__PAYMENT_METHOD_ID = eINSTANCE.getReturnHeader_PaymentMethodId();
+		EReference RETURN_HEADER__PAYMENT_METHOD_ID = eINSTANCE.getReturnHeader_PaymentMethodId();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Header Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Header Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__RETURN_HEADER_TYPE_ID = eINSTANCE.getReturnHeader_ReturnHeaderTypeId();
+		EReference RETURN_HEADER__RETURN_HEADER_TYPE_ID = eINSTANCE.getReturnHeader_ReturnHeaderTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__STATUS_ID = eINSTANCE.getReturnHeader_StatusId();
+		EReference RETURN_HEADER__STATUS_ID = eINSTANCE.getReturnHeader_StatusId();
 
 		/**
 		 * The meta object literal for the '<em><b>Supplier Rma Id</b></em>' attribute feature.
@@ -3828,12 +3829,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_HEADER__SUPPLIER_RMA_ID = eINSTANCE.getReturnHeader_SupplierRmaId();
 
 		/**
-		 * The meta object literal for the '<em><b>To Party Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>To Party Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER__TO_PARTY_ID = eINSTANCE.getReturnHeader_ToPartyId();
+		EReference RETURN_HEADER__TO_PARTY_ID = eINSTANCE.getReturnHeader_ToPartyId();
 
 		/**
 		 * The meta object literal for the '<em><b>Communication Event Returns</b></em>' attribute list feature.
@@ -3878,12 +3879,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_HEADER_TYPE__DESCRIPTION = eINSTANCE.getReturnHeaderType_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_HEADER_TYPE__PARENT_TYPE_ID = eINSTANCE.getReturnHeaderType_ParentTypeId();
+		EReference RETURN_HEADER_TYPE__PARENT_TYPE_ID = eINSTANCE.getReturnHeaderType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemImpl <em>Item</em>}' class.
@@ -3920,20 +3921,20 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM__DESCRIPTION = eINSTANCE.getReturnItem_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Expected Item Status</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Expected Item Status</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM__EXPECTED_ITEM_STATUS = eINSTANCE.getReturnItem_ExpectedItemStatus();
+		EReference RETURN_ITEM__EXPECTED_ITEM_STATUS = eINSTANCE.getReturnItem_ExpectedItemStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM__ORDER_ID = eINSTANCE.getReturnItem_OrderId();
+		EReference RETURN_ITEM__ORDER_ID = eINSTANCE.getReturnItem_OrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Order Item Seq Id</b></em>' attribute feature.
@@ -3944,12 +3945,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM__ORDER_ITEM_SEQ_ID = eINSTANCE.getReturnItem_OrderItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Product Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Product Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM__PRODUCT_ID = eINSTANCE.getReturnItem_ProductId();
+		EReference RETURN_ITEM__PRODUCT_ID = eINSTANCE.getReturnItem_ProductId();
 
 		/**
 		 * The meta object literal for the '<em><b>Received Quantity</b></em>' attribute feature.
@@ -3960,20 +3961,20 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM__RECEIVED_QUANTITY = eINSTANCE.getReturnItem_ReceivedQuantity();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Item Response Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Item Response Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM__RETURN_ITEM_RESPONSE_ID = eINSTANCE.getReturnItem_ReturnItemResponseId();
+		EReference RETURN_ITEM__RETURN_ITEM_RESPONSE_ID = eINSTANCE.getReturnItem_ReturnItemResponseId();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Item Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Item Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM__RETURN_ITEM_TYPE_ID = eINSTANCE.getReturnItem_ReturnItemTypeId();
+		EReference RETURN_ITEM__RETURN_ITEM_TYPE_ID = eINSTANCE.getReturnItem_ReturnItemTypeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Price</b></em>' attribute feature.
@@ -3992,28 +3993,28 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM__RETURN_QUANTITY = eINSTANCE.getReturnItem_ReturnQuantity();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Reason Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Reason Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM__RETURN_REASON_ID = eINSTANCE.getReturnItem_ReturnReasonId();
+		EReference RETURN_ITEM__RETURN_REASON_ID = eINSTANCE.getReturnItem_ReturnReasonId();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM__RETURN_TYPE_ID = eINSTANCE.getReturnItem_ReturnTypeId();
+		EReference RETURN_ITEM__RETURN_TYPE_ID = eINSTANCE.getReturnItem_ReturnTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM__STATUS_ID = eINSTANCE.getReturnItem_StatusId();
+		EReference RETURN_ITEM__STATUS_ID = eINSTANCE.getReturnItem_StatusId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemBillingImpl <em>Item Billing</em>}' class.
@@ -4042,12 +4043,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM_BILLING__RETURN_ITEM_SEQ_ID = eINSTANCE.getReturnItemBilling_ReturnItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Invoice Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Invoice Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_BILLING__INVOICE_ID = eINSTANCE.getReturnItemBilling_InvoiceId();
+		EReference RETURN_ITEM_BILLING__INVOICE_ID = eINSTANCE.getReturnItemBilling_InvoiceId();
 
 		/**
 		 * The meta object literal for the '<em><b>Invoice Item Seq Id</b></em>' attribute feature.
@@ -4074,12 +4075,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM_BILLING__QUANTITY = eINSTANCE.getReturnItemBilling_Quantity();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Receipt Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Receipt Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_BILLING__SHIPMENT_RECEIPT_ID = eINSTANCE.getReturnItemBilling_ShipmentReceiptId();
+		EReference RETURN_ITEM_BILLING__SHIPMENT_RECEIPT_ID = eINSTANCE.getReturnItemBilling_ShipmentReceiptId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemResponseImpl <em>Item Response</em>}' class.
@@ -4100,44 +4101,44 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM_RESPONSE__RETURN_ITEM_RESPONSE_ID = eINSTANCE.getReturnItemResponse_ReturnItemResponseId();
 
 		/**
-		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Billing Account Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID = eINSTANCE.getReturnItemResponse_BillingAccountId();
+		EReference RETURN_ITEM_RESPONSE__BILLING_ACCOUNT_ID = eINSTANCE.getReturnItemResponse_BillingAccountId();
 
 		/**
-		 * The meta object literal for the '<em><b>Fin Account Trans Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Fin Account Trans Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID = eINSTANCE.getReturnItemResponse_FinAccountTransId();
+		EReference RETURN_ITEM_RESPONSE__FIN_ACCOUNT_TRANS_ID = eINSTANCE.getReturnItemResponse_FinAccountTransId();
 
 		/**
-		 * The meta object literal for the '<em><b>Order Payment Preference Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Order Payment Preference Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID = eINSTANCE.getReturnItemResponse_OrderPaymentPreferenceId();
+		EReference RETURN_ITEM_RESPONSE__ORDER_PAYMENT_PREFERENCE_ID = eINSTANCE.getReturnItemResponse_OrderPaymentPreferenceId();
 
 		/**
-		 * The meta object literal for the '<em><b>Payment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Payment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_RESPONSE__PAYMENT_ID = eINSTANCE.getReturnItemResponse_PaymentId();
+		EReference RETURN_ITEM_RESPONSE__PAYMENT_ID = eINSTANCE.getReturnItemResponse_PaymentId();
 
 		/**
-		 * The meta object literal for the '<em><b>Replacement Order Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Replacement Order Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID = eINSTANCE.getReturnItemResponse_ReplacementOrderId();
+		EReference RETURN_ITEM_RESPONSE__REPLACEMENT_ORDER_ID = eINSTANCE.getReturnItemResponse_ReplacementOrderId();
 
 		/**
 		 * The meta object literal for the '<em><b>Response Amount</b></em>' attribute feature.
@@ -4182,12 +4183,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM_SHIPMENT__RETURN_ITEM_SEQ_ID = eINSTANCE.getReturnItemShipment_ReturnItemSeqId();
 
 		/**
-		 * The meta object literal for the '<em><b>Shipment Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Shipment Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_SHIPMENT__SHIPMENT_ID = eINSTANCE.getReturnItemShipment_ShipmentId();
+		EReference RETURN_ITEM_SHIPMENT__SHIPMENT_ID = eINSTANCE.getReturnItemShipment_ShipmentId();
 
 		/**
 		 * The meta object literal for the '<em><b>Shipment Item Seq Id</b></em>' attribute feature.
@@ -4232,12 +4233,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM_TYPE__DESCRIPTION = eINSTANCE.getReturnItemType_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parent Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getReturnItemType_ParentTypeId();
+		EReference RETURN_ITEM_TYPE__PARENT_TYPE_ID = eINSTANCE.getReturnItemType_ParentTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnItemTypeMapImpl <em>Item Type Map</em>}' class.
@@ -4258,20 +4259,20 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_ITEM_TYPE_MAP__RETURN_ITEM_MAP_KEY = eINSTANCE.getReturnItemTypeMap_ReturnItemMapKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Header Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Header Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID = eINSTANCE.getReturnItemTypeMap_ReturnHeaderTypeId();
+		EReference RETURN_ITEM_TYPE_MAP__RETURN_HEADER_TYPE_ID = eINSTANCE.getReturnItemTypeMap_ReturnHeaderTypeId();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Item Type Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Item Type Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID = eINSTANCE.getReturnItemTypeMap_ReturnItemTypeId();
+		EReference RETURN_ITEM_TYPE_MAP__RETURN_ITEM_TYPE_ID = eINSTANCE.getReturnItemTypeMap_ReturnItemTypeId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnReasonImpl <em>Reason</em>}' class.
@@ -4326,20 +4327,20 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_STATUS__RETURN_STATUS_ID = eINSTANCE.getReturnStatus_ReturnStatusId();
 
 		/**
-		 * The meta object literal for the '<em><b>Change By User Login Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Change By User Login Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID = eINSTANCE.getReturnStatus_ChangeByUserLoginId();
+		EReference RETURN_STATUS__CHANGE_BY_USER_LOGIN_ID = eINSTANCE.getReturnStatus_ChangeByUserLoginId();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Return Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_STATUS__RETURN_ID = eINSTANCE.getReturnStatus_ReturnId();
+		EReference RETURN_STATUS__RETURN_ID = eINSTANCE.getReturnStatus_ReturnId();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Item Seq Id</b></em>' attribute feature.
@@ -4358,12 +4359,12 @@ public interface ReturnPackage extends EPackage {
 		EAttribute RETURN_STATUS__STATUS_DATETIME = eINSTANCE.getReturnStatus_StatusDatetime();
 
 		/**
-		 * The meta object literal for the '<em><b>Status Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status Id</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RETURN_STATUS__STATUS_ID = eINSTANCE.getReturnStatus_StatusId();
+		EReference RETURN_STATUS__STATUS_ID = eINSTANCE.getReturnStatus_StatusId();
 
 		/**
 		 * The meta object literal for the '{@link org.abchip.mimo.biz.order.return_.impl.ReturnTypeImpl <em>Type</em>}' class.

@@ -19,8 +19,8 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayRespMsgId <em>Payment Gateway Resp Msg Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPgrMessage <em>Pgr Message</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayRespMsg()
@@ -39,7 +39,7 @@ public interface PaymentGatewayRespMsg extends BizEntity {
 	 * @return the value of the '<em>Payment Gateway Resp Msg Id</em>' attribute.
 	 * @see #setPaymentGatewayRespMsgId(String)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayRespMsg_PaymentGatewayRespMsgId()
-	 * @model id="true"
+	 * @model id="true" required="true"
 	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
@@ -82,29 +82,29 @@ public interface PaymentGatewayRespMsg extends BizEntity {
 	void setPgrMessage(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Payment Gateway Response Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Payment Gateway Response Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Payment Gateway Response Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Payment Gateway Response Id</em>' attribute.
-	 * @see #setPaymentGatewayResponseId(String)
+	 * @return the value of the '<em>Payment Gateway Response Id</em>' reference.
+	 * @see #setPaymentGatewayResponseId(PaymentGatewayResponse)
 	 * @see org.abchip.mimo.biz.accounting.payment.PaymentPackage#getPaymentGatewayRespMsg_PaymentGatewayResponseId()
-	 * @model annotation="mimo-ent-domain frame='PaymentGatewayResponse'"
+	 * @model keys="paymentGatewayResponseId"
 	 * @generated
 	 */
-	String getPaymentGatewayResponseId();
+	PaymentGatewayResponse getPaymentGatewayResponseId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.payment.PaymentGatewayRespMsg#getPaymentGatewayResponseId <em>Payment Gateway Response Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Payment Gateway Response Id</em>' attribute.
+	 * @param value the new value of the '<em>Payment Gateway Response Id</em>' reference.
 	 * @see #getPaymentGatewayResponseId()
 	 * @generated
 	 */
-	void setPaymentGatewayResponseId(String value);
+	void setPaymentGatewayResponseId(PaymentGatewayResponse value);
 
 } // PaymentGatewayRespMsg

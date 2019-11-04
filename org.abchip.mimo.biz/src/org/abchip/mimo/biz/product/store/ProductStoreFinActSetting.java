@@ -10,6 +10,9 @@ package org.abchip.mimo.biz.product.store;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.accounting.finaccount.FinAccountType;
+import org.abchip.mimo.biz.common.enum_.Enumeration;
+import org.abchip.mimo.biz.content.survey.Survey;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +24,6 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getAccountCodeLength <em>Account Code Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getAccountValidDays <em>Account Valid Days</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#isAllowAuthToNegative <em>Allow Auth To Negative</em>}</li>
@@ -30,11 +32,12 @@ import org.abchip.mimo.biz.BizEntity;
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPinCodeLength <em>Pin Code Length</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchSurveyCopyMe <em>Purch Survey Copy Me</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchSurveySendTo <em>Purch Survey Send To</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchaseSurveyId <em>Purchase Survey Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishThreshold <em>Replenish Threshold</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#isRequirePinCode <em>Require Pin Code</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#isValidateGCFinAcct <em>Validate GC Fin Acct</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getFinAccountTypeId <em>Fin Account Type Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchaseSurveyId <em>Purchase Survey Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting()
@@ -147,31 +150,30 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	void setAuthValidDays(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Fin Account Type Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fin Account Type Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fin Account Type Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fin Account Type Id</em>' attribute.
-	 * @see #setFinAccountTypeId(String)
+	 * @return the value of the '<em>Fin Account Type Id</em>' reference.
+	 * @see #setFinAccountTypeId(FinAccountType)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_FinAccountTypeId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='FinAccountType'"
+	 * @model keys="finAccountTypeId"
 	 * @generated
 	 */
-	String getFinAccountTypeId();
+	FinAccountType getFinAccountTypeId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getFinAccountTypeId <em>Fin Account Type Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getFinAccountTypeId <em>Fin Account Type Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fin Account Type Id</em>' attribute.
+	 * @param value the new value of the '<em>Fin Account Type Id</em>' reference.
 	 * @see #getFinAccountTypeId()
 	 * @generated
 	 */
-	void setFinAccountTypeId(String value);
+	void setFinAccountTypeId(FinAccountType value);
 
 	/**
 	 * Returns the value of the '<em><b>Min Balance</b></em>' attribute.
@@ -278,56 +280,56 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	void setPurchSurveySendTo(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Purchase Survey Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Purchase Survey Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Purchase Survey Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Purchase Survey Id</em>' attribute.
-	 * @see #setPurchaseSurveyId(String)
+	 * @return the value of the '<em>Purchase Survey Id</em>' reference.
+	 * @see #setPurchaseSurveyId(Survey)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_PurchaseSurveyId()
-	 * @model annotation="mimo-ent-domain frame='Survey'"
+	 * @model keys="surveyId"
 	 * @generated
 	 */
-	String getPurchaseSurveyId();
+	Survey getPurchaseSurveyId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchaseSurveyId <em>Purchase Survey Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getPurchaseSurveyId <em>Purchase Survey Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Purchase Survey Id</em>' attribute.
+	 * @param value the new value of the '<em>Purchase Survey Id</em>' reference.
 	 * @see #getPurchaseSurveyId()
 	 * @generated
 	 */
-	void setPurchaseSurveyId(String value);
+	void setPurchaseSurveyId(Survey value);
 
 	/**
-	 * Returns the value of the '<em><b>Replenish Method Enum Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Replenish Method Enum Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Replenish Method Enum Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Replenish Method Enum Id</em>' attribute.
-	 * @see #setReplenishMethodEnumId(String)
+	 * @return the value of the '<em>Replenish Method Enum Id</em>' reference.
+	 * @see #setReplenishMethodEnumId(Enumeration)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ReplenishMethodEnumId()
-	 * @model annotation="mimo-ent-domain frame='Enumeration'"
+	 * @model keys="enumId"
 	 * @generated
 	 */
-	String getReplenishMethodEnumId();
+	Enumeration getReplenishMethodEnumId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.product.store.ProductStoreFinActSetting#getReplenishMethodEnumId <em>Replenish Method Enum Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Replenish Method Enum Id</em>' attribute.
+	 * @param value the new value of the '<em>Replenish Method Enum Id</em>' reference.
 	 * @see #getReplenishMethodEnumId()
 	 * @generated
 	 */
-	void setReplenishMethodEnumId(String value);
+	void setReplenishMethodEnumId(Enumeration value);
 
 	/**
 	 * Returns the value of the '<em><b>Replenish Threshold</b></em>' attribute.
@@ -418,8 +420,8 @@ public interface ProductStoreFinActSetting extends BizEntity {
 	 * @return the value of the '<em>Product Store Id</em>' attribute.
 	 * @see #setProductStoreId(String)
 	 * @see org.abchip.mimo.biz.product.store.StorePackage#getProductStoreFinActSetting_ProductStoreId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='ProductStore'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getProductStoreId();

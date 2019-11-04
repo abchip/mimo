@@ -12,10 +12,13 @@ import java.util.Date;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.order.requirement.RequirementPackage;
 import org.abchip.mimo.biz.order.requirement.RequirementRole;
+import org.abchip.mimo.biz.party.party.Party;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -27,10 +30,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getRequirementId <em>Requirement Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getPartyId <em>Party Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getRoleTypeId <em>Role Type Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.requirement.impl.RequirementRoleImpl#getPartyId <em>Party Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,26 +63,6 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	 * @ordered
 	 */
 	protected String requirementId = REQUIREMENT_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARTY_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPartyId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String partyId = PARTY_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRoleTypeId() <em>Role Type Id</em>}' attribute.
@@ -142,6 +125,16 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	protected Date thruDate = THRU_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getPartyId() <em>Party Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartyId()
+	 * @generated
+	 * @ordered
+	 */
+	protected Party partyId;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -189,7 +182,24 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	 * @generated
 	 */
 	@Override
-	public String getPartyId() {
+	public Party getPartyId() {
+		if (partyId != null && ((EObject)partyId).eIsProxy()) {
+			InternalEObject oldPartyId = (InternalEObject)partyId;
+			partyId = (Party)eResolveProxy(oldPartyId);
+			if (partyId != oldPartyId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementPackage.REQUIREMENT_ROLE__PARTY_ID, oldPartyId, partyId));
+			}
+		}
+		return partyId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party basicGetPartyId() {
 		return partyId;
 	}
 
@@ -199,8 +209,8 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 	 * @generated
 	 */
 	@Override
-	public void setPartyId(String newPartyId) {
-		String oldPartyId = partyId;
+	public void setPartyId(Party newPartyId) {
+		Party oldPartyId = partyId;
 		partyId = newPartyId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementPackage.REQUIREMENT_ROLE__PARTY_ID, oldPartyId, partyId));
@@ -285,14 +295,15 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 		switch (featureID) {
 			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
 				return getRequirementId();
-			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
-				return getPartyId();
 			case RequirementPackage.REQUIREMENT_ROLE__ROLE_TYPE_ID:
 				return getRoleTypeId();
 			case RequirementPackage.REQUIREMENT_ROLE__FROM_DATE:
 				return getFromDate();
 			case RequirementPackage.REQUIREMENT_ROLE__THRU_DATE:
 				return getThruDate();
+			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
+				if (resolve) return getPartyId();
+				return basicGetPartyId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,9 +319,6 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
 				setRequirementId((String)newValue);
 				return;
-			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
-				setPartyId((String)newValue);
-				return;
 			case RequirementPackage.REQUIREMENT_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId((String)newValue);
 				return;
@@ -319,6 +327,9 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 				return;
 			case RequirementPackage.REQUIREMENT_ROLE__THRU_DATE:
 				setThruDate((Date)newValue);
+				return;
+			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
+				setPartyId((Party)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,9 +346,6 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
 				setRequirementId(REQUIREMENT_ID_EDEFAULT);
 				return;
-			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
-				setPartyId(PARTY_ID_EDEFAULT);
-				return;
 			case RequirementPackage.REQUIREMENT_ROLE__ROLE_TYPE_ID:
 				setRoleTypeId(ROLE_TYPE_ID_EDEFAULT);
 				return;
@@ -346,6 +354,9 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 				return;
 			case RequirementPackage.REQUIREMENT_ROLE__THRU_DATE:
 				setThruDate(THRU_DATE_EDEFAULT);
+				return;
+			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
+				setPartyId((Party)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -361,14 +372,14 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 		switch (featureID) {
 			case RequirementPackage.REQUIREMENT_ROLE__REQUIREMENT_ID:
 				return REQUIREMENT_ID_EDEFAULT == null ? requirementId != null : !REQUIREMENT_ID_EDEFAULT.equals(requirementId);
-			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
-				return PARTY_ID_EDEFAULT == null ? partyId != null : !PARTY_ID_EDEFAULT.equals(partyId);
 			case RequirementPackage.REQUIREMENT_ROLE__ROLE_TYPE_ID:
 				return ROLE_TYPE_ID_EDEFAULT == null ? roleTypeId != null : !ROLE_TYPE_ID_EDEFAULT.equals(roleTypeId);
 			case RequirementPackage.REQUIREMENT_ROLE__FROM_DATE:
 				return FROM_DATE_EDEFAULT == null ? fromDate != null : !FROM_DATE_EDEFAULT.equals(fromDate);
 			case RequirementPackage.REQUIREMENT_ROLE__THRU_DATE:
 				return THRU_DATE_EDEFAULT == null ? thruDate != null : !THRU_DATE_EDEFAULT.equals(thruDate);
+			case RequirementPackage.REQUIREMENT_ROLE__PARTY_ID:
+				return partyId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,8 +396,6 @@ public class RequirementRoleImpl extends BizEntityImpl implements RequirementRol
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (requirementId: ");
 		result.append(requirementId);
-		result.append(", partyId: ");
-		result.append(partyId);
 		result.append(", roleTypeId: ");
 		result.append(roleTypeId);
 		result.append(", fromDate: ");

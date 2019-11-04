@@ -10,12 +10,16 @@ package org.abchip.mimo.biz.order.order.impl;
 import java.math.BigDecimal;
 
 import org.abchip.mimo.biz.impl.BizEntityImpl;
+import org.abchip.mimo.biz.order.order.OrderHeader;
 import org.abchip.mimo.biz.order.order.OrderItemPriceInfo;
 import org.abchip.mimo.biz.order.order.OrderPackage;
+import org.abchip.mimo.biz.product.price.ProductPriceRule;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -29,11 +33,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getOrderItemPriceInfoId <em>Order Item Price Info Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getModifyAmount <em>Modify Amount</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getOrderId <em>Order Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getOrderItemSeqId <em>Order Item Seq Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getProductPriceActionSeqId <em>Product Price Action Seq Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getRateCode <em>Rate Code</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getOrderId <em>Order Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.order.order.impl.OrderItemPriceInfoImpl#getProductPriceRuleId <em>Product Price Rule Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,26 +109,6 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 	protected BigDecimal modifyAmount = MODIFY_AMOUNT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ORDER_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOrderId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String orderId = ORDER_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getOrderItemSeqId() <em>Order Item Seq Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,26 +149,6 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 	protected String productPriceActionSeqId = PRODUCT_PRICE_ACTION_SEQ_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getProductPriceRuleId() <em>Product Price Rule Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceRuleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRODUCT_PRICE_RULE_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getProductPriceRuleId() <em>Product Price Rule Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProductPriceRuleId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String productPriceRuleId = PRODUCT_PRICE_RULE_ID_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getRateCode() <em>Rate Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,6 +167,26 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 	 * @ordered
 	 */
 	protected String rateCode = RATE_CODE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOrderId() <em>Order Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderId()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrderHeader orderId;
+
+	/**
+	 * The cached value of the '{@link #getProductPriceRuleId() <em>Product Price Rule Id</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProductPriceRuleId()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProductPriceRule productPriceRuleId;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,7 +259,24 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 	 * @generated
 	 */
 	@Override
-	public String getOrderId() {
+	public OrderHeader getOrderId() {
+		if (orderId != null && ((EObject)orderId).eIsProxy()) {
+			InternalEObject oldOrderId = (InternalEObject)orderId;
+			orderId = (OrderHeader)eResolveProxy(oldOrderId);
+			if (orderId != oldOrderId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID, oldOrderId, orderId));
+			}
+		}
+		return orderId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrderHeader basicGetOrderId() {
 		return orderId;
 	}
 
@@ -285,8 +286,8 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 	 * @generated
 	 */
 	@Override
-	public void setOrderId(String newOrderId) {
-		String oldOrderId = orderId;
+	public void setOrderId(OrderHeader newOrderId) {
+		OrderHeader oldOrderId = orderId;
 		orderId = newOrderId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID, oldOrderId, orderId));
@@ -367,7 +368,24 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 	 * @generated
 	 */
 	@Override
-	public String getProductPriceRuleId() {
+	public ProductPriceRule getProductPriceRuleId() {
+		if (productPriceRuleId != null && ((EObject)productPriceRuleId).eIsProxy()) {
+			InternalEObject oldProductPriceRuleId = (InternalEObject)productPriceRuleId;
+			productPriceRuleId = (ProductPriceRule)eResolveProxy(oldProductPriceRuleId);
+			if (productPriceRuleId != oldProductPriceRuleId) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
+			}
+		}
+		return productPriceRuleId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductPriceRule basicGetProductPriceRuleId() {
 		return productPriceRuleId;
 	}
 
@@ -377,8 +395,8 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 	 * @generated
 	 */
 	@Override
-	public void setProductPriceRuleId(String newProductPriceRuleId) {
-		String oldProductPriceRuleId = productPriceRuleId;
+	public void setProductPriceRuleId(ProductPriceRule newProductPriceRuleId) {
+		ProductPriceRule oldProductPriceRuleId = productPriceRuleId;
 		productPriceRuleId = newProductPriceRuleId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID, oldProductPriceRuleId, productPriceRuleId));
@@ -421,16 +439,18 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 				return getDescription();
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__MODIFY_AMOUNT:
 				return getModifyAmount();
-			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID:
-				return getOrderId();
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ITEM_SEQ_ID:
 				return getOrderItemSeqId();
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_ACTION_SEQ_ID:
 				return getProductPriceActionSeqId();
-			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID:
-				return getProductPriceRuleId();
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__RATE_CODE:
 				return getRateCode();
+			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID:
+				if (resolve) return getOrderId();
+				return basicGetOrderId();
+			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID:
+				if (resolve) return getProductPriceRuleId();
+				return basicGetProductPriceRuleId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -452,20 +472,20 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__MODIFY_AMOUNT:
 				setModifyAmount((BigDecimal)newValue);
 				return;
-			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID:
-				setOrderId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId((String)newValue);
 				return;
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_ACTION_SEQ_ID:
 				setProductPriceActionSeqId((String)newValue);
 				return;
-			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID:
-				setProductPriceRuleId((String)newValue);
-				return;
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__RATE_CODE:
 				setRateCode((String)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID:
+				setOrderId((OrderHeader)newValue);
+				return;
+			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID:
+				setProductPriceRuleId((ProductPriceRule)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -488,20 +508,20 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__MODIFY_AMOUNT:
 				setModifyAmount(MODIFY_AMOUNT_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID:
-				setOrderId(ORDER_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ITEM_SEQ_ID:
 				setOrderItemSeqId(ORDER_ITEM_SEQ_ID_EDEFAULT);
 				return;
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_ACTION_SEQ_ID:
 				setProductPriceActionSeqId(PRODUCT_PRICE_ACTION_SEQ_ID_EDEFAULT);
 				return;
-			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID:
-				setProductPriceRuleId(PRODUCT_PRICE_RULE_ID_EDEFAULT);
-				return;
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__RATE_CODE:
 				setRateCode(RATE_CODE_EDEFAULT);
+				return;
+			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID:
+				setOrderId((OrderHeader)null);
+				return;
+			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID:
+				setProductPriceRuleId((ProductPriceRule)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -521,16 +541,16 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__MODIFY_AMOUNT:
 				return MODIFY_AMOUNT_EDEFAULT == null ? modifyAmount != null : !MODIFY_AMOUNT_EDEFAULT.equals(modifyAmount);
-			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID:
-				return ORDER_ID_EDEFAULT == null ? orderId != null : !ORDER_ID_EDEFAULT.equals(orderId);
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ITEM_SEQ_ID:
 				return ORDER_ITEM_SEQ_ID_EDEFAULT == null ? orderItemSeqId != null : !ORDER_ITEM_SEQ_ID_EDEFAULT.equals(orderItemSeqId);
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_ACTION_SEQ_ID:
 				return PRODUCT_PRICE_ACTION_SEQ_ID_EDEFAULT == null ? productPriceActionSeqId != null : !PRODUCT_PRICE_ACTION_SEQ_ID_EDEFAULT.equals(productPriceActionSeqId);
-			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID:
-				return PRODUCT_PRICE_RULE_ID_EDEFAULT == null ? productPriceRuleId != null : !PRODUCT_PRICE_RULE_ID_EDEFAULT.equals(productPriceRuleId);
 			case OrderPackage.ORDER_ITEM_PRICE_INFO__RATE_CODE:
 				return RATE_CODE_EDEFAULT == null ? rateCode != null : !RATE_CODE_EDEFAULT.equals(rateCode);
+			case OrderPackage.ORDER_ITEM_PRICE_INFO__ORDER_ID:
+				return orderId != null;
+			case OrderPackage.ORDER_ITEM_PRICE_INFO__PRODUCT_PRICE_RULE_ID:
+				return productPriceRuleId != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -551,14 +571,10 @@ public class OrderItemPriceInfoImpl extends BizEntityImpl implements OrderItemPr
 		result.append(description);
 		result.append(", modifyAmount: ");
 		result.append(modifyAmount);
-		result.append(", orderId: ");
-		result.append(orderId);
 		result.append(", orderItemSeqId: ");
 		result.append(orderItemSeqId);
 		result.append(", productPriceActionSeqId: ");
 		result.append(productPriceActionSeqId);
-		result.append(", productPriceRuleId: ");
-		result.append(productPriceRuleId);
 		result.append(", rateCode: ");
 		result.append(rateCode);
 		result.append(')');

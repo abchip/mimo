@@ -7,12 +7,15 @@
  */
 package org.abchip.mimo.biz.product.store.impl;
 
+import org.abchip.mimo.biz.common.enum_.Enumeration;
 import org.abchip.mimo.biz.impl.BizEntityImpl;
 import org.abchip.mimo.biz.product.store.ProductStoreEmailSetting;
 import org.abchip.mimo.biz.product.store.StorePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,7 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl#getProductStoreId <em>Product Store Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl#getEmailType <em>Email Type</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl#getBccAddress <em>Bcc Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl#getBodyScreenLocation <em>Body Screen Location</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl#getCcAddress <em>Cc Address</em>}</li>
@@ -32,6 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl#getFromAddress <em>From Address</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl#getSubject <em>Subject</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl#getXslfoAttachScreenLocation <em>Xslfo Attach Screen Location</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.product.store.impl.ProductStoreEmailSettingImpl#getEmailType <em>Email Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,26 +64,6 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 * @ordered
 	 */
 	protected String productStoreId = PRODUCT_STORE_ID_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEmailType() <em>Email Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmailType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMAIL_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmailType() <em>Email Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmailType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emailType = EMAIL_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBccAddress() <em>Bcc Address</em>}' attribute.
@@ -223,6 +206,16 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	protected String xslfoAttachScreenLocation = XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getEmailType() <em>Email Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmailType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Enumeration emailType;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -339,7 +332,24 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public String getEmailType() {
+	public Enumeration getEmailType() {
+		if (emailType != null && ((EObject)emailType).eIsProxy()) {
+			InternalEObject oldEmailType = (InternalEObject)emailType;
+			emailType = (Enumeration)eResolveProxy(oldEmailType);
+			if (emailType != oldEmailType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE, oldEmailType, emailType));
+			}
+		}
+		return emailType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration basicGetEmailType() {
 		return emailType;
 	}
 
@@ -349,8 +359,8 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 	 * @generated
 	 */
 	@Override
-	public void setEmailType(String newEmailType) {
-		String oldEmailType = emailType;
+	public void setEmailType(Enumeration newEmailType) {
+		Enumeration oldEmailType = emailType;
 		emailType = newEmailType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE, oldEmailType, emailType));
@@ -458,8 +468,6 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID:
 				return getProductStoreId();
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
-				return getEmailType();
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS:
 				return getBccAddress();
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION:
@@ -474,6 +482,9 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 				return getSubject();
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
 				return getXslfoAttachScreenLocation();
+			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
+				if (resolve) return getEmailType();
+				return basicGetEmailType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -488,9 +499,6 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID:
 				setProductStoreId((String)newValue);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
-				setEmailType((String)newValue);
 				return;
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS:
 				setBccAddress((String)newValue);
@@ -513,6 +521,9 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
 				setXslfoAttachScreenLocation((String)newValue);
 				return;
+			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
+				setEmailType((Enumeration)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -527,9 +538,6 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID:
 				setProductStoreId(PRODUCT_STORE_ID_EDEFAULT);
-				return;
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
-				setEmailType(EMAIL_TYPE_EDEFAULT);
 				return;
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS:
 				setBccAddress(BCC_ADDRESS_EDEFAULT);
@@ -552,6 +560,9 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
 				setXslfoAttachScreenLocation(XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT);
 				return;
+			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
+				setEmailType((Enumeration)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -566,8 +577,6 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 		switch (featureID) {
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__PRODUCT_STORE_ID:
 				return PRODUCT_STORE_ID_EDEFAULT == null ? productStoreId != null : !PRODUCT_STORE_ID_EDEFAULT.equals(productStoreId);
-			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
-				return EMAIL_TYPE_EDEFAULT == null ? emailType != null : !EMAIL_TYPE_EDEFAULT.equals(emailType);
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BCC_ADDRESS:
 				return BCC_ADDRESS_EDEFAULT == null ? bccAddress != null : !BCC_ADDRESS_EDEFAULT.equals(bccAddress);
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__BODY_SCREEN_LOCATION:
@@ -582,6 +591,8 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 				return SUBJECT_EDEFAULT == null ? subject != null : !SUBJECT_EDEFAULT.equals(subject);
 			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__XSLFO_ATTACH_SCREEN_LOCATION:
 				return XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT == null ? xslfoAttachScreenLocation != null : !XSLFO_ATTACH_SCREEN_LOCATION_EDEFAULT.equals(xslfoAttachScreenLocation);
+			case StorePackage.PRODUCT_STORE_EMAIL_SETTING__EMAIL_TYPE:
+				return emailType != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -598,8 +609,6 @@ public class ProductStoreEmailSettingImpl extends BizEntityImpl implements Produ
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (productStoreId: ");
 		result.append(productStoreId);
-		result.append(", emailType: ");
-		result.append(emailType);
 		result.append(", bccAddress: ");
 		result.append(bccAddress);
 		result.append(", bodyScreenLocation: ");

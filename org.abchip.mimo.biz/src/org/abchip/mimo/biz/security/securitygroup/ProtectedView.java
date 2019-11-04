@@ -43,7 +43,6 @@ public interface ProtectedView extends BizEntity {
 	 * @see org.abchip.mimo.biz.security.securitygroup.SecuritygroupPackage#getProtectedView_GroupId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='SecurityGroup'"
 	 * @generated
 	 */
 	String getGroupId();

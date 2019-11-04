@@ -23,10 +23,10 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember#getGlAccountId <em>Gl Account Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember#getGlAccountCategoryId <em>Gl Account Category Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember#getFromDate <em>From Date</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember#getAmountPercentage <em>Amount Percentage</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember#getThruDate <em>Thru Date</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember#getGlAccountCategoryId <em>Gl Account Category Id</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategoryMember()
@@ -71,7 +71,8 @@ public interface GlAccountCategoryMember extends BizEntity {
 	 * @return the value of the '<em>From Date</em>' attribute.
 	 * @see #setFromDate(Date)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategoryMember_FromDate()
-	 * @model annotation="mimo-ent-slot key='true'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	Date getFromDate();
@@ -123,8 +124,8 @@ public interface GlAccountCategoryMember extends BizEntity {
 	 * @return the value of the '<em>Gl Account Id</em>' attribute.
 	 * @see #setGlAccountId(String)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategoryMember_GlAccountId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccount'"
+	 * @model required="true"
+	 *        annotation="mimo-ent-slot key='true'"
 	 * @generated
 	 */
 	String getGlAccountId();
@@ -140,30 +141,29 @@ public interface GlAccountCategoryMember extends BizEntity {
 	void setGlAccountId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Gl Account Category Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Gl Account Category Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Gl Account Category Id</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gl Account Category Id</em>' attribute.
-	 * @see #setGlAccountCategoryId(String)
+	 * @return the value of the '<em>Gl Account Category Id</em>' reference.
+	 * @see #setGlAccountCategoryId(GlAccountCategory)
 	 * @see org.abchip.mimo.biz.accounting.ledger.LedgerPackage#getGlAccountCategoryMember_GlAccountCategoryId()
-	 * @model annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='GlAccountCategory'"
+	 * @model keys="glAccountCategoryId"
 	 * @generated
 	 */
-	String getGlAccountCategoryId();
+	GlAccountCategory getGlAccountCategoryId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember#getGlAccountCategoryId <em>Gl Account Category Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.accounting.ledger.GlAccountCategoryMember#getGlAccountCategoryId <em>Gl Account Category Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gl Account Category Id</em>' attribute.
+	 * @param value the new value of the '<em>Gl Account Category Id</em>' reference.
 	 * @see #getGlAccountCategoryId()
 	 * @generated
 	 */
-	void setGlAccountCategoryId(String value);
+	void setGlAccountCategoryId(GlAccountCategory value);
 
 } // GlAccountCategoryMember

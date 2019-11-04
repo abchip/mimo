@@ -8,6 +8,7 @@
 package org.abchip.mimo.biz.content.data;
 
 import org.abchip.mimo.biz.BizEntity;
+import org.abchip.mimo.biz.common.datasource.DataSource;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,9 +20,9 @@ import org.abchip.mimo.biz.BizEntity;
  * </p>
  * <ul>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataResourceId <em>Data Resource Id</em>}</li>
+ *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataValue <em>Meta Data Value</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataPredicateId <em>Meta Data Predicate Id</em>}</li>
  *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataSourceId <em>Data Source Id</em>}</li>
- *   <li>{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataValue <em>Meta Data Value</em>}</li>
  * </ul>
  *
  * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData()
@@ -42,7 +43,6 @@ public interface DataResourceMetaData extends BizEntity {
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_DataResourceId()
 	 * @model required="true"
 	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='DataResource'"
 	 * @generated
 	 */
 	String getDataResourceId();
@@ -58,58 +58,56 @@ public interface DataResourceMetaData extends BizEntity {
 	void setDataResourceId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Data Source Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Data Source Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Source Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Source Id</em>' attribute.
-	 * @see #setDataSourceId(String)
+	 * @return the value of the '<em>Data Source Id</em>' reference.
+	 * @see #setDataSourceId(DataSource)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_DataSourceId()
-	 * @model annotation="mimo-ent-domain frame='DataSource'"
+	 * @model keys="dataSourceId"
 	 * @generated
 	 */
-	String getDataSourceId();
+	DataSource getDataSourceId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataSourceId <em>Data Source Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getDataSourceId <em>Data Source Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Source Id</em>' attribute.
+	 * @param value the new value of the '<em>Data Source Id</em>' reference.
 	 * @see #getDataSourceId()
 	 * @generated
 	 */
-	void setDataSourceId(String value);
+	void setDataSourceId(DataSource value);
 
 	/**
-	 * Returns the value of the '<em><b>Meta Data Predicate Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Meta Data Predicate Id</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Meta Data Predicate Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Meta Data Predicate Id</em>' attribute.
-	 * @see #setMetaDataPredicateId(String)
+	 * @return the value of the '<em>Meta Data Predicate Id</em>' reference.
+	 * @see #setMetaDataPredicateId(MetaDataPredicate)
 	 * @see org.abchip.mimo.biz.content.data.DataPackage#getDataResourceMetaData_MetaDataPredicateId()
-	 * @model required="true"
-	 *        annotation="mimo-ent-slot key='true'"
-	 *        annotation="mimo-ent-domain frame='MetaDataPredicate'"
+	 * @model keys="metaDataPredicateId"
 	 * @generated
 	 */
-	String getMetaDataPredicateId();
+	MetaDataPredicate getMetaDataPredicateId();
 
 	/**
-	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataPredicateId <em>Meta Data Predicate Id</em>}' attribute.
+	 * Sets the value of the '{@link org.abchip.mimo.biz.content.data.DataResourceMetaData#getMetaDataPredicateId <em>Meta Data Predicate Id</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Meta Data Predicate Id</em>' attribute.
+	 * @param value the new value of the '<em>Meta Data Predicate Id</em>' reference.
 	 * @see #getMetaDataPredicateId()
 	 * @generated
 	 */
-	void setMetaDataPredicateId(String value);
+	void setMetaDataPredicateId(MetaDataPredicate value);
 
 	/**
 	 * Returns the value of the '<em><b>Meta Data Value</b></em>' attribute.
